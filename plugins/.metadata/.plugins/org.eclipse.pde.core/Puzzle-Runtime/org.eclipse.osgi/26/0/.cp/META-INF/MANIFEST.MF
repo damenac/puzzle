@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: de.ovgu.featureide.ui;singleton:=true
+Require-Bundle: org.eclipse.ui,org.eclipse.core.runtime,org.eclipse.ui
+ .ide,org.eclipse.debug.ui,org.eclipse.jdt.debug.ui,org.eclipse.jdt.ui
+ ,org.eclipse.gef,de.ovgu.featureide.fm.core,de.ovgu.featureide.fm.ui,
+ de.ovgu.featureide.core,org.eclipse.core.expressions
+Bundle-ManifestVersion: 2
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: University of Magdeburg
+Import-Package: org.eclipse.jdt.core,org.eclipse.jdt.core.compiler.bat
+ ch,org.eclipse.jdt.internal.core,org.eclipse.jdt.internal.ui.javaedit
+ or,org.eclipse.jface.text,org.eclipse.jface.text.contentassist,org.ec
+ lipse.jface.text.source,org.eclipse.platform.internal,org.eclipse.ui.
+ editors.text,org.eclipse.ui.texteditor
+Export-Package: de.ovgu.featureide.ui;uses:="org.eclipse.swt.graphics,
+ de.ovgu.featureide.fm.ui,org.osgi.framework",de.ovgu.featureide.ui.ac
+ tions,de.ovgu.featureide.ui.actions.generator,de.ovgu.featureide.ui.d
+ ecorators,de.ovgu.featureide.ui.editors,de.ovgu.featureide.ui.editors
+ .annotation,de.ovgu.featureide.ui.handlers.base,de.ovgu.featureide.ui
+ .perspective,de.ovgu.featureide.ui.quickfix,de.ovgu.featureide.ui.sta
+ tistics.core,de.ovgu.featureide.ui.statistics.core.composite,de.ovgu.
+ featureide.ui.statistics.core.composite.lazyimplementations,de.ovgu.f
+ eatureide.ui.statistics.core.composite.lazyimplementations.genericdat
+ atypes,de.ovgu.featureide.ui.statistics.ui,de.ovgu.featureide.ui.stat
+ istics.ui.helper,de.ovgu.featureide.ui.statistics.ui.helper.jobs,de.o
+ vgu.featureide.ui.views.collaboration; uses:="org.eclipse.core.runtim
+ e,  de.ovgu.featureide.core,  org.eclipse.ui,  org.eclipse.core.resou
+ rces,  org.eclipse.draw2d.geometry,  org.eclipse.swt.graphics,  de.ov
+ gu.featureide.core.listeners,  org.eclipse.ui.part,  org.eclipse.draw
+ 2d,  org.eclipse.swt.widgets",de.ovgu.featureide.ui.views.collaborati
+ on.action; uses:="org.eclipse.jface.action,  org.eclipse.swt.graphics
+ ,  de.ovgu.featureide.ui.views.collaboration,  org.eclipse.gef.ui.par
+ ts,  de.ovgu.featureide.fm.core",de.ovgu.featureide.ui.views.collabor
+ ation.editparts,de.ovgu.featureide.ui.views.collaboration.figures,de.
+ ovgu.featureide.ui.views.collaboration.model,de.ovgu.featureide.ui.vi
+ ews.collaboration.outline; uses:="org.eclipse.ui,  de.ovgu.featureide
+ .core.fstmodel,  org.eclipse.ui.part,  de.ovgu.featureide.ui.views.co
+ llaboration,  org.eclipse.jface.action,  de.ovgu.featureide.core,  or
+ g.eclipse.core.resources,  org.eclipse.jface.viewers,  org.eclipse.sw
+ t.graphics,  de.ovgu.featureide.core.listeners,  org.eclipse.jface.ut
+ il,  org.eclipse.swt.widgets",de.ovgu.featureide.ui.views.collaborati
+ on.policy,de.ovgu.featureide.ui.views.outline,de.ovgu.featureide.ui.w
+ izards; uses:="org.eclipse.jface.wizard,  de.ovgu.featureide.core,  o
+ rg.eclipse.ui,  org.eclipse.ui.wizards.newresource,  org.eclipse.core
+ .resources,  org.eclipse.jface.viewers,  org.eclipse.swt.widgets,  or
+ g.eclipse.swt.layout,  de.ovgu.featureide.core.builder,  de.ovgu.feat
+ ureide.fm.core",org.apache.commons.math;uses:="org.apache.commons.mat
+ h.exception.util,org.apache.commons.math.exception"
+Bundle-Name: FeatureIDE UI Plug-In
+Bundle-Version: 2.7.4.201506171554
+Bundle-Localization: 
+Bundle-ClassPath: lib/SPLACAT.jar,lib/commons-math-2.2.jar,.
+Bundle-Activator: de.ovgu.featureide.ui.UIPlugin
+
+

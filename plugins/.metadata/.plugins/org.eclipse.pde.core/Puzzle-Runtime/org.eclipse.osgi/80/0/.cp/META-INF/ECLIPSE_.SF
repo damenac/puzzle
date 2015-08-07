@@ -1,0 +1,2718 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: LmwUN7gGhmROUd0L3Lnw2iBdTeE=
+Created-By: 1.6.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: Ow++7TS1chYnrmcg7T2IwsSgeKE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wUIConfigurationPage$2.class
+SHA1-Digest: nRcsITG0WW0jiWuzuLKxwYCB1+Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$15.class
+SHA1-Digest: g43vJIndAk0w70JZGaxbTtcC+tc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/ColorButton$2.cl
+ ass
+SHA1-Digest: oPDD62nviJCaxQ8rxkcO4t9hBuY=
+
+Name: icons/AcceleoLogo.png
+SHA1-Digest: E+2nZoMetqunvfsBJnEC/Png0NM=
+
+Name: icons/template-editor/Template_protected.gif
+SHA1-Digest: 69fjnVBQ8EUi9AShr8Juc+hiw80=
+
+Name: org/eclipse/acceleo/internal/ide/ui/classpath/AcceleoClasspathCo
+ ntainerWizard.class
+SHA1-Digest: qm3ARv4E3MMYwcCpofUTPBZvD9I=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/LoadModuleAction
+ $1.class
+SHA1-Digest: zNSGjzq1f1myuIWiCzl0ZwSbXbg=
+
+Name: icons/template-editor/ModuleImportsValue.gif
+SHA1-Digest: i15q9Nqn8vHYiPjZvjag/EpMPBQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoCreateJavaServiceWrapperResolutionAfterLastMember.class
+SHA1-Digest: Y3j9x2TpdOGr0xYtUXV/GT0i4V0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/acceleoModule.emt
+ l
+SHA1-Digest: kev6cOO8Mov7NVPWz0wsRlrwa7s=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomUpdateSite.emt
+ l
+SHA1-Digest: /Ky7SOlDm2kUaI7xy8netWPD3GI=
+
+Name: icons/template-editor/TemplateExpression.gif
+SHA1-Digest: tLhUG4eZqLMcKbE7pgDxUeUvvNw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameVariableRefactoring.class
+SHA1-Digest: Mow4w65sWM8nRofZKuoDSr8sqn4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Overr
+ ideNameRule.class
+SHA1-Digest: IQkgKOht9/7zqyVcK9GKnY0Ejuc=
+
+Name: icons/AcceleoProblemMarker.gif
+SHA1-Digest: PuZy+lE7gaWePcDVh66ET/ixBbw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePage$RefreshViewJob$1.class
+SHA1-Digest: rxi95sJ2ISJny9HmcxceDjxHtWs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomMaven.emtl
+SHA1-Digest: My9PajHQ22qH3Kvhjel5Hr2sb/o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$4.class
+SHA1-Digest: gAxCPOP/hpPW5yrV6k2gfbeDPLE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoToken.class
+SHA1-Digest: Gb9/QHUb0GN++IO/EOnjouJ6Eo0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpWizard.class
+SHA1-Digest: drBNXTOOX8+Or4NRnlAd9oSKmOA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/patterns/New
+ TemplateForeachType.class
+SHA1-Digest: qa1QGfYUI+aek79RTZbNT3mNngw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/HideNonPublicAction.class
+SHA1-Digest: RC010qBCurjV9gDObk/bVmpLcOQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpDescriptor.class
+SHA1-Digest: WGUfrSgQxKJxiCj7XUYDy+guMdY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/example/Abstr
+ actAcceleoInitializationStrategy.class
+SHA1-Digest: z+RtE0iSp2v7IAns92t3srRQUnA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/core/ITemplateDebugger
+ Listener.class
+SHA1-Digest: MTeah9JLqiCUuHvsUZ86YKW/CHo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/accel
+ eodocumentation.properties
+SHA1-Digest: G9FkeXy3WE/Fi8gw/VbG2gWOZZU=
+
+Name: icons/template-editor/completion/Template_private.gif
+SHA1-Digest: OHLq4UvHZ6Ittxl+tiHloG91reg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRefactoringPreviewViewer.class
+SHA1-Digest: 0a0l12HwPi6j207Ih+UOZR/JRl0=
+
+Name: icons/template-editor/Template_main.gif
+SHA1-Digest: l2lvz+6HwFOZlxwcP9ySStP5yqQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoDebugTarg
+ et.class
+SHA1-Digest: qRCRpXfkZ0FljF2cOn/lT8FIEDI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Pr
+ oblemMarkerResolutionProposal.class
+SHA1-Digest: Q5krn25pYEPMby36XMJfgyCcqAY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoPositionedQueryLabelProvider.class
+SHA1-Digest: j0WuhUfXC1m6CujPvjBeJW1Tljc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$1.c
+ lass
+SHA1-Digest: j2IVlUFBJ/MvNKPgkz0kMkZS9EQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoProtectedAreaScanner.class
+SHA1-Digest: PKZB6J8H7XZSyWnrVFhBoD4zr30=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AbstractAcce
+ leoNewTemplatesMasterComposite$TemplatesTreeContentProvider.class
+SHA1-Digest: bFwM9ftBL6SLFOb/KSAgZH6vRXs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/CreateTempla
+ teData.class
+SHA1-Digest: QTDxoCB1WiVftqQnbOkBtqKAMGE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/ModuleElementNam
+ eWizard$ModuleElementNameWizardPage.class
+SHA1-Digest: rHL43XynhDgceyRxrw+gRVpRBHo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoRunToLine
+ Breakpoint.class
+SHA1-Digest: dn7kb9R8+oh9CgdU1bZf9u4n1J8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoProje
+ ctWizard$1.class
+SHA1-Digest: vt8XX7/i5O3HXSHIa5TEnojyrMY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$2.class
+SHA1-Digest: AKppHmeVPTycmB2Y6jDXxab3V50=
+
+Name: org/eclipse/acceleo/internal/ide/ui/dialog/ResourceSelectionDial
+ og.class
+SHA1-Digest: QT1oHDyNjrGCsu608PJGdrvkDq0=
+
+Name: intro/images/tutorial_hov.png
+SHA1-Digest: PDF15LItOeD/0VDgAYar2uKbrwk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateInputWizardPage$1.class
+SHA1-Digest: /Uq7M7JSBAwBYZw09CaZmUSfTb4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleInputWizardPage.class
+SHA1-Digest: JI26kiH2S662eq92NopOAj5V33c=
+
+Name: intro/acceleo-overview.xml
+SHA1-Digest: SglcRGnwiwqCgM+SBhly5LCPFeo=
+
+Name: org/eclipse/acceleo/ide/ui/wizards/module/example/IAcceleoInitia
+ lizationStrategy.class
+SHA1-Digest: EuQpl22wjuCfpwRJzLv+CPOk4BU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoTemp
+ lateReconcilingStrategy$1.class
+SHA1-Digest: LwHAoYvjXPMvdhf0TKnILXfNM4w=
+
+Name: icons/debug/attribute.gif
+SHA1-Digest: liTXXCNl8l4aeS6U/gv4UqblrxQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Seque
+ nceBlockRule.class
+SHA1-Digest: oA0gxL/jPfNmvBUpoYrGRN/Zxdo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/example/Accel
+ eoInitializationStrategyUtils.class
+SHA1-Digest: LL4fExqYmHsPz9Frc2jyqi7GraA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpRefactoring.class
+SHA1-Digest: jCXpz4YPV/9/Oatjbhp1Q4cULh4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wProjectWizard.class
+SHA1-Digest: HV6s/ydt+6x5ddz3FN71aJjX9Ek=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$1.class
+SHA1-Digest: YifdLXhZ4iQOJ9U36jNugusO0k4=
+
+Name: org/eclipse/acceleo/ide/ui/views/proposals/patterns/IAcceleoPatt
+ ernProposal.class
+SHA1-Digest: uayjMYkpvPYI3x5O230B2VmYNv0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoDocViewer.class
+SHA1-Digest: EwpBDnNmcMlUJ7ILmkl5eLLX/BQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/OpenD
+ eclarationUtils$1.class
+SHA1-Digest: gila+6Edv0y5VOmgfS6ze+l7neY=
+
+Name: intro/images/generators.png
+SHA1-Digest: W03fiOcgzQ/UBF2zrdZGN/cMzzc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateWizard.class
+SHA1-Digest: N0DI+2w7SoNVuZMfshNU8Nv2COg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePageItemProvider.class
+SHA1-Digest: plCi13Awn+kqshpLftC7pJg3yQM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wProjectWizard$1.class
+SHA1-Digest: MZripSZ1OGtlw46XNZh/rqeZdu0=
+
+Name: icons/template-editor/completion/URI.gif
+SHA1-Digest: 5XOV6Bc76EQ0F9rNtiwUINKISiQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/IAcce
+ leoContantsImage$TemplateEditor$Outline.class
+SHA1-Digest: D20rx0n/XsfHfHOP/1pkINT0dsY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/IAcce
+ leoContantsImage$TemplateEditor.class
+SHA1-Digest: vkJZdzU9G24LwvrF4MHHDGc2vbg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/First
+ ParenthesisRule.class
+SHA1-Digest: lk3LAXu86bmTX0PoKzFJ/AIxl7Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or$1.class
+SHA1-Digest: yWikA6ZPPI1EKvZBEW7nYik+zWE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/AcceleoUIGenerato
+ r$1.class
+SHA1-Digest: Cj4aMdhujcmDgpeXIvVT2CkonC0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Retur
+ nTypeRule.class
+SHA1-Digest: sFQWZgEbNCs/Ar3Fj44NXXlXPfg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePage$RefreshViewJob$1$1.class
+SHA1-Digest: 9hfGPZw/jqkG/oOWmgkfi0iiUVQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoNotificat
+ ionsPreferences.class
+SHA1-Digest: 8i9yPJpDI+/Ymgzt7Uflh0my2lQ=
+
+Name: icons/interpreter/save_expression.gif
+SHA1-Digest: SQLetDnuHKmR3LzNWHva6i74S8M=
+
+Name: icons/AcceleoLaunch.gif
+SHA1-Digest: 2Ga3ujyU8SiioNjMzV1ypJv5WCA=
+
+Name: icons/template-editor/actions/ShowWhitespaceCharactersAction.gif
+SHA1-Digest: 5bwY5IwfkSx86WJMujiYGOsEyQ4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesGlobalController.class
+SHA1-Digest: vpskfqan61ufd2+LEwbwxmkU6nc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/ComputeGenerationSta
+ tisticsAction$1$1.class
+SHA1-Digest: H3fMlAzv3rKBml1JoSYOmq52WVc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoCompilati
+ onTask.class
+SHA1-Digest: UXnSCcEc2jV0nOjkxXSlDEKCOKE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoJavaArgumen
+ tsTab.class
+SHA1-Digest: q5qDBpQd6VNN/O4zrZPzN/l1yz0=
+
+Name: icons/template-editor/completion/Completion_Query.gif
+SHA1-Digest: 7irLKnPak3k/WYhRM4cs3sSuYno=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIData.class
+SHA1-Digest: W5e7LW7yNxQDhhnQppcHL2jxXpg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$11.class
+SHA1-Digest: U+54EStuXypkKNd0E0jtp0Yb2Cg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoCreateTemplateResolutionAfterLastMember.class
+SHA1-Digest: T1YwExqiH9ZupZNQpRy+HsMjrFU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultVi
+ ew$AcceleoPreviewContentProvider.class
+SHA1-Digest: VSPjoZhlGUcsluAn1OPK7isgu1c=
+
+Name: icons/overrides/AcceleoProjectResolved.gif
+SHA1-Digest: mQKii/16gQWe0Vs7MgCPvSEU24o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoCommentScanner.class
+SHA1-Digest: t5hJ3IoByN+nuOdsQ28SXP//Q8M=
+
+Name: icons/AcceleoNewProjectConvert.gif
+SHA1-Digest: QvpKMLFcSyFIJYqPCpCaMTVbzxE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoWhit
+ espaceCharactersPainter.class
+SHA1-Digest: cM73NLABGX6fQ+SCBPSHvWjzO0M=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/ColorButton.clas
+ s
+SHA1-Digest: LlEKNrHZ86OZy02WseNA5bF2fSw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wser$1.class
+SHA1-Digest: RCPetOJ45f/LrnIDY+YcaoebK9w=
+
+Name: icons/template-editor/ToggleMarkOccurrences.png
+SHA1-Digest: 8OWABEk1l+zP64Q7FbsweFx96UY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/IAcce
+ leoContantsImage$QuickFix.class
+SHA1-Digest: ++aFTzvpWxXvS9rW0K37YsEWJDk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$6.c
+ lass
+SHA1-Digest: CEwsfLdk/IJH7395yeBClu58DgM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/ProxyPreferenceS
+ tore$1.class
+SHA1-Digest: LgIdFvJ3TR8nd8n9C6xzBn4ZkWc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/Acceleo
+ NewMainTemplateWizardPage$2.class
+SHA1-Digest: 6mGcNnLBRvPhwTM2ubHpxbqJdfU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTextRefactoring.class
+SHA1-Digest: u0Em3dq7t0bQeH50kx4Lj6HDfoI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$7.class
+SHA1-Digest: i7jArDBk4axhxgLUQIiXzAPGsmk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/resource/AcceleoResourceSetC
+ leanerJob.class
+SHA1-Digest: CtbvaW8mmKfODWzyC9RubSbRAow=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoCreateQueryResolutionAfterLastMember.class
+SHA1-Digest: RVKk6fu6mijstrd3TrK4jToPM+U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryRefactoring.class
+SHA1-Digest: 3kDx+2193P/e5/m0gMIggj6fges=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferencesSearchQuery.class
+SHA1-Digest: 2CuVhNIaoHHc0mo2J13PGTIFxfA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoLaunchDeleg
+ ateStandalone.class
+SHA1-Digest: VDovDR8Js6XO6EvkkCIomuuN1PU=
+
+Name: icons/interpreter/acceleo_language.gif
+SHA1-Digest: t5eq5/vBAELHGbT/pgOPOp/B/Vk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpTableLabelProvider.class
+SHA1-Digest: m9FweGZkBz3sDo838JdEURnoCgM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePage$RefreshViewJob.class
+SHA1-Digest: xhQ7vAny1ug/csH31xwsjQ9AaK8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ orActionContributor.class
+SHA1-Digest: Qs/KlkJDs5s4GHatRqmZpI4glO0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoModul
+ esCreationPage$2.class
+SHA1-Digest: OsC6inKDhR0vTxfS38pyeACthcw=
+
+Name: icons/AcceleoNewProject.gif
+SHA1-Digest: Tc/teCQhlWerAEfy/avJXnQHQ48=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/HideTemplatesAction$1.class
+SHA1-Digest: 1WRCKBjPZSgutdh+tzCROeZeST4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/notifications/AcceleoGenerat
+ ionListener.class
+SHA1-Digest: DwTeT24rNACDpCclqey3ZWc8B1Q=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$6.class
+SHA1-Digest: AOJ6CVnHomDvgKhzzyxFRLikmyY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoSour
+ ceContent.class
+SHA1-Digest: gBhwtuAn8cNgAdSMjkHMRW3tYl0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoLaunchDeleg
+ ateStandalone$1.class
+SHA1-Digest: WbqqR0j/6sZ7+oB7S0zXiOIwHWc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/Com
+ mentAction.class
+SHA1-Digest: rkUUqJMXOUd9zgdN1RtS2I3PXgA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/prefs/AcceleoCompil
+ erPage$1.class
+SHA1-Digest: VzRrOcWvE5S2aaY28qd9AFbFCNg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoPo
+ m.class
+SHA1-Digest: Ln2WZc3JVl9Bi3I93SM7wJI1Tt0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/ComputeGenerationSta
+ tisticsAction$2.class
+SHA1-Digest: S04z1lkjBBanc6502VQTZC34Akw=
+
+Name: org/eclipse/acceleo/ide/ui/natures/AcceleoNature.class
+SHA1-Digest: lyVVCRRw7ont0OnlBjplp3zHFic=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/acceleoJavaClassG
+ enerator.emtl
+SHA1-Digest: fxnP7PCN2WN1thqyFLVMojs1HNs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/AbstractRefactoringAction.class
+SHA1-Digest: oi5rLi4hw5j8jsZHod0hMkCWNFw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/classpath/AcceleoClasspathCo
+ ntainerInitializer.class
+SHA1-Digest: MyeZGaG08CA4ue88t6MosZ5dRAc=
+
+Name: icons/debug/class.gif
+SHA1-Digest: lc38+azK0XtGtORDiaHHKhvuhQw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Keywo
+ rdRule.class
+SHA1-Digest: asFDRIdU6Eifk2OZv9zhqSIKACg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/ModuleEle
+ mentKind.class
+SHA1-Digest: YdLZhX6Wim/RyJ7b/6DMBOyJRKY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/ProposalsBro
+ wserTypesLabelProvider.class
+SHA1-Digest: LSvyVkrf/kDbNUgeJlrbnuKd5G8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/ProposalsBro
+ wserPatternsLabelProvider.class
+SHA1-Digest: 8rlWoH4SjMAM12jBOC0uXbFmDiY=
+
+Name: icons/template-editor/TraceBlock.gif
+SHA1-Digest: bSX9YNU0Jk0793OBxaCMyeoWkGI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or$6.class
+SHA1-Digest: PebfL1FuEISRcdRnle+ooXHXXx0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/dialog/TreeSelectionComposit
+ e$2.class
+SHA1-Digest: F8BSypDFaoa+G2+rVEHMLXjeZCI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpAction.class
+SHA1-Digest: lY+E3HTbKVnmgo9kI26TypI/77s=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePageLabelProvider.class
+SHA1-Digest: aH78MFLrMGwY2MiMmhAX/zzePoE=
+
+Name: org/eclipse/acceleo/ide/ui/wizards/newfile/example/AcceleoCopyEx
+ ampleContentStrategy.class
+SHA1-Digest: j29SOUb+/Jlpr1o+nJ4HJ1l9ovs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Block
+ NameRule.class
+SHA1-Digest: bOWdANYI/67+2pcUaNeYfDihkcc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/MarkOccurre
+ ncesToggleAction.class
+SHA1-Digest: DAKHPlHyQbPvkT8lgO2GiJr3mZ8=
+
+Name: icons/template-editor/Comment.gif
+SHA1-Digest: BKwsA/SJMnchjNF9snAtFu1mX7Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/antRunner.mtl
+SHA1-Digest: 7L0wx9JEREVmUD8nokxKLlMPoJI=
+
+Name: icons/overrides/Template_main.gif
+SHA1-Digest: WYrXiXUaRnHmiEkBGWPkc9UN1/0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wser$6.class
+SHA1-Digest: ZcgvFc5BqV5NYP/B48koCL2hEjY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/IAcce
+ leoContantsImage$TemplateEditor$Completion.class
+SHA1-Digest: br+bXnNDrefLbtPTWQuEO5FibpM=
+
+Name: org/eclipse/acceleo/ide/ui/AcceleoUIActivator.class
+SHA1-Digest: 5GDW9fiFNV0jSX3YWoLekDgwT9o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wUIConfigurationPage$1.class
+SHA1-Digest: hwhA9zc1meMDigeHhovbHD4D7O4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$14.class
+SHA1-Digest: OFrv29sbx6z0AjV3IVKjgfUGpk4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/ISequ
+ enceRule.class
+SHA1-Digest: q1S3La7L5VFPv5uj2Qiu9NVcoaQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/ColorButton$1.cl
+ ass
+SHA1-Digest: /HvD+yLzMNwTzAHwnq2BfcdXqKM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesWizard$3.class
+SHA1-Digest: 0CL66y929xE0/Pgl+rZZB2Qs3hY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/antCompiler.emtl
+SHA1-Digest: UCAzBhn91eEDeqxdUwuSfREbQUw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/AcceleoBuilder$2.cl
+ ass
+SHA1-Digest: rsqWCjnGjr+viPh9nxLIhg5kv/A=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/JavaS
+ ervicesUtils.class
+SHA1-Digest: JIrAFu31PmB3HrLlbimCI6CyYzo=
+
+Name: icons/template-editor/Module.gif
+SHA1-Digest: gHdJE0xCxzRqHxPlRILUL7fTpqk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomFeature.emtl
+SHA1-Digest: 6a1yulvVQ32BSAWbNDBtlYLPJmk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/projectClasspath.
+ emtl
+SHA1-Digest: 2GnfZypHv7WGsLnhQWYAXtEgf1o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/IAcce
+ leoContantsImage$TemplateEditor$Actions.class
+SHA1-Digest: bodAGhhWSWF6tJ+JKP208eafDpo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoPositionedTemplate.class
+SHA1-Digest: hj+G7K0lY9xhOqq/WU4oMEHEh84=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryRefactoring$1.class
+SHA1-Digest: iokcz/KElMnjN5LC4cus9o2k6ls=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoPomDependencyImpl.class
+SHA1-Digest: pSsSDZurPGETJ/naDdZnh3zZWgU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/activator.mtl
+SHA1-Digest: tF4m4vX6MLO80pp8C8zgvUAxZlk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$3.class
+SHA1-Digest: D8J2QkKhm1wLTrQYQIrufH4TTEo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/projectSettings.m
+ tl
+SHA1-Digest: HiTcDRzv1k0IXcCLsCM++pgSEZ8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wProjectUIWizard.class
+SHA1-Digest: mLw/DwDvwQENVArWQoCx+bL7pio=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePage$1.class
+SHA1-Digest: oJupT90XKYseATQ7EnE1JtD6upM=
+
+Name: icons/template-editor/outline/HideTemplates.gif
+SHA1-Digest: t7JQJlVFdftxuBXxhI8LoFrtvE4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$ColorViewerLabelProvider.class
+SHA1-Digest: 46QlYznVKWHm7yWo/zoopvaaIbg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesWizardPage.class
+SHA1-Digest: 3dWoNH0JvET9juYi8/v0HR3JUZk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Abs
+ tractAcceleoScanner.class
+SHA1-Digest: VJXuquS7nC6gvB2+JaAt+ykzGPY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/projectManifest.m
+ tl
+SHA1-Digest: 9BDmoxi0Goi7JEQ381K4YBWTXDw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/antRunnerTarget.m
+ tl
+SHA1-Digest: IaSbJRASDX9liWTHyJ/tenRBGaM=
+
+Name: icons/template-editor/completion/RefactorTextSelection.gif
+SHA1-Digest: TvtKyZllh6QHm/VgDcHLvRkbqGw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leowizardmodelFactoryImpl.class
+SHA1-Digest: kwlfCsb2zr07/rkEDjzuO9SC97Q=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab.cla
+ ss
+SHA1-Digest: vSKXrnCjitKdUgGi3LvBETfvpno=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/acceleoJavaClassG
+ enerator.mtl
+SHA1-Digest: qzeRS2TUSCajc5WH7nQJL33qHmc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePageItemProviderAdapterFactory.class
+SHA1-Digest: AGy4Xt7uOOt+LN7S3AlQrL/vchU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoInterpret
+ erCompletionProcessor.class
+SHA1-Digest: WngDlCSSzAtM5q6kyFf4ImPLwFs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryInputWizardPage$3.class
+SHA1-Digest: /uaVgyjD17p86EcKwIacQr1ua8s=
+
+Name: org/eclipse/acceleo/internal/ide/ui/notifications/AcceleoLogList
+ ener$1.class
+SHA1-Digest: K1TBZlo+drXxHl08rHGsiX5/fGk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$1.class
+SHA1-Digest: oyrlF4sS6irR2jExkK7n8VfaaUk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ab
+ stractCreateModuleElementResolution.class
+SHA1-Digest: RxHvDPium2l+hWxtGcr0kG9F0ec=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoDocViewerConfiguration.class
+SHA1-Digest: TiHP8ehkYz0FJbrsx1SJ4Cweoqo=
+
+Name: icons/template-editor/TemplateOverridesValue.gif
+SHA1-Digest: IRAAVhL1Xzuzw7YeIJWjIN6MvZg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wProjectUIWizard$WizardNewAcceleoProjectCreationPage.class
+SHA1-Digest: ytMVrddFxYckSapib3tLbwAQfMw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomChild.mtl
+SHA1-Digest: wyLKdaqUnVT4qNaom/9ifxky3uk=
+
+Name: icons/quickfix/QuickFixResolveWarning.gif
+SHA1-Digest: 2wfZ+Si6cWnwiLmL7l3xIscNxH4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleouimessages.properties
+SHA1-Digest: 2xm/h1mlMRSXIIqyPRm/65L9WbM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/dotProject.emtl
+SHA1-Digest: gGX+5g+Es/t9ioCPgczyKKHRQq4=
+
+Name: icons/template-editor/InitSection.gif
+SHA1-Digest: uQtC+wlwqSbjDWjQUAp0j5QN5FY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTextDescriptor.class
+SHA1-Digest: svv6zW355lCuuOSikJklsSWv6Oc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Wizard.class
+SHA1-Digest: Ppm13Y8mhpcmtOeNfq/wACHM9wQ=
+
+Name: icons/template-editor/completion/ProposalsBrowser.gif
+SHA1-Digest: ZiEr0ZQorFlYcjbWriHMufXGZfw=
+
+Name: icons/AcceleoActiveRegion.gif
+SHA1-Digest: RE6NgOjsBtq4VUUgzLrNCasMRU8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoInterpret
+ erConfiguration.class
+SHA1-Digest: Arx5ylwIf+QXFREpwxY29MhjN6A=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoModelPres
+ entation.class
+SHA1-Digest: pIEX2ZKT8gKBl7RbuxW0pR/Cp+o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoComp
+ letionProposal.class
+SHA1-Digest: ZHbljOZP+29vNCp5hdlAuryjmeA=
+
+Name: intro/acceleo-webresources.xml
+SHA1-Digest: abkBPb/y/PlNNh4zhPO6uerWlfo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoCreateTemplateResolutionBeforeNextMember.class
+SHA1-Digest: S8mPNRWta3li+RNxB/s7YdOa0Ww=
+
+Name: icons/overrides/AcceleoProjectNotResolved.gif
+SHA1-Digest: fGnmeFrantEwC6z1YftMT2U+INY=
+
+Name: icons/template-editor/outline/HideNonPublic.png
+SHA1-Digest: CYXRH1vAFOHFgPpvAl9taO8UIIc=
+
+Name: icons/template-editor/completion/Type.gif
+SHA1-Digest: hRwTFXnXll4KrD+nubuxMzcsbCE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePageItemProvider$1.class
+SHA1-Digest: 6MXPzWNQEdXSl4FUoIHuF3hDuR0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoValue.cla
+ ss
+SHA1-Digest: o6rrIpN9JcYNY6y7DxXMyB5wZ1A=
+
+Name: icons/AcceleoEditor.gif
+SHA1-Digest: skKaExvdeuXynq7trUmMgt0XG4I=
+
+Name: intro/acceleo-tutorials.xml
+SHA1-Digest: szOvGnYTZpUuVn/PQ6LlQbae2sM=
+
+Name: icons/overrides/Query.gif
+SHA1-Digest: ghDPM7gZLOgBwMonqtgCXNZ/uJA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoProje
+ ctPage$4.class
+SHA1-Digest: 4LIpAJ4RwKgQEBWjqmflwtSOhug=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leowizardmodelPackageImpl.class
+SHA1-Digest: erSu6NGviZLh7kjQPx0Fs48tEA0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$ColorViewerContentProvider.class
+SHA1-Digest: 5cV5dk3rt2MTACWIS+aJ4wQnkDM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wser.class
+SHA1-Digest: hRdoE1S0VAqMrmxBSSZ2NvsaXhU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$10.class
+SHA1-Digest: wYNK+P7bduYsAKfN5Vw1uYKuAms=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainMethodS
+ earchEngine.class
+SHA1-Digest: ff/AyP0Kg/3/729AFhEdPX8FtNI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTextInputWizardPage$1.class
+SHA1-Digest: DHJ2Xd87DwSKYKZeGIUTOD04s2I=
+
+Name: icons/proposals/NewQueryForeachType.gif
+SHA1-Digest: oovT+eIkeiBUKwWGDeffmaFT3QQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultVi
+ ew$3.class
+SHA1-Digest: I6CCCNDNqB/TSfvW0jpKridLSkI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/AcceleoMarkerUtils.
+ class
+SHA1-Digest: gHeoXvq+kjl4sOLXNvof/RL/8GI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoBreakpoin
+ tAdapterFactory.class
+SHA1-Digest: uCUJfnelg6tIfT71MsFtTIO6Xtc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoDocumentationScanner.class
+SHA1-Digest: SwYPhAIjQtPmv1tbm/xuSUFEKtM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleClasspathWriter.class
+SHA1-Digest: 2qceI4siGi+/gElB11vaI4tkkrc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$5.c
+ lass
+SHA1-Digest: 1BzJlgQVocYcfiXh7yb5X265eJY=
+
+Name: icons/add_obj.gif
+SHA1-Digest: dfEB9XeO6R3oKzVvbi38D4jvqM8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/Acceleo
+ NewMainTemplateWizardPage$1.class
+SHA1-Digest: sxyoAHy3gesEkIpLi/5Gqg9E3/o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameVariableRefactoringContribution.class
+SHA1-Digest: sg7oCBmapHBqjkZFNvdaGgN1IJI=
+
+Name: org/eclipse/acceleo/ide/ui/launching/strategy/AcceleoPluginLaunc
+ hingStrategy.class
+SHA1-Digest: IgUlHySWLNW+qpo+m9sO/HgkOls=
+
+Name: icons/template-editor/ModuleExtendsValue.gif
+SHA1-Digest: UT3855Jq+S9zf1zsW1RmV+T5n8Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$6.class
+SHA1-Digest: Kc47Cf16lyQ4YU9fzcpfQWhOTM0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/DoNotGenerateFilesAc
+ tion.class
+SHA1-Digest: YEqnWT4Z6nIQwOKIQDQxr4wKQNs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameAction.class
+SHA1-Digest: i2QvKvibHNPFBfw8Tp0f3J/+rz4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AbstractAcce
+ leoNewTemplatesMasterComposite$4.class
+SHA1-Digest: CWmLcs58k9JpV2FwnlOuDs5hwCE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoTemplateScanner.class
+SHA1-Digest: UN8VVrBhXET46We4E/QstJJjoeU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/perspectives/AcceleoPerspect
+ iveFactory.class
+SHA1-Digest: OAaVH6PlSEfo+HhKnYrgFGxW4i0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/prefs/AcceleoCompil
+ erPage.class
+SHA1-Digest: ixOu8W1mPIUTYVhOUQY1DNGDdE8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/FileBlo
+ cksContentProvider.class
+SHA1-Digest: AopyR/+jhe93Pgn+YX2CTvK3qkI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoModul
+ esCreationPage$1.class
+SHA1-Digest: m0OLqMn1U7t8Xbo3y5OdE18tgWo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferencesSearchViewPage.class
+SHA1-Digest: A/C9DLYtGyNqEquUJkZO3Vv8iy8=
+
+Name: icons/template-editor/ProtectedAreaBlock.gif
+SHA1-Digest: GoP9Mfd3r5wNKT4JEKOxhEKFVlw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoUI
+ Project.class
+SHA1-Digest: JewG+uLprGB8Rwjzv+PoMRHviyg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$5.class
+SHA1-Digest: FdD/dLRqp8dKsHoYgvqbqfVPvCo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoPositionedVariable.class
+SHA1-Digest: RG7gx4Z2O1IVg2SyydU7xcDSIHA=
+
+Name: icons/template-editor/completion/EnumLiteral.gif
+SHA1-Digest: wAVq+hp286KMYzYu0wyUiFV4mFQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/Acceleowi
+ zardmodelPackage.class
+SHA1-Digest: tpSYJN2YigaOPc00m0QcyB0efos=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateDescriptor.class
+SHA1-Digest: SgSwjCEVHCHfVwEd/dYA2FkTDoM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/ComputeGenerationSta
+ tisticsAction$1.class
+SHA1-Digest: /GUzevShUWbFeAaGiRaLQEXkTPQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIActivatorWriter.class
+SHA1-Digest: eE9dUTdzJuqVKmQf8hPlwaYDHqc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/util/Acce
+ leowizardmodelAdapterFactory$1.class
+SHA1-Digest: suTLgDxZ/XoM4RCX27IYVthtx0g=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/ShowWhitesp
+ aceCharactersAction.class
+SHA1-Digest: YkcejCS8ftYwcqGLXnw7GaFoMYk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoDocWhitespaceDetector.class
+SHA1-Digest: e0nQkT5FE9JWSXcfZXt1pJLvteY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/EClassHandle
+ r.class
+SHA1-Digest: 7120yx8GCk3z4MFYGvCkV6dhW0c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoSour
+ ceContent$ChoiceComparator.class
+SHA1-Digest: IAHpukN+RdTICpYHTFbeU/CrrQ0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or$5.class
+SHA1-Digest: IqrtQBFiroxNWv3Akhu1nlW1q84=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoFold
+ ingInformationControl.class
+SHA1-Digest: rRAaunhUxM+EGYkbyYt1D2J+Qv0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIMANIFESTWriter.class
+SHA1-Digest: Metx+FhuMqbOBlRaGtcWOV+y9sM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/dialog/TreeSelectionComposit
+ e$1.class
+SHA1-Digest: egcPMUbSjuzEBFph+kPZELOR3Bw=
+
+Name: schema/initialization.exsd
+SHA1-Digest: ZQmDiqyqpRMdxGlFvcw8dSx1Prk=
+
+Name: about.html
+SHA1-Digest: ZONjjNEQofS9XExxSxGrlLqh9As=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Qui
+ ckOutlineControl.class
+SHA1-Digest: Hx1QDfYNLD3AOmbMnMfnf26Z6Ro=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoNotificat
+ ionsPreferences$1.class
+SHA1-Digest: eev4n3GAqwBsukdg2XwRNbFPdck=
+
+Name: icons/debug/reference.gif
+SHA1-Digest: N13tvaO6as3UsVByelBRtn4sVvg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$15.class
+SHA1-Digest: sSAlzfRyCaU/txhA44MkQZOtBw4=
+
+Name: icons/ProposalsBrowser.gif
+SHA1-Digest: AtcFpeq+HwwPQbV+YpSrU6BgbEs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIGenerateAllWriter.class
+SHA1-Digest: b5QjcIN231c+wXZWXnryvxBt4bQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesWizard.class
+SHA1-Digest: aSUhHi/I+WC24EffMhBPqKWWtUE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/activator.emtl
+SHA1-Digest: NlUsE7Tkq6M3LK6IvlR052fg1QQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/runner/CreateRunnab
+ leAcceleoOperation.class
+SHA1-Digest: mNft9Q6pvSLN9sIEEvlLeaW4Wwc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpRefactoringContribution.class
+SHA1-Digest: 5pR7Pvdtq1AuKSu/1XY5uzS4uds=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUISettingsWriter.class
+SHA1-Digest: JS2VpCDe1r6tWQsQOGVzoL/dSHE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoDocDefaultScanner.class
+SHA1-Digest: u7KoThlMULS1pj3bcsNKRjKZgrI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Abstr
+ actSingleCharReader.class
+SHA1-Digest: elLwEQJv9Vd3aeXF4wBaCLKz4Og=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoLineBreak
+ pointAdapter.class
+SHA1-Digest: woiA220mG2txKnR/rVhG/aH9+4E=
+
+Name: icons/AcceleoEditorMain.gif
+SHA1-Digest: 44Egu1nj2zneUAYKF6nTHTZS18s=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/acceleocolormess
+ ages.properties
+SHA1-Digest: tB6Jqjw/4p5PWHoCBUzno4ZHnuw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wser$5.class
+SHA1-Digest: 3VPljETTMi28g/qt0OA1xRxbQno=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoOccu
+ rrencesFinderJob.class
+SHA1-Digest: WV56dmleWr30/Uk7jTAi5vDd8PY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/LoadModuleAction
+ .class
+SHA1-Digest: dbZluG0B8Qw+iyGT2+8hsV/+uOQ=
+
+Name: icons/template-editor/AcceleoDocOpenDeclaration.gif
+SHA1-Digest: Oa5UYliTWGP8LbYQhu2nbCITnts=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoCompareViewer.class
+SHA1-Digest: /dX7ifNZkGWS2yvBGQKfYJblJCk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/SaveExpressionAc
+ tion.class
+SHA1-Digest: q5Lwe/UYQT/dG5JggogxR8JsYRw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoCreateComparisonResolution.class
+SHA1-Digest: KCROZ7C+rsAeGa4Tqo+Y3InR4HU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/actions/RulerSelectMod
+ elActionDelegate.class
+SHA1-Digest: jhjWQzpmE/uO8XNbBoaDGbcDw7o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$13.class
+SHA1-Digest: mulG641YFDCvnzyQjmWzrKF2KQo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesWizard$2.class
+SHA1-Digest: eEuz7nCAdIKz6FjVe/JqnUrmo0c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/AcceleoBuilder$1.cl
+ ass
+SHA1-Digest: Wf1wy1M9c44IUl3QM1cFpuz1vy4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTextWizard.class
+SHA1-Digest: G9cHg7C1w6FEV9naruoG9ioWK/I=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoInterpret
+ er$1.class
+SHA1-Digest: M4Pjx7WG1Kiv3eFB7hksLbO9wsM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/buildProperties.e
+ mtl
+SHA1-Digest: 18d4St9i9fdQsF4dhsfDHHW0ZlY=
+
+Name: icons/template-editor/LetBlock.gif
+SHA1-Digest: bYCFatw8Pj5LvEVMf3e+1JBuSxU=
+
+Name: org/eclipse/acceleo/ide/ui/launching/strategy/IAcceleoLaunchingS
+ trategy.class
+SHA1-Digest: +1BLcc0cAom2P1rpctI2WE4PUkQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleInputWizardPage$1.class
+SHA1-Digest: 7eZIQWOEZt1bNtgFEnzu/Lgz+PE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleMANIFESTWriter.class
+SHA1-Digest: 041Yn6rzACxeeml2qpogSNJhkus=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoColorMess
+ ages.class
+SHA1-Digest: B8iNLjMobHBSkvlwni7bLO1NwrM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/AbstractRefactoringWithVariableContextAction.class
+SHA1-Digest: 46rjV5H0WNStq96dmC3hSsouSSs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$2.class
+SHA1-Digest: 4DBPXSzunITmr/SUsjI/diwsgRI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/dialog/TreeSelectionComposit
+ e.class
+SHA1-Digest: BDE59BULlBp4V/sT8Ga8HTgWZEk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/popupMenus/AcceleoNewProject
+ UIWizardAction.class
+SHA1-Digest: zXoKM3xbSxcLuUtVZjtgvguC/4k=
+
+Name: icons/template-editor/Query.gif
+SHA1-Digest: axUNlOpy/eYlLFljuPGgXImsWsU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleRefactoring.class
+SHA1-Digest: 2vG+PB94Ycu67F78QzFfLWeRAyM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIProjectWriter.class
+SHA1-Digest: 0F4aIORc9vXIUx4AvmvcAiU2Lo0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultVi
+ ew.class
+SHA1-Digest: Dm68y4pxDeBcrU1MCuqJH1eOXPU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleSettingsWriter.class
+SHA1-Digest: JT4zTs+z/o+Jim8oc5bRWiPyuG0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoApplication
+ TabGroup.class
+SHA1-Digest: +y6NIq/1s9znQMS+baKbV6j0B6Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/ExtractAsTemplateAction.class
+SHA1-Digest: CBV760pXZGU3w/B9TAkb+t+Zwi0=
+
+Name: intro/images/tutorial.png
+SHA1-Digest: IvO63OXzInWLZvgPhu10NCSrmM8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/HideQueriesAction.class
+SHA1-Digest: xugwE8N3MujRlVdNEMmpGnOlE+A=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/AcceleoBuilderUtils
+ .class
+SHA1-Digest: rZGYYiQW9P27xjnR7Onp/N4ArlQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/Accel
+ eoUIDocumentationUtils.class
+SHA1-Digest: byfragp6dk1MXpm9AwsVxc3hopk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryRefactoringContribution.class
+SHA1-Digest: SirfzlNmLFHY1Nf+l/kEbAIbtZo=
+
+Name: icons/template-editor/Override_indicator.gif
+SHA1-Digest: 7ZT4HJSXWjrSXEHr7V7Uw1rIsHY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/AcceleoBuilder.clas
+ s
+SHA1-Digest: XVZwlTSCYmYCL2+xN+i7MSb8/tw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryInputWizardPage$2.class
+SHA1-Digest: zNQdw8xk9d2KdwoZLSVOwx524f0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite.class
+SHA1-Digest: jVPK7lqFlZS2brEuakLkvodvo1A=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/AcceleoPatte
+ rnProposalsUtils.class
+SHA1-Digest: EvR3s5+S381G3O4FcKdPTF4m8po=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/Acceleo
+ NewMainTemplateWizard.class
+SHA1-Digest: 10N3GzJIZ2nyJiFcnpvpMJamhqU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/color/Accel
+ eoColorManager.class
+SHA1-Digest: pGfyFw06WkLbcjIxuowsDOfMiTw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/IAcceleoModul
+ eCompositeListener.class
+SHA1-Digest: QYBvojLtxcxOUiuyOw+xeCignzo=
+
+Name: icons/template-editor/outline/HideQueries.gif
+SHA1-Digest: kA0+MBqUH2MSW4hPIrK5c5YfOIg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/DoNotGenerateFilesAc
+ tion$2.class
+SHA1-Digest: j3BPR31bNbH833dOkM2BqxrJCC4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateRefactoring.class
+SHA1-Digest: WjFLUf8IAmCM2azdA8O8A9u/JkY=
+
+Name: icons/template-editor/completion/Keyword.gif
+SHA1-Digest: WYoaLBDuZ4nqnDXQVYWQTfxSsfU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoHoverInformationControl.class
+SHA1-Digest: 3Ss1tVM3zsK7G4BoRINOzYPFsxE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultCo
+ ntent.class
+SHA1-Digest: awSf1QwgMcQKsME9ciRb68aCH8c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/antRunner.emtl
+SHA1-Digest: fnZRRhYmFGhqc3CDdJWNlyu9NgE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoCo
+ nvertProjectWizard.class
+SHA1-Digest: 33V2hYdRAX+rSy+N3rm3xEK3JJ0=
+
+Name: icons/template-editor/AcceleoDocBrowser.gif
+SHA1-Digest: fB/T3/2QLUGS7hzwM5AOcpUQnLA=
+
+Name: icons/AcceleoPerspective.gif
+SHA1-Digest: UcRA2GaJD28K229fevla7WTqE/E=
+
+Name: icons/template-editor/completion/IfBlock.gif
+SHA1-Digest: CwvE97yWEFwtsGhQxEHlnGm0ilQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Qui
+ ckOutlineContentProvider.class
+SHA1-Digest: AdGSffBJWhrBWxgiBttdVgBUwSA=
+
+Name: icons/AcceleoQuickFix.gif
+SHA1-Digest: vE8/xS3bOeTew4YsuecfB1OBB34=
+
+Name: org/eclipse/acceleo/ide/ui/wizards/module/example/AcceleoCopyExa
+ mpleInitializationStrategy.class
+SHA1-Digest: VSVHAyqSqDsiAvUVMOuPDwEe4Uk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoProje
+ ctPage$3.class
+SHA1-Digest: 5trc9tlbGVKzO6x+F21DP2fSM0U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoSourcePathC
+ omputer.class
+SHA1-Digest: lgft/eE6oDBeZNG3BHVQwHyG/zA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferenceSorter.class
+SHA1-Digest: 3FMaH0r13rNRmlh2u0u/I8oGG/U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/CreateForIfAction.class
+SHA1-Digest: Qj+1mrvbnQVRq+hGA/bLTBRSg20=
+
+Name: icons/overrides/Template.gif
+SHA1-Digest: /tFQCkInBmA2431ZKv0tcmOMWRQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferenceEntry.class
+SHA1-Digest: hlG6UNtR4oIKtVOjeAAwbZSjdnk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomMaven.mtl
+SHA1-Digest: mSy6dJEvApih7prG5ECgMj8Kkdg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultVi
+ ew$2.class
+SHA1-Digest: jVz8J8kqoVrKW0X88V8J9fGOfO0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/TraceabilityMod
+ el.class
+SHA1-Digest: IgsKkRdgrzfXZT0NT43L5qKzdLU=
+
+Name: model/AcceleoWizardModel.genmodel
+SHA1-Digest: Ss5qMORw9nYPsoopEKSA8pmkN2w=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoConf
+ iguration$3.class
+SHA1-Digest: FP6Z+/h4R126OJvHugQGpjH0AiM=
+
+Name: schema/example.exsd
+SHA1-Digest: s3ATFnwQpEQmNFej/T7XAddRbVQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoInterpret
+ erSourceContent.class
+SHA1-Digest: xLZKBOn/Sy80AnnqPsiIqlj4l3g=
+
+Name: intro/css/acceleo.css
+SHA1-Digest: KWg9EPaHwnjgWxlteyR6s0ddpps=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$4.c
+ lass
+SHA1-Digest: LOT3g0m8SAua+C7g3SpMBA+8KUc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoLineBreak
+ point$1.class
+SHA1-Digest: wpLE9Cw1L76RUiHYJiTyU1lhY/o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Qui
+ ckOutlineControl$3.class
+SHA1-Digest: aRqtu6c83kYd9aAdRS0lrhrK9f4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$5.class
+SHA1-Digest: 6c1Otqnl29y7UsKN/53yFvwJBhk=
+
+Name: icons/template-editor/outline/SortType.gif
+SHA1-Digest: OgO5ZKbFnLiqEkrAnuvZp4hknE0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoDocu
+ ment.class
+SHA1-Digest: XeKdQZNLLkoN+oNZxQm8Y8Le7LI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoPo
+ mDependency.class
+SHA1-Digest: JkCd2ahRBX8e1rnc41MhzJmdBrA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoComp
+ letionChoice.class
+SHA1-Digest: zdvqMs6oX3jH06YmuSvx9Wn3Bew=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AbstractAcce
+ leoNewTemplatesMasterComposite$3.class
+SHA1-Digest: TXIKPab8tx3TzYl70q9lojo91gM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$ColorCategory.class
+SHA1-Digest: AMwr4BIWcTUfHAbNEM5lPwKmFZI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/patterns/New
+ IfElseIfForeachType.class
+SHA1-Digest: MjepZsUS3LynB+kFgpaYHJJ4M78=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/FileBlo
+ cksLabelProvider.class
+SHA1-Digest: 9Kigvfz7EIwtEkWYIZS2kSgoGg8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/commands/CreatePomCommandHan
+ dler.class
+SHA1-Digest: pDIZIRI6nv1nNJMY/QnOVgNbUtg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/ProposalsBro
+ wserPatternsProvider.class
+SHA1-Digest: RJ1nJMYBEW3b8dh4F8pt7tDUkNM=
+
+Name: org/eclipse/acceleo/ide/ui/popupMenus/AbstractMigrateProjectWiza
+ rdAction$1.class
+SHA1-Digest: 8wKI/HoVv4Bi5Ep7NYQVnIEMJHM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/move/AcceleoMoveModuleParticipant.class
+SHA1-Digest: Ra85LQI3jxlUFP1JyM1gSvr5O1M=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoWarningQuickFix.class
+SHA1-Digest: t2t/iYyxXUvdBct7oLSQOUbadYI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$4.class
+SHA1-Digest: lPY+HPGOobAKDHOUASiiCT1zm20=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoPa
+ ckage.class
+SHA1-Digest: 6iRABqZ5tq5AKBbIFcBapTOIPuQ=
+
+Name: icons/template-editor/completion/Operation.gif
+SHA1-Digest: pR9jKaOhBmtDkUEnqSHy0TcPDi4=
+
+Name: icons/debug/filteredBrkp.gif
+SHA1-Digest: SdQgpe1MRFbz7QWxSJepNTN5eIk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoComp
+ letionProcessor$1.class
+SHA1-Digest: eFgPwqqYT/1Ae7zeKt/9jahahek=
+
+Name: org/eclipse/acceleo/internal/ide/ui/notifications/AcceleoGenerat
+ ionListener$AcceleoHyperLinkListener.class
+SHA1-Digest: PCTOZMhSTmnnEnMPRKYtBVFhq4Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoApplication
+ LaunchShortcut.class
+SHA1-Digest: 0TDv3L090EcSFlsiv52rrp0F5cQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/projectClasspath.
+ mtl
+SHA1-Digest: g3sW+NE6+iOmZAQ2Fea/HGvT0Kw=
+
+Name: icons/template-editor/completion/Completion_Query_protected.gif
+SHA1-Digest: oUxOCmAV/Bbp1YiXf+xB4oeyiVg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pom.emtl
+SHA1-Digest: FqtvJ+ABmzbsQY5hzToZSxKmyus=
+
+Name: icons/AcceleoWizard.gif
+SHA1-Digest: 0OTtaipfbIFDaRJGxgolaPsv0a0=
+
+Name: icons/overrides/Module.gif
+SHA1-Digest: klg2Qw4CpJB+p30hSGyOnBhEF8U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or$4.class
+SHA1-Digest: kSF/C/LhbHgXr7QrnEuelz/yqMM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/ModuleProjec
+ tHandler.class
+SHA1-Digest: Opd2SXnV+8h81PglD/NEijoOqkk=
+
+Name: icons/overrides/Macro.gif
+SHA1-Digest: JuC7gG2dZ37fsNq+YxgLm3FHPiQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoPomImpl.class
+SHA1-Digest: lgDIYeESdyzZ7SonbXxwWwuIp0g=
+
+Name: icons/quickfix/QuickFixCreateQuery.gif
+SHA1-Digest: M9EQ6iInoj3mBH2sdA8z+mMEa5Q=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/AcceleoOutlineViewerTypeSorter.class
+SHA1-Digest: HWUiEJaCAzRVhLWOx4iLbHCaEnU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoPositionedTemplateLabelProvider.class
+SHA1-Digest: Np2Bvjv9d+vSbdp8vYfwkQKExmU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/HideNonPublicAction$1.class
+SHA1-Digest: omXzE9Qwmz9+Lhw0loeR/1qgPsQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoStackFram
+ e.class
+SHA1-Digest: 8S/7byDbP9zpgp7EwcXLNGeIrx4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpTreeLabelProvider.class
+SHA1-Digest: kEI+3rz5hTdDBmpukqRyxMsa0Lc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoComp
+ letionTemplateProposal.class
+SHA1-Digest: tjovjidSkKPglA/f/HWvKjJPrj4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoProje
+ ctWizard.class
+SHA1-Digest: oWNXIVu9SHNjqBoXMs6f2unTqAo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/FileBlo
+ cksWizardPage.class
+SHA1-Digest: /+o5Y7eky1vLHCjrt/Pt2VCwzf4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesWizardController.class
+SHA1-Digest: FMU/XFNMISd2kK0bcaNj2Sw3i0Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/example/Xpand
+ InitializationStrategy.class
+SHA1-Digest: 9zGSNN0dAg5Uona12rppRbT4AvI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$14.class
+SHA1-Digest: kuzXJwH4I4V/VQdcvnZCot7o94s=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoFold
+ ingInformationControl$1.class
+SHA1-Digest: Fq/dHdfZWjai6Wzg4GQ/cTrfInc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoProjectImpl.class
+SHA1-Digest: uqcJTEvX8GkVjo45Fdb1gVAkdN4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoQuickFixProcessor.class
+SHA1-Digest: hHB4F0m/Ij8Qt4XJMJhnowEDbcE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ver
+ ticalruler/OpenOverriddenTemplateAction.class
+SHA1-Digest: n5azWFKjS0amJwQh4y2cSMV0HAc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/Accel
+ eoUIPreferences.class
+SHA1-Digest: I6Cf+23zF6FmWSsjcRTEIrJgiE0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wser$4.class
+SHA1-Digest: ixi4yxwSU+kfZlAg3WrYj8t+dSY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/TraceabilityTar
+ getFile.class
+SHA1-Digest: Xw3bB64B0qcA6Dj2zGFXnBpwGnc=
+
+Name: icons/template-editor/Import_declaration.gif
+SHA1-Digest: fzK5RnzDG1dJ74PwLv4NbwK8cS4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoPreferenc
+ es.class
+SHA1-Digest: mPk3CfmZw0/NqB7p+N8ycWYcV7A=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/buildProperties.m
+ tl
+SHA1-Digest: WLc6qgqywC2nPmWGRdEEtESCGHA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$9.c
+ lass
+SHA1-Digest: jfyoIvhVktuigi1p7bsMBzp18Qw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$12.class
+SHA1-Digest: o9DsFnDwL1Lg8WBkIGWMJ/Vwil4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesWizard$1.class
+SHA1-Digest: v9fWYwzWhb1ZOPPAHTmACz3t3C0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/TraceabilityReg
+ ion.class
+SHA1-Digest: jhLHP7VuJFAh+qjipmhBXn6fnxs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Keywo
+ rdSequenceRule.class
+SHA1-Digest: QXC//2QxI0tpowVl+w7tfHVhEpQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferenceLabelProvider.class
+SHA1-Digest: F2aSsLp3mkipiaztv6M5kJC9Miw=
+
+Name: icons/debug/list.gif
+SHA1-Digest: rmmRkRU5GWIHGPQZNKKzAImW2ps=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoComp
+ letionProcessor.class
+SHA1-Digest: XpPYfVKQhaFjnUt/N/wdi2skpts=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoPropertiesF
+ ilesTab$1.class
+SHA1-Digest: OAGd2w5EXjP9e5UE3qZ28Qm0id0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/TraceabilityCon
+ tainer.class
+SHA1-Digest: b82dE+6D4FbI02/tk/MjxnL4P7k=
+
+Name: org/eclipse/acceleo/internal/ide/ui/dialog/ResourceSelectionDial
+ og$1.class
+SHA1-Digest: dVoSkf/SHcfmnSq2ETkWs/Y/5q0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/AcceleoCompileOpera
+ tion.class
+SHA1-Digest: w6/Biha5GhQo3R3oJPljFuz0d/8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Qui
+ ckOutlineInformationProvider.class
+SHA1-Digest: 8+0j9sTnVkTZVJE/Wkp/+N/vx30=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/projectSettings.e
+ mtl
+SHA1-Digest: 2tBTbX8rGcNnxxNHSLAc9iDbCuA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/acceleoCompiler.m
+ tl
+SHA1-Digest: NU9/j9zu4xoqYXcRstkYJI6Zf0g=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/AcceleoOutlineViewerSorter.class
+SHA1-Digest: 9TYKINIOF7kvORWTLuxnqSroPHc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/core/ITemplateDebugger
+ .class
+SHA1-Digest: pLYtp+KOVr9W9OCo5Rl8oCrZnP4=
+
+Name: icons/template-editor/completion/Template_protected.gif
+SHA1-Digest: ABpRlJlDRTiup7WwQTBLLvL8TE4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$9.class
+SHA1-Digest: UrHhYjhPsufpLwG8aI1Ut3FXG9Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoDocu
+ mentProvider.class
+SHA1-Digest: LEfOdZTzbIjVgaYqNBRqzRAfl4c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/patterns/New
+ IfElseIfForeachType$1.class
+SHA1-Digest: T7YvAxhrasMYDXrwPkZZgpMGZNQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoProje
+ ctPage.class
+SHA1-Digest: o0O50b8Fjs77Hr8RkWOs2sm+8TA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$1.class
+SHA1-Digest: +1hA5+j30DQD7IHxmJHHhy59wsU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/ExtractAsQueryAction.class
+SHA1-Digest: DRXGd9mZ3wt0NVnc4WML799+J4g=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameVariableRefactoring$1.class
+SHA1-Digest: YS7PRnq6txYaNwkjhhS4Uv1Tgqo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage$ColorItem.class
+SHA1-Digest: 9KYSF3uy/l6qA7XoRGn7N63NCkk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/actions/BreakpointSele
+ ctModelRulerAction.class
+SHA1-Digest: /wVaytF14ObYCNGIHXWLcom7H8U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/resource/AcceleoUIResourceSe
+ t.class
+SHA1-Digest: ENa09BEg3+73uPB0Ir7b4i7cAME=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoMacroScanner.class
+SHA1-Digest: s4TY7mCMER/co9rZSj0lTydeiqE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/SortElementAction.class
+SHA1-Digest: nITUTQrtPArwWOT5pp8hWBvBrWQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/core/AcceleoDebugger$F
+ ileRegion.class
+SHA1-Digest: AxZNrPR0NI6s4FA2zp1TYMPqDIA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/notifications/AcceleoLogList
+ ener.class
+SHA1-Digest: 8/nzBzFNJjHmaHKsRbpdt9Ja63M=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferencesSearchAction.class
+SHA1-Digest: Ol5XymZWVT1OYTkedIrIClDsU5I=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/ProxyPreferenceS
+ tore.class
+SHA1-Digest: GjPM7B3JN2SX+KxSRYS+d8U3YKI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/SortTypeAction.class
+SHA1-Digest: YDq0s2TCOl14hO5srt7TiXclbaI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/patterns/New
+ LetElseLetForeachType.class
+SHA1-Digest: 6+Tx4d76oQ3uD3NP341GQtCyXOo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePageContentProvider.class
+SHA1-Digest: sO8u+y7jaq/XnkqmnqgwBH7em5Y=
+
+Name: icons/template-editor/completion/Macro.gif
+SHA1-Digest: bWgIAbKWR9NXS9DouFHbnSASYnM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryInputWizardPage$1.class
+SHA1-Digest: CdzZlSnO4QkGrJ2X+X0FbF0RXtk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Qui
+ ckOutlinePatternFilter.class
+SHA1-Digest: PoHIVDnJ5l6xZDxuTcGV7yISqNs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/ProxyPreferenceS
+ tore$DelegateChangesListener.class
+SHA1-Digest: 4DTMSJLAfUgPQ0c01GytVKSi458=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/color/Accel
+ eoColor.class
+SHA1-Digest: oCOrqlz5MRHyXMYP36f9zZ+/PZ8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/ProposalsBro
+ wser$2.class
+SHA1-Digest: nwCCPgTJacErAh9zxTllO9iqHPk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$17.class
+SHA1-Digest: 9dA3tlxoWM77e9BfGYWHLw9vJHc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoPositionedQuery.class
+SHA1-Digest: Vj5cD1LvurTsonf83Iaff8juYqg=
+
+Name: icons/proposals/NewIfElseIfForeachType.gif
+SHA1-Digest: raAXsB2S8fKKBj7ZCnZ1V2Wob40=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/DoNotGenerateFilesAc
+ tion$1.class
+SHA1-Digest: fNKkBSxWEkRLweJTYNHQjG19jEM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/ComputeGenerationSta
+ tisticsAction$StatisticEntry.class
+SHA1-Digest: fSLqmbL2gQ3uUZHCp+zEwWjUjdE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferencesTreeContentProvider.class
+SHA1-Digest: q7aaRN4UXNXSdD+HxgxJjSUr2fI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlineImportContainer.class
+SHA1-Digest: ZH7qqNdbVFz2lRn+RAerpEGEFlY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/IAcceleoLaunchConf
+ igurationConstants.class
+SHA1-Digest: 7RY7p1RMcPr36ALkHCiy4V5k0PU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/notifications/AcceleoGenerat
+ ionListener$1.class
+SHA1-Digest: h+J+E+xxO5+TVFNUwLlc4oxBMxI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomFeature.mtl
+SHA1-Digest: JkBrBCoFSeVEy6keLi1CNdBOOZE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/patterns/New
+ QueryForeachType.class
+SHA1-Digest: U0TR6PwtViFiaMbVnjH7M6Qzfek=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoProcess.c
+ lass
+SHA1-Digest: Itc7b/SungC3wvxsp/k3ukAoIew=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoUIProjectImpl.class
+SHA1-Digest: RXUEqUlymD8TpJXDpZvzEaTg5Yg=
+
+Name: icons/template-editor/ForBlock.gif
+SHA1-Digest: 8AuZELJJzukZ5Z0FnFuxMydscBA=
+
+Name: icons/template-editor/Macro.gif
+SHA1-Digest: YsClHR5pXShvAeUZkDxhbYTlvoo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoProje
+ ctPage$2.class
+SHA1-Digest: C/3sNNjVy/i6MsPRlBKgRLuMU8Q=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoCo
+ nvertProjectWizard$1.class
+SHA1-Digest: sjn2wmJoRM8hcR8y5Q93aYE09zE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoPr
+ oject.class
+SHA1-Digest: jfMswQqMt6nzgdMfj6YK4xHo3SU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoVariable.
+ class
+SHA1-Digest: 388JxD1R8+4Rvv3/UMcDCMchNJ4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoFold
+ ingViewer.class
+SHA1-Digest: EjyrXOch9X8WUNbelg/E3IZuFi8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpFirstInputWizardPage.class
+SHA1-Digest: sq5XS2rCyav9RlODeZq3wg3FDBE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoSour
+ ceContent$AcceleoSourceBufferWithASTJob$1.class
+SHA1-Digest: XLj/3gfTfG/iKrd8ugiEwHwgvqQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultFi
+ lesFilter.class
+SHA1-Digest: MxTjNBClVwZd9AjJ6CCYaLpLjIg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/ModuleElementNam
+ eWizard.class
+SHA1-Digest: BRNsFPPPfq65b9M/IAwAJ/VxJ00=
+
+Name: icons/template-editor/completion/ForBlock.gif
+SHA1-Digest: UTEq2CshGNBSU+yEC1zxXT5Cw7U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite.class
+SHA1-Digest: xKXN5qw7id2DadKtOr3PcalyGbg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultVi
+ ew$1.class
+SHA1-Digest: dTRzptle9hOCakLzFIQJD9XbLOo=
+
+Name: icons/debug/null.gif
+SHA1-Digest: yE3sk8x61INaLQhDLvzBsBWz8uM=
+
+Name: icons/template-editor/completion/Completion_Query_private.gif
+SHA1-Digest: uJ0ZHeFWS+tpQB+UAcW8P2jeU6o=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleActivatorWriter.class
+SHA1-Digest: JklBOt6cdrHeHJmnLHmSoYuuO2Q=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameVariableInputWizardPage.class
+SHA1-Digest: 9xNhX/n23/YHLjwvSv/m47bLN3c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoThread.cl
+ ass
+SHA1-Digest: DcIue9bYSodPbEfKphpAlU/CpIw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoConf
+ iguration$2.class
+SHA1-Digest: OAsFhvYKetYkSzLLl+IHiFstibY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoLetScanner.class
+SHA1-Digest: 94Frp3LNkxIb5Jp6At/xU+fYhrw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$3.c
+ lass
+SHA1-Digest: iyEezZ/UbXzQ+M18MG7qcG+LqTI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/classpath/AcceleoClasspathCo
+ ntainer.class
+SHA1-Digest: Wc0tTW1VA/FxLgRA7FRXixhR3vY=
+
+Name: icons/template-editor/completion/Property.gif
+SHA1-Digest: Ft+1WqTnPcn0ROPRwKZM11tSJ2E=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Qui
+ ckOutlineControl$2.class
+SHA1-Digest: iB9T+Em3vc3h1IUb8rFgcmNUD6k=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$4.class
+SHA1-Digest: iB2baAoVbZ0oeFK3Xd/swpjKq/Y=
+
+Name: intro/acceleo-firststeps.xml
+SHA1-Digest: /PccVv7nD6grM06kgxsua7kiPsM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateInputWizardPage$3.class
+SHA1-Digest: A86vEgrRWiCKA4GxZHiOTP2J1SI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoDebugProc
+ ess.class
+SHA1-Digest: 3/4gYZjthQ4cL2M942kpOYgUF8g=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AbstractAcce
+ leoNewTemplatesMasterComposite$2.class
+SHA1-Digest: LjF6F7JssqGbmP4eGMkTVCzfclY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoIfScanner.class
+SHA1-Digest: /jIFYsJ5ZDvICqo+e14ovCntvzc=
+
+Name: icons/template-editor/FileBlock.gif
+SHA1-Digest: ORxN1LnV46bLu86OHYlnPslhkIw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/TraceabilityTem
+ plate.class
+SHA1-Digest: DdAwjNGqi05469QF0kGKQSEVb+M=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoEditorCol
+ oringPreferencePage.class
+SHA1-Digest: T15XIJt737N8vdNGib4vx+8cqaI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoForScanner.class
+SHA1-Digest: JJSIIdJl4WK1KZpuBi6FYSrhO3s=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoModuleElementImpl.class
+SHA1-Digest: ebiulm9WLkl0F9ev/M9QNTuvs+U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$3.class
+SHA1-Digest: RWVPWZI7846OZCgi/N8g2RRm4ac=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoSourceLooku
+ pParticipant.class
+SHA1-Digest: fnQphxOj4YxWiGiiv9j6KUSee1c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleRefactoringContribution.class
+SHA1-Digest: ZRRoIgl4CWuzOfB3n5jdhAWwnnc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/Acceleo
+ NewMainTemplateWizard$2.class
+SHA1-Digest: ohQCKM3/TxN7T11svWyvUBmppmE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoEvaluatio
+ nTask$EvaluationLogListener.class
+SHA1-Digest: uBwF4vYSZwLKl7tIsO37fgmvv8w=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$ExampleBrowseSelectionAdapter.class
+SHA1-Digest: FU8WlPUq5yWMj7RNaCfzvsV/dig=
+
+Name: plugin.properties
+SHA1-Digest: zE4K7JQQibrHUJRuTTH01GpKctE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoEvaluatio
+ nTask.class
+SHA1-Digest: yKguHLR/W8Cla3K2ZehRijlsSQk=
+
+Name: icons/template-editor/Template.gif
+SHA1-Digest: pgSO3+OogGQn7vX1Dpqi6zMpxwg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/natures/AcceleoToggleNatureA
+ ction.class
+SHA1-Digest: Yb/b43/0IcO8wrZZfmEV4NEOf4w=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/HTML2
+ TextReader.class
+SHA1-Digest: se3P70g4Zt1tofmbR7VQP+0e5Wk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Seque
+ nceRule.class
+SHA1-Digest: D+UQ9WzAmS0D9H6UHVrEJoF8coM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/SaveExpressionAc
+ tion$SaveAsTemplateAction.class
+SHA1-Digest: fVzaun9h2KoOQFLRsIZNPKCrCrw=
+
+Name: plugin.xml
+SHA1-Digest: KAdkLzsxK3SY8tIaCUcCbBsy9XI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/Qui
+ ckOutlineAction.class
+SHA1-Digest: phKo8XjxxiHdI7iZqsAxvk+B0pk=
+
+Name: icons/template-editor/Block.gif
+SHA1-Digest: Lor9V48aEpXuzmeG8mkBevv7obc=
+
+Name: icons/template-editor/completion/Template.gif
+SHA1-Digest: szR21l8mShoMQdM1Luks56LbZjw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/Accel
+ eoUIDocumentationMessages.class
+SHA1-Digest: jJzOEYnJRYoxvdxY4T7WnDTnGdE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/core/StackInfo.class
+SHA1-Digest: hq9tIleROxGy/DKE8DWDlTGagUg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or$3.class
+SHA1-Digest: 4ggFpZNEZIK/h8BHhBQqhkE0AgQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpSecondInputWizardPage$2.class
+SHA1-Digest: Lf7ojVLst7ZXaiGPsCNJhgFdzQM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/example/JavaS
+ ervicesWrapperInitializationStrategy.class
+SHA1-Digest: mwdbodOdyEQY5JML3xp74h4uGYk=
+
+Name: icons/proposals/NewTemplateForeachType.gif
+SHA1-Digest: 7HabSEcxq5wXCWYhTN/RxuLbqPI=
+
+Name: icons/template-editor/completion/OverridesBrowser.gif
+SHA1-Digest: xiA0PyidbC76QOhNkH3RlSyox4I=
+
+Name: model/AcceleoWizardModel.ecore
+SHA1-Digest: nKlemgNwutufZ1A/45rwAUvm8MQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoQueryScanner.class
+SHA1-Digest: TZuw8pzzsONgB2XSX6aLK6iAJjo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AcceleoResultVi
+ ew$AcceleoPreviewLabelProvider.class
+SHA1-Digest: gVrpKHhQx4V0Ts0FtopI4ybaEzg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$13.class
+SHA1-Digest: 4lp2dInM6bcKu6VsC3DtS3660Yw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpFirstInputWizardPage$1.class
+SHA1-Digest: ofqFaym7kg7mO7iyH2ih5ecVV3Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/ProposalsBro
+ wser.class
+SHA1-Digest: MMZyn0UBDb3ZCNwR4P7nNgvacyE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wser$3.class
+SHA1-Digest: iH9GlOFjdIZSDDYKcdZ1apizcp0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoInterpret
+ er.class
+SHA1-Digest: lw0c0tRIn6uI7WBw6CFcy9nf5II=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/CreateProtectedAreaAction.class
+SHA1-Digest: qlZrzSNup/iUIx8hFdej2JHn64U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$8.c
+ lass
+SHA1-Digest: wmBtOjCkb37lRXWsdxOjaF8d8KI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$11.class
+SHA1-Digest: kOY2jCAQ/a/IyVLLIp/jD/B0PJo=
+
+Name: org/eclipse/acceleo/ide/ui/resources/AcceleoProject.class
+SHA1-Digest: 6qEcyPkW20gyL0ieeVtAcX1pLAc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$9.class
+SHA1-Digest: vD4FSgQt8fHTYNblCgtCbEzEAus=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoDocTitleScanner.class
+SHA1-Digest: N2G8aBnDgJ/Z10zxuj+6r2/6phk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/result/AbstractTraceab
+ ilityElement.class
+SHA1-Digest: QWDWJSYYsE34CDFi3QZ5LqHOUCE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoMa
+ inClass.class
+SHA1-Digest: xIwZX/bOPmeUceFlZoAy3aaN94c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/Acceleowi
+ zardmodelPackage$Literals.class
+SHA1-Digest: U4oXdY1rVHO9+Xd4mWJnZla3jQc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleBuildWriter.class
+SHA1-Digest: 59IBvts1m/63zQFcuYH6xO/Ef9Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoCreateQueryResolutionBeforeNextMember.class
+SHA1-Digest: aG7j426tRt5NnGghKn6BLEDkz+I=
+
+Name: org/eclipse/acceleo/internal/ide/ui/actions/ComputeGenerationSta
+ tisticsAction.class
+SHA1-Digest: alP6qmyvy9UipFIJyZQaJoATgQM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoModul
+ esCreationPage$4.class
+SHA1-Digest: 3c42iPSFZVoA58Um8XYbqHxQtS8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePage.class
+SHA1-Digest: WI+ZgfPs2iaJhu0MnOwpyG82QvE=
+
+Name: org/eclipse/acceleo/ide/ui/launching/strategy/AcceleoPluginLaunc
+ hOperation.class
+SHA1-Digest: Ncysp2nD1EzqkS9SdpXT7oQ0GZI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$8.class
+SHA1-Digest: A8P+PsI7kAWU3g8TvNRRaAAuYHg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferencesSearchResult.class
+SHA1-Digest: meodUE8CVNiJ/xQWAIN7Zemw1Ok=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainMethodS
+ earchEngine$MethodCollector.class
+SHA1-Digest: NUB2QNykN2mmg+dXVPxrxwPrwFc=
+
+Name: icons/AcceleoResultView.gif
+SHA1-Digest: pa2l9P7SwnbEq3LZpd8Fnb95Fc4=
+
+Name: icons/template-editor/Template_private.gif
+SHA1-Digest: HMBek3nsOckZwPn4l0zVPw0mB/I=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/Acceleowi
+ zardmodelFactory.class
+SHA1-Digest: 0QOKzF6fnXR/bzgFqaDQoM3R+KQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoRemo
+ veAnnotationJob.class
+SHA1-Digest: SWtuovcpa4waf2dlQfHWPq2grc0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/Local
+ FileStorageEditorInput.class
+SHA1-Digest: 0L3J21lPmTr2FBP7deTXm/DHdqQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoHoverInformationControl$1.class
+SHA1-Digest: 81g5AL7dcN7z5v284fKr47BzYn0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoPackageImpl.class
+SHA1-Digest: pkAFc4rKqH8hgDbP51qyt244uZM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoHover.class
+SHA1-Digest: 2pOlDA+mSKVfQQ02B0BaIgx9H94=
+
+Name: org/eclipse/acceleo/internal/ide/ui/commands/CreateAntCommandHan
+ dler.class
+SHA1-Digest: VAasF7tGKVtACm95+JhA006MJjc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomChild.emtl
+SHA1-Digest: jHKP+3jefK/dO5mPJNx85BWPz3s=
+
+Name: icons/template-editor/outline/Sort.gif
+SHA1-Digest: dT5sKA9vsuygMIDKJqzA1IhXgas=
+
+Name: icons/AcceleoRegion.gif
+SHA1-Digest: hLZYvv0fmdR8PZrlvQx+BalYT4g=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryInputWizardPage.class
+SHA1-Digest: 3/aAiRe2dV6qDfACVrU9CcA9NRc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTextRefactoringContribution.class
+SHA1-Digest: xaXO62426GbGJniU6HUohcvOM+Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/Acceleo
+ NewMainTemplateWizardPage.class
+SHA1-Digest: wWxns9bP/JTKaG2rb26qxPYoa/M=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/move/AcceleoMoveModuleChange.class
+SHA1-Digest: +bHpW4Vy8ygSPD/rNg1KZXOeEIU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleParticipant.class
+SHA1-Digest: ZDTXUaWrNp/8yAf2lHmf7YVlY5A=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoDocPartitionScanner.class
+SHA1-Digest: D+fOYcm1CSXZjTb+J68+Euu8vXA=
+
+Name: icons/interpreter/load_module.gif
+SHA1-Digest: 18uFbdu927+vbIrhdMo6Mk1AVno=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoTextHover.class
+SHA1-Digest: XrdwYMNH++GfP6HF2S91RsGND5E=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AbstractAcce
+ leoNewTemplatesMasterComposite.class
+SHA1-Digest: TRp8pqNB6ZTEvI5ZRyGsuoNz7m8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoPropertiesF
+ ilesTab.class
+SHA1-Digest: SELFuWz0ddmQaISkp37lqokSLxQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/FileBlo
+ cksWizardPage$2.class
+SHA1-Digest: yvuo7juXUNP9lPZgG+6OMGGHyVk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/HideTemplatesAction.class
+SHA1-Digest: ZGVwQXzIi/Ne+rCOIePSz/xfcB8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoSourceVie
+ wer.class
+SHA1-Digest: W4K1ifRqn8Nn1paaosx6b4ZrNvI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/OpenD
+ eclarationUtils.class
+SHA1-Digest: L6c/LQR5VdRvFd+rE6um3S1DH88=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/ProposalsBro
+ wser$1.class
+SHA1-Digest: 7bIIE9OAxGteEGFmsRkqwa3WGdc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wUIConfigurationPage$3.class
+SHA1-Digest: SL9rPgBY4nCOWoO+/+5xGrRVh0M=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$16.class
+SHA1-Digest: Hlyv0K9z1BwSpK8aVkUnb/UkI3w=
+
+Name: icons/template-editor/IfBlock.gif
+SHA1-Digest: a+SMDiThBBqx2dzhDd56uxtgQYs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoBlockScanner.class
+SHA1-Digest: yH+dglhzUC0Jol8LfL9O4WVM9Zs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/FileBlo
+ cksProjectHandler.class
+SHA1-Digest: IJSpp4Gf+E9UNtdjq5IhoMMEN4Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoRunToLine
+ Breakpoint$1.class
+SHA1-Digest: Bw/0uzgWfJjGy3qwy6UCXXENdqU=
+
+Name: icons/template-editor/Query_protected.gif
+SHA1-Digest: bFUCqv9USs4o/xARLo7rkFcixDM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/ProposalsBro
+ wserTypesProvider.class
+SHA1-Digest: LfJEXWJ2ktGNdb+k0jonkjpM0U8=
+
+Name: org/eclipse/acceleo/ide/ui/launching/strategy/AcceleoPluginLaunc
+ hingStrategy$1.class
+SHA1-Digest: 7YCuaKzmF6GmKki3XuT9jJ0DLho=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pom.mtl
+SHA1-Digest: enRWka4XZhlUuzmGBKXYyHpoLRU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/Gen
+ erateJavaServicesModuleAction.class
+SHA1-Digest: hUGJMTDQEVdDtP+gorFMm0K3tTo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpTableContentProvider.class
+SHA1-Digest: DxIiyLHIfTWIBMN3IxAEyCstVtc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoRegist
+ eredPackageDialog.class
+SHA1-Digest: iyycPwIMJENP7XrVCLEln2ygOSA=
+
+Name: icons/OverridesBrowser.gif
+SHA1-Digest: Ynfrp1nn0SLtkJC/GEQyKJFjApg=
+
+Name: icons/AcceleoResultOpenDeclaration.gif
+SHA1-Digest: J3/kyDrAlIgFUuVWGPq2qehtzP0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/AcceleoInterpret
+ erStrategy.class
+SHA1-Digest: HkEYc8SUFKuRbcgvbBajw1H5BkQ=
+
+Name: icons/delete_obj.gif
+SHA1-Digest: tPE4QrdYWHBzSKd4fhfCwCtQXu0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or.class
+SHA1-Digest: Gg7jtkvvXTRHI7l81CcIw1l+ajQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameVariableWizard.class
+SHA1-Digest: soVIXRY8Q4WXlVslj+7P34rn8No=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpSecondInputWizardPage.class
+SHA1-Digest: RP4RJTPqnl+iGVRiHz7Vnz+lwJQ=
+
+Name: icons/debug/int.gif
+SHA1-Digest: ptcY1vDRWqnn/M75C2vzOcDbz/o=
+
+Name: intro/images/acceleo-logo.png
+SHA1-Digest: rZE04FTNIOuKdaX+Oi/92C1Kr5E=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wserTemplatesProvider.class
+SHA1-Digest: +d0QLof3OzuiiAWb8YuhyEFBjWo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameVariableDescriptor.class
+SHA1-Digest: LoH4IDDKYzFjSSLJ/eX4e5zQpIE=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoMainClassImpl.class
+SHA1-Digest: zguDHnhyCcNwedTK/Bqdz6aecSA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoSour
+ ceContent$AcceleoSourceBufferWithASTJob.class
+SHA1-Digest: RO1MUGhlL0QIBgdGcFF2kMFeRMs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/pomUpdateSite.mtl
+SHA1-Digest: u4ZlfylZA0RJjxbx8lyknnm2OT0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/acceleoModule.mtl
+SHA1-Digest: NId/9aBI3Aij0Av7lgaftIVAtYU=
+
+Name: icons/AcceleoNature.gif
+SHA1-Digest: lUXp6vegDZkfTi0DP8WSClW7rNs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoProje
+ ctPage$1.class
+SHA1-Digest: 5/vhps4SMp+i68bVQi0fG8LWYYw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoLaunchDeleg
+ ate.class
+SHA1-Digest: 2OqYbnxMHxnnvR5oJ0G8GqsJv+c=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/dotProject.mtl
+SHA1-Digest: DJvsqEG36VFIdPxVzoEIRuvtNYg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoSour
+ ceContent$SyntaxHelpJob.class
+SHA1-Digest: /RIhIkeByRFelSF2+3AcAmeEGo8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/Can
+ GenerateJavaServicesModulePropertyTester.class
+SHA1-Digest: XU8/cLWcWOlxlyHQFxx29mkzmoM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/example/Accel
+ eo2InitializationStrategy.class
+SHA1-Digest: mkPqUtnW95J8xqGIUmZew6VsRrs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoLineBreak
+ point.class
+SHA1-Digest: 54IxzewEsKijkVt6o7kvixe93fI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/documentation/GenerateDocumentationAction.class
+SHA1-Digest: uNRTmpU8QteteOZzNlWyxYKOLCk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateInputWizardPage.class
+SHA1-Digest: g19q7+XJ48ea3TaGHkeLkQbaGNs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoConf
+ iguration$1.class
+SHA1-Digest: yhmlqg/36MSuTxtnaI4Fk2+dSNg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoDebugTarg
+ et$TemplateDebuggerListener.class
+SHA1-Digest: EcS3fBr2WKdkhkvgHy+2fcfVTv0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$2.c
+ lass
+SHA1-Digest: YaqW6s0XXsQ+n+gdeHYeohC4i6M=
+
+Name: intro/acceleo-migrate.xml
+SHA1-Digest: 1entlitXVgW3OB4LMG7268Y+TNs=
+
+Name: icons/proposals/NewLetElseLetForeachType.gif
+SHA1-Digest: oft1D+QUk3hqCsO1QsEcrrpotu4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoMo
+ duleElement.class
+SHA1-Digest: LHzzMtB8sVHKS1MOKoJygjvLmwU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/acceleoCompiler.e
+ mtl
+SHA1-Digest: WvRCt6TJCaJSY/T3PEWvYaKBisU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainMethodS
+ earchEngine$1.class
+SHA1-Digest: YVDidSUmSbuqnaseN8r0/HkefUU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/SaveExpressionAc
+ tion$AcceleoModulesViewerFilter.class
+SHA1-Digest: CzEGPQY49XPnH8mLFnHUA3o/sxg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Qui
+ ckOutlineControl$1.class
+SHA1-Digest: pI0CX6cJoCkN5rui17lA/OYpHvo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$3.class
+SHA1-Digest: WPq7wpVFBu0IE8JWfbIcJby6lpg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoModul
+ esCreationPage.class
+SHA1-Digest: wDdXPm1goNl1ByCwNacAVatH62Q=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateInputWizardPage$2.class
+SHA1-Digest: Xu7ouwBsGX9R1LvYJ7Nm198K7MI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AbstractAcce
+ leoNewTemplatesMasterComposite$1.class
+SHA1-Digest: Qh8K4DITRt4AuCOfwi+CMO4cvpg=
+
+Name: org/eclipse/acceleo/ide/ui/launching/strategy/AcceleoLaunchOpera
+ tion.class
+SHA1-Digest: 94eLxIFonMlB5I+ruVN2Mn9M5HA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/ModuleElementNam
+ eWizard$ModuleElementNameWizardPage$1.class
+SHA1-Digest: lo9n5zxxhnFKaUZIK4ECq7+91bI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/Ope
+ nDeclarationAction.class
+SHA1-Digest: 0kX1iluI2j2GXYRWIgGBT4SrX20=
+
+Name: icons/quickfix/QuickFixCreateTemplate.gif
+SHA1-Digest: YvSp/JwslpCcMXJxM/stRhZ5eLY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoPartitionScanner.class
+SHA1-Digest: npeGM8E+vE6CD5Z1m1Wfx3yQpv0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/utils/IAcce
+ leoContantsImage.class
+SHA1-Digest: IZWBU2QysHeBG7kps/w7c1zE6w0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/util/Acce
+ leowizardmodelSwitch.class
+SHA1-Digest: +3pkuCl4Y/Js8ovzGct7FTAI/0g=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$2.class
+SHA1-Digest: btnf83x0p/EdZcnYDPvlmp6kGVY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/interpreter/SaveExpressionAc
+ tion$SaveAsQueryAction.class
+SHA1-Digest: HAvZFSAxVxAd5IxXW03MHT+++SY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AbstractDebugEle
+ ment.class
+SHA1-Digest: 4SZNu7WPsDwnTq7lOgeRYmYWSVs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/Acceleo
+ NewMainTemplateWizard$1.class
+SHA1-Digest: UQiZcTMpwAOct2kyLpafWyagIgQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesGlobalController$AcceleoNewTemplatesMasterComposite.class
+SHA1-Digest: 746JNowrsi1AKrRngxh/wBqLHxo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoElem
+ entHyperlinkDetector$AcceleoElementHyperlink.class
+SHA1-Digest: 2l38HVwSM3UYDY5FqmszJueEOIo=
+
+Name: icons/debug/boolean.gif
+SHA1-Digest: hEDzKIuXvEJsPeJifqBnV7y4HHU=
+
+Name: icons/template-editor/completion/Module.gif
+SHA1-Digest: WrXmqAJzUTZT/8J4vcdh07Yt9is=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/AcceleoUIGenerato
+ r.class
+SHA1-Digest: wf6OCaBZKueFG04REFc1cEjbw4A=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoComp
+ letionImportProposal.class
+SHA1-Digest: LBxNMwl30kMcbkw7S+foTauyRok=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleData.class
+SHA1-Digest: oCHWGB8ueGg2wAPzPcVyH/Ysy60=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/AcceleoMo
+ dule.class
+SHA1-Digest: GjhOE1QCpQlxs4ZrniyWDrx5jrs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateRefactoring$1.class
+SHA1-Digest: CE50FfhVIKEkDETHLVzW9+JE8TI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/core/AcceleoDebugger.c
+ lass
+SHA1-Digest: GqTqmep1UbHLN7K0zZR2F9lt2ck=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoDocu
+ mentProvider$1.class
+SHA1-Digest: 7e3AJLhMMM3okGx0BQboXQWzEwY=
+
+Name: intro/css/acceleo.properties
+SHA1-Digest: dRNSwRb3e2N+IIONJoeCfAWFsNM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTextInputWizardPage.class
+SHA1-Digest: v3l/OeWdfXFvlyl7Xy1YpBbpWmA=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoModul
+ esCreationPage$ModulesTreeContentProvider.class
+SHA1-Digest: HFLb356UV+pJMCR9SXEIsUd36Rc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or$2.class
+SHA1-Digest: CLrhbLtUpAvNUJhJm4HYKZpFO3M=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/strategy/AcceleoJa
+ vaLaunchingStrategy.class
+SHA1-Digest: 3MTExkjxVWsxxAYb7yF4eTFeEUU=
+
+Name: icons/AcceleoNewProjectUI.gif
+SHA1-Digest: h40XP9ZRcW3t9xtM9CpW+IHsxBM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpSecondInputWizardPage$1.class
+SHA1-Digest: GnAQUCltIh4M5KM+x2mm0dQMSgs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/actions/AbstractBreakp
+ ointRulerAction.class
+SHA1-Digest: p8eYspSf6JRNbNDk9YesuYlMhOk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/antCompiler.mtl
+SHA1-Digest: 9XKe0GYqte6/gn0OtuOEP0IbLjs=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoConf
+ iguration.class
+SHA1-Digest: nSf/eYOJmleF6fDoHJ/sHnSs/VI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/dialog/FileTreeContentProvid
+ er.class
+SHA1-Digest: NGZoWMeFUBMIvK5ncqKmptSiDWI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoPair
+ Matcher.class
+SHA1-Digest: vo3wmpbNprZX9Pn/SsqWTSO10kc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/AcceleoUIMessages.class
+SHA1-Digest: 3FZXAjAApcwWYX2lGJ6mY2m6UyY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIPluginXMLWriter.class
+SHA1-Digest: oNH65SCw2GKCLUrysvAZgqD1DRM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$12.class
+SHA1-Digest: H0rKeBbmNEB2Amc6byT1W3lqwc4=
+
+Name: schema/launching.exsd
+SHA1-Digest: 9ZXZqH5NUyRzUzYeNGypNjSHlto=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIBuildWriter.class
+SHA1-Digest: zXiOvCFlY4t88LFnaY19Kuwt4e0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferencesTreeContentProvider$EntryComparator.class
+SHA1-Digest: ZnRaQv6PRztlGRg4t5LbS7NXy2E=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wser$2.class
+SHA1-Digest: yaI9JIQbiXO/RhR/XnBSE8lBbz4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoWhitespaceDetector.class
+SHA1-Digest: V/YZ/OnnKgAj/Mtvr1TuyA1vZ9Q=
+
+Name: icons/template-editor/Override_overlay.gif
+SHA1-Digest: MpCfnb8qQH9ue/OsNB6BVrvq3c4=
+
+Name: icons/debug/double.gif
+SHA1-Digest: 8zmm6XIBq9yPMJoJIOr17B6btb0=
+
+Name: org/eclipse/acceleo/ide/ui/wizards/newfile/example/IAcceleoExamp
+ leStrategy.class
+SHA1-Digest: MgtC4ga4K/+QsbWJ7ASZClpUd3U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/builders/AcceleoBuilderSetti
+ ngs.class
+SHA1-Digest: tX3kAdJtt9g+OtUorAuVo5xvYqg=
+
+Name: icons/template-editor/TypedModel.gif
+SHA1-Digest: wqbkYa8G3w0iYVh63UEVA3CaZTw=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/act
+ ions/HideQueriesAction$1.class
+SHA1-Digest: nU1JUp3rVF8AL5IVkiRfPxHvOYg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoMainTab$7.c
+ lass
+SHA1-Digest: 8rH/kT9C2AU+Kjsnal007xdFY2I=
+
+Name: org/eclipse/acceleo/ide/ui/popupMenus/AbstractMigrateProjectWiza
+ rdAction.class
+SHA1-Digest: jXCHJa5Dhsjn66znTYqu2pB/ars=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/Acceleo
+ NewMainTemplateWizardPage$3.class
+SHA1-Digest: Z0zTC1sDHI+1TbOvjF2OqKZzG20=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$10.class
+SHA1-Digest: gifryGmm+ce1SEYQNoCWEuRjVqI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/proposals/patterns/New
+ LetElseLetForeachType$1.class
+SHA1-Digest: jchxPYSDkdtdZkkPEow/LYvFlW0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/outline/Acc
+ eleoOutlinePageContentProvider$1.class
+SHA1-Digest: ZV+zXxppfYVwfu1fw7WZXSeYlQc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$8.class
+SHA1-Digest: H3p0g5tFmynYLDCXspW8I5vmpwc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/projectManifest.e
+ mtl
+SHA1-Digest: QyknhTPNanF/eUVtf5Cz9pfgWvQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/antRunnerTarget.e
+ mtl
+SHA1-Digest: g0tsBDh0v/69zcUA+Lcctm3WinQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleWizard.class
+SHA1-Digest: mnh7MhLuzq8hOCr+/+tRuXy5PCQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Abstr
+ actSubstitutionTextReader.class
+SHA1-Digest: 2/KbH78YhQjeKFKw/MafhMxR7wc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/OCLEx
+ pressionRule.class
+SHA1-Digest: re2x4I0zaIyUhdbVP2k+Q3bpyEo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleDescriptor.class
+SHA1-Digest: ymPk1IowGUxLMl/sUDm6l3BZbsM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIPopupMenuActionWriter.class
+SHA1-Digest: Ha7xwgxo+eLHjKSGWfzNolINZqM=
+
+Name: org/eclipse/acceleo/internal/ide/ui/resource/AcceleoProjectUtils
+ .class
+SHA1-Digest: nibxyXvObeNLfmVy6xuKcjTyyvY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/AcceleoRefactoringUtils.class
+SHA1-Digest: NV7plfKe5h34JgrjxZ4C6eiZdMU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/preferences/AcceleoPreferenc
+ eInitializer.class
+SHA1-Digest: z6zj1F0xYgTXg7dk6JjbRgZByWI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/project/AcceleoModul
+ esCreationPage$3.class
+SHA1-Digest: YWW5nQIByn2gy9sQgKQ3ty2r490=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ Composite$7.class
+SHA1-Digest: u8s01Ta+WiufKwok//hbloIV6o0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/quickfix/Ac
+ celeoProblemQuickFix.class
+SHA1-Digest: mxx5JWj7pRQ7yiFYZxI6dLyGdmU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/util/Acce
+ leowizardmodelAdapterFactory.class
+SHA1-Digest: 4T7Hn6ayFDPxpGLf2VxDS4LJ7FQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/scanner/Acc
+ eleoDefaultScanner.class
+SHA1-Digest: p/36zyIGsNFH+HhxS+/FCqIaPTY=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/rules/Varia
+ bleRule.class
+SHA1-Digest: TOKFknfQMn5UB9BJhqesQuAPMj8=
+
+Name: schema/proposal.exsd
+SHA1-Digest: cGGA91q91VTaC5isQxONjGg8Hrc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoElem
+ entHyperlinkDetector.class
+SHA1-Digest: XvS/i7utDlSQibf4Q7GiWk5R4yo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoDocA
+ utoIndentStrategy.class
+SHA1-Digest: 4EZvA+PppSuV3Wld1PchtkQtxDs=
+
+Name: icons/template-editor/Variable.gif
+SHA1-Digest: lVxkbQSEhUR0PdQm6G1Bah+lHbQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ erences/ReferencesSearchViewPage$1.class
+SHA1-Digest: SFQZ3lk/uhwuJR1hpSnXdyTP1/0=
+
+Name: intro/acceleo-whatsnew.xml
+SHA1-Digest: uFl8Ct4Iab5aAZahERzXXDM7Q20=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryWizard.class
+SHA1-Digest: /AyQ+6k1PsekhqmxCpe+f+epgfo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/debug/model/AcceleoRunToLine
+ Adapter.class
+SHA1-Digest: V1OfZpAl9OLuzd4zDFCMmWtjJz0=
+
+Name: org/eclipse/acceleo/internal/ide/ui/generators/IAcceleoGeneratio
+ nConstants.class
+SHA1-Digest: 5KnSkXmnUTfZlY+dZ3Ld7+uldlw=
+
+Name: icons/template-editor/Query_private.gif
+SHA1-Digest: 2KIVP+ev9Ht/HXAXe+9W3/6w5tI=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameQueryDescriptor.class
+SHA1-Digest: ovxkSSLILI6rt4DFugMWWKKgxhc=
+
+Name: icons/template-editor/completion/Variable.gif
+SHA1-Digest: xVDvOzQkBtV2QSlbNTNMlZp6tBo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleUIClasspathWriter.class
+SHA1-Digest: Nf+uDuL3bedHCjFPtTtGhXToKe4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoEdit
+ or$7.class
+SHA1-Digest: /887fn0M5gbLmqJfDQip5oFjXxQ=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wProjectUIWizard$1.class
+SHA1-Digest: or0zGuPDFjOslYKxPkDV+WlTaLk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/acceleowizardmodel/impl/Acce
+ leoModuleImpl.class
+SHA1-Digest: qwD/xwWsVNvQVPZy3b7zhcNoew8=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameModuleRefactoring$1.class
+SHA1-Digest: P3HFIvqWbs2dIE02hPvi639oQjk=
+
+Name: org/eclipse/acceleo/internal/ide/ui/launching/AcceleoSourceLooku
+ pDirector.class
+SHA1-Digest: cit6CG9fOMmunZrpSTXCELlih9U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoSour
+ ceContent$SyntaxHelpJob$1.class
+SHA1-Digest: mMlAtISt5WnRUFg1jSskj4Yd8lo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/pullup/AcceleoPullUpTreeContentProvider.class
+SHA1-Digest: c8pqAiZtiif99Wt3blB7vp3zm1U=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/AcceleoNe
+ wUIConfigurationPage.class
+SHA1-Digest: 3kdWwPEk0o8wNZFkk6Chi6Yfypo=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/hover/Accel
+ eoDocBoldScanner.class
+SHA1-Digest: frIliXy4oloWKuuiTAGLcVxQZAg=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newproject/CreateMod
+ uleProjectWriter.class
+SHA1-Digest: E0vSIEcgwjyCULKdHX8mkkMALg8=
+
+Name: icons/template-editor/ModelExpression.gif
+SHA1-Digest: pRpzODAVbTAc+WdSyWqHu94U/3g=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/AcceleoTemp
+ lateReconcilingStrategy.class
+SHA1-Digest: MHXqDU92dXphHvThFPpCJHOjcZc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/views/overrides/OverridesBro
+ wserTemplateLabelProvider.class
+SHA1-Digest: NE7hCWk1jOTNovIqyZg2omlKBS0=
+
+Name: icons/template-editor/completion/Pattern.gif
+SHA1-Digest: Uj1UILDYckd2w/BlftWU2piu9/A=
+
+Name: icons/debug/string.gif
+SHA1-Digest: wLVJNJktJcJ7IjlqumbAKTPEmAU=
+
+Name: icons/template-editor/AcceleoDocOpenInView.png
+SHA1-Digest: j7AG1C9JPq1ZTBzgVT2xWuAmq0I=
+
+Name: org/eclipse/acceleo/internal/ide/ui/popupMenus/OpenDeclarationTr
+ aceabilityElementAction.class
+SHA1-Digest: o9NvnIxpZWvoiDXo6xuNFY3j5rU=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/module/AcceleoModule
+ WizardPage.class
+SHA1-Digest: p026jrspwdP0p+CSiigfnN1izbc=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/main/FileBlo
+ cksWizardPage$1.class
+SHA1-Digest: OWUkPtDF8CKQxkdccj4+D4oGd3k=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameVariableInputWizardPage$1.class
+SHA1-Digest: j1903VX3haKyfsJrO7raoXf1o3Y=
+
+Name: org/eclipse/acceleo/internal/ide/ui/editors/template/actions/ref
+ actor/rename/AcceleoRenameTemplateRefactoringContribution.class
+SHA1-Digest: Tk1i1v988wa2xhMt7EeDGUhDUF4=
+
+Name: org/eclipse/acceleo/internal/ide/ui/wizards/newfile/AcceleoNewTe
+ mplatesDetailsComposite$ExampleBrowseSelectionAdapter.class
+SHA1-Digest: SbgqGCQ0SWfSBKT5dec5V6Z6P5w=
+
