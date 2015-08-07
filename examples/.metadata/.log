@@ -21,3 +21,6 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 
 !ENTRY org.eclipse.core.net 1 0 2015-08-07 15:52:48.832
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.ui 2 2 2015-08-07 15:55:19.411
+!MESSAGE Invalid property category path: org.eclipse.cdt.managedbuilder.ui.properties.Page_head_build (bundle: org.eclipse.cdt.ui, propertyPage: org.eclipse.cdt.managedbuilder.ui.properties.BuildLogPreferencePage)
