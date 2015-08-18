@@ -54,19 +54,19 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Literal"/>
-  <eClassifiers xsi:type="ecore:EClass" name="IntegerLit" eSuperTypes="../../fr.inria.diverse.sle.examples.logo/models/logo.ecore#//Literal">
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerLit" eSuperTypes="#//Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StringLit" eSuperTypes="../../fr.inria.diverse.sle.examples.logo/models/logo.ecore#//Literal">
+  <eClassifiers xsi:type="ecore:EClass" name="StringLit" eSuperTypes="#//Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BoolLit" eSuperTypes="../../fr.inria.diverse.sle.examples.logo/models/logo.ecore#//Literal">
+  <eClassifiers xsi:type="ecore:EClass" name="BoolLit" eSuperTypes="#//Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="../../fr.inria.diverse.sle.examples.logo/models/logo.ecore#//Expression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="ecore:EClass ../../fr.inria.diverse.sle.examples.logo/models/logo.ecore#//Expression"
+  <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="ecore:EClass ../../fr.inria.diverse.sle.examples.logo/models/logo.ecore#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="#//Expression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//ArithmeticOperator"/>
   </eClassifiers>
@@ -76,11 +76,11 @@
     <eLiterals name="mult" value="2"/>
     <eLiterals name="div" value="3" literal=""/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelationalExpression" eSuperTypes="../../fr.inria.diverse.sle.examples.fsm.rhapsody/models/fsm.ecore#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="RelationalExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//RelationalOperator"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="ecore:EClass ../../fr.inria.diverse.sle.examples.fsm.rhapsody/models/fsm.ecore#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="#//Expression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="ecore:EClass ../../fr.inria.diverse.sle.examples.fsm.rhapsody/models/fsm.ecore#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RelationalOperator">
@@ -91,7 +91,7 @@
     <eLiterals name="lessThanOrEqualTo" value="4" literal="lessThanOrEqualTo"/>
     <eLiterals name="greaterThanOrEqualTo" value="5" literal="greaterThanOrEqualTo"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VarReference" eSuperTypes="../../fr.inria.diverse.sle.examples.fsm.rhapsody/models/fsm.ecore#//Expression">
+  <eClassifiers xsi:type="ecore:EClass" name="VarReference" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

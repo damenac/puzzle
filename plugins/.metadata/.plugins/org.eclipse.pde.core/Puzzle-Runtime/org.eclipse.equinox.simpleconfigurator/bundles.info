@@ -35,7 +35,6 @@ fr.inria.diverse.commons.eclipse.messagingsystem.ui,1.0.0.201504291000,file:/Use
 fr.inria.diverse.commons.eclipse.pde,1.0.0.201504291000,file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/fr.inria.diverse.commons.eclipse.pde_1.0.0.201504291000.jar,4,false
 fr.inria.diverse.commons.provisionner4eclipse,1.0.0.201504291000,file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/fr.inria.diverse.commons.provisionner4eclipse_1.0.0.201504291000.jar,4,false
 fr.inria.diverse.k3.al.annotationprocessor.plugin,3.1.0.v20150428-0820,file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/fr.inria.diverse.k3.al.annotationprocessor.plugin_3.1.0.v20150428-0820.jar,4,false
-fr.inria.diverse.puzzle.breaker.partial,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.breaker.partial/,4,false
 fr.inria.diverse.puzzle.breaker.total,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.breaker.total/,4,false
 fr.inria.diverse.puzzle.common,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/,4,false
 fr.inria.diverse.puzzle.metrics,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/,4,false

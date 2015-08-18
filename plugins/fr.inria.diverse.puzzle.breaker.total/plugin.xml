@@ -10,15 +10,15 @@
          <menu
                label="Puzzle"
                path="additions"
-               id="fr.inria.diverse.puzzle.breaker.menu1">
+               id="fr.inria.diverse.puzzle.menu">
             <separator
                   name="group1">
             </separator>
          </menu>
          <action
-               label="Break-down"
+               label="Total break-down"
                class="fr.inria.diverse.puzzle.breaker.popup.actions.BreakDownFamily"
-               menubarPath="fr.inria.diverse.puzzle.breaker.menu1/group1"
+               menubarPath="fr.inria.diverse.puzzle.menu/group1"
                enablesFor="multiple"
                id="fr.inria.diverse.puzzle.breaker.newAction">
          </action>

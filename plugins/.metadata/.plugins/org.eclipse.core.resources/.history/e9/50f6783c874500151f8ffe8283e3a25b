@@ -1,0 +1,13 @@
+package fr.inria.diverse.puzzle.metrics.evaluators;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EPackage;
+
+public class ReusabilityBenefit {
+
+	public static String evaluate(ArrayList<EPackage> ePackages){
+	
+		return "";
+	}
+}

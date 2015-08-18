@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.metrics.evaluators;
+
+import org.eclipse.emf.ecore.EPackage;
+
+public class SizeOfSyntacticCommonality {
+
+	public double evaluate(ArrayList<EPackage> ePackages){
+		
+	}
+}

@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1438955725861
+# List of external plug-in models previously loaded. Timestamp: 1439891414934
 file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/br.ufal.ic.colligens_1.1.4.201506171554.jar
 file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/ch.qos.logback.classic_1.0.7.v20121108-1250.jar
 file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/ch.qos.logback.core_1.0.7.v20121108-1250.jar
@@ -35,7 +35,6 @@ file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/fr.inria.diverse.commons.ec
 file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/fr.inria.diverse.commons.eclipse.pde_1.0.0.201504291000.jar
 file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/fr.inria.diverse.commons.provisionner4eclipse_1.0.0.201504291000.jar
 file:/Users/dmendeza/IDEs/eclipse-luna-xtend/plugins/fr.inria.diverse.k3.al.annotationprocessor.plugin_3.1.0.v20150428-0820.jar
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.breaker.partial/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.breaker.total/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/

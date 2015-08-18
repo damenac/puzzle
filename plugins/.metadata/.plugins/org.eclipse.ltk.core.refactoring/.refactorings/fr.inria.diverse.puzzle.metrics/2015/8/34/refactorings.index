@@ -1,0 +1,13 @@
+1439885021517	Rename type 'AountOfConcepts'
+1439885062183	Delete element
+1439888268306	Rename type 'ProductRelatedReusability'
+1439888279098	Rename type 'SyntacticProductRelatedReusability'
+1439888284219	Rename type 'ReusabilityBenefit'
+1439888291403	Rename type 'SizeOfSyntacticCommonality'
+1439888296726	Rename type 'TotalAmountOfConcepts'
+1439888305098	Rename package 'fr.inria.diverse.puzzle.metrics.evaluators'
+1439888312574	Rename type 'SyntacticIndividualizationRatio'
+1439888319141	Rename type 'SyntaxProductRelatedReusability'
+1439888324769	Rename type 'SyntaxReusabilityBenefit'
+1439888330470	Rename type 'SyntaxSizeOfCommonality'
+1439888336494	Rename type 'SyntaxTotalAmountOfConcepts'

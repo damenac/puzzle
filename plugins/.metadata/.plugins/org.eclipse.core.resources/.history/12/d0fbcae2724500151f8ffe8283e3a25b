@@ -1,0 +1,18 @@
+package fr.inria.diverse.puzzle.metrics.evaluators;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EPackage;
+
+import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO;
+
+public class SizeOfSyntacticCommonality {
+
+	public double evaluate(ArrayList<EPackage> ePackages){
+		ArrayList<ModuleConceptsVO> moduleConceptsList = FamiliesServices.getInstance().obtainConceptsOwenerLanguagesList(ePackages);
+		
+		
+		return 0;
+	}
+}

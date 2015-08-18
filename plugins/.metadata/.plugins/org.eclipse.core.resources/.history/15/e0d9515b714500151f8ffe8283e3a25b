@@ -1,0 +1,57 @@
+package fr.inria.diverse.k3.sle.common.utils;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EPackage;
+
+
+public class FamiliesServices {
+
+	public void obtainConceptsOwenerLanguagesList(){
+		// Step 1: Scan the metamodels creating the concept-member list.
+				ArrayList<ConceptMemberVO> conceptMemberList = new ArrayList<ConceptMemberVO>();
+				for (EPackage ePackage : ePackages) {
+					this.fillConceptMemberList(conceptMemberList, ePackage, ePackage.getName());
+				}
+				
+				System.out.println("Step 1");
+				for (ConceptMemberVO conceptMemberVO : conceptMemberList) {
+					System.out.println(conceptMemberVO);
+				}
+				
+				ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = new ArrayList<ConceptMembersGroupVO>();
+				for (ConceptMemberVO conceptMemberVO : conceptMemberList) {
+					ConceptMembersGroupVO conceptMemberGroupLegacy = getConceptMemberGroup(conceptMemberGroupList, conceptMemberVO);
+					if(conceptMemberGroupLegacy == null){
+						ConceptMembersGroupVO conceptMemberGroupVO = new ConceptMembersGroupVO(conceptMemberVO.getConcept());
+						conceptMemberGroupVO.getMemberGroup().add(conceptMemberVO.getMemberName());
+						conceptMemberGroupList.add(conceptMemberGroupVO);
+					}else{
+						conceptMemberGroupLegacy.getMemberGroup().add(conceptMemberVO.getMemberName());
+					}
+				}
+				System.out.println("Step 2");
+				for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
+					System.out.println(conceptMembersGroupVO);
+				}
+				
+				ArrayList<ModuleConceptsVO> moduleConceptsList = new ArrayList<ModuleConceptsVO>();
+				int i = 1;
+				for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
+					ModuleConceptsVO legacyModule = getLegacyFeature(moduleConceptsList, conceptMembersGroupVO);
+					if(legacyModule == null){
+						ModuleConceptsVO newModule = new ModuleConceptsVO("module" + i, conceptMembersGroupVO.getMemberGroup().toString());
+						newModule.getConcepts().add(conceptMembersGroupVO.getConcept());
+						moduleConceptsList.add(newModule);
+						i++;
+					}else{
+						legacyModule.getConcepts().add(conceptMembersGroupVO.getConcept());
+					}
+				}
+				
+				System.out.println("Step 3");
+				for (ModuleConceptsVO moduleConceptsVO : moduleConceptsList) {
+					System.out.println(moduleConceptsVO);
+				}
+	}
+}

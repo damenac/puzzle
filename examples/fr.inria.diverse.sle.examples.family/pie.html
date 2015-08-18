@@ -1,0 +1,318 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Results for the analysis</title>
+      <script src="lib/Chart.js"></script>
+  </head>
+
+<body bgcolor="#FAFAFA">
+
+<table align="center" border="0" cellpadding="1" cellspacing="1" style="width:550px;" bgcolor="#FFFFFF">
+	<tbody>
+		<tr>
+			<td style="text-align: center;">
+                <p><span style="font-size:20px;"><strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;">Results of the analysis for the family</span></strong></span></br>
+                <span style="font-size:24px;"><strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;">Sample Family&nbsp;</span></strong></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+                <hr />
+                <p>
+                    &nbsp; &nbsp; &nbsp;<span style="font-size:12px;"><strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"> Size of commonality:</span></strong></span></br>
+                    &nbsp; &nbsp; &nbsp; &nbsp;<span style="font-size:11px;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"> (Size of the core with respect to the rest of the family)</span></span>
+                </p>
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-holder">
+                                    <canvas id="chart-syntactic-commonalities" width="150" height="150"/>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">
+                                <div id="canvas-holder-semantic-commonalities">
+                                    <canvas id="chart-semantic-commonalities" width="150" height="150"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><em><span style="font-size:12px;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;">Syntactic commonality</span></span></em></td>
+                            <td style="text-align: center;"><em><span style="font-size:12px;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;">Semantic comonality</span></span></em></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <hr />
+                <p>&nbsp; &nbsp; &nbsp;<strong><span style="font-size:12px;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"> Product-related reusability:</span></span></strong></p>
+                
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-product-reusability" width="150" height="150">
+                                    <canvas id="pie-product-reusability" width="450" height="200"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <hr />
+                <p><span style="line-height: 1.6em;">&nbsp; &nbsp; &nbsp;&nbsp;</span><strong style="line-height: 1.6em;"><span style="font-size:12px;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;">Reusability benefit:</span></span></strong></p>
+                
+                <table align="center" border="1" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode;font-size:12px;">[State Machines]</span>
+                                <div id="canvas-reusability-benefit-statemachines" width="120" height="150">
+                                    <canvas id="pie-reusability-benefit-statemachines" width="250" height="150"/>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode;font-size:12px;">[Logo]</span>
+                                <div id="canvas-reusability-benefit-logo" width="120" height="150">
+                                    <canvas id="pie-reusability-benefit-logo" width="250" height="150"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode;font-size:12px;">[Flowchart]</span>
+                                <div id="canvas-reusability-benefit-flowchart" width="120" height="150">
+                                    <canvas id="pie-reusability-benefit-flowchart" width="250" height="150"/>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">
+                            
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <hr />
+                <p>&nbsp; &nbsp; &nbsp; <strong><span style="font-size:12px;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;">Relationship ratio:</span></span></strong></p>
+                
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">rratiop1</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">rratiop2</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <hr />
+                <p>&nbsp; &nbsp; &nbsp; <strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"><span style="font-size:12px;">Individualization ratio:</span></span></strong></p>
+                
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-individualization-ratio" width="150" height="150">
+                                    <canvas id="pie-individualization-ratio" width="450" height="200"/>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+    <script>
+      var pieDataSyntacticCommonality = [
+        {
+          value: 7,
+	  color:"#FF0000",
+	  highlight: "#FF4000",
+	  label: "Commonalities"
+        },
+        {
+	  value: 48,
+	  color: "#FE9A2E",
+	  highlight: "#DBA901",
+	  label: "Particulalrities"
+        }
+      ];
+      
+      var pieDataSemanticCommonality = [
+        {
+           value: 9,
+           color:"#FF0000",
+           highlight: "#FF4000",
+           label: "Commonalities"
+        },
+        {
+           value: 48,
+           color: "#FE9A2E",
+           highlight: "#DBA901",
+           label: "Particulalrities"
+        }
+      ];
+      
+      var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+      var barProductRelatedReusability = {
+          labels : ["State Machines","Logo","Flowchart"],
+          datasets : [
+            {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+              }
+           ]
+      };
+    
+    var barProductRelatedReusability = {
+        labels : ["State Machines","Logo","Flowchart"],
+        datasets : [
+           {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            },
+            {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+             }
+         ]
+    };
+    
+    var barReusabilityBenefitStateMachines = {
+        labels : ["Logo","Flowchart"],
+        datasets : [
+             {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             }
+        ]
+    };
+    
+    var barReusabilityBenefitLogo = {
+        labels : ["State Machines","Flowchart"],
+        datasets : [
+                    {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data : [randomScalingFactor(),randomScalingFactor()]
+                    },
+                    {
+                    fillColor : "rgba(151,187,205,0.5)",
+                    strokeColor : "rgba(151,187,205,0.8)",
+                    highlightFill : "rgba(151,187,205,0.75)",
+                    highlightStroke : "rgba(151,187,205,1)",
+                    data : [randomScalingFactor(),randomScalingFactor()]
+                    }
+                    ]
+    };
+    
+    var barReusabilityBenefitFlowChart = {
+        labels : ["State Machines","Logo"],
+        datasets : [
+                    {
+                    fillColor : "rgba(220,220,220,0.5)",
+                    strokeColor : "rgba(220,220,220,0.8)",
+                    highlightFill: "rgba(220,220,220,0.75)",
+                    highlightStroke: "rgba(220,220,220,1)",
+                    data : [randomScalingFactor(),randomScalingFactor()]
+                    },
+                    {
+                    fillColor : "rgba(151,187,205,0.5)",
+                    strokeColor : "rgba(151,187,205,0.8)",
+                    highlightFill : "rgba(151,187,205,0.75)",
+                    highlightStroke : "rgba(151,187,205,1)",
+                    data : [randomScalingFactor(),randomScalingFactor()]
+                    }
+                    ]
+    };
+    
+    var barIndividualizationRatio = {
+        labels : ["State Machines","Logo","Flowchart"],
+        datasets : [
+             {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+             }
+         ]
+    };
+
+      window.onload = function(){
+        var ctxSyntacticCommonalities = document.getElementById("chart-syntactic-commonalities").getContext("2d");
+        window.myPieSyntacticCommonalities = new Chart(ctxSyntacticCommonalities).Pie(pieDataSyntacticCommonality);
+        
+        var ctxSemanticCommonalities = document.getElementById("chart-semantic-commonalities").getContext("2d");
+        window.myPieSemanticCommonalities = new Chart(ctxSemanticCommonalities).Pie(pieDataSemanticCommonality);
+        
+        var ctxProductRelatedReusability = document.getElementById("pie-product-reusability").getContext("2d");
+		window.myBarProductReusability = new Chart(ctxProductRelatedReusability).Bar(barProductRelatedReusability, {
+           responsive : false
+        });
+        
+        var ctxReusabilityBenefitStateMachines = document.getElementById("pie-reusability-benefit-statemachines").getContext("2d");
+		window.myBarReusabilityBenefitStateMachines = new Chart(ctxReusabilityBenefitStateMachines).Bar(barReusabilityBenefitStateMachines, {
+           responsive : false
+        });
+        
+        var ctxReusabilityBenefitLogo = document.getElementById("pie-reusability-benefit-logo").getContext("2d");
+		window.myBarReusabilityBenefitLogo = new Chart(ctxReusabilityBenefitLogo).Bar(barReusabilityBenefitLogo, {
+           responsive : false
+        });
+        
+        var ctxReusabilityBenefitFlowchart = document.getElementById("pie-reusability-benefit-flowchart").getContext("2d");
+		window.myBarReusabilityBenefitFlowchart = new Chart(ctxReusabilityBenefitFlowchart).Bar(barReusabilityBenefitFlowChart, {
+          responsive : false
+        });
+
+                                                                                      
+        var ctxIndividualizationRatio = document.getElementById("pie-individualization-ratio").getContext("2d");
+		window.myBarIndividualizationRatio = new Chart(ctxIndividualizationRatio).Bar(barIndividualizationRatio, {
+           responsive : false
+        });
+        
+      };
+    
+    
+    </script>
+  </body>
+</html>

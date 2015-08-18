@@ -36,7 +36,7 @@ public class ComputeMetricsAction implements IObjectActionDelegate {
 	// --------------------------------------------------
 	// Constructor
 	// --------------------------------------------------
-
+	
 	public ComputeMetricsAction() {
 		super();
 	}
@@ -66,8 +66,9 @@ public class ComputeMetricsAction implements IObjectActionDelegate {
 	 */
 	public void run(IAction action) {
 		try {
+			String result = ComputeMetricsActionImpl.getInstance().computeMetrics((ArrayList<IResource>) selectedResources);
 			MessageDialog.openInformation(shell, "Ui",
-					"Generate extensions was executed.");
+					"Metricss: " + result);
 		} catch (Exception e) {
 			MessageDialog.openInformation(
 					shell,
