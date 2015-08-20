@@ -14,13 +14,22 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.EcoreQueries"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.ReusabilityBenefit"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.RelationshipRatio"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
 <fullyQualifiedTypeName name="java.util.Enumeration"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SyntactOverlapping"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
-<fullyQualifiedTypeName name="org.eclipse.core.runtime.Platform"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.TotalAmountOfConcepts"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.RelationshipRatio"/>
+<fullyQualifiedTypeName name="org.eclipse.core.runtime.Platform"/>
+<fullyQualifiedTypeName name="org.eclipse.core.runtime.FileLocator"/>
+<fullyQualifiedTypeName name="java.net.URL"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticOverlapping"/>
 </qualifiedTypeNameHistroy>

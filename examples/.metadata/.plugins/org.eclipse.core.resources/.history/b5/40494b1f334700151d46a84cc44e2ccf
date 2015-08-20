@@ -1,0 +1,3 @@
+language Rhapsody{
+	syntax "platform:/resource/"
+}

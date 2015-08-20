@@ -1,0 +1,23 @@
+eclipse.preferences.version=1
+repositories/http\:__download.eclipse.org_eclipse_updates_4.4/count=1
+repositories/http\:__download.eclipse.org_eclipse_updates_4.4/enabled=true
+repositories/http\:__download.eclipse.org_eclipse_updates_4.4/nickname=The Eclipse Project Updates
+repositories/http\:__download.eclipse.org_eclipse_updates_4.4/uri=http\://download.eclipse.org/eclipse/updates/4.4
+repositories/http\:__download.eclipse.org_releases_luna/count=1
+repositories/http\:__download.eclipse.org_releases_luna/enabled=true
+repositories/http\:__download.eclipse.org_releases_luna/nickname=Luna
+repositories/http\:__download.eclipse.org_releases_luna/uri=http\://download.eclipse.org/releases/luna
+repositories/http\:__www.eclipse.org_modeling_amalgam_downloads_package_modeling_luna/count=1
+repositories/http\:__www.eclipse.org_modeling_amalgam_downloads_package_modeling_luna/enabled=true
+repositories/http\:__www.eclipse.org_modeling_amalgam_downloads_package_modeling_luna/nickname=Modeling Package Updates for Eclipse Luna
+repositories/http\:__www.eclipse.org_modeling_amalgam_downloads_package_modeling_luna/uri=http\://www.eclipse.org/modeling/amalgam/downloads/package/modeling/luna/
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/enabled=true
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/isSystem=false
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/name=fr.inria.diverse.melange.p2updatesite
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/nickname=Melange
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/suffix=content.xml
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/type=org.eclipse.equinox.internal.p2.metadata.repository.LocalMetadataRepository
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/uri=https\://ci.inria.fr/k3al/job/melange-master/lastSuccessfulBuild/artifact/releng/fr.inria.diverse.melange.p2updatesite/target/site/
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/version=1.0.0
+ter/lastSuccessfulBuild/artifact/releng/fr.inria.diverse.melange.p2updatesite/target/site/
+repositories/https\:__ci.inria.fr_k3al_job_melange-master_lastSuccessfulBuild_artifact_releng_fr.inria.diverse.melange.p2updatesite_target_site/version=1.0.0

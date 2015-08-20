@@ -9,7 +9,7 @@ import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
 public class ReusabilityBenefit {
 
 	public static String evaluate(ArrayList<EPackage> ePackages){
-		double SoC = SizeOfCommonality.evaluateMetric(ePackages);
+		double SoC = SizeOfCommonality.evaluateForSyntax(ePackages);
 		String result = "";
 		
 		for (EPackage ePackageI : ePackages) {

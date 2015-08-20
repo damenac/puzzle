@@ -6,16 +6,35 @@ import org.eclipse.emf.ecore.EPackage;
 
 public class ProductRelatedReusability {
 
-	public static String evaluate(ArrayList<EPackage> ePackages){
-		double SoSC = SizeOfCommonality.evaluateMetric(ePackages);
-		String result = "";
-		
+	public static String evaluateForSyntax(ArrayList<EPackage> ePackages){
+		String values = "";
+		double SoSC = SizeOfCommonality.evaluateForSyntax(ePackages);
+		boolean first = true;
 		for (EPackage ePackage : ePackages) {
-			double currentValue = SoSC / countConstructs(ePackage);
-			result += ePackage.getName() + ": " + currentValue + "\n";
+			double currentValue = (SoSC / countConstructs(ePackage))*100;
+			if(!first)
+				values +=  ",";
+			values += currentValue;
+			first = false;
 		}
 		
-		return result;
+		return values;
+	}
+	
+	public static String evaluateForSemantics(ArrayList<EPackage> ePackages){
+		//TODO Do something!
+		String values = "";
+		double SoSC = SizeOfCommonality.evaluateForSyntax(ePackages);
+		boolean first = true;
+		for (EPackage ePackage : ePackages) {
+			double currentValue = (SoSC / countConstructs(ePackage))*100;
+			if(!first)
+				values +=  ",";
+			values += currentValue;
+			first = false;
+		}
+		
+		return values;
 	}
 	
 	private static double countConstructs(EPackage ePackage){
@@ -28,7 +47,7 @@ public class ProductRelatedReusability {
 		return count;
 	}
 	
-	public static String printMetricsResults(ArrayList<EPackage> ePackages){
+	public static String getVariablesDeclaration(ArrayList<EPackage> ePackages){
 		String answer = "var barProductRelatedReusability = {\n";
 		
 		boolean first = true;
@@ -46,30 +65,26 @@ public class ProductRelatedReusability {
 		answer += "        strokeColor : \"rgba(220,220,220,0.8)\",\n";
 		answer += "        highlightFill: \"rgba(220,220,220,0.75)\",\n";
 		answer += "        highlightStroke: \"rgba(220,220,220,1)\",\n";
-		
-		String values = "";
-		double SoSC = SizeOfCommonality.evaluateMetric(ePackages);
-		first = true;
-		for (EPackage ePackage : ePackages) {
-			double currentValue = SoSC / countConstructs(ePackage);
-			if(!first)
-				values +=  ",";
-			values += currentValue;
-			first = false;
-		}
-		
-		answer += "        data : [" + values + "]\n";
+		answer += "        data : [" + evaluateForSyntax(ePackages) + "]\n";
 		answer += "      },\n";
 		answer += "      {\n";
 		answer += "        fillColor : \"rgba(151,187,205,0.5)\",\n";
 		answer += "        strokeColor : \"rgba(151,187,205,0.8)\",\n";
 		answer += "        highlightFill : \"rgba(151,187,205,0.75)\",\n";
 		answer += "        highlightStroke : \"rgba(151,187,205,1)\",\n";
-		answer += "        data : [" + values + "]\n"; // TODO Semantic values here
+		answer += "        data : [" + evaluateForSemantics(ePackages) + "]\n"; 
 		answer += "      }\n";
 		answer += "    ]\n";
 		answer += "};\n";
 		
+		return answer;
+	}
+	
+	public static String getWindow(){
+		String answer = "    var ctxProductRelatedReusability = document.getElementById(\"pie-product-reusability\").getContext(\"2d\");\n";
+		answer += "    window.myBarProductReusability = new Chart(ctxProductRelatedReusability).Bar(barProductRelatedReusability, {\n";
+		answer += "       responsive : false\n";
+		answer += "    });\n\n";
 		return answer;
 	}
 }
