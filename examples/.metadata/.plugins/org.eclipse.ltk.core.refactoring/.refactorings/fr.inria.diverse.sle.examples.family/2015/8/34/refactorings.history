@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.sle.examples.family/libVenn/semanticVennData.jsonp&apos; to &apos;semanticVennData-backup.jsonp&apos;" description="Rename resource &apos;semanticVennData.jsonp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="libVenn/semanticVennData.jsonp" name="semanticVennData-backup.jsonp" stamp="1439994862309" updateReferences="true"/>
+</session>

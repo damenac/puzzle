@@ -2,8 +2,6 @@ package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;

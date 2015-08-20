@@ -68,15 +68,15 @@
 			showScale: true,
 
 			// Boolean - If we want to override with a hard coded scale
-			scaleOverride: false,
+			scaleOverride: true,
 
 			// ** Required if scaleOverride is true **
 			// Number - The number of steps in a hard coded scale
-			scaleSteps: null,
+			scaleSteps: 10,
 			// Number - The value jump in the hard coded scale
-			scaleStepWidth: null,
+			scaleStepWidth: 10,
 			// Number - The scale starting value
-			scaleStartValue: null,
+			scaleStartValue: 0,
 
 			// String - Colour of the scale line
 			scaleLineColor: "rgba(0,0,0,.1)",
@@ -91,7 +91,7 @@
 			scaleLabel: "<%=value%>",
 
 			// Boolean - Whether the scale should stick to integers, and not show any floats even if drawing space is there
-			scaleIntegersOnly: true,
+			scaleIntegersOnly: false,
 
 			// Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
 			scaleBeginAtZero: false,
@@ -130,7 +130,7 @@
 			tooltipFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
 
 			// Number - Tooltip label font size in pixels
-			tooltipFontSize: 14,
+			tooltipFontSize: 11,
 
 			// String - Tooltip font weight style
 			tooltipFontStyle: "normal",
@@ -142,7 +142,7 @@
 			tooltipTitleFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
 
 			// Number - Tooltip title font size in pixels
-			tooltipTitleFontSize: 14,
+			tooltipTitleFontSize: 12,
 
 			// String - Tooltip title font weight style
 			tooltipTitleFontStyle: "bold",

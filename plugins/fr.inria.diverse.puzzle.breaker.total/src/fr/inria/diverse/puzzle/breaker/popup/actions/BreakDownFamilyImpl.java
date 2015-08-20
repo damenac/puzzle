@@ -16,8 +16,6 @@ import fr.inria.diverse.k3.sle.common.utils.EcoreCloningServices;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO;
 
 /**

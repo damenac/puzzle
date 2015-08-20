@@ -1,2 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.FamiliesServices"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.TotalAmountOfConcepts"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.SizeOfSyntacticCommonality"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.ProductRelatedReusability"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.SyntacticIndividualizationRatio"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.EcoreQueries"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.ReusabilityBenefit"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.RelationshipRatio"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="java.util.Enumeration"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SyntactOverlapping"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
+<fullyQualifiedTypeName name="org.eclipse.core.runtime.Platform"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
+</qualifiedTypeNameHistroy>
