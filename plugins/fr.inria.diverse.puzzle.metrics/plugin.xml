@@ -19,7 +19,7 @@
                label="Compute metrics"
                class="fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsAction"
                menubarPath="fr.inria.diverse.puzzle.metrics.menu1/group1"
-               enablesFor="multiple"
+               enablesFor="1"
                id="fr.inria.diverse.puzzle.metrics.newAction">
          </action>
       </objectContribution>

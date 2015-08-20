@@ -1,9 +1,11 @@
 package fr.inria.diverse.puzzle.metrics.actions;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -17,10 +19,20 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.resource.XtextResource;
+import org.eclipse.xtext.resource.XtextResourceSet;
+
+import com.google.inject.Injector;
 
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
+import fr.inria.diverse.melange.MelangeStandaloneSetup;
+import fr.inria.diverse.melange.metamodel.melange.Element;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.PairwiseRelationshipRatio;
@@ -44,18 +56,26 @@ public class ComputeMetricsActionImpl {
 		return instance;
 	}
 	
-	public String computeMetrics(ArrayList<IResource> selectedResources) throws IOException, CoreException, URISyntaxException{
+	public String computeMetrics(IResource selectedResource) throws IOException, CoreException, URISyntaxException{
+		Injector injector = new MelangeStandaloneSetup().createInjectorAndDoEMFRegistration();
+		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
+		Resource resource = resourceSet.createResource(URI.createFileURI(selectedResource.getLocation().toString()));
+		resource.load(resourceSet.getLoadOptions());
+		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
-		for (IResource iResource : selectedResources) {
-			IFile currentFile = (IFile) iResource;
-			EPackage currentMetamodel = ModelUtils.loadEcoreFile(currentFile.getLocation().toString());
-			ePackages.add(currentMetamodel);
+		ModelTypingSpace familyTypingSpace = (ModelTypingSpace) resource.getContents().get(0);
+		for (Element element : familyTypingSpace.getElements()) {
+			if(element instanceof Language){
+				Language language = (Language)element;
+				EPackage currentMetamodel = ModelUtils.loadEcoreResource(language.getSyntax().getEcoreUri());
+				ePackages.add(currentMetamodel);
+			}
 		}
 		
 		String metrics = "Metrics calculated"; 
 		
-		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
-		IProject project = root.getProject("fr.inria.diverse.sle.examples.family");
+		IProject project = selectedResource.getProject();
 		
 		String generalMetricsString = "";
 		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(ePackages);
@@ -69,6 +89,12 @@ public class ComputeMetricsActionImpl {
 		generalMetricsWindowsString += IndividualizationRatio.getWindow();
 		generalMetricsWindowsString += PairwiseRelationshipRatio.getWindow(ePackages);
 		generalMetricsWindowsString += "};";
+		
+		//Copying the java script libraries if they dont exist
+		URL libFolderPath = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/libs");
+		File libFolder = new File(FileLocator.resolve(libFolderPath).toURI());
+        File projectFolder = new File(project.getLocation().toString());
+        ProjectManagementServices.copyFolder(libFolder, projectFolder);
 		
 		File generalMetrics = new File(project.getLocation().toString() + "/lib/metrics.jsonp" );
 		if(!generalMetrics.exists())

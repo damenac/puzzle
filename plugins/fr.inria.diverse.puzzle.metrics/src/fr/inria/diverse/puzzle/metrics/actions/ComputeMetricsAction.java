@@ -66,7 +66,7 @@ public class ComputeMetricsAction implements IObjectActionDelegate {
 	 */
 	public void run(IAction action) {
 		try {
-			String result = ComputeMetricsActionImpl.getInstance().computeMetrics((ArrayList<IResource>) selectedResources);
+			String result = ComputeMetricsActionImpl.getInstance().computeMetrics(((ArrayList<IResource>) selectedResources).get(0));
 			MessageDialog.openInformation(shell, "Ui",
 					"Metricss: " + result);
 		} catch (Exception e) {

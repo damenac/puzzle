@@ -109,6 +109,25 @@ public class ModelUtils {
 	}
 	
 	/**
+	 * Loads a model located in the ECORE file in the parameter
+	 * 
+	 * @param filePath
+	 * @return The root object of the model
+	 */
+	public static EPackage loadEcoreResource(String filePath) {
+		ResourceSet rs = new ResourceSetImpl();
+
+		rs.getResourceFactoryRegistry().getExtensionToFactoryMap()
+				.put("ecore", new EcoreResourceFactoryImpl());
+
+		URI fileURI = URI.createURI(filePath);
+		Resource ecoreResource = rs.getResource(fileURI, true);
+		EcoreUtil.resolveAll(ecoreResource);
+		
+		return (EPackage) ecoreResource.getContents().get(0);
+	}
+	
+	/**
 	 * Loads a Xtend file from the resource in the parameter
 	 * @param filePath
 	 * @return The root object of the model
