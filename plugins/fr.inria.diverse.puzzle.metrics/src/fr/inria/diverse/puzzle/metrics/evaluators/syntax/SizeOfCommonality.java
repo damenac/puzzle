@@ -49,14 +49,22 @@ public class SizeOfCommonality {
 	
 	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
 		String answer = "";
+		int syntacticCore = evaluateForSyntax(languages, conceptComparisonOperator);
+		int totalConstructs = TotalAmountOfConcepts.evaluateMetric(languages, conceptComparisonOperator);
+		int syntacticDifferences = totalConstructs - syntacticCore;
+		
+		int semanticCore = evaluateForSemantics(languages, conceptComparisonOperator, methodComparisonOperator);
+		int totalMethods = TotalAmountOfMethods.evaluateMetric(languages, conceptComparisonOperator, methodComparisonOperator);
+		int semanticDifferences = totalMethods - semanticCore;
+		
 		answer += "var pieDataSyntacticCommonality = [{\n";
-		answer += "        value: " + evaluateForSyntax(languages, conceptComparisonOperator) + ",\n";
+		answer += "        value: " + syntacticCore + ",\n";
 		answer += "        color:\"#FAAC58\",\n";
 		answer += "        highlight: \"#F7BE81\",\n";
 		answer += "        label: \"Commonalities\"\n";
 		answer += "    },\n";
 		answer += "    {\n";
-		answer += "        value: " + TotalAmountOfConcepts.evaluateMetric(languages, conceptComparisonOperator) + ",\n";
+		answer += "        value: " +  syntacticDifferences + ",\n";
 		answer += "        color:\"#F5F6CE\",\n";
 		answer += "        highlight: \"#FBFBEF\",\n";
 		answer += "        label: \"Particularities\"\n";
@@ -64,13 +72,13 @@ public class SizeOfCommonality {
 		answer += "];\n\n";
 		
 		answer += "var pieDataSemanticCommonality = [{\n";
-		answer += "        value: " + evaluateForSemantics(languages, conceptComparisonOperator, methodComparisonOperator) + ",\n";
+		answer += "        value: " + semanticCore + ",\n";
 		answer += "        color:\"#FAAC58\",\n";
 		answer += "        highlight: \"#F7BE81\",\n";
 		answer += "        label: \"Commonalities\"\n";
 		answer += "    },\n";
 		answer += "    {\n";
-		answer += "        value: " + TotalAmountOfMethods.evaluateMetric(languages, conceptComparisonOperator, methodComparisonOperator) + ",\n";
+		answer += "        value: " + semanticDifferences + ",\n";
 		answer += "        color:\"#F5F6CE\",\n";
 		answer += "        highlight: \"#FBFBEF\",\n";
 		answer += "        label: \"Particularities\"\n";

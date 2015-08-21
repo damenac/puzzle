@@ -13,7 +13,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class TotalAmountOfConcepts {
 
-	public static double evaluateMetric(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
+	public static int evaluateMetric(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);

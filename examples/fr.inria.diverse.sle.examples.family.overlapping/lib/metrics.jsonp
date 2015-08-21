@@ -5,7 +5,7 @@ var pieDataSyntacticCommonality = [{
         label: "Commonalities"
     },
     {
-        value: 57.0,
+        value: 48,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -19,7 +19,7 @@ var pieDataSemanticCommonality = [{
         label: "Commonalities"
     },
     {
-        value: 58.0,
+        value: 51,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"

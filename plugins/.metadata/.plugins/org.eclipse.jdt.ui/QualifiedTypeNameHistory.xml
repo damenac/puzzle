@@ -49,14 +49,14 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.FamiliesServices"/>
-<fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
 </qualifiedTypeNameHistroy>
