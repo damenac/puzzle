@@ -1,0 +1,45 @@
+package fr.inria.diverse.melange.ui.preferences;
+
+import fr.inria.diverse.melange.preferences.MelangePreferencesConstants;
+import fr.inria.diverse.melange.ui.internal.MelangeActivator;
+import org.eclipse.jface.preference.BooleanFieldEditor;
+import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Group;
+import org.eclipse.ui.IWorkbench;
+import org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+
+@SuppressWarnings("all")
+public class MelangePreferencePage extends LanguageRootPreferencePage {
+  @Override
+  public void init(final IWorkbench workbench) {
+    MelangeActivator _instance = MelangeActivator.getInstance();
+    IPreferenceStore _preferenceStore = _instance.getPreferenceStore();
+    this.setPreferenceStore(_preferenceStore);
+  }
+  
+  @Override
+  public void createFieldEditors() {
+    final Composite parent = this.getFieldEditorParent();
+    Group _group = new Group(parent, SWT.SHADOW_IN);
+    final Procedure1<Group> _function = (Group it) -> {
+      it.setText("Generation");
+      GridData _gridData = new GridData(SWT.FILL, SWT.TOP, true, false);
+      it.setLayoutData(_gridData);
+      GridLayout _gridLayout = new GridLayout(1, false);
+      it.setLayout(_gridLayout);
+    };
+    final Group group = ObjectExtensions.<Group>operator_doubleArrow(_group, _function);
+    final Composite composite = new Composite(group, SWT.NONE);
+    BooleanFieldEditor _booleanFieldEditor = new BooleanFieldEditor(
+      MelangePreferencesConstants.GENERATE_ADAPTERS_CODE, 
+      "Always generate adapters code", composite);
+    this.addField(_booleanFieldEditor);
+    group.pack();
+  }
+}

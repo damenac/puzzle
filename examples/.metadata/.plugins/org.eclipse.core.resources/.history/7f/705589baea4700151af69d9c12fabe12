@@ -1,0 +1,11 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.Statement;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface ConsoleOutput extends EObject, Statement {
+  public abstract String getInput();
+  
+  public abstract void setInput(final String newInput);
+}

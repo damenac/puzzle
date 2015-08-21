@@ -9,11 +9,15 @@ import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class SemanticOverlapping {
 
 	public static String evaluate(ArrayList<Language> languages){
+		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		
+		
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();

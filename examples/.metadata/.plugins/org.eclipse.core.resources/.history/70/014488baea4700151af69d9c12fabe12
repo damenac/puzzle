@@ -1,0 +1,99 @@
+package family.rhapsodymt;
+
+import java.util.List;
+import org.eclipse.emf.common.util.Enumerator;
+
+@SuppressWarnings("all")
+public enum ArithmeticOperator implements Enumerator {
+  PLUS,
+  
+  MINUS,
+  
+  MULT,
+  
+  DIV;
+  public final static int PLUS_VALUE = 0;
+  
+  public final static int MINUS_VALUE = 1;
+  
+  public final static int MULT_VALUE = 2;
+  
+  public final static int DIV_VALUE = 3;
+  
+  private final static ArithmeticOperator[] VALUES_ARRAY = new ArithmeticOperator[] {
+    	PLUS,
+    	MINUS,
+    	MULT,
+    	DIV,
+    };;
+  
+  private final static List<ArithmeticOperator> VALUES = java.util.Collections.unmodifiableList(java.util.Arrays.asList(VALUES_ARRAY));;
+  
+  public static family.rhapsodymt.ArithmeticOperator get(final String literal) {
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+    	ArithmeticOperator result = VALUES_ARRAY[i];
+    	if (result.toString().equals(literal)) {
+    		return result;
+    	}
+    }
+    return null;
+  }
+  
+  public static family.rhapsodymt.ArithmeticOperator getByName(final String name) {
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+    	ArithmeticOperator result = VALUES_ARRAY[i];
+    	if (result.getName().equals(name)) {
+    		return result;
+    	}
+    }
+    return null;
+  }
+  
+  public static family.rhapsodymt.ArithmeticOperator get(final int value) {
+    switch (value) {
+    	/* true */
+    	case PLUS_VALUE: return PLUS;
+    	/* true */
+    	case MINUS_VALUE: return MINUS;
+    	/* true */
+    	case MULT_VALUE: return MULT;
+    	/* true */
+    	case DIV_VALUE: return DIV;
+    }
+    return null;
+  }
+  
+  private final int value;
+  
+  private final String name;
+  
+  private final String literal;
+  
+  private ArithmeticOperator() {
+    this.value = 0;
+    this.name = "";
+    this.literal = "";
+  }
+  
+  private ArithmeticOperator(final int value, final String name, final String literal) {
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
+  
+  public String getName() {
+    return name;
+  }
+  
+  public int getValue() {
+    return value;
+  }
+  
+  public String getLiteral() {
+    return literal;
+  }
+  
+  public String toString() {
+    return literal;
+  }
+}

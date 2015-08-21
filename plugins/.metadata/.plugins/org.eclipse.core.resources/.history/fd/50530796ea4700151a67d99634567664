@@ -1,0 +1,27 @@
+package fr.inria.diverse.melange.ui.quickfix;
+
+import com.google.inject.Inject;
+import fr.inria.diverse.melange.ast.LanguageExtensions;
+import fr.inria.diverse.melange.ast.MetamodelExtensions;
+import fr.inria.diverse.melange.lib.EcoreExtensions;
+import org.eclipse.xtext.common.types.access.jdt.IJavaProjectProvider;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.ui.quickfix.XbaseQuickfixProvider;
+
+@SuppressWarnings("all")
+public class MelangeQuickfixProvider extends XbaseQuickfixProvider {
+  @Inject
+  @Extension
+  private LanguageExtensions _languageExtensions;
+  
+  @Inject
+  @Extension
+  private MetamodelExtensions _metamodelExtensions;
+  
+  @Inject
+  @Extension
+  private EcoreExtensions _ecoreExtensions;
+  
+  @Inject
+  private IJavaProjectProvider projectProvider;
+}

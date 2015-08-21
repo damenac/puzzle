@@ -1,0 +1,113 @@
+package family.rhapsodymt;
+
+import java.util.List;
+import org.eclipse.emf.common.util.Enumerator;
+
+@SuppressWarnings("all")
+public enum RelationalOperator implements Enumerator {
+  LESSTHAN,
+  
+  GREATERTHAN,
+  
+  EQUALS,
+  
+  NOTEQUAL,
+  
+  LESSTHANOREQUALTO,
+  
+  GREATERTHANOREQUALTO;
+  public final static int LESSTHAN_VALUE = 0;
+  
+  public final static int GREATERTHAN_VALUE = 1;
+  
+  public final static int EQUALS_VALUE = 2;
+  
+  public final static int NOTEQUAL_VALUE = 3;
+  
+  public final static int LESSTHANOREQUALTO_VALUE = 4;
+  
+  public final static int GREATERTHANOREQUALTO_VALUE = 5;
+  
+  private final static RelationalOperator[] VALUES_ARRAY = new RelationalOperator[] {
+    	LESSTHAN,
+    	GREATERTHAN,
+    	EQUALS,
+    	NOTEQUAL,
+    	LESSTHANOREQUALTO,
+    	GREATERTHANOREQUALTO,
+    };;
+  
+  private final static List<RelationalOperator> VALUES = java.util.Collections.unmodifiableList(java.util.Arrays.asList(VALUES_ARRAY));;
+  
+  public static family.rhapsodymt.RelationalOperator get(final String literal) {
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+    	RelationalOperator result = VALUES_ARRAY[i];
+    	if (result.toString().equals(literal)) {
+    		return result;
+    	}
+    }
+    return null;
+  }
+  
+  public static family.rhapsodymt.RelationalOperator getByName(final String name) {
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+    	RelationalOperator result = VALUES_ARRAY[i];
+    	if (result.getName().equals(name)) {
+    		return result;
+    	}
+    }
+    return null;
+  }
+  
+  public static family.rhapsodymt.RelationalOperator get(final int value) {
+    switch (value) {
+    	/* true */
+    	case LESSTHAN_VALUE: return LESSTHAN;
+    	/* true */
+    	case GREATERTHAN_VALUE: return GREATERTHAN;
+    	/* true */
+    	case EQUALS_VALUE: return EQUALS;
+    	/* true */
+    	case NOTEQUAL_VALUE: return NOTEQUAL;
+    	/* true */
+    	case LESSTHANOREQUALTO_VALUE: return LESSTHANOREQUALTO;
+    	/* true */
+    	case GREATERTHANOREQUALTO_VALUE: return GREATERTHANOREQUALTO;
+    }
+    return null;
+  }
+  
+  private final int value;
+  
+  private final String name;
+  
+  private final String literal;
+  
+  private RelationalOperator() {
+    this.value = 0;
+    this.name = "";
+    this.literal = "";
+  }
+  
+  private RelationalOperator(final int value, final String name, final String literal) {
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
+  
+  public String getName() {
+    return name;
+  }
+  
+  public int getValue() {
+    return value;
+  }
+  
+  public String getLiteral() {
+    return literal;
+  }
+  
+  public String toString() {
+    return literal;
+  }
+}

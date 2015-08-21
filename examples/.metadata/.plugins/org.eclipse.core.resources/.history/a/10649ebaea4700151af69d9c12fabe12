@@ -1,0 +1,35 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.Equals;
+import family.logomt.Expression;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class EqualsAdapter extends /* EObjectAdapter<kmlogo.Equals> */ implements Equals {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public EqualsAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Expression getLhs() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getLhs()) ;
+  }
+  
+  @Override
+  public void setLhs(final Expression o) {
+    adaptee.setLhs(((family.logo.adapters.logomt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public Expression getRhs() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getRhs()) ;
+  }
+  
+  @Override
+  public void setRhs(final Expression o) {
+    adaptee.setRhs(((family.logo.adapters.logomt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+}

@@ -1,0 +1,9 @@
+package family.rhapsodymt;
+
+import java.util.Map;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Expression extends EObject {
+  public abstract Object obtainValue(final Map context);
+}

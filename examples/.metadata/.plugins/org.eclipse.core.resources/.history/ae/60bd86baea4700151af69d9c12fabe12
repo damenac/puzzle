@@ -1,0 +1,23 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.ArithmeticOperator;
+import family.rhapsodymt.Expression;
+import java.util.Map;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface ArithmeticExpression extends EObject, Expression {
+  public abstract ArithmeticOperator getOperator();
+  
+  public abstract void setOperator(final ArithmeticOperator newOperator);
+  
+  public abstract Expression getLeft();
+  
+  public abstract void setLeft(final Expression newLeft);
+  
+  public abstract Expression getRight();
+  
+  public abstract void setRight(final Expression newRight);
+  
+  public abstract Object obtainValue(final Map context);
+}

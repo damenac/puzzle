@@ -1,0 +1,14 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.PenUp;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class PenUpAdapter extends /* EObjectAdapter<kmlogo.PenUp> */ implements PenUp {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public PenUpAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+}

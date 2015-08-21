@@ -1,0 +1,56 @@
+package family.logomt;
+
+import fr.inria.diverse.melange.lib.IFactory;
+
+@SuppressWarnings("all")
+public interface LogoMTFactory extends IFactory {
+  public abstract family.logomt.Back createBack();
+  
+  public abstract family.logomt.Forward createForward();
+  
+  public abstract family.logomt.Left createLeft();
+  
+  public abstract family.logomt.Right createRight();
+  
+  public abstract family.logomt.PenDown createPenDown();
+  
+  public abstract family.logomt.PenUp createPenUp();
+  
+  public abstract family.logomt.Clear createClear();
+  
+  public abstract family.logomt.Constant createConstant();
+  
+  public abstract family.logomt.ProcCall createProcCall();
+  
+  public abstract family.logomt.ProcDeclaration createProcDeclaration();
+  
+  public abstract family.logomt.Block createBlock();
+  
+  public abstract family.logomt.If createIf();
+  
+  public abstract family.logomt.ControlStructure createControlStructure();
+  
+  public abstract family.logomt.Repeat createRepeat();
+  
+  public abstract family.logomt.While createWhile();
+  
+  public abstract family.logomt.Parameter createParameter();
+  
+  public abstract family.logomt.ParameterCall createParameterCall();
+  
+  public abstract family.logomt.Plus createPlus();
+  
+  public abstract family.logomt.Minus createMinus();
+  
+  public abstract family.logomt.Mult createMult();
+  
+  public abstract family.logomt.Div createDiv();
+  
+  public abstract family.logomt.Equals createEquals();
+  
+  public abstract family.logomt.Greater createGreater();
+  
+  public abstract family.logomt.Lower createLower();
+  
+  public abstract family.logomt.LogoProgram createLogoProgram();
+}

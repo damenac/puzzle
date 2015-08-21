@@ -1,0 +1,48 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.AbstractState;
+import family.rhapsodymt.Region;
+import family.rhapsodymt.State;
+import family.rhapsodymt.Transition;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import org.eclipse.emf.common.util.EList;
+
+@SuppressWarnings("all")
+public class RegionAdapter extends /* EObjectAdapter<rhapsody.Region> */ implements Region {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public RegionAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName() ;
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o) ;
+  }
+  
+  @Override
+  public EList<AbstractState> getSubvertex() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getSubvertex(), family.rhapsody.adapters.rhapsodymt.AbstractStateAdapter.class) ;
+  }
+  
+  @Override
+  public EList<Transition> getTransitions() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getTransitions(), family.rhapsody.adapters.rhapsodymt.TransitionAdapter.class) ;
+  }
+  
+  @Override
+  public State getOwnerState() {
+    return adaptersFactory.createStateAdapter(adaptee.getOwnerState()) ;
+  }
+  
+  @Override
+  public void setOwnerState(final State o) {
+    adaptee.setOwnerState(((family.rhapsody.adapters.rhapsodymt.StateAdapter) o).getAdaptee()) ;
+  }
+}

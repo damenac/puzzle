@@ -1,0 +1,12 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.AbstractState;
+import family.rhapsodymt.PseudostateKind;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Pseudostate extends EObject, AbstractState {
+  public abstract PseudostateKind getKind();
+  
+  public abstract void setKind(final PseudostateKind newKind);
+}

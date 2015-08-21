@@ -1,0 +1,25 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.Expression;
+import family.logomt.Forward;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class ForwardAdapter extends /* EObjectAdapter<kmlogo.Forward> */ implements Forward {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public ForwardAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Expression getSteps() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getSteps()) ;
+  }
+  
+  @Override
+  public void setSteps(final Expression o) {
+    adaptee.setSteps(((family.logo.adapters.logomt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+}

@@ -1,0 +1,37 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.IntegerLit;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Map;
+
+@SuppressWarnings("all")
+public class IntegerLitAdapter extends /* EObjectAdapter<rhapsody.IntegerLit> */ implements IntegerLit {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public IntegerLitAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public int getValue() {
+    return adaptee.getValue() ;
+  }
+  
+  @Override
+  public void setValue(final int o) {
+    adaptee.setValue(o) ;
+  }
+  
+  @Override
+  public Object obtainValue(final Map context) {
+    return adaptee.obtainValue(context
+    ) ;
+  }
+  
+  @Override
+  public Object obtainValue(final Map context) {
+    return adaptee.obtainValue(context
+    ) ;
+  }
+}

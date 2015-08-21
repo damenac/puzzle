@@ -1,0 +1,34 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.Program;
+import family.rhapsodymt.Statement;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Map;
+import org.eclipse.emf.common.util.EList;
+
+@SuppressWarnings("all")
+public class ProgramAdapter extends /* EObjectAdapter<rhapsody.Program> */ implements Program {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public ProgramAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public EList<Statement> getStatements() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getStatements(), family.rhapsody.adapters.rhapsodymt.StatementAdapter.class) ;
+  }
+  
+  @Override
+  public void eval(final Map context) {
+    adaptee.eval(context
+    ) ;
+  }
+  
+  @Override
+  public void eval(final Map context) {
+    adaptee.eval(context
+    ) ;
+  }
+}

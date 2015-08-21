@@ -1,0 +1,19 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.Expression;
+import family.rhapsodymt.Statement;
+import java.util.Map;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface VarDecl extends EObject, Statement {
+  public abstract String getName();
+  
+  public abstract void setName(final String newName);
+  
+  public abstract Expression getExpr();
+  
+  public abstract void setExpr(final Expression newExpr);
+  
+  public abstract void eval(final Map context);
+}

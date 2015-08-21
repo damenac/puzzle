@@ -11,7 +11,7 @@ language Rhapsody {
 language Logo {
 	// Abstract syntax
 	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.logo/models/logo.ecore"
-	
+	 
 	// Operational semantics
 	with logo.InstructionAspect
 	with logo.PrimitiveAspect

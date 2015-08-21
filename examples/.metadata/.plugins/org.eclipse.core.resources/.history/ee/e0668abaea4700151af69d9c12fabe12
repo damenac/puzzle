@@ -1,0 +1,14 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.Literal;
+import java.util.Map;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface StringLit extends EObject, Literal {
+  public abstract String getValue();
+  
+  public abstract void setValue(final String newValue);
+  
+  public abstract Object obtainValue(final Map context);
+}

@@ -1,0 +1,11 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.Expression;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface VarReference extends EObject, Expression {
+  public abstract String getKey();
+  
+  public abstract void setKey(final String newKey);
+}

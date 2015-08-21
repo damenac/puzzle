@@ -1,0 +1,155 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.ArithmeticExpression;
+import family.rhapsodymt.Assignation;
+import family.rhapsodymt.BoolLit;
+import family.rhapsodymt.Conditional;
+import family.rhapsodymt.ConsoleOutput;
+import family.rhapsodymt.FinalState;
+import family.rhapsodymt.IntegerLit;
+import family.rhapsodymt.Loop;
+import family.rhapsodymt.NamedElement;
+import family.rhapsodymt.Print;
+import family.rhapsodymt.Println;
+import family.rhapsodymt.Program;
+import family.rhapsodymt.Pseudostate;
+import family.rhapsodymt.Region;
+import family.rhapsodymt.RelationalConstraint;
+import family.rhapsodymt.RelationalExpression;
+import family.rhapsodymt.RhapsodyMTFactory;
+import family.rhapsodymt.State;
+import family.rhapsodymt.StateMachine;
+import family.rhapsodymt.StringLit;
+import family.rhapsodymt.Transition;
+import family.rhapsodymt.Trigger;
+import family.rhapsodymt.VarDecl;
+import family.rhapsodymt.VarReference;
+import family.rhapsodymt.Wait;
+
+@SuppressWarnings("all")
+public class RhapsodyMTFactoryAdapter implements RhapsodyMTFactory {
+  private RhapsodyMTAdaptersFactory adaptersFactory = family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance();
+  
+  private rhapsody.RhapsodyFactory rhapsodyAdaptee = rhapsody.RhapsodyFactory.eINSTANCE;
+  
+  @Override
+  public StateMachine createStateMachine() {
+    return adaptersFactory.createStateMachineAdapter(rhapsodyAdaptee.createStateMachine()) ;
+  }
+  
+  @Override
+  public Region createRegion() {
+    return adaptersFactory.createRegionAdapter(rhapsodyAdaptee.createRegion()) ;
+  }
+  
+  @Override
+  public State createState() {
+    return adaptersFactory.createStateAdapter(rhapsodyAdaptee.createState()) ;
+  }
+  
+  @Override
+  public Transition createTransition() {
+    return adaptersFactory.createTransitionAdapter(rhapsodyAdaptee.createTransition()) ;
+  }
+  
+  @Override
+  public NamedElement createNamedElement() {
+    return adaptersFactory.createNamedElementAdapter(rhapsodyAdaptee.createNamedElement()) ;
+  }
+  
+  @Override
+  public Trigger createTrigger() {
+    return adaptersFactory.createTriggerAdapter(rhapsodyAdaptee.createTrigger()) ;
+  }
+  
+  @Override
+  public Pseudostate createPseudostate() {
+    return adaptersFactory.createPseudostateAdapter(rhapsodyAdaptee.createPseudostate()) ;
+  }
+  
+  @Override
+  public FinalState createFinalState() {
+    return adaptersFactory.createFinalStateAdapter(rhapsodyAdaptee.createFinalState()) ;
+  }
+  
+  @Override
+  public RelationalConstraint createRelationalConstraint() {
+    return adaptersFactory.createRelationalConstraintAdapter(rhapsodyAdaptee.createRelationalConstraint()) ;
+  }
+  
+  @Override
+  public Program createProgram() {
+    return adaptersFactory.createProgramAdapter(rhapsodyAdaptee.createProgram()) ;
+  }
+  
+  @Override
+  public Conditional createConditional() {
+    return adaptersFactory.createConditionalAdapter(rhapsodyAdaptee.createConditional()) ;
+  }
+  
+  @Override
+  public Loop createLoop() {
+    return adaptersFactory.createLoopAdapter(rhapsodyAdaptee.createLoop()) ;
+  }
+  
+  @Override
+  public VarDecl createVarDecl() {
+    return adaptersFactory.createVarDeclAdapter(rhapsodyAdaptee.createVarDecl()) ;
+  }
+  
+  @Override
+  public IntegerLit createIntegerLit() {
+    return adaptersFactory.createIntegerLitAdapter(rhapsodyAdaptee.createIntegerLit()) ;
+  }
+  
+  @Override
+  public StringLit createStringLit() {
+    return adaptersFactory.createStringLitAdapter(rhapsodyAdaptee.createStringLit()) ;
+  }
+  
+  @Override
+  public BoolLit createBoolLit() {
+    return adaptersFactory.createBoolLitAdapter(rhapsodyAdaptee.createBoolLit()) ;
+  }
+  
+  @Override
+  public ArithmeticExpression createArithmeticExpression() {
+    return adaptersFactory.createArithmeticExpressionAdapter(rhapsodyAdaptee.createArithmeticExpression()) ;
+  }
+  
+  @Override
+  public RelationalExpression createRelationalExpression() {
+    return adaptersFactory.createRelationalExpressionAdapter(rhapsodyAdaptee.createRelationalExpression()) ;
+  }
+  
+  @Override
+  public VarReference createVarReference() {
+    return adaptersFactory.createVarReferenceAdapter(rhapsodyAdaptee.createVarReference()) ;
+  }
+  
+  @Override
+  public ConsoleOutput createConsoleOutput() {
+    return adaptersFactory.createConsoleOutputAdapter(rhapsodyAdaptee.createConsoleOutput()) ;
+  }
+  
+  @Override
+  public Println createPrintln() {
+    return adaptersFactory.createPrintlnAdapter(rhapsodyAdaptee.createPrintln()) ;
+  }
+  
+  @Override
+  public Print createPrint() {
+    return adaptersFactory.createPrintAdapter(rhapsodyAdaptee.createPrint()) ;
+  }
+  
+  @Override
+  public Assignation createAssignation() {
+    return adaptersFactory.createAssignationAdapter(rhapsodyAdaptee.createAssignation()) ;
+  }
+  
+  @Override
+  public Wait createWait() {
+    return adaptersFactory.createWaitAdapter(rhapsodyAdaptee.createWait()) ;
+  }
+}

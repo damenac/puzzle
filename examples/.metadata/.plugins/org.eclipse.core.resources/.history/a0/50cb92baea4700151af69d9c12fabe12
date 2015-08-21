@@ -1,0 +1,31 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.Println;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Map;
+
+@SuppressWarnings("all")
+public class PrintlnAdapter extends /* EObjectAdapter<rhapsody.Println> */ implements Println {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public PrintlnAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getInput() {
+    return adaptee.getInput() ;
+  }
+  
+  @Override
+  public void setInput(final String o) {
+    adaptee.setInput(o) ;
+  }
+  
+  @Override
+  public void eval(final Map context) {
+    adaptee.eval(context
+    ) ;
+  }
+}

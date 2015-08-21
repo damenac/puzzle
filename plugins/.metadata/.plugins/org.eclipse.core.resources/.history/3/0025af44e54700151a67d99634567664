@@ -1,0 +1,144 @@
+package fr.inria.diverse.melange.ui.views;
+
+import java.util.List;
+import javax.annotation.PostConstruct;
+import org.eclipse.core.runtime.IConfigurationElement;
+import org.eclipse.core.runtime.IContributor;
+import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.jface.viewers.ArrayContentProvider;
+import org.eclipse.jface.viewers.ColumnLabelProvider;
+import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.jface.viewers.TableViewerColumn;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ListExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
+
+@SuppressWarnings("all")
+public class ModelTypeRegistryView {
+  private final static String MODELTYPE_EXTENSION_ID = "fr.inria.diverse.melange.modeltype";
+  
+  private TableViewer viewer;
+  
+  @PostConstruct
+  public void createView(final Composite parent) {
+    TableViewer _tableViewer = new TableViewer(parent, SWT.BORDER);
+    this.viewer = _tableViewer;
+    this.createColumns(this.viewer);
+    ArrayContentProvider _instance = ArrayContentProvider.getInstance();
+    this.viewer.setContentProvider(_instance);
+    IExtensionRegistry _extensionRegistry = Platform.getExtensionRegistry();
+    IConfigurationElement[] _configurationElementsFor = _extensionRegistry.getConfigurationElementsFor(ModelTypeRegistryView.MODELTYPE_EXTENSION_ID);
+    this.viewer.setInput(_configurationElementsFor);
+    Table _table = this.viewer.getTable();
+    _table.setHeaderVisible(true);
+    Table _table_1 = this.viewer.getTable();
+    _table_1.setLinesVisible(true);
+    Control _control = this.viewer.getControl();
+    GridData _gridData = new GridData();
+    final Procedure1<GridData> _function = (GridData it) -> {
+      it.horizontalAlignment = SWT.FILL;
+      it.verticalAlignment = SWT.FILL;
+      it.horizontalSpan = 2;
+      it.grabExcessHorizontalSpace = true;
+      it.grabExcessVerticalSpace = true;
+    };
+    GridData _doubleArrow = ObjectExtensions.<GridData>operator_doubleArrow(_gridData, _function);
+    _control.setLayoutData(_doubleArrow);
+  }
+  
+  @Focus
+  public void setFocus() {
+    Control _control = this.viewer.getControl();
+    _control.setFocus();
+  }
+  
+  private void createColumns(final TableViewer viewer) {
+    TableViewerColumn _tableViewerColumn = new TableViewerColumn(viewer, SWT.NONE);
+    final Procedure1<TableViewerColumn> _function = (TableViewerColumn it) -> {
+      TableColumn _column = it.getColumn();
+      _column.setWidth(300);
+      TableColumn _column_1 = it.getColumn();
+      _column_1.setText("Identifier");
+      it.setLabelProvider(new ColumnLabelProvider() {
+        @Override
+        public String getText(final Object o) {
+          return ((IConfigurationElement) o).getAttribute("id");
+        }
+      });
+    };
+    ObjectExtensions.<TableViewerColumn>operator_doubleArrow(_tableViewerColumn, _function);
+    TableViewerColumn _tableViewerColumn_1 = new TableViewerColumn(viewer, SWT.NONE);
+    final Procedure1<TableViewerColumn> _function_1 = (TableViewerColumn it) -> {
+      TableColumn _column = it.getColumn();
+      _column.setWidth(300);
+      TableColumn _column_1 = it.getColumn();
+      _column_1.setText("URI");
+      it.setLabelProvider(new ColumnLabelProvider() {
+        @Override
+        public String getText(final Object o) {
+          return ((IConfigurationElement) o).getAttribute("uri");
+        }
+      });
+    };
+    ObjectExtensions.<TableViewerColumn>operator_doubleArrow(_tableViewerColumn_1, _function_1);
+    TableViewerColumn _tableViewerColumn_2 = new TableViewerColumn(viewer, SWT.NONE);
+    final Procedure1<TableViewerColumn> _function_2 = (TableViewerColumn it) -> {
+      TableColumn _column = it.getColumn();
+      _column.setWidth(300);
+      TableColumn _column_1 = it.getColumn();
+      _column_1.setText("Description");
+      it.setLabelProvider(new ColumnLabelProvider() {
+        @Override
+        public String getText(final Object o) {
+          return ((IConfigurationElement) o).getAttribute("description");
+        }
+      });
+    };
+    ObjectExtensions.<TableViewerColumn>operator_doubleArrow(_tableViewerColumn_2, _function_2);
+    TableViewerColumn _tableViewerColumn_3 = new TableViewerColumn(viewer, SWT.NONE);
+    final Procedure1<TableViewerColumn> _function_3 = (TableViewerColumn it) -> {
+      TableColumn _column = it.getColumn();
+      _column.setWidth(500);
+      TableColumn _column_1 = it.getColumn();
+      _column_1.setText("Subtype Of");
+      it.setLabelProvider(new ColumnLabelProvider() {
+        @Override
+        public String getText(final Object o) {
+          IConfigurationElement[] _children = ((IConfigurationElement) o).getChildren("subtyping");
+          final Function1<IConfigurationElement, String> _function = (IConfigurationElement e) -> {
+            return e.getAttribute("modeltypeId");
+          };
+          List<String> _map = ListExtensions.<IConfigurationElement, String>map(((List<IConfigurationElement>)Conversions.doWrapArray(_children)), _function);
+          return IterableExtensions.join(_map, ", ");
+        }
+      });
+    };
+    ObjectExtensions.<TableViewerColumn>operator_doubleArrow(_tableViewerColumn_3, _function_3);
+    TableViewerColumn _tableViewerColumn_4 = new TableViewerColumn(viewer, SWT.NONE);
+    final Procedure1<TableViewerColumn> _function_4 = (TableViewerColumn it) -> {
+      TableColumn _column = it.getColumn();
+      _column.setWidth(300);
+      TableColumn _column_1 = it.getColumn();
+      _column_1.setText("Contributor");
+      it.setLabelProvider(new ColumnLabelProvider() {
+        @Override
+        public String getText(final Object o) {
+          IContributor _contributor = ((IConfigurationElement) o).getContributor();
+          return _contributor.getName();
+        }
+      });
+    };
+    ObjectExtensions.<TableViewerColumn>operator_doubleArrow(_tableViewerColumn_4, _function_4);
+  }
+}

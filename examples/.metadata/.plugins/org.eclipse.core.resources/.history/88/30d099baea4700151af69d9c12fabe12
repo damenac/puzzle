@@ -1,0 +1,15 @@
+package family.logomt;
+
+import family.logomt.Expression;
+import family.logomt.Instruction;
+import logo.Context;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface ControlStructure extends EObject, Instruction {
+  public abstract Expression getCondition();
+  
+  public abstract void setCondition(final Expression newCondition);
+  
+  public abstract int eval(final Context context);
+}

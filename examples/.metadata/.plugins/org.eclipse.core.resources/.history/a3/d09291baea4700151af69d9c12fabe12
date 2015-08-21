@@ -1,0 +1,21 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.Literal;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Map;
+
+@SuppressWarnings("all")
+public class LiteralAdapter extends /* EObjectAdapter<rhapsody.Literal> */ implements Literal {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public LiteralAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Object obtainValue(final Map context) {
+    return adaptee.obtainValue(context
+    ) ;
+  }
+}

@@ -1,0 +1,32 @@
+package family;
+
+import family.FlowchartMT;
+import fr.inria.diverse.melange.lib.IMetamodel;
+import org.eclipse.emf.ecore.resource.Resource;
+
+@SuppressWarnings("all")
+public class Flowchart implements IMetamodel {
+  private Resource resource;
+  
+  public Resource getResource() {
+    return this.resource;
+  }
+  
+  public void setResource(final Resource resource) {
+    this.resource = resource;
+  }
+  
+  public static Flowchart load(final String uri) {
+    org.eclipse.emf.ecore.resource.ResourceSet rs = new org.eclipse.emf.ecore.resource.impl.ResourceSetImpl() ;
+    Resource res = rs.getResource(org.eclipse.emf.common.util.URI.createURI(uri), true) ;
+    Flowchart mm = new Flowchart() ;
+    mm.setResource(res) ;
+    return mm ;
+  }
+  
+  public FlowchartMT toFlowchartMT() {
+    family.flowchart.adapters.flowchartmt.FlowchartAdapter adaptee = new family.flowchart.adapters.flowchartmt.FlowchartAdapter() ;
+    adaptee.setAdaptee(resource) ;
+    return adaptee ;
+  }
+}

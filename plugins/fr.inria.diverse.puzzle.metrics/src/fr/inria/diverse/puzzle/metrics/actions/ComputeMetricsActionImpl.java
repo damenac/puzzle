@@ -10,21 +10,13 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtext.resource.XtextResource;
-import org.eclipse.xtext.resource.XtextResourceSet;
-
-import com.google.inject.Injector;
 
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
-import fr.inria.diverse.melange.MelangeStandaloneSetup;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
@@ -67,17 +59,11 @@ public class ComputeMetricsActionImpl {
 	 * @throws CoreException
 	 * @throws URISyntaxException
 	 */
-	public String computeMetrics(IResource selectedResource) throws IOException, CoreException, URISyntaxException{
-		Injector injector = new MelangeStandaloneSetup().createInjectorAndDoEMFRegistration();
-		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
-		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
-		Resource resource = resourceSet.createResource(URI.createFileURI(selectedResource.getLocation().toString()));
-		resource.load(resourceSet.getLoadOptions());
+	public String computeMetrics(ModelTypingSpace familyTypingSpace, IProject project) throws IOException, CoreException, URISyntaxException{
 		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		ArrayList<Language> languages = new ArrayList<Language>();
 		
-		ModelTypingSpace familyTypingSpace = (ModelTypingSpace) resource.getContents().get(0);
 		for (Element element : familyTypingSpace.getElements()) {
 			if(element instanceof Language){
 				Language language = (Language)element;
@@ -88,8 +74,6 @@ public class ComputeMetricsActionImpl {
 		}
 		
 		String metrics = "Metrics calculated"; 
-		
-		IProject project = selectedResource.getProject();
 		
 		String generalMetricsString = "";
 		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(languages);

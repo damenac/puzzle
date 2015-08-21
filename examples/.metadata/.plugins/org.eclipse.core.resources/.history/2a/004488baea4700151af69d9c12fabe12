@@ -1,0 +1,17 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.Expression;
+import family.rhapsodymt.Statement;
+import family.rhapsodymt.VarDecl;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Assignation extends EObject, Statement {
+  public abstract VarDecl getVarRef();
+  
+  public abstract void setVarRef(final VarDecl newVarRef);
+  
+  public abstract Expression getExpression();
+  
+  public abstract void setExpression(final Expression newExpression);
+}

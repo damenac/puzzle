@@ -1,0 +1,24 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.Parameter;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class ParameterAdapter extends /* EObjectAdapter<kmlogo.Parameter> */ implements Parameter {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public ParameterAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName() ;
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o) ;
+  }
+}

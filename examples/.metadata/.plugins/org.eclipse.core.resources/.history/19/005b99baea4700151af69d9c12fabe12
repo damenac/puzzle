@@ -1,0 +1,20 @@
+package family.logomt;
+
+import family.logomt.Instruction;
+import family.logomt.Parameter;
+import family.logomt.ProcCall;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface ProcDeclaration extends EObject, Instruction {
+  public abstract String getName();
+  
+  public abstract void setName(final String newName);
+  
+  public abstract EList<Parameter> getArgs();
+  
+  public abstract EList<ProcCall> getProcCall();
+  
+  public abstract EList<Instruction> getInstructions();
+}

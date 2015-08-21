@@ -1,0 +1,25 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.Expression;
+import family.logomt.Right;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class RightAdapter extends /* EObjectAdapter<kmlogo.Right> */ implements Right {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public RightAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Expression getAngle() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getAngle()) ;
+  }
+  
+  @Override
+  public void setAngle(final Expression o) {
+    adaptee.setAngle(((family.logo.adapters.logomt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+}

@@ -1,0 +1,7 @@
+package fr.inria.diverse.melange.ui.labeling;
+
+import org.eclipse.xtext.xbase.ui.labeling.XbaseDescriptionLabelProvider;
+
+@SuppressWarnings("all")
+public class MelangeDescriptionLabelProvider extends XbaseDescriptionLabelProvider {
+}

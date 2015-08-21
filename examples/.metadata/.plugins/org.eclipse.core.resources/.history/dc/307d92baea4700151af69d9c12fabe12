@@ -1,0 +1,74 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.AbstractState;
+import family.rhapsodymt.Constraint;
+import family.rhapsodymt.Statement;
+import family.rhapsodymt.Transition;
+import family.rhapsodymt.Trigger;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import org.eclipse.emf.common.util.EList;
+
+@SuppressWarnings("all")
+public class TransitionAdapter extends /* EObjectAdapter<rhapsody.Transition> */ implements Transition {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public TransitionAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName() ;
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o) ;
+  }
+  
+  @Override
+  public Trigger getTrigger() {
+    return adaptersFactory.createTriggerAdapter(adaptee.getTrigger()) ;
+  }
+  
+  @Override
+  public void setTrigger(final Trigger o) {
+    adaptee.setTrigger(((family.rhapsody.adapters.rhapsodymt.TriggerAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public AbstractState getTarget() {
+    return adaptersFactory.createAbstractStateAdapter(adaptee.getTarget()) ;
+  }
+  
+  @Override
+  public void setTarget(final AbstractState o) {
+    adaptee.setTarget(((family.rhapsody.adapters.rhapsodymt.AbstractStateAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public AbstractState getSource() {
+    return adaptersFactory.createAbstractStateAdapter(adaptee.getSource()) ;
+  }
+  
+  @Override
+  public void setSource(final AbstractState o) {
+    adaptee.setSource(((family.rhapsody.adapters.rhapsodymt.AbstractStateAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public EList<Statement> getEffect() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getEffect(), family.rhapsody.adapters.rhapsodymt.StatementAdapter.class) ;
+  }
+  
+  @Override
+  public Constraint getGuard() {
+    return adaptersFactory.createConstraintAdapter(adaptee.getGuard()) ;
+  }
+  
+  @Override
+  public void setGuard(final Constraint o) {
+    adaptee.setGuard(((family.rhapsody.adapters.rhapsodymt.ConstraintAdapter) o).getAdaptee()) ;
+  }
+}

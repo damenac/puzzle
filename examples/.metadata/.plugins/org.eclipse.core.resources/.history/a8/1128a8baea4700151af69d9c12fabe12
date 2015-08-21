@@ -1,0 +1,101 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Action;
+import family.flowchartmt.Arc;
+import family.flowchartmt.ArithmeticExpression;
+import family.flowchartmt.BoolLit;
+import family.flowchartmt.Constraint;
+import family.flowchartmt.Decision;
+import family.flowchartmt.Expression;
+import family.flowchartmt.Flowchart;
+import family.flowchartmt.FlowchartMTFactory;
+import family.flowchartmt.IntegerLit;
+import family.flowchartmt.Literal;
+import family.flowchartmt.RelationalConstraint;
+import family.flowchartmt.RelationalExpression;
+import family.flowchartmt.StringLit;
+import family.flowchartmt.Subflow;
+import family.flowchartmt.VarReference;
+
+@SuppressWarnings("all")
+public class FlowchartMTFactoryAdapter implements FlowchartMTFactory {
+  private FlowchartMTAdaptersFactory adaptersFactory = family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance();
+  
+  private flowchart.FlowchartFactory flowchartAdaptee = flowchart.FlowchartFactory.eINSTANCE;
+  
+  @Override
+  public Flowchart createFlowchart() {
+    return adaptersFactory.createFlowchartAdapter(flowchartAdaptee.createFlowchart()) ;
+  }
+  
+  @Override
+  public Arc createArc() {
+    return adaptersFactory.createArcAdapter(flowchartAdaptee.createArc()) ;
+  }
+  
+  @Override
+  public Subflow createSubflow() {
+    return adaptersFactory.createSubflowAdapter(flowchartAdaptee.createSubflow()) ;
+  }
+  
+  @Override
+  public Action createAction() {
+    return adaptersFactory.createActionAdapter(flowchartAdaptee.createAction()) ;
+  }
+  
+  @Override
+  public Decision createDecision() {
+    return adaptersFactory.createDecisionAdapter(flowchartAdaptee.createDecision()) ;
+  }
+  
+  @Override
+  public Constraint createConstraint() {
+    return adaptersFactory.createConstraintAdapter(flowchartAdaptee.createConstraint()) ;
+  }
+  
+  @Override
+  public RelationalConstraint createRelationalConstraint() {
+    return adaptersFactory.createRelationalConstraintAdapter(flowchartAdaptee.createRelationalConstraint()) ;
+  }
+  
+  @Override
+  public Expression createExpression() {
+    return adaptersFactory.createExpressionAdapter(flowchartAdaptee.createExpression()) ;
+  }
+  
+  @Override
+  public Literal createLiteral() {
+    return adaptersFactory.createLiteralAdapter(flowchartAdaptee.createLiteral()) ;
+  }
+  
+  @Override
+  public IntegerLit createIntegerLit() {
+    return adaptersFactory.createIntegerLitAdapter(flowchartAdaptee.createIntegerLit()) ;
+  }
+  
+  @Override
+  public StringLit createStringLit() {
+    return adaptersFactory.createStringLitAdapter(flowchartAdaptee.createStringLit()) ;
+  }
+  
+  @Override
+  public BoolLit createBoolLit() {
+    return adaptersFactory.createBoolLitAdapter(flowchartAdaptee.createBoolLit()) ;
+  }
+  
+  @Override
+  public ArithmeticExpression createArithmeticExpression() {
+    return adaptersFactory.createArithmeticExpressionAdapter(flowchartAdaptee.createArithmeticExpression()) ;
+  }
+  
+  @Override
+  public RelationalExpression createRelationalExpression() {
+    return adaptersFactory.createRelationalExpressionAdapter(flowchartAdaptee.createRelationalExpression()) ;
+  }
+  
+  @Override
+  public VarReference createVarReference() {
+    return adaptersFactory.createVarReferenceAdapter(flowchartAdaptee.createVarReference()) ;
+  }
+}

@@ -1,0 +1,46 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Expression;
+import family.flowchartmt.RelationalExpression;
+import family.flowchartmt.RelationalOperator;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class RelationalExpressionAdapter extends /* EObjectAdapter<flowchart.RelationalExpression> */ implements RelationalExpression {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public RelationalExpressionAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public RelationalOperator getOperator() {
+    return family.flowchartmt.RelationalOperator.get(adaptee.getOperator().getValue());
+  }
+  
+  @Override
+  public void setOperator(final RelationalOperator o) {
+    adaptee.setOperator(flowchart.RelationalOperator.get(o.getValue())) ;
+  }
+  
+  @Override
+  public Expression getLeft() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getLeft()) ;
+  }
+  
+  @Override
+  public void setLeft(final Expression o) {
+    adaptee.setLeft(((family.flowchart.adapters.flowchartmt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public Expression getRight() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getRight()) ;
+  }
+  
+  @Override
+  public void setRight(final Expression o) {
+    adaptee.setRight(((family.flowchart.adapters.flowchartmt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+}

@@ -1,0 +1,43 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.Assignation;
+import family.rhapsodymt.Expression;
+import family.rhapsodymt.VarDecl;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Map;
+
+@SuppressWarnings("all")
+public class AssignationAdapter extends /* EObjectAdapter<rhapsody.Assignation> */ implements Assignation {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public AssignationAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public VarDecl getVarRef() {
+    return adaptersFactory.createVarDeclAdapter(adaptee.getVarRef()) ;
+  }
+  
+  @Override
+  public void setVarRef(final VarDecl o) {
+    adaptee.setVarRef(((family.rhapsody.adapters.rhapsodymt.VarDeclAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public Expression getExpression() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getExpression()) ;
+  }
+  
+  @Override
+  public void setExpression(final Expression o) {
+    adaptee.setExpression(((family.rhapsody.adapters.rhapsodymt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public void eval(final Map context) {
+    adaptee.eval(context
+    ) ;
+  }
+}

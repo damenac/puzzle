@@ -1,0 +1,18 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.NamedElement;
+import family.rhapsodymt.Region;
+import family.rhapsodymt.Transition;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface AbstractState extends EObject, NamedElement {
+  public abstract EList<Transition> getIncoming();
+  
+  public abstract EList<Transition> getOutgoing();
+  
+  public abstract Region getOwnerRegion();
+  
+  public abstract void setOwnerRegion(final Region newOwnerRegion);
+}

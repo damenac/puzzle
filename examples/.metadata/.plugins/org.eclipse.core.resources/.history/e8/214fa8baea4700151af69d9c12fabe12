@@ -1,0 +1,14 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Literal;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class LiteralAdapter extends /* EObjectAdapter<flowchart.Literal> */ implements Literal {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public LiteralAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+}

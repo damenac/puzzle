@@ -1,0 +1,46 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.Block;
+import family.logomt.Expression;
+import family.logomt.If;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class IfAdapter extends /* EObjectAdapter<kmlogo.If> */ implements If {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public IfAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Expression getCondition() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getCondition()) ;
+  }
+  
+  @Override
+  public void setCondition(final Expression o) {
+    adaptee.setCondition(((family.logo.adapters.logomt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public Block getThenPart() {
+    return adaptersFactory.createBlockAdapter(adaptee.getThenPart()) ;
+  }
+  
+  @Override
+  public void setThenPart(final Block o) {
+    adaptee.setThenPart(((family.logo.adapters.logomt.BlockAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public Block getElsePart() {
+    return adaptersFactory.createBlockAdapter(adaptee.getElsePart()) ;
+  }
+  
+  @Override
+  public void setElsePart(final Block o) {
+    adaptee.setElsePart(((family.logo.adapters.logomt.BlockAdapter) o).getAdaptee()) ;
+  }
+}

@@ -1,0 +1,25 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.ControlStructure;
+import family.logomt.Expression;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class ControlStructureAdapter extends /* EObjectAdapter<kmlogo.ControlStructure> */ implements ControlStructure {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public ControlStructureAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Expression getCondition() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getCondition()) ;
+  }
+  
+  @Override
+  public void setCondition(final Expression o) {
+    adaptee.setCondition(((family.logo.adapters.logomt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+}

@@ -1,0 +1,8 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.ConsoleOutput;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Println extends EObject, ConsoleOutput {
+}

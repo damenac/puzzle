@@ -1,0 +1,88 @@
+package fr.inria.diverse.melange.ui.outline;
+
+import com.google.inject.Inject;
+import fr.inria.diverse.melange.ast.ModelingElementExtensions;
+import fr.inria.diverse.melange.metamodel.melange.Aspect;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.melange.metamodel.melange.Metamodel;
+import fr.inria.diverse.melange.metamodel.melange.ModelType;
+import fr.inria.diverse.melange.metamodel.melange.Transformation;
+import java.util.List;
+import java.util.function.Consumer;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAnnotation;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
+import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
+import org.eclipse.xtext.ui.editor.outline.impl.EObjectNode;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+
+@SuppressWarnings("all")
+public class MelangeOutlineTreeProvider extends DefaultOutlineTreeProvider {
+  @Inject
+  @Extension
+  private ModelingElementExtensions _modelingElementExtensions;
+  
+  public boolean _isLeaf(final Transformation t) {
+    return true;
+  }
+  
+  public boolean _isLeaf(final EStructuralFeature a) {
+    return true;
+  }
+  
+  public void _createNode(final IOutlineNode parentNode, final JvmTypeReference ref) {
+  }
+  
+  public void _createNode(final IOutlineNode parentNode, final GenModel gm) {
+  }
+  
+  public void _createNode(final IOutlineNode parentNode, final Metamodel mm) {
+  }
+  
+  public void _createNode(final IOutlineNode parentNode, final EAnnotation a) {
+  }
+  
+  public void _createNode(final IOutlineNode parentNode, final ModelType mt) {
+    final EObjectNode mNode = this.createEObjectNode(parentNode, mt);
+    List<EPackage> _pkgs = this._modelingElementExtensions.getPkgs(mt);
+    final Consumer<EPackage> _function = (EPackage pkg) -> {
+      this.createNode(mNode, pkg);
+    };
+    _pkgs.forEach(_function);
+  }
+  
+  public void _createNode(final IOutlineNode parentNode, final Language l) {
+    final EObjectNode mNode = this.createEObjectNode(parentNode, l);
+    Metamodel _syntax = l.getSyntax();
+    List<EPackage> _pkgs = this._modelingElementExtensions.getPkgs(_syntax);
+    final Function1<EPackage, Boolean> _function = (EPackage it) -> {
+      EPackage _eSuperPackage = it.getESuperPackage();
+      return Boolean.valueOf((_eSuperPackage == null));
+    };
+    Iterable<EPackage> _filter = IterableExtensions.<EPackage>filter(_pkgs, _function);
+    final Consumer<EPackage> _function_1 = (EPackage pkg) -> {
+      this.createNode(mNode, pkg);
+    };
+    _filter.forEach(_function_1);
+    EList<Aspect> _semantics = l.getSemantics();
+    final Consumer<Aspect> _function_2 = (Aspect asp) -> {
+      this.createNode(mNode, asp);
+    };
+    _semantics.forEach(_function_2);
+  }
+  
+  public void _createNode(final IOutlineNode parentNode, final EPackage p) {
+    final EObjectNode mNode = this.createEObjectNode(parentNode, p);
+    EList<EPackage> _eSubpackages = p.getESubpackages();
+    final Consumer<EPackage> _function = (EPackage pkg) -> {
+      this.createNode(mNode, pkg);
+    };
+    _eSubpackages.forEach(_function);
+  }
+}

@@ -1,0 +1,31 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.BoolLit;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.Map;
+
+@SuppressWarnings("all")
+public class BoolLitAdapter extends /* EObjectAdapter<rhapsody.BoolLit> */ implements BoolLit {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public BoolLitAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public boolean isValue() {
+    return adaptee.isValue() ;
+  }
+  
+  @Override
+  public void setValue(final boolean o) {
+    adaptee.setValue(o) ;
+  }
+  
+  @Override
+  public Object obtainValue(final Map context) {
+    return adaptee.obtainValue(context
+    ) ;
+  }
+}

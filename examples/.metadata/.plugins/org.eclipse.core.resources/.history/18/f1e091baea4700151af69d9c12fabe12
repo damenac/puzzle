@@ -1,0 +1,24 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.Trigger;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class TriggerAdapter extends /* EObjectAdapter<rhapsody.Trigger> */ implements Trigger {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public TriggerAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getExpression() {
+    return adaptee.getExpression() ;
+  }
+  
+  @Override
+  public void setExpression(final String o) {
+    adaptee.setExpression(o) ;
+  }
+}

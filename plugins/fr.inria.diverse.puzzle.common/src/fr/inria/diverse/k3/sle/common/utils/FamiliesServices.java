@@ -7,11 +7,16 @@ import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO;
+import fr.inria.diverse.melange.metamodel.melange.Aspect;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**
  * Services for manipulating families of domain-specific languages
  * @author David Mendez-Acuna
+ * 
+ * TODO We need to use the name of the language as member name instead of the root package name. 
  */
 public class FamiliesServices {
 	
@@ -38,20 +43,56 @@ public class FamiliesServices {
 	// Methods
 	// -----------------------------------------------
 	
+	/**
+	 * Returns a list with the mapping between the concept and the language it belongs to. 
+	 * @param ePackages. List of ePackages 
+	 * @return
+	 */
 	public ArrayList<ConceptMemberVO> getConceptMemberMappingList(ArrayList<EPackage> ePackages){
 		ArrayList<ConceptMemberVO> conceptMemberList = new ArrayList<ConceptMemberVO>();
 		for (EPackage ePackage : ePackages) {
 			this.fillConceptMemberList(conceptMemberList, ePackage, ePackage.getName());
 		}
-		
-		System.out.println("Step 1");
-		for (ConceptMemberVO conceptMemberVO : conceptMemberList) {
-			System.out.println(conceptMemberVO);
-		}
-		
 		return conceptMemberList;
 	}
 	
+	/**
+	 * Fills the list in the parameter with the mapping between the concept and the language it belongs to. 
+	 */
+	private void fillConceptMemberList(ArrayList<ConceptMemberVO> conceptMemberList, EPackage ePackage, String memberName) {
+		for (EClassifier concept : ePackage.getEClassifiers()) {
+			ConceptMemberVO conceptMember = new ConceptMemberVO(concept, memberName);
+			conceptMemberList.add(conceptMember);
+		}
+		for (EPackage subPackage : ePackage.getESubpackages()) {
+			this.fillConceptMemberList(conceptMemberList, subPackage, memberName);
+		}
+	}
+	
+	/**
+	 * Returns a list with the mapping between the method and the language it belongs to.
+	 * @param languages. List of languages 
+	 * @return
+	 */
+	public ArrayList<ConceptMethodMemberVO> getConceptMethodMemberMappingList(ArrayList<Language> languages){
+		System.out.println("FamiliesServices.getConceptMethodMemberMappingList");
+		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = new ArrayList<ConceptMethodMemberVO>();
+		for (Language language : languages) {
+			EPackage ePackage = MelangeServices.getEPackageFromLanguage(language);
+			this.fillConceptMethodMemberList(conceptMethodMemberList, language, ePackage.getName());
+		}
+		return conceptMethodMemberList;
+	}
+	
+	private void fillConceptMethodMemberList(
+			ArrayList<ConceptMethodMemberVO> conceptMethodMemberList, Language language, String memberName) {
+		System.out.println("FamiliesServices.fillConceptMethodMemberList");
+		System.out.println("language.getSemantics(): " + language.getSemantics());
+		for (Aspect aspect : language.getSemantics()) {
+			System.out.println("Coucou! " + aspect.getAspectTypeRef().getType().eContents());
+		}
+	}
+
 	public ArrayList<ConceptMembersGroupVO> getConceptMemberGroupList(ArrayList<ConceptMemberVO> conceptMemberList){
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = new ArrayList<ConceptMembersGroupVO>();
 		for (ConceptMemberVO conceptMemberVO : conceptMemberList) {
@@ -63,10 +104,6 @@ public class FamiliesServices {
 			}else{
 				conceptMemberGroupLegacy.getMemberGroup().add(conceptMemberVO.getMemberName());
 			}
-		}
-		System.out.println("Step 2");
-		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
-			System.out.println(conceptMembersGroupVO);
 		}
 		
 		return conceptMemberGroupList;
@@ -92,25 +129,10 @@ public class FamiliesServices {
 				legacyModule.getConcepts().add(conceptMembersGroupVO.getConcept());
 			}
 		}
-		
-		System.out.println("Step 3");
-		for (ModuleConceptsVO moduleConceptsVO : moduleConceptsList) {
-			System.out.println(moduleConceptsVO);
-		}
-		
 		return moduleConceptsList;
 	}
 	
-	private void fillConceptMemberList(ArrayList<ConceptMemberVO> conceptMemberList, 
-			EPackage ePackage, String memberName) {
-		for (EClassifier concept : ePackage.getEClassifiers()) {
-			ConceptMemberVO conceptMember = new ConceptMemberVO(concept, memberName);
-			conceptMemberList.add(conceptMember);
-		}
-		for (EPackage subPackage : ePackage.getESubpackages()) {
-			this.fillConceptMemberList(conceptMemberList, subPackage, memberName);
-		}
-	}
+	
 	
 	private ConceptMembersGroupVO getConceptMemberGroup(ArrayList<ConceptMembersGroupVO> conceptMemberGroupList,
 			ConceptMemberVO conceptMemberVO) {

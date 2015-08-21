@@ -1,0 +1,36 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Action;
+import family.flowchartmt.Arc;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import org.eclipse.emf.common.util.EList;
+
+@SuppressWarnings("all")
+public class ActionAdapter extends /* EObjectAdapter<flowchart.Action> */ implements Action {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public ActionAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName() ;
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o) ;
+  }
+  
+  @Override
+  public EList<Arc> getOutgoing() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoing(), family.flowchart.adapters.flowchartmt.ArcAdapter.class) ;
+  }
+  
+  @Override
+  public EList<Arc> getIncoming() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncoming(), family.flowchart.adapters.flowchartmt.ArcAdapter.class) ;
+  }
+}

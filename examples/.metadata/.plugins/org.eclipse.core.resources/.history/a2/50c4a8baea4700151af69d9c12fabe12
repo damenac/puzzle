@@ -1,0 +1,24 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.VarReference;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class VarReferenceAdapter extends /* EObjectAdapter<flowchart.VarReference> */ implements VarReference {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public VarReferenceAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getKey() {
+    return adaptee.getKey() ;
+  }
+  
+  @Override
+  public void setKey(final String o) {
+    adaptee.setKey(o) ;
+  }
+}

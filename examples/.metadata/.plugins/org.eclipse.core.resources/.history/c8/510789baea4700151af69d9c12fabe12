@@ -1,0 +1,11 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.Statement;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Wait extends EObject, Statement {
+  public abstract long getMiliseconds();
+  
+  public abstract void setMiliseconds(final long newMiliseconds);
+}

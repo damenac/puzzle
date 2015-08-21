@@ -1,0 +1,82 @@
+package family;
+
+@SuppressWarnings("all")
+public class StandaloneSetup {
+  public static void doSetup() {
+    StandaloneSetup setup = new StandaloneSetup() ;
+    setup.doEMFRegistration() ;
+    setup.doAdaptersRegistration() ;
+  }
+  
+  public void doEMFRegistration() {
+    org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.put(
+    	rhapsody.RhapsodyPackage.eNS_URI,
+    	rhapsody.RhapsodyPackage.eINSTANCE
+    ) ;
+    org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.put(
+    	kmlogo.KmLogoPackage.eNS_URI,
+    	kmlogo.KmLogoPackage.eINSTANCE
+    ) ;
+    org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.put(
+    	flowchart.FlowchartPackage.eNS_URI,
+    	flowchart.FlowchartPackage.eINSTANCE
+    ) ;
+    
+    org.eclipse.emf.ecore.resource.Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
+    	"*",
+    	new org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl()
+    ) ;
+    org.eclipse.emf.ecore.resource.Resource.Factory.Registry.INSTANCE.getProtocolToFactoryMap().put(
+    	"melange",
+    	new fr.inria.diverse.melange.resource.MelangeResourceFactoryImpl()
+    ) ;
+  }
+  
+  public void doAdaptersRegistration() {
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl rhapsody = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl(
+    	"family.Rhapsody", "", "http://rhapsody", "family.RhapsodyMT"
+    ) ;
+    rhapsody.addAdapter("family.RhapsodyMT", family.rhapsody.adapters.rhapsodymt.RhapsodyAdapter.class) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getLanguageMap().put(
+    	"family.Rhapsody",
+    	rhapsody
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl logo = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl(
+    	"family.Logo", "A language for Logo", "http://www.kermeta.org/kmLogo", "family.LogoMT"
+    ) ;
+    logo.addAdapter("family.LogoMT", family.logo.adapters.logomt.LogoAdapter.class) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getLanguageMap().put(
+    	"family.Logo",
+    	logo
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl flowchart = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl(
+    	"family.Flowchart", "", "flowchart", "family.FlowchartMT"
+    ) ;
+    flowchart.addAdapter("family.FlowchartMT", family.flowchart.adapters.flowchartmt.FlowchartAdapter.class) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getLanguageMap().put(
+    	"family.Flowchart",
+    	flowchart
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl rhapsodyMT = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl(
+    	"family.RhapsodyMT", "", "http://rhapsodymt/"
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getModelTypeMap().put(
+    	"family.RhapsodyMT",
+    	rhapsodyMT
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl logoMT = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl(
+    	"family.LogoMT", "", "http://logomt/"
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getModelTypeMap().put(
+    	"family.LogoMT",
+    	logoMT
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl flowchartMT = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl(
+    	"family.FlowchartMT", "", "http://flowchartmt/"
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getModelTypeMap().put(
+    	"family.FlowchartMT",
+    	flowchartMT
+    ) ;
+  }
+}

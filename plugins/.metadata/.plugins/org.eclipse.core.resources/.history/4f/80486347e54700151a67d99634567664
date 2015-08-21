@@ -1,0 +1,83 @@
+package fr.inria.diverse.melange.ui.wizards;
+
+import org.eclipse.xtend2.lib.StringConcatenation;
+
+@SuppressWarnings("all")
+public class MelangeFilesTemplates {
+  public static String getBuildProperties() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("source.. = src/,\\");
+    _builder.newLine();
+    _builder.append("           ");
+    _builder.append("src-gen/,\\");
+    _builder.newLine();
+    _builder.append("           ");
+    _builder.append("xtend-gen/");
+    _builder.newLine();
+    _builder.append("bin.includes = plugin.xml,\\");
+    _builder.newLine();
+    _builder.append("               ");
+    _builder.append("META-INF/,\\");
+    _builder.newLine();
+    _builder.append("               ");
+    _builder.append(".");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public static String getK3SLEStub(final String pkgName, final String ecoreUri, final String mmName) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package ");
+    _builder.append(pkgName, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("language ");
+    _builder.append(mmName, "");
+    _builder.append(" {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("ecore ");
+    _builder.append(ecoreUri, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("exactType ");
+    _builder.append(mmName, "\t");
+    _builder.append("MT");
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("transformation foo(");
+    _builder.append(mmName, "");
+    _builder.append("MT m) {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("val root = m.contents.head");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("println(root)");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("@Main");
+    _builder.newLine();
+    _builder.append("transformation main() {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("println(\"Hello, SLE!\")");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder.toString();
+  }
+  
+  public static String getEclipseResourcePrefs() {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("eclipse.preferences.version=1");
+    _builder.newLine();
+    _builder.append("encoding/<project>=UTF-8");
+    _builder.newLine();
+    return _builder.toString();
+  }
+}

@@ -1,0 +1,11 @@
+package family.flowchartmt;
+
+import family.flowchartmt.Literal;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface BoolLit extends EObject, Literal {
+  public abstract boolean isValue();
+  
+  public abstract void setValue(final boolean newValue);
+}

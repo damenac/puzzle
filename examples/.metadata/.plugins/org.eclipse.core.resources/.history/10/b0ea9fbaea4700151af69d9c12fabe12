@@ -1,0 +1,161 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.Back;
+import family.logomt.Block;
+import family.logomt.Clear;
+import family.logomt.Constant;
+import family.logomt.ControlStructure;
+import family.logomt.Div;
+import family.logomt.Equals;
+import family.logomt.Forward;
+import family.logomt.Greater;
+import family.logomt.If;
+import family.logomt.Left;
+import family.logomt.LogoMTFactory;
+import family.logomt.LogoProgram;
+import family.logomt.Lower;
+import family.logomt.Minus;
+import family.logomt.Mult;
+import family.logomt.Parameter;
+import family.logomt.ParameterCall;
+import family.logomt.PenDown;
+import family.logomt.PenUp;
+import family.logomt.Plus;
+import family.logomt.ProcCall;
+import family.logomt.ProcDeclaration;
+import family.logomt.Repeat;
+import family.logomt.Right;
+import family.logomt.While;
+
+@SuppressWarnings("all")
+public class LogoMTFactoryAdapter implements LogoMTFactory {
+  private LogoMTAdaptersFactory adaptersFactory = family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance();
+  
+  private kmlogo.KmLogoFactory kmLogoAdaptee = kmlogo.KmLogoFactory.eINSTANCE;
+  
+  @Override
+  public Back createBack() {
+    return adaptersFactory.createBackAdapter(kmLogoAdaptee.createBack()) ;
+  }
+  
+  @Override
+  public Forward createForward() {
+    return adaptersFactory.createForwardAdapter(kmLogoAdaptee.createForward()) ;
+  }
+  
+  @Override
+  public Left createLeft() {
+    return adaptersFactory.createLeftAdapter(kmLogoAdaptee.createLeft()) ;
+  }
+  
+  @Override
+  public Right createRight() {
+    return adaptersFactory.createRightAdapter(kmLogoAdaptee.createRight()) ;
+  }
+  
+  @Override
+  public PenDown createPenDown() {
+    return adaptersFactory.createPenDownAdapter(kmLogoAdaptee.createPenDown()) ;
+  }
+  
+  @Override
+  public PenUp createPenUp() {
+    return adaptersFactory.createPenUpAdapter(kmLogoAdaptee.createPenUp()) ;
+  }
+  
+  @Override
+  public Clear createClear() {
+    return adaptersFactory.createClearAdapter(kmLogoAdaptee.createClear()) ;
+  }
+  
+  @Override
+  public Constant createConstant() {
+    return adaptersFactory.createConstantAdapter(kmLogoAdaptee.createConstant()) ;
+  }
+  
+  @Override
+  public ProcCall createProcCall() {
+    return adaptersFactory.createProcCallAdapter(kmLogoAdaptee.createProcCall()) ;
+  }
+  
+  @Override
+  public ProcDeclaration createProcDeclaration() {
+    return adaptersFactory.createProcDeclarationAdapter(kmLogoAdaptee.createProcDeclaration()) ;
+  }
+  
+  @Override
+  public Block createBlock() {
+    return adaptersFactory.createBlockAdapter(kmLogoAdaptee.createBlock()) ;
+  }
+  
+  @Override
+  public If createIf() {
+    return adaptersFactory.createIfAdapter(kmLogoAdaptee.createIf()) ;
+  }
+  
+  @Override
+  public ControlStructure createControlStructure() {
+    return adaptersFactory.createControlStructureAdapter(kmLogoAdaptee.createControlStructure()) ;
+  }
+  
+  @Override
+  public Repeat createRepeat() {
+    return adaptersFactory.createRepeatAdapter(kmLogoAdaptee.createRepeat()) ;
+  }
+  
+  @Override
+  public While createWhile() {
+    return adaptersFactory.createWhileAdapter(kmLogoAdaptee.createWhile()) ;
+  }
+  
+  @Override
+  public Parameter createParameter() {
+    return adaptersFactory.createParameterAdapter(kmLogoAdaptee.createParameter()) ;
+  }
+  
+  @Override
+  public ParameterCall createParameterCall() {
+    return adaptersFactory.createParameterCallAdapter(kmLogoAdaptee.createParameterCall()) ;
+  }
+  
+  @Override
+  public Plus createPlus() {
+    return adaptersFactory.createPlusAdapter(kmLogoAdaptee.createPlus()) ;
+  }
+  
+  @Override
+  public Minus createMinus() {
+    return adaptersFactory.createMinusAdapter(kmLogoAdaptee.createMinus()) ;
+  }
+  
+  @Override
+  public Mult createMult() {
+    return adaptersFactory.createMultAdapter(kmLogoAdaptee.createMult()) ;
+  }
+  
+  @Override
+  public Div createDiv() {
+    return adaptersFactory.createDivAdapter(kmLogoAdaptee.createDiv()) ;
+  }
+  
+  @Override
+  public Equals createEquals() {
+    return adaptersFactory.createEqualsAdapter(kmLogoAdaptee.createEquals()) ;
+  }
+  
+  @Override
+  public Greater createGreater() {
+    return adaptersFactory.createGreaterAdapter(kmLogoAdaptee.createGreater()) ;
+  }
+  
+  @Override
+  public Lower createLower() {
+    return adaptersFactory.createLowerAdapter(kmLogoAdaptee.createLower()) ;
+  }
+  
+  @Override
+  public LogoProgram createLogoProgram() {
+    return adaptersFactory.createLogoProgramAdapter(kmLogoAdaptee.createLogoProgram()) ;
+  }
+}

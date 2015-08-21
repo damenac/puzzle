@@ -1,0 +1,363 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.BackAdapter;
+import family.logo.adapters.logomt.BinaryExpAdapter;
+import family.logo.adapters.logomt.BlockAdapter;
+import family.logo.adapters.logomt.ClearAdapter;
+import family.logo.adapters.logomt.ConstantAdapter;
+import family.logo.adapters.logomt.ControlStructureAdapter;
+import family.logo.adapters.logomt.DivAdapter;
+import family.logo.adapters.logomt.EqualsAdapter;
+import family.logo.adapters.logomt.ExpressionAdapter;
+import family.logo.adapters.logomt.ForwardAdapter;
+import family.logo.adapters.logomt.GreaterAdapter;
+import family.logo.adapters.logomt.IfAdapter;
+import family.logo.adapters.logomt.InstructionAdapter;
+import family.logo.adapters.logomt.LeftAdapter;
+import family.logo.adapters.logomt.LogoProgramAdapter;
+import family.logo.adapters.logomt.LowerAdapter;
+import family.logo.adapters.logomt.MinusAdapter;
+import family.logo.adapters.logomt.MultAdapter;
+import family.logo.adapters.logomt.ParameterAdapter;
+import family.logo.adapters.logomt.ParameterCallAdapter;
+import family.logo.adapters.logomt.PenDownAdapter;
+import family.logo.adapters.logomt.PenUpAdapter;
+import family.logo.adapters.logomt.PlusAdapter;
+import family.logo.adapters.logomt.PrimitiveAdapter;
+import family.logo.adapters.logomt.ProcCallAdapter;
+import family.logo.adapters.logomt.ProcDeclarationAdapter;
+import family.logo.adapters.logomt.RepeatAdapter;
+import family.logo.adapters.logomt.RightAdapter;
+import family.logo.adapters.logomt.WhileAdapter;
+import fr.inria.diverse.melange.adapters.AdaptersFactory;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.WeakHashMap;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public class LogoMTAdaptersFactory implements AdaptersFactory {
+  private static LogoMTAdaptersFactory instance;
+  
+  private WeakHashMap<EObject, EObjectAdapter> register;
+  
+  public LogoMTAdaptersFactory() {
+    register = new WeakHashMap();
+  }
+  
+  public static LogoMTAdaptersFactory getInstance() {
+    if (instance == null) {
+    	instance = new family.logo.adapters.logomt.LogoMTAdaptersFactory() ;
+    }
+    return instance ;
+  }
+  
+  public EObjectAdapter createAdapter(final EObject o) {
+    EObjectAdapter res = register.get(o);
+    if(res != null){
+    	 return res;
+    }
+    else{
+    	if (o instanceof kmlogo.Back){
+    		res = createBackAdapter((kmlogo.Back) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Forward){
+    		res = createForwardAdapter((kmlogo.Forward) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Left){
+    		res = createLeftAdapter((kmlogo.Left) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Right){
+    		res = createRightAdapter((kmlogo.Right) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.PenDown){
+    		res = createPenDownAdapter((kmlogo.PenDown) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.PenUp){
+    		res = createPenUpAdapter((kmlogo.PenUp) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Clear){
+    		res = createClearAdapter((kmlogo.Clear) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Constant){
+    		res = createConstantAdapter((kmlogo.Constant) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.ProcCall){
+    		res = createProcCallAdapter((kmlogo.ProcCall) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.ProcDeclaration){
+    		res = createProcDeclarationAdapter((kmlogo.ProcDeclaration) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Block){
+    		res = createBlockAdapter((kmlogo.Block) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.If){
+    		res = createIfAdapter((kmlogo.If) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Repeat){
+    		res = createRepeatAdapter((kmlogo.Repeat) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.While){
+    		res = createWhileAdapter((kmlogo.While) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.ControlStructure){
+    		res = createControlStructureAdapter((kmlogo.ControlStructure) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Parameter){
+    		res = createParameterAdapter((kmlogo.Parameter) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.ParameterCall){
+    		res = createParameterCallAdapter((kmlogo.ParameterCall) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Plus){
+    		res = createPlusAdapter((kmlogo.Plus) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Minus){
+    		res = createMinusAdapter((kmlogo.Minus) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Mult){
+    		res = createMultAdapter((kmlogo.Mult) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Div){
+    		res = createDivAdapter((kmlogo.Div) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Equals){
+    		res = createEqualsAdapter((kmlogo.Equals) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Greater){
+    		res = createGreaterAdapter((kmlogo.Greater) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.Lower){
+    		res = createLowerAdapter((kmlogo.Lower) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof kmlogo.LogoProgram){
+    		res = createLogoProgramAdapter((kmlogo.LogoProgram) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    }
+    
+    return null ;
+  }
+  
+  public InstructionAdapter createInstructionAdapter(final kmlogo.Instruction adaptee) {
+    family.logo.adapters.logomt.InstructionAdapter adap = new family.logo.adapters.logomt.InstructionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public PrimitiveAdapter createPrimitiveAdapter(final kmlogo.Primitive adaptee) {
+    family.logo.adapters.logomt.PrimitiveAdapter adap = new family.logo.adapters.logomt.PrimitiveAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public BackAdapter createBackAdapter(final kmlogo.Back adaptee) {
+    family.logo.adapters.logomt.BackAdapter adap = new family.logo.adapters.logomt.BackAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ForwardAdapter createForwardAdapter(final kmlogo.Forward adaptee) {
+    family.logo.adapters.logomt.ForwardAdapter adap = new family.logo.adapters.logomt.ForwardAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public LeftAdapter createLeftAdapter(final kmlogo.Left adaptee) {
+    family.logo.adapters.logomt.LeftAdapter adap = new family.logo.adapters.logomt.LeftAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public RightAdapter createRightAdapter(final kmlogo.Right adaptee) {
+    family.logo.adapters.logomt.RightAdapter adap = new family.logo.adapters.logomt.RightAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public PenDownAdapter createPenDownAdapter(final kmlogo.PenDown adaptee) {
+    family.logo.adapters.logomt.PenDownAdapter adap = new family.logo.adapters.logomt.PenDownAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public PenUpAdapter createPenUpAdapter(final kmlogo.PenUp adaptee) {
+    family.logo.adapters.logomt.PenUpAdapter adap = new family.logo.adapters.logomt.PenUpAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ClearAdapter createClearAdapter(final kmlogo.Clear adaptee) {
+    family.logo.adapters.logomt.ClearAdapter adap = new family.logo.adapters.logomt.ClearAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ExpressionAdapter createExpressionAdapter(final kmlogo.Expression adaptee) {
+    family.logo.adapters.logomt.ExpressionAdapter adap = new family.logo.adapters.logomt.ExpressionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public BinaryExpAdapter createBinaryExpAdapter(final kmlogo.BinaryExp adaptee) {
+    family.logo.adapters.logomt.BinaryExpAdapter adap = new family.logo.adapters.logomt.BinaryExpAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ConstantAdapter createConstantAdapter(final kmlogo.Constant adaptee) {
+    family.logo.adapters.logomt.ConstantAdapter adap = new family.logo.adapters.logomt.ConstantAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ProcCallAdapter createProcCallAdapter(final kmlogo.ProcCall adaptee) {
+    family.logo.adapters.logomt.ProcCallAdapter adap = new family.logo.adapters.logomt.ProcCallAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ProcDeclarationAdapter createProcDeclarationAdapter(final kmlogo.ProcDeclaration adaptee) {
+    family.logo.adapters.logomt.ProcDeclarationAdapter adap = new family.logo.adapters.logomt.ProcDeclarationAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public BlockAdapter createBlockAdapter(final kmlogo.Block adaptee) {
+    family.logo.adapters.logomt.BlockAdapter adap = new family.logo.adapters.logomt.BlockAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public IfAdapter createIfAdapter(final kmlogo.If adaptee) {
+    family.logo.adapters.logomt.IfAdapter adap = new family.logo.adapters.logomt.IfAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ControlStructureAdapter createControlStructureAdapter(final kmlogo.ControlStructure adaptee) {
+    family.logo.adapters.logomt.ControlStructureAdapter adap = new family.logo.adapters.logomt.ControlStructureAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public RepeatAdapter createRepeatAdapter(final kmlogo.Repeat adaptee) {
+    family.logo.adapters.logomt.RepeatAdapter adap = new family.logo.adapters.logomt.RepeatAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public WhileAdapter createWhileAdapter(final kmlogo.While adaptee) {
+    family.logo.adapters.logomt.WhileAdapter adap = new family.logo.adapters.logomt.WhileAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ParameterAdapter createParameterAdapter(final kmlogo.Parameter adaptee) {
+    family.logo.adapters.logomt.ParameterAdapter adap = new family.logo.adapters.logomt.ParameterAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ParameterCallAdapter createParameterCallAdapter(final kmlogo.ParameterCall adaptee) {
+    family.logo.adapters.logomt.ParameterCallAdapter adap = new family.logo.adapters.logomt.ParameterCallAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public PlusAdapter createPlusAdapter(final kmlogo.Plus adaptee) {
+    family.logo.adapters.logomt.PlusAdapter adap = new family.logo.adapters.logomt.PlusAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public MinusAdapter createMinusAdapter(final kmlogo.Minus adaptee) {
+    family.logo.adapters.logomt.MinusAdapter adap = new family.logo.adapters.logomt.MinusAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public MultAdapter createMultAdapter(final kmlogo.Mult adaptee) {
+    family.logo.adapters.logomt.MultAdapter adap = new family.logo.adapters.logomt.MultAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public DivAdapter createDivAdapter(final kmlogo.Div adaptee) {
+    family.logo.adapters.logomt.DivAdapter adap = new family.logo.adapters.logomt.DivAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public EqualsAdapter createEqualsAdapter(final kmlogo.Equals adaptee) {
+    family.logo.adapters.logomt.EqualsAdapter adap = new family.logo.adapters.logomt.EqualsAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public GreaterAdapter createGreaterAdapter(final kmlogo.Greater adaptee) {
+    family.logo.adapters.logomt.GreaterAdapter adap = new family.logo.adapters.logomt.GreaterAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public LowerAdapter createLowerAdapter(final kmlogo.Lower adaptee) {
+    family.logo.adapters.logomt.LowerAdapter adap = new family.logo.adapters.logomt.LowerAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public LogoProgramAdapter createLogoProgramAdapter(final kmlogo.LogoProgram adaptee) {
+    family.logo.adapters.logomt.LogoProgramAdapter adap = new family.logo.adapters.logomt.LogoProgramAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+}

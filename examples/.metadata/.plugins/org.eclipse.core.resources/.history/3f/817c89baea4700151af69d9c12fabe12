@@ -1,0 +1,113 @@
+package family.rhapsodymt;
+
+import java.util.List;
+import org.eclipse.emf.common.util.Enumerator;
+
+@SuppressWarnings("all")
+public enum PseudostateKind implements Enumerator {
+  INITIAL,
+  
+  SHALLOWHISTORY,
+  
+  CONDITIONAL,
+  
+  FORK,
+  
+  JOIN,
+  
+  JUNCTION;
+  public final static int INITIAL_VALUE = 0;
+  
+  public final static int SHALLOWHISTORY_VALUE = 3;
+  
+  public final static int CONDITIONAL_VALUE = 5;
+  
+  public final static int FORK_VALUE = 1;
+  
+  public final static int JOIN_VALUE = 2;
+  
+  public final static int JUNCTION_VALUE = 6;
+  
+  private final static PseudostateKind[] VALUES_ARRAY = new PseudostateKind[] {
+    	INITIAL,
+    	SHALLOWHISTORY,
+    	CONDITIONAL,
+    	FORK,
+    	JOIN,
+    	JUNCTION,
+    };;
+  
+  private final static List<PseudostateKind> VALUES = java.util.Collections.unmodifiableList(java.util.Arrays.asList(VALUES_ARRAY));;
+  
+  public static family.rhapsodymt.PseudostateKind get(final String literal) {
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+    	PseudostateKind result = VALUES_ARRAY[i];
+    	if (result.toString().equals(literal)) {
+    		return result;
+    	}
+    }
+    return null;
+  }
+  
+  public static family.rhapsodymt.PseudostateKind getByName(final String name) {
+    for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+    	PseudostateKind result = VALUES_ARRAY[i];
+    	if (result.getName().equals(name)) {
+    		return result;
+    	}
+    }
+    return null;
+  }
+  
+  public static family.rhapsodymt.PseudostateKind get(final int value) {
+    switch (value) {
+    	/* true */
+    	case INITIAL_VALUE: return INITIAL;
+    	/* true */
+    	case SHALLOWHISTORY_VALUE: return SHALLOWHISTORY;
+    	/* true */
+    	case CONDITIONAL_VALUE: return CONDITIONAL;
+    	/* true */
+    	case FORK_VALUE: return FORK;
+    	/* true */
+    	case JOIN_VALUE: return JOIN;
+    	/* true */
+    	case JUNCTION_VALUE: return JUNCTION;
+    }
+    return null;
+  }
+  
+  private final int value;
+  
+  private final String name;
+  
+  private final String literal;
+  
+  private PseudostateKind() {
+    this.value = 0;
+    this.name = "";
+    this.literal = "";
+  }
+  
+  private PseudostateKind(final int value, final String name, final String literal) {
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
+  
+  public String getName() {
+    return name;
+  }
+  
+  public int getValue() {
+    return value;
+  }
+  
+  public String getLiteral() {
+    return literal;
+  }
+  
+  public String toString() {
+    return literal;
+  }
+}

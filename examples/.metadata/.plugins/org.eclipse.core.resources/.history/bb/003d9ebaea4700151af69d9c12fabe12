@@ -1,0 +1,36 @@
+package family.logo.adapters.logomt;
+
+import family.logo.adapters.logomt.LogoMTAdaptersFactory;
+import family.logomt.Block;
+import family.logomt.Expression;
+import family.logomt.While;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class WhileAdapter extends /* EObjectAdapter<kmlogo.While> */ implements While {
+  private LogoMTAdaptersFactory adaptersFactory;
+  
+  public WhileAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Expression getCondition() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getCondition()) ;
+  }
+  
+  @Override
+  public void setCondition(final Expression o) {
+    adaptee.setCondition(((family.logo.adapters.logomt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public Block getBlock() {
+    return adaptersFactory.createBlockAdapter(adaptee.getBlock()) ;
+  }
+  
+  @Override
+  public void setBlock(final Block o) {
+    adaptee.setBlock(((family.logo.adapters.logomt.BlockAdapter) o).getAdaptee()) ;
+  }
+}

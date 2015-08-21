@@ -1,0 +1,24 @@
+package family.logo.adapters.logomt;
+
+import family.LogoMT;
+import family.logomt.LogoMTFactory;
+import fr.inria.diverse.melange.adapters.ResourceAdapter;
+import java.io.IOException;
+
+@SuppressWarnings("all")
+public class LogoAdapter extends ResourceAdapter implements LogoMT {
+  public LogoAdapter() {
+    super(family.logo.adapters.logomt.LogoMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public LogoMTFactory getFactory() {
+    return new family.logo.adapters.logomt.LogoMTFactoryAdapter() ;
+  }
+  
+  @Override
+  public void save(final String uri) throws IOException {
+    this.adaptee.setURI(org.eclipse.emf.common.util.URI.createURI(uri));
+    this.adaptee.save(null);
+  }
+}

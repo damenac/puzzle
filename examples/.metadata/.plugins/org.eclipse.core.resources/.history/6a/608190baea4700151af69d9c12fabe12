@@ -1,0 +1,358 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.AbstractStateAdapter;
+import family.rhapsody.adapters.rhapsodymt.ArithmeticExpressionAdapter;
+import family.rhapsody.adapters.rhapsodymt.AssignationAdapter;
+import family.rhapsody.adapters.rhapsodymt.BoolLitAdapter;
+import family.rhapsody.adapters.rhapsodymt.ConditionalAdapter;
+import family.rhapsody.adapters.rhapsodymt.ConsoleOutputAdapter;
+import family.rhapsody.adapters.rhapsodymt.ConstraintAdapter;
+import family.rhapsody.adapters.rhapsodymt.ExpressionAdapter;
+import family.rhapsody.adapters.rhapsodymt.FinalStateAdapter;
+import family.rhapsody.adapters.rhapsodymt.IntegerLitAdapter;
+import family.rhapsody.adapters.rhapsodymt.LiteralAdapter;
+import family.rhapsody.adapters.rhapsodymt.LoopAdapter;
+import family.rhapsody.adapters.rhapsodymt.NamedElementAdapter;
+import family.rhapsody.adapters.rhapsodymt.PrintAdapter;
+import family.rhapsody.adapters.rhapsodymt.PrintlnAdapter;
+import family.rhapsody.adapters.rhapsodymt.ProgramAdapter;
+import family.rhapsody.adapters.rhapsodymt.PseudostateAdapter;
+import family.rhapsody.adapters.rhapsodymt.RegionAdapter;
+import family.rhapsody.adapters.rhapsodymt.RelationalConstraintAdapter;
+import family.rhapsody.adapters.rhapsodymt.RelationalExpressionAdapter;
+import family.rhapsody.adapters.rhapsodymt.StateAdapter;
+import family.rhapsody.adapters.rhapsodymt.StateMachineAdapter;
+import family.rhapsody.adapters.rhapsodymt.StatementAdapter;
+import family.rhapsody.adapters.rhapsodymt.StringLitAdapter;
+import family.rhapsody.adapters.rhapsodymt.TransitionAdapter;
+import family.rhapsody.adapters.rhapsodymt.TriggerAdapter;
+import family.rhapsody.adapters.rhapsodymt.VarDeclAdapter;
+import family.rhapsody.adapters.rhapsodymt.VarReferenceAdapter;
+import family.rhapsody.adapters.rhapsodymt.WaitAdapter;
+import fr.inria.diverse.melange.adapters.AdaptersFactory;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.WeakHashMap;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public class RhapsodyMTAdaptersFactory implements AdaptersFactory {
+  private static RhapsodyMTAdaptersFactory instance;
+  
+  private WeakHashMap<EObject, EObjectAdapter> register;
+  
+  public RhapsodyMTAdaptersFactory() {
+    register = new WeakHashMap();
+  }
+  
+  public static RhapsodyMTAdaptersFactory getInstance() {
+    if (instance == null) {
+    	instance = new family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory() ;
+    }
+    return instance ;
+  }
+  
+  public EObjectAdapter createAdapter(final EObject o) {
+    EObjectAdapter res = register.get(o);
+    if(res != null){
+    	 return res;
+    }
+    else{
+    	if (o instanceof rhapsody.StateMachine){
+    		res = createStateMachineAdapter((rhapsody.StateMachine) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Region){
+    		res = createRegionAdapter((rhapsody.Region) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.State){
+    		res = createStateAdapter((rhapsody.State) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Transition){
+    		res = createTransitionAdapter((rhapsody.Transition) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.NamedElement){
+    		res = createNamedElementAdapter((rhapsody.NamedElement) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Trigger){
+    		res = createTriggerAdapter((rhapsody.Trigger) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Pseudostate){
+    		res = createPseudostateAdapter((rhapsody.Pseudostate) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.FinalState){
+    		res = createFinalStateAdapter((rhapsody.FinalState) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.RelationalConstraint){
+    		res = createRelationalConstraintAdapter((rhapsody.RelationalConstraint) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Program){
+    		res = createProgramAdapter((rhapsody.Program) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Conditional){
+    		res = createConditionalAdapter((rhapsody.Conditional) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Loop){
+    		res = createLoopAdapter((rhapsody.Loop) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.VarDecl){
+    		res = createVarDeclAdapter((rhapsody.VarDecl) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.IntegerLit){
+    		res = createIntegerLitAdapter((rhapsody.IntegerLit) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.StringLit){
+    		res = createStringLitAdapter((rhapsody.StringLit) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.BoolLit){
+    		res = createBoolLitAdapter((rhapsody.BoolLit) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.ArithmeticExpression){
+    		res = createArithmeticExpressionAdapter((rhapsody.ArithmeticExpression) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.RelationalExpression){
+    		res = createRelationalExpressionAdapter((rhapsody.RelationalExpression) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.VarReference){
+    		res = createVarReferenceAdapter((rhapsody.VarReference) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Println){
+    		res = createPrintlnAdapter((rhapsody.Println) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Print){
+    		res = createPrintAdapter((rhapsody.Print) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.ConsoleOutput){
+    		res = createConsoleOutputAdapter((rhapsody.ConsoleOutput) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Assignation){
+    		res = createAssignationAdapter((rhapsody.Assignation) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof rhapsody.Wait){
+    		res = createWaitAdapter((rhapsody.Wait) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    }
+    
+    return null ;
+  }
+  
+  public StateMachineAdapter createStateMachineAdapter(final rhapsody.StateMachine adaptee) {
+    family.rhapsody.adapters.rhapsodymt.StateMachineAdapter adap = new family.rhapsody.adapters.rhapsodymt.StateMachineAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public RegionAdapter createRegionAdapter(final rhapsody.Region adaptee) {
+    family.rhapsody.adapters.rhapsodymt.RegionAdapter adap = new family.rhapsody.adapters.rhapsodymt.RegionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public AbstractStateAdapter createAbstractStateAdapter(final rhapsody.AbstractState adaptee) {
+    family.rhapsody.adapters.rhapsodymt.AbstractStateAdapter adap = new family.rhapsody.adapters.rhapsodymt.AbstractStateAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public StateAdapter createStateAdapter(final rhapsody.State adaptee) {
+    family.rhapsody.adapters.rhapsodymt.StateAdapter adap = new family.rhapsody.adapters.rhapsodymt.StateAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public TransitionAdapter createTransitionAdapter(final rhapsody.Transition adaptee) {
+    family.rhapsody.adapters.rhapsodymt.TransitionAdapter adap = new family.rhapsody.adapters.rhapsodymt.TransitionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public NamedElementAdapter createNamedElementAdapter(final rhapsody.NamedElement adaptee) {
+    family.rhapsody.adapters.rhapsodymt.NamedElementAdapter adap = new family.rhapsody.adapters.rhapsodymt.NamedElementAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public TriggerAdapter createTriggerAdapter(final rhapsody.Trigger adaptee) {
+    family.rhapsody.adapters.rhapsodymt.TriggerAdapter adap = new family.rhapsody.adapters.rhapsodymt.TriggerAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public PseudostateAdapter createPseudostateAdapter(final rhapsody.Pseudostate adaptee) {
+    family.rhapsody.adapters.rhapsodymt.PseudostateAdapter adap = new family.rhapsody.adapters.rhapsodymt.PseudostateAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public FinalStateAdapter createFinalStateAdapter(final rhapsody.FinalState adaptee) {
+    family.rhapsody.adapters.rhapsodymt.FinalStateAdapter adap = new family.rhapsody.adapters.rhapsodymt.FinalStateAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ConstraintAdapter createConstraintAdapter(final rhapsody.Constraint adaptee) {
+    family.rhapsody.adapters.rhapsodymt.ConstraintAdapter adap = new family.rhapsody.adapters.rhapsodymt.ConstraintAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public RelationalConstraintAdapter createRelationalConstraintAdapter(final rhapsody.RelationalConstraint adaptee) {
+    family.rhapsody.adapters.rhapsodymt.RelationalConstraintAdapter adap = new family.rhapsody.adapters.rhapsodymt.RelationalConstraintAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public StatementAdapter createStatementAdapter(final rhapsody.Statement adaptee) {
+    family.rhapsody.adapters.rhapsodymt.StatementAdapter adap = new family.rhapsody.adapters.rhapsodymt.StatementAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ProgramAdapter createProgramAdapter(final rhapsody.Program adaptee) {
+    family.rhapsody.adapters.rhapsodymt.ProgramAdapter adap = new family.rhapsody.adapters.rhapsodymt.ProgramAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ConditionalAdapter createConditionalAdapter(final rhapsody.Conditional adaptee) {
+    family.rhapsody.adapters.rhapsodymt.ConditionalAdapter adap = new family.rhapsody.adapters.rhapsodymt.ConditionalAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public LoopAdapter createLoopAdapter(final rhapsody.Loop adaptee) {
+    family.rhapsody.adapters.rhapsodymt.LoopAdapter adap = new family.rhapsody.adapters.rhapsodymt.LoopAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public VarDeclAdapter createVarDeclAdapter(final rhapsody.VarDecl adaptee) {
+    family.rhapsody.adapters.rhapsodymt.VarDeclAdapter adap = new family.rhapsody.adapters.rhapsodymt.VarDeclAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ExpressionAdapter createExpressionAdapter(final rhapsody.Expression adaptee) {
+    family.rhapsody.adapters.rhapsodymt.ExpressionAdapter adap = new family.rhapsody.adapters.rhapsodymt.ExpressionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public LiteralAdapter createLiteralAdapter(final rhapsody.Literal adaptee) {
+    family.rhapsody.adapters.rhapsodymt.LiteralAdapter adap = new family.rhapsody.adapters.rhapsodymt.LiteralAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public IntegerLitAdapter createIntegerLitAdapter(final rhapsody.IntegerLit adaptee) {
+    family.rhapsody.adapters.rhapsodymt.IntegerLitAdapter adap = new family.rhapsody.adapters.rhapsodymt.IntegerLitAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public StringLitAdapter createStringLitAdapter(final rhapsody.StringLit adaptee) {
+    family.rhapsody.adapters.rhapsodymt.StringLitAdapter adap = new family.rhapsody.adapters.rhapsodymt.StringLitAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public BoolLitAdapter createBoolLitAdapter(final rhapsody.BoolLit adaptee) {
+    family.rhapsody.adapters.rhapsodymt.BoolLitAdapter adap = new family.rhapsody.adapters.rhapsodymt.BoolLitAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ArithmeticExpressionAdapter createArithmeticExpressionAdapter(final rhapsody.ArithmeticExpression adaptee) {
+    family.rhapsody.adapters.rhapsodymt.ArithmeticExpressionAdapter adap = new family.rhapsody.adapters.rhapsodymt.ArithmeticExpressionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public RelationalExpressionAdapter createRelationalExpressionAdapter(final rhapsody.RelationalExpression adaptee) {
+    family.rhapsody.adapters.rhapsodymt.RelationalExpressionAdapter adap = new family.rhapsody.adapters.rhapsodymt.RelationalExpressionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public VarReferenceAdapter createVarReferenceAdapter(final rhapsody.VarReference adaptee) {
+    family.rhapsody.adapters.rhapsodymt.VarReferenceAdapter adap = new family.rhapsody.adapters.rhapsodymt.VarReferenceAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ConsoleOutputAdapter createConsoleOutputAdapter(final rhapsody.ConsoleOutput adaptee) {
+    family.rhapsody.adapters.rhapsodymt.ConsoleOutputAdapter adap = new family.rhapsody.adapters.rhapsodymt.ConsoleOutputAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public PrintlnAdapter createPrintlnAdapter(final rhapsody.Println adaptee) {
+    family.rhapsody.adapters.rhapsodymt.PrintlnAdapter adap = new family.rhapsody.adapters.rhapsodymt.PrintlnAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public PrintAdapter createPrintAdapter(final rhapsody.Print adaptee) {
+    family.rhapsody.adapters.rhapsodymt.PrintAdapter adap = new family.rhapsody.adapters.rhapsodymt.PrintAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public AssignationAdapter createAssignationAdapter(final rhapsody.Assignation adaptee) {
+    family.rhapsody.adapters.rhapsodymt.AssignationAdapter adap = new family.rhapsody.adapters.rhapsodymt.AssignationAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public WaitAdapter createWaitAdapter(final rhapsody.Wait adaptee) {
+    family.rhapsody.adapters.rhapsodymt.WaitAdapter adap = new family.rhapsody.adapters.rhapsodymt.WaitAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+}

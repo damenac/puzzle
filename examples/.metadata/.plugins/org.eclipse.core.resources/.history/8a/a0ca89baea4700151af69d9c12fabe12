@@ -1,0 +1,8 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.State;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface FinalState extends EObject, State {
+}

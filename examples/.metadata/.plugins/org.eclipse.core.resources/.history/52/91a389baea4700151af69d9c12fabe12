@@ -1,0 +1,13 @@
+package family.rhapsodymt;
+
+import family.rhapsodymt.Statement;
+import java.util.Map;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Program extends EObject, Statement {
+  public abstract EList<Statement> getStatements();
+  
+  public abstract void eval(final Map context);
+}

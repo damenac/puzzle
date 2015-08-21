@@ -1,0 +1,14 @@
+package family.rhapsody.adapters.rhapsodymt;
+
+import family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory;
+import family.rhapsodymt.Constraint;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class ConstraintAdapter extends /* EObjectAdapter<rhapsody.Constraint> */ implements Constraint {
+  private RhapsodyMTAdaptersFactory adaptersFactory;
+  
+  public ConstraintAdapter() {
+    super(family.rhapsody.adapters.rhapsodymt.RhapsodyMTAdaptersFactory.getInstance()) ;
+  }
+}
