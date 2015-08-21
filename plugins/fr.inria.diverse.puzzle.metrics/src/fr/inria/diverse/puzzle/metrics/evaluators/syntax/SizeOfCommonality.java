@@ -5,12 +5,15 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class SizeOfCommonality {
 
-	public static int evaluateForSyntax(ArrayList<EPackage> ePackages){
+	public static int evaluateForSyntax(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList);
 		
@@ -24,7 +27,9 @@ public class SizeOfCommonality {
 		return count;
 	}
 	
-	public static int evaluateForSemantics(ArrayList<EPackage> ePackages){
+	public static int evaluateForSemantics(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+		
 		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList);
 		
@@ -38,16 +43,17 @@ public class SizeOfCommonality {
 		return count;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<EPackage> ePackages){
+	public static String getVariablesDeclaration(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		answer += "var pieDataSyntacticCommonality = [{\n";
-		answer += "        value: " + evaluateForSyntax(ePackages) + ",\n";
+		answer += "        value: " + evaluateForSyntax(languages) + ",\n";
 		answer += "        color:\"#FAAC58\",\n";
 		answer += "        highlight: \"#F7BE81\",\n";
 		answer += "        label: \"Commonalities\"\n";
 		answer += "    },\n";
 		answer += "    {\n";
-		answer += "        value: " + TotalAmountOfConcepts.evaluateMetric(ePackages) + ",\n";
+		answer += "        value: " + TotalAmountOfConcepts.evaluateMetric(languages) + ",\n";
 		answer += "        color:\"#F5F6CE\",\n";
 		answer += "        highlight: \"#FBFBEF\",\n";
 		answer += "        label: \"Particularities\"\n";
@@ -55,13 +61,13 @@ public class SizeOfCommonality {
 		answer += "];\n\n";
 		
 		answer += "var pieDataSemanticCommonality = [{\n";
-		answer += "        value: " + evaluateForSemantics(ePackages) + ",\n";
+		answer += "        value: " + evaluateForSemantics(languages) + ",\n";
 		answer += "        color:\"#FAAC58\",\n";
 		answer += "        highlight: \"#F7BE81\",\n";
 		answer += "        label: \"Commonalities\"\n";
 		answer += "    },\n";
 		answer += "    {\n";
-		answer += "        value: " + TotalAmountOfConcepts.evaluateMetric(ePackages) + ",\n";
+		answer += "        value: " + TotalAmountOfConcepts.evaluateMetric(languages) + ",\n";
 		answer += "        color:\"#F5F6CE\",\n";
 		answer += "        highlight: \"#FBFBEF\",\n";
 		answer += "        label: \"Particularities\"\n";

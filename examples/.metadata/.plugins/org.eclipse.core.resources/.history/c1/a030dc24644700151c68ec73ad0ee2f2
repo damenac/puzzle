@@ -1,0 +1,20 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import kmLogo.LogoProgram
+
+// *.*
+// ASPECT
+/**
+ * StateMachineAspect: Aspects for the State Machine meta-class
+ * Serves as the interpreter of the state machine (the controller of the )
+ */  
+@Aspect(className=LogoProgram)
+class LogoProgramAspect { 
+	
+	 
+	def public void eval() {
+		println("\nExecuting the state machine. Please enter the events to process...\n")
+	}
+}

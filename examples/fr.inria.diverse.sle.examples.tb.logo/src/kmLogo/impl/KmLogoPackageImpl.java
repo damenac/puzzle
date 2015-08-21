@@ -2,29 +2,41 @@
  */
 package kmLogo.impl;
 
-import kmLogo.ArithmeticExpression;
-import kmLogo.ArithmeticOperator;
 import kmLogo.Back;
-import kmLogo.BoolLit;
+import kmLogo.BinaryExp;
+import kmLogo.Block;
 import kmLogo.Clear;
+import kmLogo.Constant;
+import kmLogo.ControlStructure;
+import kmLogo.Div;
+import kmLogo.Equals;
 import kmLogo.Expression;
 import kmLogo.Forward;
+import kmLogo.Greater;
+import kmLogo.If;
 import kmLogo.Instruction;
-import kmLogo.IntegerLit;
 import kmLogo.KmLogoFactory;
 import kmLogo.KmLogoPackage;
 import kmLogo.Left;
-import kmLogo.Literal;
 import kmLogo.LogoProgram;
+import kmLogo.Lower;
+import kmLogo.Minus;
+import kmLogo.Mult;
+import kmLogo.Parameter;
+import kmLogo.ParameterCall;
 import kmLogo.PenDown;
 import kmLogo.PenUp;
+import kmLogo.Plus;
 import kmLogo.Primitive;
+import kmLogo.ProcCall;
+import kmLogo.ProcDeclaration;
+import kmLogo.Repeat;
 import kmLogo.Right;
-import kmLogo.StringLit;
+import kmLogo.While;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -37,13 +49,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass logoProgramEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,42 +124,154 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass literalEClass = null;
+	private EClass binaryExpEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass integerLitEClass = null;
+	private EClass constantEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass stringLitEClass = null;
+	private EClass procCallEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass boolLitEClass = null;
+	private EClass procDeclarationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass arithmeticExpressionEClass = null;
+	private EClass blockEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum arithmeticOperatorEEnum = null;
+	private EClass ifEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass controlStructureEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass repeatEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass whileEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterCallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass plusEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass minusEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass multEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass divEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass equalsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass greaterEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass lowerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass logoProgramEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType integerEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType booleanEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType stringEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -222,24 +339,6 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLogoProgram() {
-		return logoProgramEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLogoProgram_Instructions() {
-		return (EReference)logoProgramEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getInstruction() {
 		return instructionEClass;
 	}
@@ -251,15 +350,6 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 */
 	public EClass getPrimitive() {
 		return primitiveEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPrimitive_Expression() {
-		return (EReference)primitiveEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -375,8 +465,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLiteral() {
-		return literalEClass;
+	public EClass getBinaryExp() {
+		return binaryExpEClass;
 	}
 
 	/**
@@ -384,8 +474,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIntegerLit() {
-		return integerLitEClass;
+	public EReference getBinaryExp_Lhs() {
+		return (EReference)binaryExpEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -393,8 +483,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIntegerLit_Value() {
-		return (EAttribute)integerLitEClass.getEStructuralFeatures().get(0);
+	public EReference getBinaryExp_Rhs() {
+		return (EReference)binaryExpEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -402,8 +492,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getStringLit() {
-		return stringLitEClass;
+	public EClass getConstant() {
+		return constantEClass;
 	}
 
 	/**
@@ -411,8 +501,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStringLit_Value() {
-		return (EAttribute)stringLitEClass.getEStructuralFeatures().get(0);
+	public EAttribute getConstant_IntegerValue() {
+		return (EAttribute)constantEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -420,8 +510,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBoolLit() {
-		return boolLitEClass;
+	public EClass getProcCall() {
+		return procCallEClass;
 	}
 
 	/**
@@ -429,8 +519,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBoolLit_Value() {
-		return (EAttribute)boolLitEClass.getEStructuralFeatures().get(0);
+	public EReference getProcCall_ActualArgs() {
+		return (EReference)procCallEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -438,8 +528,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getArithmeticExpression() {
-		return arithmeticExpressionEClass;
+	public EReference getProcCall_Declaration() {
+		return (EReference)procCallEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -447,8 +537,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArithmeticExpression_Left() {
-		return (EReference)arithmeticExpressionEClass.getEStructuralFeatures().get(0);
+	public EClass getProcDeclaration() {
+		return procDeclarationEClass;
 	}
 
 	/**
@@ -456,8 +546,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getArithmeticExpression_Right() {
-		return (EReference)arithmeticExpressionEClass.getEStructuralFeatures().get(1);
+	public EAttribute getProcDeclaration_Name() {
+		return (EAttribute)procDeclarationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -465,8 +555,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArithmeticExpression_Operator() {
-		return (EAttribute)arithmeticExpressionEClass.getEStructuralFeatures().get(2);
+	public EReference getProcDeclaration_Args() {
+		return (EReference)procDeclarationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -474,8 +564,260 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getArithmeticOperator() {
-		return arithmeticOperatorEEnum;
+	public EReference getProcDeclaration_ProcCall() {
+		return (EReference)procDeclarationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProcDeclaration_Instructions() {
+		return (EReference)procDeclarationEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBlock() {
+		return blockEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBlock_Instructions() {
+		return (EReference)blockEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIf() {
+		return ifEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIf_ThenPart() {
+		return (EReference)ifEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIf_ElsePart() {
+		return (EReference)ifEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getControlStructure() {
+		return controlStructureEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getControlStructure_Condition() {
+		return (EReference)controlStructureEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRepeat() {
+		return repeatEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRepeat_Block() {
+		return (EReference)repeatEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getWhile() {
+		return whileEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getWhile_Block() {
+		return (EReference)whileEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getParameter_Name() {
+		return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getParameterCall() {
+		return parameterCallEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getParameterCall_Parameter() {
+		return (EReference)parameterCallEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPlus() {
+		return plusEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMinus() {
+		return minusEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMult() {
+		return multEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiv() {
+		return divEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEquals() {
+		return equalsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGreater() {
+		return greaterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLower() {
+		return lowerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogoProgram() {
+		return logoProgramEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogoProgram_Instructions() {
+		return (EReference)logoProgramEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getInteger() {
+		return integerEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getBoolean() {
+		return booleanEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getString() {
+		return stringEDataType;
 	}
 
 	/**
@@ -506,13 +848,9 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		logoProgramEClass = createEClass(LOGO_PROGRAM);
-		createEReference(logoProgramEClass, LOGO_PROGRAM__INSTRUCTIONS);
-
 		instructionEClass = createEClass(INSTRUCTION);
 
 		primitiveEClass = createEClass(PRIMITIVE);
-		createEReference(primitiveEClass, PRIMITIVE__EXPRESSION);
 
 		backEClass = createEClass(BACK);
 		createEReference(backEClass, BACK__STEPS);
@@ -534,24 +872,66 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 
 		expressionEClass = createEClass(EXPRESSION);
 
-		literalEClass = createEClass(LITERAL);
+		binaryExpEClass = createEClass(BINARY_EXP);
+		createEReference(binaryExpEClass, BINARY_EXP__LHS);
+		createEReference(binaryExpEClass, BINARY_EXP__RHS);
 
-		integerLitEClass = createEClass(INTEGER_LIT);
-		createEAttribute(integerLitEClass, INTEGER_LIT__VALUE);
+		constantEClass = createEClass(CONSTANT);
+		createEAttribute(constantEClass, CONSTANT__INTEGER_VALUE);
 
-		stringLitEClass = createEClass(STRING_LIT);
-		createEAttribute(stringLitEClass, STRING_LIT__VALUE);
+		procCallEClass = createEClass(PROC_CALL);
+		createEReference(procCallEClass, PROC_CALL__ACTUAL_ARGS);
+		createEReference(procCallEClass, PROC_CALL__DECLARATION);
 
-		boolLitEClass = createEClass(BOOL_LIT);
-		createEAttribute(boolLitEClass, BOOL_LIT__VALUE);
+		procDeclarationEClass = createEClass(PROC_DECLARATION);
+		createEAttribute(procDeclarationEClass, PROC_DECLARATION__NAME);
+		createEReference(procDeclarationEClass, PROC_DECLARATION__ARGS);
+		createEReference(procDeclarationEClass, PROC_DECLARATION__PROC_CALL);
+		createEReference(procDeclarationEClass, PROC_DECLARATION__INSTRUCTIONS);
 
-		arithmeticExpressionEClass = createEClass(ARITHMETIC_EXPRESSION);
-		createEReference(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__LEFT);
-		createEReference(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__RIGHT);
-		createEAttribute(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__OPERATOR);
+		blockEClass = createEClass(BLOCK);
+		createEReference(blockEClass, BLOCK__INSTRUCTIONS);
 
-		// Create enums
-		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
+		ifEClass = createEClass(IF);
+		createEReference(ifEClass, IF__THEN_PART);
+		createEReference(ifEClass, IF__ELSE_PART);
+
+		controlStructureEClass = createEClass(CONTROL_STRUCTURE);
+		createEReference(controlStructureEClass, CONTROL_STRUCTURE__CONDITION);
+
+		repeatEClass = createEClass(REPEAT);
+		createEReference(repeatEClass, REPEAT__BLOCK);
+
+		whileEClass = createEClass(WHILE);
+		createEReference(whileEClass, WHILE__BLOCK);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEAttribute(parameterEClass, PARAMETER__NAME);
+
+		parameterCallEClass = createEClass(PARAMETER_CALL);
+		createEReference(parameterCallEClass, PARAMETER_CALL__PARAMETER);
+
+		plusEClass = createEClass(PLUS);
+
+		minusEClass = createEClass(MINUS);
+
+		multEClass = createEClass(MULT);
+
+		divEClass = createEClass(DIV);
+
+		equalsEClass = createEClass(EQUALS);
+
+		greaterEClass = createEClass(GREATER);
+
+		lowerEClass = createEClass(LOWER);
+
+		logoProgramEClass = createEClass(LOGO_PROGRAM);
+		createEReference(logoProgramEClass, LOGO_PROGRAM__INSTRUCTIONS);
+
+		// Create data types
+		integerEDataType = createEDataType(INTEGER);
+		booleanEDataType = createEDataType(BOOLEAN);
+		stringEDataType = createEDataType(STRING);
 	}
 
 	/**
@@ -590,19 +970,29 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		penDownEClass.getESuperTypes().add(this.getPrimitive());
 		penUpEClass.getESuperTypes().add(this.getPrimitive());
 		clearEClass.getESuperTypes().add(this.getPrimitive());
-		integerLitEClass.getESuperTypes().add(this.getLiteral());
-		stringLitEClass.getESuperTypes().add(this.getLiteral());
-		boolLitEClass.getESuperTypes().add(this.getLiteral());
-		arithmeticExpressionEClass.getESuperTypes().add(this.getExpression());
+		expressionEClass.getESuperTypes().add(this.getInstruction());
+		binaryExpEClass.getESuperTypes().add(this.getExpression());
+		constantEClass.getESuperTypes().add(this.getExpression());
+		procCallEClass.getESuperTypes().add(this.getExpression());
+		procDeclarationEClass.getESuperTypes().add(this.getInstruction());
+		blockEClass.getESuperTypes().add(this.getInstruction());
+		ifEClass.getESuperTypes().add(this.getControlStructure());
+		controlStructureEClass.getESuperTypes().add(this.getInstruction());
+		repeatEClass.getESuperTypes().add(this.getControlStructure());
+		whileEClass.getESuperTypes().add(this.getControlStructure());
+		parameterCallEClass.getESuperTypes().add(this.getExpression());
+		plusEClass.getESuperTypes().add(this.getBinaryExp());
+		minusEClass.getESuperTypes().add(this.getBinaryExp());
+		multEClass.getESuperTypes().add(this.getBinaryExp());
+		divEClass.getESuperTypes().add(this.getBinaryExp());
+		equalsEClass.getESuperTypes().add(this.getBinaryExp());
+		greaterEClass.getESuperTypes().add(this.getBinaryExp());
+		lowerEClass.getESuperTypes().add(this.getBinaryExp());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLogoProgram_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, LogoProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(primitiveEClass, Primitive.class, "Primitive", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPrimitive_Expression(), this.getExpression(), null, "expression", null, 1, 1, Primitive.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(backEClass, Back.class, "Back", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBack_Steps(), this.getExpression(), null, "steps", null, 1, 1, Back.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -624,28 +1014,66 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(binaryExpEClass, BinaryExp.class, "BinaryExp", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBinaryExp_Lhs(), this.getExpression(), null, "lhs", null, 1, 1, BinaryExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBinaryExp_Rhs(), this.getExpression(), null, "rhs", null, 1, 1, BinaryExp.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(integerLitEClass, IntegerLit.class, "IntegerLit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntegerLit_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConstant_IntegerValue(), this.getInteger(), "integerValue", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(stringLitEClass, StringLit.class, "StringLit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStringLit_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(procCallEClass, ProcCall.class, "ProcCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProcCall_ActualArgs(), this.getExpression(), null, "actualArgs", null, 0, -1, ProcCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcCall_Declaration(), this.getProcDeclaration(), this.getProcDeclaration_ProcCall(), "declaration", null, 1, 1, ProcCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(boolLitEClass, BoolLit.class, "BoolLit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBoolLit_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, BoolLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(procDeclarationEClass, ProcDeclaration.class, "ProcDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProcDeclaration_Name(), this.getString(), "name", null, 0, 1, ProcDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcDeclaration_Args(), this.getParameter(), null, "args", null, 0, -1, ProcDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcDeclaration_ProcCall(), this.getProcCall(), this.getProcCall_Declaration(), "procCall", null, 0, -1, ProcDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcDeclaration_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, ProcDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(arithmeticExpressionEClass, ArithmeticExpression.class, "ArithmeticExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getArithmeticExpression_Left(), this.getExpression(), null, "left", null, 1, 1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArithmeticExpression_Right(), this.getExpression(), null, "right", null, 1, 1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getArithmeticExpression_Operator(), this.getArithmeticOperator(), "operator", null, 0, 1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBlock_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		// Initialize enums and add enum literals
-		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MINUS);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MULT);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.DIV);
+		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIf_ThenPart(), this.getBlock(), null, "thenPart", null, 1, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIf_ElsePart(), this.getBlock(), null, "elsePart", null, 0, 1, If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(controlStructureEClass, ControlStructure.class, "ControlStructure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getControlStructure_Condition(), this.getExpression(), null, "condition", null, 0, 1, ControlStructure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(repeatEClass, Repeat.class, "Repeat", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRepeat_Block(), this.getBlock(), null, "block", null, 1, 1, Repeat.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(whileEClass, While.class, "While", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getWhile_Block(), this.getBlock(), null, "block", null, 1, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameter_Name(), this.getString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterCallEClass, ParameterCall.class, "ParameterCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParameterCall_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(plusEClass, Plus.class, "Plus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(minusEClass, Minus.class, "Minus", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(multEClass, Mult.class, "Mult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(divEClass, Div.class, "Div", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(equalsEClass, Equals.class, "Equals", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(greaterEClass, Greater.class, "Greater", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(lowerEClass, Lower.class, "Lower", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogoProgram_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, LogoProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(integerEDataType, int.class, "Integer", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(booleanEDataType, Boolean.class, "Boolean", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(stringEDataType, String.class, "String", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

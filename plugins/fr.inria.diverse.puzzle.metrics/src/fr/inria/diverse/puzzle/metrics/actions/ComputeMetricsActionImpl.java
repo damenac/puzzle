@@ -1,21 +1,16 @@
 package fr.inria.diverse.puzzle.metrics.actions;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
-import org.eclipse.core.resources.IWorkspaceRoot;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
@@ -36,19 +31,23 @@ import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.PairwiseRelationshipRatio;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ReusabilityBenefit;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticOverlapping;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SyntactOverlapping;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.TotalAmountOfConcepts;
 
 public class ComputeMetricsActionImpl {
 
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
+	
 	private static ComputeMetricsActionImpl instance;
 	
-	private ComputeMetricsActionImpl(){
-		
-	}
+	// -----------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------
+	
+	private ComputeMetricsActionImpl(){}
 	
 	public static ComputeMetricsActionImpl getInstance(){
 		if(instance == null)
@@ -56,6 +55,18 @@ public class ComputeMetricsActionImpl {
 		return instance;
 	}
 	
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
+	/**
+	 * Computes the metrics defined in Mendez-Acuna et. al and generates the corresponding report in HTML. 
+	 * @param selectedResource
+	 * @return
+	 * @throws IOException
+	 * @throws CoreException
+	 * @throws URISyntaxException
+	 */
 	public String computeMetrics(IResource selectedResource) throws IOException, CoreException, URISyntaxException{
 		Injector injector = new MelangeStandaloneSetup().createInjectorAndDoEMFRegistration();
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
@@ -64,10 +75,13 @@ public class ComputeMetricsActionImpl {
 		resource.load(resourceSet.getLoadOptions());
 		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
+		ArrayList<Language> languages = new ArrayList<Language>();
+		
 		ModelTypingSpace familyTypingSpace = (ModelTypingSpace) resource.getContents().get(0);
 		for (Element element : familyTypingSpace.getElements()) {
 			if(element instanceof Language){
 				Language language = (Language)element;
+				languages.add(language);
 				EPackage currentMetamodel = ModelUtils.loadEcoreResource(language.getSyntax().getEcoreUri());
 				ePackages.add(currentMetamodel);
 			}
@@ -78,16 +92,16 @@ public class ComputeMetricsActionImpl {
 		IProject project = selectedResource.getProject();
 		
 		String generalMetricsString = "";
-		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(ePackages);
-		generalMetricsString += ProductRelatedReusability.getVariablesDeclaration(ePackages);
-		generalMetricsString += IndividualizationRatio.getVariablesDeclaration(ePackages);
-		generalMetricsString += PairwiseRelationshipRatio.getVariablesDeclaration(ePackages);
+		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(languages);
+		generalMetricsString += ProductRelatedReusability.getVariablesDeclaration(languages);
+		generalMetricsString += IndividualizationRatio.getVariablesDeclaration(languages);
+		generalMetricsString += PairwiseRelationshipRatio.getVariablesDeclaration(languages);
 
 		String generalMetricsWindowsString = "window.onload = function(){\n";
 		generalMetricsWindowsString += SizeOfCommonality.getWindow();
 		generalMetricsWindowsString += ProductRelatedReusability.getWindow();
 		generalMetricsWindowsString += IndividualizationRatio.getWindow();
-		generalMetricsWindowsString += PairwiseRelationshipRatio.getWindow(ePackages);
+		generalMetricsWindowsString += PairwiseRelationshipRatio.getWindow(languages);
 		generalMetricsWindowsString += "};";
 		
 		//Copying the java script libraries if they dont exist
@@ -108,14 +122,14 @@ public class ComputeMetricsActionImpl {
 		if(!syntacticVennData.exists())
 			syntacticVennData.createNewFile();
 		PrintWriter out = new PrintWriter( syntacticVennData );
-        out.print(SyntactOverlapping.evaluate(ePackages));
+        out.print(SyntactOverlapping.evaluate(languages));
         out.close();
         
         File semanticVennData = new File(project.getLocation().toString() + "/libVenn/semanticVennData.jsonp" );
 		if(!semanticVennData.exists())
 			semanticVennData.createNewFile();
 		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
-		outSemanticVennData.print(SemanticOverlapping.evaluate(ePackages));
+		outSemanticVennData.print(SemanticOverlapping.evaluate(languages));
 		outSemanticVennData.close();
         
         URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/analysis.html");
@@ -127,7 +141,7 @@ public class ComputeMetricsActionImpl {
         	content += currentLine;
         	currentLine = br.readLine();
         }
-        content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", PairwiseRelationshipRatio.getTables(ePackages));
+        content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", PairwiseRelationshipRatio.getTables(languages));
         br.close();
         
         File fileReport = new File(project.getLocation().toString() + "/analysisReport.html" );

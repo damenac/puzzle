@@ -11,7 +11,6 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.ProductRelatedReusability"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.SyntacticIndividualizationRatio"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.EcoreQueries"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.ReusabilityBenefit"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
@@ -20,7 +19,6 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.TotalAmountOfConcepts"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality"/>
@@ -32,4 +30,21 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticOverlapping"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace"/>
+<fullyQualifiedTypeName name="com.google.inject.Injector"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.MelangeStandaloneSetup"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.resource.XtextResourceSet"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.resource.XtextResource"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.common.util.URI"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Element"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
 </qualifiedTypeNameHistroy>

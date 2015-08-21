@@ -68,10 +68,6 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 	protected KmLogoSwitch<Adapter> modelSwitch =
 		new KmLogoSwitch<Adapter>() {
 			@Override
-			public Adapter caseLogoProgram(LogoProgram object) {
-				return createLogoProgramAdapter();
-			}
-			@Override
 			public Adapter caseInstruction(Instruction object) {
 				return createInstructionAdapter();
 			}
@@ -112,24 +108,80 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 				return createExpressionAdapter();
 			}
 			@Override
-			public Adapter caseLiteral(Literal object) {
-				return createLiteralAdapter();
+			public Adapter caseBinaryExp(BinaryExp object) {
+				return createBinaryExpAdapter();
 			}
 			@Override
-			public Adapter caseIntegerLit(IntegerLit object) {
-				return createIntegerLitAdapter();
+			public Adapter caseConstant(Constant object) {
+				return createConstantAdapter();
 			}
 			@Override
-			public Adapter caseStringLit(StringLit object) {
-				return createStringLitAdapter();
+			public Adapter caseProcCall(ProcCall object) {
+				return createProcCallAdapter();
 			}
 			@Override
-			public Adapter caseBoolLit(BoolLit object) {
-				return createBoolLitAdapter();
+			public Adapter caseProcDeclaration(ProcDeclaration object) {
+				return createProcDeclarationAdapter();
 			}
 			@Override
-			public Adapter caseArithmeticExpression(ArithmeticExpression object) {
-				return createArithmeticExpressionAdapter();
+			public Adapter caseBlock(Block object) {
+				return createBlockAdapter();
+			}
+			@Override
+			public Adapter caseIf(If object) {
+				return createIfAdapter();
+			}
+			@Override
+			public Adapter caseControlStructure(ControlStructure object) {
+				return createControlStructureAdapter();
+			}
+			@Override
+			public Adapter caseRepeat(Repeat object) {
+				return createRepeatAdapter();
+			}
+			@Override
+			public Adapter caseWhile(While object) {
+				return createWhileAdapter();
+			}
+			@Override
+			public Adapter caseParameter(Parameter object) {
+				return createParameterAdapter();
+			}
+			@Override
+			public Adapter caseParameterCall(ParameterCall object) {
+				return createParameterCallAdapter();
+			}
+			@Override
+			public Adapter casePlus(Plus object) {
+				return createPlusAdapter();
+			}
+			@Override
+			public Adapter caseMinus(Minus object) {
+				return createMinusAdapter();
+			}
+			@Override
+			public Adapter caseMult(Mult object) {
+				return createMultAdapter();
+			}
+			@Override
+			public Adapter caseDiv(Div object) {
+				return createDivAdapter();
+			}
+			@Override
+			public Adapter caseEquals(Equals object) {
+				return createEqualsAdapter();
+			}
+			@Override
+			public Adapter caseGreater(Greater object) {
+				return createGreaterAdapter();
+			}
+			@Override
+			public Adapter caseLower(Lower object) {
+				return createLowerAdapter();
+			}
+			@Override
+			public Adapter caseLogoProgram(LogoProgram object) {
+				return createLogoProgramAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -150,20 +202,6 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link kmLogo.LogoProgram <em>Logo Program</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see kmLogo.LogoProgram
-	 * @generated
-	 */
-	public Adapter createLogoProgramAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link kmLogo.Instruction <em>Instruction</em>}'.
@@ -306,72 +344,268 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link kmLogo.Literal <em>Literal</em>}'.
+	 * Creates a new adapter for an object of class '{@link kmLogo.BinaryExp <em>Binary Exp</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see kmLogo.Literal
+	 * @see kmLogo.BinaryExp
 	 * @generated
 	 */
-	public Adapter createLiteralAdapter() {
+	public Adapter createBinaryExpAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link kmLogo.IntegerLit <em>Integer Lit</em>}'.
+	 * Creates a new adapter for an object of class '{@link kmLogo.Constant <em>Constant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see kmLogo.IntegerLit
+	 * @see kmLogo.Constant
 	 * @generated
 	 */
-	public Adapter createIntegerLitAdapter() {
+	public Adapter createConstantAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link kmLogo.StringLit <em>String Lit</em>}'.
+	 * Creates a new adapter for an object of class '{@link kmLogo.ProcCall <em>Proc Call</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see kmLogo.StringLit
+	 * @see kmLogo.ProcCall
 	 * @generated
 	 */
-	public Adapter createStringLitAdapter() {
+	public Adapter createProcCallAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link kmLogo.BoolLit <em>Bool Lit</em>}'.
+	 * Creates a new adapter for an object of class '{@link kmLogo.ProcDeclaration <em>Proc Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see kmLogo.BoolLit
+	 * @see kmLogo.ProcDeclaration
 	 * @generated
 	 */
-	public Adapter createBoolLitAdapter() {
+	public Adapter createProcDeclarationAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link kmLogo.ArithmeticExpression <em>Arithmetic Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link kmLogo.Block <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see kmLogo.ArithmeticExpression
+	 * @see kmLogo.Block
 	 * @generated
 	 */
-	public Adapter createArithmeticExpressionAdapter() {
+	public Adapter createBlockAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.If <em>If</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.If
+	 * @generated
+	 */
+	public Adapter createIfAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.ControlStructure <em>Control Structure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.ControlStructure
+	 * @generated
+	 */
+	public Adapter createControlStructureAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Repeat <em>Repeat</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Repeat
+	 * @generated
+	 */
+	public Adapter createRepeatAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.While <em>While</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.While
+	 * @generated
+	 */
+	public Adapter createWhileAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Parameter
+	 * @generated
+	 */
+	public Adapter createParameterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.ParameterCall <em>Parameter Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.ParameterCall
+	 * @generated
+	 */
+	public Adapter createParameterCallAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Plus <em>Plus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Plus
+	 * @generated
+	 */
+	public Adapter createPlusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Minus <em>Minus</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Minus
+	 * @generated
+	 */
+	public Adapter createMinusAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Mult <em>Mult</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Mult
+	 * @generated
+	 */
+	public Adapter createMultAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Div <em>Div</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Div
+	 * @generated
+	 */
+	public Adapter createDivAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Equals <em>Equals</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Equals
+	 * @generated
+	 */
+	public Adapter createEqualsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Greater <em>Greater</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Greater
+	 * @generated
+	 */
+	public Adapter createGreaterAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.Lower <em>Lower</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.Lower
+	 * @generated
+	 */
+	public Adapter createLowerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link kmLogo.LogoProgram <em>Logo Program</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see kmLogo.LogoProgram
+	 * @generated
+	 */
+	public Adapter createLogoProgramAdapter() {
 		return null;
 	}
 

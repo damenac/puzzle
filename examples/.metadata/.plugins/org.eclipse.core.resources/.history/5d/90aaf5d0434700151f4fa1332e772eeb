@@ -1,0 +1,42 @@
+package FSM.simultaneous
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.ArrayList
+import java.util.Hashtable
+import java.util.Scanner
+
+import fsmcore.FinalState
+import fsmcore.StateMachine
+import fsmcore.State
+import fsmcore.Transition
+import fsmcore.Trigger
+import fsmcore.AbstractState
+import fsmcore.Pseudostate
+import fsmcore.PseudostateKind
+
+import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.common.util.BasicEList
+
+import static extension FSM.simultaneous.StateAspect.*
+import static extension FSM.simultaneous.RegionAspect.*
+import static extension FSM.simultaneous.TransitionAspect.*
+import static extension FSM.simultaneous.TriggerAspect.*
+import fsmcore.Region
+
+// *.*
+// ASPECT
+/**
+ * StateMachineAspect: Aspects for the State Machine meta-class
+ * Serves as the interpreter of the state machine (the controller of the )
+ */ 
+@Aspect(className=StateMachine)
+class StateMachineAspect { 
+	
+	
+	def public void evalStateMachine() {
+		println("\nExecuting the state machine. Please enter the events to process...\n")
+		
+	}
+}

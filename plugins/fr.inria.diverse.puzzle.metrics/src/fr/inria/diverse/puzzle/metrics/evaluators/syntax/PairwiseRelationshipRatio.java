@@ -5,10 +5,13 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
+import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class PairwiseRelationshipRatio {
 
-	public static String evaluate(ArrayList<EPackage> ePackages){
+	public static String evaluate(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String result = "";
 		
 		for (EPackage ePackageI : ePackages) {
@@ -20,11 +23,11 @@ public class PairwiseRelationshipRatio {
 				}
 			}
 		}
-		
 		return result;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<EPackage> ePackages){
+	public static String getVariablesDeclaration(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		for (EPackage ePackageI : ePackages) {
 			answer += "var barRelationshipRatio" + ePackageI.getName() + " = {\n";
@@ -74,7 +77,8 @@ public class PairwiseRelationshipRatio {
 		return answer;
 	}
 	
-	public static String getWindow(ArrayList<EPackage> ePackages){
+	public static String getWindow(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		for (EPackage ePackageI : ePackages) {
 			answer += "    var ctxRelationshipRatio" + ePackageI.getName() + " = document.getElementById(\"pie-relationship-ratio-" + ePackageI.getName() + "\").getContext(\"2d\");\n";
@@ -85,7 +89,8 @@ public class PairwiseRelationshipRatio {
 		return answer;
 	}
 	
-	public static String getTables(ArrayList<EPackage> ePackages){
+	public static String getTables(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		char index = 'a';
 		for (EPackage ePackageI : ePackages) {

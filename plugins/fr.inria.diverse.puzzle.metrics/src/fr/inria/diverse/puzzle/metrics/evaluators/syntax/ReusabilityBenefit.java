@@ -5,11 +5,14 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
+import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class ReusabilityBenefit {
 
-	public static String evaluate(ArrayList<EPackage> ePackages){
-		double SoC = SizeOfCommonality.evaluateForSyntax(ePackages);
+	public static String evaluate(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+		double SoC = SizeOfCommonality.evaluateForSyntax(languages);
 		String result = "";
 		
 		for (EPackage ePackageI : ePackages) {
@@ -18,15 +21,9 @@ public class ReusabilityBenefit {
 					double currentValue = SoC / EcoreQueries.getIntersection(ePackageI, ePackageJ).size();
 					
 					result += "  - " + ePackageI.getName() + " vs " + ePackageJ.getName() + ": " + currentValue + "\n";
-					
-//					for (String string : EcoreQueries.getIntersection(ePackageI, ePackageJ)) {
-//						result += "       * " + string + "\n";
-//					}
 				}
 			}
 		}
-		
 		return result;
 	}
-	
 }

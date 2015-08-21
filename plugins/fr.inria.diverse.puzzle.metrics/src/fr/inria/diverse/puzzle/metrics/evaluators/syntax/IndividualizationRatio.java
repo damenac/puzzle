@@ -5,12 +5,16 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class IndividualizationRatio {
 
-	public static String evaluateForSyntax(ArrayList<EPackage> ePackages){
+	public static String evaluateForSyntax(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+		
 		String answer = "";
 		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList);
@@ -33,7 +37,9 @@ public class IndividualizationRatio {
 		return answer;
 	}
 	
-	public static String evaluateForSemantics(ArrayList<EPackage> ePackages){
+	public static String evaluateForSemantics(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+		
 		String answer = "";
 		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList);
@@ -66,7 +72,9 @@ public class IndividualizationRatio {
 		return count;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<EPackage> ePackages){
+	public static String getVariablesDeclaration(ArrayList<Language> languages){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+		
 		String answer = "var barIndividualizationRatio = {\n";
 		
 		boolean first = true;
@@ -84,14 +92,14 @@ public class IndividualizationRatio {
 		answer += "        strokeColor : \"rgba(220,220,220,0.8)\",\n";
 		answer += "        highlightFill: \"rgba(220,220,220,0.75)\",\n";
 		answer += "        highlightStroke: \"rgba(220,220,220,1)\",\n";
-		answer += "        data : [" + evaluateForSyntax(ePackages) + "]\n";
+		answer += "        data : [" + evaluateForSyntax(languages) + "]\n";
 		answer += "      },\n";
 		answer += "      {\n";
 		answer += "        fillColor : \"rgba(151,187,205,0.5)\",\n";
 		answer += "        strokeColor : \"rgba(151,187,205,0.8)\",\n";
 		answer += "        highlightFill : \"rgba(151,187,205,0.75)\",\n";
 		answer += "        highlightStroke : \"rgba(151,187,205,1)\",\n";
-		answer += "        data : [" + evaluateForSemantics(ePackages) + "]\n"; 
+		answer += "        data : [" + evaluateForSemantics(languages) + "]\n"; 
 		answer += "      }\n";
 		answer += "    ]\n";
 		answer += "};\n";

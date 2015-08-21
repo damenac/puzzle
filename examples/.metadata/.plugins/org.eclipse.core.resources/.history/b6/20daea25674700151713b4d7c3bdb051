@@ -1,0 +1,45 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import kmLogo.Instruction
+import kmLogo.Primitive
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+import kmLogo.Back
+
+import static extension logo.InstructionAspect.*
+import static extension logo.BackAspect.*
+import static extension logo.BlockAspect.*
+
+// *.*
+// ASPECT
+ @Aspect(className=Instruction) 
+class InstructionAspect {
+ 
+	def public int eval (Context context ) {
+		return 0
+	}  
+}
+
+@Aspect(className=Primitive) 
+public class PrimitiveAspect extends InstructionAspect{  
+
+	@OverrideAspectMethod
+	def int eval (Context context) {
+		return 0
+	}
+
+} 
+
+@Aspect(className=Back)
+public class BackAspect extends PrimitiveAspect{
+
+	@OverrideAspectMethod
+	def int eval (Context context) {
+		var int param = -1*  _self.steps.eval(context)
+		println("BACK "+ param)
+		context.turtle.forward(param)
+		return 0
+	}
+
+}

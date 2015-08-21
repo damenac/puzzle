@@ -9,10 +9,21 @@ import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO;
 
-
+/**
+ * Services for manipulating families of domain-specific languages
+ * @author David Mendez-Acuna
+ */
 public class FamiliesServices {
 	
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
+	
 	private static FamiliesServices instance;
+	
+	// -----------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------
 	
 	private FamiliesServices(){}
 
@@ -22,6 +33,10 @@ public class FamiliesServices {
 		}
 		return instance;
 	}
+	
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
 	
 	public ArrayList<ConceptMemberVO> getConceptMemberMappingList(ArrayList<EPackage> ePackages){
 		ArrayList<ConceptMemberVO> conceptMemberList = new ArrayList<ConceptMemberVO>();

@@ -22,15 +22,6 @@ public interface KmLogoFactory extends EFactory {
 	KmLogoFactory eINSTANCE = kmLogo.impl.KmLogoFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Logo Program</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Logo Program</em>'.
-	 * @generated
-	 */
-	LogoProgram createLogoProgram();
-
-	/**
 	 * Returns a new object of class '<em>Back</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -94,49 +85,166 @@ public interface KmLogoFactory extends EFactory {
 	Clear createClear();
 
 	/**
-	 * Returns a new object of class '<em>Literal</em>'.
+	 * Returns a new object of class '<em>Constant</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Literal</em>'.
+	 * @return a new object of class '<em>Constant</em>'.
 	 * @generated
 	 */
-	Literal createLiteral();
+	Constant createConstant();
 
 	/**
-	 * Returns a new object of class '<em>Integer Lit</em>'.
+	 * Returns a new object of class '<em>Proc Call</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Integer Lit</em>'.
+	 * @return a new object of class '<em>Proc Call</em>'.
 	 * @generated
 	 */
-	IntegerLit createIntegerLit();
+	ProcCall createProcCall();
 
 	/**
-	 * Returns a new object of class '<em>String Lit</em>'.
+	 * Returns a new object of class '<em>Proc Declaration</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>String Lit</em>'.
+	 * @return a new object of class '<em>Proc Declaration</em>'.
 	 * @generated
 	 */
-	StringLit createStringLit();
+	ProcDeclaration createProcDeclaration();
 
 	/**
-	 * Returns a new object of class '<em>Bool Lit</em>'.
+	 * Returns a new object of class '<em>Block</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bool Lit</em>'.
+	 * @return a new object of class '<em>Block</em>'.
 	 * @generated
 	 */
-	BoolLit createBoolLit();
+	Block createBlock();
 
 	/**
-	 * Returns a new object of class '<em>Arithmetic Expression</em>'.
+	 * Returns a new object of class '<em>If</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Arithmetic Expression</em>'.
+	 * @return a new object of class '<em>If</em>'.
 	 * @generated
 	 */
-	ArithmeticExpression createArithmeticExpression();
+	If createIf();
+
+	/**
+	 * Returns a new object of class '<em>Control Structure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Control Structure</em>'.
+	 * @generated
+	 */
+	ControlStructure createControlStructure();
+
+	/**
+	 * Returns a new object of class '<em>Repeat</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Repeat</em>'.
+	 * @generated
+	 */
+	Repeat createRepeat();
+
+	/**
+	 * Returns a new object of class '<em>While</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>While</em>'.
+	 * @generated
+	 */
+	While createWhile();
+
+	/**
+	 * Returns a new object of class '<em>Parameter</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter</em>'.
+	 * @generated
+	 */
+	Parameter createParameter();
+
+	/**
+	 * Returns a new object of class '<em>Parameter Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Parameter Call</em>'.
+	 * @generated
+	 */
+	ParameterCall createParameterCall();
+
+	/**
+	 * Returns a new object of class '<em>Plus</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Plus</em>'.
+	 * @generated
+	 */
+	Plus createPlus();
+
+	/**
+	 * Returns a new object of class '<em>Minus</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Minus</em>'.
+	 * @generated
+	 */
+	Minus createMinus();
+
+	/**
+	 * Returns a new object of class '<em>Mult</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mult</em>'.
+	 * @generated
+	 */
+	Mult createMult();
+
+	/**
+	 * Returns a new object of class '<em>Div</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Div</em>'.
+	 * @generated
+	 */
+	Div createDiv();
+
+	/**
+	 * Returns a new object of class '<em>Equals</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Equals</em>'.
+	 * @generated
+	 */
+	Equals createEquals();
+
+	/**
+	 * Returns a new object of class '<em>Greater</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Greater</em>'.
+	 * @generated
+	 */
+	Greater createGreater();
+
+	/**
+	 * Returns a new object of class '<em>Lower</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Lower</em>'.
+	 * @generated
+	 */
+	Lower createLower();
+
+	/**
+	 * Returns a new object of class '<em>Logo Program</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logo Program</em>'.
+	 * @generated
+	 */
+	LogoProgram createLogoProgram();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -7,8 +7,6 @@ import kmLogo.KmLogoPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Expression</b></em>'.
@@ -18,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression {
+public abstract class ExpressionImpl extends InstructionImpl implements Expression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

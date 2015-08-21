@@ -1,0 +1,22 @@
+package family
+
+language Rhapsody {
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/rhapsody.ecore"
+	exactType RhapsodyMT
+}
+
+language Logo {
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.logo/models/logo.ecore"
+	with logo.InstructionAspect
+	with logo.PrimitiveAspect
+	with logo.BackAspect
+	with logo.ForwardAspect
+	with logo.LeftAspect
+	with logo.RightAspect
+	exactType LogoMT
+}
+
+language Flowchart {
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.flowchart/models/flowchart.ecore"
+	exactType FlowchartMT
+}

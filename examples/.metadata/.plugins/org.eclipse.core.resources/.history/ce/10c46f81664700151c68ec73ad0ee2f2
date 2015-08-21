@@ -1,0 +1,24 @@
+package logo;
+
+import java.util.Map;
+import kmLogo.Back;
+import logo.BackAspectBackAspectProperties;
+
+@SuppressWarnings("all")
+public class BackAspectBackAspectContext {
+  public final static BackAspectBackAspectContext INSTANCE /* Skipped initializer because of errors */;
+  
+  public static BackAspectBackAspectProperties getSelf(final Back _self) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type BackAspect is already defined in logo.xtend."
+      + "\nThe type BackAspectBackAspectContext is already defined in logo.xtend.");
+  }
+  
+  private Map<Back, BackAspectBackAspectProperties> map /* Skipped initializer because of errors */;
+  
+  public Map<Back, BackAspectBackAspectProperties> getMap() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type BackAspect is already defined in logo.xtend."
+      + "\nThe type BackAspectBackAspectContext is already defined in logo.xtend.");
+  }
+}

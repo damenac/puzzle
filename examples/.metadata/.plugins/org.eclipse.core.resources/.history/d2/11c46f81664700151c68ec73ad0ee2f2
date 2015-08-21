@@ -1,0 +1,24 @@
+package logo;
+
+import java.util.Map;
+import kmLogo.Instruction;
+import logo.InstructionAspectInstructionAspectProperties;
+
+@SuppressWarnings("all")
+public class InstructionAspectInstructionAspectContext {
+  public final static InstructionAspectInstructionAspectContext INSTANCE /* Skipped initializer because of errors */;
+  
+  public static InstructionAspectInstructionAspectProperties getSelf(final Instruction _self) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type InstructionAspect is already defined in logo.xtend."
+      + "\nThe type InstructionAspectInstructionAspectContext is already defined in logo.xtend.");
+  }
+  
+  private Map<Instruction, InstructionAspectInstructionAspectProperties> map /* Skipped initializer because of errors */;
+  
+  public Map<Instruction, InstructionAspectInstructionAspectProperties> getMap() {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type InstructionAspect is already defined in logo.xtend."
+      + "\nThe type InstructionAspectInstructionAspectContext is already defined in logo.xtend.");
+  }
+}
