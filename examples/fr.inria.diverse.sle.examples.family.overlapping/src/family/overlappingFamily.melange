@@ -1,9 +1,29 @@
 package family
 
-//language Rhapsody {
-//	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/rhapsody.ecore"
-//	exactType RhapsodyMT
-//}
+/**
+ * A language for State Machines defined according the Rhapsody formalism. 
+ */
+language Rhapsody {
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/rhapsody.ecore"
+	
+	with rhapsody.StateMachineAspect
+	with rhapsody.RegionAspect
+	with rhapsody.StateAspect
+	with rhapsody.TransitionAspect
+	with rhapsody.TriggerAspect
+	with rhapsody.FinalStateAspect
+	with rhapsody.ExpressionAspect
+	with rhapsody.LiteralAspect
+	with rhapsody.IntegerLitAspect
+	with rhapsody.StringLitAspect
+	with rhapsody.BoolLitAspect
+	with rhapsody.ArithmeticExpressionAspect
+	with rhapsody.RelationalExpressionAspect
+	with rhapsody.ConstraintAspect
+	with rhapsody.RelationalConstraintAspect
+	
+	exactType RhapsodyMT
+}
 
 /**
  * A language for Logo 
@@ -12,7 +32,7 @@ language Logo {
 	
 	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.logo/models/logo.ecore"
 	 
-	with logo.InstructionAspect
+	with logo.InstructionAspect 
 	with logo.PrimitiveAspect
 	with logo.BackAspect
 	with logo.ForwardAspect
@@ -49,6 +69,12 @@ language Flowchart {
 	
 	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.flowchart/models/flowchart.ecore"
 	
+	with flowchart.FlowchartAspect
+	with flowchart.NodeAspect
+	with flowchart.ArcAspect
+	with flowchart.SubflowAspect
+	with flowchart.ActionAspect
+	with flowchart.DecisionAspect
 	with flowchart.ExpressionAspect
 	with flowchart.LiteralAspect
 	with flowchart.IntegerLitAspect

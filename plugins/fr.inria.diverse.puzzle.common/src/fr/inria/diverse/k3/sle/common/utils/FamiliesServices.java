@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.xtext.common.types.JvmOperation;
 
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
@@ -102,7 +104,6 @@ public class FamiliesServices {
 							!aspectOperation.getSimpleName().contains("_privk3_")){
 						ConceptMethodMemberVO conceptMethodMember = new ConceptMethodMemberVO(aspectOperation.getDeclaringType(), aspectOperation, memberName);
 						conceptMethodMemberList.add(conceptMethodMember);
-						System.out.println(memberName + "." + aspectOperation.getDeclaringType().getSimpleName().replace("Aspect", "") + "." + aspectOperation.getSimpleName());
 					}
 				}
 			}
@@ -113,11 +114,12 @@ public class FamiliesServices {
 	 * Returns a list where each concept is related to the set of family members it belongs to. 
 	 * @param conceptMemberList
 	 * @return
+	 * @throws Exception 
 	 */
-	public ArrayList<ConceptMembersGroupVO> getConceptMemberGroupList(ArrayList<ConceptMemberVO> conceptMemberList){
+	public ArrayList<ConceptMembersGroupVO> getConceptMemberGroupList(ArrayList<ConceptMemberVO> conceptMemberList, ConceptComparison comparisonOperator) throws Exception{
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = new ArrayList<ConceptMembersGroupVO>();
 		for (ConceptMemberVO conceptMemberVO : conceptMemberList) {
-			ConceptMembersGroupVO conceptMemberGroupLegacy = getConceptMemberGroup(conceptMemberGroupList, conceptMemberVO);
+			ConceptMembersGroupVO conceptMemberGroupLegacy = getConceptMemberGroup(conceptMemberGroupList, conceptMemberVO, comparisonOperator);
 			if(conceptMemberGroupLegacy == null){
 				ConceptMembersGroupVO conceptMemberGroupVO = new ConceptMembersGroupVO(conceptMemberVO.getConcept());
 				conceptMemberGroupVO.getMemberGroup().add(conceptMemberVO.getMemberName());
@@ -135,47 +137,53 @@ public class FamiliesServices {
 	 * @param conceptMemberGroupList
 	 * @param conceptMemberVO
 	 * @return
+	 * @throws IllegalAccessException 
+	 * @throws Exception 
 	 */
 	private ConceptMembersGroupVO getConceptMemberGroup(ArrayList<ConceptMembersGroupVO> conceptMemberGroupList,
-			ConceptMemberVO conceptMemberVO) {
+			ConceptMemberVO conceptMemberVO, ConceptComparison comparisonOperator) throws Exception {
 		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
 			// *.*
 			// Here we have the equals operator!!!!!!
-			if(conceptMembersGroupVO.getConcept().getName().equals(conceptMemberVO.getConcept().getName()))
+			if(comparisonOperator.equals(conceptMembersGroupVO.getConcept(), conceptMemberVO.getConcept())){
 				return conceptMembersGroupVO;
+			}
 		}
 		return null;
 	}
 	
 	/**
 	 * Returns a list where each method is related to the set of family members it belongs to. 
+	 * @param comparisonOperator 
 	 * @param conceptMemberList
 	 * @return
 	 */
-	public ArrayList<ConceptMethodMembersGroupVO> getConceptMethodMemberGroupList(ArrayList<ConceptMethodMemberVO> conceptMethodMemberList){
+	public ArrayList<ConceptMethodMembersGroupVO> getConceptMethodMemberGroupList(ArrayList<ConceptMethodMemberVO> conceptMethodMemberList, ConceptComparison conceptComparisonOperator,
+			MethodComparison methodComparisonOperator){
 		ArrayList<ConceptMethodMembersGroupVO> conceptMemberGroupList = new ArrayList<ConceptMethodMembersGroupVO>();
 		for (ConceptMethodMemberVO conceptMethodMembersVO : conceptMethodMemberList) {
-			ConceptMethodMembersGroupVO conceptMethodMemberGroupLegacy = getConceptMethodMemberGroup(conceptMemberGroupList, conceptMethodMembersVO);
+			ConceptMethodMembersGroupVO conceptMethodMemberGroupLegacy = getConceptMethodMemberGroup(conceptMemberGroupList, conceptMethodMembersVO, conceptComparisonOperator, methodComparisonOperator);
 			
 			if(conceptMethodMemberGroupLegacy == null){
 				ConceptMethodMembersGroupVO newConceptMethodMembersGroup = new ConceptMethodMembersGroupVO(conceptMethodMembersVO.getConcept(), conceptMethodMembersVO.getMethod());
 				newConceptMethodMembersGroup.getMemberGroup().add(conceptMethodMembersVO.getMemberName());
 				conceptMemberGroupList.add(newConceptMethodMembersGroup);
 			}else{
-				conceptMethodMemberGroupLegacy.getMemberGroup().add(conceptMethodMembersVO.getMemberName());
+				if(!conceptMethodMemberGroupLegacy.getMemberGroup().contains(conceptMethodMembersVO.getMemberName()))
+					conceptMethodMemberGroupLegacy.getMemberGroup().add(conceptMethodMembersVO.getMemberName());
 			}
 		}
 		return conceptMemberGroupList;
 	}
 	
-	private ConceptMethodMembersGroupVO getConceptMethodMemberGroup(
-			ArrayList<ConceptMethodMembersGroupVO> conceptMemberGroupList,
-			ConceptMethodMemberVO conceptMethodMembersVO) {
+	private ConceptMethodMembersGroupVO getConceptMethodMemberGroup(ArrayList<ConceptMethodMembersGroupVO> conceptMemberGroupList,
+			ConceptMethodMemberVO conceptMethodMembersVO, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) {
 		for (ConceptMethodMembersGroupVO currentConceptMethodMembersGroupVO : conceptMemberGroupList) {
 			// *.*
 			// Here we have the equals operator!!!!!!
+			//TODO FIX THIS
 			boolean conceptsAreTheSame = currentConceptMethodMembersGroupVO.getConcept().getSimpleName().equals(conceptMethodMembersVO.getConcept().getSimpleName());
-			boolean methodsAreTheSame = currentConceptMethodMembersGroupVO.getMethod().getSimpleName().equals(conceptMethodMembersVO.getMethod().getSimpleName());
+			boolean methodsAreTheSame = methodComparisonOperator.equal(currentConceptMethodMembersGroupVO.getMethod(), conceptMethodMembersVO.getMethod());
 			if(conceptsAreTheSame && methodsAreTheSame)
 				return currentConceptMethodMembersGroupVO;
 		}
@@ -183,12 +191,12 @@ public class FamiliesServices {
 	}
 
 	
-	public ArrayList<ModuleConceptsVO> obtainConceptsOwenerLanguagesList(ArrayList<EPackage> ePackages){
+	public ArrayList<ModuleConceptsVO> obtainConceptsOwenerLanguagesList(ArrayList<EPackage> ePackages, ConceptComparison comparisonOperator) throws Exception{
 		// Step 1: Scan the metamodels creating the concept-member list.
 		ArrayList<ConceptMemberVO> conceptMemberList = this.getConceptMemberMappingList(ePackages);
 		
 		// Step 2: For each concept, get the group of members it belongs.
-		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = this.getConceptMemberGroupList(conceptMemberList);
+		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = this.getConceptMemberGroupList(conceptMemberList, comparisonOperator);
 		
 		ArrayList<ModuleConceptsVO> moduleConceptsList = new ArrayList<ModuleConceptsVO>();
 		int i = 1;
@@ -216,5 +224,88 @@ public class FamiliesServices {
 				return featureConceptsVO;
 		}
 		return null;
+	}
+	
+	
+	
+	/**
+	 * Returns the intersection between two EPackages by using the concepts comparison in the parameter. 
+	 * @param left
+	 * @param right
+	 * @return
+	 */
+	public static ArrayList<String> getIntersection(EPackage left, EPackage right, ConceptComparison comparisonOperator){
+		ArrayList<EClassifier> leftClassifiers = new ArrayList<EClassifier>();
+		getClassifiersArray(left, leftClassifiers);
+		
+		ArrayList<EClassifier> rightClassifiers = new ArrayList<EClassifier>();
+		getClassifiersArray(right, rightClassifiers);
+		
+		ArrayList<String> answer = new ArrayList<String>();
+		
+		for (EClassifier eClassifier : leftClassifiers) {
+			if(EcoreQueries.searchEClassifierByComparisonOperator(right, eClassifier, comparisonOperator) != null && !answer.contains(eClassifier.getName()))
+				answer.add(eClassifier.getName());
+		}
+		
+		for (EClassifier eClassifier : rightClassifiers) {
+			if(EcoreQueries.searchEClassifierByComparisonOperator(left, eClassifier, comparisonOperator) != null && !answer.contains(eClassifier.getName()))
+				answer.add(eClassifier.getName());
+				
+		}
+		
+		return answer;
+	}
+
+	private static void getClassifiersArray(EPackage ePackage, ArrayList<EClassifier> classifiersArray) {
+		classifiersArray.addAll(ePackage.getEClassifiers());
+		for (EPackage eSubPackage : ePackage.getESubpackages()) {
+			getClassifiersArray(eSubPackage, classifiersArray);
+		}
+	}
+	
+	
+	public static ArrayList<String> getUnion(EPackage left, EPackage right){
+		ArrayList<EClassifier> leftClassifiers = new ArrayList<EClassifier>();
+		getClassifiersArray(left, leftClassifiers);
+		
+		ArrayList<EClassifier> rightClassifiers = new ArrayList<EClassifier>();
+		getClassifiersArray(right, rightClassifiers);
+		
+		ArrayList<String> answer = new ArrayList<String>();
+		
+		for (EClassifier eClassifier : leftClassifiers) {
+			if(!answer.contains(eClassifier.getName()))
+				answer.add(eClassifier.getName());
+		}
+		
+		for (EClassifier eClassifier : rightClassifiers) {
+			if(!answer.contains(eClassifier.getName()))
+				answer.add(eClassifier.getName());
+				
+		}
+		
+		return answer;
+	}
+	
+	public static ArrayList<String> getIntersection(Language left, Language right, MethodComparison comparisonOperator) {
+		ArrayList<JvmOperation> leftOperations = new ArrayList<JvmOperation>();
+		ArrayList<JvmOperation> rightOperations = new ArrayList<JvmOperation>();
+		
+		ArrayList<String> answer = new ArrayList<String>();
+
+		for (JvmOperation operation : leftOperations) {
+			String operationId = operation.getDeclaringType().getSimpleName() + "." + operation.getSimpleName();
+			if(XtendQueries.searchJvmOperationByComparisonOperator(right, operation, comparisonOperator) != null && !answer.contains(operationId))
+				answer.add(operationId);
+		}
+		
+		for (JvmOperation operation : rightOperations) {
+			String operationId = operation.getDeclaringType().getSimpleName() + "." + operation.getSimpleName();
+			if(XtendQueries.searchJvmOperationByComparisonOperator(left, operation, comparisonOperator) != null && !answer.contains(operationId))
+				answer.add(operationId);
+		}
+		
+		return answer;
 	}
 }

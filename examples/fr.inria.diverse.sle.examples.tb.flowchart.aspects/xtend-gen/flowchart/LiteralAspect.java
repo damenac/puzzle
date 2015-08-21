@@ -13,12 +13,12 @@ public class LiteralAspect extends ExpressionAspect {
   public static Object eval(final Literal _self) {
     flowchart.LiteralAspectLiteralAspectProperties _self_ = flowchart.LiteralAspectLiteralAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof flowchart.StringLit){
-    result = flowchart.StringLitAspect.eval((flowchart.StringLit)_self);
-    } else  if (_self instanceof flowchart.IntegerLit){
+     if (_self instanceof flowchart.IntegerLit){
     result = flowchart.IntegerLitAspect.eval((flowchart.IntegerLit)_self);
     } else  if (_self instanceof flowchart.BoolLit){
     result = flowchart.BoolLitAspect.eval((flowchart.BoolLit)_self);
+    } else  if (_self instanceof flowchart.StringLit){
+    result = flowchart.StringLitAspect.eval((flowchart.StringLit)_self);
     } else  if (_self instanceof flowchart.Literal){
     result = flowchart.LiteralAspect._privk3_eval(_self_, (flowchart.Literal)_self);
     } else  if (_self instanceof flowchart.Expression){

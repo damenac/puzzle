@@ -6,18 +6,28 @@ import org.eclipse.emf.ecore.EClassifier;
 
 public class ModuleConceptsVO {
 
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
+	
 	private String moduleName;
-	
 	private ArrayList<EClassifier> concepts;
-	
 	private String members;
 
+	// -----------------------------------------------
+	// Constructor
+	// -----------------------------------------------
+	
 	public ModuleConceptsVO(String moduleName, String members) {
 		this.moduleName = moduleName;
 		this.members = members;
 		this.concepts = new ArrayList<EClassifier>();
 	}
 
+	// -----------------------------------------------
+	// Getters and setters
+	// -----------------------------------------------
+	
 	public String getModuleName() {
 		return moduleName;
 	}

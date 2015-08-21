@@ -8,6 +8,10 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.common.types.JvmOperation;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**
  * @author David Mendez Acuna
@@ -44,6 +48,28 @@ public class EcoreQueries {
 		}
 		return null;
 	}
+	
+	/**
+	 * Searches a classifier in the language by using a specific comparison operator. 
+	 * @param language
+	 * @param toCompare
+	 * @param comparisonOperator
+	 * @return
+	 */
+	public static EClassifier searchEClassifierByComparisonOperator(EPackage language,
+			EClassifier toCompare, ConceptComparison comparisonOperator) {
+		for (EClassifier eClassifier : language.getEClassifiers()) {
+			if(comparisonOperator.equals(eClassifier, toCompare))
+				return eClassifier;
+		}
+		for(EPackage ePackage : language.getESubpackages()){
+			EClassifier eClassifier = searchEClassifierByComparisonOperator(ePackage, toCompare, comparisonOperator);
+			if(eClassifier != null)
+				return eClassifier;
+		}
+		return null;
+	}
+	
 	
 	public static EReference searchEReferenceByName(EClass eClass, String name){
 		for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {
@@ -318,58 +344,5 @@ public class EcoreQueries {
 	public static EClassifier getRootClass(EPackage metamodel){
 		//TODO To something real here!
 		return metamodel.getEClassifiers().get(0);
-	}
-	
-	public static ArrayList<String> getIntersection(EPackage left, EPackage right){
-		ArrayList<EClassifier> leftClassifiers = new ArrayList<EClassifier>();
-		getClassifiersArray(left, leftClassifiers);
-		
-		ArrayList<EClassifier> rightClassifiers = new ArrayList<EClassifier>();
-		getClassifiersArray(right, rightClassifiers);
-		
-		ArrayList<String> answer = new ArrayList<String>();
-		
-		for (EClassifier eClassifier : leftClassifiers) {
-			if(searchEClassifierByName(right, eClassifier.getName()) != null && !answer.contains(eClassifier.getName()))
-				answer.add(eClassifier.getName());
-		}
-		
-		for (EClassifier eClassifier : rightClassifiers) {
-			if(searchEClassifierByName(left, eClassifier.getName()) != null && !answer.contains(eClassifier.getName()))
-				answer.add(eClassifier.getName());
-				
-		}
-		
-		return answer;
-	}
-
-	private static void getClassifiersArray(EPackage ePackage, ArrayList<EClassifier> classifiersArray) {
-		classifiersArray.addAll(ePackage.getEClassifiers());
-		for (EPackage eSubPackage : ePackage.getESubpackages()) {
-			getClassifiersArray(eSubPackage, classifiersArray);
-		}
-	}
-	
-	public static ArrayList<String> getUnion(EPackage left, EPackage right){
-		ArrayList<EClassifier> leftClassifiers = new ArrayList<EClassifier>();
-		getClassifiersArray(left, leftClassifiers);
-		
-		ArrayList<EClassifier> rightClassifiers = new ArrayList<EClassifier>();
-		getClassifiersArray(right, rightClassifiers);
-		
-		ArrayList<String> answer = new ArrayList<String>();
-		
-		for (EClassifier eClassifier : leftClassifiers) {
-			if(!answer.contains(eClassifier.getName()))
-				answer.add(eClassifier.getName());
-		}
-		
-		for (EClassifier eClassifier : rightClassifiers) {
-			if(!answer.contains(eClassifier.getName()))
-				answer.add(eClassifier.getName());
-				
-		}
-		
-		return answer;
 	}
 }

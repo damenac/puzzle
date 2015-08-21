@@ -4,29 +4,30 @@ import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EPackage;
 
-import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class PairwiseRelationshipRatio {
 
-	public static String evaluate(ArrayList<Language> languages){
+	public static String evaluate(ArrayList<Language> languages, ConceptComparison comparisonOperator){
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String result = "";
 		
 		for (EPackage ePackageI : ePackages) {
 			for (EPackage ePackageJ : ePackages) {
 				if(!ePackageI.getName().equals(ePackageJ.getName())){
-					double currentValue = ((double)EcoreQueries.getIntersection(ePackageI, ePackageJ).size()) / ((double)EcoreQueries.getUnion(ePackageI, ePackageJ).size());
+					double currentValue = ((double) FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size()) / ((double) FamiliesServices.getUnion(ePackageI, ePackageJ).size());
 					
-					result += "  - " + ePackageI.getName() + " vs " + ePackageJ.getName() + ": " + currentValue + " (" + EcoreQueries.getIntersection(ePackageI, ePackageJ).size() + ", "+ EcoreQueries.getUnion(ePackageI, ePackageJ).size() + ")" + "\n";
+					result += "  - " + ePackageI.getName() + " vs " + ePackageJ.getName() + ": " + currentValue + " (" + FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size() + ", "+ FamiliesServices.getUnion(ePackageI, ePackageJ).size() + ")" + "\n";
 				}
 			}
 		}
 		return result;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<Language> languages){
+	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator){
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		for (EPackage ePackageI : ePackages) {
@@ -38,7 +39,7 @@ public class PairwiseRelationshipRatio {
 			boolean first = true;
 			for (EPackage ePackageJ : ePackages) {
 				if(!ePackageI.getName().equals(ePackageJ.getName())){
-					double currentValue = (((double)EcoreQueries.getIntersection(ePackageI, ePackageJ).size()) / ((double)EcoreQueries.getUnion(ePackageI, ePackageJ).size()))*100;
+					double currentValue = (((double)FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size()) / ((double)FamiliesServices.getUnion(ePackageI, ePackageJ).size()))*100;
 					
 					if(!first) labels += ",";
 					labels += "\"" + ePackageJ.getName() + "\"";

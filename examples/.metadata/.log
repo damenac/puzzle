@@ -5013,3 +5013,1576 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 !ENTRY org.apache.log4j 2 0 2015-08-21 14:32:19.223
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 14:42:51.763
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody.aspects/src/rhapsody/Rhapsody.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 14:43:06.213
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody.aspects/src/rhapsody/Rhapsody.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 14:43:17.084
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody.aspects/src/rhapsody/Rhapsody.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 14:43:18.130
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody.aspects/src/rhapsody/Rhapsody.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 14:43:39.239
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody.aspects/src/rhapsody/Rhapsody.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 14:43:40.051
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody.aspects/src/rhapsody/Rhapsody.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 14:43:41.757
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody.aspects/src/rhapsody/Rhapsody.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.814
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/43/@members.0/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.815
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/44/@members.0/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.815
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/45/@members.0/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.815
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/46/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.816
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/47/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.816
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/48/@members.0/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.816
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/48/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.816
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/48/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.816
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/48/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.817
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/49/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.817
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/49/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.817
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/49/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.817
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/49/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.817
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/50/@members.0/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.817
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/50/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.818
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/50/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.818
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/50/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.818
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/51/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.818
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/51/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.819
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/51/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.819
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/51/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.819
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/52/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.820
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/52/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.820
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/52/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.820
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/52/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.820
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/53/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.821
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/53/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.821
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/53/@members.3/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.821
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/54/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.821
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/54/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.821
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/54/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.821
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/54/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.822
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/54/@members.3/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.822
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/54/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.822
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/55/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.822
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/55/@members.1/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.822
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/56/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.822
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/56/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.823
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/56/@members.4/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.823
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/57/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.823
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/57/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.823
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/58/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.823
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/58/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.824
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/59/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.824
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/59/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.824
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/60/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.824
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/60/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.824
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/60/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.824
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/60/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.824
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/61/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.825
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/61/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.825
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/62/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.825
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/62/@members.1/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.826
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/67/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.826
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/67/@members.1/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.827
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/68/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.827
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/68/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.827
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/68/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.827
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/68/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.827
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/68/@members.3/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.828
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/69/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.828
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/69/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.828
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/69/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.828
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/69/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.829
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/69/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.829
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/72/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.829
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/74/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.829
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/75/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.830
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/76/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.830
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/77/@members.0/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.830
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/77/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.830
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/77/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.830
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/77/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.830
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/78/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.830
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/78/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.831
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/78/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.831
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/78/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.831
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/79/@members.0/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.831
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/79/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.831
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/79/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.831
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/79/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.831
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/80/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.832
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/80/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.832
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/80/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.832
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/80/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.832
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/81/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.832
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/81/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.832
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/81/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.832
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/81/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.833
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/82/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.833
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/82/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.833
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/82/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.834
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/88/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.StateMachine (visibility: PUBLIC, simpleName: StateMachine, identifier: rhapsody.StateMachine, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.834
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/88/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.834
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/88/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.834
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/88/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.835
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/89/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Region (visibility: PUBLIC, simpleName: Region, identifier: rhapsody.Region, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.835
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/89/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.835
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/89/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.835
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/89/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.835
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/89/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.836
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/90/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.AbstractState (visibility: PUBLIC, simpleName: AbstractState, identifier: rhapsody.AbstractState, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.836
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/90/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.836
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/90/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.836
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/90/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.836
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/90/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.837
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/91/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.State (visibility: PUBLIC, simpleName: State, identifier: rhapsody.State, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.837
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/91/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.837
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/91/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.837
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/91/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.837
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/91/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.838
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/91/@members.14/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.838
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/92/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Transition (visibility: PUBLIC, simpleName: Transition, identifier: rhapsody.Transition, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.838
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/92/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.838
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/92/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.838
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/92/@members.10/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.839
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/93/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.NamedElement (visibility: PUBLIC, simpleName: NamedElement, identifier: rhapsody.NamedElement, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.839
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/93/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.839
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/93/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.839
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/94/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Trigger (visibility: PUBLIC, simpleName: Trigger, identifier: rhapsody.Trigger, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.839
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/94/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.840
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/94/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.840
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/95/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Pseudostate (visibility: PUBLIC, simpleName: Pseudostate, identifier: rhapsody.Pseudostate, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.840
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/95/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.840
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/95/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.840
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/95/@members.6/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.840
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/95/@members.7/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.841
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/96/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.FinalState (visibility: PUBLIC, simpleName: FinalState, identifier: rhapsody.FinalState, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.841
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/96/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.841
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/96/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.841
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/96/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.841
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/96/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.841
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/96/@members.14/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.842
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/97/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Constraint (visibility: PUBLIC, simpleName: Constraint, identifier: rhapsody.Constraint, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.842
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/98/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.RelationalConstraint (visibility: PUBLIC, simpleName: RelationalConstraint, identifier: rhapsody.RelationalConstraint, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.842
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/99/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Statement (visibility: PUBLIC, simpleName: Statement, identifier: rhapsody.Statement, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.842
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/99/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.842
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/99/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.843
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/100/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Program (visibility: PUBLIC, simpleName: Program, identifier: rhapsody.Program, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.843
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/100/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.843
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/100/@members.3/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.843
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/100/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.843
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/100/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.843
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/100/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.843
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/101/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Conditional (visibility: PUBLIC, simpleName: Conditional, identifier: rhapsody.Conditional, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.844
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/101/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.844
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/101/@members.6/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.844
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/101/@members.7/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.844
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/101/@members.7/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.844
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/102/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Loop (visibility: PUBLIC, simpleName: Loop, identifier: rhapsody.Loop, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.844
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/102/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.845
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/102/@members.6/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.845
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/102/@members.7/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.845
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/102/@members.7/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.845
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/103/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.VarDecl (visibility: PUBLIC, simpleName: VarDecl, identifier: rhapsody.VarDecl, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.845
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/103/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.846
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/103/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.846
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/103/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.846
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/103/@members.6/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.846
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/103/@members.7/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.846
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/103/@members.7/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.846
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/104/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Expression (visibility: PUBLIC, simpleName: Expression, identifier: rhapsody.Expression, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.847
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/104/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.847
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/104/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.847
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/105/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Literal (visibility: PUBLIC, simpleName: Literal, identifier: rhapsody.Literal, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.847
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/105/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.847
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/105/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.847
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/106/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.IntegerLit (visibility: PUBLIC, simpleName: IntegerLit, identifier: rhapsody.IntegerLit, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.848
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/106/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.848
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/106/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.848
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/106/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.848
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/106/@members.4/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.848
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/106/@members.5/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.848
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/106/@members.5/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.849
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/107/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.StringLit (visibility: PUBLIC, simpleName: StringLit, identifier: rhapsody.StringLit, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.849
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/107/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.849
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/107/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.849
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/107/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.849
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/107/@members.4/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.849
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/107/@members.5/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.849
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/107/@members.5/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.850
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/108/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.BoolLit (visibility: PUBLIC, simpleName: BoolLit, identifier: rhapsody.BoolLit, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.850
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/108/@members.2/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.850
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/108/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.850
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/108/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.850
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/108/@members.4/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.850
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/109/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.ArithmeticExpression (visibility: PUBLIC, simpleName: ArithmeticExpression, identifier: rhapsody.ArithmeticExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.851
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/109/@members.8/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.851
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/109/@members.8/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.851
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/109/@members.9/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.851
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/109/@members.9/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.851
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/110/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.RelationalExpression (visibility: PUBLIC, simpleName: RelationalExpression, identifier: rhapsody.RelationalExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.852
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/110/@members.8/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.852
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/110/@members.8/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.852
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/111/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.VarReference (visibility: PUBLIC, simpleName: VarReference, identifier: rhapsody.VarReference, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.853
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/111/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.853
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/111/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.853
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/111/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.853
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/111/@members.4/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.853
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/112/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.ConsoleOutput (visibility: PUBLIC, simpleName: ConsoleOutput, identifier: rhapsody.ConsoleOutput, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.853
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/112/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.854
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/112/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.854
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/112/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.854
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/112/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.854
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/113/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Println (visibility: PUBLIC, simpleName: Println, identifier: rhapsody.Println, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.854
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/113/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.855
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/113/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.855
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/113/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.855
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/113/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.855
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/114/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Print (visibility: PUBLIC, simpleName: Print, identifier: rhapsody.Print, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.855
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/114/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.856
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/114/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.856
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/114/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.856
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/114/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.856
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/115/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Assignation (visibility: PUBLIC, simpleName: Assignation, identifier: rhapsody.Assignation, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.865
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/115/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.866
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/115/@members.6/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.866
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/116/@superTypes.0/@arguments.0 to JvmGenericType: rhapsody.Wait (visibility: PUBLIC, simpleName: Wait, identifier: rhapsody.Wait, deprecated: false) (abstract: true, static: false, final: false, packageName: rhapsody) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.866
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/116/@members.2/@returnType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.866
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/116/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.867
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/116/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Map (visibility: PUBLIC, simpleName: Map, identifier: java.util.Map, deprecated: false) (abstract: true, static: false, final: false, packageName: java.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.867
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/116/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.869
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/132/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.870
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/132/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.870
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/133/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.870
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/133/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.870
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/134/@members.2/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.871
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/134/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.871
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/137/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.872
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/138/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.872
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/138/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.872
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/138/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.872
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/138/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.872
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/138/@members.6/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.873
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/139/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.874
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/144/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.874
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/144/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.874
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/146/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.876
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/151/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Flowchart (visibility: PUBLIC, simpleName: Flowchart, identifier: flowchart.Flowchart, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.876
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/151/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.876
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/151/@members.3/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.876
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/152/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Node (visibility: PUBLIC, simpleName: Node, identifier: flowchart.Node, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.876
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/152/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.877
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/152/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.877
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/152/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.877
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/152/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.877
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/153/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Arc (visibility: PUBLIC, simpleName: Arc, identifier: flowchart.Arc, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.878
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/153/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.878
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/153/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.878
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/154/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Subflow (visibility: PUBLIC, simpleName: Subflow, identifier: flowchart.Subflow, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.879
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/154/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.879
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/154/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.879
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/154/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.879
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/154/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.879
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/154/@members.6/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.880
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/154/@members.7/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.880
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/155/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Action (visibility: PUBLIC, simpleName: Action, identifier: flowchart.Action, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.880
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/155/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.880
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/155/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.881
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/155/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.881
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/155/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.881
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/156/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Decision (visibility: PUBLIC, simpleName: Decision, identifier: flowchart.Decision, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.881
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/156/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.881
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/156/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.881
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/156/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.882
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/156/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.882
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/157/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Constraint (visibility: PUBLIC, simpleName: Constraint, identifier: flowchart.Constraint, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.882
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/158/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.RelationalConstraint (visibility: PUBLIC, simpleName: RelationalConstraint, identifier: flowchart.RelationalConstraint, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.882
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/159/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Expression (visibility: PUBLIC, simpleName: Expression, identifier: flowchart.Expression, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.883
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/160/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.Literal (visibility: PUBLIC, simpleName: Literal, identifier: flowchart.Literal, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.883
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/161/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.IntegerLit (visibility: PUBLIC, simpleName: IntegerLit, identifier: flowchart.IntegerLit, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.883
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/161/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.883
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/161/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.883
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/162/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.StringLit (visibility: PUBLIC, simpleName: StringLit, identifier: flowchart.StringLit, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.884
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/162/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.884
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/162/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.884
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/163/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.BoolLit (visibility: PUBLIC, simpleName: BoolLit, identifier: flowchart.BoolLit, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.884
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/163/@members.2/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.884
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/163/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.884
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/164/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.ArithmeticExpression (visibility: PUBLIC, simpleName: ArithmeticExpression, identifier: flowchart.ArithmeticExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.885
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/165/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.RelationalExpression (visibility: PUBLIC, simpleName: RelationalExpression, identifier: flowchart.RelationalExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.885
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/166/@superTypes.0/@arguments.0 to JvmGenericType: flowchart.VarReference (visibility: PUBLIC, simpleName: VarReference, identifier: flowchart.VarReference, deprecated: false) (abstract: true, static: false, final: false, packageName: flowchart) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.885
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/166/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 15:07:13.886
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/fr.inria.diverse.sle.examples.family.overlapping/src/family/overlappingFamily.melange#/166/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+!SESSION 2015-08-21 15:14:43.194 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 15:14:46.680
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 15:14:54.059
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 15:16:02.994 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 15:16:06.481
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 15:16:37.200
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 15:23:01.661 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 15:23:05.170
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2015-08-21 15:24:26.872 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 15:24:30.353
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 15:24:37.816
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 16:07:57.907 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 16:08:02.662
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 16:08:04.785
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-08-21 16:08:33.662
+!MESSAGE An internal error occurred during: "Puzzle: Compute Metrics".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticOverlapping.evaluate(SemanticOverlapping.java:43)
+	at fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl.computeMetrics(ComputeMetricsActionImpl.java:120)
+	at fr.inria.diverse.melange.ui.builder.MetricsBuilder.computeMetrics(MetricsBuilder.java:21)
+	at fr.inria.diverse.melange.ui.menu.ComputeMetrics$1.run(ComputeMetrics.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-08-21 16:34:12.551 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 16:34:16.509
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 16:34:18.528
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-08-21 16:34:41.328
+!MESSAGE An internal error occurred during: "Puzzle: Compute Metrics".
+!STACK 0
+java.lang.Error: Unresolved compilation problem: 
+	Unhandled exception type Exception
+
+	at fr.inria.diverse.puzzle.metrics.evaluators.syntax.TotalAmountOfConcepts.evaluateMetric(TotalAmountOfConcepts.java:19)
+	at fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality.getVariablesDeclaration(SizeOfCommonality.java:58)
+	at fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl.computeMetrics(ComputeMetricsActionImpl.java:85)
+	at fr.inria.diverse.melange.ui.builder.MetricsBuilder.computeMetrics(MetricsBuilder.java:21)
+	at fr.inria.diverse.melange.ui.menu.ComputeMetrics$1.run(ComputeMetrics.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-08-21 16:35:19.892 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 16:35:23.444
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 16:35:25.433
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 16:38:03.665 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 16:38:07.125
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 16:38:09.166
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 16:47:33.212 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 16:47:36.735
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 16:47:38.598
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 16:49:48.239 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 16:49:51.748
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 16:49:53.723
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 16:51:14.634 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 16:51:18.167
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 16:51:20.126
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-08-21 19:53:15.210 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 19:53:18.779
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 19:53:20.333
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-21 20:10:36.536
+!MESSAGE org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy  - Error post-processing resource with content:
+package family
+
+/**
+ * A language for State Machines defined according the Rhapsody formalism. 
+ */
+language Rhapsody {
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/rhapsody.ecore"
+	
+	with rhapsody.StateMachineAspect
+	with rhapsody.RegionAspect
+	with rhapsody.StateAspect
+	with rhapsody.TransitionAspect
+	with rhapsody.TriggerAspect
+	with rhapsody.FinalStateAspect
+	with rhapsody.ExpressionAspect
+	with rhapsody.LiteralAspect
+	with rhapsody.IntegerLitAspect
+	with rhapsody.StringLitAspect
+	with rhapsody.BoolLitAspect
+	with rhapsody.ArithmeticExpressionAspect
+	with rhapsody.RelationalExpressionAspect
+	with rhapsody.ConstraintAspect
+	with rhapsody.RelationalConstraintAspect
+	
+	exactType RhapsodyMT
+}
+
+/**
+ * A language for Logo 
+ */
+language Logo {
+	
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.logo/models/logo.ecore"
+	 
+	with logo.InstructionAspect 
+	with logo.PrimitiveAspect
+	with logo.BackAspect
+	with logo.ForwardAspect
+	with logo.LeftAspect
+	with logo.RightAspect
+	with logo.PenDownAspect
+	with logo.PenUpAspect
+	with logo.ClearAspect
+	with logo.ExpressionAspect
+	with logo.LiteralAspect
+	with logo.IntegerLitAspect
+	with logo.StringLitAspect
+	with logo.BoolLitAspect
+	with logo.ArithmeticExpressionAspect
+	with logo.RelationalExpressionAspect
+	with logo.ProcCallAspect
+	with logo.BlockAspect
+	with logo.ControlStructureAspect
+	with logo.IfAspect
+	with logo.RepeatAspect
+	with logo.WhileAspect
+	with logo.ParameterAspect
+	with logo.ParameterCallAspect
+	with logo.LogoProgramAspect
+	
+	exactType LogoMT
+}
+
+
+/**
+ * A language for Flowcharts 
+ */
+language Flowchart {
+	
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.flowchart/models/flowchart.ecore"
+	
+	with flowchart.
+	with flowchart.ExpressionAspect
+	with flowchart.LiteralAspect
+	with flowchart.IntegerLitAspect
+	with flowchart.StringLitAspect
+	with flowchart.BoolLitAspect
+	with flowchart.ArithmeticExpressionAspect
+	with flowchart.RelationalExpressionAspect
+	
+	exactType FlowchartMT
+}
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.melange.processors.LanguageBuilder.build(LanguageBuilder.java:158)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.access$0(LanguageBuilder.java:141)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:131)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:1)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at fr.inria.diverse.melange.processors.LanguageBuilder._preProcess(LanguageBuilder.java:134)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.preProcess(LanguageBuilder.java:849)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:91)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:1)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer.installDerivedState(MelangeDerivedStateComputer.java:95)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.installDerivedState(DerivedStateAwareResource.java:240)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getContents(BatchLinkableResource.java:148)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareBatchTypeResolver.getEntryPoints(LogicalContainerAwareBatchTypeResolver.java:44)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultBatchTypeResolver.getTypeResolver(DefaultBatchTypeResolver.java:63)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:49)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:77)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver.doResolveTypes(CachingBatchTypeResolver.java:46)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractBatchTypeResolver.resolveTypes(AbstractBatchTypeResolver.java:69)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:71)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.resolveLazyCrossReferences(BatchLinkableResource.java:165)
+	at org.eclipse.xtext.EcoreUtil2.resolveLazyCrossReferences(EcoreUtil2.java:528)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.postParse(XtextDocumentReconcileStrategy.java:175)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.doReconcile(XtextDocumentReconcileStrategy.java:153)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.reconcile(XtextDocumentReconcileStrategy.java:67)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.doRun(XtextReconciler.java:442)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.access$3(XtextReconciler.java:422)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$1.process(XtextReconciler.java:363)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$1.process(XtextReconciler.java:1)
+	at org.eclipse.xtext.util.concurrent.IUnitOfWork$Void.exec(IUnitOfWork.java:37)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.modify(XtextDocument.java:428)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.internalModify(XtextDocument.java:162)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.run(XtextReconciler.java:360)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-08-21 20:14:43.728 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-21 20:14:47.297
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-21 20:15:07.163
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+

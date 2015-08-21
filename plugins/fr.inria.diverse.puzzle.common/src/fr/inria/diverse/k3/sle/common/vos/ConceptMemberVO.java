@@ -4,15 +4,26 @@ import org.eclipse.emf.ecore.EClassifier;
 
 public class ConceptMemberVO {
 
-	private EClassifier concept;
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
 	
+	private EClassifier concept;
 	private String memberName;
 
+	// -----------------------------------------------
+	// Constructor
+	// -----------------------------------------------
+	
 	public ConceptMemberVO(EClassifier concept, String memberName) {
 		super();
 		this.concept = concept;
 		this.memberName = memberName;
 	}
+	
+	// -----------------------------------------------
+	// Getters and setters
+	// -----------------------------------------------
 	
 	public EClassifier getConcept() {
 		return concept;

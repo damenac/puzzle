@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EPackage;
 
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class ProductRelatedReusability {
 
-	public static String evaluateForSyntax(ArrayList<Language> languages){
+	public static String evaluateForSyntax(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String values = "";
-		double SoSC = SizeOfCommonality.evaluateForSyntax(languages);
+		double SoSC = SizeOfCommonality.evaluateForSyntax(languages, comparisonOperator);
 		boolean first = true;
 		for (EPackage ePackage : ePackages) {
 			double currentValue = (SoSC / countConstructs(ePackage))*100;
@@ -25,11 +26,11 @@ public class ProductRelatedReusability {
 		return values;
 	}
 	
-	public static String evaluateForSemantics(ArrayList<Language> languages){
+	public static String evaluateForSemantics(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		//TODO Do something!
 		String values = "";
-		double SoSC = SizeOfCommonality.evaluateForSyntax(languages);
+		double SoSC = SizeOfCommonality.evaluateForSyntax(languages, comparisonOperator);
 		boolean first = true;
 		for (EPackage ePackage : ePackages) {
 			double currentValue = (SoSC / countConstructs(ePackage))*100;
@@ -52,7 +53,7 @@ public class ProductRelatedReusability {
 		return count;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<Language> languages){
+	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "var barProductRelatedReusability = {\n";
 		boolean first = true;
@@ -70,14 +71,14 @@ public class ProductRelatedReusability {
 		answer += "        strokeColor : \"rgba(220,220,220,0.8)\",\n";
 		answer += "        highlightFill: \"rgba(220,220,220,0.75)\",\n";
 		answer += "        highlightStroke: \"rgba(220,220,220,1)\",\n";
-		answer += "        data : [" + evaluateForSyntax(languages) + "]\n";
+		answer += "        data : [" + evaluateForSyntax(languages, comparisonOperator) + "]\n";
 		answer += "      },\n";
 		answer += "      {\n";
 		answer += "        fillColor : \"rgba(151,187,205,0.5)\",\n";
 		answer += "        strokeColor : \"rgba(151,187,205,0.8)\",\n";
 		answer += "        highlightFill : \"rgba(151,187,205,0.75)\",\n";
 		answer += "        highlightStroke : \"rgba(151,187,205,1)\",\n";
-		answer += "        data : [" + evaluateForSemantics(languages) + "]\n"; 
+		answer += "        data : [" + evaluateForSemantics(languages, comparisonOperator) + "]\n"; 
 		answer += "      }\n";
 		answer += "    ]\n";
 		answer += "};\n";

@@ -15,6 +15,10 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EPackage;
 
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Element;
@@ -59,7 +63,9 @@ public class ComputeMetricsActionImpl {
 	 * @throws CoreException
 	 * @throws URISyntaxException
 	 */
-	public String computeMetrics(ModelTypingSpace familyTypingSpace, IProject project) throws IOException, CoreException, URISyntaxException{
+	public String computeMetrics(ModelTypingSpace familyTypingSpace, IProject project) throws Exception {
+		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
+		MethodComparison methodComparisonOperator = NamingMethodComparison.class.newInstance();
 		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		ArrayList<Language> languages = new ArrayList<Language>();
@@ -76,10 +82,10 @@ public class ComputeMetricsActionImpl {
 		String metrics = "Metrics calculated"; 
 		
 		String generalMetricsString = "";
-		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(languages);
-		generalMetricsString += ProductRelatedReusability.getVariablesDeclaration(languages);
-		generalMetricsString += IndividualizationRatio.getVariablesDeclaration(languages);
-		generalMetricsString += PairwiseRelationshipRatio.getVariablesDeclaration(languages);
+		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
+		generalMetricsString += ProductRelatedReusability.getVariablesDeclaration(languages, conceptComparisonOperator);
+		generalMetricsString += IndividualizationRatio.getVariablesDeclaration(languages, conceptComparisonOperator);
+		generalMetricsString += PairwiseRelationshipRatio.getVariablesDeclaration(languages, conceptComparisonOperator);
 
 		String generalMetricsWindowsString = "window.onload = function(){\n";
 		generalMetricsWindowsString += SizeOfCommonality.getWindow();
@@ -106,14 +112,14 @@ public class ComputeMetricsActionImpl {
 		if(!syntacticVennData.exists())
 			syntacticVennData.createNewFile();
 		PrintWriter out = new PrintWriter( syntacticVennData );
-        out.print(SyntactOverlapping.evaluate(languages));
+        out.print(SyntactOverlapping.evaluate(languages, conceptComparisonOperator));
         out.close();
         
         File semanticVennData = new File(project.getLocation().toString() + "/libVenn/semanticVennData.jsonp" );
 		if(!semanticVennData.exists())
 			semanticVennData.createNewFile();
 		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
-		outSemanticVennData.print(SemanticOverlapping.evaluate(languages));
+		outSemanticVennData.print(SemanticOverlapping.evaluate(languages, conceptComparisonOperator, methodComparisonOperator));
 		outSemanticVennData.close();
         
         URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/analysis.html");
