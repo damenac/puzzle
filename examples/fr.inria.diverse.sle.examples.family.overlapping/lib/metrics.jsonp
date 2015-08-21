@@ -41,7 +41,7 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [28.125,32.142857142857146,50.0]
+        data : [8.974358974358974,8.75,21.875]
       }
     ]
 };
@@ -60,7 +60,7 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [37.5,32.142857142857146,66.66666666666666]
+        data : [21.875,25.0,38.88888888888889]
       }
     ]
 };
@@ -79,7 +79,7 @@ var barRelationshipRatiorhapsody = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [17.647058823529413,31.57894736842105]
+        data : [13.725490196078432,18.421052631578945]
       }
     ]
 };
@@ -98,7 +98,7 @@ var barRelationshipRatiokmLogo = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [17.647058823529413,24.324324324324326]
+        data : [13.725490196078432,18.91891891891892]
       }
     ]
 };
@@ -117,7 +117,7 @@ var barRelationshipRatioflowchart = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [31.57894736842105,24.324324324324326]
+        data : [18.421052631578945,18.91891891891892]
       }
     ]
 };

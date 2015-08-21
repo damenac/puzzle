@@ -5,10 +5,13 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class IndividualizationRatio {
@@ -38,17 +41,17 @@ public class IndividualizationRatio {
 		return answer;
 	}
 	
-	public static String evaluateForSemantics(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
+	public static String evaluateForSemantics(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		
 		String answer = "";
-		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
-		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
+		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
+		
 		boolean first = true;
 		for (EPackage ePackage : ePackages) {
 			double count = 0;
-			for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
-				if(conceptMembersGroupVO.getMemberGroup().size() >= 2 && conceptMembersGroupVO.getMemberGroup().contains(ePackage.getName())){
+			for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+				if(conceptMethodMembersGroupVO.getMemberGroup().size() >= 2 && conceptMethodMembersGroupVO.getMemberGroup().contains(ePackage.getName())){
 					count++;
 				}
 			}
@@ -73,7 +76,7 @@ public class IndividualizationRatio {
 		return count;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
+	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		
 		String answer = "var barIndividualizationRatio = {\n";
@@ -93,14 +96,14 @@ public class IndividualizationRatio {
 		answer += "        strokeColor : \"rgba(220,220,220,0.8)\",\n";
 		answer += "        highlightFill: \"rgba(220,220,220,0.75)\",\n";
 		answer += "        highlightStroke: \"rgba(220,220,220,1)\",\n";
-		answer += "        data : [" + evaluateForSyntax(languages, comparisonOperator) + "]\n";
+		answer += "        data : [" + evaluateForSyntax(languages, conceptComparisonOperator) + "]\n";
 		answer += "      },\n";
 		answer += "      {\n";
 		answer += "        fillColor : \"rgba(151,187,205,0.5)\",\n";
 		answer += "        strokeColor : \"rgba(151,187,205,0.8)\",\n";
 		answer += "        highlightFill : \"rgba(151,187,205,0.75)\",\n";
 		answer += "        highlightStroke : \"rgba(151,187,205,1)\",\n";
-		answer += "        data : [" + evaluateForSemantics(languages, comparisonOperator) + "]\n"; 
+		answer += "        data : [" + evaluateForSemantics(languages, conceptComparisonOperator, methodComparisonOperator) + "]\n"; 
 		answer += "      }\n";
 		answer += "    ]\n";
 		answer += "};\n";

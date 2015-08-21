@@ -83,9 +83,9 @@ public class ComputeMetricsActionImpl {
 		
 		String generalMetricsString = "";
 		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
-		generalMetricsString += ProductRelatedReusability.getVariablesDeclaration(languages, conceptComparisonOperator);
-		generalMetricsString += IndividualizationRatio.getVariablesDeclaration(languages, conceptComparisonOperator);
-		generalMetricsString += PairwiseRelationshipRatio.getVariablesDeclaration(languages, conceptComparisonOperator);
+		generalMetricsString += ProductRelatedReusability.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
+		generalMetricsString += IndividualizationRatio.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
+		generalMetricsString += PairwiseRelationshipRatio.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
 
 		String generalMetricsWindowsString = "window.onload = function(){\n";
 		generalMetricsWindowsString += SizeOfCommonality.getWindow();

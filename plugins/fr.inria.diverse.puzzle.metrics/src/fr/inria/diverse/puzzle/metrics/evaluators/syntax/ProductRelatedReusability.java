@@ -2,10 +2,14 @@ package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
 
 import java.util.ArrayList;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
+import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class ProductRelatedReusability {
@@ -26,20 +30,17 @@ public class ProductRelatedReusability {
 		return values;
 	}
 	
-	public static String evaluateForSemantics(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		//TODO Do something!
+	public static String evaluateForSemantics(ArrayList<Language> languages, ConceptComparison comparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
 		String values = "";
-		double SoSC = SizeOfCommonality.evaluateForSyntax(languages, comparisonOperator);
+		double SoSC = SizeOfCommonality.evaluateForSemantics(languages, comparisonOperator, methodComparisonOperator);
 		boolean first = true;
-		for (EPackage ePackage : ePackages) {
-			double currentValue = (SoSC / countConstructs(ePackage))*100;
+		for (Language language : languages) {
+			double currentValue = (SoSC / countMethods(language))*100;
 			if(!first)
 				values +=  ",";
 			values += currentValue;
 			first = false;
 		}
-		
 		return values;
 	}
 	
@@ -53,7 +54,20 @@ public class ProductRelatedReusability {
 		return count;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
+	private static double countMethods(Language language){
+		double count = 0;
+		
+		for (Aspect aspect : language.getSemantics()) {
+			for (EObject aspectContent : aspect.getAspectTypeRef().getType().eContents()) {
+				if(aspectContent instanceof JvmOperation)
+					count ++;
+			}
+		}
+		
+		return count;
+	}
+	
+	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "var barProductRelatedReusability = {\n";
 		boolean first = true;
@@ -78,7 +92,7 @@ public class ProductRelatedReusability {
 		answer += "        strokeColor : \"rgba(151,187,205,0.8)\",\n";
 		answer += "        highlightFill : \"rgba(151,187,205,0.75)\",\n";
 		answer += "        highlightStroke : \"rgba(151,187,205,1)\",\n";
-		answer += "        data : [" + evaluateForSemantics(languages, comparisonOperator) + "]\n"; 
+		answer += "        data : [" + evaluateForSemantics(languages, comparisonOperator, methodComparisonOperator) + "]\n"; 
 		answer += "      }\n";
 		answer += "    ]\n";
 		answer += "};\n";

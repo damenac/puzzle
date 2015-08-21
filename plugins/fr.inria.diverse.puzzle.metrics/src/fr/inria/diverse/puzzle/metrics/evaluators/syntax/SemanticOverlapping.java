@@ -9,7 +9,6 @@ import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
 import fr.inria.diverse.melange.metamodel.melange.Language;

@@ -5,8 +5,11 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class PairwiseRelationshipRatio {
@@ -27,29 +30,47 @@ public class PairwiseRelationshipRatio {
 		return result;
 	}
 	
-	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator){
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
 		String answer = "";
-		for (EPackage ePackageI : ePackages) {
+		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
+		
+		for (Language languageI : languages) {
+			EPackage ePackageI = MelangeServices.getEPackageFromLanguage(languageI);
 			answer += "var barRelationshipRatio" + ePackageI.getName() + " = {\n";
 			
 			String labels = "";
 			String dataForSyntax = "";
-			String dataForSemantics = "";
 			boolean first = true;
-			for (EPackage ePackageJ : ePackages) {
+			for (Language languageJ : languages) {
+				
+				EPackage ePackageJ = MelangeServices.getEPackageFromLanguage(languageJ);
 				if(!ePackageI.getName().equals(ePackageJ.getName())){
-					double currentValue = (((double)FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size()) / ((double)FamiliesServices.getUnion(ePackageI, ePackageJ).size()))*100;
+					double currentValue = (((double)FamiliesServices.getIntersection(ePackageI, ePackageJ, conceptComparisonOperator).size()) / ((double)FamiliesServices.getUnion(ePackageI, ePackageJ).size()))*100;
 					
 					if(!first) labels += ",";
 					labels += "\"" + ePackageJ.getName() + "\"";
 					
 					if(!first){
 						dataForSyntax +=  ",";
-						dataForSemantics +=  ",";
 					}
 					dataForSyntax += currentValue;
-					dataForSemantics += currentValue; //TODO Do something!
+					first = false;
+					
+				}
+			}
+			
+			String dataForSemantics = "";
+			first = true;
+			for (Language languageJ : languages) {
+				EPackage ePackageJ = MelangeServices.getEPackageFromLanguage(languageJ);
+				if(!ePackageI.getName().equals(ePackageJ.getName())){
+					double currentValue = (((double)getIntersection(conceptMethodMemberGroupList, languageI, languageJ, methodComparisonOperator).size()) / ((double)FamiliesServices.getUnion(ePackageI, ePackageJ).size()))*100;
+					
+					if(!first){
+						dataForSemantics +=  ",";
+					}
+					dataForSemantics += currentValue;
 					first = false;
 					
 				}
@@ -117,6 +138,22 @@ public class PairwiseRelationshipRatio {
 			answer += "                </table>\n";
 			
 			index++;
+		}
+		return answer;
+	}
+	
+	private static ArrayList<String> getIntersection(
+			ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList, Language languageI, Language languageJ,
+			MethodComparison methodComparisonOperator) {
+
+		String languageIName = MelangeServices.getEPackageFromLanguage(languageI).getName();
+		String languageJName = MelangeServices.getEPackageFromLanguage(languageJ).getName();
+		ArrayList<String> answer = new ArrayList<String>();
+		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+			boolean isInI = conceptMethodMembersGroupVO.getMemberGroup().contains(languageIName);
+			boolean isInJ = conceptMethodMembersGroupVO.getMemberGroup().contains(languageJName);
+			if(isInI && isInJ)
+				answer.add(conceptMethodMembersGroupVO.getConcept().getSimpleName() + "." + conceptMethodMembersGroupVO.getMethod().getSimpleName());
 		}
 		return answer;
 	}
