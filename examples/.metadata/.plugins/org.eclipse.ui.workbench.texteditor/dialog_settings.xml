@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="logo" key="selection"/>
+		<item value="" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="flow"/>
 			<item value="fr.inria.triskell.k3.sample.logo"/>
 			<item value="cou"/>
 		</list>
@@ -19,7 +20,7 @@
 		<item value="263" key="DIALOG_WIDTH"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="531" key="DIALOG_X_ORIGIN"/>
-		<item value="132" key="DIALOG_Y_ORIGIN"/>
+		<item value="193" key="DIALOG_X_ORIGIN"/>
+		<item value="608" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

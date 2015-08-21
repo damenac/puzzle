@@ -1,18 +1,17 @@
 package family
 
-language Rhapsody {
-	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/rhapsody.ecore"
-	exactType RhapsodyMT
-}
+//language Rhapsody {
+//	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/rhapsody.ecore"
+//	exactType RhapsodyMT
+//}
 
 /**
  * A language for Logo 
  */
 language Logo {
-	// Abstract syntax
+	
 	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.logo/models/logo.ecore"
 	 
-	// Operational semantics
 	with logo.InstructionAspect
 	with logo.PrimitiveAspect
 	with logo.BackAspect
@@ -23,7 +22,12 @@ language Logo {
 	with logo.PenUpAspect
 	with logo.ClearAspect
 	with logo.ExpressionAspect
-	with logo.ConstantAspect
+	with logo.LiteralAspect
+	with logo.IntegerLitAspect
+	with logo.StringLitAspect
+	with logo.BoolLitAspect
+	with logo.ArithmeticExpressionAspect
+	with logo.RelationalExpressionAspect
 	with logo.ProcCallAspect
 	with logo.BlockAspect
 	with logo.ControlStructureAspect
@@ -32,21 +36,26 @@ language Logo {
 	with logo.WhileAspect
 	with logo.ParameterAspect
 	with logo.ParameterCallAspect
-	with logo.BinaryExpAspect
-	with logo.PlusAspect
-	with logo.MinusAspect
-	with logo.MultAspect
-	with logo.DivAspect
-	with logo.EqualsAspect
-	with logo.GreaterAspect
-	with logo.LowerAspect
 	with logo.LogoProgramAspect
 	
-	// Exact type for model typing stuff
 	exactType LogoMT
 }
 
+
+/**
+ * A language for Flowcharts 
+ */
 language Flowchart {
+	
 	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.flowchart/models/flowchart.ecore"
+	
+	with flowchart.ExpressionAspect
+	with flowchart.LiteralAspect
+	with flowchart.IntegerLitAspect
+	with flowchart.StringLitAspect
+	with flowchart.BoolLitAspect
+	with flowchart.ArithmeticExpressionAspect
+	with flowchart.RelationalExpressionAspect
+	
 	exactType FlowchartMT
 }

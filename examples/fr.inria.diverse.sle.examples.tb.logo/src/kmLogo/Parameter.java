@@ -32,7 +32,7 @@ public interface Parameter extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see kmLogo.KmLogoPackage#getParameter_Name()
-	 * @model dataType="kmLogo.String"
+	 * @model
 	 * @generated
 	 */
 	String getName();

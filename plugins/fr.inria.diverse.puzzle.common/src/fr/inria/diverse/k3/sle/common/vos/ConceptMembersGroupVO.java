@@ -6,15 +6,26 @@ import org.eclipse.emf.ecore.EClassifier;
 
 public class ConceptMembersGroupVO {
 
-	private EClassifier concept;
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
 	
+	private EClassifier concept;
 	private ArrayList<String> memberGroup;
+	
+	// -----------------------------------------------
+	// Constructor
+	// -----------------------------------------------
 	
 	public ConceptMembersGroupVO(EClassifier concept){
 		this.concept = concept;
 		memberGroup = new ArrayList<String>();
 	}
 
+	// -----------------------------------------------
+	// Getters and setters
+	// -----------------------------------------------
+	
 	public EClassifier getConcept() {
 		return concept;
 	}

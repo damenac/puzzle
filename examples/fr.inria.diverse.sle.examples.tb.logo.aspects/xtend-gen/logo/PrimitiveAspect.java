@@ -18,16 +18,16 @@ public class PrimitiveAspect extends InstructionAspect {
     result = logo.ForwardAspect.eval((kmLogo.Forward)_self,context);
     } else  if (_self instanceof kmLogo.PenDown){
     result = logo.PenDownAspect.eval((kmLogo.PenDown)_self,context);
-    } else  if (_self instanceof kmLogo.Back){
-    result = logo.BackAspect.eval((kmLogo.Back)_self,context);
-    } else  if (_self instanceof kmLogo.Right){
-    result = logo.RightAspect.eval((kmLogo.Right)_self,context);
+    } else  if (_self instanceof kmLogo.Left){
+    result = logo.LeftAspect.eval((kmLogo.Left)_self,context);
     } else  if (_self instanceof kmLogo.PenUp){
     result = logo.PenUpAspect.eval((kmLogo.PenUp)_self,context);
     } else  if (_self instanceof kmLogo.Clear){
     result = logo.ClearAspect.eval((kmLogo.Clear)_self,context);
-    } else  if (_self instanceof kmLogo.Left){
-    result = logo.LeftAspect.eval((kmLogo.Left)_self,context);
+    } else  if (_self instanceof kmLogo.Right){
+    result = logo.RightAspect.eval((kmLogo.Right)_self,context);
+    } else  if (_self instanceof kmLogo.Back){
+    result = logo.BackAspect.eval((kmLogo.Back)_self,context);
     } else  if (_self instanceof kmLogo.Primitive){
     result = logo.PrimitiveAspect._privk3_eval(_self_, (kmLogo.Primitive)_self,context);
     } else  if (_self instanceof kmLogo.Instruction){

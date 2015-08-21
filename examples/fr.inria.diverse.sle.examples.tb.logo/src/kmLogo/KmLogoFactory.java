@@ -85,13 +85,58 @@ public interface KmLogoFactory extends EFactory {
 	Clear createClear();
 
 	/**
-	 * Returns a new object of class '<em>Constant</em>'.
+	 * Returns a new object of class '<em>Literal</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constant</em>'.
+	 * @return a new object of class '<em>Literal</em>'.
 	 * @generated
 	 */
-	Constant createConstant();
+	Literal createLiteral();
+
+	/**
+	 * Returns a new object of class '<em>Integer Lit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Integer Lit</em>'.
+	 * @generated
+	 */
+	IntegerLit createIntegerLit();
+
+	/**
+	 * Returns a new object of class '<em>String Lit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Lit</em>'.
+	 * @generated
+	 */
+	StringLit createStringLit();
+
+	/**
+	 * Returns a new object of class '<em>Bool Lit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Bool Lit</em>'.
+	 * @generated
+	 */
+	BoolLit createBoolLit();
+
+	/**
+	 * Returns a new object of class '<em>Arithmetic Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arithmetic Expression</em>'.
+	 * @generated
+	 */
+	ArithmeticExpression createArithmeticExpression();
+
+	/**
+	 * Returns a new object of class '<em>Relational Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Relational Expression</em>'.
+	 * @generated
+	 */
+	RelationalExpression createRelationalExpression();
 
 	/**
 	 * Returns a new object of class '<em>Proc Call</em>'.
@@ -173,69 +218,6 @@ public interface KmLogoFactory extends EFactory {
 	 * @generated
 	 */
 	ParameterCall createParameterCall();
-
-	/**
-	 * Returns a new object of class '<em>Plus</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Plus</em>'.
-	 * @generated
-	 */
-	Plus createPlus();
-
-	/**
-	 * Returns a new object of class '<em>Minus</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Minus</em>'.
-	 * @generated
-	 */
-	Minus createMinus();
-
-	/**
-	 * Returns a new object of class '<em>Mult</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mult</em>'.
-	 * @generated
-	 */
-	Mult createMult();
-
-	/**
-	 * Returns a new object of class '<em>Div</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Div</em>'.
-	 * @generated
-	 */
-	Div createDiv();
-
-	/**
-	 * Returns a new object of class '<em>Equals</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Equals</em>'.
-	 * @generated
-	 */
-	Equals createEquals();
-
-	/**
-	 * Returns a new object of class '<em>Greater</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Greater</em>'.
-	 * @generated
-	 */
-	Greater createGreater();
-
-	/**
-	 * Returns a new object of class '<em>Lower</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Lower</em>'.
-	 * @generated
-	 */
-	Lower createLower();
 
 	/**
 	 * Returns a new object of class '<em>Logo Program</em>'.

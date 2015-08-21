@@ -4,7 +4,7 @@ package kmLogo;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -374,87 +374,253 @@ public interface KmLogoPackage extends EPackage {
 	int EXPRESSION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.BinaryExpImpl <em>Binary Exp</em>}' class.
+	 * The meta object id for the '{@link kmLogo.impl.LiteralImpl <em>Literal</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.BinaryExpImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getBinaryExp()
+	 * @see kmLogo.impl.LiteralImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getLiteral()
 	 * @generated
 	 */
-	int BINARY_EXP = 10;
+	int LITERAL = 10;
 
 	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
+	 * The number of structural features of the '<em>Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXP__LHS = EXPRESSION_FEATURE_COUNT + 0;
+	int LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
+	 * The number of operations of the '<em>Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXP__RHS = EXPRESSION_FEATURE_COUNT + 1;
+	int LITERAL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Binary Exp</em>' class.
+	 * The meta object id for the '{@link kmLogo.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.IntegerLitImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getIntegerLit()
+	 * @generated
+	 */
+	int INTEGER_LIT = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXP_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+	int INTEGER_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Binary Exp</em>' class.
+	 * The number of structural features of the '<em>Integer Lit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXP_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int INTEGER_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.ConstantImpl <em>Constant</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ConstantImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getConstant()
-	 * @generated
-	 */
-	int CONSTANT = 11;
-
-	/**
-	 * The feature id for the '<em><b>Integer Value</b></em>' attribute.
+	 * The number of operations of the '<em>Integer Lit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANT__INTEGER_VALUE = EXPRESSION_FEATURE_COUNT + 0;
+	int INTEGER_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Constant</em>' class.
+	 * The meta object id for the '{@link kmLogo.impl.StringLitImpl <em>String Lit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.StringLitImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getStringLit()
+	 * @generated
+	 */
+	int STRING_LIT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+	int STRING_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Constant</em>' class.
+	 * The number of structural features of the '<em>String Lit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTANT_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int STRING_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>String Lit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.BoolLitImpl <em>Bool Lit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.BoolLitImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getBoolLit()
+	 * @generated
+	 */
+	int BOOL_LIT = 13;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOL_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Bool Lit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOL_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Bool Lit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOL_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ArithmeticExpressionImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getArithmeticExpression()
+	 * @generated
+	 */
+	int ARITHMETIC_EXPRESSION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPRESSION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPRESSION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Arithmetic Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Arithmetic Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.RelationalExpressionImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getRelationalExpression()
+	 * @generated
+	 */
+	int RELATIONAL_EXPRESSION = 15;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONAL_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONAL_EXPRESSION__LEFT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONAL_EXPRESSION__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Relational Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Relational Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATIONAL_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link kmLogo.impl.ProcCallImpl <em>Proc Call</em>}' class.
@@ -464,7 +630,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getProcCall()
 	 * @generated
 	 */
-	int PROC_CALL = 12;
+	int PROC_CALL = 16;
 
 	/**
 	 * The feature id for the '<em><b>Actual Args</b></em>' containment reference list.
@@ -510,7 +676,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getProcDeclaration()
 	 * @generated
 	 */
-	int PROC_DECLARATION = 13;
+	int PROC_DECLARATION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -574,7 +740,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getBlock()
 	 * @generated
 	 */
-	int BLOCK = 14;
+	int BLOCK = 18;
 
 	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -611,7 +777,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getControlStructure()
 	 * @generated
 	 */
-	int CONTROL_STRUCTURE = 16;
+	int CONTROL_STRUCTURE = 20;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -648,7 +814,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getIf()
 	 * @generated
 	 */
-	int IF = 15;
+	int IF = 19;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -703,7 +869,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getRepeat()
 	 * @generated
 	 */
-	int REPEAT = 17;
+	int REPEAT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -749,7 +915,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getWhile()
 	 * @generated
 	 */
-	int WHILE = 18;
+	int WHILE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -795,7 +961,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getParameter()
 	 * @generated
 	 */
-	int PARAMETER = 19;
+	int PARAMETER = 23;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -832,7 +998,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getParameterCall()
 	 * @generated
 	 */
-	int PARAMETER_CALL = 20;
+	int PARAMETER_CALL = 24;
 
 	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
@@ -862,328 +1028,6 @@ public interface KmLogoPackage extends EPackage {
 	int PARAMETER_CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.PlusImpl <em>Plus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.PlusImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getPlus()
-	 * @generated
-	 */
-	int PLUS = 21;
-
-	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLUS__LHS = BINARY_EXP__LHS;
-
-	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLUS__RHS = BINARY_EXP__RHS;
-
-	/**
-	 * The number of structural features of the '<em>Plus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLUS_FEATURE_COUNT = BINARY_EXP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Plus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLUS_OPERATION_COUNT = BINARY_EXP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.MinusImpl <em>Minus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.MinusImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getMinus()
-	 * @generated
-	 */
-	int MINUS = 22;
-
-	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MINUS__LHS = BINARY_EXP__LHS;
-
-	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MINUS__RHS = BINARY_EXP__RHS;
-
-	/**
-	 * The number of structural features of the '<em>Minus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MINUS_FEATURE_COUNT = BINARY_EXP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Minus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MINUS_OPERATION_COUNT = BINARY_EXP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.MultImpl <em>Mult</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.MultImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getMult()
-	 * @generated
-	 */
-	int MULT = 23;
-
-	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULT__LHS = BINARY_EXP__LHS;
-
-	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULT__RHS = BINARY_EXP__RHS;
-
-	/**
-	 * The number of structural features of the '<em>Mult</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULT_FEATURE_COUNT = BINARY_EXP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Mult</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MULT_OPERATION_COUNT = BINARY_EXP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.DivImpl <em>Div</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.DivImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getDiv()
-	 * @generated
-	 */
-	int DIV = 24;
-
-	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIV__LHS = BINARY_EXP__LHS;
-
-	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIV__RHS = BINARY_EXP__RHS;
-
-	/**
-	 * The number of structural features of the '<em>Div</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIV_FEATURE_COUNT = BINARY_EXP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Div</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DIV_OPERATION_COUNT = BINARY_EXP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.EqualsImpl <em>Equals</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.EqualsImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getEquals()
-	 * @generated
-	 */
-	int EQUALS = 25;
-
-	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUALS__LHS = BINARY_EXP__LHS;
-
-	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUALS__RHS = BINARY_EXP__RHS;
-
-	/**
-	 * The number of structural features of the '<em>Equals</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUALS_FEATURE_COUNT = BINARY_EXP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Equals</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EQUALS_OPERATION_COUNT = BINARY_EXP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.GreaterImpl <em>Greater</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.GreaterImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getGreater()
-	 * @generated
-	 */
-	int GREATER = 26;
-
-	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER__LHS = BINARY_EXP__LHS;
-
-	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER__RHS = BINARY_EXP__RHS;
-
-	/**
-	 * The number of structural features of the '<em>Greater</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER_FEATURE_COUNT = BINARY_EXP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Greater</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GREATER_OPERATION_COUNT = BINARY_EXP_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.LowerImpl <em>Lower</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.LowerImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getLower()
-	 * @generated
-	 */
-	int LOWER = 27;
-
-	/**
-	 * The feature id for the '<em><b>Lhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOWER__LHS = BINARY_EXP__LHS;
-
-	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOWER__RHS = BINARY_EXP__RHS;
-
-	/**
-	 * The number of structural features of the '<em>Lower</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOWER_FEATURE_COUNT = BINARY_EXP_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Lower</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOWER_OPERATION_COUNT = BINARY_EXP_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link kmLogo.impl.LogoProgramImpl <em>Logo Program</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1191,7 +1035,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getLogoProgram()
 	 * @generated
 	 */
-	int LOGO_PROGRAM = 28;
+	int LOGO_PROGRAM = 25;
 
 	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
@@ -1221,33 +1065,24 @@ public interface KmLogoPackage extends EPackage {
 	int LOGO_PROGRAM_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '<em>Integer</em>' data type.
+	 * The meta object id for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.KmLogoPackageImpl#getInteger()
+	 * @see kmLogo.ArithmeticOperator
+	 * @see kmLogo.impl.KmLogoPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int INTEGER = 29;
+	int ARITHMETIC_OPERATOR = 26;
 
 	/**
-	 * The meta object id for the '<em>Boolean</em>' data type.
+	 * The meta object id for the '{@link kmLogo.RelationalOperator <em>Relational Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see java.lang.Boolean
-	 * @see kmLogo.impl.KmLogoPackageImpl#getBoolean()
+	 * @see kmLogo.RelationalOperator
+	 * @see kmLogo.impl.KmLogoPackageImpl#getRelationalOperator()
 	 * @generated
 	 */
-	int BOOLEAN = 30;
-
-	/**
-	 * The meta object id for the '<em>String</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see java.lang.String
-	 * @see kmLogo.impl.KmLogoPackageImpl#getString()
-	 * @generated
-	 */
-	int STRING = 31;
+	int RELATIONAL_OPERATOR = 27;
 
 
 	/**
@@ -1395,57 +1230,163 @@ public interface KmLogoPackage extends EPackage {
 	EClass getExpression();
 
 	/**
-	 * Returns the meta object for class '{@link kmLogo.BinaryExp <em>Binary Exp</em>}'.
+	 * Returns the meta object for class '{@link kmLogo.Literal <em>Literal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Binary Exp</em>'.
-	 * @see kmLogo.BinaryExp
+	 * @return the meta object for class '<em>Literal</em>'.
+	 * @see kmLogo.Literal
 	 * @generated
 	 */
-	EClass getBinaryExp();
+	EClass getLiteral();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link kmLogo.BinaryExp#getLhs <em>Lhs</em>}'.
+	 * Returns the meta object for class '{@link kmLogo.IntegerLit <em>Integer Lit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Lhs</em>'.
-	 * @see kmLogo.BinaryExp#getLhs()
-	 * @see #getBinaryExp()
+	 * @return the meta object for class '<em>Integer Lit</em>'.
+	 * @see kmLogo.IntegerLit
 	 * @generated
 	 */
-	EReference getBinaryExp_Lhs();
+	EClass getIntegerLit();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link kmLogo.BinaryExp#getRhs <em>Rhs</em>}'.
+	 * Returns the meta object for the attribute '{@link kmLogo.IntegerLit#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Rhs</em>'.
-	 * @see kmLogo.BinaryExp#getRhs()
-	 * @see #getBinaryExp()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see kmLogo.IntegerLit#getValue()
+	 * @see #getIntegerLit()
 	 * @generated
 	 */
-	EReference getBinaryExp_Rhs();
+	EAttribute getIntegerLit_Value();
 
 	/**
-	 * Returns the meta object for class '{@link kmLogo.Constant <em>Constant</em>}'.
+	 * Returns the meta object for class '{@link kmLogo.StringLit <em>String Lit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Constant</em>'.
-	 * @see kmLogo.Constant
+	 * @return the meta object for class '<em>String Lit</em>'.
+	 * @see kmLogo.StringLit
 	 * @generated
 	 */
-	EClass getConstant();
+	EClass getStringLit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link kmLogo.Constant#getIntegerValue <em>Integer Value</em>}'.
+	 * Returns the meta object for the attribute '{@link kmLogo.StringLit#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Integer Value</em>'.
-	 * @see kmLogo.Constant#getIntegerValue()
-	 * @see #getConstant()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see kmLogo.StringLit#getValue()
+	 * @see #getStringLit()
 	 * @generated
 	 */
-	EAttribute getConstant_IntegerValue();
+	EAttribute getStringLit_Value();
+
+	/**
+	 * Returns the meta object for class '{@link kmLogo.BoolLit <em>Bool Lit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Bool Lit</em>'.
+	 * @see kmLogo.BoolLit
+	 * @generated
+	 */
+	EClass getBoolLit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link kmLogo.BoolLit#isValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see kmLogo.BoolLit#isValue()
+	 * @see #getBoolLit()
+	 * @generated
+	 */
+	EAttribute getBoolLit_Value();
+
+	/**
+	 * Returns the meta object for class '{@link kmLogo.ArithmeticExpression <em>Arithmetic Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arithmetic Expression</em>'.
+	 * @see kmLogo.ArithmeticExpression
+	 * @generated
+	 */
+	EClass getArithmeticExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link kmLogo.ArithmeticExpression#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Left</em>'.
+	 * @see kmLogo.ArithmeticExpression#getLeft()
+	 * @see #getArithmeticExpression()
+	 * @generated
+	 */
+	EReference getArithmeticExpression_Left();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link kmLogo.ArithmeticExpression#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Right</em>'.
+	 * @see kmLogo.ArithmeticExpression#getRight()
+	 * @see #getArithmeticExpression()
+	 * @generated
+	 */
+	EReference getArithmeticExpression_Right();
+
+	/**
+	 * Returns the meta object for the attribute '{@link kmLogo.ArithmeticExpression#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see kmLogo.ArithmeticExpression#getOperator()
+	 * @see #getArithmeticExpression()
+	 * @generated
+	 */
+	EAttribute getArithmeticExpression_Operator();
+
+	/**
+	 * Returns the meta object for class '{@link kmLogo.RelationalExpression <em>Relational Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Relational Expression</em>'.
+	 * @see kmLogo.RelationalExpression
+	 * @generated
+	 */
+	EClass getRelationalExpression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link kmLogo.RelationalExpression#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see kmLogo.RelationalExpression#getOperator()
+	 * @see #getRelationalExpression()
+	 * @generated
+	 */
+	EAttribute getRelationalExpression_Operator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link kmLogo.RelationalExpression#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Left</em>'.
+	 * @see kmLogo.RelationalExpression#getLeft()
+	 * @see #getRelationalExpression()
+	 * @generated
+	 */
+	EReference getRelationalExpression_Left();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link kmLogo.RelationalExpression#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Right</em>'.
+	 * @see kmLogo.RelationalExpression#getRight()
+	 * @see #getRelationalExpression()
+	 * @generated
+	 */
+	EReference getRelationalExpression_Right();
 
 	/**
 	 * Returns the meta object for class '{@link kmLogo.ProcCall <em>Proc Call</em>}'.
@@ -1692,76 +1633,6 @@ public interface KmLogoPackage extends EPackage {
 	EReference getParameterCall_Parameter();
 
 	/**
-	 * Returns the meta object for class '{@link kmLogo.Plus <em>Plus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Plus</em>'.
-	 * @see kmLogo.Plus
-	 * @generated
-	 */
-	EClass getPlus();
-
-	/**
-	 * Returns the meta object for class '{@link kmLogo.Minus <em>Minus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Minus</em>'.
-	 * @see kmLogo.Minus
-	 * @generated
-	 */
-	EClass getMinus();
-
-	/**
-	 * Returns the meta object for class '{@link kmLogo.Mult <em>Mult</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Mult</em>'.
-	 * @see kmLogo.Mult
-	 * @generated
-	 */
-	EClass getMult();
-
-	/**
-	 * Returns the meta object for class '{@link kmLogo.Div <em>Div</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Div</em>'.
-	 * @see kmLogo.Div
-	 * @generated
-	 */
-	EClass getDiv();
-
-	/**
-	 * Returns the meta object for class '{@link kmLogo.Equals <em>Equals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Equals</em>'.
-	 * @see kmLogo.Equals
-	 * @generated
-	 */
-	EClass getEquals();
-
-	/**
-	 * Returns the meta object for class '{@link kmLogo.Greater <em>Greater</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Greater</em>'.
-	 * @see kmLogo.Greater
-	 * @generated
-	 */
-	EClass getGreater();
-
-	/**
-	 * Returns the meta object for class '{@link kmLogo.Lower <em>Lower</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Lower</em>'.
-	 * @see kmLogo.Lower
-	 * @generated
-	 */
-	EClass getLower();
-
-	/**
 	 * Returns the meta object for class '{@link kmLogo.LogoProgram <em>Logo Program</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1783,36 +1654,24 @@ public interface KmLogoPackage extends EPackage {
 	EReference getLogoProgram_Instructions();
 
 	/**
-	 * Returns the meta object for data type '<em>Integer</em>'.
+	 * Returns the meta object for enum '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Integer</em>'.
-	 * @model instanceClass="int"
+	 * @return the meta object for enum '<em>Arithmetic Operator</em>'.
+	 * @see kmLogo.ArithmeticOperator
 	 * @generated
 	 */
-	EDataType getInteger();
+	EEnum getArithmeticOperator();
 
 	/**
-	 * Returns the meta object for data type '{@link java.lang.Boolean <em>Boolean</em>}'.
+	 * Returns the meta object for enum '{@link kmLogo.RelationalOperator <em>Relational Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>Boolean</em>'.
-	 * @see java.lang.Boolean
-	 * @model instanceClass="java.lang.Boolean"
+	 * @return the meta object for enum '<em>Relational Operator</em>'.
+	 * @see kmLogo.RelationalOperator
 	 * @generated
 	 */
-	EDataType getBoolean();
-
-	/**
-	 * Returns the meta object for data type '{@link java.lang.String <em>String</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>String</em>'.
-	 * @see java.lang.String
-	 * @model instanceClass="java.lang.String"
-	 * @generated
-	 */
-	EDataType getString();
+	EEnum getRelationalOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1970,48 +1829,136 @@ public interface KmLogoPackage extends EPackage {
 		EClass EXPRESSION = eINSTANCE.getExpression();
 
 		/**
-		 * The meta object literal for the '{@link kmLogo.impl.BinaryExpImpl <em>Binary Exp</em>}' class.
+		 * The meta object literal for the '{@link kmLogo.impl.LiteralImpl <em>Literal</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.BinaryExpImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getBinaryExp()
+		 * @see kmLogo.impl.LiteralImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getLiteral()
 		 * @generated
 		 */
-		EClass BINARY_EXP = eINSTANCE.getBinaryExp();
+		EClass LITERAL = eINSTANCE.getLiteral();
 
 		/**
-		 * The meta object literal for the '<em><b>Lhs</b></em>' containment reference feature.
+		 * The meta object literal for the '{@link kmLogo.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see kmLogo.impl.IntegerLitImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getIntegerLit()
 		 * @generated
 		 */
-		EReference BINARY_EXP__LHS = eINSTANCE.getBinaryExp_Lhs();
+		EClass INTEGER_LIT = eINSTANCE.getIntegerLit();
 
 		/**
-		 * The meta object literal for the '<em><b>Rhs</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BINARY_EXP__RHS = eINSTANCE.getBinaryExp_Rhs();
+		EAttribute INTEGER_LIT__VALUE = eINSTANCE.getIntegerLit_Value();
 
 		/**
-		 * The meta object literal for the '{@link kmLogo.impl.ConstantImpl <em>Constant</em>}' class.
+		 * The meta object literal for the '{@link kmLogo.impl.StringLitImpl <em>String Lit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.ConstantImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getConstant()
+		 * @see kmLogo.impl.StringLitImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getStringLit()
 		 * @generated
 		 */
-		EClass CONSTANT = eINSTANCE.getConstant();
+		EClass STRING_LIT = eINSTANCE.getStringLit();
 
 		/**
-		 * The meta object literal for the '<em><b>Integer Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONSTANT__INTEGER_VALUE = eINSTANCE.getConstant_IntegerValue();
+		EAttribute STRING_LIT__VALUE = eINSTANCE.getStringLit_Value();
+
+		/**
+		 * The meta object literal for the '{@link kmLogo.impl.BoolLitImpl <em>Bool Lit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see kmLogo.impl.BoolLitImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getBoolLit()
+		 * @generated
+		 */
+		EClass BOOL_LIT = eINSTANCE.getBoolLit();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOL_LIT__VALUE = eINSTANCE.getBoolLit_Value();
+
+		/**
+		 * The meta object literal for the '{@link kmLogo.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see kmLogo.impl.ArithmeticExpressionImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getArithmeticExpression()
+		 * @generated
+		 */
+		EClass ARITHMETIC_EXPRESSION = eINSTANCE.getArithmeticExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARITHMETIC_EXPRESSION__LEFT = eINSTANCE.getArithmeticExpression_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARITHMETIC_EXPRESSION__RIGHT = eINSTANCE.getArithmeticExpression_Right();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
+
+		/**
+		 * The meta object literal for the '{@link kmLogo.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see kmLogo.impl.RelationalExpressionImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getRelationalExpression()
+		 * @generated
+		 */
+		EClass RELATIONAL_EXPRESSION = eINSTANCE.getRelationalExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RELATIONAL_EXPRESSION__OPERATOR = eINSTANCE.getRelationalExpression_Operator();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATIONAL_EXPRESSION__LEFT = eINSTANCE.getRelationalExpression_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference RELATIONAL_EXPRESSION__RIGHT = eINSTANCE.getRelationalExpression_Right();
 
 		/**
 		 * The meta object literal for the '{@link kmLogo.impl.ProcCallImpl <em>Proc Call</em>}' class.
@@ -2216,76 +2163,6 @@ public interface KmLogoPackage extends EPackage {
 		EReference PARAMETER_CALL__PARAMETER = eINSTANCE.getParameterCall_Parameter();
 
 		/**
-		 * The meta object literal for the '{@link kmLogo.impl.PlusImpl <em>Plus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.PlusImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getPlus()
-		 * @generated
-		 */
-		EClass PLUS = eINSTANCE.getPlus();
-
-		/**
-		 * The meta object literal for the '{@link kmLogo.impl.MinusImpl <em>Minus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.MinusImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getMinus()
-		 * @generated
-		 */
-		EClass MINUS = eINSTANCE.getMinus();
-
-		/**
-		 * The meta object literal for the '{@link kmLogo.impl.MultImpl <em>Mult</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.MultImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getMult()
-		 * @generated
-		 */
-		EClass MULT = eINSTANCE.getMult();
-
-		/**
-		 * The meta object literal for the '{@link kmLogo.impl.DivImpl <em>Div</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.DivImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getDiv()
-		 * @generated
-		 */
-		EClass DIV = eINSTANCE.getDiv();
-
-		/**
-		 * The meta object literal for the '{@link kmLogo.impl.EqualsImpl <em>Equals</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.EqualsImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getEquals()
-		 * @generated
-		 */
-		EClass EQUALS = eINSTANCE.getEquals();
-
-		/**
-		 * The meta object literal for the '{@link kmLogo.impl.GreaterImpl <em>Greater</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.GreaterImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getGreater()
-		 * @generated
-		 */
-		EClass GREATER = eINSTANCE.getGreater();
-
-		/**
-		 * The meta object literal for the '{@link kmLogo.impl.LowerImpl <em>Lower</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.LowerImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getLower()
-		 * @generated
-		 */
-		EClass LOWER = eINSTANCE.getLower();
-
-		/**
 		 * The meta object literal for the '{@link kmLogo.impl.LogoProgramImpl <em>Logo Program</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2304,33 +2181,24 @@ public interface KmLogoPackage extends EPackage {
 		EReference LOGO_PROGRAM__INSTRUCTIONS = eINSTANCE.getLogoProgram_Instructions();
 
 		/**
-		 * The meta object literal for the '<em>Integer</em>' data type.
+		 * The meta object literal for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.KmLogoPackageImpl#getInteger()
+		 * @see kmLogo.ArithmeticOperator
+		 * @see kmLogo.impl.KmLogoPackageImpl#getArithmeticOperator()
 		 * @generated
 		 */
-		EDataType INTEGER = eINSTANCE.getInteger();
+		EEnum ARITHMETIC_OPERATOR = eINSTANCE.getArithmeticOperator();
 
 		/**
-		 * The meta object literal for the '<em>Boolean</em>' data type.
+		 * The meta object literal for the '{@link kmLogo.RelationalOperator <em>Relational Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see java.lang.Boolean
-		 * @see kmLogo.impl.KmLogoPackageImpl#getBoolean()
+		 * @see kmLogo.RelationalOperator
+		 * @see kmLogo.impl.KmLogoPackageImpl#getRelationalOperator()
 		 * @generated
 		 */
-		EDataType BOOLEAN = eINSTANCE.getBoolean();
-
-		/**
-		 * The meta object literal for the '<em>String</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see java.lang.String
-		 * @see kmLogo.impl.KmLogoPackageImpl#getString()
-		 * @generated
-		 */
-		EDataType STRING = eINSTANCE.getString();
+		EEnum RELATIONAL_OPERATOR = eINSTANCE.getRelationalOperator();
 
 	}
 

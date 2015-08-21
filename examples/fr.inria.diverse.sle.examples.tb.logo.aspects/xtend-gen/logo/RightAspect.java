@@ -34,7 +34,8 @@ public class RightAspect extends PrimitiveAspect {
   
   protected static int _privk3_eval(final RightAspectRightAspectProperties _self_, final Right _self, final Context context) {
     Expression _angle = _self.getAngle();
-    int param = ExpressionAspect.eval(_angle, context);
+    Object _eval = ExpressionAspect.eval(_angle, context);
+    int param = (((Integer) _eval)).intValue();
     InputOutput.<String>println(("RIGHT " + Integer.valueOf(param)));
     context.turtle.rotate(param);
     return 0;

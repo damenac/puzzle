@@ -1,0 +1,48 @@
+package fr.inria.diverse.k3.sle.common.vos;
+
+import java.util.ArrayList;
+
+import org.eclipse.xtext.common.types.JvmDeclaredType;
+
+public class ConceptMethodMembersGroupVO {
+
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
+	
+	private JvmDeclaredType concept;
+	private ArrayList<String> memberGroup;
+	
+	// -----------------------------------------------
+	// Constructor
+	// -----------------------------------------------
+	
+	public ConceptMethodMembersGroupVO(JvmDeclaredType concept){
+		this.concept = concept;
+		memberGroup = new ArrayList<String>();
+	}
+
+	// -----------------------------------------------
+	// Getters and setters
+	// -----------------------------------------------
+	
+	public JvmDeclaredType getConcept() {
+		return concept;
+	}
+
+	public void setConcept(JvmDeclaredType concept) {
+		this.concept = concept;
+	}
+
+	public ArrayList<String> getMemberGroup() {
+		return memberGroup;
+	}
+	
+	public String toString(){
+		String members = "";
+		for (String member : memberGroup) {
+			members += member + ", ";
+		}
+		return concept.getSimpleName() + " - " + members;
+	}
+}

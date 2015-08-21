@@ -64,7 +64,12 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 			case KmLogoPackage.PEN_DOWN: return createPenDown();
 			case KmLogoPackage.PEN_UP: return createPenUp();
 			case KmLogoPackage.CLEAR: return createClear();
-			case KmLogoPackage.CONSTANT: return createConstant();
+			case KmLogoPackage.LITERAL: return createLiteral();
+			case KmLogoPackage.INTEGER_LIT: return createIntegerLit();
+			case KmLogoPackage.STRING_LIT: return createStringLit();
+			case KmLogoPackage.BOOL_LIT: return createBoolLit();
+			case KmLogoPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
+			case KmLogoPackage.RELATIONAL_EXPRESSION: return createRelationalExpression();
 			case KmLogoPackage.PROC_CALL: return createProcCall();
 			case KmLogoPackage.PROC_DECLARATION: return createProcDeclaration();
 			case KmLogoPackage.BLOCK: return createBlock();
@@ -74,13 +79,6 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 			case KmLogoPackage.WHILE: return createWhile();
 			case KmLogoPackage.PARAMETER: return createParameter();
 			case KmLogoPackage.PARAMETER_CALL: return createParameterCall();
-			case KmLogoPackage.PLUS: return createPlus();
-			case KmLogoPackage.MINUS: return createMinus();
-			case KmLogoPackage.MULT: return createMult();
-			case KmLogoPackage.DIV: return createDiv();
-			case KmLogoPackage.EQUALS: return createEquals();
-			case KmLogoPackage.GREATER: return createGreater();
-			case KmLogoPackage.LOWER: return createLower();
 			case KmLogoPackage.LOGO_PROGRAM: return createLogoProgram();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -95,12 +93,10 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case KmLogoPackage.INTEGER:
-				return createIntegerFromString(eDataType, initialValue);
-			case KmLogoPackage.BOOLEAN:
-				return createBooleanFromString(eDataType, initialValue);
-			case KmLogoPackage.STRING:
-				return createStringFromString(eDataType, initialValue);
+			case KmLogoPackage.ARITHMETIC_OPERATOR:
+				return createArithmeticOperatorFromString(eDataType, initialValue);
+			case KmLogoPackage.RELATIONAL_OPERATOR:
+				return createRelationalOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -114,12 +110,10 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case KmLogoPackage.INTEGER:
-				return convertIntegerToString(eDataType, instanceValue);
-			case KmLogoPackage.BOOLEAN:
-				return convertBooleanToString(eDataType, instanceValue);
-			case KmLogoPackage.STRING:
-				return convertStringToString(eDataType, instanceValue);
+			case KmLogoPackage.ARITHMETIC_OPERATOR:
+				return convertArithmeticOperatorToString(eDataType, instanceValue);
+			case KmLogoPackage.RELATIONAL_OPERATOR:
+				return convertRelationalOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -200,9 +194,59 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Constant createConstant() {
-		ConstantImpl constant = new ConstantImpl();
-		return constant;
+	public Literal createLiteral() {
+		LiteralImpl literal = new LiteralImpl();
+		return literal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntegerLit createIntegerLit() {
+		IntegerLitImpl integerLit = new IntegerLitImpl();
+		return integerLit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringLit createStringLit() {
+		StringLitImpl stringLit = new StringLitImpl();
+		return stringLit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BoolLit createBoolLit() {
+		BoolLitImpl boolLit = new BoolLitImpl();
+		return boolLit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ArithmeticExpression createArithmeticExpression() {
+		ArithmeticExpressionImpl arithmeticExpression = new ArithmeticExpressionImpl();
+		return arithmeticExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RelationalExpression createRelationalExpression() {
+		RelationalExpressionImpl relationalExpression = new RelationalExpressionImpl();
+		return relationalExpression;
 	}
 
 	/**
@@ -300,76 +344,6 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Plus createPlus() {
-		PlusImpl plus = new PlusImpl();
-		return plus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Minus createMinus() {
-		MinusImpl minus = new MinusImpl();
-		return minus;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Mult createMult() {
-		MultImpl mult = new MultImpl();
-		return mult;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Div createDiv() {
-		DivImpl div = new DivImpl();
-		return div;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Equals createEquals() {
-		EqualsImpl equals = new EqualsImpl();
-		return equals;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Greater createGreater() {
-		GreaterImpl greater = new GreaterImpl();
-		return greater;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Lower createLower() {
-		LowerImpl lower = new LowerImpl();
-		return lower;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public LogoProgram createLogoProgram() {
 		LogoProgramImpl logoProgram = new LogoProgramImpl();
 		return logoProgram;
@@ -380,8 +354,10 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Integer createIntegerFromString(EDataType eDataType, String initialValue) {
-		return (Integer)super.createFromString(eDataType, initialValue);
+	public ArithmeticOperator createArithmeticOperatorFromString(EDataType eDataType, String initialValue) {
+		ArithmeticOperator result = ArithmeticOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -389,8 +365,8 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertIntegerToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+	public String convertArithmeticOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
@@ -398,8 +374,10 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Boolean createBooleanFromString(EDataType eDataType, String initialValue) {
-		return (Boolean)super.createFromString(eDataType, initialValue);
+	public RelationalOperator createRelationalOperatorFromString(EDataType eDataType, String initialValue) {
+		RelationalOperator result = RelationalOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
 	}
 
 	/**
@@ -407,26 +385,8 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertBooleanToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String createStringFromString(EDataType eDataType, String initialValue) {
-		return (String)super.createFromString(eDataType, initialValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertStringToString(EDataType eDataType, Object instanceValue) {
-		return super.convertToString(eDataType, instanceValue);
+	public String convertRelationalOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

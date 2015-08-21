@@ -12,7 +12,9 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:=reexport,
  fr.inria.diverse.melange.adapters;bundle-version="0.1.0";visibility:=reexport,
  fr.inria.diverse.sle.examples.tb.logo;bundle-version="1.0.0",
- fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.2.0"
+ fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.2.0",
+ fr.inria.diverse.sle.examples.tb.flowchart;bundle-version="1.0.0",
+ fr.inria.diverse.sle.examples.tb.flowchart.aspects;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0

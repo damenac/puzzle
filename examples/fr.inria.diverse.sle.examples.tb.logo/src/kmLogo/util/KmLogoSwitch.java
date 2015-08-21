@@ -142,19 +142,54 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KmLogoPackage.BINARY_EXP: {
-				BinaryExp binaryExp = (BinaryExp)theEObject;
-				T result = caseBinaryExp(binaryExp);
-				if (result == null) result = caseExpression(binaryExp);
-				if (result == null) result = caseInstruction(binaryExp);
+			case KmLogoPackage.LITERAL: {
+				Literal literal = (Literal)theEObject;
+				T result = caseLiteral(literal);
+				if (result == null) result = caseExpression(literal);
+				if (result == null) result = caseInstruction(literal);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KmLogoPackage.CONSTANT: {
-				Constant constant = (Constant)theEObject;
-				T result = caseConstant(constant);
-				if (result == null) result = caseExpression(constant);
-				if (result == null) result = caseInstruction(constant);
+			case KmLogoPackage.INTEGER_LIT: {
+				IntegerLit integerLit = (IntegerLit)theEObject;
+				T result = caseIntegerLit(integerLit);
+				if (result == null) result = caseLiteral(integerLit);
+				if (result == null) result = caseExpression(integerLit);
+				if (result == null) result = caseInstruction(integerLit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KmLogoPackage.STRING_LIT: {
+				StringLit stringLit = (StringLit)theEObject;
+				T result = caseStringLit(stringLit);
+				if (result == null) result = caseLiteral(stringLit);
+				if (result == null) result = caseExpression(stringLit);
+				if (result == null) result = caseInstruction(stringLit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KmLogoPackage.BOOL_LIT: {
+				BoolLit boolLit = (BoolLit)theEObject;
+				T result = caseBoolLit(boolLit);
+				if (result == null) result = caseLiteral(boolLit);
+				if (result == null) result = caseExpression(boolLit);
+				if (result == null) result = caseInstruction(boolLit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KmLogoPackage.ARITHMETIC_EXPRESSION: {
+				ArithmeticExpression arithmeticExpression = (ArithmeticExpression)theEObject;
+				T result = caseArithmeticExpression(arithmeticExpression);
+				if (result == null) result = caseExpression(arithmeticExpression);
+				if (result == null) result = caseInstruction(arithmeticExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KmLogoPackage.RELATIONAL_EXPRESSION: {
+				RelationalExpression relationalExpression = (RelationalExpression)theEObject;
+				T result = caseRelationalExpression(relationalExpression);
+				if (result == null) result = caseExpression(relationalExpression);
+				if (result == null) result = caseInstruction(relationalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -222,69 +257,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				T result = caseParameterCall(parameterCall);
 				if (result == null) result = caseExpression(parameterCall);
 				if (result == null) result = caseInstruction(parameterCall);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.PLUS: {
-				Plus plus = (Plus)theEObject;
-				T result = casePlus(plus);
-				if (result == null) result = caseBinaryExp(plus);
-				if (result == null) result = caseExpression(plus);
-				if (result == null) result = caseInstruction(plus);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.MINUS: {
-				Minus minus = (Minus)theEObject;
-				T result = caseMinus(minus);
-				if (result == null) result = caseBinaryExp(minus);
-				if (result == null) result = caseExpression(minus);
-				if (result == null) result = caseInstruction(minus);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.MULT: {
-				Mult mult = (Mult)theEObject;
-				T result = caseMult(mult);
-				if (result == null) result = caseBinaryExp(mult);
-				if (result == null) result = caseExpression(mult);
-				if (result == null) result = caseInstruction(mult);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.DIV: {
-				Div div = (Div)theEObject;
-				T result = caseDiv(div);
-				if (result == null) result = caseBinaryExp(div);
-				if (result == null) result = caseExpression(div);
-				if (result == null) result = caseInstruction(div);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.EQUALS: {
-				Equals equals = (Equals)theEObject;
-				T result = caseEquals(equals);
-				if (result == null) result = caseBinaryExp(equals);
-				if (result == null) result = caseExpression(equals);
-				if (result == null) result = caseInstruction(equals);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.GREATER: {
-				Greater greater = (Greater)theEObject;
-				T result = caseGreater(greater);
-				if (result == null) result = caseBinaryExp(greater);
-				if (result == null) result = caseExpression(greater);
-				if (result == null) result = caseInstruction(greater);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.LOWER: {
-				Lower lower = (Lower)theEObject;
-				T result = caseLower(lower);
-				if (result == null) result = caseBinaryExp(lower);
-				if (result == null) result = caseExpression(lower);
-				if (result == null) result = caseInstruction(lower);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -449,32 +421,92 @@ public class KmLogoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binary Exp</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Literal</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binary Exp</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Literal</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBinaryExp(BinaryExp object) {
+	public T caseLiteral(Literal object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constant</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Integer Lit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constant</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Integer Lit</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstant(Constant object) {
+	public T caseIntegerLit(IntegerLit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Lit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Lit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringLit(StringLit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bool Lit</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bool Lit</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBoolLit(BoolLit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arithmetic Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArithmeticExpression(ArithmeticExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Relational Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Relational Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRelationalExpression(RelationalExpression object) {
 		return null;
 	}
 
@@ -610,111 +642,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterCall(ParameterCall object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Plus</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Plus</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePlus(Plus object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Minus</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Minus</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMinus(Minus object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Mult</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Mult</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseMult(Mult object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Div</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Div</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDiv(Div object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Equals</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Equals</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEquals(Equals object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Greater</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Greater</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGreater(Greater object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Lower</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Lower</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLower(Lower object) {
 		return null;
 	}
 

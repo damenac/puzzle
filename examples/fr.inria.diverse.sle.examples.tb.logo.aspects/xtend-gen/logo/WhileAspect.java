@@ -33,7 +33,7 @@ public class WhileAspect extends ControlStructureAspect {
   }
   
   protected static int _privk3_eval(final WhileAspectWhileAspectProperties _self_, final While _self, final Context context) {
-    while ((ExpressionAspect.eval(_self.getCondition(), context) > 0)) {
+    while (((((Integer) ExpressionAspect.eval(_self.getCondition(), context))).intValue() > 0)) {
       Block _block = _self.getBlock();
       BlockAspect.eval(_block, context);
     }

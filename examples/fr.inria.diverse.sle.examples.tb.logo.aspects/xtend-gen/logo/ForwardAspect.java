@@ -34,7 +34,8 @@ public class ForwardAspect extends PrimitiveAspect {
   
   protected static int _privk3_eval(final ForwardAspectForwardAspectProperties _self_, final Forward _self, final Context context) {
     Expression _steps = _self.getSteps();
-    int param = ExpressionAspect.eval(_steps, context);
+    Object _eval = ExpressionAspect.eval(_steps, context);
+    int param = (((Integer) _eval)).intValue();
     InputOutput.<String>println(("FORWARD " + Integer.valueOf(param)));
     context.turtle.forward(param);
     return 0;

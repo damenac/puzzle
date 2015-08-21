@@ -13,7 +13,7 @@ import logo.ParameterCallAspectParameterCallAspectProperties;
 @SuppressWarnings("all")
 public class ParameterCallAspect extends ExpressionAspect {
   @OverrideAspectMethod
-  public static int eval(final ParameterCall _self, final Context context) {
+  public static Object eval(final ParameterCall _self, final Context context) {
     logo.ParameterCallAspectParameterCallAspectProperties _self_ = logo.ParameterCallAspectParameterCallAspectContext.getSelf(_self);
     Object result = null;
      if (_self instanceof kmLogo.ParameterCall){
@@ -23,16 +23,16 @@ public class ParameterCallAspect extends ExpressionAspect {
     } else  if (_self instanceof kmLogo.Instruction){
     result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (int)result;
+    return (java.lang.Object)result;
   }
   
-  private static int super_eval(final ParameterCall _self, final Context context) {
+  private static Object super_eval(final ParameterCall _self, final Context context) {
     logo.ExpressionAspectExpressionAspectProperties _self_ = logo.ExpressionAspectExpressionAspectContext.getSelf(_self);
     return  logo.ExpressionAspect._privk3_eval(_self_, _self,context);
   }
   
-  protected static int _privk3_eval(final ParameterCallAspectParameterCallAspectProperties _self_, final ParameterCall _self, final Context context) {
+  protected static Object _privk3_eval(final ParameterCallAspectParameterCallAspectProperties _self_, final ParameterCall _self, final Context context) {
     Parameter _parameter = _self.getParameter();
-    return ParameterAspect.eval(_parameter, context);
+    return Integer.valueOf(ParameterAspect.eval(_parameter, context));
   }
 }

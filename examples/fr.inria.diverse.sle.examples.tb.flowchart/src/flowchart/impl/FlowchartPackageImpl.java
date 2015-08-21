@@ -685,6 +685,7 @@ public class FlowchartPackageImpl extends EPackageImpl implements FlowchartPacka
 		actionEClass.getESuperTypes().add(this.getNode());
 		decisionEClass.getESuperTypes().add(this.getNode());
 		relationalConstraintEClass.getESuperTypes().add(this.getConstraint());
+		literalEClass.getESuperTypes().add(this.getExpression());
 		integerLitEClass.getESuperTypes().add(this.getLiteral());
 		stringLitEClass.getESuperTypes().add(this.getLiteral());
 		boolLitEClass.getESuperTypes().add(this.getLiteral());

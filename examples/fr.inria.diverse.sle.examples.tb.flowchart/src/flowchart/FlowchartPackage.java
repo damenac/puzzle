@@ -515,7 +515,7 @@ public interface FlowchartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LITERAL_FEATURE_COUNT = 0;
+	int LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Literal</em>' class.
@@ -524,7 +524,7 @@ public interface FlowchartPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LITERAL_OPERATION_COUNT = 0;
+	int LITERAL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link flowchart.impl.IntegerLitImpl <em>Integer Lit</em>}' class.

@@ -128,6 +128,7 @@ public class FlowchartSwitch<T> extends Switch<T> {
 			case FlowchartPackage.LITERAL: {
 				Literal literal = (Literal)theEObject;
 				T result = caseLiteral(literal);
+				if (result == null) result = caseExpression(literal);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,6 +136,7 @@ public class FlowchartSwitch<T> extends Switch<T> {
 				IntegerLit integerLit = (IntegerLit)theEObject;
 				T result = caseIntegerLit(integerLit);
 				if (result == null) result = caseLiteral(integerLit);
+				if (result == null) result = caseExpression(integerLit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,6 +144,7 @@ public class FlowchartSwitch<T> extends Switch<T> {
 				StringLit stringLit = (StringLit)theEObject;
 				T result = caseStringLit(stringLit);
 				if (result == null) result = caseLiteral(stringLit);
+				if (result == null) result = caseExpression(stringLit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -149,6 +152,7 @@ public class FlowchartSwitch<T> extends Switch<T> {
 				BoolLit boolLit = (BoolLit)theEObject;
 				T result = caseBoolLit(boolLit);
 				if (result == null) result = caseLiteral(boolLit);
+				if (result == null) result = caseExpression(boolLit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

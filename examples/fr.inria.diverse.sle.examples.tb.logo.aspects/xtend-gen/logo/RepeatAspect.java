@@ -35,7 +35,8 @@ public class RepeatAspect extends ControlStructureAspect {
   
   protected static int _privk3_eval(final RepeatAspectRepeatAspectProperties _self_, final Repeat _self, final Context context) {
     Expression _condition = _self.getCondition();
-    int time = ExpressionAspect.eval(_condition, context);
+    Object _eval = ExpressionAspect.eval(_condition, context);
+    int time = (((Integer) _eval)).intValue();
     while ((time > 0)) {
       {
         Block _block = _self.getBlock();

@@ -35,7 +35,7 @@ public interface ProcDeclaration extends Instruction {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see kmLogo.KmLogoPackage#getProcDeclaration_Name()
-	 * @model dataType="kmLogo.String"
+	 * @model
 	 * @generated
 	 */
 	String getName();

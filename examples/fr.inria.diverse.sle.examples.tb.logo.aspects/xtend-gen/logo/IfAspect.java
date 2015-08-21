@@ -1,5 +1,6 @@
 package logo;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import kmLogo.Block;
@@ -35,8 +36,8 @@ public class IfAspect extends ControlStructureAspect {
   
   protected static int _privk3_eval(final IfAspectIfAspectProperties _self_, final If _self, final Context context) {
     Expression _condition = _self.getCondition();
-    int _eval = ExpressionAspect.eval(_condition, context);
-    boolean _notEquals = (_eval != 0);
+    Object _eval = ExpressionAspect.eval(_condition, context);
+    boolean _notEquals = (!Objects.equal(_eval, Integer.valueOf(0)));
     if (_notEquals) {
       Block _thenPart = _self.getThenPart();
       return BlockAspect.eval(_thenPart, context);

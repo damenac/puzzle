@@ -8,6 +8,8 @@ import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class SizeOfCommonality {
@@ -28,14 +30,12 @@ public class SizeOfCommonality {
 	}
 	
 	public static int evaluateForSemantics(ArrayList<Language> languages){
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		
-		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
-		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList);
+		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList);
 		
 		int count = 0;
-		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
-			if(conceptMembersGroupVO.getMemberGroup().size() == ePackages.size()){
+		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+			if(conceptMethodMembersGroupVO.getMemberGroup().size() == languages.size()){
 				count++;
 			}
 		}
@@ -44,7 +44,6 @@ public class SizeOfCommonality {
 	}
 	
 	public static String getVariablesDeclaration(ArrayList<Language> languages){
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		answer += "var pieDataSyntacticCommonality = [{\n";
 		answer += "        value: " + evaluateForSyntax(languages) + ",\n";
@@ -67,7 +66,7 @@ public class SizeOfCommonality {
 		answer += "        label: \"Commonalities\"\n";
 		answer += "    },\n";
 		answer += "    {\n";
-		answer += "        value: " + TotalAmountOfConcepts.evaluateMetric(languages) + ",\n";
+		answer += "        value: " + TotalAmountOfMethods.evaluateMetric(languages) + ",\n";
 		answer += "        color:\"#F5F6CE\",\n";
 		answer += "        highlight: \"#FBFBEF\",\n";
 		answer += "        label: \"Particularities\"\n";

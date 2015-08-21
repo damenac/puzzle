@@ -14,7 +14,6 @@ public class TotalAmountOfConcepts {
 
 	public static double evaluateMetric(ArrayList<Language> languages){
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		
 		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList);
 		return conceptMemberGroupList.size();

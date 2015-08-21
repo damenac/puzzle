@@ -4,10 +4,7 @@ package flowchart.impl;
 
 import flowchart.FlowchartPackage;
 import flowchart.Literal;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +15,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class LiteralImpl extends MinimalEObjectImpl.Container implements Literal {
+public class LiteralImpl extends ExpressionImpl implements Literal {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

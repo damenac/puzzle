@@ -1,6 +1,7 @@
 package fr.inria.diverse.k3.sle.common.vos;
 
-import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.xtext.common.types.JvmDeclaredType;
+import org.eclipse.xtext.common.types.JvmOperation;
 
 public class ConceptMethodMemberVO {
 
@@ -8,17 +9,17 @@ public class ConceptMethodMemberVO {
 	// Attributes
 	// -----------------------------------------------
 	
-	private EClassifier concept;
-	private String methodSignature;
+	private JvmDeclaredType concept;
+	private JvmOperation method;
 	private String memberName;
 
 	// -----------------------------------------------
 	// Constructor
 	// -----------------------------------------------
 	
-	public ConceptMethodMemberVO(EClassifier concept, String methodSignature, String memberName) {
+	public ConceptMethodMemberVO(JvmDeclaredType concept, JvmOperation method, String memberName) {
 		this.concept = concept;
-		this.methodSignature = methodSignature;
+		this.method = method;
 		this.memberName = memberName;
 	}
 	
@@ -26,20 +27,20 @@ public class ConceptMethodMemberVO {
 	// Getters and setters
 	// -----------------------------------------------
 	
-	public EClassifier getConcept() {
+	public JvmDeclaredType getConcept() {
 		return concept;
 	}
 	
-	public void setConcept(EClassifier concept) {
+	public void setConcept(JvmDeclaredType concept) {
 		this.concept = concept;
 	}
 	
-	public String getMethodSignature() {
-		return methodSignature;
+	public JvmOperation getMethod() {
+		return method;
 	}
 
-	public void setMethodSignature(String methodSignature) {
-		this.methodSignature = methodSignature;
+	public void setMethod(JvmOperation method) {
+		this.method = method;
 	}
 	
 	public String getMemberName() {
@@ -51,6 +52,6 @@ public class ConceptMethodMemberVO {
 	}
 	
 	public String toString(){
-		return this.memberName + " - " + this.concept.getName();
+		return this.memberName + " - " + this.concept.getSimpleName();
 	}
 }

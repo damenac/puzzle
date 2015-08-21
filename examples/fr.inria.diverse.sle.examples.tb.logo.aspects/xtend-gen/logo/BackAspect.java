@@ -34,8 +34,8 @@ public class BackAspect extends PrimitiveAspect {
   
   protected static int _privk3_eval(final BackAspectBackAspectProperties _self_, final Back _self, final Context context) {
     Expression _steps = _self.getSteps();
-    int _eval = ExpressionAspect.eval(_steps, context);
-    int param = ((-1) * _eval);
+    Object _eval = ExpressionAspect.eval(_steps, context);
+    int param = ((-1) * (((Integer) _eval)).intValue());
     InputOutput.<String>println(("BACK " + Integer.valueOf(param)));
     context.turtle.forward(param);
     return 0;
