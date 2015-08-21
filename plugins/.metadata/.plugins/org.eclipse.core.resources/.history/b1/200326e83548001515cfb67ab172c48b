@@ -37,7 +37,7 @@ public class BreakDownFamilyImpl {
 		return instance;
 	}
 	
-	public void breakDownFamily(ArrayList<IResource> selectedResources) throws Exception{
+	public void breakDownFamily(ArrayList<IResource> selectedResources) throws CoreException{
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		for (IResource iResource : selectedResources) {
 			IFile currentFile = (IFile) iResource;

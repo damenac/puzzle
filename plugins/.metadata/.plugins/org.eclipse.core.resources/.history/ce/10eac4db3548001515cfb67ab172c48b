@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.k3.sle.common.utils.EcoreCloningServices;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
@@ -37,15 +35,15 @@ public class BreakDownFamilyImpl {
 		return instance;
 	}
 	
-	public void breakDownFamily(ArrayList<IResource> selectedResources) throws Exception{
+	public void breakDownFamily(ArrayList<IResource> selectedResources) throws CoreException{
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		for (IResource iResource : selectedResources) {
 			IFile currentFile = (IFile) iResource;
 			EPackage currentMetamodel = ModelUtils.loadEcoreFile(currentFile.getLocation().toString());
 			ePackages.add(currentMetamodel);
 		}
-		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
-		ArrayList<ModuleConceptsVO> moduleConceptsList = FamiliesServices.getInstance().obtainConceptsOwenerLanguagesList(ePackages, conceptComparisonOperator);
+		
+		ArrayList<ModuleConceptsVO> moduleConceptsList = FamiliesServices.getInstance().obtainConceptsOwenerLanguagesList(ePackages);
 		buildModules(moduleConceptsList);
 	}
 
