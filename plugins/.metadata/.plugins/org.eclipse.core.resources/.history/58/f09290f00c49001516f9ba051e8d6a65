@@ -1,0 +1,17 @@
+package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class SemanticAnalysis {
+
+	public static String getVariablesDeclaration(ArrayList<Language> languages){
+		String answer = "";
+		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		
+		return answer;
+	}
+}

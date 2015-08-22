@@ -27,6 +27,7 @@ import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.PairwiseRelationshipRatio;
+import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticAnalysis;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticOverlapping;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SyntactOverlapping;
@@ -121,8 +122,17 @@ public class ComputeMetricsActionImpl {
 		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
 		outSemanticVennData.print(SemanticOverlapping.evaluate(languages, conceptComparisonOperator, methodComparisonOperator));
 		outSemanticVennData.close();
-        
-        URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/analysis.html");
+		
+		this.copyAnalysisReport(project, languages);
+		this.copyAnalysisSemanticsData(project, languages, conceptComparisonOperator, methodComparisonOperator);
+		this.copyAnalysisSemantics(project, languages);
+		
+		ProjectManagementServices.refreshProject(project);
+		return metrics;
+	}
+	
+	public void copyAnalysisReport(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/analysis.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -140,9 +150,35 @@ public class ComputeMetricsActionImpl {
 		PrintWriter outRileReport = new PrintWriter( fileReport );
 		outRileReport.print(content);
 		outRileReport.close();
-
-		
-		ProjectManagementServices.refreshProject(project);
-		return metrics;
+	}
+	
+	public void copyAnalysisSemanticsData(IProject project, ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws IOException{
+		File generalMetrics = new File(project.getLocation().toString() + "/lib/semanticAnalysis.js" );
+		if(!generalMetrics.exists())
+			generalMetrics.createNewFile();
+		PrintWriter outMetrics = new PrintWriter( generalMetrics );
+		outMetrics.print(SemanticAnalysis.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
+		outMetrics.close();
+	}
+	
+	public void copyAnalysisSemantics(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/semanticAnalysis.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/semanticAnalysis.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
 	}
 }

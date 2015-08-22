@@ -13,6 +13,7 @@ import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMethodsMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -190,7 +191,37 @@ public class FamiliesServices {
 		return null;
 	}
 
+	public ArrayList<ConceptMethodsMembersGroupVO> getConceptMethodsMembersGroupVOList(ArrayList<ConceptMethodMembersGroupVO> ConceptMethodMemberGroupList,
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
+		ArrayList<ConceptMethodsMembersGroupVO> answer = new ArrayList<ConceptMethodsMembersGroupVO>();
+		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : ConceptMethodMemberGroupList) {
+			ConceptMethodsMembersGroupVO conceptMethodsMemberGroupLegacy = getConceptMethodsMemberGroup(conceptMethodMembersGroupVO, answer, conceptComparisonOperator, methodComparisonOperator);
+			
+			if(conceptMethodsMemberGroupLegacy == null){
+				ConceptMethodsMembersGroupVO newConcept = new ConceptMethodsMembersGroupVO(conceptMethodMembersGroupVO.getConcept());
+				newConcept.getMemberGroup().addAll(conceptMethodMembersGroupVO.getMemberGroup());
+				newConcept.getMethods().add(conceptMethodMembersGroupVO.getMethod());
+				answer.add(newConcept);
+			}else{
+				conceptMethodsMemberGroupLegacy.getMethods().add(conceptMethodMembersGroupVO.getMethod());
+			}
+		}
+		return answer;
+	}
 	
+
+	private ConceptMethodsMembersGroupVO getConceptMethodsMemberGroup(
+			ConceptMethodMembersGroupVO conceptMethodMembersGroupVO,
+			ArrayList<ConceptMethodsMembersGroupVO> answer,
+			ConceptComparison conceptComparisonOperator,
+			MethodComparison methodComparisonOperator) {
+		for (ConceptMethodsMembersGroupVO conceptMethodsMembersGroupVO : answer) {
+			if(conceptMethodsMembersGroupVO.getConcept().getSimpleName().equals(conceptMethodMembersGroupVO.getConcept().getSimpleName()))
+				return conceptMethodsMembersGroupVO;
+		}
+		return null;
+	}
+
 	public ArrayList<ModuleConceptsVO> obtainConceptsOwenerLanguagesList(ArrayList<EPackage> ePackages, ConceptComparison comparisonOperator) throws Exception{
 		// Step 1: Scan the metamodels creating the concept-member list.
 		ArrayList<ConceptMemberVO> conceptMemberList = this.getConceptMemberMappingList(ePackages);
@@ -288,24 +319,27 @@ public class FamiliesServices {
 		return answer;
 	}
 	
+	/**
+	 * Returns the intersection between the two languages in the parameter and according to the comparison operator. 
+	 * @param left
+	 * @param right
+	 * @param comparisonOperator
+	 * @return
+	 */
 	public static ArrayList<String> getIntersection(Language left, Language right, MethodComparison comparisonOperator) {
 		ArrayList<JvmOperation> leftOperations = new ArrayList<JvmOperation>();
 		ArrayList<JvmOperation> rightOperations = new ArrayList<JvmOperation>();
-		
 		ArrayList<String> answer = new ArrayList<String>();
-
 		for (JvmOperation operation : leftOperations) {
 			String operationId = operation.getDeclaringType().getSimpleName() + "." + operation.getSimpleName();
 			if(XtendQueries.searchJvmOperationByComparisonOperator(right, operation, comparisonOperator) != null && !answer.contains(operationId))
 				answer.add(operationId);
 		}
-		
 		for (JvmOperation operation : rightOperations) {
 			String operationId = operation.getDeclaringType().getSimpleName() + "." + operation.getSimpleName();
 			if(XtendQueries.searchJvmOperationByComparisonOperator(left, operation, comparisonOperator) != null && !answer.contains(operationId))
 				answer.add(operationId);
 		}
-		
 		return answer;
 	}
 }
