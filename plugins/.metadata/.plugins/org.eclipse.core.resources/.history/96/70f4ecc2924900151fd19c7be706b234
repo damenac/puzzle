@@ -1,0 +1,48 @@
+package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EPackage;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
+import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.vos.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.vos.MembersGroupVsConceptVO;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class DependenciesGraph {
+
+	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception{
+		String answer = "";
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
+		ArrayList<MembersGroupVsConceptVO> membersGroupVsConceptVOList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMemberGroupList);
+		EcoreGraph dependenciesGraph = FamiliesServices.computeDependenciesGraph(conceptMemberGroupList);
+		
+		answer += "var G = new jsnx.DiGraph();\n";
+		
+		int i = 0;
+		for (MembersGroupVsConceptVO membersGroupVsConceptVO : membersGroupVsConceptVOList) {
+			String nodes = "";
+			boolean first = true;
+			for (String currentConcept : membersGroupVsConceptVO.getConcepts()) {
+				if(!first)
+					nodes += ",";
+				nodes += "\"" + currentConcept + "\"";
+				first = false;
+			}
+
+			answer += "G.addNodesFrom([" + nodes + "], {group:" + i + "});\n";
+			i++;
+		}
+		
+		
+		
+		
+		return answer;
+	}
+}

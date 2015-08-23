@@ -16,10 +16,10 @@ public class LiteralAspect extends ExpressionAspect {
     Object result = null;
      if (_self instanceof rhapsody.StringLit){
     result = rhapsody.StringLitAspect.eval((rhapsody.StringLit)_self,context);
-    } else  if (_self instanceof rhapsody.IntegerLit){
-    result = rhapsody.IntegerLitAspect.eval((rhapsody.IntegerLit)_self,context);
     } else  if (_self instanceof rhapsody.BoolLit){
     result = rhapsody.BoolLitAspect.eval((rhapsody.BoolLit)_self,context);
+    } else  if (_self instanceof rhapsody.IntegerLit){
+    result = rhapsody.IntegerLitAspect.eval((rhapsody.IntegerLit)_self,context);
     } else  if (_self instanceof rhapsody.Literal){
     result = rhapsody.LiteralAspect._privk3_eval(_self_, (rhapsody.Literal)_self,context);
     } else  if (_self instanceof rhapsody.Expression){

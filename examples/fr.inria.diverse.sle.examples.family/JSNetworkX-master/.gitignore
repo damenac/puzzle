@@ -1,0 +1,9 @@
+/coverage
+/test
+/utils
+/node_modules
+/jsnetworkx-dev.js
+/_site
+/node
+tags
+/runtime.js

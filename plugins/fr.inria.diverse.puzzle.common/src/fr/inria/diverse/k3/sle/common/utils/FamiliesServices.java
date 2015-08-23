@@ -2,9 +2,14 @@ package fr.inria.diverse.k3.sle.common.utils;
 
 import java.util.ArrayList;
 
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
@@ -14,6 +19,10 @@ import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.vos.ConceptMethodsMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.vos.EcoreArc;
+import fr.inria.diverse.k3.sle.common.vos.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.vos.EcoreNode;
+import fr.inria.diverse.k3.sle.common.vos.MembersGroupVsConceptVO;
 import fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -258,6 +267,31 @@ public class FamiliesServices {
 	}
 	
 	
+	public ArrayList<MembersGroupVsConceptVO> getMembersGroupVsConceptVOList(ArrayList<ConceptMembersGroupVO> conceptMembersGroupList){
+		ArrayList<MembersGroupVsConceptVO> answer = new ArrayList<MembersGroupVsConceptVO>();
+		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMembersGroupList) {
+			String groupId = "[";
+			boolean first = true;
+			for (String member : conceptMembersGroupVO.getMemberGroup()) {
+				if(!first) groupId += ", ";
+				groupId += member;
+				first = false;
+			}
+			groupId += "]";
+			
+			MembersGroupVsConceptVO pivot = new MembersGroupVsConceptVO(groupId);
+			if(answer.indexOf(pivot) == -1){
+				pivot.getConcepts().add(conceptMembersGroupVO.getConcept().getName());
+				answer.add(pivot);
+			}
+			else{
+				MembersGroupVsConceptVO legacy = answer.get(answer.indexOf(pivot));
+				legacy.getConcepts().add(conceptMembersGroupVO.getConcept().getName());
+			}
+		}
+		return answer;
+	}
+	
 	
 	/**
 	 * Returns the intersection between two EPackages by using the concepts comparison in the parameter. 
@@ -341,5 +375,68 @@ public class FamiliesServices {
 				answer.add(operationId);
 		}
 		return answer;
+	}
+	
+	public EcoreGraph computeDependenciesGraph(ArrayList<ConceptMembersGroupVO> conceptMembersGroupList){
+		EcoreGraph graph = new EcoreGraph();
+		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMembersGroupList) {
+			EClassifier currentClassifier = conceptMembersGroupVO.getConcept();
+			EcoreNode node = new EcoreNode(currentClassifier);
+			graph.getNodes().add(node);
+		}
+		
+		// Adding one arc for each reference
+		for (EcoreNode node : graph.getNodes()) {
+			EClassifier currentClassifier = node.getClassifier();
+			
+			if(currentClassifier instanceof EClass){
+				EClass currentEClass = (EClass) currentClassifier;
+				for (EStructuralFeature structuralFeature : currentEClass.getEStructuralFeatures()) {
+					if(structuralFeature instanceof EReference){
+						EReference currentEReference = (EReference) structuralFeature;
+						EcoreNode toNode = getNodeByName(graph, currentEReference.getEType().getName());
+						if(toNode != null){
+							EcoreArc arc = new EcoreArc(node, toNode);
+							graph.getArcs().add(arc);
+						}
+					}
+					
+					if(structuralFeature instanceof EAttribute){
+						EAttribute currentEAttribute = (EAttribute) structuralFeature;
+						if(currentEAttribute.getEType() instanceof EEnum){
+							EcoreNode toNode = getNodeByName(graph, currentEAttribute.getEType().getName());
+							if(toNode != null){
+								EcoreArc arc = new EcoreArc(node, toNode);
+								graph.getArcs().add(arc);
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		// Adding one arc for each inheritance
+		for (EcoreNode node : graph.getNodes()) {
+			EClassifier currentClassifier = node.getClassifier();
+			
+			if(currentClassifier instanceof EClass){
+				EClass currentEClass = (EClass) currentClassifier;
+				for (EClass superClass : currentEClass.getESuperTypes()) {
+					EcoreNode toNode = getNodeByName(graph, superClass.getName());
+					if(toNode != null){
+						EcoreArc arc = new EcoreArc(node, toNode);
+						graph.getArcs().add(arc);
+					}
+				}
+			}
+		}
+		return graph;
+	}
+	
+	private EcoreNode getNodeByName(EcoreGraph graph, String nodeName){
+		for (EcoreNode node : graph.getNodes()) {
+			if(node.getClassifier().getName().equals(nodeName))
+				return node;
+		} return null;
 	}
 }

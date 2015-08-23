@@ -24,6 +24,7 @@ import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
+import fr.inria.diverse.puzzle.metrics.evaluators.syntax.DependenciesGraph;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.PairwiseRelationshipRatio;
@@ -124,6 +125,8 @@ public class ComputeMetricsActionImpl {
 		outSemanticVennData.close();
 		
 		this.copyAnalysisReport(project, languages);
+		this.copyAnalysisSyntaxData(project, languages, conceptComparisonOperator, methodComparisonOperator);
+		this.copyAnalysisSynactic(project, languages);
 		this.copyAnalysisSemanticsData(project, languages, conceptComparisonOperator, methodComparisonOperator);
 		this.copyAnalysisSemantics(project, languages);
 		
@@ -145,6 +148,36 @@ public class ComputeMetricsActionImpl {
         br.close();
         
         File fileReport = new File(project.getLocation().toString() + "/analysisReport.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	public void copyAnalysisSyntaxData(IProject project, ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
+		File generalMetrics = new File(project.getLocation().toString() + "/lib/graph.js" );
+		if(!generalMetrics.exists())
+			generalMetrics.createNewFile();
+		PrintWriter outMetrics = new PrintWriter( generalMetrics );
+		outMetrics.print(DependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
+		outMetrics.close();
+	}
+	
+	public void copyAnalysisSynactic(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/syntacticAnalysis.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/syntacticAnalysis.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );

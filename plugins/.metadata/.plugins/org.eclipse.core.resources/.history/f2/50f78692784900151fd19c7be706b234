@@ -1,0 +1,15 @@
+package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class DependenciesGraph {
+
+	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator){
+		String answer = "";
+		
+		return answer;
+	}
+}
