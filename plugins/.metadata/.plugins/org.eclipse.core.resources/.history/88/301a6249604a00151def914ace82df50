@@ -1,0 +1,8 @@
+package fr.inria.diverse.k3.sle.common.tuples;
+
+import org.eclipse.xtext.common.types.JvmOperation;
+
+public class TupleMethodMembers {
+
+	private JvmOperation method;
+}

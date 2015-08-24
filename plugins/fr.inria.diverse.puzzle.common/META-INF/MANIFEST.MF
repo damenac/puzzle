@@ -28,5 +28,5 @@ Import-Package: org.eclipse.emf.common.util,
  org.eclipse.jdt.core,
  org.eclipse.jdt.launching
 Export-Package: fr.inria.diverse.k3.sle.common.comparisonOperators,
- fr.inria.diverse.k3.sle.common.utils,
- fr.inria.diverse.k3.sle.common.vos
+ fr.inria.diverse.k3.sle.common.tuples,
+ fr.inria.diverse.k3.sle.common.utils

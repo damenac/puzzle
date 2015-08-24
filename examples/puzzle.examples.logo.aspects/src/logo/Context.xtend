@@ -5,17 +5,10 @@ import java.util.Hashtable
 
 class Context {
 	
-		/*
-		 * Store lists of (paramter name, value)
-		 */
 		var ArrayList<Hashtable<String,Integer>> stack
-		
-		/*
-		 * Object in charge of printing/drawing
-		 */
+		public var Hashtable<String, Object> variablesTable 
 		public var Turtle turtle
 		
-
 		new() {
 			stack = new ArrayList<Hashtable<String,Integer>>()
 			turtle = new Turtle()

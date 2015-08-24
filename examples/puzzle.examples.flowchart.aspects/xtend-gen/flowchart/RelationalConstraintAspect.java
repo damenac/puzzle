@@ -31,7 +31,7 @@ public class RelationalConstraintAspect extends ConstraintAspect {
   
   protected static boolean _privk3_evalConstraint(final RelationalConstraintAspectRelationalConstraintAspectProperties _self_, final RelationalConstraint _self, final Hashtable<String, Object> context) {
     Expression _expression = _self.getExpression();
-    Object _eval = ExpressionAspect.eval(_expression);
+    Object _eval = ExpressionAspect.eval(_expression, context);
     return (((Boolean) _eval)).booleanValue();
   }
 }

@@ -972,6 +972,7 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		controlStructureEClass.getESuperTypes().add(this.getInstruction());
 		repeatEClass.getESuperTypes().add(this.getControlStructure());
 		whileEClass.getESuperTypes().add(this.getControlStructure());
+		parameterEClass.getESuperTypes().add(this.getExpression());
 		parameterCallEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters

@@ -7,14 +7,10 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class Context {
-  /**
-   * Store lists of (paramter name, value)
-   */
   private ArrayList<Hashtable<String, Integer>> stack;
   
-  /**
-   * Object in charge of printing/drawing
-   */
+  public Hashtable<String, Object> variablesTable;
+  
   public Turtle turtle;
   
   public Context() {

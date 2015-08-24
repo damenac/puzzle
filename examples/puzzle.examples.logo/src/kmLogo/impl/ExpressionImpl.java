@@ -4,7 +4,6 @@ package kmLogo.impl;
 
 import kmLogo.Expression;
 import kmLogo.KmLogoPackage;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**

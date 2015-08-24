@@ -14,16 +14,17 @@ import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMemberVO;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMembersGroupVO;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMethodsMembersGroupVO;
-import fr.inria.diverse.k3.sle.common.vos.EcoreArc;
-import fr.inria.diverse.k3.sle.common.vos.EcoreGraph;
-import fr.inria.diverse.k3.sle.common.vos.EcoreNode;
-import fr.inria.diverse.k3.sle.common.vos.MembersGroupVsConceptVO;
-import fr.inria.diverse.k3.sle.common.vos.ModuleConceptsVO;
+import fr.inria.diverse.k3.sle.common.tuples.ConceptMemberVO;
+import fr.inria.diverse.k3.sle.common.tuples.ConceptMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMemberVO;
+import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodsMembers;
+import fr.inria.diverse.k3.sle.common.tuples.EcoreArc;
+import fr.inria.diverse.k3.sle.common.tuples.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.tuples.EcoreNode;
+import fr.inria.diverse.k3.sle.common.tuples.MembersGroupVsConceptVO;
+import fr.inria.diverse.k3.sle.common.tuples.ModuleConceptsVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
@@ -200,31 +201,34 @@ public class FamiliesServices {
 		return null;
 	}
 
-	public ArrayList<ConceptMethodsMembersGroupVO> getConceptMethodsMembersGroupVOList(ArrayList<ConceptMethodMembersGroupVO> ConceptMethodMemberGroupList,
+	public ArrayList<TupleConceptMethodsMembers> getConceptMethodsMembersGroupTupleList(ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList,
 			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
-		ArrayList<ConceptMethodsMembersGroupVO> answer = new ArrayList<ConceptMethodsMembersGroupVO>();
-		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : ConceptMethodMemberGroupList) {
-			ConceptMethodsMembersGroupVO conceptMethodsMemberGroupLegacy = getConceptMethodsMemberGroup(conceptMethodMembersGroupVO, answer, conceptComparisonOperator, methodComparisonOperator);
-			
+		ArrayList<TupleConceptMethodsMembers> answer = new ArrayList<TupleConceptMethodsMembers>();
+
+		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+			TupleConceptMethodsMembers conceptMethodsMemberGroupLegacy = getConceptMethodsMemberTuple(conceptMethodMembersGroupVO, answer, conceptComparisonOperator, methodComparisonOperator);
 			if(conceptMethodsMemberGroupLegacy == null){
-				ConceptMethodsMembersGroupVO newConcept = new ConceptMethodsMembersGroupVO(conceptMethodMembersGroupVO.getConcept());
-				newConcept.getMemberGroup().addAll(conceptMethodMembersGroupVO.getMemberGroup());
-				newConcept.getMethods().add(conceptMethodMembersGroupVO.getMethod());
+				TupleMethodMembers methodMembers = new TupleMethodMembers(conceptMethodMembersGroupVO.getMethod());
+				methodMembers.getMembers().addAll(conceptMethodMembersGroupVO.getMemberGroup());
+				TupleConceptMethodsMembers newConcept = new TupleConceptMethodsMembers(conceptMethodMembersGroupVO.getConcept());
+				newConcept.getMethodsMembers().add(methodMembers);
 				answer.add(newConcept);
 			}else{
-				conceptMethodsMemberGroupLegacy.getMethods().add(conceptMethodMembersGroupVO.getMethod());
+				TupleMethodMembers methodMembers = new TupleMethodMembers(conceptMethodMembersGroupVO.getMethod());
+				methodMembers.getMembers().addAll(conceptMethodMembersGroupVO.getMemberGroup());
+				conceptMethodsMemberGroupLegacy.getMethodsMembers().add(methodMembers);
 			}
 		}
 		return answer;
 	}
 	
 
-	private ConceptMethodsMembersGroupVO getConceptMethodsMemberGroup(
+	private TupleConceptMethodsMembers getConceptMethodsMemberTuple(
 			ConceptMethodMembersGroupVO conceptMethodMembersGroupVO,
-			ArrayList<ConceptMethodsMembersGroupVO> answer,
+			ArrayList<TupleConceptMethodsMembers> answer,
 			ConceptComparison conceptComparisonOperator,
 			MethodComparison methodComparisonOperator) {
-		for (ConceptMethodsMembersGroupVO conceptMethodsMembersGroupVO : answer) {
+		for (TupleConceptMethodsMembers conceptMethodsMembersGroupVO : answer) {
 			if(conceptMethodsMembersGroupVO.getConcept().getSimpleName().equals(conceptMethodMembersGroupVO.getConcept().getSimpleName()))
 				return conceptMethodsMembersGroupVO;
 		}

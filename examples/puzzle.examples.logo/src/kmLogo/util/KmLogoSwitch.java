@@ -249,6 +249,8 @@ public class KmLogoSwitch<T> extends Switch<T> {
 			case KmLogoPackage.PARAMETER: {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
+				if (result == null) result = caseExpression(parameter);
+				if (result == null) result = caseInstruction(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

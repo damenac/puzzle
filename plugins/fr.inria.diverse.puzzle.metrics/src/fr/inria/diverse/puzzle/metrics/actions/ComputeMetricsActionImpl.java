@@ -19,6 +19,7 @@ import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Element;
@@ -67,7 +68,8 @@ public class ComputeMetricsActionImpl {
 	 */
 	public String computeMetrics(ModelTypingSpace familyTypingSpace, IProject project) throws Exception {
 		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
-		MethodComparison methodComparisonOperator = NamingMethodComparison.class.newInstance();
+//		MethodComparison methodComparisonOperator = NamingMethodComparison.class.newInstance();
+		MethodComparison methodComparisonOperator = SignatureMethodComparison.class.newInstance();
 		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		ArrayList<Language> languages = new ArrayList<Language>();

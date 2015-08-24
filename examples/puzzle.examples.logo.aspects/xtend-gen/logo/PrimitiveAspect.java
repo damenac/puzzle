@@ -14,16 +14,16 @@ public class PrimitiveAspect extends InstructionAspect {
   public static int eval(final Primitive _self, final Context context) {
     logo.PrimitiveAspectPrimitiveAspectProperties _self_ = logo.PrimitiveAspectPrimitiveAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.PenUp){
-    result = logo.PenUpAspect.eval((kmLogo.PenUp)_self,context);
-    } else  if (_self instanceof kmLogo.Clear){
+     if (_self instanceof kmLogo.Clear){
     result = logo.ClearAspect.eval((kmLogo.Clear)_self,context);
     } else  if (_self instanceof kmLogo.Forward){
     result = logo.ForwardAspect.eval((kmLogo.Forward)_self,context);
-    } else  if (_self instanceof kmLogo.PenDown){
-    result = logo.PenDownAspect.eval((kmLogo.PenDown)_self,context);
     } else  if (_self instanceof kmLogo.Back){
     result = logo.BackAspect.eval((kmLogo.Back)_self,context);
+    } else  if (_self instanceof kmLogo.PenDown){
+    result = logo.PenDownAspect.eval((kmLogo.PenDown)_self,context);
+    } else  if (_self instanceof kmLogo.PenUp){
+    result = logo.PenUpAspect.eval((kmLogo.PenUp)_self,context);
     } else  if (_self instanceof kmLogo.Left){
     result = logo.LeftAspect.eval((kmLogo.Left)_self,context);
     } else  if (_self instanceof kmLogo.Right){

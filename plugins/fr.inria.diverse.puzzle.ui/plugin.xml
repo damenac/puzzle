@@ -41,7 +41,7 @@
          <menuContribution
             locationURI="popup:org.eclipse.jdt.ui.PackageExplorer">
             <menu
-                  icon="icons/puzzle.png"
+                  icon="icons/triskell.png"
                   label="Puzzle">
                <visibleWhen
                      checkEnabled="false">

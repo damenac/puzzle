@@ -13,13 +13,13 @@ var pieDataSyntacticCommonality = [{
 ];
 
 var pieDataSemanticCommonality = [{
-        value: 7,
+        value: 0,
         color:"#FAAC58",
         highlight: "#F7BE81",
         label: "Commonalities"
     },
     {
-        value: 56,
+        value: 74,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -41,7 +41,7 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [8.13953488372093,8.75,21.875]
+        data : [0.0,0.0,0.0]
       }
     ]
 };
@@ -60,7 +60,7 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [22.58064516129032,25.0,38.88888888888889]
+        data : [22.58064516129032,0.0,38.88888888888889]
       }
     ]
 };
@@ -79,7 +79,7 @@ var barRelationshipRatiofsm = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [14.000000000000002,18.91891891891892]
+        data : [0.0,18.91891891891892]
       }
     ]
 };
@@ -98,7 +98,7 @@ var barRelationshipRatiokmLogo = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [14.000000000000002,18.91891891891892]
+        data : [0.0,0.0]
       }
     ]
 };
@@ -117,7 +117,7 @@ var barRelationshipRatioflowchart = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [18.91891891891892,18.91891891891892]
+        data : [18.91891891891892,0.0]
       }
     ]
 };

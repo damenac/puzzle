@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMemberVO;
+import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMembersGroupVO;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO;
-import fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class TotalAmountOfMethods {

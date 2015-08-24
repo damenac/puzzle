@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.puzzle.ui/icons/melange.png&apos; to &apos;triskell.png&apos;" description="Rename resource &apos;melange.png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="icons/melange.png" name="triskell.png" stamp="1440418943200" updateReferences="true"/>
+</session>

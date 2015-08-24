@@ -9,7 +9,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
@@ -30,7 +29,6 @@ import org.eclipse.emf.ecore.xmi.impl.XMLResourceFactoryImpl;
 import org.eclipse.emf.mapping.MappingRoot;
 import org.eclipse.emf.mapping.ecore2ecore.Ecore2EcorePackage;
 import org.eclipse.emf.mapping.ecore2ecore.util.Ecore2EcoreResourceFactoryImpl;
-import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 import org.w3c.dom.Document;
@@ -39,9 +37,6 @@ import org.xml.sax.SAXException;
 
 public class ModelUtils {
 
-//	private static Injector injector = new K3SLEXtendStandaloneSetup()
-//		.createInjectorAndDoEMFRegistration();
-	
 	// --------------------------------------------------
 	// Methods
 	// --------------------------------------------------
@@ -210,26 +205,6 @@ public class ModelUtils {
 	      e.printStackTrace();
 	    }
 	}
-	
-//	/**
-//	 * Serializes an Xtend file in the file path given in the parameter
-//	 * @param filePath
-//	 * @param rootResource
-//	 * @throws IOException
-//	 */
-//	public static void saveXtendFile(String filePath, Resource rootResource)
-//			throws IOException {
-//		XtextResourceSet set = injector.getInstance(XtextResourceSet.class);
-//		Resource resource = (Resource) set
-//				.createResource(org.eclipse.emf.common.util.URI
-//						.createFileURI(filePath));
-//		EList<EObject> toAdd = new BasicEList<EObject>();
-//		for (EObject _object : rootResource.getContents()) {
-//			toAdd.add(_object);
-//		}
-//		resource.getContents().addAll(toAdd);
-//		resource.save(null);
-//	}
 	
 	/**
 	 * Loads an XML document from the file path in the parameter. 
