@@ -1,0 +1,272 @@
+package fsm
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.ArrayList
+import java.util.Hashtable
+import org.eclipse.emf.common.util.EList
+
+import java.util.Scanner
+import org.eclipse.emf.common.util.BasicEList
+
+import static extension fsm.TransitionAspect.*
+import static extension fsm.ExpressionAspect.*
+import static extension fsm.ConstraintAspect.*
+
+// *.*
+// ASPECT
+@Aspect(className=StateMachine)
+class StateMachineAspect { 
+	
+	public ArrayList<ArrayList<String>> events
+	 
+	/**
+	 * Reads the input events from the console and performs the corresponding steps in the state machine. 
+	 */
+	def public void evalStateMachine() {
+		val Hashtable<String, Object> context = new Hashtable<String, Object>
+		
+		// Welcome message and initialization of the state machine. 
+		println("Executing the state machine. Please enter the input events:\n")
+		_self.initStateMachine(context)
+		
+		
+		print("    step: ---> current active state (s): ")
+		var _it = context.keySet.iterator
+		while(_it.hasNext){
+			var String _key = _it.next
+			var Object _value = context.get(_key)
+			if(_key.startsWith("currentState"))
+				(_value as ArrayList<AbstractState>).forEach[ _vertex |
+					print( _vertex.name + " ")]
+		}
+		
+		_it = context.keySet.iterator
+		var String variablesString = ""
+		while(_it.hasNext){
+			var String _key = _it.next
+			var Object _value = context.get(_key)
+			if(!_key.startsWith("currentState"))
+				variablesString += " - " + _key + ": " + _value + "\n"
+		}
+		if(!variablesString.equals("")){
+			println("\n ---> current variables' values: ")
+			println(variablesString)
+		}
+		
+		while(true){
+			var Scanner in = new Scanner(System.in);
+			print(" \n\n *INPUT ---> Next event: ")
+			var String[] eventsChain = in.nextLine.split(",")
+			for(String _event : eventsChain){
+				val EList<String> events = new BasicEList<String>()
+				events.add(_event)
+				_self.step(context, events)
+
+				
+			}
+		}
+	}
+	
+	/**
+	 * Finds the initial pseudo-state and starts the execution of the state machine. 
+	 */
+	def public void initStateMachine(Hashtable<String, Object> context){
+		var ArrayList<AbstractState> initialState = new ArrayList<AbstractState>();
+		context.put("currentState", initialState)
+		
+		// Looking for the initial pseudo-state
+		var Pseudostate initialPseudostate = _self.subvertex.
+						findFirst[ _vertex | (_vertex instanceof Pseudostate) && 
+							(_vertex as Pseudostate).kind == PseudostateKind.INITIAL] as Pseudostate
+		
+		// Dispatching the transitions of the initial pseudo-state
+		var ArrayList<AbstractState> initialCurrentState = new ArrayList<AbstractState>()
+		var ArrayList<Transition> initialCurrentTransitions = new ArrayList<Transition>()
+		for(Transition _transition : initialPseudostate.outgoing){
+			initialCurrentTransitions.add(_transition)
+			initialCurrentState.add(_transition.target)
+		}
+		(initialState as ArrayList<AbstractState>).addAll(initialCurrentState)
+		
+		initialCurrentTransitions.forEach[ transition |
+			transition.evalTransition(context)
+		]
+	}
+}
+
+// *.*
+// ASPECT
+@Aspect(className=State)
+class StateAspect {
+	
+	def public void entryState(Hashtable<String, Object> context){
+		
+	}
+	
+	def public void evalState(Hashtable<String, Object> context) {
+		
+	}
+	
+	def public void exitState(Hashtable<String, Object> context){
+		
+	}
+}
+
+// *.*
+// ASPECT
+@Aspect(className=Transition)
+class TransitionAspect {
+	
+	private boolean fired = false
+	
+	def public void evalTransition(Hashtable<String, Object> context){
+		
+	}
+	
+	def public boolean validGuard(Hashtable<String, Object> context){
+		return (_self.guard == null) || (_self.guard != null && _self.guard.evalConstraint(context) == true)
+	}
+	
+	def public boolean alreadyFired(Hashtable<String, Object> context){
+		return _self.fired
+		
+	}
+	
+	def public void resetFired(){
+		_self.fired = false
+	}
+}
+
+// *.*
+// ASPECT
+@Aspect(className=Trigger)
+class TriggerAspect {
+	
+	def public boolean evalTrigger(EList<String> events){
+		return events.contains(_self.expression)
+	}
+}
+
+// *.*
+// ASPECT
+@Aspect(className=FinalState)
+class FinalStateAspect extends StateAspect {
+	
+	@OverrideAspectMethod
+	def public void exitState(Hashtable<String, Object> context){
+		
+	}
+}
+
+@Aspect(className=Expression)
+public class ExpressionAspect {
+
+	def Object eval (Hashtable<String, Object> context) {
+		return 0 
+	}
+}
+
+@Aspect(className=Literal)
+public class LiteralAspect extends ExpressionAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		return 0
+	}
+}
+
+@Aspect(className=IntegerLit)
+public class IntegerLitAspect extends LiteralAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		return _self.value
+	}
+}
+
+@Aspect(className=StringLit)
+public class StringLitAspect extends LiteralAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		return _self.value
+	}
+}
+
+@Aspect(className=BoolLit)
+public class BoolLitAspect extends LiteralAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		return _self.value
+	}
+}
+
+@Aspect(className=ArithmeticExpression)
+public class ArithmeticExpressionAspect extends ExpressionAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		var int result = 0
+		if(_self.operator == ArithmeticOperator.PLUS){
+			result = (_self.left.eval(context) as Integer) + (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == ArithmeticOperator.MINUS){
+			result = (_self.left.eval(context) as Integer) - (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == ArithmeticOperator.MULT){
+			result = (_self.left.eval(context) as Integer) * (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == ArithmeticOperator.DIV){
+			result = (_self.left.eval(context) as Integer) / (_self.right.eval(context) as Integer)
+		}
+		return result
+	}
+}
+
+@Aspect(className=RelationalExpression)
+public class RelationalExpressionAspect extends ExpressionAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		var boolean result = false
+		if(_self.operator == RelationalOperator.EQUALS){
+			result = (_self.left.eval(context) as Integer) == (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == RelationalOperator.NOT_EQUAL){
+			result = (_self.left.eval(context) as Integer) != (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == RelationalOperator.LESS_THAN){
+			result = (_self.left.eval(context) as Integer) < (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == RelationalOperator.GREATER_THAN){
+			result = (_self.left.eval(context) as Integer) > (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == RelationalOperator.LESS_THAN_OR_EQUAL_TO){
+			result = (_self.left.eval(context) as Integer) <= (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == RelationalOperator.GREATER_THAN_OR_EQUAL_TO){
+			result = (_self.left.eval(context) as Integer) >= (_self.right.eval(context) as Integer)
+		}
+		return result
+	}
+}
+
+@Aspect(className=Constraint)
+public class ConstraintAspect {
+	
+	def boolean evalConstraint(Hashtable<String, Object> context){
+		return false
+	}
+}
+
+@Aspect(className=RelationalConstraint)
+public class RelationalConstraintAspect extends ConstraintAspect {
+
+	@OverrideAspectMethod	
+	def boolean evalConstraint(Hashtable<String, Object> context){
+		return _self.expression.eval(context) as Boolean
+	}
+}

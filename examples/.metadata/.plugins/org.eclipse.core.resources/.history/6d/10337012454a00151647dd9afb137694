@@ -1,0 +1,16 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	hfsm.FinalState = hfsm.FinalStateAspect
+	hfsm.Constraint = hfsm.ConstraintAspect
+	hfsm.BoolLit = hfsm.BoolLitAspect
+	hfsm.Literal = hfsm.LiteralAspect
+	hfsm.RelationalExpression = hfsm.RelationalExpressionAspect
+	hfsm.RelationalConstraint = hfsm.RelationalConstraintAspect
+	hfsm.StringLit = hfsm.StringLitAspect
+	hfsm.Expression = hfsm.ExpressionAspect
+	hfsm.Transition = hfsm.TransitionAspect
+	hfsm.Trigger = hfsm.TriggerAspect
+	hfsm.State = hfsm.StateAspect
+	hfsm.StateMachine = hfsm.StateMachineAspect
+	hfsm.IntegerLit = hfsm.IntegerLitAspect
+	hfsm.ArithmeticExpression = hfsm.ArithmeticExpressionAspect
+	hfsm.Region = hfsm.RegionAspect

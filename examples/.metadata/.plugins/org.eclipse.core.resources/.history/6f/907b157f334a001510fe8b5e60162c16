@@ -1,0 +1,14 @@
+package rhapsody;
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
+import java.util.Hashtable;
+import rhapsody.ExpressionAspect;
+
+/* @Aspect(className = /* name is null */) */@SuppressWarnings("all")
+public class LiteralAspect extends ExpressionAspect {
+  @OverrideAspectMethod
+  public Object eval(final Hashtable<String, Object> context) {
+    return Integer.valueOf(0);
+  }
+}

@@ -1,0 +1,87 @@
+package family
+
+/**
+ * A language for State Machines defined according the Rhapsody formalism. 
+ */
+language FSM {
+	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/rhapsody.ecore"
+	
+	with fsm.StateMachineAspect
+	with fsm.RegionAspect
+	with fsm.StateAspect
+	with fsm.TransitionAspect
+	with fsm.TriggerAspect
+	with fsm.FinalStateAspect
+	with fsm.ExpressionAspect
+	with fsm.LiteralAspect
+	with fsm.IntegerLitAspect
+	with fsm.StringLitAspect
+	with fsm.BoolLitAspect
+	with fsm.ArithmeticExpressionAspect
+	with fsm.RelationalExpressionAspect
+	with fsm.ConstraintAspect
+	with fsm.RelationalConstraintAspect
+	
+	exactType RhapsodyMT
+}
+
+/**
+ * A language for Logo 
+ */
+language Logo {
+	
+	syntax "platform:/resource/puzzle.examples.logo/models/logo.ecore"
+	 
+	with logo.InstructionAspect 
+	with logo.PrimitiveAspect
+	with logo.BackAspect
+	with logo.ForwardAspect
+	with logo.LeftAspect
+	with logo.RightAspect
+	with logo.PenDownAspect
+	with logo.PenUpAspect
+	with logo.ClearAspect
+	with logo.ExpressionAspect
+	with logo.LiteralAspect
+	with logo.IntegerLitAspect
+	with logo.StringLitAspect
+	with logo.BoolLitAspect
+	with logo.ArithmeticExpressionAspect
+	with logo.RelationalExpressionAspect
+	with logo.ProcCallAspect
+	with logo.BlockAspect
+	with logo.ControlStructureAspect
+	with logo.IfAspect
+	with logo.RepeatAspect
+	with logo.WhileAspect
+	with logo.ParameterAspect
+	with logo.ParameterCallAspect
+	with logo.LogoProgramAspect
+	
+	exactType LogoMT
+}
+
+
+/**
+ * A language for Flowcharts 
+ */
+language Flowchart {
+	
+	syntax "platform:/resource/puzzle.examples.flowchart/models/flowchart.ecore"
+	
+	with flowchart.FlowchartAspect
+	with flowchart.NodeAspect
+	with flowchart.ArcAspect
+	with flowchart.SubflowAspect
+	with flowchart.ActionAspect
+	with flowchart.DecisionAspect
+	with flowchart.ExpressionAspect
+	with flowchart.LiteralAspect
+	with flowchart.IntegerLitAspect
+	with flowchart.StringLitAspect
+	with flowchart.BoolLitAspect
+	with flowchart.ArithmeticExpressionAspect
+	with flowchart.RelationalExpressionAspect
+	
+	exactType FlowchartMT
+}
