@@ -65,7 +65,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 4;
+	int NAMED_ELEMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,7 +102,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getStateMachine()
 	 * @generated
 	 */
-	int STATE_MACHINE = 0;
+	int STATE_MACHINE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -157,7 +157,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getAbstractState()
 	 * @generated
 	 */
-	int ABSTRACT_STATE = 1;
+	int ABSTRACT_STATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -212,7 +212,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 2;
+	int STATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -294,7 +294,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 3;
+	int TRANSITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.

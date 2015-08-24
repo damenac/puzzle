@@ -16,9 +16,9 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
@@ -67,7 +67,8 @@ public class ComputeMetricsActionImpl {
 	 * @throws URISyntaxException
 	 */
 	public String computeMetrics(ModelTypingSpace familyTypingSpace, IProject project) throws Exception {
-		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
+//		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
+		ConceptComparison conceptComparisonOperator = DeepConceptComparison.class.newInstance();
 //		MethodComparison methodComparisonOperator = NamingMethodComparison.class.newInstance();
 		MethodComparison methodComparisonOperator = SignatureMethodComparison.class.newInstance();
 		

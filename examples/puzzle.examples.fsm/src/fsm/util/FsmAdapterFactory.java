@@ -68,6 +68,10 @@ public class FsmAdapterFactory extends AdapterFactoryImpl {
 	protected FsmSwitch<Adapter> modelSwitch =
 		new FsmSwitch<Adapter>() {
 			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
 			public Adapter caseStateMachine(StateMachine object) {
 				return createStateMachineAdapter();
 			}
@@ -82,10 +86,6 @@ public class FsmAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTransition(Transition object) {
 				return createTransitionAdapter();
-			}
-			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
 			}
 			@Override
 			public Adapter caseTrigger(Trigger object) {

@@ -11,31 +11,31 @@ var treeData = [
                "parent": "StateMachine"
                },
                {
-               "name": "void initStateMachine(StateMachine Hashtable<String, Object> ) [from: fsm hfsm tfsm]",
+               "name": "void initStateMachine(StateMachine Hashtable<String, Object> ) [from: fsm]",
                "parent": "StateMachine"
                },
                {
-               "name": "void step(StateMachine Hashtable<String, Object> EList<String> ) [from: fsm hfsm tfsm]",
+               "name": "void step(StateMachine Hashtable<String, Object> EList<String> ) [from: fsm]",
                "parent": "StateMachine"
                },
                {
-               "name": "ArrayList<AbstractState> getCurrentState(StateMachine Hashtable<String, Object> EList<String> ) [from: fsm hfsm tfsm]",
+               "name": "ArrayList<AbstractState> getCurrentState(StateMachine Hashtable<String, Object> EList<String> ) [from: fsm]",
                "parent": "StateMachine"
                },
                {
-               "name": "EList<Transition> getActiveTransitions(StateMachine AbstractState EList<String> ) [from: fsm hfsm tfsm]",
+               "name": "EList<Transition> getActiveTransitions(StateMachine AbstractState EList<String> ) [from: fsm]",
                "parent": "StateMachine"
                },
                {
-               "name": "void findOldActiveStates(StateMachine ArrayList<AbstractState> Transition Hashtable<String, Object> ) [from: fsm hfsm tfsm]",
+               "name": "void findOldActiveStates(StateMachine ArrayList<AbstractState> Transition Hashtable<String, Object> ) [from: fsm]",
                "parent": "StateMachine"
                },
                {
-               "name": "void findNewActiveStates(StateMachine ArrayList<AbstractState> Transition ArrayList<Transition> Hashtable<String, Object> ) [from: fsm hfsm tfsm]",
+               "name": "void findNewActiveStates(StateMachine ArrayList<AbstractState> Transition ArrayList<Transition> Hashtable<String, Object> ) [from: fsm]",
                "parent": "StateMachine"
                },
                {
-               "name": "void findNewActiveTransitions(StateMachine ArrayList<Transition> Transition Hashtable<String, Object> ) [from: fsm hfsm tfsm]",
+               "name": "void findNewActiveTransitions(StateMachine ArrayList<Transition> Transition Hashtable<String, Object> ) [from: fsm]",
                "parent": "StateMachine"
                },
                {
@@ -43,7 +43,15 @@ var treeData = [
                "parent": "StateMachine"
                },
                {
-               "name": "String chain(StateMachine ) [from: fsm hfsm tfsm]",
+               "name": "void events(StateMachine ArrayList<ArrayList<String>> ) [from: fsm hfsm tfsm]",
+               "parent": "StateMachine"
+               },
+               {
+               "name": "String chain(StateMachine ) [from: hfsm tfsm]",
+               "parent": "StateMachine"
+               },
+               {
+               "name": "void chain(StateMachine String ) [from: hfsm tfsm]",
                "parent": "StateMachine"
                }
               ]
@@ -88,6 +96,10 @@ var treeData = [
                },
                {
                "name": "boolean fired(Transition ) [from: fsm hfsm tfsm]",
+               "parent": "Transition"
+               },
+               {
+               "name": "void fired(Transition boolean ) [from: fsm hfsm tfsm]",
                "parent": "Transition"
                }
               ]

@@ -66,6 +66,12 @@ public class FsmSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case FsmPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FsmPackage.STATE_MACHINE: {
 				StateMachine stateMachine = (StateMachine)theEObject;
 				T result = caseStateMachine(stateMachine);
@@ -92,12 +98,6 @@ public class FsmSwitch<T> extends Switch<T> {
 				Transition transition = (Transition)theEObject;
 				T result = caseTransition(transition);
 				if (result == null) result = caseNamedElement(transition);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FsmPackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

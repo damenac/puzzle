@@ -1,0 +1,79 @@
+package fr.inria.diverse.k3.sle.common.comparisonOperators;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.common.types.JvmFormalParameter;
+import org.eclipse.xtext.common.types.JvmOperation;
+import org.eclipse.xtext.common.types.JvmTypeReference;
+
+public class SignatureAndSourceMethodComparison implements MethodComparison{
+
+	@Override
+	public boolean equal(JvmOperation left, JvmOperation right) {
+		boolean identicalModifiers = compareModifiers(left, right);
+		boolean identicalReturnType = compareReturnType(left, right);
+		boolean identicalName = compareName(left, right);
+		boolean identicalParameters = compareParameters(left, right);
+		boolean identicalExceptions = compareExceptions(left, right);
+		boolean identicalSource = compareSource(left, right);
+		return identicalModifiers && identicalReturnType && identicalName && identicalParameters && identicalExceptions;
+	}
+
+	private boolean compareModifiers(JvmOperation left, JvmOperation right) {
+		return left.getVisibility().getName().equals(right.getVisibility().getName());
+	}
+
+	private boolean compareReturnType(JvmOperation left, JvmOperation right) {
+		return left.getReturnType().getSimpleName().equals(right.getReturnType().getSimpleName());
+	}
+	
+	private boolean compareName(JvmOperation left, JvmOperation right) {
+		return left.getSimpleName().equals(right.getSimpleName());
+	}
+	
+	private boolean compareParameters(JvmOperation left, JvmOperation right) {
+		if(left.getParameters().size() != right.getParameters().size())
+			return false;
+		
+		int i = 0;
+		for (JvmFormalParameter leftParam : left.getParameters()) {
+			JvmFormalParameter rightParam = right.getParameters().get(i);
+			if(!leftParam.getParameterType().getSimpleName().equals(rightParam.getParameterType().getSimpleName()))
+				return false;
+			i++;
+		}
+		return true;
+	}
+	
+	private boolean compareExceptions(JvmOperation left, JvmOperation right) {
+		if(left.getExceptions().size() != right.getExceptions().size())
+			return false;
+		
+		ArrayList<String> leftExceptionStrings = getExceptionsString(left);
+		ArrayList<String> rightExceptionStrings = getExceptionsString(right);
+		
+		for (String leftException : leftExceptionStrings) {
+			if(!rightExceptionStrings.contains(leftException))
+				return false;
+		}
+		return true;
+	}
+
+	private ArrayList<String> getExceptionsString(JvmOperation operation) {
+		ArrayList<String> answer = new ArrayList<String>();
+		for (JvmTypeReference exception : operation.getExceptions()) {
+			answer.add(exception.getSimpleName());
+		}
+		return answer;
+	}
+
+	private boolean compareSource(JvmOperation left, JvmOperation right) {
+		String leftSource = "";
+		for (EObject leftElement : left.eContents()) {
+			leftSource += leftElement.toString();
+		}
+		System.out.println("leftSource: " + leftSource);
+		return false;
+	}
+}

@@ -3,7 +3,6 @@ package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
 import java.util.ArrayList;
 
 import org.eclipse.xtext.common.types.JvmFormalParameter;
-import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
@@ -21,10 +20,10 @@ public class SemanticAnalysis {
 		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
 		ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
 		
-		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
-			System.out.println("conceptMethodMembersGroupVO*:" + conceptMethodMembersGroupVO);
-		}
-		
+//		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+//			System.out.println("conceptMethodMembersGroupVO*:" + conceptMethodMembersGroupVO);
+//		}
+//		
 		ArrayList<TupleConceptMethodsMembers> conceptsGroupMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodsMembersGroupTupleList(conceptMethodMemberGroupList, conceptComparisonOperator, methodComparisonOperator);
 		
 		answer += "var treeData = [\n";

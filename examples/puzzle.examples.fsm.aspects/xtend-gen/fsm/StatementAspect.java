@@ -14,20 +14,20 @@ public abstract class StatementAspect {
     fsm.StatementAspectStatementAspectProperties _self_ = fsm.StatementAspectStatementAspectContext.getSelf(_self);
      if (_self instanceof fsm.Println){
      fsm.PrintlnAspect.eval((fsm.Println)_self,context);
-    } else  if (_self instanceof fsm.Print){
-     fsm.PrintAspect.eval((fsm.Print)_self,context);
+    } else  if (_self instanceof fsm.Loop){
+     fsm.LoopAspect.eval((fsm.Loop)_self,context);
     } else  if (_self instanceof fsm.Program){
      fsm.ProgramAspect.eval((fsm.Program)_self,context);
     } else  if (_self instanceof fsm.Wait){
      fsm.WaitAspect.eval((fsm.Wait)_self,context);
-    } else  if (_self instanceof fsm.VarDecl){
-     fsm.VarDeclAspect.eval((fsm.VarDecl)_self,context);
-    } else  if (_self instanceof fsm.Conditional){
-     fsm.ConditionalAspect.eval((fsm.Conditional)_self,context);
     } else  if (_self instanceof fsm.Assignation){
      fsm.AssignationAspect.eval((fsm.Assignation)_self,context);
-    } else  if (_self instanceof fsm.Loop){
-     fsm.LoopAspect.eval((fsm.Loop)_self,context);
+    } else  if (_self instanceof fsm.Conditional){
+     fsm.ConditionalAspect.eval((fsm.Conditional)_self,context);
+    } else  if (_self instanceof fsm.Print){
+     fsm.PrintAspect.eval((fsm.Print)_self,context);
+    } else  if (_self instanceof fsm.VarDecl){
+     fsm.VarDeclAspect.eval((fsm.VarDecl)_self,context);
     } else  if (_self instanceof fsm.Statement){
      fsm.StatementAspect._privk3_eval(_self_, (fsm.Statement)_self,context);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };

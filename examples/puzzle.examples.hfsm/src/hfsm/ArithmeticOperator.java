@@ -26,7 +26,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	PLUS(0, "plus", ""),
+	PLUS(0, "plus", "plus"),
 
 	/**
 	 * The '<em><b>Minus</b></em>' literal object.
@@ -67,7 +67,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #PLUS
-	 * @model name="plus" literal=""
+	 * @model name="plus"
 	 * @generated
 	 * @ordered
 	 */

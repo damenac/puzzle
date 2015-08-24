@@ -1,11 +1,11 @@
 var pieDataSyntacticCommonality = [{
-        value: 31,
+        value: 28,
         color:"#FAAC58",
         highlight: "#F7BE81",
         label: "Commonalities"
     },
     {
-        value: 1,
+        value: 8,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -13,13 +13,13 @@ var pieDataSyntacticCommonality = [{
 ];
 
 var pieDataSemanticCommonality = [{
-        value: 30,
+        value: 32,
         color:"#FAAC58",
         highlight: "#F7BE81",
         label: "Commonalities"
     },
     {
-        value: 18,
+        value: 19,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -34,14 +34,14 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [100.0,96.875,96.875]
+        data : [90.32258064516128,87.5,87.5]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [34.883720930232556,31.25,31.25]
+        data : [37.2093023255814,33.33333333333333,33.33333333333333]
       }
     ]
 };
@@ -53,14 +53,14 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [100.0,100.0,100.0]
+        data : [90.32258064516128,96.875,96.875]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [96.7741935483871,128.125,128.125]
+        data : [103.2258064516129,137.5,137.5]
       }
     ]
 };
@@ -72,14 +72,14 @@ var barRelationshipRatiofsm = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [96.875,96.875]
+        data : [87.5,87.5]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [93.75,93.75]
+        data : [100.0,100.0]
       }
     ]
 };
@@ -91,14 +91,14 @@ var barRelationshipRatiohfsm = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [96.875,100.0]
+        data : [87.5,96.875]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [93.75,128.125]
+        data : [100.0,137.5]
       }
     ]
 };
@@ -110,14 +110,14 @@ var barRelationshipRatiotfsm = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [96.875,100.0]
+        data : [87.5,96.875]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [93.75,128.125]
+        data : [100.0,137.5]
       }
     ]
 };

@@ -56,7 +56,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	DIV(3, "div", "");
+	DIV(3, "div", "div");
 
 	/**
 	 * The '<em><b>Plus</b></em>' literal value.
@@ -112,7 +112,7 @@ public enum ArithmeticOperator implements Enumerator {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @see #DIV
-	 * @model name="div" literal=""
+	 * @model name="div"
 	 * @generated
 	 * @ordered
 	 */
