@@ -27,25 +27,82 @@ var pieDataSemanticCommonality = [{
 ];
 
 var barProductRelatedReusability = {
-   labels : ["fsm","hfsm"],
+   labels : ["fsm","hfsm","tfsm"],
    datasets : [
      {
         fillColor : "rgba(220,220,220,0.5)",
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [100.0,96.875]
+        data : [100.0,96.875,96.875]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [34.883720930232556,31.25]
+        data : [34.883720930232556,31.25,31.25]
       }
     ]
 };
 var barIndividualizationRatio = {
+   labels : ["fsm","hfsm","tfsm"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [100.0,100.0,100.0]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [96.7741935483871,128.125,128.125]
+      }
+    ]
+};
+var barRelationshipRatiofsm = {
+   labels : ["hfsm","tfsm"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [96.875,96.875]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [93.75,93.75]
+      }
+    ]
+};
+var barRelationshipRatiohfsm = {
+   labels : ["fsm","tfsm"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [96.875,100.0]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [93.75,128.125]
+      }
+    ]
+};
+var barRelationshipRatiotfsm = {
    labels : ["fsm","hfsm"],
    datasets : [
      {
@@ -53,52 +110,14 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [100.0,96.875]
+        data : [96.875,100.0]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [96.7741935483871,93.75]
-      }
-    ]
-};
-var barRelationshipRatiofsm = {
-   labels : ["hfsm"],
-   datasets : [
-     {
-        fillColor : "rgba(220,220,220,0.5)",
-        strokeColor : "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data : [96.875]
-      },
-      {
-        fillColor : "rgba(151,187,205,0.5)",
-        strokeColor : "rgba(151,187,205,0.8)",
-        highlightFill : "rgba(151,187,205,0.75)",
-        highlightStroke : "rgba(151,187,205,1)",
-        data : [93.75]
-      }
-    ]
-};
-var barRelationshipRatiohfsm = {
-   labels : ["fsm"],
-   datasets : [
-     {
-        fillColor : "rgba(220,220,220,0.5)",
-        strokeColor : "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data : [96.875]
-      },
-      {
-        fillColor : "rgba(151,187,205,0.5)",
-        strokeColor : "rgba(151,187,205,0.8)",
-        highlightFill : "rgba(151,187,205,0.75)",
-        highlightStroke : "rgba(151,187,205,1)",
-        data : [93.75]
+        data : [93.75,128.125]
       }
     ]
 };
@@ -127,6 +146,11 @@ window.onload = function(){
 
     var ctxRelationshipRatiohfsm = document.getElementById("pie-relationship-ratio-hfsm").getContext("2d");
     window.window.window.myBarRelationshipRatiohfsm = new Chart(ctxRelationshipRatiohfsm).Bar(barRelationshipRatiohfsm, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatiotfsm = document.getElementById("pie-relationship-ratio-tfsm").getContext("2d");
+    window.window.window.myBarRelationshipRatiotfsm = new Chart(ctxRelationshipRatiotfsm).Bar(barRelationshipRatiotfsm, {
        responsive : false
     });
 

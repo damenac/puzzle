@@ -147,7 +147,7 @@ public class ComputeMetricsActionImpl {
         content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", PairwiseRelationshipRatio.getTables(languages));
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/analysisReport.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-Metrics.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -177,7 +177,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/syntacticAnalysis.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-SyntacticAnalysis.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -207,7 +207,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/semanticAnalysis.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-SemanticAnalysis.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );

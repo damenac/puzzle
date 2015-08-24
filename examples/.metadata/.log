@@ -1577,3 +1577,859 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:32:18.274
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.tfsm.aspects/src/hfsm/HFSM.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:32:35.377
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.tfsm.aspects/src/tfsm/HFSM.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:32:41.477
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.tfsm.aspects/src/tfsm/TFSM.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 4 376 2015-08-24 13:32:54.793
+!MESSAGE Marker id 62738 not found.
+
+!ENTRY org.eclipse.pde.core 4 0 2015-08-24 13:32:56.313
+!MESSAGE The manifest line "hfsm," is invalid; it has no colon ':' character after the header key.
+!STACK 0
+org.osgi.framework.BundleException: The manifest line "hfsm," is invalid; it has no colon ':' character after the header key.
+	at org.eclipse.osgi.util.ManifestElement.parseBundleManifest(ManifestElement.java:550)
+	at org.eclipse.pde.internal.core.bundle.BundleModel.load(BundleModel.java:57)
+	at org.eclipse.pde.internal.core.bundle.BundleModel.reload(BundleModel.java:123)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.loadModel(WorkspaceModelManager.java:247)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.handleBundleManifestDelta(WorkspacePluginModelManager.java:296)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.handleFileDelta(WorkspacePluginModelManager.java:136)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.visit(WorkspaceModelManager.java:162)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.handleResourceDelta(WorkspaceModelManager.java:127)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:115)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState$1.run(DeltaProcessingState.java:472)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:467)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:378)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1498)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:156)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.pde.core 4 0 2015-08-24 13:32:56.316
+!MESSAGE Error reading manifest for /Users/dmendeza/workspaces/puzzle/examples/puzzle.examples.tfsm.aspects
+!STACK 0
+org.osgi.framework.BundleException: The manifest line "hfsm," is invalid; it has no colon ':' character after the header key.
+	at org.eclipse.osgi.util.ManifestElement.parseBundleManifest(ManifestElement.java:550)
+	at org.eclipse.pde.internal.core.util.ManifestUtils.loadManifest(ManifestUtils.java:122)
+	at org.eclipse.pde.internal.core.MinimalState.addBundle(MinimalState.java:105)
+	at org.eclipse.pde.internal.core.MinimalState.addBundle(MinimalState.java:71)
+	at org.eclipse.pde.internal.core.PluginModelManager.handleChange(PluginModelManager.java:908)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:236)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:35)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:265)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:237)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:199)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:116)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState$1.run(DeltaProcessingState.java:472)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.jdt.internal.core.DeltaProcessingState.resourceChanged(DeltaProcessingState.java:467)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:378)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1498)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:156)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:35:12.493
+!MESSAGE org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy  - Error post-processing resource with content:
+package SubdomainsFamily
+
+/**
+ * A language for simple state machines.
+ */
+language FSM {
+	syntax "platform:/resource/puzzle.examples.fsm/models/fsm.ecore"
+	
+	with fsm.StateMachineAspect
+	with fsm.StateAspect
+	with fsm.TransitionAspect
+	with fsm.TriggerAspect
+	with fsm.FinalStateAspect
+	with fsm.ExpressionAspect
+	with fsm.LiteralAspect
+	with fsm.IntegerLitAspect
+	with fsm.StringLitAspect
+	with fsm.BoolLitAspect
+	with fsm.ArithmeticExpressionAspect
+	with fsm.RelationalExpressionAspect
+	with fsm.ConstraintAspect
+	with fsm.RelationalConstraintAspect
+	with fsm.StatementAspect
+	with fsm.ProgramAspect
+	with fsm.VarDeclAspect
+	with fsm.ConditionalAspect
+	with fsm.LoopAspect
+	with fsm.PrintlnAspect
+	with fsm.PrintAspect
+	with fsm.AssignationAspect
+	with fsm.WaitAspect
+	
+	exactType FsmMT
+}
+
+/**
+ * A language for simple state machines.
+ */
+language HFSM {
+	syntax "platform:/resource/puzzle.examples.hfsm/models/hfsm.ecore"
+	
+	with hfsm.StateMachineAspect
+	with hfsm.RegionAspect
+	with hfsm.StateAspect
+	with hfsm.TransitionAspect
+	with hfsm.TriggerAspect
+	with hfsm.FinalStateAspect
+	with hfsm.ExpressionAspect
+	with hfsm.LiteralAspect
+	with hfsm.IntegerLitAspect
+	with hfsm.StringLitAspect
+	with hfsm.BoolLitAspect
+	with hfsm.ArithmeticExpressionAspect
+	with hfsm.RelationalExpressionAspect
+	with hfsm.ConstraintAspect
+	with hfsm.RelationalConstraintAspect
+	with hfsm.StatementAspect
+	with hfsm.ProgramAspect
+	with hfsm.VarDeclAspect
+	with hfsm.ConditionalAspect
+	with hfsm.LoopAspect
+	with hfsm.PrintlnAspect
+	with hfsm.PrintAspect
+	with hfsm.AssignationAspect
+	with hfsm.WaitAspect
+	
+	exactType HfsmMT
+}
+
+/**
+ * A language for simple state machines.
+ */
+language TFSM {
+	syntax "platform:/resource/puzzle.examples.tfsm/models/hfsm.ecore"
+	
+	with hfsm.StateMachineAspect
+	with hfsm.RegionAspect
+	with hfsm.StateAspect
+	with hfsm.TransitionAspect
+	with hfsm.TriggerAspect
+	with hfsm.FinalStateAspect
+	with hfsm.ExpressionAspect
+	with hfsm.LiteralAspect
+	with hfsm.IntegerLitAspect
+	with hfsm.StringLitAspect
+	with hfsm.BoolLitAspect
+	with hfsm.ArithmeticExpressionAspect
+	with hfsm.RelationalExpressionAspect
+	with hfsm.ConstraintAspect
+	with hfsm.RelationalConstraintAspect
+	with hfsm.StatementAspect
+	with hfsm.ProgramAspect
+	with hfsm.VarDeclAspect
+	with hfsm.ConditionalAspect
+	with hfsm.LoopAspect
+	with hfsm.PrintlnAspect
+	with hfsm.PrintAspect
+	with hfsm.AssignationAspect
+	with hfsm.WaitAspect
+	
+	exactType HfsmMT
+}
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.melange.processors.LanguageBuilder.applyRenaming(LanguageBuilder.java:657)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.build(LanguageBuilder.java:197)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.access$0(LanguageBuilder.java:141)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:131)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:1)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at fr.inria.diverse.melange.processors.LanguageBuilder._preProcess(LanguageBuilder.java:134)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.preProcess(LanguageBuilder.java:849)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:91)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:1)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer.installDerivedState(MelangeDerivedStateComputer.java:95)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.installDerivedState(DerivedStateAwareResource.java:240)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getContents(BatchLinkableResource.java:148)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareBatchTypeResolver.getEntryPoints(LogicalContainerAwareBatchTypeResolver.java:44)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultBatchTypeResolver.getTypeResolver(DefaultBatchTypeResolver.java:63)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:49)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:77)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver.doResolveTypes(CachingBatchTypeResolver.java:46)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractBatchTypeResolver.resolveTypes(AbstractBatchTypeResolver.java:69)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:71)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.resolveLazyCrossReferences(BatchLinkableResource.java:165)
+	at org.eclipse.xtext.EcoreUtil2.resolveLazyCrossReferences(EcoreUtil2.java:528)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.postParse(XtextDocumentReconcileStrategy.java:175)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.doReconcile(XtextDocumentReconcileStrategy.java:153)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.reconcile(XtextDocumentReconcileStrategy.java:67)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.doRun(XtextReconciler.java:442)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.access$3(XtextReconciler.java:422)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener$1.exec(XtextReconciler.java:133)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener$1.exec(XtextReconciler.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.modify(XtextDocument.java:428)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.process(XtextDocument.java:337)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener.performNecessaryUpdates(XtextReconciler.java:130)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.updateContentBeforeRead(XtextDocument.java:249)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:518)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.xtext.xbase.ui.hover.XbaseDispatchingEObjectTextHover.getHoverInfo2(XbaseDispatchingEObjectTextHover.java:52)
+	at org.eclipse.xtext.ui.editor.hover.AbstractCompositeHover.getHoverInfo2(AbstractCompositeHover.java:94)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:35:14.281
+!MESSAGE org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy  - Error post-processing resource with content:
+package SubdomainsFamily
+
+/**
+ * A language for simple state machines.
+ */
+language FSM {
+	syntax "platform:/resource/puzzle.examples.fsm/models/fsm.ecore"
+	
+	with fsm.StateMachineAspect
+	with fsm.StateAspect
+	with fsm.TransitionAspect
+	with fsm.TriggerAspect
+	with fsm.FinalStateAspect
+	with fsm.ExpressionAspect
+	with fsm.LiteralAspect
+	with fsm.IntegerLitAspect
+	with fsm.StringLitAspect
+	with fsm.BoolLitAspect
+	with fsm.ArithmeticExpressionAspect
+	with fsm.RelationalExpressionAspect
+	with fsm.ConstraintAspect
+	with fsm.RelationalConstraintAspect
+	with fsm.StatementAspect
+	with fsm.ProgramAspect
+	with fsm.VarDeclAspect
+	with fsm.ConditionalAspect
+	with fsm.LoopAspect
+	with fsm.PrintlnAspect
+	with fsm.PrintAspect
+	with fsm.AssignationAspect
+	with fsm.WaitAspect
+	
+	exactType FsmMT
+}
+
+/**
+ * A language for simple state machines.
+ */
+language HFSM {
+	syntax "platform:/resource/puzzle.examples.hfsm/models/hfsm.ecore"
+	
+	with hfsm.StateMachineAspect
+	with hfsm.RegionAspect
+	with hfsm.StateAspect
+	with hfsm.TransitionAspect
+	with hfsm.TriggerAspect
+	with hfsm.FinalStateAspect
+	with hfsm.ExpressionAspect
+	with hfsm.LiteralAspect
+	with hfsm.IntegerLitAspect
+	with hfsm.StringLitAspect
+	with hfsm.BoolLitAspect
+	with hfsm.ArithmeticExpressionAspect
+	with hfsm.RelationalExpressionAspect
+	with hfsm.ConstraintAspect
+	with hfsm.RelationalConstraintAspect
+	with hfsm.StatementAspect
+	with hfsm.ProgramAspect
+	with hfsm.VarDeclAspect
+	with hfsm.ConditionalAspect
+	with hfsm.LoopAspect
+	with hfsm.PrintlnAspect
+	with hfsm.PrintAspect
+	with hfsm.AssignationAspect
+	with hfsm.WaitAspect
+	
+	exactType HfsmMT
+}
+
+/**
+ * A language for simple state machines.
+ */
+language TFSM {
+	syntax "platform:/resource/puzzle.examples.tfsm/models/fsm.ecore"
+	
+	with hfsm.StateMachineAspect
+	with hfsm.RegionAspect
+	with hfsm.StateAspect
+	with hfsm.TransitionAspect
+	with hfsm.TriggerAspect
+	with hfsm.FinalStateAspect
+	with hfsm.ExpressionAspect
+	with hfsm.LiteralAspect
+	with hfsm.IntegerLitAspect
+	with hfsm.StringLitAspect
+	with hfsm.BoolLitAspect
+	with hfsm.ArithmeticExpressionAspect
+	with hfsm.RelationalExpressionAspect
+	with hfsm.ConstraintAspect
+	with hfsm.RelationalConstraintAspect
+	with hfsm.StatementAspect
+	with hfsm.ProgramAspect
+	with hfsm.VarDeclAspect
+	with hfsm.ConditionalAspect
+	with hfsm.LoopAspect
+	with hfsm.PrintlnAspect
+	with hfsm.PrintAspect
+	with hfsm.AssignationAspect
+	with hfsm.WaitAspect
+	
+	exactType HfsmMT
+}
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.melange.processors.LanguageBuilder.applyRenaming(LanguageBuilder.java:657)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.build(LanguageBuilder.java:197)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.access$0(LanguageBuilder.java:141)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:131)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:1)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at fr.inria.diverse.melange.processors.LanguageBuilder._preProcess(LanguageBuilder.java:134)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.preProcess(LanguageBuilder.java:849)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:91)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:1)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer.installDerivedState(MelangeDerivedStateComputer.java:95)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.installDerivedState(DerivedStateAwareResource.java:240)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getContents(BatchLinkableResource.java:148)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareBatchTypeResolver.getEntryPoints(LogicalContainerAwareBatchTypeResolver.java:44)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultBatchTypeResolver.getTypeResolver(DefaultBatchTypeResolver.java:63)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:49)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:77)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver.doResolveTypes(CachingBatchTypeResolver.java:46)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractBatchTypeResolver.resolveTypes(AbstractBatchTypeResolver.java:69)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:71)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.resolveLazyCrossReferences(BatchLinkableResource.java:165)
+	at org.eclipse.xtext.EcoreUtil2.resolveLazyCrossReferences(EcoreUtil2.java:528)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.postParse(XtextDocumentReconcileStrategy.java:175)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.doReconcile(XtextDocumentReconcileStrategy.java:153)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.reconcile(XtextDocumentReconcileStrategy.java:67)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.doRun(XtextReconciler.java:442)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.access$3(XtextReconciler.java:422)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener$1.exec(XtextReconciler.java:133)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener$1.exec(XtextReconciler.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.modify(XtextDocument.java:428)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.process(XtextDocument.java:337)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener.performNecessaryUpdates(XtextReconciler.java:130)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.updateContentBeforeRead(XtextDocument.java:249)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:518)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverInfo2(AbstractEObjectHover.java:87)
+	at org.eclipse.xtext.xbase.ui.hover.XbaseDispatchingEObjectTextHover.getHoverInfo2(XbaseDispatchingEObjectTextHover.java:52)
+	at org.eclipse.xtext.ui.editor.hover.AbstractCompositeHover.getHoverInfo2(AbstractCompositeHover.java:94)
+	at org.eclipse.jface.text.TextViewerHoverManager$4.run(TextViewerHoverManager.java:166)
+!SESSION 2015-08-24 13:37:36.005 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-08-24 13:37:39.914
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-08-24 13:37:46.552
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.051
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/187/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Literal (visibility: PUBLIC, simpleName: Literal, identifier: tfsm.Literal, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.052
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/188/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.IntegerLit (visibility: PUBLIC, simpleName: IntegerLit, identifier: tfsm.IntegerLit, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.053
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/188/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.053
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/188/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.053
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/189/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.StringLit (visibility: PUBLIC, simpleName: StringLit, identifier: tfsm.StringLit, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.054
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/189/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.054
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/189/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.055
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/190/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.BoolLit (visibility: PUBLIC, simpleName: BoolLit, identifier: tfsm.BoolLit, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.055
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/190/@members.2/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.055
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/190/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.056
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/191/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.ArithmeticExpression (visibility: PUBLIC, simpleName: ArithmeticExpression, identifier: tfsm.ArithmeticExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.057
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/192/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.RelationalExpression (visibility: PUBLIC, simpleName: RelationalExpression, identifier: tfsm.RelationalExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.057
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/193/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.VarReference (visibility: PUBLIC, simpleName: VarReference, identifier: tfsm.VarReference, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.058
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/193/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.058
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/193/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.058
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/194/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.ConsoleOutput (visibility: PUBLIC, simpleName: ConsoleOutput, identifier: tfsm.ConsoleOutput, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.059
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/194/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.059
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/194/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.060
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/195/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Println (visibility: PUBLIC, simpleName: Println, identifier: tfsm.Println, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.060
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/195/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.060
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/195/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.061
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/196/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Print (visibility: PUBLIC, simpleName: Print, identifier: tfsm.Print, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.062
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/196/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.062
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/196/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.062
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/197/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Assignation (visibility: PUBLIC, simpleName: Assignation, identifier: tfsm.Assignation, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.063
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/198/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Wait (visibility: PUBLIC, simpleName: Wait, identifier: tfsm.Wait, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.063
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/198/@members.2/@returnType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.063
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/198/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.065
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/202/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.NamedElement (visibility: PUBLIC, simpleName: NamedElement, identifier: tfsm.NamedElement, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.065
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/202/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.066
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/202/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.066
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/203/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.StateMachine (visibility: PUBLIC, simpleName: StateMachine, identifier: tfsm.StateMachine, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.066
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/203/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.067
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/203/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.067
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/203/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.067
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/204/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Region (visibility: PUBLIC, simpleName: Region, identifier: tfsm.Region, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.068
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/204/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.068
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/204/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.068
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/204/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.069
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/204/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.069
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/205/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.AbstractState (visibility: PUBLIC, simpleName: AbstractState, identifier: tfsm.AbstractState, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.070
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/205/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.070
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/205/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.070
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/205/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.071
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/205/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.071
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/206/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.State (visibility: PUBLIC, simpleName: State, identifier: tfsm.State, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.071
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/206/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.071
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/206/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.072
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/206/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.072
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/206/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.073
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/207/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Transition (visibility: PUBLIC, simpleName: Transition, identifier: tfsm.Transition, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.073
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/207/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.073
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/207/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.073
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/207/@members.4/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.074
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/207/@members.5/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.074
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/208/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Trigger (visibility: PUBLIC, simpleName: Trigger, identifier: tfsm.Trigger, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.074
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/208/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.075
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/208/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.075
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/209/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Pseudostate (visibility: PUBLIC, simpleName: Pseudostate, identifier: tfsm.Pseudostate, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.075
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/209/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.076
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/209/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.076
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/209/@members.6/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.076
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/209/@members.7/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.076
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/210/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.FinalState (visibility: PUBLIC, simpleName: FinalState, identifier: tfsm.FinalState, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.077
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/210/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.077
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/210/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.077
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/210/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.077
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/210/@members.5/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.078
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/211/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Constraint (visibility: PUBLIC, simpleName: Constraint, identifier: tfsm.Constraint, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.078
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/212/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.RelationalConstraint (visibility: PUBLIC, simpleName: RelationalConstraint, identifier: tfsm.RelationalConstraint, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.079
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/213/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Statement (visibility: PUBLIC, simpleName: Statement, identifier: tfsm.Statement, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.079
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/214/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Program (visibility: PUBLIC, simpleName: Program, identifier: tfsm.Program, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.079
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/214/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.080
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/215/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Conditional (visibility: PUBLIC, simpleName: Conditional, identifier: tfsm.Conditional, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.080
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/216/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Loop (visibility: PUBLIC, simpleName: Loop, identifier: tfsm.Loop, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.080
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/217/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.VarDecl (visibility: PUBLIC, simpleName: VarDecl, identifier: tfsm.VarDecl, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.081
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/217/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.081
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/217/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.081
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/218/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Expression (visibility: PUBLIC, simpleName: Expression, identifier: tfsm.Expression, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.082
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/219/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Literal (visibility: PUBLIC, simpleName: Literal, identifier: tfsm.Literal, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.082
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/220/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.IntegerLit (visibility: PUBLIC, simpleName: IntegerLit, identifier: tfsm.IntegerLit, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.082
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/220/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.082
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/220/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.083
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/221/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.StringLit (visibility: PUBLIC, simpleName: StringLit, identifier: tfsm.StringLit, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.083
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/221/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.083
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/221/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.083
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/222/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.BoolLit (visibility: PUBLIC, simpleName: BoolLit, identifier: tfsm.BoolLit, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.084
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/222/@members.2/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.084
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/222/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.084
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/223/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.ArithmeticExpression (visibility: PUBLIC, simpleName: ArithmeticExpression, identifier: tfsm.ArithmeticExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.085
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/224/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.RelationalExpression (visibility: PUBLIC, simpleName: RelationalExpression, identifier: tfsm.RelationalExpression, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.086
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/225/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.VarReference (visibility: PUBLIC, simpleName: VarReference, identifier: tfsm.VarReference, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.086
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/225/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.086
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/225/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.086
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/226/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.ConsoleOutput (visibility: PUBLIC, simpleName: ConsoleOutput, identifier: tfsm.ConsoleOutput, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.087
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/226/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.087
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/226/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.087
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/227/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Println (visibility: PUBLIC, simpleName: Println, identifier: tfsm.Println, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.087
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/227/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.088
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/227/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.088
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/228/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Print (visibility: PUBLIC, simpleName: Print, identifier: tfsm.Print, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.088
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/228/@members.2/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.088
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/228/@members.3/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.089
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/229/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Assignation (visibility: PUBLIC, simpleName: Assignation, identifier: tfsm.Assignation, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.089
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/230/@superTypes.0/@arguments.0 to JvmGenericType: tfsm.Wait (visibility: PUBLIC, simpleName: Wait, identifier: tfsm.Wait, deprecated: false) (abstract: true, static: false, final: false, packageName: tfsm) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.089
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/230/@members.2/@returnType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-08-24 13:38:08.090
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.family.subdomains/src/family/subdomains.melange#/230/@members.3/@parameters.0/@parameterType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
