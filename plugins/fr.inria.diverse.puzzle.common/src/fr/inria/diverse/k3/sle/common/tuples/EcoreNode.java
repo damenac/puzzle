@@ -8,13 +8,15 @@ public class EcoreNode {
 	// Attributes
 	// -----------------------------------------------
 	
+	private String nodeId;
 	private EClassifier classifier;
 	
 	// -----------------------------------------------
 	// Constructor
 	// -----------------------------------------------
 	
-	public EcoreNode(EClassifier classifier) {
+	public EcoreNode(String nodeId, EClassifier classifier) {
+		this.nodeId = nodeId;
 		this.classifier = classifier;
 	}
 
@@ -24,6 +26,14 @@ public class EcoreNode {
 	
 	public EClassifier getClassifier() {
 		return classifier;
+	}
+
+	public String getNodeId() {
+		return nodeId;
+	}
+
+	public void setNodeId(String nodeId) {
+		this.nodeId = nodeId;
 	}
 
 	public void setClassifier(EClassifier classifier) {

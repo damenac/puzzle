@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.tuples.EcoreNode;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreArc;
@@ -20,23 +21,22 @@ public class DependenciesGraph {
 		String answer = "";
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
-		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
-		ArrayList<TupleMembersConcepts> membersGroupVsConceptVOList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMemberGroupList);
-		EcoreGraph dependenciesGraph = FamiliesServices.getInstance().computeDependenciesGraph(conceptMemberGroupList);
+		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
+		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
+		EcoreGraph dependenciesGraph = new EcoreGraph(conceptMembersList);
+		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList);
 		
 		answer += "var G = new jsnx.DiGraph();\n";
-		
 		int i = 0;
-		for (TupleMembersConcepts membersGroupVsConceptVO : membersGroupVsConceptVOList) {
+		for (ArrayList<EcoreNode> group : dependenciesGraph.getGroups()) {
 			String nodes = "";
 			boolean first = true;
-			for (String currentConcept : membersGroupVsConceptVO.getConcepts()) {
+			for (EcoreNode currentNode : group) {
 				if(!first)
 					nodes += ",";
-				nodes += "\"" + currentConcept + "\"";
+				nodes += "\"" + currentNode.getNodeId() + "\"";
 				first = false;
 			}
-
 			answer += "G.addNodesFrom([" + nodes + "], {group:" + i + "});\n";
 			i++;
 		}
@@ -50,13 +50,8 @@ public class DependenciesGraph {
 				answer += "[\"" + arc.getFrom().getClassifier().getName() + "\",\""+ arc.getTo().getClassifier().getName() +"\"]";
 				first = false;
 			}
-			
 			answer += "]);\n";
 		}
-		
-		
-		
-		
 		return answer;
 	}
 }
