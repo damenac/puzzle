@@ -4,3 +4,15 @@
 1440423514372	Copy compilation unit
 1440423642059	Delete element
 1440425754550	Delete element
+1440488167504	Rename type 'ConceptMemberVO'
+1440488186447	Rename type 'ConceptMembersGroupVO'
+1440488201106	Rename field 'memberGroup'
+1440488223303	Rename method 'getMemberGroup'
+1440488245654	Rename type 'ConceptMethodMemberVO'
+1440488262815	Rename type 'ConceptMethodMembersGroupVO'
+1440488275797	Rename field 'memberGroup'
+1440488296704	Rename method 'getMemberGroup'
+1440488343266	Rename type 'MembersGroupVsConceptVO'
+1440488358083	Rename field 'membersGroup'
+1440488370732	Rename method 'setMembersGroup'
+1440488438473	Rename type 'ModuleConceptsVO'

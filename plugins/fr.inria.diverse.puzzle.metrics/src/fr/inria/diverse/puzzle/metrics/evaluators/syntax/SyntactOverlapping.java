@@ -6,7 +6,7 @@ import java.util.Hashtable;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMemberVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -16,9 +16,9 @@ public class SyntactOverlapping {
 	public static String evaluate(ArrayList<Language> languages, ConceptComparison comparisonOperator){
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();
-		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 	
-		for (ConceptMemberVO conceptMemberVO : conceptMemberList) {
+		for (TupleConceptMember conceptMemberVO : conceptMemberList) {
 			if(membersSizeTable.get(conceptMemberVO.getMemberName()) == null)
 				membersSizeTable.put(conceptMemberVO.getMemberName(), 1);
 			else{

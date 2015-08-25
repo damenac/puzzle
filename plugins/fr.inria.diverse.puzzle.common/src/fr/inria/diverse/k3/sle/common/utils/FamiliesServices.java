@@ -10,21 +10,20 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
-import org.eclipse.xtend.core.xtend.XtendFile;
 import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMemberVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMembersGroupVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMemberVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodsMembers;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreArc;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreNode;
-import fr.inria.diverse.k3.sle.common.tuples.MembersGroupVsConceptVO;
-import fr.inria.diverse.k3.sle.common.tuples.ModuleConceptsVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
+import fr.inria.diverse.k3.sle.common.tuples.TupleModuleConceptsMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -34,7 +33,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
  * @author David Mendez-Acuna
  * 
  * TODO We need to use the name of the language as member name instead of the root package name.
- * TODO We need to use the meta-class in the annotation to identify the construct of a method insteaad of just removing the Aspect segment
+ * TODO We need to use the meta-class in the annotation to identify the construct of a method instead of just removing the Aspect segment
  */
 public class FamiliesServices {
 	
@@ -66,8 +65,8 @@ public class FamiliesServices {
 	 * @param ePackages. List of ePackages 
 	 * @return
 	 */
-	public ArrayList<ConceptMemberVO> getConceptMemberMappingList(ArrayList<EPackage> ePackages){
-		ArrayList<ConceptMemberVO> conceptMemberList = new ArrayList<ConceptMemberVO>();
+	public ArrayList<TupleConceptMember> getConceptMemberMappingList(ArrayList<EPackage> ePackages){
+		ArrayList<TupleConceptMember> conceptMemberList = new ArrayList<TupleConceptMember>();
 		for (EPackage ePackage : ePackages) {
 			this.fillConceptMemberList(conceptMemberList, ePackage, ePackage.getName());
 		}
@@ -77,9 +76,9 @@ public class FamiliesServices {
 	/**
 	 * Fills the list in the parameter with the mapping between the concept and the language it belongs to. 
 	 */
-	private void fillConceptMemberList(ArrayList<ConceptMemberVO> conceptMemberList, EPackage ePackage, String memberName) {
+	private void fillConceptMemberList(ArrayList<TupleConceptMember> conceptMemberList, EPackage ePackage, String memberName) {
 		for (EClassifier concept : ePackage.getEClassifiers()) {
-			ConceptMemberVO conceptMember = new ConceptMemberVO(concept, memberName);
+			TupleConceptMember conceptMember = new TupleConceptMember(concept, memberName);
 			conceptMemberList.add(conceptMember);
 		}
 		for (EPackage subPackage : ePackage.getESubpackages()) {
@@ -92,8 +91,8 @@ public class FamiliesServices {
 	 * @param languages. List of languages 
 	 * @return
 	 */
-	public ArrayList<ConceptMethodMemberVO> getConceptMethodMemberMappingList(ArrayList<Language> languages){
-		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = new ArrayList<ConceptMethodMemberVO>();
+	public ArrayList<TupleConceptMethodMember> getConceptMethodMemberMappingList(ArrayList<Language> languages){
+		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = new ArrayList<TupleConceptMethodMember>();
 		for (Language language : languages) {
 			EPackage ePackage = MelangeServices.getEPackageFromLanguage(language);
 			this.fillConceptMethodMemberList(conceptMethodMemberList, language, ePackage.getName());
@@ -105,7 +104,7 @@ public class FamiliesServices {
 	 * Fills the list in the parameter with the mapping between the concept, the method, and the language they belong to. 
 	 */
 	private void fillConceptMethodMemberList(
-			ArrayList<ConceptMethodMemberVO> conceptMethodMemberList, Language language, String memberName) {
+			ArrayList<TupleConceptMethodMember> conceptMethodMemberList, Language language, String memberName) {
 		for (Aspect aspect : language.getSemantics()) {
 			for (EObject aspectContent : aspect.getAspectTypeRef().getType().eContents()) {
 				if(aspectContent instanceof JvmOperation){
@@ -113,7 +112,7 @@ public class FamiliesServices {
 					// We remove this 'super' and 'privk3' methods because they are generated by k3.
 					if(!aspectOperation.getSimpleName().contains("super_") &&
 							!aspectOperation.getSimpleName().contains("_privk3_")){
-						ConceptMethodMemberVO conceptMethodMember = new ConceptMethodMemberVO(aspectOperation.getDeclaringType(), aspectOperation, memberName);
+						TupleConceptMethodMember conceptMethodMember = new TupleConceptMethodMember(aspectOperation.getDeclaringType(), aspectOperation, memberName);
 						conceptMethodMemberList.add(conceptMethodMember);
 					}
 				}
@@ -127,16 +126,16 @@ public class FamiliesServices {
 	 * @return
 	 * @throws Exception 
 	 */
-	public ArrayList<ConceptMembersGroupVO> getConceptMemberGroupList(ArrayList<ConceptMemberVO> conceptMemberList, ConceptComparison comparisonOperator) throws Exception{
-		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = new ArrayList<ConceptMembersGroupVO>();
-		for (ConceptMemberVO conceptMemberVO : conceptMemberList) {
-			ConceptMembersGroupVO conceptMemberGroupLegacy = getConceptMemberGroup(conceptMemberGroupList, conceptMemberVO, comparisonOperator);
+	public ArrayList<TupleConceptMembers> getConceptMemberGroupList(ArrayList<TupleConceptMember> conceptMemberList, ConceptComparison comparisonOperator) throws Exception{
+		ArrayList<TupleConceptMembers> conceptMemberGroupList = new ArrayList<TupleConceptMembers>();
+		for (TupleConceptMember conceptMemberVO : conceptMemberList) {
+			TupleConceptMembers conceptMemberGroupLegacy = getConceptMemberGroup(conceptMemberGroupList, conceptMemberVO, comparisonOperator);
 			if(conceptMemberGroupLegacy == null){
-				ConceptMembersGroupVO conceptMemberGroupVO = new ConceptMembersGroupVO(conceptMemberVO.getConcept());
-				conceptMemberGroupVO.getMemberGroup().add(conceptMemberVO.getMemberName());
+				TupleConceptMembers conceptMemberGroupVO = new TupleConceptMembers(conceptMemberVO.getConcept());
+				conceptMemberGroupVO.getMembers().add(conceptMemberVO.getMemberName());
 				conceptMemberGroupList.add(conceptMemberGroupVO);
 			}else{
-				conceptMemberGroupLegacy.getMemberGroup().add(conceptMemberVO.getMemberName());
+				conceptMemberGroupLegacy.getMembers().add(conceptMemberVO.getMemberName());
 			}
 		}
 		
@@ -151,9 +150,9 @@ public class FamiliesServices {
 	 * @throws IllegalAccessException 
 	 * @throws Exception 
 	 */
-	private ConceptMembersGroupVO getConceptMemberGroup(ArrayList<ConceptMembersGroupVO> conceptMemberGroupList,
-			ConceptMemberVO conceptMemberVO, ConceptComparison comparisonOperator) throws Exception {
-		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
+	private TupleConceptMembers getConceptMemberGroup(ArrayList<TupleConceptMembers> conceptMemberGroupList,
+			TupleConceptMember conceptMemberVO, ConceptComparison comparisonOperator) throws Exception {
+		for (TupleConceptMembers conceptMembersGroupVO : conceptMemberGroupList) {
 			// *.*
 			// Here we have the equals operator!!!!!!
 			if(comparisonOperator.equals(conceptMembersGroupVO.getConcept(), conceptMemberVO.getConcept())){
@@ -169,27 +168,27 @@ public class FamiliesServices {
 	 * @param conceptMemberList
 	 * @return
 	 */
-	public ArrayList<ConceptMethodMembersGroupVO> getConceptMethodMemberGroupList(ArrayList<ConceptMethodMemberVO> conceptMethodMemberList, ConceptComparison conceptComparisonOperator,
+	public ArrayList<TupleConceptMethodMembers> getConceptMethodMemberGroupList(ArrayList<TupleConceptMethodMember> conceptMethodMemberList, ConceptComparison conceptComparisonOperator,
 			MethodComparison methodComparisonOperator){
-		ArrayList<ConceptMethodMembersGroupVO> conceptMemberGroupList = new ArrayList<ConceptMethodMembersGroupVO>();
-		for (ConceptMethodMemberVO conceptMethodMembersVO : conceptMethodMemberList) {
-			ConceptMethodMembersGroupVO conceptMethodMemberGroupLegacy = getConceptMethodMemberGroup(conceptMemberGroupList, conceptMethodMembersVO, conceptComparisonOperator, methodComparisonOperator);
+		ArrayList<TupleConceptMethodMembers> conceptMemberGroupList = new ArrayList<TupleConceptMethodMembers>();
+		for (TupleConceptMethodMember conceptMethodMembersVO : conceptMethodMemberList) {
+			TupleConceptMethodMembers conceptMethodMemberGroupLegacy = getConceptMethodMemberGroup(conceptMemberGroupList, conceptMethodMembersVO, conceptComparisonOperator, methodComparisonOperator);
 			
 			if(conceptMethodMemberGroupLegacy == null){
-				ConceptMethodMembersGroupVO newConceptMethodMembersGroup = new ConceptMethodMembersGroupVO(conceptMethodMembersVO.getConcept(), conceptMethodMembersVO.getMethod());
-				newConceptMethodMembersGroup.getMemberGroup().add(conceptMethodMembersVO.getMemberName());
+				TupleConceptMethodMembers newConceptMethodMembersGroup = new TupleConceptMethodMembers(conceptMethodMembersVO.getConcept(), conceptMethodMembersVO.getMethod());
+				newConceptMethodMembersGroup.getMembers().add(conceptMethodMembersVO.getMemberName());
 				conceptMemberGroupList.add(newConceptMethodMembersGroup);
 			}else{
-				if(!conceptMethodMemberGroupLegacy.getMemberGroup().contains(conceptMethodMembersVO.getMemberName()))
-					conceptMethodMemberGroupLegacy.getMemberGroup().add(conceptMethodMembersVO.getMemberName());
+				if(!conceptMethodMemberGroupLegacy.getMembers().contains(conceptMethodMembersVO.getMemberName()))
+					conceptMethodMemberGroupLegacy.getMembers().add(conceptMethodMembersVO.getMemberName());
 			}
 		}
 		return conceptMemberGroupList;
 	}
 	
-	private ConceptMethodMembersGroupVO getConceptMethodMemberGroup(ArrayList<ConceptMethodMembersGroupVO> conceptMemberGroupList,
-			ConceptMethodMemberVO conceptMethodMembersVO, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) {
-		for (ConceptMethodMembersGroupVO currentConceptMethodMembersGroupVO : conceptMemberGroupList) {
+	private TupleConceptMethodMembers getConceptMethodMemberGroup(ArrayList<TupleConceptMethodMembers> conceptMemberGroupList,
+			TupleConceptMethodMember conceptMethodMembersVO, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) {
+		for (TupleConceptMethodMembers currentConceptMethodMembersGroupVO : conceptMemberGroupList) {
 			// *.*
 			// Here we have the equals operator!!!!!!
 			//TODO FIX THIS
@@ -201,21 +200,21 @@ public class FamiliesServices {
 		return null;
 	}
 
-	public ArrayList<TupleConceptMethodsMembers> getConceptMethodsMembersGroupTupleList(ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList,
+	public ArrayList<TupleConceptMethodsMembers> getConceptMethodsMembersGroupTupleList(ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList,
 			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
 		ArrayList<TupleConceptMethodsMembers> answer = new ArrayList<TupleConceptMethodsMembers>();
 
-		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+		for (TupleConceptMethodMembers conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
 			TupleConceptMethodsMembers conceptMethodsMemberGroupLegacy = getConceptMethodsMemberTuple(conceptMethodMembersGroupVO, answer, conceptComparisonOperator, methodComparisonOperator);
 			if(conceptMethodsMemberGroupLegacy == null){
 				TupleMethodMembers methodMembers = new TupleMethodMembers(conceptMethodMembersGroupVO.getMethod());
-				methodMembers.getMembers().addAll(conceptMethodMembersGroupVO.getMemberGroup());
+				methodMembers.getMembers().addAll(conceptMethodMembersGroupVO.getMembers());
 				TupleConceptMethodsMembers newConcept = new TupleConceptMethodsMembers(conceptMethodMembersGroupVO.getConcept());
 				newConcept.getMethodsMembers().add(methodMembers);
 				answer.add(newConcept);
 			}else{
 				TupleMethodMembers methodMembers = new TupleMethodMembers(conceptMethodMembersGroupVO.getMethod());
-				methodMembers.getMembers().addAll(conceptMethodMembersGroupVO.getMemberGroup());
+				methodMembers.getMembers().addAll(conceptMethodMembersGroupVO.getMembers());
 				conceptMethodsMemberGroupLegacy.getMethodsMembers().add(methodMembers);
 			}
 		}
@@ -223,7 +222,7 @@ public class FamiliesServices {
 	}
 
 	private TupleConceptMethodsMembers getConceptMethodsMemberTuple(
-			ConceptMethodMembersGroupVO conceptMethodMembersGroupVO,
+			TupleConceptMethodMembers conceptMethodMembersGroupVO,
 			ArrayList<TupleConceptMethodsMembers> answer,
 			ConceptComparison conceptComparisonOperator,
 			MethodComparison methodComparisonOperator) {
@@ -234,19 +233,19 @@ public class FamiliesServices {
 		return null;
 	}
 	
-	public ArrayList<ModuleConceptsVO> obtainConceptsOwenerLanguagesList(ArrayList<EPackage> ePackages, ConceptComparison comparisonOperator) throws Exception{
+	public ArrayList<TupleModuleConceptsMembers> obtainConceptsOwenerLanguagesList(ArrayList<EPackage> ePackages, ConceptComparison comparisonOperator) throws Exception{
 		// Step 1: Scan the metamodels creating the concept-member list.
-		ArrayList<ConceptMemberVO> conceptMemberList = this.getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = this.getConceptMemberMappingList(ePackages);
 		
 		// Step 2: For each concept, get the group of members it belongs.
-		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = this.getConceptMemberGroupList(conceptMemberList, comparisonOperator);
+		ArrayList<TupleConceptMembers> conceptMemberGroupList = this.getConceptMemberGroupList(conceptMemberList, comparisonOperator);
 		
-		ArrayList<ModuleConceptsVO> moduleConceptsList = new ArrayList<ModuleConceptsVO>();
+		ArrayList<TupleModuleConceptsMembers> moduleConceptsList = new ArrayList<TupleModuleConceptsMembers>();
 		int i = 1;
-		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
-			ModuleConceptsVO legacyModule = getLegacyFeature(moduleConceptsList, conceptMembersGroupVO);
+		for (TupleConceptMembers conceptMembersGroupVO : conceptMemberGroupList) {
+			TupleModuleConceptsMembers legacyModule = getLegacyFeature(moduleConceptsList, conceptMembersGroupVO);
 			if(legacyModule == null){
-				ModuleConceptsVO newModule = new ModuleConceptsVO("module" + i, conceptMembersGroupVO.getMemberGroup().toString());
+				TupleModuleConceptsMembers newModule = new TupleModuleConceptsMembers("module" + i, conceptMembersGroupVO.getMembers().toString());
 				newModule.getConcepts().add(conceptMembersGroupVO.getConcept());
 				moduleConceptsList.add(newModule);
 				i++;
@@ -259,36 +258,36 @@ public class FamiliesServices {
 	
 	
 	
-	private ModuleConceptsVO getLegacyFeature(
-			ArrayList<ModuleConceptsVO> featureConceptsList,
-			ConceptMembersGroupVO conceptMembersGroupVO) {
-		for (ModuleConceptsVO featureConceptsVO : featureConceptsList) {
-			if(featureConceptsVO.getMembers().equals(conceptMembersGroupVO.getMemberGroup().toString()))
+	private TupleModuleConceptsMembers getLegacyFeature(
+			ArrayList<TupleModuleConceptsMembers> featureConceptsList,
+			TupleConceptMembers conceptMembersGroupVO) {
+		for (TupleModuleConceptsMembers featureConceptsVO : featureConceptsList) {
+			if(featureConceptsVO.getMembers().equals(conceptMembersGroupVO.getMembers().toString()))
 				return featureConceptsVO;
 		}
 		return null;
 	}
 	
 	
-	public ArrayList<MembersGroupVsConceptVO> getMembersGroupVsConceptVOList(ArrayList<ConceptMembersGroupVO> conceptMembersGroupList){
-		ArrayList<MembersGroupVsConceptVO> answer = new ArrayList<MembersGroupVsConceptVO>();
-		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMembersGroupList) {
+	public ArrayList<TupleMembersConcepts> getMembersGroupVsConceptVOList(ArrayList<TupleConceptMembers> conceptMembersGroupList){
+		ArrayList<TupleMembersConcepts> answer = new ArrayList<TupleMembersConcepts>();
+		for (TupleConceptMembers conceptMembersGroupVO : conceptMembersGroupList) {
 			String groupId = "[";
 			boolean first = true;
-			for (String member : conceptMembersGroupVO.getMemberGroup()) {
+			for (String member : conceptMembersGroupVO.getMembers()) {
 				if(!first) groupId += ", ";
 				groupId += member;
 				first = false;
 			}
 			groupId += "]";
 			
-			MembersGroupVsConceptVO pivot = new MembersGroupVsConceptVO(groupId);
+			TupleMembersConcepts pivot = new TupleMembersConcepts(groupId);
 			if(answer.indexOf(pivot) == -1){
 				pivot.getConcepts().add(conceptMembersGroupVO.getConcept().getName());
 				answer.add(pivot);
 			}
 			else{
-				MembersGroupVsConceptVO legacy = answer.get(answer.indexOf(pivot));
+				TupleMembersConcepts legacy = answer.get(answer.indexOf(pivot));
 				legacy.getConcepts().add(conceptMembersGroupVO.getConcept().getName());
 			}
 		}
@@ -380,9 +379,14 @@ public class FamiliesServices {
 		return answer;
 	}
 	
-	public EcoreGraph computeDependenciesGraph(ArrayList<ConceptMembersGroupVO> conceptMembersGroupList){
+	/**
+	 * Computes the dependencies graph from a list of tuples Concept-Members
+	 * @param conceptMembersGroupList
+	 * @return
+	 */
+	public EcoreGraph computeDependenciesGraph(ArrayList<TupleConceptMembers> conceptMembersGroupList){
 		EcoreGraph graph = new EcoreGraph();
-		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMembersGroupList) {
+		for (TupleConceptMembers conceptMembersGroupVO : conceptMembersGroupList) {
 			EClassifier currentClassifier = conceptMembersGroupVO.getConcept();
 			EcoreNode node = new EcoreNode(currentClassifier);
 			graph.getNodes().add(node);

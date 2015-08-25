@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMemberVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreArc;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreGraph;
-import fr.inria.diverse.k3.sle.common.tuples.MembersGroupVsConceptVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -19,15 +19,15 @@ public class DependenciesGraph {
 	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception{
 		String answer = "";
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
-		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
-		ArrayList<MembersGroupVsConceptVO> membersGroupVsConceptVOList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMemberGroupList);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
+		ArrayList<TupleMembersConcepts> membersGroupVsConceptVOList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMemberGroupList);
 		EcoreGraph dependenciesGraph = FamiliesServices.getInstance().computeDependenciesGraph(conceptMemberGroupList);
 		
 		answer += "var G = new jsnx.DiGraph();\n";
 		
 		int i = 0;
-		for (MembersGroupVsConceptVO membersGroupVsConceptVO : membersGroupVsConceptVOList) {
+		for (TupleMembersConcepts membersGroupVsConceptVO : membersGroupVsConceptVOList) {
 			String nodes = "";
 			boolean first = true;
 			for (String currentConcept : membersGroupVsConceptVO.getConcepts()) {

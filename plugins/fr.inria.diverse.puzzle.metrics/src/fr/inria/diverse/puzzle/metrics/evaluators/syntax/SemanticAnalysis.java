@@ -6,8 +6,8 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMemberVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodsMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
@@ -17,8 +17,8 @@ public class SemanticAnalysis {
 
 	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
 		String answer = "";
-		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
-		ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
+		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
 		
 //		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
 //			System.out.println("conceptMethodMembersGroupVO*:" + conceptMethodMembersGroupVO);

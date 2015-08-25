@@ -7,8 +7,8 @@ import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMemberVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -17,10 +17,10 @@ public class SemanticOverlapping {
 
 	public static String evaluate(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();
-		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
-		ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
+		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
 		
-		for (ConceptMethodMemberVO conceptMethodMemberVO : conceptMethodMemberList) {
+		for (TupleConceptMethodMember conceptMethodMemberVO : conceptMethodMemberList) {
 			if(membersSizeTable.get(conceptMethodMemberVO.getMemberName()) == null)
 				membersSizeTable.put(conceptMethodMemberVO.getMemberName(), 1);
 			else{
@@ -53,15 +53,15 @@ public class SemanticOverlapping {
 	}
 
 	private static ArrayList<String> getIntersection(
-			ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList, Language languageI, Language languageJ,
+			ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList, Language languageI, Language languageJ,
 			MethodComparison methodComparisonOperator) {
 
 		String languageIName = MelangeServices.getEPackageFromLanguage(languageI).getName();
 		String languageJName = MelangeServices.getEPackageFromLanguage(languageJ).getName();
 		ArrayList<String> answer = new ArrayList<String>();
-		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
-			boolean isInI = conceptMethodMembersGroupVO.getMemberGroup().contains(languageIName);
-			boolean isInJ = conceptMethodMembersGroupVO.getMemberGroup().contains(languageJName);
+		for (TupleConceptMethodMembers conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+			boolean isInI = conceptMethodMembersGroupVO.getMembers().contains(languageIName);
+			boolean isInJ = conceptMethodMembersGroupVO.getMembers().contains(languageJName);
 			if(isInI && isInJ)
 				answer.add(conceptMethodMembersGroupVO.getConcept().getSimpleName() + "." + conceptMethodMembersGroupVO.getMethod().getSimpleName());
 		}

@@ -6,10 +6,10 @@ import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMemberVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMembersGroupVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMemberVO;
-import fr.inria.diverse.k3.sle.common.tuples.ConceptMethodMembersGroupVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -18,12 +18,12 @@ public class SizeOfCommonality {
 
 	public static int evaluateForSyntax(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		ArrayList<ConceptMemberVO> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
-		ArrayList<ConceptMembersGroupVO> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
 		
 		int count = 0;
-		for (ConceptMembersGroupVO conceptMembersGroupVO : conceptMemberGroupList) {
-			if(conceptMembersGroupVO.getMemberGroup().size() == ePackages.size()){
+		for (TupleConceptMembers conceptMembersGroupVO : conceptMemberGroupList) {
+			if(conceptMembersGroupVO.getMembers().size() == ePackages.size()){
 				count++;
 			}
 		}
@@ -32,12 +32,12 @@ public class SizeOfCommonality {
 	}
 	
 	public static int evaluateForSemantics(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
-		ArrayList<ConceptMethodMemberVO> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
-		ArrayList<ConceptMethodMembersGroupVO> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
+		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
+		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
 		
 		int count = 0;
-		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
-			if(conceptMethodMembersGroupVO.getMemberGroup().size() == languages.size()){
+		for (TupleConceptMethodMembers conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
+			if(conceptMethodMembersGroupVO.getMembers().size() == languages.size()){
 				count++;
 			}
 		}

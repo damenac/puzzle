@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EcoreFactory;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
-import fr.inria.diverse.k3.sle.common.tuples.ModuleConceptsVO;
+import fr.inria.diverse.k3.sle.common.tuples.TupleModuleConceptsMembers;
 import fr.inria.diverse.k3.sle.common.utils.EcoreCloningServices;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
@@ -45,12 +45,12 @@ public class BreakDownFamilyImpl {
 			ePackages.add(currentMetamodel);
 		}
 		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
-		ArrayList<ModuleConceptsVO> moduleConceptsList = FamiliesServices.getInstance().obtainConceptsOwenerLanguagesList(ePackages, conceptComparisonOperator);
+		ArrayList<TupleModuleConceptsMembers> moduleConceptsList = FamiliesServices.getInstance().obtainConceptsOwenerLanguagesList(ePackages, conceptComparisonOperator);
 		buildModules(moduleConceptsList);
 	}
 
-	private void buildModules(ArrayList<ModuleConceptsVO> moduleConceptsList) throws CoreException {
-		for (ModuleConceptsVO moduleConceptsVO : moduleConceptsList) {
+	private void buildModules(ArrayList<TupleModuleConceptsMembers> moduleConceptsList) throws CoreException {
+		for (TupleModuleConceptsMembers moduleConceptsVO : moduleConceptsList) {
 			// Build the module metamodel with the required interface.
 			EPackage moduleEPackage = this.createEPackageByModule(moduleConceptsVO);
 
@@ -77,7 +77,7 @@ public class BreakDownFamilyImpl {
 	 * @param moduleConceptsVO
 	 * @return
 	 */
-	private EPackage createEPackageByModule(ModuleConceptsVO moduleConceptsVO) {
+	private EPackage createEPackageByModule(TupleModuleConceptsMembers moduleConceptsVO) {
 		EcoreCloningServices.getInstance().resetClonedClassifiers();
 		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
 		newPackage.setName(moduleConceptsVO.getModuleName().trim());
