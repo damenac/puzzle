@@ -5,16 +5,24 @@ package hfsm.impl;
 import hfsm.AbstractState;
 import hfsm.Constraint;
 import hfsm.HfsmPackage;
+import hfsm.Statement;
 import hfsm.Transition;
 import hfsm.Trigger;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,6 +35,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link hfsm.impl.TransitionImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link hfsm.impl.TransitionImpl#getSource <em>Source</em>}</li>
  *   <li>{@link hfsm.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
+ *   <li>{@link hfsm.impl.TransitionImpl#getEffect <em>Effect</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,6 +81,16 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * @ordered
 	 */
 	protected Constraint guard;
+
+	/**
+	 * The cached value of the '{@link #getEffect() <em>Effect</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEffect()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Statement> effect;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -303,6 +322,18 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Statement> getEffect() {
+		if (effect == null) {
+			effect = new EObjectContainmentEList<Statement>(Statement.class, this, HfsmPackage.TRANSITION__EFFECT);
+		}
+		return effect;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -334,6 +365,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return basicSetSource(null, msgs);
 			case HfsmPackage.TRANSITION__GUARD:
 				return basicSetGuard(null, msgs);
+			case HfsmPackage.TRANSITION__EFFECT:
+				return ((InternalEList<?>)getEffect()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -356,6 +389,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return basicGetSource();
 			case HfsmPackage.TRANSITION__GUARD:
 				return getGuard();
+			case HfsmPackage.TRANSITION__EFFECT:
+				return getEffect();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -365,6 +400,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -379,6 +415,10 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return;
 			case HfsmPackage.TRANSITION__GUARD:
 				setGuard((Constraint)newValue);
+				return;
+			case HfsmPackage.TRANSITION__EFFECT:
+				getEffect().clear();
+				getEffect().addAll((Collection<? extends Statement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -404,6 +444,9 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 			case HfsmPackage.TRANSITION__GUARD:
 				setGuard((Constraint)null);
 				return;
+			case HfsmPackage.TRANSITION__EFFECT:
+				getEffect().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -424,6 +467,8 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 				return source != null;
 			case HfsmPackage.TRANSITION__GUARD:
 				return guard != null;
+			case HfsmPackage.TRANSITION__EFFECT:
+				return effect != null && !effect.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

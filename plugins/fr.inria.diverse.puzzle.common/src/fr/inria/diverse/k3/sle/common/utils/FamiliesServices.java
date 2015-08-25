@@ -2,14 +2,9 @@ package fr.inria.diverse.k3.sle.common.utils;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
@@ -19,12 +14,9 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodsMembers;
-import fr.inria.diverse.k3.sle.common.tuples.EcoreArc;
-import fr.inria.diverse.k3.sle.common.tuples.EcoreGraph;
-import fr.inria.diverse.k3.sle.common.tuples.EcoreNode;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
-import fr.inria.diverse.k3.sle.common.tuples.TupleModuleConceptsMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers;
+import fr.inria.diverse.k3.sle.common.tuples.TupleModuleConceptsMembers;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
@@ -272,23 +264,14 @@ public class FamiliesServices {
 	public ArrayList<TupleMembersConcepts> getMembersGroupVsConceptVOList(ArrayList<TupleConceptMembers> conceptMembersGroupList){
 		ArrayList<TupleMembersConcepts> answer = new ArrayList<TupleMembersConcepts>();
 		for (TupleConceptMembers conceptMembersGroupVO : conceptMembersGroupList) {
-			String groupId = "[";
-			boolean first = true;
-			for (String member : conceptMembersGroupVO.getMembers()) {
-				if(!first) groupId += ", ";
-				groupId += member;
-				first = false;
-			}
-			groupId += "]";
-			
-			TupleMembersConcepts pivot = new TupleMembersConcepts(groupId);
+			TupleMembersConcepts pivot = new TupleMembersConcepts(conceptMembersGroupVO.getMembers());
 			if(answer.indexOf(pivot) == -1){
-				pivot.getConcepts().add(conceptMembersGroupVO.getConcept().getName());
+				pivot.getConcepts().add(conceptMembersGroupVO.getConcept());
 				answer.add(pivot);
 			}
 			else{
 				TupleMembersConcepts legacy = answer.get(answer.indexOf(pivot));
-				legacy.getConcepts().add(conceptMembersGroupVO.getConcept().getName());
+				legacy.getConcepts().add(conceptMembersGroupVO.getConcept());
 			}
 		}
 		return answer;

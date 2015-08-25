@@ -1,14 +1,14 @@
-var color = d3.scale.category20();
+var color = d3.scale.category10();
 
 jsnx.draw(G, {
           element: '#div-graph',
           withLabels: true,
           layoutAttr: {
-          charge: -900,
-          linkDistance: 60
+          charge: -1000,
+          linkDistance: 70
           },
           nodeAttr: {
-          r: 8,
+          r: 7,
           title: function(d) { return d.label;}
           },
           nodeStyle: {
@@ -18,6 +18,6 @@ jsnx.draw(G, {
           stroke: 'none'
           },
           edgeStyle: {
-          fill: '#999'
+          fill: '#E6E6E6'
           }
           });

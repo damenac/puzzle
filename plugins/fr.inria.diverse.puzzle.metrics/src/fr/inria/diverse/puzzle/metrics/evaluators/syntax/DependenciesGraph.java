@@ -23,8 +23,8 @@ public class DependenciesGraph {
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
-		EcoreGraph dependenciesGraph = new EcoreGraph(conceptMembersList);
-		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList);
+		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
+		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
 		
 		answer += "var G = new jsnx.DiGraph();\n";
 		int i = 0;
@@ -34,6 +34,7 @@ public class DependenciesGraph {
 			for (EcoreNode currentNode : group) {
 				if(!first)
 					nodes += ",";
+//				nodes += "\"" + currentNode.getClassifier().getName() + "\"";
 				nodes += "\"" + currentNode.getNodeId() + "\"";
 				first = false;
 			}
@@ -47,7 +48,8 @@ public class DependenciesGraph {
 			boolean first = true;
 			for (EcoreArc arc : dependenciesGraph.getArcs()) {
 				if(!first) answer += ",";
-				answer += "[\"" + arc.getFrom().getClassifier().getName() + "\",\""+ arc.getTo().getClassifier().getName() +"\"]";
+//				answer += "[\"" + arc.getFrom().getClassifier().getName() + "\",\""+ arc.getTo().getClassifier().getName() +"\"]";
+				answer += "[\"" + arc.getFrom().getNodeId() + "\",\""+ arc.getTo().getNodeId() +"\"]";
 				first = false;
 			}
 			answer += "]);\n";

@@ -34,7 +34,6 @@ public class SemanticAnalysis {
 		
 		boolean firstLevel0 = true;
 		for (TupleConceptMethodsMembers conceptMethodMembersGroupVO : conceptsGroupMethodMemberGroupList) {
-			System.out.println("conceptMethodMembersGroupVO: " + conceptMethodMembersGroupVO);
 			if(!firstLevel0) answer += ",\n";
 			//FIXME
 			String conceptName = conceptMethodMembersGroupVO.getConcept().getSimpleName().replace("Aspect", "");

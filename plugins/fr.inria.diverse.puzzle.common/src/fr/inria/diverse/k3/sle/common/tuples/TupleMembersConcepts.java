@@ -2,46 +2,72 @@ package fr.inria.diverse.k3.sle.common.tuples;
 
 import java.util.ArrayList;
 
+import org.eclipse.emf.ecore.EClassifier;
+
 public class TupleMembersConcepts {
 
 	// -----------------------------------------------
 	// Attributes
 	// -----------------------------------------------
 	
-	private String members;
-	private ArrayList<String> concepts;
+	private ArrayList<String> members;
+	private ArrayList<EClassifier> concepts;
 	
 	// -----------------------------------------------
 	// Constructor
 	// -----------------------------------------------
 
-	public TupleMembersConcepts(String membersGroup) {
-		this.members = membersGroup;
-		this.concepts = new ArrayList<String>();
+	public TupleMembersConcepts(ArrayList<String> members) {
+		this.members = members;
+		this.concepts = new ArrayList<EClassifier>();
 	}
 	
 	// -----------------------------------------------
 	// Getters and setters
 	// -----------------------------------------------
 	
-	public String getMembersGroup() {
+	public ArrayList<String> getMembers() {
 		return members;
 	}
-	
-	public void setMembers(String members) {
-		this.members = members;
-	}
-	
-	public ArrayList<String> getConcepts() {
+
+	public ArrayList<EClassifier> getConcepts() {
 		return concepts;
 	}
 
-	public void setConcepts(ArrayList<String> concepts) {
-		this.concepts = concepts;
-	}
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
 
 	public boolean equals(Object toCompare){
 		TupleMembersConcepts toCompareObject = (TupleMembersConcepts) toCompare;
-		return toCompareObject.members.equals(this.members);
+		return toCompareObject.getMembersString().equals(this.getMembersString());
+	}
+	
+	public String getMembersString(){
+		String members = "[";
+		boolean first = true;
+		for (String member : this.members) {
+			if(!first) members += ", ";
+			members += member;
+			first = false;
+		}
+		members += "]";
+		return members;
+	}
+	
+	public String getConceptsString(){
+		String concepts = "[";
+		boolean first = true;
+		for (EClassifier concept : this.concepts) {
+			if(!first) concepts += ", ";
+			concepts += concept.getName();
+			first = false;
+		}
+		concepts += "]";
+		return concepts;
+	}
+	
+	public String toString(){
+		return this.getMembersString() + " - " + this.getConceptsString();
 	}
 }

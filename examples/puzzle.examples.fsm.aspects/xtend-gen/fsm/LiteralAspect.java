@@ -14,12 +14,12 @@ public class LiteralAspect extends ExpressionAspect {
   public static Object eval(final Literal _self, final Hashtable<String, Object> context) {
     fsm.LiteralAspectLiteralAspectProperties _self_ = fsm.LiteralAspectLiteralAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.StringLit){
+     if (_self instanceof fsm.IntegerLit){
+    result = fsm.IntegerLitAspect.eval((fsm.IntegerLit)_self,context);
+    } else  if (_self instanceof fsm.StringLit){
     result = fsm.StringLitAspect.eval((fsm.StringLit)_self,context);
     } else  if (_self instanceof fsm.BoolLit){
     result = fsm.BoolLitAspect.eval((fsm.BoolLit)_self,context);
-    } else  if (_self instanceof fsm.IntegerLit){
-    result = fsm.IntegerLitAspect.eval((fsm.IntegerLit)_self,context);
     } else  if (_self instanceof fsm.Literal){
     result = fsm.LiteralAspect._privk3_eval(_self_, (fsm.Literal)_self,context);
     } else  if (_self instanceof fsm.Expression){

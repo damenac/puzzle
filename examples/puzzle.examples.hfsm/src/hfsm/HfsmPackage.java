@@ -406,13 +406,22 @@ public interface HfsmPackage extends EPackage {
 	int TRANSITION__GUARD = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Effect</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__EFFECT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int TRANSITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -1646,6 +1655,17 @@ public interface HfsmPackage extends EPackage {
 	EReference getTransition_Guard();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link hfsm.Transition#getEffect <em>Effect</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Effect</em>'.
+	 * @see hfsm.Transition#getEffect()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_Effect();
+
+	/**
 	 * Returns the meta object for class '{@link hfsm.Trigger <em>Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2363,6 +2383,14 @@ public interface HfsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
+
+		/**
+		 * The meta object literal for the '<em><b>Effect</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__EFFECT = eINSTANCE.getTransition_Effect();
 
 		/**
 		 * The meta object literal for the '{@link hfsm.impl.TriggerImpl <em>Trigger</em>}' class.

@@ -17,3 +17,4 @@
 1440488370732	Rename method 'setMembersGroup'
 1440488438473	Rename type 'ModuleConceptsVO'
 1440488566426	Rename local variable 'conceptMembersGroupList'
+1440490492281	Rename local variable 'conceptMembersGroupVO'
