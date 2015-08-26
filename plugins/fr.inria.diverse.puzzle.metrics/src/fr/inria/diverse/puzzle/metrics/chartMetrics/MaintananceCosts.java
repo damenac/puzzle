@@ -4,14 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectConstructs;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectMethods;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructsOccurrences;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethodsOccurrences;
 
 /**
  * Chart metric for the family's maintenance costs versus product line maintenance costs.
@@ -28,109 +31,152 @@ public class MaintananceCosts implements ChartMetric {
 			ConceptComparison conceptComparisonOperator,
 			MethodComparison methodComparisonOperator) throws Exception {
 		
-		String labelsSyntaxMaintenance = this.getLabelsSyntaxMaintenance(languages, conceptComparisonOperator);
-		String labelsSyntaxFamilyMaintenanceData = this.getLabelsFamilySyntaxMaintenanceData(languages, conceptComparisonOperator, methodComparisonOperator);
-		String labelsSyntaxLanguageLineMaintenanceData = this.getLabelsLanguageLineSyntaxMaintenanceData(languages, conceptComparisonOperator, methodComparisonOperator);
+		int[] constructsAmountsArray = this.getConstructsAmount(languages, conceptComparisonOperator);
+		double pendiente = this.getAverageCostSyntax(languages, conceptComparisonOperator, methodComparisonOperator);
+		int manHoursByConstruct = 2;
 		
-		String javaScriptData = "var barsDataSyntaxMaintainanceCosts = {\n";
-		javaScriptData += "    labels: [" + labelsSyntaxMaintenance + "],\n";
-		javaScriptData += "    datasets: [\n";
-		javaScriptData += "        {\n";
-		javaScriptData += "            label: \"My First dataset\",\n";
-		javaScriptData += "            fillColor: \"rgba(220,220,220,0.2)\",\n";
-		javaScriptData += "            strokeColor: \"rgba(220,220,220,1)\",\n";
-		javaScriptData += "            pointColor: \"rgba(220,220,220,1)\",\n";
-		javaScriptData += "            pointStrokeColor: \"#fff\",\n";
-		javaScriptData += "            pointHighlightFill: \"#fff\",\n";
-		javaScriptData += "            pointHighlightStroke: \"rgba(220,220,220,1)\",\n";
-		javaScriptData += "            data: [" + labelsSyntaxFamilyMaintenanceData + "]\n";
-		javaScriptData += "        },\n";
-		javaScriptData += "        {\n";
-		javaScriptData += "            label: \"My Second dataset\",\n";
-		javaScriptData += "            fillColor: \"rgba(151,187,205,0.2)\",\n";
-		javaScriptData += "            strokeColor: \"rgba(151,187,205,1)\",\n";
-		javaScriptData += "            pointColor: \"rgba(151,187,205,1)\",\n";
-		javaScriptData += "            pointStrokeColor: \"#fff\",\n";
-		javaScriptData += "            pointHighlightFill: \"#fff\",\n";
-		javaScriptData += "            pointHighlightStroke: \"rgba(151,187,205,1)\",\n";
-		javaScriptData += "            data: [" + labelsSyntaxLanguageLineMaintenanceData + "]\n";
-		javaScriptData += "        }\n";
-		javaScriptData += "    ]\n";
-		javaScriptData += "};\n\n";
+		String javaScriptData = "google.load('visualization', '1.1', {packages: ['line', 'corechart']});\n";
+		javaScriptData += "google.setOnLoadCallback(drawChart);\n\n";
+		javaScriptData += "    function drawChart() {\n";
+		javaScriptData += "      var syntaxChart;\n";
+		javaScriptData += "      var syntaxDiv = document.getElementById('chart-maitenance-costs-syntax');\n";
+		javaScriptData += "      var data = new google.visualization.DataTable()\n";
+		javaScriptData += "      data.addColumn('number', \"Amount of constructs\");\n";
+		javaScriptData += "      data.addColumn('number', \"Family approach\");\n";
+		javaScriptData += "      data.addColumn('number', \"Product line approach\");\n\n";
+		javaScriptData += "      data.addRows([\n";
 		
-		String labelsSemanticsMaintenance = this.getLabelsSemanticsMaintenance(languages, conceptComparisonOperator, methodComparisonOperator);
-		javaScriptData += "var barsDataSemanticMaintainanceCosts = {\n";
-		javaScriptData += "    labels: [" + labelsSemanticsMaintenance + "],\n";
-		javaScriptData += "    datasets: [\n";
-		javaScriptData += "        {\n";
-		javaScriptData += "            label: \"My First dataset\",\n";
-		javaScriptData += "            fillColor: \"rgba(220,220,220,0.2)\",\n";
-		javaScriptData += "            strokeColor: \"rgba(220,220,220,1)\",\n";
-		javaScriptData += "            pointColor: \"rgba(220,220,220,1)\",\n";
-		javaScriptData += "            pointStrokeColor: \"#fff\",\n";
-		javaScriptData += "            pointHighlightFill: \"#fff\",\n";
-		javaScriptData += "            pointHighlightStroke: \"rgba(220,220,220,1)\",\n";
-		javaScriptData += "            data: [65, 59, 80, 81]\n";
+		boolean first = true;
+		for (int i = 0; i < constructsAmountsArray.length; i++) {
+			if(!first) javaScriptData += ", \n";
+			javaScriptData += "        [" + constructsAmountsArray[i] + ",  " + constructsAmountsArray[i] * manHoursByConstruct * pendiente + ",  " + constructsAmountsArray[i] * manHoursByConstruct + "]";
+			first = false;
+		}
+		
+		javaScriptData += "      ]);\n\n";
+		javaScriptData += "      var syntaxOptions = {\n";
+		javaScriptData += "        title: 'Maintenance costs of the family of DSLs vs. maintenance costs of its corresponding language product line (abstract syntax)',\n";
+		javaScriptData += "        titleTextStyle: {fontSize: 10, fontName: \"lucida sans unicode\" },\n";
+		javaScriptData += "        width: 650,\n";
+		javaScriptData += "        height: 280,\n";
+		javaScriptData += "        series: {\n";
+		javaScriptData += "          0: {targetAxisIndex: 0}\n";
 		javaScriptData += "        },\n";
-		javaScriptData += "        {\n";
-		javaScriptData += "            label: \"My Second dataset\",\n";
-		javaScriptData += "            fillColor: \"rgba(151,187,205,0.2)\",\n";
-		javaScriptData += "            strokeColor: \"rgba(151,187,205,1)\",\n";
-		javaScriptData += "            pointColor: \"rgba(151,187,205,1)\",\n";
-		javaScriptData += "            pointStrokeColor: \"#fff\",\n";
-		javaScriptData += "            pointHighlightFill: \"#fff\",\n";
-		javaScriptData += "            pointHighlightStroke: \"rgba(151,187,205,1)\",\n";
-		javaScriptData += "            data: [28, 48, 40, 19]\n";
-		javaScriptData += "        }\n";
-		javaScriptData += "    ]\n";
-		javaScriptData += "};\n\n";
+		javaScriptData += "        vAxes: {\n";
+		javaScriptData += "          0: {title: 'Maintenance Costs (Man-Hour)',\n";
+		javaScriptData += "              titleTextStyle: {fontSize: 10, fontName: \"lucida sans unicode\" },\n";
+		javaScriptData += "              textStyle: {fontSize: 10, fontName: \"lucida sans unicode\", bold: true }\n";
+		javaScriptData += "             }\n";
+		javaScriptData += "        },\n";
+		javaScriptData += "        hAxis: {\n";
+		javaScriptData += "          title: 'Amount of Involved Constructs',\n";
+		javaScriptData += "          titleTextStyle: {fontSize: 10, fontName: \"lucida sans unicode\" },\n";
+		javaScriptData += "          textStyle: {fontSize: 10, fontName: \"lucida sans unicode\", bold: true },\n";
+		javaScriptData += "          ticks: [";
+		
+		first = true;
+		for (int i = 0; i < constructsAmountsArray.length; i++) {
+			if(!first) javaScriptData += ", ";
+			javaScriptData += constructsAmountsArray[i];
+			first = false;
+		}
+		javaScriptData += "]\n";
+		javaScriptData += "        },\n";
+		javaScriptData += "        legend: { position: 'top',\n";
+		javaScriptData += "      			  textStyle: {fontSize: 10, fontName: \"lucida sans unicode\" }\n";
+		javaScriptData += "    			}\n";
+		javaScriptData += "      	};\n";
+		
+		
+		int[] methodsAmountsArray = this.getMethodsAmount(languages, conceptComparisonOperator, methodComparisonOperator);
+		double pendienteMethods = this.getAverageCostSemantics(languages, conceptComparisonOperator, methodComparisonOperator);
+		int manHoursByMethod = 2;
+		
+		javaScriptData += "      var semanticsChart;\n";
+		javaScriptData += "      var semanticsDiv = document.getElementById('chart-maitenance-costs-semantics');\n";
+		javaScriptData += "      var semanticsData = new google.visualization.DataTable()\n";
+		javaScriptData += "      semanticsData.addColumn('number', \"Amount of methods\");\n";
+		javaScriptData += "      semanticsData.addColumn('number', \"Family approach\");\n";
+		javaScriptData += "      semanticsData.addColumn('number', \"Product line approach\");\n\n";
+		javaScriptData += "      semanticsData.addRows([\n";
+		
+		for (int i = 0; i < methodsAmountsArray.length; i++) {
+			javaScriptData += "        [" + methodsAmountsArray[i] + ",  " + methodsAmountsArray[i] * manHoursByMethod * pendienteMethods + ",  " + methodsAmountsArray[i] * manHoursByMethod + "],\n";
+		}
+		
+		javaScriptData += "      ]);\n\n";
+		javaScriptData += "      var semanticsOptions = {\n";
+		javaScriptData += "        title: 'Maintenance costs of the family of DSLs vs. maintenance costs of its corresponding language product line (semantics)',\n";
+		javaScriptData += "        titleTextStyle: {fontSize: 10, fontName: \"lucida sans unicode\" },\n";
+		javaScriptData += "        width: 650,\n";
+		javaScriptData += "        height: 280,\n";
+		javaScriptData += "        series: {\n";
+		javaScriptData += "          0: {targetAxisIndex: 0}\n";
+		javaScriptData += "        },\n";
+		javaScriptData += "        vAxes: {\n";
+		javaScriptData += "          0: {title: 'Maintenance Costs (Man-Hour)',\n";
+		javaScriptData += "              titleTextStyle: {fontSize: 10, fontName: \"lucida sans unicode\" },\n";
+		javaScriptData += "              textStyle: {fontSize: 10, fontName: \"lucida sans unicode\", bold: true }\n";
+		javaScriptData += "             }\n";
+		javaScriptData += "        },\n";
+		javaScriptData += "        hAxis: {\n";
+		javaScriptData += "          title: 'Amount of Involved Methods',\n";
+		javaScriptData += "          titleTextStyle: {fontSize: 10, fontName: \"lucida sans unicode\" },\n";
+		javaScriptData += "          textStyle: {fontSize: 10, fontName: \"lucida sans unicode\", bold: true },\n";
+		javaScriptData += "          ticks: [";
+		
+		first = true;
+		for (int i = 0; i < methodsAmountsArray.length; i++) {
+			if(!first) javaScriptData += ", ";
+			javaScriptData += methodsAmountsArray[i];
+			first = false;
+		}
+		javaScriptData += "]\n";
+		javaScriptData += "        },\n";
+		javaScriptData += "        legend: { position: 'top',\n";
+		javaScriptData += "      			  textStyle: {fontSize: 10, fontName: \"lucida sans unicode\" }\n";
+		javaScriptData += "    			}\n";
+		javaScriptData += "      	};\n";
+		
+		javaScriptData += "      syntaxChart = new google.visualization.LineChart(syntaxDiv);\n";
+		javaScriptData += "      syntaxChart.draw(data, syntaxOptions);\n";
+		
+		javaScriptData += "      syntaxChart = new google.visualization.LineChart(semanticsDiv);\n";
+		javaScriptData += "      syntaxChart.draw(semanticsData, semanticsOptions);\n";
+		javaScriptData += "    }\n";
+		
 		return javaScriptData;
 	}
 
 	@Override
 	public String getWindow(ArrayList<Language> languages) {
-		String javaScriptWindow = "    var ctxLineChartSyntaxMaintaince = document.getElementById(\"chart-maintainance-costs-syntax\").getContext(\"2d\");\n";
-		javaScriptWindow += "    window.myLineChartSyntaxMaintaince = new Chart(ctxLineChartSyntaxMaintaince).Line(barsDataSyntaxMaintainanceCosts,{\n";
-		javaScriptWindow += "       datasetFill : false\n";
-		javaScriptWindow += "    });\n\n";
-		
-		javaScriptWindow += "    var ctxLineChartSemanticsMaintaince = document.getElementById(\"chart-maintainance-costs-semantics\").getContext(\"2d\");\n";
-		javaScriptWindow += "    window.myLineChartSemanticsMaintaince = new Chart(ctxLineChartSemanticsMaintaince).Line(barsDataSemanticMaintainanceCosts,{\n";
-		javaScriptWindow += "       datasetFill : false\n";
-		javaScriptWindow += "    });\n\n";
-		return javaScriptWindow;
+		return "";
 	}
 	
 	// ---------------------------------------------------
 	// Auxiliar services
 	// ---------------------------------------------------
 	
-	private String getLabelsSyntaxMaintenance(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception {
-		String labels = "";
+	private int[] getConstructsAmount(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception {
+		int[] answer = new int[10];
 		int constructsAmount = CountConstructs.countFamilyConstructs(languages, conceptComparisonOperator);
-		int interval = constructsAmount/4;
-		boolean first = true;
-		for (int i = 1; i <= 4; i++) {
-			if(!first) labels += ",";
-			labels += "\"" + interval * i + "\"";
-			first = false;
+		int interval = constructsAmount/9;
+		for (int i = 0; i < 10; i++) {
+			answer[i] += interval * (i);
 		}
-		return labels;
+		return answer;
 	}
 	
-	private String getLabelsSemanticsMaintenance(ArrayList<Language> languages,
+	private int[] getMethodsAmount(ArrayList<Language> languages,
 			ConceptComparison conceptComparisonOperator,
 			MethodComparison methodComparisonOperator) {
-		String labels = "";
-		int methodsAmount = CountMethods.countFamilyMethods(languages, conceptComparisonOperator, methodComparisonOperator);
-		int interval = methodsAmount/4;
-		boolean first = true;
-		for (int i = 1; i <= 4; i++) {
-			if(!first) labels += ",";
-			labels += "\"" + interval * i + "\"";
-			first = false;
+		int[] answer = new int[10];
+		int constructsAmount = CountMethods.countFamilyMethods(languages, conceptComparisonOperator, methodComparisonOperator);
+		int interval = constructsAmount/9;
+		for (int i = 0; i < 10; i++) {
+			answer[i] += interval * (i);
 		}
-		return labels;
+		return answer;
 	}
 	
 	public double getAverageCostSyntax(ArrayList<Language> languages,
@@ -147,33 +193,17 @@ public class MaintananceCosts implements ChartMetric {
 			return totalCost/constructs.size();
 	}
 	
-	private String getLabelsFamilySyntaxMaintenanceData(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator,
+	private double getAverageCostSemantics(ArrayList<Language> languages,
+			ConceptComparison conceptComparisonOperator,
 			MethodComparison methodComparisonOperator) throws Exception {
-		String labels = "";
-		int constructsAmount = CountConstructs.countFamilyConstructs(languages, conceptComparisonOperator);
-		int interval = constructsAmount/4;
-		boolean first = true;
-		for (int i = 1; i <= 4; i++) {
-			if(!first) labels += " ,";
-			double value = interval * i * getAverageCostSyntax(languages, conceptComparisonOperator, methodComparisonOperator);
-			labels += value ;
-			first = false;
+		double totalCost = 0;
+		List<JvmOperation> methods = CollectMethods.collectFamilyMethods(languages, conceptComparisonOperator, methodComparisonOperator);
+		for (JvmOperation jvmOperation : methods) {
+			totalCost += CountMethodsOccurrences.countMethodsOccurrences(languages, conceptComparisonOperator, methodComparisonOperator, jvmOperation);
 		}
-		return labels;
-	}
-	
-	private String getLabelsLanguageLineSyntaxMaintenanceData(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator,
-			MethodComparison methodComparisonOperator) throws Exception {
-		String labels = "";
-		int constructsAmount = CountConstructs.countFamilyConstructs(languages, conceptComparisonOperator);
-		int interval = constructsAmount/4;
-		boolean first = true;
-		for (int i = 1; i <= 4; i++) {
-			if(!first) labels += " ,";
-			double value = interval * i;
-			labels += value ;
-			first = false;
-		}
-		return labels;
+		if(methods.size() == 0)
+			return 0;
+		else
+			return totalCost/methods.size();
 	}
 }

@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.RelationshipRatio"/>
-<fullyQualifiedTypeName name="org.eclipse.core.runtime.Platform"/>
-<fullyQualifiedTypeName name="org.eclipse.core.runtime.FileLocator"/>
-<fullyQualifiedTypeName name="java.net.URL"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.FileReader"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticOverlapping"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace"/>
 <fullyQualifiedTypeName name="com.google.inject.Injector"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.MelangeStandaloneSetup"/>
@@ -58,6 +50,14 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.tuples.EcoreNode"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.ChartMetric"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.MaintananceCosts"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfConcepts"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfMethods"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectConstructs"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructsOccurrences"/>
 </qualifiedTypeNameHistroy>

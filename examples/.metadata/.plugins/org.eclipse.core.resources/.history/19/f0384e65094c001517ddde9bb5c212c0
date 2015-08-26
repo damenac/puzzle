@@ -1,0 +1,209 @@
+var barsDataSyntaxMaintainanceCosts = {
+    labels: ["14","28","42","56"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [19.25 ,38.5 ,57.75 ,77.0]
+        },
+        {
+            label: "My Second dataset",
+            fillColor: "rgba(151,187,205,0.2)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            data: [14.0 ,28.0 ,42.0 ,56.0]
+        }
+    ]
+};
+
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+
+var pieDataSyntacticCommonality = [{
+        value: 9,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 47,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particularities"
+    }
+];
+
+var pieDataSemanticCommonality = [{
+        value: 0,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 74,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particularities"
+    }
+];
+
+var barProductRelatedReusability = {
+   labels : ["fsm","kmLogo","flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [29.03225806451613,32.142857142857146,50.0]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0,0.0]
+      }
+    ]
+};
+var barIndividualizationRatio = {
+   labels : ["fsm","kmLogo","flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [38.70967741935484,32.142857142857146,66.66666666666666]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [22.58064516129032,0.0,38.88888888888889]
+      }
+    ]
+};
+var barRelationshipRatiofsm = {
+   labels : ["kmLogo","flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [18.0,32.432432432432435]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,18.91891891891892]
+      }
+    ]
+};
+var barRelationshipRatiokmLogo = {
+   labels : ["fsm","flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [18.0,24.324324324324326]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0]
+      }
+    ]
+};
+var barRelationshipRatioflowchart = {
+   labels : ["fsm","kmLogo"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [32.432432432432435,24.324324324324326]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [18.91891891891892,0.0]
+      }
+    ]
+};
+
+window.onload = function(){
+    var ctxLineChartSyntaxMaintaince = document.getElementById("chart-maintainance-costs-syntax").getContext("2d");
+    window.myLineChartSyntaxMaintaince = new Chart(ctxLineChartSyntaxMaintaince).Line(barsDataSyntaxMaintainanceCosts,{
+       datasetFill : false
+    });
+
+    var ctxSyntacticCommonalities = document.getElementById("chart-syntactic-commonalities").getContext("2d");
+    window.myPieSyntacticCommonalities = new Chart(ctxSyntacticCommonalities).Pie(pieDataSyntacticCommonality);
+
+    var ctxSemanticCommonalities = document.getElementById("chart-semantic-commonalities").getContext("2d");
+    window.myPieSemanticCommonalities = new Chart(ctxSemanticCommonalities).Pie(pieDataSemanticCommonality);
+
+    var ctxProductRelatedReusability = document.getElementById("pie-product-reusability").getContext("2d");
+    window.myBarProductReusability = new Chart(ctxProductRelatedReusability).Bar(barProductRelatedReusability, {
+       responsive : false
+    });
+
+    var ctxIndividualizationRatio = document.getElementById("pie-individualization-ratio").getContext("2d");
+    window.window.myBarIndividualizationRatio = new Chart(ctxIndividualizationRatio).Bar(barIndividualizationRatio, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatiofsm = document.getElementById("pie-relationship-ratio-fsm").getContext("2d");
+    window.window.window.myBarRelationshipRatiofsm = new Chart(ctxRelationshipRatiofsm).Bar(barRelationshipRatiofsm, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatiokmLogo = document.getElementById("pie-relationship-ratio-kmLogo").getContext("2d");
+    window.window.window.myBarRelationshipRatiokmLogo = new Chart(ctxRelationshipRatiokmLogo).Bar(barRelationshipRatiokmLogo, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatioflowchart = document.getElementById("pie-relationship-ratio-flowchart").getContext("2d");
+    window.window.window.myBarRelationshipRatioflowchart = new Chart(ctxRelationshipRatioflowchart).Bar(barRelationshipRatioflowchart, {
+       responsive : false
+    });
+
+};

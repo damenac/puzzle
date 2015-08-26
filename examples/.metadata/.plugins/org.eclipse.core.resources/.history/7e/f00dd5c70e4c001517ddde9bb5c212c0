@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['line', 'corechart']}]}"></script>
+     <button id="change-chart">Change to Classic</button>
+	  <br><br>
+	  <div id="classic" class="hide"></div>
+	  <div id="material"></div>
+
+    <script type="text/javascript">
+     google.load('visualization', '1.1', {packages: ['line', 'corechart']});
+     google.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+      var materialChart;
+      var classicChart;
+      var button = document.getElementById('change-chart');
+      var classicDiv = document.getElementById('classic');
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', "Month");
+      data.addColumn('number', "Family");
+      data.addColumn('number', "Product Line");
+
+      data.addRows([
+        [10,  -.5,  5.7],
+        [20,   .4,  8.7],
+        [30,   .5,   12],
+        [40,  2.9, 15.3],
+        [50,  6.3, 18.6],
+        [60,    9, 20.9],
+        [70, 10.6, 19.8],
+        [80, 10.3, 16.6]
+      ]);
+
+      var classicOptions = {
+        title: 'Maintenance costs of the family of DSLs vs. maintenance costs of its corresponding language product line (abstract syntax)',
+        width: 650,
+        height: 280,
+        // Gives each series an axis that matches the vAxes number below.
+        series: {
+          0: {targetAxisIndex: 0}
+        },
+        vAxes: {
+          // Adds titles to each axis.
+          0: {title: 'Maintenance Costs (Man-Hour)'}
+        },
+        hAxis: {
+          title: 'Amount of Involved Constructs',
+          ticks: [10, 20, 30, 40, 50, 60, 70, 80]
+        },
+        vAxis: {
+          viewWindow: {
+            max: 30
+          }
+        }
+      };
+
+      classicChart = new google.visualization.LineChart(classicDiv);
+      classicChart.draw(data, classicOptions);
+
+    }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>

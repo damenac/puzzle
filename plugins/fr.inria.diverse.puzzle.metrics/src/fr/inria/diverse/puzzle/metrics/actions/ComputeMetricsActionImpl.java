@@ -90,7 +90,6 @@ public class ComputeMetricsActionImpl {
 		String metrics = "Metrics calculated"; 
 		
 		List<ChartMetric> chartMetrics = new ArrayList<ChartMetric>();
-		chartMetrics.add(new MaintananceCosts());
 		chartMetrics.add(new SizeOfCommonality());
 		chartMetrics.add(new ProductRelatedReusability());
 		chartMetrics.add(new IndividualizationRatio());
@@ -136,6 +135,8 @@ public class ComputeMetricsActionImpl {
 		outSemanticVennData.close();
 		
 		this.createReport1FamilysShape(project, languages);
+		this.createReport2CostSaving(project, languages);
+		this.createReport2CostSavingData(project, languages, conceptComparisonOperator, methodComparisonOperator);
 		this.createReport3ReuseMetrics(project, languages);
 		this.copyAnalysisSyntaxData(project, languages, conceptComparisonOperator, methodComparisonOperator);
 		this.copyAnalysisSynactic(project, languages);
@@ -166,8 +167,38 @@ public class ComputeMetricsActionImpl {
 		outRileReport.close();
 	}
 	
+	public void createReport2CostSaving(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-2-CostSavingsMetrics.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/Report-2-CostSavingsMetrics.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	public void createReport2CostSavingData(IProject project, ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
+        File fileReport = new File(project.getLocation().toString() + "/lib/costSavingMetrics.js" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print((new MaintananceCosts()).getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
+		outRileReport.close();
+	}
+	
 	public void createReport3ReuseMetrics(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-2-ReuseMetrics.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-3-ReuseMetrics.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -179,7 +210,7 @@ public class ComputeMetricsActionImpl {
         content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", (new PairwiseRelationshipRatio()).getTables(languages));
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-2-ReuseMetrics.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-3-ReuseMetrics.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -198,7 +229,7 @@ public class ComputeMetricsActionImpl {
 	}
 	
 	public void copyAnalysisSynactic(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-3-SyntacticVariability.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-4-SyntacticVariability.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -209,7 +240,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-3-SyntacticVariability.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-4-SyntacticVariability.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -228,7 +259,7 @@ public class ComputeMetricsActionImpl {
 	}
 	
 	public void copyAnalysisSemantics(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-4-SemanticVariability.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-5-SemanticVariability.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -239,7 +270,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-4-SemanticVariability.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-5-SemanticVariability.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
