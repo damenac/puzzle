@@ -1,0 +1,36 @@
+package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class MaintananceCosts implements ChartMetric {
+
+	@Override
+	public String getVariablesDeclaration(ArrayList<Language> languages,
+			ConceptComparison conceptComparisonOperator,
+			MethodComparison methodComparisonOperator) throws Exception {
+		String javaScriptData = "var barsDataMaintainanceCosts = {";
+		javaScriptData += "labels: [\"January\", \"February\", \"March\", \"April\", \"May\", \"June\", \"July\"],";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		return javaScriptData;
+	}
+	
+	@Override
+	public String getWindow() {
+		String javaScriptWindow = "    var ctxLineChartMaintaince = document.getElementById(\"chart-maintainance-costs\").getContext(\"2d\");";
+		javaScriptWindow += "    window.myLineChartMaintaince = new Chart(ctxLineChartMaintaince).Line(barsDataMaintainanceCosts,{";
+		javaScriptWindow += "       datasetFill : false";
+		javaScriptWindow += "    });";
+		return javaScriptWindow;
+	}
+}

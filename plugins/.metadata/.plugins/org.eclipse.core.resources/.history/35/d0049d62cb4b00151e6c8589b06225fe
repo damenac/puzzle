@@ -1,0 +1,5 @@
+package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
+
+public interface ChartMetric {
+
+}

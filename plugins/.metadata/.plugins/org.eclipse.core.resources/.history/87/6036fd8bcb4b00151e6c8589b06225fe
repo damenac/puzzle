@@ -1,0 +1,11 @@
+package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
+
+public interface ChartMetric {
+
+	/**
+	 * Returns the String with the javascript code that specifies the chart window
+	 * that will display the metric in the report.
+	 * @return
+	 */
+	public String getWindow();
+}

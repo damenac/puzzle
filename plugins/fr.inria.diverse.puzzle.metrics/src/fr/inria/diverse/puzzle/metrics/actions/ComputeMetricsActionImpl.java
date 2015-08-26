@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
@@ -25,8 +26,10 @@ import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
+import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ChartMetric;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.DependenciesGraph;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio;
+import fr.inria.diverse.puzzle.metrics.evaluators.syntax.MaintananceCosts;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.PairwiseRelationshipRatio;
 import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticAnalysis;
@@ -86,17 +89,22 @@ public class ComputeMetricsActionImpl {
 		
 		String metrics = "Metrics calculated"; 
 		
+		List<ChartMetric> chartMetrics = new ArrayList<ChartMetric>();
+		chartMetrics.add(new MaintananceCosts());
+		chartMetrics.add(new SizeOfCommonality());
+		chartMetrics.add(new ProductRelatedReusability());
+		chartMetrics.add(new IndividualizationRatio());
+		chartMetrics.add(new PairwiseRelationshipRatio());
+		
 		String generalMetricsString = "";
-		generalMetricsString += SizeOfCommonality.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
-		generalMetricsString += ProductRelatedReusability.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
-		generalMetricsString += IndividualizationRatio.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
-		generalMetricsString += PairwiseRelationshipRatio.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
+		for (ChartMetric chartMetric : chartMetrics) {
+			generalMetricsString += chartMetric.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
+		}
 
 		String generalMetricsWindowsString = "window.onload = function(){\n";
-		generalMetricsWindowsString += SizeOfCommonality.getWindow();
-		generalMetricsWindowsString += ProductRelatedReusability.getWindow();
-		generalMetricsWindowsString += IndividualizationRatio.getWindow();
-		generalMetricsWindowsString += PairwiseRelationshipRatio.getWindow(languages);
+		for (ChartMetric chartMetric : chartMetrics) {
+			generalMetricsWindowsString += chartMetric.getWindow(languages);
+		}
 		generalMetricsWindowsString += "};";
 		
 		//Copying the java script libraries if they dont exist
@@ -148,7 +156,6 @@ public class ComputeMetricsActionImpl {
         	content += currentLine + "\n";
         	currentLine = br.readLine();
         }
-        content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", PairwiseRelationshipRatio.getTables(languages));
         br.close();
         
         File fileReport = new File(project.getLocation().toString() + "/Report-1-FamilysShape.html" );
@@ -160,7 +167,7 @@ public class ComputeMetricsActionImpl {
 	}
 	
 	public void createReport3ReuseMetrics(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-3-ReuseMetrics.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-2-ReuseMetrics.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -169,10 +176,10 @@ public class ComputeMetricsActionImpl {
         	content += currentLine + "\n";
         	currentLine = br.readLine();
         }
-        content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", PairwiseRelationshipRatio.getTables(languages));
+        content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", (new PairwiseRelationshipRatio()).getTables(languages));
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-3-ReuseMetrics.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-2-ReuseMetrics.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -191,7 +198,7 @@ public class ComputeMetricsActionImpl {
 	}
 	
 	public void copyAnalysisSynactic(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-4-SyntacticVariability.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-3-SyntacticVariability.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -202,7 +209,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-4-SyntacticVariability.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-3-SyntacticVariability.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -221,7 +228,7 @@ public class ComputeMetricsActionImpl {
 	}
 	
 	public void copyAnalysisSemantics(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-5-SemanticVariability.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-4-SemanticVariability.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -232,7 +239,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-5-SemanticVariability.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-4-SemanticVariability.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );

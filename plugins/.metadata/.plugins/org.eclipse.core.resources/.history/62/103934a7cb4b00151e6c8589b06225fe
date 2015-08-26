@@ -1,0 +1,11 @@
+package fr.inria.diverse.puzzle.metrics.evaluators.syntax;
+
+public class MaintananceCosts implements ChartMetric {
+
+	@Override
+	public String getWindow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
