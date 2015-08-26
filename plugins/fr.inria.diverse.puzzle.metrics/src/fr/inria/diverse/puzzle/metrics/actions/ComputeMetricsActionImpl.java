@@ -127,7 +127,8 @@ public class ComputeMetricsActionImpl {
 		outSemanticVennData.print(SemanticOverlapping.evaluate(languages, conceptComparisonOperator, methodComparisonOperator));
 		outSemanticVennData.close();
 		
-		this.copyAnalysisReport(project, languages);
+		this.createReport1FamilysShape(project, languages);
+		this.createReport3ReuseMetrics(project, languages);
 		this.copyAnalysisSyntaxData(project, languages, conceptComparisonOperator, methodComparisonOperator);
 		this.copyAnalysisSynactic(project, languages);
 		this.copyAnalysisSemanticsData(project, languages, conceptComparisonOperator, methodComparisonOperator);
@@ -137,20 +138,41 @@ public class ComputeMetricsActionImpl {
 		return metrics;
 	}
 	
-	public void copyAnalysisReport(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/analysis.html");
+	public void createReport1FamilysShape(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-FamilysShape.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
         String currentLine = br.readLine();
         while(currentLine != null){
-        	content += currentLine;
+        	content += currentLine + "\n";
         	currentLine = br.readLine();
         }
         content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", PairwiseRelationshipRatio.getTables(languages));
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-Metrics.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-1-FamilysShape.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	public void createReport3ReuseMetrics(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-3-ReuseMetrics.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", PairwiseRelationshipRatio.getTables(languages));
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/Report-3-ReuseMetrics.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -169,7 +191,7 @@ public class ComputeMetricsActionImpl {
 	}
 	
 	public void copyAnalysisSynactic(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/syntacticAnalysis.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-4-SyntacticVariability.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -180,7 +202,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-SyntacticAnalysis.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-4-SyntacticVariability.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -199,7 +221,7 @@ public class ComputeMetricsActionImpl {
 	}
 	
 	public void copyAnalysisSemantics(IProject project, ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/semanticAnalysis.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-5-SemanticVariability.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -210,7 +232,7 @@ public class ComputeMetricsActionImpl {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-SemanticAnalysis.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-5-SemanticVariability.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );

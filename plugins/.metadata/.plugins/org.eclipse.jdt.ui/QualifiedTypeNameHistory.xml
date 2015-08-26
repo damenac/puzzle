@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.RelationshipRatio"/>
 <fullyQualifiedTypeName name="org.eclipse.core.runtime.Platform"/>
@@ -33,13 +32,11 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticAnalysis"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodsMembersGroupVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.MembersGroupVsConceptVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.EcoreNode"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.EcoreGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.FamiliesServices"/>
@@ -50,7 +47,6 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
 <fullyQualifiedTypeName name="org.eclipse.xtend.core.xtend.XtendFile"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EAttribute"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnumLiteral"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.tuples.EcoreNode"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 </qualifiedTypeNameHistroy>

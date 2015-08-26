@@ -4,11 +4,11 @@ jsnx.draw(G, {
           element: '#div-graph',
           withLabels: true,
           layoutAttr: {
-          charge: -1000,
-          linkDistance: 70
+          charge: -350,
+          linkDistance: 60
           },
           nodeAttr: {
-          r: 7,
+          r: 6,
           title: function(d) { return d.label;}
           },
           nodeStyle: {
