@@ -11,8 +11,8 @@ import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfConcepts;
-import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfMethods;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
 
 /**
  * Chart metric for the Product Related Reusability (PRR)
@@ -77,7 +77,7 @@ public class ProductRelatedReusability implements ChartMetric {
 		double SoSC = SizeOfCommonality.evaluateForSyntax(languages, comparisonOperator);
 		boolean first = true;
 		for (EPackage ePackage : ePackages) {
-			double currentValue = (SoSC / TotalAmountOfConcepts.countConstructs(ePackage))*100;
+			double currentValue = (SoSC / CountConstructs.countLanguageConstructs(ePackage))*100;
 			if(!first)
 				values +=  ",";
 			values += currentValue;
@@ -92,7 +92,7 @@ public class ProductRelatedReusability implements ChartMetric {
 		double SoSC = SizeOfCommonality.evaluateForSemantics(languages, comparisonOperator, methodComparisonOperator);
 		boolean first = true;
 		for (Language language : languages) {
-			double currentValue = (SoSC / TotalAmountOfMethods.countMethods(language))*100;
+			double currentValue = (SoSC / CountMethods.countLanguageMethods(language))*100;
 			if(!first)
 				values +=  ",";
 			values += currentValue;

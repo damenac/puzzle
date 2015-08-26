@@ -1,5 +1,5 @@
 var barsDataSyntaxMaintainanceCosts = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["14","28","42","56"],
     datasets: [
         {
             label: "My First dataset",
@@ -9,7 +9,7 @@ var barsDataSyntaxMaintainanceCosts = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
+            data: [19.25 ,38.5 ,57.75 ,77.0]
         },
         {
             label: "My Second dataset",
@@ -19,13 +19,13 @@ var barsDataSyntaxMaintainanceCosts = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
+            data: [14.0 ,28.0 ,42.0 ,56.0]
         }
     ]
 };
 
 var barsDataSemanticMaintainanceCosts = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ["18","36","54","72"],
     datasets: [
         {
             label: "My First dataset",
@@ -35,7 +35,7 @@ var barsDataSemanticMaintainanceCosts = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(220,220,220,1)",
-            data: [65, 59, 80, 81, 56, 55, 40]
+            data: [65, 59, 80, 81]
         },
         {
             label: "My Second dataset",
@@ -45,7 +45,7 @@ var barsDataSemanticMaintainanceCosts = {
             pointStrokeColor: "#fff",
             pointHighlightFill: "#fff",
             pointHighlightStroke: "rgba(151,187,205,1)",
-            data: [28, 48, 40, 19, 86, 27, 90]
+            data: [28, 48, 40, 19]
         }
     ]
 };

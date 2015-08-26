@@ -13,8 +13,8 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfConcepts;
-import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfMethods;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
 
 /**
  * Chart metric for the size of (syntactic and semantic) commonality
@@ -30,11 +30,11 @@ public class SizeOfCommonality implements ChartMetric {
 	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
 		String answer = "";
 		int syntacticCore = evaluateForSyntax(languages, conceptComparisonOperator);
-		int totalConstructs = TotalAmountOfConcepts.evaluateMetric(languages, conceptComparisonOperator);
+		int totalConstructs = CountConstructs.countFamilyConstructs(languages, conceptComparisonOperator);
 		int syntacticDifferences = totalConstructs - syntacticCore;
 		
 		int semanticCore = evaluateForSemantics(languages, conceptComparisonOperator, methodComparisonOperator);
-		int totalMethods = TotalAmountOfMethods.evaluateMetric(languages, conceptComparisonOperator, methodComparisonOperator);
+		int totalMethods = CountMethods.countFamilyMethods(languages, conceptComparisonOperator, methodComparisonOperator);
 		int semanticDifferences = totalMethods - semanticCore;
 		
 		answer += "var pieDataSyntacticCommonality = [{\n";

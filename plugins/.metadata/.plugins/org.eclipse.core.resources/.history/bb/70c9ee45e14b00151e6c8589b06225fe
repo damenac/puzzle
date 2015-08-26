@@ -1,0 +1,16 @@
+package fr.inria.diverse.puzzle.metrics.auxiliarMetrics;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.eclipse.emf.ecore.EClassifier;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class CountConstructsOccurrences {
+
+	public static int intCountConstructOccurrences(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
+	
+	}
+}

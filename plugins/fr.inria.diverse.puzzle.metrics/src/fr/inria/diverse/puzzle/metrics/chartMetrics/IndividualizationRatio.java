@@ -13,7 +13,7 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfConcepts;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
 
 /**
  * Chart metric for the Individualization Ratio (IR)
@@ -87,7 +87,7 @@ public class IndividualizationRatio implements ChartMetric {
 					count++;
 				}
 			}
-			double individualizationRatio = (count/TotalAmountOfConcepts.countConstructs(ePackage))*100;
+			double individualizationRatio = (count/CountConstructs.countLanguageConstructs(ePackage))*100;
 			
 			if(!first)
 				answer +=  ",";
@@ -112,7 +112,7 @@ public class IndividualizationRatio implements ChartMetric {
 					count++;
 				}
 			}
-			double individualizationRatio = (count/TotalAmountOfConcepts.countConstructs(ePackage))*100;
+			double individualizationRatio = (count/CountConstructs.countLanguageConstructs(ePackage))*100;
 			
 			if(!first)
 				answer +=  ",";
