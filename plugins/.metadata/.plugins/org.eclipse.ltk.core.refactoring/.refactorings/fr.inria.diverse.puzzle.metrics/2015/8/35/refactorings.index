@@ -10,3 +10,15 @@
 1440580295843	Rename resource 'Report-3-ReuseMetrics.html'
 1440580302737	Rename resource 'Report-4-SyntacticVariability.html'
 1440580309989	Rename resource 'Report-5-SemanticVariability.html'
+1440584365036	Move compilation units
+1440584374907	Rename type 'SyntactOverlapping'
+1440584381361	Rename type 'SemanticOverlapping'
+1440584386304	Rename type 'SemanticAnalysis'
+1440584401265	Move compilation units
+1440584424728	Delete element
+1440584454000	Move compilation unit
+1440584625273	Rename package 'fr.inria.diverse.puzzle.metrics.evaluators.syntax'
+1440584650331	Rename type 'DependenciesGraph'
+1440584661478	Rename type 'SemanticsAnalysis'
+1440584678716	Rename type 'SyntaxOverlapping'
+1440584692386	Rename type 'SemanticsOverlapping'

@@ -39,34 +39,45 @@
 			<td>
 			<hr />
                 <p>
-                <strong>
-                    <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:12px;">
-                        Maintanance Costs (MC):
-                    </span>
-                </strong></br>
-                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;"> (This metric shows the percentage of reuse of each DSL with respect the core. Concretely, it shows for each product the amount of constructs/methods that are included in the core.)
-                </span>
-                
+	                <strong>
+	                    <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:12px;">
+	                        Maintanance Costs (MC):
+	                    </span>
+	                </strong></br>
+	                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;"> (This metric shows the percentage of reuse of each DSL with respect the core. Concretely, it shows for each product the amount of constructs/methods that are included in the core.)
+	                </span>
                 </p>
-                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:600px;">
                     <tbody>
                         <tr>
                             <td style="text-align: center;">
-                                <div id="canvas-maintainance-costs" width="150" height="150">
-                                    <canvas id="chart-maintainance-costs" width="450" height="200"/>
+                                <div id="canvas-holder">
+                                     <canvas id="chart-maintainance-costs-syntax" width="250" height="200"/>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">
+                                <div id="canvas-holder-semantic-commonalities">
+                                     <canvas id="chart-maintainance-costs-semantics" width="250" height="200"/>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align: center;">
                                 <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
-                                    <strong>Figure 5.</strong></br>
-                                    Product-related reusability
+                                    <strong>Figure 3.</strong></br>
+                                    Maintenance costs for the syntax
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 4.</strong></br>
+                                    Maintenance costs for the semantics
                                 </span>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                
                 <hr/>
                 <p>
                     <span style="font-size:12px;"><strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"> Size of commonality (SoC):</span></strong></span></br>

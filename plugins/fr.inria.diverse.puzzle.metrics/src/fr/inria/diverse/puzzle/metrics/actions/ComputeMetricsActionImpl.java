@@ -26,16 +26,16 @@ import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ChartMetric;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.DependenciesGraph;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.IndividualizationRatio;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.MaintananceCosts;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.ProductRelatedReusability;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.PairwiseRelationshipRatio;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticAnalysis;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticOverlapping;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality;
-import fr.inria.diverse.puzzle.metrics.evaluators.syntax.SyntactOverlapping;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.ChartMetric;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.IndividualizationRatio;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.ProductRelatedReusability;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticVariabilityGraph;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVariabilityTree;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVennDiagram;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticVennDiagram;
 
 public class ComputeMetricsActionImpl {
 
@@ -125,14 +125,14 @@ public class ComputeMetricsActionImpl {
 		if(!syntacticVennData.exists())
 			syntacticVennData.createNewFile();
 		PrintWriter out = new PrintWriter( syntacticVennData );
-        out.print(SyntactOverlapping.evaluate(languages, conceptComparisonOperator));
+        out.print(SyntacticVennDiagram.evaluate(languages, conceptComparisonOperator));
         out.close();
         
         File semanticVennData = new File(project.getLocation().toString() + "/libVenn/semanticVennData.jsonp" );
 		if(!semanticVennData.exists())
 			semanticVennData.createNewFile();
 		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
-		outSemanticVennData.print(SemanticOverlapping.evaluate(languages, conceptComparisonOperator, methodComparisonOperator));
+		outSemanticVennData.print(SemanticalVennDiagram.evaluate(languages, conceptComparisonOperator, methodComparisonOperator));
 		outSemanticVennData.close();
 		
 		this.createReport1FamilysShape(project, languages);
@@ -193,7 +193,7 @@ public class ComputeMetricsActionImpl {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		outMetrics.print(DependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
+		outMetrics.print(SyntacticVariabilityGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
 		outMetrics.close();
 	}
 	
@@ -223,7 +223,7 @@ public class ComputeMetricsActionImpl {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		outMetrics.print(SemanticAnalysis.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
+		outMetrics.print(SemanticalVariabilityTree.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
 		outMetrics.close();
 	}
 	
