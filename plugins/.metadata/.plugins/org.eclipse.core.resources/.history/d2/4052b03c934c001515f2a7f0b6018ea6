@@ -49,8 +49,7 @@
                      style="push">
                </command>
                <separator
-                     name="fr.inria.diverse.puzzle.ui.separator1"
-                     visible="true">
+                     name="fr.inria.diverse.puzzle.ui.separator1">
                </separator>
                <command
                      commandId="fr.inria.diverse.puzzle.BreakDownSyntax"
