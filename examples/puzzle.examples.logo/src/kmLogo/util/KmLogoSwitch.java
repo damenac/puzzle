@@ -66,6 +66,12 @@ public class KmLogoSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case KmLogoPackage.LOGO_PROGRAM: {
+				LogoProgram logoProgram = (LogoProgram)theEObject;
+				T result = caseLogoProgram(logoProgram);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case KmLogoPackage.INSTRUCTION: {
 				Instruction instruction = (Instruction)theEObject;
 				T result = caseInstruction(instruction);
@@ -259,12 +265,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				T result = caseParameterCall(parameterCall);
 				if (result == null) result = caseExpression(parameterCall);
 				if (result == null) result = caseInstruction(parameterCall);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.LOGO_PROGRAM: {
-				LogoProgram logoProgram = (LogoProgram)theEObject;
-				T result = caseLogoProgram(logoProgram);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

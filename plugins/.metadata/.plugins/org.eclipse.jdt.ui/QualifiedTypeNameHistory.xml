@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace"/>
-<fullyQualifiedTypeName name="com.google.inject.Injector"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.melange.MelangeStandaloneSetup"/>
-<fullyQualifiedTypeName name="org.eclipse.xtext.resource.XtextResourceSet"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.resource.XtextResource"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.common.util.URI"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
@@ -21,7 +17,6 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
@@ -37,9 +32,7 @@
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmFormalParameter"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmTypeReference"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
-<fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
 <fullyQualifiedTypeName name="org.eclipse.xtend.core.xtend.XtendFile"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
@@ -55,9 +48,16 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfConcepts"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfMethods"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectConstructs"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructsOccurrences"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectMethods"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethodsOccurrences"/>
 </qualifiedTypeNameHistroy>

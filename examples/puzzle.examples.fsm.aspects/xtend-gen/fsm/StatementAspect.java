@@ -12,18 +12,18 @@ public abstract class StatementAspect {
   @Abstract
   public static void eval(final Statement _self, final Hashtable<String, Object> context) {
     fsm.StatementAspectStatementAspectProperties _self_ = fsm.StatementAspectStatementAspectContext.getSelf(_self);
-     if (_self instanceof fsm.Print){
-     fsm.PrintAspect.eval((fsm.Print)_self,context);
-    } else  if (_self instanceof fsm.Program){
-     fsm.ProgramAspect.eval((fsm.Program)_self,context);
-    } else  if (_self instanceof fsm.Loop){
+     if (_self instanceof fsm.Loop){
      fsm.LoopAspect.eval((fsm.Loop)_self,context);
     } else  if (_self instanceof fsm.Println){
      fsm.PrintlnAspect.eval((fsm.Println)_self,context);
-    } else  if (_self instanceof fsm.VarDecl){
-     fsm.VarDeclAspect.eval((fsm.VarDecl)_self,context);
+    } else  if (_self instanceof fsm.Program){
+     fsm.ProgramAspect.eval((fsm.Program)_self,context);
     } else  if (_self instanceof fsm.Assignation){
      fsm.AssignationAspect.eval((fsm.Assignation)_self,context);
+    } else  if (_self instanceof fsm.VarDecl){
+     fsm.VarDeclAspect.eval((fsm.VarDecl)_self,context);
+    } else  if (_self instanceof fsm.Print){
+     fsm.PrintAspect.eval((fsm.Print)_self,context);
     } else  if (_self instanceof fsm.Conditional){
      fsm.ConditionalAspect.eval((fsm.Conditional)_self,context);
     } else  if (_self instanceof fsm.Wait){

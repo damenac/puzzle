@@ -14,22 +14,22 @@ public class ExpressionAspect extends InstructionAspect {
   public static Object eval(final Expression _self, final Context context) {
     logo.ExpressionAspectExpressionAspectProperties _self_ = logo.ExpressionAspectExpressionAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.ProcCall){
-    result = logo.ProcCallAspect.eval((kmLogo.ProcCall)_self,context);
-    } else  if (_self instanceof kmLogo.StringLit){
-    result = logo.StringLitAspect.eval((kmLogo.StringLit)_self,context);
-    } else  if (_self instanceof kmLogo.ParameterCall){
-    result = logo.ParameterCallAspect.eval((kmLogo.ParameterCall)_self,context);
-    } else  if (_self instanceof kmLogo.BoolLit){
-    result = logo.BoolLitAspect.eval((kmLogo.BoolLit)_self,context);
-    } else  if (_self instanceof kmLogo.IntegerLit){
+     if (_self instanceof kmLogo.IntegerLit){
     result = logo.IntegerLitAspect.eval((kmLogo.IntegerLit)_self,context);
     } else  if (_self instanceof kmLogo.ArithmeticExpression){
     result = logo.ArithmeticExpressionAspect.eval((kmLogo.ArithmeticExpression)_self,context);
-    } else  if (_self instanceof kmLogo.Literal){
-    result = logo.LiteralAspect.eval((kmLogo.Literal)_self,context);
+    } else  if (_self instanceof kmLogo.BoolLit){
+    result = logo.BoolLitAspect.eval((kmLogo.BoolLit)_self,context);
+    } else  if (_self instanceof kmLogo.StringLit){
+    result = logo.StringLitAspect.eval((kmLogo.StringLit)_self,context);
     } else  if (_self instanceof kmLogo.RelationalExpression){
     result = logo.RelationalExpressionAspect.eval((kmLogo.RelationalExpression)_self,context);
+    } else  if (_self instanceof kmLogo.ParameterCall){
+    result = logo.ParameterCallAspect.eval((kmLogo.ParameterCall)_self,context);
+    } else  if (_self instanceof kmLogo.Literal){
+    result = logo.LiteralAspect.eval((kmLogo.Literal)_self,context);
+    } else  if (_self instanceof kmLogo.ProcCall){
+    result = logo.ProcCallAspect.eval((kmLogo.ProcCall)_self,context);
     } else  if (_self instanceof kmLogo.Expression){
     result = logo.ExpressionAspect._privk3_eval(_self_, (kmLogo.Expression)_self,context);
     } else  if (_self instanceof kmLogo.Instruction){

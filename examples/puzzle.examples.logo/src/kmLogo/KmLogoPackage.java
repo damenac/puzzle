@@ -65,7 +65,284 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getInstruction()
 	 * @generated
 	 */
-	int INSTRUCTION = 0;
+	int INSTRUCTION = 1;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.PrimitiveImpl <em>Primitive</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.PrimitiveImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getPrimitive()
+	 * @generated
+	 */
+	int PRIMITIVE = 2;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.BackImpl <em>Back</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.BackImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getBack()
+	 * @generated
+	 */
+	int BACK = 3;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ForwardImpl <em>Forward</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ForwardImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getForward()
+	 * @generated
+	 */
+	int FORWARD = 4;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.LeftImpl <em>Left</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.LeftImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getLeft()
+	 * @generated
+	 */
+	int LEFT = 5;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.RightImpl <em>Right</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.RightImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getRight()
+	 * @generated
+	 */
+	int RIGHT = 6;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.PenDownImpl <em>Pen Down</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.PenDownImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getPenDown()
+	 * @generated
+	 */
+	int PEN_DOWN = 7;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.PenUpImpl <em>Pen Up</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.PenUpImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getPenUp()
+	 * @generated
+	 */
+	int PEN_UP = 8;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ClearImpl <em>Clear</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ClearImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getClear()
+	 * @generated
+	 */
+	int CLEAR = 9;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ExpressionImpl <em>Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ExpressionImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getExpression()
+	 * @generated
+	 */
+	int EXPRESSION = 10;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.LiteralImpl <em>Literal</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.LiteralImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getLiteral()
+	 * @generated
+	 */
+	int LITERAL = 11;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.IntegerLitImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getIntegerLit()
+	 * @generated
+	 */
+	int INTEGER_LIT = 12;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.StringLitImpl <em>String Lit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.StringLitImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getStringLit()
+	 * @generated
+	 */
+	int STRING_LIT = 13;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.BoolLitImpl <em>Bool Lit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.BoolLitImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getBoolLit()
+	 * @generated
+	 */
+	int BOOL_LIT = 14;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ArithmeticExpressionImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getArithmeticExpression()
+	 * @generated
+	 */
+	int ARITHMETIC_EXPRESSION = 15;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.RelationalExpressionImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getRelationalExpression()
+	 * @generated
+	 */
+	int RELATIONAL_EXPRESSION = 16;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ProcCallImpl <em>Proc Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ProcCallImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getProcCall()
+	 * @generated
+	 */
+	int PROC_CALL = 17;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ProcDeclarationImpl <em>Proc Declaration</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ProcDeclarationImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getProcDeclaration()
+	 * @generated
+	 */
+	int PROC_DECLARATION = 18;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.BlockImpl <em>Block</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.BlockImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getBlock()
+	 * @generated
+	 */
+	int BLOCK = 19;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ControlStructureImpl <em>Control Structure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ControlStructureImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getControlStructure()
+	 * @generated
+	 */
+	int CONTROL_STRUCTURE = 21;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.IfImpl <em>If</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.IfImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getIf()
+	 * @generated
+	 */
+	int IF = 20;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.RepeatImpl <em>Repeat</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.RepeatImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getRepeat()
+	 * @generated
+	 */
+	int REPEAT = 22;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.WhileImpl <em>While</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.WhileImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getWhile()
+	 * @generated
+	 */
+	int WHILE = 23;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ParameterImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 24;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.ParameterCallImpl <em>Parameter Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.ParameterCallImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getParameterCall()
+	 * @generated
+	 */
+	int PARAMETER_CALL = 25;
+
+	/**
+	 * The meta object id for the '{@link kmLogo.impl.LogoProgramImpl <em>Logo Program</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.LogoProgramImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getLogoProgram()
+	 * @generated
+	 */
+	int LOGO_PROGRAM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGO_PROGRAM__INSTRUCTIONS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Logo Program</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGO_PROGRAM_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Logo Program</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGO_PROGRAM_OPERATION_COUNT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Instruction</em>' class.
@@ -86,16 +363,6 @@ public interface KmLogoPackage extends EPackage {
 	int INSTRUCTION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.PrimitiveImpl <em>Primitive</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.PrimitiveImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getPrimitive()
-	 * @generated
-	 */
-	int PRIMITIVE = 1;
-
-	/**
 	 * The number of structural features of the '<em>Primitive</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -112,16 +379,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int PRIMITIVE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.BackImpl <em>Back</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.BackImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getBack()
-	 * @generated
-	 */
-	int BACK = 2;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference.
@@ -151,16 +408,6 @@ public interface KmLogoPackage extends EPackage {
 	int BACK_OPERATION_COUNT = PRIMITIVE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.ForwardImpl <em>Forward</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ForwardImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getForward()
-	 * @generated
-	 */
-	int FORWARD = 3;
-
-	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -186,16 +433,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORWARD_OPERATION_COUNT = PRIMITIVE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.LeftImpl <em>Left</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.LeftImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getLeft()
-	 * @generated
-	 */
-	int LEFT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Angle</b></em>' containment reference.
@@ -225,16 +462,6 @@ public interface KmLogoPackage extends EPackage {
 	int LEFT_OPERATION_COUNT = PRIMITIVE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.RightImpl <em>Right</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.RightImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getRight()
-	 * @generated
-	 */
-	int RIGHT = 5;
-
-	/**
 	 * The feature id for the '<em><b>Angle</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -262,16 +489,6 @@ public interface KmLogoPackage extends EPackage {
 	int RIGHT_OPERATION_COUNT = PRIMITIVE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.PenDownImpl <em>Pen Down</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.PenDownImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getPenDown()
-	 * @generated
-	 */
-	int PEN_DOWN = 6;
-
-	/**
 	 * The number of structural features of the '<em>Pen Down</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -288,16 +505,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int PEN_DOWN_OPERATION_COUNT = PRIMITIVE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.PenUpImpl <em>Pen Up</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.PenUpImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getPenUp()
-	 * @generated
-	 */
-	int PEN_UP = 7;
 
 	/**
 	 * The number of structural features of the '<em>Pen Up</em>' class.
@@ -318,16 +525,6 @@ public interface KmLogoPackage extends EPackage {
 	int PEN_UP_OPERATION_COUNT = PRIMITIVE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.ClearImpl <em>Clear</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ClearImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getClear()
-	 * @generated
-	 */
-	int CLEAR = 8;
-
-	/**
 	 * The number of structural features of the '<em>Clear</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -344,16 +541,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int CLEAR_OPERATION_COUNT = PRIMITIVE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.ExpressionImpl <em>Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ExpressionImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getExpression()
-	 * @generated
-	 */
-	int EXPRESSION = 9;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -374,16 +561,6 @@ public interface KmLogoPackage extends EPackage {
 	int EXPRESSION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.LiteralImpl <em>Literal</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.LiteralImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getLiteral()
-	 * @generated
-	 */
-	int LITERAL = 10;
-
-	/**
 	 * The number of structural features of the '<em>Literal</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -400,16 +577,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int LITERAL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.IntegerLitImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getIntegerLit()
-	 * @generated
-	 */
-	int INTEGER_LIT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -439,16 +606,6 @@ public interface KmLogoPackage extends EPackage {
 	int INTEGER_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.StringLitImpl <em>String Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.StringLitImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getStringLit()
-	 * @generated
-	 */
-	int STRING_LIT = 12;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -476,16 +633,6 @@ public interface KmLogoPackage extends EPackage {
 	int STRING_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.BoolLitImpl <em>Bool Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.BoolLitImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getBoolLit()
-	 * @generated
-	 */
-	int BOOL_LIT = 13;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -511,16 +658,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOL_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ArithmeticExpressionImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getArithmeticExpression()
-	 * @generated
-	 */
-	int ARITHMETIC_EXPRESSION = 14;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -568,16 +705,6 @@ public interface KmLogoPackage extends EPackage {
 	int ARITHMETIC_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.RelationalExpressionImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getRelationalExpression()
-	 * @generated
-	 */
-	int RELATIONAL_EXPRESSION = 15;
-
-	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -623,16 +750,6 @@ public interface KmLogoPackage extends EPackage {
 	int RELATIONAL_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.ProcCallImpl <em>Proc Call</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ProcCallImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getProcCall()
-	 * @generated
-	 */
-	int PROC_CALL = 16;
-
-	/**
 	 * The feature id for the '<em><b>Actual Args</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -667,16 +784,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROC_CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.ProcDeclarationImpl <em>Proc Declaration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ProcDeclarationImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getProcDeclaration()
-	 * @generated
-	 */
-	int PROC_DECLARATION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -733,16 +840,6 @@ public interface KmLogoPackage extends EPackage {
 	int PROC_DECLARATION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.BlockImpl <em>Block</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.BlockImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getBlock()
-	 * @generated
-	 */
-	int BLOCK = 18;
-
-	/**
 	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -770,16 +867,6 @@ public interface KmLogoPackage extends EPackage {
 	int BLOCK_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.ControlStructureImpl <em>Control Structure</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ControlStructureImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getControlStructure()
-	 * @generated
-	 */
-	int CONTROL_STRUCTURE = 20;
-
-	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -805,16 +892,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int CONTROL_STRUCTURE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.IfImpl <em>If</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.IfImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getIf()
-	 * @generated
-	 */
-	int IF = 19;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -862,16 +939,6 @@ public interface KmLogoPackage extends EPackage {
 	int IF_OPERATION_COUNT = CONTROL_STRUCTURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.RepeatImpl <em>Repeat</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.RepeatImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getRepeat()
-	 * @generated
-	 */
-	int REPEAT = 21;
-
-	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -906,16 +973,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int REPEAT_OPERATION_COUNT = CONTROL_STRUCTURE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.WhileImpl <em>While</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.WhileImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getWhile()
-	 * @generated
-	 */
-	int WHILE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -954,16 +1011,6 @@ public interface KmLogoPackage extends EPackage {
 	int WHILE_OPERATION_COUNT = CONTROL_STRUCTURE_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.ParameterImpl <em>Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ParameterImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getParameter()
-	 * @generated
-	 */
-	int PARAMETER = 23;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -991,16 +1038,6 @@ public interface KmLogoPackage extends EPackage {
 	int PARAMETER_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.ParameterCallImpl <em>Parameter Call</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.ParameterCallImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getParameterCall()
-	 * @generated
-	 */
-	int PARAMETER_CALL = 24;
-
-	/**
 	 * The feature id for the '<em><b>Parameter</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1026,43 +1063,6 @@ public interface KmLogoPackage extends EPackage {
 	 * @ordered
 	 */
 	int PARAMETER_CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link kmLogo.impl.LogoProgramImpl <em>Logo Program</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.LogoProgramImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getLogoProgram()
-	 * @generated
-	 */
-	int LOGO_PROGRAM = 25;
-
-	/**
-	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGO_PROGRAM__INSTRUCTIONS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Logo Program</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGO_PROGRAM_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Logo Program</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOGO_PROGRAM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

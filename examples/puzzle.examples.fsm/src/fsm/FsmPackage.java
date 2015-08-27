@@ -65,7 +65,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 0;
+	int NAMED_ELEMENT = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,7 +102,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getStateMachine()
 	 * @generated
 	 */
-	int STATE_MACHINE = 1;
+	int STATE_MACHINE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -157,7 +157,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getAbstractState()
 	 * @generated
 	 */
-	int ABSTRACT_STATE = 2;
+	int ABSTRACT_STATE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -212,7 +212,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 3;
+	int STATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -294,7 +294,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 4;
+	int TRANSITION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -376,7 +376,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getTrigger()
 	 * @generated
 	 */
-	int TRIGGER = 5;
+	int TRIGGER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -413,7 +413,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getPseudostate()
 	 * @generated
 	 */
-	int PSEUDOSTATE = 6;
+	int PSEUDOSTATE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -477,7 +477,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getFinalState()
 	 * @generated
 	 */
-	int FINAL_STATE = 7;
+	int FINAL_STATE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -559,7 +559,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 8;
+	int CONSTRAINT = 7;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -587,7 +587,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getRelationalConstraint()
 	 * @generated
 	 */
-	int RELATIONAL_CONSTRAINT = 9;
+	int RELATIONAL_CONSTRAINT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -624,7 +624,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 10;
+	int STATEMENT = 9;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -652,7 +652,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getProgram()
 	 * @generated
 	 */
-	int PROGRAM = 11;
+	int PROGRAM = 10;
 
 	/**
 	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -689,7 +689,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getConditional()
 	 * @generated
 	 */
-	int CONDITIONAL = 12;
+	int CONDITIONAL = 11;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -735,7 +735,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getLoop()
 	 * @generated
 	 */
-	int LOOP = 13;
+	int LOOP = 12;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -781,7 +781,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getVarDecl()
 	 * @generated
 	 */
-	int VAR_DECL = 14;
+	int VAR_DECL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -827,7 +827,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 15;
+	int EXPRESSION = 14;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -855,7 +855,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getLiteral()
 	 * @generated
 	 */
-	int LITERAL = 16;
+	int LITERAL = 15;
 
 	/**
 	 * The number of structural features of the '<em>Literal</em>' class.
@@ -883,7 +883,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getIntegerLit()
 	 * @generated
 	 */
-	int INTEGER_LIT = 17;
+	int INTEGER_LIT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -920,7 +920,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getStringLit()
 	 * @generated
 	 */
-	int STRING_LIT = 18;
+	int STRING_LIT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -957,7 +957,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getBoolLit()
 	 * @generated
 	 */
-	int BOOL_LIT = 19;
+	int BOOL_LIT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -994,7 +994,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getArithmeticExpression()
 	 * @generated
 	 */
-	int ARITHMETIC_EXPRESSION = 20;
+	int ARITHMETIC_EXPRESSION = 19;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -1049,7 +1049,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getRelationalExpression()
 	 * @generated
 	 */
-	int RELATIONAL_EXPRESSION = 21;
+	int RELATIONAL_EXPRESSION = 20;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -1104,7 +1104,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getVarReference()
 	 * @generated
 	 */
-	int VAR_REFERENCE = 22;
+	int VAR_REFERENCE = 21;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -1141,7 +1141,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getConsoleOutput()
 	 * @generated
 	 */
-	int CONSOLE_OUTPUT = 23;
+	int CONSOLE_OUTPUT = 22;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
@@ -1178,7 +1178,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getPrintln()
 	 * @generated
 	 */
-	int PRINTLN = 24;
+	int PRINTLN = 23;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
@@ -1215,7 +1215,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getPrint()
 	 * @generated
 	 */
-	int PRINT = 25;
+	int PRINT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
@@ -1252,7 +1252,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getAssignation()
 	 * @generated
 	 */
-	int ASSIGNATION = 26;
+	int ASSIGNATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Var Ref</b></em>' reference.
@@ -1298,7 +1298,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getWait()
 	 * @generated
 	 */
-	int WAIT = 27;
+	int WAIT = 26;
 
 	/**
 	 * The feature id for the '<em><b>Miliseconds</b></em>' attribute.

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="kmLogo" nsURI="http://www.kermeta.org/kmLogo" nsPrefix="kmlogo">
+  <eClassifiers xsi:type="ecore:EClass" name="LogoProgram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Primitive" abstract="true" eSuperTypes="//Instruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Back" eSuperTypes="//Primitive">
@@ -93,8 +96,5 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParameterCall" eSuperTypes="//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1" eType="//Parameter"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LogoProgram">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

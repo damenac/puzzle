@@ -68,6 +68,10 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 	protected KmLogoSwitch<Adapter> modelSwitch =
 		new KmLogoSwitch<Adapter>() {
 			@Override
+			public Adapter caseLogoProgram(LogoProgram object) {
+				return createLogoProgramAdapter();
+			}
+			@Override
 			public Adapter caseInstruction(Instruction object) {
 				return createInstructionAdapter();
 			}
@@ -166,10 +170,6 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseParameterCall(ParameterCall object) {
 				return createParameterCallAdapter();
-			}
-			@Override
-			public Adapter caseLogoProgram(LogoProgram object) {
-				return createLogoProgramAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

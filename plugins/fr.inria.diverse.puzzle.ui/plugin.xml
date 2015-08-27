@@ -43,25 +43,17 @@
             <menu
                   icon="icons/triskell.png"
                   label="Puzzle">
-               <visibleWhen
-                     checkEnabled="false">
-                  <with
-                        variable="activeMenuSelection">
-                     <iterate
-                           ifEmpty="false">
-                        <adapt
-                              type="org.eclipse.core.resources.IResource">
-                           <test
-                                 property="org.eclipse.core.resources.extension"
-                                 value="melange">
-                           </test>
-                        </adapt>
-                     </iterate>
-                  </with>
-               </visibleWhen>
                <command
                      commandId="fr.inria.diverse.melange.ComputeMetrics"
                      label="Compute Metrics"
+                     style="push">
+               </command>
+               <separator
+                     name="fr.inria.diverse.puzzle.ui.separator1">
+               </separator>
+               <command
+                     commandId="fr.inria.diverse.puzzle.BreakDownSyntax"
+                     label="Break Down Family"
                      style="push">
                </command>
                
@@ -74,12 +66,20 @@
             id="fr.inria.diverse.melange.ComputeMetrics"
             name="Compute Metrics">
       </command>
+      <command
+            id="fr.inria.diverse.puzzle.BreakDownSyntax"
+            name="Break Down Family">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ComputeMetrics"
             commandId="fr.inria.diverse.melange.ComputeMetrics">
+      </handler>
+      <handler
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.BreakDownSyntax"
+            commandId="fr.inria.diverse.puzzle.BreakDownSyntax">
       </handler>
    </extension>
 

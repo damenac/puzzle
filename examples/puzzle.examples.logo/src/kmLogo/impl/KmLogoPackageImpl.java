@@ -837,6 +837,9 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		isCreated = true;
 
 		// Create classes and their features
+		logoProgramEClass = createEClass(LOGO_PROGRAM);
+		createEReference(logoProgramEClass, LOGO_PROGRAM__INSTRUCTIONS);
+
 		instructionEClass = createEClass(INSTRUCTION);
 
 		primitiveEClass = createEClass(PRIMITIVE);
@@ -914,9 +917,6 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		parameterCallEClass = createEClass(PARAMETER_CALL);
 		createEReference(parameterCallEClass, PARAMETER_CALL__PARAMETER);
 
-		logoProgramEClass = createEClass(LOGO_PROGRAM);
-		createEReference(logoProgramEClass, LOGO_PROGRAM__INSTRUCTIONS);
-
 		// Create enums
 		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
 		relationalOperatorEEnum = createEEnum(RELATIONAL_OPERATOR);
@@ -976,6 +976,9 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		parameterCallEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogoProgram_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, LogoProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(primitiveEClass, Primitive.class, "Primitive", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1052,9 +1055,6 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 
 		initEClass(parameterCallEClass, ParameterCall.class, "ParameterCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterCall_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLogoProgram_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, LogoProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");

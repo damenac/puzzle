@@ -23,9 +23,9 @@ fr.inria.diverse.melange.metamodel,0.1.0.201508100737,file:/Users/dmendeza/IDEs/
 fr.inria.diverse.melange.resource,0.1.0.201508100737,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.resource_0.1.0.201508100737.jar,4,false
 fr.inria.diverse.melange.ui,0.1.0.201508100737,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.ui_0.1.0.201508100737.jar,4,false
 fr.inria.diverse.melange.ui.templates,0.1.0.201508100737,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.ui.templates_0.1.0.201508100737.jar,4,false
-fr.inria.diverse.puzzle.breaker.total,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.breaker.total/,4,false
 fr.inria.diverse.puzzle.common,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/,4,false
 fr.inria.diverse.puzzle.metrics,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/,4,false
+fr.inria.diverse.puzzle.syntaxBreaker,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.syntaxBreaker/,4,false
 fr.inria.diverse.puzzle.ui,0.1.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.ui/,4,false
 javaewah,0.7.9.v201401101600,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/javaewah_0.7.9.v201401101600.jar,4,false
 javax.annotation,1.2.0.v201401042248,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/javax.annotation_1.2.0.v201401042248.jar,4,false

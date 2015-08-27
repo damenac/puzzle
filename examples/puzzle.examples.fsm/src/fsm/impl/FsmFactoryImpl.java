@@ -57,7 +57,6 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case FsmPackage.NAMED_ELEMENT: return createNamedElement();
 			case FsmPackage.STATE_MACHINE: return createStateMachine();
 			case FsmPackage.STATE: return createState();
 			case FsmPackage.TRANSITION: return createTransition();
@@ -80,6 +79,7 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 			case FsmPackage.PRINT: return createPrint();
 			case FsmPackage.ASSIGNATION: return createAssignation();
 			case FsmPackage.WAIT: return createWait();
+			case FsmPackage.NAMED_ELEMENT: return createNamedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

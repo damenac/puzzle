@@ -57,6 +57,7 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case KmLogoPackage.LOGO_PROGRAM: return createLogoProgram();
 			case KmLogoPackage.BACK: return createBack();
 			case KmLogoPackage.FORWARD: return createForward();
 			case KmLogoPackage.LEFT: return createLeft();
@@ -79,7 +80,6 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 			case KmLogoPackage.WHILE: return createWhile();
 			case KmLogoPackage.PARAMETER: return createParameter();
 			case KmLogoPackage.PARAMETER_CALL: return createParameterCall();
-			case KmLogoPackage.LOGO_PROGRAM: return createLogoProgram();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
