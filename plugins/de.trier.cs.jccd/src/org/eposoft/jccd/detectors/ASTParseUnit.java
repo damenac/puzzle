@@ -84,7 +84,6 @@ public final class ASTParseUnit {
 							"read files for directory ´");
 					msg.append(file.getCanonicalPath());
 					msg.append("´:");
-					log.debug(msg);
 					msg = null;
 				} catch (IOException e) {
 					e.printStackTrace();
@@ -118,18 +117,14 @@ public final class ASTParseUnit {
 
 		try {
 			final AParser parser = parserSelector.getParserForFile(file);
-			log.info("Using parser: " + parser.getClass().getSimpleName());
 			final boolean wasParsed = parser.parse(file, version);
 
 			if (!wasParsed) {
-				log.warn("Couldn't parse code from file: "
-						+ file.getCanonicalPath());
 			} else {
 				if (log.isDebugEnabled()) {
 					StringBuffer msg = new StringBuffer("AST built for File: ´");
 					msg.append(file.getCanonicalPath());
 					msg.append("´");
-					log.debug(msg);
 					msg = null;
 				}
 			}

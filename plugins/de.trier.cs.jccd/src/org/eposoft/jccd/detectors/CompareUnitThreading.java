@@ -176,11 +176,8 @@ public final class CompareUnitThreading {
 		final ExecutorService executor;
 		if (0 > threadAmount) {
 			executor = Executors.newCachedThreadPool();
-			System.out.println("\t* new cached thread pool");
 		} else {
 			executor = Executors.newFixedThreadPool(threadAmount);
-			System.out.println("\t* new fixed thread pool (" + threadAmount
-					+ ")");
 		}
 
 		final SimilarityGroupManager simPairSet = new SimilarityGroupManager();
@@ -223,7 +220,6 @@ public final class CompareUnitThreading {
 			});
 		}
 
-		System.out.println("process all pool-threads ...");
 		executor.shutdown();
 		while (!executor.isTerminated() || !executor.isShutdown()) {
 			try {
@@ -232,7 +228,6 @@ public final class CompareUnitThreading {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("finished.");
 
 		return simPairSet;
 	}

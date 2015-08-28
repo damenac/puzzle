@@ -1,11 +1,12 @@
 package fr.inria.diverse.puzzle.metrics.specialCharts;
 
 import java.util.ArrayList;
-
-import org.eclipse.xtext.common.types.JvmFormalParameter;
+import java.util.List;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.tuples.SemanticNode;
+import fr.inria.diverse.k3.sle.common.tuples.SemanticTree;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodsMembers;
@@ -20,63 +21,115 @@ public class SemanticalVariabilityTree {
 		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
 		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
 		
-//		for (ConceptMethodMembersGroupVO conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
-//			System.out.println("conceptMethodMembersGroupVO*:" + conceptMethodMembersGroupVO);
-//		}
-//		
 		ArrayList<TupleConceptMethodsMembers> conceptsGroupMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodsMembersGroupTupleList(conceptMethodMemberGroupList, conceptComparisonOperator, methodComparisonOperator);
+		SemanticTree semanticTree = buildSemanticTree(conceptsGroupMethodMemberGroupList);
+		SemanticTree newSemanticTree = refactorTreeToHighlightSemanticVariability(semanticTree);
 		
 		answer += "var treeData = [\n";
-		answer += "    {";
-		answer += "    \"name\": \"Family\",\n";
-		answer += "    \"parent\": \"null\",\n";
-		answer += "    \"children\": [\n";
-		
-		boolean firstLevel0 = true;
-		for (TupleConceptMethodsMembers conceptMethodMembersGroupVO : conceptsGroupMethodMemberGroupList) {
-			if(!firstLevel0) answer += ",\n";
-			//FIXME
-			String conceptName = conceptMethodMembersGroupVO.getConcept().getSimpleName().replace("Aspect", "");
-			answer += "          {\n";
-			answer += "          \"name\": \"" + conceptName + "\",\n";
-			answer += "          \"parent\": \"Family\"";
-			if(conceptMethodMembersGroupVO.getMethodsMembers().size() > 0){
-				answer += ",\n";
-				answer += "          \"children\": [\n";
-				boolean firstLevel1 = true;
-				for (TupleMethodMembers methodMembers : conceptMethodMembersGroupVO.getMethodsMembers()) {
-					if(!firstLevel1) answer += ",\n";
-					String operationSignature = methodMembers.getMethod().getReturnType().getSimpleName() + " " 
-													+ methodMembers.getMethod().getSimpleName() + "(";
-					for (JvmFormalParameter param : methodMembers.getMethod().getParameters()) {
-						operationSignature += param.getParameterType().getSimpleName() + " ";
-					}
-					operationSignature += ") [from:";
-					
-					for (String member : methodMembers.getMembers()) {
-						operationSignature += " " + member;
-					}
-					operationSignature += "]";
-					
-					answer += "               {\n";
-					answer += "               \"name\": \"" + operationSignature + "\",\n";
-					answer += "               \"parent\": \"" + conceptName + "\"\n";
-					answer += "               }";
-					firstLevel1 = false;
-				}
-				answer += "\n";
-				answer += "              ]\n";
-			}else{
-				answer += "\n";
-			}
-			answer += "          }";
-			firstLevel0 = false;
-		}
-		answer += "\n";
-		answer += "     ]\n";
-		answer += "    }\n";
+		String treeString = buildTreeString(newSemanticTree.getRoot());
+		answer += treeString;
 		answer += "];\n";
 		
+		return answer;
+	}
+	
+	private static SemanticTree buildSemanticTree(ArrayList<TupleConceptMethodsMembers> conceptsGroupMethodMemberGroupList){
+		SemanticTree tree = new SemanticTree();
+		SemanticNode root = new SemanticNode("Family", "Family", null, "");
+		tree.setRoot(root);
+		
+		for (TupleConceptMethodsMembers tupleConceptMethodsMembers : conceptsGroupMethodMemberGroupList) {
+			SemanticNode conceptNode = new SemanticNode(tupleConceptMethodsMembers.getConcept().getSimpleName(), 
+					tupleConceptMethodsMembers.getConcept().getSimpleName(), root, "");
+			
+			for (TupleMethodMembers methodMembers : tupleConceptMethodsMembers.getMethodsMembers()) {
+				String members = "[from:";
+				boolean first = true;
+				for (String member : methodMembers.getMembers()) {
+					if(!first) members += " ,";
+					members += member;
+					first = false;
+				}
+				members += "]";
+				
+				String nodeName = methodMembers.getMethod().getSimpleName() + " " + members;
+				SemanticNode methodNode = new SemanticNode(methodMembers.getMethod().getSimpleName(), nodeName, conceptNode, members);
+				conceptNode.getChilds().add(methodNode);
+			}
+			root.getChilds().add(conceptNode);
+		}
+		return tree;
+	}
+	
+	private static SemanticTree refactorTreeToHighlightSemanticVariability(SemanticTree tree){
+		SemanticTree newTree = new SemanticTree();
+		SemanticNode root = new SemanticNode(tree.getRoot().getId(), tree.getRoot().getLabel(), null, tree.getRoot().getMembers());
+		newTree.setRoot(root);
+		
+		for (SemanticNode conceptNode : tree.getRoot().getChilds()) {
+			SemanticNode newConceptNode = new SemanticNode(conceptNode.getId(), conceptNode.getLabel(), root, conceptNode.getMembers());
+			
+			for (int i = 0; i < conceptNode.getChilds().size(); i++) {
+				SemanticNode nodeI = conceptNode.getChilds().get(i);
+				
+				if(!methodAlreadyDone(newConceptNode.getChilds(), nodeI)){
+					ArrayList<SemanticNode> variantsI = new ArrayList<SemanticNode>();
+					for (int j = 0; j < conceptNode.getChilds().size(); j++) {
+						SemanticNode nodeJ = conceptNode.getChilds().get(j);
+						if((nodeI.getId().equals(nodeJ.getId()) && !(nodeI.getMembers().equals(nodeJ.getMembers()))) || i == j){
+							if(!variantsI.contains(nodeJ))
+								variantsI.add(nodeJ);
+						}
+					}
+					if(variantsI.size() == 1){
+						SemanticNode newMethodNode = new SemanticNode(variantsI.get(0).getId(), variantsI.get(0).getLabel(), newConceptNode, variantsI.get(0).getMembers());
+						newConceptNode.getChilds().add(newMethodNode);
+					}else if(variantsI.size() > 1){
+						SemanticNode newMethodNode = new SemanticNode(variantsI.get(0).getId(), "+" + variantsI.get(0).getId(), newConceptNode, variantsI.get(0).getMembers());
+						for (SemanticNode semanticNode : variantsI) {
+							SemanticNode newMethodVariantNode = new SemanticNode(semanticNode.getId(), semanticNode.getLabel(), newMethodNode, semanticNode.getMembers());
+							newMethodNode.getChilds().add(newMethodVariantNode);
+						}
+						newConceptNode.getChilds().add(newMethodNode);
+					}
+				}
+			}
+			root.getChilds().add(newConceptNode);
+		}
+		
+		return newTree;
+	}
+	
+	private static boolean methodAlreadyDone(List<SemanticNode> childs,
+			SemanticNode nodeI) {
+		for (SemanticNode semanticNode : childs) {
+			if(semanticNode.getId().equals(nodeI.getId()))
+				return true;
+		}
+		return false;
+	}
+
+	private static String buildTreeString(SemanticNode root) {
+		String answer = "";
+		answer += "          {\n";
+		answer += "          \"name\": \"" + root.getLabel() + "\",\n";
+		if(root.getParent() == null)
+			answer += "          \"parent\": \"null\"";
+		else
+			answer += "          \"parent\": \"" + root.getParent().getLabel() + "\"";
+		
+		if(root.getChilds().size() != 0){
+			answer += ",\n";
+			answer += "          \"children\": [\n";
+			boolean first = true;
+			for (int i = 0; i < root.getChilds().size(); i++) {
+				if(!first) answer += ",\n";
+				answer += buildTreeString(root.getChilds().get(i));
+				first = false;
+			}
+			answer += "              ]\n";
+		}
+		answer += "    }\n";
 		return answer;
 	}
 }

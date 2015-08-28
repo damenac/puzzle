@@ -1,0 +1,37 @@
+package fr.inria.diverse.k3.sle.common.tuples;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SemanticNode {
+
+	private String label;
+	private SemanticNode parent;
+	private List<SemanticNode> childs;
+
+	public SemanticNode(String label, SemanticNode parent){
+		this.label = label;
+		this.parent = parent;
+		childs = new ArrayList<SemanticNode>();
+	}
+	
+	public String getLabel() {
+		return label;
+	}
+
+	public void setLabel(String label) {
+		this.label = label;
+	}
+
+	public SemanticNode getParent() {
+		return parent;
+	}
+
+	public void setParent(SemanticNode parent) {
+		this.parent = parent;
+	}
+
+	public List<SemanticNode> getChilds() {
+		return childs;
+	}
+}

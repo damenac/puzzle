@@ -76,7 +76,7 @@ public class ComputeMetricsActionImpl {
 		ConceptComparison conceptComparisonOperator = DeepConceptComparison.class.newInstance();
 //		MethodComparison methodComparisonOperator = NamingMethodComparison.class.newInstance();
 //		MethodComparison methodComparisonOperator = SignatureMethodComparison.class.newInstance();
-		MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.class.newInstance();
+		MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		ArrayList<Language> languages = new ArrayList<Language>();
@@ -147,6 +147,7 @@ public class ComputeMetricsActionImpl {
 		this.copyAnalysisSemantics(project, languages);
 		
 		ProjectManagementServices.refreshProject(project);
+		System.out.println("SignatureAndSourceMethodComparison.getInstance().getAmountComputations(): " + SignatureAndSourceMethodComparison.getInstance().getAmountComputations());
 		return metrics;
 	}
 	

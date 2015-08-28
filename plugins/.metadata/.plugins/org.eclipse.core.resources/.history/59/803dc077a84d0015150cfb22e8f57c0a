@@ -1,0 +1,6 @@
+package fr.inria.diverse.k3.sle.common.tuples;
+
+public class SemanticTree {
+
+	private SemanticNode root;
+}

@@ -1,0 +1,18 @@
+package fr.inria.diverse.k3.sle.common.tuples;
+
+public class SemanticTree {
+
+	private SemanticNode root;
+
+	public SemanticTree(SemanticNode root) {
+		this.root = root;
+	}
+
+	public SemanticNode getRoot() {
+		return root;
+	}
+
+	public void setRoot(SemanticNode root) {
+		this.root = root;
+	}
+}

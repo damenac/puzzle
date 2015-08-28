@@ -16,10 +16,10 @@ public class LiteralAspect extends ExpressionAspect {
     Object result = null;
      if (_self instanceof kmLogo.BoolLit){
     result = logo.BoolLitAspect.eval((kmLogo.BoolLit)_self,context);
-    } else  if (_self instanceof kmLogo.StringLit){
-    result = logo.StringLitAspect.eval((kmLogo.StringLit)_self,context);
     } else  if (_self instanceof kmLogo.IntegerLit){
     result = logo.IntegerLitAspect.eval((kmLogo.IntegerLit)_self,context);
+    } else  if (_self instanceof kmLogo.StringLit){
+    result = logo.StringLitAspect.eval((kmLogo.StringLit)_self,context);
     } else  if (_self instanceof kmLogo.Literal){
     result = logo.LiteralAspect._privk3_eval(_self_, (kmLogo.Literal)_self,context);
     } else  if (_self instanceof kmLogo.Expression){

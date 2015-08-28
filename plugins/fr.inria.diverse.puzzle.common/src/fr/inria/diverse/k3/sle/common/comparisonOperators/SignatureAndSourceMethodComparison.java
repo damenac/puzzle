@@ -2,6 +2,7 @@ package fr.inria.diverse.k3.sle.common.comparisonOperators;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
@@ -20,6 +21,21 @@ import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 
 public class SignatureAndSourceMethodComparison implements MethodComparison {
 
+	private static SignatureAndSourceMethodComparison instance;
+	private Hashtable<String, SimilarityGroup[]> cache;
+	private int amountComputations;
+	
+	private SignatureAndSourceMethodComparison(){
+		cache = new Hashtable<String, SimilarityGroup[]>();
+		amountComputations = 0;
+	}
+	
+	public static SignatureAndSourceMethodComparison getInstance(){
+		if(instance == null)
+			instance = new SignatureAndSourceMethodComparison();
+		return instance;
+	}
+	
 	@Override
 	public boolean equal(JvmOperation left, JvmOperation right) {
 		boolean identicalModifiers = compareModifiers(left, right);
@@ -29,20 +45,31 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 		boolean identicalExceptions = compareExceptions(left, right);
 		
 		if(identicalModifiers && identicalReturnType && identicalName && identicalParameters && identicalExceptions){
+			long before = System.currentTimeMillis();
 			String leftOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), left.eResource().getURI().segment(1));
 			String rightOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), right.eResource().getURI().segment(1));
 			
-			APipeline<ANode> detector = new ASTDetector();
-			JCCDFile[] files = { new JCCDFile(leftOperationJavaFile),
-					new JCCDFile(rightOperationJavaFile)};
-			detector.setSourceFiles(files);
-			SimilarityGroupManager manager = detector.process();
+			SimilarityGroup[] simGroups = cache.get(leftOperationJavaFile + "-" + rightOperationJavaFile);
 			
-			SimilarityGroup[] simGroups = manager.getSimilarityGroups();
-
-			if (null == simGroups) {
-				simGroups = new SimilarityGroup[0];
+			if(simGroups == null){
+				
+				APipeline<ANode> detector = new ASTDetector();
+				JCCDFile[] files = { new JCCDFile(leftOperationJavaFile),
+						new JCCDFile(rightOperationJavaFile)};
+				detector.setSourceFiles(files);
+				SimilarityGroupManager manager = detector.process();
+				simGroups = manager.getSimilarityGroups();
+				if (null == simGroups) {
+					simGroups = new SimilarityGroup[0];
+				}else{
+					cache.put(leftOperationJavaFile + "-" + rightOperationJavaFile, simGroups);
+				}
+				amountComputations++;
+				
+				long after = System.currentTimeMillis();
+				System.out.println("... " + (after-before));
 			}
+			
 			if ((null != simGroups) && (0 < simGroups.length)) {
 				for (int i = 0; i < simGroups.length; i++) {
 					final ASourceUnit[] nodes = simGroups[i].getNodes();
@@ -57,10 +84,6 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 								return true;
 							}
 						}
-						
-						System.out.println("nodes[j]: " + nodes[j]);
-						ANode node = (ANode) nodes[j];
-						System.out.println(node);
 					}
 				}
 			} else {
@@ -130,5 +153,9 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 			answer.add(exception.getSimpleName());
 		}
 		return answer;
+	}
+
+	public int getAmountComputations() {
+		return amountComputations;
 	}
 }

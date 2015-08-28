@@ -1,0 +1,17 @@
+package fr.inria.diverse.k3.sle.common.tuples;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SemanticNode {
+
+	private List<SemanticNode> childs;
+
+	public SemanticNode(){
+		childs = new ArrayList<SemanticNode>();
+	}
+	
+	public List<SemanticNode> getChilds() {
+		return childs;
+	}
+}

@@ -37,14 +37,11 @@ public abstract class SourceUnitManager {
 	 */
 	public void preprocess(final APreprocessor[] preprocessors) {
 		// apply preprocessors
-		log.info("START PREPROCESSING ` ...");
 		for (final APreprocessor preprocessor : preprocessors) {
 			if (this.preprocessors.contains(preprocessor)) {
 				continue;
 			}
 			this.addPreprocessor(preprocessor.getClass());
-			log.debug("Using preprocessor: "
-					+ preprocessor.getClass().getSimpleName());
 			preprocessor.start(this);
 		}
 	}

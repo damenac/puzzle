@@ -11,10 +11,10 @@ public class ExpressionAspect {
   public static Object eval(final Expression _self, final Hashtable<String, Object> context) {
     fsm.ExpressionAspectExpressionAspectProperties _self_ = fsm.ExpressionAspectExpressionAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.ArithmeticExpression){
-    result = fsm.ArithmeticExpressionAspect.eval((fsm.ArithmeticExpression)_self,context);
-    } else  if (_self instanceof fsm.BoolLit){
+     if (_self instanceof fsm.BoolLit){
     result = fsm.BoolLitAspect.eval((fsm.BoolLit)_self,context);
+    } else  if (_self instanceof fsm.ArithmeticExpression){
+    result = fsm.ArithmeticExpressionAspect.eval((fsm.ArithmeticExpression)_self,context);
     } else  if (_self instanceof fsm.StringLit){
     result = fsm.StringLitAspect.eval((fsm.StringLit)_self,context);
     } else  if (_self instanceof fsm.IntegerLit){
