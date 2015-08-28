@@ -19,7 +19,7 @@ var pieDataSemanticCommonality = [{
         label: "Commonalities"
     },
     {
-        value: 74,
+        value: 75,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -60,7 +60,7 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [22.58064516129032,0.0,38.88888888888889]
+        data : [19.35483870967742,0.0,33.33333333333333]
       }
     ]
 };
@@ -79,7 +79,7 @@ var barRelationshipRatiofsm = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [0.0,18.91891891891892]
+        data : [0.0,16.216216216216218]
       }
     ]
 };
@@ -117,7 +117,7 @@ var barRelationshipRatioflowchart = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [18.91891891891892,0.0]
+        data : [16.216216216216218,0.0]
       }
     ]
 };

@@ -1,0 +1,41 @@
+================================================================================
+                      JCCD - Java Code Clone Detector API
+
+                              jccd.sourceforge.net
+================================================================================
+
+  What is it?
+  -----------
+
+    The Java Code Clone Detection API (JCCD) allows to implement individual code
+    clone detectors. These code clone detectors can be easily integrated into 
+    other Java applications.
+
+    JCCD is based on a pipeline architecture which allows to replace whole parts
+    of the detection process without changing the overall pipeline. This enables
+    to re-implement state-of-the-art techniques as well as to realize new ideas
+    and concepts.
+
+
+  System Requirements
+  -------------------
+
+    JDK 1.5 or above.
+
+
+  Using JCCD
+  ----------
+
+    - copy `jccd-*.jar` together with all jar files from `lib` into the class-
+      path of your application.
+    - put the file `src/log4j.properties` in the root of your application.
+
+
+  Licensing
+  ---------
+
+    See the file called `LICENSE`.
+
+
+  Please visit `http://jccd.sourceforge.net` for further information.
+

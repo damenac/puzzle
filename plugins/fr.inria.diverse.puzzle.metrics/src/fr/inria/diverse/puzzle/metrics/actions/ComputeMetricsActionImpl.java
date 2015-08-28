@@ -20,6 +20,8 @@ import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
@@ -73,7 +75,8 @@ public class ComputeMetricsActionImpl {
 //		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
 		ConceptComparison conceptComparisonOperator = DeepConceptComparison.class.newInstance();
 //		MethodComparison methodComparisonOperator = NamingMethodComparison.class.newInstance();
-		MethodComparison methodComparisonOperator = SignatureMethodComparison.class.newInstance();
+//		MethodComparison methodComparisonOperator = SignatureMethodComparison.class.newInstance();
+		MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.class.newInstance();
 		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		ArrayList<Language> languages = new ArrayList<Language>();

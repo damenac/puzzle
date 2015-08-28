@@ -1,0 +1,15 @@
+package de.trier.cs.jccd.tests;
+
+public class Main {
+
+	public void test(){
+		
+		 APipeline detector = new ASTDetector();
+		 JCCDFile[] files = { 
+		         new JCCDFile("doku/TestFileOne.java"),
+		         new JCCDFile("doku/TestFileTwo.java") 
+		         };
+		     detector.setSourceFiles(files);
+		     APipeline.printSimilarityGroups(detector.process());
+	}
+}

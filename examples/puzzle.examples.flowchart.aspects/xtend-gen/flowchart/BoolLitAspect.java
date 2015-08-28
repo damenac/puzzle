@@ -6,6 +6,7 @@ import flowchart.LiteralAspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @Aspect(className = BoolLit.class)
 @SuppressWarnings("all")
@@ -30,6 +31,7 @@ public class BoolLitAspect extends LiteralAspect {
   }
   
   protected static Object _privk3_eval(final BoolLitAspectBoolLitAspectProperties _self_, final BoolLit _self, final Hashtable<String, Object> context) {
+    InputOutput.<String>println("coucou!!!");
     return Boolean.valueOf(_self.isValue());
   }
 }

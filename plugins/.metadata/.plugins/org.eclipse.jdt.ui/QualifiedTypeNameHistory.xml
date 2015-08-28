@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.eclipse.xtext.resource.XtextResource"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.common.util.URI"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
-<fullyQualifiedTypeName name="java.io.ByteArrayInputStream"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Element"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
@@ -16,7 +11,6 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
@@ -33,7 +27,6 @@
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmTypeReference"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
 <fullyQualifiedTypeName name="org.eclipse.xtend.core.xtend.XtendFile"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethodsOccurrences"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.detectors.APipeline"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.detectors.ASTDetector"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.data.JCCDFile"/>
+<fullyQualifiedTypeName name="de.trier.cs.jccd.tests.Main"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.data.SimilarityGroupManager"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Jccd
+Bundle-SymbolicName: de.trier.cs.jccd
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: jccd.jar,
+ lib/antlr-3.0.1.jar,
+ lib/jccd-1.0.6.jar,
+ lib/log4j-1.2.8.jar

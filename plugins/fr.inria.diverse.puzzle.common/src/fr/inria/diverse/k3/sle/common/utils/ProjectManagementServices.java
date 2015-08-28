@@ -3,6 +3,7 @@ package fr.inria.diverse.k3.sle.common.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -37,6 +38,19 @@ public class ProjectManagementServices {
 		description.setNatureIds(new String[] { JavaCore.NATURE_ID });
 		project.setDescription(description, null);
 
+		return project;
+	}
+	
+	/**
+	 * Returns an eclipse project in the workspace by its name. Returns null if the project does not exist.
+	 * 
+	 * @param projectName
+	 * @throws CoreException
+	 */
+	public static IProject getEclipseProject(String projectName)
+			throws CoreException {
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IProject project = root.getProject(projectName);
 		return project;
 	}
 
@@ -94,5 +108,29 @@ public class ProjectManagementServices {
 			in.close();
 			out.close();
 		}
+	}
+
+	public static File getFile(IProject project, final String fileName) {
+		if(project != null){
+			File projectFile = new File(project.getLocation().toString());
+			return findFile(projectFile, fileName);
+		}
+		return null;
+	}
+	
+	private static File findFile(File root, String fileName){
+		File[] files = root.listFiles();
+		for (int i = 0; i < root.listFiles().length; i++) {
+			if(!files[i].isDirectory() && files[i].getName().equals(fileName))
+				return files[i];
+		}
+		for (int i = 0; i < files.length; i++) {
+			if(files[i].isDirectory() && !files[i].getName().equals("bin") && !files[i].getName().equals(".settings")){
+				File found = findFile(files[i], fileName);
+				if(found != null)
+					return found;
+			}
+		}
+		return null;
 	}
 }
