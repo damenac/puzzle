@@ -120,7 +120,7 @@ public class MaintananceCosts implements ChartMetric {
 		javaScriptData += "             }\n";
 		javaScriptData += "        },\n";
 		javaScriptData += "        hAxis: {\n";
-		javaScriptData += "          title: 'Amount of Involved Methods',\n";
+		javaScriptData += "          title: 'Amount of Involved Domain-Specific Actions (DSAs)',\n";
 		javaScriptData += "          titleTextStyle: {fontSize: 10, fontName: \"lucida sans unicode\" },\n";
 		javaScriptData += "          textStyle: {fontSize: 10, fontName: \"lucida sans unicode\", bold: true },\n";
 		javaScriptData += "          ticks: [";

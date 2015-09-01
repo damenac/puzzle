@@ -80,7 +80,7 @@ google.setOnLoadCallback(drawChart);
              }
         },
         hAxis: {
-          title: 'Amount of Involved Methods',
+          title: 'Amount of Involved Domain-Specific Actions (DSAs)',
           titleTextStyle: {fontSize: 10, fontName: "lucida sans unicode" },
           textStyle: {fontSize: 10, fontName: "lucida sans unicode", bold: true },
           ticks: [0, 8, 16, 24, 32, 40, 48, 56, 64, 72]
