@@ -45,7 +45,7 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 		boolean identicalExceptions = compareExceptions(left, right);
 		
 		if(identicalModifiers && identicalReturnType && identicalName && identicalParameters && identicalExceptions){
-			long before = System.currentTimeMillis();
+			
 			String leftOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), left.eResource().getURI().segment(1));
 			String rightOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), right.eResource().getURI().segment(1));
 			
@@ -65,9 +65,6 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 					cache.put(leftOperationJavaFile + "-" + rightOperationJavaFile, simGroups);
 				}
 				amountComputations++;
-				
-				long after = System.currentTimeMillis();
-				System.out.println("... " + (after-before));
 			}
 			
 			if ((null != simGroups) && (0 < simGroups.length)) {

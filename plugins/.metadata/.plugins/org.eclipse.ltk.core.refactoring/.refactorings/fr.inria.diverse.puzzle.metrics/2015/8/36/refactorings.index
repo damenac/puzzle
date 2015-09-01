@@ -1,0 +1,15 @@
+1441036186193	Copy compilation unit
+1441036299083	Rename method 'copyAnalysisSyntaxData'
+1441036316900	Rename method 'copyAnalysisSynactic'
+1441036596993	Copy file
+1441036789532	Rename resource 'Report-4-SyntacticVariability.html'
+1441041673144	Rename resource 'Report-4a-FamilyMembershipGraph.html'
+1441041678845	Rename resource 'Report-4b-TarjansGraph.html'
+1441041684211	Rename resource 'Report-4a-TarjansGraph.html'
+1441041723264	Copy file
+1441041873668	Rename method 'copyTarjansGraph'
+1441041887468	Rename method 'copyTarjansGraphData'
+1441041912737	Rename method 'copyFamilyMembershipGraph'
+1441041928089	Rename method 'copyFamilyMembershipGraphData'
+1441042021472	Rename type 'SyntacticVariabilityGraph'
+1441042033270	Copy compilation unit

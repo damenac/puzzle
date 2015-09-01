@@ -1,0 +1,22 @@
+package fr.inria.diverse.k3.sle.common.tuples;
+
+public class TarjansAlgorithm {
+
+	// -----------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------
+	
+	private static TarjansAlgorithm instance;
+	
+	// -----------------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------------
+	
+	private TarjansAlgorithm(){}
+	
+	public static TarjansAlgorithm getInstance(){
+		if(instance == null)
+			instance = new TarjansAlgorithm();
+		return instance;
+	}
+}

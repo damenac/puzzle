@@ -1,4 +1,4 @@
-var color = d3.scale.category10();
+var color = d3.scale.category20();
 
 jsnx.draw(G, {
           element: '#div-graph',

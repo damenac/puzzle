@@ -54,15 +54,15 @@ google.setOnLoadCallback(drawChart);
 
       semanticsData.addRows([
         [0,  0.0,  0],
-        [5,  24.901960784313726,  10],
-        [10,  49.80392156862745,  20],
-        [15,  74.70588235294117,  30],
-        [20,  99.6078431372549,  40],
-        [25,  124.50980392156863,  50],
-        [30,  149.41176470588235,  60],
-        [35,  174.31372549019608,  70],
-        [40,  199.2156862745098,  80],
-        [45,  224.11764705882354,  90],
+        [8,  10.38961038961039,  16],
+        [16,  20.77922077922078,  32],
+        [24,  31.16883116883117,  48],
+        [32,  41.55844155844156,  64],
+        [40,  51.94805194805195,  80],
+        [48,  62.33766233766234,  96],
+        [56,  72.72727272727272,  112],
+        [64,  83.11688311688312,  128],
+        [72,  93.50649350649351,  144],
       ]);
 
       var semanticsOptions = {
@@ -83,7 +83,7 @@ google.setOnLoadCallback(drawChart);
           title: 'Amount of Involved Methods',
           titleTextStyle: {fontSize: 10, fontName: "lucida sans unicode" },
           textStyle: {fontSize: 10, fontName: "lucida sans unicode", bold: true },
-          ticks: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45]
+          ticks: [0, 8, 16, 24, 32, 40, 48, 56, 64, 72]
         },
         legend: { position: 'top',
       			  textStyle: {fontSize: 10, fontName: "lucida sans unicode" }

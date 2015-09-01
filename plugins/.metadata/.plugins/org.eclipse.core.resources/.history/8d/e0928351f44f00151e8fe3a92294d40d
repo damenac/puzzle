@@ -1,0 +1,40 @@
+package fr.inria.diverse.k3.sle.common.tuples;
+
+import java.util.Stack;
+
+public class TarjansAlgorithm {
+
+	// -----------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------
+	
+	private static TarjansAlgorithm instance;
+	private Stack<EcoreVertex> stack;
+	
+	// -----------------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------------
+	
+	private TarjansAlgorithm(){}
+	
+	public static TarjansAlgorithm getInstance(){
+		if(instance == null)
+			instance = new TarjansAlgorithm();
+		return instance;
+	}
+	
+	// -----------------------------------------------------
+	// Methods
+	// -----------------------------------------------------
+	
+	public EcoreGraph eval(EcoreGraph graph){
+		int index = 0;
+		stack = new Stack<EcoreVertex>();
+		
+		for (EcoreVertex vertex : graph.getVertex()) {
+			
+		}
+		
+		return null;
+	}
+}

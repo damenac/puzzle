@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodMemberVO"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodMembersGroupVO"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SemanticAnalysis"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.ConceptMethodsMembersGroupVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.MembersGroupVsConceptVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.EcoreNode"/>
@@ -33,13 +26,11 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.evaluators.syntax.SizeOfCommonality"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfConcepts"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.TotalAmountOfMethods"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectConstructs"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructsOccurrences"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectMethods"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
@@ -51,7 +42,6 @@
 <fullyQualifiedTypeName name="org.eposoft.jccd.data.JCCDFile"/>
 <fullyQualifiedTypeName name="de.trier.cs.jccd.tests.Main"/>
 <fullyQualifiedTypeName name="org.eposoft.jccd.data.SimilarityGroupManager"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
 <fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmGenericType"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
@@ -60,4 +50,14 @@
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.eposoft.jccd.data.ASourceUnit"/>
 <fullyQualifiedTypeName name="org.eposoft.jccd.data.ast.ANode"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVariabilityTree"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.tuples.SemanticTree"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.tuples.SemanticNode"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.TarjansAlgorithmGraph"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.DependenciesGraph"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

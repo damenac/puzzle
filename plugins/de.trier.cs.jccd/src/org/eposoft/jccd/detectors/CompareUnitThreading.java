@@ -223,7 +223,8 @@ public final class CompareUnitThreading {
 		executor.shutdown();
 		while (!executor.isTerminated() || !executor.isShutdown()) {
 			try {
-				Thread.sleep(500);
+				//TODO! PILAS! ANTES 500!
+				Thread.sleep(10);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

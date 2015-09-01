@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Reuse metrics</title>
+      <script src="lib/Chart.js"></script>
+      <script type="text/javascript"
+          src="https://www.google.com/jsapi?autoload={
+            'modules':[{
+              'name':'visualization',
+              'version':'1',
+              'packages':['corechart']
+            }]
+          }"></script>
+      <style>
+          body {
+              font-family: "lucida sans unicode",lucida grande,sans-serif;
+              font-size: 12px;
+          }
+      </style>
+  </head>
+
+<body bgcolor="#FAFAFA">
+
+<table border="0" cellpadding="1" cellspacing="10" style="width:650px;" bgcolor="#FFFFFF">
+	<tbody>
+		<tr>
+			<td>
+				<table border="0" cellpadding="1" cellspacing="1" style="width:600px;">
+	                    <tbody>
+	                        <tr>
+	                            <td style="width:110px;">
+	                                <img src="images/puzzle.png" alt="PuzzleMetrics Icon" height="100" width="100">
+	                            </td>
+	                            <td>
+	                                <strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:24px;">Puzzle Metrics</span></strong>
+	                                <br>
+	                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:12px;">A Tool for Analyzing Families of Domain-Specific Languages</span>
+	                                <br>
+	                                <strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:12px;">3rd Report: Reuse Metrics</span></strong>
+	                            </td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<hr />
+                <p>
+                    <span style="font-size:12px;"><strong><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"> Size of commonality (SoC):</span></strong></span></br>
+                    <span style="font-size:11px;"><span style="font-family:lucida sans unicode,lucida grande,sans-serif;"> (This metric shows the size of the core with respect to the rest of the family. It is calculated as the percentage of constructs/methods that are included in the core with respect to the union of the constructs/methods of all the DSLs of the family.)</span></span>
+                </p>
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-holder">
+                                    <canvas id="chart-syntactic-commonalities" width="150" height="150"/>
+                                </div>
+                            </td>
+                            <td style="text-align: center;">
+                                <div id="canvas-holder-semantic-commonalities">
+                                    <canvas id="chart-semantic-commonalities" width="150" height="150"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 3.</strong></br>
+                                    Size of syntactic commonalities (core)
+                                </span>
+                            </td>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 4.</strong></br>
+                                    Size of semantic commonalities (core)
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <hr />
+                <p>
+                    <strong>
+                        <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:12px;">
+                            Product-related reusability (PRR):
+                        </span>
+                    </strong></br>
+                    <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;"> (This metric shows the percentage of reuse of each DSL with respect the core. Concretely, it shows for each product the amount of constructs/methods that are included in the core.)
+                    </span>
+                   
+                </p>
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-product-reusability" width="150" height="150">
+                                    <canvas id="pie-product-reusability" width="450" height="200"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 5.</strong></br>
+                                    Product-related reusability
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <hr />
+                <p>
+                <strong>
+                    <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:12px;">
+                        Individualization ratio (IR):
+                    </span>
+                </strong></br>
+                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;"> (This metric shows the percentage of reuse of each DSL with respect the rest of the family. Concretely, it shows for each product the amount of constructs/methods that are included in at least another DSL that is member of the family. )
+                </span>
+                
+                </p>
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-individualization-ratio" width="150" height="150">
+                                    <canvas id="pie-individualization-ratio" width="450" height="200"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 6.</strong></br>
+                                    Individualization ratio
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <hr />
+                <p>
+                <strong>
+                    <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:12px;">
+                        Pair-wise Relationship Ratio (PWRR):
+                    </span>
+                </strong></br>
+                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;"> (This metric shows the percentage of reuse of each DSL with respect the each of the other DSLs that are members of the family. Concretely, it shows, for each product, the amount of constructs/methods that are included each of the other members of the family. )
+                </span>
+                </p>
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-relationship-ratio-fsm" width="150" height="150">
+                                    <canvas id="pie-relationship-ratio-fsm" width="450" height="200"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 7a.</strong></br>
+                                    Pair-wise Relationship Ratio for fsm</br>
+                                    ----
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-relationship-ratio-kmLogo" width="150" height="150">
+                                    <canvas id="pie-relationship-ratio-kmLogo" width="450" height="200"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 7b.</strong></br>
+                                    Pair-wise Relationship Ratio for kmLogo</br>
+                                    ----
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:500px;">
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;">
+                                <div id="canvas-relationship-ratio-flowchart" width="150" height="150">
+                                    <canvas id="pie-relationship-ratio-flowchart" width="450" height="200"/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;">
+                                <span style="font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;">
+                                    <strong>Figure 7c.</strong></br>
+                                    Pair-wise Relationship Ratio for flowchart</br>
+                                    ----
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </td>
+		</tr>
+	</tbody>
+</table>
+</body>
+
+<style>
+    .venntooltip {
+        position: absolute;
+        text-align: center;
+        width: 128px;
+        height: 16px;
+        background: #333;
+        color: #ddd;
+        padding: 2px;
+        border: 0px;
+        border-radius: 8px;
+        opacity: 0;
+    }
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+<script src="libVenn/venn.js"></script>
+<script src="libVenn/syntacticVennData.jsonp"></script>
+<script src="libVenn/semanticVennData.jsonp"></script>
+<script src="lib/metrics.jsonp"></script>
+<script src="libVenn/syntacticVenn.jsonp"></script>
+<script src="libVenn/semanticVenn.jsonp"></script>
+
+</html>

@@ -1,0 +1,8 @@
+1441034109179	Rename type 'EcoreNode'
+1441034493233	Rename method 'setNodeId'
+1441034513468	Rename method 'getNodeId'
+1441034536890	Rename field 'nodeId'
+1441034567404	Rename field 'nodes'
+1441034586583	Rename method 'getNodes'
+1441034614661	Rename local variable 'node'
+1441034944325	Delete element

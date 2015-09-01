@@ -1,6 +1,8 @@
 package fr.inria.diverse.k3.sle.common.tuples;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -17,9 +19,11 @@ public class EcoreGraph {
 	// Attributes
 	// -----------------------------------------------
 	
-	private ArrayList<EcoreNode> nodes;
+	private ArrayList<EcoreVertex> vertex;
 	private ArrayList<EcoreArc> arcs;
-	private ArrayList<ArrayList<EcoreNode>> groups;
+	private int tarjansIndex;
+	private Stack<EcoreVertex> tarjansStack;
+	private ArrayList<ArrayList<EcoreVertex>> groups;
 	
 	// -----------------------------------------------
 	// Constructor
@@ -29,18 +33,18 @@ public class EcoreGraph {
 	 * Constructor by default. Returns an emtpy graph. 
 	 */
 	public EcoreGraph(){
-		this.nodes = new ArrayList<EcoreNode>();
+		this.vertex = new ArrayList<EcoreVertex>();
 		this.arcs = new ArrayList<EcoreArc>();
-		this.groups = new ArrayList<ArrayList<EcoreNode>>();
+		this.groups = new ArrayList<ArrayList<EcoreVertex>>();
 	}
 	
 	/**
 	 * Constructor that builds a dependencies graph from a list of Concept-Members tuple
 	 */
 	public EcoreGraph(ArrayList<TupleMembersConcepts> membersConceptList, ConceptComparison conceptComparisonOperator){
-		this.nodes = new ArrayList<EcoreNode>();
+		this.vertex = new ArrayList<EcoreVertex>();
 		this.arcs = new ArrayList<EcoreArc>();
-		this.groups = new ArrayList<ArrayList<EcoreNode>>();
+		this.groups = new ArrayList<ArrayList<EcoreVertex>>();
 		this.computeDependenciesGraph(membersConceptList, conceptComparisonOperator);
 	}
 	
@@ -48,15 +52,15 @@ public class EcoreGraph {
 	// Getters
 	// -----------------------------------------------
 
-	public ArrayList<EcoreNode> getNodes() {
-		return nodes;
+	public ArrayList<EcoreVertex> getVertex() {
+		return vertex;
 	}
 
 	public ArrayList<EcoreArc> getArcs() {
 		return arcs;
 	}
 	
-	public ArrayList<ArrayList<EcoreNode>> getGroups() {
+	public ArrayList<ArrayList<EcoreVertex>> getGroups() {
 		return groups;
 	}
 	
@@ -72,14 +76,14 @@ public class EcoreGraph {
 	public void computeDependenciesGraph(ArrayList<TupleMembersConcepts> membersConceptList, ConceptComparison conceptComparisonOperator){
 		for (TupleMembersConcepts conceptMembersTuple : membersConceptList) {
 			for (EClassifier currentClassifier : conceptMembersTuple.getConcepts()) {
-				EcoreNode node = new EcoreNode(currentClassifier.getName() + ": " + conceptMembersTuple.getMembersString(), currentClassifier);
-				this.getNodes().add(node);
+				EcoreVertex node = new EcoreVertex(currentClassifier.getName() + ": " + conceptMembersTuple.getMembersString(), currentClassifier);
+				this.getVertex().add(node);
 			}
 			
 		}
 		
 		// Adding one arc for each reference
-		for (EcoreNode node : this.getNodes()) {
+		for (EcoreVertex node : this.getVertex()) {
 			EClassifier currentClassifier = node.getClassifier();
 			
 			if(currentClassifier instanceof EClass){
@@ -87,7 +91,7 @@ public class EcoreGraph {
 				for (EStructuralFeature structuralFeature : currentEClass.getEStructuralFeatures()) {
 					if(structuralFeature instanceof EReference){
 						EReference currentEReference = (EReference) structuralFeature;
-						EcoreNode toNode = getNodeByConceptComparisonOperator(this, currentEReference.getEType(), conceptComparisonOperator);
+						EcoreVertex toNode = getNodeByConceptComparisonOperator(this, currentEReference.getEType(), conceptComparisonOperator);
 						if(toNode != null){
 							EcoreArc arc = new EcoreArc(node, toNode);
 							this.getArcs().add(arc);
@@ -97,7 +101,7 @@ public class EcoreGraph {
 					if(structuralFeature instanceof EAttribute){
 						EAttribute currentEAttribute = (EAttribute) structuralFeature;
 						if(currentEAttribute.getEType() instanceof EEnum){
-							EcoreNode toNode = getNodeByConceptComparisonOperator(this, currentEAttribute.getEType(), conceptComparisonOperator);
+							EcoreVertex toNode = getNodeByConceptComparisonOperator(this, currentEAttribute.getEType(), conceptComparisonOperator);
 							if(toNode != null){
 								EcoreArc arc = new EcoreArc(node, toNode);
 								this.getArcs().add(arc);
@@ -109,13 +113,13 @@ public class EcoreGraph {
 		}
 		
 		// Adding one arc for each inheritance
-		for (EcoreNode node : this.getNodes()) {
+		for (EcoreVertex node : this.getVertex()) {
 			EClassifier currentClassifier = node.getClassifier();
 			
 			if(currentClassifier instanceof EClass){
 				EClass currentEClass = (EClass) currentClassifier;
 				for (EClass superClass : currentEClass.getESuperTypes()) {
-					EcoreNode toNode = getNodeByConceptComparisonOperator(this, superClass, conceptComparisonOperator);
+					EcoreVertex toNode = getNodeByConceptComparisonOperator(this, superClass, conceptComparisonOperator);
 					if(toNode != null){
 						EcoreArc arc = new EcoreArc(node, toNode);
 						this.getArcs().add(arc);
@@ -125,9 +129,9 @@ public class EcoreGraph {
 		}
 	}
 	
-	private EcoreNode getNodeByConceptComparisonOperator(EcoreGraph graph,
+	private EcoreVertex getNodeByConceptComparisonOperator(EcoreGraph graph,
 			EClassifier eType, ConceptComparison conceptComparisonOperator) {
-		for (EcoreNode node : graph.getNodes()) {
+		for (EcoreVertex node : graph.getVertex()) {
 			if(conceptComparisonOperator.equals(node.getClassifier(),eType))
 				return node;
 		} return null;
@@ -139,8 +143,8 @@ public class EcoreGraph {
 	 * @param nodeName
 	 * @return
 	 */
-	public EcoreNode getNodeByName(EcoreGraph graph, String nodeName){
-		for (EcoreNode node : graph.getNodes()) {
+	public EcoreVertex getNodeByName(EcoreGraph graph, String nodeName){
+		for (EcoreVertex node : graph.getVertex()) {
 			if(node.getClassifier().getName().equals(nodeName))
 				return node;
 		} return null;
@@ -152,8 +156,8 @@ public class EcoreGraph {
 	 * @param nodeName
 	 * @return
 	 */
-	public EcoreNode getNodeByEClassifier(EcoreGraph graph, EClassifier eClassifier){
-		for (EcoreNode node : graph.getNodes()) {
+	public EcoreVertex getNodeByEClassifier(EcoreGraph graph, EClassifier eClassifier){
+		for (EcoreVertex node : graph.getVertex()) {
 			if(node.getClassifier().equals(eClassifier))
 				return node;
 		} return null;
@@ -165,24 +169,85 @@ public class EcoreGraph {
 	 * @param nodeName
 	 * @return
 	 */
-	public EcoreNode getNodeById(EcoreGraph graph, String id){
-		for (EcoreNode node : graph.getNodes()) {
-			if(node.getNodeId().equals(id))
-				return node;
+	public EcoreVertex getNodeById(EcoreGraph graph, String id){
+		for (EcoreVertex currentVertex : graph.getVertex()) {
+			if(currentVertex.getVertexId().equals(id))
+				return currentVertex;
 		} return null;
+	}
+	
+	public void groupByDefault(
+			ArrayList<TupleMembersConcepts> membersConceptList,
+			ConceptComparison conceptComparisonOperator) {
+		this.groups = new ArrayList<ArrayList<EcoreVertex>>();
+		ArrayList<EcoreVertex> uniqueGroup = new ArrayList<EcoreVertex>();
+		uniqueGroup.addAll(this.vertex);
+		this.groups.add(uniqueGroup);
 	}
 	
 	/**
 	 * Groups the current graphs according to the membership of each of its nodes.
 	 */
 	public void groupGraphByFamilyMembership(ArrayList<TupleMembersConcepts> membersConceptList, ConceptComparison conceptComparisonOperator){
-		
+		this.groups = new ArrayList<ArrayList<EcoreVertex>>();
 		for (TupleMembersConcepts membersGroupVsConceptVO : membersConceptList) {
-			ArrayList<EcoreNode> currentGroup = new ArrayList<EcoreNode>();
+			ArrayList<EcoreVertex> currentGroup = new ArrayList<EcoreVertex>();
 			for (EClassifier currentConcept : membersGroupVsConceptVO.getConcepts()) {
 				currentGroup.add(this.getNodeByConceptComparisonOperator(this, currentConcept, conceptComparisonOperator));
 			}
 			this.groups.add(currentGroup);
 		}
+	}
+	
+	/**
+	 * 
+	 */
+	public void groupByTarjansAlgorithm(){
+		this.tarjansIndex = 0;
+		tarjansStack = new Stack<EcoreVertex>();
+		this.groups = new ArrayList<ArrayList<EcoreVertex>>();
+		for (EcoreVertex currentVertex : this.getVertex()) {
+			if(currentVertex.getTarjansIndex() == -1){
+				this.strongConnect(currentVertex);
+			}
+		}
+	}
+
+	private void strongConnect(EcoreVertex theVertex) {
+		theVertex.setTarjansIndex(this.tarjansIndex);
+		theVertex.setTarjansLowlink(this.tarjansIndex);
+		this.tarjansIndex++;
+		this.tarjansStack.push(theVertex);
+		theVertex.setOnTarjansStack(true);
+		
+		for (EcoreVertex sucessor : this.getSucessors(theVertex)) {
+			if(sucessor.getTarjansIndex() == -1){
+				this.strongConnect(sucessor);
+				theVertex.setTarjansLowlink(Math.min(theVertex.getTarjansLowlink(), sucessor.getTarjansLowlink()));
+			}
+			else if(sucessor.isOnTarjansStack()){
+				theVertex.setTarjansLowlink(Math.min(theVertex.getTarjansLowlink(), sucessor.getTarjansLowlink()));
+			}
+		}
+		
+		if(theVertex.getTarjansLowlink() == theVertex.getTarjansIndex()){
+			ArrayList<EcoreVertex> newGroup = new ArrayList<EcoreVertex>();
+			EcoreVertex sucessor = null;
+			do{
+				sucessor = tarjansStack.pop();
+				sucessor.setOnTarjansStack(false);
+				newGroup.add(sucessor);
+			} while(!theVertex.getVertexId().equals(sucessor.getVertexId()));
+			this.groups.add(newGroup);
+		}
+	}
+
+	private List<EcoreVertex> getSucessors(EcoreVertex theVertex) {
+		List<EcoreVertex> sucessors = new ArrayList<EcoreVertex>();
+		for (EcoreArc arc : this.arcs) {
+			if(arc.getFrom().getVertexId().equals(theVertex.getVertexId()))
+				sucessors.add(arc.getTo());
+		}
+		return sucessors;
 	}
 }

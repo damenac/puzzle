@@ -6,14 +6,14 @@ public class EcoreArc {
 	// Attributes
 	// -----------------------------------------------
 
-	private EcoreNode from;
-	private EcoreNode to;
+	private EcoreVertex from;
+	private EcoreVertex to;
 	
 	// -----------------------------------------------
 	// Constructor
 	// -----------------------------------------------
 	
-	public EcoreArc(EcoreNode from, EcoreNode to) {
+	public EcoreArc(EcoreVertex from, EcoreVertex to) {
 		this.from = from;
 		this.to = to;
 	}
@@ -22,19 +22,19 @@ public class EcoreArc {
 	// Getters and setters
 	// -----------------------------------------------
 	
-	public EcoreNode getFrom() {
+	public EcoreVertex getFrom() {
 		return from;
 	}
 	
-	public void setFrom(EcoreNode from) {
+	public void setFrom(EcoreVertex from) {
 		this.from = from;
 	}
 	
-	public EcoreNode getTo() {
+	public EcoreVertex getTo() {
 		return to;
 	}
 	
-	public void setTo(EcoreNode to) {
+	public void setTo(EcoreVertex to) {
 		this.to = to;
 	}
 }
