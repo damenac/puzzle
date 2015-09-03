@@ -2,19 +2,20 @@ package fr.inria.diverse.puzzle.breaker.popup.actions;
 
 import java.util.ArrayList;
 
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
-import fr.inria.diverse.k3.sle.common.tuples.TupleModuleConceptsMembers;
+import fr.inria.diverse.k3.sle.common.tuples.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.tuples.EcoreVertex;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
+import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.EcoreCloningServices;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
@@ -40,28 +41,27 @@ public class BreakDownFamilyImpl {
 	}
 	
 	public void breakDownFamily(ArrayList<Language> languages) throws Exception{
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		
 		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
-		ArrayList<TupleModuleConceptsMembers> moduleConceptsList = FamiliesServices.getInstance().obtainConceptsOwenerLanguagesList(ePackages, conceptComparisonOperator);
-		buildModules(moduleConceptsList);
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
+		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
+		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
+		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
+		buildModules(dependenciesGraph);
 	}
 
-	private void buildModules(ArrayList<TupleModuleConceptsMembers> moduleConceptsList) throws CoreException {
-		for (TupleModuleConceptsMembers moduleConceptsVO : moduleConceptsList) {
+	private void buildModules(EcoreGraph ecoreGraph) throws CoreException {
+		for (ArrayList<EcoreVertex> group : ecoreGraph.getGroups()) {
 			// Build the module metamodel with the required interface.
-			EPackage moduleEPackage = this.createEPackageByModule(moduleConceptsVO);
+			EPackage moduleEPackage = this.createEPackageByModule(group);
 
-			// Get the module name by obtaining the name of the first class (we can do this better!)
-			String moduleName = moduleEPackage.getEClassifiers().get(0).getName();
-			moduleConceptsVO.setModuleName(moduleName);
-			
 			// Create the module project with the folders.
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking." + moduleConceptsVO.getModuleName().trim());
+			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking." + group.get(0).getClassifier().getName().trim());
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 
-			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + moduleConceptsVO.getModuleName() + ".ecore", moduleEPackage);
+			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + group.get(0).getClassifier().getName() + ".ecore", moduleEPackage);
 			
 			// Create the genmodel and generate the code of the module.
 			
@@ -75,20 +75,20 @@ public class BreakDownFamilyImpl {
 	 * @param moduleConceptsVO
 	 * @return
 	 */
-	private EPackage createEPackageByModule(TupleModuleConceptsMembers moduleConceptsVO) {
+	private EPackage createEPackageByModule(ArrayList<EcoreVertex> group) {
 		EcoreCloningServices.getInstance().resetClonedClassifiers();
 		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
-		newPackage.setName(moduleConceptsVO.getModuleName().trim());
-		newPackage.setNsPrefix(moduleConceptsVO.getModuleName().trim());
-		newPackage.setNsURI(moduleConceptsVO.getModuleName().trim());
+		newPackage.setName(group.get(0).getClassifier().getName().trim());
+		newPackage.setNsPrefix(group.get(0).getClassifier().getName().trim());
+		newPackage.setNsURI(group.get(0).getClassifier().getName().trim());
 		
-		for (EClassifier eClassifier : moduleConceptsVO.getConcepts()) {
-			if(eClassifier instanceof EClass){
-				EClass newClass = EcoreCloningServices.getInstance().cloneEClass((EClass)eClassifier);
+		for (EcoreVertex vertex : group) {
+			if(vertex.getClassifier() instanceof EClass){
+				EClass newClass = EcoreCloningServices.getInstance().cloneEClass((EClass)vertex.getClassifier());
 				newPackage.getEClassifiers().add(newClass);
 			}
-			else if(eClassifier instanceof EEnum){
-				EEnum newEEnum = EcoreCloningServices.getInstance().cloneEEnum((EEnum)eClassifier);
+			else if(vertex.getClassifier() instanceof EEnum){
+				EEnum newEEnum = EcoreCloningServices.getInstance().cloneEEnum((EEnum)vertex.getClassifier());
 				newPackage.getEClassifiers().add(newEEnum);
 			}
 		}
