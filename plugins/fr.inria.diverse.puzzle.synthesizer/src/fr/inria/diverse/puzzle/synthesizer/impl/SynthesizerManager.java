@@ -2,6 +2,8 @@ package fr.inria.diverse.puzzle.synthesizer.impl;
 
 import java.util.ArrayList;
 
+import org.eclipse.core.resources.IProject;
+
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
@@ -43,14 +45,14 @@ public class SynthesizerManager {
 	// Methods
 	// ----------------------------------------------------------
 	
-	public void synthesizeLanguageProductLine(ArrayList<Language> languages) throws Exception{
+	public void synthesizeLanguageProductLine(ArrayList<Language> languages, IProject project) throws Exception{
 		SynthesisProperties properties = this.getSynthesisProperties();
 		
 		// Step 1. Break-down the family
-		EcoreGraph modularizationGraph = SynthesisManager.getInstance().breakDownFamily(languages, properties);
+		EcoreGraph modularizationGraph = SynthesisManager.getInstance().breakDownFamily(languages, properties, project);
 		
 		// Step 2: Synthesize variability model
-		VariabilityInfererManager.getInstance().synthesizeVariabilityModel(properties, languages, modularizationGraph);
+		VariabilityInfererManager.getInstance().synthesizeVariabilityModel(properties, languages, modularizationGraph, project);
 	}
 	
 	private SynthesisProperties getSynthesisProperties(){

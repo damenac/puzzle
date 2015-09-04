@@ -1,5 +1,6 @@
 package fr.inria.diverse.melange.ui.builder;
 
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
@@ -28,10 +29,12 @@ public class SynthesisBuilder {
           languages.add(((Language) element));
         }
       }
+      IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
       SynthesizerManager _instance = SynthesizerManager.getInstance();
-      _instance.synthesizeLanguageProductLine(languages);
+      _instance.synthesizeLanguageProductLine(languages, lplProject);
       ComputeMetricsActionImpl _instance_1 = ComputeMetricsActionImpl.getInstance();
       _instance_1.computeMetrics(root, project);
+      ProjectManagementServices.refreshProject(lplProject);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

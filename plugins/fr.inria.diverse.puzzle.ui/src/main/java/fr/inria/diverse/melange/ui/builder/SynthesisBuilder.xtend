@@ -9,6 +9,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language
 import java.util.ArrayList
 import fr.inria.diverse.melange.metamodel.melange.Element
 import fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices
 
 class SynthesisBuilder
 {
@@ -20,7 +21,11 @@ class SynthesisBuilder
 			if(element instanceof Language)
 				languages.add(element as Language);
 		}
-		SynthesizerManager.instance.synthesizeLanguageProductLine(languages)
+		
+		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
+		var IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+		SynthesizerManager.instance.synthesizeLanguageProductLine(languages, lplProject)
 		ComputeMetricsActionImpl.instance.computeMetrics(root, project);
+		ProjectManagementServices.refreshProject(lplProject)
 	}	
 }

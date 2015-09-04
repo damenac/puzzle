@@ -3,7 +3,6 @@ package fr.inria.diverse.puzzle.variabilityinferer.inferers;
 import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
@@ -18,9 +17,8 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 public class DiverSEInferrer implements VariabilityInferer {
 
 	@Override
-	public EObject inferVariabilityModel(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) {
-		System.out.println("Coucou! inferVariabilityModel" + this.generatePCMInCVSFormat(properties, languages, modularizationGraph));
-		return null;
+	public String inferVariabilityModel(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) {
+		return this.generatePCMInCVSFormat(properties, languages, modularizationGraph);
 	}
 	
 	private String generatePCMInCVSFormat(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph){

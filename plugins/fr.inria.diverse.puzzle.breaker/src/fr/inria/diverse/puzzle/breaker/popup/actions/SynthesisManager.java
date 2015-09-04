@@ -58,7 +58,7 @@ public class SynthesisManager {
 	 * @param languages
 	 * @throws Exception
 	 */
-	public EcoreGraph breakDownFamily(ArrayList<Language> languages, SynthesisProperties synthesisProperties) throws Exception{
+	public EcoreGraph breakDownFamily(ArrayList<Language> languages, SynthesisProperties synthesisProperties, IProject lplProject) throws Exception{
 		ConceptComparison conceptComparisonOperator = synthesisProperties.getConceptComparisonOperator();
 		MethodComparison methodComparisonOperator = synthesisProperties.getMethodComparisonOperator();
 		
@@ -70,8 +70,7 @@ public class SynthesisManager {
 		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
 		buildModules(dependenciesGraph);
 		
-		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
-		IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+		
 		
 		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(lplProject);
 		metricsManager.createReport1ProductLineCoupling(languages);
