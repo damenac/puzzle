@@ -1,0 +1,39 @@
+package fr.inria.diverse.puzzle.variabilityinferer.inferers;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EObject;
+
+import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class DiverSEInferrer implements VariabilityInferer {
+
+	@Override
+	public EObject inferVariabilityModel(ArrayList<Language> languages, EcoreGraph modularizationGraph) {
+		System.out.println("Coucou! inferVariabilityModel" + this.generatePCMInCVSFormat(languages, modularizationGraph));
+		return null;
+	}
+	
+	private String generatePCMInCVSFormat(ArrayList<Language> languages, EcoreGraph modularizationGraph){
+		String pcm = "\"Product\"";
+		for (int i = 0; i < modularizationGraph.getGroups().size(); i++) {
+			ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(i);
+			// get name by module. 
+			pcm += ",\"Group " + i + "\"";
+		}
+		pcm += "\n";
+		
+		for (int i = 0; i < languages.size(); i++) {
+			
+		}
+		return pcm;
+	}
+	
+	private boolean moduleContainedInLanguage(Language language, ArrayList<EcoreVertex> module){
+		return false;
+	}
+
+}

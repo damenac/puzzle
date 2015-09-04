@@ -38,7 +38,7 @@ public class VariabilityInfererManager {
 	
 	public void synthesizeVariabilityModel(SynthesisProperties synthesisProperties, ArrayList<Language> languages, EcoreGraph modularizationGraph){
 		VariabilityInferer inferrer = synthesisProperties.getVariabilityInferer();
-		EObject variabilityModel = inferrer.inferVariabilityModel(languages, modularizationGraph);
+		EObject variabilityModel = inferrer.inferVariabilityModel(synthesisProperties, languages, modularizationGraph);
 		System.out.println("variabilityModel: " + variabilityModel);
 		//TODO serialize the model
 	}

@@ -22,10 +22,10 @@ class AnalyzeFamily extends AbstractHandler {
 	@Inject XtextResourceSetProvider rsProvider
 
 	override execute(ExecutionEvent event) throws ExecutionException {
-		new Job("Puzzle: Compute Metrics") {
+		new Job("Puzzle: Analyzing family") {
 			override run(IProgressMonitor monitor) {
 				try {
-					monitor.beginTask("Computing all metrics", 4)
+					monitor.beginTask("Computing all metrics of the family's analysis", 4)
 
 					val sel = HandlerUtil.getActiveMenuSelection(event)
 					val selection = sel as IStructuredSelection

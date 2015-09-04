@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
 
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**
@@ -13,5 +14,5 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
  */
 public interface VariabilityInferer {
 
-	public EObject inferVariabilityModel(ArrayList<Language> languages, EcoreGraph modularizationGraph);
+	public EObject inferVariabilityModel(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph);
 }

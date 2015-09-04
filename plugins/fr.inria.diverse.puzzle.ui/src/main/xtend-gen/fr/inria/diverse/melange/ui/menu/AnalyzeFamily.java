@@ -33,11 +33,11 @@ public class AnalyzeFamily extends AbstractHandler {
   
   @Override
   public Object execute(final ExecutionEvent event) throws ExecutionException {
-    new Job("Puzzle: Compute Metrics") {
+    new Job("Puzzle: Analyzing family") {
       @Override
       public IStatus run(final IProgressMonitor monitor) {
         try {
-          monitor.beginTask("Computing all metrics", 4);
+          monitor.beginTask("Computing all metrics of the family\'s analysis", 4);
           final ISelection sel = HandlerUtil.getActiveMenuSelection(event);
           final IStructuredSelection selection = ((IStructuredSelection) sel);
           Object _firstElement = selection.getFirstElement();
