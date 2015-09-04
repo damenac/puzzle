@@ -39,23 +39,21 @@ public class CouplingMetricsTable implements ChartMetric{
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
 		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
 		SumCoupling sumCouplingMetric = new SumCoupling();
+		int sum = 0;
 		
-		boolean first = true;
 		for (int i = 0; i < dependenciesGraph.getGroups().size(); i++) {
 			ArrayList<EcoreVertex> groupI = dependenciesGraph.getGroups().get(i);
 			for (int j = i + 1; j < dependenciesGraph.getGroups().size(); j++) {
 				if(i!=j){
 					ArrayList<EcoreVertex> groupJ = dependenciesGraph.getGroups().get(j);
 					int pairCoupling = sumCouplingMetric.getCouplingByGroupsPair(groupI, groupJ, dependenciesGraph.getArcs());
-					if(!first) javaScriptData += ",\n";
-					javaScriptData += "      ['Group " + i + "', 'Group " + j + "', " + pairCoupling + "]";
-					first = false;
+					javaScriptData += "      ['Group " + i + "', 'Group " + j + "', " + pairCoupling + "],\n";
+					sum += pairCoupling;
 				}
 			}
 		}
-		javaScriptData += "\n";
-		
-		// aqui la suma y el promedio. 
+		javaScriptData += "      [' ', 'Coupling Sum', " + sum + "],\n";
+		javaScriptData += "      [' ', 'Coupling Avg', " + (new AverageCoupling()).compute(languages, conceptComparisonOperator) + "]\n";
 		
 		javaScriptData += "  ]);\n\n";
 		javaScriptData += "  var table = new google.visualization.Table(document.getElementById('table_div'));";

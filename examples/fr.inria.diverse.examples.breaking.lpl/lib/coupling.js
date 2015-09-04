@@ -15,7 +15,9 @@ function drawTable() {
       ['Group 1', 'Group 4', 1],
       ['Group 2', 'Group 3', 9],
       ['Group 2', 'Group 4', 0],
-      ['Group 3', 'Group 4', 0]
+      ['Group 3', 'Group 4', 0],
+      [' ', 'Coupling Sum', 17],
+      [' ', 'Coupling Avg', 3.0]
   ]);
 
   var table = new google.visualization.Table(document.getElementById('table_div'));  table.draw(data, {showRowNumber: false, width: '80%', height: '100%'});
