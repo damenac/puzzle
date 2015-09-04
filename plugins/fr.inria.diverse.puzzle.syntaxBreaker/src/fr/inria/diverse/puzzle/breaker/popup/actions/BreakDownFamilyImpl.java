@@ -64,7 +64,6 @@ public class BreakDownFamilyImpl {
 			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + group.get(0).getClassifier().getName() + ".ecore", moduleEPackage);
 			
 			// Create the genmodel and generate the code of the module.
-			
 			ProjectManagementServices.refreshProject(moduleProject);
 		}
 	}

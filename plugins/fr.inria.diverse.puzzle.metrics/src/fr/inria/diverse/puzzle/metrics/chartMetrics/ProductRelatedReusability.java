@@ -2,14 +2,11 @@ package fr.inria.diverse.puzzle.metrics.chartMetrics;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
-import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
