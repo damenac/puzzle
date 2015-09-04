@@ -1,0 +1,26 @@
+package fr.inria.diverse.puzzle.synthesizer.impl;
+
+public class SynthesizerManager {
+
+	// ----------------------------------------------------------
+	// Attributes
+	// ----------------------------------------------------------
+	
+	private static SynthesizerManager instance;
+	
+	// ----------------------------------------------------------
+	// Constructor and singleton
+	// ----------------------------------------------------------
+	
+	private SynthesizerManager(){
+		
+	}
+	
+	// ----------------------------------------------------------
+	// Methods
+	// ----------------------------------------------------------
+	
+	public void synthesizeLanguageProductLine(){
+		
+	}
+}

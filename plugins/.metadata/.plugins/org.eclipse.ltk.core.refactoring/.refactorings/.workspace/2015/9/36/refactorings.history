@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;ca.uwaterloo.gsd.refm&apos;" deleteContents="false" description="Delete resource &apos;ca.uwaterloo.gsd.refm&apos;" element1="/ca.uwaterloo.gsd.refm" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1441364632987"/>
+</session>

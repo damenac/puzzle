@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Synthesizer
+Bundle-SymbolicName: fr.inria.diverse.puzzle.synthesizer
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.inria.diverse.puzzle.synthesizer.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.variabilityinferer.impl;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EObject;
+
+public interface VariabilityInferer {
+
+	public EObject inferVariabilityModel(ArrayList<Language> languages);
+}

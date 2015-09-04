@@ -1,0 +1,12 @@
+package fr.inria.diverse.puzzle.synthesizer.impl;
+
+public class SynthesizerManager {
+
+	// ----------------------------------------------------------
+	// Attributes
+	// ----------------------------------------------------------
+	
+	private static SynthesizerManager instance;
+	
+	
+}
