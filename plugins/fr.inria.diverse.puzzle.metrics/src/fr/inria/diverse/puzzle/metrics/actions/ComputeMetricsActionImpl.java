@@ -12,11 +12,12 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
@@ -61,12 +62,10 @@ public class ComputeMetricsActionImpl {
 	 * @throws CoreException
 	 * @throws URISyntaxException
 	 */
-	public String computeMetrics(ModelTypingSpace familyTypingSpace, IProject project) throws Exception {
-//		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
-		ConceptComparison conceptComparisonOperator = DeepConceptComparison.class.newInstance();
-//		MethodComparison methodComparisonOperator = NamingMethodComparison.class.newInstance();
-//		MethodComparison methodComparisonOperator = SignatureMethodComparison.class.newInstance();
-		MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
+	public String computeMetrics(SynthesisProperties synthesisProperties, ModelTypingSpace familyTypingSpace, IProject project) throws Exception {
+		ConceptComparison conceptComparisonOperator = synthesisProperties.getConceptComparisonOperator();
+		MethodComparison methodComparisonOperator = synthesisProperties.getMethodComparisonOperator();
+		GraphPartition graphPartition = synthesisProperties.getGraphPartition();
 		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		ArrayList<Language> languages = new ArrayList<Language>();
@@ -90,7 +89,7 @@ public class ComputeMetricsActionImpl {
 		
 		String generalMetricsString = "";
 		for (ChartMetric chartMetric : chartMetrics) {
-			generalMetricsString += chartMetric.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator);
+			generalMetricsString += chartMetric.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
 		}
 
 		String generalMetricsWindowsString = "window.onload = function(){\n";
@@ -125,7 +124,7 @@ public class ComputeMetricsActionImpl {
 		
 		familysMetric.createReport1FamilysShape(languages);
 		familysMetric.createReport2CostSaving(languages);
-		familysMetric.createReport2CostSavingData(languages, conceptComparisonOperator, methodComparisonOperator);
+		familysMetric.createReport2CostSavingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
 		familysMetric.createReport3ReuseMetrics(languages);
 		familysMetric.createDependenciesGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
 		familysMetric.createDependenciesGraph(languages);

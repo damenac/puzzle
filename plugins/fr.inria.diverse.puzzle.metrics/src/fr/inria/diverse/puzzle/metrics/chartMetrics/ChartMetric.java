@@ -3,6 +3,7 @@ package fr.inria.diverse.puzzle.metrics.chartMetrics;
 import java.util.ArrayList;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
@@ -18,7 +19,7 @@ public interface ChartMetric {
 	 * @return javaScriptData
 	 * @throws Exception
 	 */
-	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception;
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, GraphPartition graphPartition) throws Exception;
 	
 	/**
 	 * Returns the String with the java-script code that specifies the chart window

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -22,7 +23,8 @@ public class ProductRelatedReusability implements ChartMetric {
 	// ---------------------------------------------------
 
 	@Override
-	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator, 
+			MethodComparison methodComparisonOperator, GraphPartition graphPartition) throws Exception{
 		String answer = "var barProductRelatedReusability = {\n";
 		boolean first = true;
 		String labels = "";

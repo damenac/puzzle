@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectConstructs;
@@ -29,7 +30,7 @@ public class MaintananceCosts implements ChartMetric {
 	@Override
 	public String getVariablesDeclaration(ArrayList<Language> languages,
 			ConceptComparison conceptComparisonOperator,
-			MethodComparison methodComparisonOperator) throws Exception {
+			MethodComparison methodComparisonOperator, GraphPartition graphPartition) throws Exception {
 		
 		int[] constructsAmountsArray = this.getConstructsAmount(languages, conceptComparisonOperator);
 		double pendiente = this.getAverageCostSyntax(languages, conceptComparisonOperator, methodComparisonOperator);

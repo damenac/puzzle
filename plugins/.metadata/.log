@@ -5928,3 +5928,9 @@ org.eclipse.text.edits.MalformedTreeException: End position lies outside documen
 	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
 	at org.eclipse.ltk.internal.ui.refactoring.WorkbenchRunnableAdapter.run(WorkbenchRunnableAdapter.java:87)
 	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:122)
+
+!ENTRY org.eclipse.core.resources 4 376 2015-09-04 16:50:01.113
+!MESSAGE Marker id 11838 not found.
+
+!ENTRY org.eclipse.core.resources 4 376 2015-09-04 16:50:01.114
+!MESSAGE Marker id 11837 not found.

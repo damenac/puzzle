@@ -2,16 +2,14 @@ package fr.inria.diverse.puzzle.metrics.chartMetrics;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.ecore.EPackage;
-
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
-import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
@@ -27,7 +25,8 @@ public class SizeOfCommonality implements ChartMetric {
 	// ---------------------------------------------------
 
 	@Override
-	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, 
+			MethodComparison methodComparisonOperator, GraphPartition graphPartition) throws Exception{
 		String answer = "";
 		int syntacticCore = evaluateForSyntax(languages, conceptComparisonOperator);
 		int totalConstructs = CountConstructs.countFamilyConstructs(languages, conceptComparisonOperator);

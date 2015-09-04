@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
@@ -23,7 +24,8 @@ public class PairwiseRelationshipRatio implements ChartMetric {
 	// ---------------------------------------------------
 
 	@Override
-	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, 
+			MethodComparison methodComparisonOperator, GraphPartition graphPartition){
 		String answer = "";
 		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
 		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);

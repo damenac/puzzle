@@ -1,0 +1,20 @@
+package fr.inria.diverse.k3.sle.common.graphsOperators;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
+
+public class DefaultParition implements GraphPartition {
+
+	@Override
+	public void graphPartition(EcoreGraph graph,
+			ArrayList<TupleMembersConcepts> membersConceptList,
+			ConceptComparison conceptComparisonOperator) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

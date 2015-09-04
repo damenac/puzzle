@@ -7,7 +7,7 @@ import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**
- * Interface specifying the behavior for variability models inference for language product lines.
+ * Contract for the variability inferrer command. 
  * @author David Mendez-Acuna
  */
 public interface VariabilityInferer {

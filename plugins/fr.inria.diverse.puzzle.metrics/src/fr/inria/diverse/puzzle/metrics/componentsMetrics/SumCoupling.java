@@ -3,6 +3,7 @@ package fr.inria.diverse.puzzle.metrics.componentsMetrics;
 import java.util.ArrayList;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreArc;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
@@ -14,13 +15,13 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class SumCoupling {
 
-	public int compute(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception{
+	public int compute(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, GraphPartition graphPartition) throws Exception{
 		int coupling = 0;
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
-		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
+		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 	
 		for (int i = 0; i < dependenciesGraph.getGroups().size(); i++) {
 			ArrayList<EcoreVertex> groupI = dependenciesGraph.getGroups().get(i);

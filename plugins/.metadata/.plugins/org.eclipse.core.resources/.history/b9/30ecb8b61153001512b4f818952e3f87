@@ -1,0 +1,7 @@
+package fr.inria.diverse.k3.sle.common.graphsOperators;
+
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
+
+public class TarjansPartition implements GraphPartition {
+
+}

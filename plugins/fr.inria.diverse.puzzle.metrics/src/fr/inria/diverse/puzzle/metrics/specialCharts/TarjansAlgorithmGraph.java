@@ -2,17 +2,15 @@ package fr.inria.diverse.puzzle.metrics.specialCharts;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.ecore.EPackage;
-
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreArc;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
+import fr.inria.diverse.k3.sle.common.graphsOperators.TarjansPartition;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
-import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class TarjansAlgorithmGraph {
@@ -23,7 +21,7 @@ public class TarjansAlgorithmGraph {
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
-		dependenciesGraph.groupByTarjansAlgorithm();
+		(new TarjansPartition()).graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		
 		answer += "var G = new jsnx.DiGraph();\n";
 		int i = 0;

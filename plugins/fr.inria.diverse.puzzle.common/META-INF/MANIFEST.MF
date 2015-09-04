@@ -31,6 +31,7 @@ Import-Package: org.eclipse.emf.common.util,
 Export-Package: fr.inria.diverse.k3.sle.common.commands,
  fr.inria.diverse.k3.sle.common.comparisonOperators,
  fr.inria.diverse.k3.sle.common.graphs,
+ fr.inria.diverse.k3.sle.common.graphsOperators,
  fr.inria.diverse.k3.sle.common.tuples,
  fr.inria.diverse.k3.sle.common.utils,
  fr.inria.diverse.k3.sle.common.vos

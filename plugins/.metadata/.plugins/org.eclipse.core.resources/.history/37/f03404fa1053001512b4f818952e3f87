@@ -1,0 +1,8 @@
+package fr.inria.diverse.k3.sle.common.commands;
+
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+
+public interface GraphPartition {
+
+	public void graphPartition(EcoreGraph graph);
+}

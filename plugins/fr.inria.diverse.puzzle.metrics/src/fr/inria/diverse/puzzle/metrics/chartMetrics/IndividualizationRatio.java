@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
@@ -26,7 +27,8 @@ public class IndividualizationRatio implements ChartMetric {
 	// ---------------------------------------------------
 
 	@Override
-	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, 
+			MethodComparison methodComparisonOperator, GraphPartition graphPartition) throws Exception{
 		String answer = "var barIndividualizationRatio = {\n";
 		
 		boolean first = true;
@@ -74,7 +76,6 @@ public class IndividualizationRatio implements ChartMetric {
 
 	private String evaluateForSyntax(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		String answer = "";
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
 		boolean first = true;

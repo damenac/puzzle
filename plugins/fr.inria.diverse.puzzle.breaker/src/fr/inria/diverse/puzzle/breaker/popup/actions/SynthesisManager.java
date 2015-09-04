@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
@@ -61,17 +62,18 @@ public class SynthesisManager {
 	public EcoreGraph breakDownFamily(ArrayList<Language> languages, SynthesisProperties synthesisProperties, IProject lplProject) throws Exception{
 		ConceptComparison conceptComparisonOperator = synthesisProperties.getConceptComparisonOperator();
 		MethodComparison methodComparisonOperator = synthesisProperties.getMethodComparisonOperator();
+		GraphPartition graphPartition = synthesisProperties.getGraphPartition();
 		
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
-		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
+		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		buildModules(dependenciesGraph);
 		
 		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(lplProject);
 		metricsManager.createReport1ProductLineCoupling(languages);
-		metricsManager.createReport1ProductLineCouplingData(languages, conceptComparisonOperator, methodComparisonOperator);
+		metricsManager.createReport1ProductLineCouplingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
 		
 		ProjectManagementServices.refreshProject(lplProject);
 		return dependenciesGraph;

@@ -1,0 +1,14 @@
+package fr.inria.diverse.k3.sle.common.graphsOperators;
+
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+
+public class MembershipGraphPartition implements GraphPartition {
+
+	@Override
+	public void graphPartition(EcoreGraph graph) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

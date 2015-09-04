@@ -2,9 +2,8 @@ package fr.inria.diverse.puzzle.metrics.componentsMetrics;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.ecore.EPackage;
-
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
@@ -21,7 +20,8 @@ public class CouplingMetricsTable implements ChartMetric{
 	@Override
 	public String getVariablesDeclaration(ArrayList<Language> languages,
 			ConceptComparison conceptComparisonOperator,
-			MethodComparison methodComparisonOperator) throws Exception {
+			MethodComparison methodComparisonOperator,
+			GraphPartition graphPartition) throws Exception {
 		
 		String javaScriptData = "google.load('visualization', '1.1', {packages:['table']});\n";
 		javaScriptData += "google.setOnLoadCallback(drawTable);\n\n";
@@ -36,7 +36,8 @@ public class CouplingMetricsTable implements ChartMetric{
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
-		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
+		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
+		
 		SumCoupling sumCouplingMetric = new SumCoupling();
 		int sum = 0;
 		
@@ -54,7 +55,7 @@ public class CouplingMetricsTable implements ChartMetric{
 			}
 		}
 		javaScriptData += "      [' ', 'Coupling Sum', " + sum + "],\n";
-		javaScriptData += "      [' ', 'Coupling Avg', " + (new AverageCoupling()).compute(languages, conceptComparisonOperator) + "]\n";
+		javaScriptData += "      [' ', 'Coupling Avg', " + (new AverageCoupling()).compute(languages, conceptComparisonOperator, graphPartition) + "]\n";
 		
 		javaScriptData += "  ]);\n\n";
 		javaScriptData += "  var table = new google.visualization.Table(document.getElementById('table_div'));";

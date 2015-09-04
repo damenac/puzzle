@@ -3,7 +3,7 @@ package fr.inria.diverse.k3.sle.common.commands;
 import org.eclipse.emf.ecore.EClassifier;
 
 /**
- * Contract for the concepts comparison service
+ * Contract for the concepts comparison command.
  * @author David Mendez-Acuna
  */
 public interface ConceptComparison {

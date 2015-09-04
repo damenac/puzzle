@@ -14,6 +14,7 @@ import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts;
@@ -70,12 +71,12 @@ public class FamilysMetricManager extends MetricsManager {
 	}
 	
 	public void createReport2CostSavingData(ArrayList<Language> languages, 
-			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, GraphPartition graphPartition) throws Exception{
         File fileReport = new File(project.getLocation().toString() + "/lib/costSavingMetrics.js" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
-		outRileReport.print((new MaintananceCosts()).getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
+		outRileReport.print((new MaintananceCosts()).getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition));
 		outRileReport.close();
 	}
 	
