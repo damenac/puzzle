@@ -1,0 +1,8 @@
+package fr.inria.diverse.puzzle.metrics.managers;
+
+import org.eclipse.core.resources.IProject;
+
+public abstract class MetricsManager {
+
+	protected IProject project;
+}

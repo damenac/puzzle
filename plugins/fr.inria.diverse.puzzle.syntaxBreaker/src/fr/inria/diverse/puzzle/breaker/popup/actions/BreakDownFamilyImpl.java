@@ -22,6 +22,7 @@ import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.metrics.managers.ProductLinesMetricManager;
 
 /**
  * 
@@ -49,6 +50,14 @@ public class BreakDownFamilyImpl {
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
 		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
 		buildModules(dependenciesGraph);
+		
+		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
+		IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+		
+		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(lplProject);
+		metricsManager.createReport1ProductLineCoupling(languages);
+		
+		ProjectManagementServices.refreshProject(lplProject);
 	}
 
 	private void buildModules(EcoreGraph ecoreGraph) throws CoreException {
@@ -57,7 +66,7 @@ public class BreakDownFamilyImpl {
 			EPackage moduleEPackage = this.createEPackageByModule(group);
 
 			// Create the module project with the folders.
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking." + group.get(0).getClassifier().getName().trim());
+			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl" + group.get(0).getClassifier().getName().trim());
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 
