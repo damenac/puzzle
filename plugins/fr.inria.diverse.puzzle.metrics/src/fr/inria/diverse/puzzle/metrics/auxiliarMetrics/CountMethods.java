@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmOperation;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;

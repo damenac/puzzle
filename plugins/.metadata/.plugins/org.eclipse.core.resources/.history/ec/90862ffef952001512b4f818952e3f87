@@ -1,0 +1,9 @@
+package fr.inria.diverse.k3.sle.common.vos;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+
+public class SynthesisProperties {
+	
+	private ConceptComparison conceptComparisonOperator;
+
+}

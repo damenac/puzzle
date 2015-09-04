@@ -3,8 +3,8 @@ package fr.inria.diverse.puzzle.metrics.specialCharts;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.tuples.SemanticNode;
 import fr.inria.diverse.k3.sle.common.tuples.SemanticTree;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;

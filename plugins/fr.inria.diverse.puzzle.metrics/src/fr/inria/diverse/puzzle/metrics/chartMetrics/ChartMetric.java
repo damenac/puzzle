@@ -2,8 +2,8 @@ package fr.inria.diverse.puzzle.metrics.chartMetrics;
 
 import java.util.ArrayList;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public interface ChartMetric {

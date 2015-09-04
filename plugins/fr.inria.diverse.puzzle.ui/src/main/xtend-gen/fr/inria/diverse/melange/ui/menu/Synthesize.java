@@ -1,7 +1,7 @@
 package fr.inria.diverse.melange.ui.menu;
 
 import com.google.inject.Inject;
-import fr.inria.diverse.melange.ui.builder.SyntaxBreakerBuilder;
+import fr.inria.diverse.melange.ui.builder.SynthesisBuilder;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -24,32 +24,32 @@ import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 @SuppressWarnings("all")
-public class BreakDownSyntax extends AbstractHandler {
+public class Synthesize extends AbstractHandler {
   @Inject
-  private SyntaxBreakerBuilder builder;
+  private SynthesisBuilder builder;
   
   @Inject
   private XtextResourceSetProvider rsProvider;
   
   @Override
   public Object execute(final ExecutionEvent event) throws ExecutionException {
-    new Job("Puzzle: Break down family") {
+    new Job("Puzzle: Synthesize language product line") {
       @Override
       public IStatus run(final IProgressMonitor monitor) {
         try {
-          monitor.beginTask("Breaking down the family", 4);
+          monitor.beginTask("Synthesizing a language product line", 4);
           final ISelection sel = HandlerUtil.getActiveMenuSelection(event);
           final IStructuredSelection selection = ((IStructuredSelection) sel);
           Object _firstElement = selection.getFirstElement();
           final IResource resource = ((IResource) _firstElement);
           final IProject project = resource.getProject();
-          final ResourceSet rs = BreakDownSyntax.this.rsProvider.get(project);
+          final ResourceSet rs = Synthesize.this.rsProvider.get(project);
           IPath _fullPath = resource.getFullPath();
           String _string = _fullPath.toString();
           URI _createPlatformResourceURI = URI.createPlatformResourceURI(_string, true);
           Resource _resource = rs.getResource(_createPlatformResourceURI, true);
           final DerivedStateAwareResource res = ((DerivedStateAwareResource) _resource);
-          BreakDownSyntax.this.builder.breakDownSyntax(res, project, monitor);
+          Synthesize.this.builder.synthesizeLanguageProductLine(res, project, monitor);
         } catch (final Throwable _t) {
           if (_t instanceof OperationCanceledException) {
             final OperationCanceledException e = (OperationCanceledException)_t;

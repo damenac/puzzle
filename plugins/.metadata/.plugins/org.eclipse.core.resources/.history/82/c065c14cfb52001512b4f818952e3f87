@@ -1,0 +1,48 @@
+package fr.inria.diverse.puzzle.synthesizer.impl;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+
+public class SynthesizerManager {
+
+	// ----------------------------------------------------------
+	// Attributes
+	// ----------------------------------------------------------
+	
+	private static SynthesizerManager instance;
+	
+	// ----------------------------------------------------------
+	// Constructor and singleton
+	// ----------------------------------------------------------
+	
+	private SynthesizerManager(){
+		
+	}
+	
+	public static SynthesizerManager getInstance(){
+		if(instance == null)
+			instance = new SynthesizerManager();
+		return instance;
+	}
+	
+	// ----------------------------------------------------------
+	// Methods
+	// ----------------------------------------------------------
+	
+	public void synthesizeLanguageProductLine(){
+		
+	}
+	
+	private SynthesisProperties getSynthesisProperties(){
+//		ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
+		ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
+		
+		MethodComparison methodComparisonOperator = new NamingMethodComparison();
+		
+		SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer)
+	}
+}

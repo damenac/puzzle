@@ -15,3 +15,6 @@
 /GenerateLanguages.java
 /.ComputeMetrics.java._trace
 /.BreakDownSyntax.java._trace
+/.Synthesizer.java._trace
+/.Synthesize.java._trace
+/.AnalyzeFamily.java._trace

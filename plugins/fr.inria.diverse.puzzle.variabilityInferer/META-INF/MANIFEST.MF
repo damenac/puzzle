@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: VariabilityInferer
-Bundle-SymbolicName: fr.inria.diverse.puzzle.variabilityInferer
+Bundle-SymbolicName: fr.inria.diverse.puzzle.variabilityInferer;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: fr.inria.diverse.puzzle.variabilityinferer.Activator
 Require-Bundle: org.eclipse.ui,
@@ -11,3 +11,5 @@ Require-Bundle: org.eclipse.ui,
  fr.inria.diverse.puzzle.common;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: fr.inria.diverse.puzzle.variabilityinferer,
+ fr.inria.diverse.puzzle.variabilityinferer.inferers

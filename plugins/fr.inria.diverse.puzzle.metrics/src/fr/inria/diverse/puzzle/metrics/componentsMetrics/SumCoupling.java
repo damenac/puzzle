@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EPackage;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.tuples.EcoreArc;
-import fr.inria.diverse.k3.sle.common.tuples.EcoreGraph;
-import fr.inria.diverse.k3.sle.common.tuples.EcoreVertex;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreArc;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;

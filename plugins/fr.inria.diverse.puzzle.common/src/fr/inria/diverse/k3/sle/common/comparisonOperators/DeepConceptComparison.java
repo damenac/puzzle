@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EReference;
 
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+
 public class DeepConceptComparison implements ConceptComparison {
 
 	@Override

@@ -6,8 +6,8 @@ import java.util.List;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.xtext.common.types.JvmOperation;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectConstructs;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CollectMethods;

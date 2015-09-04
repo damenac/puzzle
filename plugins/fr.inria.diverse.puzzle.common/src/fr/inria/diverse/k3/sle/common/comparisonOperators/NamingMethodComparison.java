@@ -2,6 +2,8 @@ package fr.inria.diverse.k3.sle.common.comparisonOperators;
 
 import org.eclipse.xtext.common.types.JvmOperation;
 
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+
 /**
  * Service for methods comparison by simple naming match
  * @author David Mendez-Acuna

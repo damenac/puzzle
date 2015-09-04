@@ -11,9 +11,9 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.ecore.EPackage;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;

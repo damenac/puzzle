@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.xtext.common.types.JvmOperation;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**

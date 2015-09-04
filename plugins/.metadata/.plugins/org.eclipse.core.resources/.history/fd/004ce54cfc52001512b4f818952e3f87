@@ -1,0 +1,15 @@
+package fr.inria.diverse.puzzle.variabilityinferer;
+
+public class VariabilityInfererManager {
+
+	// --------------------------------------------------
+	// Attributes
+	// --------------------------------------------------
+	
+	private static VariabilityInfererManager instance;
+	
+	// --------------------------------------------------
+	// Constructor and singleton
+	// --------------------------------------------------
+	
+}

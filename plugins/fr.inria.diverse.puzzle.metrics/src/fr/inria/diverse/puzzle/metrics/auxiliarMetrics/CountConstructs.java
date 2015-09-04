@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.eclipse.emf.ecore.EPackage;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;

@@ -6,6 +6,8 @@ import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmOperation;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+
 /**
  * Service for methods comparison by their signature
  * @author David Mendez-Acuna

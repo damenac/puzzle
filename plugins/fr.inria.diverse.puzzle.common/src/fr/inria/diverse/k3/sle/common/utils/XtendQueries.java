@@ -3,7 +3,7 @@ package fr.inria.diverse.k3.sle.common.utils;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.common.types.JvmOperation;
 
-import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 

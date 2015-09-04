@@ -1,0 +1,13 @@
+package fr.inria.diverse.k3.sle.common.vos;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
+
+public class SynthesisProperties {
+	
+	private ConceptComparison conceptComparisonOperator;
+	private MethodComparison methodComparisonOperator;
+	private VariabilityInferer variabilityInferer;
+
+}

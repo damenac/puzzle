@@ -17,6 +17,7 @@ import org.eposoft.jccd.data.ast.ANode;
 import org.eposoft.jccd.detectors.APipeline;
 import org.eposoft.jccd.detectors.ASTDetector;
 
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 
 public class SignatureAndSourceMethodComparison implements MethodComparison {
