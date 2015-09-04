@@ -27,7 +27,7 @@ var pieDataSemanticCommonality = [{
 ];
 
 var barProductRelatedReusability = {
-   labels : ["fsm","kmLogo","flowchart"],
+   labels : ["FSM","Logo","Flowchart"],
    datasets : [
      {
         fillColor : "rgba(220,220,220,0.5)",
@@ -46,7 +46,7 @@ var barProductRelatedReusability = {
     ]
 };
 var barIndividualizationRatio = {
-   labels : ["fsm","kmLogo","flowchart"],
+   labels : ["FSM","Logo","Flowchart"],
    datasets : [
      {
         fillColor : "rgba(220,220,220,0.5)",
@@ -60,12 +60,12 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [19.35483870967742,0.0,33.33333333333333]
+        data : [0.0,0.0,0.0]
       }
     ]
 };
-var barRelationshipRatiofsm = {
-   labels : ["kmLogo","flowchart"],
+var barRelationshipRatioFSM = {
+   labels : ["Logo","Flowchart"],
    datasets : [
      {
         fillColor : "rgba(220,220,220,0.5)",
@@ -79,12 +79,12 @@ var barRelationshipRatiofsm = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [0.0,16.216216216216218]
+        data : [0.0,0.0]
       }
     ]
 };
-var barRelationshipRatiokmLogo = {
-   labels : ["fsm","flowchart"],
+var barRelationshipRatioLogo = {
+   labels : ["FSM","Flowchart"],
    datasets : [
      {
         fillColor : "rgba(220,220,220,0.5)",
@@ -102,8 +102,8 @@ var barRelationshipRatiokmLogo = {
       }
     ]
 };
-var barRelationshipRatioflowchart = {
-   labels : ["fsm","kmLogo"],
+var barRelationshipRatioFlowchart = {
+   labels : ["FSM","Logo"],
    datasets : [
      {
         fillColor : "rgba(220,220,220,0.5)",
@@ -117,7 +117,7 @@ var barRelationshipRatioflowchart = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [16.216216216216218,0.0]
+        data : [0.0,0.0]
       }
     ]
 };
@@ -139,18 +139,18 @@ window.onload = function(){
        responsive : false
     });
 
-    var ctxRelationshipRatiofsm = document.getElementById("pie-relationship-ratio-fsm").getContext("2d");
-    window.window.window.myBarRelationshipRatiofsm = new Chart(ctxRelationshipRatiofsm).Bar(barRelationshipRatiofsm, {
+    var ctxRelationshipRatioFSM = document.getElementById("pie-relationship-ratio-FSM").getContext("2d");
+    window.window.window.myBarRelationshipRatioFSM = new Chart(ctxRelationshipRatioFSM).Bar(barRelationshipRatioFSM, {
        responsive : false
     });
 
-    var ctxRelationshipRatiokmLogo = document.getElementById("pie-relationship-ratio-kmLogo").getContext("2d");
-    window.window.window.myBarRelationshipRatiokmLogo = new Chart(ctxRelationshipRatiokmLogo).Bar(barRelationshipRatiokmLogo, {
+    var ctxRelationshipRatioLogo = document.getElementById("pie-relationship-ratio-Logo").getContext("2d");
+    window.window.window.myBarRelationshipRatioLogo = new Chart(ctxRelationshipRatioLogo).Bar(barRelationshipRatioLogo, {
        responsive : false
     });
 
-    var ctxRelationshipRatioflowchart = document.getElementById("pie-relationship-ratio-flowchart").getContext("2d");
-    window.window.window.myBarRelationshipRatioflowchart = new Chart(ctxRelationshipRatioflowchart).Bar(barRelationshipRatioflowchart, {
+    var ctxRelationshipRatioFlowchart = document.getElementById("pie-relationship-ratio-Flowchart").getContext("2d");
+    window.window.window.myBarRelationshipRatioFlowchart = new Chart(ctxRelationshipRatioFlowchart).Bar(barRelationshipRatioFlowchart, {
        responsive : false
     });
 

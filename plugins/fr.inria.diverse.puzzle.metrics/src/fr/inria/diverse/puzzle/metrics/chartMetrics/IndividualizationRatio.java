@@ -27,15 +27,13 @@ public class IndividualizationRatio implements ChartMetric {
 
 	@Override
 	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		
 		String answer = "var barIndividualizationRatio = {\n";
 		
 		boolean first = true;
 		String labels = "";
-		for (EPackage ePackage : ePackages) {
+		for (Language language : languages) {
 			if(!first) labels += ",";
-			labels += "\"" + ePackage.getName() + "\"";
+			labels += "\"" + language.getName() + "\"";
 			first = false;
 		}
 		
@@ -77,16 +75,17 @@ public class IndividualizationRatio implements ChartMetric {
 	private String evaluateForSyntax(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		String answer = "";
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
 		boolean first = true;
-		for (EPackage ePackage : ePackages) {
+		for (Language language : languages) {
 			double count = 0;
 			for (TupleConceptMembers conceptMembersGroupVO : conceptMemberGroupList) {
-				if(conceptMembersGroupVO.getMembers().size() >= 2 && conceptMembersGroupVO.getMembers().contains(ePackage.getName())){
+				if(conceptMembersGroupVO.getMembers().size() >= 2 && conceptMembersGroupVO.getMembers().contains(language.getName())){
 					count++;
 				}
 			}
+			EPackage ePackage = MelangeServices.getEPackageFromLanguage(language);
 			double individualizationRatio = (count/CountConstructs.countLanguageConstructs(ePackage))*100;
 			
 			if(!first)

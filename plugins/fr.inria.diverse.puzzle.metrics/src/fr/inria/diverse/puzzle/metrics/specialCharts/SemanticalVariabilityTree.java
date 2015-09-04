@@ -43,10 +43,10 @@ public class SemanticalVariabilityTree {
 					tupleConceptMethodsMembers.getConcept().getSimpleName(), root, "");
 			
 			for (TupleMethodMembers methodMembers : tupleConceptMethodsMembers.getMethodsMembers()) {
-				String members = "[from:";
+				String members = "[from: ";
 				boolean first = true;
 				for (String member : methodMembers.getMembers()) {
-					if(!first) members += " ,";
+					if(!first) members += ", ";
 					members += member;
 					first = false;
 				}

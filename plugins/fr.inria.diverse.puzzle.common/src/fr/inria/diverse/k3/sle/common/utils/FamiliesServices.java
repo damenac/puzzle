@@ -57,10 +57,11 @@ public class FamiliesServices {
 	 * @param ePackages. List of ePackages 
 	 * @return
 	 */
-	public ArrayList<TupleConceptMember> getConceptMemberMappingList(ArrayList<EPackage> ePackages){
+	public ArrayList<TupleConceptMember> getConceptMemberMappingList(ArrayList<Language> languages){
 		ArrayList<TupleConceptMember> conceptMemberList = new ArrayList<TupleConceptMember>();
-		for (EPackage ePackage : ePackages) {
-			this.fillConceptMemberList(conceptMemberList, ePackage, ePackage.getName());
+		for (Language language : languages) {
+			EPackage ePackage = MelangeServices.getEPackageFromLanguage(language);
+			this.fillConceptMemberList(conceptMemberList, ePackage, language.getName());
 		}
 		return conceptMemberList;
 	}
@@ -86,8 +87,7 @@ public class FamiliesServices {
 	public ArrayList<TupleConceptMethodMember> getConceptMethodMemberMappingList(ArrayList<Language> languages){
 		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = new ArrayList<TupleConceptMethodMember>();
 		for (Language language : languages) {
-			EPackage ePackage = MelangeServices.getEPackageFromLanguage(language);
-			this.fillConceptMethodMemberList(conceptMethodMemberList, language, ePackage.getName());
+			this.fillConceptMethodMemberList(conceptMethodMemberList, language, language.getName());
 		}
 		return conceptMethodMemberList;
 	}
@@ -225,9 +225,9 @@ public class FamiliesServices {
 		return null;
 	}
 	
-	public ArrayList<TupleModuleConceptsMembers> obtainConceptsOwenerLanguagesList(ArrayList<EPackage> ePackages, ConceptComparison comparisonOperator) throws Exception{
+	public ArrayList<TupleModuleConceptsMembers> obtainConceptsOwenerLanguagesList(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		// Step 1: Scan the metamodels creating the concept-member list.
-		ArrayList<TupleConceptMember> conceptMemberList = this.getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = this.getConceptMemberMappingList(languages);
 		
 		// Step 2: For each concept, get the group of members it belongs.
 		ArrayList<TupleConceptMembers> conceptMemberGroupList = this.getConceptMemberGroupList(conceptMemberList, comparisonOperator);

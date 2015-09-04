@@ -30,7 +30,7 @@ public class PairwiseRelationshipRatio implements ChartMetric {
 		
 		for (Language languageI : languages) {
 			EPackage ePackageI = MelangeServices.getEPackageFromLanguage(languageI);
-			answer += "var barRelationshipRatio" + ePackageI.getName() + " = {\n";
+			answer += "var barRelationshipRatio" + languageI.getName() + " = {\n";
 			
 			String labels = "";
 			String dataForSyntax = "";
@@ -38,11 +38,11 @@ public class PairwiseRelationshipRatio implements ChartMetric {
 			for (Language languageJ : languages) {
 				
 				EPackage ePackageJ = MelangeServices.getEPackageFromLanguage(languageJ);
-				if(!ePackageI.getName().equals(ePackageJ.getName())){
+				if(!languageI.getName().equals(languageJ.getName())){
 					double currentValue = (((double)FamiliesServices.getIntersection(ePackageI, ePackageJ, conceptComparisonOperator).size()) / ((double)FamiliesServices.getUnion(ePackageI, ePackageJ).size()))*100;
 					
 					if(!first) labels += ",";
-					labels += "\"" + ePackageJ.getName() + "\"";
+					labels += "\"" + languageJ.getName() + "\"";
 					
 					if(!first){
 						dataForSyntax +=  ",";
@@ -57,7 +57,7 @@ public class PairwiseRelationshipRatio implements ChartMetric {
 			first = true;
 			for (Language languageJ : languages) {
 				EPackage ePackageJ = MelangeServices.getEPackageFromLanguage(languageJ);
-				if(!ePackageI.getName().equals(ePackageJ.getName())){
+				if(!languageI.getName().equals(languageJ.getName())){
 					double currentValue = (((double)getIntersection(conceptMethodMemberGroupList, languageI, languageJ, methodComparisonOperator).size()) / ((double)FamiliesServices.getUnion(ePackageI, ePackageJ).size()))*100;
 					
 					if(!first){
@@ -94,11 +94,10 @@ public class PairwiseRelationshipRatio implements ChartMetric {
 	
 	@Override
 	public String getWindow(ArrayList<Language> languages){
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
-		for (EPackage ePackageI : ePackages) {
-			answer += "    var ctxRelationshipRatio" + ePackageI.getName() + " = document.getElementById(\"pie-relationship-ratio-" + ePackageI.getName() + "\").getContext(\"2d\");\n";
-			answer += "    window.window.window.myBarRelationshipRatio" + ePackageI.getName() + " = new Chart(ctxRelationshipRatio" + ePackageI.getName() + ").Bar(barRelationshipRatio" + ePackageI.getName() + ", {\n";
+		for (Language languageI : languages) {
+			answer += "    var ctxRelationshipRatio" + languageI.getName() + " = document.getElementById(\"pie-relationship-ratio-" + languageI.getName() + "\").getContext(\"2d\");\n";
+			answer += "    window.window.window.myBarRelationshipRatio" + languageI.getName() + " = new Chart(ctxRelationshipRatio" + languageI.getName() + ").Bar(barRelationshipRatio" + languageI.getName() + ", {\n";
 			answer += "       responsive : false\n";
 			answer += "    });\n\n";
 		}
@@ -106,16 +105,15 @@ public class PairwiseRelationshipRatio implements ChartMetric {
 	}
 	
 	public String getTables(ArrayList<Language> languages){
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		char index = 'a';
-		for (EPackage ePackageI : ePackages) {
+		for (Language languageI : languages) {
 			answer += "                <table align=\"center\" border=\"0\" cellpadding=\"1\" cellspacing=\"1\" style=\"width:500px;\">\n";
 			answer += "                    <tbody>\n";
 			answer += "                        <tr>\n";
 			answer += "                            <td style=\"text-align: center;\">\n";
-			answer += "                                <div id=\"canvas-relationship-ratio-" + ePackageI.getName() + "\" width=\"150\" height=\"150\">\n";
-			answer += "                                    <canvas id=\"pie-relationship-ratio-" + ePackageI.getName() + "\" width=\"450\" height=\"200\"/>\n";
+			answer += "                                <div id=\"canvas-relationship-ratio-" + languageI.getName() + "\" width=\"150\" height=\"150\">\n";
+			answer += "                                    <canvas id=\"pie-relationship-ratio-" + languageI.getName() + "\" width=\"450\" height=\"200\"/>\n";
 			answer += "                                </div>\n";
 			answer += "                            </td>\n";
 			answer += "                        </tr>\n";
@@ -123,7 +121,7 @@ public class PairwiseRelationshipRatio implements ChartMetric {
 			answer += "                            <td style=\"text-align: center;\">\n";
 			answer += "                                <span style=\"font-family:lucida sans unicode,lucida grande,sans-serif;font-size:11px;\">\n";
 			answer += "                                    <strong>Figure 7" + index + ".</strong></br>\n";
-			answer += "                                    Pair-wise Relationship Ratio for " + ePackageI.getName() + "</br>\n";
+			answer += "                                    Pair-wise Relationship Ratio for " + languageI.getName() + "</br>\n";
 			answer += "                                    ----\n";
 			answer += "                                </span>\n";
 			answer += "                            </td>\n";

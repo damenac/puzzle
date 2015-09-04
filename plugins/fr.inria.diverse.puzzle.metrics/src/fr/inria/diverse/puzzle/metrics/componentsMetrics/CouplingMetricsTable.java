@@ -32,8 +32,7 @@ public class CouplingMetricsTable implements ChartMetric{
 		javaScriptData += "    data.addColumn('number', 'Coupling');\n";
 		javaScriptData += "    data.addRows([";
 		
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);

@@ -8,39 +8,39 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalStateMachine [from:fsm]",
+          "name": "evalStateMachine [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "initStateMachine [from:fsm]",
+          "name": "initStateMachine [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "step [from:fsm]",
+          "name": "step [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "getCurrentState [from:fsm]",
+          "name": "getCurrentState [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "getActiveTransitions [from:fsm]",
+          "name": "getActiveTransitions [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "findOldActiveStates [from:fsm]",
+          "name": "findOldActiveStates [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "findNewActiveStates [from:fsm]",
+          "name": "findNewActiveStates [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "findNewActiveTransitions [from:fsm]",
+          "name": "findNewActiveTransitions [from: FSM]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "events [from:fsm]",
+          "name": "events [from: FSM]",
           "parent": "StateMachineAspect"    }
               ]
     }
@@ -50,15 +50,15 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "entryState [from:fsm]",
+          "name": "entryState [from: FSM]",
           "parent": "StateAspect"    }
 ,
           {
-          "name": "evalState [from:fsm]",
+          "name": "evalState [from: FSM]",
           "parent": "StateAspect"    }
 ,
           {
-          "name": "exitState [from:fsm]",
+          "name": "exitState [from: FSM]",
           "parent": "StateAspect"    }
               ]
     }
@@ -68,23 +68,23 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalTransition [from:fsm]",
+          "name": "evalTransition [from: FSM]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "validGuard [from:fsm]",
+          "name": "validGuard [from: FSM]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "alreadyFired [from:fsm]",
+          "name": "alreadyFired [from: FSM]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "resetFired [from:fsm]",
+          "name": "resetFired [from: FSM]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "fired [from:fsm]",
+          "name": "fired [from: FSM]",
           "parent": "TransitionAspect"    }
               ]
     }
@@ -94,7 +94,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalTrigger [from:fsm]",
+          "name": "evalTrigger [from: FSM]",
           "parent": "TriggerAspect"    }
               ]
     }
@@ -104,7 +104,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "exitState [from:fsm]",
+          "name": "exitState [from: FSM]",
           "parent": "FinalStateAspect"    }
               ]
     }
@@ -118,11 +118,11 @@ var treeData = [
           "parent": "ExpressionAspect",
           "children": [
           {
-          "name": "eval [from:fsm ,flowchart]",
+          "name": "eval [from: FSM, Flowchart]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "+eval"    }
               ]
     }
@@ -138,11 +138,11 @@ var treeData = [
           "parent": "LiteralAspect",
           "children": [
           {
-          "name": "eval [from:fsm ,flowchart]",
+          "name": "eval [from: FSM, Flowchart]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "+eval"    }
               ]
     }
@@ -158,11 +158,11 @@ var treeData = [
           "parent": "IntegerLitAspect",
           "children": [
           {
-          "name": "eval [from:fsm ,flowchart]",
+          "name": "eval [from: FSM, Flowchart]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "+eval"    }
               ]
     }
@@ -178,11 +178,11 @@ var treeData = [
           "parent": "StringLitAspect",
           "children": [
           {
-          "name": "eval [from:fsm ,flowchart]",
+          "name": "eval [from: FSM, Flowchart]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "+eval"    }
               ]
     }
@@ -198,15 +198,15 @@ var treeData = [
           "parent": "BoolLitAspect",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:flowchart]",
+          "name": "eval [from: Flowchart]",
           "parent": "+eval"    }
               ]
     }
@@ -222,11 +222,11 @@ var treeData = [
           "parent": "ArithmeticExpressionAspect",
           "children": [
           {
-          "name": "eval [from:fsm ,flowchart]",
+          "name": "eval [from: FSM, Flowchart]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "+eval"    }
               ]
     }
@@ -242,11 +242,11 @@ var treeData = [
           "parent": "RelationalExpressionAspect",
           "children": [
           {
-          "name": "eval [from:fsm ,flowchart]",
+          "name": "eval [from: FSM, Flowchart]",
           "parent": "+eval"    }
 ,
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "+eval"    }
               ]
     }
@@ -258,7 +258,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalConstraint [from:fsm]",
+          "name": "evalConstraint [from: FSM]",
           "parent": "ConstraintAspect"    }
               ]
     }
@@ -268,7 +268,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalConstraint [from:fsm]",
+          "name": "evalConstraint [from: FSM]",
           "parent": "RelationalConstraintAspect"    }
               ]
     }
@@ -278,7 +278,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "StatementAspect"    }
               ]
     }
@@ -288,7 +288,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "ProgramAspect"    }
               ]
     }
@@ -298,7 +298,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "VarDeclAspect"    }
               ]
     }
@@ -308,7 +308,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "ConditionalAspect"    }
               ]
     }
@@ -318,7 +318,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "LoopAspect"    }
               ]
     }
@@ -328,7 +328,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "PrintlnAspect"    }
               ]
     }
@@ -338,7 +338,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "PrintAspect"    }
               ]
     }
@@ -348,7 +348,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "AssignationAspect"    }
               ]
     }
@@ -358,7 +358,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:fsm]",
+          "name": "eval [from: FSM]",
           "parent": "WaitAspect"    }
               ]
     }
@@ -368,7 +368,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "InstructionAspect"    }
               ]
     }
@@ -378,7 +378,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "PrimitiveAspect"    }
               ]
     }
@@ -388,7 +388,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "BackAspect"    }
               ]
     }
@@ -398,7 +398,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "ForwardAspect"    }
               ]
     }
@@ -408,7 +408,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "LeftAspect"    }
               ]
     }
@@ -418,7 +418,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "RightAspect"    }
               ]
     }
@@ -428,7 +428,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "PenDownAspect"    }
               ]
     }
@@ -438,7 +438,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "PenUpAspect"    }
               ]
     }
@@ -448,7 +448,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "ClearAspect"    }
               ]
     }
@@ -458,11 +458,11 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "ProcCallAspect"    }
 ,
           {
-          "name": "res [from:kmLogo]",
+          "name": "res [from: Logo]",
           "parent": "ProcCallAspect"    }
               ]
     }
@@ -472,11 +472,11 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "BlockAspect"    }
 ,
           {
-          "name": "res [from:kmLogo]",
+          "name": "res [from: Logo]",
           "parent": "BlockAspect"    }
               ]
     }
@@ -486,7 +486,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "ControlStructureAspect"    }
               ]
     }
@@ -496,7 +496,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "IfAspect"    }
               ]
     }
@@ -506,7 +506,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "RepeatAspect"    }
               ]
     }
@@ -516,7 +516,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "WhileAspect"    }
               ]
     }
@@ -526,7 +526,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "ParameterAspect"    }
               ]
     }
@@ -536,7 +536,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "ParameterCallAspect"    }
               ]
     }
@@ -546,7 +546,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:kmLogo]",
+          "name": "eval [from: Logo]",
           "parent": "LogoProgramAspect"    }
               ]
     }
@@ -556,7 +556,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:flowchart]",
+          "name": "eval [from: Flowchart]",
           "parent": "FlowchartAspect"    }
               ]
     }
@@ -566,7 +566,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:flowchart]",
+          "name": "eval [from: Flowchart]",
           "parent": "NodeAspect"    }
               ]
     }
@@ -576,7 +576,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:flowchart]",
+          "name": "eval [from: Flowchart]",
           "parent": "ArcAspect"    }
               ]
     }
@@ -586,7 +586,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:flowchart]",
+          "name": "eval [from: Flowchart]",
           "parent": "SubflowAspect"    }
               ]
     }
@@ -596,7 +596,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:flowchart]",
+          "name": "eval [from: Flowchart]",
           "parent": "ActionAspect"    }
               ]
     }
@@ -606,7 +606,7 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from:flowchart]",
+          "name": "eval [from: Flowchart]",
           "parent": "DecisionAspect"    }
               ]
     }

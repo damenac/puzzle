@@ -23,13 +23,12 @@ public class ProductRelatedReusability implements ChartMetric {
 
 	@Override
 	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "var barProductRelatedReusability = {\n";
 		boolean first = true;
 		String labels = "";
-		for (EPackage ePackage : ePackages) {
+		for (Language language : languages) {
 			if(!first) labels += ",";
-			labels += "\"" + ePackage.getName() + "\"";
+			labels += "\"" + language.getName() + "\"";
 			first = false;
 		}
 		

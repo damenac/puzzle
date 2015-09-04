@@ -3,14 +3,11 @@ package fr.inria.diverse.puzzle.metrics.specialCharts;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import org.eclipse.emf.ecore.EPackage;
-
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
-import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class SemanticalVennDiagram {
@@ -31,8 +28,8 @@ public class SemanticalVennDiagram {
 		
 		String answer = "var semanticVennData = [";
 		for (int i = 0; i < languages.size(); i++) {
-			EPackage currentEPackage = MelangeServices.getEPackageFromLanguage(languages.get(i));
-			answer += "{sets : [" + i + "], label : '" + currentEPackage.getName() + "', size : " + membersSizeTable.get(currentEPackage.getName()) + ",}";
+			Language currentLanguage =  languages.get(i);
+			answer += "{sets : [" + i + "], label : '" + currentLanguage.getName() + "', size : " + membersSizeTable.get(currentLanguage.getName()) + ",}";
 			answer += ",\n              ";
 		}
 		
@@ -56,8 +53,8 @@ public class SemanticalVennDiagram {
 			ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList, Language languageI, Language languageJ,
 			MethodComparison methodComparisonOperator) {
 
-		String languageIName = MelangeServices.getEPackageFromLanguage(languageI).getName();
-		String languageJName = MelangeServices.getEPackageFromLanguage(languageJ).getName();
+		String languageIName = languageI.getName();
+		String languageJName = languageJ.getName();
 		ArrayList<String> answer = new ArrayList<String>();
 		for (TupleConceptMethodMembers conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
 			boolean isInI = conceptMethodMembersGroupVO.getMembers().contains(languageIName);

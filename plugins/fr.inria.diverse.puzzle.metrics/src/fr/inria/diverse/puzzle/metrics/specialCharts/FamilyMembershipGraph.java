@@ -2,8 +2,6 @@ package fr.inria.diverse.puzzle.metrics.specialCharts;
 
 import java.util.ArrayList;
 
-import org.eclipse.emf.ecore.EPackage;
-
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreArc;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
@@ -12,15 +10,13 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
-import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class FamilyMembershipGraph {
 
 	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception{
 		String answer = "";
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
@@ -34,7 +30,6 @@ public class FamilyMembershipGraph {
 			for (EcoreVertex currentNode : group) {
 				if(!first)
 					nodes += ",";
-//				nodes += "\"" + currentNode.getClassifier().getName() + "\"";
 				nodes += "\"" + currentNode.getVertexId() + "\"";
 				first = false;
 			}
@@ -48,7 +43,6 @@ public class FamilyMembershipGraph {
 			boolean first = true;
 			for (EcoreArc arc : dependenciesGraph.getArcs()) {
 				if(!first) answer += ",";
-//				answer += "[\"" + arc.getFrom().getClassifier().getName() + "\",\""+ arc.getTo().getClassifier().getName() +"\"]";
 				answer += "[\"" + arc.getFrom().getVertexId() + "\",\""+ arc.getTo().getVertexId() +"\"]";
 				first = false;
 			}

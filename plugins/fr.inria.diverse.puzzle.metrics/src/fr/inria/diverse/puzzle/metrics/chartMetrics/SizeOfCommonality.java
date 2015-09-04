@@ -82,17 +82,15 @@ public class SizeOfCommonality implements ChartMetric {
 	// ---------------------------------------------------
 	
 	public static int evaluateForSyntax(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
-		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
 		
 		int count = 0;
 		for (TupleConceptMembers conceptMembersGroupVO : conceptMemberGroupList) {
-			if(conceptMembersGroupVO.getMembers().size() == ePackages.size()){
+			if(conceptMembersGroupVO.getMembers().size() == languages.size()){
 				count++;
 			}
 		}
-		
 		return count;
 	}
 	

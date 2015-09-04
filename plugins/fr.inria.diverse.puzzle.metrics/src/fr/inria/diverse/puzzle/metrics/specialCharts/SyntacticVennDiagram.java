@@ -16,7 +16,7 @@ public class SyntacticVennDiagram {
 	public static String evaluate(ArrayList<Language> languages, ConceptComparison comparisonOperator){
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();
-		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 	
 		for (TupleConceptMember conceptMemberVO : conceptMemberList) {
 			if(membersSizeTable.get(conceptMemberVO.getMemberName()) == null)
@@ -28,9 +28,9 @@ public class SyntacticVennDiagram {
 		}
 		
 		String answer = "var syntacticVennData = [";
-		for (int i = 0; i < ePackages.size(); i++) {
-			EPackage currentEPackage = ePackages.get(i);
-			answer += "{sets : [" + i + "], label : '" + currentEPackage.getName() + "', size : " + membersSizeTable.get(currentEPackage.getName()) + ",}";
+		for (int i = 0; i < languages.size(); i++) {
+			Language currentLanguage = languages.get(i);
+			answer += "{sets : [" + i + "], label : '" + currentLanguage.getName() + "', size : " + membersSizeTable.get(currentLanguage.getName()) + ",}";
 			answer += ",\n              ";
 		}
 		
@@ -44,9 +44,7 @@ public class SyntacticVennDiagram {
 				first = false;
 			}
 		}
-		
 		answer += "];";
-		
 		return answer;
 	}
 }
