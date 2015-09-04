@@ -43,11 +43,13 @@ public class CouplingMetricsTable implements ChartMetric{
 		
 		for (int i = 0; i < dependenciesGraph.getGroups().size(); i++) {
 			ArrayList<EcoreVertex> groupI = dependenciesGraph.getGroups().get(i);
+			String groupIName = MelangeServices.getLanguageModuleName(groupI);
 			for (int j = i + 1; j < dependenciesGraph.getGroups().size(); j++) {
 				if(i!=j){
 					ArrayList<EcoreVertex> groupJ = dependenciesGraph.getGroups().get(j);
+					String groupJName = MelangeServices.getLanguageModuleName(groupJ);
 					int pairCoupling = sumCouplingMetric.getCouplingByGroupsPair(groupI, groupJ, dependenciesGraph.getArcs());
-					javaScriptData += "      ['Group " + i + "', 'Group " + j + "', " + pairCoupling + "],\n";
+					javaScriptData += "      ['" + groupIName + "', '" + groupJName + "', " + pairCoupling + "],\n";
 					sum += pairCoupling;
 				}
 			}

@@ -25,8 +25,9 @@ public class DiverSEInferrer implements VariabilityInferer {
 		String pcm = "\"Product\"";
 		for (int i = 0; i < modularizationGraph.getGroups().size(); i++) {
 			ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(i);
+			String moduleName = MelangeServices.getLanguageModuleName(module);
 			// get name by module. 
-			pcm += ",\"Group " + i + "\"";
+			pcm += ",\"" + moduleName + "\"";
 		}
 		pcm += "\n";
 		

@@ -70,14 +70,11 @@ public class SynthesisManager {
 		dependenciesGraph.groupGraphByFamilyMembership(membersConceptList, conceptComparisonOperator);
 		buildModules(dependenciesGraph);
 		
-		
-		
 		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(lplProject);
 		metricsManager.createReport1ProductLineCoupling(languages);
 		metricsManager.createReport1ProductLineCouplingData(languages, conceptComparisonOperator, methodComparisonOperator);
 		
 		ProjectManagementServices.refreshProject(lplProject);
-		
 		return dependenciesGraph;
 	}
 
@@ -92,11 +89,11 @@ public class SynthesisManager {
 			EPackage moduleEPackage = this.createEPackageByModule(group);
 
 			// Create the module project with the folders.
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl." + group.get(0).getClassifier().getName().trim());
+			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl." + MelangeServices.getLanguageModuleName(group).trim());
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 
-			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + group.get(0).getClassifier().getName() + ".ecore", moduleEPackage);
+			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + MelangeServices.getLanguageModuleName(group) + ".ecore", moduleEPackage);
 			
 			// Create the genmodel and generate the code of the module.
 			ProjectManagementServices.refreshProject(moduleProject);
@@ -112,9 +109,10 @@ public class SynthesisManager {
 	private EPackage createEPackageByModule(ArrayList<EcoreVertex> group) {
 		EcoreCloningServices.getInstance().resetClonedClassifiers();
 		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
-		newPackage.setName(group.get(0).getClassifier().getName().trim());
-		newPackage.setNsPrefix(group.get(0).getClassifier().getName().trim());
-		newPackage.setNsURI(group.get(0).getClassifier().getName().trim());
+		String moduleName = MelangeServices.getLanguageModuleName(group);
+		newPackage.setName(moduleName.trim());
+		newPackage.setNsPrefix(moduleName.trim());
+		newPackage.setNsURI(moduleName.trim());
 		
 		for (EcoreVertex vertex : group) {
 			if(vertex.getClassifier() instanceof EClass){

@@ -6,16 +6,16 @@ function drawTable() {
     data.addColumn('string', 'Group Name');
     data.addColumn('string', 'Group Name');
     data.addColumn('number', 'Coupling');
-    data.addRows([      ['Group 0', 'Group 1', 1],
-      ['Group 0', 'Group 2', 4],
-      ['Group 0', 'Group 3', 0],
-      ['Group 0', 'Group 4', 0],
-      ['Group 1', 'Group 2', 2],
-      ['Group 1', 'Group 3', 0],
-      ['Group 1', 'Group 4', 1],
-      ['Group 2', 'Group 3', 9],
-      ['Group 2', 'Group 4', 0],
-      ['Group 3', 'Group 4', 0],
+    data.addRows([      ['StateMachine', 'Constraint', 1],
+      ['StateMachine', 'Expression', 4],
+      ['StateMachine', 'LogoProgram', 0],
+      ['StateMachine', 'Flowchart', 0],
+      ['Constraint', 'Expression', 2],
+      ['Constraint', 'LogoProgram', 0],
+      ['Constraint', 'Flowchart', 1],
+      ['Expression', 'LogoProgram', 9],
+      ['Expression', 'Flowchart', 0],
+      ['LogoProgram', 'Flowchart', 0],
       [' ', 'Coupling Sum', 17],
       [' ', 'Coupling Avg', 3.0]
   ]);
