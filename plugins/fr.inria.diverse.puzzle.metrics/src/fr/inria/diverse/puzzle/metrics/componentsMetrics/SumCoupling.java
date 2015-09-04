@@ -39,7 +39,7 @@ public class SumCoupling {
 		return coupling;
 	}
 	
-	private int getCouplingByGroupsPair(ArrayList<EcoreVertex> groupA, ArrayList<EcoreVertex> groupB, ArrayList<EcoreArc> arcs){
+	public int getCouplingByGroupsPair(ArrayList<EcoreVertex> groupA, ArrayList<EcoreVertex> groupB, ArrayList<EcoreArc> arcs){
 		int coupling = 0;
 		for (EcoreArc ecoreArc : arcs) {
 			if(this.belongsToGroup(ecoreArc.getFrom(), groupA) && this.belongsToGroup(ecoreArc.getTo(), groupB))

@@ -1,0 +1,42 @@
+package fr.inria.diverse.puzzle.metrics.componentsMetrics;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.ChartMetric;
+
+public class CouplingMetricsTable implements ChartMetric{
+
+	@Override
+	public String getVariablesDeclaration(ArrayList<Language> languages,
+			ConceptComparison conceptComparisonOperator,
+			MethodComparison methodComparisonOperator) throws Exception {
+		
+		String javaScriptData = "google.load('visualization', '1.1', {packages:['table']});";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		javaScriptData += "";
+		return null;
+	}
+
+	@Override
+	public String getWindow(ArrayList<Language> languages) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

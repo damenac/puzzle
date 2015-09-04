@@ -10,7 +10,9 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.tuples.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
@@ -25,14 +27,21 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.managers.ProductLinesMetricManager;
 
 /**
- * 
+ * Action implementation for families decomposition. 
  * @author David Mendez Acuna
- *
  */
 public class BreakDownFamilyImpl {
 	
+	// --------------------------------------------------------
+	// Attributes
+	// --------------------------------------------------------
+	
 	private static BreakDownFamilyImpl instance;
 	
+	// --------------------------------------------------------
+	// Constructor and singleton
+	// --------------------------------------------------------
+
 	private BreakDownFamilyImpl(){}
 	
 	public static BreakDownFamilyImpl getInstance(){
@@ -41,8 +50,19 @@ public class BreakDownFamilyImpl {
 		return instance;
 	}
 	
+	// --------------------------------------------------------
+	// Methods
+	// --------------------------------------------------------
+	
+	/**
+	 * Breaks-down the family in the parameter using the comparison operators and the decomposition strategy in the parameters (TODO) 
+	 * @param languages
+	 * @throws Exception
+	 */
 	public void breakDownFamily(ArrayList<Language> languages) throws Exception{
 		ConceptComparison conceptComparisonOperator = NamingConceptComparison.class.newInstance();
+		MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
+		
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(ePackages);
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
@@ -56,17 +76,23 @@ public class BreakDownFamilyImpl {
 		
 		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(lplProject);
 		metricsManager.createReport1ProductLineCoupling(languages);
+		metricsManager.createReport1ProductLineCouplingData(languages, conceptComparisonOperator, methodComparisonOperator);
 		
 		ProjectManagementServices.refreshProject(lplProject);
 	}
 
+	/**
+	 * Builds the ecore metamodels according to the decomposed dependencies graph. 
+	 * @param ecoreGraph
+	 * @throws CoreException
+	 */
 	private void buildModules(EcoreGraph ecoreGraph) throws CoreException {
 		for (ArrayList<EcoreVertex> group : ecoreGraph.getGroups()) {
 			// Build the module metamodel with the required interface.
 			EPackage moduleEPackage = this.createEPackageByModule(group);
 
 			// Create the module project with the folders.
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl" + group.get(0).getClassifier().getName().trim());
+			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl." + group.get(0).getClassifier().getName().trim());
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 

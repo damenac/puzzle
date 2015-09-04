@@ -13,7 +13,10 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 
+import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.metrics.componentsMetrics.CouplingMetricsTable;
 
 public class ProductLinesMetricManager extends MetricsManager {
 
@@ -38,6 +41,16 @@ public class ProductLinesMetricManager extends MetricsManager {
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
 		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	public void createReport1ProductLineCouplingData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
+        File fileReport = new File(project.getLocation().toString() + "/lib/coupling.js" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print((new CouplingMetricsTable()).getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
 		outRileReport.close();
 	}
 }

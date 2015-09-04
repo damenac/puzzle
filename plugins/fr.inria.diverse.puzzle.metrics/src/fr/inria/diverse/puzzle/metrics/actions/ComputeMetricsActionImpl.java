@@ -1,28 +1,20 @@
 package fr.inria.diverse.puzzle.metrics.actions;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EPackage;
 
 import fr.inria.diverse.k3.sle.common.comparisonOperators.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.MethodComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.metamodel.melange.Element;
@@ -30,17 +22,12 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.ChartMetric;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.IndividualizationRatio;
-import fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
 import fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager;
-import fr.inria.diverse.puzzle.metrics.specialCharts.DependenciesGraph;
-import fr.inria.diverse.puzzle.metrics.specialCharts.FamilyMembershipGraph;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVariabilityTree;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVennDiagram;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticVennDiagram;
-import fr.inria.diverse.puzzle.metrics.specialCharts.TarjansAlgorithmGraph;
 
 public class ComputeMetricsActionImpl {
 
