@@ -6,8 +6,7 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import facade.FamaSynthesizer;
-
+import fama.synthesizer.facade.FamaSynthesizer;
 import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
