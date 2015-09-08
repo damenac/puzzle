@@ -1,4 +1,3 @@
-"Product","StateMachine","Constraint","Expression","LogoProgram","Flowchart"
-"FSM","YES","YES","YES","NO","NO"
-"Logo","NO","NO","YES","YES","NO"
-"Flowchart","NO","YES","YES","NO","YES"
+root;F1;F2;F3;
+root;F3;F4;
+root;F2;F3;F5;

@@ -16,7 +16,7 @@ public class DiverSEInferrer implements VariabilityInferer {
 
 	@Override
 	public String inferVariabilityModel(IProject targetProject, SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception {
-		String PCM = PCMsGenerator.generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
+		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
 		
 		File fileReport = new File(targetProject.getLocation().toString()
 				+ "/pcm.csv");

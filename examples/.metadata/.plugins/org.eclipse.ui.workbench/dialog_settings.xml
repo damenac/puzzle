@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="EditorSelectionDialog">
+		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
 		<item value="750" key="dialogHeight"/>

@@ -23,7 +23,7 @@ public class FamaInferrer implements VariabilityInferer{
 	@Override
 	public String inferVariabilityModel(IProject targetProject, SynthesisProperties properties,
 			ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception {
-		String PCM = PCMsGenerator.generatePCM(properties, languages, modularizationGraph, PCMsGenerator.FAMA_FORMAT);
+		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.FAMA_FORMAT);
 		
 		File fileReport = new File(targetProject.getLocation().toString()
 				+ "/pcm.csv");
@@ -32,6 +32,13 @@ public class FamaInferrer implements VariabilityInferer{
 		PrintWriter outRileReport = new PrintWriter(fileReport);
 		outRileReport.print(PCM);
 		outRileReport.close();
+		
+		String inputFile = targetProject.getLocation().toString()
+				+ "/pcm.csv";
+		String outputFile = targetProject.getLocation().toString()
+				+ "/variabilityModel.xml";
+		
+		FamaSynthesizer.getInstance().synthesizeFeatureModelFromPCM(inputFile, outputFile);
 		
 		return "";
 	}

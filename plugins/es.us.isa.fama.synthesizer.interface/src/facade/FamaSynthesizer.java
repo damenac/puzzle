@@ -41,4 +41,8 @@ public class FamaSynthesizer {
 	public void synthesizeFeatureModelFromPCM(String inputFile, String outputFile){
 		FMExtractorFacade.generateFM(inputFile, outputFile);
 	}
+	
+	public static void main(String args[]){
+		FMExtractorFacade.generateFM("./data/pcm2.csv", "vm.xml");
+	}
 }
