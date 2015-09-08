@@ -17,7 +17,7 @@ import fr.inria.diverse.k3.sle.common.commands.GraphPartition
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer
+import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer
 
 class SynthesisBuilder
 {
@@ -40,7 +40,7 @@ class SynthesisBuilder
 	def private SynthesisProperties getSynthesisProperties(){
 		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
-		var VariabilityInferer variabilityInferer = new DiverSEInferrer();
+		var VariabilityInferer variabilityInferer = new FamaInferrer();
 		var GraphPartition graphPartition = new MembershipGraphPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;

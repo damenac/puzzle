@@ -1,0 +1,27 @@
+package fr.inria.diverse.puzzle.variabilityinferer.inferers;
+
+import java.util.ArrayList;
+
+import facade.FamaSynthesizer;
+import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
+
+/**
+ * Variability models inferer provided by the FAMA framework. 
+ * @author David Mendez-Acuna
+ */
+public class FamaInferrer implements VariabilityInferer{
+
+	@Override
+	public String inferVariabilityModel(SynthesisProperties properties,
+			ArrayList<Language> languages, EcoreGraph modularizationGraph) {
+		String PCM = PCMsGenerator.generatePCM(properties, languages, modularizationGraph, PCMsGenerator.FAMA_FORMAT);
+		
+		return FamaSynthesizer.getInstance().
+		return null;
+	}
+
+}

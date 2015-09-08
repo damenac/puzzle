@@ -1,0 +1,11 @@
+package facade;
+
+import fm.experiments.utils.FMExtractorFacade;
+ 
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FMExtractorFacade.generateFM("./data/changedNames.prod", "./data/guajiro");	}
+
+}

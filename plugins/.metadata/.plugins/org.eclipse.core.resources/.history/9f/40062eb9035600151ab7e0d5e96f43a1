@@ -1,0 +1,11 @@
+package prueba;
+
+import fm.experiments.utils.FMExtractorFacade;
+
+public class test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FMExtractorFacade.generateFM("/home/malawito/Documents/Repositories/fmextractor/trunk/Extractor_FM/invar_models/car_fm/changedNames.prod", "./guajiro");	}
+
+}

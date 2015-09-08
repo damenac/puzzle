@@ -1,0 +1,24 @@
+package fr.inria.diverse.puzzle.variabilityinferer.inferers;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EPackage;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
+import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
+import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
+
+public class DiverSEInferrer implements VariabilityInferer {
+
+	@Override
+	public String inferVariabilityModel(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) {
+		return PCMsGenerator.generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
+	}
+}

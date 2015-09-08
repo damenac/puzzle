@@ -1,0 +1,23 @@
+package fr.inria.diverse.puzzle.variabilityinferer.inferers;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+/**
+ * Variability models inferrer provided by the FAMA framework. 
+ * @author David Mendez-Acuna
+ */
+public class FamaInferrer implements VariabilityInferer{
+
+	@Override
+	public String inferVariabilityModel(SynthesisProperties properties,
+			ArrayList<Language> languages, EcoreGraph modularizationGraph) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

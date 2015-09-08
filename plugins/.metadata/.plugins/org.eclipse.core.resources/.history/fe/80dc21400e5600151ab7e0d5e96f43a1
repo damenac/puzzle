@@ -1,0 +1,9 @@
+package fr.inria.diverse.puzzle.variabilityinferer.auxiliar;
+
+/**
+ * Generates PCMs in diverse formats for the variability model inferrers. 
+ * @author David Mendez-Acuna
+ */
+public class PCMsGenerator {
+
+}

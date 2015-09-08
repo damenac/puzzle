@@ -1,0 +1,31 @@
+package facade;
+
+import fm.experiments.utils.FMExtractorFacade;
+ 
+public class FamaSynthesizer {
+
+	// --------------------------------------------------
+	// Attributes
+	// --------------------------------------------------
+	
+	private static FamaSynthesizer instance;
+	
+	// --------------------------------------------------
+	// Constructor and singleton
+	// --------------------------------------------------
+	
+	
+	/**
+	 * Synthesizes a feature model from a PCM. 
+	 * @param inputFile The location of the file containing the PCM in a comma separated file
+	 * @param outputFile The location of the file in which the feature model should be saved. 
+	 */
+	public void synthesizeFeatureModelFromPCM(String inputFile, String outputFile){
+		FMExtractorFacade.generateFM(inputFile, outputFile);
+	}
+	
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		FMExtractorFacade.generateFM("./data/changedNames.prod", "./data/guajiro");
+//	}
+}

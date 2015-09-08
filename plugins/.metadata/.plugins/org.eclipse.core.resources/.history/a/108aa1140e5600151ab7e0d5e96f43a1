@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.variabilityinferer.auxiliar;
+
+/**
+ * 
+ * @author David Mendez-ACuna
+ *
+ */
+public class PCMsGenerator {
+
+}
