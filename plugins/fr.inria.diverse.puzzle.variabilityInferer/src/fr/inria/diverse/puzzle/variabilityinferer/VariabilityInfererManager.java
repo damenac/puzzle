@@ -1,17 +1,19 @@
 package fr.inria.diverse.puzzle.variabilityinferer;
 
-import java.io.File;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
+import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
+/**
+ * Delegator for variability models inference.
+ * @author David Mendez-Acuna
+ */
 public class VariabilityInfererManager {
 
 	// --------------------------------------------------
@@ -43,13 +45,12 @@ public class VariabilityInfererManager {
 			SynthesisProperties synthesisProperties,
 			ArrayList<Language> languages, EcoreGraph modularizationGraph,
 			IProject project) throws Exception {
-		VariabilityInferer inferrer = synthesisProperties
+		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
 		
-		inferrer.inferVariabilityModel(project, 
+		inferrer.inferOpenFeaturesModel(project, 
 				synthesisProperties, languages, modularizationGraph);
 
 		ProjectManagementServices.refreshProject(project);
-		// TODO serialize the model
 	}
 }

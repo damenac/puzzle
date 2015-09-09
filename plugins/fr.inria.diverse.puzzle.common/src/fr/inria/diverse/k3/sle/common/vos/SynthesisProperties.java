@@ -3,11 +3,12 @@ package fr.inria.diverse.k3.sle.common.vos;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
-import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
+import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 
 /**
  * VO with the synthesis properties
  * @author David Mendez-Acuna
+ * 
  */
 public class SynthesisProperties {
 	
@@ -17,7 +18,7 @@ public class SynthesisProperties {
 	
 	private ConceptComparison conceptComparisonOperator;
 	private MethodComparison methodComparisonOperator;
-	private VariabilityInferer variabilityInferer;
+	private FeaturesModelInference variabilityInferer;
 	private GraphPartition graphPartition;
 
 	// -----------------------------------------------------------
@@ -26,7 +27,7 @@ public class SynthesisProperties {
 	
 	public SynthesisProperties(ConceptComparison conceptComparisonOperator,
 			MethodComparison methodComparisonOperator,
-			VariabilityInferer variabilityInferer,
+			FeaturesModelInference variabilityInferer,
 			GraphPartition graphPartition) {
 		this.conceptComparisonOperator = conceptComparisonOperator;
 		this.methodComparisonOperator = methodComparisonOperator;
@@ -56,11 +57,11 @@ public class SynthesisProperties {
 		this.methodComparisonOperator = methodComparisonOperator;
 	}
 
-	public VariabilityInferer getVariabilityInferer() {
+	public FeaturesModelInference getVariabilityInferer() {
 		return variabilityInferer;
 	}
 
-	public void setVariabilityInferer(VariabilityInferer variabilityInferer) {
+	public void setVariabilityInferer(FeaturesModelInference variabilityInferer) {
 		this.variabilityInferer = variabilityInferer;
 	}
 

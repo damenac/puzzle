@@ -1,16 +1,10 @@
 package fr.inria.diverse.puzzle.variabilityinferer.auxiliar;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import org.eclipse.core.runtime.FileLocator;
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 

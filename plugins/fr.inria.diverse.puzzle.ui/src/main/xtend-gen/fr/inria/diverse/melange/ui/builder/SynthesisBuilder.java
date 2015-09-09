@@ -1,9 +1,9 @@
 package fr.inria.diverse.melange.ui.builder;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
-import fr.inria.diverse.k3.sle.common.commands.VariabilityInferer;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.graphsOperators.MembershipGraphPartition;
@@ -13,7 +13,7 @@ import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager;
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer;
+import fr.inria.diverse.puzzle.variabilityinferer.inferers.KSynthesisInferrer;
 import java.util.ArrayList;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -50,7 +50,7 @@ public class SynthesisBuilder {
   private SynthesisProperties getSynthesisProperties() {
     ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
     MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
-    VariabilityInferer variabilityInferer = new DiverSEInferrer();
+    FeaturesModelInference variabilityInferer = new KSynthesisInferrer();
     GraphPartition graphPartition = new MembershipGraphPartition();
     SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
     return properties;

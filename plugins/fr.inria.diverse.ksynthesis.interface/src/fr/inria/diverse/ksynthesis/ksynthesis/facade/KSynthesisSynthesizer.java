@@ -62,7 +62,7 @@ public class KSynthesisSynthesizer {
 	 * @param outputFile The location of the file in which the feature model should be saved. 
 	 * @throws FileNotFoundException 
 	 */
-	public void synthesizeFeatureModelFromPCM(String inputFile, String outputFile) throws Exception{
+	public FeatureModelVariable synthesizeFeatureModelFromPCM(String inputFile, String outputFile) throws Exception{
 		ProductLine pl = loadProductLineFromPCM(inputFile);
 		FeatureModelVariable fm = obtainVariabilityModelConstraints(pl);
 		System.out.println(fm + " base fm");
@@ -72,6 +72,7 @@ public class KSynthesisSynthesizer {
 		FeatureModelVariable synthesizedFM = synthesizer.computeCompleteFeatureModel();
 		System.out.println(synthesizedFM + " synthesized fm");
 		System.out.println("synthesizedFM.getAllConstraints(): " + synthesizedFM.getAllConstraints());
+		return synthesizedFM;
 	}
 	
 	/**

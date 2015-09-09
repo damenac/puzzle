@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.variabilityinferer.auxiliar;
+
+/**
+ * Offers the services for translating feature models from diverse formats to the VM metamodel.
+ * @author dmendeza
+ *
+ */
+public class FeatureModelsTranslator {
+
+}
