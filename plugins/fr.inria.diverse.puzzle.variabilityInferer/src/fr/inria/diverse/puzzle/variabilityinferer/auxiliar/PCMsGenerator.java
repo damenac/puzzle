@@ -87,7 +87,7 @@ public class PCMsGenerator {
 		String pcm = "\"Product\"";
 		for (int i = 0; i < modularizationGraph.getGroups().size(); i++) {
 			ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(i);
-			String moduleName = MelangeServices.getLanguageModuleName(module);
+			String moduleName = EcoreGraph.getLanguageModuleName(module);
 			// get name by module. 
 			pcm += ",\"" + moduleName + "\"";
 		}
@@ -127,7 +127,7 @@ public class PCMsGenerator {
 			for (int j = 0; j < modularizationGraph.getGroups().size(); j++) {
 				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j);
 				boolean contained = moduleContainedInLanguage(properties.getConceptComparisonOperator(), language, module);
-				String moduleName = MelangeServices.getLanguageModuleName(module);
+				String moduleName = EcoreGraph.getLanguageModuleName(module);
 				if(contained){
 					pcm += this.modulesNameVsFamasIndex.get(moduleName) + ";";
 				}
@@ -145,7 +145,7 @@ public class PCMsGenerator {
 				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j);
 				boolean contained = moduleContainedInLanguage(properties.getConceptComparisonOperator(), language, module);
 				if(contained){
-					String moduleName = MelangeServices.getLanguageModuleName(module);
+					String moduleName = EcoreGraph.getLanguageModuleName(module);
 					String famasIndexString = "F" + famasIndex;
 					if(modulesNameVsFamasIndex.get(moduleName) == null
 							&& famasIndexVsModulesName.get(famasIndexString) == null){

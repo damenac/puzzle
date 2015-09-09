@@ -1,6 +1,7 @@
 package fr.inria.diverse.k3.sle.common.graphs;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -12,6 +13,11 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 
+/**
+ * Class that implements the services of an ecore graph.
+ * @author David Mendez-Acuna
+ *
+ */
 public class EcoreGraph {
 
 	// -----------------------------------------------
@@ -175,5 +181,32 @@ public class EcoreGraph {
 			if(currentVertex.getVertexId().equals(id))
 				return currentVertex;
 		} return null;
+	}
+	
+	// -----------------------------------------------
+	// Static services
+	// -----------------------------------------------
+
+	/**
+	 * Returns an identifier for the group in the parameter.
+	 * @param languageModule. Group under study.
+	 * @return
+	 */
+	public static String getLanguageModuleName(ArrayList<EcoreVertex> languageModule){
+		return languageModule.get(0).getClassifier().getName();
+	}
+	
+	/**
+	 * Returns a the collection of eclassifiers included in the group in the parameter. 
+	 * @param group. Group under study.
+	 * @return
+	 */
+	public static Collection<? extends EClassifier> collectEClassifierByGroup(
+			ArrayList<EcoreVertex> group) {
+		Collection<EClassifier> collection = new ArrayList<EClassifier>();
+		for (EcoreVertex ecoreVertex : group) {
+			collection.add(ecoreVertex.getClassifier());
+		}
+		return collection;
 	}
 }

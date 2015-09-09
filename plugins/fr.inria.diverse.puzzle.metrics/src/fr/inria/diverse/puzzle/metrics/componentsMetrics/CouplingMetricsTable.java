@@ -11,7 +11,6 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
-import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.ChartMetric;
 
@@ -43,11 +42,11 @@ public class CouplingMetricsTable implements ChartMetric{
 		
 		for (int i = 0; i < dependenciesGraph.getGroups().size(); i++) {
 			ArrayList<EcoreVertex> groupI = dependenciesGraph.getGroups().get(i);
-			String groupIName = MelangeServices.getLanguageModuleName(groupI);
+			String groupIName = EcoreGraph.getLanguageModuleName(groupI);
 			for (int j = i + 1; j < dependenciesGraph.getGroups().size(); j++) {
 				if(i!=j){
 					ArrayList<EcoreVertex> groupJ = dependenciesGraph.getGroups().get(j);
-					String groupJName = MelangeServices.getLanguageModuleName(groupJ);
+					String groupJName = EcoreGraph.getLanguageModuleName(groupJ);
 					int pairCoupling = sumCouplingMetric.getCouplingByGroupsPair(groupI, groupJ, dependenciesGraph.getArcs());
 					javaScriptData += "      ['" + groupIName + "', '" + groupJName + "', " + pairCoupling + "],\n";
 					sum += pairCoupling;

@@ -1,10 +1,7 @@
 package fr.inria.diverse.k3.sle.common.utils;
 
 import java.util.ArrayList;
-
 import org.eclipse.emf.ecore.EPackage;
-
-import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**
@@ -43,9 +40,5 @@ public class MelangeServices {
 			}
 		}
 		return ePackages;
-	}
-	
-	public static String getLanguageModuleName(ArrayList<EcoreVertex> languageModule){
-		return languageModule.get(0).getClassifier().getName();
 	}
 }

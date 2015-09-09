@@ -3,10 +3,8 @@ package fr.inria.diverse.k3.sle.common.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
-
 /**
- * Dependency graph.
+ * Class that implements the services of a dependencies graph.
  * @author David Mendez-Acuna
  *
  */
@@ -41,10 +39,29 @@ public class DependencyGraph {
 		
 		// Create one vertex for each modularization group. 
 		for (ArrayList<EcoreVertex> group : modularizationGraph.getGroups()) {
-			String moduleName = MelangeServices.getLanguageModuleName(group);
+			String moduleName = EcoreGraph.getLanguageModuleName(group);
 			DependencyVertex dependencyVertex = new DependencyVertex(moduleName);
+			dependencyVertex.geteClassifiers().addAll(EcoreGraph.collectEClassifierByGroup(group));
 			this.vertex.add(dependencyVertex);
 		}
+	}
+	
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
+	/**
+	 * Indicates if the origin depends on the destination.
+	 * In other words, returns true if there is at least one eClassifier in the origin that contains a reference to
+	 * a classifier in the destination.
+	 * 
+	 * @param origin
+	 * @param destination
+	 * @return
+	 */
+	private boolean dependsOn(DependencyVertex origin, DependencyVertex destination){
+		
+		return false;
 	}
 	
 	// -----------------------------------------------
