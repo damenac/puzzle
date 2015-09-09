@@ -13,7 +13,7 @@ import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager;
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.KSynthesisInferrer;
+import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer;
 import java.util.ArrayList;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -50,7 +50,7 @@ public class SynthesisBuilder {
   private SynthesisProperties getSynthesisProperties() {
     ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
     MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
-    FeaturesModelInference variabilityInferer = new KSynthesisInferrer();
+    FeaturesModelInference variabilityInferer = new FamaInferrer();
     GraphPartition graphPartition = new MembershipGraphPartition();
     SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
     return properties;

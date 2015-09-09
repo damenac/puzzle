@@ -66,63 +66,63 @@ public class VmSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case VmPackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
+			case VmPackage.PNAMED_ELEMENT: {
+				PNamedElement pNamedElement = (PNamedElement)theEObject;
+				T result = casePNamedElement(pNamedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.FEATURE_MODEL: {
-				FeatureModel featureModel = (FeatureModel)theEObject;
-				T result = caseFeatureModel(featureModel);
-				if (result == null) result = caseNamedElement(featureModel);
+			case VmPackage.PFEATURE_MODEL: {
+				PFeatureModel pFeatureModel = (PFeatureModel)theEObject;
+				T result = casePFeatureModel(pFeatureModel);
+				if (result == null) result = casePNamedElement(pFeatureModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.FEATURE: {
-				Feature feature = (Feature)theEObject;
-				T result = caseFeature(feature);
-				if (result == null) result = caseNamedElement(feature);
+			case VmPackage.PFEATURE: {
+				PFeature pFeature = (PFeature)theEObject;
+				T result = casePFeature(pFeature);
+				if (result == null) result = casePNamedElement(pFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.FEATURE_GROUP: {
-				FeatureGroup featureGroup = (FeatureGroup)theEObject;
-				T result = caseFeatureGroup(featureGroup);
+			case VmPackage.PFEATURE_GROUP: {
+				PFeatureGroup pFeatureGroup = (PFeatureGroup)theEObject;
+				T result = casePFeatureGroup(pFeatureGroup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.CONSTRAINT: {
-				Constraint constraint = (Constraint)theEObject;
-				T result = caseConstraint(constraint);
-				if (result == null) result = caseNamedElement(constraint);
+			case VmPackage.PCONSTRAINT: {
+				PConstraint pConstraint = (PConstraint)theEObject;
+				T result = casePConstraint(pConstraint);
+				if (result == null) result = casePNamedElement(pConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.BOOLEAN_EXPRESSION: {
-				BooleanExpression booleanExpression = (BooleanExpression)theEObject;
-				T result = caseBooleanExpression(booleanExpression);
+			case VmPackage.PBOOLEAN_EXPRESSION: {
+				PBooleanExpression pBooleanExpression = (PBooleanExpression)theEObject;
+				T result = casePBooleanExpression(pBooleanExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.FEATURE_REF: {
-				FeatureRef featureRef = (FeatureRef)theEObject;
-				T result = caseFeatureRef(featureRef);
-				if (result == null) result = caseBooleanExpression(featureRef);
+			case VmPackage.PFEATURE_REF: {
+				PFeatureRef pFeatureRef = (PFeatureRef)theEObject;
+				T result = casePFeatureRef(pFeatureRef);
+				if (result == null) result = casePBooleanExpression(pFeatureRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.UNARY_EXPRESSION: {
-				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
-				T result = caseUnaryExpression(unaryExpression);
-				if (result == null) result = caseBooleanExpression(unaryExpression);
+			case VmPackage.PUNARY_EXPRESSION: {
+				PUnaryExpression pUnaryExpression = (PUnaryExpression)theEObject;
+				T result = casePUnaryExpression(pUnaryExpression);
+				if (result == null) result = casePBooleanExpression(pUnaryExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.BINARY_EXPRESSION: {
-				BinaryExpression binaryExpression = (BinaryExpression)theEObject;
-				T result = caseBinaryExpression(binaryExpression);
-				if (result == null) result = caseBooleanExpression(binaryExpression);
+			case VmPackage.PBINARY_EXPRESSION: {
+				PBinaryExpression pBinaryExpression = (PBinaryExpression)theEObject;
+				T result = casePBinaryExpression(pBinaryExpression);
+				if (result == null) result = casePBooleanExpression(pBinaryExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,137 +131,137 @@ public class VmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PNamed Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PNamed Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNamedElement(NamedElement object) {
+	public T casePNamedElement(PNamedElement object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Model</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PFeature Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Model</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PFeature Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureModel(FeatureModel object) {
+	public T casePFeatureModel(PFeatureModel object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PFeature</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PFeature</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeature(Feature object) {
+	public T casePFeature(PFeature object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Group</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PFeature Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Group</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PFeature Group</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureGroup(FeatureGroup object) {
+	public T casePFeatureGroup(PFeatureGroup object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PConstraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PConstraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstraint(Constraint object) {
+	public T casePConstraint(PConstraint object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PBoolean Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PBoolean Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBooleanExpression(BooleanExpression object) {
+	public T casePBooleanExpression(PBooleanExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Feature Ref</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PFeature Ref</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Feature Ref</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PFeature Ref</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFeatureRef(FeatureRef object) {
+	public T casePFeatureRef(PFeatureRef object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PUnary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PUnary Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnaryExpression(UnaryExpression object) {
+	public T casePUnaryExpression(PUnaryExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>PBinary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>PBinary Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBinaryExpression(BinaryExpression object) {
+	public T casePBinaryExpression(PBinaryExpression object) {
 		return null;
 	}
 

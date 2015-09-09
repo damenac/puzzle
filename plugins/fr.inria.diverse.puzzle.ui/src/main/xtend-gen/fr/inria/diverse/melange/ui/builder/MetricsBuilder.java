@@ -10,7 +10,7 @@ import fr.inria.diverse.k3.sle.common.graphsOperators.MembershipGraphPartition;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl;
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.KSynthesisInferrer;
+import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
@@ -37,7 +37,7 @@ public class MetricsBuilder {
   private SynthesisProperties getSynthesisProperties() {
     ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
     MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
-    FeaturesModelInference variabilityInferer = new KSynthesisInferrer();
+    FeaturesModelInference variabilityInferer = new FamaInferrer();
     GraphPartition graphPartition = new MembershipGraphPartition();
     SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
     return properties;

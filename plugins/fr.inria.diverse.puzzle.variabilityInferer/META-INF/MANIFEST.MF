@@ -18,4 +18,5 @@ Bundle-ActivationPolicy: lazy
 Export-Package: fr.inria.diverse.puzzle.variabilityinferer,
  fr.inria.diverse.puzzle.variabilityinferer.inferers
 Bundle-ClassPath: lib/FAMILIAR-Standalone-1.0.10-jar-with-dependencies.jar,
+ lib/FaMaFeatureModel-0.9.1.jar,
  .

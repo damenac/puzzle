@@ -22,67 +22,67 @@ public interface VmFactory extends EFactory {
 	VmFactory eINSTANCE = vm.impl.VmFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Feature Model</em>'.
+	 * Returns a new object of class '<em>PFeature Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature Model</em>'.
+	 * @return a new object of class '<em>PFeature Model</em>'.
 	 * @generated
 	 */
-	FeatureModel createFeatureModel();
+	PFeatureModel createPFeatureModel();
 
 	/**
-	 * Returns a new object of class '<em>Feature</em>'.
+	 * Returns a new object of class '<em>PFeature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature</em>'.
+	 * @return a new object of class '<em>PFeature</em>'.
 	 * @generated
 	 */
-	Feature createFeature();
+	PFeature createPFeature();
 
 	/**
-	 * Returns a new object of class '<em>Feature Group</em>'.
+	 * Returns a new object of class '<em>PFeature Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature Group</em>'.
+	 * @return a new object of class '<em>PFeature Group</em>'.
 	 * @generated
 	 */
-	FeatureGroup createFeatureGroup();
+	PFeatureGroup createPFeatureGroup();
 
 	/**
-	 * Returns a new object of class '<em>Constraint</em>'.
+	 * Returns a new object of class '<em>PConstraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constraint</em>'.
+	 * @return a new object of class '<em>PConstraint</em>'.
 	 * @generated
 	 */
-	Constraint createConstraint();
+	PConstraint createPConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Feature Ref</em>'.
+	 * Returns a new object of class '<em>PFeature Ref</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Feature Ref</em>'.
+	 * @return a new object of class '<em>PFeature Ref</em>'.
 	 * @generated
 	 */
-	FeatureRef createFeatureRef();
+	PFeatureRef createPFeatureRef();
 
 	/**
-	 * Returns a new object of class '<em>Unary Expression</em>'.
+	 * Returns a new object of class '<em>PUnary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unary Expression</em>'.
+	 * @return a new object of class '<em>PUnary Expression</em>'.
 	 * @generated
 	 */
-	UnaryExpression createUnaryExpression();
+	PUnaryExpression createPUnaryExpression();
 
 	/**
-	 * Returns a new object of class '<em>Binary Expression</em>'.
+	 * Returns a new object of class '<em>PBinary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Binary Expression</em>'.
+	 * @return a new object of class '<em>PBinary Expression</em>'.
 	 * @generated
 	 */
-	BinaryExpression createBinaryExpression();
+	PBinaryExpression createPBinaryExpression();
 
 	/**
 	 * Returns the package supported by this factory.

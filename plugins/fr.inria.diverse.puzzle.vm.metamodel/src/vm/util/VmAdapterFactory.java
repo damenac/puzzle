@@ -68,40 +68,40 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 	protected VmSwitch<Adapter> modelSwitch =
 		new VmSwitch<Adapter>() {
 			@Override
-			public Adapter caseNamedElement(NamedElement object) {
-				return createNamedElementAdapter();
+			public Adapter casePNamedElement(PNamedElement object) {
+				return createPNamedElementAdapter();
 			}
 			@Override
-			public Adapter caseFeatureModel(FeatureModel object) {
-				return createFeatureModelAdapter();
+			public Adapter casePFeatureModel(PFeatureModel object) {
+				return createPFeatureModelAdapter();
 			}
 			@Override
-			public Adapter caseFeature(Feature object) {
-				return createFeatureAdapter();
+			public Adapter casePFeature(PFeature object) {
+				return createPFeatureAdapter();
 			}
 			@Override
-			public Adapter caseFeatureGroup(FeatureGroup object) {
-				return createFeatureGroupAdapter();
+			public Adapter casePFeatureGroup(PFeatureGroup object) {
+				return createPFeatureGroupAdapter();
 			}
 			@Override
-			public Adapter caseConstraint(Constraint object) {
-				return createConstraintAdapter();
+			public Adapter casePConstraint(PConstraint object) {
+				return createPConstraintAdapter();
 			}
 			@Override
-			public Adapter caseBooleanExpression(BooleanExpression object) {
-				return createBooleanExpressionAdapter();
+			public Adapter casePBooleanExpression(PBooleanExpression object) {
+				return createPBooleanExpressionAdapter();
 			}
 			@Override
-			public Adapter caseFeatureRef(FeatureRef object) {
-				return createFeatureRefAdapter();
+			public Adapter casePFeatureRef(PFeatureRef object) {
+				return createPFeatureRefAdapter();
 			}
 			@Override
-			public Adapter caseUnaryExpression(UnaryExpression object) {
-				return createUnaryExpressionAdapter();
+			public Adapter casePUnaryExpression(PUnaryExpression object) {
+				return createPUnaryExpressionAdapter();
 			}
 			@Override
-			public Adapter caseBinaryExpression(BinaryExpression object) {
-				return createBinaryExpressionAdapter();
+			public Adapter casePBinaryExpression(PBinaryExpression object) {
+				return createPBinaryExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -124,128 +124,128 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.NamedElement <em>Named Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PNamedElement <em>PNamed Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.NamedElement
+	 * @see vm.PNamedElement
 	 * @generated
 	 */
-	public Adapter createNamedElementAdapter() {
+	public Adapter createPNamedElementAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.FeatureModel <em>Feature Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PFeatureModel <em>PFeature Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.FeatureModel
+	 * @see vm.PFeatureModel
 	 * @generated
 	 */
-	public Adapter createFeatureModelAdapter() {
+	public Adapter createPFeatureModelAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.Feature <em>Feature</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PFeature <em>PFeature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.Feature
+	 * @see vm.PFeature
 	 * @generated
 	 */
-	public Adapter createFeatureAdapter() {
+	public Adapter createPFeatureAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.FeatureGroup <em>Feature Group</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PFeatureGroup <em>PFeature Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.FeatureGroup
+	 * @see vm.PFeatureGroup
 	 * @generated
 	 */
-	public Adapter createFeatureGroupAdapter() {
+	public Adapter createPFeatureGroupAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.Constraint <em>Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PConstraint <em>PConstraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.Constraint
+	 * @see vm.PConstraint
 	 * @generated
 	 */
-	public Adapter createConstraintAdapter() {
+	public Adapter createPConstraintAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.BooleanExpression <em>Boolean Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PBooleanExpression <em>PBoolean Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.BooleanExpression
+	 * @see vm.PBooleanExpression
 	 * @generated
 	 */
-	public Adapter createBooleanExpressionAdapter() {
+	public Adapter createPBooleanExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.FeatureRef <em>Feature Ref</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PFeatureRef <em>PFeature Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.FeatureRef
+	 * @see vm.PFeatureRef
 	 * @generated
 	 */
-	public Adapter createFeatureRefAdapter() {
+	public Adapter createPFeatureRefAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.UnaryExpression <em>Unary Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PUnaryExpression <em>PUnary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.UnaryExpression
+	 * @see vm.PUnaryExpression
 	 * @generated
 	 */
-	public Adapter createUnaryExpressionAdapter() {
+	public Adapter createPUnaryExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.BinaryExpression <em>Binary Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.PBinaryExpression <em>PBinary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.BinaryExpression
+	 * @see vm.PBinaryExpression
 	 * @generated
 	 */
-	public Adapter createBinaryExpressionAdapter() {
+	public Adapter createPBinaryExpressionAdapter() {
 		return null;
 	}
 

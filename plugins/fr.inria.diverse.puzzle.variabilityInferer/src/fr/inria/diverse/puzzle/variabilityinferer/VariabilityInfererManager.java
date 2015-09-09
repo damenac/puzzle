@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
+import vm.PFeatureModel;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -48,9 +50,10 @@ public class VariabilityInfererManager {
 		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
 		
-		inferrer.inferOpenFeaturesModel(project, 
+		PFeatureModel openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
 				synthesisProperties, languages, modularizationGraph);
 
+		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/openFM.vm");
 		ProjectManagementServices.refreshProject(project);
 	}
 }

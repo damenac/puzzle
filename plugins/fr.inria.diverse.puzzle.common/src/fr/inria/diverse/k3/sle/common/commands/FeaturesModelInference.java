@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.FeatureModel;
+import vm.PFeatureModel;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -27,7 +27,7 @@ public interface FeaturesModelInference {
 	 * @return
 	 * @throws Exception
 	 */
-	public FeatureModel inferOpenFeaturesModel(IProject targetProject, 
+	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, 
 			SynthesisProperties properties, ArrayList<Language> languages, 
 			EcoreGraph modularizationGraph) throws Exception;
 	
@@ -42,7 +42,7 @@ public interface FeaturesModelInference {
 	 * @return
 	 * @throws Exception
 	 */
-	public FeatureModel inferClosedFeaturesModel(IProject targetProject, 
+	public PFeatureModel inferClosedFeaturesModel(IProject targetProject, 
 			SynthesisProperties properties, ArrayList<Language> languages, 
 			EcoreGraph modularizationGraph) throws Exception;
 }

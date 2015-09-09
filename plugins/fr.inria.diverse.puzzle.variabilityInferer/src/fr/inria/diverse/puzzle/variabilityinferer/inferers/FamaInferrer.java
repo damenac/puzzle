@@ -6,12 +6,14 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.FeatureModel;
+import vm.PFeatureModel;
+import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import fama.synthesizer.facade.FamaSynthesizer;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FeatureModelsTranslator;
 import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
 
 /**
@@ -22,7 +24,7 @@ import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
 public class FamaInferrer implements FeaturesModelInference{
 
 	@Override
-	public FeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties,
+	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties,
 			ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception {
 		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.FAMA_FORMAT);
 		
@@ -39,17 +41,16 @@ public class FamaInferrer implements FeaturesModelInference{
 		String outputFile = targetProject.getLocation().toString()
 				+ "/variabilityModel.xml";
 		
-		FamaSynthesizer.getInstance().synthesizeFeatureModelFromPCM(inputFile, outputFile);
-		
-		return null;
+		FAMAFeatureModel famafm = FamaSynthesizer.getInstance().synthesizeFeatureModelFromPCM(inputFile, outputFile);
+		PFeatureModel fm = FeatureModelsTranslator.getInstance().fromFAMAFeatureModelToFeatureModel(famafm);
+		return fm;
 	}
 
 	@Override
-	public FeatureModel inferClosedFeaturesModel(IProject targetProject,
+	public PFeatureModel inferClosedFeaturesModel(IProject targetProject,
 			SynthesisProperties properties, ArrayList<Language> languages,
 			EcoreGraph modularizationGraph) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

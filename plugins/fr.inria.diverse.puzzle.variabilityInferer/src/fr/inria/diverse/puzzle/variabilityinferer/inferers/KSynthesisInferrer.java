@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.FeatureModel;
+import vm.PFeatureModel;
 import fr.familiar.variable.FeatureModelVariable;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
@@ -24,7 +24,7 @@ import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
 public class KSynthesisInferrer implements FeaturesModelInference {
 
 	@Override
-	public FeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception {
+	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception {
 		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
 		
 		File fileReport = new File(targetProject.getLocation().toString()
@@ -38,13 +38,12 @@ public class KSynthesisInferrer implements FeaturesModelInference {
 		FeatureModelVariable fmv = KSynthesisSynthesizer.getInstance().synthesizeFeatureModelFromPCM(targetProject.getLocation().toString()
 				+ "/pcm.csv", targetProject.getLocation().toString() + "/vm.xml");
 		
-		FeatureModel fm = FeatureModelsTranslator.getInstance().fromFeatureModelVariableToFeatureModel(fmv);
-		
-		return null;
+		PFeatureModel fm = FeatureModelsTranslator.getInstance().fromFeatureModelVariableToFeatureModel(fmv);
+		return fm;
 	}
 
 	@Override
-	public FeatureModel inferClosedFeaturesModel(IProject targetProject,
+	public PFeatureModel inferClosedFeaturesModel(IProject targetProject,
 			SynthesisProperties properties, ArrayList<Language> languages,
 			EcoreGraph modularizationGraph) throws Exception {
 		// TODO Auto-generated method stub

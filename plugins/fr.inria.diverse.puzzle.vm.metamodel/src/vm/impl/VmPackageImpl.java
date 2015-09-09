@@ -10,18 +10,18 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import vm.BinaryExpression;
-import vm.BinaryOperator;
-import vm.BooleanExpression;
-import vm.Constraint;
-import vm.Feature;
-import vm.FeatureGroup;
-import vm.FeatureModel;
-import vm.FeatureRef;
-import vm.GroupKind;
-import vm.NamedElement;
-import vm.UnaryExpression;
-import vm.UninaryOperator;
+import vm.PBinaryExpression;
+import vm.PBinaryOperator;
+import vm.PBooleanExpression;
+import vm.PConstraint;
+import vm.PFeature;
+import vm.PFeatureGroup;
+import vm.PFeatureModel;
+import vm.PFeatureRef;
+import vm.PGroupKind;
+import vm.PNamedElement;
+import vm.PUnaryExpression;
+import vm.PUninaryOperator;
 import vm.VmFactory;
 import vm.VmPackage;
 
@@ -37,84 +37,84 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass namedElementEClass = null;
+	private EClass pNamedElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureModelEClass = null;
+	private EClass pFeatureModelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureEClass = null;
+	private EClass pFeatureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureGroupEClass = null;
+	private EClass pFeatureGroupEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass constraintEClass = null;
+	private EClass pConstraintEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass booleanExpressionEClass = null;
+	private EClass pBooleanExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass featureRefEClass = null;
+	private EClass pFeatureRefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass unaryExpressionEClass = null;
+	private EClass pUnaryExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass binaryExpressionEClass = null;
+	private EClass pBinaryExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum groupKindEEnum = null;
+	private EEnum pGroupKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum uninaryOperatorEEnum = null;
+	private EEnum pUninaryOperatorEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum binaryOperatorEEnum = null;
+	private EEnum pBinaryOperatorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -182,8 +182,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getNamedElement() {
-		return namedElementEClass;
+	public EClass getPNamedElement() {
+		return pNamedElementEClass;
 	}
 
 	/**
@@ -191,8 +191,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNamedElement_Name() {
-		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPNamedElement_Name() {
+		return (EAttribute)pNamedElementEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -200,8 +200,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureModel() {
-		return featureModelEClass;
+	public EClass getPFeatureModel() {
+		return pFeatureModelEClass;
 	}
 
 	/**
@@ -209,8 +209,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureModel_RootFeature() {
-		return (EReference)featureModelEClass.getEStructuralFeatures().get(0);
+	public EReference getPFeatureModel_RootFeature() {
+		return (EReference)pFeatureModelEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -218,8 +218,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureModel_Constraints() {
-		return (EReference)featureModelEClass.getEStructuralFeatures().get(1);
+	public EReference getPFeatureModel_Constraints() {
+		return (EReference)pFeatureModelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -227,8 +227,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeature() {
-		return featureEClass;
+	public EClass getPFeature() {
+		return pFeatureEClass;
 	}
 
 	/**
@@ -236,8 +236,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeature_Mandatory() {
-		return (EAttribute)featureEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPFeature_Mandatory() {
+		return (EAttribute)pFeatureEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -245,8 +245,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeature_Children() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(1);
+	public EReference getPFeature_Children() {
+		return (EReference)pFeatureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -254,8 +254,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeature_Parent() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(2);
+	public EReference getPFeature_Parent() {
+		return (EReference)pFeatureEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -263,8 +263,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeature_Groups() {
-		return (EReference)featureEClass.getEStructuralFeatures().get(3);
+	public EReference getPFeature_Groups() {
+		return (EReference)pFeatureEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -272,8 +272,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureGroup() {
-		return featureGroupEClass;
+	public EClass getPFeatureGroup() {
+		return pFeatureGroupEClass;
 	}
 
 	/**
@@ -281,8 +281,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFeatureGroup_Features() {
-		return (EReference)featureGroupEClass.getEStructuralFeatures().get(0);
+	public EReference getPFeatureGroup_Features() {
+		return (EReference)pFeatureGroupEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -290,8 +290,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeatureGroup_Kind() {
-		return (EAttribute)featureGroupEClass.getEStructuralFeatures().get(1);
+	public EAttribute getPFeatureGroup_Kind() {
+		return (EAttribute)pFeatureGroupEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -299,8 +299,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConstraint() {
-		return constraintEClass;
+	public EClass getPConstraint() {
+		return pConstraintEClass;
 	}
 
 	/**
@@ -308,8 +308,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConstraint_Expression() {
-		return (EReference)constraintEClass.getEStructuralFeatures().get(0);
+	public EReference getPConstraint_Expression() {
+		return (EReference)pConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -317,8 +317,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBooleanExpression() {
-		return booleanExpressionEClass;
+	public EClass getPBooleanExpression() {
+		return pBooleanExpressionEClass;
 	}
 
 	/**
@@ -326,8 +326,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getFeatureRef() {
-		return featureRefEClass;
+	public EClass getPFeatureRef() {
+		return pFeatureRefEClass;
 	}
 
 	/**
@@ -335,8 +335,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFeatureRef_FeatureName() {
-		return (EAttribute)featureRefEClass.getEStructuralFeatures().get(0);
+	public EAttribute getPFeatureRef_FeatureName() {
+		return (EAttribute)pFeatureRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -344,8 +344,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getUnaryExpression() {
-		return unaryExpressionEClass;
+	public EClass getPUnaryExpression() {
+		return pUnaryExpressionEClass;
 	}
 
 	/**
@@ -353,8 +353,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUnaryExpression_Expr() {
-		return (EReference)unaryExpressionEClass.getEStructuralFeatures().get(0);
+	public EReference getPUnaryExpression_Expr() {
+		return (EReference)pUnaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -362,8 +362,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBinaryExpression() {
-		return binaryExpressionEClass;
+	public EClass getPBinaryExpression() {
+		return pBinaryExpressionEClass;
 	}
 
 	/**
@@ -371,8 +371,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryExpression_Left() {
-		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(0);
+	public EReference getPBinaryExpression_Left() {
+		return (EReference)pBinaryExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -380,8 +380,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBinaryExpression_Right() {
-		return (EReference)binaryExpressionEClass.getEStructuralFeatures().get(1);
+	public EReference getPBinaryExpression_Right() {
+		return (EReference)pBinaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -389,8 +389,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getGroupKind() {
-		return groupKindEEnum;
+	public EEnum getPGroupKind() {
+		return pGroupKindEEnum;
 	}
 
 	/**
@@ -398,8 +398,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getUninaryOperator() {
-		return uninaryOperatorEEnum;
+	public EEnum getPUninaryOperator() {
+		return pUninaryOperatorEEnum;
 	}
 
 	/**
@@ -407,8 +407,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getBinaryOperator() {
-		return binaryOperatorEEnum;
+	public EEnum getPBinaryOperator() {
+		return pBinaryOperatorEEnum;
 	}
 
 	/**
@@ -439,42 +439,42 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		namedElementEClass = createEClass(NAMED_ELEMENT);
-		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+		pNamedElementEClass = createEClass(PNAMED_ELEMENT);
+		createEAttribute(pNamedElementEClass, PNAMED_ELEMENT__NAME);
 
-		featureModelEClass = createEClass(FEATURE_MODEL);
-		createEReference(featureModelEClass, FEATURE_MODEL__ROOT_FEATURE);
-		createEReference(featureModelEClass, FEATURE_MODEL__CONSTRAINTS);
+		pFeatureModelEClass = createEClass(PFEATURE_MODEL);
+		createEReference(pFeatureModelEClass, PFEATURE_MODEL__ROOT_FEATURE);
+		createEReference(pFeatureModelEClass, PFEATURE_MODEL__CONSTRAINTS);
 
-		featureEClass = createEClass(FEATURE);
-		createEAttribute(featureEClass, FEATURE__MANDATORY);
-		createEReference(featureEClass, FEATURE__CHILDREN);
-		createEReference(featureEClass, FEATURE__PARENT);
-		createEReference(featureEClass, FEATURE__GROUPS);
+		pFeatureEClass = createEClass(PFEATURE);
+		createEAttribute(pFeatureEClass, PFEATURE__MANDATORY);
+		createEReference(pFeatureEClass, PFEATURE__CHILDREN);
+		createEReference(pFeatureEClass, PFEATURE__PARENT);
+		createEReference(pFeatureEClass, PFEATURE__GROUPS);
 
-		featureGroupEClass = createEClass(FEATURE_GROUP);
-		createEReference(featureGroupEClass, FEATURE_GROUP__FEATURES);
-		createEAttribute(featureGroupEClass, FEATURE_GROUP__KIND);
+		pFeatureGroupEClass = createEClass(PFEATURE_GROUP);
+		createEReference(pFeatureGroupEClass, PFEATURE_GROUP__FEATURES);
+		createEAttribute(pFeatureGroupEClass, PFEATURE_GROUP__KIND);
 
-		constraintEClass = createEClass(CONSTRAINT);
-		createEReference(constraintEClass, CONSTRAINT__EXPRESSION);
+		pConstraintEClass = createEClass(PCONSTRAINT);
+		createEReference(pConstraintEClass, PCONSTRAINT__EXPRESSION);
 
-		booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
+		pBooleanExpressionEClass = createEClass(PBOOLEAN_EXPRESSION);
 
-		featureRefEClass = createEClass(FEATURE_REF);
-		createEAttribute(featureRefEClass, FEATURE_REF__FEATURE_NAME);
+		pFeatureRefEClass = createEClass(PFEATURE_REF);
+		createEAttribute(pFeatureRefEClass, PFEATURE_REF__FEATURE_NAME);
 
-		unaryExpressionEClass = createEClass(UNARY_EXPRESSION);
-		createEReference(unaryExpressionEClass, UNARY_EXPRESSION__EXPR);
+		pUnaryExpressionEClass = createEClass(PUNARY_EXPRESSION);
+		createEReference(pUnaryExpressionEClass, PUNARY_EXPRESSION__EXPR);
 
-		binaryExpressionEClass = createEClass(BINARY_EXPRESSION);
-		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__LEFT);
-		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__RIGHT);
+		pBinaryExpressionEClass = createEClass(PBINARY_EXPRESSION);
+		createEReference(pBinaryExpressionEClass, PBINARY_EXPRESSION__LEFT);
+		createEReference(pBinaryExpressionEClass, PBINARY_EXPRESSION__RIGHT);
 
 		// Create enums
-		groupKindEEnum = createEEnum(GROUP_KIND);
-		uninaryOperatorEEnum = createEEnum(UNINARY_OPERATOR);
-		binaryOperatorEEnum = createEEnum(BINARY_OPERATOR);
+		pGroupKindEEnum = createEEnum(PGROUP_KIND);
+		pUninaryOperatorEEnum = createEEnum(PUNINARY_OPERATOR);
+		pBinaryOperatorEEnum = createEEnum(PBINARY_OPERATOR);
 	}
 
 	/**
@@ -505,59 +505,59 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		featureModelEClass.getESuperTypes().add(this.getNamedElement());
-		featureEClass.getESuperTypes().add(this.getNamedElement());
-		constraintEClass.getESuperTypes().add(this.getNamedElement());
-		featureRefEClass.getESuperTypes().add(this.getBooleanExpression());
-		unaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
-		binaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
+		pFeatureModelEClass.getESuperTypes().add(this.getPNamedElement());
+		pFeatureEClass.getESuperTypes().add(this.getPNamedElement());
+		pConstraintEClass.getESuperTypes().add(this.getPNamedElement());
+		pFeatureRefEClass.getESuperTypes().add(this.getPBooleanExpression());
+		pUnaryExpressionEClass.getESuperTypes().add(this.getPBooleanExpression());
+		pBinaryExpressionEClass.getESuperTypes().add(this.getPBooleanExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pNamedElementEClass, PNamedElement.class, "PNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, PNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(featureModelEClass, FeatureModel.class, "FeatureModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeatureModel_RootFeature(), this.getFeature(), null, "rootFeature", null, 0, 1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeatureModel_Constraints(), this.getConstraint(), null, "constraints", null, 0, -1, FeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pFeatureModelEClass, PFeatureModel.class, "PFeatureModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPFeatureModel_RootFeature(), this.getPFeature(), null, "rootFeature", null, 0, 1, PFeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeatureModel_Constraints(), this.getPConstraint(), null, "constraints", null, 0, -1, PFeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(featureEClass, Feature.class, "Feature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeature_Mandatory(), ecorePackage.getEBoolean(), "mandatory", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_Children(), this.getFeature(), this.getFeature_Parent(), "children", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_Parent(), this.getFeature(), this.getFeature_Children(), "parent", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_Groups(), this.getFeatureGroup(), null, "groups", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pFeatureEClass, PFeature.class, "PFeature", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPFeature_Mandatory(), ecorePackage.getEBoolean(), "mandatory", null, 0, 1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeature_Children(), this.getPFeature(), this.getPFeature_Parent(), "children", null, 0, -1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeature_Parent(), this.getPFeature(), this.getPFeature_Children(), "parent", null, 0, 1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeature_Groups(), this.getPFeatureGroup(), null, "groups", null, 0, -1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(featureGroupEClass, FeatureGroup.class, "FeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFeatureGroup_Features(), this.getFeature(), null, "features", null, 1, -1, FeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFeatureGroup_Kind(), this.getGroupKind(), "kind", null, 0, 1, FeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pFeatureGroupEClass, PFeatureGroup.class, "PFeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPFeatureGroup_Features(), this.getPFeature(), null, "features", null, 1, -1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPFeatureGroup_Kind(), this.getPGroupKind(), "kind", null, 0, 1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConstraint_Expression(), this.getBooleanExpression(), null, "expression", null, 1, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pConstraintEClass, PConstraint.class, "PConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPConstraint_Expression(), this.getPBooleanExpression(), null, "expression", null, 1, 1, PConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(pBooleanExpressionEClass, PBooleanExpression.class, "PBooleanExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(featureRefEClass, FeatureRef.class, "FeatureRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFeatureRef_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, FeatureRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pFeatureRefEClass, PFeatureRef.class, "PFeatureRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPFeatureRef_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, PFeatureRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(unaryExpressionEClass, UnaryExpression.class, "UnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUnaryExpression_Expr(), this.getBooleanExpression(), null, "expr", null, 1, 1, UnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pUnaryExpressionEClass, PUnaryExpression.class, "PUnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPUnaryExpression_Expr(), this.getPBooleanExpression(), null, "expr", null, 1, 1, PUnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(binaryExpressionEClass, BinaryExpression.class, "BinaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBinaryExpression_Left(), this.getBooleanExpression(), null, "left", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getBinaryExpression_Right(), this.getBooleanExpression(), null, "right", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(pBinaryExpressionEClass, PBinaryExpression.class, "PBinaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPBinaryExpression_Left(), this.getPBooleanExpression(), null, "left", null, 1, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPBinaryExpression_Right(), this.getPBooleanExpression(), null, "right", null, 1, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(groupKindEEnum, GroupKind.class, "GroupKind");
-		addEEnumLiteral(groupKindEEnum, GroupKind.ALTERNATIVE);
-		addEEnumLiteral(groupKindEEnum, GroupKind.OPTIONAL);
+		initEEnum(pGroupKindEEnum, PGroupKind.class, "PGroupKind");
+		addEEnumLiteral(pGroupKindEEnum, PGroupKind.ALTERNATIVE);
+		addEEnumLiteral(pGroupKindEEnum, PGroupKind.OPTIONAL);
 
-		initEEnum(uninaryOperatorEEnum, UninaryOperator.class, "UninaryOperator");
-		addEEnumLiteral(uninaryOperatorEEnum, UninaryOperator.NOT);
+		initEEnum(pUninaryOperatorEEnum, PUninaryOperator.class, "PUninaryOperator");
+		addEEnumLiteral(pUninaryOperatorEEnum, PUninaryOperator.NOT);
 
-		initEEnum(binaryOperatorEEnum, BinaryOperator.class, "BinaryOperator");
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.AND);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.OR);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.IMPLIES);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.XOR);
+		initEEnum(pBinaryOperatorEEnum, PBinaryOperator.class, "PBinaryOperator");
+		addEEnumLiteral(pBinaryOperatorEEnum, PBinaryOperator.AND);
+		addEEnumLiteral(pBinaryOperatorEEnum, PBinaryOperator.OR);
+		addEEnumLiteral(pBinaryOperatorEEnum, PBinaryOperator.IMPLIES);
+		addEEnumLiteral(pBinaryOperatorEEnum, PBinaryOperator.XOR);
 
 		// Create resource
 		createResource(eNS_URI);

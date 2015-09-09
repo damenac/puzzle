@@ -1,5 +1,6 @@
 package fama.synthesizer.facade;
 
+import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import fm.experiments.utils.FMExtractorFacade;
 
 /**
@@ -38,8 +39,9 @@ public class FamaSynthesizer {
 	 * @param inputFile The location of the file containing the PCM in a comma separated file
 	 * @param outputFile The location of the file in which the feature model should be saved. 
 	 */
-	public void synthesizeFeatureModelFromPCM(String inputFile, String outputFile){
-		FMExtractorFacade.generateFM(inputFile, outputFile);
+	public FAMAFeatureModel synthesizeFeatureModelFromPCM(String inputFile, String outputFile){
+		FAMAFeatureModel ffm = FMExtractorFacade.generateFM(inputFile);
+		return ffm;
 	}
 	
 	public static void main(String args[]){

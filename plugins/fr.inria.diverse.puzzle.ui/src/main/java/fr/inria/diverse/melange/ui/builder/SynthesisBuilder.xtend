@@ -41,7 +41,7 @@ class SynthesisBuilder
 	def private SynthesisProperties getSynthesisProperties(){
 		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
-		var FeaturesModelInference variabilityInferer = new KSynthesisInferrer();
+		var FeaturesModelInference variabilityInferer = new FamaInferrer();
 		var GraphPartition graphPartition = new MembershipGraphPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;

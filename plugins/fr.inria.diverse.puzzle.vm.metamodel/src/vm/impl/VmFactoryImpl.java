@@ -57,13 +57,13 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case VmPackage.FEATURE_MODEL: return createFeatureModel();
-			case VmPackage.FEATURE: return createFeature();
-			case VmPackage.FEATURE_GROUP: return createFeatureGroup();
-			case VmPackage.CONSTRAINT: return createConstraint();
-			case VmPackage.FEATURE_REF: return createFeatureRef();
-			case VmPackage.UNARY_EXPRESSION: return createUnaryExpression();
-			case VmPackage.BINARY_EXPRESSION: return createBinaryExpression();
+			case VmPackage.PFEATURE_MODEL: return createPFeatureModel();
+			case VmPackage.PFEATURE: return createPFeature();
+			case VmPackage.PFEATURE_GROUP: return createPFeatureGroup();
+			case VmPackage.PCONSTRAINT: return createPConstraint();
+			case VmPackage.PFEATURE_REF: return createPFeatureRef();
+			case VmPackage.PUNARY_EXPRESSION: return createPUnaryExpression();
+			case VmPackage.PBINARY_EXPRESSION: return createPBinaryExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -77,12 +77,12 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case VmPackage.GROUP_KIND:
-				return createGroupKindFromString(eDataType, initialValue);
-			case VmPackage.UNINARY_OPERATOR:
-				return createUninaryOperatorFromString(eDataType, initialValue);
-			case VmPackage.BINARY_OPERATOR:
-				return createBinaryOperatorFromString(eDataType, initialValue);
+			case VmPackage.PGROUP_KIND:
+				return createPGroupKindFromString(eDataType, initialValue);
+			case VmPackage.PUNINARY_OPERATOR:
+				return createPUninaryOperatorFromString(eDataType, initialValue);
+			case VmPackage.PBINARY_OPERATOR:
+				return createPBinaryOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -96,12 +96,12 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case VmPackage.GROUP_KIND:
-				return convertGroupKindToString(eDataType, instanceValue);
-			case VmPackage.UNINARY_OPERATOR:
-				return convertUninaryOperatorToString(eDataType, instanceValue);
-			case VmPackage.BINARY_OPERATOR:
-				return convertBinaryOperatorToString(eDataType, instanceValue);
+			case VmPackage.PGROUP_KIND:
+				return convertPGroupKindToString(eDataType, instanceValue);
+			case VmPackage.PUNINARY_OPERATOR:
+				return convertPUninaryOperatorToString(eDataType, instanceValue);
+			case VmPackage.PBINARY_OPERATOR:
+				return convertPBinaryOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -112,9 +112,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureModel createFeatureModel() {
-		FeatureModelImpl featureModel = new FeatureModelImpl();
-		return featureModel;
+	public PFeatureModel createPFeatureModel() {
+		PFeatureModelImpl pFeatureModel = new PFeatureModelImpl();
+		return pFeatureModel;
 	}
 
 	/**
@@ -122,9 +122,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Feature createFeature() {
-		FeatureImpl feature = new FeatureImpl();
-		return feature;
+	public PFeature createPFeature() {
+		PFeatureImpl pFeature = new PFeatureImpl();
+		return pFeature;
 	}
 
 	/**
@@ -132,9 +132,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureGroup createFeatureGroup() {
-		FeatureGroupImpl featureGroup = new FeatureGroupImpl();
-		return featureGroup;
+	public PFeatureGroup createPFeatureGroup() {
+		PFeatureGroupImpl pFeatureGroup = new PFeatureGroupImpl();
+		return pFeatureGroup;
 	}
 
 	/**
@@ -142,9 +142,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Constraint createConstraint() {
-		ConstraintImpl constraint = new ConstraintImpl();
-		return constraint;
+	public PConstraint createPConstraint() {
+		PConstraintImpl pConstraint = new PConstraintImpl();
+		return pConstraint;
 	}
 
 	/**
@@ -152,9 +152,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FeatureRef createFeatureRef() {
-		FeatureRefImpl featureRef = new FeatureRefImpl();
-		return featureRef;
+	public PFeatureRef createPFeatureRef() {
+		PFeatureRefImpl pFeatureRef = new PFeatureRefImpl();
+		return pFeatureRef;
 	}
 
 	/**
@@ -162,9 +162,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnaryExpression createUnaryExpression() {
-		UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
-		return unaryExpression;
+	public PUnaryExpression createPUnaryExpression() {
+		PUnaryExpressionImpl pUnaryExpression = new PUnaryExpressionImpl();
+		return pUnaryExpression;
 	}
 
 	/**
@@ -172,9 +172,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BinaryExpression createBinaryExpression() {
-		BinaryExpressionImpl binaryExpression = new BinaryExpressionImpl();
-		return binaryExpression;
+	public PBinaryExpression createPBinaryExpression() {
+		PBinaryExpressionImpl pBinaryExpression = new PBinaryExpressionImpl();
+		return pBinaryExpression;
 	}
 
 	/**
@@ -182,8 +182,8 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public GroupKind createGroupKindFromString(EDataType eDataType, String initialValue) {
-		GroupKind result = GroupKind.get(initialValue);
+	public PGroupKind createPGroupKindFromString(EDataType eDataType, String initialValue) {
+		PGroupKind result = PGroupKind.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -193,7 +193,7 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertGroupKindToString(EDataType eDataType, Object instanceValue) {
+	public String convertPGroupKindToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -202,8 +202,8 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UninaryOperator createUninaryOperatorFromString(EDataType eDataType, String initialValue) {
-		UninaryOperator result = UninaryOperator.get(initialValue);
+	public PUninaryOperator createPUninaryOperatorFromString(EDataType eDataType, String initialValue) {
+		PUninaryOperator result = PUninaryOperator.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -213,7 +213,7 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertUninaryOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertPUninaryOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -222,8 +222,8 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BinaryOperator createBinaryOperatorFromString(EDataType eDataType, String initialValue) {
-		BinaryOperator result = BinaryOperator.get(initialValue);
+	public PBinaryOperator createPBinaryOperatorFromString(EDataType eDataType, String initialValue) {
+		PBinaryOperator result = PBinaryOperator.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -233,7 +233,7 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertBinaryOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertPBinaryOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
