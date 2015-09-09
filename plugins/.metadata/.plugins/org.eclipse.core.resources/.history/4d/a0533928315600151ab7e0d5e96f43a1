@@ -1,0 +1,7 @@
+source.. = src/
+output.. = bin/
+bin.includes = META-INF/,\
+               .,\
+               lib/FAMILIAR-Standalone-1.0.10-jar-with-dependencies.jar,\
+               lib/KSynthesis-0.0.1-SNAPSHOT-jar-with-dependencies.jar,\
+               lib/org.eclipse.core.resources_3.8.101.v20130717-0806.jar

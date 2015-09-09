@@ -1,8 +1,16 @@
 package fr.inria.diverse.puzzle.variabilityinferer.auxiliar;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -78,8 +86,10 @@ public class PCMsGenerator {
 	 * @param properties Synthesis properties needed for the computation of the PCM. 
 	 * @param modularizationGraph Modularization graph containing the language constructs. 
 	 * @return
+	 * @throws IOException 
+	 * @throws URISyntaxException 
 	 */
-	private String generatePCMOpenCompareFormat(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph){
+	private String generatePCMOpenCompareFormat(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception{
 		String pcm = "\"Product\"";
 		for (int i = 0; i < modularizationGraph.getGroups().size(); i++) {
 			ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(i);

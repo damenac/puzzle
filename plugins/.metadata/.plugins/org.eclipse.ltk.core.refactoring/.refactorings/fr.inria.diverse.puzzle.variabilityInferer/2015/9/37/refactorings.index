@@ -2,3 +2,5 @@
 1441705347769	Rename package 'fr.inria.diverse.puzzle.variabilityinferer.auxiliar'
 1441705360548	Rename package 'fr.inria.diverse.puzzle.variabilityinferer.pcms'
 1441713239450	Rename field 'FamasPCMWeirdMapping'
+1441782925260	Move compilation units
+1441782928499	Delete element

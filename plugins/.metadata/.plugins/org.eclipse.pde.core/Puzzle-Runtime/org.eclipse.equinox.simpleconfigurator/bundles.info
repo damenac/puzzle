@@ -18,6 +18,7 @@ fr.inria.diverse.k3.al.annotationprocessor.plugin,3.2.0.v20150707-0658,file:/Use
 fr.inria.diverse.k3.sample.deployer,3.2.0.v20150707-0702,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.k3.sample.deployer_3.2.0.v20150707-0702.jar,4,false
 fr.inria.diverse.k3.ui,3.2.0.v20150707-0702,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.k3.ui_3.2.0.v20150707-0702.jar,4,false
 fr.inria.diverse.k3.ui.templates,3.2.0.v20150707-0702,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.k3.ui.templates_3.2.0.v20150707-0702/,4,false
+fr.inria.diverse.ksynthesis.interface,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.ksynthesis.interface/,4,false
 fr.inria.diverse.melange,0.1.0.201508100737,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange_0.1.0.201508100737.jar,4,false
 fr.inria.diverse.melange.adapters,0.1.0.201508100737,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.adapters_0.1.0.201508100737.jar,4,false
 fr.inria.diverse.melange.lib,0.1.0.201508100737,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.lib_0.1.0.201508100737.jar,4,false

@@ -1,0 +1,19 @@
+package fr.inria.diverse.puzzle.variabilityinferer.vos;
+
+public class Product {
+
+	private String identifier;
+
+	public Product(String identifier) {
+		super();
+		this.identifier = identifier;
+	}
+
+	public String getIdentifier() {
+		return identifier;
+	}
+
+	public void setIdentifier(String identifier) {
+		this.identifier = identifier;
+	}
+}

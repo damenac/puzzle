@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.variabilityinferer.vos;
+
+import java.util.List;
+
+public class ProductLine {
+
+	private List<Product> products;
+	
+	private List<Feature> features;
+}

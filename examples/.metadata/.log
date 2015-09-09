@@ -7676,3 +7676,1138 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 !ENTRY org.apache.log4j 2 0 2015-09-08 14:02:07.883
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+!SESSION 2015-09-08 15:14:10.879 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:14:15.352
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:14:43.503
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:14:56.060
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+com.google.inject.CreationException: Guice creation errors:
+
+1) Error injecting method, java.lang.NoClassDefFoundError: org/eclipse/core/resources/ResourcesPlugin
+  at org.eclipse.xtext.validation.AbstractInjectableValidator.register(AbstractInjectableValidator.java:44)
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:55)
+  while locating org.xtext.example.mydsl.validation.FMLJavaValidator
+
+1 error
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:435)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:183)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:109)
+	at com.google.inject.Guice.createInjector(Guice.java:95)
+	at com.google.inject.Guice.createInjector(Guice.java:72)
+	at com.google.inject.Guice.createInjector(Guice.java:62)
+	at org.xtext.example.mydsl.FMLStandaloneSetupGenerated.createInjector(FMLStandaloneSetupGenerated.java:28)
+	at org.xtext.example.mydsl.FMLStandaloneSetupGenerated.createInjectorAndDoEMFRegistration(FMLStandaloneSetupGenerated.java:22)
+	at fr.familiar.parser.FMLCommandInterpreter.<init>(FMLCommandInterpreter.java:187)
+	at fr.familiar.interpreter.FMLShell.<init>(FMLShell.java:253)
+	at fr.familiar.interpreter.FMLShell.<init>(FMLShell.java:243)
+	at fr.familiar.interpreter.FMLShell.instantiateStandalone(FMLShell.java:233)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:50)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:45)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.NoClassDefFoundError: org/eclipse/core/resources/ResourcesPlugin
+	at org.eclipse.emf.ecore.plugin.EcorePlugin.getWorkspaceRoot(EcorePlugin.java:1131)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.<clinit>(ExtensibleURIConverterImpl.java:393)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.getDefaultURIConverter(ResourceImpl.java:113)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.getURIConverter(ResourceImpl.java:943)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1254)
+	at org.xtext.example.mydsl.fML.impl.FMLPackageImpl.loadPackage(FMLPackageImpl.java:5695)
+	at org.xtext.example.mydsl.fML.impl.FMLPackageImpl.init(FMLPackageImpl.java:1238)
+	at org.xtext.example.mydsl.fML.FMLPackage.<clinit>(FMLPackage.java:58)
+	at org.xtext.example.mydsl.validation.AbstractFMLJavaValidator.getEPackages(AbstractFMLJavaValidator.java:16)
+	at org.eclipse.xtext.validation.AbstractInjectableValidator.register(AbstractInjectableValidator.java:44)
+	at org.eclipse.xtext.validation.AbstractInjectableValidator$$FastClassByGuice$$2999770a.invoke(<generated>)
+	at com.google.inject.internal.cglib.reflect.$FastMethod.invoke(FastMethod.java:53)
+	at com.google.inject.internal.SingleMethodInjector$1.invoke(SingleMethodInjector.java:56)
+	at com.google.inject.internal.SingleMethodInjector.inject(SingleMethodInjector.java:90)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:204)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:198)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:198)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:179)
+	... 18 more
+Caused by: java.lang.ClassNotFoundException: org.eclipse.core.resources.ResourcesPlugin cannot be found by fr.inria.diverse.ksynthesis.interface_1.0.0.qualifier
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 45 more
+!SESSION 2015-09-08 15:16:29.821 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:16:34.167
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:16:46.572
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:17:17.304
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+com.google.inject.CreationException: Guice creation errors:
+
+1) Error injecting method, java.lang.ExceptionInInitializerError
+  at org.eclipse.xtext.validation.AbstractInjectableValidator.register(AbstractInjectableValidator.java:44)
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:55)
+  while locating org.xtext.example.mydsl.validation.FMLJavaValidator
+
+1 error
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:435)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:183)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:109)
+	at com.google.inject.Guice.createInjector(Guice.java:95)
+	at com.google.inject.Guice.createInjector(Guice.java:72)
+	at com.google.inject.Guice.createInjector(Guice.java:62)
+	at org.xtext.example.mydsl.FMLStandaloneSetupGenerated.createInjector(FMLStandaloneSetupGenerated.java:28)
+	at org.xtext.example.mydsl.FMLStandaloneSetupGenerated.createInjectorAndDoEMFRegistration(FMLStandaloneSetupGenerated.java:22)
+	at fr.familiar.parser.FMLCommandInterpreter.<init>(FMLCommandInterpreter.java:187)
+	at fr.familiar.interpreter.FMLShell.<init>(FMLShell.java:253)
+	at fr.familiar.interpreter.FMLShell.<init>(FMLShell.java:243)
+	at fr.familiar.interpreter.FMLShell.instantiateStandalone(FMLShell.java:233)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:50)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:45)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.getDefaultURIConverter(ResourceImpl.java:113)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.getURIConverter(ResourceImpl.java:943)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1254)
+	at org.xtext.example.mydsl.fML.impl.FMLPackageImpl.loadPackage(FMLPackageImpl.java:5695)
+	at org.xtext.example.mydsl.fML.impl.FMLPackageImpl.init(FMLPackageImpl.java:1238)
+	at org.xtext.example.mydsl.fML.FMLPackage.<clinit>(FMLPackage.java:58)
+	at org.xtext.example.mydsl.validation.AbstractFMLJavaValidator.getEPackages(AbstractFMLJavaValidator.java:16)
+	at org.eclipse.xtext.validation.AbstractInjectableValidator.register(AbstractInjectableValidator.java:44)
+	at org.eclipse.xtext.validation.AbstractInjectableValidator$$FastClassByGuice$$2999770a.invoke(<generated>)
+	at com.google.inject.internal.cglib.reflect.$FastMethod.invoke(FastMethod.java:53)
+	at com.google.inject.internal.SingleMethodInjector$1.invoke(SingleMethodInjector.java:56)
+	at com.google.inject.internal.SingleMethodInjector.inject(SingleMethodInjector.java:90)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:204)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:198)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:198)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:179)
+	... 18 more
+Caused by: java.lang.IllegalStateException: Workspace is closed.
+	at org.eclipse.core.resources.ResourcesPlugin.getWorkspace(ResourcesPlugin.java:399)
+	at org.eclipse.emf.ecore.plugin.EcorePlugin.getWorkspaceRoot(EcorePlugin.java:1131)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.<clinit>(ExtensibleURIConverterImpl.java:393)
+	... 43 more
+!SESSION 2015-09-08 15:18:34.964 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:18:38.504
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:18:49.610
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:18:59.972
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.familiar.interpreter.ConsoleEclipse.findConsole(ConsoleEclipse.java:73)
+	at fr.familiar.interpreter.ConsoleEclipse.initConsole(ConsoleEclipse.java:146)
+	at fr.familiar.interpreter.ConsoleEclipse.<init>(ConsoleEclipse.java:60)
+	at fr.familiar.interpreter.FMLShell.instantiateWithEclipse(FMLShell.java:172)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:50)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:45)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:19:41.759
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.familiar.interpreter.ConsoleEclipse.findConsole(ConsoleEclipse.java:73)
+	at fr.familiar.interpreter.ConsoleEclipse.initConsole(ConsoleEclipse.java:146)
+	at fr.familiar.interpreter.ConsoleEclipse.<init>(ConsoleEclipse.java:60)
+	at fr.familiar.interpreter.FMLShell.instantiateWithEclipse(FMLShell.java:172)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:50)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:45)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-08 15:21:09.559 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:21:13.093
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:21:24.620
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:21:34.252
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.familiar.interpreter.ConsoleEclipse.findConsole(ConsoleEclipse.java:73)
+	at fr.familiar.interpreter.ConsoleEclipse.initConsole(ConsoleEclipse.java:146)
+	at fr.familiar.interpreter.ConsoleEclipse.<init>(ConsoleEclipse.java:60)
+	at fr.familiar.interpreter.FMLShell.instantiateWithEclipse(FMLShell.java:172)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:50)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:45)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-08 15:22:16.103 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:22:19.548
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:22:30.359
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 15:23:07.997 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:23:11.493
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:23:21.564
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 15:27:26.505 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:27:30.175
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:28:31.603
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:28:42.499
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.core.internal.runtime.Activator.getURLConverter(Activator.java:321)
+	at org.eclipse.core.runtime.FileLocator.resolve(FileLocator.java:227)
+	at fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator.generatePCMOpenCompareFormat(PCMsGenerator.java:121)
+	at fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator.generatePCM(PCMsGenerator.java:77)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:20)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-08 15:29:22.590 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:29:26.144
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:29:31.922
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 15:50:24.445 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:50:28.247
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:50:38.024
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:50:49.107
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+com.google.inject.CreationException: Guice creation errors:
+
+1) Error injecting method, java.lang.ExceptionInInitializerError
+  at org.eclipse.xtext.validation.AbstractInjectableValidator.register(AbstractInjectableValidator.java:44)
+  at org.eclipse.xtext.service.MethodBasedModule.configure(MethodBasedModule.java:55)
+  while locating org.xtext.example.mydsl.validation.FMLJavaValidator
+
+1 error
+	at com.google.inject.internal.Errors.throwCreationExceptionIfErrorsExist(Errors.java:435)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:183)
+	at com.google.inject.internal.InternalInjectorCreator.build(InternalInjectorCreator.java:109)
+	at com.google.inject.Guice.createInjector(Guice.java:95)
+	at com.google.inject.Guice.createInjector(Guice.java:72)
+	at com.google.inject.Guice.createInjector(Guice.java:62)
+	at org.xtext.example.mydsl.FMLStandaloneSetupGenerated.createInjector(FMLStandaloneSetupGenerated.java:28)
+	at org.xtext.example.mydsl.FMLStandaloneSetupGenerated.createInjectorAndDoEMFRegistration(FMLStandaloneSetupGenerated.java:22)
+	at fr.familiar.parser.FMLCommandInterpreter.<init>(FMLCommandInterpreter.java:187)
+	at fr.familiar.interpreter.FMLShell.<init>(FMLShell.java:253)
+	at fr.familiar.interpreter.FMLShell.<init>(FMLShell.java:243)
+	at fr.familiar.interpreter.FMLShell.instantiateStandalone(FMLShell.java:233)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:50)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:45)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ExceptionInInitializerError
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.getDefaultURIConverter(ResourceImpl.java:113)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.getURIConverter(ResourceImpl.java:943)
+	at org.eclipse.emf.ecore.resource.impl.ResourceImpl.load(ResourceImpl.java:1254)
+	at org.xtext.example.mydsl.fML.impl.FMLPackageImpl.loadPackage(FMLPackageImpl.java:5695)
+	at org.xtext.example.mydsl.fML.impl.FMLPackageImpl.init(FMLPackageImpl.java:1238)
+	at org.xtext.example.mydsl.fML.FMLPackage.<clinit>(FMLPackage.java:58)
+	at org.xtext.example.mydsl.validation.AbstractFMLJavaValidator.getEPackages(AbstractFMLJavaValidator.java:16)
+	at org.eclipse.xtext.validation.AbstractInjectableValidator.register(AbstractInjectableValidator.java:44)
+	at org.eclipse.xtext.validation.AbstractInjectableValidator$$FastClassByGuice$$2999770a.invoke(<generated>)
+	at com.google.inject.internal.cglib.reflect.$FastMethod.invoke(FastMethod.java:53)
+	at com.google.inject.internal.SingleMethodInjector$1.invoke(SingleMethodInjector.java:56)
+	at com.google.inject.internal.SingleMethodInjector.inject(SingleMethodInjector.java:90)
+	at com.google.inject.internal.MembersInjectorImpl.injectMembers(MembersInjectorImpl.java:110)
+	at com.google.inject.internal.ConstructorInjector.construct(ConstructorInjector.java:94)
+	at com.google.inject.internal.ConstructorBindingImpl$Factory.get(ConstructorBindingImpl.java:254)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call(ProviderToInternalFactoryAdapter.java:46)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1031)
+	at com.google.inject.internal.ProviderToInternalFactoryAdapter.get(ProviderToInternalFactoryAdapter.java:40)
+	at com.google.inject.Scopes$1$1.get(Scopes.java:65)
+	at com.google.inject.internal.InternalFactoryToProviderAdapter.get(InternalFactoryToProviderAdapter.java:40)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:204)
+	at com.google.inject.internal.InternalInjectorCreator$1.call(InternalInjectorCreator.java:198)
+	at com.google.inject.internal.InjectorImpl.callInContext(InjectorImpl.java:1024)
+	at com.google.inject.internal.InternalInjectorCreator.loadEagerSingletons(InternalInjectorCreator.java:198)
+	at com.google.inject.internal.InternalInjectorCreator.injectDynamically(InternalInjectorCreator.java:179)
+	... 18 more
+Caused by: java.lang.IllegalStateException: Workspace is closed.
+	at org.eclipse.core.resources.ResourcesPlugin.getWorkspace(ResourcesPlugin.java:399)
+	at org.eclipse.emf.ecore.plugin.EcorePlugin.getWorkspaceRoot(EcorePlugin.java:1131)
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.<clinit>(ExtensibleURIConverterImpl.java:393)
+	... 43 more
+!SESSION 2015-09-08 15:55:37.741 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 15:55:42.259
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 15:55:54.067
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 15:56:05.221
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.familiar.interpreter.ConsoleEclipse.findConsole(ConsoleEclipse.java:73)
+	at fr.familiar.interpreter.ConsoleEclipse.initConsole(ConsoleEclipse.java:146)
+	at fr.familiar.interpreter.ConsoleEclipse.<init>(ConsoleEclipse.java:60)
+	at fr.familiar.interpreter.FMLShell.instantiateWithEclipse(FMLShell.java:172)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:50)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:45)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-08 16:04:02.899 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:04:07.356
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:04:18.067
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 16:18:20.108 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:18:23.764
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:18:36.094
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 16:18:48.233
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.familiar.variable.FeatureModelVariable.features(FeatureModelVariable.java:517)
+	at fr.familiar.variable.FeatureModelVariable.checkConstraintisInFM(FeatureModelVariable.java:2593)
+	at fr.familiar.variable.FeatureModelVariable.addConstraint(FeatureModelVariable.java:2616)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:54)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:47)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-08 16:25:17.480 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:25:21.067
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:25:32.590
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 16:31:05.750 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:31:09.407
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:31:15.806
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 16:32:51.190 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:32:54.758
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:33:13.970
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 16:34:25.133 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:34:28.665
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:34:37.141
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 16:36:43.316 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:36:46.874
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:36:52.287
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 16:44:18.667 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 16:44:22.265
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 16:44:27.230
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 17:04:30.182 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:04:34.891
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:04:46.256
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 17:05:00.720
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NoClassDefFoundError: org/sat4j/specs/TimeoutException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.loadPCM(KSynthesisSynthesizer.java:95)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: org.sat4j.specs.TimeoutException cannot be found by fr.inria.diverse.ksynthesis.interface_1.0.0.qualifier
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:432)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 8 more
+!SESSION 2015-09-08 17:08:03.190 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:08:07.769
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:08:21.500
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 17:08:35.602
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.familiar.variable.FeatureModelVariable.removeAllConstraints(FeatureModelVariable.java:2625)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.clearFM(KSynthesisSynthesizer.java:145)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:75)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-08 17:09:21.470 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:09:25.149
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:09:38.475
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 17:12:41.471 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:12:45.056
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:12:49.715
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 17:12:59.687
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/fr.inria.diverse.examples.breaking.lpl' already exists.
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:320)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:307)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:52)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:287)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:269)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:262)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.createEclipseProject(ProjectManagementServices.java:34)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:40)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 374 2015-09-08 17:12:59.688
+!MESSAGE Resource '/fr.inria.diverse.examples.breaking.lpl' already exists.
+!SESSION 2015-09-08 17:18:03.912 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:18:07.545
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:18:18.966
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-08 17:18:30.312
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at gsd.synthesis.BDDBuilder.mkFeatureModel(BDDBuilder.java:318)
+	at fr.familiar.variable.FeatureModelVariable.getFormula(FeatureModelVariable.java:185)
+	at foreverse.ksynthesis.InteractiveFMSynthesizer.<init>(InteractiveFMSynthesizer.java:80)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:79)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-08 17:37:37.742 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:37:41.392
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:37:46.164
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 17:40:21.695 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:40:25.304
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:40:36.728
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 17:54:38.032 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:54:41.704
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:54:53.616
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-08 17:57:09.229 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-08 17:57:12.831
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-08 17:57:18.726
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:12:07.862 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:12:11.394
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:12:24.128
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:12:38.536
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:168)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:13:37.421 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:13:40.997
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:13:51.291
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:14:02.133
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:169)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:15:14.693 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:15:18.262
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:15:23.034
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:15:33.712
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:170)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:17:42.744 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:17:46.306
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:17:50.925
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:18:02.541
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:173)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:19:11.807 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:19:15.323
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:19:39.674
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:20:45.689
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:173)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:23:22.720 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:23:26.355
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:23:53.107
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:24:03.281
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:173)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:28:07.745 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:28:11.275
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:28:24.028
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:28:37.893
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:173)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:72)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:30:26.788 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:30:30.291
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:30:43.532
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:31:46.402 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:31:49.955
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:31:59.349
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:33:32.666 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:33:36.182
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:33:46.426
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:34:36.468 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:34:39.921
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:34:44.449
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:35:40.635 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:35:44.267
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:35:53.159
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:36:03.806
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at foreverse.ksynthesis.InteractiveFMSynthesizer.<init>(InteractiveFMSynthesizer.java:74)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:75)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:37:00.253 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:37:03.767
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:37:08.569
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:37:52.320 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:37:55.772
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:38:00.308
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:41:30.209 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:41:33.835
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:41:47.138
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:43:25.647 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:43:29.166
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:43:33.923
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-09-09 10:43:45.053
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NullPointerException
+	at gsd.synthesis.Expression.hashCode(Expression.java:110)
+	at gsd.synthesis.Expression.hashCode(Expression.java:110)
+	at java.util.HashMap.hash(HashMap.java:338)
+	at java.util.HashMap.containsKey(HashMap.java:595)
+	at java.util.HashSet.contains(HashSet.java:203)
+	at gsd.synthesis.FeatureModel.addConstraint(FeatureModel.java:144)
+	at fr.familiar.variable.FeatureModelVariable.addConstraint(FeatureModelVariable.java:2618)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.obtainVariabilityModelConstraints(KSynthesisSynthesizer.java:174)
+	at fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer.synthesizeFeatureModelFromPCM(KSynthesisSynthesizer.java:67)
+	at fr.inria.diverse.puzzle.variabilityinferer.inferers.DiverSEInferrer.inferVariabilityModel(DiverSEInferrer.java:30)
+	at fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager.synthesizeVariabilityModel(VariabilityInfererManager.java:49)
+	at fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager.synthesizeLanguageProductLine(SynthesizerManager.java:45)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:43)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-09-09 10:45:29.725 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:45:33.404
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:46:00.474
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-09-09 10:48:20.547 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-09-09 10:48:21.912
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:48:22.769
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:48:24.633
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2015-09-09 10:50:17.463 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-09-09 10:50:18.733
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.apache.log4j 2 0 2015-09-09 10:50:19.521
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.net 1 0 2015-09-09 10:50:21.422
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
