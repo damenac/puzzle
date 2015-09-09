@@ -1,8 +1,9 @@
 package fr.inria.diverse.ksynthesis.ksynthesis.vos;
 
 /**
- * Class that represents a feature in PCMs for KSynthesis.
- * @author David Mendez-Acuna
+ * Class that represents a feature in PCMs for 
+ * @author dmendeza
+ *
  */
 public class Feature {
 

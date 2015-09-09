@@ -1,9 +1,5 @@
 package fr.inria.diverse.ksynthesis.ksynthesis.vos;
 
-/**
- * Class that represents a feature in PCMs for KSynthesis.
- * @author David Mendez-Acuna
- */
 public class Feature {
 
 	// ----------------------------------------------------------
@@ -21,10 +17,6 @@ public class Feature {
 		this.identifier = identifier;
 	}
 
-	// ----------------------------------------------------------
-	// Getters and setters
-	// ----------------------------------------------------------
-	
 	public String getIdentifier() {
 		return identifier;
 	}

@@ -9,27 +9,15 @@ import java.util.List;
  */
 public class Product {
 
-	// ----------------------------------------------------------
-	// Attributes
-	// ----------------------------------------------------------
-	
 	private String identifier;
 
 	private List<Feature> features;
-	
-	// ----------------------------------------------------------
-	// Constructor
-	// ----------------------------------------------------------
 	
 	public Product(String identifier) {
 		super();
 		this.identifier = identifier;
 		this.features = new ArrayList<Feature>();
 	}
-	
-	// ----------------------------------------------------------
-	// Getters and setters
-	// ----------------------------------------------------------
 
 	public String getIdentifier() {
 		return identifier;
