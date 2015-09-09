@@ -1,11 +1,17 @@
 package fr.inria.diverse.k3.sle.common.utils;
 
+
+import java.util.ArrayList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.xtext.common.types.JvmOperation;
+
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**
  * @author David Mendez Acuna
@@ -63,6 +69,7 @@ public class EcoreQueries {
 		}
 		return null;
 	}
+	
 	
 	public static EReference searchEReferenceByName(EClass eClass, String name){
 		for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {

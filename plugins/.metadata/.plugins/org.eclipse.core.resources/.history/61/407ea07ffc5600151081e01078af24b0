@@ -5,6 +5,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 
 /**
@@ -63,6 +64,7 @@ public class EcoreQueries {
 		}
 		return null;
 	}
+	
 	
 	public static EReference searchEReferenceByName(EClass eClass, String name){
 		for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {

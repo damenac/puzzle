@@ -39,7 +39,6 @@ public class DependencyGraph {
 		vertex = new ArrayList<DependencyVertex>();
 		arcs = new ArrayList<DependencyArc>();
 		
-		// Create one vertex for each modularization group. 
 		for (ArrayList<EcoreVertex> group : modularizationGraph.getGroups()) {
 			String moduleName = MelangeServices.getLanguageModuleName(group);
 			DependencyVertex dependencyVertex = new DependencyVertex(moduleName);

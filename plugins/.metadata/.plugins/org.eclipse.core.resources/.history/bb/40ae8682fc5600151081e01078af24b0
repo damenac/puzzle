@@ -64,6 +64,7 @@ public class EcoreQueries {
 		return null;
 	}
 	
+	
 	public static EReference searchEReferenceByName(EClass eClass, String name){
 		for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {
 			if((eStructuralFeature instanceof EReference) && (eStructuralFeature.getName().equals(name))){
