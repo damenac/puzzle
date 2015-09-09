@@ -11,10 +11,7 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import vm.PFeatureRef;
 import vm.VmPackage;
 
 /**
@@ -45,29 +42,29 @@ public class PFeatureRefItemProvider extends PBooleanExpressionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addFeatureNamePropertyDescriptor(object);
+			addRefPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Feature Name feature.
+	 * This adds a property descriptor for the Ref feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addFeatureNamePropertyDescriptor(Object object) {
+	protected void addRefPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PFeatureRef_featureName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PFeatureRef_featureName_feature", "_UI_PFeatureRef_type"),
-				 VmPackage.Literals.PFEATURE_REF__FEATURE_NAME,
+				 getString("_UI_PFeatureRef_ref_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PFeatureRef_ref_feature", "_UI_PFeatureRef_type"),
+				 VmPackage.Literals.PFEATURE_REF__REF,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -91,10 +88,7 @@ public class PFeatureRefItemProvider extends PBooleanExpressionItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((PFeatureRef)object).getFeatureName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_PFeatureRef_type") :
-			getString("_UI_PFeatureRef_type") + " " + label;
+		return getString("_UI_PFeatureRef_type");
 	}
 	
 
@@ -108,12 +102,6 @@ public class PFeatureRefItemProvider extends PBooleanExpressionItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(PFeatureRef.class)) {
-			case VmPackage.PFEATURE_REF__FEATURE_NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

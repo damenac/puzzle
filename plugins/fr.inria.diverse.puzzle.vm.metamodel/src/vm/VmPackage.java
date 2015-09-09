@@ -353,13 +353,13 @@ public interface VmPackage extends EPackage {
 	int PFEATURE_REF = 6;
 
 	/**
-	 * The feature id for the '<em><b>Feature Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_REF__FEATURE_NAME = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int PFEATURE_REF__REF = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>PFeature Ref</em>' class.
@@ -399,13 +399,22 @@ public interface VmPackage extends EPackage {
 	int PUNARY_EXPRESSION__EXPR = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PUNARY_EXPRESSION__OPERATOR = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>PUnary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUNARY_EXPRESSION_FEATURE_COUNT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int PUNARY_EXPRESSION_FEATURE_COUNT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>PUnary Expression</em>' class.
@@ -445,13 +454,22 @@ public interface VmPackage extends EPackage {
 	int PBINARY_EXPRESSION__RIGHT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PBINARY_EXPRESSION__OPERATOR = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>PBinary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PBINARY_EXPRESSION_FEATURE_COUNT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+	int PBINARY_EXPRESSION_FEATURE_COUNT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>PBinary Expression</em>' class.
@@ -674,15 +692,15 @@ public interface VmPackage extends EPackage {
 	EClass getPFeatureRef();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PFeatureRef#getFeatureName <em>Feature Name</em>}'.
+	 * Returns the meta object for the reference '{@link vm.PFeatureRef#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Feature Name</em>'.
-	 * @see vm.PFeatureRef#getFeatureName()
+	 * @return the meta object for the reference '<em>Ref</em>'.
+	 * @see vm.PFeatureRef#getRef()
 	 * @see #getPFeatureRef()
 	 * @generated
 	 */
-	EAttribute getPFeatureRef_FeatureName();
+	EReference getPFeatureRef_Ref();
 
 	/**
 	 * Returns the meta object for class '{@link vm.PUnaryExpression <em>PUnary Expression</em>}'.
@@ -704,6 +722,17 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPUnaryExpression_Expr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PUnaryExpression#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see vm.PUnaryExpression#getOperator()
+	 * @see #getPUnaryExpression()
+	 * @generated
+	 */
+	EAttribute getPUnaryExpression_Operator();
 
 	/**
 	 * Returns the meta object for class '{@link vm.PBinaryExpression <em>PBinary Expression</em>}'.
@@ -736,6 +765,17 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPBinaryExpression_Right();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PBinaryExpression#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see vm.PBinaryExpression#getOperator()
+	 * @see #getPBinaryExpression()
+	 * @generated
+	 */
+	EAttribute getPBinaryExpression_Operator();
 
 	/**
 	 * Returns the meta object for enum '{@link vm.PGroupKind <em>PGroup Kind</em>}'.
@@ -941,12 +981,12 @@ public interface VmPackage extends EPackage {
 		EClass PFEATURE_REF = eINSTANCE.getPFeatureRef();
 
 		/**
-		 * The meta object literal for the '<em><b>Feature Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PFEATURE_REF__FEATURE_NAME = eINSTANCE.getPFeatureRef_FeatureName();
+		EReference PFEATURE_REF__REF = eINSTANCE.getPFeatureRef_Ref();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.PUnaryExpressionImpl <em>PUnary Expression</em>}' class.
@@ -965,6 +1005,14 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PUNARY_EXPRESSION__EXPR = eINSTANCE.getPUnaryExpression_Expr();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PUNARY_EXPRESSION__OPERATOR = eINSTANCE.getPUnaryExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.PBinaryExpressionImpl <em>PBinary Expression</em>}' class.
@@ -991,6 +1039,14 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PBINARY_EXPRESSION__RIGHT = eINSTANCE.getPBinaryExpression_Right();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PBINARY_EXPRESSION__OPERATOR = eINSTANCE.getPBinaryExpression_Operator();
 
 		/**
 		 * The meta object literal for the '{@link vm.PGroupKind <em>PGroup Kind</em>}' enum.

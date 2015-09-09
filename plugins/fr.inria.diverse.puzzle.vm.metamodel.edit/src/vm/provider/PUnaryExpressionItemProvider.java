@@ -11,10 +11,13 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import vm.PUnaryExpression;
+import vm.PUninaryOperator;
 import vm.VmFactory;
 import vm.VmPackage;
 
@@ -46,8 +49,31 @@ public class PUnaryExpressionItemProvider extends PBooleanExpressionItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addOperatorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Operator feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addOperatorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PUnaryExpression_operator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PUnaryExpression_operator_feature", "_UI_PUnaryExpression_type"),
+				 VmPackage.Literals.PUNARY_EXPRESSION__OPERATOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -99,7 +125,11 @@ public class PUnaryExpressionItemProvider extends PBooleanExpressionItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PUnaryExpression_type");
+		PUninaryOperator labelValue = ((PUnaryExpression)object).getOperator();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ?
+			getString("_UI_PUnaryExpression_type") :
+			getString("_UI_PUnaryExpression_type") + " " + label;
 	}
 	
 
@@ -115,6 +145,9 @@ public class PUnaryExpressionItemProvider extends PBooleanExpressionItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(PUnaryExpression.class)) {
+			case VmPackage.PUNARY_EXPRESSION__OPERATOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case VmPackage.PUNARY_EXPRESSION__EXPR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;

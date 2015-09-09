@@ -12,7 +12,6 @@ import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.KSynthesisInferrer
 import fr.inria.diverse.k3.sle.common.graphsOperators.MembershipGraphPartition
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer
 

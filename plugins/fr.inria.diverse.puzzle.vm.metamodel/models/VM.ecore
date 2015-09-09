@@ -34,11 +34,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PBooleanExpression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="PFeatureRef" eSuperTypes="#//PBooleanExpression">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//PFeature"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PUnaryExpression" eSuperTypes="#//PBooleanExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" lowerBound="1" eType="#//PBooleanExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//PUninaryOperator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PUninaryOperator">
     <eLiterals name="not"/>
@@ -48,6 +49,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="#//PBooleanExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//PBinaryOperator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="PBinaryOperator">
     <eLiterals name="and"/>

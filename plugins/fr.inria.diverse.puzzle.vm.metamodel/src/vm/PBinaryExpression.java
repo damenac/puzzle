@@ -13,6 +13,7 @@ package vm;
  * <ul>
  *   <li>{@link vm.PBinaryExpression#getLeft <em>Left</em>}</li>
  *   <li>{@link vm.PBinaryExpression#getRight <em>Right</em>}</li>
+ *   <li>{@link vm.PBinaryExpression#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
@@ -72,5 +73,34 @@ public interface PBinaryExpression extends PBooleanExpression {
 	 * @generated
 	 */
 	void setRight(PBooleanExpression value);
+
+	/**
+	 * Returns the value of the '<em><b>Operator</b></em>' attribute.
+	 * The literals are from the enumeration {@link vm.PBinaryOperator}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Operator</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operator</em>' attribute.
+	 * @see vm.PBinaryOperator
+	 * @see #setOperator(PBinaryOperator)
+	 * @see vm.VmPackage#getPBinaryExpression_Operator()
+	 * @model
+	 * @generated
+	 */
+	PBinaryOperator getOperator();
+
+	/**
+	 * Sets the value of the '{@link vm.PBinaryExpression#getOperator <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operator</em>' attribute.
+	 * @see vm.PBinaryOperator
+	 * @see #getOperator()
+	 * @generated
+	 */
+	void setOperator(PBinaryOperator value);
 
 } // PBinaryExpression

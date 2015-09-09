@@ -7,13 +7,10 @@ import java.util.ArrayList;
 import org.eclipse.core.resources.IProject;
 
 import vm.PFeatureModel;
-import fr.familiar.variable.FeatureModelVariable;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
-import fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FeatureModelsTranslator;
 import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
 
 /**
@@ -35,11 +32,10 @@ public class KSynthesisInferrer implements FeaturesModelInference {
 		outRileReport.print(PCM);
 		outRileReport.close();
 		
-		FeatureModelVariable fmv = KSynthesisSynthesizer.getInstance().synthesizeFeatureModelFromPCM(targetProject.getLocation().toString()
-				+ "/pcm.csv", targetProject.getLocation().toString() + "/vm.xml");
-		
-		PFeatureModel fm = FeatureModelsTranslator.getInstance().fromFeatureModelVariableToFeatureModel(fmv);
-		return fm;
+//		FeatureModelVariable fmv = KSynthesisSynthesizer.getInstance().synthesizeFeatureModelFromPCM(targetProject.getLocation().toString()
+//				+ "/pcm.csv", targetProject.getLocation().toString() + "/vm.xml");
+//		PFeatureModel fm = FeatureModelsTranslator.getInstance().fromFeatureModelVariableToFeatureModel(null);
+		return null;
 	}
 
 	@Override

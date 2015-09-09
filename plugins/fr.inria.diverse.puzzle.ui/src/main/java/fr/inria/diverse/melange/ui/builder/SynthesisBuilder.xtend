@@ -18,7 +18,6 @@ import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.KSynthesisInferrer
 
 class SynthesisBuilder
 {

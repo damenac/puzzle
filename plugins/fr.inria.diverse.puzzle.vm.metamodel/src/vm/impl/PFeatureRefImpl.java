@@ -5,9 +5,11 @@ package vm.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import vm.PFeature;
 import vm.PFeatureRef;
 import vm.VmPackage;
 
@@ -18,7 +20,7 @@ import vm.VmPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link vm.impl.PFeatureRefImpl#getFeatureName <em>Feature Name</em>}</li>
+ *   <li>{@link vm.impl.PFeatureRefImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,24 +28,14 @@ import vm.VmPackage;
  */
 public class PFeatureRefImpl extends PBooleanExpressionImpl implements PFeatureRef {
 	/**
-	 * The default value of the '{@link #getFeatureName() <em>Feature Name</em>}' attribute.
+	 * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getFeatureName()
+	 * @see #getRef()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String FEATURE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getFeatureName() <em>Feature Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getFeatureName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String featureName = FEATURE_NAME_EDEFAULT;
+	protected PFeature ref;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,8 +61,16 @@ public class PFeatureRefImpl extends PBooleanExpressionImpl implements PFeatureR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getFeatureName() {
-		return featureName;
+	public PFeature getRef() {
+		if (ref != null && ref.eIsProxy()) {
+			InternalEObject oldRef = (InternalEObject)ref;
+			ref = (PFeature)eResolveProxy(oldRef);
+			if (ref != oldRef) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VmPackage.PFEATURE_REF__REF, oldRef, ref));
+			}
+		}
+		return ref;
 	}
 
 	/**
@@ -78,11 +78,20 @@ public class PFeatureRefImpl extends PBooleanExpressionImpl implements PFeatureR
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFeatureName(String newFeatureName) {
-		String oldFeatureName = featureName;
-		featureName = newFeatureName;
+	public PFeature basicGetRef() {
+		return ref;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRef(PFeature newRef) {
+		PFeature oldRef = ref;
+		ref = newRef;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE_REF__FEATURE_NAME, oldFeatureName, featureName));
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE_REF__REF, oldRef, ref));
 	}
 
 	/**
@@ -93,8 +102,9 @@ public class PFeatureRefImpl extends PBooleanExpressionImpl implements PFeatureR
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VmPackage.PFEATURE_REF__FEATURE_NAME:
-				return getFeatureName();
+			case VmPackage.PFEATURE_REF__REF:
+				if (resolve) return getRef();
+				return basicGetRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -107,8 +117,8 @@ public class PFeatureRefImpl extends PBooleanExpressionImpl implements PFeatureR
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VmPackage.PFEATURE_REF__FEATURE_NAME:
-				setFeatureName((String)newValue);
+			case VmPackage.PFEATURE_REF__REF:
+				setRef((PFeature)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,8 +132,8 @@ public class PFeatureRefImpl extends PBooleanExpressionImpl implements PFeatureR
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VmPackage.PFEATURE_REF__FEATURE_NAME:
-				setFeatureName(FEATURE_NAME_EDEFAULT);
+			case VmPackage.PFEATURE_REF__REF:
+				setRef((PFeature)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -137,26 +147,10 @@ public class PFeatureRefImpl extends PBooleanExpressionImpl implements PFeatureR
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VmPackage.PFEATURE_REF__FEATURE_NAME:
-				return FEATURE_NAME_EDEFAULT == null ? featureName != null : !FEATURE_NAME_EDEFAULT.equals(featureName);
+			case VmPackage.PFEATURE_REF__REF:
+				return ref != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (featureName: ");
-		result.append(featureName);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PFeatureRefImpl

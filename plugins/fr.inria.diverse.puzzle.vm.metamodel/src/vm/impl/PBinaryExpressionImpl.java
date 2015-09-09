@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import vm.PBinaryExpression;
+import vm.PBinaryOperator;
 import vm.PBooleanExpression;
 import vm.VmPackage;
 
@@ -23,6 +24,7 @@ import vm.VmPackage;
  * <ul>
  *   <li>{@link vm.impl.PBinaryExpressionImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link vm.impl.PBinaryExpressionImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link vm.impl.PBinaryExpressionImpl#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,6 +50,26 @@ public class PBinaryExpressionImpl extends PBooleanExpressionImpl implements PBi
 	 * @ordered
 	 */
 	protected PBooleanExpression right;
+
+	/**
+	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final PBinaryOperator OPERATOR_EDEFAULT = PBinaryOperator.AND;
+
+	/**
+	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected PBinaryOperator operator = OPERATOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,6 +181,27 @@ public class PBinaryExpressionImpl extends PBooleanExpressionImpl implements PBi
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PBinaryOperator getOperator() {
+		return operator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOperator(PBinaryOperator newOperator) {
+		PBinaryOperator oldOperator = operator;
+		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.PBINARY_EXPRESSION__OPERATOR, oldOperator, operator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -182,6 +225,8 @@ public class PBinaryExpressionImpl extends PBooleanExpressionImpl implements PBi
 				return getLeft();
 			case VmPackage.PBINARY_EXPRESSION__RIGHT:
 				return getRight();
+			case VmPackage.PBINARY_EXPRESSION__OPERATOR:
+				return getOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -199,6 +244,9 @@ public class PBinaryExpressionImpl extends PBooleanExpressionImpl implements PBi
 				return;
 			case VmPackage.PBINARY_EXPRESSION__RIGHT:
 				setRight((PBooleanExpression)newValue);
+				return;
+			case VmPackage.PBINARY_EXPRESSION__OPERATOR:
+				setOperator((PBinaryOperator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -218,6 +266,9 @@ public class PBinaryExpressionImpl extends PBooleanExpressionImpl implements PBi
 			case VmPackage.PBINARY_EXPRESSION__RIGHT:
 				setRight((PBooleanExpression)null);
 				return;
+			case VmPackage.PBINARY_EXPRESSION__OPERATOR:
+				setOperator(OPERATOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -234,8 +285,26 @@ public class PBinaryExpressionImpl extends PBooleanExpressionImpl implements PBi
 				return left != null;
 			case VmPackage.PBINARY_EXPRESSION__RIGHT:
 				return right != null;
+			case VmPackage.PBINARY_EXPRESSION__OPERATOR:
+				return operator != OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (operator: ");
+		result.append(operator);
+		result.append(')');
+		return result.toString();
 	}
 
 } //PBinaryExpressionImpl

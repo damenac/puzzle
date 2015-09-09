@@ -335,8 +335,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPFeatureRef_FeatureName() {
-		return (EAttribute)pFeatureRefEClass.getEStructuralFeatures().get(0);
+	public EReference getPFeatureRef_Ref() {
+		return (EReference)pFeatureRefEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -355,6 +355,15 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 */
 	public EReference getPUnaryExpression_Expr() {
 		return (EReference)pUnaryExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPUnaryExpression_Operator() {
+		return (EAttribute)pUnaryExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -382,6 +391,15 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 */
 	public EReference getPBinaryExpression_Right() {
 		return (EReference)pBinaryExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPBinaryExpression_Operator() {
+		return (EAttribute)pBinaryExpressionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -462,14 +480,16 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		pBooleanExpressionEClass = createEClass(PBOOLEAN_EXPRESSION);
 
 		pFeatureRefEClass = createEClass(PFEATURE_REF);
-		createEAttribute(pFeatureRefEClass, PFEATURE_REF__FEATURE_NAME);
+		createEReference(pFeatureRefEClass, PFEATURE_REF__REF);
 
 		pUnaryExpressionEClass = createEClass(PUNARY_EXPRESSION);
 		createEReference(pUnaryExpressionEClass, PUNARY_EXPRESSION__EXPR);
+		createEAttribute(pUnaryExpressionEClass, PUNARY_EXPRESSION__OPERATOR);
 
 		pBinaryExpressionEClass = createEClass(PBINARY_EXPRESSION);
 		createEReference(pBinaryExpressionEClass, PBINARY_EXPRESSION__LEFT);
 		createEReference(pBinaryExpressionEClass, PBINARY_EXPRESSION__RIGHT);
+		createEAttribute(pBinaryExpressionEClass, PBINARY_EXPRESSION__OPERATOR);
 
 		// Create enums
 		pGroupKindEEnum = createEEnum(PGROUP_KIND);
@@ -536,14 +556,16 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEClass(pBooleanExpressionEClass, PBooleanExpression.class, "PBooleanExpression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(pFeatureRefEClass, PFeatureRef.class, "PFeatureRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPFeatureRef_FeatureName(), ecorePackage.getEString(), "featureName", null, 0, 1, PFeatureRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeatureRef_Ref(), this.getPFeature(), null, "ref", null, 0, 1, PFeatureRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pUnaryExpressionEClass, PUnaryExpression.class, "PUnaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPUnaryExpression_Expr(), this.getPBooleanExpression(), null, "expr", null, 1, 1, PUnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPUnaryExpression_Operator(), this.getPUninaryOperator(), "operator", null, 0, 1, PUnaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pBinaryExpressionEClass, PBinaryExpression.class, "PBinaryExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPBinaryExpression_Left(), this.getPBooleanExpression(), null, "left", null, 1, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPBinaryExpression_Right(), this.getPBooleanExpression(), null, "right", null, 1, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPBinaryExpression_Operator(), this.getPBinaryOperator(), "operator", null, 0, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(pGroupKindEEnum, PGroupKind.class, "PGroupKind");

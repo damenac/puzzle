@@ -11,7 +11,7 @@ package vm;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link vm.PFeatureRef#getFeatureName <em>Feature Name</em>}</li>
+ *   <li>{@link vm.PFeatureRef#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -21,29 +21,29 @@ package vm;
  */
 public interface PFeatureRef extends PBooleanExpression {
 	/**
-	 * Returns the value of the '<em><b>Feature Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Feature Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Ref</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Feature Name</em>' attribute.
-	 * @see #setFeatureName(String)
-	 * @see vm.VmPackage#getPFeatureRef_FeatureName()
+	 * @return the value of the '<em>Ref</em>' reference.
+	 * @see #setRef(PFeature)
+	 * @see vm.VmPackage#getPFeatureRef_Ref()
 	 * @model
 	 * @generated
 	 */
-	String getFeatureName();
+	PFeature getRef();
 
 	/**
-	 * Sets the value of the '{@link vm.PFeatureRef#getFeatureName <em>Feature Name</em>}' attribute.
+	 * Sets the value of the '{@link vm.PFeatureRef#getRef <em>Ref</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Feature Name</em>' attribute.
-	 * @see #getFeatureName()
+	 * @param value the new value of the '<em>Ref</em>' reference.
+	 * @see #getRef()
 	 * @generated
 	 */
-	void setFeatureName(String value);
+	void setRef(PFeature value);
 
 } // PFeatureRef

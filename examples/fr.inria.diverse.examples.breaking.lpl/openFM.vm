@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <vm:PFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel">
-  <rootFeature name="root"/>
+  <rootFeature name="root" mandatory="true">
+    <children name="StateMachine"/>
+    <children name="Constraint"/>
+    <children name="Expression" mandatory="true">
+      <children name="LogoProgram"/>
+      <children name="Flowchart"/>
+      <groups features="//@rootFeature/@children.2/@children.0" kind="optional"/>
+      <groups features="//@rootFeature/@children.2/@children.1" kind="optional"/>
+    </children>
+    <groups features="//@rootFeature/@children.0" kind="optional"/>
+    <groups features="//@rootFeature/@children.1" kind="optional"/>
+    <groups features="//@rootFeature/@children.2"/>
+  </rootFeature>
 </vm:PFeatureModel>
