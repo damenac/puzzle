@@ -3,12 +3,7 @@ package fr.inria.diverse.k3.sle.common.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * Class that implements the services of a dependencies graph.
@@ -56,8 +51,8 @@ public class DependencyGraph {
 		for (int i = 0; i < vertex.size(); i++) {
 			DependencyVertex vertexI = vertex.get(i);
 			for (int j = 0; j < vertex.size(); j++) {
+				DependencyVertex vertexJ = vertex.get(j);
 				if(i!=j){
-					DependencyVertex vertexJ = vertex.get(j);
 					if(this.dependsOn(vertexI, vertexJ)){
 						DependencyArc arc = new DependencyArc(vertexI, vertexJ);
 						this.arcs.add(arc);
@@ -86,7 +81,7 @@ public class DependencyGraph {
 			for (int j = 0; j < origin.geteClassifiers().size(); j++) {
 				if(i!=j){
 					EClassifier destinationClassifier = origin.geteClassifiers().get(j);
-					if(this.dependsOn(originClassifier, destinationClassifier))
+					if(this.dependsOn(origin, destination))
 						return true;
 				}
 			}
@@ -102,42 +97,7 @@ public class DependencyGraph {
 	 * @return
 	 */
 	private boolean dependsOn(EClassifier origin, EClassifier destination){
-		if(origin instanceof EClass && destination instanceof EClass){
-			// Checking eReferences
-			EClass originEClass = (EClass) origin;
-			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
-				if(eStructuralFeature instanceof EReference){
-					EReference eReference = (EReference) eStructuralFeature;
-					// TODO Here we need to use the construct comparison operator!
-					if(eReference.getEType().getName().equals(destination.getName())){
-						return true;
-					}
-				}
-			}
-			// Checking eSuperTypes
-			for (EClass superType : originEClass.getESuperTypes()) {
-				// TODO Here we need to use the construct comparison operator!
-				if(superType.getName().equals(destination.getName()))
-					return true;
-			}
-			return false;
-		}
-		else if(origin instanceof EClass && destination instanceof EEnum){
-			EClass originEClass = (EClass) origin;
-			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
-				if(eStructuralFeature instanceof EAttribute){
-					EAttribute eAttribute = (EAttribute) eStructuralFeature;
-					// TODO Here we need to use the construct comparison operator!
-					if(eAttribute.getEType().getName().equals(destination.getName())){
-						return true;
-					}
-				}
-			}
-			return false;
-		}
-		else{
-			return false;
-		}
+		return false;
 	}
 	
 	// -----------------------------------------------

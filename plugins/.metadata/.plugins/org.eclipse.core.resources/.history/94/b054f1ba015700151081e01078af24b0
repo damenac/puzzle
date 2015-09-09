@@ -114,12 +114,6 @@ public class DependencyGraph {
 					}
 				}
 			}
-			// Checking eSuperTypes
-			for (EClass superType : originEClass.getESuperTypes()) {
-				// TODO Here we need to use the construct comparison operator!
-				if(superType.getName().equals(destination.getName()))
-					return true;
-			}
 			return false;
 		}
 		else if(origin instanceof EClass && destination instanceof EEnum){

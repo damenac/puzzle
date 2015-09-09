@@ -103,7 +103,6 @@ public class DependencyGraph {
 	 */
 	private boolean dependsOn(EClassifier origin, EClassifier destination){
 		if(origin instanceof EClass && destination instanceof EClass){
-			// Checking eReferences
 			EClass originEClass = (EClass) origin;
 			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
 				if(eStructuralFeature instanceof EReference){
@@ -113,12 +112,6 @@ public class DependencyGraph {
 						return true;
 					}
 				}
-			}
-			// Checking eSuperTypes
-			for (EClass superType : originEClass.getESuperTypes()) {
-				// TODO Here we need to use the construct comparison operator!
-				if(superType.getName().equals(destination.getName()))
-					return true;
 			}
 			return false;
 		}
