@@ -90,12 +90,11 @@ public class SynthesisManager {
 			EPackage moduleEPackage = this.createEPackageByModule(group);
 
 			// Create the module project with the folders.
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl." + 
-					EcoreGraph.getLanguageModuleName(group).trim());
+			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl." + MelangeServices.getLanguageModuleName(group).trim());
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 
-			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group) + ".ecore", moduleEPackage);
+			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + MelangeServices.getLanguageModuleName(group) + ".ecore", moduleEPackage);
 			
 			// Create the genmodel and generate the code of the module.
 			ProjectManagementServices.refreshProject(moduleProject);
@@ -111,7 +110,7 @@ public class SynthesisManager {
 	private EPackage createEPackageByModule(ArrayList<EcoreVertex> group) {
 		EcoreCloningServices.getInstance().resetClonedClassifiers();
 		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
-		String moduleName = EcoreGraph.getLanguageModuleName(group);
+		String moduleName = MelangeServices.getLanguageModuleName(group);
 		newPackage.setName(moduleName.trim());
 		newPackage.setNsPrefix(moduleName.trim());
 		newPackage.setNsURI(moduleName.trim());
