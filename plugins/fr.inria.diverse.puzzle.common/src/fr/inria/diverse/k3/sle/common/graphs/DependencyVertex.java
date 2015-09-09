@@ -1,5 +1,6 @@
 package fr.inria.diverse.k3.sle.common.graphs;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClassifier;
@@ -24,6 +25,7 @@ public class DependencyVertex {
 	
 	public DependencyVertex(String identifier){
 		this.identifier = identifier;
+		this.eClassifiers = new ArrayList<EClassifier>();
 	}
 	
 	// -----------------------------------------------

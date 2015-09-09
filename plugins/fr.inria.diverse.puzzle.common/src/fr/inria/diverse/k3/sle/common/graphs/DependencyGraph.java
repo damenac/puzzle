@@ -140,6 +140,21 @@ public class DependencyGraph {
 		}
 	}
 	
+	/**
+	 * Indicates if there is an arc between the origin and the destination given in the parameters. 
+	 * @param origin
+	 * @param destination
+	 * @return
+	 */
+	public boolean thereIsArc(DependencyVertex origin, DependencyVertex destination){
+		for (DependencyArc dependencyArc : arcs) {
+			if(dependencyArc.getFrom().getIdentifier().equals(origin.getIdentifier()) &&
+					dependencyArc.getTo().getIdentifier().equals(destination.getIdentifier()))
+				return true;
+		}
+		return false;
+	}
+	
 	// -----------------------------------------------
 	// Getters
 	// -----------------------------------------------

@@ -201,7 +201,7 @@ public class EcoreGraph {
 	 * @param group. Group under study.
 	 * @return
 	 */
-	public static Collection<? extends EClassifier> collectEClassifierByGroup(
+	public static Collection<EClassifier> collectEClassifierByGroup(
 			ArrayList<EcoreVertex> group) {
 		Collection<EClassifier> collection = new ArrayList<EClassifier>();
 		for (EcoreVertex ecoreVertex : group) {
