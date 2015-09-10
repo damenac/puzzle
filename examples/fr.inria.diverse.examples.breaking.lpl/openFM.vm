@@ -8,35 +8,33 @@
     </children>
     <children name="LogoProgram"/>
     <children name="Flowchart"/>
-    <groups features="//@rootFeature/@children.0" kind="optional"/>
-    <groups features="//@rootFeature/@children.1" kind="optional"/>
-    <groups features="//@rootFeature/@children.2 //@rootFeature/@children.3"/>
+    <groups features="//@rootFeature/@children.0 //@rootFeature/@children.1 //@rootFeature/@children.2 //@rootFeature/@children.3"/>
   </rootFeature>
-  <constraints>
+  <constraints name="StateMachine => Constraint">
     <expression xsi:type="vm:PBinaryExpression" operator="implies">
       <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
       <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
     </expression>
   </constraints>
-  <constraints>
+  <constraints name="StateMachine => Expression">
     <expression xsi:type="vm:PBinaryExpression" operator="implies">
       <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
       <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
     </expression>
   </constraints>
-  <constraints>
+  <constraints name="Constraint => Expression">
     <expression xsi:type="vm:PBinaryExpression" operator="implies">
       <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
       <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
     </expression>
   </constraints>
-  <constraints>
+  <constraints name="LogoProgram => Expression">
     <expression xsi:type="vm:PBinaryExpression" operator="implies">
       <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
       <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
     </expression>
   </constraints>
-  <constraints>
+  <constraints name="Flowchart => Constraint">
     <expression xsi:type="vm:PBinaryExpression" operator="implies">
       <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
       <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>

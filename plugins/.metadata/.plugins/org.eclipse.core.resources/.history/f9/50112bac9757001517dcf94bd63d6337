@@ -93,7 +93,6 @@ public class FamaInferrer implements FeaturesModelInference{
 			expression.setRight(destinationRef);
 			expression.setOperator(PBinaryOperator.IMPLIES);
 			constraint.setExpression(expression);
-			constraint.setName(originRef.getRef().getName() + " => " + destinationRef.getRef().getName());
 			fm.getConstraints().add(constraint);
 		}
 	}
