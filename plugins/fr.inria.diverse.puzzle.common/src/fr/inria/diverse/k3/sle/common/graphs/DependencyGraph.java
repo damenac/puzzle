@@ -3,13 +3,6 @@ package fr.inria.diverse.k3.sle.common.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EClassifier;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 /**
  * Class that implements the services of a dependencies graph.
  * @author David Mendez-Acuna
@@ -48,7 +41,7 @@ public class DependencyGraph {
 		for (ArrayList<EcoreVertex> group : modularizationGraph.getGroups()) {
 			String moduleName = EcoreGraph.getLanguageModuleName(group);
 			DependencyVertex dependencyVertex = new DependencyVertex(moduleName);
-			dependencyVertex.geteClassifiers().addAll(EcoreGraph.collectEClassifierByGroup(group));
+			dependencyVertex.getInternalVertex().addAll(group);
 			this.vertex.add(dependencyVertex);
 		}
 		
@@ -58,7 +51,7 @@ public class DependencyGraph {
 			for (int j = 0; j < vertex.size(); j++) {
 				if(i!=j){
 					DependencyVertex vertexJ = vertex.get(j);
-					if(this.dependsOn(vertexI, vertexJ)){
+					if(this.dependsOn(vertexI, vertexJ, modularizationGraph)){
 						DependencyArc arc = new DependencyArc(vertexI, vertexJ);
 						this.arcs.add(arc);
 					}
@@ -80,65 +73,77 @@ public class DependencyGraph {
 	 * @param destination
 	 * @return
 	 */
-	private boolean dependsOn(DependencyVertex origin, DependencyVertex destination){
-		for (int i = 0; i < origin.geteClassifiers().size(); i++) {
-			EClassifier originClassifier = origin.geteClassifiers().get(i);
-			for (int j = 0; j < origin.geteClassifiers().size(); j++) {
-				if(i!=j){
-					EClassifier destinationClassifier = origin.geteClassifiers().get(j);
-					if(this.dependsOn(originClassifier, destinationClassifier))
-						return true;
-				}
-			}
+	private boolean dependsOn(DependencyVertex origin, DependencyVertex destination, EcoreGraph modularizationGraph){
+		for (EcoreArc ecoreArc : modularizationGraph.getArcs()) {
+			boolean fromInTheOrigin = exists(origin.getInternalVertex(), ecoreArc.getFrom());
+			boolean toInTheDestination = exists(destination.getInternalVertex(), ecoreArc.getTo());
+			
+			if(fromInTheOrigin && toInTheDestination)
+				return true;
 		}
 		return false;
 	}
 	
+	
 	/**
-	 * Indicates if the origin depends on the destination.
-	 * Concretely, returns true of there is any reference from the origin to the destination or if the origin is sub-type of the destination.
-	 * @param origin. Origin eClassifier.
-	 * @param destination. Destination eClassifier.
+	 * Returns true of the ecore vertex is contained in the ecore vertex list. 
+	 * @param internalVertex
+	 * @param modularizationGraph
 	 * @return
 	 */
-	private boolean dependsOn(EClassifier origin, EClassifier destination){
-		if(origin instanceof EClass && destination instanceof EClass){
-			// Checking eReferences
-			EClass originEClass = (EClass) origin;
-			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
-				if(eStructuralFeature instanceof EReference){
-					EReference eReference = (EReference) eStructuralFeature;
-					// TODO Here we need to use the construct comparison operator!
-					if(eReference.getEType().getName().equals(destination.getName())){
-						return true;
-					}
-				}
-			}
-			// Checking eSuperTypes
-			for (EClass superType : originEClass.getESuperTypes()) {
-				// TODO Here we need to use the construct comparison operator!
-				if(superType.getName().equals(destination.getName()))
-					return true;
-			}
-			return false;
+	private boolean exists(List<EcoreVertex> internalVertex, EcoreVertex vertex) {
+		for (EcoreVertex ecoreVertex : internalVertex) {
+			if(ecoreVertex.getVertexId().equals(vertex.getVertexId()))
+				return true;
 		}
-		else if(origin instanceof EClass && destination instanceof EEnum){
-			EClass originEClass = (EClass) origin;
-			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
-				if(eStructuralFeature instanceof EAttribute){
-					EAttribute eAttribute = (EAttribute) eStructuralFeature;
-					// TODO Here we need to use the construct comparison operator!
-					if(eAttribute.getEType().getName().equals(destination.getName())){
-						return true;
-					}
-				}
-			}
-			return false;
-		}
-		else{
-			return false;
-		}
+		return false;
 	}
+
+//	/**
+//	 * Indicates if the origin depends on the destination.
+//	 * Concretely, returns true of there is any reference from the origin to the destination or if the origin is sub-type of the destination.
+//	 * @param origin. Origin eClassifier.
+//	 * @param destination. Destination eClassifier.
+//	 * @return
+//	 */
+//	private boolean dependsOn(EClassifier origin, EClassifier destination){
+//		if(origin instanceof EClass && destination instanceof EClass){
+//			// Checking eReferences
+//			EClass originEClass = (EClass) origin;
+//			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
+//				if(eStructuralFeature instanceof EReference){
+//					EReference eReference = (EReference) eStructuralFeature;
+//					// TODO Here we need to use the construct comparison operator!
+//					if(eReference.getEType().getName().equals(destination.getName())){
+//						return true;
+//					}
+//				}
+//			}
+//			// Checking eSuperTypes
+//			for (EClass superType : originEClass.getESuperTypes()) {
+//				// TODO Here we need to use the construct comparison operator!
+//				if(superType.getName().equals(destination.getName()))
+//					return true;
+//			}
+//			return false;
+//		}
+//		else if(origin instanceof EClass && destination instanceof EEnum){
+//			EClass originEClass = (EClass) origin;
+//			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
+//				if(eStructuralFeature instanceof EAttribute){
+//					EAttribute eAttribute = (EAttribute) eStructuralFeature;
+//					// TODO Here we need to use the construct comparison operator!
+//					if(eAttribute.getEType().getName().equals(destination.getName())){
+//						return true;
+//					}
+//				}
+//			}
+//			return false;
+//		}
+//		else{
+//			return false;
+//		}
+//	}
 	
 	/**
 	 * Indicates if there is an arc between the origin and the destination given in the parameters. 

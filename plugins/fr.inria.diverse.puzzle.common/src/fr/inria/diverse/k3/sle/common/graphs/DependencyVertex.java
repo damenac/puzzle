@@ -3,8 +3,6 @@ package fr.inria.diverse.k3.sle.common.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.ecore.EClassifier;
-
 /**
  * Value object representing a vertex within a dependency graph.
  * @author David Mendez-Acuna
@@ -17,7 +15,7 @@ public class DependencyVertex {
 	// -----------------------------------------------
 	
 	private String identifier;
-	private List<EClassifier> eClassifiers;
+	private List<EcoreVertex> internalVertex;
 
 	// -----------------------------------------------
 	// Constructor
@@ -25,7 +23,7 @@ public class DependencyVertex {
 	
 	public DependencyVertex(String identifier){
 		this.identifier = identifier;
-		this.eClassifiers = new ArrayList<EClassifier>();
+		this.internalVertex = new ArrayList<EcoreVertex>();
 	}
 	
 	// -----------------------------------------------
@@ -40,7 +38,7 @@ public class DependencyVertex {
 		this.identifier = identifier;
 	}
 
-	public List<EClassifier> geteClassifiers() {
-		return eClassifiers;
+	public List<EcoreVertex> getInternalVertex() {
+		return this.internalVertex;
 	}
 }
