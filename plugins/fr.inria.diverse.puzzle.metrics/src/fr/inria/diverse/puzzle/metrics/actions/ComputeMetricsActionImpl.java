@@ -21,7 +21,7 @@ import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
-import fr.inria.diverse.puzzle.metrics.chartMetrics.ChartMetric;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.FamilyChartMetric;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.IndividualizationRatio;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.ProductRelatedReusability;
@@ -83,19 +83,19 @@ public class ComputeMetricsActionImpl {
 		
 		String metrics = "Metrics calculated"; 
 		
-		List<ChartMetric> chartMetrics = new ArrayList<ChartMetric>();
+		List<FamilyChartMetric> chartMetrics = new ArrayList<FamilyChartMetric>();
 		chartMetrics.add(new SizeOfCommonality());
 		chartMetrics.add(new ProductRelatedReusability());
 		chartMetrics.add(new IndividualizationRatio());
 		chartMetrics.add(new PairwiseRelationshipRatio());
 		
 		String generalMetricsString = "";
-		for (ChartMetric chartMetric : chartMetrics) {
+		for (FamilyChartMetric chartMetric : chartMetrics) {
 			generalMetricsString += chartMetric.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
 		}
 
 		String generalMetricsWindowsString = "window.onload = function(){\n";
-		for (ChartMetric chartMetric : chartMetrics) {
+		for (FamilyChartMetric chartMetric : chartMetrics) {
 			generalMetricsWindowsString += chartMetric.getWindow(languages);
 		}
 		generalMetricsWindowsString += "};";

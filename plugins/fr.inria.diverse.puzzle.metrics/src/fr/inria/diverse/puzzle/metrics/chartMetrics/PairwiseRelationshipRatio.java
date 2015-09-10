@@ -17,7 +17,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
  * Chart metric for the Pairwise Relationship Ratio (PWRR)
  * @author David Mendez-Acuna
  */
-public class PairwiseRelationshipRatio implements ChartMetric {
+public class PairwiseRelationshipRatio implements FamilyChartMetric {
 
 	// ---------------------------------------------------
 	// Methods

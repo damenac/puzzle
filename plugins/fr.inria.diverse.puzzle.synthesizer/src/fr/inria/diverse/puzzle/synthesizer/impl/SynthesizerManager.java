@@ -12,6 +12,7 @@ import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.breaker.popup.actions.SynthesisManager;
+import fr.inria.diverse.puzzle.metrics.managers.ProductLinesMetricManager;
 import fr.inria.diverse.puzzle.variabilityinferer.VariabilityInfererManager;
 
 public class SynthesizerManager {
@@ -41,9 +42,14 @@ public class SynthesizerManager {
 	// ----------------------------------------------------------
 	
 	public void synthesizeLanguageProductLine(SynthesisProperties properties, ArrayList<Language> languages, IProject project) throws Exception{
+		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(project);
 		
 		// Step 1.1: Break-down the family
 		EcoreGraph modularizationGraph = SynthesisManager.getInstance().breakDownFamily(languages, properties, project);
+		metricsManager.createProductLineCouplingReport(languages);
+		metricsManager.createProductLineCouplingReportData(languages, properties.getConceptComparisonOperator(), 
+				properties.getMethodComparisonOperator(), modularizationGraph);
+		
 		
 		// Step 1.2: Compute the dependencies graph.
 		DependencyGraph dependenciesGraph = new DependencyGraph(modularizationGraph);

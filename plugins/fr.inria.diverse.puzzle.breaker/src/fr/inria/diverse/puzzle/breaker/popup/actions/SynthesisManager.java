@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EcoreFactory;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
-import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
@@ -23,7 +22,6 @@ import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-import fr.inria.diverse.puzzle.metrics.managers.ProductLinesMetricManager;
 
 /**
  * Action implementation for families decomposition. 
@@ -60,7 +58,6 @@ public class SynthesisManager {
 	 */
 	public EcoreGraph breakDownFamily(ArrayList<Language> languages, SynthesisProperties synthesisProperties, IProject lplProject) throws Exception{
 		ConceptComparison conceptComparisonOperator = synthesisProperties.getConceptComparisonOperator();
-		MethodComparison methodComparisonOperator = synthesisProperties.getMethodComparisonOperator();
 		GraphPartition graphPartition = synthesisProperties.getGraphPartition();
 		
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
@@ -70,11 +67,6 @@ public class SynthesisManager {
 		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		buildModules(dependenciesGraph);
 		
-		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(lplProject);
-		metricsManager.createReport1ProductLineCoupling(languages);
-		metricsManager.createReport1ProductLineCouplingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
-		
-		ProjectManagementServices.refreshProject(lplProject);
 		return dependenciesGraph;
 	}
 

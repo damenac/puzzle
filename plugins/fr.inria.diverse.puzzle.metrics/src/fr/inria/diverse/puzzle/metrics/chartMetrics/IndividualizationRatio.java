@@ -20,7 +20,7 @@ import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
  * Chart metric for the Individualization Ratio (IR)
  * @author David Mendez-Acuna
  */
-public class IndividualizationRatio implements ChartMetric {
+public class IndividualizationRatio implements FamilyChartMetric {
 
 	// ---------------------------------------------------
 	// Methods

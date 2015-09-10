@@ -16,7 +16,7 @@ import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
  * Chart metric for the Product Related Reusability (PRR)
  * @author David Mendez-Acuna
  */
-public class ProductRelatedReusability implements ChartMetric {
+public class ProductRelatedReusability implements FamilyChartMetric {
 
 	// ---------------------------------------------------
 	// Methods

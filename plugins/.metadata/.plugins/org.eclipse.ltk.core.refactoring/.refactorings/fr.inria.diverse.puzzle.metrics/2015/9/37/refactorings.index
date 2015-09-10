@@ -2,3 +2,6 @@
 1441875439936	Rename type 'ModularizationGraph'
 1441875943458	Rename type 'SpecialChart'
 1441875956218	Copy compilation unit
+1441877579415	Rename type 'ChartMetric'
+1441877582984	Copy compilation unit
+1441877594340	Rename type 'FamilyChartMetric'

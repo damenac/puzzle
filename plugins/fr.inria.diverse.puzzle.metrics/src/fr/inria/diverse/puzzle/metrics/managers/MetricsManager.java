@@ -9,9 +9,22 @@ import org.eclipse.core.runtime.Platform;
 
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 
+/**
+ * Abstract metrics manager
+ * @author David Mendez-Acuna
+ *
+ */
 public abstract class MetricsManager {
 
+	// ------------------------------------------------------
+	// Attributes
+	// ------------------------------------------------------
+	
 	protected IProject project;
+	
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
 	
 	public MetricsManager(IProject project) throws Exception{
 		this.project = project;

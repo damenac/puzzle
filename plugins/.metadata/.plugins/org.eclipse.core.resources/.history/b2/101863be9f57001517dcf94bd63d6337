@@ -1,0 +1,24 @@
+package fr.inria.diverse.puzzle.metrics.componentsMetrics;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
+import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
+import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class AverageCoupling {
+
+	public double compute(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, EcoreGraph modularizationGraph) throws Exception{
+		SumCoupling sumOperator = new SumCoupling();
+		int sum = sumOperator.compute(languages, conceptComparisonOperator, graphPartition);
+		
+		double aveCoupling = sum / modularizationGraph.getGroups().size();
+		return aveCoupling;
+	}
+	
+}

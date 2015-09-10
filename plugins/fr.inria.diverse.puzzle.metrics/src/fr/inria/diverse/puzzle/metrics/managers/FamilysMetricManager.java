@@ -26,11 +26,24 @@ import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSemanticChart;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSyntacticChart;
 import fr.inria.diverse.puzzle.metrics.specialCharts.TarjansAlgorithmGraph;
 
+/**
+ * Manager for metrics analyzing families of DSLs
+ * @author David Mendez-Acuna
+ *
+ */
 public class FamilysMetricManager extends MetricsManager {
 
+	// ------------------------------------------------------
+	// Constructor
+	// ------------------------------------------------------
+	
 	public FamilysMetricManager(IProject project) throws Exception{
 		super(project);
 	}
+	
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
 	
 	public void createReport1FamilysShape(ArrayList<Language> languages) throws URISyntaxException, IOException{
 		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-FamilysShape.html");

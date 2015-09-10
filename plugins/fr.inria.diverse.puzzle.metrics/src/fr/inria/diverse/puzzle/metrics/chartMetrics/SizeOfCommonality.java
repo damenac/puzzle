@@ -18,7 +18,7 @@ import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
  * Chart metric for the size of (syntactic and semantic) commonality
  * @author David Mendez-Acuna
  */
-public class SizeOfCommonality implements ChartMetric {
+public class SizeOfCommonality implements FamilyChartMetric {
 
 	// ---------------------------------------------------
 	// Methods

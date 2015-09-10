@@ -21,7 +21,7 @@ import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethodsOccurrences;
  * Chart metric for the family's maintenance costs versus product line maintenance costs.
  * @author David Mendez-Acuna
  */
-public class MaintananceCosts implements ChartMetric {
+public class MaintananceCosts implements FamilyChartMetric {
 
 	// ---------------------------------------------------
 	// Methods
