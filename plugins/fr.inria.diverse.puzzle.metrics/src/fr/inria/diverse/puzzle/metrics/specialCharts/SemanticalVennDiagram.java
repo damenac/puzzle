@@ -10,9 +10,14 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
-public class SemanticalVennDiagram {
+public class SemanticalVennDiagram implements SpecialSemanticChart {
 
-	public static String evaluate(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	@Override
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();
 		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
 		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
@@ -48,7 +53,11 @@ public class SemanticalVennDiagram {
 		
 		return answer;
 	}
-
+	
+	// ------------------------------------------------------
+	// Auxiliary Methods
+	// ------------------------------------------------------
+	
 	private static ArrayList<String> getIntersection(
 			ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList, Language languageI, Language languageJ,
 			MethodComparison methodComparisonOperator) {

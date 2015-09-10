@@ -13,9 +13,19 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
-public class TarjansAlgorithmGraph {
+/**
+ * Prints the graph resulting of the execution of the Tarjans algorithm.
+ * @author David Mendez-Acuna
+ *
+ */
+public class TarjansAlgorithmGraph implements SpecialSyntacticChart {
 
-	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception{
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	@Override
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator) throws Exception{
 		String answer = "";
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);

@@ -37,7 +37,7 @@ public class FamaInferrer implements FeaturesModelInference{
 	
 	@Override
 	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties,
-			ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception {
+			ArrayList<Language> languages, EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph) throws Exception {
 		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.FAMA_FORMAT);
 		
 		File fileReport = new File(targetProject.getLocation().toString()
@@ -55,7 +55,7 @@ public class FamaInferrer implements FeaturesModelInference{
 		
 		FAMAFeatureModel famafm = FamaSynthesizer.getInstance().synthesizeFeatureModelFromPCM(inputFile, outputFile);
 		PFeatureModel fm = FeatureModelsTranslator.getInstance().fromFAMAFeatureModelToFeatureModel(famafm);
-		this.createTechnologicalConstraints(fm, modularizationGraph);
+		this.createTechnologicalConstraints(fm, dependenciesGraph);
 		return fm;
 	}
 
@@ -77,8 +77,8 @@ public class FamaInferrer implements FeaturesModelInference{
 	 * @param modularizationGraph. The modularization graph that is used to obtain the technological constraints.
 	 */
 	private void createTechnologicalConstraints(PFeatureModel fm,
-			EcoreGraph modularizationGraph) {
-		DependencyGraph dependenciesGraph = new DependencyGraph(modularizationGraph);
+			DependencyGraph dependenciesGraph) {
+		
 		for (DependencyArc arc : dependenciesGraph.getArcs()) {
 			PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
 			PBinaryExpression expression = VmFactory.eINSTANCE.createPBinaryExpression();

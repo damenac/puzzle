@@ -8,6 +8,7 @@ import org.eclipse.core.resources.IProject;
 
 import vm.PFeatureModel;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -21,7 +22,8 @@ import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
 public class KSynthesisInferrer implements FeaturesModelInference {
 
 	@Override
-	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception {
+	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, 
+			ArrayList<Language> languages, EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph) throws Exception {
 		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
 		
 		File fileReport = new File(targetProject.getLocation().toString()

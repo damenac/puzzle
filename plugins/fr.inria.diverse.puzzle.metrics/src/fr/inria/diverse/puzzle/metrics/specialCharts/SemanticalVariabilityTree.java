@@ -14,9 +14,19 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
-public class SemanticalVariabilityTree {
+/**
+ * Prints the semantical variability tree
+ * @author David Mendez-Acuna
+ *
+ */
+public class SemanticalVariabilityTree implements SpecialSemanticChart {
 
-	public static String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	@Override
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
 		String answer = "";
 		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
 		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
@@ -32,6 +42,10 @@ public class SemanticalVariabilityTree {
 		
 		return answer;
 	}
+	
+	// ------------------------------------------------------
+	// Auxiliary Methods
+	// ------------------------------------------------------
 	
 	private static SemanticTree buildSemanticTree(ArrayList<TupleConceptMethodsMembers> conceptsGroupMethodMemberGroupList){
 		SemanticTree tree = new SemanticTree();

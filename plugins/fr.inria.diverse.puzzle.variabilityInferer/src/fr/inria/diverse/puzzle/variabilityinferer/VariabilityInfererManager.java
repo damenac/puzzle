@@ -6,9 +6,8 @@ import org.eclipse.core.resources.IProject;
 
 import vm.PFeatureModel;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
-import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
-import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
@@ -43,17 +42,25 @@ public class VariabilityInfererManager {
 	// Methods
 	// --------------------------------------------------
 
-	public void synthesizeVariabilityModel(
-			SynthesisProperties synthesisProperties,
-			ArrayList<Language> languages, EcoreGraph modularizationGraph,
+	/**
+	 * Synthesizes and returns the open features model. 
+	 * @param synthesisProperties
+	 * @param languages
+	 * @param modularizationGraph
+	 * @param dependenciesGraph
+	 * @param project
+	 * @throws Exception
+	 */
+	public PFeatureModel synthesizeOpenFeaturesModel(SynthesisProperties synthesisProperties,
+			ArrayList<Language> languages, EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph,
 			IProject project) throws Exception {
+		
 		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
 		
 		PFeatureModel openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
-				synthesisProperties, languages, modularizationGraph);
+				synthesisProperties, languages, modularizationGraph, dependenciesGraph);
 
-		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/openFM.vm");
-		ProjectManagementServices.refreshProject(project);
+		return openFeaturesModel;
 	}
 }

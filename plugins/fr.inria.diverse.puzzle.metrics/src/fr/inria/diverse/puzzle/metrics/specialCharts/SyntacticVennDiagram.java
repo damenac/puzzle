@@ -11,9 +11,19 @@ import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
-public class SyntacticVennDiagram {
+/**
+ * Prints the Venn diagram representing the syntactic core of the family of DSLs
+ * @author David Mendez-Acuna
+ *
+ */
+public class SyntacticVennDiagram implements SpecialSyntacticChart {
 
-	public static String evaluate(ArrayList<Language> languages, ConceptComparison comparisonOperator){
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	@Override
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator){
 		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);

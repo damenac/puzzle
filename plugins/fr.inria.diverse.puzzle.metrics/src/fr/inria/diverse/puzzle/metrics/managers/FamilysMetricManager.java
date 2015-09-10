@@ -19,9 +19,11 @@ import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
-import fr.inria.diverse.puzzle.metrics.specialCharts.DependenciesGraph;
+import fr.inria.diverse.puzzle.metrics.specialCharts.InternalDependenciesGraph;
 import fr.inria.diverse.puzzle.metrics.specialCharts.FamilyMembershipGraph;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVariabilityTree;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSemanticChart;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSyntacticChart;
 import fr.inria.diverse.puzzle.metrics.specialCharts.TarjansAlgorithmGraph;
 
 public class FamilysMetricManager extends MetricsManager {
@@ -141,7 +143,8 @@ public class FamilysMetricManager extends MetricsManager {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		outMetrics.print(DependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
+		SpecialSyntacticChart internalDependenciesGraph = new InternalDependenciesGraph();
+		outMetrics.print(internalDependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
 		outMetrics.close();
 	}
 	
@@ -186,7 +189,8 @@ public class FamilysMetricManager extends MetricsManager {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		outMetrics.print(FamilyMembershipGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
+		SpecialSyntacticChart internalDependenciesGraph = new FamilyMembershipGraph();
+		outMetrics.print(internalDependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
 		outMetrics.close();
 	}
 	
@@ -230,17 +234,19 @@ public class FamilysMetricManager extends MetricsManager {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		outMetrics.print(TarjansAlgorithmGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
+		SpecialSyntacticChart tarjansAlgorithmGraph = new TarjansAlgorithmGraph();
+		outMetrics.print(tarjansAlgorithmGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
 		outMetrics.close();
 	}
 	
 	public void copyAnalysisSemanticsData(ArrayList<Language> languages, 
-			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws IOException{
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
 		File generalMetrics = new File(project.getLocation().toString() + "/lib/semanticAnalysis.js" );
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		outMetrics.print(SemanticalVariabilityTree.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
+		SpecialSemanticChart semanticalVariabilityTree = new SemanticalVariabilityTree();
+		outMetrics.print(semanticalVariabilityTree.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
 		outMetrics.close();
 	}
 	

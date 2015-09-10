@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
+import vm.PFeatureModel;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.breaker.popup.actions.SynthesisManager;
@@ -38,10 +42,19 @@ public class SynthesizerManager {
 	
 	public void synthesizeLanguageProductLine(SynthesisProperties properties, ArrayList<Language> languages, IProject project) throws Exception{
 		
-		// Step 1. Break-down the family
+		// Step 1.1: Break-down the family
 		EcoreGraph modularizationGraph = SynthesisManager.getInstance().breakDownFamily(languages, properties, project);
 		
-		// Step 2: Synthesize variability model
-		VariabilityInfererManager.getInstance().synthesizeVariabilityModel(properties, languages, modularizationGraph, project);
+		// Step 1.2: Compute the dependencies graph.
+		DependencyGraph dependenciesGraph = new DependencyGraph(modularizationGraph);
+		
+		// Step 2.1: Synthesize variability model
+		PFeatureModel openFeaturesModel = VariabilityInfererManager.getInstance().synthesizeOpenFeaturesModel(
+				properties, languages, modularizationGraph, dependenciesGraph, project);
+		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/openFM.vm");
+		
+
+		// Step 4: Refresh the product line project. 
+		ProjectManagementServices.refreshProject(project);
 	}
 }
