@@ -28,8 +28,8 @@ import fr.inria.diverse.puzzle.metrics.chartMetrics.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
 import fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVennDiagram;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSemanticChart;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSyntacticChart;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySemanticChart;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySyntacticChart;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticVennDiagram;
 
 public class ComputeMetricsActionImpl {
@@ -112,7 +112,7 @@ public class ComputeMetricsActionImpl {
 		if(!syntacticVennData.exists())
 			syntacticVennData.createNewFile();
 		PrintWriter out = new PrintWriter( syntacticVennData );
-		SpecialSyntacticChart syntacticVennDiagram = new SyntacticVennDiagram();
+		SpecialFamilySyntacticChart syntacticVennDiagram = new SyntacticVennDiagram();
         out.print(syntacticVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator));
         out.close();
         
@@ -120,7 +120,7 @@ public class ComputeMetricsActionImpl {
 		if(!semanticVennData.exists())
 			semanticVennData.createNewFile();
 		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
-		SpecialSemanticChart semanticalVennDiagram = new SemanticalVennDiagram();
+		SpecialFamilySemanticChart semanticalVennDiagram = new SemanticalVennDiagram();
 		outSemanticVennData.print(semanticalVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
 		outSemanticVennData.close();
 		

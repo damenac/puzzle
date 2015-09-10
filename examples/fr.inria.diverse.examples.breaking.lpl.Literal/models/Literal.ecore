@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Literal" nsURI="Literal" nsPrefix="Literal">
+  <eClassifiers xsi:type="ecore:EClass" name="Literal" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLit" eSuperTypes="//Literal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

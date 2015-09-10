@@ -15,9 +15,12 @@ import org.eclipse.core.runtime.Platform;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.componentsMetrics.CouplingMetricsTable;
+import fr.inria.diverse.puzzle.metrics.specialCharts.ExternalDependenciesGraph;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialProductLineSyntacticChart;
 
 /**
  * Manager for metrics analyzing language product lines
@@ -84,7 +87,49 @@ public class ProductLinesMetricManager extends MetricsManager {
 		outRileReport.close();
 	}
 	
-	public void createDependenciesGraphReport(){
-		
+	/**
+	 * Creates the file the the instructions to draw the graph that shows the graph grouping using the family membership criterion.
+	 * @param targetProject. The project where the file should be created.
+	 * @param languages. The set of languages belonging to the family under study.
+	 * @throws Exception
+	 */
+	public void createDependenciesGraph() throws Exception{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-DependenciesGraph.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/Report-1-DependenciesGraph.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the file with the data input of the graph that shows the graph grouping using the family membership criterion.
+	 * @param targetProject. The project where the file should be created.
+	 * @param languages. The set of languages belonging to the family under study.
+	 * @param conceptComparisonOperator
+	 * @param methodComparisonOperator
+	 * @throws Exception
+	 */
+	public void createDependenciesGraphData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, DependencyGraph dependenciesGraph) throws Exception{
+		File generalMetrics = new File(project.getLocation().toString() + "/lib/externalDependenciesGraph.js" );
+		if(!generalMetrics.exists())
+			generalMetrics.createNewFile();
+		PrintWriter outMetrics = new PrintWriter( generalMetrics );
+		SpecialProductLineSyntacticChart externalDependenciesGraph = new ExternalDependenciesGraph();
+		outMetrics.print(externalDependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator, 
+				null, dependenciesGraph));
+		outMetrics.close();
 	}
 }

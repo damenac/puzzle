@@ -18,6 +18,7 @@ import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer
+import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition
 
 class SynthesisBuilder
 {
@@ -41,7 +42,7 @@ class SynthesisBuilder
 		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new FamaInferrer();
-		var GraphPartition graphPartition = new MembershipGraphPartition();
+		var GraphPartition graphPartition = new MinimumAcyclicPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;
 	}

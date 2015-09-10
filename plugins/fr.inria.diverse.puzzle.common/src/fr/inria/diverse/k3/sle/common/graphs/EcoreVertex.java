@@ -1,5 +1,8 @@
 package fr.inria.diverse.k3.sle.common.graphs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.emf.ecore.EClassifier;
 
 public class EcoreVertex {
@@ -13,6 +16,9 @@ public class EcoreVertex {
 	private int tarjansIndex;
 	private int tarjansLowlink;
 	private boolean onTarjansStack;
+	private List<EcoreArc> incomingArcs;
+	private List<EcoreArc> outgoingArcs;
+	private boolean visited;
 	
 	// -----------------------------------------------
 	// Constructor
@@ -24,8 +30,39 @@ public class EcoreVertex {
 		this.tarjansIndex = -1;
 		this.tarjansLowlink = -1;
 		this.onTarjansStack = false;
+		this.incomingArcs = new ArrayList<EcoreArc>();
+		this.outgoingArcs = new ArrayList<EcoreArc>();
 	}
 
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
+	/**
+	 * Indicates if there is a path from the origin to the destination.
+	 * @param origin
+	 * @param destination
+	 * @return
+	 */
+	public boolean thereIsPath(EcoreVertex destination){
+		this.visited = true;
+		
+		// Base case: there is a direct arc from the origin to the destination. 
+		for (EcoreArc ecoreArc : this.getOutgoingArcs()) {
+			if(ecoreArc.getTo().getVertexId().equals(destination.getVertexId()))
+				return true;
+		}
+		// Recursive case: visiting recursively the outgoing vertex.
+		for (EcoreArc ecoreArc : this.getOutgoingArcs()) {
+			if(!ecoreArc.getTo().isVisited()){
+				boolean thereIsPath = ecoreArc.getTo().thereIsPath(destination);
+				if(thereIsPath)
+					return true;
+			}
+		}
+		return false;
+	}
+	
 	// -----------------------------------------------
 	// Getters and setters
 	// -----------------------------------------------
@@ -68,5 +105,34 @@ public class EcoreVertex {
 
 	public void setOnTarjansStack(boolean onTarjansStack) {
 		this.onTarjansStack = onTarjansStack;
+	}
+
+	public List<EcoreArc> getIncomingArcs() {
+		return incomingArcs;
+	}
+
+	public List<EcoreArc> getOutgoingArcs() {
+		return outgoingArcs;
+	}
+
+	public boolean isVisited() {
+		return visited;
+	}
+
+	public void setVisited(boolean visited) {
+		this.visited = visited;
+	}
+	
+	// -----------------------------------------------
+	// Object Methods
+	// -----------------------------------------------
+
+	public String toString(){
+		return this.vertexId;
+	}
+	
+	public boolean equals(Object o){
+		EcoreVertex ecoreVertex = (EcoreVertex) o;
+		return ecoreVertex.vertexId.equals(this.vertexId);
 	}
 }

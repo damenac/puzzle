@@ -19,7 +19,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
  * @author David Mendez-Acuna
  *
  */
-public class SemanticalVariabilityTree implements SpecialSemanticChart {
+public class SemanticalVariabilityTree implements SpecialFamilySemanticChart {
 
 	// ------------------------------------------------------
 	// Methods

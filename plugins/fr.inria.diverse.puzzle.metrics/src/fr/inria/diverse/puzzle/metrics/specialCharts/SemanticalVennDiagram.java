@@ -10,7 +10,7 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMembers;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
-public class SemanticalVennDiagram implements SpecialSemanticChart {
+public class SemanticalVennDiagram implements SpecialFamilySemanticChart {
 
 	// ------------------------------------------------------
 	// Methods

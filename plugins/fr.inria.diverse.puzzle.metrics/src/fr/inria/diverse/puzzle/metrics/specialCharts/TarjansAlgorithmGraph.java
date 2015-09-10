@@ -18,7 +18,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
  * @author David Mendez-Acuna
  *
  */
-public class TarjansAlgorithmGraph implements SpecialSyntacticChart {
+public class TarjansAlgorithmGraph implements SpecialFamilySyntacticChart {
 
 	// ------------------------------------------------------
 	// Methods

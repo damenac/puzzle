@@ -2,3 +2,7 @@
 1441791683205	Rename method 'inferOpenVariabilityModel'
 1441791885365	Rename type 'VariabilityInferer'
 1441807100394	Rename type 'DependencyNode'
+1441882924985	Copy compilation unit
+1441883042245	Rename local variable 'familyMembershipVertex'
+1441884034172	Rename type 'MendezAcunasParition'
+1441886389404	Rename type 'MinimumAcyclicParition'

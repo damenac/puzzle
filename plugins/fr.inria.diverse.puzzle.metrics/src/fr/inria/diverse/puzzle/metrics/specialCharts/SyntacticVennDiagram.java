@@ -16,7 +16,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
  * @author David Mendez-Acuna
  *
  */
-public class SyntacticVennDiagram implements SpecialSyntacticChart {
+public class SyntacticVennDiagram implements SpecialFamilySyntacticChart {
 
 	// ------------------------------------------------------
 	// Methods

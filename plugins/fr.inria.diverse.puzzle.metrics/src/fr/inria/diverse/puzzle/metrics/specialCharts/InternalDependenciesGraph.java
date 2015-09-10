@@ -18,7 +18,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
  * @author David Mendez-Acuna
  *
  */
-public class InternalDependenciesGraph implements SpecialSyntacticChart {
+public class InternalDependenciesGraph implements SpecialFamilySyntacticChart {
 
 	// ------------------------------------------------------
 	// Methods

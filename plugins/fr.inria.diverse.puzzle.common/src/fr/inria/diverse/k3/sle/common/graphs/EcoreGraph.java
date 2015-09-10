@@ -101,6 +101,13 @@ public class EcoreGraph {
 						EcoreVertex toNode = getNodeByConceptComparisonOperator(this, currentEReference.getEType(), conceptComparisonOperator);
 						if(toNode != null){
 							EcoreArc arc = new EcoreArc(node, toNode);
+							
+							if(!node.getOutgoingArcs().contains(arc))
+								node.getOutgoingArcs().add(arc);
+							
+							if(!toNode.getIncomingArcs().contains(arc))
+								toNode.getIncomingArcs().add(arc);
+							
 							this.getArcs().add(arc);
 						}
 					}
@@ -111,6 +118,13 @@ public class EcoreGraph {
 							EcoreVertex toNode = getNodeByConceptComparisonOperator(this, currentEAttribute.getEType(), conceptComparisonOperator);
 							if(toNode != null){
 								EcoreArc arc = new EcoreArc(node, toNode);
+								
+								if(!node.getOutgoingArcs().contains(arc))
+									node.getOutgoingArcs().add(arc);
+								
+								if(!toNode.getIncomingArcs().contains(arc))
+									toNode.getIncomingArcs().add(arc);
+								
 								this.getArcs().add(arc);
 							}
 						}
@@ -129,6 +143,13 @@ public class EcoreGraph {
 					EcoreVertex toNode = getNodeByConceptComparisonOperator(this, superClass, conceptComparisonOperator);
 					if(toNode != null){
 						EcoreArc arc = new EcoreArc(node, toNode);
+						
+						if(!node.getOutgoingArcs().contains(arc))
+							node.getOutgoingArcs().add(arc);
+						
+						if(!toNode.getIncomingArcs().contains(arc))
+							toNode.getIncomingArcs().add(arc);
+						
 						this.getArcs().add(arc);
 					}
 				}
@@ -136,6 +157,13 @@ public class EcoreGraph {
 		}
 	}
 	
+	/**
+	 * Finds a node by using the concept comparison operator defined in the synthesis properties. 
+	 * @param graph
+	 * @param eType
+	 * @param conceptComparisonOperator
+	 * @return
+	 */
 	public EcoreVertex getNodeByConceptComparisonOperator(EcoreGraph graph,
 			EClassifier eType, ConceptComparison conceptComparisonOperator) {
 		for (EcoreVertex node : graph.getVertex()) {
@@ -181,6 +209,26 @@ public class EcoreGraph {
 			if(currentVertex.getVertexId().equals(id))
 				return currentVertex;
 		} return null;
+	}
+	
+	/**
+	 * Indicates if there is a path from the origin to the destination.
+	 * @param origin
+	 * @param destination
+	 * @return
+	 */
+	public boolean thereIsPath(EcoreVertex origin, EcoreVertex destination){
+		this.resetVisited();
+		return origin.thereIsPath(destination);
+	}
+	
+	/**
+	 * Puts all the visited flag in false for all the vertex in the graph.
+	 */
+	public void resetVisited(){
+		for (EcoreVertex vertex : this.vertex) {
+			vertex.setVisited(false);
+		}
 	}
 	
 	// -----------------------------------------------

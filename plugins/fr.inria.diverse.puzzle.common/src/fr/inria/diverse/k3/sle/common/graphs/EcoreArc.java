@@ -37,4 +37,17 @@ public class EcoreArc {
 	public void setTo(EcoreVertex to) {
 		this.to = to;
 	}
+	
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
+	public String toString(){
+		return this.from.getVertexId() + " -> " + this.to.getVertexId();
+	}
+	
+	public boolean equals(Object o){
+		EcoreArc ecoreArc = (EcoreArc) o;
+		return ecoreArc.from.equals(this.from) && ecoreArc.to.equals(this.to);
+	}
 }

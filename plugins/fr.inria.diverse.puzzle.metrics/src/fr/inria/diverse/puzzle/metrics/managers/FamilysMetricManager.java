@@ -22,8 +22,8 @@ import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
 import fr.inria.diverse.puzzle.metrics.specialCharts.InternalDependenciesGraph;
 import fr.inria.diverse.puzzle.metrics.specialCharts.FamilyMembershipGraph;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVariabilityTree;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSemanticChart;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSyntacticChart;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySemanticChart;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySyntacticChart;
 import fr.inria.diverse.puzzle.metrics.specialCharts.TarjansAlgorithmGraph;
 
 /**
@@ -156,7 +156,7 @@ public class FamilysMetricManager extends MetricsManager {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		SpecialSyntacticChart internalDependenciesGraph = new InternalDependenciesGraph();
+		SpecialFamilySyntacticChart internalDependenciesGraph = new InternalDependenciesGraph();
 		outMetrics.print(internalDependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
 		outMetrics.close();
 	}
@@ -202,7 +202,7 @@ public class FamilysMetricManager extends MetricsManager {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		SpecialSyntacticChart internalDependenciesGraph = new FamilyMembershipGraph();
+		SpecialFamilySyntacticChart internalDependenciesGraph = new FamilyMembershipGraph();
 		outMetrics.print(internalDependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
 		outMetrics.close();
 	}
@@ -247,7 +247,7 @@ public class FamilysMetricManager extends MetricsManager {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		SpecialSyntacticChart tarjansAlgorithmGraph = new TarjansAlgorithmGraph();
+		SpecialFamilySyntacticChart tarjansAlgorithmGraph = new TarjansAlgorithmGraph();
 		outMetrics.print(tarjansAlgorithmGraph.getVariablesDeclaration(languages, conceptComparisonOperator));
 		outMetrics.close();
 	}
@@ -258,7 +258,7 @@ public class FamilysMetricManager extends MetricsManager {
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
-		SpecialSemanticChart semanticalVariabilityTree = new SemanticalVariabilityTree();
+		SpecialFamilySemanticChart semanticalVariabilityTree = new SemanticalVariabilityTree();
 		outMetrics.print(semanticalVariabilityTree.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
 		outMetrics.close();
 	}

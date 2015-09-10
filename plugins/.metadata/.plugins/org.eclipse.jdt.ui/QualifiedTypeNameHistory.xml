@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="foreverse.ksynthesis.metrics.FMEditDistanceMetric"/>
-<fullyQualifiedTypeName name="foreverse.ksynthesis.metrics.CommonEdgesMetric"/>
-<fullyQualifiedTypeName name="foreverse.ksynthesis.metrics.ZhangEditDistance"/>
-<fullyQualifiedTypeName name="foreverse.ksynthesis.metrics.RefactoringEditDistance"/>
-<fullyQualifiedTypeName name="fr.familiar.variable.featureide.FeatureModelVariableSATFormula"/>
-<fullyQualifiedTypeName name="fr.familiar.operations.featureide.SATFormula"/>
-<fullyQualifiedTypeName name="fr.familiar.operations.featureide.SATFMLFormula"/>
-<fullyQualifiedTypeName name="fr.familiar.variable.FeatureModelVariableBDDFormula"/>
 <fullyQualifiedTypeName name="fr.familiar.variable.FeatureModelVariableWithSynchronizedFormula"/>
 <fullyQualifiedTypeName name="gsd.synthesis.FeatureGraphFactory"/>
 <fullyQualifiedTypeName name="fr.familiar.interpreter.FMLShell"/>
@@ -28,7 +20,6 @@
 <fullyQualifiedTypeName name="gsd.synthesis.FeatureGraph"/>
 <fullyQualifiedTypeName name="vm.PFeature"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Feature"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ModelUtils"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Relation"/>
@@ -41,23 +32,32 @@
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
 <fullyQualifiedTypeName name="vm.PBooleanExpression"/>
 <fullyQualifiedTypeName name="vm.PFeatureRef"/>
-<fullyQualifiedTypeName name="vm.PFeatureModel"/>
 <fullyQualifiedTypeName name="vm.PBinaryExpression"/>
 <fullyQualifiedTypeName name="vm.PBinaryOperator"/>
 <fullyQualifiedTypeName name="vm.PConstraint"/>
 <fullyQualifiedTypeName name="vm.PUnaryExpression"/>
 <fullyQualifiedTypeName name="vm.PUninaryOperator"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EAttribute"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference"/>
+<fullyQualifiedTypeName name="vm.PFeatureModel"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ModelUtils"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialChart"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSyntacticChart"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSemanticChart"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyVertex"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.ExternalDependenciesGraph"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialProductLineSyntacticChart"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
