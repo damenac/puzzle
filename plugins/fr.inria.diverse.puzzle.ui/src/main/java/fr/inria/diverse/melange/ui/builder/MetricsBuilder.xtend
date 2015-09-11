@@ -28,7 +28,7 @@ class MetricsBuilder
 		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
-		var GraphPartition graphPartition = new MembershipGraphPartition();
+		var GraphPartition graphPartition = new MinimumAcyclicPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;
 	}

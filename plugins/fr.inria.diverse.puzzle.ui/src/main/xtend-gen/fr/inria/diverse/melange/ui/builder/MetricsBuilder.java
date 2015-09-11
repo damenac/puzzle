@@ -6,7 +6,7 @@ import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
-import fr.inria.diverse.k3.sle.common.graphsOperators.MembershipGraphPartition;
+import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl;
@@ -38,7 +38,7 @@ public class MetricsBuilder {
     ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
     MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
     FeaturesModelInference variabilityInferer = new PuzzleInferrer();
-    GraphPartition graphPartition = new MembershipGraphPartition();
+    GraphPartition graphPartition = new MinimumAcyclicPartition();
     SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
     return properties;
   }
