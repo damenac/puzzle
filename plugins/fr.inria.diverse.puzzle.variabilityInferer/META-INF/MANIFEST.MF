@@ -18,7 +18,8 @@ Bundle-ActivationPolicy: lazy
 Export-Package: fr.inria.diverse.puzzle.variabilityinferer,
  fr.inria.diverse.puzzle.variabilityinferer.inferers
 Bundle-ClassPath: lib/FaMaFeatureModel-0.9.1.jar,
- .
+ .,
+ lib/FAMILIAR-Standalone-1.0.10-jar-with-dependencies.jar
 Import-Package: fr.familiar.attributedfm,
  fr.familiar.attributedfm.domain,
  fr.familiar.attributedfm.reasoning,

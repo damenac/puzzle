@@ -6,14 +6,16 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import vm.PFeatureModel;
 import foreverse.ksynthesis.Heuristic;
 import foreverse.ksynthesis.InteractiveFMSynthesizer;
 import foreverse.ksynthesis.metrics.AlwaysZeroMetric;
 import fr.familiar.interpreter.FMLShell;
 import fr.familiar.variable.FeatureModelVariable;
-import fr.inria.diverse.ksynthesis.ksynthesis.vos.Feature;
-import fr.inria.diverse.ksynthesis.ksynthesis.vos.Product;
-import fr.inria.diverse.ksynthesis.ksynthesis.vos.ProductLine;
+import fr.inria.diverse.ksynthesis.ksynthesis.auxiliary.Feature;
+import fr.inria.diverse.ksynthesis.ksynthesis.auxiliary.Product;
+import fr.inria.diverse.ksynthesis.ksynthesis.auxiliary.ProductLine;
+import fr.inria.diverse.ksynthesis.ksynthesis.auxiliary.PuzzleFMTranslator;
 import gsd.synthesis.Expression;
 import gsd.synthesis.ExpressionType;
 
@@ -62,7 +64,7 @@ public class KSynthesisSynthesizer {
 	 * @param outputFile The location of the file in which the feature model should be saved. 
 	 * @throws FileNotFoundException 
 	 */
-	public FeatureModelVariable synthesizeFeatureModelFromPCM(String inputFile, String outputFile) throws Exception{
+	public PFeatureModel synthesizeFeatureModelFromPCM(String inputFile, String outputFile) throws Exception{
 		ProductLine pl = loadProductLineFromPCM(inputFile);
 		FeatureModelVariable fm = obtainVariabilityModelConstraints(pl);
 		System.out.println(fm + " base fm");
@@ -72,7 +74,9 @@ public class KSynthesisSynthesizer {
 		FeatureModelVariable synthesizedFM = synthesizer.computeCompleteFeatureModel();
 		System.out.println(synthesizedFM + " synthesized fm");
 		System.out.println("synthesizedFM.getAllConstraints(): " + synthesizedFM.getAllConstraints());
-		return synthesizedFM;
+		System.out.println("synthesizedFM.getHierarchy(): " + synthesizedFM.getHierarchy());
+		
+		return PuzzleFMTranslator.getInstance().fromFeatureModelVariableToFeatureModel(synthesizedFM);
 	}
 	
 	/**

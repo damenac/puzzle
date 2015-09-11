@@ -4,6 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="lib/FaMaFeatureModel-0.9.1.jar"/>
+	<classpathentry kind="lib" path="lib/FAMILIAR-Standalone-1.0.10-jar-with-dependencies.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/fr.inria.diverse.ksynthesis.interface"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

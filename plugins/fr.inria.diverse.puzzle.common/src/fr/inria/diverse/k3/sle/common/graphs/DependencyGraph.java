@@ -53,6 +53,8 @@ public class DependencyGraph {
 					DependencyVertex vertexJ = vertex.get(j);
 					if(this.dependsOn(vertexI, vertexJ, modularizationGraph)){
 						DependencyArc arc = new DependencyArc(vertexI, vertexJ);
+						vertexI.getOutgoingArcs().add(arc);
+						vertexJ.getIncomingArcs().add(arc);
 						this.arcs.add(arc);
 					}
 				}
@@ -99,52 +101,6 @@ public class DependencyGraph {
 		return false;
 	}
 
-//	/**
-//	 * Indicates if the origin depends on the destination.
-//	 * Concretely, returns true of there is any reference from the origin to the destination or if the origin is sub-type of the destination.
-//	 * @param origin. Origin eClassifier.
-//	 * @param destination. Destination eClassifier.
-//	 * @return
-//	 */
-//	private boolean dependsOn(EClassifier origin, EClassifier destination){
-//		if(origin instanceof EClass && destination instanceof EClass){
-//			// Checking eReferences
-//			EClass originEClass = (EClass) origin;
-//			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
-//				if(eStructuralFeature instanceof EReference){
-//					EReference eReference = (EReference) eStructuralFeature;
-//					// TODO Here we need to use the construct comparison operator!
-//					if(eReference.getEType().getName().equals(destination.getName())){
-//						return true;
-//					}
-//				}
-//			}
-//			// Checking eSuperTypes
-//			for (EClass superType : originEClass.getESuperTypes()) {
-//				// TODO Here we need to use the construct comparison operator!
-//				if(superType.getName().equals(destination.getName()))
-//					return true;
-//			}
-//			return false;
-//		}
-//		else if(origin instanceof EClass && destination instanceof EEnum){
-//			EClass originEClass = (EClass) origin;
-//			for (EStructuralFeature eStructuralFeature : originEClass.getEStructuralFeatures()) {
-//				if(eStructuralFeature instanceof EAttribute){
-//					EAttribute eAttribute = (EAttribute) eStructuralFeature;
-//					// TODO Here we need to use the construct comparison operator!
-//					if(eAttribute.getEType().getName().equals(destination.getName())){
-//						return true;
-//					}
-//				}
-//			}
-//			return false;
-//		}
-//		else{
-//			return false;
-//		}
-//	}
-	
 	/**
 	 * Indicates if there is an arc between the origin and the destination given in the parameters. 
 	 * @param origin
@@ -155,6 +111,39 @@ public class DependencyGraph {
 		for (DependencyArc dependencyArc : arcs) {
 			if(dependencyArc.getFrom().getIdentifier().equals(origin.getIdentifier()) &&
 					dependencyArc.getTo().getIdentifier().equals(destination.getIdentifier()))
+				return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Indicates if there is a path from the origin to the destination.
+	 * @param origin
+	 * @param destination
+	 * @return
+	 */
+	public boolean thereIsPath(DependencyVertex origin, DependencyVertex destination){
+		this.resetVisited();
+		return origin.thereIsPath(destination);
+	}
+	
+	/**
+	 * Puts all the visited flag in false for all the vertex in the graph.
+	 */
+	public void resetVisited(){
+		for (DependencyVertex vertex : this.vertex) {
+			vertex.setVisited(false);
+		}
+	}
+	
+	/**
+	 * Indicates if there is any loop in the graph. 
+	 * @return
+	 */
+	public boolean thereIsLoop(){
+		for (DependencyVertex vertex : this.vertex) {
+			boolean loop = this.thereIsArc(vertex, vertex);
+			if(loop)
 				return true;
 		}
 		return false;

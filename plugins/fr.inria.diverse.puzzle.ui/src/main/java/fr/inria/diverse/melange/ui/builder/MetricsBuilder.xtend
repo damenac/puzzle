@@ -14,6 +14,7 @@ import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer
 import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition
+import fr.inria.diverse.puzzle.variabilityinferer.inferers.KSynthesisInferrer
 
 class MetricsBuilder
 {

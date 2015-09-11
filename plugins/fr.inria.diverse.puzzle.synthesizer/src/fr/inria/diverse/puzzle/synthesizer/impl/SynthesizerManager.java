@@ -56,11 +56,14 @@ public class SynthesizerManager {
 		metricsManager.createDependenciesGraphData(languages, properties.getConceptComparisonOperator(), 
 				dependenciesGraph);
 		
+		// Step 1.3: Validates that the dependencies graph is acyclic.
+		if(dependenciesGraph.thereIsLoop())
+			throw new Exception("The obtained dependencies graph is not acyclic! Check your graph partitioning algorithm.");
+		
 		// Step 2.1: Synthesize variability model
 		PFeatureModel openFeaturesModel = VariabilityInfererManager.getInstance().synthesizeOpenFeaturesModel(
 				properties, languages, modularizationGraph, dependenciesGraph, project);
 		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/openFM.vm");
-		
 
 		// Step 4: Refresh the product line project. 
 		ProjectManagementServices.refreshProject(project);

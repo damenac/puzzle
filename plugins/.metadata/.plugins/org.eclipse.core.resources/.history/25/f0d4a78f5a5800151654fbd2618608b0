@@ -1,0 +1,85 @@
+package fr.inria.diverse.ksynthesis.ksynthesis.auxiliary;
+
+import java.util.Hashtable;
+import java.util.Iterator;
+
+import vm.PBinaryExpression;
+import vm.PBinaryOperator;
+import vm.PConstraint;
+import vm.PFeature;
+import vm.PFeatureGroup;
+import vm.PFeatureModel;
+import vm.PFeatureRef;
+import vm.PGroupKind;
+import vm.PUnaryExpression;
+import vm.PUninaryOperator;
+import vm.VmFactory;
+
+/**
+ * Offers the services for translating feature models from diverse formats to the VM metamodel.
+ * @author David Mendez-Acuna
+ *
+ */
+public class FeatureModelsTranslator {
+
+	// -----------------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------------
+	
+	private static FeatureModelsTranslator instance;
+	
+	// -----------------------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------------------
+	
+	private FeatureModelsTranslator(){
+		
+	}
+	
+	public static FeatureModelsTranslator getInstance(){
+		if(instance == null)
+			instance = new FeatureModelsTranslator();
+		return instance;
+	}
+
+	// -----------------------------------------------------------
+	// Methods
+	// -----------------------------------------------------------
+
+	
+	/**
+	 * Finds a PFeature by the name in the features model in the parameter.
+	 * @param featureName. Name of the feature.
+	 * @param featuresModelRoot. Root of the features model where the feature should be searched. 
+	 * @return
+	 */
+	private PFeature getPFeatureByName(String featureName, PFeature featureModelRoot) {
+		if(featureModelRoot.getName().equals(featureName)){
+			return featureModelRoot;
+		}
+		for (PFeature feature : featureModelRoot.getChildren()) {
+			PFeature found = this.getPFeatureByName(featureName, feature);
+			if(found != null)
+				return found;
+		}
+		return null;
+	}
+	
+//	/**
+//	 * Translates from a features model from FeatureModelVariable (Familiar) to FeatureModel (Puzzle).
+//	 * @param fmv The feature model as an FeatureModelVariable object.
+//	 * @return
+//	 */
+//	public PFeatureModel fromFeatureModelVariableToFeatureModel(
+//			FeatureModelVariable fmv) {
+//		PFeatureModel fm = VmFactory.eINSTANCE.createPFeatureModel();
+//		
+//		gsd.synthesis.FeatureModel<String> originalFeatureModel = fmv.getHierarchy();
+//		
+//		gsd.synthesis.FeatureGraph<String> diagram = originalFeatureModel.getDiagram();
+//		System.out.println("diagram.getTopVertex(): " + diagram.getTopVertex());
+//		System.out.println("diagram.getBottomVertex(): " + diagram.getBottomVertex());
+//		
+//		return fm;
+//	}
+}

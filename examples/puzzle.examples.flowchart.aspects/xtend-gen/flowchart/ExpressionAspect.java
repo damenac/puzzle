@@ -11,16 +11,16 @@ public class ExpressionAspect {
   public static Object eval(final Expression _self, final Hashtable<String, Object> context) {
     flowchart.ExpressionAspectExpressionAspectProperties _self_ = flowchart.ExpressionAspectExpressionAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof flowchart.ArithmeticExpression){
+     if (_self instanceof flowchart.BoolLit){
+    result = flowchart.BoolLitAspect.eval((flowchart.BoolLit)_self,context);
+    } else  if (_self instanceof flowchart.StringLit){
+    result = flowchart.StringLitAspect.eval((flowchart.StringLit)_self,context);
+    } else  if (_self instanceof flowchart.IntegerLit){
+    result = flowchart.IntegerLitAspect.eval((flowchart.IntegerLit)_self,context);
+    } else  if (_self instanceof flowchart.ArithmeticExpression){
     result = flowchart.ArithmeticExpressionAspect.eval((flowchart.ArithmeticExpression)_self,context);
     } else  if (_self instanceof flowchart.RelationalExpression){
     result = flowchart.RelationalExpressionAspect.eval((flowchart.RelationalExpression)_self,context);
-    } else  if (_self instanceof flowchart.StringLit){
-    result = flowchart.StringLitAspect.eval((flowchart.StringLit)_self,context);
-    } else  if (_self instanceof flowchart.BoolLit){
-    result = flowchart.BoolLitAspect.eval((flowchart.BoolLit)_self,context);
-    } else  if (_self instanceof flowchart.IntegerLit){
-    result = flowchart.IntegerLitAspect.eval((flowchart.IntegerLit)_self,context);
     } else  if (_self instanceof flowchart.Literal){
     result = flowchart.LiteralAspect.eval((flowchart.Literal)_self,context);
     } else  if (_self instanceof flowchart.Expression){

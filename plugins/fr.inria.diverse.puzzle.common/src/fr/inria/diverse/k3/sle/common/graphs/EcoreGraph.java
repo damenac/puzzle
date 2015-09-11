@@ -86,7 +86,6 @@ public class EcoreGraph {
 				EcoreVertex node = new EcoreVertex(currentClassifier.getName() + ": " + conceptMembersTuple.getMembersString(), currentClassifier);
 				this.getVertex().add(node);
 			}
-			
 		}
 		
 		// Adding one arc for each reference

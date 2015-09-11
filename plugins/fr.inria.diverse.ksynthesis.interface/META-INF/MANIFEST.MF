@@ -6,7 +6,8 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: fr.inria.diverse.ksynthesis.ksynthesis.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.core.resources;bundle-version="3.9.1"
+ org.eclipse.core.resources;bundle-version="3.9.1",
+ fr.inria.diverse.puzzle.vm.metamodel;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: lib/FAMILIAR-Standalone-1.0.10-jar-with-dependencies.jar,
@@ -52,8 +53,8 @@ Export-Package: fr.familiar.attributedfm,
  fr.familiar.views.featureide,
  fr.familiar.wizard,
  fr.inria.diverse.ksynthesis.ksynthesis,
+ fr.inria.diverse.ksynthesis.ksynthesis.auxiliary,
  fr.inria.diverse.ksynthesis.ksynthesis.facade,
- fr.inria.diverse.ksynthesis.ksynthesis.vos,
  fr.inria.familiar.fmlero,
  fr.inria.familiar.fmlero.fmprimitives,
  fr.inria.familiar.fmlero.fmprimitives.impl,
