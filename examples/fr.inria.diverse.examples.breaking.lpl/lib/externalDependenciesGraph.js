@@ -1,22 +1,8 @@
 var G = new jsnx.DiGraph();
 G.addNodesFrom(["StateMachine"], {group: 0 });
-G.addNodesFrom(["State"], {group: 1 });
-G.addNodesFrom(["AbstractState"], {group: 2 });
-G.addNodesFrom(["Trigger"], {group: 3 });
-G.addNodesFrom(["Constraint"], {group: 4 });
-G.addNodesFrom(["VarReference"], {group: 5 });
-G.addNodesFrom(["RelationalConstraint"], {group: 6 });
-G.addNodesFrom(["Expression"], {group: 7 });
-G.addNodesFrom(["ArithmeticExpression"], {group: 8 });
-G.addNodesFrom(["Literal"], {group: 9 });
-G.addNodesFrom(["IntegerLit"], {group: 10 });
-G.addNodesFrom(["LogoProgram"], {group: 11 });
-G.addNodesFrom(["Primitive"], {group: 12 });
-G.addNodesFrom(["Instruction"], {group: 13 });
-G.addNodesFrom(["ProcCall"], {group: 14 });
-G.addNodesFrom(["Flowchart"], {group: 15 });
-G.addNodesFrom(["Subflow"], {group: 16 });
-G.addNodesFrom(["Node"], {group: 17 });
-G.addNodesFrom(["Decision"], {group: 18 });
+G.addNodesFrom(["Constraint"], {group: 1 });
+G.addNodesFrom(["Expression"], {group: 2 });
+G.addNodesFrom(["LogoProgram"], {group: 3 });
+G.addNodesFrom(["Flowchart"], {group: 4 });
 
-G.addEdgesFrom([["StateMachine","State"],["StateMachine","AbstractState"],["StateMachine","Trigger"],["StateMachine","Expression"],["State","AbstractState"],["State","Trigger"],["State","Expression"],["AbstractState","Trigger"],["AbstractState","Constraint"],["AbstractState","Expression"],["VarReference","Expression"],["RelationalConstraint","Constraint"],["RelationalConstraint","Expression"],["ArithmeticExpression","Expression"],["Literal","Expression"],["IntegerLit","Literal"],["LogoProgram","Expression"],["LogoProgram","Primitive"],["LogoProgram","Instruction"],["Primitive","Expression"],["Primitive","Instruction"],["Instruction","Expression"],["ProcCall","Expression"],["ProcCall","Instruction"],["Flowchart","Node"],["Subflow","Flowchart"],["Subflow","Node"],["Decision","Constraint"],["Decision","Node"]]);
+G.addEdgesFrom([["StateMachine","Constraint"],["StateMachine","Expression"],["Constraint","Expression"],["LogoProgram","Expression"],["Flowchart","Constraint"]]);

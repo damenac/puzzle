@@ -61,6 +61,10 @@ public class DependencyVertex {
 		return false;
 	}
 	
+	public String toString(){
+		return this.identifier;
+	}
+	
 	// -----------------------------------------------
 	// Getters and setters
 	// -----------------------------------------------

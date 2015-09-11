@@ -61,7 +61,9 @@ public class VmSynthesis {
 		}
 		
 		List<DependencyVertex> currentLevel = firstLevelVertex;
+		
 		while(!dependenciesGraph.allIncluded()){
+			System.out.println("currentLevel: " + currentLevel);
 			List<DependencyVertex> directDependentVertex = dependenciesGraph.getDirectDependentVertex(currentLevel);
 			for (DependencyVertex dependencyVertex : directDependentVertex) {
 				if(!dependencyVertex.isIncluded()){

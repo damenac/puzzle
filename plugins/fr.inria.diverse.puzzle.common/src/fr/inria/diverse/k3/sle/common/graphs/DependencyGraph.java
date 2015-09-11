@@ -187,10 +187,8 @@ public class DependencyGraph {
 			DependencyVertex originalVertex = this.vertex.get(i);
 			for (int j = 0; j < vertexList.size(); j++) {
 				DependencyVertex inputVertex = vertexList.get(j);
-				if(i!=j){
-					if(this.thereIsArc(originalVertex, inputVertex)){
-						directDependentVertex.add(originalVertex);
-					}
+				if(this.thereIsArc(originalVertex, inputVertex)){
+					directDependentVertex.add(originalVertex);
 				}
 			}
 		}
