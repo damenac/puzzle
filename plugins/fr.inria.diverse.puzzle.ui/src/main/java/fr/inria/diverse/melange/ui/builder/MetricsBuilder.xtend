@@ -12,9 +12,8 @@ import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.FamaInferrer
 import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.KSynthesisInferrer
+import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
 
 class MetricsBuilder
 {
@@ -27,7 +26,7 @@ class MetricsBuilder
 	def private SynthesisProperties getSynthesisProperties(){
 		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
-		var FeaturesModelInference variabilityInferer = new FamaInferrer();
+		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
 		var GraphPartition graphPartition = new MinimumAcyclicPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;

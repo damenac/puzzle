@@ -1,0 +1,17 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+public class VmSynthesis {
+	
+	private static VmSynthesis instance;
+	
+	private VmSynthesis(){
+		
+	}
+	
+	public static VmSynthesis getInstance(){
+		if(instance == null)
+			instance = new VmSynthesis();
+		return instance;
+	}
+	
+}

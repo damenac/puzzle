@@ -149,6 +149,54 @@ public class DependencyGraph {
 		return false;
 	}
 	
+	/**
+	 * Returns the list of vertex in the graph such that they have not outgoing arcs.
+	 * @return
+	 */
+	public List<DependencyVertex> getIndendependentVertex(){
+		List<DependencyVertex> independentVertex = new ArrayList<DependencyVertex>();
+		for (DependencyVertex dependencyVertex : this.vertex) {
+			if(dependencyVertex.getOutgoingArcs().size() == 0)
+				independentVertex.add(dependencyVertex);
+		}
+		return independentVertex;
+	}
+	
+	/**
+	 * Indicates if the flag 'included' is true for all the vertex in the graph.
+	 * @return
+	 */
+	public boolean allIncluded() {
+		for (DependencyVertex currentVertex : this.vertex) {
+			if(!currentVertex.isIncluded())
+				return false;
+		}
+		return true;
+	}
+	
+	/**
+	 * Returns the list of vertex that directly depend on at least one vertex in the list in the parameter.
+	 * @param currentLevel
+	 * @return
+	 */
+	public List<DependencyVertex> getDirectDependentVertex(
+			List<DependencyVertex> vertexList) {
+		List<DependencyVertex> directDependentVertex = new ArrayList<DependencyVertex>();
+		
+		for (int i = 0; i < this.vertex.size(); i++) {
+			DependencyVertex originalVertex = this.vertex.get(i);
+			for (int j = 0; j < vertexList.size(); j++) {
+				DependencyVertex inputVertex = vertexList.get(j);
+				if(i!=j){
+					if(this.thereIsArc(originalVertex, inputVertex)){
+						directDependentVertex.add(originalVertex);
+					}
+				}
+			}
+		}
+		return directDependentVertex;
+	}
+	
 	// -----------------------------------------------
 	// Getters
 	// -----------------------------------------------
@@ -160,4 +208,6 @@ public class DependencyGraph {
 	public List<DependencyArc> getArcs() {
 		return arcs;
 	}
+
+	
 }

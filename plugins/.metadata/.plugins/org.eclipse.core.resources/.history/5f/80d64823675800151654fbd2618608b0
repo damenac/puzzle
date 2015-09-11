@@ -1,0 +1,55 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+import java.util.List;
+
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
+import vm.PFeature;
+import vm.PFeatureModel;
+import vm.VmFactory;
+
+/**
+ * Algorithm for synthesizing feature models from PCMs and dependencies graphs. 
+ * @author David Mendez-Acuna
+ *
+ */
+public class VmSynthesis {
+	
+	// ----------------------------------------------------------
+	// Attributes
+	// ----------------------------------------------------------
+	
+	private static VmSynthesis instance;
+	
+	// ----------------------------------------------------------
+	// Constructor and singleton
+	// ----------------------------------------------------------
+	
+	private VmSynthesis(){
+		
+	}
+	
+	public static VmSynthesis getInstance(){
+		if(instance == null)
+			instance = new VmSynthesis();
+		return instance;
+	}
+	
+	// ----------------------------------------------------------
+	// Methods
+	// ----------------------------------------------------------
+	
+	public PFeatureModel synthesizeFeatureModel(String PCMFile, DependencyGraph dependenciesGraph){
+		PFeatureModel featureModel = VmFactory.eINSTANCE.createPFeatureModel();
+		
+		PFeature rootFeature = VmFactory.eINSTANCE.createPFeature();
+		rootFeature.setMandatory(true);
+		rootFeature.setName("Root");
+		
+		// Step 2: The first level features are those vertex in the graph such that they have not dependencies with other vertex.
+		List<DependencyVertex> firstLevelVertex = dependenciesGraph.getIndendependentVertex();
+		
+		return featureModel;
+	}
+	
+}

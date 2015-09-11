@@ -1,0 +1,20 @@
+package fr.inria.diverse.puzzle.variabilityinferer.inferers;
+
+import java.util.ArrayList;
+
+import org.eclipse.core.resources.IProject;
+
+import vm.PFeatureModel;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class PuzzleInferrer {
+
+	@Override
+	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, 
+			ArrayList<Language> languages, EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph) throws Exception{
+		return null;
+	}
+}

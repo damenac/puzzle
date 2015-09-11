@@ -19,6 +19,7 @@ public class DependencyVertex {
 	private List<DependencyArc> incomingArcs;
 	private List<DependencyArc> outgoingArcs;
 	private boolean visited;
+	private boolean included;
 
 	// -----------------------------------------------
 	// Constructor
@@ -90,5 +91,13 @@ public class DependencyVertex {
 
 	public List<DependencyArc> getOutgoingArcs() {
 		return outgoingArcs;
+	}
+
+	public boolean isIncluded() {
+		return included;
+	}
+
+	public void setIncluded(boolean included) {
+		this.included = included;
 	}
 }

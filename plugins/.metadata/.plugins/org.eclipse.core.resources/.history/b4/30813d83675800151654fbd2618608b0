@@ -1,0 +1,5 @@
+package fr.inria.diverse.puzzle.variabilityinferer.inferers;
+
+public class PuzzleInferrer {
+
+}
