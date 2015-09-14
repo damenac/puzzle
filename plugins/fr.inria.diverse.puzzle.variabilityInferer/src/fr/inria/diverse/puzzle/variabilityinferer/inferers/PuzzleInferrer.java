@@ -18,15 +18,14 @@ public class PuzzleInferrer implements FeaturesModelInference{
 	@Override
 	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, 
 			ArrayList<Language> languages, EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph) throws Exception{
-		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
-		return VmSynthesis.getInstance().synthesizeFeatureModel(PCM, dependenciesGraph);
+		return VmSynthesis.getInstance().synthesizeOpenFeatureModel(dependenciesGraph);
 	}
 
 	@Override
 	public PFeatureModel inferClosedFeaturesModel(IProject targetProject,
 			SynthesisProperties properties, ArrayList<Language> languages,
-			EcoreGraph modularizationGraph) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+			EcoreGraph modularizationGraph, PFeatureModel openFeaturesModel) throws Exception {
+		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
+		return VmSynthesis.getInstance().synthesizeClosedFeatureModel(PCM, openFeaturesModel);
 	}
 }

@@ -43,7 +43,7 @@ public interface FeaturesModelInference {
 	 * @return
 	 * @throws Exception
 	 */
-	public PFeatureModel inferClosedFeaturesModel(IProject targetProject, 
-			SynthesisProperties properties, ArrayList<Language> languages, 
-			EcoreGraph modularizationGraph) throws Exception;
+	public PFeatureModel inferClosedFeaturesModel(IProject targetProject,
+			SynthesisProperties properties, ArrayList<Language> languages,
+			EcoreGraph modularizationGraph, PFeatureModel openFeaturesModel) throws Exception;
 }

@@ -7,10 +7,13 @@ import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
 import vm.PBinaryExpression;
 import vm.PBinaryOperator;
+import vm.PBooleanExpression;
 import vm.PConstraint;
 import vm.PFeature;
 import vm.PFeatureModel;
 import vm.PFeatureRef;
+import vm.PUnaryExpression;
+import vm.PUninaryOperator;
 import vm.VmFactory;
 
 /**
@@ -44,7 +47,7 @@ public class VmSynthesis {
 	// Methods
 	// ----------------------------------------------------------
 	
-	public PFeatureModel synthesizeFeatureModel(String PCM, DependencyGraph dependenciesGraph){
+	public PFeatureModel synthesizeOpenFeatureModel(DependencyGraph dependenciesGraph){
 		PFeatureModel featureModel = VmFactory.eINSTANCE.createPFeatureModel();
 		
 		PFeature rootFeature = VmFactory.eINSTANCE.createPFeature();
@@ -106,6 +109,94 @@ public class VmSynthesis {
 		return featureModel;
 	}
 	
+	public PFeatureModel synthesizeClosedFeatureModel(String PCM, PFeatureModel openFeatureModel) throws Exception{
+		PFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
+		return closedFeatureModel;
+	}
+	
+	// ----------------------------------------------------------
+	// Auxiliary Methods
+	// ----------------------------------------------------------
+	
+	private PFeatureModel cloneFeatureModel(PFeatureModel openFeatureModel) throws Exception {
+		PFeatureModel clone = VmFactory.eINSTANCE.createPFeatureModel();
+		clone.setName(openFeatureModel.getName());
+		clone.setRootFeature(this.cloneFeature(openFeatureModel.getRootFeature()));
+		
+		for (PConstraint constraint : openFeatureModel.getConstraints()) {
+			PConstraint clonedConstraint = this.cloneConstraint(clone.getRootFeature(), constraint);
+			clone.getConstraints().add(clonedConstraint);
+		}
+		
+		return clone;
+	}
+
+	private PFeature cloneFeature(PFeature rootFeature) {
+		PFeature clone = VmFactory.eINSTANCE.createPFeature();
+		clone.setMandatory(rootFeature.isMandatory());
+		clone.setName(rootFeature.getName());
+		
+		for (PFeature child : rootFeature.getChildren()) {
+			PFeature cloneChild = this.cloneFeature(child);
+			clone.getChildren().add(cloneChild);
+		}
+		
+		return clone;
+	}
+
+	private PConstraint cloneConstraint(PFeature root, PConstraint constraint) throws Exception {
+		PConstraint clone = VmFactory.eINSTANCE.createPConstraint();
+		clone.setName(constraint.getName());
+		clone.setExpression(this.cloneExpression(root, constraint.getExpression()));
+		return clone;
+	}
+	
+	private PBooleanExpression cloneExpression(PFeature root, PBooleanExpression expression) throws Exception {
+		if(expression instanceof PBinaryExpression){
+			PBinaryExpression binaryExpression = (PBinaryExpression)expression;
+			PBinaryExpression clone = VmFactory.eINSTANCE.createPBinaryExpression();
+			clone.setLeft(this.cloneExpression(root, binaryExpression.getLeft()));
+			clone.setRight(this.cloneExpression(root, binaryExpression.getRight()));
+			clone.setOperator(this.getOperator(binaryExpression.getOperator()));
+			return clone;
+		}
+		else if(expression instanceof PFeatureRef){
+			PFeatureRef featureRef = (PFeatureRef) expression;
+			PFeatureRef clone = VmFactory.eINSTANCE.createPFeatureRef();
+			clone.setRef(this.getPFeatureByName(featureRef.getRef().getName(), root));
+			return clone;
+		}
+		else if(expression instanceof PUnaryExpression){
+			PUnaryExpression punaryExpression = (PUnaryExpression) expression;
+			PUnaryExpression clone = VmFactory.eINSTANCE.createPUnaryExpression();
+			clone.setExpr(this.cloneExpression(root, punaryExpression));
+			clone.setOperator(this.getOperator(punaryExpression.getOperator()));
+			return clone;
+		}else{
+			throw new Exception("Type does not supported!");
+		}
+	}
+
+	private PBinaryOperator getOperator(PBinaryOperator operator) {
+		if(operator.getName().equals(PBinaryOperator.AND))
+			return PBinaryOperator.AND;
+		else if(operator.getName().equals(PBinaryOperator.OR))
+			return PBinaryOperator.OR;
+		else if(operator.getName().equals(PBinaryOperator.IMPLIES))
+			return PBinaryOperator.IMPLIES;
+		else if(operator.getName().equals(PBinaryOperator.XOR))
+			return PBinaryOperator.XOR;
+		else
+			return null;
+	}
+	
+	private PUninaryOperator getOperator(PUninaryOperator operator) {
+		if(operator.getName().equals(PUninaryOperator.NOT))
+			return PUninaryOperator.NOT;
+		else
+			return null;
+	}
+
 	/**
 	 * Finds a PFeature by the name in the features model in the parameter.
 	 * @param featureName. Name of the feature.

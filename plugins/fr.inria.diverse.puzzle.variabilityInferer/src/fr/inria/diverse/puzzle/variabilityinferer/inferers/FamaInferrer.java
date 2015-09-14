@@ -62,7 +62,7 @@ public class FamaInferrer implements FeaturesModelInference{
 	@Override
 	public PFeatureModel inferClosedFeaturesModel(IProject targetProject,
 			SynthesisProperties properties, ArrayList<Language> languages,
-			EcoreGraph modularizationGraph) throws Exception {
+			EcoreGraph modularizationGraph, PFeatureModel openFeaturesModel) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}

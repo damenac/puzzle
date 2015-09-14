@@ -25,6 +25,9 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class SynthesisBuilder {
+  /**
+   * Synthesizes a language product line from the family of DSLs described in the resource.
+   */
   public void synthesizeLanguageProductLine(final Resource res, final IProject project, final IProgressMonitor monitor) {
     try {
       EList<EObject> _contents = res.getContents();

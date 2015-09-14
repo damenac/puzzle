@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vm:PFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel">
+  <rootFeature name="Root" mandatory="true">
+    <children name="Trigger">
+      <children name="StateMachine"/>
+      <children name="State"/>
+      <children name="AbstractState"/>
+    </children>
+    <children name="Constraint">
+      <children name="RelationalConstraint"/>
+      <children name="Decision"/>
+    </children>
+    <children name="Expression">
+      <children name="VarReference"/>
+      <children name="ArithmeticExpression"/>
+      <children name="Literal">
+        <children name="IntegerLit"/>
+      </children>
+      <children name="LogoProgram"/>
+      <children name="Primitive"/>
+      <children name="Instruction"/>
+      <children name="ProcCall"/>
+    </children>
+    <children name="Node">
+      <children name="Flowchart"/>
+      <children name="Subflow"/>
+    </children>
+  </rootFeature>
+  <constraints name="StateMachine implies Expression">
+    <expression xsi:type="vm:PBinaryExpression">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="State implies Expression">
+    <expression xsi:type="vm:PBinaryExpression">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState implies Expression">
+    <expression xsi:type="vm:PBinaryExpression">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint implies Expression">
+    <expression xsi:type="vm:PBinaryExpression">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="Decision implies Node">
+    <expression xsi:type="vm:PBinaryExpression">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+    </expression>
+  </constraints>
+</vm:PFeatureModel>

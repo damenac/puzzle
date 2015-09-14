@@ -63,4 +63,31 @@ public class VariabilityInfererManager {
 
 		return openFeaturesModel;
 	}
+
+	/**
+	 * Synthesizes and returns the closed features model.
+	 * @param synthesisProperties
+	 * @param languages
+	 * @param modularizationGraph
+	 * @param dependenciesGraph
+	 * @param project
+	 * @param openFeaturesModel
+	 * @return
+	 * @throws Exception
+	 */
+	public PFeatureModel synthesizeClosedFeaturesModel(
+			SynthesisProperties synthesisProperties, ArrayList<Language> languages,
+			EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph,
+			IProject project, PFeatureModel openFeaturesModel) throws Exception {
+		
+		FeaturesModelInference inferrer = synthesisProperties
+				.getVariabilityInferer();
+		
+		PFeatureModel closedFeaturesModel = inferrer.inferClosedFeaturesModel(
+				project, synthesisProperties, languages, modularizationGraph, openFeaturesModel);
+
+		return closedFeaturesModel;
+	}
+	
+	
 }

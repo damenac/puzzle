@@ -8,8 +8,8 @@
 		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="563" key="dialogHeight"/>
-		<item value="900" key="dialogWidth"/>
+		<item value="750" key="dialogHeight"/>
+		<item value="1200" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -20,11 +20,24 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.emf.importer.ui.EMFModelWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.pde.ui.NewProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.team.cvs.ui.newWizards"/>
 			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
-			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory/org.eclipse.emf.codegen.ecore.ui.mappingWizardCategory"/>
+			<item value="org.eclipse.emf.ecp.view.ide"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.emf.codegen.ui.JETNewWizards"/>
+			<item value="fr.inria.diverse.k3.category"/>
+			<item value="fr.inria.diverse.melange.category"/>
+			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.sirius.category"/>
 			<item value="org.eclipse.xtext.projectwiz"/>
+			<item value="org.eclipse.ui.Other"/>
+			<item value="org.eclipse.ui.Examples"/>
+			<item value="org.eclipse.ui.Examples/org.eclipse.gmf.examples.runtime"/>
+			<item value="org.eclipse.ui.Examples/org.eclipse.net4j.examples"/>
+			<item value="org.eclipse.ui.Examples/org.eclipse.uml2.examples.category"/>
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">

@@ -18,10 +18,12 @@ import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
-import fr.inria.diverse.k3.sle.common.graphsOperators.MembershipGraphPartition
 
 class SynthesisBuilder
 {
+	/**
+	 * Synthesizes a language product line from the family of DSLs described in the resource.
+	 */
 	def void synthesizeLanguageProductLine(Resource res, IProject project, IProgressMonitor monitor) {
 		val root = res.contents.head as ModelTypingSpace
 		var ArrayList<Language> languages = new ArrayList<Language>()
@@ -34,6 +36,7 @@ class SynthesisBuilder
 		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
 		var IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
 		var SynthesisProperties properties = this.synthesisProperties
+		
 		SynthesizerManager.instance.synthesizeLanguageProductLine(properties, languages, lplProject)
 		ProjectManagementServices.refreshProject(lplProject)
 	}
