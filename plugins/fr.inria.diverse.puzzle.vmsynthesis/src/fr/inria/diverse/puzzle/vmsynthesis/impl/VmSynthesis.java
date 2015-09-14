@@ -66,7 +66,6 @@ public class VmSynthesis {
 		List<DependencyVertex> currentLevel = firstLevelVertex;
 		
 		while(!dependenciesGraph.allIncluded()){
-			System.out.println("currentLevel: " + currentLevel);
 			List<DependencyVertex> directDependentVertex = dependenciesGraph.getDirectDependentVertex(currentLevel);
 			for (DependencyVertex dependencyVertex : directDependentVertex) {
 				if(!dependencyVertex.isIncluded()){
@@ -111,13 +110,35 @@ public class VmSynthesis {
 	
 	public PFeatureModel synthesizeClosedFeatureModel(String PCM, PFeatureModel openFeatureModel) throws Exception{
 		PFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
+		PCMQueryServices.getInstance().loadPCM(PCM);
+		
+		this.identifyMandatoryFeatures(closedFeatureModel.getRootFeature());
+		
 		return closedFeatureModel;
 	}
 	
+	private void identifyMandatoryFeatures(PFeature rootFeature) {
+		if(PCMQueryServices.getInstance().existsProductWithoutFeature(rootFeature.getName()))
+			rootFeature.setMandatory(false);
+		else
+			rootFeature.setMandatory(true);
+		
+		for (PFeature child : rootFeature.getChildren()) {
+			this.identifyMandatoryFeatures(child);
+		}
+		
+	}
+
 	// ----------------------------------------------------------
 	// Auxiliary Methods
 	// ----------------------------------------------------------
 	
+	/**
+	 * Clones the feature model in the parameter.
+	 * @param openFeatureModel
+	 * @return
+	 * @throws Exception
+	 */
 	private PFeatureModel cloneFeatureModel(PFeatureModel openFeatureModel) throws Exception {
 		PFeatureModel clone = VmFactory.eINSTANCE.createPFeatureModel();
 		clone.setName(openFeatureModel.getName());
@@ -131,6 +152,11 @@ public class VmSynthesis {
 		return clone;
 	}
 
+	/**
+	 * Clones (recursively) the feature in the parameter.
+	 * @param rootFeature
+	 * @return
+	 */
 	private PFeature cloneFeature(PFeature rootFeature) {
 		PFeature clone = VmFactory.eINSTANCE.createPFeature();
 		clone.setMandatory(rootFeature.isMandatory());
@@ -144,6 +170,13 @@ public class VmSynthesis {
 		return clone;
 	}
 
+	/**
+	 * Clones the constraint in the parameter.
+	 * @param root
+	 * @param constraint
+	 * @return
+	 * @throws Exception
+	 */
 	private PConstraint cloneConstraint(PFeature root, PConstraint constraint) throws Exception {
 		PConstraint clone = VmFactory.eINSTANCE.createPConstraint();
 		clone.setName(constraint.getName());
@@ -151,6 +184,13 @@ public class VmSynthesis {
 		return clone;
 	}
 	
+	/**
+	 * Clones the expression in the parameter.
+	 * @param root
+	 * @param expression
+	 * @return
+	 * @throws Exception
+	 */
 	private PBooleanExpression cloneExpression(PFeature root, PBooleanExpression expression) throws Exception {
 		if(expression instanceof PBinaryExpression){
 			PBinaryExpression binaryExpression = (PBinaryExpression)expression;

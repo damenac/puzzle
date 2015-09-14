@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.vos.Feature"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.vos.ProductLine"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.vos.Product"/>
@@ -23,8 +22,6 @@
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
 <fullyQualifiedTypeName name="vm.PBooleanExpression"/>
-<fullyQualifiedTypeName name="vm.PUnaryExpression"/>
-<fullyQualifiedTypeName name="vm.PUninaryOperator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
@@ -51,13 +48,16 @@
 <fullyQualifiedTypeName name="java.sql.Array"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="vm.util.VmSwitch"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyVertex"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
 <fullyQualifiedTypeName name="vm.PConstraint"/>
+<fullyQualifiedTypeName name="vm.PBinaryOperator"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 <fullyQualifiedTypeName name="vm.PBinaryExpression"/>
 <fullyQualifiedTypeName name="vm.PFeatureRef"/>
+<fullyQualifiedTypeName name="vm.PUnaryExpression"/>
 <fullyQualifiedTypeName name="vm.VmFactory"/>
-<fullyQualifiedTypeName name="vm.PBinaryOperator"/>
+<fullyQualifiedTypeName name="vm.PUninaryOperator"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
 </qualifiedTypeNameHistroy>

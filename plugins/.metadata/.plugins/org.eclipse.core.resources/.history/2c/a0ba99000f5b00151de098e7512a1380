@@ -1,0 +1,33 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+/**
+ * Provides query services for PCMs.
+ * @author David Mendez-Acuna
+ *
+ */
+public class PCMQueryServices {
+
+	// ----------------------------------------------------------
+	// Attributes
+	// ----------------------------------------------------------
+	
+	private static PCMQueryServices instance;
+	
+	// ----------------------------------------------------------
+	// Constructor and singleton
+	// ----------------------------------------------------------
+	
+	private PCMQueryServices(){
+		
+	}
+	
+	public static PCMQueryServices getInstance(){
+		if(instance == null)
+			instance = new PCMQueryServices();
+		return instance;
+	}
+	
+	// ----------------------------------------------------------
+	// Methods
+	// ----------------------------------------------------------
+}

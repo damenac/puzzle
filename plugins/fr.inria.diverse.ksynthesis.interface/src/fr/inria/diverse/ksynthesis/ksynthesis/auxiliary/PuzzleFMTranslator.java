@@ -47,8 +47,6 @@ public class PuzzleFMTranslator {
 		
 		gsd.synthesis.FeatureModel<String> originalFeatureModel = fmv.getHierarchy();
 		gsd.synthesis.FeatureGraph<String> diagram = originalFeatureModel.getDiagram();
-		System.out.println("diagram.getTopVertex(): " + diagram.getTopVertex());
-		System.out.println("diagram.getBottomVertex(): " + diagram.getBottomVertex());
 		
 		return fm;
 	}
