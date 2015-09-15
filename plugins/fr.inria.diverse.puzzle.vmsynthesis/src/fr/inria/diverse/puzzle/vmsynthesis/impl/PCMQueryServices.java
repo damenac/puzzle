@@ -1,5 +1,8 @@
 package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Provides query services for PCMs.
  * @author David Mendez-Acuna
@@ -74,6 +77,45 @@ public class PCMQueryServices {
 		return false;
 	}
 	
+	public ArrayList<String> getProductsContainingFeature(String feature){
+		ArrayList<String> answer = new ArrayList<String>();
+		for (int i = 1; i < PCM.length; i++) {
+			String currentProduct = PCM[i][0];
+			for (int j = 1; j < PCM[0].length; j++) {
+				if(PCM[0][j].replace("\"", "").equals(feature)){
+					if(PCM[i][j].replace("\"", "").equals("YES")){
+						answer.add(currentProduct);
+						break;
+					}
+				}
+			}
+		}
+		return answer;
+	}
+	
+	public boolean xor(List<String> features){
+		ArrayList<ArrayList<String>> productsSet = new ArrayList<ArrayList<String>>();
+		for (String feature : features) {
+			productsSet.add(this.getProductsContainingFeature(feature));
+		}
+		return this.disjointSets(productsSet);
+	}
+	
+	private boolean disjointSets(ArrayList<ArrayList<String>> set){
+		ArrayList<String> bigSet = new ArrayList<String>();
+		int sumCount = 0;
+		for (ArrayList<String> arrayList : set) {
+			sumCount += arrayList.size();
+			for (String string : arrayList) {
+				if(!bigSet.contains(string))
+					bigSet.add(string);
+			}
+		}
+		
+		return sumCount == bigSet.size();
+	}
+	
+	
 	public void loadPCM(String PCMString){
 		String[] products = PCMString.split("\n");
 		int productsAmount = products.length;
@@ -100,7 +142,7 @@ public class PCMQueryServices {
 	private void printPCM(){
 		for (int i = 0; i < PCM.length; i++) {
 			for (int j = 0; j < PCM[0].length; j++) {
-				System.out.print(PCM[i][j] + "|");
+				System.out.print(PCM[i][j] + ",");
 			}
 			System.out.println();
 		}

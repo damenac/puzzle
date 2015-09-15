@@ -1,5 +1,6 @@
 package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
@@ -139,6 +140,7 @@ public class VmSynthesis {
 		PCMQueryServices.getInstance().loadPCM(PCM);
 		
 		this.identifyMandatoryFeatures(closedFeatureModel.getRootFeature());
+		this.identifyXORs(closedFeatureModel.getRootFeature());
 		
 		return closedFeatureModel;
 	}
@@ -146,13 +148,77 @@ public class VmSynthesis {
 	private void identifyMandatoryFeatures(PFeature rootFeature) {
 		if(PCMQueryServices.getInstance().existsProductWithoutFeature(rootFeature.getName()))
 			rootFeature.setMandatory(false);
-		else
+		else{
 			rootFeature.setMandatory(true);
+			if(rootFeature.getParent() != null){
+				for (PFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
+					if(parentGroup.getFeatures().get(0).getName().equals(rootFeature.getName())){
+						parentGroup.getCardinality().setLowerBound(1);
+						parentGroup.getCardinality().setUpperBound(1);
+					}
+				}
+			}
+		}
 		
 		for (PFeature child : rootFeature.getChildren()) {
 			this.identifyMandatoryFeatures(child);
 		}
+	}
+	
+	private void identifyXORs(PFeature rootFeature){
+		// Deme los grupos de features opcionales
+		ArrayList<PFeature> initialGroup = new ArrayList<PFeature>();
+		for (PFeatureGroup group : rootFeature.getGroups()) {
+			if(group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1 &&
+					group.getFeatures().size() > 0){
+				initialGroup.add(group.getFeatures().get(0));
+			}
+		}
+
+		//Itere el grupo hasta que encuentre 
+		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
+		this.identifyXORRecursively(initialGroup, allXORs);
 		
+		//imprima los xors en la consola
+		for (ArrayList<PFeature> xor : allXORs) {
+			System.out.print("current xor: ");
+			for (PFeature pFeature : xor) {
+				System.out.print(pFeature.getName() + ",");
+			}
+			System.out.println();
+		}
+		
+		// vayase por todo el arbol haciendo la misma tarea!
+		for (PFeature child : rootFeature.getChildren()) {
+			this.identifyXORs(child);
+		}
+	}
+	
+	private void identifyXORRecursively(ArrayList<PFeature> group, ArrayList<ArrayList<PFeature>> allXORs){
+		// caso base, si existe el XOR. Retornelo!
+		ArrayList<String> features = new ArrayList<String>();
+		for (PFeature feature : group) {
+			features.add(feature.getName());
+		}
+		boolean xor = PCMQueryServices.getInstance().xor(features);
+		if(xor){
+			allXORs.add(group);
+			return;
+		}
+		
+		// caso recursivo, no hay xor, entonces vaya al fondo!
+		else{
+			for (PFeature feature : group) {
+				ArrayList<PFeature> recursiveFeatures = new ArrayList<PFeature>();
+				for (PFeature recursiveFeature : group) {
+					if(!recursiveFeature.getName().equals(feature.getName()))
+						recursiveFeatures.add(recursiveFeature);
+				}
+				if(recursiveFeatures.size() >= 2){
+					this.identifyXORRecursively(recursiveFeatures, allXORs);
+				}
+			}
+		}
 	}
 
 	// ----------------------------------------------------------
@@ -195,6 +261,11 @@ public class VmSynthesis {
 		for (PFeatureGroup group : rootFeature.getGroups()) {
 			PFeatureGroup newGroup = this.cloneFeatureGroup(group);
 			clone.getGroups().add(newGroup);
+			
+			for (PFeature feature : group.getFeatures()) {
+				PFeature groupFeature = this.getPFeatureByName(feature.getName(), clone);
+				newGroup.getFeatures().add(groupFeature);
+			}
 		}
 		return clone;
 	}
