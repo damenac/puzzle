@@ -1,7 +1,7 @@
 package fr.inria.diverse.melange.ui.menu
 
 import com.google.inject.Inject
-import fr.inria.diverse.melange.ui.builder.MetricsBuilder
+import fr.inria.diverse.melange.ui.builder.AnalysisBuilder
 import org.eclipse.core.commands.AbstractHandler
 import org.eclipse.core.commands.ExecutionEvent
 import org.eclipse.core.commands.ExecutionException
@@ -16,9 +16,13 @@ import org.eclipse.ui.handlers.HandlerUtil
 import org.eclipse.xtext.resource.DerivedStateAwareResource
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
 
+/**
+ * Hanlder for the action: Analyze Family
+ * @author David Mendez-Acuna
+ */
 class AnalyzeFamily extends AbstractHandler {
 	
-	@Inject MetricsBuilder builder
+	@Inject AnalysisBuilder builder
 	@Inject XtextResourceSetProvider rsProvider
 
 	override execute(ExecutionEvent event) throws ExecutionException {
@@ -45,7 +49,6 @@ class AnalyzeFamily extends AbstractHandler {
 				return Status.OK_STATUS
 			}
 		}.schedule
-
 		return null
 	}
 }

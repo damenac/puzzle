@@ -1,0 +1,14 @@
+package fr.inria.diverse.melange.ui.builder
+
+/**
+ * Builder for the action: Configure.
+ * Loads the input and performs the delegation to the corresponding plug-in.
+ * 
+ * @author David Mendez-Acuna
+ */
+class ConfigurationBuilder extends AbstractBuilder {
+	
+	def void configureDSL(Resource res, IProject project, IProgressMonitor monitor) {
+		
+	}
+}

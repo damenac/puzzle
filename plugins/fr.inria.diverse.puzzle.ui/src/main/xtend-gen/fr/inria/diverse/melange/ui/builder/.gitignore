@@ -5,3 +5,6 @@
 /.SyntaxBreakerBuilder.java._trace
 /.SynthesizerBuilder.java._trace
 /.SynthesisBuilder.java._trace
+/.ConfigurationBuilder.java._trace
+/.AnalysisBuilder.java._trace
+/.AbstractBuilder.java._trace

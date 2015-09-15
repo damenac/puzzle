@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename Java project &apos;Configurator&apos; to &apos;fr.inria.diverse.puzzle.configurator&apos;&#x0A;- Original element: &apos;Configurator&apos;&#x0A;- Renamed element: &apos;Configurator&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Configurator&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Configurator" name="fr.inria.diverse.puzzle.configurator" references="true" stamp="1442308296928" version="1.0"/>
+</session>

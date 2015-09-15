@@ -23,6 +23,12 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
+/**
+ * Builder for the action: Synthesize Language Product Line (LPL).
+ * Loads the input and performs the delegation to the corresponding plug-in.
+ * 
+ * @author David Mendez-Acuna
+ */
 @SuppressWarnings("all")
 public class SynthesisBuilder {
   /**

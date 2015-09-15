@@ -1,7 +1,7 @@
 package fr.inria.diverse.melange.ui.menu;
 
 import com.google.inject.Inject;
-import fr.inria.diverse.melange.ui.builder.MetricsBuilder;
+import fr.inria.diverse.melange.ui.builder.AnalysisBuilder;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -23,10 +23,14 @@ import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
+/**
+ * Hanlder for the action: Analyze Family
+ * @author David Mendez-Acuna
+ */
 @SuppressWarnings("all")
 public class AnalyzeFamily extends AbstractHandler {
   @Inject
-  private MetricsBuilder builder;
+  private AnalysisBuilder builder;
   
   @Inject
   private XtextResourceSetProvider rsProvider;

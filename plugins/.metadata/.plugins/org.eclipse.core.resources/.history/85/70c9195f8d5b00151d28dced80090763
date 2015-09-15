@@ -1,0 +1,47 @@
+package fr.inria.diverse.melange.ui.menu
+
+import javax.inject.Inject
+
+import org.eclipse.core.commands.AbstractHandler
+import org.eclipse.core.commands.ExecutionEvent
+import org.eclipse.core.commands.ExecutionException
+
+import fr.inria.diverse.melange.ui.builder.ConfigurationBuilder
+import org.eclipse.core.runtime.jobs.Job
+import org.eclipse.core.runtime.IProgressMonitor
+
+/**
+ * Hanlder for the action: Configure
+ * @author David Mendez-Acuna
+ */
+class Configure extends AbstractHandler {
+	
+	@Inject ConfigurationBuilder builder
+	
+	override execute(ExecutionEvent event) throws ExecutionException {
+		new Job("Puzzle: Configuring DSL") {
+			override run(IProgressMonitor monitor) {
+				try {
+					monitor.beginTask("Configuring a DSL in the Language Product Line", 4)
+
+					val sel = HandlerUtil.getActiveMenuSelection(event)
+					val selection = sel as IStructuredSelection
+					val resource = selection.firstElement as IResource
+					val project = resource.project
+					val rs = rsProvider.get(project)
+					val res = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString, true), true) as DerivedStateAwareResource
+
+					builder.computeMetrics(res, project, monitor)
+					
+				} catch (OperationCanceledException e) {
+					return Status.CANCEL_STATUS
+				} finally {
+					monitor.done
+				}
+
+				return Status.OK_STATUS
+			}
+		}.schedule
+		return null
+	}
+}

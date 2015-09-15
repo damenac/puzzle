@@ -1,0 +1,5 @@
+package fr.inria.diverse.melange.ui.builder
+
+class AbstractBuilder {
+	
+}

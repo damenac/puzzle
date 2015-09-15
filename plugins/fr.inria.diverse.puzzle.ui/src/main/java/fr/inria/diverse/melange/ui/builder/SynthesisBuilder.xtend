@@ -19,6 +19,12 @@ import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
 
+/**
+ * Builder for the action: Synthesize Language Product Line (LPL).
+ * Loads the input and performs the delegation to the corresponding plug-in.
+ * 
+ * @author David Mendez-Acuna
+ */
 class SynthesisBuilder
 {
 	/**

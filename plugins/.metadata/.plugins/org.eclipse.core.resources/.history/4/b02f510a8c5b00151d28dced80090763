@@ -1,0 +1,9 @@
+package fr.inria.diverse.melange.ui.menu
+
+/**
+ * Hanlder for the action: Configure
+ * @author David Mendez-Acuna
+ */
+class Configure {
+	
+}

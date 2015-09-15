@@ -23,6 +23,10 @@ import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
+/**
+ * Hanlder for the action: Synthesize Language Product Line (LPL)
+ * @author David Mendez-Acuna
+ */
 @SuppressWarnings("all")
 public class Synthesize extends AbstractHandler {
   @Inject
