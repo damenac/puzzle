@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.vos.Feature"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.vos.ProductLine"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.vos.Product"/>
-<fullyQualifiedTypeName name="gsd.synthesis.Expression"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FeatureModelsTranslator"/>
 <fullyQualifiedTypeName name="vm.FeatureModel"/>
 <fullyQualifiedTypeName name="vm.VmPackage"/>
 <fullyQualifiedTypeName name="fr.inria.familiar.fmlero.fmprimitives.FeatureModel"/>
 <fullyQualifiedTypeName name="gsd.synthesis.FeatureModel"/>
 <fullyQualifiedTypeName name="gsd.synthesis.FeatureGraph"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Feature"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator"/>
 <fullyQualifiedTypeName name="java.util.Hashtable"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Relation"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
-<fullyQualifiedTypeName name="vm.PFeatureGroup"/>
-<fullyQualifiedTypeName name="vm.PGroupKind"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Dependency"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
@@ -42,13 +31,9 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer"/>
 <fullyQualifiedTypeName name="fr.familiar.variable.FeatureModelVariable"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.auxiliary.PuzzleFMTranslator"/>
-<fullyQualifiedTypeName name="vm.PFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
-<fullyQualifiedTypeName name="vm.PFeature"/>
 <fullyQualifiedTypeName name="java.sql.Array"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="vm.util.VmSwitch"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyVertex"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
 <fullyQualifiedTypeName name="vm.PConstraint"/>
@@ -57,7 +42,22 @@
 <fullyQualifiedTypeName name="vm.PBinaryExpression"/>
 <fullyQualifiedTypeName name="vm.PFeatureRef"/>
 <fullyQualifiedTypeName name="vm.PUnaryExpression"/>
-<fullyQualifiedTypeName name="vm.VmFactory"/>
 <fullyQualifiedTypeName name="vm.PUninaryOperator"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Feature"/>
+<fullyQualifiedTypeName name="vm.PFeatureModel"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.FromPFeatureModelToFAMA"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.Configurator"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.ConfigurationFacade"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Relation"/>
+<fullyQualifiedTypeName name="vm.PGroupKind"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.featureModel.Cardinality"/>
+<fullyQualifiedTypeName name="vm.PFeatureGroupCardinality"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
+<fullyQualifiedTypeName name="vm.PFeature"/>
+<fullyQualifiedTypeName name="vm.VmFactory"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="vm.PFeatureGroup"/>
 </qualifiedTypeNameHistroy>

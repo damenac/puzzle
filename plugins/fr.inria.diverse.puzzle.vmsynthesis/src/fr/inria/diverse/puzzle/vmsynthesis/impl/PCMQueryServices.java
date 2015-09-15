@@ -147,4 +147,31 @@ public class PCMQueryServices {
 			System.out.println();
 		}
 	}
+
+	public boolean existsProductWithFeatureAWithoutFeatureB(String A,
+			String B) {
+		
+		for (int i = 1; i < PCM.length; i++) {
+			boolean withA = false;
+			for (int j = 1; j < PCM[0].length; j++) {
+				if(PCM[0][j].equals("\"" + A + "\"")){
+					if(PCM[i][j].equals("\"YES\""))
+						withA = true;
+				}
+			}
+			
+			boolean withoutB = false;
+			for (int j = 1; j < PCM[0].length; j++) {
+				if(PCM[0][j].equals("\"" + A + "\"")){
+					if(PCM[i][j].equals("\"NO\""))
+						withoutB = true;
+				}
+			}
+			
+			if(withA && withoutB)
+				return true;
+			
+		}
+		return false;
+	}
 }

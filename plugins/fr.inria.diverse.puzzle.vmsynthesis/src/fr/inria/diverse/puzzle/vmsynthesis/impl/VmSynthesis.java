@@ -139,45 +139,12 @@ public class VmSynthesis {
 		PFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
 		PCMQueryServices.getInstance().loadPCM(PCM);
 		
-		this.identifyMandatoryFeatures(closedFeatureModel.getRootFeature());
-		this.identifyXORs(closedFeatureModel.getRootFeature());
-		
-		return closedFeatureModel;
-	}
-	
-	private void identifyMandatoryFeatures(PFeature rootFeature) {
-		if(PCMQueryServices.getInstance().existsProductWithoutFeature(rootFeature.getName()))
-			rootFeature.setMandatory(false);
-		else{
-			rootFeature.setMandatory(true);
-			if(rootFeature.getParent() != null){
-				for (PFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
-					if(parentGroup.getFeatures().get(0).getName().equals(rootFeature.getName())){
-						parentGroup.getCardinality().setLowerBound(1);
-						parentGroup.getCardinality().setUpperBound(1);
-					}
-				}
-			}
+		for (PFeature child : closedFeatureModel.getRootFeature().getChildren()) {
+			this.identifyMandatoryFeatures(child, true);
 		}
 		
-		for (PFeature child : rootFeature.getChildren()) {
-			this.identifyMandatoryFeatures(child);
-		}
-	}
-	
-	private void identifyXORs(PFeature rootFeature){
-		// Deme los grupos de features opcionales
-		ArrayList<PFeature> initialGroup = new ArrayList<PFeature>();
-		for (PFeatureGroup group : rootFeature.getGroups()) {
-			if(group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1 &&
-					group.getFeatures().size() > 0){
-				initialGroup.add(group.getFeatures().get(0));
-			}
-		}
-
-		//Itere el grupo hasta que encuentre 
 		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
-		this.identifyXORRecursively(initialGroup, allXORs);
+		this.identifyXORs(closedFeatureModel.getRootFeature(), allXORs);
 		
 		//imprima los xors en la consola
 		for (ArrayList<PFeature> xor : allXORs) {
@@ -188,9 +155,63 @@ public class VmSynthesis {
 			System.out.println();
 		}
 		
+		return closedFeatureModel;
+	}
+	
+	private void identifyMandatoryFeatures(PFeature rootFeature, boolean root) {
+		if(root){
+			if(PCMQueryServices.getInstance().existsProductWithoutFeature(rootFeature.getName()))
+				rootFeature.setMandatory(false);
+			else{
+				rootFeature.setMandatory(true);
+				if(rootFeature.getParent() != null){
+					for (PFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
+						if(parentGroup.getFeatures().get(0).getName().equals(rootFeature.getName())){
+							parentGroup.getCardinality().setLowerBound(1);
+							parentGroup.getCardinality().setUpperBound(1);
+						}
+					}
+				}
+			}
+		}else{
+			if(PCMQueryServices.getInstance().existsProductWithFeatureAWithoutFeatureB(
+					rootFeature.getParent().getName(), rootFeature.getName())){
+				rootFeature.setMandatory(false);
+			}else{
+				rootFeature.setMandatory(true);
+				if(rootFeature.getParent() != null){
+					for (PFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
+						if(parentGroup.getFeatures().get(0).getName().equals(rootFeature.getName())){
+							parentGroup.getCardinality().setLowerBound(1);
+							parentGroup.getCardinality().setUpperBound(1);
+						}
+					}
+				}
+			}
+		}
+		
+		
+		for (PFeature child : rootFeature.getChildren()) {
+			this.identifyMandatoryFeatures(child, false);
+		}
+	}
+	
+	private void identifyXORs(PFeature rootFeature, ArrayList<ArrayList<PFeature>> allXORs){
+		// Deme los grupos de features opcionales
+		ArrayList<PFeature> initialGroup = new ArrayList<PFeature>();
+		for (PFeatureGroup group : rootFeature.getGroups()) {
+			if(group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1 &&
+					group.getFeatures().size() > 0){
+				initialGroup.add(group.getFeatures().get(0));
+			}
+		}
+
+		//Itere el grupo hasta que encuentre 
+		this.identifyXORRecursively(initialGroup, allXORs);
+		
 		// vayase por todo el arbol haciendo la misma tarea!
 		for (PFeature child : rootFeature.getChildren()) {
-			this.identifyXORs(child);
+			this.identifyXORs(child, allXORs);
 		}
 	}
 	
