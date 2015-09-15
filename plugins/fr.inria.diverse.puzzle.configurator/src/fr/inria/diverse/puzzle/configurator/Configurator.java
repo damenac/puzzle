@@ -88,10 +88,10 @@ public class Configurator {
 		// Implementing a VERY simple terminal configurator
 
 		System.out.println("The available options are:");
-		for (Option o : q.options) {
+		for (Option o : q.getOptions()) {
 			// we only ask about undecided options
-			if (o.state == State.undecided) {
-				System.out.println(o.name);
+			if (o.getState() == State.undecided) {
+				System.out.println(o.getName());
 			}
 		}
 		System.out.println("Select the options. Divide by using ; :");
@@ -119,7 +119,7 @@ public class Configurator {
 			Iterator<Feature> destination = next.getDestination();
 			while (destination.hasNext()) {
 				Feature next2 = destination.next();
-				q.options.add(new Option(next2.getName()));
+				q.getOptions().add(new Option(next2.getName()));
 				processFeatureInorder(next2);
 			}
 			conf.questions.add(q);

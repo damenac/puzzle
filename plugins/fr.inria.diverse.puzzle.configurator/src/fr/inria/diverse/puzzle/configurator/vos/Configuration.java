@@ -13,22 +13,34 @@ import fr.inria.diverse.puzzle.configurator.vos.Option.State;
  */
 public class Configuration {
 	
+	// --------------------------------------------------
+	// Attributes
+	// --------------------------------------------------
+	
 	public Collection<Question> questions;
 
+	// --------------------------------------------------
+	// Constructor
+	// --------------------------------------------------
+	
 	public Configuration() {
 		this.questions = new LinkedList<Question>();
 	}
 
+	// --------------------------------------------------
+	// Methods
+	// --------------------------------------------------
+	
 	public es.us.isa.FAMA.stagedConfigManager.Configuration getFAMAConfiguration() {
 		es.us.isa.FAMA.stagedConfigManager.Configuration conf = new es.us.isa.FAMA.stagedConfigManager.Configuration();
 
 		for (Question q : questions) {
-			for (Option o : q.options) {
-				if (o.state == State.selected) {
-					conf.addElement(new Feature(o.name), 1);
-				} else if (o.state == State.deselected) {
-					conf.addElement(new Feature(o.name), 0);
-				} else if (o.state == State.undecided) {
+			for (Option o : q.getOptions()) {
+				if (o.getState() == State.selected) {
+					conf.addElement(new Feature(o.getName()), 1);
+				} else if (o.getState() == State.deselected) {
+					conf.addElement(new Feature(o.getName()), 0);
+				} else if (o.getState() == State.undecided) {
 					// do nothing
 				}
 			}
@@ -38,14 +50,14 @@ public class Configuration {
 
 	public void setOption(Feature f, Boolean b) {
 		for (Question q : questions) {
-			for (Option o : q.options) {
-				if (o.name.equals(f.getName())) {
+			for (Option o : q.getOptions()) {
+				if (o.getName().equals(f.getName())) {
 					if (b == null) {
-						o.state = State.undecided;
+						o.setState(State.undecided);
 					} else if (b) {
-						o.state = State.selected;
+						o.setState(State.selected);
 					} else if (!b) {
-						o.state = State.deselected;
+						o.setState(State.deselected);
 					}
 				}
 			}
@@ -56,13 +68,13 @@ public class Configuration {
 	public String toString() {
 		String returnStr = "";
 		for (Question q : questions) {
-			for (Option o : q.options) {
-				returnStr += o.name + "=";
-				if (o.state == State.selected) {
+			for (Option o : q.getOptions()) {
+				returnStr += o.getName() + "=";
+				if (o.getState() == State.selected) {
 					returnStr += "selected";
-				} else if (o.state == State.deselected) {
+				} else if (o.getState() == State.deselected) {
 					returnStr += "deselected";
-				} else if (o.state == State.undecided) {
+				} else if (o.getState() == State.undecided) {
 					returnStr += "undecided";
 				}
 				returnStr += "\n";
