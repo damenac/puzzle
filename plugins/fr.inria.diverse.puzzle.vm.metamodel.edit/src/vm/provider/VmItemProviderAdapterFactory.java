@@ -141,6 +141,29 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link vm.PFeatureGroupCardinality} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PFeatureGroupCardinalityItemProvider pFeatureGroupCardinalityItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.PFeatureGroupCardinality}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPFeatureGroupCardinalityAdapter() {
+		if (pFeatureGroupCardinalityItemProvider == null) {
+			pFeatureGroupCardinalityItemProvider = new PFeatureGroupCardinalityItemProvider(this);
+		}
+
+		return pFeatureGroupCardinalityItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link vm.PConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -334,6 +357,7 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 		if (pFeatureModelItemProvider != null) pFeatureModelItemProvider.dispose();
 		if (pFeatureItemProvider != null) pFeatureItemProvider.dispose();
 		if (pFeatureGroupItemProvider != null) pFeatureGroupItemProvider.dispose();
+		if (pFeatureGroupCardinalityItemProvider != null) pFeatureGroupCardinalityItemProvider.dispose();
 		if (pConstraintItemProvider != null) pConstraintItemProvider.dispose();
 		if (pFeatureRefItemProvider != null) pFeatureRefItemProvider.dispose();
 		if (pUnaryExpressionItemProvider != null) pUnaryExpressionItemProvider.dispose();

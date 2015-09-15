@@ -242,13 +242,13 @@ public interface VmPackage extends EPackage {
 	int PFEATURE_GROUP__FEATURES = 0;
 
 	/**
-	 * The feature id for the '<em><b>Kind</b></em>' attribute.
+	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP__KIND = 1;
+	int PFEATURE_GROUP__CARDINALITY = 1;
 
 	/**
 	 * The number of structural features of the '<em>PFeature Group</em>' class.
@@ -269,6 +269,52 @@ public interface VmPackage extends EPackage {
 	int PFEATURE_GROUP_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link vm.impl.PFeatureGroupCardinalityImpl <em>PFeature Group Cardinality</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.PFeatureGroupCardinalityImpl
+	 * @see vm.impl.VmPackageImpl#getPFeatureGroupCardinality()
+	 * @generated
+	 */
+	int PFEATURE_GROUP_CARDINALITY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PFEATURE_GROUP_CARDINALITY__LOWER_BOUND = 0;
+
+	/**
+	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PFEATURE_GROUP_CARDINALITY__UPPER_BOUND = 1;
+
+	/**
+	 * The number of structural features of the '<em>PFeature Group Cardinality</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PFEATURE_GROUP_CARDINALITY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>PFeature Group Cardinality</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PFEATURE_GROUP_CARDINALITY_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link vm.impl.PConstraintImpl <em>PConstraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -276,7 +322,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getPConstraint()
 	 * @generated
 	 */
-	int PCONSTRAINT = 4;
+	int PCONSTRAINT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -322,7 +368,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getPBooleanExpression()
 	 * @generated
 	 */
-	int PBOOLEAN_EXPRESSION = 5;
+	int PBOOLEAN_EXPRESSION = 6;
 
 	/**
 	 * The number of structural features of the '<em>PBoolean Expression</em>' class.
@@ -350,7 +396,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getPFeatureRef()
 	 * @generated
 	 */
-	int PFEATURE_REF = 6;
+	int PFEATURE_REF = 7;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -387,7 +433,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getPUnaryExpression()
 	 * @generated
 	 */
-	int PUNARY_EXPRESSION = 7;
+	int PUNARY_EXPRESSION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -433,7 +479,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getPBinaryExpression()
 	 * @generated
 	 */
-	int PBINARY_EXPRESSION = 8;
+	int PBINARY_EXPRESSION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -479,16 +525,6 @@ public interface VmPackage extends EPackage {
 	 * @ordered
 	 */
 	int PBINARY_EXPRESSION_OPERATION_COUNT = PBOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vm.PGroupKind <em>PGroup Kind</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vm.PGroupKind
-	 * @see vm.impl.VmPackageImpl#getPGroupKind()
-	 * @generated
-	 */
-	int PGROUP_KIND = 9;
 
 	/**
 	 * The meta object id for the '{@link vm.PUninaryOperator <em>PUninary Operator</em>}' enum.
@@ -640,15 +676,47 @@ public interface VmPackage extends EPackage {
 	EReference getPFeatureGroup_Features();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PFeatureGroup#getKind <em>Kind</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.PFeatureGroup#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Kind</em>'.
-	 * @see vm.PFeatureGroup#getKind()
+	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
+	 * @see vm.PFeatureGroup#getCardinality()
 	 * @see #getPFeatureGroup()
 	 * @generated
 	 */
-	EAttribute getPFeatureGroup_Kind();
+	EReference getPFeatureGroup_Cardinality();
+
+	/**
+	 * Returns the meta object for class '{@link vm.PFeatureGroupCardinality <em>PFeature Group Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>PFeature Group Cardinality</em>'.
+	 * @see vm.PFeatureGroupCardinality
+	 * @generated
+	 */
+	EClass getPFeatureGroupCardinality();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PFeatureGroupCardinality#getLowerBound <em>Lower Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
+	 * @see vm.PFeatureGroupCardinality#getLowerBound()
+	 * @see #getPFeatureGroupCardinality()
+	 * @generated
+	 */
+	EAttribute getPFeatureGroupCardinality_LowerBound();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PFeatureGroupCardinality#getUpperBound <em>Upper Bound</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
+	 * @see vm.PFeatureGroupCardinality#getUpperBound()
+	 * @see #getPFeatureGroupCardinality()
+	 * @generated
+	 */
+	EAttribute getPFeatureGroupCardinality_UpperBound();
 
 	/**
 	 * Returns the meta object for class '{@link vm.PConstraint <em>PConstraint</em>}'.
@@ -776,16 +844,6 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPBinaryExpression_Operator();
-
-	/**
-	 * Returns the meta object for enum '{@link vm.PGroupKind <em>PGroup Kind</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>PGroup Kind</em>'.
-	 * @see vm.PGroupKind
-	 * @generated
-	 */
-	EEnum getPGroupKind();
 
 	/**
 	 * Returns the meta object for enum '{@link vm.PUninaryOperator <em>PUninary Operator</em>}'.
@@ -935,12 +993,38 @@ public interface VmPackage extends EPackage {
 		EReference PFEATURE_GROUP__FEATURES = eINSTANCE.getPFeatureGroup_Features();
 
 		/**
-		 * The meta object literal for the '<em><b>Kind</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PFEATURE_GROUP__KIND = eINSTANCE.getPFeatureGroup_Kind();
+		EReference PFEATURE_GROUP__CARDINALITY = eINSTANCE.getPFeatureGroup_Cardinality();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.PFeatureGroupCardinalityImpl <em>PFeature Group Cardinality</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.PFeatureGroupCardinalityImpl
+		 * @see vm.impl.VmPackageImpl#getPFeatureGroupCardinality()
+		 * @generated
+		 */
+		EClass PFEATURE_GROUP_CARDINALITY = eINSTANCE.getPFeatureGroupCardinality();
+
+		/**
+		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PFEATURE_GROUP_CARDINALITY__LOWER_BOUND = eINSTANCE.getPFeatureGroupCardinality_LowerBound();
+
+		/**
+		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PFEATURE_GROUP_CARDINALITY__UPPER_BOUND = eINSTANCE.getPFeatureGroupCardinality_UpperBound();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.PConstraintImpl <em>PConstraint</em>}' class.
@@ -1047,16 +1131,6 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PBINARY_EXPRESSION__OPERATOR = eINSTANCE.getPBinaryExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link vm.PGroupKind <em>PGroup Kind</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vm.PGroupKind
-		 * @see vm.impl.VmPackageImpl#getPGroupKind()
-		 * @generated
-		 */
-		EEnum PGROUP_KIND = eINSTANCE.getPGroupKind();
 
 		/**
 		 * The meta object literal for the '{@link vm.PUninaryOperator <em>PUninary Operator</em>}' enum.

@@ -1,16 +1,12 @@
 package fr.inria.diverse.puzzle.configurator;
 
-import java.util.Hashtable;
-import java.util.Iterator;
-
 import vm.PFeature;
+import vm.PFeatureGroup;
 import vm.PFeatureModel;
-import es.us.isa.FAMA.models.FAMAfeatureModel.Dependency;
-import es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import es.us.isa.FAMA.models.FAMAfeatureModel.Feature;
 import es.us.isa.FAMA.models.FAMAfeatureModel.Relation;
-import es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency;
+import es.us.isa.FAMA.models.featureModel.Cardinality;
 
 /**
  * Offers the services for translating feature models from diverse formats to the VM metamodel.
@@ -63,10 +59,20 @@ public class FromPFeatureModelToFAMA {
 	 */
 	private Feature fromFAMAFeatureToPFeature(PFeature pFeature){
 		Feature feature = new Feature(pFeature.getName());
-//		for (PFeature child : pFeature.getChildren()) {
-//			Feature newChild = this.fromFAMAFeatureToPFeature(child);
-//			
-//		}
+		
+		for (PFeatureGroup group : pFeature.getGroups()) {
+			Relation relation = new Relation();
+			relation.setParent(feature);
+			
+			Cardinality cardinality = new Cardinality(group.getCardinality().getLowerBound(), group.getCardinality().getUpperBound());
+			relation.addCardinality(cardinality);
+			
+			for (PFeature groupFeature : group.getFeatures()) {
+				Feature relationFeature = this.fromFAMAFeatureToPFeature(groupFeature);
+				relation.addDestination(relationFeature);
+			}
+		}
+		
 		return feature;
 	}
 	

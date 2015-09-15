@@ -5,10 +5,12 @@ package vm.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -17,7 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import vm.PFeature;
 import vm.PFeatureGroup;
-import vm.PGroupKind;
+import vm.PFeatureGroupCardinality;
 import vm.VmPackage;
 
 /**
@@ -28,7 +30,7 @@ import vm.VmPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link vm.impl.PFeatureGroupImpl#getFeatures <em>Features</em>}</li>
- *   <li>{@link vm.impl.PFeatureGroupImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link vm.impl.PFeatureGroupImpl#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,24 +48,14 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 	protected EList<PFeature> features;
 
 	/**
-	 * The default value of the '{@link #getKind() <em>Kind</em>}' attribute.
+	 * The cached value of the '{@link #getCardinality() <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getKind()
+	 * @see #getCardinality()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final PGroupKind KIND_EDEFAULT = PGroupKind.ALTERNATIVE;
-
-	/**
-	 * The cached value of the '{@link #getKind() <em>Kind</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getKind()
-	 * @generated
-	 * @ordered
-	 */
-	protected PGroupKind kind = KIND_EDEFAULT;
+	protected PFeatureGroupCardinality cardinality;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,8 +93,8 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PGroupKind getKind() {
-		return kind;
+	public PFeatureGroupCardinality getCardinality() {
+		return cardinality;
 	}
 
 	/**
@@ -110,11 +102,47 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setKind(PGroupKind newKind) {
-		PGroupKind oldKind = kind;
-		kind = newKind == null ? KIND_EDEFAULT : newKind;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE_GROUP__KIND, oldKind, kind));
+	public NotificationChain basicSetCardinality(PFeatureGroupCardinality newCardinality, NotificationChain msgs) {
+		PFeatureGroupCardinality oldCardinality = cardinality;
+		cardinality = newCardinality;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE_GROUP__CARDINALITY, oldCardinality, newCardinality);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCardinality(PFeatureGroupCardinality newCardinality) {
+		if (newCardinality != cardinality) {
+			NotificationChain msgs = null;
+			if (cardinality != null)
+				msgs = ((InternalEObject)cardinality).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VmPackage.PFEATURE_GROUP__CARDINALITY, null, msgs);
+			if (newCardinality != null)
+				msgs = ((InternalEObject)newCardinality).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VmPackage.PFEATURE_GROUP__CARDINALITY, null, msgs);
+			msgs = basicSetCardinality(newCardinality, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE_GROUP__CARDINALITY, newCardinality, newCardinality));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case VmPackage.PFEATURE_GROUP__CARDINALITY:
+				return basicSetCardinality(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -127,8 +155,8 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 		switch (featureID) {
 			case VmPackage.PFEATURE_GROUP__FEATURES:
 				return getFeatures();
-			case VmPackage.PFEATURE_GROUP__KIND:
-				return getKind();
+			case VmPackage.PFEATURE_GROUP__CARDINALITY:
+				return getCardinality();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,8 +174,8 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 				getFeatures().clear();
 				getFeatures().addAll((Collection<? extends PFeature>)newValue);
 				return;
-			case VmPackage.PFEATURE_GROUP__KIND:
-				setKind((PGroupKind)newValue);
+			case VmPackage.PFEATURE_GROUP__CARDINALITY:
+				setCardinality((PFeatureGroupCardinality)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -164,8 +192,8 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 			case VmPackage.PFEATURE_GROUP__FEATURES:
 				getFeatures().clear();
 				return;
-			case VmPackage.PFEATURE_GROUP__KIND:
-				setKind(KIND_EDEFAULT);
+			case VmPackage.PFEATURE_GROUP__CARDINALITY:
+				setCardinality((PFeatureGroupCardinality)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -181,26 +209,10 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 		switch (featureID) {
 			case VmPackage.PFEATURE_GROUP__FEATURES:
 				return features != null && !features.isEmpty();
-			case VmPackage.PFEATURE_GROUP__KIND:
-				return kind != KIND_EDEFAULT;
+			case VmPackage.PFEATURE_GROUP__CARDINALITY:
+				return cardinality != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (kind: ");
-		result.append(kind);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PFeatureGroupImpl

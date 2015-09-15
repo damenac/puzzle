@@ -16,9 +16,9 @@ import vm.PBooleanExpression;
 import vm.PConstraint;
 import vm.PFeature;
 import vm.PFeatureGroup;
+import vm.PFeatureGroupCardinality;
 import vm.PFeatureModel;
 import vm.PFeatureRef;
-import vm.PGroupKind;
 import vm.PNamedElement;
 import vm.PUnaryExpression;
 import vm.PUninaryOperator;
@@ -65,6 +65,13 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass pFeatureGroupCardinalityEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass pConstraintEClass = null;
 
 	/**
@@ -94,13 +101,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * @generated
 	 */
 	private EClass pBinaryExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum pGroupKindEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,8 +290,35 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPFeatureGroup_Kind() {
-		return (EAttribute)pFeatureGroupEClass.getEStructuralFeatures().get(1);
+	public EReference getPFeatureGroup_Cardinality() {
+		return (EReference)pFeatureGroupEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPFeatureGroupCardinality() {
+		return pFeatureGroupCardinalityEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPFeatureGroupCardinality_LowerBound() {
+		return (EAttribute)pFeatureGroupCardinalityEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPFeatureGroupCardinality_UpperBound() {
+		return (EAttribute)pFeatureGroupCardinalityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -407,15 +434,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getPGroupKind() {
-		return pGroupKindEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getPUninaryOperator() {
 		return pUninaryOperatorEEnum;
 	}
@@ -472,7 +490,11 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 
 		pFeatureGroupEClass = createEClass(PFEATURE_GROUP);
 		createEReference(pFeatureGroupEClass, PFEATURE_GROUP__FEATURES);
-		createEAttribute(pFeatureGroupEClass, PFEATURE_GROUP__KIND);
+		createEReference(pFeatureGroupEClass, PFEATURE_GROUP__CARDINALITY);
+
+		pFeatureGroupCardinalityEClass = createEClass(PFEATURE_GROUP_CARDINALITY);
+		createEAttribute(pFeatureGroupCardinalityEClass, PFEATURE_GROUP_CARDINALITY__LOWER_BOUND);
+		createEAttribute(pFeatureGroupCardinalityEClass, PFEATURE_GROUP_CARDINALITY__UPPER_BOUND);
 
 		pConstraintEClass = createEClass(PCONSTRAINT);
 		createEReference(pConstraintEClass, PCONSTRAINT__EXPRESSION);
@@ -492,7 +514,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEAttribute(pBinaryExpressionEClass, PBINARY_EXPRESSION__OPERATOR);
 
 		// Create enums
-		pGroupKindEEnum = createEEnum(PGROUP_KIND);
 		pUninaryOperatorEEnum = createEEnum(PUNINARY_OPERATOR);
 		pBinaryOperatorEEnum = createEEnum(PBINARY_OPERATOR);
 	}
@@ -548,7 +569,11 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 
 		initEClass(pFeatureGroupEClass, PFeatureGroup.class, "PFeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPFeatureGroup_Features(), this.getPFeature(), null, "features", null, 1, -1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPFeatureGroup_Kind(), this.getPGroupKind(), "kind", null, 0, 1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeatureGroup_Cardinality(), this.getPFeatureGroupCardinality(), null, "cardinality", null, 1, 1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pFeatureGroupCardinalityEClass, PFeatureGroupCardinality.class, "PFeatureGroupCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPFeatureGroupCardinality_LowerBound(), ecorePackage.getEInt(), "lowerBound", null, 1, 1, PFeatureGroupCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPFeatureGroupCardinality_UpperBound(), ecorePackage.getEInt(), "upperBound", null, 1, 1, PFeatureGroupCardinality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pConstraintEClass, PConstraint.class, "PConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPConstraint_Expression(), this.getPBooleanExpression(), null, "expression", null, 1, 1, PConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -568,10 +593,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEAttribute(getPBinaryExpression_Operator(), this.getPBinaryOperator(), "operator", null, 0, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(pGroupKindEEnum, PGroupKind.class, "PGroupKind");
-		addEEnumLiteral(pGroupKindEEnum, PGroupKind.ALTERNATIVE);
-		addEEnumLiteral(pGroupKindEEnum, PGroupKind.OPTIONAL);
-
 		initEEnum(pUninaryOperatorEEnum, PUninaryOperator.class, "PUninaryOperator");
 		addEEnumLiteral(pUninaryOperatorEEnum, PUninaryOperator.NOT);
 

@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link vm.PFeatureGroup#getFeatures <em>Features</em>}</li>
- *   <li>{@link vm.PFeatureGroup#getKind <em>Kind</em>}</li>
+ *   <li>{@link vm.PFeatureGroup#getCardinality <em>Cardinality</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,32 +41,29 @@ public interface PFeatureGroup extends EObject {
 	EList<PFeature> getFeatures();
 
 	/**
-	 * Returns the value of the '<em><b>Kind</b></em>' attribute.
-	 * The literals are from the enumeration {@link vm.PGroupKind}.
+	 * Returns the value of the '<em><b>Cardinality</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Kind</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Cardinality</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Kind</em>' attribute.
-	 * @see vm.PGroupKind
-	 * @see #setKind(PGroupKind)
-	 * @see vm.VmPackage#getPFeatureGroup_Kind()
-	 * @model
+	 * @return the value of the '<em>Cardinality</em>' containment reference.
+	 * @see #setCardinality(PFeatureGroupCardinality)
+	 * @see vm.VmPackage#getPFeatureGroup_Cardinality()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	PGroupKind getKind();
+	PFeatureGroupCardinality getCardinality();
 
 	/**
-	 * Sets the value of the '{@link vm.PFeatureGroup#getKind <em>Kind</em>}' attribute.
+	 * Sets the value of the '{@link vm.PFeatureGroup#getCardinality <em>Cardinality</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kind</em>' attribute.
-	 * @see vm.PGroupKind
-	 * @see #getKind()
+	 * @param value the new value of the '<em>Cardinality</em>' containment reference.
+	 * @see #getCardinality()
 	 * @generated
 	 */
-	void setKind(PGroupKind value);
+	void setCardinality(PFeatureGroupCardinality value);
 
 } // PFeatureGroup

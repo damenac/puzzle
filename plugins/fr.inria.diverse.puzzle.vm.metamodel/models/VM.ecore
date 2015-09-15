@@ -22,11 +22,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="PFeatureGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
         upperBound="-1" eType="#//PFeature"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//PGroupKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
+        eType="#//PFeatureGroupCardinality" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="PGroupKind">
-    <eLiterals name="alternative"/>
-    <eLiterals name="optional" value="1"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PFeatureGroupCardinality">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PConstraint" eSuperTypes="#//PNamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"

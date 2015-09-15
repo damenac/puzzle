@@ -10,7 +10,6 @@ import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureModel;
 import vm.PFeatureRef;
-import vm.PGroupKind;
 import vm.PUnaryExpression;
 import vm.PUninaryOperator;
 import vm.VmFactory;
@@ -146,10 +145,10 @@ public class FromFAMAToPFeatureModel {
 			Relation currentRelation = (Relation) relations.next();
 			PFeatureGroup featureGroup = VmFactory.eINSTANCE.createPFeatureGroup();
 			
-			if(currentRelation.isAlternative())
-				featureGroup.setKind(PGroupKind.ALTERNATIVE);
-			else if(currentRelation.isOptional())
-				featureGroup.setKind(PGroupKind.OPTIONAL);
+//			if(currentRelation.isAlternative())
+//				featureGroup.setKind(PGroupKind.ALTERNATIVE);
+//			else if(currentRelation.isOptional())
+//				featureGroup.setKind(PGroupKind.OPTIONAL);
 			
 			Iterator<Feature> featuresIterator = currentRelation.getDestination();
 			while (featuresIterator.hasNext()) {

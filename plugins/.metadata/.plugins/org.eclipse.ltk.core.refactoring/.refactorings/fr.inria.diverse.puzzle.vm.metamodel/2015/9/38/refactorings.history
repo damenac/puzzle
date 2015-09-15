@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;fr.inria.diverse.puzzle.vm.metamodel&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.vm.metamodel&apos;&#x0A;- Original elements:&#x0A;     fr.inria.diverse.puzzle.vm.metamodel/src/vm&#x0A;     fr.inria.diverse.puzzle.vm.metamodel/src/vm.impl&#x0A;     fr.inria.diverse.puzzle.vm.metamodel/src/vm.util&#x0A;- Delete subpackages" description="Delete elements" element1="/src&lt;vm.util" element2="/src&lt;vm.impl" element3="/src&lt;vm" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1442316081368" subPackages="true" version="1.0"/>
+</session>

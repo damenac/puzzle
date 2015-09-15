@@ -49,6 +49,7 @@ public class PUnaryExpressionImpl extends PBooleanExpressionImpl implements PUna
 	 * @ordered
 	 */
 	protected static final PUninaryOperator OPERATOR_EDEFAULT = PUninaryOperator.NOT;
+
 	/**
 	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
 	 * <!-- begin-user-doc -->

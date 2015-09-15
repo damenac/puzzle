@@ -60,6 +60,7 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 			case VmPackage.PFEATURE_MODEL: return createPFeatureModel();
 			case VmPackage.PFEATURE: return createPFeature();
 			case VmPackage.PFEATURE_GROUP: return createPFeatureGroup();
+			case VmPackage.PFEATURE_GROUP_CARDINALITY: return createPFeatureGroupCardinality();
 			case VmPackage.PCONSTRAINT: return createPConstraint();
 			case VmPackage.PFEATURE_REF: return createPFeatureRef();
 			case VmPackage.PUNARY_EXPRESSION: return createPUnaryExpression();
@@ -77,8 +78,6 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case VmPackage.PGROUP_KIND:
-				return createPGroupKindFromString(eDataType, initialValue);
 			case VmPackage.PUNINARY_OPERATOR:
 				return createPUninaryOperatorFromString(eDataType, initialValue);
 			case VmPackage.PBINARY_OPERATOR:
@@ -96,8 +95,6 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case VmPackage.PGROUP_KIND:
-				return convertPGroupKindToString(eDataType, instanceValue);
 			case VmPackage.PUNINARY_OPERATOR:
 				return convertPUninaryOperatorToString(eDataType, instanceValue);
 			case VmPackage.PBINARY_OPERATOR:
@@ -142,6 +139,16 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PFeatureGroupCardinality createPFeatureGroupCardinality() {
+		PFeatureGroupCardinalityImpl pFeatureGroupCardinality = new PFeatureGroupCardinalityImpl();
+		return pFeatureGroupCardinality;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public PConstraint createPConstraint() {
 		PConstraintImpl pConstraint = new PConstraintImpl();
 		return pConstraint;
@@ -175,26 +182,6 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	public PBinaryExpression createPBinaryExpression() {
 		PBinaryExpressionImpl pBinaryExpression = new PBinaryExpressionImpl();
 		return pBinaryExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PGroupKind createPGroupKindFromString(EDataType eDataType, String initialValue) {
-		PGroupKind result = PGroupKind.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertPGroupKindToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

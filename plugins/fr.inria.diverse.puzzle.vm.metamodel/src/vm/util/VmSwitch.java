@@ -92,6 +92,12 @@ public class VmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case VmPackage.PFEATURE_GROUP_CARDINALITY: {
+				PFeatureGroupCardinality pFeatureGroupCardinality = (PFeatureGroupCardinality)theEObject;
+				T result = casePFeatureGroupCardinality(pFeatureGroupCardinality);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case VmPackage.PCONSTRAINT: {
 				PConstraint pConstraint = (PConstraint)theEObject;
 				T result = casePConstraint(pConstraint);
@@ -187,6 +193,21 @@ public class VmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePFeatureGroup(PFeatureGroup object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PFeature Group Cardinality</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PFeature Group Cardinality</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePFeatureGroupCardinality(PFeatureGroupCardinality object) {
 		return null;
 	}
 

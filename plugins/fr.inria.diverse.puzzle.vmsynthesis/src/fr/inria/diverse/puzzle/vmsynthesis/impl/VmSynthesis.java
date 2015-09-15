@@ -10,6 +10,8 @@ import vm.PBinaryOperator;
 import vm.PBooleanExpression;
 import vm.PConstraint;
 import vm.PFeature;
+import vm.PFeatureGroup;
+import vm.PFeatureGroupCardinality;
 import vm.PFeatureModel;
 import vm.PFeatureRef;
 import vm.PUnaryExpression;
@@ -50,6 +52,9 @@ public class VmSynthesis {
 	public PFeatureModel synthesizeOpenFeatureModel(DependencyGraph dependenciesGraph){
 		PFeatureModel featureModel = VmFactory.eINSTANCE.createPFeatureModel();
 		
+		//TODO Put a real family name to the feature model.
+		featureModel.setName("FeatureModel");
+		
 		PFeature rootFeature = VmFactory.eINSTANCE.createPFeature();
 		rootFeature.setMandatory(true);
 		rootFeature.setName("Root");
@@ -57,10 +62,21 @@ public class VmSynthesis {
 		// Step 2: The first level features are those vertex in the graph such that they have not dependencies with other vertex.
 		List<DependencyVertex> firstLevelVertex = dependenciesGraph.getIndendependentVertex();
 		for (DependencyVertex dependencyVertex : firstLevelVertex) {
+			dependencyVertex.setIncluded(true);
+			
 			PFeature feature = VmFactory.eINSTANCE.createPFeature();
 			feature.setName(dependencyVertex.getIdentifier());
 			feature.setParent(rootFeature);
-			dependencyVertex.setIncluded(true);
+			
+			PFeatureGroup featureGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+			featureGroup.getFeatures().add(feature);
+			
+			PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+			cardinality.setLowerBound(0);
+			cardinality.setUpperBound(1);
+			featureGroup.setCardinality(cardinality);
+			
+			rootFeature.getGroups().add(featureGroup);
 		}
 		
 		List<DependencyVertex> currentLevel = firstLevelVertex;
@@ -80,6 +96,16 @@ public class VmSynthesis {
 								// Esta feature no tiene padre. Asignelo.
 								PFeature parent = this.getPFeatureByName(dependencyArc.getTo().getIdentifier(), rootFeature);
 								feature.setParent(parent);
+								
+								PFeatureGroup featureGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+								featureGroup.getFeatures().add(feature);
+								
+								PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+								cardinality.setLowerBound(0);
+								cardinality.setUpperBound(1);
+								featureGroup.setCardinality(cardinality);
+								
+								parent.getGroups().add(featureGroup);
 							}else{
 								// Esta feature ya tiene padre. Cree la constraint.
 								PFeature requiredFeature = this.getPFeatureByName(dependencyArc.getTo().getIdentifier(), rootFeature);
@@ -148,7 +174,6 @@ public class VmSynthesis {
 			PConstraint clonedConstraint = this.cloneConstraint(clone.getRootFeature(), constraint);
 			clone.getConstraints().add(clonedConstraint);
 		}
-		
 		return clone;
 	}
 
@@ -167,6 +192,35 @@ public class VmSynthesis {
 			clone.getChildren().add(cloneChild);
 		}
 		
+		for (PFeatureGroup group : rootFeature.getGroups()) {
+			PFeatureGroup newGroup = this.cloneFeatureGroup(group);
+			clone.getGroups().add(newGroup);
+		}
+		return clone;
+	}
+
+	/**
+	 * Clones the group in the parameter. 
+	 * @param group
+	 * @return
+	 */
+	private PFeatureGroup cloneFeatureGroup(PFeatureGroup group) {
+		PFeatureGroup clone = VmFactory.eINSTANCE.createPFeatureGroup();
+		PFeatureGroupCardinality clonedCardinality = this.cloneFeatureGroupCardinality(group.getCardinality());
+		clone.setCardinality(clonedCardinality);
+		return clone;
+	}
+	
+	/**
+	 * Clones the feature group cardinality in the parameter.
+	 * @param cardinality
+	 * @return
+	 */
+	private PFeatureGroupCardinality cloneFeatureGroupCardinality(
+			PFeatureGroupCardinality cardinality) {
+		PFeatureGroupCardinality clone = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		clone.setLowerBound(cardinality.getLowerBound());
+		clone.setUpperBound(cardinality.getUpperBound());
 		return clone;
 	}
 

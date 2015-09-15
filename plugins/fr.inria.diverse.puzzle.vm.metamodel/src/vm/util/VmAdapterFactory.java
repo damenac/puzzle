@@ -84,6 +84,10 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 				return createPFeatureGroupAdapter();
 			}
 			@Override
+			public Adapter casePFeatureGroupCardinality(PFeatureGroupCardinality object) {
+				return createPFeatureGroupCardinalityAdapter();
+			}
+			@Override
 			public Adapter casePConstraint(PConstraint object) {
 				return createPConstraintAdapter();
 			}
@@ -176,6 +180,20 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPFeatureGroupAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.PFeatureGroupCardinality <em>PFeature Group Cardinality</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.PFeatureGroupCardinality
+	 * @generated
+	 */
+	public Adapter createPFeatureGroupCardinalityAdapter() {
 		return null;
 	}
 

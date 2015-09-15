@@ -6,10 +6,6 @@
     operationReflection="true" importOrganizing="true">
   <foreignModel>VM.ecore</foreignModel>
   <genPackages prefix="Vm" disposableProviderFactory="true" ecorePackage="VM.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VM.ecore#//PGroupKind">
-      <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PGroupKind/alternative"/>
-      <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PGroupKind/optional"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="VM.ecore#//PUninaryOperator">
       <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PUninaryOperator/not"/>
     </genEnums>
@@ -34,7 +30,11 @@
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//PFeatureGroup">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureGroup/features"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PFeatureGroup/kind"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureGroup/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PFeatureGroupCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PFeatureGroupCardinality/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PFeatureGroupCardinality/upperBound"/>
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//PConstraint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PConstraint/expression"/>

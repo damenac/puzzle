@@ -49,6 +49,15 @@ public interface VmFactory extends EFactory {
 	PFeatureGroup createPFeatureGroup();
 
 	/**
+	 * Returns a new object of class '<em>PFeature Group Cardinality</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PFeature Group Cardinality</em>'.
+	 * @generated
+	 */
+	PFeatureGroupCardinality createPFeatureGroupCardinality();
+
+	/**
 	 * Returns a new object of class '<em>PConstraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
