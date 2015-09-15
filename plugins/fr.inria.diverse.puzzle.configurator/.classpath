@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="lib/ChocoReasoner-1.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/FaMaFeatureModel-0.9.1.jar"/>
 	<classpathentry kind="lib" path="lib/FaMaSDK-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

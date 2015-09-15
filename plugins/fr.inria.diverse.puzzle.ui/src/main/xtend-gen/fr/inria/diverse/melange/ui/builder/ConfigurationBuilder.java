@@ -2,12 +2,12 @@ package fr.inria.diverse.melange.ui.builder;
 
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.melange.ui.builder.AbstractBuilder;
+import fr.inria.diverse.puzzle.configurator.ConfigurationFacade;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import vm.PFeatureModel;
 
 /**
@@ -23,6 +23,7 @@ public class ConfigurationBuilder extends AbstractBuilder {
     String _string = _location.toString();
     EObject _loadXMIFile = ModelUtils.loadXMIFile(_string);
     PFeatureModel fm = ((PFeatureModel) _loadXMIFile);
-    InputOutput.<String>println(("PFeatureModel: " + fm));
+    ConfigurationFacade _instance = ConfigurationFacade.getInstance();
+    _instance.configure(fm);
   }
 }

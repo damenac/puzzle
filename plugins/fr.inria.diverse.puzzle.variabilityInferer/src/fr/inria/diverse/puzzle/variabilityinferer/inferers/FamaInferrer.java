@@ -21,7 +21,7 @@ import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FeatureModelsTranslator;
+import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FromFAMAToPFeatureModel;
 import fr.inria.diverse.puzzle.variabilityinferer.auxiliar.PCMsGenerator;
 
 /**
@@ -54,7 +54,7 @@ public class FamaInferrer implements FeaturesModelInference{
 				+ "/variabilityModel.xml";
 		
 		FAMAFeatureModel famafm = FamaSynthesizer.getInstance().synthesizeFeatureModelFromPCM(inputFile, outputFile);
-		PFeatureModel fm = FeatureModelsTranslator.getInstance().fromFAMAFeatureModelToFeatureModel(famafm);
+		PFeatureModel fm = FromFAMAToPFeatureModel.getInstance().fromFAMAFeatureModelToFeatureModel(famafm);
 		this.createTechnologicalConstraints(fm, dependenciesGraph);
 		return fm;
 	}
