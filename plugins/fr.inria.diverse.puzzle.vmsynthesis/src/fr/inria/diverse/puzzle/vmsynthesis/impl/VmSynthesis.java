@@ -235,8 +235,11 @@ public class VmSynthesis {
 				// Create new XOR group
 				System.out.print("new group! ");
 				for (PFeature pFeature : xor) {
+					PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
+					rootFeature.getGroups().remove(featureGroup);
 					System.out.print(pFeature.getName() + ",");
 				}
+				this.createXORGroup(rootFeature, xor);
 				System.out.println();
 				// Add to the already considered elements. 
 				added.addAll(xor);
@@ -244,6 +247,26 @@ public class VmSynthesis {
 		}
 	}
 
+	private PFeatureGroup getGroupByFeature(PFeature rootFeature, PFeature feature) {
+		for (PFeatureGroup currentGroup : rootFeature.getGroups()) {
+			if(currentGroup.getFeatures().contains(feature))
+				return currentGroup;
+		}
+		return null;
+	}
+
+	private void createXORGroup(PFeature rootFeature, ArrayList<PFeature> xor) {
+		PFeatureGroup XORGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+		XORGroup.getFeatures().addAll(xor);
+		
+		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		cardinality.setLowerBound(0); // FIXME
+		cardinality.setUpperBound(1);
+		XORGroup.setCardinality(cardinality);
+		
+		rootFeature.getGroups().add(XORGroup);
+	}
+	
 	private void sortBySize(ArrayList<ArrayList<PFeature>> group) {
 		// TODO Auto-generated method stub
 		
