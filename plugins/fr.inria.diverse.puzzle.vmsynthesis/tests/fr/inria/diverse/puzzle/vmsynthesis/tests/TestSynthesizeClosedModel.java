@@ -7,6 +7,7 @@ import java.io.FileReader;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
 import vm.PFeature;
 import vm.PFeatureGroup;
@@ -185,8 +186,14 @@ public class TestSynthesizeClosedModel {
 	// -------------------------------------------------
 	
 	@Test
-	public void synthesizeClosedFeaturesModelTest() throws Exception{
-		PFeatureModel closedFM = synthesis.synthesizeClosedFeatureModel(PCM, openFM);
+	public void testIdentifyMandatoryFeatures() throws Exception{
+		PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
+		PCMQueryServices.getInstance().loadPCM(PCM);
+		
+		synthesis.identifyMandatoryFeatures(closedFM);
+		this.printFM(closedFM);
+		
+		synthesis.identifyXORs(closedFM);
 		this.printFM(closedFM);
 	}
 	
@@ -196,13 +203,17 @@ public class TestSynthesizeClosedModel {
 	
 	private void printFM(PFeatureModel fm){
 		System.out.println(fm.getName());
-		this.printFeature("", fm.getRootFeature());
+		this.printFeature("", " +", fm.getRootFeature());
 	}
 	
-	private void printFeature(String space, PFeature feature){
-		System.out.println(space + feature.getName() + " Mandatory: " + feature.isMandatory());
-		for (PFeature child : feature.getChildren()) {
-			this.printFeature(space + "  ", child);
+	private void printFeature(String space, String groupString, PFeature feature){
+		System.out.println(space + groupString + feature.getName() + " [mandatory: " + feature.isMandatory() + "]");
+		int i = 1;
+		for (PFeatureGroup group : feature.getGroups()) {
+			for (PFeature childFeature : group.getFeatures()) {
+				this.printFeature("    " + space, " Group: " + i + ": ", childFeature);
+			}
+			i++;
 		}
 	}
 }

@@ -139,27 +139,29 @@ public class VmSynthesis {
 		PFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
 		PCMQueryServices.getInstance().loadPCM(PCM);
 		
-		for (PFeature child : closedFeatureModel.getRootFeature().getChildren()) {
-			this.identifyMandatoryFeatures(child, true);
-		}
-		
-//		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
-//		this.identifyXORs(closedFeatureModel.getRootFeature(), allXORs);
-//		
-//		//imprima los xors en la consola
-//		for (ArrayList<PFeature> xor : allXORs) {
-//			System.out.print("current xor: ");
-//			for (PFeature pFeature : xor) {
-//				System.out.print(pFeature.getName() + ",");
-//			}
-//			System.out.println();
-//		}
+		this.identifyMandatoryFeatures(closedFeatureModel);
+		this.identifyXORs(closedFeatureModel);
 		
 		return closedFeatureModel;
 	}
 	
-	private void identifyMandatoryFeatures(PFeature rootFeature, boolean root) {
-		if(root){
+	/**
+	 * Identifies the mandatory features in the feature model received in the parameter.
+	 * @param fm. Feature model under study. 
+	 */
+	public void identifyMandatoryFeatures(PFeatureModel fm){
+		for (PFeature child : fm.getRootFeature().getChildren()) {
+			this.identifyMandatoryFeatures(child, true);
+		}
+	}
+	
+	/**
+	 * Identifies the mandatory features recursively starting by the feature in the parameter.
+	 * @param rootFeature. The root feature of the hierarchy.
+	 * @param isRoot. Indicates if the current feature is the feature of the feature model. 
+	 */
+	private void identifyMandatoryFeatures(PFeature rootFeature, boolean isRoot) {
+		if(isRoot){
 			if(PCMQueryServices.getInstance().existsProductWithoutFeature(rootFeature.getName()))
 				rootFeature.setMandatory(false);
 			else{
@@ -174,8 +176,10 @@ public class VmSynthesis {
 				}
 			}
 		}else{
-			if(PCMQueryServices.getInstance().existsProductWithFeatureAWithoutFeatureB(
-					rootFeature.getParent().getName(), rootFeature.getName())){
+			boolean optional = PCMQueryServices.getInstance().
+				existsProductWithFeatureAWithoutFeatureB(rootFeature.getParent().getName(), rootFeature.getName());
+			
+			if(optional){
 				rootFeature.setMandatory(false);
 			}else{
 				rootFeature.setMandatory(true);
@@ -195,8 +199,30 @@ public class VmSynthesis {
 		}
 	}
 	
+	/**
+	 * Identifies the XOR groups in the feature model received in the parameter.
+	 * @param fm. Feature model under study. 
+	 */
+	public void identifyXORs(PFeatureModel fm) {
+		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
+		this.identifyXORs(fm.getRootFeature(), allXORs);
+		
+		//imprima los xors en la consola
+		for (ArrayList<PFeature> xor : allXORs) {
+			System.out.print("current xor: ");
+			for (PFeature pFeature : xor) {
+				System.out.print(pFeature.getName() + ",");
+			}
+			System.out.println();
+		}
+	}
+	
+	/**
+	 * Identifies the XOR groups recursively starting by the feature in the parameter.
+	 * @param rootFeature. The root feature of the hierarchy.
+	 * @param allXORs. A collection where the XOR groups will be acumulated. 
+	 */
 	private void identifyXORs(PFeature rootFeature, ArrayList<ArrayList<PFeature>> allXORs){
-		// Deme los grupos de features opcionales
 		ArrayList<PFeature> initialGroup = new ArrayList<PFeature>();
 		for (PFeatureGroup group : rootFeature.getGroups()) {
 			if(group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1 &&
@@ -204,18 +230,19 @@ public class VmSynthesis {
 				initialGroup.add(group.getFeatures().get(0));
 			}
 		}
-
-		//Itere el grupo hasta que encuentre 
-		this.identifyXORRecursively(initialGroup, allXORs);
-		
-		// vayase por todo el arbol haciendo la misma tarea!
+		this.identifyXORByCombination(initialGroup, allXORs);
 		for (PFeature child : rootFeature.getChildren()) {
 			this.identifyXORs(child, allXORs);
 		}
 	}
 	
-	private void identifyXORRecursively(ArrayList<PFeature> group, ArrayList<ArrayList<PFeature>> allXORs){
-		// caso base, si existe el XOR. Retornelo!
+	/**
+	 * Identifies the XOR groups existing in the feature in the parameter. This method considers 
+	 * all the possible group combinations.
+	 * @param group
+	 * @param allXORs
+	 */
+	private void identifyXORByCombination(ArrayList<PFeature> group, ArrayList<ArrayList<PFeature>> allXORs){
 		ArrayList<String> features = new ArrayList<String>();
 		for (PFeature feature : group) {
 			features.add(feature.getName());
@@ -225,8 +252,6 @@ public class VmSynthesis {
 			allXORs.add(group);
 			return;
 		}
-		
-		// caso recursivo, no hay xor, entonces vaya al fondo!
 		else{
 			for (PFeature feature : group) {
 				ArrayList<PFeature> recursiveFeatures = new ArrayList<PFeature>();
@@ -235,7 +260,7 @@ public class VmSynthesis {
 						recursiveFeatures.add(recursiveFeature);
 				}
 				if(recursiveFeatures.size() >= 2){
-					this.identifyXORRecursively(recursiveFeatures, allXORs);
+					this.identifyXORByCombination(recursiveFeatures, allXORs);
 				}
 			}
 		}
@@ -251,7 +276,7 @@ public class VmSynthesis {
 	 * @return
 	 * @throws Exception
 	 */
-	private PFeatureModel cloneFeatureModel(PFeatureModel openFeatureModel) throws Exception {
+	public PFeatureModel cloneFeatureModel(PFeatureModel openFeatureModel) throws Exception {
 		PFeatureModel clone = VmFactory.eINSTANCE.createPFeatureModel();
 		clone.setName(openFeatureModel.getName());
 		clone.setRootFeature(this.cloneFeature(openFeatureModel.getRootFeature()));
