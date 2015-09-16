@@ -233,14 +233,11 @@ public class VmSynthesis {
 		for (ArrayList<PFeature> xor : allXORs) {
 			if(this.isStillValid(added, xor)){
 				// Create new XOR group
-				System.out.print("new group! ");
 				for (PFeature pFeature : xor) {
 					PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
 					rootFeature.getGroups().remove(featureGroup);
-					System.out.print(pFeature.getName() + ",");
 				}
 				this.createXORGroup(rootFeature, xor);
-				System.out.println();
 				// Add to the already considered elements. 
 				added.addAll(xor);
 			}
@@ -260,7 +257,22 @@ public class VmSynthesis {
 		XORGroup.getFeatures().addAll(xor);
 		
 		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
-		cardinality.setLowerBound(0); // FIXME
+		ArrayList<String> features = new ArrayList<String>();
+		for (PFeature pFeature : xor) {
+			features.add(pFeature.getName());
+		}
+		ArrayList<String> consideredProducts = new ArrayList<String>();
+		for (PFeature pFeature : xor) {
+			ArrayList<String> currentProducts = PCMQueryServices.getInstance().getProductsContainingFeature(pFeature.getName());
+			for (String p : currentProducts) {
+				if(!consideredProducts.contains(p))
+					consideredProducts.add(p);
+			}
+		}
+		
+		System.out.println("xor: " + xor);
+		System.out.println("consideredProducts: " + consideredProducts);
+		cardinality.setLowerBound(PCMQueryServices.getInstance().minFeaturesOccurrences(features, consideredProducts));
 		cardinality.setUpperBound(1);
 		XORGroup.setCardinality(cardinality);
 		

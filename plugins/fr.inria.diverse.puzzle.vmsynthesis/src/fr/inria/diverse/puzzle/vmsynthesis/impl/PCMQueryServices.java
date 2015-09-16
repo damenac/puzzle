@@ -62,11 +62,11 @@ public class PCMQueryServices {
 	
 	public boolean productContainsFeature(String product, String feature){
 		for (int i = 1; i < PCM.length; i++) {
-			if(PCM[i][0].equals(product)){
+			if(PCM[i][0].replace("\"", "").equals(product.replace("\"", ""))){
 				for (int j = 1; j < PCM[0].length; j++) {
-					if(PCM[0][j].equals(feature)){
+					if(PCM[0][j].replace("\"", "").equals(feature.replace("\"", ""))){
 						String answer = PCM[i][j];
-						if(answer.equals("YES"))
+						if(answer.replace("\"", "").equals("YES"))
 							return true;
 						else
 							return false;
@@ -170,8 +170,25 @@ public class PCMQueryServices {
 			
 			if(withA && withoutB)
 				return true;
-			
 		}
 		return false;
+	}
+	
+	public int minFeaturesOccurrences(ArrayList<String> features, ArrayList<String> productsConsidered){
+		int min = Integer.MAX_VALUE;
+		for (int i = 1; i < PCM.length; i++) {
+			String currentProduct = PCM[i][0];
+			
+			if(productsConsidered.contains(currentProduct)){
+				int currentCount = 0;
+				for (String feature : features) {
+					if(this.productContainsFeature(currentProduct, feature))
+						currentCount++;
+				}
+				if(currentCount < min)
+					min = currentCount;
+			}
+		}
+		return min;
 	}
 }

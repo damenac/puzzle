@@ -211,7 +211,9 @@ public class TestSynthesizeClosedModel {
 		int i = 1;
 		for (PFeatureGroup group : feature.getGroups()) {
 			for (PFeature childFeature : group.getFeatures()) {
-				this.printFeature("    " + space, " Group: " + i + ": ", childFeature);
+				this.printFeature("    " + space, " Group " + i + " (" + 
+						group.getCardinality().getLowerBound() + "," + group.getCardinality().getUpperBound() 
+							+ "): ", childFeature);
 			}
 			i++;
 		}
