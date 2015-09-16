@@ -203,7 +203,7 @@ public class TestSynthesizeClosedModel {
 	
 	private void printFM(PFeatureModel fm){
 		System.out.println(fm.getName());
-		this.printFeature("", " +", fm.getRootFeature());
+		this.printFeature("", " + ", fm.getRootFeature());
 	}
 	
 	private void printFeature(String space, String groupString, PFeature feature){

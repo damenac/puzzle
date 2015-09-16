@@ -204,17 +204,7 @@ public class VmSynthesis {
 	 * @param fm. Feature model under study. 
 	 */
 	public void identifyXORs(PFeatureModel fm) {
-		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
-		this.identifyXORs(fm.getRootFeature(), allXORs);
-		
-		//imprima los xors en la consola
-		for (ArrayList<PFeature> xor : allXORs) {
-			System.out.print("current xor: ");
-			for (PFeature pFeature : xor) {
-				System.out.print(pFeature.getName() + ",");
-			}
-			System.out.println();
-		}
+		this.identifyXORs(fm.getRootFeature());
 	}
 	
 	/**
@@ -222,7 +212,8 @@ public class VmSynthesis {
 	 * @param rootFeature. The root feature of the hierarchy.
 	 * @param allXORs. A collection where the XOR groups will be acumulated. 
 	 */
-	private void identifyXORs(PFeature rootFeature, ArrayList<ArrayList<PFeature>> allXORs){
+	private void identifyXORs(PFeature rootFeature){
+		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
 		ArrayList<PFeature> initialGroup = new ArrayList<PFeature>();
 		for (PFeatureGroup group : rootFeature.getGroups()) {
 			if(group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1 &&
@@ -232,10 +223,48 @@ public class VmSynthesis {
 		}
 		this.identifyXORByCombination(initialGroup, allXORs);
 		for (PFeature child : rootFeature.getChildren()) {
-			this.identifyXORs(child, allXORs);
+			this.identifyXORs(child);
+		}
+		
+		this.sortBySize(allXORs);
+		
+		ArrayList<PFeature> added = new ArrayList<PFeature>();
+		
+		for (ArrayList<PFeature> xor : allXORs) {
+			if(this.isStillValid(added, xor)){
+				// Create new XOR group
+				System.out.print("new group! ");
+				for (PFeature pFeature : xor) {
+					System.out.print(pFeature.getName() + ",");
+				}
+				System.out.println();
+				// Add to the already considered elements. 
+				added.addAll(xor);
+			}
 		}
 	}
+
+	private void sortBySize(ArrayList<ArrayList<PFeature>> group) {
+		// TODO Auto-generated method stub
+		
+	}
 	
+	/**
+	 * Returns true if the XOR in the parameter does not contains any of the features in the array
+	 * @param features
+	 * @param xor
+	 * @return
+	 */
+	private boolean isStillValid(ArrayList<PFeature> features, ArrayList<PFeature> xor) {
+		for (int i = 0; i < features.size(); i++) {
+			for (int j = 0; j < xor.size(); j++) {
+				if(features.get(i).getName().equals(xor.get(j).getName()))
+					return false;
+			}
+		}
+		return true;
+	}
+
 	/**
 	 * Identifies the XOR groups existing in the feature in the parameter. This method considers 
 	 * all the possible group combinations.
