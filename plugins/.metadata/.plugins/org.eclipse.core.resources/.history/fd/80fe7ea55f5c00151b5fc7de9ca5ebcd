@@ -1,0 +1,107 @@
+package fr.inria.diverse.puzzle.vmsynthesis.tests;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import vm.PFeature;
+import vm.PFeatureGroup;
+import vm.PFeatureGroupCardinality;
+import vm.PFeatureModel;
+import vm.VmFactory;
+
+/**
+ * Test cases for the synthesis of closed feature models
+ * @author David Mendez-Acuna
+ *
+ */
+public class TestSynthesizeClosedModel {
+	
+	// -------------------------------------------------
+	// Scenarios
+	// -------------------------------------------------
+	
+	private String PCMFile;
+	
+	private PFeatureModel openFM;
+	
+	@Before
+	public void loadScenarios(){
+		PCMFile = "./testdata/PCMTest1.txt";
+		
+		openFM = VmFactory.eINSTANCE.createPFeatureModel();
+		
+		PFeature root = VmFactory.eINSTANCE.createPFeature();
+		root.setName("Root");
+		root.setMandatory(true);
+		
+		PFeature f1 = VmFactory.eINSTANCE.createPFeature();
+		f1.setName("F1");
+		f1.setParent(root);
+		PFeatureGroup groupRootF1 = VmFactory.eINSTANCE.createPFeatureGroup();
+		PFeatureGroupCardinality cardinalityGroupRootF1 = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		cardinalityGroupRootF1.setLowerBound(0);
+		cardinalityGroupRootF1.setUpperBound(1);
+		groupRootF1.setCardinality(cardinalityGroupRootF1);
+		groupRootF1.getFeatures().add(f1);
+		root.getGroups().add(groupRootF1);
+		
+		
+		PFeature f2 = VmFactory.eINSTANCE.createPFeature();
+		f2.setName("F2");
+		f2.setParent(root);
+		PFeatureGroup groupRootF2 = VmFactory.eINSTANCE.createPFeatureGroup();
+		PFeatureGroupCardinality cardinalityGroupRootF2 = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		cardinalityGroupRootF2.setLowerBound(0);
+		cardinalityGroupRootF2.setUpperBound(1);
+		groupRootF2.setCardinality(cardinalityGroupRootF2);
+		groupRootF2.getFeatures().add(f2);
+		root.getGroups().add(groupRootF2);
+		
+		PFeature f3 = VmFactory.eINSTANCE.createPFeature();
+		f3.setName("F3");
+		f3.setParent(root);
+		
+		PFeature f4 = VmFactory.eINSTANCE.createPFeature();
+		f4.setName("F4");
+		f4.setParent(root);
+	}
+	
+	private PFeatureGroup createOptionalGroup(PFeature parent, PFeature feature){
+		PFeatureGroup group = VmFactory.eINSTANCE.createPFeatureGroup();
+		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		cardinality.setLowerBound(0);
+		cardinality.setUpperBound(1);
+		group.setCardinality(cardinality);
+		group.getFeatures().add(feature);
+		parent.getGroups().add(group);
+	}
+	
+	// -------------------------------------------------
+	// Test Cases
+	// -------------------------------------------------
+	
+	@Test
+	public void synthesizeClosedFeaturesModelTest() throws Exception{
+		File PCMFileObject = new File(PCMFile);
+		BufferedReader br = new BufferedReader(new FileReader(PCMFileObject));
+		
+		String PCM = "";
+		String line = br.readLine();
+		
+		while(line != null){
+			PCM += line + "\n";
+			line = br.readLine();
+		}
+		
+		br.close();
+		
+		System.out.println(PCMFileObject.exists());
+		System.out.println(PCM);
+	}
+}

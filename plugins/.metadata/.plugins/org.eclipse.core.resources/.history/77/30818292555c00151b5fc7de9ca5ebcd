@@ -1,0 +1,13 @@
+package fr.inria.diverse.puzzle.vmsynthesis.tests;
+
+/**
+ * Test cases for the synthesis of closed feature models
+ * @author David Mendez-Acuna
+ *
+ */
+public class TestSynthesizeClosedModel {
+
+	public void testSynthesizeClosedFeaturesModel(){
+		
+	}
+}

@@ -1,0 +1,11 @@
+package fr.inria.diverse.puzzle.vmsynthesis.tests;
+
+/**
+ * Test cases for the synthesis of closed FMs
+ * @author dmendeza
+ *
+ */
+public class TestSynthesizeClosedModel {
+
+	
+}

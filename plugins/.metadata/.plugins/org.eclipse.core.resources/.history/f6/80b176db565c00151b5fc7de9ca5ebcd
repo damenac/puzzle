@@ -1,0 +1,38 @@
+package fr.inria.diverse.puzzle.vmsynthesis.tests;
+
+import java.io.File;
+
+import org.junit.Before;
+import org.junit.Test;
+
+
+
+/**
+ * Test cases for the synthesis of closed feature models
+ * @author David Mendez-Acuna
+ *
+ */
+public class TestSynthesizeClosedModel {
+	
+	// -------------------------------------------------
+	// Scenarios
+	// -------------------------------------------------
+	
+	private String PCMFile;
+	
+	@Before
+	public void loadScenarios(){
+		PCMFile = "./testdata/PCMTest1.txt";
+	}
+	
+	// -------------------------------------------------
+	// Test Cases
+	// -------------------------------------------------
+	
+	@Test
+	public void synthesizeClosedFeaturesModelTest(){
+		File PCMFileObject = new File(PCMFile);
+		System.out.println(PCMFileObject.exists());
+		System.out.println(PCMFile);
+	}
+}
