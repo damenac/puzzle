@@ -11,6 +11,9 @@
 	</section>
 	<section name="PDEFormActionManager">
 	</section>
+	<section name="pde-form-editor">
+		<item value="overview" key="org.eclipse.pde.ui.manifestEditor"/>
+	</section>
 	<section name="org.eclipse.pde.ui.dialogs.PluginSelectionDialog">
 		<item value="true" key="ShowStatusLine"/>
 		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;" key="History"/>

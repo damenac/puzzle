@@ -41,4 +41,15 @@
 			<item value="org.eclipse.ui.Basic"/>
 		</list>
 	</section>
+	<section name="ShowViewDialog">
+		<item value="308" key="DIALOG_WIDTH"/>
+		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		<item value="org.eclipse.pde.runtime.RegistryBrowser" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
+		<item value="415" key="DIALOG_HEIGHT"/>
+		<item value="437" key="DIALOG_X_ORIGIN"/>
+		<item value="99" key="DIALOG_Y_ORIGIN"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.pde.ui"/>
+		</list>
+	</section>
 </section>

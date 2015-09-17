@@ -7,13 +7,17 @@ import java.io.FileReader;
 import org.junit.Before;
 import org.junit.Test;
 
-import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
 import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureGroupCardinality;
 import vm.PFeatureModel;
 import vm.VmFactory;
+import es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion;
+import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
+import es.us.isa.fama.PluginQuestionTrader;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
 
 /**
  * Test cases for the synthesis of closed feature models
@@ -192,12 +196,15 @@ public class TestSynthesizeClosedModel {
 		
 		synthesis.identifyMandatoryFeatures(closedFM);
 		this.printFM(closedFM);
+		this.printAllValidProducts(closedFM);
 		
 		synthesis.identifyXORs(closedFM);
 		this.printFM(closedFM);
+		this.printAllValidProducts(closedFM);
 		
 		synthesis.identifyORs(closedFM);
 		this.printFM(closedFM);
+//		this.printAllValidProducts(closedFM);
 	}
 	
 	// -------------------------------------------------
@@ -220,5 +227,16 @@ public class TestSynthesizeClosedModel {
 			}
 			i++;
 		}
+	}
+	
+	private void printAllValidProducts(PFeatureModel fm){
+		FAMAFeatureModel famaFm = FromPFeatureModelToFAMA.getInstance().fromPFeatureModelToFAMA(fm);
+		
+		PluginQuestionTrader qt = new PluginQuestionTrader();
+		qt.setVariabilityModel(famaFm);
+		NumberOfProductsQuestion npq = (NumberOfProductsQuestion) qt.createQuestion("#Products");
+		System.out.println(npq);
+		qt.ask(npq);
+		System.out.println("The number of products is: " + npq.getNumberOfProducts());
 	}
 }

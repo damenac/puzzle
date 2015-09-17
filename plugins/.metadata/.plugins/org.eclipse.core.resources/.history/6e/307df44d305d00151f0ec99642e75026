@@ -1,0 +1,26 @@
+package es.us.isa.fama;
+
+import java.util.LinkedList;
+
+import es.us.isa.FAMA.Reasoner.DefaultCriteriaSelector;
+import es.us.isa.FAMA.Reasoner.QuestionTrader;
+import es.us.isa.FAMA.loader.ExtensionsLoaderFactory;
+import es.us.isa.FAMA.stagedConfigManager.Configuration;
+
+public class PluginQuestionTrader extends QuestionTrader {
+
+	public PluginQuestionTrader(){
+		super();
+		
+		extFactory = new ExtensionsLoaderFactory();
+		extLoad = extFactory.createExtensionsLoader("./", this);
+		reasoners = extLoad.getReasoners();
+		selectorsMap = extLoad.getSelectorsMap();
+		questionsMap = extLoad.getQuestionsMap();
+		reasonersIdMap = extLoad.getReasonersIdMap();
+		transformationsMap = extLoad.getTransformationsMap();
+		configurations = new LinkedList<Configuration>();
+		selector = new DefaultCriteriaSelector(this);
+		mp = extLoad.getModelParser();
+	}
+}

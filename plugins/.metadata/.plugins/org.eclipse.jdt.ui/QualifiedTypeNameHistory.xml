@@ -1,17 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.Hashtable"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Dependency"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
-<fullyQualifiedTypeName name="vm.PBooleanExpression"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.MelangeServices"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EAttribute"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ModelUtils"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
@@ -36,7 +24,6 @@
 <fullyQualifiedTypeName name="vm.PUnaryExpression"/>
 <fullyQualifiedTypeName name="vm.PUninaryOperator"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Feature"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.FromPFeatureModelToFAMA"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.Configurator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.ConfigurationFacade"/>
@@ -52,12 +39,25 @@
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
-<fullyQualifiedTypeName name="vm.PFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 <fullyQualifiedTypeName name="vm.PFeature"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroup"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroupCardinality"/>
 <fullyQualifiedTypeName name="vm.VmFactory"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.Reasoner.questions.ProductsQuestion"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
+<fullyQualifiedTypeName name="vm.PFeatureModel"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.variabilityModel.GenericProduct"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.variabilityModel.VariabilityElement"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion"/>
+<fullyQualifiedTypeName name="org.eclipse.core.internal.runtime.InternalPlatform"/>
+<fullyQualifiedTypeName name="org.osgi.framework.FrameworkUtil"/>
+<fullyQualifiedTypeName name="org.osgi.framework.BundleContext"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.Reasoner.QuestionTrader"/>
+<fullyQualifiedTypeName name="org.osgi.framework.ServiceReference"/>
 </qualifiedTypeNameHistroy>

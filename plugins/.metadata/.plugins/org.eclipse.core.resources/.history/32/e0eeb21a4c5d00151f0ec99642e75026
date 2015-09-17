@@ -1,0 +1,20 @@
+package es.us.isa.fama;
+
+import es.us.isa.FAMA.Reasoner.Question;
+import es.us.isa.FAMA.Reasoner.QuestionTrader;
+
+public class PluginQuestionTrader extends QuestionTrader {
+
+	public PluginQuestionTrader(){
+		super("OSGI");
+		Class<Question> qcl;
+		try {
+			qcl = (Class<Question>) Class.forName("es.us.isa.FAMA.Reasoner.questions.ProductsQuestion");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		this.questionsMap.put("Products", qcl);
+		
+	}
+}

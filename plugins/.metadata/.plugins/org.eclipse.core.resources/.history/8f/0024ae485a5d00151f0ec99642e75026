@@ -1,0 +1,19 @@
+<reasoner>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ProductsQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ValidConfigurationErrorsQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ExplainInvalidProductQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.CommonalityQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.FilterQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ValidQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.DetectErrorsQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ExplainErrorsQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.SetQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ValidProductQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ValidConfigurationQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.VariabilityQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.CoreFeaturesQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.ExplainInvalidProductQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.HomogeneityQuestion"/>
+	<question class="es.us.isa.ChocoReasoner.questions." interface="es.us.isa.FAMA.Reasoner.questions.UniqueFeaturesQuestion"/>
+</reasoner>

@@ -1,0 +1,19 @@
+<reasoner>
+	<question class="Products" interface="es.us.isa.FAMA.Reasoner.questions.ProductsQuestion"/>
+	<question class="#Products" interface="es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion"/>
+	<question class="ValidConfigurationErrors" interface="es.us.isa.FAMA.Reasoner.questions.ValidConfigurationErrorsQuestion"/>
+	<question class="ExplainProduct" interface="es.us.isa.FAMA.Reasoner.questions.ExplainInvalidProductQuestion"/>
+	<question class="Commonality" interface="es.us.isa.FAMA.Reasoner.questions.CommonalityQuestion"/>
+	<question class="Filter" interface="es.us.isa.FAMA.Reasoner.questions.FilterQuestion"/>
+	<question class="Valid" interface="es.us.isa.FAMA.Reasoner.questions.ValidQuestion"/>
+	<question class="DetectErrors" interface="es.us.isa.FAMA.Reasoner.questions.DetectErrorsQuestion"/>
+	<question class="Explanations" interface="es.us.isa.FAMA.Reasoner.questions.ExplainErrorsQuestion"/>
+	<question class="Set" interface="es.us.isa.FAMA.Reasoner.questions.SetQuestion"/>
+	<question class="ValidProduct" interface="es.us.isa.FAMA.Reasoner.questions.ValidProductQuestion"/>
+	<question class="ValidConfiguration" interface="es.us.isa.FAMA.Reasoner.questions.ValidConfigurationQuestion"/>
+	<question class="Variability" interface="es.us.isa.FAMA.Reasoner.questions.VariabilityQuestion"/>
+	<question class="Core" interface="es.us.isa.FAMA.Reasoner.questions.CoreFeaturesQuestion"/>
+	<question class="ExplainInvalidProduct" interface="es.us.isa.FAMA.Reasoner.questions.ExplainInvalidProductQuestion"/>
+	<question class="Homogeneity" interface="es.us.isa.FAMA.Reasoner.questions.HomogeneityQuestion"/>
+	<question class="UniqueFeatures" interface="es.us.isa.FAMA.Reasoner.questions.UniqueFeaturesQuestion"/>
+</reasoner>

@@ -1,0 +1,12 @@
+package es.us.isa.fama;
+
+import es.us.isa.FAMA.Reasoner.QuestionTrader;
+
+public class PluginQuestionTrader extends QuestionTrader {
+
+	public PluginQuestionTrader(){
+		super("OSGI");
+		this.questionsMap.put(key, value)
+		
+	}
+}

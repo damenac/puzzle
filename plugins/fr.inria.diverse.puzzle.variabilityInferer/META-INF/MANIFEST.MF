@@ -13,13 +13,13 @@ Require-Bundle: org.eclipse.ui,
  es.us.isa.fama.synthesizer.interface;bundle-version="1.0.0",
  fr.inria.diverse.ksynthesis.interface;bundle-version="1.0.0",
  fr.inria.diverse.puzzle.vm.metamodel;bundle-version="1.0.0",
- fr.inria.diverse.puzzle.vmsynthesis;bundle-version="1.0.0"
+ fr.inria.diverse.puzzle.vmsynthesis;bundle-version="1.0.0",
+ es.us.isa.fama;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: fr.inria.diverse.puzzle.variabilityinferer,
  fr.inria.diverse.puzzle.variabilityinferer.inferers
-Bundle-ClassPath: lib/FaMaFeatureModel-0.9.1.jar,
- .,
+Bundle-ClassPath: .,
  lib/FAMILIAR-Standalone-1.0.10-jar-with-dependencies.jar
 Import-Package: fr.familiar.attributedfm,
  fr.familiar.attributedfm.domain,

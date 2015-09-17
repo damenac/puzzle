@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="lib/choco-2.1.0-basic+old.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ChocoReasoner-1.1.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/ChocoReasoner-1.1.1.jar" sourcepath="lib/ChocoReasoner-1.1.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FaMaAttributedModel-1.0.4-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FaMaFeatureModel-0.9.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FaMaSDK-1.1.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FaMaShell-0.1.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/JaCoPReasoner-1.0.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/JavaBDDReasoner-1.0.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Sat4jReasoner-1.0.0-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/antlr.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/BeTTy-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-beanutils.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-cli.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/cspparserxml.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FaMaFeatureModel-0.9.1.jar" sourcepath="lib/FaMaFeatureModel-0.9.1-sources.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/FaMaSDK-1.1.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Fmapi.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/fmextractor.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/javacsv.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/jericho-html-3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/js.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.sat4j.core-src.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.sat4j.core.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.sat4j.csp.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.sat4j.maxsat.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.sat4j.pb-src.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.sat4j.pb.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/org.sat4j.sat.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/sat4j-maxsat.jar"/>
+	<classpathentry exported="true" kind="lib" path="lib/Sat4jReasoner-1.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
