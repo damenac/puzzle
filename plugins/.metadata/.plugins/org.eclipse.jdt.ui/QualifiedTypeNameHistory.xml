@@ -45,7 +45,6 @@
 <fullyQualifiedTypeName name="vm.PGroupKind"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.featureModel.Cardinality"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="org.junit.Before"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -56,8 +55,9 @@
 <fullyQualifiedTypeName name="vm.PFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 <fullyQualifiedTypeName name="vm.PFeature"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroup"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroupCardinality"/>
 <fullyQualifiedTypeName name="vm.VmFactory"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

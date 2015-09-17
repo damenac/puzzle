@@ -191,4 +191,23 @@ public class PCMQueryServices {
 		}
 		return min;
 	}
+
+	public int maxFeaturesOccurrences(ArrayList<String> features,
+			ArrayList<String> consideredProducts) {
+		int max = -1;
+		for (int i = 1; i < PCM.length; i++) {
+			String currentProduct = PCM[i][0];
+			
+			if(consideredProducts.contains(currentProduct)){
+				int currentCount = 0;
+				for (String feature : features) {
+					if(this.productContainsFeature(currentProduct, feature))
+						currentCount++;
+				}
+				if(currentCount > max)
+					max = currentCount;
+			}
+		}
+		return max;
+	}
 }

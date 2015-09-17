@@ -1,6 +1,8 @@
 package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
@@ -141,6 +143,7 @@ public class VmSynthesis {
 		
 		this.identifyMandatoryFeatures(closedFeatureModel);
 		this.identifyXORs(closedFeatureModel);
+		this.identifyORs(closedFeatureModel);
 		
 		return closedFeatureModel;
 	}
@@ -210,7 +213,7 @@ public class VmSynthesis {
 	/**
 	 * Identifies the XOR groups recursively starting by the feature in the parameter.
 	 * @param rootFeature. The root feature of the hierarchy.
-	 * @param allXORs. A collection where the XOR groups will be acumulated. 
+	 * @param allXORs. A collection where the XOR groups will be stored. 
 	 */
 	private void identifyXORs(PFeature rootFeature){
 		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
@@ -222,12 +225,7 @@ public class VmSynthesis {
 			}
 		}
 		this.identifyXORByCombination(initialGroup, allXORs);
-		for (PFeature child : rootFeature.getChildren()) {
-			this.identifyXORs(child);
-		}
-		
 		this.sortBySize(allXORs);
-		
 		ArrayList<PFeature> added = new ArrayList<PFeature>();
 		
 		for (ArrayList<PFeature> xor : allXORs) {
@@ -241,6 +239,10 @@ public class VmSynthesis {
 				// Add to the already considered elements. 
 				added.addAll(xor);
 			}
+		}
+		
+		for (PFeature child : rootFeature.getChildren()) {
+			this.identifyXORs(child);
 		}
 	}
 
@@ -269,18 +271,13 @@ public class VmSynthesis {
 					consideredProducts.add(p);
 			}
 		}
-		
-		System.out.println("xor: " + xor);
-		System.out.println("consideredProducts: " + consideredProducts);
 		cardinality.setLowerBound(PCMQueryServices.getInstance().minFeaturesOccurrences(features, consideredProducts));
 		cardinality.setUpperBound(1);
 		XORGroup.setCardinality(cardinality);
-		
 		rootFeature.getGroups().add(XORGroup);
 	}
 	
 	private void sortBySize(ArrayList<ArrayList<PFeature>> group) {
-		// TODO Auto-generated method stub
 		
 	}
 	
@@ -328,6 +325,61 @@ public class VmSynthesis {
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Identifies the OR groups in the feature model received in the parameter.
+	 * @param fm. Feature model under study. 
+	 */
+	public void identifyORs(PFeatureModel fm) {
+		this.identifyORs(fm.getRootFeature());
+	}
+
+	/**
+	 * Identifies the OR groups recursively starting by the feature in the parameter.
+	 * @param rootFeature. The root feature of the hierarchy.
+	 */
+	private void identifyORs(PFeature rootFeature) {
+		ArrayList<PFeature> or = new ArrayList<PFeature>();
+		for (PFeatureGroup group : rootFeature.getGroups()) {
+			if(group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1 &&
+					group.getFeatures().size() > 0){
+				or.add(group.getFeatures().get(0));
+			}
+		}
+		
+		for (PFeature pFeature : or) {
+			PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
+			rootFeature.getGroups().remove(featureGroup);
+		}
+		this.createORGroup(rootFeature, or);
+		
+		for (PFeature child : rootFeature.getChildren()) {
+			this.identifyORs(child);
+		}
+	}
+	
+	private void createORGroup(PFeature rootFeature, ArrayList<PFeature> or) {
+		PFeatureGroup ORGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+		ORGroup.getFeatures().addAll(or);
+		
+		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		ArrayList<String> features = new ArrayList<String>();
+		for (PFeature pFeature : or) {
+			features.add(pFeature.getName());
+		}
+		ArrayList<String> consideredProducts = new ArrayList<String>();
+		for (PFeature pFeature : or) {
+			ArrayList<String> currentProducts = PCMQueryServices.getInstance().getProductsContainingFeature(pFeature.getName());
+			for (String p : currentProducts) {
+				if(!consideredProducts.contains(p))
+					consideredProducts.add(p);
+			}
+		}
+		cardinality.setLowerBound(PCMQueryServices.getInstance().minFeaturesOccurrences(features, consideredProducts));
+		cardinality.setUpperBound(PCMQueryServices.getInstance().maxFeaturesOccurrences(features, consideredProducts));
+		ORGroup.setCardinality(cardinality);
+		rootFeature.getGroups().add(ORGroup);
 	}
 
 	// ----------------------------------------------------------

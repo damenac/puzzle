@@ -195,6 +195,9 @@ public class TestSynthesizeClosedModel {
 		
 		synthesis.identifyXORs(closedFM);
 		this.printFM(closedFM);
+		
+		synthesis.identifyORs(closedFM);
+		this.printFM(closedFM);
 	}
 	
 	// -------------------------------------------------
