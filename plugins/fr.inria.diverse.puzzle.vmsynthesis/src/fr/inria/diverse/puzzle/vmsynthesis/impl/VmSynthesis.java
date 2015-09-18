@@ -343,7 +343,7 @@ public class VmSynthesis {
 		ArrayList<PFeature> or = new ArrayList<PFeature>();
 		for (PFeatureGroup group : rootFeature.getGroups()) {
 			if(group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1 &&
-					group.getFeatures().size() > 0){
+					group.getFeatures().size() == 1){
 				or.add(group.getFeatures().get(0));
 			}
 		}
@@ -352,7 +352,9 @@ public class VmSynthesis {
 			PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
 			rootFeature.getGroups().remove(featureGroup);
 		}
-		this.createORGroup(rootFeature, or);
+		
+		if(or.size() > 0)
+			this.createORGroup(rootFeature, or);
 		
 		for (PFeature child : rootFeature.getChildren()) {
 			this.identifyORs(child);
