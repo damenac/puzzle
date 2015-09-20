@@ -50,11 +50,6 @@ public class VmSynthesis {
 	// Methods
 	// ----------------------------------------------------------
 	
-	/**
-	 * Synthesizes an open feature model from the given dependencies graph.
-	 * @param dependenciesGraph
-	 * @return
-	 */
 	public PFeatureModel synthesizeOpenFeatureModel(DependencyGraph dependenciesGraph){
 		PFeatureModel featureModel = VmFactory.eINSTANCE.createPFeatureModel();
 		

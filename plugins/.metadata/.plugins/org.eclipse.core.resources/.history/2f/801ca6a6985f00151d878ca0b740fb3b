@@ -50,11 +50,6 @@ public class VmSynthesis {
 	// Methods
 	// ----------------------------------------------------------
 	
-	/**
-	 * Synthesizes an open feature model from the given dependencies graph.
-	 * @param dependenciesGraph
-	 * @return
-	 */
 	public PFeatureModel synthesizeOpenFeatureModel(DependencyGraph dependenciesGraph){
 		PFeatureModel featureModel = VmFactory.eINSTANCE.createPFeatureModel();
 		
@@ -249,12 +244,6 @@ public class VmSynthesis {
 		}
 	}
 
-	/**
-	 * Searches the group containing the feature in the parameter starting by the given root feature. 
-	 * @param rootFeature
-	 * @param feature
-	 * @return
-	 */
 	private PFeatureGroup getGroupByFeature(PFeature rootFeature, PFeature feature) {
 		for (PFeatureGroup currentGroup : rootFeature.getGroups()) {
 			if(currentGroup.getFeatures().contains(feature))
@@ -263,22 +252,17 @@ public class VmSynthesis {
 		return null;
 	}
 
-	/**
-	 * Creates an XOR group with the features in the parameter and add it to the root feature.
-	 * @param rootFeature
-	 * @param xor
-	 */
-	private void createXORGroup(PFeature rootFeature, ArrayList<PFeature> xorFeatures) {
+	private void createXORGroup(PFeature rootFeature, ArrayList<PFeature> xor) {
 		PFeatureGroup XORGroup = VmFactory.eINSTANCE.createPFeatureGroup();
-		XORGroup.getFeatures().addAll(xorFeatures);
+		XORGroup.getFeatures().addAll(xor);
 		
 		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
 		ArrayList<String> features = new ArrayList<String>();
-		for (PFeature pFeature : xorFeatures) {
+		for (PFeature pFeature : xor) {
 			features.add(pFeature.getName());
 		}
 		ArrayList<String> consideredProducts = new ArrayList<String>();
-		for (PFeature pFeature : xorFeatures) {
+		for (PFeature pFeature : xor) {
 			ArrayList<String> currentProducts = PCMQueryServices.getInstance().getProductsContainingFeature(pFeature.getName());
 			for (String p : currentProducts) {
 				if(!consideredProducts.contains(p))
@@ -291,12 +275,8 @@ public class VmSynthesis {
 		rootFeature.getGroups().add(XORGroup);
 	}
 	
-	/**
-	 * Sorts the array of groups in the parameter by size. 
-	 * @param group
-	 */
 	private void sortBySize(ArrayList<ArrayList<PFeature>> group) {
-		// TODO Implement it!!
+		
 	}
 	
 	/**
@@ -379,22 +359,17 @@ public class VmSynthesis {
 		}
 	}
 	
-	/**
-	 * Creates an OR group with the features in the parameter and adds it to the root feature.
-	 * @param rootFeature
-	 * @param or
-	 */
-	private void createORGroup(PFeature rootFeature, ArrayList<PFeature> orFeatures) {
+	private void createORGroup(PFeature rootFeature, ArrayList<PFeature> or) {
 		PFeatureGroup ORGroup = VmFactory.eINSTANCE.createPFeatureGroup();
-		ORGroup.getFeatures().addAll(orFeatures);
+		ORGroup.getFeatures().addAll(or);
 		
 		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
 		ArrayList<String> features = new ArrayList<String>();
-		for (PFeature pFeature : orFeatures) {
+		for (PFeature pFeature : or) {
 			features.add(pFeature.getName());
 		}
 		ArrayList<String> consideredProducts = new ArrayList<String>();
-		for (PFeature pFeature : orFeatures) {
+		for (PFeature pFeature : or) {
 			ArrayList<String> currentProducts = PCMQueryServices.getInstance().getProductsContainingFeature(pFeature.getName());
 			for (String p : currentProducts) {
 				if(!consideredProducts.contains(p))
