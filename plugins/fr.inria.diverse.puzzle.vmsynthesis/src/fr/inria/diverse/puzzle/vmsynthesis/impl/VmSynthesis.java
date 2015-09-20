@@ -406,6 +406,61 @@ public class VmSynthesis {
 		ORGroup.setCardinality(cardinality);
 		rootFeature.getGroups().add(ORGroup);
 	}
+	
+	public void addAdditionalImpliesConstraints(PFeatureModel fm){
+		ArrayList<PFeature> features = new ArrayList<PFeature>();
+		this.collectPFeatures(features, fm.getRootFeature());
+	
+		for (int i = 1; i < features.size(); i++) {
+			for (int j = 1; j < features.size(); j++) {
+				PFeature origin = features.get(i);
+				PFeature destination = features.get(j);
+				
+				if(!origin.getName().equals(destination.getName())){
+					boolean child = this.featureAIsChildOfB(origin, destination);
+					if(!child && !destination.isMandatory() && PCMQueryServices.getInstance().allProductsWithFeatureAHaveAlsoFeatureB(
+							origin.getName(), destination.getName())){
+						this.createImplies(origin, destination, fm);
+					}
+				}
+			}
+		}
+	}
+	
+	private boolean featureAIsChildOfB(PFeature origin, PFeature destination) {
+		if(destination == null)
+			return false;
+		else if(origin.getParent().getName().equals(destination.getName()))
+			return true;
+		else{
+			return this.featureAIsChildOfB(origin, destination.getParent());
+		}
+	}
+
+	private void createImplies(PFeature origin, PFeature destination,
+			PFeatureModel fm) {
+		
+		PConstraint implies = VmFactory.eINSTANCE.createPConstraint();
+		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+		left.setRef(origin);
+		PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+		right.setRef(destination);
+		
+		PBinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+		pBinaryExpression.setLeft(left);
+		pBinaryExpression.setRight(right);
+		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
+		
+		implies.setExpression(pBinaryExpression);
+		fm.getConstraints().add(implies);
+	}
+
+	private void collectPFeatures(ArrayList<PFeature> arrayList, PFeature root){
+		arrayList.add(root);
+		for (PFeature pFeature : root.getChildren()) {
+			this.collectPFeatures(arrayList, pFeature);
+		}
+	}
 
 	// ----------------------------------------------------------
 	// Auxiliary Methods

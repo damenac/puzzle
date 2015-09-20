@@ -7,10 +7,13 @@ import java.io.FileReader;
 import org.junit.Before;
 import org.junit.Test;
 
+import vm.PBinaryExpression;
+import vm.PConstraint;
 import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureGroupCardinality;
 import vm.PFeatureModel;
+import vm.PFeatureRef;
 import vm.VmFactory;
 import es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
@@ -206,6 +209,10 @@ public class TestSynthesizeClosedModel {
 		synthesis.identifyORs(closedFM);
 		this.printFM(closedFM);
 		this.printAllValidProducts(closedFM);
+		
+		synthesis.addAdditionalImpliesConstraints(closedFM);
+		this.printFM(closedFM);
+		this.printAllValidProducts(closedFM);
 	}
 	
 	// -------------------------------------------------
@@ -215,6 +222,19 @@ public class TestSynthesizeClosedModel {
 	private void printFM(PFeatureModel fm){
 		System.out.println(fm.getName());
 		this.printFeature("", " + ", fm.getRootFeature());
+		
+		System.out.println(fm.getConstraints().size());
+		for (PConstraint constraint : fm.getConstraints()) {
+			if(constraint.getExpression() instanceof PBinaryExpression){
+				PBinaryExpression pBinaryExpression = (PBinaryExpression) constraint.getExpression();
+				 if(pBinaryExpression.getLeft() instanceof PFeatureRef && 
+						 pBinaryExpression.getRight() instanceof PFeatureRef){
+					 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
+					 PFeatureRef right = (PFeatureRef) pBinaryExpression.getRight();
+					 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " " + right.getRef().getName());
+				 }
+			}
+		}
 	}
 	
 	private void printFeature(String space, String groupString, PFeature feature){

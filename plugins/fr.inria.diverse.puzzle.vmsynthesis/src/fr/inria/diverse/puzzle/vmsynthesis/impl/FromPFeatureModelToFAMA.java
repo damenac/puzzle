@@ -1,11 +1,17 @@
 package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
+import vm.PBinaryExpression;
+import vm.PBinaryOperator;
+import vm.PConstraint;
 import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureModel;
+import vm.PFeatureRef;
+import es.us.isa.FAMA.models.FAMAfeatureModel.Dependency;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import es.us.isa.FAMA.models.FAMAfeatureModel.Feature;
 import es.us.isa.FAMA.models.FAMAfeatureModel.Relation;
+import es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency;
 import es.us.isa.FAMA.models.featureModel.Cardinality;
 
 /**
@@ -49,9 +55,54 @@ public class FromPFeatureModelToFAMA {
 		
 		FAMAFeatureModel famaFeatureModel = new FAMAFeatureModel();
 		famaFeatureModel.setRoot(fromFAMAFeatureToPFeature(pFeatureModel.getRootFeature()));
+		
+		for (PConstraint pConstraint : pFeatureModel.getConstraints()) {
+			
+			if(pConstraint.getExpression() instanceof PBinaryExpression){
+				PBinaryExpression pBinaryExpression = (PBinaryExpression) pConstraint.getExpression();
+				
+				if(pBinaryExpression.getOperator().equals(PBinaryOperator.IMPLIES)){
+					if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
+							pBinaryExpression.getRight() instanceof PFeatureRef){
+						
+						Dependency dependency = new RequiresDependency(pConstraint.getName());
+						
+						PFeatureRef leftFeatureRef = (PFeatureRef) pBinaryExpression.getLeft();
+						PFeatureRef rightFeatureRef = (PFeatureRef) pBinaryExpression.getRight();
+						
+						dependency.setOrigin(this.getFamaFeatureByName(leftFeatureRef.getRef().getName(), 
+								famaFeatureModel.getRoot()));
+						
+						dependency.setDestination(this.getFamaFeatureByName(rightFeatureRef.getRef().getName(), 
+								famaFeatureModel.getRoot()));
+						
+						famaFeatureModel.addDependency(dependency);
+					}
+				}
+			}
+		}
 		return famaFeatureModel;
 	}
 	
+	/**
+	 * Finds a FAMA feature by the name in the features model in the parameter
+	 * @param name
+	 * @param root
+	 * @return
+	 */
+	private Feature getFamaFeatureByName(String name, Feature root) {
+		if(root.getName().equals(name))
+			return root;
+		else{
+			for (Feature currentFeature : root.getChilds()) {
+				Feature feature = this.getFamaFeatureByName(name, currentFeature);
+				if(feature != null)
+					return feature;
+			}
+		}
+		return null;
+	}
+
 	/**
 	 * In-deep translating of the FAMA feature in the parameter to a new puzzle feature.
 	 * @param famaFeature. The FAMA feature that should be translated. 
@@ -74,9 +125,6 @@ public class FromPFeatureModelToFAMA {
 			
 			feature.addRelation(relation);
 		}
-		
 		return feature;
 	}
-	
-
 }

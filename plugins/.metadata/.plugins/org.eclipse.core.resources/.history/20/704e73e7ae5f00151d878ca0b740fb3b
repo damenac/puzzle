@@ -1,0 +1,145 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+import vm.PBinaryExpression;
+import vm.PBinaryOperator;
+import vm.PConstraint;
+import vm.PFeature;
+import vm.PFeatureGroup;
+import vm.PFeatureModel;
+import vm.PFeatureRef;
+import es.us.isa.FAMA.models.FAMAfeatureModel.Dependency;
+import es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency;
+import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
+import es.us.isa.FAMA.models.FAMAfeatureModel.Feature;
+import es.us.isa.FAMA.models.FAMAfeatureModel.Relation;
+import es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency;
+import es.us.isa.FAMA.models.featureModel.Cardinality;
+
+/**
+ * Offers the services for translating feature models from diverse formats to the VM metamodel.
+ * @author David Mendez-Acuna
+ *
+ */
+public class FromPFeatureModelToFAMA {
+
+	// -----------------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------------
+	
+	private static FromPFeatureModelToFAMA instance;
+	
+	// -----------------------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------------------
+	
+	private FromPFeatureModelToFAMA(){
+		
+	}
+	
+	public static FromPFeatureModelToFAMA getInstance(){
+		if(instance == null)
+			instance = new FromPFeatureModelToFAMA();
+		return instance;
+	}
+
+	// -----------------------------------------------------------
+	// Methods
+	// -----------------------------------------------------------
+
+	/**
+	 * Translates from a features model from FAMAFeatureModel (FAMA) to FeatureModel (Puzzle).
+	 * @param famafm The feature model as an FAMAFeatureModel object.
+	 * @return
+	 */
+	public FAMAFeatureModel fromPFeatureModelToFAMA(
+			PFeatureModel pFeatureModel) {
+		
+		FAMAFeatureModel famaFeatureModel = new FAMAFeatureModel();
+		famaFeatureModel.setRoot(fromFAMAFeatureToPFeature(pFeatureModel.getRootFeature()));
+		
+		for (PConstraint pConstraint : pFeatureModel.getConstraints()) {
+			
+			
+			if(pConstraint.getExpression() instanceof PBinaryExpression){
+				PBinaryExpression pBinaryExpression = (PBinaryExpression) pConstraint.getExpression();
+				
+				if(pBinaryExpression.getOperator().equals(PBinaryOperator.IMPLIES)){
+					if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
+							pBinaryExpression.getRight() instanceof PFeatureRef){
+						
+						Dependency dependency = new RequiresDependency(pConstraint.getName());
+						dependency.setOrigin(this.getFamaFeatureByName(((PFeature)pBinaryExpression.getLeft()).getName(), 
+								famaFeatureModel.getRoot()));
+					}
+				}
+			}
+		}
+		
+		return famaFeatureModel;
+	}
+	
+	/**
+	 * 
+	 * @param name
+	 * @param root
+	 * @return
+	 */
+	private Feature getFamaFeatureByName(String name, Feature root) {
+		if(root.getName().equals(name))
+			return root;
+		else{
+			for (Feature currentFeature : root.getChilds()) {
+				Feature feature = this.getFamaFeatureByName(name, currentFeature);
+				if(feature != null)
+					return feature;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * In-deep translating of the FAMA feature in the parameter to a new puzzle feature.
+	 * @param famaFeature. The FAMA feature that should be translated. 
+	 * @return
+	 */
+	private Feature fromFAMAFeatureToPFeature(PFeature pFeature){
+		Feature feature = new Feature(pFeature.getName());
+		
+		for (PFeatureGroup group : pFeature.getGroups()) {
+			Relation relation = new Relation();
+			relation.setParent(feature);
+			
+			Cardinality cardinality = new Cardinality(group.getCardinality().getLowerBound(), group.getCardinality().getUpperBound());
+			relation.addCardinality(cardinality);
+			
+			for (PFeature groupFeature : group.getFeatures()) {
+				Feature relationFeature = this.fromFAMAFeatureToPFeature(groupFeature);
+				relation.addDestination(relationFeature);
+			}
+			
+			feature.addRelation(relation);
+		}
+		
+		return feature;
+	}
+	
+	/**
+	 * Finds a PFeature by the name in the features model in the parameter.
+	 * @param featureName. Name of the feature.
+	 * @param featuresModelRoot. Root of the features model where the feature should be searched. 
+	 * @return
+	 */
+	private PFeature getPFeatureByName(String featureName, PFeature featureModelRoot) {
+		if(featureModelRoot.getName().equals(featureName)){
+			return featureModelRoot;
+		}
+		for (PFeature feature : featureModelRoot.getChildren()) {
+			PFeature found = this.getPFeatureByName(featureName, feature);
+			if(found != null)
+				return found;
+		}
+		return null;
+	}
+	
+
+}
