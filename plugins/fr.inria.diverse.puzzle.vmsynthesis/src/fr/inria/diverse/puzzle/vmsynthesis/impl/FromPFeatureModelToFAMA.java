@@ -7,7 +7,10 @@ import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureModel;
 import vm.PFeatureRef;
+import vm.PUnaryExpression;
+import vm.PUninaryOperator;
 import es.us.isa.FAMA.models.FAMAfeatureModel.Dependency;
+import es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import es.us.isa.FAMA.models.FAMAfeatureModel.Feature;
 import es.us.isa.FAMA.models.FAMAfeatureModel.Relation;
@@ -77,6 +80,27 @@ public class FromPFeatureModelToFAMA {
 								famaFeatureModel.getRoot()));
 						
 						famaFeatureModel.addDependency(dependency);
+					}
+					
+					if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
+							pBinaryExpression.getRight() instanceof PUnaryExpression){
+						PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
+						 if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
+							 if(not.getExpr() instanceof PFeatureRef){
+								 Dependency dependency = new ExcludesDependency(pConstraint.getName());
+								 
+								PFeatureRef leftFeatureRef = (PFeatureRef) pBinaryExpression.getLeft();
+								PFeatureRef rightFeatureRef = (PFeatureRef) not.getExpr();
+								
+								dependency.setOrigin(this.getFamaFeatureByName(leftFeatureRef.getRef().getName(), 
+										famaFeatureModel.getRoot()));
+								
+								dependency.setDestination(this.getFamaFeatureByName(rightFeatureRef.getRef().getName(), 
+										famaFeatureModel.getRoot()));
+								
+								famaFeatureModel.addDependency(dependency);
+							 }
+						 }
 					}
 				}
 			}

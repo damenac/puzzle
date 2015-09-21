@@ -22,7 +22,6 @@ public class PluginQuestionTrader extends QuestionTrader {
 		super("OSGI");
 
 		try {
-
 			this.reasonersIdMap.put("Choco", this.createReasoner("Choco",
 					es.us.isa.ChocoReasoner.ChocoReasoner.class));
 			// this.reasonersIdMap.put("Choco4exp",
@@ -37,14 +36,8 @@ public class PluginQuestionTrader extends QuestionTrader {
 			// this.reasonersIdMap.put("Sat4j", this.createReasoner("Sat4j",
 			// es.us.isa.Sat4jReasoner.Sat4jReasoner.class));
 
-			this.questionsMap
-					.put("Products",
-							(Class<Question>) Class
-									.forName("es.us.isa.FAMA.Reasoner.questions.ProductsQuestion"));
-			this.questionsMap
-					.put("#Products",
-							(Class<Question>) Class
-									.forName("es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion"));
+			this.questionsMap.put("Products", (Class<Question>) Class.forName("es.us.isa.FAMA.Reasoner.questions.ProductsQuestion"));
+			this.questionsMap.put("#Products", (Class<Question>) Class.forName("es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

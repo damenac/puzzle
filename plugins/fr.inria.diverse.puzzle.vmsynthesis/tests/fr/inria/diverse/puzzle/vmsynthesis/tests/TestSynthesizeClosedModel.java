@@ -14,9 +14,14 @@ import vm.PFeatureGroup;
 import vm.PFeatureGroupCardinality;
 import vm.PFeatureModel;
 import vm.PFeatureRef;
+import vm.PUnaryExpression;
+import vm.PUninaryOperator;
 import vm.VmFactory;
 import es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion;
+import es.us.isa.FAMA.Reasoner.questions.ProductsQuestion;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
+import es.us.isa.FAMA.models.variabilityModel.GenericProduct;
+import es.us.isa.FAMA.models.variabilityModel.VariabilityElement;
 import es.us.isa.fama.PluginQuestionTrader;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
@@ -213,6 +218,10 @@ public class TestSynthesizeClosedModel {
 		synthesis.addAdditionalImpliesConstraints(closedFM);
 		this.printFM(closedFM);
 		this.printAllValidProducts(closedFM);
+		
+		synthesis.addAdditionalExcludesConstraints(closedFM);
+		this.printFM(closedFM);
+		this.printAllValidProducts(closedFM);
 	}
 	
 	// -------------------------------------------------
@@ -233,6 +242,18 @@ public class TestSynthesizeClosedModel {
 					 PFeatureRef right = (PFeatureRef) pBinaryExpression.getRight();
 					 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " " + right.getRef().getName());
 				 }
+				 
+				 if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
+							pBinaryExpression.getRight() instanceof PUnaryExpression){
+					PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
+					if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
+						if(not.getExpr() instanceof PFeatureRef){
+							 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
+							 PFeatureRef right = (PFeatureRef) not.getExpr();
+							 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " not " + right.getRef().getName());
+						}
+					}
+				}
 			}
 		}
 	}
@@ -255,9 +276,60 @@ public class TestSynthesizeClosedModel {
 		
 		PluginQuestionTrader qt = new PluginQuestionTrader();
 		qt.setVariabilityModel(famaFm);
+		
 		NumberOfProductsQuestion npq = (NumberOfProductsQuestion) qt.createQuestion("#Products");
 		System.out.println(npq);
 		qt.ask(npq);
 		System.out.println("The number of products is: " + npq.getNumberOfProducts());
+		
+		ProductsQuestion pq = (ProductsQuestion) qt.createQuestion("Products");
+		qt.ask(pq);
+		
+		String[] product1 = {"Root", "F2", "F3", "F5", "F8", "F11", "F12"};
+		boolean product1Exists = this.productExists(product1, pq);
+		System.out.println("P1: " + product1Exists);
+		
+		String[] product2 = {"Root", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F9", "F11", "F13", "F14", "F15", "F18"};
+		boolean product2Exists = this.productExists(product2, pq);
+		System.out.println("P2: " + product2Exists);
+		
+		String[] product3 = {"Root", "F1", "F2", "F4", "F5", "F6", "F10", "F19", "F20"};
+		boolean product3Exists = this.productExists(product3, pq);
+		System.out.println("P3: " + product3Exists);
+		
+		String[] product4 = {"Root", "F2", "F3", "F4", "F5", "F8", "F11", "F12", "F13", "F14", "F16", "F17", "F18", "F21"};
+		boolean product4Exists = this.productExists(product4, pq);
+		System.out.println("P4: " + product4Exists);
+	}
+	
+	public boolean productExists(String[] productFeatures, ProductsQuestion pq){
+		for (GenericProduct product : pq.getAllProducts()) {
+			if(this.productsAreEqual(product, productFeatures)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean productsAreEqual(GenericProduct product,
+			String[] productFeatures) {
+		if(product.getElements().size() != productFeatures.length){
+			return false;
+		}
+		
+		for (String feature : productFeatures) {
+			boolean featureExists = false;
+			
+			for (VariabilityElement element : product.getElements()) {
+				if(element.getName().equals(feature)){
+					featureExists = true;
+					break;
+				}
+			}
+			
+			if(!featureExists)
+				return false;
+		}
+		return true;
 	}
 }

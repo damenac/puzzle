@@ -200,6 +200,32 @@ public class PCMQueryServices {
 		return true;
 	}
 	
+	public boolean allProductsWithFeatureAExcludeFeatureB(String A,
+			String B) {
+		
+		for (int i = 1; i < PCM.length; i++) {
+			boolean withA = false;
+			for (int j = 1; j < PCM[0].length && !withA; j++) {
+				if(PCM[0][j].equals("\"" + A + "\"")){
+					if(PCM[i][j].equals("\"YES\""))
+						withA = true;
+				}
+			}
+			
+			boolean withB = false;
+			for (int j = 1; j < PCM[0].length && !withB; j++) {
+				if(PCM[0][j].equals("\"" + B + "\"")){
+					if(PCM[i][j].equals("\"YES\""))
+						withB = true;
+				}
+			}
+			
+			if(withA && withB)
+				return false;
+		}
+		return true;
+	}
+	
 	public int minFeaturesOccurrences(ArrayList<String> features, ArrayList<String> productsConsidered){
 		int min = Integer.MAX_VALUE;
 		for (int i = 1; i < PCM.length; i++) {

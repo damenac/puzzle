@@ -367,7 +367,6 @@ public class VmSynthesis {
 			
 			this.createORGroup(rootFeature, or);
 		}
-			
 		
 		for (PFeature child : rootFeature.getChildren()) {
 			this.identifyORs(child);
@@ -450,13 +449,59 @@ public class VmSynthesis {
 		fm.getConstraints().add(implies);
 	}
 
+	/**
+	 * Adds the additional excludes constraints to the closed feature model. 
+	 * @param fm
+	 */
+	public void addAdditionalExcludesConstraints(PFeatureModel fm) {
+		ArrayList<PFeature> features = new ArrayList<PFeature>();
+		this.collectPFeatures(features, fm.getRootFeature());
+	
+		for (int i = 1; i < features.size(); i++) {
+			for (int j = 1; j < features.size(); j++) {
+				PFeature origin = features.get(i);
+				PFeature destination = features.get(j);
+				
+				if(!origin.getName().equals(destination.getName())){
+					if(PCMQueryServices.getInstance().allProductsWithFeatureAExcludeFeatureB(
+							origin.getName(), destination.getName())){
+						this.createExcludes(origin, destination, fm);
+					}
+				}
+			}
+		}
+	}
+	
+	private void createExcludes(PFeature origin, PFeature destination,
+			PFeatureModel fm) {
+		
+		PConstraint excludes = VmFactory.eINSTANCE.createPConstraint();
+		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+		left.setRef(origin);
+		
+		PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+		right.setRef(destination);
+		
+		PUnaryExpression notImplies = VmFactory.eINSTANCE.createPUnaryExpression();
+		notImplies.setExpr(right);
+		notImplies.setOperator(PUninaryOperator.NOT);
+		
+		PBinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+		pBinaryExpression.setLeft(left);
+		pBinaryExpression.setRight(notImplies);
+		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
+		
+		excludes.setExpression(pBinaryExpression);
+		fm.getConstraints().add(excludes);
+	}
+
 	private void collectPFeatures(ArrayList<PFeature> arrayList, PFeature root){
 		arrayList.add(root);
 		for (PFeature pFeature : root.getChildren()) {
 			this.collectPFeatures(arrayList, pFeature);
 		}
 	}
-
+	
 	// ----------------------------------------------------------
 	// Auxiliary Methods
 	// ----------------------------------------------------------
@@ -615,5 +660,4 @@ public class VmSynthesis {
 		}
 		return null;
 	}
-	
 }
