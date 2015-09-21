@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GraphsGenerator
+Bundle-SymbolicName: fr.inria.diverse.puzzle.graphsGenerator
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.inria.diverse.puzzle.graphsgenerator.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ fr.inria.diverse.puzzle.common;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: fr.inria.diverse.puzzle.graphsgenerator.impl

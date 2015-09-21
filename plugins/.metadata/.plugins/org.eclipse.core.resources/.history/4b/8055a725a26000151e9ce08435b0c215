@@ -1,0 +1,16 @@
+package fr.inria.diverse.puzzle.graphsgenerator.impl;
+
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
+
+public class GraphGenerator {
+
+	public DependencyGraph generateGraph(int size){
+		// Creating an empty graph
+		for (int i = 0; i < size; i++) {
+			DependencyVertex vertex = new DependencyVertex(Integer.toString(i));
+		}
+		
+		return null;
+	}
+}

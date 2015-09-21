@@ -20,8 +20,26 @@ public class DependencyArc {
 	
 	public DependencyArc(DependencyVertex from, DependencyVertex to) {
 		super();
+		
 		this.from = from;
+		this.from.getOutgoingArcs().add(this);
+		
 		this.to = to;
+		this.to.getIncomingArcs().add(this);
+	}
+	
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
+	public String toString(){
+		return this.from.getIdentifier() + " -> " + this.to.getIdentifier();
+	}
+	
+	public boolean equals(Object o){
+		DependencyArc arc = (DependencyArc) o;
+		return this.getFrom().getIdentifier().equals(arc.getFrom().getIdentifier()) &&
+				this.getTo().getIdentifier().equals(arc.getTo().getIdentifier());
 	}
 	
 	// -----------------------------------------------

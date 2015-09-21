@@ -195,6 +195,20 @@ public class DependencyGraph {
 		return directDependentVertex;
 	}
 	
+	public String toString(){
+		String answer = "Vertex {\n";
+		for (DependencyVertex dependencyVertex : vertex) {
+			answer += " - " + dependencyVertex.getIdentifier() + "\n";
+		}
+		answer += "}\n\n";
+		answer += "Arcs (" + this.arcs.size() + ") {\n";
+		for (DependencyArc dependencyArc : arcs) {
+			answer += "  + " + dependencyArc.toString() + "\n";
+		}
+		answer += "}\n\n";
+		return answer;
+	}
+	
 	// -----------------------------------------------
 	// Getters
 	// -----------------------------------------------
