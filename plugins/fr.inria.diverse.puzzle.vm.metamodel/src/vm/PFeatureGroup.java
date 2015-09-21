@@ -27,6 +27,7 @@ public interface PFeatureGroup extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' reference list.
 	 * The list contents are of type {@link vm.PFeature}.
+	 * It is bidirectional and its opposite is '{@link vm.PFeature#getParentGroup <em>Parent Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Features</em>' reference list isn't clear,
@@ -35,7 +36,8 @@ public interface PFeatureGroup extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Features</em>' reference list.
 	 * @see vm.VmPackage#getPFeatureGroup_Features()
-	 * @model required="true"
+	 * @see vm.PFeature#getParentGroup
+	 * @model opposite="parentGroup" required="true"
 	 * @generated
 	 */
 	EList<PFeature> getFeatures();

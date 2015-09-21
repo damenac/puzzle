@@ -272,6 +272,15 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPFeature_ParentGroup() {
+		return (EReference)pFeatureEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPFeatureGroup() {
 		return pFeatureGroupEClass;
 	}
@@ -487,6 +496,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEReference(pFeatureEClass, PFEATURE__CHILDREN);
 		createEReference(pFeatureEClass, PFEATURE__PARENT);
 		createEReference(pFeatureEClass, PFEATURE__GROUPS);
+		createEReference(pFeatureEClass, PFEATURE__PARENT_GROUP);
 
 		pFeatureGroupEClass = createEClass(PFEATURE_GROUP);
 		createEReference(pFeatureGroupEClass, PFEATURE_GROUP__FEATURES);
@@ -566,9 +576,10 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getPFeature_Children(), this.getPFeature(), this.getPFeature_Parent(), "children", null, 0, -1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPFeature_Parent(), this.getPFeature(), this.getPFeature_Children(), "parent", null, 0, 1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPFeature_Groups(), this.getPFeatureGroup(), null, "groups", null, 0, -1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeature_ParentGroup(), this.getPFeatureGroup(), this.getPFeatureGroup_Features(), "parentGroup", null, 0, 1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pFeatureGroupEClass, PFeatureGroup.class, "PFeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPFeatureGroup_Features(), this.getPFeature(), null, "features", null, 1, -1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeatureGroup_Features(), this.getPFeature(), this.getPFeature_ParentGroup(), "features", null, 1, -1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPFeatureGroup_Cardinality(), this.getPFeatureGroupCardinality(), null, "cardinality", null, 1, 1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pFeatureGroupCardinalityEClass, PFeatureGroupCardinality.class, "PFeatureGroupCardinality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

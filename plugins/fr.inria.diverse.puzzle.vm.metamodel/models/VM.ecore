@@ -18,10 +18,12 @@
         eOpposite="#//PFeature/children"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
         eType="#//PFeatureGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentGroup" eType="#//PFeatureGroup"
+        eOpposite="#//PFeatureGroup/features"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PFeatureGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
-        upperBound="-1" eType="#//PFeature"/>
+        upperBound="-1" eType="#//PFeature" eOpposite="#//PFeature/parentGroup"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="cardinality" lowerBound="1"
         eType="#//PFeatureGroupCardinality" containment="true"/>
   </eClassifiers>

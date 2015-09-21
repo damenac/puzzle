@@ -3,20 +3,15 @@
 package vm.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureGroupCardinality;
@@ -83,7 +78,7 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 	 */
 	public EList<PFeature> getFeatures() {
 		if (features == null) {
-			features = new EObjectResolvingEList<PFeature>(PFeature.class, this, VmPackage.PFEATURE_GROUP__FEATURES);
+			features = new EObjectWithInverseResolvingEList<PFeature>(PFeature.class, this, VmPackage.PFEATURE_GROUP__FEATURES, VmPackage.PFEATURE__PARENT_GROUP);
 		}
 		return features;
 	}
@@ -136,9 +131,26 @@ public class PFeatureGroupImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case VmPackage.PFEATURE_GROUP__FEATURES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getFeatures()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case VmPackage.PFEATURE_GROUP__FEATURES:
+				return ((InternalEList<?>)getFeatures()).basicRemove(otherEnd, msgs);
 			case VmPackage.PFEATURE_GROUP__CARDINALITY:
 				return basicSetCardinality(null, msgs);
 		}

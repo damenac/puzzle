@@ -34,6 +34,7 @@ import vm.VmPackage;
  *   <li>{@link vm.impl.PFeatureImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link vm.impl.PFeatureImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link vm.impl.PFeatureImpl#getGroups <em>Groups</em>}</li>
+ *   <li>{@link vm.impl.PFeatureImpl#getParentGroup <em>Parent Group</em>}</li>
  * </ul>
  * </p>
  *
@@ -79,6 +80,16 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 	 * @ordered
 	 */
 	protected EList<PFeatureGroup> groups;
+
+	/**
+	 * The cached value of the '{@link #getParentGroup() <em>Parent Group</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getParentGroup()
+	 * @generated
+	 * @ordered
+	 */
+	protected PFeatureGroup parentGroup;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +201,66 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PFeatureGroup getParentGroup() {
+		if (parentGroup != null && parentGroup.eIsProxy()) {
+			InternalEObject oldParentGroup = (InternalEObject)parentGroup;
+			parentGroup = (PFeatureGroup)eResolveProxy(oldParentGroup);
+			if (parentGroup != oldParentGroup) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VmPackage.PFEATURE__PARENT_GROUP, oldParentGroup, parentGroup));
+			}
+		}
+		return parentGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PFeatureGroup basicGetParentGroup() {
+		return parentGroup;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParentGroup(PFeatureGroup newParentGroup, NotificationChain msgs) {
+		PFeatureGroup oldParentGroup = parentGroup;
+		parentGroup = newParentGroup;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE__PARENT_GROUP, oldParentGroup, newParentGroup);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParentGroup(PFeatureGroup newParentGroup) {
+		if (newParentGroup != parentGroup) {
+			NotificationChain msgs = null;
+			if (parentGroup != null)
+				msgs = ((InternalEObject)parentGroup).eInverseRemove(this, VmPackage.PFEATURE_GROUP__FEATURES, PFeatureGroup.class, msgs);
+			if (newParentGroup != null)
+				msgs = ((InternalEObject)newParentGroup).eInverseAdd(this, VmPackage.PFEATURE_GROUP__FEATURES, PFeatureGroup.class, msgs);
+			msgs = basicSetParentGroup(newParentGroup, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE__PARENT_GROUP, newParentGroup, newParentGroup));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -200,6 +271,10 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParent((PFeature)otherEnd, msgs);
+			case VmPackage.PFEATURE__PARENT_GROUP:
+				if (parentGroup != null)
+					msgs = ((InternalEObject)parentGroup).eInverseRemove(this, VmPackage.PFEATURE_GROUP__FEATURES, PFeatureGroup.class, msgs);
+				return basicSetParentGroup((PFeatureGroup)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -218,6 +293,8 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 				return basicSetParent(null, msgs);
 			case VmPackage.PFEATURE__GROUPS:
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
+			case VmPackage.PFEATURE__PARENT_GROUP:
+				return basicSetParentGroup(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -252,6 +329,9 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 				return getParent();
 			case VmPackage.PFEATURE__GROUPS:
 				return getGroups();
+			case VmPackage.PFEATURE__PARENT_GROUP:
+				if (resolve) return getParentGroup();
+				return basicGetParentGroup();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -279,6 +359,9 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 				getGroups().clear();
 				getGroups().addAll((Collection<? extends PFeatureGroup>)newValue);
 				return;
+			case VmPackage.PFEATURE__PARENT_GROUP:
+				setParentGroup((PFeatureGroup)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -303,6 +386,9 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 			case VmPackage.PFEATURE__GROUPS:
 				getGroups().clear();
 				return;
+			case VmPackage.PFEATURE__PARENT_GROUP:
+				setParentGroup((PFeatureGroup)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -323,6 +409,8 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 				return getParent() != null;
 			case VmPackage.PFEATURE__GROUPS:
 				return groups != null && !groups.isEmpty();
+			case VmPackage.PFEATURE__PARENT_GROUP:
+				return parentGroup != null;
 		}
 		return super.eIsSet(featureID);
 	}

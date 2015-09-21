@@ -205,13 +205,22 @@ public interface VmPackage extends EPackage {
 	int PFEATURE__GROUPS = PNAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Parent Group</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PFEATURE__PARENT_GROUP = PNAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>PFeature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 4;
+	int PFEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>PFeature</em>' class.
@@ -655,6 +664,17 @@ public interface VmPackage extends EPackage {
 	EReference getPFeature_Groups();
 
 	/**
+	 * Returns the meta object for the reference '{@link vm.PFeature#getParentGroup <em>Parent Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Parent Group</em>'.
+	 * @see vm.PFeature#getParentGroup()
+	 * @see #getPFeature()
+	 * @generated
+	 */
+	EReference getPFeature_ParentGroup();
+
+	/**
 	 * Returns the meta object for class '{@link vm.PFeatureGroup <em>PFeature Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -973,6 +993,14 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PFEATURE__GROUPS = eINSTANCE.getPFeature_Groups();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent Group</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PFEATURE__PARENT_GROUP = eINSTANCE.getPFeature_ParentGroup();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.PFeatureGroupImpl <em>PFeature Group</em>}' class.

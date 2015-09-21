@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link vm.PFeature#getChildren <em>Children</em>}</li>
  *   <li>{@link vm.PFeature#getParent <em>Parent</em>}</li>
  *   <li>{@link vm.PFeature#getGroups <em>Groups</em>}</li>
+ *   <li>{@link vm.PFeature#getParentGroup <em>Parent Group</em>}</li>
  * </ul>
  * </p>
  *
@@ -111,5 +112,33 @@ public interface PFeature extends PNamedElement {
 	 * @generated
 	 */
 	EList<PFeatureGroup> getGroups();
+
+	/**
+	 * Returns the value of the '<em><b>Parent Group</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link vm.PFeatureGroup#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent Group</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent Group</em>' reference.
+	 * @see #setParentGroup(PFeatureGroup)
+	 * @see vm.VmPackage#getPFeature_ParentGroup()
+	 * @see vm.PFeatureGroup#getFeatures
+	 * @model opposite="features"
+	 * @generated
+	 */
+	PFeatureGroup getParentGroup();
+
+	/**
+	 * Sets the value of the '{@link vm.PFeature#getParentGroup <em>Parent Group</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent Group</em>' reference.
+	 * @see #getParentGroup()
+	 * @generated
+	 */
+	void setParentGroup(PFeatureGroup value);
 
 } // PFeature

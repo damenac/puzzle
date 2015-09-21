@@ -93,6 +93,15 @@ public class PCMQueryServices {
 		return answer;
 	}
 	
+	public ArrayList<String> getAllProducts() {
+		ArrayList<String> answer = new ArrayList<String>();
+		for (int i = 1; i < PCM.length; i++) {
+			String currentProduct = PCM[i][0];
+			answer.add(currentProduct);
+		}
+		return answer;
+	}
+	
 	public boolean xor(List<String> features){
 		ArrayList<ArrayList<String>> productsSet = new ArrayList<ArrayList<String>>();
 		for (String feature : features) {
@@ -111,10 +120,8 @@ public class PCMQueryServices {
 					bigSet.add(string);
 			}
 		}
-		
 		return sumCount == bigSet.size();
 	}
-	
 	
 	public void loadPCM(String PCMString){
 		String[] products = PCMString.split("\n");
