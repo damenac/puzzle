@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ModelUtils"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialChart"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSyntacticChart"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSemanticChart"/>
@@ -16,10 +13,6 @@
 <fullyQualifiedTypeName name="vm.util.VmSwitch"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyVertex"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
-<fullyQualifiedTypeName name="vm.PConstraint"/>
-<fullyQualifiedTypeName name="vm.PBinaryOperator"/>
-<fullyQualifiedTypeName name="vm.PBinaryExpression"/>
-<fullyQualifiedTypeName name="vm.PFeatureRef"/>
 <fullyQualifiedTypeName name="vm.PUnaryExpression"/>
 <fullyQualifiedTypeName name="vm.PUninaryOperator"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Feature"/>
@@ -41,11 +34,8 @@
 <fullyQualifiedTypeName name="vm.PFeature"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroup"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroupCardinality"/>
-<fullyQualifiedTypeName name="vm.VmFactory"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Comparator"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.Reasoner.questions.ProductsQuestion"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
@@ -60,4 +50,14 @@
 <fullyQualifiedTypeName name="es.us.isa.FAMA.Reasoner.QuestionTrader"/>
 <fullyQualifiedTypeName name="es.us.isa.fama.PluginQuestionTrader"/>
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Dependency"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
+<fullyQualifiedTypeName name="vm.VmFactory"/>
+<fullyQualifiedTypeName name="vm.PBinaryOperator"/>
+<fullyQualifiedTypeName name="vm.PConstraint"/>
+<fullyQualifiedTypeName name="vm.PBinaryExpression"/>
+<fullyQualifiedTypeName name="vm.PFeatureRef"/>
 </qualifiedTypeNameHistroy>

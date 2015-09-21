@@ -359,15 +359,13 @@ public class VmSynthesis {
 			}
 		}
 		
-		if(or.size() > 1){
-			for (PFeature pFeature : or) {
-				PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
-				rootFeature.getGroups().remove(featureGroup);
-			}
-			
-			this.createORGroup(rootFeature, or);
+		for (PFeature pFeature : or) {
+			PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
+			rootFeature.getGroups().remove(featureGroup);
 		}
-			
+		
+		if(or.size() > 0)
+			this.createORGroup(rootFeature, or);
 		
 		for (PFeature child : rootFeature.getChildren()) {
 			this.identifyORs(child);
