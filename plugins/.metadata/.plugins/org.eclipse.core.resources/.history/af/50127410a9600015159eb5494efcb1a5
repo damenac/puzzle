@@ -16,6 +16,5 @@ public class RandomTest {
 		System.out.println(randomAciclic.thereIsLoop());
 		
 		PFeatureModel openFM = VmSynthesis.getInstance().synthesizeOpenFeatureModel(randomAciclic);
-		System.out.println(openFM.getRootFeature().getChildren().size());
 	}
 }
