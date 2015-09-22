@@ -69,7 +69,7 @@ public class FromPFeatureModelToFAMA {
 							pBinaryExpression.getRight() instanceof PFeatureRef){
 						
 						Dependency dependency = new RequiresDependency(pConstraint.getName());
-						
+
 						PFeatureRef leftFeatureRef = (PFeatureRef) pBinaryExpression.getLeft();
 						PFeatureRef rightFeatureRef = (PFeatureRef) pBinaryExpression.getRight();
 						

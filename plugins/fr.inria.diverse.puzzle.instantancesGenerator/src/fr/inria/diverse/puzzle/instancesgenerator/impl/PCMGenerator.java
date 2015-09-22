@@ -35,7 +35,7 @@ public class PCMGenerator {
 			while(productsIterations > 0){
 				
 				ArrayList<DependencyVertex> vertexToInclude = new ArrayList<DependencyVertex>();
-				PCM += "\"P" + i + "\",";
+				
 				
 				// Randomly choosing k vertex
 				int graphSize = graph.getVertex().size();
@@ -49,7 +49,7 @@ public class PCMGenerator {
 				}
 				
 				String currentProduct = "";
-				for (int j = 0; j < graphSize; j++) {
+				for (int j = 1; j <= graphSize; j++) {
 					boolean vertexIncluded = contains(vertexToInclude, ("F" + j));
 					
 					if(vertexIncluded)
@@ -59,6 +59,7 @@ public class PCMGenerator {
 				}
 				
 				if(!exists(currentProduct, PCM)){
+					PCM += "\"P" + i + "\",";
 					PCM += currentProduct + "\n";
 					i++;
 					productsIterations--;

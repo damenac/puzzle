@@ -201,143 +201,26 @@ public class TestSynthesizeClosedModel {
 	public void testIdentifyMandatoryFeatures() throws Exception{
 		PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
 		PCMQueryServices.getInstance().loadPCM(PCM);
-		this.printAllValidProducts(closedFM);
+		TestServices.printAllValidProducts(closedFM, PCM);
 		
 		synthesis.identifyMandatoryFeatures(closedFM);
-		this.printFM(closedFM);
-		this.printAllValidProducts(closedFM);
+		TestServices.printFM(closedFM);
+		TestServices.printAllValidProducts(closedFM, PCM);
 		
 		synthesis.identifyXORs(closedFM);
-		this.printFM(closedFM);
-		this.printAllValidProducts(closedFM);
+		TestServices.printFM(closedFM);
+		TestServices.printAllValidProducts(closedFM, PCM);
 		
 		synthesis.identifyORs(closedFM);
-		this.printFM(closedFM);
-		this.printAllValidProducts(closedFM);
+		TestServices.printFM(closedFM);
+		TestServices.printAllValidProducts(closedFM, PCM);
 		
 		synthesis.addAdditionalImpliesConstraints(closedFM);
-		this.printFM(closedFM);
-		this.printAllValidProducts(closedFM);
+		TestServices.printFM(closedFM);
+		TestServices.printAllValidProducts(closedFM, PCM);
 		
 		synthesis.addAdditionalExcludesConstraints(closedFM);
-		this.printFM(closedFM);
-		this.printAllValidProducts(closedFM);
-	}
-	
-	// -------------------------------------------------
-	// Auxiliary Methods
-	// -------------------------------------------------
-	
-	private void printFM(PFeatureModel fm){
-		System.out.println(fm.getName());
-		this.printFeature("", " + ", fm.getRootFeature());
-		
-//		System.out.println(fm.getConstraints().size());
-//		for (PConstraint constraint : fm.getConstraints()) {
-//			if(constraint.getExpression() instanceof PBinaryExpression){
-//				PBinaryExpression pBinaryExpression = (PBinaryExpression) constraint.getExpression();
-//				 if(pBinaryExpression.getLeft() instanceof PFeatureRef && 
-//						 pBinaryExpression.getRight() instanceof PFeatureRef){
-//					 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
-//					 PFeatureRef right = (PFeatureRef) pBinaryExpression.getRight();
-////					 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " " + right.getRef().getName());
-//				 }
-//				 
-//				 if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
-//							pBinaryExpression.getRight() instanceof PUnaryExpression){
-//					PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
-//					if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
-//						if(not.getExpr() instanceof PFeatureRef){
-//							 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
-//							 PFeatureRef right = (PFeatureRef) not.getExpr();
-////							 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " not " + right.getRef().getName());
-//						}
-//					}
-//				}
-//			}
-//		}
-	}
-	
-	private void printFeature(String space, String groupString, PFeature feature){
-		System.out.println(space + groupString + feature.getName() + " [mandatory: " + feature.isMandatory() + "]");
-		int i = 1;
-		for (PFeatureGroup group : feature.getGroups()) {
-			for (PFeature childFeature : group.getFeatures()) {
-				this.printFeature("    " + space, " Group " + i + " (" + 
-						group.getCardinality().getLowerBound() + "," + group.getCardinality().getUpperBound() 
-							+ "): ", childFeature);
-			}
-			i++;
-		}
-	}
-	
-	private void printAllValidProducts(PFeatureModel fm){
-		FAMAFeatureModel famaFm = FromPFeatureModelToFAMA.getInstance().fromPFeatureModelToFAMA(fm);
-		
-		PluginQuestionTrader qt = new PluginQuestionTrader();
-		qt.setVariabilityModel(famaFm);
-		
-		NumberOfProductsQuestion npq = (NumberOfProductsQuestion) qt.createQuestion("#Products");
-		System.out.println(npq);
-		qt.ask(npq);
-		System.out.println("The number of products is: " + npq.getNumberOfProducts());
-		
-		ProductsQuestion pq = (ProductsQuestion) qt.createQuestion("Products");
-		qt.ask(pq);
-		
-		String[] product1 = {"Root", "F2", "F3", "F5", "F8", "F11", "F12"};
-		boolean product1Exists = this.productExists(product1, pq);
-		System.out.println("P1: " + product1Exists);
-		
-		String[] product2 = {"Root", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F9", "F11", "F13", "F14", "F15", "F18"};
-		boolean product2Exists = this.productExists(product2, pq);
-		System.out.println("P2: " + product2Exists);
-		
-		String[] product3 = {"Root", "F1", "F2", "F4", "F5", "F6", "F10", "F19", "F20"};
-		boolean product3Exists = this.productExists(product3, pq);
-		System.out.println("P3: " + product3Exists);
-		
-		String[] product4 = {"Root", "F2", "F3", "F4", "F5", "F8", "F11", "F12", "F13", "F14", "F16", "F17", "F18", "F21"};
-		boolean product4Exists = this.productExists(product4, pq);
-		System.out.println("P4: " + product4Exists);
-		
-//		for (GenericProduct product : pq.getAllProducts()) {
-//			System.out.print("Product: ");
-//			for (VariabilityElement element : product.getElements()) {
-//				System.out.print(element + ", ");	
-//			}
-//			System.out.println();
-//		}
-	}
-	
-	public boolean productExists(String[] productFeatures, ProductsQuestion pq){
-		for (GenericProduct product : pq.getAllProducts()) {
-			if(this.productsAreEqual(product, productFeatures)){
-				return true;
-			}
-		}
-		return false;
-	}
-
-	private boolean productsAreEqual(GenericProduct product,
-			String[] productFeatures) {
-		if(product.getElements().size() != productFeatures.length){
-			return false;
-		}
-		
-		for (String feature : productFeatures) {
-			boolean featureExists = false;
-			
-			for (VariabilityElement element : product.getElements()) {
-				if(element.getName().equals(feature)){
-					featureExists = true;
-					break;
-				}
-			}
-			
-			if(!featureExists)
-				return false;
-		}
-		return true;
+		TestServices.printFM(closedFM);
+		TestServices.printAllValidProducts(closedFM, PCM);
 	}
 }

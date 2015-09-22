@@ -6,6 +6,7 @@ com.jcraft.jsch,0.1.51.v201410302000,file:/Users/dmendeza/IDEs/eclipse-melange/p
 com.jcraft.jsch,0.1.50.v201403120620,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.jcraft.jsch_0.1.50.v201403120620.jar,4,false
 com.sun.el,2.2.0.v201303151357,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.sun.el_2.2.0.v201303151357.jar,4,false
 de.trier.cs.jccd,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/de.trier.cs.jccd/,4,false
+es.us.isa.fama,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/es.us.isa.fama/,4,false
 es.us.isa.fama.synthesizer.interface,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/es.us.isa.fama.synthesizer.interface/,4,false
 fr.inria.diverse.commons.asm,1.0.0.201506091325,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.commons.asm_1.0.0.201506091325.jar,4,false
 fr.inria.diverse.commons.eclipse,1.0.0.201506091325,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.commons.eclipse_1.0.0.201506091325.jar,4,false
@@ -29,6 +30,7 @@ fr.inria.diverse.melange.ui.templates,0.1.0.201508100737,file:/Users/dmendeza/ID
 fr.inria.diverse.puzzle.breaker,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.breaker/,4,false
 fr.inria.diverse.puzzle.common,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/,4,false
 fr.inria.diverse.puzzle.configurator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.configurator/,4,false
+fr.inria.diverse.puzzle.instantancesGenerator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.instantancesGenerator/,4,false
 fr.inria.diverse.puzzle.metrics,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/,4,false
 fr.inria.diverse.puzzle.synthesizer,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer/,4,false
 fr.inria.diverse.puzzle.ui,0.1.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.ui/,4,false

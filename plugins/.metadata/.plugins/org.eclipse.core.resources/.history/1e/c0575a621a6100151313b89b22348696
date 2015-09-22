@@ -1,0 +1,65 @@
+package fr.inria.diverse.puzzle.vmsynthesis.tests;
+
+import java.util.ArrayList;
+
+import org.junit.Test;
+
+import vm.PFeatureModel;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.puzzle.instancesgenerator.impl.GraphGenerator;
+import fr.inria.diverse.puzzle.instancesgenerator.impl.PCMGenerator;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
+
+public class RandomTest {
+
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
+	
+	private VmSynthesis synthesis;
+	
+	// -------------------------------------------------
+	// Test Cases
+	// -------------------------------------------------
+	
+	@Test
+	public void testRandom() throws Exception {
+		DependencyGraph randomAciclic = GraphGenerator.generateGraph(10, 880608);
+		System.out.println(randomAciclic.toString());
+		System.out.println(randomAciclic.thereIsLoop());
+		
+		PFeatureModel openFM = VmSynthesis.getInstance().synthesizeOpenFeatureModel(randomAciclic);
+		System.out.println(openFM.getRootFeature().getChildren().size());
+		
+		ArrayList<String> PCMs = PCMGenerator.generatePCMs(randomAciclic, 2, 10, 880608, 3);
+		for (String PCM : PCMs) {
+			
+			PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
+			PCMQueryServices.getInstance().loadPCM(PCM);
+			this.printAllValidProducts(closedFM);
+			
+			synthesis.identifyMandatoryFeatures(closedFM);
+			this.printFM(closedFM);
+			this.printAllValidProducts(closedFM);
+			
+			synthesis.identifyXORs(closedFM);
+			this.printFM(closedFM);
+			this.printAllValidProducts(closedFM);
+			
+			synthesis.identifyORs(closedFM);
+			this.printFM(closedFM);
+			this.printAllValidProducts(closedFM);
+			
+			synthesis.addAdditionalImpliesConstraints(closedFM);
+			this.printFM(closedFM);
+			this.printAllValidProducts(closedFM);
+			
+			synthesis.addAdditionalExcludesConstraints(closedFM);
+			this.printFM(closedFM);
+			this.printAllValidProducts(closedFM);
+		}
+		
+		
+	}
+}

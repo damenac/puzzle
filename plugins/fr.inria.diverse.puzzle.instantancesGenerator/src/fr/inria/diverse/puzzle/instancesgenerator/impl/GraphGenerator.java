@@ -30,7 +30,7 @@ public class GraphGenerator {
 		
 		// Creating an empty graph (without arcs)
 		DependencyGraph graph = new DependencyGraph();
-		for (int i = 0; i < size; i++) {
+		for (int i = 1; i <= size; i++) {
 			DependencyVertex vertex = new DependencyVertex("F" + Integer.toString(i));
 			graph.getVertex().add(vertex);
 		}

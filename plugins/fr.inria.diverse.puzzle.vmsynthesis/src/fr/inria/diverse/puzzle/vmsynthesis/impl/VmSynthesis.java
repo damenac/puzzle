@@ -147,6 +147,8 @@ public class VmSynthesis {
 		this.identifyMandatoryFeatures(closedFeatureModel);
 		this.identifyXORs(closedFeatureModel);
 		this.identifyORs(closedFeatureModel);
+		this.addAdditionalImpliesConstraints(closedFeatureModel);
+		this.addAdditionalExcludesConstraints(closedFeatureModel);
 		
 		return closedFeatureModel;
 	}
@@ -450,6 +452,7 @@ public class VmSynthesis {
 		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
 		
 		implies.setExpression(pBinaryExpression);
+		implies.setName(left.getRef().getName() + " implies " + right.getRef().getName());
 		fm.getConstraints().add(implies);
 	}
 
@@ -497,6 +500,7 @@ public class VmSynthesis {
 		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
 		
 		excludes.setExpression(pBinaryExpression);
+		excludes.setName(left.getRef().getName() + " excludes " + right.getRef().getName());
 		fm.getConstraints().add(excludes);
 	}
 
