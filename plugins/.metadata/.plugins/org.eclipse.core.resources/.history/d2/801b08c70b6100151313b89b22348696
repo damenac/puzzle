@@ -1,0 +1,57 @@
+package fr.inria.diverse.puzzle.instancesgenerator.impl;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
+
+/**
+ * Random generator of PCMs for a given dependencies graph.
+ * 
+ * @author David Mendez-Acuna
+ * 
+ */
+public class PCMGenerator {
+
+	// -------------------------------------------------------
+	// Methods
+	// -------------------------------------------------------
+	
+	public static ArrayList<String> generatePCMs(DependencyGraph graph, int amount, long seed, int k){
+		ArrayList<String> PCMs = new ArrayList<String>();
+		
+		int iterations = amount;
+		while(iterations > 0){
+			String PCM = "\"Product\",";
+			
+			ArrayList<DependencyVertex> vertexToInclude = new ArrayList<DependencyVertex>();
+			
+			// Randomly choosing k vertex
+			int graphSize = graph.getVertex().size();
+			int iterationsK = k;
+			while(iterationsK > 0){
+				Random generator = new Random(seed);
+				int currentVertexIndex = 0 + (int)(generator.nextDouble() * (graphSize - 1));
+				DependencyVertex currentVertex = graph.getVertex().get(currentVertexIndex);
+				DependencyVertex vertexFlag = currentVertex;
+				
+				while(currentVertex.getOutgoingArcs().size() != 0){
+					for (DependencyArc toAdd : currentVertex.getOutgoingArcs()) {
+						
+					}
+				}
+				
+				
+				iterationsK--;
+			}
+			
+			
+			PCMs.add(PCM);
+			iterations--;
+		}
+		
+		
+		return PCMs;
+	}
+}

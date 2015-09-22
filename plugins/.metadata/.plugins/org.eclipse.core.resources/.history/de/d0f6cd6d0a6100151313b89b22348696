@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.instancesgenerator.impl;
+
+/**
+ * Random generator of PCMs for a given dependencies graph.
+ * 
+ * @author David Mendez-Acuna
+ */
+public class PCMGenerator {
+
+}

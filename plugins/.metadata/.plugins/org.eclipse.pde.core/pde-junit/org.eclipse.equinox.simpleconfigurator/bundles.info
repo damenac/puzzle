@@ -30,7 +30,7 @@ fr.inria.diverse.melange.ui.templates,0.1.0.201508100737,file:/Users/dmendeza/ID
 fr.inria.diverse.puzzle.breaker,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.breaker/,4,false
 fr.inria.diverse.puzzle.common,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/,4,false
 fr.inria.diverse.puzzle.configurator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.configurator/,4,false
-fr.inria.diverse.puzzle.graphsGenerator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.graphsGenerator/,4,false
+fr.inria.diverse.puzzle.instantancesGenerator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.instantancesGenerator/,4,false
 fr.inria.diverse.puzzle.metrics,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/,4,false
 fr.inria.diverse.puzzle.synthesizer,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer/,4,false
 fr.inria.diverse.puzzle.ui,0.1.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.ui/,4,false

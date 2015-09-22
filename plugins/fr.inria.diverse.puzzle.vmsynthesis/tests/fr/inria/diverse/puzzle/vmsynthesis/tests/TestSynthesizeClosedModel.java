@@ -232,30 +232,30 @@ public class TestSynthesizeClosedModel {
 		System.out.println(fm.getName());
 		this.printFeature("", " + ", fm.getRootFeature());
 		
-		System.out.println(fm.getConstraints().size());
-		for (PConstraint constraint : fm.getConstraints()) {
-			if(constraint.getExpression() instanceof PBinaryExpression){
-				PBinaryExpression pBinaryExpression = (PBinaryExpression) constraint.getExpression();
-				 if(pBinaryExpression.getLeft() instanceof PFeatureRef && 
-						 pBinaryExpression.getRight() instanceof PFeatureRef){
-					 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
-					 PFeatureRef right = (PFeatureRef) pBinaryExpression.getRight();
-					 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " " + right.getRef().getName());
-				 }
-				 
-				 if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
-							pBinaryExpression.getRight() instanceof PUnaryExpression){
-					PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
-					if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
-						if(not.getExpr() instanceof PFeatureRef){
-							 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
-							 PFeatureRef right = (PFeatureRef) not.getExpr();
-							 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " not " + right.getRef().getName());
-						}
-					}
-				}
-			}
-		}
+//		System.out.println(fm.getConstraints().size());
+//		for (PConstraint constraint : fm.getConstraints()) {
+//			if(constraint.getExpression() instanceof PBinaryExpression){
+//				PBinaryExpression pBinaryExpression = (PBinaryExpression) constraint.getExpression();
+//				 if(pBinaryExpression.getLeft() instanceof PFeatureRef && 
+//						 pBinaryExpression.getRight() instanceof PFeatureRef){
+//					 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
+//					 PFeatureRef right = (PFeatureRef) pBinaryExpression.getRight();
+////					 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " " + right.getRef().getName());
+//				 }
+//				 
+//				 if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
+//							pBinaryExpression.getRight() instanceof PUnaryExpression){
+//					PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
+//					if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
+//						if(not.getExpr() instanceof PFeatureRef){
+//							 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
+//							 PFeatureRef right = (PFeatureRef) not.getExpr();
+////							 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " not " + right.getRef().getName());
+//						}
+//					}
+//				}
+//			}
+//		}
 	}
 	
 	private void printFeature(String space, String groupString, PFeature feature){
@@ -301,13 +301,13 @@ public class TestSynthesizeClosedModel {
 		boolean product4Exists = this.productExists(product4, pq);
 		System.out.println("P4: " + product4Exists);
 		
-		for (GenericProduct product : pq.getAllProducts()) {
-			System.out.print("Product: ");
-			for (VariabilityElement element : product.getElements()) {
-				System.out.print(element + ", ");	
-			}
-			System.out.println();
-		}
+//		for (GenericProduct product : pq.getAllProducts()) {
+//			System.out.print("Product: ");
+//			for (VariabilityElement element : product.getElements()) {
+//				System.out.print(element + ", ");	
+//			}
+//			System.out.println();
+//		}
 	}
 	
 	public boolean productExists(String[] productFeatures, ProductsQuestion pq){
