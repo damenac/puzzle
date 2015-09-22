@@ -22,7 +22,6 @@
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 <fullyQualifiedTypeName name="vm.PFeature"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroup"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroupCardinality"/>
@@ -30,7 +29,6 @@
 <fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
-<fullyQualifiedTypeName name="vm.PFeatureModel"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion"/>
 <fullyQualifiedTypeName name="org.eclipse.core.internal.runtime.InternalPlatform"/>
 <fullyQualifiedTypeName name="org.osgi.framework.FrameworkUtil"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.graphsgenerator.impl.GraphGenerator"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
+<fullyQualifiedTypeName name="vm.PFeatureModel"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 </qualifiedTypeNameHistroy>

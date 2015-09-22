@@ -11,7 +11,7 @@ public class RandomTest {
 
 	@Test
 	public void testRandom(){
-		DependencyGraph randomAciclic = GraphGenerator.generateGraph(100, 880608);
+		DependencyGraph randomAciclic = GraphGenerator.generateGraph(10, 880608);
 		System.out.println(randomAciclic.toString());
 		System.out.println(randomAciclic.thereIsLoop());
 		

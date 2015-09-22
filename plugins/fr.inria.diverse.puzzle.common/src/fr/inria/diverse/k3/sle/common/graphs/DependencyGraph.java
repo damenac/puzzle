@@ -142,7 +142,7 @@ public class DependencyGraph {
 	 */
 	public boolean thereIsLoop(){
 		for (DependencyVertex vertex : this.vertex) {
-			boolean loop = this.thereIsArc(vertex, vertex);
+			boolean loop = this.thereIsPath(vertex, vertex);
 			if(loop)
 				return true;
 		}
@@ -209,6 +209,23 @@ public class DependencyGraph {
 		return answer;
 	}
 	
+	/**
+	 * Returns the arc between the origin and the destination.
+	 * Returns null if there is not an arc between the given nodes. 
+	 * @param origin
+	 * @param destination
+	 * @return
+	 */
+	public DependencyArc getArc(DependencyVertex origin,
+			DependencyVertex destination) {
+		for (DependencyArc dependencyArc : arcs) {
+			if(dependencyArc.getFrom().getIdentifier().equals(origin.getIdentifier()) &&
+					dependencyArc.getTo().getIdentifier().equals(destination.getIdentifier()))
+				return dependencyArc;
+		}
+		return null;
+	}
+	
 	// -----------------------------------------------
 	// Getters
 	// -----------------------------------------------
@@ -220,6 +237,4 @@ public class DependencyGraph {
 	public List<DependencyArc> getArcs() {
 		return arcs;
 	}
-
-	
 }
