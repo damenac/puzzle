@@ -113,22 +113,6 @@ public class VmSynthesis {
 								
 								parent.getGroups().add(featureGroup);
 							}
-//							else{
-//								// Esta feature ya tiene padre. Cree la constraint.
-//								PFeature requiredFeature = this.getPFeatureByName(dependencyArc.getTo().getIdentifier(), rootFeature);
-//								PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
-//								PBinaryExpression binaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
-//								PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
-//								left.setRef(feature);
-//								PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
-//								right.setRef(requiredFeature);
-//								binaryExpression.setLeft(left);
-//								binaryExpression.setRight(right);
-//								binaryExpression.setOperator(PBinaryOperator.IMPLIES);
-//								constraint.setExpression(binaryExpression);
-//								constraint.setName(left.getRef().getName() + " implies " + right.getRef().getName());
-//								featureModel.getConstraints().add(constraint);
-//							}
 							first = false;
 						}
 					}

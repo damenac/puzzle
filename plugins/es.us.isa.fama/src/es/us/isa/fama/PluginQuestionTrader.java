@@ -20,16 +20,15 @@ public class PluginQuestionTrader extends QuestionTrader {
 	@SuppressWarnings("unchecked")
 	public PluginQuestionTrader() {
 		super("OSGI");
-
 		try {
 			this.reasonersIdMap.put("Choco", this.createReasoner("Choco",
 					es.us.isa.ChocoReasoner.ChocoReasoner.class));
+			this.reasonersIdMap.put("ChocoAttributed", this.createReasoner("ChocoAttributed", 
+					 es.us.isa.ChocoReasoner.attributed.ChocoReasoner.class));
+			
 			// this.reasonersIdMap.put("Choco4exp",
 			// this.createReasoner("Choco4exp",
 			// es.us.isa.ChocoReasoner4Exp.ChocoReasoner.class));
-			// this.reasonersIdMap.put("ChocoAttributed",
-			// this.createReasoner("ChocoAttributed",
-			// es.us.isa.ChocoReasoner.attributed.ChocoReasoner.class));
 			// this.reasonersIdMap.put("ChocoAttributed4exp",
 			// this.createReasoner("ChocoAttributed4exp",
 			// es.us.isa.ChocoReasoner4Exp.attributed.ChocoReasoner.class));

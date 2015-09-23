@@ -1,14 +1,10 @@
 package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
-import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.AttributedFeature;
-import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.ComplexConstraint;
-import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.Dependency;
-import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureModel;
-import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.Relation;
-import es.us.isa.FAMA.models.featureModel.Cardinality;
-import es.us.isa.util.Tree;
+import java.util.Iterator;
+
 import vm.PBinaryExpression;
 import vm.PBinaryOperator;
+import vm.PBooleanExpression;
 import vm.PConstraint;
 import vm.PFeature;
 import vm.PFeatureGroup;
@@ -16,6 +12,15 @@ import vm.PFeatureModel;
 import vm.PFeatureRef;
 import vm.PUnaryExpression;
 import vm.PUninaryOperator;
+import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.AttributedFeature;
+import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.ComplexConstraint;
+import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureModel;
+import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.Relation;
+import es.us.isa.FAMA.models.featureModel.Cardinality;
+import es.us.isa.FAMA.models.featureModel.Constraint;
+import es.us.isa.FAMA.models.featureModel.KeyWords;
+import es.us.isa.util.Node;
+import es.us.isa.util.Tree;
 
 /**
  * Offers the services for translating feature models from diverse formats to the VM metamodel.
@@ -60,54 +65,54 @@ public class FromPFeatureModelToFAMAAttributed {
 		famaFeatureModel.setRoot(fromFAMAFeatureToPFeature(pFeatureModel.getRootFeature()));
 		
 		for (PConstraint pConstraint : pFeatureModel.getConstraints()) {
-			
-			if(pConstraint.getExpression() instanceof PBinaryExpression){
-				PBinaryExpression pBinaryExpression = (PBinaryExpression) pConstraint.getExpression();
-				
-				if(pBinaryExpression.getOperator().equals(PBinaryOperator.IMPLIES)){
-					if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
-							pBinaryExpression.getRight() instanceof PFeatureRef){
-						
-						Dependency dependency = new ComplexConstraint(null);
-
-						PFeatureRef leftFeatureRef = (PFeatureRef) pBinaryExpression.getLeft();
-						PFeatureRef rightFeatureRef = (PFeatureRef) pBinaryExpression.getRight();
-						
-						dependency.setOrigin(this.getFamaFeatureByName(leftFeatureRef.getRef().getName(), 
-								famaFeatureModel.getRoot()));
-						
-						dependency.setDestination(this.getFamaFeatureByName(rightFeatureRef.getRef().getName(), 
-								famaFeatureModel.getRoot()));
-						
-						famaFeatureModel.addDependency(dependency);
-					}
-					
-					if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
-							pBinaryExpression.getRight() instanceof PUnaryExpression){
-						PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
-						 if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
-							 if(not.getExpr() instanceof PFeatureRef){
-								 Dependency dependency = new ExcludesDependency(pConstraint.getName());
-								 
-								PFeatureRef leftFeatureRef = (PFeatureRef) pBinaryExpression.getLeft();
-								PFeatureRef rightFeatureRef = (PFeatureRef) not.getExpr();
-								
-								dependency.setOrigin(this.getFamaFeatureByName(leftFeatureRef.getRef().getName(), 
-										famaFeatureModel.getRoot()));
-								
-								dependency.setDestination(this.getFamaFeatureByName(rightFeatureRef.getRef().getName(), 
-										famaFeatureModel.getRoot()));
-								
-								famaFeatureModel.addDependency(dependency);
-							 }
-						 }
-					}
-				}
-			}
+			Tree<String> constraintAST = new Tree<String>(this.createNode(pConstraint.getExpression()));
+			Constraint constraint = new ComplexConstraint(constraintAST);
+			famaFeatureModel.addConstraint(constraint);
 		}
 		return famaFeatureModel;
 	}
 	
+	private Node<String> createNode(PBooleanExpression expression) {
+		if(expression instanceof PBinaryExpression){
+			PBinaryExpression binaryExpression = (PBinaryExpression) expression;
+			String operator = this.getOperatorByString(binaryExpression.getOperator().getName());
+			Node<String> treeRoot = new Node<String>(operator);
+			Node<String> leftNode = this.createNode(binaryExpression.getLeft());
+			Node<String> rightNode = this.createNode(binaryExpression.getRight());
+			treeRoot.addChild(leftNode);
+			treeRoot.addChild(rightNode);
+			return treeRoot;
+		}
+		else if(expression instanceof PUnaryExpression){
+			PUnaryExpression unaryExpression = (PUnaryExpression) expression;
+			String operator = this.getOperatorByString(unaryExpression.getOperator().getName());
+			Node<String> treeRoot = new Node<String>(operator);
+			Node<String> exprNode = this.createNode(unaryExpression.getExpr());
+			treeRoot.addChild(exprNode);
+			return treeRoot;
+		}
+		else if(expression instanceof PFeatureRef){
+			PFeatureRef featureRef = (PFeatureRef) expression;
+			Node<String> treeRoot = new Node<String>(featureRef.getRef().getName());
+			return treeRoot;
+		}
+		else
+			return null;
+	}
+
+	private String getOperatorByString(String name) {
+		if(name.equals(PBinaryOperator.IMPLIES.getName()))
+			return KeyWords.IMPLIES;
+		else if(name.equals(PBinaryOperator.AND.getName()))
+			return KeyWords.AND;
+		else if(name.equals(PBinaryOperator.OR.getName()))
+			return KeyWords.OR;
+		else if(name.equals(PUninaryOperator.NOT.getName()))
+			return KeyWords.NOT;
+		else
+			return null;
+	}
+
 	/**
 	 * Finds a FAMA feature by the name in the features model in the parameter
 	 * @param name
@@ -118,10 +123,15 @@ public class FromPFeatureModelToFAMAAttributed {
 		if(root.getName().equals(name))
 			return root;
 		else{
-			for (AttributedFeature currentFeature : root.getChilds()) {
-				AttributedFeature feature = this.getFamaFeatureByName(name, currentFeature);
-				if(feature != null)
-					return feature;
+			Iterator<Relation> it = root.getRelations();
+			while (it.hasNext()) {
+				Relation relation = (Relation) it.next();
+				Iterator<AttributedFeature> ito = relation.getDestination();
+				while (ito.hasNext()) {
+					AttributedFeature attributedFeature = (AttributedFeature) ito.next();
+					if(attributedFeature != null)
+						return attributedFeature;
+				}
 			}
 		}
 		return null;
