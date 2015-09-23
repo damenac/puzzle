@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer"/>
-<fullyQualifiedTypeName name="fr.familiar.variable.FeatureModelVariable"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.auxiliary.PuzzleFMTranslator"/>
-<fullyQualifiedTypeName name="java.sql.Array"/>
-<fullyQualifiedTypeName name="vm.util.VmSwitch"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Feature"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.FromPFeatureModelToFAMA"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.Configurator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.configurator.ConfigurationFacade"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Relation"/>
 <fullyQualifiedTypeName name="vm.PGroupKind"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.featureModel.Cardinality"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.junit.Before"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.AttributedFeature"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.Relation"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.featureModel.Cardinality"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMAAttributed"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureModel"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.Dependency"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.ComplexConstraint"/>
 </qualifiedTypeNameHistroy>
