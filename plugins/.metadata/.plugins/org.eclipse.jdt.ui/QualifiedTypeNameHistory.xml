@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialSemanticChart"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.ExternalDependenciesGraph"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SpecialProductLineSyntacticChart"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.facade.KSynthesisSynthesizer"/>
 <fullyQualifiedTypeName name="fr.familiar.variable.FeatureModelVariable"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.ksynthesis.ksynthesis.auxiliary.PuzzleFMTranslator"/>
@@ -39,25 +35,29 @@
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.Dependency"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.RequiresDependency"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
 <fullyQualifiedTypeName name="vm.PBinaryOperator"/>
-<fullyQualifiedTypeName name="vm.PConstraint"/>
-<fullyQualifiedTypeName name="vm.PBinaryExpression"/>
-<fullyQualifiedTypeName name="vm.PFeatureRef"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.Reasoner.questions.ProductsQuestion"/>
 <fullyQualifiedTypeName name="vm.VmFactory"/>
-<fullyQualifiedTypeName name="vm.PUnaryExpression"/>
-<fullyQualifiedTypeName name="vm.PUninaryOperator"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.variabilityModel.VariabilityElement"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.variabilityModel.GenericProduct"/>
 <fullyQualifiedTypeName name="java.util.Random"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyVertex"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.graphsgenerator.impl.GraphGenerator"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
 <fullyQualifiedTypeName name="vm.PFeatureModel"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyVertex"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.instancesgenerator.impl.PCMGenerator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.tests.TestServices"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
+<fullyQualifiedTypeName name="vm.PFeatureRef"/>
+<fullyQualifiedTypeName name="vm.PUnaryExpression"/>
+<fullyQualifiedTypeName name="vm.PBinaryExpression"/>
+<fullyQualifiedTypeName name="vm.PConstraint"/>
+<fullyQualifiedTypeName name="vm.PUninaryOperator"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
 </qualifiedTypeNameHistroy>

@@ -19,57 +19,58 @@ public class PCMGenerator {
 	// Methods
 	// -------------------------------------------------------
 	
-	public static ArrayList<String> generatePCMs(DependencyGraph graph, int PCMsAmount, int productsAmount, long seed, int k){
-		ArrayList<String> PCMs = new ArrayList<String>();
+	public static String generatePCMs(DependencyGraph graph, int productsAmount, long seed, int k){
 		Random generator = new Random(seed);
-		int iterations = PCMsAmount;
-		while(iterations > 0){
-			String PCM = "\"Product\",";
-			
-			for (DependencyVertex vertex : graph.getVertex()) {
-				PCM += "\"" + vertex.getIdentifier() + "\",";
-			}
-			PCM += "\n";
-			int i = 0;
-			int productsIterations = productsAmount;
-			while(productsIterations > 0){
-				
-				ArrayList<DependencyVertex> vertexToInclude = new ArrayList<DependencyVertex>();
-				
-				
-				// Randomly choosing k vertex
-				int graphSize = graph.getVertex().size();
-				int iterationsK = k;
-				while(iterationsK > 0){
-					
-					int currentVertexIndex = 0 + (int)(generator.nextDouble() * (graphSize - 1));
-					DependencyVertex currentVertex = graph.getVertex().get(currentVertexIndex);
-					addDependencies(currentVertex, vertexToInclude);
-					iterationsK--;
-				}
-				
-				String currentProduct = "";
-				for (int j = 1; j <= graphSize; j++) {
-					boolean vertexIncluded = contains(vertexToInclude, ("F" + j));
-					
-					if(vertexIncluded)
-						currentProduct += "\"YES\",";
-					else
-						currentProduct += "\"NO\",";
-				}
-				
-				if(!exists(currentProduct, PCM)){
-					PCM += "\"P" + i + "\",";
-					PCM += currentProduct + "\n";
-					i++;
-					productsIterations--;
-				}
-			}
-			
-			PCMs.add(PCM);
-			iterations--;
+		int count = 0;
+		String PCM = "\"Product\",";
+		
+		for (DependencyVertex vertex : graph.getVertex()) {
+			PCM += "\"" + vertex.getIdentifier() + "\",";
 		}
-		return PCMs;
+		PCM += "\n";
+		int i = 0;
+		int productsIterations = productsAmount;
+		while(productsIterations > 0){
+			
+			ArrayList<DependencyVertex> vertexToInclude = new ArrayList<DependencyVertex>();
+			
+			// Randomly choosing k vertex
+			int graphSize = graph.getVertex().size();
+			int iterationsK = 1;
+			while(iterationsK > 0){
+				
+				int currentVertexIndex = 0 + (int)(generator.nextDouble() * (graphSize));
+				DependencyVertex currentVertex = graph.getVertex().get(currentVertexIndex);
+				addDependencies(currentVertex, vertexToInclude);
+				iterationsK--;
+			}
+			
+			String currentProduct = "";
+			for (int j = 1; j <= graphSize; j++) {
+				boolean vertexIncluded = contains(vertexToInclude, ("F" + j));
+				
+				if(vertexIncluded)
+					currentProduct += "\"YES\",";
+				else
+					currentProduct += "\"NO\",";
+			}
+			
+			if(!exists(currentProduct, PCM) /*&& currentProduct.contains("NO")*/){
+				PCM += "\"P" + i + "\",";
+				PCM += currentProduct + "\n";
+				i++;
+				productsIterations--;
+			}else{
+				count++;
+			}
+			
+			if(count > 900){
+				System.out.println("No hay tantos productos como pide!");
+				return PCM;
+			}
+		}
+		
+		return PCM;
 	}
 
 	private static boolean exists(String currentProduct, String PCM) {

@@ -2,9 +2,14 @@ package fr.inria.diverse.puzzle.vmsynthesis.tests;
 
 import java.util.ArrayList;
 
+import vm.PBinaryExpression;
+import vm.PConstraint;
 import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureModel;
+import vm.PFeatureRef;
+import vm.PUnaryExpression;
+import vm.PUninaryOperator;
 import es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion;
 import es.us.isa.FAMA.Reasoner.questions.ProductsQuestion;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
@@ -23,30 +28,30 @@ public class TestServices {
 		System.out.println(fm.getName());
 		printFeature("", " + ", fm.getRootFeature());
 		
-//		System.out.println(fm.getConstraints().size());
-//		for (PConstraint constraint : fm.getConstraints()) {
-//			if(constraint.getExpression() instanceof PBinaryExpression){
-//				PBinaryExpression pBinaryExpression = (PBinaryExpression) constraint.getExpression();
-//				 if(pBinaryExpression.getLeft() instanceof PFeatureRef && 
-//						 pBinaryExpression.getRight() instanceof PFeatureRef){
-//					 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
-//					 PFeatureRef right = (PFeatureRef) pBinaryExpression.getRight();
-////					 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " " + right.getRef().getName());
-//				 }
-//				 
-//				 if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
-//							pBinaryExpression.getRight() instanceof PUnaryExpression){
-//					PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
-//					if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
-//						if(not.getExpr() instanceof PFeatureRef){
-//							 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
-//							 PFeatureRef right = (PFeatureRef) not.getExpr();
-////							 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " not " + right.getRef().getName());
-//						}
-//					}
-//				}
-//			}
-//		}
+		System.out.println(fm.getConstraints().size());
+		for (PConstraint constraint : fm.getConstraints()) {
+			if(constraint.getExpression() instanceof PBinaryExpression){
+				PBinaryExpression pBinaryExpression = (PBinaryExpression) constraint.getExpression();
+				 if(pBinaryExpression.getLeft() instanceof PFeatureRef && 
+						 pBinaryExpression.getRight() instanceof PFeatureRef){
+					 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
+					 PFeatureRef right = (PFeatureRef) pBinaryExpression.getRight();
+					 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " " + right.getRef().getName());
+				 }
+				 
+				 if(pBinaryExpression.getLeft() instanceof PFeatureRef &&
+							pBinaryExpression.getRight() instanceof PUnaryExpression){
+					PUnaryExpression not = (PUnaryExpression) pBinaryExpression.getRight();
+					if(not.getOperator().getName().equals(PUninaryOperator.NOT.getName())){
+						if(not.getExpr() instanceof PFeatureRef){
+							 PFeatureRef left = (PFeatureRef) pBinaryExpression.getLeft();
+							 PFeatureRef right = (PFeatureRef) not.getExpr();
+							 System.out.println(left.getRef().getName() + " " + pBinaryExpression.getOperator().getName() + " not " + right.getRef().getName());
+						}
+					}
+				}
+			}
+		}
 	}
 	
 	public static void printFeature(String space, String groupString, PFeature feature){
@@ -62,7 +67,7 @@ public class TestServices {
 		}
 	}
 	
-	public static void printAllValidProducts(PFeatureModel fm, String PCM){
+	public static double printAllValidProducts(PFeatureModel fm, String PCM){
 		FAMAFeatureModel famaFm = FromPFeatureModelToFAMA.getInstance().fromPFeatureModelToFAMA(fm);
 		
 		PluginQuestionTrader qt = new PluginQuestionTrader();
@@ -71,7 +76,8 @@ public class TestServices {
 		NumberOfProductsQuestion npq = (NumberOfProductsQuestion) qt.createQuestion("#Products");
 		System.out.println(npq);
 		qt.ask(npq);
-		System.out.println("The number of products is: " + npq.getNumberOfProducts());
+		double numberOfProducts = npq.getNumberOfProducts();
+		System.out.println("The number of products is: " + numberOfProducts);
 		
 		ProductsQuestion pq = (ProductsQuestion) qt.createQuestion("Products");
 		qt.ask(pq);
@@ -103,6 +109,8 @@ public class TestServices {
 			
 			i++;
 		}
+		
+		return numberOfProducts;
 		
 //		for (GenericProduct product : pq.getAllProducts()) {
 //			System.out.print("Product: ");

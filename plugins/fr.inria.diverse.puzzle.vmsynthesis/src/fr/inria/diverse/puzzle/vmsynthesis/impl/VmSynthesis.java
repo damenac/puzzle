@@ -112,22 +112,23 @@ public class VmSynthesis {
 								featureGroup.setCardinality(cardinality);
 								
 								parent.getGroups().add(featureGroup);
-							}else{
-								// Esta feature ya tiene padre. Cree la constraint.
-								PFeature requiredFeature = this.getPFeatureByName(dependencyArc.getTo().getIdentifier(), rootFeature);
-								PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
-								PBinaryExpression binaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
-								PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
-								left.setRef(feature);
-								PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
-								right.setRef(requiredFeature);
-								binaryExpression.setLeft(left);
-								binaryExpression.setRight(right);
-								binaryExpression.setOperator(PBinaryOperator.IMPLIES);
-								constraint.setExpression(binaryExpression);
-								constraint.setName(left.getRef().getName() + " implies " + right.getRef().getName());
-								featureModel.getConstraints().add(constraint);
 							}
+//							else{
+//								// Esta feature ya tiene padre. Cree la constraint.
+//								PFeature requiredFeature = this.getPFeatureByName(dependencyArc.getTo().getIdentifier(), rootFeature);
+//								PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+//								PBinaryExpression binaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+//								PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+//								left.setRef(feature);
+//								PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+//								right.setRef(requiredFeature);
+//								binaryExpression.setLeft(left);
+//								binaryExpression.setRight(right);
+//								binaryExpression.setOperator(PBinaryOperator.IMPLIES);
+//								constraint.setExpression(binaryExpression);
+//								constraint.setName(left.getRef().getName() + " implies " + right.getRef().getName());
+//								featureModel.getConstraints().add(constraint);
+//							}
 							first = false;
 						}
 					}
@@ -137,9 +138,52 @@ public class VmSynthesis {
 		}
 		
 		featureModel.setRootFeature(rootFeature);
+		this.addCrosslevelRequires(featureModel, dependenciesGraph);
 		return featureModel;
 	}
 	
+	private void addCrosslevelRequires(PFeatureModel featureModel,
+			DependencyGraph dependenciesGraph) {
+		for (DependencyArc arc : dependenciesGraph.getArcs()) {
+			if(!this.isFather(featureModel.getRootFeature(), arc.getTo().getIdentifier(),arc.getFrom().getIdentifier())){
+				PFeature requiredFeature = this.getPFeatureByName(arc.getTo().getIdentifier(), featureModel.getRootFeature());
+				PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+				PBinaryExpression binaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+				PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+				left.setRef(this.getPFeatureByName(arc.getFrom().getIdentifier(), featureModel.getRootFeature()));
+				PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+				right.setRef(requiredFeature);
+				binaryExpression.setLeft(left);
+				binaryExpression.setRight(right);
+				binaryExpression.setOperator(PBinaryOperator.IMPLIES);
+				constraint.setExpression(binaryExpression);
+				constraint.setName(left.getRef().getName() + " implies " + right.getRef().getName());
+				featureModel.getConstraints().add(constraint);
+			}
+		}
+		
+	}
+
+	private boolean isFather(PFeature root, String father,
+			String child) {
+		if(root.getName().equals(father)){
+			for (PFeature children : root.getChildren()) {
+				if(children.getName().equals(child)){
+					return true;
+				}
+			}
+		}
+		else{
+			for (PFeature children : root.getChildren()) {
+				boolean isFather = this.isFather(children, father, child);
+				if(isFather){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	public PFeatureModel synthesizeClosedFeatureModel(String PCM, PFeatureModel openFeatureModel) throws Exception{
 		PFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
 		PCMQueryServices.getInstance().loadPCM(PCM);
@@ -332,18 +376,18 @@ public class VmSynthesis {
 			allXORs.add(group);
 			return;
 		}
-//		else{
-//			for (PFeature feature : group) {
-//				ArrayList<PFeature> recursiveFeatures = new ArrayList<PFeature>();
-//				for (PFeature recursiveFeature : group) {
-//					if(!recursiveFeature.getName().equals(feature.getName()))
-//						recursiveFeatures.add(recursiveFeature);
-//				}
-//				if(recursiveFeatures.size() >= 2){
-//					this.identifyXORByCombination(recursiveFeatures, allXORs);
-//				}
-//			}
-//		}
+		else{
+			for (PFeature feature : group) {
+				ArrayList<PFeature> recursiveFeatures = new ArrayList<PFeature>();
+				for (PFeature recursiveFeature : group) {
+					if(!recursiveFeature.getName().equals(feature.getName()))
+						recursiveFeatures.add(recursiveFeature);
+				}
+				if(recursiveFeatures.size() >= 2){
+					this.identifyXORByCombination(recursiveFeatures, allXORs);
+				}
+			}
+		}
 	}
 	
 	/**
@@ -633,13 +677,13 @@ public class VmSynthesis {
 	}
 
 	private PBinaryOperator getOperator(PBinaryOperator operator) {
-		if(operator.getName().equals(PBinaryOperator.AND))
+		if(operator.getName().equals(PBinaryOperator.AND.getName()))
 			return PBinaryOperator.AND;
-		else if(operator.getName().equals(PBinaryOperator.OR))
+		else if(operator.getName().equals(PBinaryOperator.OR.getName()))
 			return PBinaryOperator.OR;
-		else if(operator.getName().equals(PBinaryOperator.IMPLIES))
+		else if(operator.getName().equals(PBinaryOperator.IMPLIES.getName()))
 			return PBinaryOperator.IMPLIES;
-		else if(operator.getName().equals(PBinaryOperator.XOR))
+		else if(operator.getName().equals(PBinaryOperator.XOR.getName()))
 			return PBinaryOperator.XOR;
 		else
 			return null;
