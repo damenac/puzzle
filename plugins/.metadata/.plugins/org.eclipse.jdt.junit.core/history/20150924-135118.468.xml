@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RandomTest" project="fr.inria.diverse.puzzle.vmsynthesis" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest" time="44.896">
+    <testcase name="testRandom" classname="fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest" time="44.896">
+      <error>java.lang.OutOfMemoryError: GC overhead limit exceeded
+	at java.util.HashSet.&lt;init&gt;(HashSet.java:105)
+	at choco.kernel.model.constraints.AbstractConstraint.&lt;init&gt;(AbstractConstraint.java:47)
+	at choco.kernel.model.constraints.ComponentConstraint.&lt;init&gt;(ComponentConstraint.java:37)
+	at choco.Choco.gt(Choco.java:949)
+	at es.us.isa.ChocoReasoner.attributed.ChocoReasoner$ChocoParser.translateLogical(ChocoReasoner.java:723)
+	at es.us.isa.ChocoReasoner.attributed.ChocoReasoner$ChocoParser.translateLogical(ChocoReasoner.java:698)
+	at es.us.isa.ChocoReasoner.attributed.ChocoReasoner$ChocoParser.translateToConstraint(ChocoReasoner.java:674)
+	at es.us.isa.ChocoReasoner.attributed.ChocoReasoner.createConstraint(ChocoReasoner.java:646)
+	at es.us.isa.ChocoReasoner.attributed.ChocoReasoner.addConstraint(ChocoReasoner.java:512)
+	at es.us.isa.FAMA.models.FAMAAttributedfeatureModel.transformations.AttributedFeatureModelTransform.setFeatureModel(AttributedFeatureModelTransform.java:76)
+	at es.us.isa.FAMA.models.FAMAAttributedfeatureModel.transformations.AttributedFeatureModelTransform.transform(AttributedFeatureModelTransform.java:52)
+	at es.us.isa.FAMA.models.variabilityModel.VariabilityModel.transformTo(VariabilityModel.java:56)
+	at es.us.isa.fama.PluginQuestionTrader.ask(PluginQuestionTrader.java:69)
+	at fr.inria.diverse.puzzle.vmsynthesis.tests.TestServices.printAllValidProducts(TestServices.java:81)
+	at fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest.executeTest(RandomTest.java:84)
+	at fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest.testRandom(RandomTest.java:118)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:70)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:50)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+
+</error>
+    </testcase>
+  </testsuite>
+</testrun>

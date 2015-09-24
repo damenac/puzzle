@@ -184,12 +184,56 @@ public class PCMQueryServices {
 	public boolean allProductsWithFeatureAHaveAlsoFeatureB(String A,
 			String B) {
 		
+		int count = 0;
 		for (int i = 1; i < PCM.length; i++) {
 			boolean withA = false;
 			for (int j = 1; j < PCM[0].length && !withA; j++) {
 				if(PCM[0][j].equals("\"" + A + "\"")){
-					if(PCM[i][j].equals("\"YES\""))
+					if(PCM[i][j].equals("\"YES\"")){
 						withA = true;
+						count ++;
+					}
+				}
+			}
+			
+			boolean withoutB = false;
+			for (int j = 1; j < PCM[0].length && !withoutB; j++) {
+				if(PCM[0][j].equals("\"" + B + "\"")){
+					if(PCM[i][j].equals("\"NO\""))
+						withoutB = true;
+				}
+			}
+			
+			if(withA && withoutB)
+				return false;
+		}
+		if(count == 0)
+			return false;
+		else
+			return true;
+	}
+	
+	/**
+	 * Returns true if all the products that contain the features in the array A contain also the feature B.
+	 * That is, (A[0] and A[1] and ... A[n]) implies B.
+	 * 
+	 * @param A. Collection of features at the left side of the operation 
+	 * @param B. The right side feature. 
+	 * @return
+	 */
+	public boolean allProductsWithFeaturesSetAHaveAlsoFeatureB(ArrayList<String> A,
+			String B) {
+		
+		for (int i = 1; i < PCM.length; i++) {
+			boolean withA = true;
+			for (int index = 0; index < A.size() && withA; index++) {
+				String a = A.get(index);
+				for (int j = 1; j < PCM[0].length && withA; j++) {
+					String currentFeatureName = PCM[0][j].replace("\"", "");
+					if(currentFeatureName.equals(a)){
+						if(PCM[i][j].equals("\"NO\""))
+							withA = false;
+					}
 				}
 			}
 			

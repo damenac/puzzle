@@ -446,7 +446,7 @@ public class VmSynthesis {
 				
 				if(!origin.getName().equals(destination.getName())){
 					boolean child = this.featureAIsChildOfB(origin, destination);
-					if(!child && !destination.isMandatory() && PCMQueryServices.getInstance().allProductsWithFeatureAHaveAlsoFeatureB(
+					if(/*!child && !destination.isMandatory() && */ PCMQueryServices.getInstance().allProductsWithFeatureAHaveAlsoFeatureB(
 							origin.getName(), destination.getName())){
 						this.createImplies(origin, destination, fm);
 					}
@@ -532,16 +532,156 @@ public class VmSynthesis {
 		fm.getConstraints().add(excludes);
 	}
 
+	public void groupImplicationsByRightSide(PFeatureModel closedFM, String PCM) {
+		
+		// Step 1. Collect the implication groups in the variable 'groups'
+		ArrayList<RightImplicationsGroup> groups = new ArrayList<RightImplicationsGroup>();
+		for (PConstraint constraintI : closedFM.getConstraints()) {
+			if(constraintI.getExpression() instanceof PBinaryExpression
+					&& ((PBinaryExpression)constraintI.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())){
+				
+				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
+				
+				if(impliesI.getRight() instanceof PFeatureRef){
+					PFeatureRef rightFeatureRefI = (PFeatureRef) impliesI.getRight();
+					if(!this.existsImplicationGroup(groups, rightFeatureRefI)){
+						RightImplicationsGroup newGroup = new RightImplicationsGroup(rightFeatureRefI);
+						
+						for (PConstraint constraintJ : closedFM.getConstraints()) {
+							if(constraintJ.getExpression() instanceof PBinaryExpression
+									&& ((PBinaryExpression)constraintJ.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())
+									&& constraintI != constraintJ){
+								
+								PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();
+								
+								if(impliesI.getRight() instanceof PFeatureRef &&
+										impliesJ.getRight() instanceof PFeatureRef){
+									PFeatureRef leftFeatureRef = (PFeatureRef) impliesJ.getLeft();
+									PFeatureRef rightFeatureRefJ = (PFeatureRef) impliesJ.getRight();
+									
+									if(rightFeatureRefI.getRef().getName().equals(rightFeatureRefJ.getRef().getName())){
+										if(!this.containsFeatureRef(newGroup.getLeftSide(), leftFeatureRef))
+											newGroup.getLeftSide().add(leftFeatureRef);
+									}
+								}
+							}
+						}
+						if(newGroup.getLeftSide().size() >= 2)
+							groups.add(newGroup);
+					}
+				}
+			}
+		}
+		
+		// Step 2. Filtering the real groups!
+		ArrayList<RightImplicationsGroup> realGroups = new ArrayList<RightImplicationsGroup>();
+		for (RightImplicationsGroup group : groups) {
+			this.searchRealRightImplicationsGroupByCombinatory(realGroups, group);
+		}
+		
+		// Step 3. Creating one constraint for each real group. 
+		for (RightImplicationsGroup group : realGroups) {
+			if(group.getRightSide() != null){
+				PConstraint constraint = this.fromRightImplicationToConstraint(group);
+				closedFM.getConstraints().add(constraint);
+			}
+		}
+	}
+	
+	private void searchRealRightImplicationsGroupByCombinatory(
+			ArrayList<RightImplicationsGroup> realGroups,
+			RightImplicationsGroup group) {
+		
+		if(group.getLeftSide().size() >= 2){
+			ArrayList<String> leftFeatures = new ArrayList<String>();
+			for (PFeatureRef featureRef : group.getLeftSide()) {
+				leftFeatures.add(featureRef.getRef().getName());
+			}
+			
+			// Base case: The current group is a real group
+			if(PCMQueryServices.getInstance().allProductsWithFeaturesSetAHaveAlsoFeatureB(leftFeatures, 
+					group.getRightSide().getRef().getName())){
+				realGroups.add(group);
+			}
+			
+			// Recursive case: 
+			for (PFeatureRef currentFeature : group.getLeftSide()) {
+				RightImplicationsGroup newGroup = new RightImplicationsGroup(group.getRightSide());
+				for (PFeatureRef fRef : group.getLeftSide()) {
+					if(!fRef.getRef().getName().equals(currentFeature.getRef().getName()))
+						newGroup.getLeftSide().add(fRef);
+				}
+				this.searchRealRightImplicationsGroupByCombinatory(realGroups, newGroup);
+			}
+		}
+	}
+
+	private boolean containsFeatureRef(ArrayList<PFeatureRef> leftSide,
+			PFeatureRef leftFeatureRef) {
+		for (PFeatureRef pFeatureRef : leftSide) {
+			if(pFeatureRef.getRef().getName().equals(leftFeatureRef.getRef().getName()))
+				return true;
+		}
+		return false;
+	}
+	
+	private PConstraint fromRightImplicationToConstraint(
+			RightImplicationsGroup group) {
+		
+		PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+		constraint.setName(group.toString());
+		
+		PBinaryExpression implies = VmFactory.eINSTANCE.createPBinaryExpression();
+		implies.setOperator(PBinaryOperator.IMPLIES);
+		implies.setRight(this.clonePFeatureRef(group.getRightSide()));
+		
+		PBooleanExpression currentExpression = this.clonePFeatureRef(group.getLeftSide().get(0));
+		for (int i = 1; i < group.getLeftSide().size(); i++) {
+			PBinaryExpression binary = VmFactory.eINSTANCE.createPBinaryExpression();
+			binary.setOperator(PBinaryOperator.AND);
+			binary.setLeft(currentExpression);
+			binary.setRight(this.clonePFeatureRef(group.getLeftSide().get(i)));
+			currentExpression = binary;
+		}
+		
+		implies.setLeft(currentExpression);
+		constraint.setExpression(implies);
+		return constraint;
+	}
+
+	// ----------------------------------------------------------
+	// Auxiliary Methods
+	// ----------------------------------------------------------
+	
+	private PBooleanExpression clonePFeatureRef(PFeatureRef pFeatureRef) {
+		PFeatureRef clone = VmFactory.eINSTANCE.createPFeatureRef();
+		clone.setRef(pFeatureRef.getRef());
+		return clone;
+	}
+
+	private boolean existsImplicationGroup(
+			ArrayList<RightImplicationsGroup> groups,
+			PFeatureRef rightFeatureRef) {
+		for (RightImplicationsGroup group : groups) {
+			if(group.getRightSide().getRef().getName().equals(rightFeatureRef.getRef().getName()))
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Collects all the features of the feature model whose root is given in the parameter.
+	 * The collection is returned in the parameter 'arrayList'.
+	 * 
+	 * @param arrayList
+	 * @param root
+	 */
 	private void collectPFeatures(ArrayList<PFeature> arrayList, PFeature root){
 		arrayList.add(root);
 		for (PFeature pFeature : root.getChildren()) {
 			this.collectPFeatures(arrayList, pFeature);
 		}
 	}
-	
-	// ----------------------------------------------------------
-	// Auxiliary Methods
-	// ----------------------------------------------------------
 	
 	/**
 	 * Clones the feature model in the parameter.
