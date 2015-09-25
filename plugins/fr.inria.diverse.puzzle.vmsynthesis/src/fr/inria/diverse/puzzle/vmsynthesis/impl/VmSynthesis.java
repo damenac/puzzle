@@ -8,6 +8,7 @@ import java.util.List;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
+import fr.inria.diverse.k3.sle.common.utils.PCMQueryServices;
 import vm.PBinaryExpression;
 import vm.PBinaryOperator;
 import vm.PBooleanExpression;
@@ -86,7 +87,6 @@ public class VmSynthesis {
 			cardinality.setLowerBound(0);
 			cardinality.setUpperBound(1);
 			featureGroup.setCardinality(cardinality);
-
 			rootFeature.getGroups().add(featureGroup);
 		}
 
@@ -183,7 +183,8 @@ public class VmSynthesis {
 		this.identifyORs(closedFeatureModel);
 		this.addAdditionalImpliesConstraints(closedFeatureModel);
 		this.addAdditionalExcludesConstraints(closedFeatureModel);
-
+		this.groupImplicationsByLeftSide(closedFeatureModel);
+		
 		return closedFeatureModel;
 	}
 

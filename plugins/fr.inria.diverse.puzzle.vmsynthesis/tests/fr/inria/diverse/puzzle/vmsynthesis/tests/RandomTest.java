@@ -5,9 +5,10 @@ import org.junit.Test;
 
 import vm.PFeatureModel;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.utils.PCMQueryServices;
 import fr.inria.diverse.puzzle.instancesgenerator.impl.GraphGenerator;
+import fr.inria.diverse.puzzle.instancesgenerator.impl.PCMFillerGenerator;
 import fr.inria.diverse.puzzle.instancesgenerator.impl.PCMGenerator;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
 
 public class RandomTest {
@@ -44,7 +45,7 @@ public class RandomTest {
 		
 		String PCM = PCMGenerator.generatePCMs(randomAciclic, numProducts, 880608, 2);
 		System.out.println("Original: "+ PCM);
-		updatePCM(PCM,randomAciclic);
+		PCM = updatePCM(PCM, randomAciclic);
 		System.out.println("Update: "+ PCM);
 		
 		numProducts = PCM.split("\n").length - 1;
@@ -112,9 +113,8 @@ public class RandomTest {
 		
 	}
 	
-	private void updatePCM(String PCM, DependencyGraph randomAciclic) {
-		// TODO Auto-generated method stub
-		
+	private String updatePCM(String PCM, DependencyGraph randomAciclic) {
+		return PCMFillerGenerator.generatePCMs(randomAciclic, PCM);
 	}
 
 	@Test
@@ -132,13 +132,13 @@ public class RandomTest {
 	
 		String resultMessage = "";
 
-//		resultMessage += this.executeTest(6, 3);
-//		resultMessage += this.executeTest(10, 3);
-//		resultMessage += this.executeTest(15, 3);
-//		resultMessage += this.executeTest(20, 3);
-//		resultMessage += this.executeTest(25, 3);
-//		resultMessage += this.executeTest(30, 3);
-//		resultMessage += this.executeTest(35, 3);
+		resultMessage += this.executeTest(6, 3);
+		resultMessage += this.executeTest(10, 3);
+		resultMessage += this.executeTest(15, 3);
+		resultMessage += this.executeTest(20, 3);
+		resultMessage += this.executeTest(25, 3);
+		resultMessage += this.executeTest(30, 3);
+		resultMessage += this.executeTest(35, 3);
 
 		resultMessage += this.executeTest(6, 4);
 //		resultMessage += this.executeTest(10, 4);

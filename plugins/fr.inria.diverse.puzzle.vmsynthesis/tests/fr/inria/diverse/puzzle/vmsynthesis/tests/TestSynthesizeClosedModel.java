@@ -12,7 +12,7 @@ import vm.PFeatureGroup;
 import vm.PFeatureGroupCardinality;
 import vm.PFeatureModel;
 import vm.VmFactory;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
+import fr.inria.diverse.k3.sle.common.utils.PCMQueryServices;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
 
 /**

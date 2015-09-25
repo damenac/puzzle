@@ -1,0 +1,88 @@
+package fr.inria.diverse.puzzle.implicationSolver;
+import static choco.Choco.eq;
+import static choco.Choco.gt;
+import static choco.Choco.implies;
+import static choco.Choco.makeIntVar;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import choco.cp.model.CPModel;
+import choco.cp.solver.CPSolver;
+import choco.kernel.model.Model;
+import choco.kernel.model.constraints.Constraint;
+import choco.kernel.model.variables.integer.IntegerVariable;
+import choco.kernel.solver.Solver;
+import choco.kernel.solver.variables.integer.IntDomainVar;
+
+public class SimpleSolver {
+
+	Map<String,IntegerVariable> variables ;
+	Model p ;
+	
+	public SimpleSolver(){
+		p= new CPModel();
+		variables = new HashMap<String,IntegerVariable>();
+	}
+	
+	public void createMandatory(String feature) {
+		p.addConstraint(eq(variables.get(feature),1));
+	}
+
+	private IntegerVariable createVariable(String feature){
+		int[] domain = {0,1};
+		IntegerVariable var = makeIntVar(feature, domain);
+		variables.put(feature, var);
+		return var;
+	}
+	
+	private IntegerVariable getVariable(String feature){
+		if(variables.containsKey(feature)){
+			return variables.get(feature);
+		}else{
+			return createVariable(feature);
+		}
+	}
+	
+	public void createRequires(String from, String to){		
+
+		IntegerVariable originVar = getVariable(from);
+		IntegerVariable destinationVar = getVariable(to);
+		Constraint requiresConstraint = implies(gt(originVar, 0), gt(destinationVar, 0));
+		p.addConstraint(requiresConstraint);
+	}
+	
+	public void createExcludes(String from, String to){		
+
+		IntegerVariable originVar = getVariable(from);
+		IntegerVariable destinationVar = getVariable(to);
+		Constraint excludesConstraint = implies(gt(originVar, 0), eq(destinationVar, 0));
+		p.addConstraint(excludesConstraint);
+	}
+		
+	public String solve(){
+		String PCM = "Product";
+		p = new CPModel();
+		
+		Solver solver = new CPSolver();
+		solver.read(p);
+
+		int n=0;
+		if (solver.solve() == Boolean.TRUE && solver.isFeasible()) {
+		  do {
+			  System.out.println("Product "+(n++));
+			  for(int i = 0; i < p.getNbIntVars(); i ++) {
+				  IntDomainVar aux = solver.getVar(p.getIntVar(i));
+				  //System.out.print(aux.getName()+":"+aux.getVal());
+				  if(aux.getVal()>0){
+					  System.out.print(aux.getName()+ ";");
+				  }
+			  }
+			  System.out.println("");
+		  } while(solver.nextSolution() == Boolean.TRUE);
+		}
+	
+		return PCM;
+	}
+
+}

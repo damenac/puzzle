@@ -1,13 +1,12 @@
 package fr.inria.diverse.puzzle.instancesgenerator.impl;
 
-import java.io.ObjectInputStream.GetField;
 import java.util.Collection;
 import java.util.LinkedList;
 
 import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.utils.PCMQueryServices;
 import fr.inria.diverse.puzzle.implicationSolver.SimpleSolver;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices;
 
 public class PCMFillerGenerator {
 	
@@ -16,7 +15,7 @@ public class PCMFillerGenerator {
 		SimpleSolver solver = new SimpleSolver();
 
 		for(DependencyArc arc:graph.getArcs()){
-			solver.createRequires(arc.getFrom().getIdentifier(), arc.getTo().getIdentifier());
+			solver.createRequires("\"" + arc.getFrom().getIdentifier() + "\"", "\"" + arc.getTo().getIdentifier() + "\"");
 		}
 		
 		for(String f: getAllCoreMandatory(PCM)){
@@ -25,20 +24,17 @@ public class PCMFillerGenerator {
 		
 		for(String rel: getAllRequires(PCM) ){
 			String orig= rel.substring(0, rel.indexOf(';'));
-			String dest= rel.substring(rel.indexOf(';'+1), rel.length());
+			String dest= rel.substring(rel.indexOf(';') + 1, rel.length());
 			solver.createRequires(orig, dest);
 		}
 		
 		for(String rel: getAllExcludes(PCM) ){
 			String orig= rel.substring(0, rel.indexOf(';'));
-			String dest= rel.substring(rel.indexOf(';'+1), rel.length());
+			String dest= rel.substring(rel.indexOf(';') + 1, rel.length());
 			solver.createExcludes(orig, dest);
 		}
 		
-		
-		solver.solve();
-		
-		return null;
+		return solver.solve();
 	}
 
 	public static Collection<String> getAllCoreMandatory(String PCM) {
@@ -58,7 +54,7 @@ public class PCMFillerGenerator {
 
 		for (String orig : PCMQueryServices.getInstance().getAllFeatures()) {
 			for (String dest : PCMQueryServices.getInstance().getAllFeatures()) {
-				if (!PCMQueryServices.getInstance().existsProductWithFeatureAWithoutFeatureB(orig, dest)) {
+				if (!orig.equals(dest) && PCMQueryServices.getInstance().allProductsWithFeatureAHaveAlsoFeatureB(orig, dest)) {
 					res.add(orig + ";" + dest);
 				}
 			}
@@ -74,8 +70,7 @@ public class PCMFillerGenerator {
 			for (String destination : PCMQueryServices.getInstance().getAllFeatures()) {
 				
 				if (!origin.equals(destination)) {
-					if (PCMQueryServices.getInstance()
-							.allProductsWithFeatureAExcludeFeatureB(origin, destination)){
+					if (!origin.equals(destination) && PCMQueryServices.getInstance().allProductsWithFeatureAExcludeFeatureB(origin, destination)){
 						res.add(origin+";"+destination);
 					}
 				}
