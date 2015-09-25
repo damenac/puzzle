@@ -1,7 +1,0 @@
-package fr.inria.diverse.k3.sle.common.vos;
-
-public class MembersGroupVsConceptVO {
-
-	private String membersGroup;
-	private String concept;
-}

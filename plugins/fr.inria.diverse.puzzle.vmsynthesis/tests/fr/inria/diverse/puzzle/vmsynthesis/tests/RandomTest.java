@@ -124,49 +124,49 @@ public class RandomTest {
 	
 		String resultMessage = "";
 
-		resultMessage += this.executeTest(6, 3);
-		resultMessage += this.executeTest(10, 3);
-		resultMessage += this.executeTest(15, 3);
-		resultMessage += this.executeTest(20, 3);
-		resultMessage += this.executeTest(25, 3);
-		resultMessage += this.executeTest(30, 3);
-		resultMessage += this.executeTest(35, 3);
+//		resultMessage += this.executeTest(6, 3);
+//		resultMessage += this.executeTest(10, 3);
+//		resultMessage += this.executeTest(15, 3);
+//		resultMessage += this.executeTest(20, 3);
+//		resultMessage += this.executeTest(25, 3);
+//		resultMessage += this.executeTest(30, 3);
+//		resultMessage += this.executeTest(35, 3);
 
 		resultMessage += this.executeTest(6, 4);
-		resultMessage += this.executeTest(10, 4);
-		resultMessage += this.executeTest(15, 4);
-		resultMessage += this.executeTest(20, 4);
-		resultMessage += this.executeTest(25, 4);
-		resultMessage += this.executeTest(30, 4);
-		resultMessage += this.executeTest(35, 4);
-		
-		resultMessage += this.executeTest(10, 5);
-		resultMessage += this.executeTest(15, 5);
-		resultMessage += this.executeTest(20, 5);
-		resultMessage += this.executeTest(25, 5);
-		resultMessage += this.executeTest(30, 5);
-		resultMessage += this.executeTest(35, 5);
-		
-		resultMessage += this.executeTest(10, 8);
-		resultMessage += this.executeTest(15, 8);
-		resultMessage += this.executeTest(20, 8);
-		resultMessage += this.executeTest(25, 8);
-		resultMessage += this.executeTest(30, 8);
-		resultMessage += this.executeTest(35, 8);
-		
-		resultMessage += this.executeTest(10, 10);
-		resultMessage += this.executeTest(15, 10);
-		resultMessage += this.executeTest(20, 10);
-		resultMessage += this.executeTest(25, 10);
-		resultMessage += this.executeTest(30, 10);
-		resultMessage += this.executeTest(35, 10);
-		
-		resultMessage += this.executeTest(10, 15);
-		resultMessage += this.executeTest(15, 15);
-		resultMessage += this.executeTest(20, 15);
-		resultMessage += this.executeTest(25, 15);
-		resultMessage += this.executeTest(30, 15);
-		resultMessage += this.executeTest(35, 15);
+//		resultMessage += this.executeTest(10, 4);
+//		resultMessage += this.executeTest(15, 4);
+//		resultMessage += this.executeTest(20, 4);
+//		resultMessage += this.executeTest(25, 4);
+//		resultMessage += this.executeTest(30, 4);
+//		resultMessage += this.executeTest(35, 4);
+//		
+//		resultMessage += this.executeTest(10, 5);
+//		resultMessage += this.executeTest(15, 5);
+//		resultMessage += this.executeTest(20, 5);
+//		resultMessage += this.executeTest(25, 5);
+//		resultMessage += this.executeTest(30, 5);
+//		resultMessage += this.executeTest(35, 5);
+//		
+//		resultMessage += this.executeTest(10, 8);
+//		resultMessage += this.executeTest(15, 8);
+//		resultMessage += this.executeTest(20, 8);
+//		resultMessage += this.executeTest(25, 8);
+//		resultMessage += this.executeTest(30, 8);
+//		resultMessage += this.executeTest(35, 8);
+//		
+//		resultMessage += this.executeTest(10, 10);
+//		resultMessage += this.executeTest(15, 10);
+//		resultMessage += this.executeTest(20, 10);
+//		resultMessage += this.executeTest(25, 10);
+//		resultMessage += this.executeTest(30, 10);
+//		resultMessage += this.executeTest(35, 10);
+//		
+//		resultMessage += this.executeTest(10, 15);
+//		resultMessage += this.executeTest(15, 15);
+//		resultMessage += this.executeTest(20, 15);
+//		resultMessage += this.executeTest(25, 15);
+//		resultMessage += this.executeTest(30, 15);
+//		resultMessage += this.executeTest(35, 15);
 		
 		System.out.println(resultMessage);
 	}

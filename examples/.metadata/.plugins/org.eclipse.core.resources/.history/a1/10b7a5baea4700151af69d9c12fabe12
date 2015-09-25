@@ -1,9 +1,0 @@
-package family.flowchartmt;
-
-import family.flowchartmt.Flowchart;
-import family.flowchartmt.Node;
-import org.eclipse.emf.ecore.EObject;
-
-@SuppressWarnings("all")
-public interface Subflow extends EObject, Flowchart, Node {
-}

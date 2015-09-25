@@ -1,5 +1,0 @@
-package fr.inria.diverse.puzzle.variabilityinferer.impl;
-
-public interface VariabilityInferer {
-
-}

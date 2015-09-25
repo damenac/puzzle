@@ -1,8 +1,0 @@
-package family.flowchartmt;
-
-import family.flowchartmt.Node;
-import org.eclipse.emf.ecore.EObject;
-
-@SuppressWarnings("all")
-public interface Action extends EObject, Node {
-}

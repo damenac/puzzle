@@ -1,9 +1,0 @@
-package fr.inria.diverse.k3.sle.common.vos;
-
-public class EcoreArc {
-
-	private EcoreNode from;
-	private EcoreNode to;
-	
-	
-}

@@ -1,7 +1,0 @@
-source.configurator.jar = src/
-bin.includes = META-INF/,\
-               lib/choco-2.1.0-basic+old.jar,\
-               lib/ChocoReasoner-1.1.1.jar,\
-               lib/FaMaFeatureModel-0.9.1.jar,\
-               lib/FaMaSDK-1.1.1.jar,\
-               configurator.jar

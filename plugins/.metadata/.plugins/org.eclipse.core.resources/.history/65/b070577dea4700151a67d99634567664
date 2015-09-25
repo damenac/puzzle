@@ -1,7 +1,0 @@
-package fr.inria.diverse.melange.ui.contentassist;
-
-import fr.inria.diverse.melange.ui.contentassist.AbstractMelangeProposalProvider;
-
-@SuppressWarnings("all")
-public class MelangeProposalProvider extends AbstractMelangeProposalProvider {
-}

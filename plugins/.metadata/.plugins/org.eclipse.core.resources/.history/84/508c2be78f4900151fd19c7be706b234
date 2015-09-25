@@ -1,8 +1,0 @@
-package fr.inria.diverse.k3.sle.common.vos;
-
-import org.eclipse.emf.ecore.EClassifier;
-
-public class EcoreNode {
-
-	private EClassifier classifier;
-}

@@ -1,6 +1,0 @@
-package fr.inria.diverse.k3.sle.common.tuples;
-
-public class SemanticNode {
-
-	private List<SemanticNode> childs;
-}

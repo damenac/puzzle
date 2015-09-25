@@ -1,9 +1,0 @@
-package fr.inria.diverse.k3.sle.common.vos;
-
-import java.util.ArrayList;
-
-public class EcoreGraph {
-
-	private ArrayList<EcoreNode> nodes;
-	private ArrayList<EcoreArc> arcs;
-}

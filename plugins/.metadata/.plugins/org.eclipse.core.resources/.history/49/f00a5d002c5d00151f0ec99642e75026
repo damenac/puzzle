@@ -1,7 +1,0 @@
-source.. = src/
-output.. = bin/
-bin.includes = META-INF/,\
-               .,\
-               plugin.xml,\
-               lib/FaMaFeatureModel-0.9.1.jar,\
-               lib/FAMILIAR-Standalone-1.0.10-jar-with-dependencies.jar

@@ -1,3 +1,0 @@
-source.configurator.jar = src/
-bin.includes = META-INF/,\
-               configurator.jar

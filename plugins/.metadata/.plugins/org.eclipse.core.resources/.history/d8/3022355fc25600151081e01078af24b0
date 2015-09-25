@@ -1,6 +1,0 @@
-package fr.inria.diverse.puzzle.variabilityinferer.vos;
-
-public class Feature {
-
-	private String identifier;
-}

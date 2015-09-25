@@ -1,5 +1,0 @@
-package fr.inria.diverse.k3.sle.common.comparisonOperators;
-
-public interface ConceptComparison {
-
-}

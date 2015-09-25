@@ -1,8 +1,0 @@
-package fr.inria.diverse.ksynthesis.ksynthesis.facade;
-
-public class KSynthesisSynthesizer {
-
-	public void synthesizeFeatureModelFromPCM(String inputFile, String outputFile){
-		
-	}
-}

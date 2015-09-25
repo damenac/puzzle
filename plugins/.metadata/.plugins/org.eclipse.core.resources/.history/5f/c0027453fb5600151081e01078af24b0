@@ -1,8 +1,0 @@
-package fr.inria.diverse.k3.sle.common.graphs;
-
-import java.util.List;
-
-public class DependencyVertex {
-
-	private List<EClassifier> eClassifiers;
-}

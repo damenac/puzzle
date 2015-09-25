@@ -1,3 +1,0 @@
-language Rhapsody{
-	syntax "platform:/resource/fr.inria.diverse.sle.examples.tb.rhapsody/models/fsm.ecore"
-}

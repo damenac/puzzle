@@ -1,8 +1,0 @@
-package fr.inria.diverse.puzzle.variabilityinferer.impl;
-
-import org.eclipse.emf.ecore.EObject;
-
-public interface VariabilityInferer {
-
-	public EObject inferVariabilityModel();
-}

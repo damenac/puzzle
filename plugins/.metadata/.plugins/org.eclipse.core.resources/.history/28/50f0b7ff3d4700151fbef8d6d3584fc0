@@ -1,3 +1,0 @@
-var syntacticVennData = [{sets : [0], label : 'rhapsody', size : 32,},
-              {sets : [1], label : 'kmLogo', size : 17,},
-              {sets : [0,1], size:7}];
