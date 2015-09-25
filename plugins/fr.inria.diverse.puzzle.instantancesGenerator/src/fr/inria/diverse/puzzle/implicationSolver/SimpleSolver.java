@@ -77,13 +77,14 @@ public class SimpleSolver {
 			  PCM += "\"P" + (n++) + "\",";
 			  for(int i = 0; i < p.getNbIntVars(); i ++) {
 				  IntDomainVar aux = solver.getVar(p.getIntVar(i));
-				  //System.out.print(aux.getName()+":"+aux.getVal());
+				  System.out.print(aux.getName()+":"+aux.getVal());
 				  if(aux.getVal()>0){
 					  PCM += "\"YES\",";
 				  }else{
 					  PCM += "\"NO\",";
 				  }
 			  }
+			  System.out.println("\n");
 			  PCM += "\n";
 		  } while(solver.nextSolution() == Boolean.TRUE);
 		}
