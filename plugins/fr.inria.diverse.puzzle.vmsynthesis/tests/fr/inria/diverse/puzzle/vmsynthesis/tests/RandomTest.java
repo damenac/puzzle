@@ -43,9 +43,12 @@ public class RandomTest {
 		TestServices.printFM(openFM);
 		
 		String PCM = PCMGenerator.generatePCMs(randomAciclic, numProducts, 880608, 2);
-		System.out.println(PCM);
+		System.out.println("Original: "+ PCM);
+		updatePCM(PCM,randomAciclic);
+		System.out.println("Update: "+ PCM);
 		
 		numProducts = PCM.split("\n").length - 1;
+		System.out.println("ya la calcule");
 		
 		System.out.println("Cloned OpenFM");
 		PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
@@ -109,6 +112,11 @@ public class RandomTest {
 		
 	}
 	
+	private void updatePCM(String PCM, DependencyGraph randomAciclic) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Test
 	public void testRandom() throws Exception{
 //		int[] dataFeatures = {5, 8, 10, 15, 20};
