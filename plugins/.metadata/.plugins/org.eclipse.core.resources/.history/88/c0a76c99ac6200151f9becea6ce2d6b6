@@ -1,0 +1,58 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+import java.util.ArrayList;
+
+import vm.PFeatureRef;
+
+public class RightImplicationsGroup {
+
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
+	
+	private PFeatureRef rightSide;
+	
+	private ArrayList<PFeatureRef> leftSide;
+	
+	// -----------------------------------------------
+	// Constructors
+	// -----------------------------------------------
+	
+	public RightImplicationsGroup(PFeatureRef rightSide){
+		this.rightSide = rightSide;
+		this.leftSide = new ArrayList<PFeatureRef>();
+	}
+
+	// -----------------------------------------------
+	// Getters and setters
+	// -----------------------------------------------
+	
+	public PFeatureRef getRightSide() {
+		return rightSide;
+	}
+
+	public void setRightSide(PFeatureRef rightSide) {
+		this.rightSide = rightSide;
+	}
+
+	public ArrayList<PFeatureRef> getLeftSide() {
+		return leftSide;
+	}
+	
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
+	public String toString(){
+		String leftSide = "";
+		boolean first = true;
+		for (PFeatureRef pFeatureRef : this.leftSide) {
+			if(!first)
+				leftSide += " and";
+			
+			leftSide += " " + pFeatureRef.getRef().getName();
+			first = false;
+		}
+		return "(" + leftSide + " ) implies " + rightSide.getRef().getName();
+	}
+}

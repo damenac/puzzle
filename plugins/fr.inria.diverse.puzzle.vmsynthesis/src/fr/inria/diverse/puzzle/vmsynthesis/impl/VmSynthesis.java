@@ -501,8 +501,15 @@ public class VmSynthesis {
 		}
 	}
 
-	private void createImplies(PFeature origin, PFeature destination, PFeatureModel fm) {
-
+	/**
+	 * Creates an implies constraint from the origin to the destination in the feature model given in the parameter.
+	 * @param origin
+	 * @param destination
+	 * @param fm
+	 */
+	private void createImplies(PFeature origin, PFeature destination,
+			PFeatureModel fm) {
+		
 		PConstraint implies = VmFactory.eINSTANCE.createPConstraint();
 		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
 		left.setRef(origin);
@@ -543,7 +550,16 @@ public class VmSynthesis {
 		}
 	}
 
-	private void createExcludes(PFeature origin, PFeature destination, PFeatureModel fm) {
+	
+	/**
+	 * Creates an excludes (implies not) constraint from the origin to the destination in the feature model given in the parameter.
+	 * @param origin
+	 * @param destination
+	 * @param fm
+	 */
+	private void createExcludes(PFeature origin, PFeature destination,
+			PFeatureModel fm) {
+		
 
 		PConstraint excludes = VmFactory.eINSTANCE.createPConstraint();
 		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
@@ -566,16 +582,409 @@ public class VmSynthesis {
 		fm.getConstraints().add(excludes);
 	}
 
-	private void collectPFeatures(ArrayList<PFeature> arrayList, PFeature root) {
+
+	/**
+	 * Groups the includes constraints in the given feature model that have the same right side. 
+	 * @param featureModel. 
+	 */
+	public void groupImplicationsByRightSide(PFeatureModel featureModel) {
+		
+		// Step 1. Collect the implication groups in the variable 'groups'
+		ArrayList<RightImplicationsGroup> groups = new ArrayList<RightImplicationsGroup>();
+		for (PConstraint constraintI : featureModel.getConstraints()) {
+			if(constraintI.getExpression() instanceof PBinaryExpression
+					&& ((PBinaryExpression)constraintI.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())){
+				
+				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
+				
+				if(impliesI.getRight() instanceof PFeatureRef){
+					PFeatureRef rightFeatureRefI = (PFeatureRef) impliesI.getRight();
+					if(!this.existsImplicationGroup(groups, rightFeatureRefI)){
+						RightImplicationsGroup newGroup = new RightImplicationsGroup(rightFeatureRefI, false);
+						
+						for (PConstraint constraintJ : featureModel.getConstraints()) {
+							if(constraintJ.getExpression() instanceof PBinaryExpression
+									&& ((PBinaryExpression)constraintJ.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())
+									&& constraintI != constraintJ){
+								
+								PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();
+								
+								if(impliesI.getRight() instanceof PFeatureRef &&
+										impliesJ.getRight() instanceof PFeatureRef){
+									PFeatureRef leftFeatureRef = (PFeatureRef) impliesJ.getLeft();
+									PFeatureRef rightFeatureRefJ = (PFeatureRef) impliesJ.getRight();
+									
+									if(rightFeatureRefI.getRef().getName().equals(rightFeatureRefJ.getRef().getName())){
+										if(!this.containsFeatureRef(newGroup.getLeftSide(), leftFeatureRef))
+											newGroup.getLeftSide().add(leftFeatureRef);
+									}
+								}
+							}
+						}
+						if(newGroup.getLeftSide().size() >= 2)
+							groups.add(newGroup);
+					}
+				}
+			}
+		}
+		
+		// Step 2. Filtering the real groups!
+		ArrayList<RightImplicationsGroup> realGroups = new ArrayList<RightImplicationsGroup>();
+		for (RightImplicationsGroup group : groups) {
+			this.searchRealRightImplicationsGroupByCombinatory(realGroups, group);
+		}
+		
+		// Step 3. Creating one constraint for each real group. 
+		for (RightImplicationsGroup group : realGroups) {
+			if(group.getRightSide() != null){
+				PConstraint constraint = this.fromRightImplicationToConstraint(group);
+				featureModel.getConstraints().add(constraint);
+			}
+		}
+	}
+	
+	/**
+	 * Groups the excludes constraints contained in the given feature model that have the same right side. 
+	 * @param featureModel
+	 */
+	public void groupNotImplicationsByRightSide(PFeatureModel featureModel) {
+		// Step 1. Collect the implication groups in the variable 'groups'
+		ArrayList<RightImplicationsGroup> groups = new ArrayList<RightImplicationsGroup>();
+		for (PConstraint constraintI : featureModel.getConstraints()) {
+			if(constraintI.getExpression() instanceof PBinaryExpression
+					&& ((PBinaryExpression)constraintI.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())){
+			
+				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
+			
+				if(impliesI.getRight() instanceof PUnaryExpression){
+					PUnaryExpression unaryExprssionI = (PUnaryExpression) impliesI.getRight();
+					PFeatureRef rightFeatureRefI = (PFeatureRef) unaryExprssionI.getExpr();
+					if(!this.existsImplicationGroup(groups, rightFeatureRefI)){
+						RightImplicationsGroup newGroup = new RightImplicationsGroup(rightFeatureRefI, true);
+						
+						for (PConstraint constraintJ : featureModel.getConstraints()) {
+							if(constraintJ.getExpression() instanceof PBinaryExpression
+									&& ((PBinaryExpression)constraintJ.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())
+									&& constraintI != constraintJ){
+								
+								PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();
+								
+								if(impliesI.getRight() instanceof PUnaryExpression &&
+										impliesJ.getRight() instanceof PUnaryExpression){
+									
+									PFeatureRef leftFeatureRef = (PFeatureRef) impliesJ.getLeft();
+									
+									PUnaryExpression unaryExprssionJ = (PUnaryExpression) impliesJ.getRight();
+									PFeatureRef rightFeatureRefJ = (PFeatureRef) unaryExprssionJ.getExpr();
+									
+									if(rightFeatureRefI.getRef().getName().equals(rightFeatureRefJ.getRef().getName())){
+										if(!this.containsFeatureRef(newGroup.getLeftSide(), leftFeatureRef))
+											newGroup.getLeftSide().add(leftFeatureRef);
+									}
+								}
+							}
+						}
+						if(newGroup.getLeftSide().size() >= 2)
+							groups.add(newGroup);
+					}
+				}
+			}
+		}
+		
+		// Step 2. Filtering the real groups!
+		ArrayList<RightImplicationsGroup> realGroups = new ArrayList<RightImplicationsGroup>();
+		for (RightImplicationsGroup group : groups) {
+			this.searchRealRightNotImplicationsGroupByCombinatory(realGroups, group);
+		}
+		
+		// Step 3. Creating one constraint for each real group. 
+		for (RightImplicationsGroup group : realGroups) {
+			PConstraint constraint = this.fromRightNotImplicationToConstraint(group);
+			featureModel.getConstraints().add(constraint);
+		}
+	}
+	
+	/**
+	 * Searches all the possible implications in the implications group in the parameter. 
+	 * It explores all the possible combinations of the involved features.
+	 * @param realGroups. The parameter in which the result is stored.
+	 * @param group. The group under study.
+	 */
+	private void searchRealRightImplicationsGroupByCombinatory(
+			ArrayList<RightImplicationsGroup> realGroups,
+			RightImplicationsGroup group) {
+		
+		if(group.getLeftSide().size() >= 2){
+			ArrayList<String> leftFeatures = new ArrayList<String>();
+			for (PFeatureRef featureRef : group.getLeftSide()) {
+				leftFeatures.add(featureRef.getRef().getName());
+			}
+			
+			// Base case: The current group is a real group
+			if(PCMQueryServices.getInstance().allProductsWithFeaturesSetAHaveAlsoFeatureB(leftFeatures, 
+					group.getRightSide().getRef().getName())){
+				realGroups.add(group);
+			}
+			
+			// Recursive case: Now we need to search for real groups in the combinations of the features of the current real group. 
+			for (PFeatureRef currentFeature : group.getLeftSide()) {
+				RightImplicationsGroup newGroup = new RightImplicationsGroup(group.getRightSide(), false);
+				for (PFeatureRef fRef : group.getLeftSide()) {
+					if(!fRef.getRef().getName().equals(currentFeature.getRef().getName()))
+						newGroup.getLeftSide().add(fRef);
+				}
+				this.searchRealRightImplicationsGroupByCombinatory(realGroups, newGroup);
+			}
+		}
+	}
+	
+	/**
+	 * Searches all the possible not-implications in the implications group in the parameter. 
+	 * It explores all the possible combinations of the involved features.
+	 * @param realGroups. The parameter in which the result is stored.
+	 * @param group. The group under study.
+	 */
+	private void searchRealRightNotImplicationsGroupByCombinatory(
+			ArrayList<RightImplicationsGroup> realGroups,
+			RightImplicationsGroup group) {
+		
+		if(group.getLeftSide().size() >= 2){
+			ArrayList<String> leftFeatures = new ArrayList<String>();
+			for (PFeatureRef featureRef : group.getLeftSide()) {
+				leftFeatures.add(featureRef.getRef().getName());
+			}
+			
+			// Base case: The current group is a real group
+			if(PCMQueryServices.getInstance().allProductsWithFeaturesSetAExcludeFeatureB(leftFeatures, 
+					group.getRightSide().getRef().getName())){
+				realGroups.add(group);
+			}
+			
+			// Recursive case: Now we need to search for real groups in the combinations of the features of the current real group. 
+			for (PFeatureRef currentFeature : group.getLeftSide()) {
+				RightImplicationsGroup newGroup = new RightImplicationsGroup(group.getRightSide(), true);
+				for (PFeatureRef fRef : group.getLeftSide()) {
+					if(!fRef.getRef().getName().equals(currentFeature.getRef().getName()))
+						newGroup.getLeftSide().add(fRef);
+				}
+				this.searchRealRightNotImplicationsGroupByCombinatory(realGroups, newGroup);
+			}
+		}
+	}
+
+	/**
+	 * Creates an implies constraint from the right implication group in the paramter.
+	 * @param group
+	 * @return
+	 */
+	private PConstraint fromRightImplicationToConstraint(
+			RightImplicationsGroup group) {
+		
+		PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+		constraint.setName(group.toString());
+		
+		PBinaryExpression implies = VmFactory.eINSTANCE.createPBinaryExpression();
+		implies.setOperator(PBinaryOperator.IMPLIES);
+		implies.setRight(this.clonePFeatureRef(group.getRightSide()));
+		
+		PBooleanExpression currentExpression = this.clonePFeatureRef(group.getLeftSide().get(0));
+		for (int i = 1; i < group.getLeftSide().size(); i++) {
+			PBinaryExpression binary = VmFactory.eINSTANCE.createPBinaryExpression();
+			binary.setOperator(PBinaryOperator.AND);
+			binary.setLeft(currentExpression);
+			binary.setRight(this.clonePFeatureRef(group.getLeftSide().get(i)));
+			currentExpression = binary;
+		}
+		
+		implies.setLeft(currentExpression);
+		constraint.setExpression(implies);
+		return constraint;
+	}
+
+	/**
+	 * Creates a not-implies constraint from the right implication group in the paramter.
+	 * @param group
+	 * @return
+	 */
+	private PConstraint fromRightNotImplicationToConstraint(
+			RightImplicationsGroup group) {
+		PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+		constraint.setName(group.toString());
+		
+		PBinaryExpression implies = VmFactory.eINSTANCE.createPBinaryExpression();
+		implies.setOperator(PBinaryOperator.IMPLIES);
+		
+		PUnaryExpression notImplies = VmFactory.eINSTANCE.createPUnaryExpression();
+		notImplies.setOperator(PUninaryOperator.NOT);
+		notImplies.setExpr(this.clonePFeatureRef(group.getRightSide()));
+		implies.setRight(notImplies);
+		
+		PBooleanExpression currentExpression = this.clonePFeatureRef(group.getLeftSide().get(0));
+		for (int i = 1; i < group.getLeftSide().size(); i++) {
+			PBinaryExpression binary = VmFactory.eINSTANCE.createPBinaryExpression();
+			binary.setOperator(PBinaryOperator.AND);
+			binary.setLeft(currentExpression);
+			binary.setRight(this.clonePFeatureRef(group.getLeftSide().get(i)));
+			currentExpression = binary;
+		}
+		
+		implies.setLeft(currentExpression);
+		constraint.setExpression(implies);
+		return constraint;
+	}
+	
+	
+	public void groupImplicationsByLeftSide(PFeatureModel featureModel) throws Exception {
+		ArrayList<LeftImplicationsGroup> groups = new ArrayList<LeftImplicationsGroup>();
+		for (PConstraint constraintI : featureModel.getConstraints()) {
+			
+			if(constraintI.getExpression() instanceof PBinaryExpression
+					&& ((PBinaryExpression)constraintI.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())){
+				
+				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
+				if(!this.existsGroup(groups, impliesI.getLeft())){
+					LeftImplicationsGroup newGroup = new LeftImplicationsGroup(impliesI.getLeft());
+					
+					for (PConstraint constraintJ : featureModel.getConstraints()) {
+						PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();
+						if(this.pBooleanExpressionEquals(impliesI.getLeft(), impliesJ.getLeft()) && constraintI != constraintJ){
+							newGroup.getRightSide().add(impliesJ.getRight());
+						}
+					}
+					if(newGroup.getRightSide().size() > 0)
+						groups.add(newGroup);
+				}
+			}
+		}
+		
+		featureModel.getConstraints().clear();
+		
+		for (LeftImplicationsGroup group : groups) {
+			PConstraint constraint = this.fromLeftImplicationToConstraint(featureModel.getRootFeature(), group);
+			featureModel.getConstraints().add(constraint);
+		}
+	}
+	
+	private PConstraint fromLeftImplicationToConstraint(PFeature root, LeftImplicationsGroup group) throws Exception {
+		
+		PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+		constraint.setName(group.toString());
+		
+		PBinaryExpression implies = VmFactory.eINSTANCE.createPBinaryExpression();
+		implies.setOperator(PBinaryOperator.IMPLIES);
+		implies.setLeft(this.cloneExpression(root, group.getLeftSide()));
+		
+		PBooleanExpression currentExpression = this.cloneExpression(root, group.getRightSide().get(0));
+		for (int i = 1; i < group.getRightSide().size(); i++) {
+			PBinaryExpression binary = VmFactory.eINSTANCE.createPBinaryExpression();
+			binary.setOperator(PBinaryOperator.AND);
+			binary.setLeft(currentExpression);
+			binary.setRight(this.cloneExpression(root, group.getRightSide().get(i)));
+			currentExpression = binary;
+		}
+		
+		implies.setRight(currentExpression);
+		constraint.setExpression(implies);
+		return constraint;
+	}
+
+
+	// ----------------------------------------------------------
+	// Auxiliary Methods
+	// ----------------------------------------------------------
+	
+	private boolean existsGroup(ArrayList<LeftImplicationsGroup> groups,
+			PBooleanExpression expr) {
+		for (LeftImplicationsGroup group : groups) {
+			if(this.pBooleanExpressionEquals(group.getLeftSide(), expr)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	private boolean pBooleanExpressionEquals(PBooleanExpression o1, PBooleanExpression o2){
+		if(o1 instanceof PBinaryExpression && o2 instanceof PBinaryExpression){
+			PBinaryExpression o1Binary = (PBinaryExpression) o1;
+			PBinaryExpression o2Binary = (PBinaryExpression) o2;
+			boolean operator = o1Binary.getOperator().getName().equals(o2Binary.getOperator().getName());
+			boolean leftSideEquals = this.pBooleanExpressionEquals(o1Binary.getLeft(), o2Binary.getLeft());
+			boolean rightSideEquals = this.pBooleanExpressionEquals(o1Binary.getRight(), o2Binary.getRight());
+			return operator && leftSideEquals && rightSideEquals;
+		}
+		else if(o1 instanceof PUnaryExpression && o2 instanceof PUnaryExpression){
+			PUnaryExpression o1Unary = (PUnaryExpression) o1;
+			PUnaryExpression o2Unary = (PUnaryExpression) o2;
+			boolean operator = o1Unary.getOperator().getName().equals(o2Unary.getOperator().getName());
+			boolean expr = this.pBooleanExpressionEquals(o1Unary.getExpr(), o2Unary.getExpr());
+			return operator && expr;
+		}
+		else if(o1 instanceof PFeatureRef && o2 instanceof PFeatureRef){
+			PFeatureRef o1FeatureRef = (PFeatureRef) o1;
+			PFeatureRef o2FeatureRef = (PFeatureRef) o2;
+			return o1FeatureRef.getRef().getName().equals(o2FeatureRef.getRef().getName());
+		}
+		else{
+			return false;
+		}
+	}
+	
+	/**
+	 * Returns true if there is an implication group in the given list and for the given feature ref.
+	 * @param groups
+	 * @param featureRef
+	 * @return
+	 */
+	private boolean existsImplicationGroup(
+			ArrayList<RightImplicationsGroup> groups,
+			PFeatureRef featureRef) {
+		for (RightImplicationsGroup group : groups) {
+			if(group.getRightSide().getRef().getName().equals(featureRef.getRef().getName()))
+				return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Returns true if the feature reference in the parameter exists within the given list of feature references.
+	 * @param refs
+	 * @param featureRef
+	 * @return
+	 */
+	private boolean containsFeatureRef(ArrayList<PFeatureRef> refs,
+			PFeatureRef featureRef) {
+		for (PFeatureRef pFeatureRef : refs) {
+			if(pFeatureRef.getRef().getName().equals(featureRef.getRef().getName()))
+				return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Returns an exact clone of the feature reference given in the parameter.
+	 * @param pFeatureRef
+	 * @return
+	 */
+	private PBooleanExpression clonePFeatureRef(PFeatureRef pFeatureRef) {
+		PFeatureRef clone = VmFactory.eINSTANCE.createPFeatureRef();
+		clone.setRef(pFeatureRef.getRef());
+		return clone;
+	}
+	
+	/**
+	 * Collects all the features of the feature model whose root is given in the parameter.
+	 * The collection is returned in the parameter 'arrayList'.
+	 * 
+	 * @param arrayList
+	 * @param root
+	 */
+	private void collectPFeatures(ArrayList<PFeature> arrayList, PFeature root){
 		arrayList.add(root);
 		for (PFeature pFeature : root.getChildren()) {
 			this.collectPFeatures(arrayList, pFeature);
 		}
 	}
-
-	// ----------------------------------------------------------
-	// Auxiliary Methods
-	// ----------------------------------------------------------
+	
 
 	/**
 	 * Clones the feature model in the parameter.
@@ -689,7 +1098,7 @@ public class VmSynthesis {
 		} else if (expression instanceof PUnaryExpression) {
 			PUnaryExpression punaryExpression = (PUnaryExpression) expression;
 			PUnaryExpression clone = VmFactory.eINSTANCE.createPUnaryExpression();
-			clone.setExpr(this.cloneExpression(root, punaryExpression));
+			clone.setExpr(this.cloneExpression(root, punaryExpression.getExpr()));
 			clone.setOperator(this.getOperator(punaryExpression.getOperator()));
 			return clone;
 		} else {

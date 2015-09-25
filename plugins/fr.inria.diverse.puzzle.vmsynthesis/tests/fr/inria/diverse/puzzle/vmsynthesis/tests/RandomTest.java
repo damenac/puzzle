@@ -49,37 +49,53 @@ public class RandomTest {
 		
 		numProducts = PCM.split("\n").length - 1;
 		System.out.println("ya la calcule");
+		
+		System.out.println("Cloned OpenFM");
 		PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
 		PCMQueryServices.getInstance().loadPCM(PCM);
-		System.out.println("Cloned OpenFM");
 		TestServices.printAllValidProducts(closedFM, PCM);
 		
+		System.out.println("IdentifyMandatoryFeatures OpenFM");
 		long before = System.currentTimeMillis();
 		synthesis.identifyMandatoryFeatures(closedFM);
 		TestServices.printFM(closedFM);
-		System.out.println("IdentifyMandatoryFeatures OpenFM");
 		TestServices.printAllValidProducts(closedFM, PCM);
 		
+		System.out.println("IdentifyXORs OpenFM");
 		synthesis.identifyXORs(closedFM);
 		TestServices.printFM(closedFM);
-		System.out.println("IdentifyXORs OpenFM");
 		TestServices.printAllValidProducts(closedFM, PCM);
 		
+		System.out.println("IdentifyORs OpenFM");
 		synthesis.identifyORs(closedFM);
 		TestServices.printFM(closedFM);
-		System.out.println("IdentifyORs OpenFM");
 		TestServices.printAllValidProducts(closedFM, PCM);
 		
+		System.out.println("AddAdditionalImpliesConstraints OpenFM");
 		synthesis.addAdditionalImpliesConstraints(closedFM);
 		TestServices.printFM(closedFM);
-		System.out.println("AddAdditionalImpliesConstraints OpenFM");
 		TestServices.printAllValidProducts(closedFM, PCM);
 		
+		System.out.println("AddAdditionalExcludesConstraints OpenFM");
 		synthesis.addAdditionalExcludesConstraints(closedFM);
 		TestServices.printFM(closedFM);
-		System.out.println("AddAdditionalExcludesConstraints OpenFM");
+		TestServices.printAllValidProducts(closedFM, PCM);
 		
+//		System.out.println("GroupingImplicationsByRightSide OpenFM");
+//		synthesis.groupImplicationsByRightSide(closedFM);
+//		TestServices.printFM(closedFM);
+//		TestServices.printAllValidProducts(closedFM, PCM);
+//		
+//		System.out.println("GroupingNotImplicationsByRightSide OpenFM");
+//		synthesis.groupNotImplicationsByRightSide(closedFM);
+//		TestServices.printFM(closedFM);
+//		TestServices.printAllValidProducts(closedFM, PCM);
+		
+		System.out.println("GroupingImplicationsByLeftSide OpenFM");
+		synthesis.groupImplicationsByLeftSide(closedFM);
+		TestServices.printFM(closedFM);
 		double result = TestServices.printAllValidProducts(closedFM, PCM);
+		
 		long after = System.currentTimeMillis();
 		long time = after - before;
 		String resultMessage = "";
@@ -116,6 +132,7 @@ public class RandomTest {
 	
 		String resultMessage = "";
 
+		resultMessage += this.executeTest(6, 3);
 		resultMessage += this.executeTest(10, 3);
 		resultMessage += this.executeTest(15, 3);
 		resultMessage += this.executeTest(20, 3);
@@ -123,6 +140,7 @@ public class RandomTest {
 		resultMessage += this.executeTest(30, 3);
 		resultMessage += this.executeTest(35, 3);
 
+		resultMessage += this.executeTest(6, 4);
 		resultMessage += this.executeTest(10, 4);
 		resultMessage += this.executeTest(15, 4);
 		resultMessage += this.executeTest(20, 4);

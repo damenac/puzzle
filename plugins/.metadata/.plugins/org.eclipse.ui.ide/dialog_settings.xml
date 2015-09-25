@@ -12,6 +12,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/dmendeza/workspaces/puzzle/plugins/Sat4jFiller"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/plugins/Configurator"/>
 			<item value="/Users/dmendeza/workspaces/gbecan/KSynthesis"/>
 			<item value="/Users/dmendeza/workspaces/gbecan/Evaluation"/>
