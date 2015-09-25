@@ -1,0 +1,65 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+import java.util.ArrayList;
+
+import vm.PBinaryExpression;
+import vm.PBooleanExpression;
+import vm.PFeatureRef;
+import vm.PUnaryExpression;
+
+public class LeftImplicationsGroup {
+
+	private PBooleanExpression leftSide;
+	
+	private ArrayList<PBooleanExpression> rightSide;
+
+	public LeftImplicationsGroup(PBooleanExpression leftSide) {
+		super();
+		this.leftSide = leftSide;
+		this.rightSide = new ArrayList<PBooleanExpression>();
+	}
+
+	public PBooleanExpression getLeftSide() {
+		return leftSide;
+	}
+
+	public void setLeftSide(PBooleanExpression leftSide) {
+		this.leftSide = leftSide;
+	}
+
+	public ArrayList<PBooleanExpression> getRightSide() {
+		return rightSide;
+	}
+	
+	public String toString(){
+		String rightSide = "";
+		for (PBooleanExpression expr : this.rightSide) {
+			rightSide += expr.toString() + " ";
+		}
+		return "(" + leftSide.toString() + " ) implies " + rightSide;
+	}
+	
+	private String stringRepresentation(PBooleanExpression expr){
+		if(expr instanceof PBinaryExpression){
+			PBinaryExpression exprBinary = (PBinaryExpression) expr;
+			String operator = exprBinary.getOperator().getName();
+			String leftSide = this.stringRepresentation(exprBinary.getLeft());
+			String rightSide = this.stringRepresentation(exprBinary.getRight());
+			return "(" + leftSide + " " + operator + " " + rightSide + ")";
+		}
+		else if(expr instanceof PUnaryExpression){
+			PUnaryExpression exprUnary = (PUnaryExpression)expr;
+			boolean operator = o1Unary.getOperator().getName().equals(o2Unary.getOperator().getName());
+			boolean expr = this.pBooleanExpressionEquals(o1Unary.getExpr(), o2Unary.getExpr());
+			return operator && expr;
+		}
+		else if(expr instanceof PFeatureRef){
+			PFeatureRef exprFeatureRef = (PFeatureRef) expr;
+			return o1FeatureRef.getRef().getName().equals(o2FeatureRef.getRef().getName());
+		}
+		else{
+			return null;
+		}
+	}
+
+}

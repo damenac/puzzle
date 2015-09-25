@@ -1,0 +1,12 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+import vm.PBooleanExpression;
+
+public class LeftImplicationsGroup {
+
+	private PBooleanExpression leftSide;
+	
+	private PBooleanExpression rightSide;
+	
+	
+}

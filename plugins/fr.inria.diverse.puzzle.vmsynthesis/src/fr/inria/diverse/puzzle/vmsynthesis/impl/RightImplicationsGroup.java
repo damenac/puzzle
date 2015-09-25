@@ -12,14 +12,17 @@ public class RightImplicationsGroup {
 	
 	private PFeatureRef rightSide;
 	
+	private boolean notImplication;
+	
 	private ArrayList<PFeatureRef> leftSide;
 	
 	// -----------------------------------------------
 	// Constructors
 	// -----------------------------------------------
 	
-	public RightImplicationsGroup(PFeatureRef rightSide){
+	public RightImplicationsGroup(PFeatureRef rightSide, boolean notImplication){
 		this.rightSide = rightSide;
+		this.notImplication = notImplication;
 		this.leftSide = new ArrayList<PFeatureRef>();
 	}
 
@@ -39,10 +42,18 @@ public class RightImplicationsGroup {
 		return leftSide;
 	}
 	
+	public boolean isNotImplication() {
+		return notImplication;
+	}
+
+	public void setNotImplication(boolean notImplication) {
+		this.notImplication = notImplication;
+	}
+	
 	// -----------------------------------------------
 	// Methods
 	// -----------------------------------------------
-	
+
 	public String toString(){
 		String leftSide = "";
 		boolean first = true;
@@ -53,7 +64,12 @@ public class RightImplicationsGroup {
 			leftSide += " " + pFeatureRef.getRef().getName();
 			first = false;
 		}
-		return "(" + leftSide + " ) implies " + rightSide.getRef().getName();
+		
+		String not = "";
+		if(this.notImplication)
+			not = "not ";
+		
+		return "(" + leftSide + " ) implies " + not + rightSide.getRef().getName();
 	}
 	
 	public boolean equals(Object o){

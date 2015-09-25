@@ -181,6 +181,14 @@ public class PCMQueryServices {
 		return false;
 	}
 	
+	/**
+	 * Returns true if all the products that contain the feature A, contain also the feature B.
+	 * That is A implies B. 
+	 * 
+	 * @param A
+	 * @param B
+	 * @return
+	 */
 	public boolean allProductsWithFeatureAHaveAlsoFeatureB(String A,
 			String B) {
 		
@@ -214,8 +222,42 @@ public class PCMQueryServices {
 	}
 	
 	/**
+	 * Returns true if all the products that contain the feature A exclude the feature B.
+	 * That is, A implies not B.
+	 * 
+	 * @param A
+	 * @param B
+	 * @return
+	 */
+	public boolean allProductsWithFeatureAExcludeFeatureB(String A,
+			String B) {
+		
+		for (int i = 1; i < PCM.length; i++) {
+			boolean withA = false;
+			for (int j = 1; j < PCM[0].length && !withA; j++) {
+				if(PCM[0][j].equals("\"" + A + "\"")){
+					if(PCM[i][j].equals("\"YES\""))
+						withA = true;
+				}
+			}
+			
+			boolean withB = false;
+			for (int j = 1; j < PCM[0].length && !withB; j++) {
+				if(PCM[0][j].equals("\"" + B + "\"")){
+					if(PCM[i][j].equals("\"YES\""))
+						withB = true;
+				}
+			}
+			
+			if(withA && withB)
+				return false;
+		}
+		return true;
+	}
+	
+	/**
 	 * Returns true if all the products that contain the features in the array A contain also the feature B.
-	 * That is, (A[0] and A[1] and ... A[n]) implies B.
+	 * That is, (A[0] and A[1] and ... and A[n]) implies B.
 	 * 
 	 * @param A. Collection of features at the left side of the operation 
 	 * @param B. The right side feature. 
@@ -251,15 +293,27 @@ public class PCMQueryServices {
 		return true;
 	}
 	
-	public boolean allProductsWithFeatureAExcludeFeatureB(String A,
-			String B) {
+	/**
+	 * Returns true if all the products that contain the features in the array A exclude the feature B.
+	 * That is, (A[0] and A[1] and ... and A[n]) implies not B.
+	 * 
+	 * @param leftFeatures
+	 * @param name
+	 * @return
+	 */
+	public boolean allProductsWithFeaturesSetAExcludeFeatureB(
+			ArrayList<String> A, String B) {
 		
 		for (int i = 1; i < PCM.length; i++) {
-			boolean withA = false;
-			for (int j = 1; j < PCM[0].length && !withA; j++) {
-				if(PCM[0][j].equals("\"" + A + "\"")){
-					if(PCM[i][j].equals("\"YES\""))
-						withA = true;
+			boolean withA = true;
+			for (int index = 0; index < A.size() && withA; index++) {
+				String a = A.get(index);
+				for (int j = 1; j < PCM[0].length && withA; j++) {
+					String currentFeatureName = PCM[0][j].replace("\"", "");
+					if(currentFeatureName.equals(a)){
+						if(PCM[i][j].equals("\"NO\""))
+							withA = false;
+					}
 				}
 			}
 			

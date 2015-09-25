@@ -1,3 +1,5 @@
 1443018407890	Copy compilation unit
 1443081457871	Rename local variable 'constraint'
 1443081640508	Rename local variable 'implies'
+1443167308244	Rename local variable 'closedFM'
+1443167535049	Rename local variable 'closedFM'

@@ -1,0 +1,32 @@
+package fr.inria.diverse.puzzle.vmsynthesis.impl;
+
+import vm.PBooleanExpression;
+
+public class LeftImplicationsGroup {
+
+	private PBooleanExpression leftSide;
+	
+	private ArrayList<PBooleanExpression> rightSide;
+
+	public LeftImplicationsGroup(PBooleanExpression leftSide,
+			PBooleanExpression rightSide) {
+		super();
+		this.leftSide = leftSide;
+	}
+
+	public PBooleanExpression getLeftSide() {
+		return leftSide;
+	}
+
+	public void setLeftSide(PBooleanExpression leftSide) {
+		this.leftSide = leftSide;
+	}
+
+	public PBooleanExpression getRightSide() {
+		return rightSide;
+	}
+
+	public void setRightSide(PBooleanExpression rightSide) {
+		this.rightSide = rightSide;
+	}
+}

@@ -93,15 +93,15 @@ public class TestServices {
 			i++;
 		}
 		
-		return numberOfProducts;
+		for (GenericProduct product : pq.getAllProducts()) {
+			System.out.print("Product: ");
+			for (VariabilityElement element : product.getElements()) {
+				System.out.print(element.getName() + ", ");	
+			}
+			System.out.println();
+		}
 		
-//		for (GenericProduct product : pq.getAllProducts()) {
-//			System.out.print("Product: ");
-//			for (VariabilityElement element : product.getElements()) {
-//				System.out.print(element + ", ");	
-//			}
-//			System.out.println();
-//		}
+		return numberOfProducts;
 	}
 	
 	public static boolean productExists(String[] productFeatures, ProductsQuestion pq){
