@@ -1,7 +1,9 @@
 package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Provides query services for PCMs.
@@ -35,6 +37,13 @@ public class PCMQueryServices {
 	// ----------------------------------------------------------
 	// Methods
 	// ----------------------------------------------------------
+	public Set<String> getAllFeatures(){
+		Set<String> features = new HashSet<String>();
+		for (int j = 0; j < PCM.length; j++) {
+			features.add(PCM[0][j]);
+		}
+		return features;
+	}
 	
 	public boolean existsProductWithFeature(String feature){
 		for (int i = 0; i < PCM.length; i++) {
