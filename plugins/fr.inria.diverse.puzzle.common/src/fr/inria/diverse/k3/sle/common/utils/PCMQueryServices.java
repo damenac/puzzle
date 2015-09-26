@@ -207,7 +207,7 @@ public class PCMQueryServices {
 		for (int i = 1; i < PCM.length; i++) {
 			boolean withA = false;
 			for (int j = 1; j < PCM[0].length && !withA; j++) {
-				if (PCM[0][j].equals("\"" + A + "\"")) {
+				if (PCM[0][j].equals(A)) {
 					if (PCM[i][j].equals("\"YES\"")) {
 						withA = true;
 						count++;
@@ -217,7 +217,7 @@ public class PCMQueryServices {
 
 			boolean withoutB = false;
 			for (int j = 1; j < PCM[0].length && !withoutB; j++) {
-				if (PCM[0][j].equals("\"" + B + "\"")) {
+				if (PCM[0][j].equals(B )) {
 					if (PCM[i][j].equals("\"NO\""))
 						withoutB = true;
 				}
@@ -245,7 +245,7 @@ public class PCMQueryServices {
 		for (int i = 1; i < PCM.length; i++) {
 			boolean withA = false;
 			for (int j = 1; j < PCM[0].length && !withA; j++) {
-				if (PCM[0][j].equals("\"" + A + "\"")) {
+				if (PCM[0][j].equals( A)) {
 					if (PCM[i][j].equals("\"YES\""))
 						withA = true;
 				}
@@ -253,7 +253,7 @@ public class PCMQueryServices {
 
 			boolean withB = false;
 			for (int j = 1; j < PCM[0].length && !withB; j++) {
-				if (PCM[0][j].equals("\"" + B + "\"")) {
+				if (PCM[0][j].equals(  B )) {
 					if (PCM[i][j].equals("\"YES\""))
 						withB = true;
 				}

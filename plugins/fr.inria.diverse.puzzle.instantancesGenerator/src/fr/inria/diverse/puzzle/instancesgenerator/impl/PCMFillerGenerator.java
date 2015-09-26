@@ -14,8 +14,10 @@ public class PCMFillerGenerator {
 	public static String generatePCMs(DependencyGraph graph, String PCM){
 	
 		SimpleSolver solver = new SimpleSolver();
-
+		System.out.println("The input PCM can be depicted by using the following requires/excludes:");
 		for(DependencyArc arc:graph.getArcs()){
+			System.out.println("Requires: "+arc.getFrom().getIdentifier()+";"+ arc.getTo().getIdentifier());
+
 			solver.createRequires("\"" + arc.getFrom().getIdentifier() + "\"", "\"" + arc.getTo().getIdentifier() + "\"");
 		}
 		
@@ -60,6 +62,7 @@ public class PCMFillerGenerator {
 		Set<String> allFeatures = PCMQueryServices.getInstance().getAllFeatures();
 		for (String orig : allFeatures) {
 			for (String dest : allFeatures) {
+			//	System.out.println(orig+";"+dest);
 				if (!orig.equals(dest) && PCMQueryServices.getInstance().allProductsWithFeatureAHaveAlsoFeatureB(orig, dest)) {
 					res.add(orig + ";" + dest);
 				}
