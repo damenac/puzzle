@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroup"/>
 <fullyQualifiedTypeName name="vm.PFeatureGroupCardinality"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
@@ -43,21 +40,24 @@
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.featureModel.Constraint"/>
 <fullyQualifiedTypeName name="es.us.isa.util.Tree"/>
 <fullyQualifiedTypeName name="org.eclipse.ui.internal.registry.KeywordRegistry"/>
-<fullyQualifiedTypeName name="vm.PUninaryOperator"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.featureModel.KeyWords"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.AttributedFeature"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMAAttributed"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.PCMQueryServices"/>
 <fullyQualifiedTypeName name="vm.PConstraint"/>
-<fullyQualifiedTypeName name="vm.PBinaryExpression"/>
 <fullyQualifiedTypeName name="vm.PBinaryOperator"/>
 <fullyQualifiedTypeName name="vm.PFeature"/>
-<fullyQualifiedTypeName name="vm.VmFactory"/>
-<fullyQualifiedTypeName name="vm.PBooleanExpression"/>
-<fullyQualifiedTypeName name="vm.PFeatureRef"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.RightImplicationsGroup"/>
+<fullyQualifiedTypeName name="vm.VmFactory"/>
+<fullyQualifiedTypeName name="vm.PUninaryOperator"/>
+<fullyQualifiedTypeName name="vm.PBinaryExpression"/>
+<fullyQualifiedTypeName name="vm.PFeatureRef"/>
 <fullyQualifiedTypeName name="vm.PUnaryExpression"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.LeftImplicationsGroup"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="vm.PBooleanExpression"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.PCMQueryServices"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.instancesgenerator.impl.PCMFillerGenerator"/>
 </qualifiedTypeNameHistroy>
