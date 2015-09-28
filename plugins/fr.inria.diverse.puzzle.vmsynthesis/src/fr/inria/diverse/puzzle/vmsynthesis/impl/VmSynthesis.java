@@ -472,6 +472,10 @@ public class VmSynthesis {
 		rootFeature.getGroups().add(ORGroup);
 	}
 
+	/**
+	 * Identifies the implications existing between the features of the feature model given in the parameter.
+	 * @param fm
+	 */
 	public void addAdditionalImpliesConstraints(PFeatureModel fm) {
 		ArrayList<PFeature> features = new ArrayList<PFeature>();
 		this.collectPFeatures(features, fm.getRootFeature());
@@ -482,9 +486,10 @@ public class VmSynthesis {
 				PFeature destination = features.get(j);
 
 				if (!origin.getName().equals(destination.getName())) {
-					boolean child = this.featureAIsChildOfB(origin, destination);
+					boolean child = this.featureAIsParentOfB(destination, origin);
 					if (!child && !destination.isMandatory() && PCMQueryServices.getInstance()
-							.allProductsWithFeatureAHaveAlsoFeatureB(origin.getName(), destination.getName())) {
+							.allProductsWithFeatureAHaveAlsoFeatureB(origin.getName(), destination.getName()) &&
+							!this.implicationExists(origin, destination, fm)) {
 						this.createImplies(origin, destination, fm);
 					}
 				}
@@ -492,13 +497,44 @@ public class VmSynthesis {
 		}
 	}
 
-	private boolean featureAIsChildOfB(PFeature origin, PFeature destination) {
-		if (destination == null)
+	/**
+	 * Indicates if in the feature model in the parameter there is already an implication between the origin and the destination. 
+	 * @param origin
+	 * @param destination
+	 * @param fm
+	 * @return
+	 */
+	private boolean implicationExists(PFeature origin, PFeature destination,
+			PFeatureModel fm) {
+		
+		PConstraint implies = VmFactory.eINSTANCE.createPConstraint();
+		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+		left.setRef(origin);
+		PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+		right.setRef(destination);
+
+		PBinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+		pBinaryExpression.setLeft(left);
+		pBinaryExpression.setRight(right);
+		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
+
+		implies.setExpression(pBinaryExpression);
+		
+		for (PConstraint constraint : fm.getConstraints()) {
+			if(pBooleanExpressionEquals(constraint.getExpression(), implies.getExpression())){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean featureAIsParentOfB(PFeature A, PFeature B) {
+		if (B.getParent() == null)
 			return false;
-		else if (origin.getParent().getName().equals(destination.getName()))
+		else if (A.getName().equals(B.getParent().getName()))
 			return true;
 		else {
-			return this.featureAIsChildOfB(origin, destination.getParent());
+			return this.featureAIsParentOfB(A, B.getParent());
 		}
 	}
 
@@ -524,6 +560,7 @@ public class VmSynthesis {
 
 		implies.setExpression(pBinaryExpression);
 		implies.setName(left.getRef().getName() + " implies " + right.getRef().getName());
+	
 		fm.getConstraints().add(implies);
 	}
 

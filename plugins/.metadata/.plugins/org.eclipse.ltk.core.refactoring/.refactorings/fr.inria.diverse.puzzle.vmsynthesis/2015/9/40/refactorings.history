@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;destination&apos; in &apos;fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis.featureAIsChildOfB(...)&apos; to &apos;B&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.vmsynthesis&apos;&#x0A;- Original element: &apos;fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis.featureAIsChildOfB(PFeature, PFeature).destination&apos;&#x0A;- Renamed element: &apos;destination&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;destination&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;fr.inria.diverse.puzzle.vmsynthesis.impl{VmSynthesis.java[VmSynthesis~featureAIsChildOfB~QPFeature;~QPFeature;@destination!16300!16319!16309!16319!QPFeature;!0!true" name="B" references="true" stamp="1443438324113" version="1.0"/>
+</session>
