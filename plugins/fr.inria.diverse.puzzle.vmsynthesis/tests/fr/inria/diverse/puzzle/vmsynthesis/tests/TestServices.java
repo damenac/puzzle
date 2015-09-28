@@ -1,6 +1,8 @@
 package fr.inria.diverse.puzzle.vmsynthesis.tests;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Set;
 
 import vm.PConstraint;
 import vm.PFeature;
@@ -12,6 +14,7 @@ import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureMod
 import es.us.isa.FAMA.models.variabilityModel.GenericProduct;
 import es.us.isa.FAMA.models.variabilityModel.VariabilityElement;
 import es.us.isa.fama.PluginQuestionTrader;
+import fr.inria.diverse.k3.sle.common.utils.PCMQueryServices;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMAAttributed;
 
 public class TestServices {
@@ -61,26 +64,26 @@ public class TestServices {
 		ProductsQuestion pq = (ProductsQuestion) qt.createQuestion("Products");
 		qt.ask(pq);
 		
-		String[] products = PCM.split("\n");
+		ArrayList<String> products = PCMQueryServices.getInstance().getAllProducts();
 		
 		int i = 1;
-		for (int k = 1; k < products.length; k++) {
-			String[] features = products[k].split(",");
-			ArrayList<String> featuresString = new ArrayList<String>();
-			featuresString.add("Root");
+		for (int k = 0; k < products.size(); k++) {
 			
-			int j = 1;
-			while ( j < features.length ) {
-				
-				if(features[j].equals("\"YES\"")){
-					featuresString.add("F" + j);
-				}
-				j++;
+			ArrayList<String> featuresCollection = new ArrayList<String>();
+			Set<String> featuresSet = PCMQueryServices.getInstance().getAllFeatures();
+			featuresCollection.add("Root");
+			
+			Iterator<String> featuresIterator = featuresSet.iterator();
+			while (featuresIterator.hasNext()) {
+				String f = (String) featuresIterator.next();
+				if(PCMQueryServices.getInstance().productContainsFeature(products.get(k), f))
+					featuresCollection.add(f.replace("\"", ""));
 			}
 			
-			String[] featuresStringArray = new String[featuresString.size()];
-			for (int l = 0; l < featuresString.size(); l++) {
-				featuresStringArray[l] = featuresString.get(l);
+			String[] featuresStringArray = new String[featuresCollection.size()];
+			for (int j = 0; j < featuresCollection.size(); j++) {
+				
+				featuresStringArray[j] = featuresCollection.get(j);
 			}
 			
 			boolean product1Exists = productExists(featuresStringArray, pq);
