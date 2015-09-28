@@ -64,9 +64,9 @@ public class PCMQueryServices {
 
 	public boolean existsProductWithoutFeature(String feature) {
 		for (int j = 1; j < PCM[0].length; j++) {
-			if (PCM[0][j].equals(feature)) {
+			if (PCM[0][j].replace("\"", "").equals(feature.replace("\"", ""))) {
 				for (int i = 1; i < PCM.length; i++) {
-					if (PCM[i][j].equals("\"NO\""))
+					if (PCM[i][j].replace("\"", "").equals("NO"))
 						return true;
 				}
 			}
@@ -207,8 +207,8 @@ public class PCMQueryServices {
 		for (int i = 1; i < PCM.length; i++) {
 			boolean withA = false;
 			for (int j = 1; j < PCM[0].length && !withA; j++) {
-				if (PCM[0][j].equals(A)) {
-					if (PCM[i][j].equals("\"YES\"")) {
+				if (PCM[0][j].replace("\"", "").equals(A.replace("\"", ""))) {
+					if (PCM[i][j].replace("\"", "").equals("YES")) {
 						withA = true;
 						count++;
 					}
@@ -217,8 +217,8 @@ public class PCMQueryServices {
 
 			boolean withoutB = false;
 			for (int j = 1; j < PCM[0].length && !withoutB; j++) {
-				if (PCM[0][j].equals(B )) {
-					if (PCM[i][j].equals("\"NO\""))
+				if (PCM[0][j].replace("\"", "").equals( B.replace("\"", "") )) {
+					if (PCM[i][j].replace("\"", "").equals("NO"))
 						withoutB = true;
 				}
 			}
@@ -245,16 +245,16 @@ public class PCMQueryServices {
 		for (int i = 1; i < PCM.length; i++) {
 			boolean withA = false;
 			for (int j = 1; j < PCM[0].length && !withA; j++) {
-				if (PCM[0][j].equals( A)) {
-					if (PCM[i][j].equals("\"YES\""))
+				if (PCM[0][j].replace("\"", "").equals( A.replace("\"", "") )) {
+					if (PCM[i][j].replace("\"", "").equals("YES"))
 						withA = true;
 				}
 			}
 
 			boolean withB = false;
 			for (int j = 1; j < PCM[0].length && !withB; j++) {
-				if (PCM[0][j].equals(  B )) {
-					if (PCM[i][j].equals("\"YES\""))
+				if (PCM[0][j].replace("\"", "").equals( B.replace("\"", "") )) {
+					if (PCM[i][j].replace("\"", "").equals("YES"))
 						withB = true;
 				}
 			}

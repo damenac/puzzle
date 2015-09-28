@@ -14,27 +14,27 @@ public class PCMFillerGenerator {
 	public static String generatePCMs(DependencyGraph graph, String PCM){
 	
 		SimpleSolver solver = new SimpleSolver();
-		System.out.println("The input PCM can be depicted by using the following requires/excludes:");
+//		System.out.println("The input PCM can be depicted by using the following requires/excludes:");
 		for(DependencyArc arc:graph.getArcs()){
-			System.out.println("Requires: "+arc.getFrom().getIdentifier()+";"+ arc.getTo().getIdentifier());
-
+//			System.out.println("Requires: "+arc.getFrom().getIdentifier()+";"+ arc.getTo().getIdentifier());
 			solver.createRequires("\"" + arc.getFrom().getIdentifier() + "\"", "\"" + arc.getTo().getIdentifier() + "\"");
 		}
 		
-		for(String f: getAllCoreMandatory(PCM)){
-			System.out.println("Mandatory:"+f);
-			solver.createMandatory(f);
+		Collection<String> mandatoryFeatures = getAllCoreMandatory(PCM);
+		for(String mandatoryFeature : mandatoryFeatures){
+//			System.out.println("Mandatory: " + mandatoryFeature);
+			solver.createMandatory(mandatoryFeature);
 		}
 		
 		for(String rel: getAllRequires(PCM) ){
-			System.out.println("Requires: "+rel);
+//			System.out.println("Requires: "+rel);
 			String orig= rel.substring(0, rel.indexOf(';'));
 			String dest= rel.substring(rel.indexOf(';') + 1, rel.length());
 			solver.createRequires(orig, dest);
 		}
 		
 		for(String rel: getAllExcludes(PCM) ){
-			System.out.println("Excludes: "+rel);
+//			System.out.println("Excludes: "+rel);
 
 			String orig= rel.substring(0, rel.indexOf(';'));
 			String dest= rel.substring(rel.indexOf(';') + 1, rel.length());

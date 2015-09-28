@@ -845,6 +845,7 @@ public class VmSynthesis {
 				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
 				if(!this.existsGroup(groups, impliesI.getLeft())){
 					LeftImplicationsGroup newGroup = new LeftImplicationsGroup(impliesI.getLeft());
+					newGroup.getRightSide().add(impliesI.getRight());
 					
 					for (PConstraint constraintJ : featureModel.getConstraints()) {
 						PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();

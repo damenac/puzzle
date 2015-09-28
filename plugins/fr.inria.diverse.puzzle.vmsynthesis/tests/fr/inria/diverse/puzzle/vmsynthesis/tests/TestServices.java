@@ -2,22 +2,16 @@ package fr.inria.diverse.puzzle.vmsynthesis.tests;
 
 import java.util.ArrayList;
 
-import vm.PBinaryExpression;
 import vm.PConstraint;
 import vm.PFeature;
 import vm.PFeatureGroup;
 import vm.PFeatureModel;
-import vm.PFeatureRef;
-import vm.PUnaryExpression;
-import vm.PUninaryOperator;
 import es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion;
 import es.us.isa.FAMA.Reasoner.questions.ProductsQuestion;
 import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureModel;
-import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import es.us.isa.FAMA.models.variabilityModel.GenericProduct;
 import es.us.isa.FAMA.models.variabilityModel.VariabilityElement;
 import es.us.isa.fama.PluginQuestionTrader;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMAAttributed;
 
 public class TestServices {
@@ -27,6 +21,7 @@ public class TestServices {
 	// -------------------------------------------------
 	
 	public static void printFM(PFeatureModel fm){
+		System.out.println();
 		System.out.println(fm.getName());
 		printFeature("", " + ", fm.getRootFeature());
 		
@@ -56,6 +51,7 @@ public class TestServices {
 		PluginQuestionTrader qt = new PluginQuestionTrader();
 		qt.setVariabilityModel(famaFm);
 		
+		System.out.println();
 		NumberOfProductsQuestion npq = (NumberOfProductsQuestion) qt.createQuestion("#Products");
 		System.out.println(npq);
 		qt.ask(npq);

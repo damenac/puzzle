@@ -32,7 +32,7 @@ public class RandomTest {
 	// Test Cases
 	// -------------------------------------------------
 	
-	public String executeTest(int numFeatures, int numProducts) throws Exception {
+	public boolean executeTest(int numFeatures, int numProducts, StringBuffer buffer) throws Exception {
 		DependencyGraph randomAciclic = GraphGenerator.generateGraph(numFeatures, 880608);
 		System.out.println("open fm: " + randomAciclic.toString());
 		System.out.println("there is loop: " + randomAciclic.thereIsLoop());
@@ -45,11 +45,12 @@ public class RandomTest {
 		
 		String PCM = PCMGenerator.generatePCMs(randomAciclic, numProducts, 880608, 2);
 		System.out.println("Original: "+ PCM);
+		int originalNumProducts = PCM.split("\n").length - 1;
+		
 		PCM = updatePCM(PCM, randomAciclic);
 		System.out.println("Update: "+ PCM);
 		
 		numProducts = PCM.split("\n").length - 1;
-		System.out.println("ya la calcule");
 		
 		System.out.println("Cloned OpenFM");
 		PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
@@ -100,16 +101,24 @@ public class RandomTest {
 		long after = System.currentTimeMillis();
 		long time = after - before;
 		String resultMessage = "";
+		String successFail = "";
 		
 		if(result != numProducts){
-			resultMessage += "Time: " + time + "; FAIL: " + "No. Features: " + numFeatures + 
-					"; No. Products: " + numProducts + "; Result: " + result + "\n";
+			successFail = "FAIL:    ";
 		}else{
-			resultMessage += "Time: " + time + "; SUCCESS: " + "No. Features: " + numFeatures + 
-					"; No. Products: " + numProducts + " Result: " + result + "\n";
+			successFail = "SUCCESS: ";
 		}
 		
-		return resultMessage;
+		resultMessage += successFail + "No. Features: " + numFeatures + 
+				"; No. Products: (original:  " + originalNumProducts + ", updated: " + numProducts + " ); Result: " + result + "; Execution Time: " + time + "\n";
+		
+		buffer.append(resultMessage);
+		
+		if(result != numProducts){
+			return false;
+		}else{
+			return true;
+		}
 		
 	}
 	
@@ -119,64 +128,32 @@ public class RandomTest {
 
 	@Test
 	public void testRandom() throws Exception{
-//		int[] dataFeatures = {5, 8, 10, 15, 20};
-//		int[] dataNumProducts = {2, 4, 6, 7, 8};
-//		String resultMessage = "";
-//		for (int i = 0; i < dataFeatures.length; i++) {
-//			for (int j = 0; j < dataNumProducts.length; j++) {
-//				resultMessage += this.executeTest(dataFeatures[i], dataNumProducts[j]);
-//			}
-//		}
-//		
-//		System.out.println(resultMessage);
-	
-		String resultMessage = "";
-
-		resultMessage += this.executeTest(6, 3);
-		resultMessage += this.executeTest(10, 3);
-		resultMessage += this.executeTest(15, 3);
-		resultMessage += this.executeTest(20, 3);
-		resultMessage += this.executeTest(25, 3);
-		resultMessage += this.executeTest(30, 3);
-		resultMessage += this.executeTest(35, 3);
-
-		resultMessage += this.executeTest(6, 4);
-//		resultMessage += this.executeTest(10, 4);
-//		resultMessage += this.executeTest(15, 4);
-//		resultMessage += this.executeTest(20, 4);
-//		resultMessage += this.executeTest(25, 4);
-//		resultMessage += this.executeTest(30, 4);
-//		resultMessage += this.executeTest(35, 4);
-//		
-//		resultMessage += this.executeTest(10, 5);
-//		resultMessage += this.executeTest(15, 5);
-//		resultMessage += this.executeTest(20, 5);
-//		resultMessage += this.executeTest(25, 5);
-//		resultMessage += this.executeTest(30, 5);
-//		resultMessage += this.executeTest(35, 5);
-//		
-//		resultMessage += this.executeTest(10, 8);
-//		resultMessage += this.executeTest(15, 8);
-//		resultMessage += this.executeTest(20, 8);
-//		resultMessage += this.executeTest(25, 8);
-//		resultMessage += this.executeTest(30, 8);
-//		resultMessage += this.executeTest(35, 8);
-//		
-//		resultMessage += this.executeTest(10, 10);
-//		resultMessage += this.executeTest(15, 10);
-//		resultMessage += this.executeTest(20, 10);
-//		resultMessage += this.executeTest(25, 10);
-//		resultMessage += this.executeTest(30, 10);
-//		resultMessage += this.executeTest(35, 10);
-//		
-//		resultMessage += this.executeTest(10, 15);
-//		resultMessage += this.executeTest(15, 15);
-//		resultMessage += this.executeTest(20, 15);
-//		resultMessage += this.executeTest(25, 15);
-//		resultMessage += this.executeTest(30, 15);
-//		resultMessage += this.executeTest(35, 15);
+		StringBuffer results = new StringBuffer();
+		int[] dataFeatures = {5, 8, 10, 15, 20, 25};
+		int[] dataNumProducts = {2, 3, 4, 6, 7, 8, 10, 12};
 		
-		System.out.println(resultMessage);
+		int executions = 0;
+		int success = 0;
+		int fails = 0;
+		for (int i = 0; i < dataFeatures.length; i++) {
+			for (int j = 0; j < dataNumProducts.length; j++) {
+				boolean result = this.executeTest(dataFeatures[i], dataNumProducts[j], results);
+				executions++;
+				
+				if(result){
+					success ++;
+				}else{
+					fails ++;
+				}
+			}
+		}
+		
+		double successPercentage = ( success * 100 ) / executions;
+		double failsPercentage = ( fails * 100 ) / executions;
+		
+		System.out.println(results);
+		System.out.println("\n\n *** Global results: No. Executions: " + executions + 
+				" Success: " + success + " (" +successPercentage + "%); Fails: "  + fails + " (" + failsPercentage + "%).\n\n");
 	}
 	
 }
