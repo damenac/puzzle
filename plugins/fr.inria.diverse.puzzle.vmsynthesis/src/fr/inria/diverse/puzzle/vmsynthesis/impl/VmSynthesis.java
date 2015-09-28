@@ -3,6 +3,7 @@ package fr.inria.diverse.puzzle.vmsynthesis.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
@@ -99,7 +100,7 @@ public class VmSynthesis {
 					dependencyVertex.setIncluded(true);
 
 					boolean first = true;
-					for (DependencyArc dependencyArc : dependencyVertex.getOutgoingArcs()) {
+					for (Arc dependencyArc : dependencyVertex.getOutgoingArcs()) {
 						if (currentLevel.contains(dependencyArc.getTo())) {
 							if (first) {
 								// Esta feature no tiene padre. Asignelo.

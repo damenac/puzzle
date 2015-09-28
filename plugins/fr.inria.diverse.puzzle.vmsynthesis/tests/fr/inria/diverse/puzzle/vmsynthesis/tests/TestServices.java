@@ -28,7 +28,7 @@ public class TestServices {
 		System.out.println(fm.getName());
 		printFeature("", " + ", fm.getRootFeature());
 		
-		System.out.println("Constraints size: " + fm.getConstraints().size());
+		System.out.println("\nConstraints size: " + fm.getConstraints().size());
 		for (PConstraint constraint : fm.getConstraints()) {
 			System.out.println(constraint.getName());
 		}
