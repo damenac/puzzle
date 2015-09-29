@@ -133,25 +133,6 @@ public class PCMGenerator {
 		}
 	}
 	
-	private Graph<Vertex, Arc> generateGraph(){
-		GraphGenerator graphGenerator = new GraphGenerator();
-		try {
-			Properties prop = graphGenerator.readProperties();
-			int size = Integer.parseInt(prop.getProperty("size"));
-			String prefix = prop.getProperty("vertexPrefix");
-			long seed = Long.parseLong(prop.getProperty("seed"));
-			int chainLenght = Integer.parseInt(prop.getProperty("chainLenght"));
-			
-			Graph<Vertex, Arc> graph = graphGenerator.generateGraph(prefix, size, seed, chainLenght);
-			return graph;
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		return null;
-	}
-	
 	public Properties readProperties() throws IOException{
 		Properties prop = new Properties();
 		InputStream input = null;
@@ -177,7 +158,7 @@ public class PCMGenerator {
 		int index = 1;
 		while(instancesAmount > 0){
 			int featuresAmount = Integer.parseInt(properties.getProperty(index + "-features-amount"));
-			int productsAmount = Integer.parseInt(properties.getProperty(index + "-features-amount"));
+			int productsAmount = Integer.parseInt(properties.getProperty(index + "-products-amount"));
 			int chainLenght = Integer.parseInt(properties.getProperty(index + "-chain-lenght"));
 			long graphSeed = Long.parseLong(properties.getProperty(index + "-graph-seed"));
 			long pcmSeed = Long.parseLong(properties.getProperty(index + "-pcm-seed"));
@@ -204,7 +185,7 @@ public class PCMGenerator {
 			System.out.println(closedPCM);
 			System.out.println();
 			
-			InstanceVO instance = new InstanceVO(graph, openPCM, closedPCM);
+			InstanceVO instance = new InstanceVO(graph, openPCM, closedPCM, featuresAmount, productsAmount);
 			instances.add(instance);
 			
 			instancesAmount--;

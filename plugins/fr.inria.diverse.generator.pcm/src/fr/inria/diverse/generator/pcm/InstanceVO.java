@@ -13,18 +13,21 @@ public class InstanceVO {
 	private Graph<Vertex, Arc> dependenciesGraph;
 	private String openPCM;
 	private String closedPCM;
-	
+	private int featuresAmount;
+	private int productsAmount;
 	
 	// -------------------------------------------------
 	// Constructor
 	// -------------------------------------------------
 	
 	public InstanceVO(Graph<Vertex, Arc> dependenciesGraph, String openPCM,
-			String closedPCM) {
+			String closedPCM, int featuresAmount, int productsAmount) {
 		super();
 		this.dependenciesGraph = dependenciesGraph;
 		this.openPCM = openPCM;
 		this.closedPCM = closedPCM;
+		this.featuresAmount = featuresAmount;
+		this.productsAmount = productsAmount;
 	}
 	
 	// -------------------------------------------------
@@ -35,28 +38,39 @@ public class InstanceVO {
 		return dependenciesGraph;
 	}
 
-
 	public void setDependenciesGraph(Graph<Vertex, Arc> dependenciesGraph) {
 		this.dependenciesGraph = dependenciesGraph;
 	}
-
 
 	public String getOpenPCM() {
 		return openPCM;
 	}
 
-
 	public void setOpenPCM(String openPCM) {
 		this.openPCM = openPCM;
 	}
-
 
 	public String getClosedPCM() {
 		return closedPCM;
 	}
 
-
 	public void setClosedPCM(String closedPCM) {
 		this.closedPCM = closedPCM;
+	}
+
+	public int getFeaturesAmount() {
+		return featuresAmount;
+	}
+
+	public void setFeaturesAmount(int featuresAmount) {
+		this.featuresAmount = featuresAmount;
+	}
+
+	public int getProductsAmount() {
+		return productsAmount;
+	}
+
+	public void setProductsAmount(int productsAmount) {
+		this.productsAmount = productsAmount;
 	}
 }

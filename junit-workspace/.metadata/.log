@@ -1,82 +1,10 @@
-!SESSION 2015-09-29 12:02:40.924 -----------------------------------------------
+!SESSION 2015-09-29 13:26:21.854 -----------------------------------------------
 eclipse.buildId=4.4.2.M20150204-1700
 java.version=1.8.0_25
 java.vendor=Oracle Corporation
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
-Framework arguments:  -version 3 -port 51076 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -testpluginname fr.inria.diverse.puzzle.vmsynthesis
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -consoleLog -version 3 -port 51076 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/plugins/../junit-workspace -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/pde-junit/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog -testpluginname fr.inria.diverse.puzzle.vmsynthesis
+Framework arguments:  -version 3 -port 51294 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -testpluginname fr.inria.diverse.puzzle.vmsynthesis
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -consoleLog -version 3 -port 51294 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTest -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/plugins/../junit-workspace -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/pde-junit/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog -testpluginname fr.inria.diverse.puzzle.vmsynthesis
 
-!ENTRY org.eclipse.core.net 1 0 2015-09-29 12:02:46.830
+!ENTRY org.eclipse.core.net 1 0 2015-09-29 13:26:28.259
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
-
-!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2015-09-29 12:02:51.904
-!MESSAGE FrameworkEvent ERROR
-!STACK 0
-org.osgi.framework.BundleException: Exception in org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop() of bundle org.eclipse.mylyn.tasks.ui.
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:847)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:950)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:324)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1623)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1542)
-	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:248)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:145)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:186)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:160)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: java.lang.ExceptionInInitializerError
-	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop(TasksUiPlugin.java:841)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:827)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:820)
-	... 13 more
-Caused by: org.eclipse.swt.SWTException: Invalid thread access
-	at org.eclipse.swt.SWT.error(SWT.java:4441)
-	at org.eclipse.swt.SWT.error(SWT.java:4356)
-	at org.eclipse.swt.SWT.error(SWT.java:4327)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1094)
-	at org.eclipse.swt.widgets.Display.createDisplay(Display.java:846)
-	at org.eclipse.swt.widgets.Display.create(Display.java:829)
-	at org.eclipse.swt.graphics.Device.<init>(Device.java:130)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:720)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:711)
-	at org.eclipse.swt.widgets.Display.getDefault(Display.java:1414)
-	at org.eclipse.mylyn.commons.ui.compatibility.CommonColors.<clinit>(CommonColors.java:28)
-	... 18 more
-Root exception:
-java.lang.ExceptionInInitializerError
-	at org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop(TasksUiPlugin.java:841)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:827)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$4.run(BundleContextImpl.java:1)
-	at java.security.AccessController.doPrivileged(Native Method)
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.stop(BundleContextImpl.java:820)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.stopWorker0(EquinoxBundle.java:950)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.stopWorker(EquinoxBundle.java:324)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.decStartLevel(ModuleContainer.java:1623)
-	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1542)
-	at org.eclipse.osgi.container.SystemModule.stopWorker(SystemModule.java:248)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule.stopWorker(EquinoxBundle.java:145)
-	at org.eclipse.osgi.container.Module.doStop(Module.java:626)
-	at org.eclipse.osgi.container.Module.stop(Module.java:488)
-	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:186)
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:160)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.eclipse.swt.SWTException: Invalid thread access
-	at org.eclipse.swt.SWT.error(SWT.java:4441)
-	at org.eclipse.swt.SWT.error(SWT.java:4356)
-	at org.eclipse.swt.SWT.error(SWT.java:4327)
-	at org.eclipse.swt.widgets.Display.error(Display.java:1094)
-	at org.eclipse.swt.widgets.Display.createDisplay(Display.java:846)
-	at org.eclipse.swt.widgets.Display.create(Display.java:829)
-	at org.eclipse.swt.graphics.Device.<init>(Device.java:130)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:720)
-	at org.eclipse.swt.widgets.Display.<init>(Display.java:711)
-	at org.eclipse.swt.widgets.Display.getDefault(Display.java:1414)
-	at org.eclipse.mylyn.commons.ui.compatibility.CommonColors.<clinit>(CommonColors.java:28)
-	... 18 more

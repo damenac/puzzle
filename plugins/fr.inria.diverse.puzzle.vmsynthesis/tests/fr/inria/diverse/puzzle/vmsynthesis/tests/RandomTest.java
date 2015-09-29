@@ -93,7 +93,7 @@ public class RandomTest {
 			successFail = "SUCCESS: ";
 		}
 		
-		resultMessage += successFail + "No. Features: " + "f" + 
+		resultMessage += successFail + "No. Features: " + instance.getFeaturesAmount() + 
 				"; No. Products: (original:  " + originalNumProducts + ", updated: " + numProducts + " ); Result: " + result + "; Execution Time: " + time + "\n";
 		
 		buffer.append(resultMessage);
