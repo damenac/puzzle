@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="AbstractUIPlugin" key="selection"/>
-		<item value="false" key="casesensitive"/>
+		<item value="Vertex" key="selection"/>
+		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Vertex"/>
 			<item value="service"/>
 			<item value="mutexGroups"/>
 			<item value="computeOr"/>
@@ -15,9 +16,9 @@
 			<item value="main"/>
 			<item value="Heuristic"/>
 			<item value="_shell"/>
-			<item value="pcmFMs"/>
 		</list>
 		<list key="replacehistory">
+			<item value="V"/>
 			<item value="syntaxOptions"/>
 			<item value="syntaxDiv"/>
 			<item value="syntaxChart"/>

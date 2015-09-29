@@ -1,5 +1,9 @@
 package fr.inria.diverse.dag.generator;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.Random;
 
 import fr.inria.diverse.graph.Arc;
@@ -76,24 +80,43 @@ public class GraphGenerator {
 		return graph;
 	}
 	
+	private Properties readProperties() throws IOException{
+		Properties prop = new Properties();
+		InputStream input = null;
+		input = new FileInputStream("parameters.properties");
+		prop.load(input);
+		input.close();
+		return prop;
+	}
+	
 	// -------------------------------------------------------
 	// Main
 	// -------------------------------------------------------
 	
 	public static void main(String[] args){
 		GraphGenerator generator = new GraphGenerator();
-		int size = 100;
-		Graph<Vertex, Arc> graph = generator.generateGraph("F", size, 880608, size * 3);
-		String[][] adjacencyMatrix = graph.adjacencyMatrix();
-		
-		for (int i = 0; i < adjacencyMatrix.length; i++) {
-			for (int j = 0; j < adjacencyMatrix[0].length; j++) {
-				System.out.print(adjacencyMatrix[i][j] + "|");
+		try {
+			Properties prop = generator.readProperties();
+			int size = Integer.parseInt(prop.getProperty("size"));
+			String prefix = prop.getProperty("vertexPrefix");
+			long seed = Long.parseLong(prop.getProperty("seed"));
+			int chainLenght = Integer.parseInt(prop.getProperty("chainLenght"));
+			
+			Graph<Vertex, Arc> graph = generator.generateGraph(prefix, size, seed, chainLenght);
+			String[][] adjacencyMatrix = graph.adjacencyMatrix();
+			
+			for (int i = 0; i < adjacencyMatrix.length; i++) {
+				for (int j = 0; j < adjacencyMatrix[0].length; j++) {
+					System.out.print(adjacencyMatrix[i][j] + "|");
+				}
+				System.out.println();
 			}
+			
 			System.out.println();
+			System.out.println(graph.toString());
+			
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
-		
-		System.out.println();
-		System.out.println(graph.toString());
 	}
 }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;fr.inria.diverse.graph.jar&apos; to &apos;exe&apos;&#x0A;- Original project: &apos;fr.inria.diverse.dag.generator&apos;&#x0A;- Destination element: &apos;exe&apos;&#x0A;- Original element: &apos;fr.inria.diverse.graph.jar&apos;" description="Copy file" element1="lib/fr.inria.diverse.graph.jar" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1443511628865" target="/fr.inria.diverse.dag.generator/exe" units="0" version="1.0"/>
+</session>
