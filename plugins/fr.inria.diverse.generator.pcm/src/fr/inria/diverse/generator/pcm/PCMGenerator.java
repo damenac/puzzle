@@ -1,6 +1,8 @@
 package fr.inria.diverse.generator.pcm;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Properties;
 import java.util.Random;
@@ -30,7 +32,7 @@ public class PCMGenerator {
 	 * @param k. K index indicating the amount of root vertex used in the generation. 
 	 * @return
 	 */
-	public static String generatePCMs(Graph<Vertex, Arc> graph, int productsAmount, long seed, int k){
+	public String generatePCMs(Graph<Vertex, Arc> graph, int productsAmount, long seed, int k){
 		Random generator = new Random(seed);
 		int count = 0;
 		String PCM = "\"Product\",";
@@ -149,15 +151,62 @@ public class PCMGenerator {
 		return null;
 	}
 	
+	public Properties readProperties() throws IOException{
+		Properties prop = new Properties();
+		InputStream input = null;
+		input = new FileInputStream("parameters.properties");
+		prop.load(input);
+		input.close();
+		return prop;
+	}
+	
+	private void generateAllPCMs() throws IOException {
+		GraphGenerator graphGenerator = new GraphGenerator();
+		Properties properties = this.readProperties();
+		int instancesAmount = Integer.parseInt(properties.getProperty("instances-amount"));
+		
+		int index = 1;
+		while(instancesAmount > 0){
+			int featuresAmount = Integer.parseInt(properties.getProperty(index + "-features-amount"));
+			int productsAmount = Integer.parseInt(properties.getProperty(index + "-features-amount"));
+			int chainLenght = Integer.parseInt(properties.getProperty(index + "-chain-lenght"));
+			long graphSeed = Long.parseLong(properties.getProperty(index + "-graph-seed"));
+			long pcmSeed = Long.parseLong(properties.getProperty(index + "-pcm-seed"));
+			
+			Graph<Vertex, Arc> graph = graphGenerator.generateGraph("F", featuresAmount, graphSeed, chainLenght);
+			
+			String[][] adjacencyMatrix = graph.adjacencyMatrix();
+			
+			for (int i = 0; i < adjacencyMatrix.length; i++) {
+				for (int j = 0; j < adjacencyMatrix[0].length; j++) {
+					System.out.print(adjacencyMatrix[i][j] + "|");
+				}
+				System.out.println();
+			}
+			
+			System.out.println();
+			System.out.println(graph.toString());
+
+			String openPCM = this.generatePCMs(graph, productsAmount, pcmSeed, 3);
+			System.out.println(openPCM);
+			System.out.println();
+			
+			instancesAmount--;
+			index++;
+		}
+	}
+	
 	// -------------------------------------------------------
 	// Main
 	// -------------------------------------------------------
 
 	public static void main(String args[]){
 		PCMGenerator generator = new PCMGenerator();
-		Graph<Vertex, Arc> graph = generator.generateGraph();
-		String pcm = PCMGenerator.generatePCMs(graph, 7, 880608, 2);
-		System.out.println(pcm);
+		try {
+			generator.generateAllPCMs();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
 

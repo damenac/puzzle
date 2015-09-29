@@ -1,0 +1,27 @@
+# ---------------------------------
+# Amount of instances
+# ---------------------------------
+
+instances-amount=60
+
+# ---------------------------------
+# 4x2 instances
+# ---------------------------------
+
+4x2-1-features-amount=4
+4x2-1-products-amount=2
+4x2-1-chain-lenght=12
+4x2-1-graph-seed=1166510396
+4x2-1-pcm-seed=164000672
+
+4x2-2-features-amount=4
+4x2-2-products-amount=2
+4x2-2-chain-lenght=12
+4x2-2-graph-seed=1624514147
+4x2-2-pcm-seed=1076870026
+
+4x2-3-features-amount=4
+4x2-3-products-amount=2
+4x2-3-chain-lenght=12
+4x2-3-graph-seed=1116611914
+4x2-3-pcm-seed=164000672
