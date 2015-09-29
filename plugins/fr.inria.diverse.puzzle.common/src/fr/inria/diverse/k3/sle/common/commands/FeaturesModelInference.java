@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import org.eclipse.core.resources.IProject;
 
 import vm.PFeatureModel;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.graph.Arc;
+import fr.inria.diverse.graph.Graph;
+import fr.inria.diverse.graph.Vertex;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -30,7 +32,7 @@ public interface FeaturesModelInference {
 	 */
 	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, 
 			SynthesisProperties properties, ArrayList<Language> languages, 
-			EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph) throws Exception;
+			EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph) throws Exception;
 	
 	/**
 	 * Returns a feature model that strictly represents the family of DSLs under study.

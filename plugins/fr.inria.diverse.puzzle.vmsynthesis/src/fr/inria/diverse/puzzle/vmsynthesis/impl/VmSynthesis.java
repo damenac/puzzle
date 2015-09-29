@@ -3,11 +3,10 @@ package fr.inria.diverse.puzzle.vmsynthesis.impl;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.inria.diverse.generator.pcm.PCMQueryServices;
 import fr.inria.diverse.graph.Arc;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
-import fr.inria.diverse.k3.sle.common.utils.PCMQueryServices;
+import fr.inria.diverse.graph.Graph;
+import fr.inria.diverse.graph.Vertex;
 import vm.PBinaryExpression;
 import vm.PBinaryOperator;
 import vm.PBooleanExpression;
@@ -59,7 +58,7 @@ public class VmSynthesis {
 	 * @param dependenciesGraph
 	 * @return
 	 */
-	public PFeatureModel synthesizeOpenFeatureModel(DependencyGraph dependenciesGraph) {
+	public PFeatureModel synthesizeOpenFeatureModel(Graph<Vertex, Arc> dependenciesGraph) {
 		PFeatureModel featureModel = VmFactory.eINSTANCE.createPFeatureModel();
 
 		// TODO Put a real family name to the feature model.
@@ -71,8 +70,8 @@ public class VmSynthesis {
 
 		// Step 2: The first level features are those vertex in the graph such
 		// that they have not dependencies with other vertex.
-		List<DependencyVertex> firstLevelVertex = dependenciesGraph.getIndendependentVertex();
-		for (DependencyVertex dependencyVertex : firstLevelVertex) {
+		List<Vertex> firstLevelVertex = dependenciesGraph.getIndendependentVertex();
+		for (Vertex dependencyVertex : firstLevelVertex) {
 			dependencyVertex.setIncluded(true);
 
 			PFeature feature = VmFactory.eINSTANCE.createPFeature();
@@ -89,11 +88,11 @@ public class VmSynthesis {
 			rootFeature.getGroups().add(featureGroup);
 		}
 
-		List<DependencyVertex> currentLevel = firstLevelVertex;
+		List<Vertex> currentLevel = firstLevelVertex;
 
 		while (!dependenciesGraph.allIncluded()) {
-			List<DependencyVertex> directDependentVertex = dependenciesGraph.getDirectDependentVertex(currentLevel);
-			for (DependencyVertex dependencyVertex : directDependentVertex) {
+			List<Vertex> directDependentVertex = dependenciesGraph.getDirectDependentVertex(currentLevel);
+			for (Vertex dependencyVertex : directDependentVertex) {
 				if (!dependencyVertex.isIncluded()) {
 					PFeature feature = VmFactory.eINSTANCE.createPFeature();
 					feature.setName(dependencyVertex.getIdentifier());
@@ -132,8 +131,8 @@ public class VmSynthesis {
 		return featureModel;
 	}
 
-	private void addCrosslevelRequires(PFeatureModel featureModel, DependencyGraph dependenciesGraph) {
-		for (DependencyArc arc : dependenciesGraph.getArcs()) {
+	private void addCrosslevelRequires(PFeatureModel featureModel, Graph<Vertex, Arc> dependenciesGraph) {
+		for (Arc arc : dependenciesGraph.getArcs()) {
 			if (!this.isFather(featureModel.getRootFeature(), arc.getTo().getIdentifier(),
 					arc.getFrom().getIdentifier())) {
 				PFeature requiredFeature = this.getPFeatureByName(arc.getTo().getIdentifier(),

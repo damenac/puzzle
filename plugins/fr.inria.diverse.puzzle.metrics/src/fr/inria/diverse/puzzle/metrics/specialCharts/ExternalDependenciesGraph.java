@@ -2,10 +2,10 @@ package fr.inria.diverse.puzzle.metrics.specialCharts;
 
 import java.util.ArrayList;
 
+import fr.inria.diverse.graph.Arc;
+import fr.inria.diverse.graph.Vertex;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyVertex;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
@@ -30,7 +30,7 @@ public class ExternalDependenciesGraph implements SpecialProductLineSyntacticCha
 		
 		boolean first = true;
 		int i = 0;
-		for (DependencyVertex currentVertex : dependenciesGraph.getVertex()) {
+		for (Vertex currentVertex : dependenciesGraph.getVertex()) {
 			answer += "G.addNodesFrom([" + "\"" + currentVertex.getIdentifier() + "\"" + "], {group: " + i + " });\n";
 			i++;
 		}
@@ -40,7 +40,7 @@ public class ExternalDependenciesGraph implements SpecialProductLineSyntacticCha
 			answer += "G.addEdgesFrom([";
 			
 			first = true;
-			for (DependencyArc arc : dependenciesGraph.getArcs()) {
+			for (Arc arc : dependenciesGraph.getArcs()) {
 				if(!first) answer += ",";
 				answer += "[\"" + arc.getFrom().getIdentifier() + "\",\""+ arc.getTo().getIdentifier() +"\"]";
 				first = false;

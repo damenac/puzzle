@@ -1,0 +1,57 @@
+# ---------------------------------
+# Amount of instances
+# ---------------------------------
+
+instances-amount=4
+
+# ---------------------------------
+# 4x2 instances
+# ---------------------------------
+
+1-features-amount=4
+1-products-amount=2
+1-chain-lenght=12
+1-graph-seed=1166510396
+1-pcm-seed=164000672
+
+2-features-amount=4
+2-products-amount=2
+2-chain-lenght=12
+2-graph-seed=1624514147
+2-pcm-seed=1076870026
+
+3-features-amount=4
+3-products-amount=2
+3-chain-lenght=12
+3-graph-seed=1116611914
+3-pcm-seed=1729673136
+
+4-features-amount=4
+4-products-amount=2
+4-chain-lenght=12
+4-graph-seed=410579806
+4-pcm-seed=1453014524
+
+5-features-amount=4
+5-products-amount=2
+5-chain-lenght=12
+5-graph-seed=1036100146
+5-pcm-seed=375655500
+
+6-features-amount=4
+6-products-amount=2
+6-chain-lenght=12
+6-graph-seed=597897640
+6-pcm-seed=322140729
+
+7-features-amount=4
+7-products-amount=2
+7-chain-lenght=12
+7-graph-seed=1268670769
+7-pcm-seed=556009645
+
+8-features-amount=4
+8-products-amount=2
+8-chain-lenght=12
+8-graph-seed=1268670769
+8-pcm-seed=556009645

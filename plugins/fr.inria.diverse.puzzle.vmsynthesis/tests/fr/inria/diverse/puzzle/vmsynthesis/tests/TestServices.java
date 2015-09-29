@@ -14,7 +14,7 @@ import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureMod
 import es.us.isa.FAMA.models.variabilityModel.GenericProduct;
 import es.us.isa.FAMA.models.variabilityModel.VariabilityElement;
 import es.us.isa.fama.PluginQuestionTrader;
-import fr.inria.diverse.k3.sle.common.utils.PCMQueryServices;
+import fr.inria.diverse.generator.pcm.PCMQueryServices;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMAAttributed;
 
 public class TestServices {
@@ -99,6 +99,9 @@ public class TestServices {
 			}
 			System.out.println();
 		}
+		
+		System.out.println();
+		System.out.println();
 		
 		return numberOfProducts;
 	}

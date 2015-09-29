@@ -15,9 +15,10 @@ import vm.PFeatureRef;
 import vm.VmFactory;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import fama.synthesizer.facade.FamaSynthesizer;
+import fr.inria.diverse.graph.Arc;
+import fr.inria.diverse.graph.Graph;
+import fr.inria.diverse.graph.Vertex;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyArc;
-import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -37,7 +38,7 @@ public class FamaInferrer implements FeaturesModelInference{
 	
 	@Override
 	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties,
-			ArrayList<Language> languages, EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph) throws Exception {
+			ArrayList<Language> languages, EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph) throws Exception {
 		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.FAMA_FORMAT);
 		
 		File fileReport = new File(targetProject.getLocation().toString()
@@ -77,9 +78,9 @@ public class FamaInferrer implements FeaturesModelInference{
 	 * @param modularizationGraph. The modularization graph that is used to obtain the technological constraints.
 	 */
 	private void createTechnologicalConstraints(PFeatureModel fm,
-			DependencyGraph dependenciesGraph) {
+			Graph<Vertex, Arc> dependenciesGraph) {
 		
-		for (DependencyArc arc : dependenciesGraph.getArcs()) {
+		for (Arc arc : dependenciesGraph.getArcs()) {
 			PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
 			PBinaryExpression expression = VmFactory.eINSTANCE.createPBinaryExpression();
 			

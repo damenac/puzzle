@@ -3,14 +3,16 @@ package fr.inria.diverse.k3.sle.common.graphs;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
+import fr.inria.diverse.graph.Vertex;
 
 /**
  * Class that implements the services of a dependencies graph.
  * @author David Mendez-Acuna
  *
  */
-public class DependencyGraph extends Graph<DependencyVertex, DependencyArc> {
+public class DependencyGraph extends Graph<Vertex, Arc> {
 
 	// -----------------------------------------------
 	// Constructors

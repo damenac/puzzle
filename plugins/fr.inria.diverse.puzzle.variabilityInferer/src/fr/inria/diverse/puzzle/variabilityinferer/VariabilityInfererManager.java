@@ -5,6 +5,9 @@ import java.util.ArrayList;
 import org.eclipse.core.resources.IProject;
 
 import vm.PFeatureModel;
+import fr.inria.diverse.graph.Arc;
+import fr.inria.diverse.graph.Graph;
+import fr.inria.diverse.graph.Vertex;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
@@ -52,7 +55,7 @@ public class VariabilityInfererManager {
 	 * @throws Exception
 	 */
 	public PFeatureModel synthesizeOpenFeaturesModel(SynthesisProperties synthesisProperties,
-			ArrayList<Language> languages, EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph,
+			ArrayList<Language> languages, EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph,
 			IProject project) throws Exception {
 		
 		FeaturesModelInference inferrer = synthesisProperties
