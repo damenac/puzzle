@@ -1,0 +1,6 @@
+package fr.inria.diverse.generator.pcm;
+
+public class InstanceVO {
+
+	private Graph<Vertex, Arc> dependenciesGraph;
+}

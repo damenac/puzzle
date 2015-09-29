@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
@@ -160,7 +161,15 @@ public class PCMGenerator {
 		return prop;
 	}
 	
-	private void generateAllPCMs() throws IOException {
+	/**
+	 * Generate the pool of instances indicated in the parameters.properties file. 
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
+	public List<InstanceVO> generateAllPCMs() throws IOException {
+		List<InstanceVO> instances = new ArrayList<InstanceVO>();
+		
 		GraphGenerator graphGenerator = new GraphGenerator();
 		Properties properties = this.readProperties();
 		int instancesAmount = Integer.parseInt(properties.getProperty("instances-amount"));
@@ -191,9 +200,18 @@ public class PCMGenerator {
 			System.out.println(openPCM);
 			System.out.println();
 			
+			String closedPCM = PCMFillerGenerator.fillPCM(graph, openPCM);
+			System.out.println(closedPCM);
+			System.out.println();
+			
+			InstanceVO instance = new InstanceVO(graph, openPCM, closedPCM);
+			instances.add(instance);
+			
 			instancesAmount--;
 			index++;
 		}
+		
+		return instances;
 	}
 	
 	// -------------------------------------------------------
