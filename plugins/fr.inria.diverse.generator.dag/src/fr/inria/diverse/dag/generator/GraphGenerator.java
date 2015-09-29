@@ -80,7 +80,7 @@ public class GraphGenerator {
 		return graph;
 	}
 	
-	private Properties readProperties() throws IOException{
+	public Properties readProperties() throws IOException{
 		Properties prop = new Properties();
 		InputStream input = null;
 		input = new FileInputStream("parameters.properties");
