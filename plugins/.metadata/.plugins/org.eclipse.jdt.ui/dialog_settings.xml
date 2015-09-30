@@ -87,6 +87,13 @@
 			<item value=".xml"/>
 		</list>
 	</section>
+	<section name="DialogBounds_AddDelegateMethodsDialog">
+		<item value="545" key="DIALOG_WIDTH"/>
+		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		<item value="485" key="DIALOG_HEIGHT"/>
+		<item value="365" key="DIALOG_X_ORIGIN"/>
+		<item value="237" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="false" key="SynchronizedModifier"/>
 		<item value="false" key="Comments"/>
@@ -185,8 +192,11 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.generator.pcm.jar"/>
 			<item value="fr.inria.diverse.puzzle.common/lib/fr.inria.diverse.graph.jar"/>
-			<item value="fr.inria.diverse.graph/bin/fr.inria.diverse.graph.jar"/>
+			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.graph.jar"/>
+			<item value="fr.inria.diverse.puzzle.instantancesGenerator/fr.inria.diverse.generator.pcm.jar"/>
+			<item value="fr.inria.diverse.generator.pcm/lib/fr.inria.diverse.graph.jar"/>
 		</list>
 	</section>
 	<section name="JavaElementSearchActions">
