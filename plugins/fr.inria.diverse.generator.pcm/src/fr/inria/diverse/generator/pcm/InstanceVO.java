@@ -31,6 +31,8 @@ public class InstanceVO {
 		this.closedPCM = closedPCM;
 		this.featuresAmount = featuresAmount;
 		this.productsAmount = productsAmount;
+		this.graphSeed = graphSeed;
+		this.PCMSeed = PCMSeed;
 	}
 	
 	// -------------------------------------------------

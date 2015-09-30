@@ -37,5 +37,5 @@ Export-Package: fr.inria.diverse.graph,
  fr.inria.diverse.k3.sle.common.tuples,
  fr.inria.diverse.k3.sle.common.utils,
  fr.inria.diverse.k3.sle.common.vos
-Bundle-ClassPath: lib/fr.inria.diverse.graph.jar,
- .
+Bundle-ClassPath: .,
+ lib/fr.inria.diverse.graph.jar

@@ -1,0 +1,200 @@
+package fr.inria.diverse.puzzle.vmsynthesis.tests;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import vm.PFeatureModel;
+import fr.inria.diverse.generator.pcm.InstanceVO;
+import fr.inria.diverse.generator.pcm.PCMGenerator;
+import fr.inria.diverse.generator.pcm.PCMQueryServices;
+import fr.inria.diverse.graph.Arc;
+import fr.inria.diverse.graph.Graph;
+import fr.inria.diverse.graph.Vertex;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
+
+/**
+ * Test scenario based on the comparison benchmark proposed for the paper in [1]
+ * 
+ * [1] David Mendez-Acuna, Jose A. Galindo, et al. Reverse Engineering Feature Models
+ * from Families of Software Products. Envisioned target: ICSR 2016.  
+ * 
+ * @author David Mendez-Acuna
+ *
+ */
+public class RandomTestFromInstancesFiles {
+
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
+	
+	private VmSynthesis synthesis;
+	
+	// -------------------------------------------------
+	// Loading scenarios
+	// -------------------------------------------------
+	
+	@Before
+	public void loadScenarios() throws Exception{
+		synthesis = VmSynthesis.getInstance();
+	}
+	
+	// -------------------------------------------------
+	// Test Cases
+	// -------------------------------------------------
+	
+	public boolean executeTest(InstanceVO instance, StringBuffer buffer) throws Exception {
+
+		Graph<Vertex, Arc> graph = instance.getDependenciesGraph();
+		PFeatureModel openFM = VmSynthesis.getInstance().synthesizeOpenFeatureModel(graph);
+		System.out.println("openFM");
+		TestServices.printFM(openFM);
+		
+		int originalNumProducts = instance.getOpenPCM().split("\n").length - 1;
+		int numProducts = instance.getClosedPCM().split("\n").length - 1;
+		
+		System.out.println("Cloned OpenFM");
+		PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
+		PCMQueryServices.getInstance().loadPCM(instance.getClosedPCM());
+		
+		System.out.println("IdentifyMandatoryFeatures OpenFM");
+		long before = System.currentTimeMillis();
+		synthesis.identifyMandatoryFeatures(closedFM);
+		
+		System.out.println("IdentifyXORs OpenFM");
+		synthesis.identifyXORs(closedFM);
+		
+		System.out.println("IdentifyORs OpenFM");
+		synthesis.identifyORs(closedFM);
+		
+		System.out.println("AddAdditionalImpliesConstraints OpenFM");
+		synthesis.addAdditionalImpliesConstraints(closedFM);
+		
+		System.out.println("AddAdditionalExcludesConstraints OpenFM");
+		synthesis.addAdditionalExcludesConstraints(closedFM);
+		
+		System.out.println("GroupingImplicationsByLeftSide OpenFM");
+		synthesis.groupImplicationsByLeftSide(closedFM);
+		TestServices.printFM(closedFM);
+		double result = TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
+		
+		long after = System.currentTimeMillis();
+		long time = after - before;
+		String resultMessage = "";
+		String successFail = "";
+		
+		if(result != numProducts){
+			successFail = "FAIL:    ";
+		}else{
+			successFail = "SUCCESS: ";
+		}
+		
+		resultMessage += successFail + "No. Features: " + instance.getFeaturesAmount() + 
+				"; No. Products: (original:  " + originalNumProducts + ", updated: " + numProducts + " ); Result: " + result + "; Execution Time: " + time + "\n";
+		
+		buffer.append(resultMessage);
+		
+		if(result != numProducts){
+			return false;
+		}else{
+			return true;
+		}
+		
+	}
+	
+	@Test
+	public void testExecuteTestPool() throws Exception{
+		StringBuffer results = new StringBuffer();
+		
+		int executions = 0;
+		int success = 0;
+		int fails = 0;
+		String folder = "testdata";
+		
+		PCMGenerator generator = new PCMGenerator();
+		generator.generateAllPCMs(folder);
+		int instances = 10;
+		List<InstanceVO> instancesList = new ArrayList<InstanceVO>();
+		
+		int index = 1;
+		while (index <= instances) {
+			File graphFile = new File(folder + "/" + index + "_A_" + "DependenciesGraph.txt");
+			File openPCMFile = new File(folder + "/" + index + "_B_" + "OpenPCM.txt");
+			File closedPCMFile = new File(folder + "/" + index + "_C_" + "ClosedPCM.txt");
+			InstanceVO instance = createInstanceByFiles(graphFile, openPCMFile, closedPCMFile);
+			instancesList.add(instance);
+			index++;
+		}
+		
+		for (InstanceVO instanceVO : instancesList) {
+			boolean result = this.executeTest(instanceVO, results);
+			executions++;
+			
+			if(result){
+				success ++;
+			}else{
+				fails ++;
+			}
+		}
+		
+		double successPercentage = ( success * 100 ) / executions;
+		double failsPercentage = ( fails * 100 ) / executions;
+		
+		System.out.println(results);
+		System.out.println("\n\n *** Global results: No. Executions: " + executions + 
+				" Success: " + success + " (" +successPercentage + "%); Fails: "  + fails + " (" + failsPercentage + "%).\n\n");
+	}
+
+	private InstanceVO createInstanceByFiles(File graphFile, File openPCMFile,
+			File closedPCMFile) throws IOException {
+		
+		
+		String adjacencyMatrix = "";
+		BufferedReader br = new BufferedReader(new FileReader(graphFile));
+		
+		int featuresAmount = 0;
+		String line = br.readLine();
+		while(line != null || line.startsWith("#")){
+			adjacencyMatrix += line + "\n";
+			featuresAmount++;
+			line = br.readLine();
+		}
+		
+		long graphSeed = 0;
+		if(line.startsWith("#")){
+			graphSeed = Long.parseLong(line.replace("#", ""));
+		}
+		
+		br.close();
+		
+		String openPCM = this.readFileContent(openPCMFile);
+		String closedPCM = this.readFileContent(closedPCMFile);
+		
+		Graph<Vertex, Arc> dependenciesGraph = new Graph<Vertex, Arc>(adjacencyMatrix); 
+		InstanceVO instance = new InstanceVO(dependenciesGraph, openPCM, closedPCM, 
+				featuresAmount, productsAmount, graphSeed, PCMSeed);
+		
+		return instance;
+	}
+	
+	private String readFileContent(File file) throws IOException{
+		String content = "";
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		
+		String line = br.readLine();
+		while(line != null){
+			content += line + "\n";
+			line = br.readLine();
+		}
+		
+		br.close();
+		return content;
+	}
+}

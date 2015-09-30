@@ -204,14 +204,15 @@ public class PCMGenerator {
 		return instances;
 	}
 	
-	// -------------------------------------------------------
-	// Main
-	// -------------------------------------------------------
-
+	/**
+	 * Serializes an instance in a pool of files stored in the folder given in the parameter. 
+	 * @param instance
+	 * @param folder
+	 * @throws IOException
+	 */
 	private void serializeInstance(InstanceVO instance, String folder) throws IOException {
 		// Serializing the graph
-		File graphFile = new File(folder + "/" + instance.getId() + "_A_" + "DependenciesGraph-" + instance.getFeaturesAmount() 
-				+ "x" + instance.getProductsAmount() + ".txt");
+		File graphFile = new File(folder + "/" + instance.getId() + "_1_" + "dependencies_graph.txt");
 		
 		if(!graphFile.exists())
 			graphFile.createNewFile();
@@ -220,13 +221,12 @@ public class PCMGenerator {
 		String matrixString = "";
 		for (int i = 0; i < adjacencyMatrix.length; i++) {
 			for (int j = 0; j < adjacencyMatrix[0].length; j++) {
-				matrixString += adjacencyMatrix[i][j] + "|";
+				matrixString += adjacencyMatrix[i][j] + ",";
 			}
 			matrixString += "\n";
 		}
 		
-		matrixString += "\n";
-		matrixString += "#graphSeed: " + instance.getGraphSeed();
+		matrixString += "#graphSeed:" + instance.getGraphSeed();
 		
 		FileWriter graphFw = new FileWriter(graphFile);
 		BufferedWriter graphBw = new BufferedWriter(graphFw);
@@ -234,20 +234,20 @@ public class PCMGenerator {
 		graphBw.close();
 		
 		// Serializing the open PCM
-		File openPCMFile = new File(folder + "/" + instance.getId() + "_B_" + "OpenPCM-" + instance.getFeaturesAmount() 
-				+ "x" + instance.getProductsAmount() + ".txt");
+		File openPCMFile = new File(folder + "/" + instance.getId() + "_2_" + "open_pcm.txt");
 		
 		if(!openPCMFile.exists())
 			openPCMFile.createNewFile();
 		
 		FileWriter openPCMFw = new FileWriter(openPCMFile);
 		BufferedWriter openPCMBw = new BufferedWriter(openPCMFw);
-		openPCMBw.write(instance.getOpenPCM());
+		String openPCMString = instance.getOpenPCM();
+		openPCMString += "#PCMSeed:" + instance.getPCMSeed();
+		openPCMBw.write(openPCMString);
 		openPCMBw.close();
 		
 		// Serializing the closed PCM
-		File closedPCMFile = new File(folder + "/" + instance.getId() + "_C_" + "ClosedPCM-" + instance.getFeaturesAmount() 
-				+ "x" + instance.getProductsAmount() + ".txt");
+		File closedPCMFile = new File(folder + "/" + instance.getId() + "_3_" + "closed_pcm.txt");
 		
 		if(!closedPCMFile.exists())
 			closedPCMFile.createNewFile();
@@ -258,6 +258,10 @@ public class PCMGenerator {
 		closedPCMBw.close();
 	}
 
+	// -------------------------------------------------------
+	// Main
+	// -------------------------------------------------------
+	
 	public static void main(String args[]){
 		PCMGenerator generator = new PCMGenerator();
 		try {
@@ -267,4 +271,3 @@ public class PCMGenerator {
 		}
 	}
 }
-

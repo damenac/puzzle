@@ -30,10 +30,71 @@ public class Graph<V extends Vertex, A extends Arc> {
 		arcs = new ArrayList<A>();
 	}
 	
+	/**
+	 * Constructs a graph by using the adjacency matrix in the parameter.
+	 * @param adjacencyMatrix
+	 */
+	public Graph(String adjacencyMatrix){
+		vertex = new ArrayList<V>();
+		arcs = new ArrayList<A>();
+		
+		String[][] realMatrix = null;
+		String[] lines = adjacencyMatrix.split("\n");
+		
+		for (int i = 0; i < lines.length; i++) {
+			String line = lines[i];
+			String[] columns = line.split(",");
+			
+			if(realMatrix == null)
+				realMatrix = new String[lines.length][columns.length];
+		
+			for (int j = 0; j < columns.length; j++) {
+				String column = columns[j];
+				realMatrix[i][j] = column;
+			}
+		}
+	
+		for (int j = 1; j < realMatrix[0].length; j++) {
+			String box = realMatrix[0][j];
+			@SuppressWarnings("unchecked")
+			V thisVertex = (V) new Vertex(box);
+			vertex.add(thisVertex);
+		}
+		
+		for (int i = 0; i < realMatrix.length; i++) {
+			for (int j = 0; j < realMatrix[0].length; j++) {
+				String box = realMatrix[i][j];
+				if(box != null && box.equals("1") && !realMatrix[0][j].equals(realMatrix[i][0])){
+					this.createArc(realMatrix[i][0], realMatrix[0][j]);
+				}
+			}
+			
+		}
+	}
+	
 	// -----------------------------------------------
 	// Methods
 	// -----------------------------------------------
 	
+	private void createArc(String from, String to) {
+		V fromVertex = this.searchVertexByIdentifier(from);
+		V toVertex = this.searchVertexByIdentifier(to);
+		
+		@SuppressWarnings("unchecked")
+		A arc = (A) new Arc(fromVertex, toVertex);
+		fromVertex.getOutgoingArcs().add(arc);
+		toVertex.getIncomingArcs().add(arc);
+		this.arcs.add(arc);
+	}
+
+	private V searchVertexByIdentifier(String id) {
+		for (V vertex : vertex) {
+			if(vertex.getIdentifier().equals(id))
+				return vertex;
+		}
+		return null;
+	}
+
 	/**
 	 * Indicates if there is an arc between the origin and the destination given in the parameters. 
 	 * @param origin

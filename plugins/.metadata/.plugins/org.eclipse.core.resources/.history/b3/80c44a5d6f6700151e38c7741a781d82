@@ -1,0 +1,19 @@
+package fr.inria.diverse.puzzle.instancesgenerator.impl;
+
+import java.io.IOException;
+import java.util.List;
+
+import fr.inria.diverse.generator.pcm.InstanceVO;
+import fr.inria.diverse.generator.pcm.PCMGenerator;
+import fr.inria.diverse.graph.Arc;
+import fr.inria.diverse.graph.Graph;
+import fr.inria.diverse.graph.Vertex;
+
+public class InstancesGenerator {
+
+	public List<InstanceVO> generateInstances(String folder) throws IOException{
+		PCMGenerator generator = new PCMGenerator();
+		Graph<Vertex, Arc> x = new Graph<Vertex, Arc>(""); 
+		return generator.generateAllPCMs(folder);
+	}
+}
