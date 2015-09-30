@@ -73,6 +73,7 @@ public class GraphGenerator {
 					arc.getFrom().getOutgoingArcs().remove(arc);
 					arc.getTo().getIncomingArcs().remove(arc);
 					graph.getArcs().remove(arc);
+					iterations++;
 				}
 			}
 			iterations--;

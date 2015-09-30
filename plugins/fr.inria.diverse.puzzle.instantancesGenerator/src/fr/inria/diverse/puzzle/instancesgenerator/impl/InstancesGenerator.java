@@ -8,8 +8,8 @@ import fr.inria.diverse.generator.pcm.PCMGenerator;
 
 public class InstancesGenerator {
 
-	public List<InstanceVO> generateInstances() throws IOException{
+	public List<InstanceVO> generateInstances(String folder) throws IOException{
 		PCMGenerator generator = new PCMGenerator();
-		return generator.generateAllPCMs();
+		return generator.generateAllPCMs(folder);
 	}
 }

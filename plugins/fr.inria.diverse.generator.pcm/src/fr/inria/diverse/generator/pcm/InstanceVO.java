@@ -15,13 +15,16 @@ public class InstanceVO {
 	private String closedPCM;
 	private int featuresAmount;
 	private int productsAmount;
+	private int id;
+	private long graphSeed;
+	private long PCMSeed;
 	
 	// -------------------------------------------------
 	// Constructor
 	// -------------------------------------------------
 	
 	public InstanceVO(Graph<Vertex, Arc> dependenciesGraph, String openPCM,
-			String closedPCM, int featuresAmount, int productsAmount) {
+			String closedPCM, int featuresAmount, int productsAmount, long graphSeed, long PCMSeed) {
 		super();
 		this.dependenciesGraph = dependenciesGraph;
 		this.openPCM = openPCM;
@@ -72,5 +75,29 @@ public class InstanceVO {
 
 	public void setProductsAmount(int productsAmount) {
 		this.productsAmount = productsAmount;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public long getGraphSeed() {
+		return graphSeed;
+	}
+
+	public void setGraphSeed(long graphSeed) {
+		this.graphSeed = graphSeed;
+	}
+
+	public long getPCMSeed() {
+		return PCMSeed;
+	}
+
+	public void setPCMSeed(long pCMSeed) {
+		PCMSeed = pCMSeed;
 	}
 }

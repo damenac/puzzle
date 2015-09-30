@@ -48,34 +48,34 @@ public class RandomTest {
 		System.out.println("Cloned OpenFM");
 		PFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
 		PCMQueryServices.getInstance().loadPCM(instance.getClosedPCM());
-		System.out.println(instance.getClosedPCM());
-		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
+//		System.out.println(instance.getClosedPCM());
+//		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
 		
 		System.out.println("IdentifyMandatoryFeatures OpenFM");
 		long before = System.currentTimeMillis();
 		synthesis.identifyMandatoryFeatures(closedFM);
-		TestServices.printFM(closedFM);
-		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
+//		TestServices.printFM(closedFM);
+//		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
 		
 		System.out.println("IdentifyXORs OpenFM");
 		synthesis.identifyXORs(closedFM);
-		TestServices.printFM(closedFM);
-		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
+//		TestServices.printFM(closedFM);
+//		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
 		
 		System.out.println("IdentifyORs OpenFM");
 		synthesis.identifyORs(closedFM);
-		TestServices.printFM(closedFM);
-		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
+//		TestServices.printFM(closedFM);
+//		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
 		
 		System.out.println("AddAdditionalImpliesConstraints OpenFM");
 		synthesis.addAdditionalImpliesConstraints(closedFM);
-		TestServices.printFM(closedFM);
-		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
+//		TestServices.printFM(closedFM);
+//		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
 		
 		System.out.println("AddAdditionalExcludesConstraints OpenFM");
 		synthesis.addAdditionalExcludesConstraints(closedFM);
-		TestServices.printFM(closedFM);
-		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
+//		TestServices.printFM(closedFM);
+//		TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
 		
 		System.out.println("GroupingImplicationsByLeftSide OpenFM");
 		synthesis.groupImplicationsByLeftSide(closedFM);
@@ -115,7 +115,7 @@ public class RandomTest {
 		int fails = 0;
 		
 		PCMGenerator generator = new PCMGenerator();
-		List<InstanceVO> instances = generator.generateAllPCMs();
+		List<InstanceVO> instances = generator.generateAllPCMs("testdata");
 		
 		for (InstanceVO instanceVO : instances) {
 			boolean result = this.executeTest(instanceVO, results);

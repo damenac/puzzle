@@ -1,6 +1,9 @@
 package fr.inria.diverse.generator.pcm;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -78,7 +81,7 @@ public class PCMGenerator {
 				count++;
 			}
 			
-			if(count > 900){
+			if(count > 1000){
 				System.out.println("No hay tantos productos como pide!");
 				return PCM;
 			}
@@ -148,7 +151,7 @@ public class PCMGenerator {
 	 * @return
 	 * @throws IOException
 	 */
-	public List<InstanceVO> generateAllPCMs() throws IOException {
+	public List<InstanceVO> generateAllPCMs(String folder) throws IOException {
 		List<InstanceVO> instances = new ArrayList<InstanceVO>();
 		
 		GraphGenerator graphGenerator = new GraphGenerator();
@@ -185,8 +188,14 @@ public class PCMGenerator {
 			System.out.println(closedPCM);
 			System.out.println();
 			
-			InstanceVO instance = new InstanceVO(graph, openPCM, closedPCM, featuresAmount, productsAmount);
+			InstanceVO instance = new InstanceVO(graph, openPCM, closedPCM, featuresAmount, 
+					productsAmount, graphSeed, pcmSeed);
+			instance.setId(index);
 			instances.add(instance);
+			
+			if(folder != null){
+				serializeInstance(instance, folder);
+			}
 			
 			instancesAmount--;
 			index++;
@@ -199,10 +208,60 @@ public class PCMGenerator {
 	// Main
 	// -------------------------------------------------------
 
+	private void serializeInstance(InstanceVO instance, String folder) throws IOException {
+		// Serializing the graph
+		File graphFile = new File(folder + "/" + instance.getId() + "_A_" + "DependenciesGraph-" + instance.getFeaturesAmount() 
+				+ "x" + instance.getProductsAmount() + ".txt");
+		
+		if(!graphFile.exists())
+			graphFile.createNewFile();
+		
+		String[][] adjacencyMatrix = instance.getDependenciesGraph().adjacencyMatrix();
+		String matrixString = "";
+		for (int i = 0; i < adjacencyMatrix.length; i++) {
+			for (int j = 0; j < adjacencyMatrix[0].length; j++) {
+				matrixString += adjacencyMatrix[i][j] + "|";
+			}
+			matrixString += "\n";
+		}
+		
+		matrixString += "\n";
+		matrixString += "#graphSeed: " + instance.getGraphSeed();
+		
+		FileWriter graphFw = new FileWriter(graphFile);
+		BufferedWriter graphBw = new BufferedWriter(graphFw);
+		graphBw.write(matrixString);
+		graphBw.close();
+		
+		// Serializing the open PCM
+		File openPCMFile = new File(folder + "/" + instance.getId() + "_B_" + "OpenPCM-" + instance.getFeaturesAmount() 
+				+ "x" + instance.getProductsAmount() + ".txt");
+		
+		if(!openPCMFile.exists())
+			openPCMFile.createNewFile();
+		
+		FileWriter openPCMFw = new FileWriter(openPCMFile);
+		BufferedWriter openPCMBw = new BufferedWriter(openPCMFw);
+		openPCMBw.write(instance.getOpenPCM());
+		openPCMBw.close();
+		
+		// Serializing the closed PCM
+		File closedPCMFile = new File(folder + "/" + instance.getId() + "_C_" + "ClosedPCM-" + instance.getFeaturesAmount() 
+				+ "x" + instance.getProductsAmount() + ".txt");
+		
+		if(!closedPCMFile.exists())
+			closedPCMFile.createNewFile();
+		
+		FileWriter closedPCMFw = new FileWriter(closedPCMFile);
+		BufferedWriter closedPCMBw = new BufferedWriter(closedPCMFw);
+		closedPCMBw.write(instance.getClosedPCM());
+		closedPCMBw.close();
+	}
+
 	public static void main(String args[]){
 		PCMGenerator generator = new PCMGenerator();
 		try {
-			generator.generateAllPCMs();
+			generator.generateAllPCMs("testdata");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

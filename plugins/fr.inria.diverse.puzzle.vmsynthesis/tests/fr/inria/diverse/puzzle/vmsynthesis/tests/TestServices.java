@@ -61,47 +61,47 @@ public class TestServices {
 		double numberOfProducts = npq.getNumberOfProducts();
 		System.out.println("The number of products is: " + numberOfProducts);
 		
-		ProductsQuestion pq = (ProductsQuestion) qt.createQuestion("Products");
-		qt.ask(pq);
-		
-		ArrayList<String> products = PCMQueryServices.getInstance().getAllProducts();
-		
-		int i = 1;
-		for (int k = 0; k < products.size(); k++) {
-			
-			ArrayList<String> featuresCollection = new ArrayList<String>();
-			Set<String> featuresSet = PCMQueryServices.getInstance().getAllFeatures();
-			featuresCollection.add("Root");
-			
-			Iterator<String> featuresIterator = featuresSet.iterator();
-			while (featuresIterator.hasNext()) {
-				String f = (String) featuresIterator.next();
-				if(PCMQueryServices.getInstance().productContainsFeature(products.get(k), f))
-					featuresCollection.add(f.replace("\"", ""));
-			}
-			
-			String[] featuresStringArray = new String[featuresCollection.size()];
-			for (int j = 0; j < featuresCollection.size(); j++) {
-				
-				featuresStringArray[j] = featuresCollection.get(j);
-			}
-			
-			boolean product1Exists = productExists(featuresStringArray, pq);
-			System.out.println("P" + i + ": " + product1Exists);
-			
-			i++;
-		}
-		
-		for (GenericProduct product : pq.getAllProducts()) {
-			System.out.print("Product: ");
-			for (VariabilityElement element : product.getElements()) {
-				System.out.print(element.getName() + ", ");	
-			}
-			System.out.println();
-		}
-		
-		System.out.println();
-		System.out.println();
+//		ProductsQuestion pq = (ProductsQuestion) qt.createQuestion("Products");
+//		qt.ask(pq);
+//		
+//		ArrayList<String> products = PCMQueryServices.getInstance().getAllProducts();
+//		
+//		int i = 1;
+//		for (int k = 0; k < products.size(); k++) {
+//			
+//			ArrayList<String> featuresCollection = new ArrayList<String>();
+//			Set<String> featuresSet = PCMQueryServices.getInstance().getAllFeatures();
+//			featuresCollection.add("Root");
+//			
+//			Iterator<String> featuresIterator = featuresSet.iterator();
+//			while (featuresIterator.hasNext()) {
+//				String f = (String) featuresIterator.next();
+//				if(PCMQueryServices.getInstance().productContainsFeature(products.get(k), f))
+//					featuresCollection.add(f.replace("\"", ""));
+//			}
+//			
+//			String[] featuresStringArray = new String[featuresCollection.size()];
+//			for (int j = 0; j < featuresCollection.size(); j++) {
+//				
+//				featuresStringArray[j] = featuresCollection.get(j);
+//			}
+//			
+//			boolean product1Exists = productExists(featuresStringArray, pq);
+//			System.out.println("P" + i + ": " + product1Exists);
+//			
+//			i++;
+//		}
+//		
+//		for (GenericProduct product : pq.getAllProducts()) {
+//			System.out.print("Product: ");
+//			for (VariabilityElement element : product.getElements()) {
+//				System.out.print(element.getName() + ", ");	
+//			}
+//			System.out.println();
+//		}
+//		
+//		System.out.println();
+//		System.out.println();
 		
 		return numberOfProducts;
 	}
