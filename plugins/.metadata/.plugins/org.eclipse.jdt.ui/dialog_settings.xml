@@ -74,11 +74,12 @@
 	</section>
 	<section name="FatJarPackageWizard">
 		<item value="/Users/dmendeza/workspaces/puzzle/plugins" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="PCMGenerator - fr.inria.diverse.generator.pcm" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="fr.inria.diverse.generator.pcm/exe/fr.inria.diverse.generator.pcm.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="VmSynthesis - fr.inria.diverse.vmsynthesis" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="/Users/dmendeza/workspaces/puzzle-testing/refm-competition-ws/fr.inria.diverse.refm.competition.mendez/lib/fr.inria.diverse.vmsynthesis.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
-		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<item value="3" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/Users/dmendeza/workspaces/puzzle-testing/refm-competition-ws/fr.inria.diverse.refm.competition.mendez/lib/fr.inria.diverse.vmsynthesis.jar"/>
 			<item value="fr.inria.diverse.generator.pcm/exe/fr.inria.diverse.generator.pcm.jar"/>
 			<item value="fr.inria.diverse.generator.dag/exe/fr.inria.diverse.generator.dag.jar"/>
 		</list>
@@ -192,11 +193,11 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="fr.inria.diverse.vmsynthesis/lib/fr.inria.diverse.puzzle.vm.metamodel.jar"/>
+			<item value="fr.inria.diverse.vmsynthesis.interface/lib/fr.inria.diverse.vmsynthesis.jar"/>
 			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.generator.pcm.jar"/>
 			<item value="fr.inria.diverse.puzzle.common/lib/fr.inria.diverse.graph.jar"/>
 			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.graph.jar"/>
-			<item value="fr.inria.diverse.puzzle.instantancesGenerator/fr.inria.diverse.generator.pcm.jar"/>
-			<item value="fr.inria.diverse.generator.pcm/lib/fr.inria.diverse.graph.jar"/>
 		</list>
 	</section>
 	<section name="JavaElementSearchActions">

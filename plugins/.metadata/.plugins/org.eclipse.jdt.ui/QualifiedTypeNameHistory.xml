@@ -4,7 +4,6 @@
 <fullyQualifiedTypeName name="vm.PFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyVertex"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.instancesgenerator.impl.PCMGenerator"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.tests.TestServices"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.graph.Graph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.generator.pcm.InstanceVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.graph.Vertex"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
 </qualifiedTypeNameHistroy>
