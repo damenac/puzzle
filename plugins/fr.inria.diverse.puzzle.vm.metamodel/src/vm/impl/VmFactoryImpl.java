@@ -65,6 +65,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 			case VmPackage.PFEATURE_REF: return createPFeatureRef();
 			case VmPackage.PUNARY_EXPRESSION: return createPUnaryExpression();
 			case VmPackage.PBINARY_EXPRESSION: return createPBinaryExpression();
+			case VmPackage.PLANGUAGE_MODULE: return createPLanguageModule();
+			case VmPackage.PABSTRACT_SYNTAX: return createPAbstractSyntax();
+			case VmPackage.PSEMANTICS: return createPSemantics();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -182,6 +185,36 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	public PBinaryExpression createPBinaryExpression() {
 		PBinaryExpressionImpl pBinaryExpression = new PBinaryExpressionImpl();
 		return pBinaryExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PLanguageModule createPLanguageModule() {
+		PLanguageModuleImpl pLanguageModule = new PLanguageModuleImpl();
+		return pLanguageModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PAbstractSyntax createPAbstractSyntax() {
+		PAbstractSyntaxImpl pAbstractSyntax = new PAbstractSyntaxImpl();
+		return pAbstractSyntax;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PSemantics createPSemantics() {
+		PSemanticsImpl pSemantics = new PSemanticsImpl();
+		return pSemantics;
 	}
 
 	/**

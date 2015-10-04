@@ -94,6 +94,33 @@ public interface VmFactory extends EFactory {
 	PBinaryExpression createPBinaryExpression();
 
 	/**
+	 * Returns a new object of class '<em>PLanguage Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PLanguage Module</em>'.
+	 * @generated
+	 */
+	PLanguageModule createPLanguageModule();
+
+	/**
+	 * Returns a new object of class '<em>PAbstract Syntax</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PAbstract Syntax</em>'.
+	 * @generated
+	 */
+	PAbstractSyntax createPAbstractSyntax();
+
+	/**
+	 * Returns a new object of class '<em>PSemantics</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>PSemantics</em>'.
+	 * @generated
+	 */
+	PSemantics createPSemantics();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

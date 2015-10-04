@@ -62,4 +62,18 @@
     <eLiterals name="implies" value="2"/>
     <eLiterals name="xor" value="3"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PLanguageModule" eSuperTypes="#//PNamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="as" eType="#//PAbstractSyntax"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sem" eType="#//PSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PAbstractSyntax">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecorePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreProject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PSemantics">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xtendPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xtendProject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

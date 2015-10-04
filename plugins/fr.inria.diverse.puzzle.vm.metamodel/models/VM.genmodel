@@ -53,5 +53,17 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PBinaryExpression/right"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PBinaryExpression/operator"/>
     </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PLanguageModule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PLanguageModule/as"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PLanguageModule/sem"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PAbstractSyntax">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecorePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecoreProject"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PSemantics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PSemantics/xtendPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PSemantics/xtendProject"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

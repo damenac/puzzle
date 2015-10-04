@@ -108,6 +108,18 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 				return createPBinaryExpressionAdapter();
 			}
 			@Override
+			public Adapter casePLanguageModule(PLanguageModule object) {
+				return createPLanguageModuleAdapter();
+			}
+			@Override
+			public Adapter casePAbstractSyntax(PAbstractSyntax object) {
+				return createPAbstractSyntaxAdapter();
+			}
+			@Override
+			public Adapter casePSemantics(PSemantics object) {
+				return createPSemanticsAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -264,6 +276,48 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPBinaryExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.PLanguageModule <em>PLanguage Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.PLanguageModule
+	 * @generated
+	 */
+	public Adapter createPLanguageModuleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.PAbstractSyntax <em>PAbstract Syntax</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.PAbstractSyntax
+	 * @generated
+	 */
+	public Adapter createPAbstractSyntaxAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.PSemantics <em>PSemantics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.PSemantics
+	 * @generated
+	 */
+	public Adapter createPSemanticsAdapter() {
 		return null;
 	}
 

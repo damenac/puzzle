@@ -132,6 +132,25 @@ public class VmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case VmPackage.PLANGUAGE_MODULE: {
+				PLanguageModule pLanguageModule = (PLanguageModule)theEObject;
+				T result = casePLanguageModule(pLanguageModule);
+				if (result == null) result = casePNamedElement(pLanguageModule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmPackage.PABSTRACT_SYNTAX: {
+				PAbstractSyntax pAbstractSyntax = (PAbstractSyntax)theEObject;
+				T result = casePAbstractSyntax(pAbstractSyntax);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmPackage.PSEMANTICS: {
+				PSemantics pSemantics = (PSemantics)theEObject;
+				T result = casePSemantics(pSemantics);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -283,6 +302,51 @@ public class VmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePBinaryExpression(PBinaryExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PLanguage Module</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PLanguage Module</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePLanguageModule(PLanguageModule object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PAbstract Syntax</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PAbstract Syntax</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePAbstractSyntax(PAbstractSyntax object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>PSemantics</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>PSemantics</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePSemantics(PSemantics object) {
 		return null;
 	}
 

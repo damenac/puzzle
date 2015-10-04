@@ -256,6 +256,75 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link vm.PLanguageModule} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PLanguageModuleItemProvider pLanguageModuleItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.PLanguageModule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPLanguageModuleAdapter() {
+		if (pLanguageModuleItemProvider == null) {
+			pLanguageModuleItemProvider = new PLanguageModuleItemProvider(this);
+		}
+
+		return pLanguageModuleItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link vm.PAbstractSyntax} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PAbstractSyntaxItemProvider pAbstractSyntaxItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.PAbstractSyntax}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPAbstractSyntaxAdapter() {
+		if (pAbstractSyntaxItemProvider == null) {
+			pAbstractSyntaxItemProvider = new PAbstractSyntaxItemProvider(this);
+		}
+
+		return pAbstractSyntaxItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link vm.PSemantics} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PSemanticsItemProvider pSemanticsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.PSemantics}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPSemanticsAdapter() {
+		if (pSemanticsItemProvider == null) {
+			pSemanticsItemProvider = new PSemanticsItemProvider(this);
+		}
+
+		return pSemanticsItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -362,6 +431,9 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 		if (pFeatureRefItemProvider != null) pFeatureRefItemProvider.dispose();
 		if (pUnaryExpressionItemProvider != null) pUnaryExpressionItemProvider.dispose();
 		if (pBinaryExpressionItemProvider != null) pBinaryExpressionItemProvider.dispose();
+		if (pLanguageModuleItemProvider != null) pLanguageModuleItemProvider.dispose();
+		if (pAbstractSyntaxItemProvider != null) pAbstractSyntaxItemProvider.dispose();
+		if (pSemanticsItemProvider != null) pSemanticsItemProvider.dispose();
 	}
 
 }

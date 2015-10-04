@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import vm.PAbstractSyntax;
 import vm.PBinaryExpression;
 import vm.PBinaryOperator;
 import vm.PBooleanExpression;
@@ -19,7 +20,9 @@ import vm.PFeatureGroup;
 import vm.PFeatureGroupCardinality;
 import vm.PFeatureModel;
 import vm.PFeatureRef;
+import vm.PLanguageModule;
 import vm.PNamedElement;
+import vm.PSemantics;
 import vm.PUnaryExpression;
 import vm.PUninaryOperator;
 import vm.VmFactory;
@@ -101,6 +104,27 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * @generated
 	 */
 	private EClass pBinaryExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pLanguageModuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pAbstractSyntaxEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass pSemanticsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -443,6 +467,87 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPLanguageModule() {
+		return pLanguageModuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPLanguageModule_As() {
+		return (EReference)pLanguageModuleEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPLanguageModule_Sem() {
+		return (EReference)pLanguageModuleEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPAbstractSyntax() {
+		return pAbstractSyntaxEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPAbstractSyntax_EcorePath() {
+		return (EAttribute)pAbstractSyntaxEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPAbstractSyntax_EcoreProject() {
+		return (EAttribute)pAbstractSyntaxEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPSemantics() {
+		return pSemanticsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPSemantics_XtendPath() {
+		return (EAttribute)pSemanticsEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPSemantics_XtendProject() {
+		return (EAttribute)pSemanticsEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPUninaryOperator() {
 		return pUninaryOperatorEEnum;
 	}
@@ -523,6 +628,18 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEReference(pBinaryExpressionEClass, PBINARY_EXPRESSION__RIGHT);
 		createEAttribute(pBinaryExpressionEClass, PBINARY_EXPRESSION__OPERATOR);
 
+		pLanguageModuleEClass = createEClass(PLANGUAGE_MODULE);
+		createEReference(pLanguageModuleEClass, PLANGUAGE_MODULE__AS);
+		createEReference(pLanguageModuleEClass, PLANGUAGE_MODULE__SEM);
+
+		pAbstractSyntaxEClass = createEClass(PABSTRACT_SYNTAX);
+		createEAttribute(pAbstractSyntaxEClass, PABSTRACT_SYNTAX__ECORE_PATH);
+		createEAttribute(pAbstractSyntaxEClass, PABSTRACT_SYNTAX__ECORE_PROJECT);
+
+		pSemanticsEClass = createEClass(PSEMANTICS);
+		createEAttribute(pSemanticsEClass, PSEMANTICS__XTEND_PATH);
+		createEAttribute(pSemanticsEClass, PSEMANTICS__XTEND_PROJECT);
+
 		// Create enums
 		pUninaryOperatorEEnum = createEEnum(PUNINARY_OPERATOR);
 		pBinaryOperatorEEnum = createEEnum(PBINARY_OPERATOR);
@@ -562,6 +679,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		pFeatureRefEClass.getESuperTypes().add(this.getPBooleanExpression());
 		pUnaryExpressionEClass.getESuperTypes().add(this.getPBooleanExpression());
 		pBinaryExpressionEClass.getESuperTypes().add(this.getPBooleanExpression());
+		pLanguageModuleEClass.getESuperTypes().add(this.getPNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(pNamedElementEClass, PNamedElement.class, "PNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -602,6 +720,18 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getPBinaryExpression_Left(), this.getPBooleanExpression(), null, "left", null, 1, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPBinaryExpression_Right(), this.getPBooleanExpression(), null, "right", null, 1, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPBinaryExpression_Operator(), this.getPBinaryOperator(), "operator", null, 0, 1, PBinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pLanguageModuleEClass, PLanguageModule.class, "PLanguageModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getPLanguageModule_As(), this.getPAbstractSyntax(), null, "as", null, 0, 1, PLanguageModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPLanguageModule_Sem(), this.getPSemantics(), null, "sem", null, 0, 1, PLanguageModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pAbstractSyntaxEClass, PAbstractSyntax.class, "PAbstractSyntax", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPAbstractSyntax_EcorePath(), ecorePackage.getEString(), "ecorePath", null, 0, 1, PAbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPAbstractSyntax_EcoreProject(), ecorePackage.getEString(), "ecoreProject", null, 0, 1, PAbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(pSemanticsEClass, PSemantics.class, "PSemantics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPSemantics_XtendPath(), ecorePackage.getEString(), "xtendPath", null, 0, 1, PSemantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPSemantics_XtendProject(), ecorePackage.getEString(), "xtendProject", null, 0, 1, PSemantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(pUninaryOperatorEEnum, PUninaryOperator.class, "PUninaryOperator");

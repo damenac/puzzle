@@ -536,6 +536,153 @@ public interface VmPackage extends EPackage {
 	int PBINARY_EXPRESSION_OPERATION_COUNT = PBOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link vm.impl.PLanguageModuleImpl <em>PLanguage Module</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.PLanguageModuleImpl
+	 * @see vm.impl.VmPackageImpl#getPLanguageModule()
+	 * @generated
+	 */
+	int PLANGUAGE_MODULE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLANGUAGE_MODULE__NAME = PNAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>As</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLANGUAGE_MODULE__AS = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Sem</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLANGUAGE_MODULE__SEM = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>PLanguage Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLANGUAGE_MODULE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>PLanguage Module</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PLANGUAGE_MODULE_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link vm.impl.PAbstractSyntaxImpl <em>PAbstract Syntax</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.PAbstractSyntaxImpl
+	 * @see vm.impl.VmPackageImpl#getPAbstractSyntax()
+	 * @generated
+	 */
+	int PABSTRACT_SYNTAX = 11;
+
+	/**
+	 * The feature id for the '<em><b>Ecore Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PABSTRACT_SYNTAX__ECORE_PATH = 0;
+
+	/**
+	 * The feature id for the '<em><b>Ecore Project</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PABSTRACT_SYNTAX__ECORE_PROJECT = 1;
+
+	/**
+	 * The number of structural features of the '<em>PAbstract Syntax</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PABSTRACT_SYNTAX_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>PAbstract Syntax</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PABSTRACT_SYNTAX_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vm.impl.PSemanticsImpl <em>PSemantics</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.PSemanticsImpl
+	 * @see vm.impl.VmPackageImpl#getPSemantics()
+	 * @generated
+	 */
+	int PSEMANTICS = 12;
+
+	/**
+	 * The feature id for the '<em><b>Xtend Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PSEMANTICS__XTEND_PATH = 0;
+
+	/**
+	 * The feature id for the '<em><b>Xtend Project</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PSEMANTICS__XTEND_PROJECT = 1;
+
+	/**
+	 * The number of structural features of the '<em>PSemantics</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PSEMANTICS_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>PSemantics</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PSEMANTICS_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link vm.PUninaryOperator <em>PUninary Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -543,7 +690,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getPUninaryOperator()
 	 * @generated
 	 */
-	int PUNINARY_OPERATOR = 10;
+	int PUNINARY_OPERATOR = 13;
 
 	/**
 	 * The meta object id for the '{@link vm.PBinaryOperator <em>PBinary Operator</em>}' enum.
@@ -553,7 +700,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getPBinaryOperator()
 	 * @generated
 	 */
-	int PBINARY_OPERATOR = 11;
+	int PBINARY_OPERATOR = 14;
 
 
 	/**
@@ -866,6 +1013,102 @@ public interface VmPackage extends EPackage {
 	EAttribute getPBinaryExpression_Operator();
 
 	/**
+	 * Returns the meta object for class '{@link vm.PLanguageModule <em>PLanguage Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>PLanguage Module</em>'.
+	 * @see vm.PLanguageModule
+	 * @generated
+	 */
+	EClass getPLanguageModule();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vm.PLanguageModule#getAs <em>As</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>As</em>'.
+	 * @see vm.PLanguageModule#getAs()
+	 * @see #getPLanguageModule()
+	 * @generated
+	 */
+	EReference getPLanguageModule_As();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vm.PLanguageModule#getSem <em>Sem</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Sem</em>'.
+	 * @see vm.PLanguageModule#getSem()
+	 * @see #getPLanguageModule()
+	 * @generated
+	 */
+	EReference getPLanguageModule_Sem();
+
+	/**
+	 * Returns the meta object for class '{@link vm.PAbstractSyntax <em>PAbstract Syntax</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>PAbstract Syntax</em>'.
+	 * @see vm.PAbstractSyntax
+	 * @generated
+	 */
+	EClass getPAbstractSyntax();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcorePath <em>Ecore Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Path</em>'.
+	 * @see vm.PAbstractSyntax#getEcorePath()
+	 * @see #getPAbstractSyntax()
+	 * @generated
+	 */
+	EAttribute getPAbstractSyntax_EcorePath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcoreProject <em>Ecore Project</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Project</em>'.
+	 * @see vm.PAbstractSyntax#getEcoreProject()
+	 * @see #getPAbstractSyntax()
+	 * @generated
+	 */
+	EAttribute getPAbstractSyntax_EcoreProject();
+
+	/**
+	 * Returns the meta object for class '{@link vm.PSemantics <em>PSemantics</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>PSemantics</em>'.
+	 * @see vm.PSemantics
+	 * @generated
+	 */
+	EClass getPSemantics();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PSemantics#getXtendPath <em>Xtend Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Xtend Path</em>'.
+	 * @see vm.PSemantics#getXtendPath()
+	 * @see #getPSemantics()
+	 * @generated
+	 */
+	EAttribute getPSemantics_XtendPath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PSemantics#getXtendProject <em>Xtend Project</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Xtend Project</em>'.
+	 * @see vm.PSemantics#getXtendProject()
+	 * @see #getPSemantics()
+	 * @generated
+	 */
+	EAttribute getPSemantics_XtendProject();
+
+	/**
 	 * Returns the meta object for enum '{@link vm.PUninaryOperator <em>PUninary Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1159,6 +1402,84 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PBINARY_EXPRESSION__OPERATOR = eINSTANCE.getPBinaryExpression_Operator();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.PLanguageModuleImpl <em>PLanguage Module</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.PLanguageModuleImpl
+		 * @see vm.impl.VmPackageImpl#getPLanguageModule()
+		 * @generated
+		 */
+		EClass PLANGUAGE_MODULE = eINSTANCE.getPLanguageModule();
+
+		/**
+		 * The meta object literal for the '<em><b>As</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLANGUAGE_MODULE__AS = eINSTANCE.getPLanguageModule_As();
+
+		/**
+		 * The meta object literal for the '<em><b>Sem</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PLANGUAGE_MODULE__SEM = eINSTANCE.getPLanguageModule_Sem();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.PAbstractSyntaxImpl <em>PAbstract Syntax</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.PAbstractSyntaxImpl
+		 * @see vm.impl.VmPackageImpl#getPAbstractSyntax()
+		 * @generated
+		 */
+		EClass PABSTRACT_SYNTAX = eINSTANCE.getPAbstractSyntax();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PABSTRACT_SYNTAX__ECORE_PATH = eINSTANCE.getPAbstractSyntax_EcorePath();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Project</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PABSTRACT_SYNTAX__ECORE_PROJECT = eINSTANCE.getPAbstractSyntax_EcoreProject();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.PSemanticsImpl <em>PSemantics</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.PSemanticsImpl
+		 * @see vm.impl.VmPackageImpl#getPSemantics()
+		 * @generated
+		 */
+		EClass PSEMANTICS = eINSTANCE.getPSemantics();
+
+		/**
+		 * The meta object literal for the '<em><b>Xtend Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PSEMANTICS__XTEND_PATH = eINSTANCE.getPSemantics_XtendPath();
+
+		/**
+		 * The meta object literal for the '<em><b>Xtend Project</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PSEMANTICS__XTEND_PROJECT = eINSTANCE.getPSemantics_XtendProject();
 
 		/**
 		 * The meta object literal for the '{@link vm.PUninaryOperator <em>PUninary Operator</em>}' enum.
