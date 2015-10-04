@@ -38,7 +38,8 @@ fr.inria.diverse.puzzle.variabilityInferer,1.0.0.qualifier,file:/Users/dmendeza/
 fr.inria.diverse.puzzle.vm.metamodel,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel/,4,false
 fr.inria.diverse.puzzle.vm.metamodel.edit,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel.edit/,4,false
 fr.inria.diverse.puzzle.vm.metamodel.editor,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel.editor/,4,false
-fr.inria.diverse.puzzle.vmsynthesis,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vmsynthesis/,4,false
+fr.inria.diverse.puzzle.vmsynthesis,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.vmsynthesis/,4,false
+fr.inria.diverse.vmsynthesis.test,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.vmsynthesis.test/,4,false
 javaewah,0.7.9.v201401101600,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/javaewah_0.7.9.v201401101600.jar,4,false
 javax.annotation,1.2.0.v201401042248,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/javax.annotation_1.2.0.v201401042248.jar,4,false
 javax.el,2.2.0.v201303151357,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/javax.el_2.2.0.v201303151357.jar,4,false
