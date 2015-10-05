@@ -181,7 +181,7 @@ public class VmSynthesis {
 		this.identifyORs(closedFeatureModel);
 		this.addAdditionalImpliesConstraints(closedFeatureModel);
 		this.addAdditionalExcludesConstraints(closedFeatureModel);
-		this.groupImplicationsByLeftSide(closedFeatureModel);
+//		this.groupImplicationsByLeftSide(closedFeatureModel);
 		
 		return closedFeatureModel;
 	}

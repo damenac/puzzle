@@ -64,7 +64,7 @@ public class RandomTestFromInstancesFiles {
 		synthesis.identifyORs(closedFM);
 		synthesis.addAdditionalImpliesConstraints(closedFM);
 		synthesis.addAdditionalExcludesConstraints(closedFM);
-		synthesis.groupImplicationsByLeftSide(closedFM);
+//		synthesis.groupImplicationsByLeftSide(closedFM);
 		
 		TestServices.printFM(closedFM);
 		double result = TestServices.printAllValidProducts(closedFM, instance.getClosedPCM());
