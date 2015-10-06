@@ -4,3 +4,4 @@
 "P2","NO","YES","NO","NO","NO","YES","NO","YES","YES","NO",
 "P3","NO","YES","NO","NO","YES","YES","NO","YES","YES","NO",
 "P4","YES","YES","YES","YES","YES","YES","YES","YES","YES","NO",
+"P5","YES","YES","YES","YES","YES","YES","YES","YES","YES","YES",

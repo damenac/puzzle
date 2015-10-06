@@ -112,7 +112,7 @@ public class RandomTestFromInstancesObjects {
 		int fails = 0;
 		
 		PCMGenerator generator = new PCMGenerator();
-		List<InstanceVO> instances = generator.generateAllPCMs(null);
+		List<InstanceVO> instances = generator.generateAllPCMs("testdata");
 		
 		for (InstanceVO instanceVO : instances) {
 			boolean result = this.executeTest(instanceVO, results);

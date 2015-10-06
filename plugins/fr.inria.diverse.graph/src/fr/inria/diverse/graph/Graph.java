@@ -87,7 +87,7 @@ public class Graph<V extends Vertex, A extends Arc> {
 		this.arcs.add(arc);
 	}
 
-	private V searchVertexByIdentifier(String id) {
+	public V searchVertexByIdentifier(String id) {
 		for (V vertex : vertex) {
 			if(vertex.getIdentifier().equals(id))
 				return vertex;

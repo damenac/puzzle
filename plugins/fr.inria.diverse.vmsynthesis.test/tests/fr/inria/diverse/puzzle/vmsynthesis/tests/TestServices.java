@@ -7,11 +7,9 @@ import vm.PFeatureModel;
 import es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion;
 import es.us.isa.FAMA.Reasoner.questions.ProductsQuestion;
 import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureModel;
-import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import es.us.isa.FAMA.models.variabilityModel.GenericProduct;
 import es.us.isa.FAMA.models.variabilityModel.VariabilityElement;
 import es.us.isa.fama.PluginQuestionTrader;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA;
 import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMAAttributed;
 
 public class TestServices {
@@ -45,8 +43,8 @@ public class TestServices {
 	}
 	
 	public static double printAllValidProducts(PFeatureModel fm, String PCM){
-		FAMAFeatureModel famaFm = FromPFeatureModelToFAMA.getInstance().fromPFeatureModelToFAMA(fm);
-//		FAMAAttributedFeatureModel famaFm = FromPFeatureModelToFAMAAttributed.getInstance().fromPFeatureModelToFAMA(fm);
+//		FAMAFeatureModel famaFm = FromPFeatureModelToFAMA.getInstance().fromPFeatureModelToFAMA(fm);
+		FAMAAttributedFeatureModel famaFm = FromPFeatureModelToFAMAAttributed.getInstance().fromPFeatureModelToFAMA(fm);
 		
 		PluginQuestionTrader qt = new PluginQuestionTrader();
 		qt.setVariabilityModel(famaFm);

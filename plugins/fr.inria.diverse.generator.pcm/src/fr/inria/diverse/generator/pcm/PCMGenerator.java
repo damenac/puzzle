@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
@@ -85,6 +86,35 @@ public class PCMGenerator {
 				System.out.println("No hay tantos productos como pide!");
 				return PCM;
 			}
+		}
+		
+		// Completing the PCM so it has not dead features
+		ArrayList<String> deadFeatures = this.getDeadFeatures(PCM);
+		
+		while(deadFeatures.size() > 0){
+			ArrayList<Vertex> vertexToInclude = new ArrayList<Vertex>();
+			Vertex currentVertex = graph.searchVertexByIdentifier(deadFeatures.get(0));
+			System.out.println("Completing instance for removing dead feature: " + deadFeatures.get(0));
+			addDependencies(currentVertex, vertexToInclude);
+			
+			String currentProduct = "";
+			for (int j = 1; j <= graph.getVertex().size(); j++) {
+				boolean vertexIncluded = contains(vertexToInclude, ("F" + j));
+				
+				if(vertexIncluded)
+					currentProduct += "\"YES\",";
+				else
+					currentProduct += "\"NO\",";
+			}
+			
+			if(!exists(currentProduct, PCM) /*&& currentProduct.contains("NO")*/){
+				PCM += "\"P" + i + "\",";
+				PCM += currentProduct + "\n";
+				i++;
+				productsIterations--;
+			}
+			
+			deadFeatures = this.getDeadFeatures(PCM);
 		}
 		
 		return PCM;
@@ -258,6 +288,25 @@ public class PCMGenerator {
 		closedPCMBw.close();
 	}
 
+	/**
+	 * Returns the list of dead features of the given PCM.
+	 * @param PCM
+	 * @return
+	 */
+	private ArrayList<String> getDeadFeatures(String PCM) {
+		ArrayList<String> deadFeatures = new ArrayList<String>();
+		PCMQueryServices.getInstance().loadPCM(PCM);
+		Iterator<String> iterator = PCMQueryServices.getInstance().getAllFeatures().iterator();
+		
+		while (iterator.hasNext()) {
+			String feature = (String) iterator.next();
+			if(!PCMQueryServices.getInstance().existsProductWithFeature(feature))
+				deadFeatures.add(feature.replace("\"",""));
+		}
+		
+		return deadFeatures;
+	}
+	
 	// -------------------------------------------------------
 	// Main
 	// -------------------------------------------------------

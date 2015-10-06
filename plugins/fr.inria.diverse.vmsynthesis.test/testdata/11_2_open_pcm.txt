@@ -12,4 +12,5 @@
 "P10","YES","NO","NO","YES","NO","NO","NO","NO","NO","YES","NO","NO","NO","NO","NO","NO","NO","YES","NO","YES","NO","NO","NO","NO","NO",
 "P11","YES","NO","NO","YES","NO","NO","NO","NO","NO","YES","NO","NO","NO","NO","NO","NO","NO","YES","NO","NO","NO","NO","NO","YES","NO",
 "P12","YES","YES","NO","YES","YES","YES","NO","YES","YES","YES","YES","YES","YES","YES","NO","YES","NO","YES","YES","YES","NO","YES","YES","YES","NO",
+"P13","YES","YES","NO","YES","YES","YES","NO","NO","YES","YES","YES","YES","YES","YES","NO","YES","NO","YES","YES","YES","YES","YES","YES","YES","YES",
 #PCMSeed:1343124817

@@ -1,0 +1,12 @@
+"Product","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10",
+"P0","YES","YES","YES","YES","YES","YES","YES","YES","NO","YES",
+"P1","YES","NO","YES","YES","NO","YES","NO","YES","NO","NO",
+"P2","YES","NO","YES","YES","NO","YES","NO","YES","NO","YES",
+"P3","YES","NO","YES","YES","NO","YES","NO","NO","NO","NO",
+"P4","YES","NO","YES","YES","YES","YES","YES","NO","NO","NO",
+"P5","YES","NO","YES","YES","NO","NO","NO","NO","NO","NO",
+"P6","YES","NO","YES","YES","YES","YES","YES","YES","YES","YES",
+"P7","NO","NO","YES","NO","NO","NO","NO","NO","NO","NO",
+"P8","NO","NO","NO","YES","NO","NO","NO","NO","NO","NO",
+"P9","YES","NO","YES","YES","YES","YES","NO","NO","NO","NO",
+#PCMSeed:556009645
