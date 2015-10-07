@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="load" key="selection"/>
+		<item value="search" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="search"/>
 			<item value="load"/>
 			<item value="Vertex"/>
 			<item value="service"/>
@@ -15,7 +16,6 @@
 			<item value="computeOr"/>
 			<item value="FeatureModelVariable"/>
 			<item value="main"/>
-			<item value="Heuristic"/>
 		</list>
 		<list key="replacehistory">
 			<item value="V"/>
@@ -28,7 +28,7 @@
 		<item value="263" key="DIALOG_WIDTH"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1126" key="DIALOG_X_ORIGIN"/>
+		<item value="1101" key="DIALOG_X_ORIGIN"/>
 		<item value="479" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

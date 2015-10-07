@@ -1,6 +1,5 @@
 package fr.inria.diverse.k3.sle.common.graphs;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.inria.diverse.graph.Arc;
@@ -9,6 +8,7 @@ import fr.inria.diverse.graph.Vertex;
 
 /**
  * Class that implements the services of a dependencies graph.
+ * 
  * @author David Mendez-Acuna
  *
  */
@@ -33,10 +33,10 @@ public class DependencyGraph extends Graph<Vertex, Arc> {
 		super();
 		
 		// Create one vertex for each modularization group. 
-		for (ArrayList<EcoreVertex> group : modularizationGraph.getGroups()) {
-			String moduleName = EcoreGraph.getLanguageModuleName(group);
+		for (EcoreGroup group : modularizationGraph.getGroups()) {
+			String moduleName = group.getName();
 			DependencyVertex dependencyVertex = new DependencyVertex(moduleName);
-			dependencyVertex.getInternalVertex().addAll(group);
+			dependencyVertex.getInternalVertex().addAll(group.getVertex());
 			this.vertex.add(dependencyVertex);
 		}
 		

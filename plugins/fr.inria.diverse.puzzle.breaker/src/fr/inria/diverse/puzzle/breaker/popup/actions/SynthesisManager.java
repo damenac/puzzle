@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
@@ -76,17 +77,17 @@ public class SynthesisManager {
 	 * @throws CoreException
 	 */
 	private void buildModules(EcoreGraph ecoreGraph) throws CoreException {
-		for (ArrayList<EcoreVertex> group : ecoreGraph.getGroups()) {
+		for (EcoreGroup group : ecoreGraph.getGroups()) {
 			// Build the module metamodel with the required interface.
 			EPackage moduleEPackage = this.createEPackageByModule(group);
 
 			// Create the module project with the folders.
 			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl." + 
-					EcoreGraph.getLanguageModuleName(group).trim());
+					EcoreGraph.getLanguageModuleName(group.getVertex()).trim());
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 
-			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group) + ".ecore", moduleEPackage);
+			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore", moduleEPackage);
 			
 			// Create the genmodel and generate the code of the module.
 			ProjectManagementServices.refreshProject(moduleProject);
@@ -99,15 +100,15 @@ public class SynthesisManager {
 	 * @param moduleConceptsVO
 	 * @return
 	 */
-	private EPackage createEPackageByModule(ArrayList<EcoreVertex> group) {
+	private EPackage createEPackageByModule(EcoreGroup group) {
 		EcoreCloningServices.getInstance().resetClonedClassifiers();
 		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
-		String moduleName = EcoreGraph.getLanguageModuleName(group);
+		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex());
 		newPackage.setName(moduleName.trim());
 		newPackage.setNsPrefix(moduleName.trim());
 		newPackage.setNsURI(moduleName.trim());
 		
-		for (EcoreVertex vertex : group) {
+		for (EcoreVertex vertex : group.getVertex()) {
 			if(vertex.getClassifier() instanceof EClass){
 				EClass newClass = EcoreCloningServices.getInstance().cloneEClass((EClass)vertex.getClassifier());
 				newPackage.getEClassifiers().add(newClass);

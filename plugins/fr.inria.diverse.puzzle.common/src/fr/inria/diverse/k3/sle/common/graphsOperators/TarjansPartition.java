@@ -8,6 +8,7 @@ import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreArc;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 
@@ -23,7 +24,7 @@ public class TarjansPartition implements GraphPartition {
 		
 		this.tarjansIndex = 0;
 		tarjansStack = new Stack<EcoreVertex>();
-		graph.setGroups(new ArrayList<ArrayList<EcoreVertex>>());
+		graph.setGroups(new ArrayList<EcoreGroup>());
 		for (EcoreVertex currentVertex : graph.getVertex()) {
 			if(currentVertex.getTarjansIndex() == -1){
 				this.strongConnect(graph, currentVertex);
@@ -49,13 +50,15 @@ public class TarjansPartition implements GraphPartition {
 		}
 		
 		if(theVertex.getTarjansLowlink() == theVertex.getTarjansIndex()){
-			ArrayList<EcoreVertex> newGroup = new ArrayList<EcoreVertex>();
+			EcoreGroup newGroup = new EcoreGroup("");
 			EcoreVertex sucessor = null;
 			do{
 				sucessor = tarjansStack.pop();
 				sucessor.setOnTarjansStack(false);
-				newGroup.add(sucessor);
+				newGroup.getVertex().add(sucessor);
 			} while(!theVertex.getVertexId().equals(sucessor.getVertexId()));
+			
+			newGroup.setName(EcoreGraph.getLanguageModuleName(newGroup.getVertex()));
 			graph.getGroups().add(newGroup);
 		}
 	}

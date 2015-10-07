@@ -1,7 +1,0 @@
-// Prefix for the name of the vertex. 
-vertex-prefix=F
-
-// Size of the graph (amount of vertex)
-size=6
-
-

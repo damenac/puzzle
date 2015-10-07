@@ -7,65 +7,75 @@ import org.eclipse.emf.ecore.EClassifier;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 
 public class MinimumAcyclicPartition implements GraphPartition {
 
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
 	@Override
 	public void graphPartition(EcoreGraph graph,
 			ArrayList<TupleMembersConcepts> membersConceptList,
 			ConceptComparison conceptComparisonOperator) {
-		graph.setGroups(new ArrayList<ArrayList<EcoreVertex>>());
+		graph.setGroups(new ArrayList<EcoreGroup>());
 		
-		ArrayList<ArrayList<EcoreVertex>> familyMembershipGroup = new ArrayList<ArrayList<EcoreVertex>>();
+		ArrayList<EcoreGroup> familyMembershipGroup = new ArrayList<EcoreGroup>();
 		for (TupleMembersConcepts membersGroupVsConceptVO : membersConceptList) {
-			ArrayList<EcoreVertex> currentGroup = new ArrayList<EcoreVertex>();
+			EcoreGroup currentGroup = new EcoreGroup("");
 			for (EClassifier currentConcept : membersGroupVsConceptVO.getConcepts()) {
-				currentGroup.add(graph.getNodeByConceptComparisonOperator(graph, currentConcept, conceptComparisonOperator));
+				currentGroup.getVertex().add(graph.getNodeByConceptComparisonOperator(graph, currentConcept, conceptComparisonOperator));
 			}
 			familyMembershipGroup.add(currentGroup);
 		}
 		
 		int granularityLevel = 2;
 		if(granularityLevel>0){
-			for (ArrayList<EcoreVertex> membershipParition : familyMembershipGroup) {
-				ArrayList<ArrayList<EcoreVertex>> partitionedGroup = this.deepLevelPartition(granularityLevel, membershipParition, graph);
+			for (EcoreGroup membershipParition : familyMembershipGroup) {
+				ArrayList<EcoreGroup> partitionedGroup = this.deepLevelPartition(granularityLevel, membershipParition, graph);
 				graph.getGroups().addAll(partitionedGroup);
 			}
 		}
+		
+		// Assigning the correct names to each ecore group. 
+		for (EcoreGroup ecoreGroup : graph.getGroups()) {
+			ecoreGroup.setName(EcoreGraph.getLanguageModuleName(ecoreGroup.getVertex()));
+		}
 	}
 
-	private ArrayList<ArrayList<EcoreVertex>> deepPartition(
-			ArrayList<EcoreVertex> membershipParition, EcoreGraph graph) {
-		ArrayList<ArrayList<EcoreVertex>> newPartitionSet = 
-				this.recursivelyBifurcatePartition(membershipParition, graph);
-		
-		if(newPartitionSet.size() == 1){
-			return newPartitionSet;
-		}
-		else{
-			ArrayList<ArrayList<EcoreVertex>> answer = new ArrayList<ArrayList<EcoreVertex>>();
-			for (ArrayList<EcoreVertex> partitionSet : newPartitionSet) {
-				ArrayList<ArrayList<EcoreVertex>> subPartition = this.deepPartition(partitionSet, graph);
-				answer.addAll(subPartition);
-			}
-			return answer;
-		}
-	}
+//	private ArrayList<EcoreGroup> deepPartition(
+//			EcoreGroup membershipParition, EcoreGraph graph) {
+//		ArrayList<EcoreGroup> newPartitionSet = 
+//				this.recursivelyBifurcatePartition(membershipParition, graph);
+//		
+//		if(newPartitionSet.size() == 1){
+//			return newPartitionSet;
+//		}
+//		else{
+//			ArrayList<EcoreGroup> answer = new ArrayList<EcoreGroup>();
+//			for (EcoreGroup partitionSet : newPartitionSet) {
+//				ArrayList<EcoreGroup> subPartition = this.deepPartition(partitionSet, graph);
+//				answer.addAll(subPartition);
+//			}
+//			return answer;
+//		}
+//	}
 	
-	private ArrayList<ArrayList<EcoreVertex>> deepLevelPartition(int level,
-			ArrayList<EcoreVertex> membershipParition, EcoreGraph graph) {
-		ArrayList<ArrayList<EcoreVertex>> newPartitionSet = 
+	private ArrayList<EcoreGroup> deepLevelPartition(int level,
+			EcoreGroup membershipParition, EcoreGraph graph) {
+		ArrayList<EcoreGroup> newPartitionSet = 
 				this.recursivelyBifurcatePartition(membershipParition, graph);
 		
 		if(newPartitionSet.size() == 1 || level == 1){
 			return newPartitionSet;
 		}
 		else{
-			ArrayList<ArrayList<EcoreVertex>> answer = new ArrayList<ArrayList<EcoreVertex>>();
-			for (ArrayList<EcoreVertex> partitionSet : newPartitionSet) {
-				ArrayList<ArrayList<EcoreVertex>> subPartition = this.deepLevelPartition(level -1, partitionSet, graph);
+			ArrayList<EcoreGroup> answer = new ArrayList<EcoreGroup>();
+			for (EcoreGroup partitionSet : newPartitionSet) {
+				ArrayList<EcoreGroup> subPartition = this.deepLevelPartition(level -1, partitionSet, graph);
 				answer.addAll(subPartition);
 			}
 			return answer;
@@ -78,13 +88,13 @@ public class MinimumAcyclicPartition implements GraphPartition {
 	 * @param membershipParition
 	 * @param graph
 	 */
-	private ArrayList<ArrayList<EcoreVertex>> recursivelyBifurcatePartition(ArrayList<EcoreVertex> membershipParition, EcoreGraph graph) {
-		ArrayList<ArrayList<EcoreVertex>> newPartitionSet = new ArrayList<ArrayList<EcoreVertex>>();
+	private ArrayList<EcoreGroup> recursivelyBifurcatePartition(EcoreGroup membershipParition, EcoreGraph graph) {
+		ArrayList<EcoreGroup> newPartitionSet = new ArrayList<EcoreGroup>();
 		ArrayList<EcoreVertex> A = new ArrayList<EcoreVertex>();
 		ArrayList<EcoreVertex> B = new ArrayList<EcoreVertex>();
 		int direction = -1;
 		
-		for (EcoreVertex ecoreVertex : membershipParition) {
+		for (EcoreVertex ecoreVertex : membershipParition.getVertex()) {
 			boolean attachedToA = false;
 			boolean attachedToB = false;
 			
@@ -188,11 +198,17 @@ public class MinimumAcyclicPartition implements GraphPartition {
 			}
 		}
 		
-		if(A.size() != 0)
-			newPartitionSet.add(A);
+		if(A.size() != 0){
+			EcoreGroup gA = new EcoreGroup("");
+			gA.getVertex().addAll(A);
+			newPartitionSet.add(gA);
+		}
 		
-		if(B.size() != 0)
-			newPartitionSet.add(B);
+		if(B.size() != 0){
+			EcoreGroup gB = new EcoreGroup("");
+			gB.getVertex().addAll(B);
+			newPartitionSet.add(gB);
+		}
 		
 		return newPartitionSet;
 	}

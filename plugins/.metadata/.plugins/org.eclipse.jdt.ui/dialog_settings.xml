@@ -187,17 +187,17 @@
 		<item value="true" key="jarOptionsWizardPage.EXPORT_ERRORS"/>
 		<item value="true" key="JarManifestWizardPage.GENERATE_MANIFEST"/>
 		<item value="true" key="JarPackageWizardPage.EXPORT_CLASS_FILES"/>
-		<item value="false" key="JarPackageWizardPage.OVERWRITE"/>
+		<item value="true" key="JarPackageWizardPage.OVERWRITE"/>
 		<item value="false" key="jarOptionsWizardPage.SAVE_DESCRIPTION"/>
 		<item value="false" key="JarPackageWizardPage.REFACTORINGS"/>
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.generator.pcm.jar"/>
+			<item value="fr.inria.diverse.generator.pcm/lib/fr.inria.diverse.generator.dag.jar"/>
+			<item value="fr.inria.diverse.puzzle.common/lib/fr.inria.diverse.graph.jar"/>
 			<item value="fr.inria.diverse.vmsynthesis/lib/fr.inria.diverse.puzzle.vm.metamodel.jar"/>
 			<item value="fr.inria.diverse.vmsynthesis.interface/lib/fr.inria.diverse.vmsynthesis.jar"/>
-			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.generator.pcm.jar"/>
-			<item value="fr.inria.diverse.puzzle.common/lib/fr.inria.diverse.graph.jar"/>
-			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.graph.jar"/>
 		</list>
 	</section>
 	<section name="JavaElementSearchActions">

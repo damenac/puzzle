@@ -86,7 +86,7 @@ public class PCMsGenerator {
 	private String generatePCMOpenCompareFormat(SynthesisProperties properties, ArrayList<Language> languages, EcoreGraph modularizationGraph) throws Exception{
 		String pcm = "\"Product\"";
 		for (int i = 0; i < modularizationGraph.getGroups().size(); i++) {
-			ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(i);
+			ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(i).getVertex();
 			String moduleName = EcoreGraph.getLanguageModuleName(module);
 			// get name by module. 
 			pcm += ",\"" + moduleName + "\"";
@@ -99,7 +99,7 @@ public class PCMsGenerator {
 			boolean first = true;
 			for (int j = 0; j < modularizationGraph.getGroups().size(); j++) {
 				if(!first) pcm += ",";
-				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j);
+				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j).getVertex();
 				boolean contained = moduleContainedInLanguage(properties.getConceptComparisonOperator(), language, module);
 				if(contained)
 					pcm += "\"YES\"";
@@ -125,7 +125,7 @@ public class PCMsGenerator {
 			pcm += "root" + ";";
 			Language language = languages.get(i);
 			for (int j = 0; j < modularizationGraph.getGroups().size(); j++) {
-				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j);
+				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j).getVertex();
 				boolean contained = moduleContainedInLanguage(properties.getConceptComparisonOperator(), language, module);
 				String moduleName = EcoreGraph.getLanguageModuleName(module);
 				if(contained){
@@ -142,7 +142,7 @@ public class PCMsGenerator {
 		for (int i = 0; i < languages.size(); i++) {
 			Language language = languages.get(i);
 			for (int j = 0; j < modularizationGraph.getGroups().size(); j++) {
-				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j);
+				ArrayList<EcoreVertex> module = modularizationGraph.getGroups().get(j).getVertex();
 				boolean contained = moduleContainedInLanguage(properties.getConceptComparisonOperator(), language, module);
 				if(contained){
 					String moduleName = EcoreGraph.getLanguageModuleName(module);

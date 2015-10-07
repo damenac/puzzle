@@ -36,11 +36,9 @@
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.PCMQueryServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
 <fullyQualifiedTypeName name="G"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.dag.generator.GraphGenerator"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.generator.pcm.PCMFillerGenerator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.generator.pcm.PCMGenerator"/>
@@ -49,7 +47,6 @@
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTestFromInstancesFiles"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.graph.Arc"/>
@@ -57,7 +54,10 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.generator.pcm.InstanceVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.graph.Vertex"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.generator.pcm.PCMQueryServices"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.generator.pcm.PCMQueryServices"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.dag.generator.GraphGenerator"/>
 </qualifiedTypeNameHistroy>

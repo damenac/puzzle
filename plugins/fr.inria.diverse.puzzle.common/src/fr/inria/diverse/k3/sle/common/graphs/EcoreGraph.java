@@ -15,6 +15,7 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 
 /**
  * Class that implements the services of an ecore graph.
+ * 
  * @author David Mendez-Acuna
  *
  */
@@ -26,7 +27,7 @@ public class EcoreGraph {
 	
 	private ArrayList<EcoreVertex> vertex;
 	private ArrayList<EcoreArc> arcs;
-	private ArrayList<ArrayList<EcoreVertex>> groups;
+	private ArrayList<EcoreGroup> groups;
 	
 	// -----------------------------------------------
 	// Constructor
@@ -38,7 +39,7 @@ public class EcoreGraph {
 	public EcoreGraph(){
 		this.vertex = new ArrayList<EcoreVertex>();
 		this.arcs = new ArrayList<EcoreArc>();
-		this.groups = new ArrayList<ArrayList<EcoreVertex>>();
+		this.groups = new ArrayList<EcoreGroup>();
 	}
 	
 	/**
@@ -47,7 +48,7 @@ public class EcoreGraph {
 	public EcoreGraph(ArrayList<TupleMembersConcepts> membersConceptList, ConceptComparison conceptComparisonOperator){
 		this.vertex = new ArrayList<EcoreVertex>();
 		this.arcs = new ArrayList<EcoreArc>();
-		this.groups = new ArrayList<ArrayList<EcoreVertex>>();
+		this.groups = new ArrayList<EcoreGroup>();
 		this.computeDependenciesGraph(membersConceptList, conceptComparisonOperator);
 	}
 	
@@ -63,11 +64,11 @@ public class EcoreGraph {
 		return arcs;
 	}
 	
-	public ArrayList<ArrayList<EcoreVertex>> getGroups() {
+	public ArrayList<EcoreGroup> getGroups() {
 		return groups;
 	}
 	
-	public void setGroups(ArrayList<ArrayList<EcoreVertex>> groups) {
+	public void setGroups(ArrayList<EcoreGroup> groups) {
 		this.groups = groups;
 	}
 	

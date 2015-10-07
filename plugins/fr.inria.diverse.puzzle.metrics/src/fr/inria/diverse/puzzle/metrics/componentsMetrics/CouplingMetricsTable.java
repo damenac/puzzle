@@ -31,11 +31,11 @@ public class CouplingMetricsTable implements LanguageProductLineChartMetric {
 		int sum = 0;
 		
 		for (int i = 0; i < modularizationGraph.getGroups().size(); i++) {
-			ArrayList<EcoreVertex> groupI = modularizationGraph.getGroups().get(i);
+			ArrayList<EcoreVertex> groupI = modularizationGraph.getGroups().get(i).getVertex();
 			String groupIName = EcoreGraph.getLanguageModuleName(groupI);
 			for (int j = i + 1; j < modularizationGraph.getGroups().size(); j++) {
 				if(i!=j){
-					ArrayList<EcoreVertex> groupJ = modularizationGraph.getGroups().get(j);
+					ArrayList<EcoreVertex> groupJ = modularizationGraph.getGroups().get(j).getVertex();
 					String groupJName = EcoreGraph.getLanguageModuleName(groupJ);
 					int pairCoupling = sumCouplingMetric.getCouplingByGroupsPair(groupI, groupJ, modularizationGraph.getArcs());
 					javaScriptData += "      ['" + groupIName + "', '" + groupJName + "', " + pairCoupling + "],\n";

@@ -14,10 +14,10 @@ public class SumCoupling {
 		int coupling = 0;
 
 		for (int i = 0; i < modularizationGraph.getGroups().size(); i++) {
-			ArrayList<EcoreVertex> groupI = modularizationGraph.getGroups().get(i);
+			ArrayList<EcoreVertex> groupI = modularizationGraph.getGroups().get(i).getVertex();
 			for (int j = i + 1; j < modularizationGraph.getGroups().size(); j++) {
 				if(i!=j){
-					ArrayList<EcoreVertex> groupJ = modularizationGraph.getGroups().get(j);
+					ArrayList<EcoreVertex> groupJ = modularizationGraph.getGroups().get(j).getVertex();
 					int pairCoupling = getCouplingByGroupsPair(groupI, groupJ, modularizationGraph.getArcs());
 					coupling += pairCoupling;
 				}

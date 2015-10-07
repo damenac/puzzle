@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreArc;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.graphsOperators.MembershipGraphPartition;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
@@ -35,10 +36,10 @@ public class FamilyMembershipGraph implements SpecialFamilySyntacticChart{
 		
 		answer += "var G = new jsnx.DiGraph();\n";
 		int i = 0;
-		for (ArrayList<EcoreVertex> group : dependenciesGraph.getGroups()) {
+		for (EcoreGroup group : dependenciesGraph.getGroups()) {
 			String nodes = "";
 			boolean first = true;
-			for (EcoreVertex currentNode : group) {
+			for (EcoreVertex currentNode : group.getVertex()) {
 				if(!first)
 					nodes += ",";
 				nodes += "\"" + currentNode.getVertexId() + "\"";
