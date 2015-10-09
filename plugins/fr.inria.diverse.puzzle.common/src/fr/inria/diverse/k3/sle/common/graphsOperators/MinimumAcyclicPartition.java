@@ -32,12 +32,14 @@ public class MinimumAcyclicPartition implements GraphPartition {
 			familyMembershipGroup.add(currentGroup);
 		}
 		
-		int granularityLevel = 2;
+		int granularityLevel = 5;
 		if(granularityLevel>0){
 			for (EcoreGroup membershipParition : familyMembershipGroup) {
 				ArrayList<EcoreGroup> partitionedGroup = this.deepLevelPartition(granularityLevel, membershipParition, graph);
 				graph.getGroups().addAll(partitionedGroup);
 			}
+		}else{
+			graph.getGroups().addAll(familyMembershipGroup);
 		}
 		
 		// Assigning the correct names to each ecore group. 
