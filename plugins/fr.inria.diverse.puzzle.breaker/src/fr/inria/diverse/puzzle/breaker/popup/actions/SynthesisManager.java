@@ -23,6 +23,7 @@ import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality;
 
 /**
  * Action implementation for families decomposition. 
@@ -67,6 +68,9 @@ public class SynthesisManager {
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
 		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		buildModules(dependenciesGraph);
+		
+		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
+		System.out.println("Modularization Quality: " + mq);
 		
 		return dependenciesGraph;
 	}

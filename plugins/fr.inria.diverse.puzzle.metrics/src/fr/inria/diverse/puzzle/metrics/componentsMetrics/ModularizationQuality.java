@@ -30,7 +30,7 @@ public class ModularizationQuality {
 		Hashtable<String, Double>  intraConnectivityData = intraConnectivity.compute(modularizationGraph);
 		Hashtable<String, Hashtable<String, Double>> interConnectivityData = interConnectivity.compute(modularizationGraph);
 		
-		int k = modularizationGraph.getGroups().size();
+		double k = modularizationGraph.getGroups().size();
 		
 		double sumA = intraConnectivity.computeSum(intraConnectivityData);
 		double left = (1/k) * sumA;
