@@ -1,0 +1,22 @@
+package fr.inria.diverse.puzzle.metrics.componentsMetrics;
+
+import java.util.Hashtable;
+
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
+
+public class InterConnectivity {
+
+	public Hashtable<String, Hashtable<String, Double>> compute(EcoreGraph modularizationGraph){
+		Hashtable<String, Hashtable<String, Double>> data = new Hashtable<String, Hashtable<String, Double>>();
+		for (EcoreGroup groupI : modularizationGraph.getGroups()) {
+			Hashtable<String, Double> dataI = new Hashtable<String, Double>();
+			for (EcoreGroup groupJ : modularizationGraph.getGroups()) {
+				Double interConnectivity = this.computeInterConnectivity(groupI, groupJ);
+				dataI.put(groupJ.getName(), interConnectivity);
+			}
+			data.put(groupI.getName(), dataI);
+		}
+		return null;
+	}
+}

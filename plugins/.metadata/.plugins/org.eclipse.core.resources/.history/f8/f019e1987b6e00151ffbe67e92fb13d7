@@ -1,0 +1,49 @@
+package fr.inria.diverse.puzzle.metrics.componentsMetrics;
+
+import java.util.ArrayList;
+import java.util.Hashtable;
+
+import fr.inria.diverse.k3.sle.common.graphs.EcoreArc;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
+
+public class InterConnectivity {
+
+	/**
+	 * Computes the interconnectivity of all the system. 
+	 * @param modularizationGraph
+	 * @return
+	 */
+	public Hashtable<String, Hashtable<String, Double>> compute(EcoreGraph modularizationGraph){
+		Hashtable<String, Hashtable<String, Double>> data = new Hashtable<String, Hashtable<String, Double>>();
+		for (EcoreGroup groupI : modularizationGraph.getGroups()) {
+			Hashtable<String, Double> dataI = new Hashtable<String, Double>();
+			for (EcoreGroup groupJ : modularizationGraph.getGroups()) {
+				Double interConnectivity = this.computeInterConnectivity(groupI, groupJ, modularizationGraph.getArcs());
+				dataI.put(groupJ.getName(), interConnectivity);
+			}
+			data.put(groupI.getName(), dataI);
+		}
+		return data;
+	}
+
+	/**
+	 * Computes the interconnectivity of the given pair of groups
+	 * @param groupI
+	 * @param groupJ
+	 * @return
+	 */
+	private Double computeInterConnectivity(EcoreGroup groupI, EcoreGroup groupJ, ArrayList<EcoreArc> arcs) {
+		if(groupI == groupJ)
+			return new Double(0);
+		
+		SumCoupling sumCouplingMetric = new SumCoupling();
+		double epsilonIJ = sumCouplingMetric.getCouplingByGroupsPair(groupJ.getVertex(), groupJ.getVertex(), arcs);
+		
+		double numberOfModulesI = groupI.getVertex().size();
+		double numberOfModulesJ = groupJ.getVertex().size();
+		double d = 2 * numberOfModulesI * numberOfModulesJ;
+		
+		return new Double(epsilonIJ / d);
+	}
+}
