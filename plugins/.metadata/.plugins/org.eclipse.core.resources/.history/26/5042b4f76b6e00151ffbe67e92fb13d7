@@ -1,0 +1,8 @@
+package fr.inria.diverse.puzzle.metrics.componentsMetrics;
+
+import java.util.Hashtable;
+
+public class IntraConnectivty implements LanguageProductLineChartMetric {
+
+	private Hashtable<String, Double> data;
+}

@@ -19,6 +19,7 @@ import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.componentsMetrics.CouplingMetricsTable;
+import fr.inria.diverse.puzzle.metrics.componentsMetrics.IntraConnectivty;
 import fr.inria.diverse.puzzle.metrics.specialCharts.ExternalDependenciesGraph;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialProductLineSyntacticChart;
 
@@ -83,6 +84,52 @@ public class ProductLinesMetricManager extends MetricsManager {
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
 		outRileReport.print((new CouplingMetricsTable()).getVariablesDeclaration(languages, 
+				conceptComparisonOperator, methodComparisonOperator, modularizationGraph, null));
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates a report with the metrics for intra connectivity of the product line. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
+	public void createProductLineIntraconnectivityReport(ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-2-IntraConnectivity.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/Report-2-IntraConnectivity.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the data of the report with the metrics for coupling of a language product line. 
+	 * @param languages
+	 * @param conceptComparisonOperator
+	 * @param methodComparisonOperator
+	 * @param graphPartition
+	 * @throws Exception
+	 */
+	public void createProductLineIntraConnectivityReportData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, 
+			EcoreGraph modularizationGraph) throws Exception{
+        File fileReport = new File(project.getLocation().toString() + "/lib/intraconnectivity.js" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print((new IntraConnectivty()).getVariablesDeclaration(languages, 
 				conceptComparisonOperator, methodComparisonOperator, modularizationGraph, null));
 		outRileReport.close();
 	}

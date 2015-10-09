@@ -49,6 +49,9 @@ public class SynthesizerManager {
 		metricsManager.createProductLineCouplingReport(languages);
 		metricsManager.createProductLineCouplingReportData(languages, properties.getConceptComparisonOperator(), 
 				properties.getMethodComparisonOperator(), modularizationGraph);
+		metricsManager.createProductLineIntraconnectivityReport(languages);
+		metricsManager.createProductLineIntraConnectivityReportData(languages, properties.getConceptComparisonOperator(), 
+				properties.getMethodComparisonOperator(), modularizationGraph);
 		
 		// Step 1.2: Compute the dependencies graph.
 		DependencyGraph dependenciesGraph = new DependencyGraph(modularizationGraph);
