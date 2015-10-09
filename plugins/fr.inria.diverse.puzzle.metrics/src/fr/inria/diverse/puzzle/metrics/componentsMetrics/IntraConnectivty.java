@@ -30,17 +30,25 @@ public class IntraConnectivty implements LanguageProductLineChartMetric {
 		return data;
 	}
 
-	private double computeAverage(Hashtable<String, Double> data) {
-		double sum = 0;
+	public double computeAverage(Hashtable<String, Double> data) {
 		double count = 0;
+		Iterator<String> it = data.keySet().iterator();
+		while (it.hasNext()) {
+			it.next();
+			count++;
+		}
+		return this.computeSum(data)/count;
+	}
+	
+	public double computeSum(Hashtable<String, Double> data) {
+		double sum = 0;
 		Iterator<String> it = data.keySet().iterator();
 		while (it.hasNext()) {
 			String groupName = (String) it.next();
 			double metricValue = data.get(groupName).doubleValue();
 			sum += metricValue;
-			count++;
 		}
-		return sum/count;
+		return sum;
 	}
 	
 	/**

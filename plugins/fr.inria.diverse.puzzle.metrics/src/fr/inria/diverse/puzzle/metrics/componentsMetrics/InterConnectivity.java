@@ -51,6 +51,26 @@ public class InterConnectivity implements LanguageProductLineChartMetric {
 		
 		return new Double(epsilonIJ / d);
 	}
+	
+	public double computeSum(
+			Hashtable<String, Hashtable<String, Double>> interConnectivityData) {
+		double sum = 0;
+		Hashtable<String, Hashtable<String, Double>> bigData = interConnectivityData;
+		Iterator<String> bigIt = bigData.keySet().iterator();
+		while (bigIt.hasNext()) {
+			String groupIName = (String) bigIt.next();
+			
+			Hashtable<String, Double> data = bigData.get(groupIName);
+			Iterator<String> it = data.keySet().iterator();
+			while (it.hasNext()) {
+				String groupJName = (String) it.next();
+				double metricValue = data.get(groupJName).doubleValue();
+				sum += metricValue;
+			}
+		}
+		return sum;
+	}
+	
 
 	@Override
 	public String getVariablesDeclaration(ArrayList<Language> languages,

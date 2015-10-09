@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.metrics.componentsMetrics;
+
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+
+public class ModularizationQuality {
+
+	public double compute(EcoreGraph modularizationGraph){
+		return 0;
+	}
+}

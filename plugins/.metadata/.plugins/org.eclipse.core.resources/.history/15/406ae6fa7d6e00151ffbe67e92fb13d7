@@ -1,0 +1,33 @@
+package fr.inria.diverse.puzzle.metrics.componentsMetrics;
+
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+
+public class ModularizationQuality {
+
+	// -------------------------------------------------------------
+	// Attributes
+	// -------------------------------------------------------------
+	
+	private IntraConnectivty intraConnectivity;
+	private InterConnectivity interConnectivity;
+	
+	// -------------------------------------------------------------
+	// Constructor
+	// -------------------------------------------------------------
+	
+	public ModularizationQuality(){
+		this.intraConnectivity = new IntraConnectivty();
+		this.interConnectivity = new InterConnectivity();
+	}
+	
+	// -------------------------------------------------------------
+	// Methods
+	// -------------------------------------------------------------
+	
+	public double compute(EcoreGraph modularizationGraph){
+		int k = modularizationGraph.getGroups().size();
+		int sumA = intraConnectivity.sum(modularizationGraph);
+		
+		return 0;
+	}
+}
