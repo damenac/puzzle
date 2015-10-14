@@ -1,0 +1,14 @@
+package fr.inria.diverse.puzzle.metrics;
+
+public class EmpiricalStudy {
+
+	// ------------------------------------------------
+	// Attributes
+	// ------------------------------------------------
+	
+	private String dataFolder = "temp";
+	
+	public void loadScenario(){
+		
+	}
+}

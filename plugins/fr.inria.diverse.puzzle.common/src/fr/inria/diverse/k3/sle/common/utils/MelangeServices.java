@@ -20,8 +20,12 @@ public class MelangeServices {
 	 * @return
 	 */
 	public static EPackage getEPackageFromLanguage(Language language){
-		if(language.getSyntax() != null)
-			return  ModelUtils.loadEcoreResource(language.getSyntax().getEcoreUri());
+		if(language.getSyntax() != null){
+			if(language.getSyntax().getEcoreUri().startsWith("platform:/resource/"))
+				return  ModelUtils.loadEcoreResource(language.getSyntax().getEcoreUri());
+			else
+				return ModelUtils.loadEcoreFile(language.getSyntax().getEcoreUri());
+		}
 		else
 			return null;
 	}

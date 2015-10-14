@@ -1,0 +1,6 @@
+package fr.inria.diverse.puzzle.metrics;
+
+public class EmpiricalStudy {
+
+	private String dataFolder = "temp";
+}

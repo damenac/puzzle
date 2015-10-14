@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.tests.TestServices"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.ExcludesDependency"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyArc"/>
-<fullyQualifiedTypeName name="org.junit.Test"/>
-<fullyQualifiedTypeName name="java.lang.IllegalStateException"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.Relation"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.featureModel.Cardinality"/>
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAAttributedfeatureModel.Dependency"/>
@@ -55,9 +49,15 @@
 <fullyQualifiedTypeName name="es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMA"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.generator.pcm.PCMQueryServices"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.dag.generator.GraphGenerator"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGroup"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreVertex"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Hashtable"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreArc"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.componentsMetrics.IntraConnectivty"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.componentsMetrics.InterConnectivity"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality"/>
 </qualifiedTypeNameHistroy>
