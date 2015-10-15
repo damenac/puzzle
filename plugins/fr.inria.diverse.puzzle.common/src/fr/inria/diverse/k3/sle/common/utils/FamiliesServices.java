@@ -127,7 +127,8 @@ public class FamiliesServices {
 				conceptMemberGroupVO.getMembers().add(conceptMemberVO.getMemberName());
 				conceptMemberGroupList.add(conceptMemberGroupVO);
 			}else{
-				conceptMemberGroupLegacy.getMembers().add(conceptMemberVO.getMemberName());
+				if(!conceptMemberGroupLegacy.getMembers().contains(conceptMemberVO.getMemberName()))
+					conceptMemberGroupLegacy.getMembers().add(conceptMemberVO.getMemberName());
 			}
 		}
 		

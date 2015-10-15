@@ -54,7 +54,16 @@ public class DeepConceptComparison implements ConceptComparison {
 	
 	private boolean compareEReferences(EReference left, EReference right) {
 		boolean identicalNames = left.getName().equals(right.getName());
-		boolean identicalTypes = left.getEType().getName().equals(right.getEType().getName());
+
+		boolean identicalTypes = false;
+		if(left.getEType() != null && right.getEType() != null && 
+				left.getEType().getName() != null && right.getEType().getName() != null){
+			left.getEType().getName().equals(right.getEType().getName());
+		}
+		else if(left.getEType() == null && right.getEType() == null){
+			identicalTypes = true;
+		}
+		
 		boolean identicalLowerBounds = left.getLowerBound() == right.getLowerBound();
 		boolean identicalUperBounds = left.getUpperBound() == right.getUpperBound();
 		boolean identicalContainment = left.isContainment() == right.isContainment();
@@ -72,7 +81,15 @@ public class DeepConceptComparison implements ConceptComparison {
 	
 	private boolean compareEAttributes(EAttribute left, EAttribute right) {
 		boolean identicalNames = left.getName().equals(right.getName());
-		boolean identicalTypes = left.getEType().getName().equals(right.getEType().getName());
+		
+		boolean identicalTypes = false;
+		if(left.getEType() != null && right.getEType() != null && 
+				left.getEType().getName() != null && right.getEType().getName() != null){
+			left.getEType().getName().equals(right.getEType().getName());
+		}
+		else if(left.getEType() == null && right.getEType() == null){
+			identicalTypes = true;
+		}		
 		boolean identicalLowerBounds = left.getLowerBound() == right.getLowerBound();
 		boolean identicalUperBounds = left.getUpperBound() == right.getUpperBound();
 		

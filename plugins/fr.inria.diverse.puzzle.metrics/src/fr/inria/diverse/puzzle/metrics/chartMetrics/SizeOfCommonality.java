@@ -83,7 +83,6 @@ public class SizeOfCommonality implements FamilyChartMetric {
 	public static int evaluateForSyntax(ArrayList<Language> languages, ConceptComparison comparisonOperator) throws Exception{
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
-		
 		int count = 0;
 		for (TupleConceptMembers conceptMembersGroupVO : conceptMemberGroupList) {
 			if(conceptMembersGroupVO.getMembers().size() == languages.size()){

@@ -1,0 +1,61 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import java.io.File;
+import java.util.ArrayList;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.melange.metamodel.melange.MelangeFactory;
+import fr.inria.diverse.melange.metamodel.melange.Metamodel;
+import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
+
+public class EmpiricalStudy {
+
+	// ------------------------------------------------
+	// Attributes
+	// ------------------------------------------------
+	
+	private String dataFolder = "temp";
+	private ArrayList<Language> languages;
+	
+	// ------------------------------------------------
+	// Loading scenarios
+	// ------------------------------------------------
+	
+	@Before
+	public void loadScenario(){
+		languages = new ArrayList<Language>();
+		
+		File dataFolderObject = new File(dataFolder);
+		
+		for (File file : dataFolderObject.listFiles()) {
+			if(file.getName().endsWith("ecore")){
+				System.out.println("file.getName(): " + file.getName());
+				Language currentLanguage = MelangeFactory.eINSTANCE.createLanguage();
+				Metamodel currentMetamodel = MelangeFactory.eINSTANCE.createMetamodel();
+				currentMetamodel.setEcoreUri(file.getAbsolutePath());
+				currentLanguage.setSyntax(currentMetamodel);
+				languages.add(currentLanguage);
+			}
+		}
+	}
+
+	// ------------------------------------------------
+	// Test cases
+	// ------------------------------------------------
+
+	@Test
+	public void lunchEmpiricalStudy() throws Exception{
+		System.out.println("coucou: " + languages);
+		ArrayList<FamilyDSLs> families = new ArrayList<FamilyDSLs>();
+		this.identifyFamilies(families, languages);
+		
+	}
+	
+	private void identifyFamilies(ArrayList<FamilyDSLs> families, ArrayList<Language> source){
+		int SoC = SizeOfCommonality.evaluateForSyntax(source, new DeepConceptComparison());
+	}
+}

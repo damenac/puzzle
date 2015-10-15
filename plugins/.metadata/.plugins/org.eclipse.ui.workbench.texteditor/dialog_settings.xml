@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="search" key="selection"/>
+		<item value="identifyXOR" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="identifyXOR"/>
 			<item value="search"/>
 			<item value="load"/>
 			<item value="Vertex"/>
@@ -15,7 +16,6 @@
 			<item value="mutexGroups"/>
 			<item value="computeOr"/>
 			<item value="FeatureModelVariable"/>
-			<item value="main"/>
 		</list>
 		<list key="replacehistory">
 			<item value="V"/>

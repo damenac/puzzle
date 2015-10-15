@@ -99,7 +99,6 @@ public class ModelUtils {
 		URI fileURI = URI.createFileURI(file.getAbsolutePath());
 		Resource ecoreResource = rs.getResource(fileURI, true);
 		EcoreUtil.resolveAll(ecoreResource);
-		
 		return (EPackage) ecoreResource.getContents().get(0);
 	}
 	
