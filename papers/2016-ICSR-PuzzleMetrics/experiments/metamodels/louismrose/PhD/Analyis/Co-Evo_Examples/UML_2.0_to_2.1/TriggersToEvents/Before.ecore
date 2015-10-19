@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uml_20_to_21_triggersToEvents"
+    nsURI="uml_20_to_21_triggersToEvents" nsPrefix="uml_20_to_21_triggersToEvents">
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
+        eType="#//Trigger" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CallTrigger" eSuperTypes="#//Trigger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SignalTrigger" eSuperTypes="#//Trigger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeTrigger" eSuperTypes="#//Trigger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangeTrigger" eSuperTypes="#//Trigger"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AnyRecieveTrigger" eSuperTypes="#//Trigger"/>
+</ecore:EPackage>

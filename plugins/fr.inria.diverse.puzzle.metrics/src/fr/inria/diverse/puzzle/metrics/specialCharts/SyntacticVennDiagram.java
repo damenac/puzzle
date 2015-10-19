@@ -57,4 +57,47 @@ public class SyntacticVennDiagram implements SpecialFamilySyntacticChart {
 		answer += "];";
 		return answer;
 	}
+	
+	public int[][] getCommonalitiesMatrix(ArrayList<Language> languages, ConceptComparison comparisonOperator){
+		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+	
+		int[][] matrix = new int[ePackages.size()][ePackages.size()];
+		
+		for (int i = 0; i < ePackages.size(); i++) {
+			EPackage ePackageI = ePackages.get(i);
+			for (int j = 0; j < ePackages.size(); j++) {
+				if(i!=j){
+					EPackage ePackageJ = ePackages.get(j);
+					matrix[i][j] = FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size();
+				}
+			}
+		}
+		return matrix;
+	}
+	
+	public Hashtable<Integer, Integer> computeConstructsCommonality(int[][] commonalitiesMatrix){
+		Hashtable<Integer, Integer> answer = new Hashtable<Integer, Integer>();
+		for (int i = 0; i < commonalitiesMatrix.length; i++) {
+			int sum = 0;
+			for (int j = 0; j < commonalitiesMatrix[0].length; j++) {
+				if(i!=j)
+					sum += commonalitiesMatrix[i][j];
+			}
+			answer.put(new Integer(i), new Integer(sum));
+		}
+		return answer;
+	}
+	
+	public Hashtable<Integer, Integer> computeLanguagesCommonality(int[][] commonalitiesMatrix){
+		Hashtable<Integer, Integer> answer = new Hashtable<Integer, Integer>();
+		for (int i = 0; i < commonalitiesMatrix.length; i++) {
+			int count = 0;
+			for (int j = 0; j < commonalitiesMatrix[0].length; j++) {
+				if(i != j && commonalitiesMatrix[i][j] > 0)
+					count++;
+			}
+			answer.put(new Integer(i), new Integer(count));
+		}
+		return answer;
+	}
 }

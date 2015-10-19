@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="repomodel" nsURI="http://inf.mit.bme.hu/donat/incquery-deps/repomodel"
+    nsPrefix="rm">
+  <eClassifiers xsi:type="ecore:EClass" name="RComponent" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uuid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1"
+        eType="#//RDependency" eOpposite="#//RDependency/from"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1"
+        eType="#//RDependency" eOpposite="#//RDependency/to"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RVersioned" abstract="true" eSuperTypes="#//RComponent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="versions" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RStructural" abstract="true" eSuperTypes="#//RVersioned">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modifiers" upperBound="-1"
+        eType="#//RModifier"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RModifier">
+    <eLiterals name="PUBLIC"/>
+    <eLiterals name="PROTECTED" value="1"/>
+    <eLiterals name="PRIVATE" value="2"/>
+    <eLiterals name="ABSTRACT" value="3"/>
+    <eLiterals name="INTERFACE" value="4"/>
+    <eLiterals name="FINAL" value="5"/>
+    <eLiterals name="TRANSIENT" value="6"/>
+    <eLiterals name="VOLATILE" value="7"/>
+    <eLiterals name="NATIVE" value="8"/>
+    <eLiterals name="STATIC" value="9"/>
+    <eLiterals name="SYNCHRONIZED" value="10"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RRepository" eSuperTypes="#//RComponent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projects" upperBound="-1"
+        eType="#//RProject" containment="true" eOpposite="#//RProject/repository"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RProject" eSuperTypes="#//RVersioned">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
+        eType="#//RPackage" containment="true" eOpposite="#//RPackage/project"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencies" upperBound="-1"
+        eType="#//RDependency" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="repository" lowerBound="1"
+        eType="#//RRepository" eOpposite="#//RRepository/projects"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RPackage" eSuperTypes="#//RVersioned">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classes" upperBound="-1"
+        eType="#//RClass" containment="true" eOpposite="#//RClass/package"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="project" lowerBound="1"
+        eType="#//RProject" eOpposite="#//RProject/packages"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RClass" eSuperTypes="#//RStructural">
+    <eOperations name="fqName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="extends" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implements" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+        eType="#//RField" containment="true" eOpposite="#//RField/class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//RMethod" containment="true" eOpposite="#//RMethod/class"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="package" lowerBound="1"
+        eType="#//RPackage" eOpposite="#//RPackage/classes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RField" eSuperTypes="#//RStructural">
+    <eOperations name="fqName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="#//RClass"
+        eOpposite="#//RClass/fields"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RMethod" eSuperTypes="#//RStructural">
+    <eOperations name="fqName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterTypes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="class" lowerBound="1" eType="#//RClass"
+        eOpposite="#//RClass/methods"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RDependency">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//RComponent"
+        eOpposite="#//RComponent/outgoing"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//RComponent"
+        eOpposite="#//RComponent/incoming"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//RDependencyType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RDependencyType">
+    <eLiterals name="PROJECT_REFERENCES_PROJECT" value="2"/>
+    <eLiterals name="CLASS_USES_CLASS"/>
+    <eLiterals name="CLASS_EXTENDS_CLASS" value="1"/>
+    <eLiterals name="FIELD_TYPE_CLASS" value="3"/>
+    <eLiterals name="CLASS_IMPLEMENTS_CLASS" value="4"/>
+    <eLiterals name="METHOD_RETURNTYPE_CLASS" value="5"/>
+    <eLiterals name="METHOD_PARAMTYPE_CLASS" value="6"/>
+    <eLiterals name="METHOD_CALL_METHOD" value="7"/>
+    <eLiterals name="METHOD_REFERENCE_FIELD" value="8"/>
+    <eLiterals name="METHOD_OVERRIDE_METHOD" value="9"/>
+  </eClassifiers>
+</ecore:EPackage>

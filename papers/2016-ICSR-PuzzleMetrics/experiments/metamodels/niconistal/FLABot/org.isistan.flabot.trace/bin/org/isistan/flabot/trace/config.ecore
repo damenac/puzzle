@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="config"
+    nsURI="http:///org/isistan/flabot/trace/config.ecore" nsPrefix="org.isistan.flabot.trace.config">
+  <eClassifiers xsi:type="ecore:EClass" name="Context">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filter" eType="#//Filter"
+        containment="true" resolveProxies="false" eOpposite="#//Filter/context"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="traceConfiguration" eType="#//TraceConfiguration"
+        transient="true" eOpposite="#//TraceConfiguration/contexts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TraceConfiguration">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="#//Context" containment="true" resolveProxies="false" eOpposite="#//Context/traceConfiguration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="outputFileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="traceOutput.tracelog"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startCollecting" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filter" interface="true" eSuperTypes="#//Filter_1">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="#//Context"
+        transient="true" eOpposite="#//Context/filter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filter_1" instanceClassName="org.isistan.flabot.gauge.GaugeFilter"
+      abstract="true" interface="true"/>
+</ecore:EPackage>

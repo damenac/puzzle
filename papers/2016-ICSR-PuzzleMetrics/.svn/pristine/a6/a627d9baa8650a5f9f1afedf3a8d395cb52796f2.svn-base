@@ -1,0 +1,10 @@
+\section{Current status and planned time-line}
+\label{sec:currentstatus}
+Planned time-line in terms of the expected contributions and current status (red line) is shown in Figure \ref{fig:status}.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=110mm]{images/status.png}
+  \caption{Planned time-line and current status}
+  \label{fig:status}
+\end{figure}

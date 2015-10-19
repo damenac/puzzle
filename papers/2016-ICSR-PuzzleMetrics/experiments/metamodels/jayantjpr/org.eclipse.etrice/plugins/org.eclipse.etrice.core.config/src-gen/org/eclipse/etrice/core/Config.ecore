@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="config" nsURI="http://www.eclipse.org/etrice/core/Config" nsPrefix="config">
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigModel">
+    <eOperations name="getActorClassConfigs" upperBound="-1" eType="#//ActorClassConfig">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="EList&lt;ActorClassConfig> list = new org.eclipse.emf.common.util.BasicEList&lt;ActorClassConfig>();&#xD;&#xA;&#x9;       &#x9;&#x9;&#x9;for(ConfigElement element : this.getConfigElements())&#xD;&#xA;&#x9;       &#x9;&#x9;&#x9;&#x9;if(element instanceof ActorClassConfig)&#xD;&#xA;&#x9;       &#x9;&#x9;&#x9;&#x9;&#x9;list.add((ActorClassConfig) element);&#xD;&#xA;&#x9;       &#x9;&#x9; return list;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getActorInstanceConfigs" upperBound="-1" eType="#//ActorInstanceConfig">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="EList&lt;ActorInstanceConfig> list = new org.eclipse.emf.common.util.BasicEList&lt;ActorInstanceConfig>();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;for(ConfigElement element : this.getConfigElements())&#xD;&#xA;&#x9;&#x9;&#x9; &#x9;&#x9;if(element instanceof ActorInstanceConfig)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;list.add((ActorInstanceConfig) element);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return list;"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getProtocolClassConfigs" upperBound="-1" eType="#//ProtocolClassConfig">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="body" value="EList&lt;ProtocolClassConfig> list = new org.eclipse.emf.common.util.BasicEList&lt;ProtocolClassConfig>();&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;for(ConfigElement element : this.getConfigElements())&#xD;&#xA;&#x9;&#x9;&#x9; &#x9;&#x9;if(element instanceof ProtocolClassConfig)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;list.add((ProtocolClassConfig) element);&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;return list;"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="configElements" upperBound="-1"
+        eType="#//ConfigElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConfigElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActorClassConfig" eSuperTypes="#//ConfigElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actor" eType="ecore:EClass ../../../../../../org.eclipse.etrice.core.room/src-gen/org/eclipse/etrice/core/Room.ecore#//ActorClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//AttrClassConfig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActorInstanceConfig" eSuperTypes="#//ConfigElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="ecore:EClass ../../../../../../org.eclipse.etrice.core.room/src-gen/org/eclipse/etrice/core/Room.ecore#//SubSystemClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" eType="#//RefPath"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//AttrInstanceConfig" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//PortInstanceConfig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProtocolClassConfig" eSuperTypes="#//ConfigElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="protocol" eType="ecore:EClass ../../../../../../org.eclipse.etrice.core.room/src-gen/org/eclipse/etrice/core/Room.ecore#//ProtocolClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="regular" eType="#//PortClassConfig"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conjugated" eType="#//PortClassConfig"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortClassConfig">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//AttrClassConfig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PortInstanceConfig">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="item" eType="ecore:EClass ../../../../../../org.eclipse.etrice.core.room/src-gen/org/eclipse/etrice/core/Room.ecore#//InterfaceItem"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+        eType="#//AttrInstanceConfig" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttrConfig">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="ecore:EClass ../../../../../../org.eclipse.etrice.core.room/src-gen/org/eclipse/etrice/core/Room.ecore#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//LiteralArray"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttrClassConfig" eSuperTypes="#//AttrConfig">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="min" eType="#//NumberLiteral"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="max" eType="#//NumberLiteral"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttrInstanceConfig" eSuperTypes="#//AttrConfig"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RefPath">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="refs" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralArray">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="literals" upperBound="-1"
+        eType="#//Literal" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Literal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="#//Literal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTrue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="#//Literal"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RealLiteral" eSuperTypes="#//NumberLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IntLiteral" eSuperTypes="#//NumberLiteral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//Literal">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

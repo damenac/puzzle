@@ -1,0 +1,40 @@
+\section{Preliminary work}
+\label{sec:preliminarywork}
+
+In this section we describe a first version of a prototype we propose as a proof of concept of our approach. Because it is based on the Kermeta 3 framework, we start by giving a brief introduction to that tool. Then, we explain the modularization schema in terms of the variability realization techniques and the variability management mechanism. 
+
+\subsection{Kermeta 3 (K3): Executable meta-modeling}
+
+K3 is a framework that enables the construction of executable metamodels. In other words, it allows to attach some semantics --not only dynamic semantics but also static-- to metamodels written in the Ecore language. Because K3 is implemented on the top of the Eclipse Modeling Framework (EMF) \cite{Steinberg:2009}, it is possible to use it in junction with tools such as xText for generating textual or graphical editors. As a result, we can completely construct DSLs by using this framework: abstract syntax with metamodels in Ecore, semantics with K3, and concrete syntax with editors generators. It is important to mention that K3 is based on the idea of \textit{``aspects"}. An aspect is an entity that adds some semantics to certain meta-class existing in a given metamodel. In the case of dynamic semantics, aspects permit to specify not only operational semantics (for building interpreters) but also translational semantics (for building compilers). Besides, statics semantics (restrictions such as pre and postconditions, or class invariants) can be also included. In that sense, K3 can be viewed as a set of facilities for specifying aspects and the infrastructure required for ``merging" them with the abstract syntax. 
+
+%Figure \ref{fig:k3-example} illustrates K3 by using a simple example. At the left part of the figure, there is a metamodel that contains two classes \texttt{X}, and \texttt{Y}; The class \texttt{X} contains elements of type \texttt{Y} by means of the containment relation \texttt{yes}. The right side of the figure shows the operational semantics attached to this metamodel by using aspects in K3. The metaclass \texttt{X} is enriched with the operation \texttt{eval()} that contains a loop that sequentially invokes the operation defined for the class \texttt{Y}. This operation is also defined by using one aspect; in this case extending the metaclass \texttt{Y}.
+
+%\begin{figure}[h!]
+%  \centering\includegraphics[width=80mm]{figures/k3-example}
+%  \caption{A simple example that illustrates the use of K3}
+%  \label{fig:k3-example}
+%\end{figure}
+
+\subsection{Languages Modularization in Action}  
+
+Our modularization approach quite inspired on the idea of \textit{``services registries''} such proposed for the classical solutions for Service Oriented Architecture (SOA). Provided services are stored in a global registry and the required services perform a look them up when required by means of a canonical name. Currently, we offer support for the orchestration at the level of the abstract syntax and at the level of the semantics, thus, we need two different registries: the structural one (that store structural services or concepts) and the behavioral one (that stores services or methods). Of course, a method is defined for a concept so there is a mapping between concepts and methods.
+
+\begin{itemize}
+
+\item \textbf{Replacement:} In replacement there is an incomplete language unit (the requiring language unit) that requires some services from other one (the providing language unit) for working correctly. The providing language unit can be any one that satisfies the requirements established by the requiring one --this is known as the principle of substitutability--. Figure \ref{fig:example-replacement} illustrates this issue by means of two language units \texttt{A} and \texttt{B}. Language unit \texttt{A} requires some services provided by the language unit \texttt{B}. At the abstract syntax level, the required service is the meta-class \texttt{X} referenced by the meta-class \texttt{Q}. At the semantics level, the required service is an abstract method added to the meta-class \texttt{X}. Note that we use the annotation \texttt{@Required} that is part of our framework and that at runtime is a lookup to the services registry. The language unit \texttt{B} implements the class \texttt{X} and registers the service \texttt{X.eval()} to the services registry by means of the \texttt{@Provided} annotation.
+
+\begin{figure}[h!]
+  \centering\includegraphics[width=110mm]{figures/replacement-example}
+  \caption{A subtract of the variability model for the family of state machines}
+  \label{fig:example-replacement}
+\end{figure} 
+
+\item \textbf{Extension:} In the case of extension, there is base language unit that can be extended (or specialized) by other one(s) that we call contributions. Figure \ref{fig:example-extension} illustrates this extension mechanism. In this case, language unit \texttt{B} extends language unit \texttt{A} by offering a contribution over the meta-class X. To do so, we offer the annotation \texttt{@Contribution} that indicates that the annotated class is a contribution of certain extension point indicated on the parameter ``extensionPoint".
+
+\begin{figure}[h!]
+  \centering\includegraphics[width=110mm]{figures/extension-example}
+  \caption{A subtract of the variability model for the family of state machines}
+  \label{fig:example-extension}
+\end{figure}
+
+\end{itemize}

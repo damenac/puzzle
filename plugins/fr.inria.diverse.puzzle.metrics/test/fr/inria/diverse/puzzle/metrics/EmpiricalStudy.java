@@ -1,9 +1,17 @@
 package fr.inria.diverse.puzzle.metrics;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.Iterator;
 
+import org.eclipse.xtext.util.Pair;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
@@ -13,6 +21,9 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.MelangeFactory;
 import fr.inria.diverse.melange.metamodel.melange.Metamodel;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
+import fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySyntacticChart;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticVennDiagram;
 
 public class EmpiricalStudy {
 
@@ -50,6 +61,114 @@ public class EmpiricalStudy {
 	// Test cases
 	// ------------------------------------------------
 
+	@Ignore
+	@Test
+	public void generateMelangeScript() throws IOException{
+		String script = "package bigFamily\n\n";
+		for (Language language : languages) {
+			script += " language " + language.getName().replace(".ecore", "") + " {\n";
+			script += "     syntax \"" + language.getSyntax().getEcoreUri() + "\"\n";
+			script += "     exactType " + language.getName().replace(".ecore", "") + "MT\n";
+			script += " }\n\n";
+		}
+		
+		File file = new File("./scripts/bigScript.melange");
+		FileWriter fw = new FileWriter(file.getAbsoluteFile());
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(script);
+		bw.close();
+	}
+	
+	@Test
+	public void drawHugeVennDiagram() throws Exception{
+		ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
+
+		File syntacticVennData = new File("./libVenn/syntacticVennData.jsonp" );
+		if(!syntacticVennData.exists())
+			syntacticVennData.createNewFile();
+		
+		PrintWriter out = new PrintWriter( syntacticVennData );
+		SpecialFamilySyntacticChart syntacticVennDiagram = new SyntacticVennDiagram();
+        out.print(syntacticVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator));
+        out.close();
+        
+		FamilysMetricManager familysMetric = new FamilysMetricManager(null);
+		familysMetric.createReport1LargeAnalysis(languages);
+	}
+	
+	@Test
+	public void computeHistograms() throws Exception{
+		ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
+
+//		File syntacticVennData = new File("./libVenn/syntacticVennData.jsonp" );
+//		if(!syntacticVennData.exists())
+//			syntacticVennData.createNewFile();
+//		
+//		PrintWriter out = new PrintWriter( syntacticVennData );
+//		SpecialFamilySyntacticChart syntacticVennDiagram = new SyntacticVennDiagram();
+//        out.print(syntacticVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator));
+//        out.close();
+        
+		SyntacticVennDiagram metrics = new SyntacticVennDiagram();
+		int[][] theMatrix = metrics.getCommonalitiesMatrix(languages, conceptComparisonOperator);
+		Hashtable<Integer, Integer> histogramByConstructs = metrics.computeConstructsCommonality(theMatrix);
+		int max = -1;
+		for (int i = 0; i < theMatrix.length; i++) {
+			int current = histogramByConstructs.get(i);
+			System.out.println(i + " - " + histogramByConstructs.get(i));
+			if(current > max)
+				max = current;
+		}
+		
+		System.out.println("max: " + max);
+		
+		ArrayList<Integer> histogram = new ArrayList<Integer>();
+		
+		Iterator<Integer> it = histogramByConstructs.keySet().iterator();
+		int count = 0;
+		while (it.hasNext()) {
+			Integer currentKey = (Integer) it.next();
+			Integer currentValue = histogramByConstructs.get(currentKey);
+			if(currentValue == 0){
+				count ++;
+			}
+		}
+		histogram.add(new Integer(count));
+		
+		int maxI = 0;
+		for (int i = 1; i <= max; i+=100) {
+			it = histogramByConstructs.keySet().iterator();
+			count = 0;
+			while (it.hasNext()) {
+				Integer currentKey = (Integer) it.next();
+				Integer currentValue = histogramByConstructs.get(currentKey);
+				int proxI = i + 100;
+				if(currentValue >= i && currentValue < proxI){
+					count ++;
+				}
+			}
+			histogram.add(new Integer(count));
+			maxI = i;
+		}
+		
+		it = histogramByConstructs.keySet().iterator();
+		count = 0;
+		while (it.hasNext()) {
+			Integer currentKey = (Integer) it.next();
+			Integer currentValue = histogramByConstructs.get(currentKey);
+			if(currentValue >= maxI && currentValue <= max){
+				count ++;
+			}
+		}
+		histogram.add(new Integer(count));
+		
+		
+		for (int i = 0; i < histogram.size(); i++) {
+			System.out.println(i*100 + "," + histogram.get(i));
+		}
+	}
+	
+	@Ignore
 	@Test
 	public void lunchEmpiricalStudy() throws Exception{
 		ConceptComparison comparisonOperator = new NamingConceptComparison();
@@ -64,7 +183,7 @@ public class EmpiricalStudy {
 				ArrayList<Language> languagesWithCommonalities = this.findLanguagesWithCommonalities(language, comparisonOperator);
 				
 				// para hacer experimentos parciales. 
-				if(languagesWithCommonalities.size() > 1 && languagesWithCommonalities.size() < 8){
+				if(languagesWithCommonalities.size() > 1 && languagesWithCommonalities.size() <= 10){
 					System.out.println();
 					System.out.print("searching a family in a set of: " + languagesWithCommonalities.size() + " languages [" );
 					for (Language language2 : languagesWithCommonalities) {

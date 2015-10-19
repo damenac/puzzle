@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="builder"
+    nsURI="http:///ch/paranor/epla/builder.ecore" nsPrefix="ch.paranor.epla.builder">
+  <eClassifiers xsi:type="ecore:EClass" name="CommandBuilder" eSuperTypes="#//EplaBuilder"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EplaBuilder" abstract="true" interface="true">
+    <eOperations name="execute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="target" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Target"/>
+      <eParameters name="command" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Command"/>
+      <eParameters name="build" eType="#//Build"/>
+      <eParameters name="processExecutor" eType="#//ProcessExecutor"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GnatBuilder" eSuperTypes="#//EplaBuilder"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Build">
+    <eOperations name="execute" eType="#//BuildState">
+      <eParameters name="target" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Target"/>
+    </eOperations>
+    <eOperations name="clean" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="bric" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Bric"/>
+    </eOperations>
+    <eOperations name="execute" eType="#//BuildState">
+      <eParameters name="bric" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Bric"/>
+    </eOperations>
+    <eOperations name="execute">
+      <eGenericType eClassifier="#//Map">
+        <eTypeArguments eClassifier="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Target"/>
+        <eTypeArguments eClassifier="#//BuildState"/>
+      </eGenericType>
+      <eParameters name="targets" upperBound="-1" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Target"/>
+    </eOperations>
+    <eOperations name="sendMessage">
+      <eParameters name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="logFile" eType="#//File">
+      <eParameters name="target" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Target"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listeners" upperBound="-1"
+        eType="#//BuildListener"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="options" eType="#//Properties"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="args" upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workspace" eType="ecore:EClass ../../ch.paranor.epla.core/model/core.ecore#//Workspace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BuildState">
+    <eLiterals name="SUCCESS"/>
+    <eLiterals name="FAIL" value="1"/>
+    <eLiterals name="SKIPPED" value="2"/>
+    <eLiterals name="WAITING" value="3"/>
+    <eLiterals name="BUILDING" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="BuildListener" instanceClassName="ch.paranor.epla.builder.listener.BuildListener"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Map" instanceClassName="java.util.Map">
+    <eTypeParameters name="T"/>
+    <eTypeParameters name="T1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Properties" instanceClassName="java.util.Properties"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ProcessExecutor" instanceClassName="ch.paranor.epla.tools.ProcessExecutor"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="File" instanceClassName="java.io.File"/>
+</ecore:EPackage>

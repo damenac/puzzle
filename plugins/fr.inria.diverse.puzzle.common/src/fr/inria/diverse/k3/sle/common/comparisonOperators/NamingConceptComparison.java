@@ -12,6 +12,8 @@ public class NamingConceptComparison implements ConceptComparison {
 
 	@Override
 	public boolean equals(EClassifier left, EClassifier right) {
-		return left.getName().equals(right.getName());
+		if(left != null && left.getName() != null && right != null && right.getName() != null)
+			return left.getName().equals(right.getName());
+		else return false;
 	}
 }

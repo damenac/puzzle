@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="graph"
+    nsURI="http:///org/eclipse/stem/core/graph.ecore" nsPrefix="org.eclipse.stem.core.graph">
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicLabel" abstract="true" eSuperTypes="#//Label">
+    <eOperations name="reset"/>
+    <eOperations name="switchToNextValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nextValueValid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nextValue" lowerBound="1"
+        eType="#//LabelValue" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decorator" eType="ecore:EClass model.ecore#//Decorator"
+        eOpposite="model.ecore#//Decorator/labelsToUpdate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicNodeLabel" abstract="true" eSuperTypes="#//DynamicLabel #//NodeLabel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="common.ecore#//Identifiable modifier.ecore#//Modifiable">
+    <eOperations name="getOtherNode" eType="#//Node" eExceptions="#//IllegalArgumentException">
+      <eParameters name="node" eType="#//Node"/>
+    </eOperations>
+    <eOperations name="isDirectedAt" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="node" eType="#//Node"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="a" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeAURI" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="b" eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nodeBURI" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//EdgeLabel"
+        containment="true" resolveProxies="false" eOpposite="#//EdgeLabel/edge"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="directed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Graph" eSuperTypes="common.ecore#//Identifiable">
+    <eOperations name="getNodeLabelsByTypeURI" upperBound="-1" eType="#//NodeLabel">
+      <eParameters name="typeURI" eType="#//URI"/>
+    </eOperations>
+    <eOperations name="addGraph">
+      <eParameters name="graph" eType="#//Graph"/>
+      <eParameters name="filter" eType="ecore:EClass common.ecore#//IdentifiableFilter"/>
+    </eOperations>
+    <eOperations name="putEdge">
+      <eParameters name="edge" eType="#//Edge"/>
+    </eOperations>
+    <eOperations name="getEdge" eType="#//Edge">
+      <eParameters name="uri" eType="#//URI"/>
+    </eOperations>
+    <eOperations name="putNode">
+      <eParameters name="node" eType="#//Node"/>
+    </eOperations>
+    <eOperations name="getNode" eType="#//Node">
+      <eParameters name="uri" eType="#//URI"/>
+    </eOperations>
+    <eOperations name="putNodeLabel">
+      <eParameters name="label" eType="#//NodeLabel"/>
+    </eOperations>
+    <eOperations name="getNodeLabel" eType="#//NodeLabel">
+      <eParameters name="uri" eType="#//URI"/>
+    </eOperations>
+    <eOperations name="putGraphLabel">
+      <eParameters name="label" eType="#//Label"/>
+    </eOperations>
+    <eOperations name="getGraphLabel" eType="#//Label">
+      <eParameters name="uri" eType="#//URI"/>
+    </eOperations>
+    <eOperations name="addDynamicLabel">
+      <eParameters name="dynamiclabel" eType="#//DynamicLabel"/>
+    </eOperations>
+    <eOperations name="switchToNextValue">
+      <eParameters name="currentTime" eType="ecore:EClass model.ecore#//STEMTime"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//URIToEdgeMapEntry" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+        eType="#//URIToNodeMapEntry" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graphLabels" upperBound="-1"
+        eType="#//URIToLabelMapEntry" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeLabels" upperBound="-1"
+        eType="#//URIToNodeLabelMapEntry" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dynamicLabels" upperBound="-1"
+        eType="#//DynamicLabel"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numEdges" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numNodes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numGraphLabels" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numNodeLabels" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="numDynamicLabels" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        changeable="false" volatile="true" transient="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unresolvedIdentifiables"
+        upperBound="-1" eType="#//UnresolvedIdentifiable" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="decorators" upperBound="-1"
+        eType="ecore:EClass model.ecore#//Decorator" containment="true" resolveProxies="false"
+        eOpposite="model.ecore#//Decorator/graph"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" eType="ecore:EClass model.ecore#//STEMTime"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" abstract="true" eSuperTypes="common.ecore#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uRIOfIdentifiableToBeLabeled"
+        eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentValue" lowerBound="1"
+        eType="#//LabelValue" containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifiable" eType="ecore:EClass common.ecore#//Identifiable"
+        volatile="true" transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LabelValue" abstract="true" eSuperTypes="#//SanityChecker">
+    <eOperations name="reset"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" eSuperTypes="common.ecore#//Identifiable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//Edge"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="labels" upperBound="-1"
+        eType="#//NodeLabel" eOpposite="#//NodeLabel/node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodeLabel" abstract="true" eSuperTypes="#//Label">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//Node" eOpposite="#//Node/labels"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticNodeLabel" abstract="true" eSuperTypes="#//NodeLabel #//StaticLabel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnresolvedIdentifiable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scenario" eType="ecore:EClass common.ecore#//Identifiable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="ecore:EClass common.ecore#//Identifiable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="graph" eType="ecore:EClass common.ecore#//Identifiable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identifiable" eType="ecore:EClass common.ecore#//Identifiable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unresolvedURI" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URIToIdentifiableMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass common.ecore#//Identifiable"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SanityChecker" instanceClassName="org.eclipse.stem.core.common.SanityChecker"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DynamicEdgeLabel" abstract="true" eSuperTypes="#//DynamicLabel #//EdgeLabel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EdgeLabel" abstract="true" eSuperTypes="#//Label">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" eType="#//Edge" eOpposite="#//Edge/label"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticEdgeLabel" abstract="true" eSuperTypes="#//EdgeLabel #//StaticLabel"/>
+  <eClassifiers xsi:type="ecore:EClass" name="URIToEdgeMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Edge"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URIToNodeMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Node"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URIToLabelMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Label"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="URIToNodeLabelMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="#//URI"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//NodeLabel"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaticLabel" abstract="true" eSuperTypes="#//Label modifier.ecore#//Modifiable"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="org.eclipse.emf.common.util.URI"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IllegalArgumentException" instanceClassName="java.lang.IllegalArgumentException"/>
+</ecore:EPackage>

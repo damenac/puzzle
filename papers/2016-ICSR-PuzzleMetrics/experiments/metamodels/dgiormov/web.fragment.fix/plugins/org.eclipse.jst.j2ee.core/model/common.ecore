@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="common"
+    nsURI="common.xmi" nsPrefix="org.eclipse.jst.j2ee.common">
+  <eClassifiers xsi:type="ecore:EClass" name="EjbRef" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The ejb-refType is used by ejb-ref elements for the&#xD;&#xA;declaration of a reference to an enterprise bean's home. The&#xD;&#xA;declaration consists of:&#xD;&#xA;&#xD;&#xA;    - an optional description&#xD;&#xA;    - the EJB reference name used in the code of&#xD;&#xA;      the Deployment Component that's referencing the enterprise&#xD;&#xA;      bean&#xD;&#xA;    - the expected type of the referenced enterprise bean&#xD;&#xA;    - the expected home and remote interfaces of the referenced&#xD;&#xA;      enterprise bean&#xD;&#xA;    - optional ejb-link information, used to specify the&#xD;&#xA;      referenced enterprise bean"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ejb-ref-name element contains the name of an EJB reference. This is the JNDI name that the servlet code uses to get a reference to the enterprise bean.&#xD;&#xA;Example: &lt;ejb-ref-name>ejb/Payroll&lt;/ejb-ref-name>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EjbRefType"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ejb-ref-type element contains the expected type of the referenced enterprise bean. The ejb-ref-type element must be one of the following:&#xD;&#xA;&lt;ejb-ref-type>Entity&lt;/ejb-ref-type>&#xD;&#xA;&lt;ejb-ref-type>Session&lt;/ejb-ref-type>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="home" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The home element contains the fully-qualified name of the enterprise bean’s home interface.&#xD;&#xA;Example: &lt;home>com.aardvark.payroll.PayrollHome&lt;/home>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remote" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The remote element contains the fully-qualified name of the enterprise bean’s remote interface."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The ejb-link element is used in the ejb-ref element to specify that an EJB reference is linked to an enterprise bean in the encompassing J2EE Application package. The value of the ejb-link element must be the ejb-name of an enterprise bean in the same J2EE Application package. &#xD;&#xA;Example: &lt;ejb-link>EmployeeRecord&lt;/ejb-link>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions&#xD;&#xA;The description element is used by the ejb-jar file producer to provide text describing the parent element.  The description element should include any information that the ejb-jar file producer wants to provide to the consumer of the ejb-jar file (i.e. to the Deployer). Typically, the tools used by the ejb-jar file consumer will display the description when processing the parent element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnvEntry" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The env-entryType is used to declare an application's&#xD;&#xA;environment entry. The declaration consists of an optional&#xD;&#xA;description, the name of the environment entry, and an&#xD;&#xA;optional value.  If a value is not specified, one must be&#xD;&#xA;supplied during deployment.&#xD;&#xA;&#xD;&#xA;It is used by env-entry elements."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions&#xD;&#xA;The description element is used by the ejb-jar file producer to provide text describing the parent element.  The description element should include any information that the ejb-jar file producer wants to provide to the consumer of the ejb-jar file (i.e. to the Deployer). Typically, the tools used by the ejb-jar file consumer will display the description when processing the parent element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The env-entry-name element contains the name of a&#xD;&#xA;        Deployment Component's environment entry.  The name&#xD;&#xA;        is a JNDI name relative to the java:comp/env&#xD;&#xA;        context.  The name must be unique within a&#xD;&#xA;        Deployment Component. The uniqueness&#xD;&#xA;        constraints must be defined within the declared&#xD;&#xA;        context.&#xD;&#xA;&#xD;&#xA;        Example:&#xD;&#xA;&#xD;&#xA;        &lt;env-entry-name>minAmount&lt;/env-entry-name>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The env-entry-value designates the value of a&#xD;&#xA;        Deployment Component's environment entry. The value&#xD;&#xA;        must be a String that is valid for the&#xD;&#xA;        constructor of the specified type that takes a&#xD;&#xA;        single String parameter, or for java.lang.Character,&#xD;&#xA;        a single character.&#xD;&#xA;&#xD;&#xA;        Example:&#xD;&#xA;&#xD;&#xA;        &lt;env-entry-value>100.00&lt;/env-entry-value>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//EnvEntryType"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The env-entry-type element contains the fully-qualified Java type of the environment entry value that is expected by the application client’s code. The following are the legal values of env-entry-type: java.lang.Bool-ean, java.lang.String, java.lang.Integer, java.lang.Double, java.lang.Byte, java.lang.Short, java.lang.Long, and java.lang.Float. &#xD;&#xA;Example: &lt;env-entry-type>java.lang.Boolean&lt;/env-entry-type>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceRef" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The resource-refType contains a declaration of a&#xD;&#xA;Deployment Component's reference to an external resource. It&#xD;&#xA;consists of an optional description, the resource manager&#xD;&#xA;connection factory reference name, the indication of the&#xD;&#xA;resource manager connection factory type expected by the&#xD;&#xA;Deployment Component code, the type of authentication&#xD;&#xA;(Application or Container), and an optional specification of&#xD;&#xA;the shareability of connections obtained from the resource&#xD;&#xA;(Shareable or Unshareable).&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;&#xD;&#xA;&lt;resource-ref>&#xD;&#xA;    &lt;res-ref-name>jdbc/EmployeeAppDB&lt;/res-ref-name>&#xD;&#xA;    &lt;res-type>javax.sql.DataSource&lt;/res-type>&#xD;&#xA;    &lt;res-auth>Container&lt;/res-auth>&#xD;&#xA;    &lt;res-sharing-scope>Shareable&lt;/res-sharing-scope>&#xD;&#xA;&lt;/resource-ref>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions&#xD;&#xA;The description element is used by the ejb-jar file producer to provide text describing the parent element.  The description element should include any information that the ejb-jar file producer wants to provide to the consumer of the ejb-jar file (i.e. to the Deployer). Typically, the tools used by the ejb-jar file consumer will display the description when processing the parent element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The res-ref-name element specifies the name of a&#xD;&#xA;        resource manager connection factory reference.&#xD;&#xA;        The name is a JNDI name relative to the&#xD;&#xA;        java:comp/env context.&#xD;&#xA;        The name must be unique within a Deployment File."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The res-type element specifies the type of the data&#xD;&#xA;        source. The type is specified by the fully qualified&#xD;&#xA;        Java language class or interface&#xD;&#xA;        expected to be implemented by the data source."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="auth" eType="#//ResAuthTypeBase"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The res-auth element specifies whether the enterprise bean code signs on programmatically to the resource manager, or whether the Container will sign on to the resource manager on behalf of the bean. In the latter case, the Container uses information that is supplied by the Deployer.  The value of this element must be one of the two following:&#xD;&#xA;&lt;res-auth>Application&lt;/res-auth>&#xD;&#xA;&lt;res-auth>Container&lt;/res-auth>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resSharingScope" eType="#//ResSharingScopeType"
+        unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The res-sharing-scope element specifies whether connections obtained&#xD;&#xA;through the given resource manager connection factory reference can be&#xD;&#xA;shared. The value of this element, if specified, must be one of the&#xD;&#xA;two following:  Shareable, Unshareable&#xD;&#xA;&#xD;&#xA;The default value is Shareable.&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EnvEntryType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.3 added Character&#xD;&#xA;String=0&#xD;&#xA;Integer=1&#xD;&#xA;Boolean=2&#xD;&#xA;Double=3&#xD;&#xA;Byte=4&#xD;&#xA;Short=5&#xD;&#xA;Long=6&#xD;&#xA;Float=7&#xD;&#xA;Character=8"/>
+    </eAnnotations>
+    <eLiterals name="String"/>
+    <eLiterals name="Integer" value="1"/>
+    <eLiterals name="Boolean" value="2"/>
+    <eLiterals name="Double" value="3"/>
+    <eLiterals name="Byte" value="4"/>
+    <eLiterals name="Short" value="5"/>
+    <eLiterals name="Long" value="6"/>
+    <eLiterals name="Float" value="7"/>
+    <eLiterals name="Character" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityRoleRef" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The security-role-refType contains the declaration of a&#xD;&#xA;security role reference in a component's or a&#xD;&#xA;Deployment Component's code. The declaration consists of an&#xD;&#xA;optional description, the security role name used in the&#xD;&#xA;code, and an optional link to a security role. If the&#xD;&#xA;security role is not specified, the Deployer must choose an&#xD;&#xA;appropriate security role."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the role-name element must be the String used&#xD;&#xA;        as the parameter to the&#xD;&#xA;        EJBContext.isCallerInRole(String roleName) method or the&#xD;&#xA;        HttpServletRequest.isUserInRole(String role) method."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions&#xD;&#xA;The description element is used by the ejb-jar file producer to provide text describing the parent element.  The description element should include any information that the ejb-jar file producer wants to provide to the consumer of the ejb-jar file (i.e. to the Deployer). Typically, the tools used by the ejb-jar file consumer will display the description when processing the parent element."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The role-link element is a reference to a defined&#xD;&#xA;        security role. The role-link element must contain&#xD;&#xA;        the name of one of the security roles defined in the&#xD;&#xA;        security-role elements.&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ResAuthTypeBase">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="CONTAINER=0&#xD;&#xA;Container=1&#xD;&#xA;Application=2&#xD;&#xA;SERVLET=3&#xD;&#xA;"/>
+    </eAnnotations>
+    <eLiterals name="Container"/>
+    <eLiterals name="Application" value="1"/>
+    <eLiterals name="SERVLET" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EjbRefType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Session=0&#xD;&#xA;Entity=1"/>
+    </eAnnotations>
+    <eLiterals name="Session"/>
+    <eLiterals name="Entity" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityRole" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The security-roleType contains the definition of a security&#xD;&#xA;role. The definition consists of an optional description of the&#xD;&#xA;security role, and the security role name.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;&#xD;&#xA;    &lt;security-role>&#xD;&#xA;    &lt;description>&#xD;&#xA;        This role includes all employees who are authorized&#xD;&#xA;        to access the employee service application.&#xD;&#xA;    &lt;/description>&#xD;&#xA;    &lt;role-name>employee&lt;/role-name>&#xD;&#xA;    &lt;/security-role>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@deprecated See descriptions"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The role-name element contains the name of a role. This element must contain a non-empty string.&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceEnvRef" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The resource-env-refType is used to define&#xD;&#xA;resource-env-type elements.  It contains a declaration of a&#xD;&#xA;Deployment Component's reference to an administered object&#xD;&#xA;associated with a resource in the Deployment Component's&#xD;&#xA;environment.  It consists of an optional description, the&#xD;&#xA;resource environment reference name, and an indication of&#xD;&#xA;the resource environment reference type expected by the&#xD;&#xA;Deployment Component code.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;&#xD;&#xA;&lt;resource-env-ref>&#xD;&#xA;    &lt;resource-env-ref-name>jms/StockQueue&#xD;&#xA;    &lt;/resource-env-ref-name>&#xD;&#xA;    &lt;resource-env-ref-type>javax.jms.Queue&#xD;&#xA;    &lt;/resource-env-ref-type>&#xD;&#xA;&lt;/resource-env-ref>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions&#xD;&#xA;The description is used by the ejb-jar file producer to provide text describing the resource env ref.&#xD;&#xA;&#xD;&#xA;The description should include any information that the ejb-jar file producer wants to provide to the consumer of the ejb-jar file (i.e. to the Deployer). Typically, the tools used by the ejb-jar file consumer will display the description when processing the list of dependents."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The resource-env-ref-name element specifies the name&#xD;&#xA;        of a resource environment reference; its value is&#xD;&#xA;        the environment entry name used in&#xD;&#xA;        the Deployment Component code.  The name is a JNDI&#xD;&#xA;        name relative to the java:comp/env context and must&#xD;&#xA;        be unique within a Deployment Component."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../org.eclipse.jem/model/java.ecore#//JavaClass">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The resource-env-ref-type element specifies the type&#xD;&#xA;        of a resource environment reference.  It is the&#xD;&#xA;        fully qualified name of a Java language class or&#xD;&#xA;        interface."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ResSharingScopeType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Shareable=0&#xD;&#xA;Unshareable=1"/>
+    </eAnnotations>
+    <eLiterals name="Shareable"/>
+    <eLiterals name="Unshareable" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EJBLocalRef" eSuperTypes="#//EjbRef">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.3&#xD;&#xA;The ejb-local-refType is used by ejb-local-ref elements for&#xD;&#xA;the declaration of a reference to an enterprise bean's local&#xD;&#xA;home. The declaration consists of:&#xD;&#xA;&#xD;&#xA;    - an optional description&#xD;&#xA;    - the EJB reference name used in the code of the Deployment&#xD;&#xA;      Component that's referencing the enterprise bean&#xD;&#xA;    - the expected type of the referenced enterprise bean&#xD;&#xA;    - the expected local home and local interfaces of the&#xD;&#xA;      referenced enterprise bean&#xD;&#xA;    - optional ejb-link information, used to specify the&#xD;&#xA;      referenced enterprise bean"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localHome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="local" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RunAsSpecifiedIdentity" eSuperTypes="#//SecurityIdentity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The security-identity element specifies whether the caller's security identity is to be used for the execution of the methods of the enterprise bean or whether a specific run-as identity is to be used. It    contains an optional description and a specification of the security identity to be used.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identity" eType="#//Identity"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Optional specifies the run-as identity to be used for the execution of the methods of an enterprise bean. It contains an optional description, and the name of a security role."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Identity" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Specifies the run-as identity to be used for the execution of the methods of an enterprise bean. It contains an optional description, and the name of a security role.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions&#xD;&#xA;The description is used by the ejb-jar file producer to provide text describing the run as identity.&#xD;&#xA;&#xD;&#xA;The description should include any information that the ejb-jar file producer wants to provide to the consumer of the ejb-jar file (i.e. to the Deployer). Typically, the tools used by the ejb-jar file consumer will display the description when processing the list of dependents."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The role-name element contains the name of a security role.&#xD;&#xA;&#xD;&#xA;The name must conform to the lexical rules for an NMTOKEN."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IconType" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;The icon type contains small-icon and large-icon elements&#xD;&#xA;that specify the file names for small and large GIF or&#xD;&#xA;JPEG icon images used to represent the parent element in a&#xD;&#xA;GUI tool.&#xD;&#xA;&#xD;&#xA;The xml:lang attribute defines the language that the&#xD;&#xA;icon file names are provided in. Its value is &quot;en&quot; (English)&#xD;&#xA;by default."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smallIcon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The small-icon element contains the name of a file&#xD;&#xA;        containing a small (16 x 16) icon image. The file&#xD;&#xA;        name is a relative path within the Deployment&#xD;&#xA;        Component's Deployment File.&#xD;&#xA;&#xD;&#xA;        The image may be either in the JPEG or GIF format.&#xD;&#xA;        The icon can be used by tools.&#xD;&#xA;&#xD;&#xA;        Example:&#xD;&#xA;&#xD;&#xA;        &lt;small-icon>employee-service-icon16x16.jpg&lt;/small-icon>"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="largeIcon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The large-icon element contains the name of a file&#xD;&#xA;        containing a large&#xD;&#xA;        (32 x 32) icon image. The file name is a relative&#xD;&#xA;        path within the Deployment Component's Deployment&#xD;&#xA;        File.&#xD;&#xA;&#xD;&#xA;        The image may be either in the JPEG or GIF format.&#xD;&#xA;        The icon can be used by tools.&#xD;&#xA;&#xD;&#xA;        Example:&#xD;&#xA;&#xD;&#xA;        &lt;large-icon>employee-service-icon32x32.jpg&lt;/large-icon>&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lang" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DisplayName" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;The display-name type contains a short name that is intended&#xD;&#xA;to be displayed by tools. It is used by display-name&#xD;&#xA;elements.  The display name need not be unique.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;&#xD;&#xA;...&#xD;&#xA;   &lt;display-name xml:lang=&quot;en&quot;>Employee Self Service&lt;/display-name>&#xD;&#xA;&#xD;&#xA;The value of the xml:lang attribute is &quot;en&quot; (English) by default."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lang" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageDestinationRef" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;The message-destination-ref element contains a declaration&#xD;&#xA;of Deployment Component's reference to a message destination&#xD;&#xA;associated with a resource in Deployment Component's&#xD;&#xA;environment. It consists of:&#xD;&#xA;&#xD;&#xA;        - an optional description&#xD;&#xA;        - the message destination reference name&#xD;&#xA;        - the message destination type&#xD;&#xA;        - a specification as to whether the&#xD;&#xA;          destination is used for&#xD;&#xA;          consuming or producing messages, or both&#xD;&#xA;        - a link to the message destination&#xD;&#xA;&#xD;&#xA;Examples:&#xD;&#xA;&#xD;&#xA;&lt;message-destination-ref>&#xD;&#xA;        &lt;message-destination-ref-name>jms/StockQueue&#xD;&#xA;        &lt;/message-destination-ref-name>&#xD;&#xA;        &lt;message-destination-type>javax.jms.Queue&#xD;&#xA;        &lt;/message-destination-type>&#xD;&#xA;        &lt;message-destination-usage>Consumes&#xD;&#xA;        &lt;/message-destination-usage>&#xD;&#xA;        &lt;message-destination-link>CorporateStocks&#xD;&#xA;        &lt;/message-destination-link>&#xD;&#xA;&lt;/message-destination-ref>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="usage" eType="#//MessageDestinationUsageType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="link" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageDestination" eSuperTypes="#//CompatibilityDescriptionGroup">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;The message-destinationType specifies a message&#xD;&#xA;destination. The logical destination described by this&#xD;&#xA;element is mapped to a physical destination by the Deployer.&#xD;&#xA;&#xD;&#xA;The message destination element contains:&#xD;&#xA;&#xD;&#xA;        - an optional description&#xD;&#xA;        - an optional display-name&#xD;&#xA;        - an optional icon&#xD;&#xA;        - a message destination name which must be unique&#xD;&#xA;          among message destination names within the same&#xD;&#xA;          Deployment File.&#xD;&#xA;&#xD;&#xA;Example:&#xD;&#xA;&#xD;&#xA;&lt;message-destination>&#xD;&#xA;        &lt;message-destination-name>CorporateStocks&#xD;&#xA;        &lt;/message-destination-name>&#xD;&#xA;&lt;/message-destination>"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The message-destination-name element specifies a&#xD;&#xA;        name for a message destination.  This name must be&#xD;&#xA;        unique among the names of message destinations&#xD;&#xA;        within the Deployment File."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParamValue" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;This type is a general type that can be used to declare&#xD;&#xA;parameter/value lists."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The param-name element contains the name of a parameter."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The param-value element contains the value of a parameter."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DescriptionGroup" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;This group keeps the usage of the contained description related&#xD;&#xA;elements consistent across J2EE deployment descriptors."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="icons" upperBound="-1"
+        eType="#//IconType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="displayNames" upperBound="-1"
+        eType="#//DisplayName" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JNDIEnvRefsGroup" abstract="true" eSuperTypes="#//CompatibilityDescriptionGroup">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;This group keeps the usage of the contained JNDI environment&#xD;&#xA;reference elements consistent across J2EE deployment descriptors."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="environmentProperties"
+        upperBound="-1" eType="#//EnvEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceRefs" upperBound="-1"
+        eType="#//ResourceRef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ejbRefs" upperBound="-1"
+        eType="#//EjbRef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceEnvRefs" upperBound="-1"
+        eType="#//ResourceEnvRef" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A list of enterprise bean references to an administered object associated with a resource in the enterprise bean's environment. It consists of an optional description, the resource environment reference name, and an indication of the resource environment reference type expected by the enterprise bean code.&#xD;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ejbLocalRefs" upperBound="-1"
+        eType="#//EJBLocalRef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messageDestinationRefs"
+        upperBound="-1" eType="#//MessageDestinationRef" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serviceRefs" upperBound="-1"
+        eType="ecore:EClass wsclient.ecore#//ServiceRef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SecurityIdentity" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The security-identity element specifies whether the caller's security identity is to be used for the execution of the methods of the enterprise bean or whether a specific run-as identity is to be used. It&#xD;&#xA;contains an optional description and a specification of the security identity to be used.&#xD;&#xA;"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4 deprecated, becomes descriptions"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="descriptions" upperBound="-1"
+        eType="#//Description" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="@version J2EE1.4"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UseCallerIdentity" eSuperTypes="#//SecurityIdentity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The use-caller-identity element specifies that the caller's security identity be used as the security identity for the execution of the enterprise bean's methods.&#xD;&#xA;"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Description" eSuperTypes="#//J2EEEObject">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4&#xD;&#xA;The description type is used by a description element to&#xD;&#xA;provide text describing the parent element.  The elements&#xD;&#xA;that use this type should include any information that the&#xD;&#xA;Deployment Component's Deployment File file producer wants&#xD;&#xA;to provide to the consumer of the Deployment Component's&#xD;&#xA;Deployment File (i.e., to the Deployer). Typically, the&#xD;&#xA;tools used by such a Deployment File consumer will display&#xD;&#xA;the description when processing the parent element that&#xD;&#xA;contains the description.&#xD;&#xA;&#xD;&#xA;The lang attribute defines the language that the&#xD;&#xA;description is provided in. The default value is &quot;en&quot; (English)."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lang" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MessageDestinationUsageType">
+    <eLiterals name="Consumes"/>
+    <eLiterals name="Produces" value="1"/>
+    <eLiterals name="ConsumesProduces" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QName" eSuperTypes="#//J2EEEObject">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespaceURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localPart" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="combinedQName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="internalPrefixOrNsURI"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Listener" eSuperTypes="#//CompatibilityDescriptionGroup">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="@version J2EE1.4 moved from webapp&#xD;&#xA;&#xD;&#xA;Declares a class in the application must be registered as a web application listener bean."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="listenerClass" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.jem/model/java.ecore#//JavaClass">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The listener-class element declares a class in the application must be registered as a web application listener bean."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompatibilityDescriptionGroup" eSuperTypes="#//DescriptionGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="smallIcon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="largeIcon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="J2EEEObject"/>
+  <eClassifiers xsi:type="ecore:EClass" name="J2EEEAttribute" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+</ecore:EPackage>

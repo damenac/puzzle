@@ -1,0 +1,131 @@
+\begin{thebibliography}{10}
+
+\bibitem{Berger:2014}
+C.~Berger, H.~Rendel, and B.~Rumpe.
+\newblock Measuring the ability to form a product line from existing products.
+\newblock volume abs/1409.6583. 2014.
+
+\bibitem{Berger:126283}
+C.~Berger, H.~Rendel, B.~Rumpe, C.~Busse, T.~Jablonski, and F.~Wolf.
+\newblock {P}roduct {L}ine {M}etrics for {L}egacy {S}oftware in {P}ractice.
+\newblock In {\em SPLC 2010 : Proceedings of the 14th International Software
+  Product Line Conference}, pages 247--250. Univ., Lancaster, 2010.
+
+\bibitem{Cengarle:2009}
+M.~V. Cengarle, H.~Gr\"onniger, and B.~Rumpe.
+\newblock Variability within modeling language definitions.
+\newblock In A.~Schürr and B.~Selic, editors, {\em Model Driven Engineering
+  Languages and Systems}, volume 5795 of {\em Lecture Notes in Computer
+  Science}, pages 670--684. Springer Berlin Heidelberg, 2009.
+
+\bibitem{Combemale:2014}
+B.~Combemale, J.~Deantoni, B.~Baudry, R.~France, J.-M. J\'ez\'equel, and
+  J.~Gray.
+\newblock Globalizing modeling languages.
+\newblock {\em Computer}, 47(6):68--71, June 2014.
+
+\bibitem{Cook:2006}
+S.~Cook.
+\newblock Separating concerns with domain specific languages.
+\newblock In D.~Lightfoot and C.~Szyperski, editors, {\em Modular Programming
+  Languages}, volume 4228 of {\em Lecture Notes in Computer Science}, pages
+  1--3. Springer Berlin Heidelberg, 2006.
+
+\bibitem{Eberius:2012}
+J.~Eberius, M.~Thiele, and W.~Lehner.
+\newblock A domain-specific language for do-it-yourself analytical mashups.
+\newblock In A.~Harth and N.~Koch, editors, {\em Current Trends in Web
+  Engineering}, volume 7059 of {\em Lecture Notes in Computer Science}, pages
+  337--341. Springer Berlin Heidelberg, 2012.
+
+\bibitem{Favre:2011}
+J.-M. Favre, D.~Gasevic, R.~Lämmel, and E.~Pek.
+\newblock Empirical language analysis in software linguistics.
+\newblock In {\em Software Language Engineering}, volume 6563 of {\em LNCS},
+  pages 316--326. Springer, 2011.
+
+\bibitem{Hamann:2012}
+L.~Hamann, O.~Hofrichter, and M.~Gogolla.
+\newblock On integrating structure and behavior modeling with ocl.
+\newblock In R.~France, J.~Kazmeier, R.~Breu, and C.~Atkinson, editors, {\em
+  Model Driven Engineering Languages and Systems}, volume 7590 of {\em Lecture
+  Notes in Computer Science}, pages 235--251. Springer Berlin Heidelberg, 2012.
+
+\bibitem{jezequel:2014}
+J.-M. J{\'e}z{\'e}quel, D.~M{\'e}ndez-Acu{\~n}a, T.~Degueule, B.~Combemale, and
+  O.~Barais.
+\newblock {When Systems Engineering Meets Software Language Engineering}.
+\newblock In {\em {CSD\&M'14 - Complex Systems Design \& Management}}, Paris,
+  France, Nov. 2014. Springer.
+
+\bibitem{Kleppe:2009}
+A.~Kleppe.
+\newblock The field of software language engineering.
+\newblock In D.~Ga?evi?, R.~Lämmel, and E.~Van~Wyk, editors, {\em Software
+  Language Engineering}, volume 5452 of {\em Lecture Notes in Computer
+  Science}, pages 1--7. Springer Berlin Heidelberg, 2009.
+
+\bibitem{Liebig:2013}
+J.~Liebig, R.~Daniel, and S.~Apel.
+\newblock Feature-oriented language families: A case study.
+\newblock In {\em Proceedings of the Seventh International Workshop on
+  Variability Modelling of Software-intensive Systems}, VaMoS '13, pages
+  11:1--11:8, New York, NY, USA, 2013. ACM.
+
+\bibitem{Lodderstedt:2002}
+T.~Lodderstedt, D.~Basin, and J.~Doser.
+\newblock Secureuml: A uml-based modeling language for model-driven security.
+\newblock In J.-M. J\'ez\'equel, H.~Hussmann, and S.~Cook, editors, {\em UML
+  2002 - The Unified Modeling Language}, volume 2460 of {\em Lecture Notes in
+  Computer Science}, pages 426--441. Springer Berlin Heidelberg, 2002.
+
+\bibitem{Oney:2012}
+S.~Oney, B.~Myers, and J.~Brandt.
+\newblock Constraintjs: Programming interactive behaviors for the web by
+  integrating constraints and states.
+\newblock In {\em Proceedings of the 25th Annual ACM Symposium on User
+  Interface Software and Technology}, UIST '12, pages 229--238, New York, NY,
+  USA, 2012. ACM.
+
+\bibitem{Schewe:2008}
+K.-D. Schewe and J.~Zhao.
+\newblock Typed abstract state machines for data-intensive applications.
+\newblock {\em Knowledge and Information Systems}, 15(3):381--391, 2008.
+
+\bibitem{vacchi:2014}
+E.~Vacchi, W.~Cazzola, B.~Combemale, and M.~Acher.
+\newblock {Automating Variability Model Inference for Component-Based Language
+  Implementations}.
+\newblock In P.~Heymans and J.~Rubin, editors, {\em {SPLC'14 - 18th
+  International Software Product Line Conference}}, Florence, Italie, Sept.
+  2014. ACM.
+
+\bibitem{Cazzola:2013b}
+E.~Vacchi, W.~Cazzola, S.~Pillay, and B.~Combemale.
+\newblock Variability support in domain-specific language development.
+\newblock In M.~Erwig, R.~Paige, and E.~Wyk, editors, {\em Software Language
+  Engineering}, volume 8225 of {\em Lecture Notes in Computer Science}, pages
+  76--95. Springer International Publishing, 2013.
+
+\bibitem{voelter:2013}
+M.~V\"olter, S.~Benz, C.~Dietrich, B.~Engelmann, M.~Helander, L.~C.~L. Kats,
+  E.~Visser, and G.~Wachsmuth.
+\newblock {\em {DSL} Engineering - Designing, Implementing and Using
+  Domain-Specific Languages}.
+\newblock dslbook.org, 2013.
+
+\bibitem{White:2009}
+J.~White, J.~H. Hill, J.~Gray, S.~Tambe, A.~Gokhale, and D.~Schmidt.
+\newblock Improving domain-specific language reuse with software product line
+  techniques.
+\newblock {\em Software, IEEE}, 26(4):47--53, July 2009.
+
+\bibitem{Zschaler:2010b}
+S.~Zschaler, D.~S. Kolovos, N.~Drivalos, R.~F. Paige, and A.~Rashid.
+\newblock Domain-specific metamodelling languages for software language
+  engineering.
+\newblock In M.~van~den Brand, D.~Ga?evi?, and J.~Gray, editors, {\em Software
+  Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
+  Science}, pages 334--353. Springer Berlin Heidelberg, 2010.
+
+\end{thebibliography}

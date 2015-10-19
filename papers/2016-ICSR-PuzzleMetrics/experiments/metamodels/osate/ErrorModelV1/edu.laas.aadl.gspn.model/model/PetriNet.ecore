@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PetriNet"
+    nsURI="http://PetriNet" nsPrefix="PetriNet">
+  <eClassifiers xsi:type="ecore:EClass" name="PetriNet">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toolInfo" upperBound="-1"
+        eType="#//ToolInfo" containment="true" eOpposite="#//ToolInfo/petriNet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arcs" unique="false" upperBound="-1"
+        eType="#//Arc" containment="true" eOpposite="#//Arc/petriNet"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="namedElement" upperBound="-1"
+        eType="#//NamedElement" containment="true" eOpposite="#//NamedElement/petriNet"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToolInfo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="petriNet" lowerBound="1"
+        eType="#//PetriNet" eOpposite="#//PetriNet/toolInfo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Place" eSuperTypes="#//PlaceorTransition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="InitialMarking" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionToPlace" upperBound="-1"
+        eType="#//TransitionToPlace" eOpposite="#//TransitionToPlace/place"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="placeToTransition" upperBound="-1"
+        eType="#//PlaceToTransition" eOpposite="#//PlaceToTransition/place"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="#//PlaceorTransition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Occurrence" lowerBound="1"
+        eType="#//OccurrenceType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="NonStandardId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitionToPlace" upperBound="-1"
+        eType="#//TransitionToPlace" eOpposite="#//TransitionToPlace/transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="placeToTransition" upperBound="-1"
+        eType="#//PlaceToTransition" eOpposite="#//PlaceToTransition/transition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Param" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Arc" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="petriNet" lowerBound="1"
+        eType="#//PetriNet" eOpposite="#//PetriNet/arcs"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OccurrenceType">
+    <eLiterals name="poisson"/>
+    <eLiterals name="fixed" value="1"/>
+    <eLiterals name="nonstandard" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlaceToTransition" eSuperTypes="#//Arc">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Inhibitor" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="place" lowerBound="1" eType="#//Place"
+        eOpposite="#//Place/placeToTransition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        eType="#//Transition" eOpposite="#//Transition/placeToTransition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TransitionToPlace" eSuperTypes="#//Arc">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transition" lowerBound="1"
+        eType="#//Transition" eOpposite="#//Transition/transitionToPlace"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="place" lowerBound="1" eType="#//Place"
+        eOpposite="#//Place/transitionToPlace"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="petriNet" lowerBound="1"
+        eType="#//PetriNet" eOpposite="#//PetriNet/namedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PlaceorTransition" abstract="true" eSuperTypes="#//NamedElement"/>
+</ecore:EPackage>

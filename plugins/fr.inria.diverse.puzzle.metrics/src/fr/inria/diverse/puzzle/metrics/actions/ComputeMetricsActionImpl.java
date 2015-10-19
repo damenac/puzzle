@@ -132,10 +132,10 @@ public class ComputeMetricsActionImpl {
 		familysMetric.createReport3ReuseMetrics(languages);
 		familysMetric.createDependenciesGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
 		familysMetric.createDependenciesGraph(languages);
-		familysMetric.createFamilyMembershipGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
-		familysMetric.createFamilyMembershipGraph(languages);
-		familysMetric.createTarjansGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
-		familysMetric.createTarjansGraph(languages);
+//		familysMetric.createFamilyMembershipGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
+//		familysMetric.createFamilyMembershipGraph(languages);
+//		familysMetric.createTarjansGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
+//		familysMetric.createTarjansGraph(languages);
 		familysMetric.copyAnalysisSemanticsData(languages, conceptComparisonOperator, methodComparisonOperator);
 		familysMetric.copyAnalysisSemantics(languages);
 		

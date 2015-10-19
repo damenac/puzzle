@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="structuredText"
+    nsURI="http://www.point.org/IEC611313/StructuredText" nsPrefix="structuredText">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//AbstractElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionBlock" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableBlock" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//VariableBlockElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeBlock" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlockElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableBlockElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableDefinition" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//VariableDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//VariableType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//VariableInitializzationValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//FunctionBlock"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableInitializzationValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="InitValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeBlockElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeBlock" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CodeBlock"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IfBlock" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionBlock" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//ConditionBlock"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeBlock" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionBlock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="leftOperand" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rightOperand" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaseBlock" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codeBlock" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlock"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AssignamentBlock" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlock">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightOperand" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//Variable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionBlockCall" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//CodeBlock">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="param" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//FunctionBlockCallParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionBlockCallParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftParameter" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//Variable"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightParameter" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//Variable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="address" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeDefinition" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//TypeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SingleTypeDefinition" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="first" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="last" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//VariableType"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructTypeDefinition" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//TypeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="singleType" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//SingleTypeDefinition"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeDefinition" eSuperTypes="platform:/resource/org.point.IEC611313.structuredtext/src-gen/org/point/IEC611313/StructuredText.ecore#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

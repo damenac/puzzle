@@ -1,0 +1,6 @@
+var semanticVennData = [{sets : [0], label : 'FSM', size : 39,},
+              {sets : [1], label : 'Logo', size : 29,},
+              {sets : [2], label : 'Flowchart', size : 13,},
+              {sets : [0,1], size:0},
+              {sets : [0,2], size:6},
+              {sets : [1,2], size:0}];

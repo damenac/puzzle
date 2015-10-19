@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ldb"
+    nsURI="http://www.postfinance.ch/zvis/kobe/ldb/Ldb" nsPrefix="ldb">
+  <eClassifiers xsi:type="ecore:EClass" name="LdbModel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serverGroups" upperBound="-1"
+        eType="#//ServerGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="databaseGroups" upperBound="-1"
+        eType="#//DatabaseGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pdbs" upperBound="-1" eType="#//PhysicalDatabase"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scopeDefinitions" upperBound="-1"
+        eType="#//ScopeDefinition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definition" upperBound="-1"
+        eType="#//LdbDefinition" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Server">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ServerGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMandant" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="servers" upperBound="-1"
+        eType="#//Server" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatabaseGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="databaseDefs" upperBound="-1"
+        eType="#//DatabaseDef" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DatabaseDef">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LdbDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="physicalDatabases" unique="false"
+        upperBound="-1" eType="#//PhysicalDatabase"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hasScopes" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scopes" upperBound="-1"
+        eType="#//Scope" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScopeKind">
+    <eLiterals name="Konto" literal="Konto"/>
+    <eLiterals name="Datum" value="1" literal="Datum"/>
+    <eLiterals name="Monat" value="2" literal="Monat"/>
+    <eLiterals name="Activ" value="3" literal="Activ"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScopeDefinition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ScopeKind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primitivesType" eType="ecore:EClass ../../../../../../../ch.postfinance.zvis.primitives/src-gen/ch/postfinance/zvis/primitives/Primitives.ecore#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partType" eType="ecore:EClass ../../../../../../../ch.postfinance.zvis.primitives/src-gen/ch/postfinance/zvis/primitives/Primitives.ecore#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Scope">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ScopeDefinition" eType="#//ScopeDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="required" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bilanzKreiz" eType="#//BilanzKreiz"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="noScope" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PhysicalDatabase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dbmName" eType="ecore:EEnum ../../../../../../../ch.postfinance.zvis.zimt.dbmodel/src-gen/ch/postfinance/zvis/zimt/dbmodel/Dbmodel.ecore#//PhysicalDatabase"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="serverGroup" eType="#//ServerGroup"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="databaseGroup" eType="#//DatabaseGroup"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BilanzKreiz">
+    <eLiterals name="All" literal="All"/>
+    <eLiterals name="Mandant_PF" value="1" literal="Mandant_PF"/>
+    <eLiterals name="Mandant_REKA" value="2" literal="Mandant_REKA"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="validation" nsURI="http://www.cloudsmith.com/hammer/1.0.0/Puppet/Validation"
+    nsPrefix="validation">
+  <eClassifiers xsi:type="ecore:EClass" name="ValidationService">
+    <eOperations name="validateManifest" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Validates PP syntax for code given in code parameter."/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="DiagnosticChain will receive calls to add Diagnostic instances for discovered problems/information."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A String containing PP code to be validated. Errors are reported for a fictious file &quot;unnamed.pp&quot;."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+    <eOperations name="validateManifest">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Validates validity of a file (typically a .pp file). It may or may not include diagnostics that related to linking depending on the implementation of the validator.&#xA;The file parameter is a reference to a regular file."/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="DiagnosticChain will receive calls to add Diagnostic instances for discovered problems/information."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="sourceFile" eType="#//File">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A File containing .pp code (must end with .pp)."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+    <eOperations name="validateModule" eType="#//BuildResult">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Statically validates all files contained in a Puppet module. The File parameter is a reference to the top level folder containing the module.&#xA;"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="DiagnosticChain will receive calls to add Diagnostic instances for discovered problems/information."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="moduleDirectory" eType="#//File">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A File referencing a directory containing a Puppet Module."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+    <eOperations name="validateRepository" eType="#//BuildResult">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Statically validates all modules contained in a catalog (a directory of Puppet modules). The file parameter is a reference to the top level directory."/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="DiagnosticChain will receive calls to add Diagnostic instances for discovered problems/information."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="catalogRoot" eType="#//File">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A File referencing a directory containing Puppet Module directories."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+    <eOperations name="validateRepository">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Performs static validation and catalog production for a given node, it's factor data, a site.pp file, and a directory of modules.&#xA;"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="DiagnosticChain will receive calls to add Diagnostic instances for discovered problems/information."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="catalogRoot" eType="#//File">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A File referencing a directory/folder where a set of subfolders each conform to Puppet Module rules."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="factorData" eType="#//File">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A File containing Factor data for the node for which the catalog should be produced/validated."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="siteFile" eType="#//File">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A File referencing a site.pp (typical name) that maps hosts to puppet nodes."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="nodeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The name of the node (does not have to be the same as the hostname)."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+    <eOperations name="validate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EResource">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Validates PP syntax for code given in code parameter."/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="DiagnosticChain will receive calls to add Diagnostic instances for discovered problems/information."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A String containing PP code to be validated. Errors are reported for a fictious file &quot;unnamed.pp&quot;."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+    <eOperations name="validate" eType="#//BuildResult">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Performs validation and reports diagnostics for all files given by source under the control of options. If a set of examinedFiles is given the diagnostics reported is limited to this set. An empty set is the same as reporting diagnostics for all files in source.&#xA;&#xA;The options may be null, in which case a syntax check is performed on everything in the intersection of source and examinedFiles.&#xA;&#xA;The examinedFiles may contain individual regular files or directories. Directories in examinedFiles are validated as modules. One special case is when examinedFiles contains the source and source is a Directory - this is interpreted as source is a PUPPET-ROOT, and that validation for everything in the non-modules part is wanted (and possibly for a select set of modules). "/>
+      </eAnnotations>
+      <eParameters name="diagnostics" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="DiagnosticChain will receive calls to add Diagnostic instances for discovered problems/information."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="source" eType="#//File">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="A String containing PP code to be validated. Errors are reported for a fictious file &quot;unnamed.pp&quot;."/>
+        </eAnnotations>
+      </eParameters>
+      <eParameters name="options" eType="#//ValidationOptions"/>
+      <eParameters name="examinedFiles" eType="#//FileArray"/>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+    <eOperations name="produceSVG" eExceptions="#//IOException">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Produces SVG output (compressed or regular) by reading the dotStream input (in dot format), piping this to graphviz dot &#xA;layout engine producing SVG output that is written in compressed form to the svgStream. &#xA;The compression is performed by this method, the caller should &lt;b>not&lt;/b> provide a GZip stream."/>
+      </eAnnotations>
+      <eParameters name="dotStream" eType="#//InputStream"/>
+      <eParameters name="svgStream" eType="#//OutputStream"/>
+      <eParameters name="compress" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="monitor" eType="#//IProgressMonitor"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="File" instanceClassName="java.io.File"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Throwable" instanceClassName="java.lang.Throwable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DiagnosticData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="file" eType="#//File">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="File is a reference to a relative or absolute file, or is empty/null if the diagnostic is not file related.&#xA;&#xA;All diagnostic relating to files given (directly or contained) in the calls to the ValidationService will be reported with path's relative to the given root, or in the case of a single file, the leaf part of the path (the file name). Diagnostics relating to absolute files may appear - these may refer to files that are used by a particular diagnostician (e.g. system libraries or general configuration files). &#xA;&#xA;Also see #node."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="-1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Line number is the (first) line for which a diagnostician reported the diagnostic, or -1 if linenumber is irrelevant (or if file is null or empty).&#xA;Note that some diagnosticians may return a DetailedDiagnosticData with further information."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="node" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The node name is a symbolic reference to the host where the filename is relevant, or the node associated with a particular diagnostic&#xA;(a particular file may have diagnostics that are only relevant for a particular node, but reporting a diagnostic for a particular &#xA;node does not indicate that the problem relates only to this node, only that it was detected during processing of the given node). &#xA;The special node &quot;SERVER&quot; indicates if the problem was diagnosed as pertaining to the server side.&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="StringArray" instanceClassName="java.lang.String[]"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DetailedDiagnosticData" eSuperTypes="#//DiagnosticData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The offest from the beginning of the parsed text, or -1 if offset is not available.&#xA;&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Length is the length (from offset) that is the textual representation that the diagnostic apply to , or 0 if there where no visible textual representation.&#xA;A length of -1 indicates that length is irrelevant."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="issue" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The issue is a String naming a particular issue that makes it possible to have a more detailed understanding of an error and what could be done to repair it. (As opposed to parsing the error message to gain an understanding). Error messages may be subject to NLS translation, but never the issue name.&#xA;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="issueData" eType="#//StringArray">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The issue data is optional data associated with a particular issue - it is typically used to pass values calculated during validation and that may be meaningful to code that tries to repair or analyze a particular problem and where it may be expensive to recompute these values."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ValidationServiceDiagnosticCode">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Describes the Diagnostic#code produced by diagnosticians under the control of the ValidationService. i.e. the codes found when the DiagnosticSource is ValidationService."/>
+    </eAnnotations>
+    <eLiterals name="GEPPETTO" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A general diagnostic emitted by geppetto (as oppose to the more specific GEPPETTO_SYNTAX)."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="GEPPETTO_SYNTAX" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A syntax error found by Geppetto."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CATALOG_PARSER" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A diagnostic found by the catalog producer (running puppet), where the error was reported as &quot;Could not parse....&quot;."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CATALOG" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A general diagnostic prouced by the catalog validator (runnning puppet).&#xA;"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="FORGE" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A diagnostic produced by the forge compliance/validator."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="UNKNOWN">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A problem of unknown origin - typically indicates an internal error where the code was not set."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="INTERNAL_ERROR" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Used to report hard errors (typically) relating to the validation service itself or the environment where it runs.&#xA;"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RUBY_SYNTAX" value="7"/>
+    <eLiterals name="RUBY" value="8"/>
+    <eLiterals name="PUPPET_LINT" value="9" literal="PUPPET_LINT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Used to report issues generated by the puppet-lint program&#xA;"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValidationOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileType" lowerBound="1"
+        eType="#//FileType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkLayout" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkModuleSemantics" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Checking module semantics means that the module's dependencies are satisfied."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkReferences" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platformURI" eType="#//URI">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A URI to a pptp resource in string form. If null, a default pptp will be used when validating. An unloadable pptp reference will result in an internal error."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependencyGraphOptions"
+        eType="#//ModuleDependencyGraphOptions" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="encodingProvider" eType="#//IEncodingProvider"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="environment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="searchPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="complianceLevel" eType="#//ComplianceLevel">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Defaults to 2.7 if not specified."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="problemsAdvisor" eType="#//IPotentialProblemsAdvisor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FileType">
+    <eLiterals name="DETECT">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Detect if file is a single source file, or a directory, and if this directory has a &quot;modules&quot; subdirectory in it, interpret this director as &#xA;being a PUPPET_ROOT, else a MODULE_ROOT.&#xA;"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PUPPET_ROOT" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The file must be a directory, and its modules are expected to be found in a &quot;modules&quot; subdirectory. Manifests are expected to be in a &quot;manifests&quot; directory, etc."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MODULE_ROOT" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Expects the file to be a directory, and that it complies with a module's layout. It is not expected that there is a subdirectory called &quot;modules&quot;."/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="SINGLE_SOURCE_FILE" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The file should be a single source file or type &quot;.pp&quot;, &quot;.rb&quot; or &quot;Modulefile&quot;."/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="FileArray" instanceClassName="java.io.File[]"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IProgressMonitor" instanceClassName="org.eclipse.core.runtime.IProgressMonitor"
+      serializable="false"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="BuildResult" instanceClassName="com.cloudsmith.hammer.puppet.validation.runner.BuildResult"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="URI" instanceClassName="org.eclipse.emf.common.util.URI"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ModuleDependencyGraphOptions">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dotStream" lowerBound="1"
+        eType="#//OutputStream">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The stream where output text is written. Should be a buffered stream for best performance."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The title (in the upper left corner of the generated graph). If unset, a deault title is generated. If no title is wanted, set it to an empty string."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modulesToGraph" eType="#//FileArray">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="If unset, all modules found in the given data are included in the graph. When set, this array should contain references to the directories that represents modules. The transitive dependencies of such modules are then included in the graph."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="graphHrefType" eType="#//GraphHrefType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="graphHrefPrefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="OutputStream" instanceClassName="java.io.OutputStream"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="InputStream" instanceClassName="java.io.InputStream"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IOException" instanceClassName="java.io.IOException"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IEncodingProvider" instanceClassName="com.cloudsmith.hammer.puppet.validation.runner.IEncodingProvider"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="ComplianceLevel" instanceClassName="org.cloudsmith.geppetto.pp.dsl.validation.IValidationAdvisor.ComplianceLevel"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="GraphHrefType">
+    <eLiterals name="JS"/>
+    <eLiterals name="Github" value="1"/>
+    <eLiterals name="RelativeFile" value="2"/>
+    <eLiterals name="AbsoluteFile" value="3"/>
+    <eLiterals name="None" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="IPotentialProblemsAdvisor" instanceClassName="org.cloudsmith.geppetto.pp.dsl.validation.IPotentialProblemsAdvisor"/>
+</ecore:EPackage>

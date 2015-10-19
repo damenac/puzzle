@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spreadsheet"
+    nsURI="http://spreadsheet/1.0" nsPrefix="spreadsheet">
+  <eSubpackages name="Root">
+    <eClassifiers xsi:type="ecore:EClass" name="Cell">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//Root/Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Root/Expression"
+          transient="true" containment="true" eOpposite="#//Root/Expression/cell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="cell" eType="#//Root/Cell"
+          eOpposite="#//Root/Cell/expression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BinExpression" eSuperTypes="#//Root/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subexprs" upperBound="-1"
+          eType="#//Root/Expression"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="function : String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Value" eSuperTypes="#//Root/Expression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CellRef" eSuperTypes="#//Root/Expression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Root/Cell"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="String" instanceClassName="java.lang.String"/>
+  </eSubpackages>
+</ecore:EPackage>

@@ -32,7 +32,13 @@ public abstract class MetricsManager {
 		//Copying the java script libraries if they dont exist
 		URL libFolderPath = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/libs");
 		File libFolder = new File(FileLocator.resolve(libFolderPath).toURI());
-        File projectFolder = new File(project.getLocation().toString());
-        ProjectManagementServices.copyFolder(libFolder, projectFolder);
+        
+		File projectFolder = null;
+        if(this.project != null){
+        	projectFolder = new File(project.getLocation().toString());
+        	ProjectManagementServices.copyFolder(libFolder, projectFolder);
+        }
+        
+        
 	}
 }

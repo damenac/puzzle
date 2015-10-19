@@ -65,6 +65,34 @@ public class FamilysMetricManager extends MetricsManager {
 		outRileReport.close();
 	}
 	
+	public void createReport1LargeAnalysis(ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-LargeAnalysis.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = null;
+        
+        if(project != null)
+        	fileReport = new File(project.getLocation().toString() + "/Report-1-LargeAnalysis.html" );
+        else{
+        	String pathReport = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getLocation().replace("file:", "").replace("reference:", "");
+            fileReport = new File(pathReport + "Report-1-LargeAnalysis.html");
+        }
+        
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
 	public void createReport2CostSaving(ArrayList<Language> languages) throws URISyntaxException, IOException{
 		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-2-CostSavingsMetrics.html");
         File file = new File(FileLocator.resolve(path).toURI());

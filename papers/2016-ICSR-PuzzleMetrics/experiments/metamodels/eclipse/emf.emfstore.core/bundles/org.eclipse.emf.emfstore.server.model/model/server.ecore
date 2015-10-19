@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://eclipse.org/emf/emfstore/server/model"
+    nsPrefix="org.eclipse.emf.emfstore.internal.server.model">
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectHistory">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projectId" eType="#//ProjectId"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="versions" lowerBound="1"
+        upperBound="-1" eType="#//versioning/Version" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectDescription" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sharedProperties" upperBound="-1"
+        eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//EMFStoreProperty"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="branches" upperBound="-1"
+        eType="#//versioning/BranchInfo" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projectId" lowerBound="1"
+        eType="#//ProjectId" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" lowerBound="1"
+        eType="#//versioning/PrimaryVersionSpec" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SessionId" eSuperTypes="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//UniqueIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServerSpace">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="groups" upperBound="-1"
+        eType="#//accesscontrol/ACGroup" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="projects" upperBound="-1"
+        eType="#//ProjectHistory"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="openSessions" upperBound="-1"
+        eType="#//SessionId" transient="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
+        eType="#//accesscontrol/ACUser" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectId" eSuperTypes="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//UniqueIdentifier"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VersionInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="emfStoreVersionString"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClientVersionInfo">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FileIdentifier" eSuperTypes="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//IdentifiableElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AuthenticationInformation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sessionId" eType="#//SessionId"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedACUser" eType="#//accesscontrol/ACUser"
+        containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="versioning" nsURI="http://eclipse.org/emf/emfstore/server/model/versioning"
+      nsPrefix="org.eclipse.emf.emfstore.internal.server.model.versioning">
+    <eClassifiers xsi:type="ecore:EClass" name="TagVersionSpec" eSuperTypes="#//versioning/VersionSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DateVersionSpec" eSuperTypes="#//versioning/VersionSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimaryVersionSpec" eSuperTypes="#//versioning/VersionSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="identifier" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="projectStateChecksum"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VersionSpec" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="branch" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="trunk"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LogMessage">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="clientDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ChangePackage">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+          eType="#//versioning/operations/AbstractOperation" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+          eType="#//versioning/events/Event" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logMessage" eType="#//versioning/LogMessage"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="versionProperties" upperBound="-1"
+          eType="#//versioning/VersionProperty" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HistoryInfo">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="primarySpec" lowerBound="1"
+          eType="#//versioning/PrimaryVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nextSpec" lowerBound="1"
+          upperBound="-1" eType="#//versioning/PrimaryVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="previousSpec" lowerBound="1"
+          eType="#//versioning/PrimaryVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mergedFrom" lowerBound="1"
+          upperBound="-1" eType="#//versioning/PrimaryVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mergedTo" lowerBound="1"
+          upperBound="-1" eType="#//versioning/PrimaryVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logMessage" lowerBound="1"
+          eType="#//versioning/LogMessage" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tagSpecs" upperBound="-1"
+          eType="#//versioning/TagVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="versionProperties" upperBound="-1"
+          eType="#//versioning/VersionProperty" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="changePackage" eType="#//versioning/ChangePackage"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HistoryQuery" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//versioning/PrimaryVersionSpec"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="includeChangePackages"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="includeAllVersions" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RangeQuery" eSuperTypes="#//versioning/HistoryQuery">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperLimit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerLimit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="includeIncoming" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="includeOutgoing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PathQuery" eSuperTypes="#//versioning/HistoryQuery">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//versioning/PrimaryVersionSpec"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElementQuery" eSuperTypes="#//versioning/RangeQuery">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modelElements" upperBound="-1"
+          eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Version">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="primarySpec" lowerBound="1"
+          eType="#//versioning/PrimaryVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tagSpecs" upperBound="-1"
+          eType="#//versioning/TagVersionSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="nextVersion" eType="#//versioning/Version"
+          eOpposite="#//versioning/Version/previousVersion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="previousVersion" eType="#//versioning/Version"
+          eOpposite="#//versioning/Version/nextVersion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="logMessage" eType="#//versioning/LogMessage"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ancestorVersion" eType="#//versioning/Version"
+          eOpposite="#//versioning/Version/branchedVersions"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="branchedVersions" upperBound="-1"
+          eType="#//versioning/Version" eOpposite="#//versioning/Version/ancestorVersion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mergedToVersion" upperBound="-1"
+          eType="#//versioning/Version" eOpposite="#//versioning/Version/mergedFromVersion"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mergedFromVersion" upperBound="-1"
+          eType="#//versioning/Version" eOpposite="#//versioning/Version/mergedToVersion"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HeadVersionSpec" eSuperTypes="#//versioning/VersionSpec"/>
+    <eClassifiers xsi:type="ecore:EClass" name="VersionProperty">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BranchVersionSpec" eSuperTypes="#//versioning/VersionSpec"/>
+    <eClassifiers xsi:type="ecore:EClass" name="BranchInfo">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="head" eType="#//versioning/PrimaryVersionSpec"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//versioning/PrimaryVersionSpec"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AncestorVersionSpec" eSuperTypes="#//versioning/VersionSpec">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//versioning/PrimaryVersionSpec"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//versioning/PrimaryVersionSpec"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PagedUpdateVersionSpec" eSuperTypes="#//versioning/VersionSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxChanges" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="baseVersionSpec" eType="#//versioning/PrimaryVersionSpec"
+          containment="true"/>
+    </eClassifiers>
+    <eSubpackages name="operations" nsURI="http://eclipse.org/emf/emfstore/server/model/versioning/operations"
+        nsPrefix="org.eclipse.emf.emfstore.internal.server.model.versioning.operations">
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractOperation" abstract="true"
+          eSuperTypes="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//IdentifiableElement">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="modelElementId" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="accepted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            transient="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="clientDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CompositeOperation" eSuperTypes="#//versioning/operations/AbstractOperation">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="subOperations" upperBound="-1"
+            eType="#//versioning/operations/AbstractOperation" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="mainOperation" eType="#//versioning/operations/AbstractOperation"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="compositeDescription"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="reversed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="FeatureOperation" abstract="true"
+          eSuperTypes="#//versioning/operations/AbstractOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral=""/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="unset" eType="#//versioning/operations/UnsetType"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="CreateDeleteOperation" eSuperTypes="#//versioning/operations/AbstractOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="delete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="modelElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="subOperations" upperBound="-1"
+            eType="#//versioning/operations/ReferenceOperation" containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="eObjectToIdMap" upperBound="-1"
+            eType="#//versioning/operations/EObjectToModelElementIdMap" containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AttributeOperation" eSuperTypes="#//versioning/operations/FeatureOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MultiAttributeOperation" eSuperTypes="#//versioning/operations/FeatureOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="indexes" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="referencedValues" unique="false"
+            upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MultiAttributeSetOperation" eSuperTypes="#//versioning/operations/FeatureOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="newValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MultiAttributeMoveOperation" eSuperTypes="#//versioning/operations/FeatureOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="newIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="referencedValue" unique="false"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="SingleReferenceOperation" eSuperTypes="#//versioning/operations/ReferenceOperation">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="oldValue" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MultiReferenceSetOperation" eSuperTypes="#//versioning/operations/ReferenceOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="oldValue" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="newValue" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MultiReferenceOperation" eSuperTypes="#//versioning/operations/ReferenceOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="add" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="index" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="referencedModelElements"
+            upperBound="-1" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="MultiReferenceMoveOperation" eSuperTypes="#//versioning/operations/FeatureOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="newIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="referencedModelElementId"
+            eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ReferenceOperation" abstract="true"
+          eSuperTypes="#//versioning/operations/FeatureOperation">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="bidirectional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="oppositeFeatureName"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="containmentType" eType="#//versioning/operations/ContainmentType"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="OperationId" eSuperTypes="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//UniqueIdentifier"/>
+      <eClassifiers xsi:type="ecore:EClass" name="OperationGroup">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+            eType="#//versioning/operations/AbstractOperation"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ModelElementGroup">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="modelElements" upperBound="-1"
+            eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="ContainmentType">
+        <eLiterals name="NONE"/>
+        <eLiterals name="CONTAINER" value="1"/>
+        <eLiterals name="CONTAINMENT" value="2"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="EObjectToModelElementIdMap" instanceClassName="java.util.Map$Entry">
+        <eStructuralFeatures xsi:type="ecore:EReference" name="key" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+            containment="true"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EEnum" name="UnsetType">
+        <eLiterals name="NONE" literal=""/>
+        <eLiterals name="IS_UNSET" value="1"/>
+        <eLiterals name="WAS_UNSET" value="2"/>
+      </eClassifiers>
+      <eSubpackages name="semantic" nsURI="http://eclipse.org/emf/emfstore/server/model/versioning/operations/semantic"
+          nsPrefix="org.eclipse.emf.emfstore.internal.server.model.versioning.operations.semantic">
+        <eClassifiers xsi:type="ecore:EClass" name="SemanticCompositeOperation" abstract="true"
+            eSuperTypes="#//versioning/operations/CompositeOperation"/>
+      </eSubpackages>
+    </eSubpackages>
+    <eSubpackages name="events" nsURI="http://eclipse.org/emf/emfstore/server/model/versioning/events"
+        nsPrefix="org.eclipse.emf.emfstore.internal.server.model.versioning.events">
+      <eClassifiers xsi:type="ecore:EClass" name="Event">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+      </eClassifiers>
+      <eSubpackages name="server" nsURI="http://eclipse.org/emf/emfstore/server/model/versioning/events/server/"
+          nsPrefix="org.eclipse.emf.emfstore.internal.server.model.versioning.events.server">
+        <eClassifiers xsi:type="ecore:EClass" name="ServerEvent" abstract="true" eSuperTypes="#//versioning/events/Event"/>
+        <eClassifiers xsi:type="ecore:EClass" name="ServerProjectEvent" abstract="true"
+            eSuperTypes="#//versioning/events/server/ServerEvent">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="projectId" eType="#//ProjectId"
+              containment="true"/>
+        </eClassifiers>
+        <eClassifiers xsi:type="ecore:EClass" name="ProjectUpdatedEvent" eSuperTypes="#//versioning/events/server/ServerProjectEvent">
+          <eStructuralFeatures xsi:type="ecore:EReference" name="newVersion" eType="#//versioning/PrimaryVersionSpec"
+              containment="true"/>
+        </eClassifiers>
+      </eSubpackages>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="accesscontrol" nsURI="http://eclipse.org/emf/emfstore/server/model/accesscontrol"
+      nsPrefix="org.eclipse.emf.emfstore.internal.server.model.accesscontrol">
+    <eClassifiers xsi:type="ecore:EClass" name="ACUser" eSuperTypes="#//accesscontrol/ACOrgUnit">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="effectiveGroups" upperBound="-1"
+          eType="#//accesscontrol/ACGroup" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ACOrgUnit" eSuperTypes="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//IdentifiableElement">
+      <eOperations name="getId" eType="#//accesscontrol/ACOrgUnitId"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="roles" upperBound="-1"
+          eType="#//accesscontrol/roles/Role" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+          eType="#//accesscontrol/OrgUnitProperty" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ACGroup" eSuperTypes="#//accesscontrol/ACOrgUnit">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="members" upperBound="-1"
+          eType="#//accesscontrol/ACOrgUnit" eKeys="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//IdentifiableElement/identifier"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ACOrgUnitId" eSuperTypes="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//UniqueIdentifier"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OrgUnitProperty">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="project" eType="#//ProjectId"
+          containment="true" eKeys="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//UniqueIdentifier/id"/>
+    </eClassifiers>
+    <eSubpackages name="roles" nsURI="http://eclipse.org/emf/emfstore/server/model/roles"
+        nsPrefix="org.eclipse.emf.emfstore.internal.server.model.accesscontrol.roles">
+      <eClassifiers xsi:type="ecore:EClass" name="Role" abstract="true">
+        <eOperations name="canAdministrate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="projectId" eType="#//ProjectId"/>
+        </eOperations>
+        <eOperations name="canCreate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="projectId" eType="#//ProjectId"/>
+          <eParameters name="modelElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        </eOperations>
+        <eOperations name="canDelete" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="projectId" eType="#//ProjectId"/>
+          <eParameters name="modelElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        </eOperations>
+        <eOperations name="canModify" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="projectId" eType="#//ProjectId"/>
+          <eParameters name="modelElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        </eOperations>
+        <eOperations name="canRead" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+          <eParameters name="projectId" eType="#//ProjectId"/>
+          <eParameters name="modelElement" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+        </eOperations>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="projects" upperBound="-1"
+            eType="#//ProjectId" containment="true" eKeys="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//UniqueIdentifier/id"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ReaderRole" eSuperTypes="#//accesscontrol/roles/Role"/>
+      <eClassifiers xsi:type="ecore:EClass" name="WriterRole" eSuperTypes="#//accesscontrol/roles/Role"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ProjectAdminRole" eSuperTypes="#//accesscontrol/roles/Role"/>
+      <eClassifiers xsi:type="ecore:EClass" name="ServerAdmin" eSuperTypes="#//accesscontrol/roles/Role"/>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="url" nsURI="http://eclipse.org/emf/emfstore/server/model/url"
+      nsPrefix="org.eclipse.emf.emfstore.internal.server.model.url">
+    <eClassifiers xsi:type="ecore:EClass" name="ServerUrl">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ProjectUrlFragment">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="projectId" eType="#//ProjectId"
+          containment="true" eKeys="../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//UniqueIdentifier/id"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElementUrlFragment">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modelElementId" eType="ecore:EClass ../../org.eclipse.emf.emfstore.common.model/model/common.ecore#//ModelElementId"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ModelElementUrl">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="serverUrl" eType="#//url/ServerUrl"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="projectUrlFragment" eType="#//url/ProjectUrlFragment"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="modelElementUrlFragment"
+          eType="#//url/ModelElementUrlFragment" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

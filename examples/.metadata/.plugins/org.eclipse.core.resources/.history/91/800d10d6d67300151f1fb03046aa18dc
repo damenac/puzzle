@@ -1,0 +1,72 @@
+package bigFamily
+
+ language 101companies {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/101companies.ecore"
+     exactType 101companiesMT
+ }
+
+ language _0 {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/_0.ecore"
+     exactType _0MT
+ }
+
+ language aadl2 {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/aadl2.ecore"
+     exactType aadl2MT
+ }
+
+ language abapmapping {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/abapmapping.ecore"
+     exactType abapmappingMT
+ }
+
+ language abapobj {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/abapobj.ecore"
+     exactType abapobjMT
+ }
+
+ language ABase {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/ABase.ecore"
+     exactType ABaseMT
+ }
+
+ language ABC {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/ABC.ecore"
+     exactType ABCMT
+ }
+
+ language abnf {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/abnf.ecore"
+     exactType abnfMT
+ }
+
+ language abstractcim {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/abstractcim.ecore"
+     exactType abstractcimMT
+ }
+
+ language abstractsyntax {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/abstractsyntax.ecore"
+     exactType abstractsyntaxMT
+ }
+
+ language AbstractSyntaxStereotypesUML1.4 {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/AbstractSyntaxStereotypesUML1.4.ecore"
+     exactType AbstractSyntaxStereotypesUML1.4MT
+ }
+
+ language AbstractTypes {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/AbstractTypes.ecore"
+     exactType AbstractTypesMT
+ }
+
+ language AbstractUI {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/AbstractUI.ecore"
+     exactType AbstractUIMT
+ }
+
+ language acad {
+     syntax "/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/temp/acad.ecore"
+     exactType acadMT
+ }
+

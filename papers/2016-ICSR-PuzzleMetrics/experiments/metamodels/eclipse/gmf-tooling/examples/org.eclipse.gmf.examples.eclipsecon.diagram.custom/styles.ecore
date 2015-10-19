@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="styles"
+    nsURI="http:///org/eclipse/gmf/examples/eclipsecon/diagram/custom/styles.ecore"
+    nsPrefix="org.eclipse.gmf.examples.eclipsecon.diagram.custom.styles">
+  <eClassifiers xsi:type="ecore:EClass" name="PresenterStyle" eSuperTypes="../org.eclipse.gmf.runtime.notation/model/notation.ecore#//Style">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imageURL" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="review" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayAsDefault" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"
+        defaultValueLiteral="Boolean.TRUE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Style" instanceClassName="org.eclipse.gmf.runtime.notation.Style"
+      abstract="true" interface="true"/>
+</ecore:EPackage>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="types"
+    nsURI="http://www.eclipse.org/tptp/symptom/ResourceTypes" nsPrefix="types">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="&#xD;&#xA;&#x9;&#x9;&#x9;Annex to the ACAB.CT0302 &quot;Autonomic Computing Resource Taxonomy&quot;.&#xD;&#xA;&#x9;&#x9;&#x9;Copyright (C) 2003, 2007 IBM Corporation. All rights reserved.&#xD;&#xA;&#x9;&#x9;"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EEnum" name="J2EERT">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="J2EE_RT"/>
+    </eAnnotations>
+    <eLiterals name="J2EERTIBMWebSphereApplicationServer" literal="J2EERT:IBMWebSphereApplicationServer"/>
+    <eLiterals name="J2EERTBEAWebLogicApplicationServer" value="1" literal="J2EERT:BEAWebLogicApplicationServer"/>
+    <eLiterals name="J2EERTOracleApplicationServer" value="2" literal="J2EERT:OracleApplicationServer"/>
+    <eLiterals name="J2EERTSunONEApplicationServer" value="3" literal="J2EERT:SunONEApplicationServer"/>
+    <eLiterals name="J2EERTApacheTomCatApplicationServer" value="4" literal="J2EERT:ApacheTomCatApplicationServer"/>
+    <eLiterals name="J2EERTJBossApplicationServer" value="5" literal="J2EERT:JBossApplicationServer"/>
+    <eLiterals name="J2EERTWebModule" value="6" literal="J2EERT:WebModule"/>
+    <eLiterals name="J2EERTEJBModule" value="7" literal="J2EERT:EJBModule"/>
+    <eLiterals name="J2EERTApplication" value="8" literal="J2EERT:Application"/>
+    <eLiterals name="J2EERTMailProvider" value="9" literal="J2EERT:MailProvider"/>
+    <eLiterals name="J2EERTMailSession" value="10" literal="J2EERT:MailSession"/>
+    <eLiterals name="J2EERTURLProvider" value="11" literal="J2EERT:URLProvider"/>
+    <eLiterals name="J2EERTURL" value="12" literal="J2EERT:URL"/>
+    <eLiterals name="J2EERTJDBCProvider" value="13" literal="J2EERT:JDBCProvider"/>
+    <eLiterals name="J2EERTDataSource" value="14" literal="J2EERT:DataSource"/>
+    <eLiterals name="J2EERTJ2CConnectionFactory" value="15" literal="J2EERT:J2CConnectionFactory"/>
+    <eLiterals name="J2EERTJMSProvider" value="16" literal="J2EERT:JMSProvider"/>
+    <eLiterals name="J2EERTJMSConnectionFactory" value="17" literal="J2EERT:JMSConnectionFactory"/>
+    <eLiterals name="J2EERTServer" value="18" literal="J2EERT:Server"/>
+    <eLiterals name="J2EERTResourceFactory" value="19" literal="J2EERT:ResourceFactory"/>
+    <eLiterals name="J2EERTJ2EEDomain" value="20" literal="J2EERT:J2EE_Domain"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="J2EERTObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="J2EE_RT:Object"/>
+      <details key="baseType" value="J2EE_RT"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OSRT">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="OS_RT"/>
+    </eAnnotations>
+    <eLiterals name="OSRTRedHatLinux" literal="OSRT:RedHatLinux"/>
+    <eLiterals name="OSRTSuSELinux" value="1" literal="OSRT:SuSELinux"/>
+    <eLiterals name="OSRTTurboLinux" value="2" literal="OSRT:TurboLinux"/>
+    <eLiterals name="OSRTUnitedLinux" value="3" literal="OSRT:UnitedLinux"/>
+    <eLiterals name="OSRTMandrakeLinux" value="4" literal="OSRT:MandrakeLinux"/>
+    <eLiterals name="OSRTSlackwareLinux" value="5" literal="OSRT:SlackwareLinux"/>
+    <eLiterals name="OSRTSunSolaris" value="6" literal="OSRT:SunSolaris"/>
+    <eLiterals name="OSRTIBMAIX" value="7" literal="OSRT:IBMAIX"/>
+    <eLiterals name="OSRTHPUX" value="8" literal="OSRT:HPUX"/>
+    <eLiterals name="OSRTNovellNetware" value="9" literal="OSRT:NovellNetware"/>
+    <eLiterals name="OSRTIBMzOS" value="10" literal="OSRT:IBMzOS"/>
+    <eLiterals name="OSRTIBMMVS" value="11" literal="OSRT:IBMMVS"/>
+    <eLiterals name="OSRTIBMOS400" value="12" literal="OSRT:IBMOS400"/>
+    <eLiterals name="OSRTMicrosoftWindows98" value="13" literal="OSRT:MicrosoftWindows_98"/>
+    <eLiterals name="OSRTMicrosoftWindowsME" value="14" literal="OSRT:MicrosoftWindows_ME"/>
+    <eLiterals name="OSRTMicrosoftWindowsNTWorkstation" value="15" literal="OSRT:MicrosoftWindows_NT_Workstation"/>
+    <eLiterals name="OSRTMicrosoftWindowsNTServer" value="16" literal="OSRT:MicrosoftWindows_NT_Server"/>
+    <eLiterals name="OSRTMicrosoftWindows2000Workstation" value="17" literal="OSRT:MicrosoftWindows_2000_Workstation"/>
+    <eLiterals name="OSRTMicrosoftWindows2000Server" value="18" literal="OSRT:MicrosoftWindows_2000_Server"/>
+    <eLiterals name="OSRTMicrosoftWindows2000AdvancedServer" value="19" literal="OSRT:MicrosoftWindows_2000_AdvancedServer"/>
+    <eLiterals name="OSRTMicrosoftWindowsXPHome" value="20" literal="OSRT:MicrosoftWindows_XP_Home"/>
+    <eLiterals name="OSRTMicrosoftWindowsXPProfessional" value="21" literal="OSRT:MicrosoftWindows_XP_Professional"/>
+    <eLiterals name="OSRTMicrosoftWindows2003Server" value="22" literal="OSRT:MicrosoftWindows_2003_Server"/>
+    <eLiterals name="OSRTMicrosoftWindows2003AdvancedServer" value="23" literal="OSRT:MicrosoftWindows_2003_AdvancedServer"/>
+    <eLiterals name="OSRTMACOS" value="24" literal="OSRT:MACOS"/>
+    <eLiterals name="OSRTFreeBSD" value="25" literal="OSRT:FreeBSD"/>
+    <eLiterals name="OSRTUnixWare" value="26" literal="OSRT:UnixWare"/>
+    <eLiterals name="OSRTOpenServer" value="27" literal="OSRT:OpenServer"/>
+    <eLiterals name="OSRTTru64UNIX" value="28" literal="OSRT:Tru64UNIX"/>
+    <eLiterals name="OSRTReliantUNIX" value="29" literal="OSRT:ReliantUNIX"/>
+    <eLiterals name="OSRTMicrosoftWinCE" value="30" literal="OSRT:MicrosoftWinCE"/>
+    <eLiterals name="OSRTMicrosoftXPE" value="31" literal="OSRT:MicrosoftXPE"/>
+    <eLiterals name="OSRTPalmOS" value="32" literal="OSRT:PalmOS"/>
+    <eLiterals name="OSRTSymbian" value="33" literal="OSRT:Symbian"/>
+    <eLiterals name="OSRTWindows" value="34" literal="OSRT:Windows"/>
+    <eLiterals name="OSRTWindowsWin32" value="35" literal="OSRT:Windows-Win32"/>
+    <eLiterals name="OSRTUNIX" value="36" literal="OSRT:UNIX"/>
+    <eLiterals name="OSRTPOSIX" value="37" literal="OSRT:POSIX"/>
+    <eLiterals name="OSRTLinux" value="38" literal="OSRT:Linux"/>
+    <eLiterals name="OSRTOperatingSystem" value="39" literal="OSRT:Operating_System"/>
+    <eLiterals name="OSRTWindowsNT" value="40" literal="OSRT:Windows_NT"/>
+    <eLiterals name="OSRTWindows2000" value="41" literal="OSRT:Windows_2000"/>
+    <eLiterals name="OSRTWindowsXP" value="42" literal="OSRT:Windows_XP"/>
+    <eLiterals name="OSRTWindows2003" value="43" literal="OSRT:Windows_2003"/>
+    <eLiterals name="OSRTOSLanguageRuntime" value="44" literal="OSRT:OS_Language_Runtime"/>
+    <eLiterals name="OSRTOSDeviceDriver" value="45" literal="OSRT:OS_Device_Driver"/>
+    <eLiterals name="OSRTOSSoftware" value="46" literal="OSRT:OS_Software"/>
+    <eLiterals name="OSRTOSProcess" value="47" literal="OSRT:OS_Process"/>
+    <eLiterals name="OSRTOSThread" value="48" literal="OSRT:OS_Thread"/>
+    <eLiterals name="OSRTOSTCPIPPort" value="49" literal="OSRT:OS_TCPIP_port"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="OSRTObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="OS_RT:Object"/>
+      <details key="baseType" value="OS_RT"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RDBRT">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RDB_RT"/>
+    </eAnnotations>
+    <eLiterals name="RDBRTIBMDB2UDB" literal="RDBRT:IBMDB2UDB"/>
+    <eLiterals name="RDBRTInformix" value="1" literal="RDBRT:Informix"/>
+    <eLiterals name="RDBRTSybase" value="2" literal="RDBRT:Sybase"/>
+    <eLiterals name="RDBRTOracle" value="3" literal="RDBRT:Oracle"/>
+    <eLiterals name="RDBRTMicrosoftSQL" value="4" literal="RDBRT:MicrosoftSQL"/>
+    <eLiterals name="RDBRTRDBNodeGroup" value="5" literal="RDBRT:RDB_NodeGroup"/>
+    <eLiterals name="RDBRTRDB" value="6" literal="RDBRT:RDB"/>
+    <eLiterals name="RDBRTRDBApplication" value="7" literal="RDBRT:RDB_Application"/>
+    <eLiterals name="RDBRTRDBConnection" value="8" literal="RDBRT:RDB_Connection"/>
+    <eLiterals name="RDBRTRDBInstance" value="9" literal="RDBRT:RDB_Instance"/>
+    <eLiterals name="RDBRTRDBTable" value="10" literal="RDBRT:RDB_Table"/>
+    <eLiterals name="RDBRTRDBTablespace" value="11" literal="RDBRT:RDB_Tablespace"/>
+    <eLiterals name="RDBRTRDBTablespaceContainer" value="12" literal="RDBRT:RDB_Tablespace_Container"/>
+    <eLiterals name="RDBRTRDBDatabase" value="13" literal="RDBRT:RDB_Database"/>
+    <eLiterals name="RDBRTRDBNode" value="14" literal="RDBRT:RDB_Node"/>
+    <eLiterals name="RDBRTRDBAPPCNode" value="15" literal="RDBRT:RDB_APPC_Node"/>
+    <eLiterals name="RDBRTRDBAPPCLUNode" value="16" literal="RDBRT:RDB_APPCLU_Node"/>
+    <eLiterals name="RDBRTRDBAPPNNode" value="17" literal="RDBRT:RDB_APPN_Node"/>
+    <eLiterals name="RDBRTRDBNETBIOSNode" value="18" literal="RDBRT:RDB_NETBIOS_Node"/>
+    <eLiterals name="RDBRTRDBTCPIPNode" value="19" literal="RDBRT:RDB_TCPIP_Node"/>
+    <eLiterals name="RDBRTRDBLDAPNode" value="20" literal="RDBRT:RDB_LDAP_Node"/>
+    <eLiterals name="RDBRTRDBLocalNode" value="21" literal="RDBRT:RDB_Local_Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RDBRTObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RDB_RT:Object"/>
+      <details key="baseType" value="RDB_RT"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ResourceCategory" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ResourceCategory"/>
+      <details key="memberTypes" value="OS_RT J2EE_RT WS_RT RDB_RT"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WSRT">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="WS_RT"/>
+    </eAnnotations>
+    <eLiterals name="WSRTWSDomain" literal="WSRT:WS_Domain"/>
+    <eLiterals name="WSRTDeploymentTarget" value="1" literal="WSRT:DeploymentTarget"/>
+    <eLiterals name="WSRTDeployableObject" value="2" literal="WSRT:DeployableObject"/>
+    <eLiterals name="WSRTServerCluster" value="3" literal="WSRT:ServerCluster"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="WSRTObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="WS_RT:Object"/>
+      <details key="baseType" value="WS_RT"/>
+    </eAnnotations>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_3GNeoVAnEd64JYB58_U7Wg"
+    name="IAC" nsURI="http://mi.parisdescartes.fr/ASEME/metamodels/IAC" nsPrefix="IAC">
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_3GNeolAnEd64JYB58_U7Wg" name="Node">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFsFAnEd64JYB58_U7Wg"
+        name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFslAnEd64JYB58_U7Wg"
+        name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFtFAnEd64JYB58_U7Wg"
+        name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFtlAnEd64JYB58_U7Wg"
+        name="activity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_3GOFuFAnEd64JYB58_U7Wg"
+        name="variables" upperBound="-1" eType="#_3GOFu1AnEd64JYB58_U7Wg"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_3GOFuVAnEd64JYB58_U7Wg" name="root"
+      eSuperTypes="#_3GNeolAnEd64JYB58_U7Wg"/>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_3GOFu1AnEd64JYB58_U7Wg" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFvFAnEd64JYB58_U7Wg"
+        name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFvlAnEd64JYB58_U7Wg"
+        name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_3GOFwFAnEd64JYB58_U7Wg" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFwVAnEd64JYB58_U7Wg"
+        name="TE" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_3GOFw1AnEd64JYB58_U7Wg"
+        name="source" lowerBound="1" eType="#_3GNeolAnEd64JYB58_U7Wg"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_3GOFxVAnEd64JYB58_U7Wg"
+        name="target" lowerBound="1" eType="#_3GNeolAnEd64JYB58_U7Wg"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFx1AnEd64JYB58_U7Wg"
+        name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_3GOFyVAnEd64JYB58_U7Wg" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_3GOFylAnEd64JYB58_U7Wg"
+        name="nodes" upperBound="-1" eType="#_3GNeolAnEd64JYB58_U7Wg"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_3GOFzFAnEd64JYB58_U7Wg"
+        name="transitions" upperBound="-1" eType="#_3GOFwFAnEd64JYB58_U7Wg"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_3GOFzlAnEd64JYB58_U7Wg"
+        name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#_3GOFu1AnEd64JYB58_U7Wg"/>
+  </eClassifiers>
+</ecore:EPackage>

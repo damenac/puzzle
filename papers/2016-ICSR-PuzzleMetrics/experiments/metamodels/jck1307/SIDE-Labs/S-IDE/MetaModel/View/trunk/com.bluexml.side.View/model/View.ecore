@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2007-2011  BlueXML - www.bluexml.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="view"
+    nsURI="http://www.kerblue.org/view/1.0" nsPrefix="view">
+  <eClassifiers xsi:type="ecore:EClass" name="ViewCollection" eSuperTypes="../../com.bluexml.side.Common/model/Common.ecore#//Package">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="nameNotNull"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.bluexml.com/OCL">
+      <details key="nameNotNull" value="not self.name.oclIsUndefined() and self.name &lt;> ''"/>
+    </eAnnotations>
+    <eOperations name="getAllViews" upperBound="-1" eType="#//AbstractView">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="method to get all instances of AbstractView"/>
+        <details key="body" value="ViewCollection.allInstances().views ->union(ViewCollection.allInstances().composedViews)"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getAllViewsAndSubViews" upperBound="-1" eType="#//AbstractView">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="method to get all instances of AbstractView"/>
+        <details key="body" value="AbstractView.allInstances()"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="views" upperBound="-1"
+        eType="#//AbstractView" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composedViews" upperBound="-1"
+        eType="#//ComposedView" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldContainer" abstract="true" eSuperTypes="#//FieldElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//FieldElement" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="use to list undesirable item"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="disabled" upperBound="-1"
+        eType="#//FieldElement" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="list fieldElement that must be hidden"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldElement" abstract="true" eSuperTypes="#//Stylable ../../com.bluexml.side.Common/model/Common.ecore#//NamedModelElement">
+    <eAnnotations source="http://www.bluexml.com/OCL">
+      <details key="noSpecialCharacters" value="self.name.regexMatch('[\w]*') = true"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noSpecialCharacters"/>
+    </eAnnotations>
+    <eOperations name="getViewCollection" upperBound="-1" eType="#//ViewCollection">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="return the root model element (viewCollection)"/>
+        <details key="body" value="ViewCollection.allInstances()"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapTo" eType="ecore:EClass ../../com.bluexml.side.Common/model/Common.ecore#//ModelElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="this may be use to show of the path use to reach the data to display exemple for attribute Object : ClassA ->association1 ->ClassB ->AspectA ->Attribute1"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="suffix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hidden" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractView" abstract="true" eSuperTypes="#//FieldContainer">
+    <eAnnotations source="http://www.bluexml.com/OCL">
+      <details key="noSameName" value="if (self.getContainer().oclIsTypeOf(ViewCollection)) then&#xD;&#x9;ViewCollection.allInstances().views ->union(ViewCollection.allInstances().composedViews) -> select( t : AbstractView | self.name = t.name) -> size() = 1&#xD;else&#xD;&#x9;self.getContainer().oclAsType(FieldContainer).children -> select( t : FieldElement | self.name = t.name) -> size() = 1&#xD;endif"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noSameName"/>
+    </eAnnotations>
+    <eOperations name="getFields" upperBound="-1" eType="#//Field">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="Get all the fields of the AbstractView, excluding the FieldContainers"/>
+        <details key="body" value="if (self.oclIsKindOf(AbstractDataTable)) then&#xD;&#x9;self.oclAsType(AbstractDataTable).getCols()->children->select(oclIsKindOf(Field))->asSequence()->union(self.getDirectChildFields()->asSequence()).oclAsType(Field)  &#xD;else self.getDirectChildFields().oclAsType(Field) endif"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getDirectChildFields" upperBound="-1" eType="#//Field">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="Get all the fields of the AbstractView, excluding the FieldContainers"/>
+        <details key="body" value="self.children->select(oclIsKindOf(Field)).oclAsType(Field) ->asSequence()"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getInnerView" upperBound="-1" eType="#//AbstractView">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="Get inner AbtractView of the AbstractView"/>
+        <details key="body" value="self.children->select(oclIsKindOf(AbstractView))"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getDisabledAndEnabledField" upperBound="-1" eType="#//Field">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="Get all the fields of the AbstractView, including disabled Field, excluding the FieldContainers"/>
+        <details key="body" value="self.getFields()->union(self.getDisabledFields())"/>
+      </eAnnotations>
+    </eOperations>
+    <eOperations name="getDisabledFields" upperBound="-1" eType="#//Field">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="Get all the disabled Fields"/>
+        <details key="body" value="if (self.oclIsKindOf(AbstractDataTable)) then self.oclAsType(AbstractDataTable).disabled->select(oclIsKindOf(Col)).oclAsType(Col).children->select(oclIsKindOf(Field))->asSet()->union(self.disabled->select(oclIsKindOf(Field))).oclAsType(Field) else self.disabled->select(oclIsKindOf(Field)).oclAsType(Field) endif"/>
+      </eAnnotations>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractViewOf" abstract="true" eSuperTypes="#//AbstractView">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="viewOf" eType="ecore:EClass ../../com.bluexml.side.Class/model/Class.ecore#//AbstractClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDataTable" abstract="true" eSuperTypes="#//AbstractViewOf #//DataTableElement #//Paginable">
+    <eOperations name="getCols" upperBound="-1" eType="#//Col">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="description" value="Get all the Cols of the AbstractView"/>
+        <details key="body" value="self.children->select(oclIsTypeOf(Col)).oclAsType(Col)"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="haveRowActions" eType="ecore:EClass ../../com.bluexml.side.Common/model/Common.ecore#//OperationComponent"
+        containment="true">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="set action list available on each row"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="haveSelectActions" eType="ecore:EClass ../../com.bluexml.side.Common/model/Common.ecore#//OperationComponent"
+        containment="true">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="set available actions on selected rows"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="haveDefaultColActions"
+        eType="ecore:EClass ../../com.bluexml.side.Common/model/Common.ecore#//OperationComponent"
+        containment="true">
+      <eAnnotations source="http://www.topcased.org/documentation">
+        <details key="documentation" value="use this to setup default actions available on each colomn"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Col" eSuperTypes="#//FieldContainer #//Movable #//Editable #//Filterable #//Sortable #//Actionable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Paging">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paginationStyle" lowerBound="1"
+        eType="#//PaginationStyle"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxItems" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="use -1 for unlimited"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxPage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sorting">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sortOrder" eType="#//SortOrder">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="must be set if sortable"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sorted" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filtering">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultFilterValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Styling" eSuperTypes="../../com.bluexml.side.Common/model/Common.ecore#//MetaInfoGroup">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="use to setup presentation options wath can not be lised because of technical dependencies (visualizer specification)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="this can be an identifier for CSS, xsl file or anything else that can manage style maybe a theme id,&#xD;nb : styles information are not available for generation purpose in this case&#xD;if you need to store style information in the model use instead metaData or available Style properties"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SortOrder">
+    <eLiterals name="asc" literal="asc"/>
+    <eLiterals name="desc" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PaginationStyle">
+    <eLiterals name="page"/>
+    <eLiterals name="scroll" value="1"/>
+    <eLiterals name="none" value="-1"/>
+    <eLiterals name="more" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Halign">
+    <eLiterals name="center"/>
+    <eLiterals name="left" value="1"/>
+    <eLiterals name="right" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTableElement" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataList" eSuperTypes="#//AbstractDataTable #//Col"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataTable" eSuperTypes="#//AbstractDataTable #//Actionable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="defaultColSetUp" eType="#//Col"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FacetMap" eSuperTypes="#//AbstractViewOf #//Paginable #//Actionable">
+    <eOperations name="getResultsAttributes" upperBound="-1" eType="#//FieldElement">
+      <eAnnotations source="http://www.bluexml.com/OCL">
+        <details key="body" value="self.children->select(oclIsKindOf(AbstractView))->asOrderedSet()->first().oclAsType(AbstractView).children->select(oclIsKindOf(FieldElement))"/>
+        <details key="description" value="Get the first element of the abstract View in the Facetmap"/>
+      </eAnnotations>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayEmptyFacet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="facetDisplayType" eType="#//FacetDisplayType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tree" eSuperTypes="#//AbstractViewOf #//Sortable #//Editable #//Movable #//Filterable #//Actionable">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Display data as Tree, the model Element &quot;dataType&quot; can be an clazz.AssociationEnd, so the tree can be buid following the Association"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeOperations" eType="ecore:EClass ../../com.bluexml.side.Common/model/Common.ecore#//OperationComponent"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodeValue" lowerBound="1"
+        eType="#//FieldElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultDepth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDepth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComposedView" eSuperTypes="#//AbstractView"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Field" abstract="true" eSuperTypes="#//FieldElement">
+    <eAnnotations source="http://www.bluexml.com/OCL">
+      <details key="noFieldMapped" value="not self.mapTo.oclIsUndefined()"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="noFieldMapped"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="patern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paternLanguage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" upperBound="-1" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextField" eSuperTypes="#//Field">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="widgetType" eType="#//WidgetTextType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanField" eSuperTypes="#//Field">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="split" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PasswordField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionField" eSuperTypes="#//Field">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="must be &quot;mapTo&quot; object that can be &#xD;use to describe actions like OperationComponent, transition etc"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="ecore:EClass ../../com.bluexml.side.Common/model/Common.ecore#//OperationComponent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DateField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DateTimeField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PhoneNumberField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EmailField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FileField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelectField" eSuperTypes="#//Field">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="selectWidget" eType="#//SelectWidgetType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HtmlField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="URLField" eSuperTypes="#//Field"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImageField" eSuperTypes="#//FileField"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="LoadingType">
+    <eLiterals name="static" literal="Static"/>
+    <eLiterals name="dynamic" value="1" literal="Dynamic"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WidgetTextType">
+    <eLiterals name="monoline"/>
+    <eLiterals name="multiline" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SelectWidgetType">
+    <eLiterals name="monoline"/>
+    <eLiterals name="autocomplete" value="1"/>
+    <eLiterals name="multiline" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stylable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="styling" eType="#//Styling"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Paginable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paging" eType="#//Paging"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Actionable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" eType="ecore:EClass ../../com.bluexml.side.Common/model/Common.ecore#//OperationComponent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sortable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sorting" eType="#//Sorting"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Editable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Movable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="movable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Filterable" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="filtering" eType="#//Filtering"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FacetDisplayType">
+    <eLiterals name="list"/>
+    <eLiterals name="cloud" value="1"/>
+    <eLiterals name="improvedCloud" value="2" literal="improvedCloud"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FieldGroup" eSuperTypes="#//FieldContainer"/>
+</ecore:EPackage>

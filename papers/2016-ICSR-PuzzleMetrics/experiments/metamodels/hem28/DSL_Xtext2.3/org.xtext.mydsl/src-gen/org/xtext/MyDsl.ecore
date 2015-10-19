@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myDsl" nsURI="http://www.xtext.org/MyDsl" nsPrefix="myDsl">
+  <eClassifiers xsi:type="ecore:EClass" name="Interface">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nsURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//Item" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Item">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//Item">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ins" upperBound="-1" eType="#//Inparam"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outs" upperBound="-1" eType="#//Outparam"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" eSuperTypes="#//Item">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outs" eType="#//Outparam"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inparam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//BuiltinType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Outparam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//BuiltinType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BuiltinType">
+    <eLiterals name="boolean" literal="boolean"/>
+    <eLiterals name="integer" value="1" literal="integer"/>
+    <eLiterals name="int" value="2" literal="int"/>
+    <eLiterals name="time" value="3" literal="time"/>
+    <eLiterals name="date" value="4" literal="date"/>
+    <eLiterals name="string" value="5" literal="string"/>
+    <eLiterals name="decimal" value="6" literal="decimal"/>
+    <eLiterals name="dateTime" value="7" literal="dateTime"/>
+    <eLiterals name="positiveInteger" value="8" literal="positiveInteger"/>
+    <eLiterals name="nonNegativeInteger" value="9" literal="nonNegativeInteger"/>
+    <eLiterals name="token" value="10" literal="token"/>
+    <eLiterals name="base64Binary" value="11" literal="base64Binary"/>
+  </eClassifiers>
+</ecore:EPackage>

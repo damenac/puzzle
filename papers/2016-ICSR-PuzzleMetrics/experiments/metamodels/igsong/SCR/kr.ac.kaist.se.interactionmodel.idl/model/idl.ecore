@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="idl"
+    nsURI="http://se.kaist.ac.kr/idl/1.0" nsPrefix="idl">
+  <eClassifiers xsi:type="ecore:EClass" name="Choreography" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EPackage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+        eType="#//Node" containment="true" eOpposite="#//Node/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//Edge" containment="true" eOpposite="#//Edge/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="participants" upperBound="-1"
+        eType="#//Participant" containment="true" eOpposite="#//Participant/owner"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Participant" eSuperTypes="#//InteractionElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Choreography"
+        eOpposite="#//Choreography/participants"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InteractionElement" abstract="true"
+      interface="true" eSuperTypes="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//ENamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interaction" eSuperTypes="#//Node">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sender" eType="#//Participant"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" upperBound="-1"
+        eType="#//Participant"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceFlow" eSuperTypes="#//Edge"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Branch" eSuperTypes="#//Gateway"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Join" eSuperTypes="#//Gateway"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Initial" eSuperTypes="#//ControlNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Final" eSuperTypes="#//ControlNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlNode" abstract="true" interface="true"
+      eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true" interface="true"
+      eSuperTypes="#//InteractionElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incomings" upperBound="-1"
+        eType="#//Edge" eOpposite="#//Edge/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoings" upperBound="-1"
+        eType="#//Edge" eOpposite="#//Edge/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Choreography"
+        eOpposite="#//Choreography/nodes"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" abstract="true" interface="true"
+      eSuperTypes="#//InteractionElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Node"
+        eOpposite="#//Node/outgoings"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Node"
+        eOpposite="#//Node/incomings"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Choreography"
+        eOpposite="#//Choreography/edges"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gateway" abstract="true" interface="true"
+      eSuperTypes="#//ControlNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//GatewayType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="GatewayType">
+    <eLiterals name="XOR"/>
+    <eLiterals name="AND" value="1"/>
+    <eLiterals name="IOR" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

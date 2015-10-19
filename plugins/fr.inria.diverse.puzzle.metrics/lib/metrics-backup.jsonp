@@ -1,0 +1,165 @@
+var pieDataSyntacticCommonality = [{
+        value: 7,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 48,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particulalrities"
+    }
+];
+      
+var pieDataSemanticCommonality = [
+    {
+        value: 9,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 48,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particulalrities"
+    }
+];
+      
+      var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+      var barProductRelatedReusability = {
+          labels : ["Rhapsody","Logo","Flowchart"],
+          datasets : [
+            {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+              }
+           ]
+      };
+    
+    var barRelationshipRatioRhapsody = {
+        labels : ["Logo","Flowchart"],
+        datasets : [
+             {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             }
+        ]
+    };
+    
+    var barRelationshipRatioLogo = {
+        labels : ["Rhapsody","Flowchart"],
+        datasets : [
+             {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             }
+        ]
+    };
+    
+    var barRelationshipRatioFlowchart = {
+        labels : ["Rhapsody","Logo"],
+        datasets : [
+             {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor()]
+             }
+        ]
+    };
+
+    var barIndividualizationRatio = {
+        labels : ["State Machines","Logo","Flowchart"],
+        datasets : [
+             {
+               fillColor : "rgba(220,220,220,0.5)",
+               strokeColor : "rgba(220,220,220,0.8)",
+               highlightFill: "rgba(220,220,220,0.75)",
+               highlightStroke: "rgba(220,220,220,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+             },
+             {
+               fillColor : "rgba(151,187,205,0.5)",
+               strokeColor : "rgba(151,187,205,0.8)",
+               highlightFill : "rgba(151,187,205,0.75)",
+               highlightStroke : "rgba(151,187,205,1)",
+               data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+             }
+         ]
+    };
+
+      window.onload = function(){
+        var ctxSyntacticCommonalities = document.getElementById("chart-syntactic-commonalities").getContext("2d");
+        window.myPieSyntacticCommonalities = new Chart(ctxSyntacticCommonalities).Pie(pieDataSyntacticCommonality);
+        
+        var ctxSemanticCommonalities = document.getElementById("chart-semantic-commonalities").getContext("2d");
+        window.myPieSemanticCommonalities = new Chart(ctxSemanticCommonalities).Pie(pieDataSemanticCommonality);
+        
+        var ctxProductRelatedReusability = document.getElementById("pie-product-reusability").getContext("2d");
+		window.myBarProductReusability = new Chart(ctxProductRelatedReusability).Bar(barProductRelatedReusability, {
+           responsive : false
+        });
+        
+        var ctxIndividualizationRatio = document.getElementById("pie-individualization-ratio").getContext("2d");
+		window.myBarIndividualizationRatio = new Chart(ctxIndividualizationRatio).Bar(barIndividualizationRatio, {
+           responsive : false
+        });
+
+        var ctxRelationshipRatioRhapsody = document.getElementById("pie-relationship-ratio-rhapsody").getContext("2d");
+		window.myBarRelationshipRatioRhapsody = new Chart(ctxRelationshipRatioRhapsody).Bar(barRelationshipRatioRhapsody, {
+           responsive : false
+        });
+        
+        var ctxRelationshipRatioLogo = document.getElementById("pie-relationship-ratio-logo").getContext("2d");
+		window.myBarRelationshipRatioLogo = new Chart(ctxRelationshipRatioLogo).Bar(barRelationshipRatioLogo, {
+           responsive : false
+        });
+        
+        var ctxRelationshipRatioFlowchart = document.getElementById("pie-relationship-ratio-flowchart").getContext("2d");
+		window.myBarRelationshipRatioFlowchart = new Chart(ctxRelationshipRatioFlowchart).Bar(barRelationshipRatioFlowchart, {
+           responsive : false
+        });
+                                                                                      
+
+        
+      };

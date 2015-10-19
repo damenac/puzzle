@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model"
+    nsURI="http:///org/isistan/flabot/executionstatemapping/model.ecore" nsPrefix="org.isistan.flabot.executionstatemapping.model.model">
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutionStateMappingFileModel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateContainersTree" eType="#//semantic/TreeStructuredElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methodExecutionConditionsTree"
+        eType="#//semantic/MappedTreeStructuredElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="generalExecutionConditionsTree"
+        eType="#//semantic/TreeStructuredElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stateDiagramsList" upperBound="-1"
+        eType="#//visual/StateDiagram" containment="true"/>
+  </eClassifiers>
+  <eSubpackages name="visual" nsURI="http:///org/isistan/flabot/executionstatemapping/model.ecore#//visual"
+      nsPrefix="org.isistan.flabot.executionstatemapping.model.visual">
+    <eClassifiers xsi:type="ecore:EClass" name="StateDiagram" eSuperTypes="../../../../../../org.isistan.flabot/src/org/isistan/flabot/editormodel.ecore#//Diagram">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="semanticModel" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="semantic" nsURI="http:///org/isistan/flabot/executionstatemapping/model.ecore#//semantic"
+      nsPrefix="org.isistan.flabot.executionstatemapping.model.semantic">
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral=""/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionCondition" eSuperTypes="#//semantic/TreeStructuredElement #//prolog/PrologElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+          eType="#//semantic/FieldEvaluationCondition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//semantic/ParameterEvaluationCondition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="returnedValue" eType="#//semantic/ReturnedValueEvaluationCondition"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internalMethodCalls"
+          upperBound="-1" eType="#//semantic/ExecutionCondition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="scope" eType="#//semantic/ScopeEvaluationCondition"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exception" eType="#//semantic/ExceptionEvaluationCondition"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="patternMapping" eType="ecore:EClass ../../../../../../org.isistan.flabot.mapping/src/org/isistan/flabot/mapping/mappingmodel.ecore#//PatternMapping"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceOfClass" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ConditionValue">
+      <eLiterals name="EQUAL"/>
+      <eLiterals name="NOT_EQUAL" value="1"/>
+      <eLiterals name="GREATER" value="2"/>
+      <eLiterals name="GREATER_EQUAL" value="3"/>
+      <eLiterals name="LOWER" value="4"/>
+      <eLiterals name="LOWER_EQUAL" value="5"/>
+      <eLiterals name="IS_NULL" value="6"/>
+      <eLiterals name="NOT_NULL" value="7"/>
+      <eLiterals name="CONTAINS" value="8"/>
+      <eLiterals name="NOT_CONTAINS" value="9" literal=""/>
+      <eLiterals name="IS_CLASS" value="10" literal="CLASS_OF"/>
+      <eLiterals name="NOT_IS_CLASS" value="11"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EvaluationCondition" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" eType="#//semantic/ConditionValue"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExceptionEvaluationCondition" eSuperTypes="#//semantic/EvaluationCondition">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkAnyException" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScopeEvaluationCondition" eSuperTypes="#//semantic/EvaluationCondition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FieldEvaluationCondition" eSuperTypes="#//semantic/EvaluationCondition">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="fieldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterEvaluationCondition" eSuperTypes="#//semantic/EvaluationCondition">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="parameterPosition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fieldEvaluationConditions"
+          upperBound="-1" eType="#//semantic/FieldEvaluationCondition" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ReturnedValueEvaluationCondition"
+        eSuperTypes="#//semantic/EvaluationCondition"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StateContainer" eSuperTypes="#//semantic/TreeStructuredElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+          eType="#//semantic/State" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inicialStates" upperBound="-1"
+          eType="#//semantic/State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="finalStates" upperBound="-1"
+          eType="#//semantic/State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="preFilters" upperBound="-1"
+          eType="#//semantic/ExecutionCondition"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="transitionConditions"
+          upperBound="-1" eType="#//semantic/TransitionCondition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultState" eType="#//semantic/ExecutionStateValue"
+          defaultValueLiteral="NotExecuted"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="exceptionState" eType="#//semantic/ExecutionStateValue"
+          defaultValueLiteral="NONE"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//semantic/NamedElement #//semantic/NotedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceTransitionConditions"
+          upperBound="-1" eType="#//semantic/TransitionCondition" eOpposite="#//semantic/TransitionCondition/sourceState"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetTransitionConditions"
+          upperBound="-1" eType="#//semantic/TransitionCondition" eOpposite="#//semantic/TransitionCondition/targetState"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stateType" eType="#//semantic/StateType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="#//semantic/State">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionState" eType="#//semantic/ExecutionStateValue"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TransitionCondition" eSuperTypes="#//semantic/NotedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceState" eType="#//semantic/State"
+          eOpposite="#//semantic/State/sourceTransitionConditions"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetState" eType="#//semantic/State"
+          eOpposite="#//semantic/State/targetTransitionConditions"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executionCondition" eType="#//semantic/ExecutionCondition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EStringToTreeStructuredElement" instanceClassName="java.util.Map$Entry">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          transient="true" defaultValueLiteral=""/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//semantic/TreeStructuredElement"
+          transient="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TreeStructuredElement" eSuperTypes="#//semantic/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="treeStructuredElements"
+          upperBound="-1" eType="#//semantic/TreeStructuredElement" transient="true"
+          eOpposite="#//semantic/TreeStructuredElement/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//semantic/TreeStructuredElement"
+          transient="true" eOpposite="#//semantic/TreeStructuredElement/treeStructuredElements"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//semantic/TreeType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="persistentList" upperBound="-1"
+          eType="#//semantic/TreeStructuredElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MappedTreeStructuredElement" eSuperTypes="#//semantic/TreeStructuredElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="treeStructuredElementMap"
+          upperBound="-1" eType="#//semantic/EStringToTreeStructuredElement" transient="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="TreeType">
+      <eLiterals name="CONTAINER_TYPE"/>
+      <eLiterals name="PROJECT_TYPE" value="1"/>
+      <eLiterals name="PACKAGE_ROOT_TYPE" value="2"/>
+      <eLiterals name="PACKAGE_TYPE" value="3"/>
+      <eLiterals name="CLASS_TYPE" value="4"/>
+      <eLiterals name="EXECUTION_CONDITION_TYPE" value="5"/>
+      <eLiterals name="STATE_DIAGRAM_TYPE" value="6"/>
+      <eLiterals name="FOLDER_STATE_DIAGRAM_TYPE" value="7"/>
+      <eLiterals name="FOLDER_GENERAL_EXECUTION_CONDITION_TYPE" value="8"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="StateType">
+      <eLiterals name="INITIAL"/>
+      <eLiterals name="NORMAL" value="1"/>
+      <eLiterals name="FINAL" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="EventType">
+      <eLiterals name="AND_EVENT"/>
+      <eLiterals name="OR_EVENT" value="1"/>
+      <eLiterals name="SINGLE_EVENT" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractExpression" abstract="true"
+        eSuperTypes="#//prolog/PrologElement #//semantic/VisitedExpression #//prolog/VisitedExpressionProlog">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="eventType" eType="#//semantic/EventType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentExpression" eType="#//semantic/AbstractExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNot" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlockExpression" abstract="true" eSuperTypes="#//semantic/AbstractExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expressionList" upperBound="-1"
+          eType="#//semantic/AbstractExpression" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AndExpression" eSuperTypes="#//semantic/BlockExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OrExpression" eSuperTypes="#//semantic/BlockExpression"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SingleExpression" eSuperTypes="#//semantic/AbstractExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="executionCondition" eType="#//semantic/ExecutionCondition"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleExpressionExecutionCondition"
+        eSuperTypes="#//semantic/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionState" eType="#//semantic/ExecutionStateValue"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//semantic/AbstractExpression"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ExecutionStateValue">
+      <eLiterals name="Faulty"/>
+      <eLiterals name="Executed" value="1"/>
+      <eLiterals name="NotExecuted" value="2"/>
+      <eLiterals name="NONE" value="4"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ScopeFilterType">
+      <eLiterals name="ARGUMENTS_SCOPE"/>
+      <eLiterals name="FIELDS_SCOPE" value="1"/>
+      <eLiterals name="RETURNVALUE_SCOPE" value="3"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NotedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
+          eType="ecore:EClass ../../../../../../org.isistan.flabot/src/org/isistan/flabot/coremodel.ecore#//Note"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VisitedExpression" abstract="true"
+        interface="true">
+      <eOperations name="accept">
+        <eParameters name="visitor" eType="#//semantic/VisitorExpression"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VisitorExpression" abstract="true"
+        interface="true">
+      <eOperations name="visit">
+        <eParameters name="expression" eType="#//semantic/AndExpression"/>
+      </eOperations>
+      <eOperations name="visit">
+        <eParameters name="expression" eType="#//semantic/OrExpression"/>
+      </eOperations>
+      <eOperations name="visit">
+        <eParameters name="expression" eType="#//semantic/SingleExpression"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SimpleExecutionConditionConfiguration">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="simpleExpressionExecutionConditions"
+          upperBound="-1" eType="#//semantic/SimpleExpressionExecutionCondition" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="executionConditionNotVerifiedState"
+          eType="#//semantic/ExecutionStateValue" defaultValueLiteral="NONE"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="exceptionState" eType="#//semantic/ExecutionStateValue"
+          defaultValueLiteral="NONE"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="preFilters" upperBound="-1"
+          eType="#//semantic/ExecutionCondition"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useDefaultConfiguration"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="useCustomConfiguration"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="prolog" nsURI="http:///org/isistan/flabot/executionstatemapping/model.ecore#//prolog"
+      nsPrefix="org.isistan.flabot.executionstatemapping.model.prolog">
+    <eClassifiers xsi:type="ecore:EClass" name="PrologElement" abstract="true" interface="true">
+      <eOperations name="setPredicateFunctor">
+        <eParameters name="functor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="parameters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="resetPredicateName"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="predicateName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          changeable="false" transient="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TagProvider" abstract="true" interface="true">
+      <eOperations name="getPreFilterInitialTag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getPreFilterCommonTag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eOperations name="getExecutionStateCommonTag" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="executionState" eType="#//semantic/ExecutionStateValue"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrologCodeFactory" eSuperTypes="#//prolog/VisitorExpressionProlog">
+      <eOperations name="getPrologCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="stateContainer" eType="#//semantic/StateContainer"/>
+        <eParameters name="tagProvider" eType="#//prolog/TagProvider"/>
+      </eOperations>
+      <eOperations name="getPrologCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="simpleExecutionConditionConfiguration" eType="#//semantic/SimpleExecutionConditionConfiguration"/>
+        <eParameters name="tagProvider" eType="#//prolog/TagProvider"/>
+      </eOperations>
+      <eOperations name="getPrologCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters eType="#//semantic/ExecutionCondition"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VisitedExpressionProlog" abstract="true"
+        interface="true">
+      <eOperations name="accept" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="visitor" eType="#//prolog/VisitorExpressionProlog"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VisitorExpressionProlog" abstract="true"
+        interface="true">
+      <eOperations name="visit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="expression" eType="#//semantic/AndExpression"/>
+      </eOperations>
+      <eOperations name="visit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="expression" eType="#//semantic/OrExpression"/>
+      </eOperations>
+      <eOperations name="visit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="expression" eType="#//semantic/SingleExpression"/>
+      </eOperations>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

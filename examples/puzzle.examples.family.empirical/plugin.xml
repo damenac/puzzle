@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="fr.inria.diverse.melange.modeltype">
+      <modeltype
+            uri="http://rhapsodymt/"
+            id="family.RhapsodyMT">
+      </modeltype>
+      <modeltype
+            uri="http://logomt/"
+            id="family.LogoMT">
+      </modeltype>
+      <modeltype
+            uri="http://flowchartmt/"
+            id="family.FlowchartMT">
+      </modeltype>
+   </extension>
+   <extension
+         point="fr.inria.diverse.melange.language">
+      <language
+            exactType="family.RhapsodyMT"
+            uri="http://rhapsody"
+            id="family.Rhapsody">
+         <adapter
+               class="family.rhapsody.adapters.rhapsodymt.RhapsodyAdapter"
+               modeltypeId="family.RhapsodyMT">
+         </adapter>
+      </language>
+      <language
+            exactType="family.LogoMT"
+            description="A language for Logo"
+            uri="http://www.kermeta.org/kmLogo"
+            id="family.Logo">
+         <adapter
+               class="family.logo.adapters.logomt.LogoAdapter"
+               modeltypeId="family.LogoMT">
+         </adapter>
+      </language>
+      <language
+            exactType="family.FlowchartMT"
+            uri="flowchart"
+            id="family.Flowchart">
+         <adapter
+               class="family.flowchart.adapters.flowchartmt.FlowchartAdapter"
+               modeltypeId="family.FlowchartMT">
+         </adapter>
+      </language>
+   </extension>
+
+</plugin>

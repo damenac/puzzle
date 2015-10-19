@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="base"
+    nsURI="http://www.eclipse.org/pop/base/1.0.0" nsPrefix="pop.base">
+  <eClassifiers xsi:type="ecore:EClass" name="Identifiable" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Displayable" abstract="true" interface="true">
+    <eOperations name="getDisplayString" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PopElement" abstract="true" eSuperTypes="#//Identifiable #//Displayable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Version" instanceClassName="org.eclipse.net4j.pop.base.Version"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Path" instanceClassName="org.eclipse.core.runtime.IPath"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RepositoryAdapter" instanceClassName="org.eclipse.net4j.pop.repository.IRepositoryAdapter"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RepositorySession" instanceClassName="org.eclipse.net4j.pop.repository.IRepositorySession"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RepositoryFolder" instanceClassName="org.eclipse.net4j.pop.repository.IRepositoryFolder"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="RepositoryTag" instanceClassName="org.eclipse.net4j.pop.repository.IRepositoryTag"/>
+</ecore:EPackage>

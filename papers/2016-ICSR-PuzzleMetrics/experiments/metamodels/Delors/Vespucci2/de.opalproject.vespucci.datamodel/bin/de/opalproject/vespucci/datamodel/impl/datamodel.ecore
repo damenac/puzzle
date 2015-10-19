@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="datamodel" nsURI="http://de/opalproject/vespucci/datamodel/1.0"
+    nsPrefix="de.opalproject.vespucci.datamodel">
+  <eClassifiers xsi:type="ecore:EClass" name="Ensemble" abstract="true" interface="true"
+      eSuperTypes="#//TreeNode">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="derived" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//Constraint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slices" upperBound="-1"
+        eType="#//Slice" eOpposite="#//Slice/ensembles"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraintType" eType="#//ConstraintType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dependencyKind" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="ALL"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Ensemble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Ensemble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConstraintType">
+    <eLiterals name="Undefined"/>
+    <eLiterals name="NotAllowed" value="1"/>
+    <eLiterals name="GlobalIncoming" value="2"/>
+    <eLiterals name="LocalIncoming" value="3"/>
+    <eLiterals name="GlobalOutgoing" value="4"/>
+    <eLiterals name="LocalOutgoing" value="5"/>
+    <eLiterals name="Expected" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SliceRepository">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="slices" upperBound="-1"
+        eType="#//Slice" containment="true" eOpposite="#//Slice/sliceRepository">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value=""/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="emptyEnsemble" lowerBound="1"
+        eType="#//Ensemble" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Slice">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="diagram" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraints" upperBound="-1"
+        eType="#//Constraint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ensembles" upperBound="-1"
+        eType="#//Ensemble" eOpposite="#//Ensemble/slices"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sliceRepository" lowerBound="1"
+        eType="#//SliceRepository" eOpposite="#//SliceRepository/slices"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EnsembleRepository" eSuperTypes="#//TreeNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TreeNode" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//TreeNode"
+        eOpposite="#//TreeNode/children"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+        eType="#//TreeNode" containment="true" eOpposite="#//TreeNode/parent"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EmptyEnsemble" eSuperTypes="#//Ensemble"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConcreteEnsemble" eSuperTypes="#//Ensemble"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="EEnsemble" instanceTypeName="Ensemble"/>
+</ecore:EPackage>

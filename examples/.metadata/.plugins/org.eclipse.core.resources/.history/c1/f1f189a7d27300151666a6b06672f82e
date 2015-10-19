@@ -1,0 +1,157 @@
+var pieDataSyntacticCommonality = [{
+        value: 9,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 47,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particularities"
+    }
+];
+
+var pieDataSemanticCommonality = [{
+        value: 0,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 75,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particularities"
+    }
+];
+
+var barProductRelatedReusability = {
+   labels : ["FSM","Logo","Flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [29.03225806451613,32.142857142857146,50.0]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0,0.0]
+      }
+    ]
+};
+var barIndividualizationRatio = {
+   labels : ["FSM","Logo","Flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [38.70967741935484,32.142857142857146,66.66666666666666]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0,0.0]
+      }
+    ]
+};
+var barRelationshipRatioFSM = {
+   labels : ["Logo","Flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [18.0,32.432432432432435]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0]
+      }
+    ]
+};
+var barRelationshipRatioLogo = {
+   labels : ["FSM","Flowchart"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [18.0,24.324324324324326]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0]
+      }
+    ]
+};
+var barRelationshipRatioFlowchart = {
+   labels : ["FSM","Logo"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [32.432432432432435,24.324324324324326]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0]
+      }
+    ]
+};
+
+window.onload = function(){
+    var ctxSyntacticCommonalities = document.getElementById("chart-syntactic-commonalities").getContext("2d");
+    window.myPieSyntacticCommonalities = new Chart(ctxSyntacticCommonalities).Pie(pieDataSyntacticCommonality);
+
+    var ctxSemanticCommonalities = document.getElementById("chart-semantic-commonalities").getContext("2d");
+    window.myPieSemanticCommonalities = new Chart(ctxSemanticCommonalities).Pie(pieDataSemanticCommonality);
+
+    var ctxProductRelatedReusability = document.getElementById("pie-product-reusability").getContext("2d");
+    window.myBarProductReusability = new Chart(ctxProductRelatedReusability).Bar(barProductRelatedReusability, {
+       responsive : false
+    });
+
+    var ctxIndividualizationRatio = document.getElementById("pie-individualization-ratio").getContext("2d");
+    window.window.myBarIndividualizationRatio = new Chart(ctxIndividualizationRatio).Bar(barIndividualizationRatio, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatioFSM = document.getElementById("pie-relationship-ratio-FSM").getContext("2d");
+    window.window.window.myBarRelationshipRatioFSM = new Chart(ctxRelationshipRatioFSM).Bar(barRelationshipRatioFSM, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatioLogo = document.getElementById("pie-relationship-ratio-Logo").getContext("2d");
+    window.window.window.myBarRelationshipRatioLogo = new Chart(ctxRelationshipRatioLogo).Bar(barRelationshipRatioLogo, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatioFlowchart = document.getElementById("pie-relationship-ratio-Flowchart").getContext("2d");
+    window.window.window.myBarRelationshipRatioFlowchart = new Chart(ctxRelationshipRatioFlowchart).Bar(barRelationshipRatioFlowchart, {
+       responsive : false
+    });
+
+};

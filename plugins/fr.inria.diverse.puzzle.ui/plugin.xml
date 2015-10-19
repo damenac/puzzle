@@ -48,6 +48,11 @@
                      label="Analyze Family"
                      style="push">
                </command>
+               <command
+                     commandId="fr.inria.diverse.puzzle.AnalyzeLargeFamily"
+                     label="Analyze Large Family"
+                     style="push">
+               </command>
                <separator
                      name="Separator"
                      visible="true">
@@ -77,6 +82,10 @@
             name="Analyze Family">
       </command>
       <command
+            id="fr.inria.diverse.puzzle.AnalyzeLargeFamily"
+            name="Analyze Large Family">
+      </command>
+      <command
             id="fr.inria.diverse.puzzle.Synthesize"
             name="Synthesize LPL">
       </command>
@@ -98,6 +107,10 @@
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.Configure"
             commandId="fr.inria.diverse.puzzle.ConfigureDSL">
+      </handler>
+      <handler
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.AnalyzeLargeFamily"
+            commandId="fr.inria.diverse.puzzle.AnalyzeLargeFamily">
       </handler>
    </extension>
 

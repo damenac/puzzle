@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="myPackage"
+    nsURI="http://www.xtext.org/graphview/example" nsPrefix="myPackage">
+  <eClassifiers xsi:type="ecore:EClass" name="MyClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="myAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MyOtherClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="otherAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="otherReference" eType="#//MyClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AThirdClass" eSuperTypes="#//MyClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="thirdAttribute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="subPackage" nsURI="http://www.xtext.org/example/graphview" nsPrefix="subPackage">
+    <eClassifiers xsi:type="ecore:EClass" name="Foo" eSuperTypes="#//MyClass"/>
+    <eSubpackages name="subsub" nsURI="subsub" nsPrefix="subsub">
+      <eClassifiers xsi:type="ecore:EClass" name="Bar">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="s" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="Baz" eSuperTypes="#//subPackage/subsub/Bar #//subPackage/Foo"/>
+    </eSubpackages>
+  </eSubpackages>
+</ecore:EPackage>

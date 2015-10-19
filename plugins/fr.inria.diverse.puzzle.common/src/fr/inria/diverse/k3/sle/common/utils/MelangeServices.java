@@ -39,8 +39,15 @@ public class MelangeServices {
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		for (Language language : languages) {
 			if(language.getSyntax() != null){
-				EPackage currentPackage = ModelUtils.loadEcoreResource(language.getSyntax().getEcoreUri());
-				ePackages.add(currentPackage);
+				if(language.getSyntax().getEcoreUri().startsWith("platform:/resource/")){
+					EPackage currentPackage = ModelUtils.loadEcoreResource(language.getSyntax().getEcoreUri());
+					ePackages.add(currentPackage);
+				}else{
+					EPackage currentPackage = ModelUtils.loadEcoreFile(language.getSyntax().getEcoreUri());
+					ePackages.add(currentPackage);
+				}
+				
+				
 			}
 		}
 		return ePackages;

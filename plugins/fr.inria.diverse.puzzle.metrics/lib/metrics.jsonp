@@ -1,0 +1,18 @@
+var pieDataSyntacticCommonality = [{
+        value: 4,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 64,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particularities"
+    }
+];
+
+window.onload = function(){
+    var ctxSyntacticCommonalities = document.getElementById("chart-syntactic-commonalities").getContext("2d");
+    window.myPieSyntacticCommonalities = new Chart(ctxSyntacticCommonalities).Pie(pieDataSyntacticCommonality);
+};
