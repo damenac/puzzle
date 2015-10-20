@@ -1,0 +1,43 @@
+package fr.inria.diverse.k3.sle.common.graphsOperators;
+
+public class SimulatedAnnealingPartitioning {
+
+	// -----------------------------------------------
+	// Attributes
+	// -----------------------------------------------
+	/**
+	 * Attribute that save the start time of the control execution
+	 */
+	private long startTime;
+	
+	/**
+	 * Attribute that save the max time of the control execution
+	 */
+	private long stopTime;
+	
+	/**
+	 * Attribute that is used to stop the execution of the control
+	 */
+	private boolean optimalAchieved;
+	
+	/**
+	 * The Number of visited neighbors during the execution of the control
+	 */
+	private int numberOfVisitedNeighbors = 0;
+		
+	// -----------------------------------------------
+	// Constructor
+	// -----------------------------------------------
+	
+	/**
+	 * Constructor of the class
+	 */
+	public SimulatedAnnealingPartitioning() {
+
+	}
+	
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+		
+}

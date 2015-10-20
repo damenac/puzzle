@@ -257,4 +257,14 @@ public class EcoreGraph {
 		}
 		return collection;
 	}
+
+	public EcoreGraph cloneGraph() {
+		EcoreGraph clone = new EcoreGraph();
+		
+		for (EcoreVertex vertex : this.vertex) {
+			
+		}
+		
+		return clone;
+	}
 }

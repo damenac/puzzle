@@ -6,12 +6,12 @@ import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
-import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison
+import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition
 
 /**
  * Abstract builder. Responsible for managing the parameters of the reverse-engineering process. 

@@ -6,11 +6,12 @@ import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
-import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
+import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition;
 import fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl;
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer;
+
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;

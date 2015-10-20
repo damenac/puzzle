@@ -16,8 +16,9 @@ import fr.inria.diverse.k3.sle.common.commands.GraphPartition
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
-import fr.inria.diverse.k3.sle.common.graphsOperators.MinimumAcyclicPartition
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
+import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
 
 /**
  * Builder for the action: Synthesize Language Product Line (LPL).
@@ -48,7 +49,7 @@ class SynthesisBuilder
 	}
 	
 	def private SynthesisProperties getSynthesisProperties(){
-		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
+		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
 		var GraphPartition graphPartition = new MinimumAcyclicPartition();

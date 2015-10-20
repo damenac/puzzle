@@ -135,4 +135,9 @@ public class EcoreVertex {
 		EcoreVertex ecoreVertex = (EcoreVertex) o;
 		return ecoreVertex.vertexId.equals(this.vertexId);
 	}
+
+	public EcoreVertex cloneVertex() {
+		EcoreVertex clone = new EcoreVertex(this.vertexId, this.getClassifier());
+		return clone;
+	}
 }
