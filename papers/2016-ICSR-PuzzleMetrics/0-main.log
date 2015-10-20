@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  19 OCT 2015 16:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  20 OCT 2015 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1010,54 +1010,89 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 
-LaTeX Warning: Reference `sec:background' on page 2 undefined on input line 26.
-
-
-
-LaTeX Warning: Reference `sec:motivation' on page 2 undefined on input line 26.
-
-
-
 LaTeX Warning: Reference `sec:puzzlemetrics' on page 2 undefined on input line 
-26.
+22.
 
-[2]) (./0-main.bbl [3])
+
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [2])
+(./sections/basicconcepts.tex [3]
+<images/domains-fig.pdf, id=155, 523.25645pt x 231.86626pt>
+File: images/domains-fig.pdf Graphic file (type pdf)
+
+<use images/domains-fig.pdf>
+Package pdftex.def Info: images/domains-fig.pdf used on input line 20.
+(pdftex.def)             Requested size: 347.12354pt x 153.81763pt.
+ [4 <./images/domains-fig.pdf>])
+(./sections/runningexample.tex [5]
+<images/motivating-example.pdf, id=248, 819.06pt x 914.41624pt>
+File: images/motivating-example.pdf Graphic file (type pdf)
+
+<use images/motivating-example.pdf>
+Package pdftex.def Info: images/motivating-example.pdf used on input line 10.
+(pdftex.def)             Requested size: 364.48076pt x 406.92093pt.
+
+Overfull \hbox (17.35722pt too wide) in paragraph at lines 10--11
+ [][] 
+ []
+
+) (./sections/familiesanalysis.tex
+<images/shape-fig.pdf, id=250, 527.06842pt x 305.78894pt>
+File: images/shape-fig.pdf Graphic file (type pdf)
+
+<use images/shape-fig.pdf>
+Package pdftex.def Info: images/shape-fig.pdf used on input line 10.
+(pdftex.def)             Requested size: 347.12354pt x 201.39204pt.
+ [6] [7 <./images/motivating-example.pdf>])
+(./sections/casestudies.tex [8 <./images/shape-fig.pdf>]) (./0-main.bbl
+[9])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
- [4]
+ [10]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
  (./0-main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
-Package rerunfilecheck Info: File `0-main.out' has not changed.
-(rerunfilecheck)             Checksum: 44DD56AFF3F92B5E4F250C19BF286091;168.
 
+
+Package rerunfilecheck Warning: File `0-main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `0-main.out':
+(rerunfilecheck)             Before: F83802C2AF9798728527D3B5A87ED218;1332
+(rerunfilecheck)             After:  87BBE6DBF4A2AE0852E726554C6D827F;1332.
 
 LaTeX Warning: There were undefined references.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
  ) 
 Here is how much of TeX's memory you used:
- 19368 strings out of 493308
- 330735 string characters out of 6137815
- 412264 words of memory out of 5000000
- 22385 multiletter control sequences out of 15000+600000
- 17822 words of font info for 53 fonts, out of 8000000 for 9000
+ 19453 strings out of 493308
+ 332165 string characters out of 6137815
+ 413732 words of memory out of 5000000
+ 22429 multiletter control sequences out of 15000+600000
+ 18523 words of font info for 54 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,6n,57p,986b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,7n,75p,1432b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
-Output written on 0-main.pdf (4 pages, 198460 bytes).
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></u
+sr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
+Output written on 0-main.pdf (10 pages, 509024 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
- 29 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 377 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 156 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -11,18 +11,20 @@ C.~Berger, H.~Rendel, B.~Rumpe, C.~Busse, T.~Jablonski, and F.~Wolf.
 \newblock In {\em SPLC 2010 : Proceedings of the 14th International Software
   Product Line Conference}, pages 247--250. Univ., Lancaster, 2010.
 
-\bibitem{Cengarle:2009}
-M.~V. Cengarle, H.~Gr\"onniger, and B.~Rumpe.
-\newblock Variability within modeling language definitions.
-\newblock In A.~Schürr and B.~Selic, editors, {\em Model Driven Engineering
-  Languages and Systems}, volume 5795 of {\em Lecture Notes in Computer
-  Science}, pages 670--684. Springer Berlin Heidelberg, 2009.
-
 \bibitem{Combemale:2014}
 B.~Combemale, J.~Deantoni, B.~Baudry, R.~France, J.-M. J\'ez\'equel, and
   J.~Gray.
 \newblock Globalizing modeling languages.
 \newblock {\em Computer}, 47(6):68--71, June 2014.
+
+\bibitem{Combemale:2013}
+B.~Combemale, J.~Deantoni, M.~Vara~Larsen, F.~Mallet, O.~Barais, B.~Baudry, and
+  R.~France.
+\newblock Reifying concurrency for executable metamodeling.
+\newblock In M.~Erwig, R.~F. Paige, and E.~Van~Wyk, editors, {\em 6th
+  International Conference on Software Language Engineering}, volume 8225 of
+  {\em SLE}, pages 365--384, Indianapolis, IN, United States, Oct 2013.
+  Springer.
 
 \bibitem{Cook:2006}
 S.~Cook.
@@ -51,6 +53,11 @@ L.~Hamann, O.~Hofrichter, and M.~Gogolla.
   Model Driven Engineering Languages and Systems}, volume 7590 of {\em Lecture
   Notes in Computer Science}, pages 235--251. Springer Berlin Heidelberg, 2012.
 
+\bibitem{Harel:2004b}
+D.~Harel and B.~Rumpe.
+\newblock Meaningful modeling: what's the semantics of ``semantics"?
+\newblock {\em Computer}, 37(10):64--72, Oct 2004.
+
 \bibitem{jezequel:2014}
 J.-M. J{\'e}z{\'e}quel, D.~M{\'e}ndez-Acu{\~n}a, T.~Degueule, B.~Combemale, and
   O.~Barais.
@@ -78,6 +85,11 @@ T.~Lodderstedt, D.~Basin, and J.~Doser.
 \newblock In J.-M. J\'ez\'equel, H.~Hussmann, and S.~Cook, editors, {\em UML
   2002 - The Unified Modeling Language}, volume 2460 of {\em Lecture Notes in
   Computer Science}, pages 426--441. Springer Berlin Heidelberg, 2002.
+
+\bibitem{Mernik:2005b}
+M.~Mernik, J.~Heering, and A.~M. Sloane.
+\newblock When and how to develop domain-specific languages.
+\newblock {\em ACM Comput. Surv.}, 37(4):316--344, Dec. 2005.
 
 \bibitem{Oney:2012}
 S.~Oney, B.~Myers, and J.~Brandt.
@@ -119,13 +131,5 @@ J.~White, J.~H. Hill, J.~Gray, S.~Tambe, A.~Gokhale, and D.~Schmidt.
 \newblock Improving domain-specific language reuse with software product line
   techniques.
 \newblock {\em Software, IEEE}, 26(4):47--53, July 2009.
-
-\bibitem{Zschaler:2010b}
-S.~Zschaler, D.~S. Kolovos, N.~Drivalos, R.~F. Paige, and A.~Rashid.
-\newblock Domain-specific metamodelling languages for software language
-  engineering.
-\newblock In M.~van~den Brand, D.~Ga?evi?, and J.~Gray, editors, {\em Software
-  Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
-  Science}, pages 334--353. Springer Berlin Heidelberg, 2010.
 
 \end{thebibliography}
