@@ -74,11 +74,12 @@
 	</section>
 	<section name="FatJarPackageWizard">
 		<item value="/Users/dmendeza/workspaces/puzzle/plugins" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="VmSynthesis - fr.inria.diverse.vmsynthesis" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="/Users/dmendeza/workspaces/puzzle-testing/refm-competition-ws/fr.inria.diverse.refm.competition.mendez/lib/fr.inria.diverse.vmsynthesis.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="CommonalitiesDetector - fr.inria.diverse.puzzle.metrics" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
 		<item value="3" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar"/>
 			<item value="/Users/dmendeza/workspaces/puzzle-testing/refm-competition-ws/fr.inria.diverse.refm.competition.mendez/lib/fr.inria.diverse.vmsynthesis.jar"/>
 			<item value="fr.inria.diverse.generator.pcm/exe/fr.inria.diverse.generator.pcm.jar"/>
 			<item value="fr.inria.diverse.generator.dag/exe/fr.inria.diverse.generator.dag.jar"/>

@@ -9,6 +9,7 @@ import org.eclipse.xtext.common.types.JvmOperation;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMethodMember;
@@ -19,6 +20,8 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleMethodMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleModuleConceptsMembers;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.melange.metamodel.melange.MelangeFactory;
+import fr.inria.diverse.melange.metamodel.melange.Metamodel;
 
 /**
  * Services for manipulating families of domain-specific languages
@@ -306,6 +309,34 @@ public class FamiliesServices {
 		}
 		
 		return answer;
+	}
+	
+	public static ArrayList<String> getIntersection(ArrayList<Language> languages,
+			ConceptComparison comparisonOperator) throws Exception {
+		
+		ArrayList<String> commonality = new ArrayList<String>();
+		
+		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
+		ArrayList<TupleConceptMembers> conceptMemberGroupList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, comparisonOperator);
+		
+		for (TupleConceptMembers conceptMembersGroupVO : conceptMemberGroupList) {
+			if(commonality(conceptMembersGroupVO, languages)){
+				commonality.add(conceptMembersGroupVO.getConcept().getName());
+			}
+		}
+		return commonality;
+	}
+	
+	private static boolean commonality(TupleConceptMembers conceptMembersGroupVO,
+			ArrayList<Language> languages) {
+		boolean allContained = true;
+		for (Language language : languages) {
+			allContained = allContained && conceptMembersGroupVO.getMembers().contains(language.getName());
+			
+			if(!allContained)
+				continue;
+		}
+		return allContained && languages.size() == conceptMembersGroupVO.getMembers().size();
 	}
 
 	private static void getClassifiersArray(EPackage ePackage, ArrayList<EClassifier> classifiersArray) {

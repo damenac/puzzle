@@ -78,6 +78,20 @@ public class EmpiricalStudy {
 		bw.close();
 	}
 	
+	@Ignore
+	@Test
+	public void testIntersectionPairs(){
+		SyntacticVennDiagram syntacticVennDiagram = new SyntacticVennDiagram();
+		ArrayList<ArrayList<Language>> pairs = syntacticVennDiagram.intersectionPairs(languages);
+		for (ArrayList<Language> arrayList : pairs) {
+			for (Language ePackage : arrayList) {
+				System.out.print(ePackage.getName() + ",");
+			}
+			System.out.println();
+		}
+	}
+	
+	
 	@Test
 	public void drawHugeVennDiagram() throws Exception{
 		ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
@@ -95,6 +109,7 @@ public class EmpiricalStudy {
 		familysMetric.createReport1LargeAnalysis(languages);
 	}
 	
+	@Ignore
 	@Test
 	public void computeHistograms() throws Exception{
 		ConceptComparison conceptComparisonOperator = new NamingConceptComparison();

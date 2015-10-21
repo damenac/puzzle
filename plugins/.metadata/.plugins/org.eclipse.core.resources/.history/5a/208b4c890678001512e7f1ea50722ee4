@@ -1,0 +1,28 @@
+package fr.inria.diverse.puzzle.metrics.specialCharts;
+
+import org.eclipse.emf.ecore.EPackage;
+
+public class IndexPackage {
+
+	private int index;
+	private EPackage ePackage;
+	
+	public IndexPackage(int index, EPackage ePackage) {
+		super();
+		this.index = index;
+		this.ePackage = ePackage;
+	}
+	
+	public int getIndex() {
+		return index;
+	}
+	public void setIndex(int index) {
+		this.index = index;
+	}
+	public EPackage getePackage() {
+		return ePackage;
+	}
+	public void setePackage(EPackage ePackage) {
+		this.ePackage = ePackage;
+	}
+}

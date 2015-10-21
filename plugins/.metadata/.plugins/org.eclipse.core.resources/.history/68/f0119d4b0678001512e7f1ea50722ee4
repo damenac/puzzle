@@ -1,0 +1,11 @@
+package fr.inria.diverse.puzzle.metrics.specialCharts;
+
+import org.eclipse.emf.ecore.EPackage;
+
+public class IndexPackage {
+
+	private int index;
+	private EPackage ePackage;
+	
+	
+}

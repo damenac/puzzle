@@ -24,7 +24,7 @@ public class SyntacticVennDiagram implements SpecialFamilySyntacticChart {
 	
 	@Override
 	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison comparisonOperator){
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
+//		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
 	
@@ -36,26 +36,81 @@ public class SyntacticVennDiagram implements SpecialFamilySyntacticChart {
 				membersSizeTable.put(conceptMemberVO.getMemberName(), currentValue + 1);
 			}
 		}
-		
+		ArrayList<IndexPackage> indexes = new ArrayList<IndexPackage>();
 		String answer = "var syntacticVennData = [";
 		for (int i = 0; i < languages.size(); i++) {
 			Language currentLanguage = languages.get(i);
 			answer += "{sets : [" + i + "], label : '" + currentLanguage.getName() + "', size : " + membersSizeTable.get(currentLanguage.getName()) + ",}";
 			answer += ",\n              ";
+			indexes.add(new IndexPackage(i, currentLanguage));
 		}
 		
+//		boolean first = true;
+//		for (int i = 0; i < ePackages.size(); i++) {
+//			EPackage ePackageI = ePackages.get(i);
+//			for (int j = i + 1; j < ePackages.size(); j++) {
+//				EPackage ePackageJ = ePackages.get(j);
+//				if(!first) answer += ",\n              ";
+//				answer += "{sets : [" + i + "," + j + "], size:" + FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size() + "}";
+//				first = false;
+//			}
+//		}
+//		answer += "];";
+		
 		boolean first = true;
-		for (int i = 0; i < ePackages.size(); i++) {
-			EPackage ePackageI = ePackages.get(i);
-			for (int j = i + 1; j < ePackages.size(); j++) {
-				EPackage ePackageJ = ePackages.get(j);
+		ArrayList<ArrayList<Language>> pairs = this.intersectionPairs(languages);
+		for (ArrayList<Language> pair : pairs) {
+			int commonalitySize = 0;
+			try {
+				commonalitySize = FamiliesServices.getIntersection(pair, comparisonOperator).size();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			if(/*commonalitySize > 0*/true){
 				if(!first) answer += ",\n              ";
-				answer += "{sets : [" + i + "," + j + "], size:" + FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size() + "}";
+				answer += "{sets : [";
+				for (Language language : pair) {
+					answer += IndexPackage.getIndexByEPackage(indexes, language) + ",";
+				}
+				answer = answer.substring(0, answer.length() - 1);
+				answer += "], size:" + commonalitySize + "}";
 				first = false;
 			}
 		}
-		answer += "];";
+		answer += "\n];";
+		
 		return answer;
+	}
+	
+	public ArrayList<ArrayList<Language>> intersectionPairs(ArrayList<Language> languages){
+		ArrayList<ArrayList<Language>> pairs = new ArrayList<ArrayList<Language>>();
+		int i = 1;
+		for (Language langauge : languages) {
+			ArrayList<Language> temp = new ArrayList<Language>();
+			temp.add(langauge);
+			this.intersectionPairsRecursive(pairs, languages, temp, i);
+			i++;
+		}
+		return pairs;
+	}
+	
+	public void intersectionPairsRecursive(ArrayList<ArrayList<Language>> combinatory, 
+			ArrayList<Language> languages, ArrayList<Language> temp, int index){
+		
+		// caso base: agregue temp + los que faltan
+		int i = index;
+		while(i < languages.size()){
+			if(!temp.contains(languages.get(i))){
+				ArrayList<Language> newGroup = new ArrayList<Language>();
+				newGroup.addAll(temp);
+				newGroup.add(languages.get(i));
+				combinatory.add(newGroup);
+				
+				// caso recursivo: por cada nuevo grupo, haga la recursion. 
+				this.intersectionPairsRecursive(combinatory, languages, newGroup, i + 1);
+			}
+			i++;
+		}
 	}
 	
 	public int[][] getCommonalitiesMatrix(ArrayList<Language> languages, ConceptComparison comparisonOperator){
