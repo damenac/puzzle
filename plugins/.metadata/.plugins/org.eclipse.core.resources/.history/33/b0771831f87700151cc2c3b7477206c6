@@ -1,0 +1,17 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class CommonalitiesDetector {
+
+	
+	
+	
+	public static void main(String[] args) {
+		ArrayList<Language> languages = new ArrayList<Language>();
+
+	}
+
+}

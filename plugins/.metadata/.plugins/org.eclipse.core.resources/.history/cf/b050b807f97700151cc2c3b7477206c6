@@ -1,0 +1,33 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EPackage;
+
+import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.melange.metamodel.melange.MelangeFactory;
+import fr.inria.diverse.melange.metamodel.melange.Metamodel;
+
+public class CommonalitiesDetector {
+
+	
+	public void obtainCommonalities(String[] ecoreFiles){
+		ArrayList<Language> languages = new ArrayList<Language>();
+		for (String ecoreFile : ecoreFiles) {
+			EPackage pack = ModelUtils.loadEcoreFile(ecoreFile);
+			Metamodel metamodel = MelangeFactory.eINSTANCE.createMetamodel();
+			metamodel.setEcoreUri(ecoreFile);
+			Language language = MelangeFactory.eINSTANCE.createLanguage();
+			language.setName(ecoreFile);
+			language.setSyntax(metamodel);
+		}
+	}
+	
+	public static void main(String[] args) {
+		CommonalitiesDetector detector = new CommonalitiesDetector();
+		detector.obtainCommonalities(args);
+		
+	}
+
+}

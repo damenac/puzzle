@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
 
-import org.eclipse.xtext.util.Pair;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;

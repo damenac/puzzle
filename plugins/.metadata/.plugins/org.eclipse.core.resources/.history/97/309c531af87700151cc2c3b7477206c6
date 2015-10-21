@@ -1,0 +1,13 @@
+package fr.inria.diverse.puzzle.metrics;
+
+public class CommonalitiesDetector {
+
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

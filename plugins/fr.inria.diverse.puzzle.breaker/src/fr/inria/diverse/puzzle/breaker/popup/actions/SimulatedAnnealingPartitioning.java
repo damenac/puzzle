@@ -6,7 +6,10 @@ import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
+import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.RandomNumber;
 import fr.inria.diverse.k3.sle.common.vos.PairVO;
 import fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality;
@@ -68,7 +71,7 @@ public class SimulatedAnnealingPartitioning implements GraphPartition {
 		
 		EcoreGraph bestFound = null;
 		try {
-			bestFound = this.simulatedAnnealing(decoder, graph, temperature, 
+			bestFound = this.simulatedAnnealing(decoder, baseGraph, temperature, 
 					membersConceptList, conceptComparisonOperator);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,6 +103,7 @@ public class SimulatedAnnealingPartitioning implements GraphPartition {
 			Integer k = 10;
 			
 			while (k > 0){
+				
 				PairVO YMovement = calculateNeighbor(X);
 				EcoreGraph Y = this.modifyGraph(X, YMovement);
 				decoder.graphPartition(Y, membersConceptList, conceptComparisonOperator);
@@ -154,6 +158,7 @@ public class SimulatedAnnealingPartitioning implements GraphPartition {
 	private PairVO calculateNeighbor(EcoreGraph x) {
 		int size = x.getVertex().size();
 		return new PairVO(0 + (int)(Math.random()*size), 0 + (int)(Math.random()*size));
+//		return new PairVO(31,1);
 	}
 	
 	private EcoreGraph modifyGraph(EcoreGraph graph, PairVO movement){
