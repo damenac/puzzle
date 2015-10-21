@@ -267,8 +267,8 @@ public class EcoreGraph {
 		}
 		
 		for (EcoreArc arc : this.arcs) {
-			EcoreVertex clonedFrom = clone.getNodeByName(clone, arc.getFrom().getVertexId());
-			EcoreVertex clonedTo = clone.getNodeByName(clone, arc.getTo().getVertexId());
+			EcoreVertex clonedFrom = clone.getNodeById(clone, arc.getFrom().getVertexId());
+			EcoreVertex clonedTo = clone.getNodeById(clone, arc.getTo().getVertexId());
 			EcoreArc clonedArc = arc.cloneArc(clonedFrom, clonedTo);
 			clonedFrom.getOutgoingArcs().add(clonedArc);
 			clonedTo.getIncomingArcs().add(clonedArc);
@@ -276,5 +276,13 @@ public class EcoreGraph {
 		}
 		
 		return clone;
+	}
+
+	public void reOrderVertex(EcoreGraph graph) {
+		 ArrayList<EcoreVertex> newVertex = new ArrayList<EcoreVertex>();
+		 for (EcoreVertex ecoreVertex : graph.getVertex()) {
+			newVertex.add(this.getNodeById(this, ecoreVertex.getVertexId()));
+		 }
+		 this.vertex = newVertex;
 	}
 }
