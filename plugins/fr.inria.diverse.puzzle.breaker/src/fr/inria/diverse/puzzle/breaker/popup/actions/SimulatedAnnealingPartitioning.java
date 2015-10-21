@@ -84,6 +84,7 @@ public class SimulatedAnnealingPartitioning implements GraphPartition {
 			ConceptComparison conceptComparisonOperator) throws Exception{
 
 		EcoreGraph X = graph;
+		decoder.graphPartition(X, membersConceptList, conceptComparisonOperator);
 		double XCMax = gamma.compute(X);
 		
 		// Initializes the best solution (XBest) as the first one (X)
@@ -115,6 +116,7 @@ public class SimulatedAnnealingPartitioning implements GraphPartition {
 				numberOfVisitedNeighbors++;
 
 				double YCMax = gamma.compute(Y);
+				System.out.println("YCMax: " + YCMax);
 				double deltaXY = YCMax - XCMax;
 				
 				if(deltaXY < 0){

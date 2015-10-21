@@ -3,35 +3,35 @@ package family
 /**
  * A language for simple state machines.
  */
-language FSM {
-	syntax "platform:/resource/puzzle.examples.fsm/models/fsm.ecore"
-	
-	with fsm.StateMachineAspect
-	with fsm.StateAspect
-	with fsm.TransitionAspect
-	with fsm.TriggerAspect
-	with fsm.FinalStateAspect
-	with fsm.ExpressionAspect
-	with fsm.LiteralAspect
-	with fsm.IntegerLitAspect
-	with fsm.StringLitAspect
-	with fsm.BoolLitAspect
-	with fsm.ArithmeticExpressionAspect
-	with fsm.RelationalExpressionAspect
-	with fsm.ConstraintAspect
-	with fsm.RelationalConstraintAspect
-	with fsm.StatementAspect
-	with fsm.ProgramAspect
-	with fsm.VarDeclAspect
-	with fsm.ConditionalAspect
-	with fsm.LoopAspect
-	with fsm.PrintlnAspect
-	with fsm.PrintAspect
-	with fsm.AssignationAspect
-	with fsm.WaitAspect
-	
-	exactType FsmMT
-}
+//language FSM {
+//	syntax "platform:/resource/puzzle.examples.fsm/models/fsm.ecore"
+//	
+//	with fsm.StateMachineAspect
+//	with fsm.StateAspect
+//	with fsm.TransitionAspect
+//	with fsm.TriggerAspect
+//	with fsm.FinalStateAspect
+//	with fsm.ExpressionAspect
+//	with fsm.LiteralAspect
+//	with fsm.IntegerLitAspect
+//	with fsm.StringLitAspect
+//	with fsm.BoolLitAspect
+//	with fsm.ArithmeticExpressionAspect
+//	with fsm.RelationalExpressionAspect
+//	with fsm.ConstraintAspect
+//	with fsm.RelationalConstraintAspect
+//	with fsm.StatementAspect
+//	with fsm.ProgramAspect
+//	with fsm.VarDeclAspect
+//	with fsm.ConditionalAspect
+//	with fsm.LoopAspect
+//	with fsm.PrintlnAspect
+//	with fsm.PrintAspect
+//	with fsm.AssignationAspect
+//	with fsm.WaitAspect
+//	
+//	exactType FsmMT
+//}
 
 /**
  * A language for Logo 

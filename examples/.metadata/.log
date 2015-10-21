@@ -2577,3 +2577,211 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 !ENTRY org.apache.log4j 2 0 2015-10-21 10:23:12.304
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+!SESSION 2015-10-21 10:55:35.607 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-10-21 10:55:37.139
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-21 10:55:39.639
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-10-21 10:55:51.805
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-10-21 10:57:03.574 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-10-21 10:57:04.977
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-21 10:57:07.227
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-10-21 10:57:54.256
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-10-21 10:58:01.543
+!MESSAGE An internal error occurred during: "Puzzle: Synthesize language product line".
+!STACK 0
+java.lang.NegativeArraySizeException
+	at java.util.AbstractCollection.toArray(AbstractCollection.java:136)
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:258)
+	at org.eclipse.emf.compare.match.eobject.internal.ProximityIndex.getValuesStillThere(ProximityIndex.java:315)
+	at org.eclipse.emf.compare.match.eobject.internal.ProximityIndex.getValuesStillThere(ProximityIndex.java:1)
+	at org.eclipse.emf.compare.match.eobject.internal.ByTypeIndex.getValuesStillThere(ByTypeIndex.java:73)
+	at org.eclipse.emf.compare.match.eobject.ProximityEObjectMatcher.createUnmatchesForRemainingObjects(ProximityEObjectMatcher.java:187)
+	at org.eclipse.emf.compare.match.eobject.ProximityEObjectMatcher.createMatches(ProximityEObjectMatcher.java:129)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.doDelegation(IdentifierEObjectMatcher.java:187)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.createMatches(IdentifierEObjectMatcher.java:141)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.doDelegation(IdentifierEObjectMatcher.java:187)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.createMatches(IdentifierEObjectMatcher.java:141)
+	at org.eclipse.emf.compare.match.DefaultMatchEngine.match(DefaultMatchEngine.java:324)
+	at org.eclipse.emf.compare.match.DefaultMatchEngine.match(DefaultMatchEngine.java:125)
+	at org.eclipse.emf.compare.match.DefaultMatchEngine.match(DefaultMatchEngine.java:95)
+	at org.eclipse.emf.compare.EMFCompare.compare(EMFCompare.java:210)
+	at org.eclipse.emf.compare.EMFCompare.compare(EMFCompare.java:175)
+	at fr.inria.diverse.melange.algebra.EmfCompareAlgebra.weaveAspect(EmfCompareAlgebra.java:125)
+	at fr.inria.diverse.melange.processors.AspectsWeaver$3.accept(AspectsWeaver.java:94)
+	at fr.inria.diverse.melange.processors.AspectsWeaver$3.accept(AspectsWeaver.java:1)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at fr.inria.diverse.melange.processors.AspectsWeaver._preProcess(AspectsWeaver.java:97)
+	at fr.inria.diverse.melange.processors.AspectsWeaver.preProcess(AspectsWeaver.java:159)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.build(LanguageBuilder.java:333)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.access$0(LanguageBuilder.java:141)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:131)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:1)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at fr.inria.diverse.melange.processors.LanguageBuilder._preProcess(LanguageBuilder.java:134)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.preProcess(LanguageBuilder.java:849)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:91)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:1)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer.installDerivedState(MelangeDerivedStateComputer.java:95)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.installDerivedState(DerivedStateAwareResource.java:240)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getContents(BatchLinkableResource.java:148)
+	at fr.inria.diverse.melange.ui.builder.SynthesisBuilder.synthesizeLanguageProductLine(SynthesisBuilder.java:39)
+	at fr.inria.diverse.melange.ui.menu.Synthesize$1.run(Synthesize.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.apache.log4j 4 0 2015-10-21 10:58:01.546
+!MESSAGE org.eclipse.xtext.builder.clustering.ClusteringBuilderState  - Error loading resource from: platform:/resource/puzzle.examples.family.overlapping/src/family/overlappingFamily.melange
+
+!STACK 0
+java.lang.NegativeArraySizeException
+	at java.util.AbstractCollection.toArray(AbstractCollection.java:136)
+	at com.google.common.collect.ImmutableList.copyOf(ImmutableList.java:258)
+	at org.eclipse.emf.compare.match.eobject.internal.ProximityIndex.getValuesStillThere(ProximityIndex.java:315)
+	at org.eclipse.emf.compare.match.eobject.internal.ProximityIndex.getValuesStillThere(ProximityIndex.java:1)
+	at org.eclipse.emf.compare.match.eobject.internal.ByTypeIndex.getValuesStillThere(ByTypeIndex.java:73)
+	at org.eclipse.emf.compare.match.eobject.ProximityEObjectMatcher.createUnmatchesForRemainingObjects(ProximityEObjectMatcher.java:187)
+	at org.eclipse.emf.compare.match.eobject.ProximityEObjectMatcher.createMatches(ProximityEObjectMatcher.java:129)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.doDelegation(IdentifierEObjectMatcher.java:187)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.createMatches(IdentifierEObjectMatcher.java:141)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.doDelegation(IdentifierEObjectMatcher.java:187)
+	at org.eclipse.emf.compare.match.eobject.IdentifierEObjectMatcher.createMatches(IdentifierEObjectMatcher.java:141)
+	at org.eclipse.emf.compare.match.DefaultMatchEngine.match(DefaultMatchEngine.java:324)
+	at org.eclipse.emf.compare.match.DefaultMatchEngine.match(DefaultMatchEngine.java:125)
+	at org.eclipse.emf.compare.match.DefaultMatchEngine.match(DefaultMatchEngine.java:95)
+	at org.eclipse.emf.compare.EMFCompare.compare(EMFCompare.java:210)
+	at org.eclipse.emf.compare.EMFCompare.compare(EMFCompare.java:175)
+	at fr.inria.diverse.melange.algebra.EmfCompareAlgebra.weaveAspect(EmfCompareAlgebra.java:125)
+	at fr.inria.diverse.melange.processors.AspectsWeaver$3.accept(AspectsWeaver.java:94)
+	at fr.inria.diverse.melange.processors.AspectsWeaver$3.accept(AspectsWeaver.java:1)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at fr.inria.diverse.melange.processors.AspectsWeaver._preProcess(AspectsWeaver.java:97)
+	at fr.inria.diverse.melange.processors.AspectsWeaver.preProcess(AspectsWeaver.java:159)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.build(LanguageBuilder.java:333)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.access$0(LanguageBuilder.java:141)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:131)
+	at fr.inria.diverse.melange.processors.LanguageBuilder$1.accept(LanguageBuilder.java:1)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at fr.inria.diverse.melange.processors.LanguageBuilder._preProcess(LanguageBuilder.java:134)
+	at fr.inria.diverse.melange.processors.LanguageBuilder.preProcess(LanguageBuilder.java:849)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:91)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer$2.accept(MelangeDerivedStateComputer.java:1)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer.installDerivedState(MelangeDerivedStateComputer.java:95)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.installDerivedState(DerivedStateAwareResource.java:240)
+	at org.eclipse.xtext.resource.DerivedStateAwareResourceDescriptionManager.internalGetResourceDescription(DerivedStateAwareResourceDescriptionManager.java:54)
+	at org.eclipse.xtext.resource.impl.DefaultResourceDescriptionManager$1.get(DefaultResourceDescriptionManager.java:62)
+	at org.eclipse.xtext.resource.impl.DefaultResourceDescriptionManager$1.get(DefaultResourceDescriptionManager.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:77)
+	at org.eclipse.xtext.resource.impl.DefaultResourceDescriptionManager.getResourceDescription(DefaultResourceDescriptionManager.java:59)
+	at org.eclipse.xtext.resource.persistence.StorageAwareResourceDescriptionManager.getResourceDescription(StorageAwareResourceDescriptionManager.java:38)
+	at org.eclipse.xtext.builder.clustering.ClusteringBuilderState.writeNewResourceDescriptions(ClusteringBuilderState.java:400)
+	at org.eclipse.xtext.builder.clustering.ClusteringBuilderState.doUpdate(ClusteringBuilderState.java:134)
+	at org.eclipse.xtext.builder.builderState.AbstractBuilderState.update(AbstractBuilderState.java:115)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.doBuild(XtextBuilder.java:248)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:280)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:328)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:403)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:618)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2313)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:597)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:124)
+	at org.eclipse.xtext.builder.impl.BuildScheduler$BuildJob.run(BuildScheduler.java:164)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-10-21 11:04:29.243 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-10-21 11:04:30.735
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.apache.log4j 2 0 2015-10-21 11:04:31.619
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-21 11:04:33.435
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2015-10-21 11:06:26.642 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-10-21 11:06:28.047
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.apache.log4j 2 0 2015-10-21 11:06:28.824
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-21 11:06:30.600
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2015-10-21 11:10:55.800 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-10-21 11:10:57.216
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-21 11:10:59.427
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-10-21 11:11:09.498
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-10-21 11:17:17.937 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-10-21 11:17:19.236
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.apache.log4j 2 0 2015-10-21 11:17:20.020
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.net 1 0 2015-10-21 11:17:21.869
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
