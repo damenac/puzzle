@@ -262,7 +262,17 @@ public class EcoreGraph {
 		EcoreGraph clone = new EcoreGraph();
 		
 		for (EcoreVertex vertex : this.vertex) {
-			
+			EcoreVertex clonedVertex = vertex.cloneVertex();
+			clone.getVertex().add(clonedVertex);
+		}
+		
+		for (EcoreArc arc : this.arcs) {
+			EcoreVertex clonedFrom = clone.getNodeByName(clone, arc.getFrom().getVertexId());
+			EcoreVertex clonedTo = clone.getNodeByName(clone, arc.getTo().getVertexId());
+			EcoreArc clonedArc = arc.cloneArc(clonedFrom, clonedTo);
+			clonedFrom.getOutgoingArcs().add(clonedArc);
+			clonedTo.getIncomingArcs().add(clonedArc);
+			clone.getArcs().add(clonedArc);
 		}
 		
 		return clone;

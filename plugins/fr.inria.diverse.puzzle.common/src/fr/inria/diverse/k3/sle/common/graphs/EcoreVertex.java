@@ -138,6 +138,10 @@ public class EcoreVertex {
 
 	public EcoreVertex cloneVertex() {
 		EcoreVertex clone = new EcoreVertex(this.vertexId, this.getClassifier());
+		clone.visited = this.visited;
+		clone.tarjansIndex = this.tarjansIndex;
+		clone.tarjansLowlink = this.tarjansLowlink;
+		clone.onTarjansStack = this.onTarjansStack;
 		return clone;
 	}
 }

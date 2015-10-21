@@ -50,4 +50,9 @@ public class EcoreArc {
 		EcoreArc ecoreArc = (EcoreArc) o;
 		return ecoreArc.from.equals(this.from) && ecoreArc.to.equals(this.to);
 	}
+
+	public EcoreArc cloneArc(EcoreVertex from, EcoreVertex to) {
+		EcoreArc clone = new EcoreArc(from, to);
+		return clone;
+	}
 }
