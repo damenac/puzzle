@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="AbstractState" nsURI="AbstractState" nsPrefix="AbstractState">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractState" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1" eType="//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1" eType="//Transition"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" eType="//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//AbstractState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//AbstractState"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="effect" upperBound="-1" eType="//Statement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" lowerBound="1" eType="//Constraint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Program" eSuperTypes="//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1" eType="//Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guard" lowerBound="1" eType="//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="//Program" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Wait" eSuperTypes="//Statement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="miliseconds">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+</ecore:EPackage>

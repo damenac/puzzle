@@ -53,7 +53,7 @@ class SynthesisBuilder
 		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
-		var GraphPartition graphPartition = new SimulatedAnnealingPartitioning();
+		var GraphPartition graphPartition = new MinimumAcyclicPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;
 	}

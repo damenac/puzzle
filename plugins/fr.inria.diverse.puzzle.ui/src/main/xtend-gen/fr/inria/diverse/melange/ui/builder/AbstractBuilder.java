@@ -4,7 +4,7 @@ import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition;
@@ -22,7 +22,7 @@ public class AbstractBuilder {
    * TODO: Read the properties from an external file.
    */
   protected SynthesisProperties getSynthesisProperties() {
-    ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
+    ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
     MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
     FeaturesModelInference variabilityInferer = new PuzzleInferrer();
     GraphPartition graphPartition = new MinimumAcyclicPartition();

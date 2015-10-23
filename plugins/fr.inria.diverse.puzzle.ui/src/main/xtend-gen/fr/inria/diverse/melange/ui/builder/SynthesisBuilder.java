@@ -11,7 +11,7 @@ import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
-import fr.inria.diverse.puzzle.breaker.popup.actions.SimulatedAnnealingPartitioning;
+import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition;
 import fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager;
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer;
 import java.util.ArrayList;
@@ -60,7 +60,7 @@ public class SynthesisBuilder {
     ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
     MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
     FeaturesModelInference variabilityInferer = new PuzzleInferrer();
-    GraphPartition graphPartition = new SimulatedAnnealingPartitioning();
+    GraphPartition graphPartition = new MinimumAcyclicPartition();
     SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
     return properties;
   }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="State" nsURI="State" nsPrefix="State">
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="doActivity" eType="//Program" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entry" eType="//Program" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exit" eType="//Program" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PseudostateKind"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Conditional">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1" eType="//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="//Program" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Println"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Program">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,11 +1,11 @@
 var pieDataSyntacticCommonality = [{
-        value: 4,
+        value: 9,
         color:"#FAAC58",
         highlight: "#F7BE81",
         label: "Commonalities"
     },
     {
-        value: 64,
+        value: 47,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -34,7 +34,7 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [12.903225806451612,14.285714285714285,22.22222222222222]
+        data : [29.03225806451613,32.142857142857146,50.0]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -53,7 +53,7 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [16.129032258064516,14.285714285714285,27.77777777777778]
+        data : [38.70967741935484,32.142857142857146,66.66666666666666]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -72,7 +72,7 @@ var barRelationshipRatioFSM = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [8.0,13.513513513513514]
+        data : [18.0,32.432432432432435]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -91,7 +91,7 @@ var barRelationshipRatioLogo = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [8.0,10.81081081081081]
+        data : [18.0,24.324324324324326]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -110,7 +110,7 @@ var barRelationshipRatioFlowchart = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [13.513513513513514,10.81081081081081]
+        data : [32.432432432432435,24.324324324324326]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",

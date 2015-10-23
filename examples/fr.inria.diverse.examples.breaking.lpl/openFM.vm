@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vm:PFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel" name="FeatureModel">
+  <rootFeature name="Root" mandatory="true">
+    <children name="Trigger" parentGroup="//@rootFeature/@groups.0">
+      <children name="StateMachine" parentGroup="//@rootFeature/@children.0/@groups.0"/>
+      <children name="State" parentGroup="//@rootFeature/@children.0/@groups.1"/>
+      <children name="AbstractState" parentGroup="//@rootFeature/@children.0/@groups.2"/>
+      <groups features="//@rootFeature/@children.0/@children.0">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.0/@children.1">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.0/@children.2">
+        <cardinality upperBound="1"/>
+      </groups>
+    </children>
+    <children name="Constraint" parentGroup="//@rootFeature/@groups.1">
+      <children name="RelationalConstraint" parentGroup="//@rootFeature/@children.1/@groups.0"/>
+      <children name="Decision" parentGroup="//@rootFeature/@children.1/@groups.1"/>
+      <groups features="//@rootFeature/@children.1/@children.0">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.1/@children.1">
+        <cardinality upperBound="1"/>
+      </groups>
+    </children>
+    <children name="Expression" parentGroup="//@rootFeature/@groups.2">
+      <children name="VarReference" parentGroup="//@rootFeature/@children.2/@groups.0"/>
+      <children name="ArithmeticExpression" parentGroup="//@rootFeature/@children.2/@groups.1"/>
+      <children name="Literal" parentGroup="//@rootFeature/@children.2/@groups.2">
+        <children name="IntegerLit" parentGroup="//@rootFeature/@children.2/@children.2/@groups.0"/>
+        <groups features="//@rootFeature/@children.2/@children.2/@children.0">
+          <cardinality upperBound="1"/>
+        </groups>
+      </children>
+      <children name="LogoProgram" parentGroup="//@rootFeature/@children.2/@groups.3"/>
+      <children name="Primitive" parentGroup="//@rootFeature/@children.2/@groups.4"/>
+      <children name="Instruction" parentGroup="//@rootFeature/@children.2/@groups.5"/>
+      <children name="ProcCall" parentGroup="//@rootFeature/@children.2/@groups.6"/>
+      <groups features="//@rootFeature/@children.2/@children.0">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.1">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.2">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.3">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.4">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.5">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.6">
+        <cardinality upperBound="1"/>
+      </groups>
+    </children>
+    <children name="Node" parentGroup="//@rootFeature/@groups.3">
+      <children name="Flowchart" parentGroup="//@rootFeature/@children.3/@groups.0"/>
+      <children name="Subflow" parentGroup="//@rootFeature/@children.3/@groups.1"/>
+      <groups features="//@rootFeature/@children.3/@children.0">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.3/@children.1">
+        <cardinality upperBound="1"/>
+      </groups>
+    </children>
+    <groups features="//@rootFeature/@children.0">
+      <cardinality upperBound="1"/>
+    </groups>
+    <groups features="//@rootFeature/@children.1">
+      <cardinality upperBound="1"/>
+    </groups>
+    <groups features="//@rootFeature/@children.2">
+      <cardinality upperBound="1"/>
+    </groups>
+    <groups features="//@rootFeature/@children.3">
+      <cardinality upperBound="1"/>
+    </groups>
+  </rootFeature>
+  <constraints name="StateMachine implies State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine implies AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="State implies AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="State implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram implies Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram implies Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+    </expression>
+  </constraints>
+  <constraints name="Primitive implies Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall implies Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+    </expression>
+  </constraints>
+  <constraints name="Subflow implies Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="Decision implies Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+    </expression>
+  </constraints>
+</vm:PFeatureModel>

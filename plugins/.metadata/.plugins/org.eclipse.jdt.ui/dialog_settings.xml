@@ -77,7 +77,7 @@
 		<item value="CommonalitiesDetector - fr.inria.diverse.puzzle.metrics" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
 		<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
-		<item value="3" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<item value="2" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
 			<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar"/>
 			<item value="/Users/dmendeza/workspaces/puzzle-testing/refm-competition-ws/fr.inria.diverse.refm.competition.mendez/lib/fr.inria.diverse.vmsynthesis.jar"/>

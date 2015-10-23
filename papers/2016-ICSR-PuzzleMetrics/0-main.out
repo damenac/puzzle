@@ -1,16 +1,9 @@
 \BOOKMARK [0][-]{chapter.1}{Identifying and Evaluating Potential Reuse in the Development of Domain-Specific Languages}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 2
-\BOOKMARK [1][-]{section.1.2}{Background}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{Preliminary Definitions}{chapter.1}% 3
 \BOOKMARK [2][-]{subsection.1.2.1}{Domain-Specific Languages}{section.1.2}% 4
 \BOOKMARK [2][-]{subsection.1.2.2}{On the notions of commonalities and potential reuse in DSLs}{section.1.2}% 5
 \BOOKMARK [2][-]{subsection.1.2.3}{Equivalence between language constructs}{section.1.2}% 6
 \BOOKMARK [3][-]{section*.3}{Comparing meta-classes.}{subsection.1.2.3}% 7
 \BOOKMARK [3][-]{section*.4}{Comparing domain-specific actions.}{subsection.1.2.3}% 8
 \BOOKMARK [3][-]{section*.5}{Semantical variability.}{subsection.1.2.3}% 9
-\BOOKMARK [1][-]{section.1.3}{Motivating scenario}{chapter.1}% 10
-\BOOKMARK [1][-]{section.1.4}{Automatically detecting potential reuse}{chapter.1}% 11
-\BOOKMARK [1][-]{section.1.5}{Objectively evaluating the potential reuse}{chapter.1}% 12
-\BOOKMARK [2][-]{subsection.1.5.1}{Visualizing semantic variability}{section.1.5}% 13
-\BOOKMARK [1][-]{section.1.6}{Validation}{chapter.1}% 14
-\BOOKMARK [2][-]{subsection.1.6.1}{Rhapsody + Harel's Statecharts + UML}{section.1.6}% 15
-\BOOKMARK [2][-]{subsection.1.6.2}{Identifying potential reuse in DSLs from GitHub}{section.1.6}% 16

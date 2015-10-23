@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vm:PFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel" name="FeatureModel">
+  <rootFeature name="Root" mandatory="true">
+    <children name="Trigger" parentGroup="//@rootFeature/@groups.1">
+      <children name="StateMachine" mandatory="true" parentGroup="//@rootFeature/@children.0/@groups.0"/>
+      <children name="State" mandatory="true" parentGroup="//@rootFeature/@children.0/@groups.1"/>
+      <children name="AbstractState" mandatory="true" parentGroup="//@rootFeature/@children.0/@groups.2"/>
+      <groups features="//@rootFeature/@children.0/@children.0">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.0/@children.1">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.0/@children.2">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+    </children>
+    <children name="Constraint" parentGroup="//@rootFeature/@groups.1">
+      <children name="RelationalConstraint" mandatory="true" parentGroup="//@rootFeature/@children.1/@groups.0"/>
+      <children name="Decision" parentGroup="//@rootFeature/@children.1/@groups.1"/>
+      <groups features="//@rootFeature/@children.1/@children.0">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.1/@children.1">
+        <cardinality upperBound="1"/>
+      </groups>
+    </children>
+    <children name="Expression" mandatory="true" parentGroup="//@rootFeature/@groups.0">
+      <children name="VarReference" parentGroup="//@rootFeature/@children.2/@groups.2"/>
+      <children name="ArithmeticExpression" mandatory="true" parentGroup="//@rootFeature/@children.2/@groups.0"/>
+      <children name="Literal" mandatory="true" parentGroup="//@rootFeature/@children.2/@groups.1">
+        <children name="IntegerLit" mandatory="true" parentGroup="//@rootFeature/@children.2/@children.2/@groups.0"/>
+        <groups features="//@rootFeature/@children.2/@children.2/@children.0">
+          <cardinality lowerBound="1" upperBound="1"/>
+        </groups>
+      </children>
+      <children name="LogoProgram" parentGroup="//@rootFeature/@children.2/@groups.2"/>
+      <children name="Primitive" parentGroup="//@rootFeature/@children.2/@groups.2"/>
+      <children name="Instruction" parentGroup="//@rootFeature/@children.2/@groups.2"/>
+      <children name="ProcCall" parentGroup="//@rootFeature/@children.2/@groups.2"/>
+      <groups features="//@rootFeature/@children.2/@children.1">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.2">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.2/@children.0 //@rootFeature/@children.2/@children.3 //@rootFeature/@children.2/@children.4 //@rootFeature/@children.2/@children.5 //@rootFeature/@children.2/@children.6">
+        <cardinality lowerBound="1" upperBound="4"/>
+      </groups>
+    </children>
+    <children name="Node" parentGroup="//@rootFeature/@groups.1">
+      <children name="Flowchart" mandatory="true" parentGroup="//@rootFeature/@children.3/@groups.0"/>
+      <children name="Subflow" mandatory="true" parentGroup="//@rootFeature/@children.3/@groups.1"/>
+      <groups features="//@rootFeature/@children.3/@children.0">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.3/@children.1">
+        <cardinality lowerBound="1" upperBound="1"/>
+      </groups>
+    </children>
+    <groups features="//@rootFeature/@children.2">
+      <cardinality lowerBound="1" upperBound="1"/>
+    </groups>
+    <groups features="//@rootFeature/@children.0 //@rootFeature/@children.1 //@rootFeature/@children.3">
+      <cardinality upperBound="2"/>
+    </groups>
+  </rootFeature>
+  <constraints name="StateMachine implies State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine implies AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="State implies AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="State implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint implies Expression">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2"/>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram implies Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram implies Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+    </expression>
+  </constraints>
+  <constraints name="Primitive implies Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall implies Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+    </expression>
+  </constraints>
+  <constraints name="Subflow implies Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="Decision implies Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+    </expression>
+  </constraints>
+  <constraints name="Trigger implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="Trigger implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="State implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="State implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="Constraint implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="Decision implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="VarReference implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram implies ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+    </expression>
+  </constraints>
+  <constraints name="Primitive implies LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+    </expression>
+  </constraints>
+  <constraints name="Primitive implies ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+    </expression>
+  </constraints>
+  <constraints name="Instruction implies LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+    </expression>
+  </constraints>
+  <constraints name="Instruction implies Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+    </expression>
+  </constraints>
+  <constraints name="Instruction implies ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall implies LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall implies Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+    </expression>
+  </constraints>
+  <constraints name="Node implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="Node implies Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="Node implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart implies Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="Subflow implies Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="Subflow implies Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+    </expression>
+  </constraints>
+  <constraints name="Subflow implies VarReference">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.0"/>
+    </expression>
+  </constraints>
+  <constraints name="Trigger excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Trigger excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Trigger excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Trigger excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Trigger excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Trigger excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Trigger excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="StateMachine excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="State excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="AbstractState excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Constraint excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Constraint excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Constraint excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Constraint excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="RelationalConstraint excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes Trigger">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Decision excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes Trigger">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes RelationalConstraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="LogoProgram excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes Trigger">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes RelationalConstraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Primitive excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes Trigger">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes RelationalConstraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Instruction excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes Trigger">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes Constraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes RelationalConstraint">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes Decision">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.1/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes Node">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes Flowchart">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="ProcCall excludes Subflow">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Node excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Node excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Node excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Node excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Node excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Node excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Node excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes Trigger">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Flowchart excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.0"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes Trigger">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes StateMachine">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.0"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes State">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.1"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes AbstractState">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.0/@children.2"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes LogoProgram">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.3"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes Primitive">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.4"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes Instruction">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.5"/>
+      </right>
+    </expression>
+  </constraints>
+  <constraints name="Subflow excludes ProcCall">
+    <expression xsi:type="vm:PBinaryExpression" operator="implies">
+      <left xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.3/@children.1"/>
+      <right xsi:type="vm:PUnaryExpression">
+        <expr xsi:type="vm:PFeatureRef" ref="//@rootFeature/@children.2/@children.6"/>
+      </right>
+    </expression>
+  </constraints>
+</vm:PFeatureModel>

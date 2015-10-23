@@ -25,7 +25,7 @@ class AbstractBuilder {
 	 * TODO: Read the properties from an external file. 
 	 */
 	def protected SynthesisProperties getSynthesisProperties(){
-		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
+		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
 		var GraphPartition graphPartition = new MinimumAcyclicPartition();

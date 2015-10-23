@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ProcCall" nsURI="ProcCall" nsPrefix="ProcCall">
+  <eClassifiers xsi:type="ecore:EClass" name="ProcCall" eSuperTypes="//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actualArgs" upperBound="-1" eType="//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="declaration" lowerBound="1" eType="//ProcDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProcDeclaration" eSuperTypes="//Instruction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="procCall" upperBound="-1" eType="//ProcCall"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Repeat">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" lowerBound="1" eType="//Block" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="While">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" lowerBound="1" eType="//Block" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="//Expression">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="//Instruction">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="RelationalConstraint" nsURI="RelationalConstraint" nsPrefix="RelationalConstraint">
+  <eClassifiers xsi:type="ecore:EClass" name="RelationalConstraint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1" eType="//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+</ecore:EPackage>

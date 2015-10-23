@@ -1,15 +1,15 @@
-!SESSION 2015-10-21 18:15:39.133 -----------------------------------------------
+!SESSION 2015-10-22 16:09:36.053 -----------------------------------------------
 eclipse.buildId=4.4.2.M20150204-1700
 java.version=1.8.0_25
 java.vendor=Oracle Corporation
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
-Framework arguments:  -version 3 -port 54625 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.metrics.EmpiricalStudy -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -testpluginname fr.inria.diverse.puzzle.metrics
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -consoleLog -version 3 -port 54625 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.metrics.EmpiricalStudy -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/plugins/../junit-workspace -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/pde-junit/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog -testpluginname fr.inria.diverse.puzzle.metrics
+Framework arguments:  -version 3 -port 61149 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.metrics.EmpiricalStudy -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -testpluginname fr.inria.diverse.puzzle.metrics
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -consoleLog -version 3 -port 61149 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.metrics.EmpiricalStudy -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/plugins/../junit-workspace -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/pde-junit/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog -testpluginname fr.inria.diverse.puzzle.metrics
 
-!ENTRY org.eclipse.core.net 1 0 2015-10-21 18:15:45.727
+!ENTRY org.eclipse.core.net 1 0 2015-10-22 16:09:42.607
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
 
-!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2015-10-21 18:22:34.882
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2015-10-22 16:09:51.551
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Exception in org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop() of bundle org.eclipse.mylyn.tasks.ui.

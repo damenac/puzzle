@@ -11,15 +11,15 @@ google.setOnLoadCallback(drawChart);
 
       data.addRows([
         [0,  0.0,  0], 
-        [7,  5.352941176470588,  14], 
-        [14,  10.705882352941176,  28], 
-        [21,  16.058823529411764,  42], 
-        [28,  21.41176470588235,  56], 
-        [35,  26.76470588235294,  70], 
-        [42,  32.11764705882353,  84], 
-        [49,  37.470588235294116,  98], 
-        [56,  42.8235294117647,  112], 
-        [63,  48.17647058823529,  126]      ]);
+        [6,  16.5,  12], 
+        [12,  33.0,  24], 
+        [18,  49.5,  36], 
+        [24,  66.0,  48], 
+        [30,  82.5,  60], 
+        [36,  99.0,  72], 
+        [42,  115.5,  84], 
+        [48,  132.0,  96], 
+        [54,  148.5,  108]      ]);
 
       var syntaxOptions = {
         title: 'Maintenance costs of the family of DSLs vs. maintenance costs of its corresponding language product line (abstract syntax)',
@@ -39,7 +39,7 @@ google.setOnLoadCallback(drawChart);
           title: 'Amount of Involved Constructs',
           titleTextStyle: {fontSize: 10, fontName: "lucida sans unicode" },
           textStyle: {fontSize: 10, fontName: "lucida sans unicode", bold: true },
-          ticks: [0, 7, 14, 21, 28, 35, 42, 49, 56, 63]
+          ticks: [0, 6, 12, 18, 24, 30, 36, 42, 48, 54]
         },
         legend: { position: 'top',
       			  textStyle: {fontSize: 10, fontName: "lucida sans unicode" }
