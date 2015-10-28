@@ -27,10 +27,6 @@ import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
 import fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVennDiagram;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySemanticChart;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySyntacticChart;
-import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticVennDiagram;
 
 public class ComputeMetricsActionImpl {
 
@@ -108,25 +104,11 @@ public class ComputeMetricsActionImpl {
 		outMetrics.close();
 		
 		
-		File syntacticVennData = new File(project.getLocation().toString() + "/libVenn/syntacticVennData.jsonp" );
-		if(!syntacticVennData.exists())
-			syntacticVennData.createNewFile();
-		PrintWriter out = new PrintWriter( syntacticVennData );
-		SpecialFamilySyntacticChart syntacticVennDiagram = new SyntacticVennDiagram();
-        out.print(syntacticVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator));
-        out.close();
-        
-        File semanticVennData = new File(project.getLocation().toString() + "/libVenn/semanticVennData.jsonp" );
-		if(!semanticVennData.exists())
-			semanticVennData.createNewFile();
-		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
-		SpecialFamilySemanticChart semanticalVennDiagram = new SemanticalVennDiagram();
-		outSemanticVennData.print(semanticalVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
-		outSemanticVennData.close();
-		
 		FamilysMetricManager familysMetric = new FamilysMetricManager(project);
 		
 		familysMetric.createReport1FamilysShape(languages);
+		familysMetric.createReport1FamilysShapeData(languages);
+		
 		familysMetric.createReport2CostSaving(languages);
 		familysMetric.createReport2CostSavingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
 		familysMetric.createReport3ReuseMetrics(languages);

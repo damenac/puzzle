@@ -2,7 +2,7 @@ var semanticVenn = venn.VennDiagram()
     .width(230)
     .height(230);
     
-    var div = d3.select("#div-semantic-venn")
+    var div = d3.select("#div-sem-signature-venn")
     div.datum(semanticVennData).call(semanticVenn);
     
     var tooltip = d3.select("body").append("div")
@@ -20,7 +20,7 @@ var semanticVenn = venn.VennDiagram()
         
         // Display a tooltip with the current size
         tooltip.transition().duration(400).style("opacity", .9);
-        tooltip.text(d.size + " methods");
+        tooltip.text(d.size + " DSAs");
         
         // highlight the current path
         var selection = d3.select(this).transition("tooltip").duration(400);

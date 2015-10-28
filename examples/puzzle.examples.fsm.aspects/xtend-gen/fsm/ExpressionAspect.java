@@ -13,6 +13,8 @@ public class ExpressionAspect {
     Object result = null;
      if (_self instanceof fsm.BoolLit){
     result = fsm.BoolLitAspect.eval((fsm.BoolLit)_self,context);
+    } else  if (_self instanceof fsm.RelationalExpression){
+    result = fsm.RelationalExpressionAspect.eval((fsm.RelationalExpression)_self,context);
     } else  if (_self instanceof fsm.ArithmeticExpression){
     result = fsm.ArithmeticExpressionAspect.eval((fsm.ArithmeticExpression)_self,context);
     } else  if (_self instanceof fsm.IntegerLit){
@@ -21,8 +23,6 @@ public class ExpressionAspect {
     result = fsm.StringLitAspect.eval((fsm.StringLit)_self,context);
     } else  if (_self instanceof fsm.Literal){
     result = fsm.LiteralAspect.eval((fsm.Literal)_self,context);
-    } else  if (_self instanceof fsm.RelationalExpression){
-    result = fsm.RelationalExpressionAspect.eval((fsm.RelationalExpression)_self,context);
     } else  if (_self instanceof fsm.Expression){
     result = fsm.ExpressionAspect._privk3_eval(_self_, (fsm.Expression)_self,context);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };

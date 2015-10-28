@@ -5,45 +5,45 @@ The style file: abbrv.bst
 Database file #1: 0-main.bib
 Warning--empty booktitle in Berger:2014
 Warning--empty publisher in Berger:2014
-You've used 25 entries,
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            695 strings with 9289 characters,
-and the built_in function-call counts, 11574 in all, are:
-= -- 1106
-> -- 623
-< -- 26
-+ -- 236
-- -- 208
-* -- 905
-:= -- 1838
-add.period$ -- 91
-call.type$ -- 25
-change.case$ -- 166
+            704 strings with 9499 characters,
+and the built_in function-call counts, 12069 in all, are:
+= -- 1154
+> -- 641
+< -- 28
++ -- 243
+- -- 213
+* -- 940
+:= -- 1910
+add.period$ -- 95
+call.type$ -- 26
+change.case$ -- 170
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 465
-empty$ -- 861
-format.name$ -- 208
-if$ -- 2527
+cite$ -- 28
+duplicate$ -- 490
+empty$ -- 904
+format.name$ -- 213
+if$ -- 2643
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 26
-newline$ -- 128
-num.names$ -- 70
-pop$ -- 192
+int.to.str$ -- 26
+missing$ -- 27
+newline$ -- 133
+num.names$ -- 74
+pop$ -- 198
 preamble$ -- 1
-purify$ -- 142
+purify$ -- 145
 quote$ -- 0
-skip$ -- 319
+skip$ -- 337
 stack$ -- 0
-substring$ -- 637
-swap$ -- 163
-text.length$ -- 26
+substring$ -- 671
+swap$ -- 175
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 98
+type$ -- 102
 warning$ -- 2
-while$ -- 99
-width$ -- 27
-write$ -- 307
+while$ -- 104
+width$ -- 28
+write$ -- 320
 (There were 2 warnings)

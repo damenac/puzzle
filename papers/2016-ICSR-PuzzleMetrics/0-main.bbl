@@ -134,6 +134,13 @@ M.~Mernik, J.~Heering, and A.~M. Sloane.
 \newblock When and how to develop domain-specific languages.
 \newblock {\em ACM Comput. Surv.}, 37(4):316--344, Dec. 2005.
 
+\bibitem{Mosses:2001}
+P.~D. Mosses.
+\newblock The varieties of programming language semantics and their uses.
+\newblock In D.~Bj{\o}rner, M.~Broy, and A.~V. Zamulin, editors, {\em
+  Perspectives of System Informatics}, volume 2244 of {\em Lecture Notes in
+  Computer Science}, pages 165--190. Springer Berlin Heidelberg, 2001.
+
 \bibitem{Oney:2012}
 S.~Oney, B.~Myers, and J.~Brandt.
 \newblock Constraintjs: Programming interactive behaviors for the web by

@@ -16,14 +16,19 @@ import org.eclipse.core.runtime.Platform;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
 import fr.inria.diverse.puzzle.metrics.specialCharts.InternalDependenciesGraph;
 import fr.inria.diverse.puzzle.metrics.specialCharts.FamilyMembershipGraph;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticSignatureAndBodyVennDiagram;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticSignatureVennDiagram;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SemanticalVariabilityTree;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySemanticChart;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialFamilySyntacticChart;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticDeepVennDiagram;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticNamingVennDiagram;
 import fr.inria.diverse.puzzle.metrics.specialCharts.TarjansAlgorithmGraph;
 
 /**
@@ -45,6 +50,12 @@ public class FamilysMetricManager extends MetricsManager {
 	// Methods
 	// ------------------------------------------------------
 	
+	/**
+	 * Creates the HTML file with the report that displays the commonalities among the set of DSLs. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
 	public void createReport1FamilysShape(ArrayList<Language> languages) throws URISyntaxException, IOException{
 		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-FamilysShape.html");
         File file = new File(FileLocator.resolve(path).toURI());
@@ -65,33 +76,46 @@ public class FamilysMetricManager extends MetricsManager {
 		outRileReport.close();
 	}
 	
-	public void createReport1LargeAnalysis(ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-LargeAnalysis.html");
-        File file = new File(FileLocator.resolve(path).toURI());
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        String content = "";
-        String currentLine = br.readLine();
-        while(currentLine != null){
-        	content += currentLine + "\n";
-        	currentLine = br.readLine();
-        }
-        br.close();
+	/**
+	 * Creates the .js files containing the data needed by report that displays the commonalities among the set of DSLs. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
+	public void createReport1FamilysShapeData(ArrayList<Language> languages) throws Exception {
+		File syntacticVennData = new File(project.getLocation().toString() + "/libVenn/syntacticVennData.jsonp" );
+		if(!syntacticVennData.exists())
+			syntacticVennData.createNewFile();
+		PrintWriter out = new PrintWriter( syntacticVennData );
+		SpecialFamilySyntacticChart syntacticVennDiagram = new SyntacticNamingVennDiagram();
+        out.print(syntacticVennDiagram.getVariablesDeclaration(languages, null));
+        out.close();
         
-        File fileReport = null;
+        File syntacticDeepVennData = new File(project.getLocation().toString() + "/libVenn/syntacticDeepVennData.jsonp" );
+		if(!syntacticDeepVennData.exists())
+			syntacticDeepVennData.createNewFile();
+		PrintWriter outSyntacticDeepVennData = new PrintWriter( syntacticDeepVennData );
+		SpecialFamilySyntacticChart syntacticDeepVennDiagram = new SyntacticDeepVennDiagram();
+		outSyntacticDeepVennData.print(syntacticDeepVennDiagram.getVariablesDeclaration(languages, null));
+		outSyntacticDeepVennData.close();
         
-        if(project != null)
-        	fileReport = new File(project.getLocation().toString() + "/Report-1-LargeAnalysis.html" );
-        else{
-        	String pathReport = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getLocation().replace("file:", "").replace("reference:", "");
-            fileReport = new File(pathReport + "Report-1-LargeAnalysis.html");
-        }
-        
-		if(!fileReport.exists())
-			fileReport.createNewFile();
-		PrintWriter outRileReport = new PrintWriter( fileReport );
-		outRileReport.print(content);
-		outRileReport.close();
+        File semanticVennData = new File(project.getLocation().toString() + "/libVenn/semanticVennData.jsonp" );
+		if(!semanticVennData.exists())
+			semanticVennData.createNewFile();
+		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
+		SpecialFamilySemanticChart semanticalVennDiagram = new SemanticSignatureVennDiagram();
+		outSemanticVennData.print(semanticalVennDiagram.getVariablesDeclaration(languages, new NamingConceptComparison(), null));
+		outSemanticVennData.close();
+		
+		 File semanticSignatureAndBodyVennData = new File(project.getLocation().toString() + "/libVenn/semanticSignatureAndBodyVennData.jsonp" );
+			if(!semanticSignatureAndBodyVennData.exists())
+				semanticSignatureAndBodyVennData.createNewFile();
+			PrintWriter outSemanticSignatureAndBodyVennData = new PrintWriter( semanticSignatureAndBodyVennData );
+			SpecialFamilySemanticChart semanticalSignatureAndBodyVennDiagram = new SemanticSignatureAndBodyVennDiagram();
+			outSemanticSignatureAndBodyVennData.print(semanticalSignatureAndBodyVennDiagram.getVariablesDeclaration(languages, new NamingConceptComparison(), null));
+			outSemanticSignatureAndBodyVennData.close();
 	}
+	
 	
 	public void createReport2CostSaving(ArrayList<Language> languages) throws URISyntaxException, IOException{
 		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-2-CostSavingsMetrics.html");
@@ -304,6 +328,34 @@ public class FamilysMetricManager extends MetricsManager {
         br.close();
         
         File fileReport = new File(project.getLocation().toString() + "/Report-5-SemanticVariability.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	public void createReport1LargeAnalysis(ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-LargeAnalysis.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = null;
+        
+        if(project != null)
+        	fileReport = new File(project.getLocation().toString() + "/Report-1-LargeAnalysis.html" );
+        else{
+        	String pathReport = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getLocation().replace("file:", "").replace("reference:", "");
+            fileReport = new File(pathReport + "Report-1-LargeAnalysis.html");
+        }
+        
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
