@@ -19,12 +19,12 @@ B.~Biegel and S.~Diehl.
   Automated Software Engineering}, ASE '10, pages 167--168, New York, NY, USA,
   2010. ACM.
 
-\bibitem{Cengarle:2009}
-M.~V. Cengarle, H.~Gr\"onniger, and B.~Rumpe.
-\newblock Variability within modeling language definitions.
-\newblock In A.~Schürr and B.~Selic, editors, {\em Model Driven Engineering
-  Languages and Systems}, volume 5795 of {\em Lecture Notes in Computer
-  Science}, pages 670--684. Springer Berlin Heidelberg, 2009.
+\bibitem{Clark:2013}
+T.~Clark and B.~Barn.
+\newblock Domain engineering for software tools.
+\newblock In I.~Reinhartz-Berger, A.~Sturm, T.~Clark, S.~Cohen, and J.~Bettin,
+  editors, {\em Domain Engineering}, pages 187--209. Springer Berlin
+  Heidelberg, 2013.
 
 \bibitem{Cleenewerck:2003}
 T.~Cleenewerck.
@@ -158,6 +158,13 @@ L.~Rose, E.~Guerra, J.~de~Lara, A.~Etien, D.~Kolovos, and R.~Paige.
 E.~Vacchi and W.~Cazzola.
 \newblock Neverlang: A framework for feature-oriented language development.
 \newblock {\em Computer Languages, Systems \& Structures}, 43:1 -- 40, 2015.
+
+\bibitem{Storm:2013}
+T.~van~der Storm, W.~Cook, and A.~Loh.
+\newblock Object grammars.
+\newblock In K.~Czarnecki and G.~Hedin, editors, {\em Software Language
+  Engineering}, volume 7745 of {\em Lecture Notes in Computer Science}, pages
+  4--23. Springer Berlin Heidelberg, 2013.
 
 \bibitem{voelter:2013}
 M.~V\"olter, S.~Benz, C.~Dietrich, B.~Engelmann, M.~Helander, L.~C.~L. Kats,
