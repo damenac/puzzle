@@ -7,46 +7,46 @@ Given a set of existing DSLs (that we term as the \textit{input set}) our approa
 
 In the first part of our approach, we perform static analysis in syntax and semantics of a given set of DSLs in order to build a pair of Venn diagrams such as the presented in the previous section (Figure \ref{fig:domains}). We consider these diagrams as a useful mechanism that allows language designers to easily visually identify commonalities. To this end, we designed an algorithm that is able to compute the all intersections among the syntax of the DSLs in the input set. We do the proper for the case of the domain-specific actions. 
 
-Our algorithm for detecting \textbf{syntactic intersections} can be formalized by the function (1) that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these metamodels. As mentioned before, there can be intersections among any of the combinations of the input set. Hence, in the result there is a tuple for each of the possible combinations of the input metamodels (i.e., the power set) (2). 
+Our algorithm for detecting \textbf{syntactic intersections} can be described as by the function that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these metamodels. As mentioned before, there can be intersections among any of the combinations of the input set. Hence, in the result there is a tuple for each of the possible combinations of the input metamodels (i.e., the power set). Similarly, our algorithm for detecting \textbf{semantic intersections} can be described as a function that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these aspects. 
 
-\begin{equation}
-  Venn_{syn} : set(MM) \rightarrow set(<set(MM),set(MC)>)
-\end{equation}
+%\begin{equation}
+%  Venn_{syn} : set(MM) \rightarrow set(<set(MM),set(MC)>)
+%\end{equation}
 
-\begin{equation}
-  Venn_{syn}(mms) = \{<x,y> \mid x \in \mathcal{P}(mms), y = I_{syn}(x)\}
-\end{equation}
+%\begin{equation}
+%  Venn_{syn}(mms) = \{<x,y> \mid x \in \mathcal{P}(mms), y = I_{syn}(x)\}
+%\end{equation}
 
-Note that our algorithm relies on a function $I_{syn}$ that computes the intersection existing withing a given set of metamodels. It can be formalized as follows:
+%Note that our algorithm relies on a function $I_{syn}$ that computes the intersection existing withing a given set of metamodels. It can be formalized as follows:
 
-\begin{equation}
-  I_{syn} : set(MM) \rightarrow set(MC)
-\end{equation}
-\vspace{-2mm}
-\begin{equation}
-  I_{syn}(mms) = \bigcap _{i=0}^{|mms|}mms_i
-\end{equation}
+%\begin{equation}
+%  I_{syn} : set(MM) \rightarrow set(MC)
+%\end{equation}
+%\vspace{-2mm}
+%\begin{equation}
+%  I_{syn}(mms) = \bigcap _{i=0}^{|mms|}mms_i
+%\end{equation}
 
-Similarly, our algorithm for detecting \textbf{semantic intersections} can be formalized by the function (3) that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these aspects (4). 
+%Similarly, our algorithm for detecting \textbf{semantic intersections} can be described as a function that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these aspects. 
 
-\begin{equation}
-  Venn_{sem} : set(A) \rightarrow set(<set(A),set(DSA)>)
-\end{equation}
+%\begin{equation}
+%  Venn_{sem} : set(A) \rightarrow set(<set(A),set(DSA)>)
+%\end{equation}
 
-\begin{equation}
-  Venn_{syn}(mms) = \{<x,y> \mid x \in \mathcal{P}(mms), y = I_{sem}(x)\}
-\end{equation}
-\vspace{2mm}
+%\begin{equation}
+%  Venn_{syn}(mms) = \{<x,y> \mid x \in \mathcal{P}(mms), y = I_{sem}(x)\}
+%\end{equation}
+%\vspace{2mm}
 
-This time, the algorithm for semantic commonalities relies on a function $I_{sem}$ that computes the intersection existing withing a given set of aspects. It can be formalized as follows:
+%This time, the algorithm for semantic commonalities relies on a function $I_{sem}$ that computes the intersection existing withing a given set of aspects. It can be formalized as follows:
 
-\begin{equation}
-  I_{sem} : set(A) \rightarrow set(DSA)
-\end{equation}
-\vspace{-2mm}
-\begin{equation}
-  I_{sem}(dsas) = \bigcap _{i=0}^{|dsas|}dsas_i
-\end{equation}
+%\begin{equation}
+%  I_{sem} : set(A) \rightarrow set(DSA)
+%\end{equation}
+%\vspace{-2mm}
+%\begin{equation}
+%  I_{sem}(dsas) = \bigcap _{i=0}^{|dsas|}dsas_i
+%\end{equation}
 
 \subsubsection{Comparison operators:} So far, we have defined a syntactic intersection is a set of metaclasses that are equal in two or more DSLs. Similarly, semantic intersection has been defined as a set of domain-specific actions that are equal in two or more DSLs. However, at this point we need to clearly define the notion of equality between metaclasses and domain-specific actions. That is, we need to establish the criteria under we consider that two metaclasses/domain-specific actions are equal.
 
