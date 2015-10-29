@@ -12,9 +12,7 @@
 \subsubsection{Technological space:} Currently, there are diverse techniques available for the implementation of syntax and semantics of DSLs \cite{Mernik:2005b}. Language designers can choose between using context-free grammars or metamodels as specification formalism for syntax. Similarly, there are at least three methods for expressing semantics: operationally, denotationally, and axiomatically \cite{Mosses:2001}. In this paper we are interested on DSLs which syntax is specified by means of metamodels and semantics is specified operationally as a set methods (a.k.a, \textit{domain-specific actions} \cite{Combemale:2013}). Each language construct is specified by means a metaclass and the relationship between language constructs are specified as references between metaclasses. In turn, each metaclass contains a set of domain-specific actions that correspond to the behavior at runtime.
 
 \vspace{-3mm}
-\subsubsection{Implementation:} In order to implement a DSL, language designer need a set of tools offering the capabilities to specify the DSL according to the selected technological space. Those tools are provided by language workbenches that offer a set of meta-languages for expressing syntax and semantics. In this paper, we use Eclipse-based technologies. As a result, we use Ecore as the meta-language for expressing metamodels. Then, we use Kermeta 3 as the formalism for expressing domain specific actions. In K3 domain-specific actions are encapsulated in aspects. 
-
-%A DSL is specified in terms of its abstract syntax, concrete syntax and semantics. There is a mapping between the concrete syntax and the semantics. Then, a DSL specification can be defined as triple $<AS, CS, Sem>$.
+\subsubsection{Implementation:} In order to implement a DSL, language designer need a set of tools offering the capabilities to specify the DSL according to the selected technological space. Those tools are provided by language workbenches that offer a set of meta-languages for expressing syntax and semantics. The ideas presented in this paper are implemented in an Eclipse-based language workbench. In particular, metamodels are specified in the Ecore language whereas domain-specific actions are specified as methods in Xtend action language. The mapping between metaclasses and domain-specific actions is specified by using the notion of aspect introduced by the Kermeta 3 framework. 
 
 \subsection{On the notions of \textit{commonalities} and \textit{potential reuse} in DSLs}
 
@@ -22,17 +20,21 @@ By definition, DSLs are scoped to specific domains so they provide restricted se
 
 Naturally, commonalities can be found not only at the level of the syntax but also at the level of the semantics. For the technological space discussed in this paper, syntactic commonalities appear where DSLs share some metaclasses and semantic commonalities appear where DSLs share some domain-specific actions. Figure \ref{fig:domains} illustrates this situation. There are three DSLs (i.e., $A$, $B$, and $C$) with both syntactic and semantic commonalities. Syntactic commonalities (at the left of the figure) correspond to the metaclasses $MC_Z$ and $MC_Q$. $MC_Z$ is shared by DSLs $A$ and $C$ whereas $MC_Q$ is shared by DSLs $A$, $B$, and $C$. Semantic commonalities (at the right of the figure) correspond to the domain-specific action $DSA_3$ which is shared by all the DSLs. 
 
-\vspace{-3mm}
-\subsubsection{Semantical variability:} Note that the fact that two metaclasses are shared does not imply that all their domain specific actions are the same. In that figure, we see this in the case of MMz. This metaclass is shared by the DSLs A and C but, in each DSL the semantics is different since each of them implement a different DSA for the metaclass. We refer to that phenomenon as \textit{semantical variability}. There are two constructs that share the syntax but that differ in their semantics. In such case, there is potential reuse at the level of the syntax since the metaclass can be defined once and reused in the DSLs but the semantics should be defined differently for each DSLs. 
-
-%there are three DSLs DSLs that are totally independent. That means that they do not share any of their language constructs, and consequently, there is not potential reuse between them. Differently, the two DSLs shown at the right of the figure have overlapping domains. That means that there are a subset of language that are \large\textbf{``equal'' }\normalsize in both DSLs. Note that if two language constructs are the same, we can assume that their specifications are equal and can be reused instead of being replicated.
-
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{images/domains-fig.pdf}
 \caption{Commonalities between domains and potential reuse}
 \label{fig:domains}
 \end{figure}
+
+Commonalities can be found between two ore more DSLs of the input set. That is, we can find metaclasses and domain specific actions that are shared by more than two DSLs. Hence, intersections should be searched among all the possible combinations of the DSLs in the input set. Once those functions are defined and implemented, the second phase is to use them in order to find the intersections among the DSLs of the input set. 
+
+\vspace{-3mm}
+\subsubsection{Semantical variability:} Note that the fact that two metaclasses are shared does not imply that all their domain specific actions are the same. In that figure, we see this in the case of MMz. This metaclass is shared by the DSLs A and C but, in each DSL the semantics is different since each of them implement a different DSA for the metaclass. We refer to that phenomenon as \textit{semantical variability}. There are two constructs that share the syntax but that differ in their semantics. In such case, there is potential reuse at the level of the syntax since the metaclass can be defined once and reused in the DSLs but the semantics should be defined differently for each DSLs. 
+
+%there are three DSLs DSLs that are totally independent. That means that they do not share any of their language constructs, and consequently, there is not potential reuse between them. Differently, the two DSLs shown at the right of the figure have overlapping domains. That means that there are a subset of language that are \large\textbf{``equal'' }\normalsize in both DSLs. Note that if two language constructs are the same, we can assume that their specifications are equal and can be reused instead of being replicated.
+
+
 
 
 %Moreover, there are set of DSLs for which the domains can be hierarchically organized \cite[p. 60-61]{voelter:2013}.

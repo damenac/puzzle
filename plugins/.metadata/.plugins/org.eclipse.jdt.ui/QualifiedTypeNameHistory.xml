@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.LeftImplicationsGroup"/>
-<fullyQualifiedTypeName name="vm.PBooleanExpression"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.instancesgenerator.impl.PCMFillerGenerator"/>
-<fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.PCMQueryServices"/>
@@ -41,7 +37,6 @@
 <fullyQualifiedTypeName name="org.eclipse.xtext.util.Pair"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.xbase.lib.Pair"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
@@ -54,10 +49,15 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Metamodel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.MelangeFactory"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.IndexPackage"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.FamiliesServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticDeepVennDiagram"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SemanticSignatureAndBodyVennDiagram"/>
 </qualifiedTypeNameHistroy>

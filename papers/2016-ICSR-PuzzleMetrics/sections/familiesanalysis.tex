@@ -1,16 +1,23 @@
 \section{Proposed approach}
 
-Given a collection of existing DSLs (that we term as the \textit{input set}) our approach is intended to identify commonalities --and so, potential reuse--. Then, we evaluate those commonalities in order to know if the input set is a good candidates to a reverse engineering method that permits to exploit the existing potential reuse. The reminder of this section explain how we tackle this problem.
+Given a set of existing DSLs (that we term as the \textit{input set}) our approach is intended to identify commonalities --and so, potential reuse--. Then, we evaluate those commonalities in order to know if the input set is a good candidate to a reverse engineering method that permits to exploit the existing potential reuse. The reminder of this section explain how we tackle this problem.
 
 \subsection{Identifying commonalities}
 \label{sec:metrics}
 
-We start by identifying commonalities among the DSLs in the input set. In other words, we start by identifying intersections among DSL specifications (see Figure \ref{fig:domains}). To this end, we need to take into account thee considerations.
+In the first part of our approach, we perform static analysis in syntax and semantics of a given set of DSLs in order to build a pair of Venn diagrams such as the presented in the previous section (Figure \ref{fig:domains}). We consider these diagrams as a useful mechanism that allows language designers to easily visually identify commonalities. To this end, we designed an algorithm that is able to compute the all intersections among the syntax of the DSLs in the input set. We do the proper for the case of the domain-specific actions. 
 
-\vspace{-2mm}
-\subsubsection{Consideration 1:} Commonalities can appear not only at the level of the syntax but also at the level of the semantics. Hence, the analysis should be performed in both, metamodels and domain-specific actions.
+Our algorithm for detecting \textbf{syntactic intersections} can be formalized by the function (1) that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these metamodels. As mentioned before, there can be intersections among any of the combinations of the input set. Hence, in the result there is a tuple for each of the possible combinations of the input metamodels (i.e., the power set) (2). 
 
-Our solution to this first consideration relies in two functions. The first one ($I_{syn}$), receives a set of metamodels and returns the set of metaclasses that are contained in all the input metamodels. 
+\begin{equation}
+  Venn_{syn} : set(MM) \rightarrow set(<set(MM),set(MC)>)
+\end{equation}
+
+\begin{equation}
+  Venn_{syn}(mms) = \{<x,y> \mid x \in \mathcal{P}(mms), y = I_{syn}(x)\}
+\end{equation}
+
+Note that our algorithm relies on a function $I_{syn}$ that computes the intersection existing withing a given set of metamodels. It can be formalized as follows:
 
 \begin{equation}
   I_{syn} : set(MM) \rightarrow set(MC)
@@ -20,7 +27,18 @@ Our solution to this first consideration relies in two functions. The first one 
   I_{syn}(mms) = \bigcap _{i=0}^{|mms|}mms_i
 \end{equation}
 
-The second function ($I_{sem}$) does the proper for the case of the aspects. That is, it receives a set of aspects and returns the set of domain specific actions that are contained in all the input aspects. The implementation of these functions is based on static analysis of metamodels and aspects.
+Similarly, our algorithm for detecting \textbf{semantic intersections} can be formalized by the function (3) that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these aspects (4). 
+
+\begin{equation}
+  Venn_{sem} : set(A) \rightarrow set(<set(A),set(DSA)>)
+\end{equation}
+
+\begin{equation}
+  Venn_{syn}(mms) = \{<x,y> \mid x \in \mathcal{P}(mms), y = I_{sem}(x)\}
+\end{equation}
+\vspace{2mm}
+
+This time, the algorithm for semantic commonalities relies on a function $I_{sem}$ that computes the intersection existing withing a given set of aspects. It can be formalized as follows:
 
 \begin{equation}
   I_{sem} : set(A) \rightarrow set(DSA)
@@ -30,8 +48,7 @@ The second function ($I_{sem}$) does the proper for the case of the aspects. Tha
   I_{sem}(dsas) = \bigcap _{i=0}^{|dsas|}dsas_i
 \end{equation}
 
-\vspace{-2mm}
-\subsubsection{Consideration 2:} So far, we have defined a syntactic intersection as a set of metaclasses that are equal in two or more DSLs. Similarly, we define semantic intersection as a set of domain-specific actions that are equal in two or more DSLs. However, at this point we need to clearly define the notion of equality between metaclasses and domain-specific actions. That is, we need to establish the criteria under we consider that two metaclasses/domain-specific actions are equal.
+\subsubsection{Comparison operators:} So far, we have defined a syntactic intersection is a set of metaclasses that are equal in two or more DSLs. Similarly, semantic intersection has been defined as a set of domain-specific actions that are equal in two or more DSLs. However, at this point we need to clearly define the notion of equality between metaclasses and domain-specific actions. That is, we need to establish the criteria under we consider that two metaclasses/domain-specific actions are equal.
 
 \begin{itemize}
 \item \textbf{Comparison of metaclasses:} The name of a metaclass usually corresponds to a word that evokes the domain concept the metaclass represents. Thus, intuitively one can think that a first approach to compare meta-classes is by comparing their names. As we will see later in this paper, this approach results quite useful and it is quite probable that, we can find potential reuse.
@@ -57,7 +74,7 @@ The second function ($I_{sem}$) does the proper for the case of the aspects. Tha
 \begin{equation}
 \begin{split}
   MC_{A} \doteqdot MC_{B} &= true \implies \\
-   & MC_{A}.name = MC_{B}.name ~ \wedge \\
+   & MC_{A} \doteq = MC_{B} ~ \wedge \\
    & \forall a_1 \in MC_{A}.attr \mid (\exists a_2 \in MC_{B}.attr \mid a_1 = a_2) ~ \wedge \\
    & \forall r_1 \in MC_{A}.refs \mid (\exists r_2 \in MC_{B}.refs \mid r_1 = r_2)
   \end{split}
@@ -87,7 +104,7 @@ The second function ($I_{sem}$) does the proper for the case of the aspects. Tha
 \end{equation}
 
 \vspace{2mm}
-\hspace{3mm} However, as the reader might imagine, there are cases in which signatures comparison is not enough. Two domain-specific actions defined in different DSLs can perform different computations even if they have the same signatures. As a result, a second approach relies in the comparison of the bodies of the domain-specific actions. Note that such comparison can be arbitrary complex task. Indeed, if we try to compare  the behavior of the actions we will have to deal with the semantic equivalence problem that, indeed, is known as be undecidable \cite{Lucanu:2013}. In this case, we a conservative approach is to compare only the structure (abstract syntax tree) body of the domain-specific action. In our approach we support both comparison operators: the one based on the signature and the one based on the signature and the body. To the later, we use the API for java code comparison proposed in \cite{Biegel:2010}. 
+\hspace{3mm} However, as the reader might imagine, there are cases in which signatures comparison is not enough. Two domain-specific actions defined in different DSLs can perform different computations even if they have the same signatures. As a result, a second approach relies in the comparison of the bodies of the domain-specific actions. Note that such comparison can be arbitrary difficult. Indeed, if we try to compare  the behavior of the actions we will have to deal with the semantic equivalence problem that, indeed, is known as be undecidable \cite{Lucanu:2013}. In this case, we a conservative approach is to compare only the structure (abstract syntax tree) body of the domain-specific action. To this end, we use the API for java code comparison proposed in \cite{Biegel:2010}. 
 
 \begin{equation}
   \triangleq~: DSA \times DSA \rightarrow bool
@@ -100,19 +117,13 @@ The second function ($I_{sem}$) does the proper for the case of the aspects. Tha
    & DSA_{A}.AST = DSA_{B}.AST
  \end{split}
 \end{equation}
-
 \end{itemize}
-
-\vspace{-2mm}
-\subsubsection{Consideration 3:} Commonalities can be found between two ore more DSLs of the input set. That is, we can find metaclasses and domain specific actions that are shared by more than two DSLs. Hence, intersections should be searched among all the possible combinations of the DSLs in the input set. Once those functions are defined and implemented, the second phase is to use them in order to find the intersections among the DSLs of the input set. 
 
 
 %It is worth nothing that there is this phenomenon of \textit{semantical variability}. A necessary condition to decide whether two language constructs are equivalent is that both, the metaclass and the associated domain-specific actions are equivalent. This condition guarantees that the specification is the same not only at the level of the abstract syntax but also at the level of the semantics. However, there is a phenomenon in the literature that corresponds to semantical variability \cite{Cengarle:2009}. There is semantical variability when there there are two constructs that have the same abstract syntax (i.e., their metaclasses are equal) but that differ in the domain-specific actions. This case is of interest for us because even in the presence of semantical variability we can have some potential reuse. If the metaclasses of two constructs are the same we can reuse them even if their domain-specific actions are different. 
 
 \vspace{-2mm}
-\subsubsection{Visualizing intersections:} After being tacckled the considerations mentioned below. We provide a graphical mechanism based on Venn Diagrams to visualize the results. The idea is that language designers can see intersections easily as the form of overlappings existing among the given set of DSLs.
-
-Figure \ref{fig:shape} shows the Venn Diagram for the case of our motivating scenario. In that figure we can see that the family is an overlapping family in terms of the abstract syntax. In the case of the semantics the results are quite interesting. Note that depending on the type of comparison operator we have different results. When the comparison operator is the naming, we have the same overlapping shape that in the case of the abstract syntax. However, when the operators become more restrictive the overlapping region is reduced. 
+\subsubsection{Visualizing the results:} Figure \ref{fig:shape} shows the Venn Diagram for the case of our motivating scenario. In that figure we can see that the family is an overlapping family in terms of the abstract syntax. In the case of the semantics the results are quite interesting. Note that depending on the type of comparison operator we have different results. When the comparison operator is the naming, we have the same overlapping shape that in the case of the abstract syntax. However, when the operators become more restrictive the overlapping region is reduced. 
 
 \begin{figure}
 \centering
