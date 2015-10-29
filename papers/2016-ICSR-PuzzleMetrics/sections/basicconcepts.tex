@@ -1,7 +1,7 @@
 \section{Preliminary Definitions}
 \label{sec:background}
 
-\subsection{Domain-Specific Languages}
+\subsection{Domain-Specific Languages in a nutshell}
 
 %As aforementioned, a DSL is a set of language constructs each of which represents certain abstraction in a particular domain. In the general case, a DSL offers an editor that provides the capabilities needed to write programs (textually or graphically) by using the language constructs. Once a the program is written, it can be used as part of the implementation artifacts of a system under construction. 
 
@@ -12,7 +12,7 @@
 \subsubsection{Technological space:} Currently, there are diverse techniques available for the implementation of syntax and semantics of DSLs \cite{Mernik:2005b}. Language designers can choose between using context-free grammars or metamodels as specification formalism for syntax. Similarly, there are at least three methods for expressing semantics: operationally, denotationally, and axiomatically \cite{Mosses:2001}. In this paper we are interested on DSLs which syntax is specified by means of metamodels and semantics is specified operationally as a set methods (a.k.a, \textit{domain-specific actions} \cite{Combemale:2013}). Each language construct is specified by means a metaclass and the relationship between language constructs are specified as references between metaclasses. In turn, each metaclass contains a set of domain-specific actions that correspond to the behavior at runtime.
 
 \vspace{-3mm}
-\subsubsection{Implementation:} In order to implement a DSL, language designer need a set of tools offering the capabilities to specify the DSL according to the selected technological space. Those tools are provided by language workbenches that offer a set of meta-languages for expressing syntax and semantics. The ideas presented in this paper are implemented in an Eclipse-based language workbench. In particular, metamodels are specified in the Ecore language whereas domain-specific actions are specified as methods in Xtend action language. The mapping between metaclasses and domain-specific actions is specified by using the notion of aspect introduced by the Kermeta 3 framework. 
+\subsubsection{Implementation:} In order to implement a DSL, language designer need a set of tools offering the capabilities to specify the DSL according to the selected technological space. Those tools are provided by language workbenches that offer a set of meta-languages for expressing syntax and semantics. The ideas presented in this paper are implemented in an Eclipse-based language workbench. In particular, metamodels are specified in the Ecore language whereas domain-specific actions are specified as methods in Xtend programming language\footnote{\url{http://www.eclipse.org/xtend/}}. The mapping between metaclasses and domain-specific actions is specified by using the notion of aspect introduced by the Kermeta 3 and Melange as explained in \cite{degueule:2015}. 
 
 \subsection{On the notions of \textit{commonalities} and \textit{potential reuse} in DSLs}
 
