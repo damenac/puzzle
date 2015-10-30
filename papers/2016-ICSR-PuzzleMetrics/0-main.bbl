@@ -168,10 +168,18 @@ M.~V\"olter, S.~Benz, C.~Dietrich, B.~Engelmann, M.~Helander, L.~C.~L. Kats,
   Domain-Specific Languages}.
 \newblock dslbook.org, 2013.
 
+\bibitem{Zschaler:2010b}
+S.~Zschaler, D.~S. Kolovos, N.~Drivalos, R.~F. Paige, and A.~Rashid.
+\newblock Domain-specific metamodelling languages for software language
+  engineering.
+\newblock In M.~van~den Brand, D.~Ga?evi?, and J.~Gray, editors, {\em Software
+  Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
+  Science}, pages 334--353. Springer Berlin Heidelberg, 2010.
+
 \bibitem{Zschaler:2010}
 S.~Zschaler, P.~S\'anchez, J.~a. Santos, M.~Alf\'erez, A.~Rashid, L.~Fuentes,
   A.~Moreira, J.~a. Ara\'ujo, and U.~Kulesza.
-\newblock Vml* ? a family of languages for variability management in software
+\newblock Vml* \- a family of languages for variability management in software
   product lines.
 \newblock In M.~van~den Brand, D.~Ga?evi?, and J.~Gray, editors, {\em Software
   Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
