@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="html"
+    nsURI="http://eclipselabs.org/mlang/soy" nsPrefix="org.eclipselabs.mlang">
+  <eClassifiers xsi:type="ecore:EClass" name="Tag" eSuperTypes="common.ecore#//Named common.ecore#//Located">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TagType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opensScope" eType="#//TagScope"
+        eOpposite="#//TagScope/opening"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="closesScope" eType="#//TagScope"
+        eOpposite="#//TagScope/closing"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TagType">
+    <eLiterals name="OPENING"/>
+    <eLiterals name="CLOSING" value="1"/>
+    <eLiterals name="SINGLE" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagScope" eSuperTypes="common.ecore#//Scope">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="opening" eType="#//Tag"
+        eOpposite="#//Tag/opensScope"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="closing" eType="#//Tag"
+        eOpposite="#//Tag/closesScope"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JSScope" eSuperTypes="#//TagScope"/>
+</ecore:EPackage>

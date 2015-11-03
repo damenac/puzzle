@@ -1,0 +1,18 @@
+\section{Proposed approach}
+\label{sec:proposedapproach}
+
+Our solution approach includes one solution strategy for each one of the aforementioned challenges. These strategies are summarized below:
+
+\begin{itemize}
+        
+	\item \textbf{Components-based DSLs' development.} We propose to address languages modularization by means of an approach for components-based DSLs' development where the main concept is the notion of language units that interact each other by means of languages interfaces. The idea is that dependencies between language units are expressed as software interfaces that offer capabilities for compatibility checking and, in a latter phase, languages composition. Our preliminary results, suggest the need of the definition of different types of languages interfaces that support different scenarios for languages modularization such as languages embedding or languages extension. 
+        
+	\vspace{4mm}
+        
+	\item \textbf{Multi-dimensional CVL for variability modeling:} To deal with variability modeling within families of DSLs, we propose to enhance the CVL (Common Variability Language) with capabilities for multi-dimensional variability modeling. We choose CVL because it provides support not only for variability models but also for implementation models which facilitate the mapping between language features and language units. Besides, it introduces the notion realization models constitute a mechanism for configuring a DSL by offering multi-staged variability.  
+        
+	\vspace{4mm}
+        
+	\item \textbf{Language units composition:} In order to perform the composition of several language units we explore two strategies: compilation based composition and interpretation based composition. In the first case, the idea is to compose the language units specifications and produce a complete specification that can be latter used for automatically generating language tooling such as editors or type-checkers. In the second case, the idea is to maintain specification separated and generate the corresponding tooling for each one. After that, the services of each of tooling are orchestrated to offer an infrastructure for the DSL. Each strategy presents advantages and disadvantages. For example, whereas interpretation based composition may impact the performance of the language, it enables variability at runtime. 
+        
+\end{itemize}

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="common"
+    nsURI="http://www.eclipse.org/ocl/1.1.0/Common" nsPrefix="common">
+  <eSubpackages name="ocl" nsURI="http://www.eclipse.org/ocl/1.1.0/CDO" nsPrefix="ocl.cdo">
+    <eClassifiers xsi:type="ecore:EClass" name="AnyType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOClassifier"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/AnyType">
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BagType">
+      <eGenericSuperTypes eClassifier="#//ocl/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/BagType">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/CollectionType">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ElementType" eSuperTypes="#//fake/CDOClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/ElementType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InvalidType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOClassifier"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/InvalidType">
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOClass"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/MessageType">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+        <eTypeArguments eClassifier="#//fake/CDOFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSetType">
+      <eGenericSuperTypes eClassifier="#//ocl/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/OrderedSetType">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/PrimitiveType">
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SequenceType">
+      <eGenericSuperTypes eClassifier="#//ocl/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/SequenceType">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SetType">
+      <eGenericSuperTypes eClassifier="#//ocl/CollectionType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/SetType">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOClass"/>
+      <eGenericSuperTypes eClassifier="#//fake/CDOType"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/TupleType">
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+        <eTypeArguments eClassifier="#//fake/CDOFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOClassifier"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/TypeType">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VoidType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName WellFormedInstanceTypeName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOClassifier"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//types/VoidType">
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallOperationAction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operation" lowerBound="1"
+          eType="#//fake/CDOOperation"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constraint" eSuperTypes="#//fake/CDONamedElement">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1"
+          containment="true">
+        <eGenericType eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//utilities/ExpressionInOCL">
+          <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+          <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+        </eGenericType>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constrainedElements"
+          upperBound="-1" eType="#//fake/CDONamedElement"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SendSignalAction">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="signal" lowerBound="1"
+          eType="#//fake/CDOClass"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpressionInOCL">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="ExpressionInOcl"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//utilities/ExpressionInOCL">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AssociationClassCallExp">
+      <eGenericSuperTypes eClassifier="#//ocl/NavigationCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/AssociationClassCallExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/PrimitiveLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/BooleanLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CallExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CallExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionItem">
+      <eGenericSuperTypes eClassifier="#//ocl/CollectionLiteralPart"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionItem">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionLiteralPart" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOTypedElement"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionLiteralPart">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CollectionRange">
+      <eGenericSuperTypes eClassifier="#//ocl/CollectionLiteralPart"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/CollectionRange">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EnumLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/EnumLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOEnumLiteral"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FeatureCallExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocl/CallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/FeatureCallExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IfExp">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IfExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntegerLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/NumericLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IntegerLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UnlimitedNaturalLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/NumericLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/UnlimitedNaturalLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InvalidLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/InvalidLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IterateExp">
+      <eGenericSuperTypes eClassifier="#//ocl/LoopExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IterateExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IteratorExp">
+      <eGenericSuperTypes eClassifier="#//ocl/LoopExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/IteratorExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LetExp">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/LetExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LiteralExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/LiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LoopExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocl/CallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/LoopExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageExp">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/MessageExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//ocl/CallOperationAction"/>
+        <eTypeArguments eClassifier="#//ocl/SendSignalAction"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NavigationCallExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocl/FeatureCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/NavigationCallExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NullLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/NullLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NumericLiteralExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocl/PrimitiveLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/NumericLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OCLExpression" abstract="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="name" value="OclExpression"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOTypedElement"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/OCLExpression">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OperationCallExp">
+      <eGenericSuperTypes eClassifier="#//ocl/FeatureCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/OperationCallExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOOperation"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PrimitiveLiteralExp" abstract="true">
+      <eGenericSuperTypes eClassifier="#//ocl/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/PrimitiveLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PropertyCallExp">
+      <eGenericSuperTypes eClassifier="#//ocl/NavigationCallExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/PropertyCallExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RealLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/NumericLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/RealLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StateExp">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/StateExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDORevision"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StringLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/PrimitiveLiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/StringLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleLiteralExp">
+      <eGenericSuperTypes eClassifier="#//ocl/LiteralExp"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/TupleLiteralExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TupleLiteralPart">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOTypedElement"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/TupleLiteralPart">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOFeature"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TypeExp">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/TypeExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UnspecifiedValueExp">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/UnspecifiedValueExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Variable">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="WellFormedName"/>
+      </eAnnotations>
+      <eGenericSuperTypes eClassifier="#//fake/CDOTypedElement"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/Variable">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="VariableExp">
+      <eGenericSuperTypes eClassifier="#//ocl/OCLExpression"/>
+      <eGenericSuperTypes eClassifier="ecore:EClass platform:/plugin/org.eclipse.ocl/model/OCL.ecore#//expressions/VariableExp">
+        <eTypeArguments eClassifier="#//fake/CDOClassifier"/>
+        <eTypeArguments eClassifier="#//fake/CDOParameter"/>
+      </eGenericSuperTypes>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="fake" nsURI="http://www.eclipse.org/ocl/2.0.0/CDO/Fake" nsPrefix="ocl.cdo.fake">
+    <eClassifiers xsi:type="ecore:EClass" name="CDORevision"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOFeature" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOClass"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOClassifier" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOType"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOEnumLiteral"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDONamedElement" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOOperation"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOParameter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CDOTypedElement" abstract="true"/>
+  </eSubpackages>
+</ecore:EPackage>

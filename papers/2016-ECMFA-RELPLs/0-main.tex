@@ -1,0 +1,87 @@
+\documentclass[runningheads,a4paper]{llncs}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[applemac]{inputenx} % This is required to support characters in spanish
+\usepackage[T1]{fontenc} % This is required to have small-bold-capitals
+\usepackage{fancyhdr} % This is required to have nice headers and footers
+\usepackage{framed} % This is required to have framed comments
+\usepackage{color} % This defines colors that can be used in the text
+\usepackage{soul} % This allows the usage of \hl to highlight text
+\usepackage{tocloft} % This is required to have custom lists of .....
+\usepackage{comment} % This is required to remove specific environments
+\usepackage{caption}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{pifont}
+\usepackage{listings}
+\usepackage{syntax}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{fancybox}
+\usepackage{pifont}
+\usepackage{lineno}
+\usepackage{todonotes}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage{todonotes}
+\usepackage{bbding}
+\usepackage{xcolor,colortbl}
+\setcounter{tocdepth}{3}
+\newtheorem{mydef}{Definition}
+
+
+\newcommand{\mc}[2]{\multicolumn{#1}{c}{#2}}
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightGray}{gray}{0.98}
+
+\newcolumntype{a}{>{\columncolor{Gray}}c}
+\newcolumntype{b}{>{\columncolor{white}}c}
+
+\newcommand\etal[0]{\emph{et al.}\xspace}
+\newcommand\td[1]{\todo[inline]{#1}\xspace}
+
+\setcounter{tocdepth}{3}
+
+
+\urldef{\mailsa}\path|{david.mendez-acuna,jagalindo,benoit.combemale,benoit.baudry}@inria.fr|    
+\newcommand{\keywords}[1]{\par\addvspace\baselineskip
+\noindent\keywordname\enspace\ignorespaces#1}
+
+\begin{document}
+
+\mainmatter  % start of an individual contribution
+
+\title{Reverse Engineering Language Product Lines}
+\titlerunning{Reverse Engineering Language Product Lines}
+
+
+\author{David M\'endez-Acu\~na \and Jos\'e A. Galindo \and Benoit Combemale \and Benoit Baudry}
+\institute{University of Rennes 1, INRIA/IRISA. France\\
+\vspace{1mm}\mailsa}
+\authorrunning{David M\'endez-Acu\~na et. al}
+
+\maketitle
+
+\begin{abstract} 
+
+The use of domain-specific languages (DSLs) is becoming a successful technique in the implementation of complex systems. However, the construction of this type of languages is time-consuming and requires highly-specialized knowledge and skills. Hence, researchers are currently seeking approaches to leverage reuse during the DSLs development in order to minimize implementation from scratch. An important step towards achieving this objective is to identify commonalities among existing DSLs. These commonalities constitute potential reuse that can be exploited by using reverse-engineering methods. In this paper, we present an approach intended to identify sets of DSLs with potential reuse. We also provide a mechanism that allows language designers to measure such potential reuse in order to objectively evaluate whether it is enough to justify the applicability of a given reverse-engineering process. We validate our approach by evaluating a large amount of DSLs we take from public \texttt{GitHub} repositories.
+
+\end{abstract}
+
+\input{sections/introduction}
+
+\section*{Acknowledgments}
+The research presented in this paper is supported by the European Union within the FP7 Marie Curie Initial Training Network ``RELATE" under grant agreement number 264840 and VaryMDE, a collaboration between Thales and INRIA.
+
+% BIBLIOGRAPHY
+\bibliographystyle{abbrv}
+\bibliography{0-main}
+
+\end{document}

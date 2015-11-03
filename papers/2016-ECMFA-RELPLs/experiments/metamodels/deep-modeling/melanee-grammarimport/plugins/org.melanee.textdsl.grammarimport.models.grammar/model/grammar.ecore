@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="grammar" nsURI="http://org.melanee/grammar" nsPrefix="grammar">
+  <eClassifiers xsi:type="ecore:EClass" name="NonTerminal" eSuperTypes="#//Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Symbol" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lowerBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="container" lowerBound="1"
+        eType="#//Container" eOpposite="#//Container/definitions"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="upperBound" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Container" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="definitions" upperBound="-1"
+        eType="#//Symbol" containment="true" eOpposite="#//Symbol/container"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NonTerminalReference" eSuperTypes="#//Symbol">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonTerminal" lowerBound="1"
+        eType="#//NonTerminal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="containment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Terminal" eSuperTypes="#//Symbol">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="terminalString" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Group" eSuperTypes="#//Container #//Symbol"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//Symbol #//Container"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Grammar">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nonTerminals" upperBound="-1"
+        eType="#//NonTerminal" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

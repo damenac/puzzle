@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="common"
+    nsURI="http://www.eclipse.org/buckminster/Common-1.0" nsPrefix="bc">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractDocumentRoot" abstract="true">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basicValue" upperBound="-2"
+        eType="#//Value" changeable="false" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="basicValue"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constant" upperBound="-2"
+        eType="#//Constant" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="constant"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="basicValue"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="format" upperBound="-2"
+        eType="#//Format" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="format"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="basicValue"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyRef" upperBound="-2"
+        eType="#//PropertyRef" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="propertyRef"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="basicValue"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="replace" upperBound="-2"
+        eType="#//Replace" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="replace"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="basicValue"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="split" upperBound="-2"
+        eType="#//Split" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="split"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="basicValue"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toLower" upperBound="-2"
+        eType="#//ToLower" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="toLower"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="basicValue"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toUpper" upperBound="-2"
+        eType="#//ToUpper" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="toUpper"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="basicValue"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rxPart" upperBound="-2"
+        eType="#//RxPart" changeable="false" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rxPart"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rxPattern" upperBound="-2"
+        eType="#//RxPattern" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rxPattern"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="rxPart"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rxGroup" upperBound="-2"
+        eType="#//RxGroup" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rxGroup"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="affiliation" value="rxPart"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comparable" instanceClassName="java.lang.Comparable"
+      abstract="true" interface="true">
+    <eTypeParameters name="T"/>
+    <eOperations name="compareTo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+      <eParameters name="o">
+        <eGenericType eTypeParameter="#//Comparable/T"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentIdentifier" eSuperTypes="#//ComponentName #//IVersionedId">
+    <eOperations name="matches" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Match this &lt;code>ComponentIdentifier&lt;/code> with another instance. The match is done as follows&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>The match is always false if the id differ&lt;/li>&#xA;&lt;li>The types match if both instances have equal types or if a type is missing&lt;/li>&#xA;&lt;li>The versions match if both instances have equal versions or if a version is missing&lt;/li>&#xA;&lt;/ul>"/>
+      </eAnnotations>
+      <eParameters name="ci" eType="#//ComponentIdentifier"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="#//Version"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentName">
+    <eOperations name="getProperties">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eGenericType>
+    </eOperations>
+    <eOperations name="toPureComponentName" eType="#//ComponentName"/>
+    <eOperations name="toString">
+      <eParameters name="result" eType="#//StringBuilder"/>
+    </eOperations>
+    <eOperations name="matches" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;p>Match this &lt;code>ComponentIdentifier&lt;/code> with another instance. The match is done as follows&lt;/p>&#xA;&lt;ul>&#xA;&lt;li>The match is always false if the id differ&lt;/li>&#xA;&lt;li>The types match if both instances have equal types or if a type is missing&lt;/li>&#xA;&lt;/ul>"/>
+      </eAnnotations>
+      <eParameters name="cn" eType="#//ComponentName"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eGenericSuperTypes eClassifier="#//Comparable">
+      <eTypeArguments eClassifier="#//ComponentName"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentRequest" eSuperTypes="#//ComponentName">
+    <eOperations name="appendViewName">
+      <eParameters name="result" eType="#//StringBuilder"/>
+    </eOperations>
+    <eOperations name="designates" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="cid" eType="#//ComponentIdentifier"/>
+    </eOperations>
+    <eOperations name="getViewName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="isEnabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="properties">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments>
+            <eUpperBound eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+          </eTypeArguments>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="isOptional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="merge" eType="#//ComponentRequest">
+      <eParameters name="request" eType="#//ComponentRequest"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="range" eType="#//VersionRange"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filter" eType="#//Filter"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Documentation">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Documentation"/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="wildcards" value="##any"/>
+        <details key="name" value=":1"/>
+        <details key="processing" value="lax"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="anyAttribute" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attributeWildcard"/>
+        <details key="wildcards" value="##any"/>
+        <details key="name" value=":2"/>
+        <details key="processing" value="lax"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Format" eSuperTypes="#//ValueFilter">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A Format is the base for a java.text.Format that in turn is used when creating a string from a set of parameter values. A parameter is denoted by {&amp;lt;n&amp;gt;} where &amp;lt;n&amp;gt; denotes n'th parameter element using zero for the first parameter."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="format" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IProgressMonitor" instanceClassName="org.eclipse.core.runtime.IProgressMonitor"
+      abstract="true" interface="true">
+    <eOperations name="beginTask">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eParameters name="totalWork" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="done"/>
+    <eOperations name="internalWorked">
+      <eParameters name="work" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eOperations>
+    <eOperations name="isCancelled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="setCancelled">
+      <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eOperations name="setTaskName">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="subTask">
+      <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="worked">
+      <eParameters name="work" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IStatus" instanceClassName="org.eclipse.core.runtime.IStatus"
+      abstract="true" interface="true">
+    <eOperations name="isOK" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eOperations name="matches" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="severityMask" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="children" eType="#//IStatusArray"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="exception" eType="#//Throwable"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="plugin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IVersionedId" instanceClassName="org.eclipse.equinox.p2.metadata.IVersionedId"
+      abstract="true" interface="true">
+    <eOperations name="getId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eOperations name="getVersion" eType="#//Version"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Match">
+    <eOperations name="match" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="resolved" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quotePattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replacement" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compiledPattern" eType="#//Pattern"
+        changeable="false" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Properties" abstract="true">
+    <eOperations name="getProperties">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eGenericType>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyConstants" upperBound="-1"
+        eType="#//PropertyConstant" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="property"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertyElements" upperBound="-1"
+        eType="#//PropertyElement" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="propertyElement"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyConstant" instanceClassName="java.util.Map$Entry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A simple property that maps a key to a constant value."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Value"
+        changeable="false" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mutable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stringValue" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="value"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyElement" instanceClassName="java.util.Map$Entry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A simple property that maps a key to a constant value."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueGroup" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="name" value="basicValue:group"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Value"
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="basicValue"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="group" value="basicValue:group"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyRef" eSuperTypes="#//Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="#//PropertyKey">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Replace" eSuperTypes="#//ValueFilter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matches" upperBound="-1"
+        eType="#//Match" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="kind" value="element"/>
+        <details key="name" value="match"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quotePattern" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="replacement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compiledPattern" eType="#//Pattern"
+        changeable="false" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RxAssembly" eSuperTypes="#//RxGroup">
+    <eOperations name="getMatchMap">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eGenericType>
+      <eParameters name="input" eType="#//CharSequence"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" eType="#//Pattern"
+        changeable="false" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RxGroup" eSuperTypes="#//RxPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines a regexp capturing group as a named assembly of part"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rxPartsGroup" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="name" value="rxPart:group"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rxParts" upperBound="-1"
+        eType="#//RxPart" volatile="true" transient="true" derived="true" containment="true"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rxPart"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="group" value="rxPart:group"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RxPart" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines a partial regexp"/>
+    </eAnnotations>
+    <eOperations name="addPattern">
+      <eParameters name="collector" eType="#//StringBuilder"/>
+      <eParameters name="namedParts">
+        <eGenericType eClassifier="#//List">
+          <eTypeArguments eClassifier="#//RxPart"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Denotes if this part a capturing group or not. The&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;match for a named part can be used in replacement&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;patterns.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="optional" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false" unsettable="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;Denotes if this part is optional (must be matched)&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;or not. The top element of a regexp can not be&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;optional.&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="optional"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RxPattern" eSuperTypes="#//RxPart">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Defines a partial regexp as a pattern"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The regular expression for this group (excluding parenthesis for the group itself)."/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The quoted prefix of the pattern. Not included in the capture"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="suffix" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The quoted suffix of the pattern. Not included in the capture"/>
+      </eAnnotations>
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Split" eSuperTypes="#//ValueFilter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="limit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pattern" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//SplitType"
+        defaultValueLiteral="unquoted" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="compiledPattern" eType="#//Pattern"
+        changeable="false" transient="true" derived="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToLower" eSuperTypes="#//ValueFilter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ToUpper" eSuperTypes="#//ValueFilter"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Value" abstract="true">
+    <eOperations name="getValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="properties">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eOperations name="isMultiValued" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mutable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueFilter" abstract="true" eSuperTypes="#//Value">
+    <eOperations name="getValues">
+      <eGenericType eClassifier="#//List">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eGenericType>
+      <eParameters name="properties">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+          <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="multiValueGroup" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="name" value="basicValue:group"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" lowerBound="1"
+        upperBound="-1" eType="#//Value" volatile="true" transient="true" derived="true"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="basicValue"/>
+        <details key="namespace" value="##targetNamespace"/>
+        <details key="group" value="basicValue:group"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="CharSequence" instanceClassName="java.lang.CharSequence"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ConflictResolution">
+    <eLiterals name="FAIL"/>
+    <eLiterals name="KEEP" value="1"/>
+    <eLiterals name="REPLACE" value="2"/>
+    <eLiterals name="UPDATE" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="CoreException" instanceClassName="org.eclipse.core.runtime.CoreException"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Filter" instanceClassName="org.eclipse.buckminster.osgi.filter.Filter"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IPath" instanceClassName="org.eclipse.core.runtime.IPath"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IStatusArray" instanceClassName="org.eclipse.core.runtime.IStatus[]"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="IVersionFormat" instanceClassName="org.eclipse.equinox.p2.metadata.IVersionFormat"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="List" instanceClassName="java.util.List">
+    <eTypeParameters name="T"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="Pattern" instanceClassName="java.util.regex.Pattern">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="pattern"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PropertyKey" instanceClassName="java.lang.String">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="propertyKey"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      <details key="pattern" value="[A-Za-z0-9_.${}/]+"/>
+      <details key="enumeration" value=""/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SplitType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A split can be done using a delimiter or a pattern containing capturing groups. In case of delimiter it can be quoted or not quoted."/>
+    </eAnnotations>
+    <eLiterals name="quoted"/>
+    <eLiterals name="unquoted" value="1"/>
+    <eLiterals name="groups" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="StringBuilder" instanceClassName="java.lang.StringBuilder"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Throwable" instanceClassName="java.lang.Throwable"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="URL" instanceClassName="java.net.URL"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Uuid" instanceClassName="java.util.UUID">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="uuid"/>
+      <details key="baseType" value="http://www.eclipse.org/emf/2003/XMLType#string"/>
+      <details key="pattern" value="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="VersionRange" instanceClassName="org.eclipse.equinox.p2.metadata.VersionRange"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Version" instanceClassName="org.eclipse.equinox.p2.metadata.Version"/>
+</ecore:EPackage>

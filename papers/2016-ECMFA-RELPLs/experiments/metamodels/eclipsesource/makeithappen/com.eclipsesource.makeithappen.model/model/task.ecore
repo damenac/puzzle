@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="task" nsURI="http://eclipsesource.com/makeithappen/model/task"
+    nsPrefix="com.eclipsesource.makeithappen.model.task">
+  <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eOperations name="hasName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eParameters name="chain" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDiagnosticChain"/>
+      <eParameters name="context">
+        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+          <eTypeArguments/>
+          <eTypeArguments/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignee" eType="#//User"
+        eOpposite="#//User/tasks"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dueDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subTasks" upperBound="-1"
+        eType="#//Task" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="done" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="User">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lastName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gender" eType="#//Gender"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="eMails" lowerBound="1"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tasks" upperBound="-1"
+        eType="#//Task" eOpposite="#//Task/assignee"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UserGroup">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="users" upperBound="-1"
+        eType="#//User" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Gender">
+    <eLiterals name="Male"/>
+    <eLiterals name="Female" value="1"/>
+  </eClassifiers>
+</ecore:EPackage>

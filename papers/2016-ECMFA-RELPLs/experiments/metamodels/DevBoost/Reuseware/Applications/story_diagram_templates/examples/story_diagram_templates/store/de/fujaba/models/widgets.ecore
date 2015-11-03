@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="widgets" nsURI="http://fujaba.de/widgets.ecore" nsPrefix="widgets">
+  <eClassifiers xsi:type="ecore:EClass" name="BasicWidget" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xPosition" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="yPosition" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Widget" eSuperTypes="//BasicWidget"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Panel" eSuperTypes="//Widget">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="widgets" upperBound="-1" eType="//Widget" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" lowerBound="1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

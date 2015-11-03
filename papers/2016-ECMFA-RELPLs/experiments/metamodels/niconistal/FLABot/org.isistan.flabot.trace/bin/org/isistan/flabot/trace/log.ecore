@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="log"
+    nsURI="http:///org/isistan/flabot/trace/log.ecore" nsPrefix="org.isistan.flabot.trace.log">
+  <eClassifiers xsi:type="ecore:EClass" name="LogContext">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log" eType="#//TraceLog"
+        transient="true" eOpposite="#//TraceLog/contexts"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containedTags" upperBound="-1"
+        eType="#//Tag" containment="true" resolveProxies="false" eOpposite="#//Tag/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Tag"
+        transient="true" eOpposite="#//Tag/containedTags"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//EStringToTagMapEntry"
+        containment="true" resolveProxies="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TraceLog">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
+        containment="true" resolveProxies="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contexts" upperBound="-1"
+        eType="#//LogContext" containment="true" resolveProxies="false" eOpposite="#//LogContext/log"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EStringToTagMapEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Tag"/>
+  </eClassifiers>
+</ecore:EPackage>

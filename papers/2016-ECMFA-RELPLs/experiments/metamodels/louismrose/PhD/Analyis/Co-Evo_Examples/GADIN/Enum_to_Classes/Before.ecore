@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="gadin_enumToClasses"
+    nsURI="gadin_enumToClasses" nsPrefix="gadin_enumToClasses">
+  <eClassifiers xsi:type="ecore:EClass" name="World">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="character" value="1"/>
+    <eLiterals name="location" value="2"/>
+    <eLiterals name="principle" value="3"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mindmap"
+    nsURI="http://www.example.org/mindmap" nsPrefix="mindmap">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentRoot">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value=""/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xMLNSPrefixMap" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xmlns:prefix"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xSISchemaLocation" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EStringToStringMapEntry"
+        transient="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="xsi:schemaLocation"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="map" upperBound="-2" eType="#//Map"
+        volatile="true" transient="true" derived="true" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="map"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Map">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Map"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootTopics" upperBound="-1"
+        eType="#//Topic" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rootTopics"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relations" upperBound="-1"
+        eType="#//Relationship" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="relations"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//Resource" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="resources"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="title"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Priority">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Priority"/>
+    </eAnnotations>
+    <eLiterals name="ZERO"/>
+    <eLiterals name="ONE" value="1"/>
+    <eLiterals name="TWO" value="2"/>
+    <eLiterals name="THREE" value="3"/>
+    <eLiterals name="FOUR" value="4"/>
+    <eLiterals name="FIVE" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="PriorityObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Priority:Object"/>
+      <details key="baseType" value="Priority"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Relationship"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="label"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//Topic">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="source"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Topic">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="target"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" unique="false" eType="#//RelationshipType"
+        defaultValueLiteral="DEPENDENCY" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="type"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RelationshipType"/>
+    </eAnnotations>
+    <eLiterals name="DEPENDENCY"/>
+    <eLiterals name="INCLUDES" value="1"/>
+    <eLiterals name="EXTENDS" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RelationshipTypeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RelationshipType:Object"/>
+      <details key="baseType" value="RelationshipType"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Resource"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
+        eType="#//Thread" eOpposite="#//Thread/author">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="comments"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="email"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="topics" upperBound="-1"
+        eType="#//Topic" eOpposite="#//Topic/resources">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="topics"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Thread">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Thread"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//ThreadItem" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="items"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" eType="#//Resource"
+        eOpposite="#//Resource/comments">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="author"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postDate" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="postDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="subject" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="subject"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ThreadItem">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="ThreadItem"/>
+      <details key="kind" value="empty"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="author" eType="#//Resource">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="author"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="body"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="itemPostDate" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="itemPostDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Topic">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Topic"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
+        eType="#//Thread" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="comments"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float" defaultValueLiteral="0"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="duration"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="endDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" unique="false" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentComplete" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="percentComplete"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" unique="false"
+        eType="#//Priority" defaultValueLiteral="ZERO" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="priority"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+        eType="#//Resource" eOpposite="#//Resource/topics">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="resources"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="startDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subtopics" upperBound="-1"
+        eType="#//Topic">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="subtopics"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

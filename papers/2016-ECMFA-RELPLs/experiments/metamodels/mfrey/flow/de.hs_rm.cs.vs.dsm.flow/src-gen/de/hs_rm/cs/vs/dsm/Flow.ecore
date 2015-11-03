@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="flow"
+    nsURI="http://www.hs_rm.de/cs/vs/dsm/Flow" nsPrefix="flow">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="models" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//PackageDeclaration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageDeclaration" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamStatement" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnStream" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operator" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamVariableStatement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamAccess" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="streamVariable" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamDeclarationAccess">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamDefinition" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamDeclaration"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JoinOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamOperatorParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="barrier" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BarrierOperator"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementJoinOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementParameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableElementParameters"
+        unique="false" upperBound="-1" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FilterOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SplitOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MatchOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="calculation" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SymmetricDifferenceOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DifferenceOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iri" upperBound="-1" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//InternationalizedResourceIdentifier"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="socket" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReturnTypeOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NoReturnTypeOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TagOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//TagElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NewTagOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//QueryTagOperator"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="target" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="QueryTagOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryType" eType="ecore:EEnum platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQueryType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="query" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQuery"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SparqlQuery">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SparqlQueryVariable"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SparqlQueryVariable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variable" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SparqlQueryType">
+    <eLiterals name="SELECT" literal="SELECT"/>
+    <eLiterals name="CONSTRUCT" value="1" literal="CONSTRUCT"/>
+    <eLiterals name="ASK" value="2" literal="ASK"/>
+    <eLiterals name="DESCRIBE" value="3" literal="DESCRIBE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnTagOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//UnTagElement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnTagElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore#//OWLClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagClassElement" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//TagElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore#//OWLClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagObjectPropertyElement" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//TagElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore#//OWLObjectProperty"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagDataTypePropertyElement" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//TagElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore#//OWLDatatypeProperty"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BarrierOperator"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WindowOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BarrierOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="setting" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MarkerOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BarrierOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SWRLOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rule" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SWRLRule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="barrier" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SWRLRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="antecedent" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//AntecedentRule"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="consequent" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ConsequentRule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AntecedentRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atoms" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Rule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConsequentRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atoms" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Rule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/model/owl.ecore#//OWLObjectProperty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CountOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StandardDeviationOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AverageOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputOperator" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//NoReturnTypeOperator">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//OutputOperatorParameter"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stream" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamOperatorParameter"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputOperatorParameter">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamAccess"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDefinition" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableDeclaration" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DataType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberVariableDefinition" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SimpleDataType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringVariableDefinition" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StringDataType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanVariableDefinition" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//BooleanDataType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StructureDeclaration" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDeclaration"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamDeclaration" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ModelElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamElement"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StreamElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StructureElements" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StreamElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="element" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//StructureDeclaration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleDataType" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexDataType" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//DataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntegerDataType" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SimpleDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanDataType" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SimpleDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatDataType" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//SimpleDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringDataType" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//ComplexDataType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InternationalizedResourceIdentifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scheme" eType="ecore:EEnum platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Scheme"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="authority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="query" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fragmentIRI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Scheme">
+    <eLiterals name="HTTP" literal="http"/>
+    <eLiterals name="FTP" value="1" literal="ftp"/>
+    <eLiterals name="FILE" value="2" literal="file"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanOperation" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plus" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Minus" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Multi" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Div" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberLiteral" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableCall" eSuperTypes="platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="ecore:EClass platform:/resource/de.hs_rm.cs.vs.dsm.flow/src-gen/de/hs_rm/cs/vs/dsm/Flow.ecore#//VariableDefinition"/>
+  </eClassifiers>
+</ecore:EPackage>

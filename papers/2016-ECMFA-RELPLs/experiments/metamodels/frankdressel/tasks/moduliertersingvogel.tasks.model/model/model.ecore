@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://model/1.0" nsPrefix="model">
+  <eClassifiers xsi:type="ecore:EClass" name="Item">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="priority" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subs" upperBound="-1" eType="#//Item"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Date" eSuperTypes="#//Item">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeInMilis" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Item">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

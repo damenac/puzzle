@@ -1,0 +1,36 @@
+\usepackage{listings}
+\usepackage{color}
+\definecolor{darkgray}{rgb}{0.35,0.35,0.35}
+\definecolor{navgray}{rgb}{0.85,0.85,0.85}
+
+
+\DeclareCaptionFont{white}{\sffamily\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.0, 0.0, 0.0,0.45}{\parbox{0.985\columnwidth}{\hspace{7pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+
+% Basic definition of a listing
+\lstset{ 
+basicstyle= \fontfamily{pcr}\selectfont, % the size of the fonts that are used for the code
+stringstyle=\color{darkgray}\slshape\bfseries,
+keywordstyle=\bfseries, 		% style of normal keywords
+keywordstyle={[2]\underbar}, 	% style of second set of keywords
+identifierstyle=,				% nothing happens 
+showtabs=false,                 		% show tabs within strings adding particular underscores
+tabsize=2,	                			% sets default tabsize to 2 spaces
+showspaces=false,               	% show spaces adding particular underscores
+showstringspaces=false,		% show spaces in strings
+morestring=[b]",
+backgroundcolor=\color{white},  	% choose the background color. You must add \usepackage{color}
+numbers=left,                   		% where to put the line-numbers
+numberstyle=\tiny, %scriptsize,      	% the size of the fonts that are used for the line-numbers
+stepnumber=1,                   	% the step between two line-numbers.
+numbersep=3pt,                  	% how far the line-numbers are from the code
+frame=b, %single,	                		% adds a frame around the code
+captionpos=t, %b                   		% sets the caption-position to bottom
+xleftmargin=10pt,
+xrightmargin=6pt,
+framexleftmargin=10pt,
+framexrightmargin=5pt,
+framexbottommargin=3pt
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="contextModel" nsURI="www.eclipse.org/context" nsPrefix="context">
+  <eClassifiers xsi:type="ecore:EClass" name="Container">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="creationDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextElements" upperBound="-1"
+        eType="#//ContextElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contextInstances" upperBound="-1"
+        eType="#//ContextInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedMappingModel"
+        lowerBound="1" eType="ecore:EClass ../../org.feature.multi.perspective.mapping/model/viewmapping.ecore#//MappingModel"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="associatedMapping" lowerBound="1"
+        eType="ecore:EClass ../../org.feature.multi.perspective.mapping/model/viewmapping.ecore#//Mapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="priorizeLinks" upperBound="-1"
+        eType="#//ContextElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendsLink" eType="#//ContextElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="excludeLinks" upperBound="-1"
+        eType="#//ContextElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifiedFeatures" upperBound="-1"
+        eType="#//ClassifiedFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ContextInstance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includeLinks" upperBound="-1"
+        eType="#//ContextElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Classification">
+    <eLiterals name="UNBOUND"/>
+    <eLiterals name="ALIVE" value="1" literal="ALIVE"/>
+    <eLiterals name="DEAD" value="2" literal="DEAD"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ClassifiedFeature">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.featuremapper.models.feature/model/feature.ecore#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="classification" unique="false"
+        lowerBound="1" eType="#//Classification"/>
+  </eClassifiers>
+</ecore:EPackage>

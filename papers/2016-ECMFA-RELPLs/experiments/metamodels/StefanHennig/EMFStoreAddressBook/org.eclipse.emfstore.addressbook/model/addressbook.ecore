@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="addressbook" nsURI="http://www.dd-eclipse.de/hackathon/emfstore/addressbook"
+    nsPrefix="addressbook">
+  <eClassifiers xsi:type="ecore:EClass" name="Contact" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Phone" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Website" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="EMail" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="address" upperBound="-1"
+        eType="#//Address" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inRelation" upperBound="-1"
+        eType="#//Contact"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relates" upperBound="-1"
+        eType="#//Relationship" containment="true" eOpposite="#//Relationship/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="isRelated" upperBound="-1"
+        eType="#//Relationship" eOpposite="#//Relationship/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Note" upperBound="-1" eType="#//Note"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Person" eSuperTypes="#//Contact">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Company" eSuperTypes="#//Contact">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Industry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AddressBook">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Contact" upperBound="-1"
+        eType="#//Contact" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Address">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="City" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Street" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="HouseNr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//RelationshipType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Contact" eOpposite="#//Contact/isRelated"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Contact" eOpposite="#//Contact/relates"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RelationshipType">
+    <eLiterals name="Boss"/>
+    <eLiterals name="Employee" value="1"/>
+    <eLiterals name="Subdivision" value="2"/>
+    <eLiterals name="CoWorker" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Note">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" eType="#//NoteType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="NoteType">
+    <eLiterals name="MEETING"/>
+    <eLiterals name="CALL" value="1"/>
+    <eLiterals name="EMAIL" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

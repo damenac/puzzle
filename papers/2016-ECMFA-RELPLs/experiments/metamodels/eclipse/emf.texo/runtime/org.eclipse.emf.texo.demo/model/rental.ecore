@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="org.eclipse.emf.texo.test.model.samples.rental"
+    nsURI="http://www.eclipse.org/emf/texo/test/model/samples/rental" nsPrefix="rental">
+  <eClassifiers xsi:type="ecore:EDataType" name="Date" instanceClassName="java.util.Date">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="Date"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RentalBicycle" eSuperTypes="#//RentalUnit">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalBicycle"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//RentalBicycleType"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="type"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rentalCar" eType="#//RentalCar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RentalBicycleType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalBicycleType"/>
+    </eAnnotations>
+    <eLiterals name="Standard"/>
+    <eLiterals name="MountainBike" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RentalBicycleTypeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalBicycleType:Object"/>
+      <details key="baseType" value="RentalBicycleType"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RentalBusiness">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalBusiness"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RentalCar" eSuperTypes="#//RentalUnit">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalCar"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1" eType="#//RentalCarSize"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="size"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentDriver" eType="#//RentalCarDriver"
+        eOpposite="#//RentalCarDriver/currentRentalCar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RentalCarSize">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalCarSize"/>
+    </eAnnotations>
+    <eLiterals name="Small"/>
+    <eLiterals name="Medium" value="1"/>
+    <eLiterals name="Family" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="RentalCarSizeObject" instanceClassName="org.eclipse.emf.common.util.Enumerator">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalCarSize:Object"/>
+      <details key="baseType" value="RentalCarSize"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RentalContract">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalContract"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rentToBusinessPartner"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rentToBusinessPartner"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startDate" lowerBound="1"
+        eType="#//Date">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="startDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" lowerBound="1"
+        eType="#//Date" unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="endDate"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cost" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//Float"
+        unsettable="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="cost"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rentalContractLines" lowerBound="1"
+        upperBound="-1" eType="#//RentalContractLine" containment="true" resolveProxies="false"
+        eOpposite="#//RentalContractLine/rentalContract">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="rentalUnits"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RentalUnit" abstract="true">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalUnit"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="description"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RentalContractLine">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rentalContract" eType="#//RentalContract"
+        eOpposite="#//RentalContract/rentalContractLines"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rentalUnit" eType="#//RentalUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RentalCarDriver">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="RentalBusiness"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentRentalCar" eType="#//RentalCar"
+        eOpposite="#//RentalCar/currentDriver"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="org.polytech.projet.ia.model" nsPrefix="org.polytech.projet.ia.model">
+  <eSubpackages name="batiment" nsURI="org.polytech.projet.ia.model.batiment" nsPrefix="org.polytech.projet.ia.model.batiment">
+    <eClassifiers xsi:type="ecore:EClass" name="Batiment" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="levelBatiment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BatimentProduction" eSuperTypes="#//batiment/Batiment">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Capacity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BatimentDefence" eSuperTypes="#//batiment/Batiment"/>
+  </eSubpackages>
+  <eSubpackages name="util" nsURI="org.polytech.projet.ia.model.util" nsPrefix="org.polytech.projet.ia.model.util">
+    <eClassifiers xsi:type="ecore:EClass" name="Coordonnee">
+      <eOperations name="equals" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+        <eParameters name="coordonnee" eType="#//util/Coordonnee"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="unite" nsURI="org.polytech.projet.ia.model.unite" nsPrefix="org.polytech.projet.ia.model.unite">
+    <eClassifiers xsi:type="ecore:EClass" name="Unite">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbole" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UniteCombat" eSuperTypes="#//unite/Unite">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="arme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="distanceUnite" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="vie" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="100.0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="armure" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="porteeArme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UniteProduction" eSuperTypes="#//unite/Unite"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Army">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listUnit" lowerBound="1"
+          upperBound="30" eType="#//unite/UniteCombat"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="armyCoord" eType="#//util/Coordonnee"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listCoordAccessible"
+          unique="false" upperBound="100" eType="#//util/Coordonnee"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Distance" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="joueur" nsURI="org.polytech.projet.ia.model.joueur" nsPrefix="org.polytech.projet.ia.model.joueur">
+    <eClassifiers xsi:type="ecore:EClass" name="Joueur">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="JoueurHumain" eSuperTypes="#//joueur/Joueur"/>
+    <eClassifiers xsi:type="ecore:EClass" name="JoueurIA" eSuperTypes="#//joueur/Joueur"/>
+  </eSubpackages>
+  <eSubpackages name="carte" nsURI="org.polytech.projet.ia.model.carte" nsPrefix="org.polytech.projet.ia.model.carte">
+    <eClassifiers xsi:type="ecore:EClass" name="Carte">
+      <eOperations name="generateMap"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="20"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="20"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listVille" lowerBound="10"
+          upperBound="30" eType="#//carte/Ville"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Ville">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          defaultValueLiteral="city"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//util/Coordonnee"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listUnite" upperBound="30"
+          eType="#//unite/Unite"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="listBatiment" lowerBound="1"
+          upperBound="10" eType="#//batiment/Batiment"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="superficie" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

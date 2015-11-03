@@ -40,13 +40,12 @@ B.~Combemale, J.~Deantoni, B.~Baudry, R.~France, J.-M. J\'ez\'equel, and
 \newblock {\em Computer}, 47(6):68--71, June 2014.
 
 \bibitem{Combemale:2013}
-B.~Combemale, J.~Deantoni, M.~Vara~Larsen, F.~Mallet, O.~Barais, B.~Baudry, and
-  R.~France.
-\newblock Reifying concurrency for executable metamodeling.
-\newblock In M.~Erwig, R.~F. Paige, and E.~Van~Wyk, editors, {\em 6th
-  International Conference on Software Language Engineering}, volume 8225 of
-  {\em SLE}, pages 365--384, Indianapolis, IN, United States, Oct 2013.
-  Springer.
+B.~Combemale, C.~Hardebolle, C.~Jacquet, F.~Boulanger, and B.~Baudry.
+\newblock Bridging the chasm between executable metamodeling and models of
+  computation.
+\newblock In K.~Czarnecki and G.~Hedin, editors, {\em Software Language
+  Engineering}, volume 7745 of {\em Lecture Notes in Computer Science}, pages
+  184--203. Springer Berlin Heidelberg, 2013.
 
 \bibitem{Cook:2006}
 S.~Cook.

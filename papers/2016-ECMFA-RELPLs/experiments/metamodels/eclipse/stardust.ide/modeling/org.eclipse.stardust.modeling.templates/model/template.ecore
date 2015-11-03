@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="template"
+    nsURI="http://www.carnot.ag/workflowmodel/templates" nsPrefix="tmplt">
+  <eClassifiers xsi:type="ecore:EClass" name="DocumentationType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="documentation"/>
+      <details key="kind" value="mixed"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mixed" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="name" value=":mixed"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="group" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+        <details key="name" value="group:1"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="any" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry"
+        volatile="true" transient="true" derived="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="elementWildcard"/>
+        <details key="wildcards" value="##any"/>
+        <details key="name" value=":2"/>
+        <details key="processing" value="lax"/>
+        <details key="group" value="#group:1"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="feature"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="label"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//FeatureStyleType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="type"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//ScopeType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="scope"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterType" eSuperTypes="#//ReferenceType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="parameter"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//ActivityType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="activity"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="process"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//FeatureType" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="feature"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="reference"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eOperations name="getReference" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eOperations name="setReference">
+      <eParameters name="reference" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationType" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//ApplicationTypeType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="applicationType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="applicationContextType"
+        eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//ApplicationContextTypeType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="applicationContextType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//DataTypeType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="dataType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventActionType" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//EventActionTypeType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="eventActionType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="eventConditionType" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//EventConditionTypeType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="eventConditionType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggerType" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//TriggerTypeType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="triggerType"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="application" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//ApplicationType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="application"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//DataType"
+        resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="data"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalPerformer" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//ConditionalPerformerType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="conditionalPerformer"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="organization" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//OrganizationType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="organization"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="role" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//RoleType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="role"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processDefinition" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//ProcessDefinitionType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="process"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typeDeclaration" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/xpdl.ecore#//TypeDeclarationType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="typeDeclaration"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.carnot.ag/workflow/model/ElementIdRef">
+        <details key="scope" value="model"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//ParameterType" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="parameter"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RootsType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="roots"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" upperBound="-1" eType="#//ReferenceType"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="root"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="template"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"
+        iD="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentation" eType="#//DocumentationType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="documentation"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="roots" eType="#//RootsType"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="roots"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//StyleType">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="style"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="category"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplatesType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="templates"/>
+      <details key="kind" value="elementOnly"/>
+    </eAnnotations>
+    <eOperations name="getTemplate" eType="#//TemplateType">
+      <eParameters name="templateId" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="template" upperBound="-1"
+        eType="#//TemplateType" containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="template"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TemplateLibraryType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="kind" value="elementOnly"/>
+      <details key="name" value="TemplateLibrary"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//ID"
+        iD="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="id"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2003/XMLType#//String">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+        <details key="name" value="name"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="documentation" eType="#//DocumentationType"
+        containment="true" resolveProxies="false">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="documentation"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="templates" eType="#//TemplatesType"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="templates"/>
+        <details key="namespace" value="##targetNamespace"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="ecore:EClass ../../org.eclipse.stardust.model.xpdl.carnot/model/carnot.ecore#//ModelType"
+        containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="element"/>
+        <details key="name" value="model"/>
+        <details key="namespace" value="http://www.carnot.ag/workflowmodel/3.1"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FeatureStyleType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="type"/>
+    </eAnnotations>
+    <eLiterals name="text" literal="text"/>
+    <eLiterals name="selection" value="1" literal="selection"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ScopeType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="type"/>
+    </eAnnotations>
+    <eLiterals name="model" literal="model"/>
+    <eLiterals name="process" value="1" literal="process"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StyleType">
+    <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+      <details key="name" value="style"/>
+    </eAnnotations>
+    <eLiterals name="standalone" literal="standalone"/>
+    <eLiterals name="embedded" value="1" literal="embedded"/>
+  </eClassifiers>
+</ecore:EPackage>

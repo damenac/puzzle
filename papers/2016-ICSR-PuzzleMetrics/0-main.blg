@@ -7,34 +7,34 @@ Warning--empty booktitle in Berger:2014
 Warning--empty publisher in Berger:2014
 You've used 27 entries,
             2118 wiz_defined-function locations,
-            709 strings with 9622 characters,
-and the built_in function-call counts, 12714 in all, are:
-= -- 1212
-> -- 677
+            704 strings with 9462 characters,
+and the built_in function-call counts, 12639 in all, are:
+= -- 1207
+> -- 664
 < -- 31
-+ -- 254
-- -- 223
-* -- 983
-:= -- 2006
++ -- 249
+- -- 218
+* -- 969
+:= -- 1991
 add.period$ -- 100
 call.type$ -- 27
-change.case$ -- 174
+change.case$ -- 172
 chr.to.int$ -- 0
 cite$ -- 29
-duplicate$ -- 524
-empty$ -- 957
-format.name$ -- 223
-if$ -- 2799
+duplicate$ -- 525
+empty$ -- 959
+format.name$ -- 218
+if$ -- 2788
 int.to.chr$ -- 0
 int.to.str$ -- 27
 missing$ -- 28
 newline$ -- 138
 num.names$ -- 80
-pop$ -- 209
+pop$ -- 208
 preamble$ -- 1
-purify$ -- 148
+purify$ -- 146
 quote$ -- 0
-skip$ -- 361
+skip$ -- 362
 stack$ -- 0
 substring$ -- 698
 swap$ -- 192
@@ -45,5 +45,5 @@ type$ -- 106
 warning$ -- 2
 while$ -- 111
 width$ -- 29
-write$ -- 334
+write$ -- 333
 (There were 2 warnings)

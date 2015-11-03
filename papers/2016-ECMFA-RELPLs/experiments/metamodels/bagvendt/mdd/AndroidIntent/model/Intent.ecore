@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="IntentDSL" nsURI="platform:/resource/AndroidIntent/model/Intent.ecore"
+    nsPrefix="">
+  <eClassifiers xsi:type="ecore:EClass" name="IntentModel" eSuperTypes="#//NamedInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="intents" upperBound="-1"
+        eType="#//Intent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Intent" abstract="true" eSuperTypes="#//NamedInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extraData" upperBound="-1"
+        eType="#//ExtraData" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataURI" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="category" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="returnData" upperBound="-1"
+        eType="#//ExtraData" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaCategory" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="permission" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExtraData" eSuperTypes="#//NamedInstance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//SimpleTypeEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplicitIntent" eSuperTypes="#//Intent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BroadCastIntent" eSuperTypes="#//Intent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExplicitIntent" eSuperTypes="#//Intent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ServiceIntent" eSuperTypes="#//Intent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedInstance">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SimpleTypeEnum">
+    <eLiterals name="STRING"/>
+    <eLiterals name="BOOLEAN" value="1"/>
+    <eLiterals name="BUNDLE" value="2"/>
+    <eLiterals name="BYTE" value="3"/>
+    <eLiterals name="INT" value="4"/>
+    <eLiterals name="FLOAT" value="5"/>
+    <eLiterals name="LONG" value="6"/>
+    <eLiterals name="SHORT" value="7"/>
+    <eLiterals name="DOUBLE" value="8"/>
+  </eClassifiers>
+</ecore:EPackage>

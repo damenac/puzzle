@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="GUI" nsURI="http://GUI/1.0" nsPrefix="gui">
+  <eClassifiers xsi:type="ecore:EClass" name="Application">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="window" lowerBound="1"
+        upperBound="-1" eType="#//DisplayedPage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startPage" lowerBound="1"
+        eType="#//DisplayedPage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PageContent" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LayoutManager" abstract="true" eSuperTypes="#//Element">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//Element" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Horizontal" eSuperTypes="#//LayoutManager"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vertical" eSuperTypes="#//LayoutManager"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Controls" abstract="true" eSuperTypes="#//Element"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//Controls">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputText" eSuperTypes="#//ActiveControls">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="editable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//ActiveControls">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Page" eSuperTypes="#//DisplayedPage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="layout" lowerBound="1"
+        eType="#//LayoutManager" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toolbar" eType="#//ToolBar"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Element">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabBar" eSuperTypes="#//DisplayedPage">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tabpages" lowerBound="1"
+        upperBound="-1" eType="#//TabPage" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wp7Type" eType="#//Wp7TabType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TabPage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" lowerBound="1" eType="#//Page"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DisplayedPage" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appbar" eType="#//AppBar"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActiveControls" abstract="true" eSuperTypes="#//Controls">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clickEvent" eType="#//Event"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//Controls">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultImage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AppBar">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appbarentry" upperBound="-1"
+        eType="#//ActionEntry" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Entry" upperBound="-1"
+        eType="#//AppBarEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AppBarEntry" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clickEvent" eType="#//Tapped"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importance" lowerBound="1"
+        eType="#//ActionImportance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MenuEntry">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="menu entry über events"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="menuentry" lowerBound="1"
+        eType="#//DisplayedPage"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="eventType">
+    <eLiterals name="standard"/>
+    <eLiterals name="changePage" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Tapped" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextChanged" eSuperTypes="#//Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ChangePage" eSuperTypes="#//Tapped">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="changeDisplayedPage" lowerBound="1"
+        eType="#//DisplayedPage"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ToolBar"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Grid" eSuperTypes="#//LayoutManager">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rows" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="columns" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Wp7TabType">
+    <eLiterals name="none"/>
+    <eLiterals name="panorama" value="1"/>
+    <eLiterals name="pivot" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActionEntry" eSuperTypes="#//AppBarEntry"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionsEntry" eSuperTypes="#//AppBarEntry"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ActionImportance">
+    <eLiterals name="action"/>
+    <eLiterals name="option" value="2"/>
+  </eClassifiers>
+</ecore:EPackage>

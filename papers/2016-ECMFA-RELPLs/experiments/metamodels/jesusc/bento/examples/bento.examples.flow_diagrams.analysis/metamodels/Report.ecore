@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="report"
+    nsURI="http://petrinet.report" nsPrefix="report">
+  <eClassifiers xsi:type="ecore:EEnum" name="ProblemKind">
+    <eLiterals name="ERROR"/>
+    <eLiterals name="WARNING" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Report">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="errors" upperBound="-1"
+        eType="#//Problem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Problem" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="problemKind" eType="#//ProblemKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="places" upperBound="-1"
+        eType="#//Place" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Place">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoOptionToComplete" eSuperTypes="#//Problem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoProperCompletion" eSuperTypes="#//Problem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states" upperBound="-1"
+        eType="#//State" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasNeedlessElements" eSuperTypes="#//Problem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="needlessPlaces" upperBound="-1"
+        eType="#//Place" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="needlessTransitions" upperBound="-1"
+        eType="#//Transition" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

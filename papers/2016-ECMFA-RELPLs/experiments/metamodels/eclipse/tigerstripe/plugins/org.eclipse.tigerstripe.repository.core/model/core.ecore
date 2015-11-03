@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core"
+    nsURI="http://www.eclipse.org/tigerstripe/metamodel/core" nsPrefix="co">
+  <eClassifiers xsi:type="ecore:EClass" name="ITigerstripeElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IFacet" eSuperTypes="#//ITigerstripeElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="includes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="excludes" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eSubpackages name="instance" nsURI="http://www.eclipse.org/tigerstripe/metamodel/core.ins"
+      nsPrefix="ins">
+    <eClassifiers xsi:type="ecore:EClass" name="artifactInstance" eSuperTypes="#//ITigerstripeElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="artifact" eType="#//model/IAbstractArtifact"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="model" nsURI="http://www.eclipse.org/tigerstripe/metamodel/core.model"
+      nsPrefix="mod">
+    <eClassifiers xsi:type="ecore:EClass" name="IAbstractArtifact" eSuperTypes="#//model/IQualifiedNamedElement #//model/IStereotypeCapable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fields" upperBound="-1"
+          eType="#//model/IField" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+          eType="#//model/IMethod" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IException" eSuperTypes="#//model/IAbstractArtifact"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IDatatypeArtifact" eSuperTypes="#//model/IAbstractArtifact">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//model/IDatatypeArtifact"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IInterfaceArtifact" eSuperTypes="#//model/IAbstractArtifact">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extends" upperBound="-1"
+          eType="#//model/IInterfaceArtifact"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IClassArtifact" eSuperTypes="#//model/IAbstractArtifact">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="extends" eType="#//model/IClassArtifact"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="implements" upperBound="-1"
+          eType="#//model/IInterfaceArtifact"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IModelComponent" eSuperTypes="#//ITigerstripeElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IStereotypeCapable"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IField" eSuperTypes="#//model/IModelComponent #//model/IStereotypeCapable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//model/IQualifiedNamedElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IMethod" eSuperTypes="#//model/IModelComponent #//model/IStereotypeCapable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exceptions" upperBound="-1"
+          eType="#//model/IException"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+          eType="#//model/IArgument" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="return" eType="#//model/IMethodReturn"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IPackage" eSuperTypes="#//model/IModelComponent"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IQualifiedNamedElement" eSuperTypes="#//ITigerstripeElement">
+      <eOperations name="getFullyQualifiedName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="package" eType="#//model/IPackage"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IArtifactContainer">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="artifacts" upperBound="-1"
+          eType="#//model/IAbstractArtifact" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IRelationship" eSuperTypes="#//model/IAbstractArtifact">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ends" unique="false"
+          lowerBound="2" upperBound="-1" eType="#//model/IRelationshipEnd" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IRelationshipEnd" eSuperTypes="#//model/IModelComponent #//model/IStereotypeCapable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//model/IAbstractArtifact"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IPrimitiveType" eSuperTypes="#//model/IQualifiedNamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IMethodReturn" eSuperTypes="#//model/IModelComponent #//model/IStereotypeCapable">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//model/IQualifiedNamedElement"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IArgument" eSuperTypes="#//model/IStereotypeCapable #//model/IModelComponent"/>
+  </eSubpackages>
+</ecore:EPackage>

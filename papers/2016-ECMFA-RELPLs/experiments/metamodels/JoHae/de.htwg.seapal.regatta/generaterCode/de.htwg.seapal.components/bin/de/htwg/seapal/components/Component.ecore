@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="component" nsURI="http://www.htwg.de/seapal/components/Component"
+    nsPrefix="component">
+  <eClassifiers xsi:type="ecore:EClass" name="Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="root" eType="#//Rootpackage"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Rootpackage">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PackageDeclaration" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//AbstractElement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type" eSuperTypes="#//AbstractElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RawType" eSuperTypes="#//Type"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//Type">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+        eType="#//Method" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Method">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type"/>
+  </eClassifiers>
+</ecore:EPackage>
