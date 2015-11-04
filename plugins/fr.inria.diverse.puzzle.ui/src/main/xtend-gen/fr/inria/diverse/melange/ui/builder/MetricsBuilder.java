@@ -8,7 +8,7 @@ import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
-import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition;
+import fr.inria.diverse.puzzle.breaker.breakers.MinimumAcyclicPartition;
 import fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl;
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer;
 

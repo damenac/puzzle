@@ -17,9 +17,9 @@ import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
-import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition
+import fr.inria.diverse.puzzle.breaker.breakers.MinimumAcyclicPartition
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
-import fr.inria.diverse.puzzle.breaker.popup.actions.SimulatedAnnealingPartitioning
+import fr.inria.diverse.puzzle.breaker.breakers.SimulatedAnnealingPartitioning
 
 /**
  * Builder for the action: Synthesize Language Product Line (LPL).

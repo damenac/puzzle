@@ -13,4 +13,5 @@ Require-Bundle: org.eclipse.ui,
  fr.inria.diverse.puzzle.metrics;bundle-version="1.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: fr.inria.diverse.puzzle.breaker.popup.actions
+Export-Package: fr.inria.diverse.puzzle.breaker.breakers,
+ fr.inria.diverse.puzzle.breaker.command

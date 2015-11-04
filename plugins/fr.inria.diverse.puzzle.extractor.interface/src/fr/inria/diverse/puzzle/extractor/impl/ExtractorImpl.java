@@ -6,6 +6,7 @@ import org.eclipse.core.resources.IProject;
 
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.breaker.command.BreakerImpl;
 
 public class ExtractorImpl {
 
@@ -33,7 +34,7 @@ public class ExtractorImpl {
 	// Methods
 	// --------------------------------------------------
 	
-	public void extractReusableModules(SynthesisProperties properties, ArrayList<Language> languages, IProject project){
-		
+	public void extractReusableModules(SynthesisProperties properties, ArrayList<Language> languages, IProject project) throws Exception{
+		BreakerImpl.getInstance().breakDownFamily(languages, properties, project);
 	}
 }

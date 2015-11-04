@@ -10,6 +10,14 @@ import java.util.ArrayList
 import fr.inria.diverse.melange.metamodel.melange.Language
 import fr.inria.diverse.melange.metamodel.melange.Element
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices
+import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison
+import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
+import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference
+import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition
+import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition
 
 /**
  * Builder for the action: Analyze Family.
@@ -35,5 +43,14 @@ class ExtractionBuilder extends AbstractBuilder {
 		ExtractorImpl.instance.extractReusableModules(properties, languages, lplProject)
 		ProjectManagementServices.refreshProject(lplProject)
 		println("ExtractionBuilder.extractReusableModules")
+	}
+	
+	override SynthesisProperties getSynthesisProperties(){
+		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
+		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
+		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
+		var GraphPartition graphPartition = new MembershipGraphPartition();
+		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
+		return properties;
 	}
 }

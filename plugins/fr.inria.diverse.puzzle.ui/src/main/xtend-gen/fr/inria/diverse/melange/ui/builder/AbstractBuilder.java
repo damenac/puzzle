@@ -7,7 +7,7 @@ import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
-import fr.inria.diverse.puzzle.breaker.popup.actions.MinimumAcyclicPartition;
+import fr.inria.diverse.puzzle.breaker.breakers.MinimumAcyclicPartition;
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer;
 
 /**

@@ -1,0 +1,65 @@
+package fr.inria.diverse.puzzle.breaker.breakers;
+
+import java.util.ArrayList;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcoreFactory;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
+import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
+import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
+import fr.inria.diverse.k3.sle.common.utils.EcoreCloningServices;
+import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.breaker.command.BreakerImpl;
+import fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality;
+
+/**
+ * Action implementation for families decomposition. 
+ * @author David Mendez Acuna
+ */
+public class SynthesisManager {
+	
+	// --------------------------------------------------------
+	// Attributes
+	// --------------------------------------------------------
+	
+	private static SynthesisManager instance;
+	
+	// --------------------------------------------------------
+	// Constructor and singleton
+	// --------------------------------------------------------
+
+	private SynthesisManager(){}
+	
+	public static SynthesisManager getInstance(){
+		if(instance == null)
+			instance = new SynthesisManager();
+		return instance;
+	}
+	
+	// --------------------------------------------------------
+	// Methods
+	// --------------------------------------------------------
+	
+	/**
+	 * Breaks-down the family in the parameter using the comparison operators and the decomposition strategy in the parameters (TODO) 
+	 * @param languages
+	 * @throws Exception
+	 */
+	public EcoreGraph breakDownFamily(ArrayList<Language> languages, SynthesisProperties synthesisProperties, IProject lplProject) throws Exception{
+		return BreakerImpl.getInstance().breakDownFamily(languages, synthesisProperties, lplProject);
+	}
+}
