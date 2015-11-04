@@ -3,7 +3,6 @@ package fr.inria.diverse.k3.sle.common.utils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -132,5 +131,10 @@ public class ProjectManagementServices {
 			}
 		}
 		return null;
+	}
+	
+	public static void createXtendConfigurationFile(IProject project) throws IOException{
+		File pluginFile = new File(project.getLocation().toString() + "/plugin.xml");
+		pluginFile.createNewFile();
 	}
 }

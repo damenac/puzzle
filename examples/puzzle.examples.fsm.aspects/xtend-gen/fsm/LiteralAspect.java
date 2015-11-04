@@ -16,10 +16,10 @@ public class LiteralAspect extends ExpressionAspect {
     Object result = null;
      if (_self instanceof fsm.IntegerLit){
     result = fsm.IntegerLitAspect.eval((fsm.IntegerLit)_self,context);
-    } else  if (_self instanceof fsm.StringLit){
-    result = fsm.StringLitAspect.eval((fsm.StringLit)_self,context);
     } else  if (_self instanceof fsm.BoolLit){
     result = fsm.BoolLitAspect.eval((fsm.BoolLit)_self,context);
+    } else  if (_self instanceof fsm.StringLit){
+    result = fsm.StringLitAspect.eval((fsm.StringLit)_self,context);
     } else  if (_self instanceof fsm.Literal){
     result = fsm.LiteralAspect._privk3_eval(_self_, (fsm.Literal)_self,context);
     } else  if (_self instanceof fsm.Expression){

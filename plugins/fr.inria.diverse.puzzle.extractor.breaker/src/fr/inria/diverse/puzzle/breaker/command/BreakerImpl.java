@@ -1,5 +1,6 @@
 package fr.inria.diverse.puzzle.breaker.command;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
@@ -65,7 +66,8 @@ public class BreakerImpl {
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
 		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
-		buildModules(dependenciesGraph);
+		buildSyntacticModules(dependenciesGraph);
+		buildSemanticModules(dependenciesGraph, languages);
 		
 		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
 		System.out.println("Modularization Quality: " + mq);
@@ -74,28 +76,53 @@ public class BreakerImpl {
 	}
 
 	/**
-	 * Builds the ecore metamodels according to the decomposed dependencies graph. 
+	 * Builds the syntactic modules according to the decomposed dependencies graph. 
 	 * @param ecoreGraph
 	 * @throws CoreException
 	 */
-	private void buildModules(EcoreGraph ecoreGraph) throws CoreException {
+	private void buildSyntacticModules(EcoreGraph ecoreGraph) throws CoreException {
 		for (EcoreGroup group : ecoreGraph.getGroups()) {
 			// Build the module metamodel with the required interface.
 			EPackage moduleEPackage = this.createEPackageByModule(group);
 
 			// Create the module project with the folders.
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl." + 
-					EcoreGraph.getLanguageModuleName(group.getVertex()).trim());
+			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
+					EcoreGraph.getLanguageModuleName(group.getVertex()).trim() + ".syntax");
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 
 			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore", moduleEPackage);
 			
 			// Create the genmodel and generate the code of the module.
+			// TODO
+			
+			// Refresh projects
 			ProjectManagementServices.refreshProject(moduleProject);
 		}
 	}
 
+	/**
+	 * Builds the semantic modules according to the decomposed dependencies graph. 
+	 * @param ecoreGraph
+	 * @throws CoreException
+	 * @throws IOException 
+	 */
+	private void buildSemanticModules(EcoreGraph dependenciesGraph, ArrayList<Language> languages) throws CoreException, IOException{
+		for (EcoreGroup group : dependenciesGraph.getGroups()) {
+			// Create the module project with the folders.
+			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
+				EcoreGraph.getLanguageModuleName(group.getVertex()).trim() + ".semantics");
+			ProjectManagementServices.createXtendConfigurationFile(moduleProject);
+			
+			// Refresh projects
+			ProjectManagementServices.refreshProject(moduleProject);
+		}
+	}
+	
+	// ---------------------------------------------
+	// Utilities
+	// ---------------------------------------------
+	
 	/**
 	 * Creates a metamodel by module taking into consideration the corresponding dependencies with other modules
 	 * by establishing the required interfaces.
