@@ -1,10 +1,21 @@
 package fr.inria.diverse.melange.ui.builder;
 
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Element;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.melange.ui.builder.AbstractBuilder;
+import fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl;
+import java.util.ArrayList;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * Builder for the action: Analyze Family.
@@ -15,6 +26,25 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 @SuppressWarnings("all")
 public class ExtractionBuilder extends AbstractBuilder {
   public void extractReusableModules(final Resource res, final IProject project, final IProgressMonitor monitor) {
-    InputOutput.<String>println("ExtractionBuilder.extractReusableModules");
+    try {
+      EList<EObject> _contents = res.getContents();
+      EObject _head = IterableExtensions.<EObject>head(_contents);
+      final ModelTypingSpace root = ((ModelTypingSpace) _head);
+      ArrayList<Language> languages = new ArrayList<Language>();
+      EList<Element> _elements = root.getElements();
+      for (final Element element : _elements) {
+        if ((element instanceof Language)) {
+          languages.add(((Language) element));
+        }
+      }
+      IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+      SynthesisProperties properties = this.getSynthesisProperties();
+      ExtractorImpl _instance = ExtractorImpl.getInstance();
+      _instance.extractReusableModules(properties, languages, lplProject);
+      ProjectManagementServices.refreshProject(lplProject);
+      InputOutput.<String>println("ExtractionBuilder.extractReusableModules");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }
