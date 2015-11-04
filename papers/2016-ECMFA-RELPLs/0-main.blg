@@ -1,49 +1,56 @@
 This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 0-main.aux
+Case mismatch error between cite keys Degueule:2015 and degueule:2015
+---line 50 of file 0-main.aux
+ : \citation{Degueule:2015
+ :                        }
+I'm skipping whatever remains of this command
 The style file: abbrv.bst
 Database file #1: 0-main.bib
-Warning--empty booktitle in Berger:2014
-Warning--empty publisher in Berger:2014
-You've used 27 entries,
+Warning--I didn't find a database entry for "Steel:2007"
+Warning--I didn't find a database entry for "Guy:2012"
+Warning--I didn't find a database entry for "Erdweg:2012"
+Warning--I didn't find a database entry for "Clifton:2000"
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            709 strings with 9622 characters,
-and the built_in function-call counts, 12714 in all, are:
-= -- 1212
-> -- 677
-< -- 31
-+ -- 254
-- -- 223
-* -- 983
-:= -- 2006
-add.period$ -- 100
-call.type$ -- 27
-change.case$ -- 174
+            637 strings with 7284 characters,
+and the built_in function-call counts, 7366 in all, are:
+= -- 699
+> -- 386
+< -- 18
++ -- 145
+- -- 126
+* -- 569
+:= -- 1172
+add.period$ -- 59
+call.type$ -- 16
+change.case$ -- 100
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 524
-empty$ -- 957
-format.name$ -- 223
-if$ -- 2799
+cite$ -- 16
+duplicate$ -- 305
+empty$ -- 564
+format.name$ -- 126
+if$ -- 1621
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 28
-newline$ -- 138
-num.names$ -- 80
-pop$ -- 209
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 83
+num.names$ -- 48
+pop$ -- 118
 preamble$ -- 1
-purify$ -- 148
+purify$ -- 84
 quote$ -- 0
-skip$ -- 361
+skip$ -- 203
 stack$ -- 0
-substring$ -- 698
-swap$ -- 192
-text.length$ -- 31
+substring$ -- 402
+swap$ -- 108
+text.length$ -- 18
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 2
-while$ -- 111
-width$ -- 29
-write$ -- 334
-(There were 2 warnings)
+type$ -- 64
+warning$ -- 0
+while$ -- 66
+width$ -- 18
+write$ -- 199
+(There was 1 error message)

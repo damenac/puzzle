@@ -53,6 +53,11 @@
                      visible="true">
                </separator>
                <command
+                     commandId="fr.inria.diverse.puzzle.ExtractReusableModules"
+                     label="Extract Reusable Modules"
+                     style="push">
+               </command>
+               <command
                      commandId="fr.inria.diverse.puzzle.Synthesize"
                      label="Synthesize LPL"
                      style="push">
@@ -84,6 +89,10 @@
             id="fr.inria.diverse.puzzle.ConfigureDSL"
             name="Configure DSL">
       </command>
+      <command
+            id="fr.inria.diverse.puzzle.ExtractReusableModules"
+            name="Extract Reusable Modules">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -98,6 +107,10 @@
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.Configure"
             commandId="fr.inria.diverse.puzzle.ConfigureDSL">
+      </handler>
+      <handler
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ExtractReusableModules"
+            commandId="fr.inria.diverse.puzzle.ExtractReusableModules">
       </handler>
    </extension>
 

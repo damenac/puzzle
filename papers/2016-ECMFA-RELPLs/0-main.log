@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  30 OCT 2015 13:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  3 NOV 2015 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,69 +1009,112 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Reference `sec:background' on page 2 undefined on input line 17.
+
+
+
+LaTeX Warning: Reference `sec:apprach' on page 2 undefined on input line 17.
+
+
+LaTeX Warning: Reference `sec:validation' on page 2 undefined on input line 17.
+
+
+
+LaTeX Warning: Reference `sec:threads' on page 2 undefined on input line 17.
+
+
+LaTeX Warning: Reference `sec:relatedwork' on page 2 undefined on input line 17
+.
+
+
+LaTeX Warning: Reference `sec:conclusions' on page 2 undefined on input line 17
+.
+
+) (./sections/problem.tex) (./sections/approach.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
+<images/breaking-down.pdf, id=112, 455.86359pt x 210.45888pt>
+File: images/breaking-down.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `sec:background' on page 3 undefined on input line 30.
+<use images/breaking-down.pdf>
+Package pdftex.def Info: images/breaking-down.pdf used on input line 16.
+(pdftex.def)             Requested size: 347.12354pt x 160.2619pt.
+ [3 <./images/breaking-down.pdf>]
 
-
-
-LaTeX Warning: Reference `sec:apprach' on page 3 undefined on input line 30.
-
-
-LaTeX Warning: Reference `sec:validation' on page 3 undefined on input line 30.
-
-
-
-LaTeX Warning: Reference `sec:threads' on page 3 undefined on input line 30.
+LaTeX Warning: Citation `Steel:2007' on page 4 undefined on input line 31.
 
 
-LaTeX Warning: Reference `sec:relatedwork' on page 3 undefined on input line 30
+LaTeX Warning: Citation `Degueule:2015' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Citation `Guy:2012' on page 4 undefined on input line 31.
+
+
+LaTeX Warning: Citation `Erdweg:2012' on page 4 undefined on input line 34.
+
+
+LaTeX Warning: Citation `Clifton:2000' on page 4 undefined on input line 36.
+
+
+Underfull \vbox (badness 1102) has occurred while \output is active []
+
+ [4]
+<images/approaches-interfaces.pdf, id=336, 636.19229pt x 342.5297pt>
+File: images/approaches-interfaces.pdf Graphic file (type pdf)
+
+<use images/approaches-interfaces.pdf>
+Package pdftex.def Info: images/approaches-interfaces.pdf used on input line 44
 .
+(pdftex.def)             Requested size: 347.12354pt x 186.89188pt.
+ [5 <./images/approaches-interfaces.pdf>]
 
+LaTeX Warning: Reference `fig:multi-dimensional-variability' on page 6 undefine
+d on input line 59.
 
-LaTeX Warning: Reference `sec:conclusions' on page 3 undefined on input line 30
-.
+) (./0-main.bbl
+Underfull \vbox (badness 2418) has occurred while \output is active []
 
-) (./0-main.bbl [3] [4])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
- [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
+ [6]
+[7])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
+ [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
  (./0-main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
 Package rerunfilecheck Info: File `0-main.out' has not changed.
-(rerunfilecheck)             Checksum: 9ABC40652F6B604BA33EF0275C966956;135.
+(rerunfilecheck)             Checksum: A3A4AA3235C91682FFED24AE0739295E;715.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
  ) 
 Here is how much of TeX's memory you used:
- 19388 strings out of 493308
- 331030 string characters out of 6137815
- 413513 words of memory out of 5000000
- 22396 multiletter control sequences out of 15000+600000
- 17822 words of font info for 53 fonts, out of 8000000 for 9000
+ 19699 strings out of 493308
+ 333871 string characters out of 6137815
+ 415353 words of memory out of 5000000
+ 22682 multiletter control sequences out of 15000+600000
+ 18523 words of font info for 54 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,7n,57p,1068b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,7n,75p,1099b,992s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0-main.pdf (5 pages, 217647 bytes).
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/cm-super/sftt0900.pfb>
+Output written on 0-main.pdf (8 pages, 760372 bytes).
 PDF statistics:
- 158 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 29 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 761 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 103 words of extra memory for PDF output out of 10000 (max. 10000000)
 

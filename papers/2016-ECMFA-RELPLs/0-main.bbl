@@ -1,24 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Berger:2014}
-C.~Berger, H.~Rendel, and B.~Rumpe.
-\newblock Measuring the ability to form a product line from existing products.
-\newblock volume abs/1409.6583. 2014.
-
-\bibitem{Berger:126283}
-C.~Berger, H.~Rendel, B.~Rumpe, C.~Busse, T.~Jablonski, and F.~Wolf.
-\newblock {P}roduct {L}ine {M}etrics for {L}egacy {S}oftware in {P}ractice.
-\newblock In {\em SPLC 2010 : Proceedings of the 14th International Software
-  Product Line Conference}, pages 247--250. Univ., Lancaster, 2010.
-
-\bibitem{Biegel:2010}
-B.~Biegel and S.~Diehl.
-\newblock Jccd: A flexible and extensible api for implementing custom code
-  clone detectors.
-\newblock In {\em Proceedings of the IEEE/ACM International Conference on
-  Automated Software Engineering}, ASE '10, pages 167--168, New York, NY, USA,
-  2010. ACM.
-
 \bibitem{Clark:2013}
 T.~Clark and B.~Barn.
 \newblock Domain engineering for software tools.
@@ -38,15 +19,6 @@ B.~Combemale, J.~Deantoni, B.~Baudry, R.~France, J.-M. J\'ez\'equel, and
   J.~Gray.
 \newblock Globalizing modeling languages.
 \newblock {\em Computer}, 47(6):68--71, June 2014.
-
-\bibitem{Combemale:2013}
-B.~Combemale, J.~Deantoni, M.~Vara~Larsen, F.~Mallet, O.~Barais, B.~Baudry, and
-  R.~France.
-\newblock Reifying concurrency for executable metamodeling.
-\newblock In M.~Erwig, R.~F. Paige, and E.~Van~Wyk, editors, {\em 6th
-  International Conference on Software Language Engineering}, volume 8225 of
-  {\em SLE}, pages 365--384, Indianapolis, IN, United States, Oct 2013.
-  Springer.
 
 \bibitem{Cook:2006}
 S.~Cook.
@@ -75,11 +47,6 @@ J.-M. Favre, D.~Gasevic, R.~Lämmel, and E.~Pek.
 \newblock In {\em Software Language Engineering}, volume 6563 of {\em LNCS},
   pages 316--326. Springer, 2011.
 
-\bibitem{Harel:2004b}
-D.~Harel and B.~Rumpe.
-\newblock Meaningful modeling: what's the semantics of ``semantics"?
-\newblock {\em Computer}, 37(10):64--72, Oct 2004.
-
 \bibitem{jezequel:2014}
 J.-M. J{\'e}z{\'e}quel, D.~M{\'e}ndez-Acu{\~n}a, T.~Degueule, B.~Combemale, and
   O.~Barais.
@@ -101,14 +68,6 @@ H.~Krahn, B.~Rumpe, and S.~V\"olkel.
 \newblock {\em International Journal on Software Tools for Technology
   Transfer}, 12(5):353--372, 2010.
 
-\bibitem{Lafi:2011}
-L.~Lafi, S.~Hammoudi, and J.~Feki.
-\newblock Metamodel matching techniques in mda: Challenge, issues and
-  comparison.
-\newblock In L.~Bellatreche and F.~Mota~Pinto, editors, {\em Model and Data
-  Engineering}, volume 6918 of {\em Lecture Notes in Computer Science}, pages
-  278--286. Springer Berlin Heidelberg, 2011.
-
 \bibitem{Lodderstedt:2002}
 T.~Lodderstedt, D.~Basin, and J.~Doser.
 \newblock Secureuml: A uml-based modeling language for model-driven security.
@@ -116,30 +75,11 @@ T.~Lodderstedt, D.~Basin, and J.~Doser.
   2002 - The Unified Modeling Language}, volume 2460 of {\em Lecture Notes in
   Computer Science}, pages 426--441. Springer Berlin Heidelberg, 2002.
 
-\bibitem{Lucanu:2013}
-D.~Lucanu and V.~Rusu.
-\newblock Program equivalence by circular reasoning.
-\newblock In E.~Johnsen and L.~Petre, editors, {\em Integrated Formal Methods},
-  volume 7940 of {\em Lecture Notes in Computer Science}, pages 362--377.
-  Springer Berlin Heidelberg, 2013.
-
 \bibitem{Mernik:2013}
 M.~Mernik.
 \newblock An object-oriented approach to language compositions for software
   language engineering.
 \newblock {\em J. Syst. Softw.}, 86(9):2451--2464, Sept. 2013.
-
-\bibitem{Mernik:2005b}
-M.~Mernik, J.~Heering, and A.~M. Sloane.
-\newblock When and how to develop domain-specific languages.
-\newblock {\em ACM Comput. Surv.}, 37(4):316--344, Dec. 2005.
-
-\bibitem{Mosses:2001}
-P.~D. Mosses.
-\newblock The varieties of programming language semantics and their uses.
-\newblock In D.~Bj{\o}rner, M.~Broy, and A.~V. Zamulin, editors, {\em
-  Perspectives of System Informatics}, volume 2244 of {\em Lecture Notes in
-  Computer Science}, pages 165--190. Springer Berlin Heidelberg, 2001.
 
 \bibitem{Oney:2012}
 S.~Oney, B.~Myers, and J.~Brandt.
@@ -160,21 +100,6 @@ T.~van~der Storm, W.~Cook, and A.~Loh.
 \newblock In K.~Czarnecki and G.~Hedin, editors, {\em Software Language
   Engineering}, volume 7745 of {\em Lecture Notes in Computer Science}, pages
   4--23. Springer Berlin Heidelberg, 2013.
-
-\bibitem{voelter:2013}
-M.~V\"olter, S.~Benz, C.~Dietrich, B.~Engelmann, M.~Helander, L.~C.~L. Kats,
-  E.~Visser, and G.~Wachsmuth.
-\newblock {\em {DSL} Engineering - Designing, Implementing and Using
-  Domain-Specific Languages}.
-\newblock dslbook.org, 2013.
-
-\bibitem{Zschaler:2010b}
-S.~Zschaler, D.~S. Kolovos, N.~Drivalos, R.~F. Paige, and A.~Rashid.
-\newblock Domain-specific metamodelling languages for software language
-  engineering.
-\newblock In M.~van~den Brand, D.~Ga?evi?, and J.~Gray, editors, {\em Software
-  Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
-  Science}, pages 334--353. Springer Berlin Heidelberg, 2010.
 
 \bibitem{Zschaler:2010}
 S.~Zschaler, P.~S\'anchez, J.~a. Santos, M.~Alf\'erez, A.~Rashid, L.~Fuentes,

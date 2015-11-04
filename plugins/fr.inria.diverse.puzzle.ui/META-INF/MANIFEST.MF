@@ -27,12 +27,12 @@ Require-Bundle: fr.inria.diverse.melange;visibility:=reexport,
  org.eclipse.e4.ui.di;bundle-version="1.0.0",
  fr.inria.diverse.melange.lib;bundle-version="0.1.0",
  fr.inria.diverse.puzzle.metrics;bundle-version="1.0.0",
- fr.inria.diverse.puzzle.synthesizer;bundle-version="1.0.0",
+ fr.inria.diverse.puzzle.synthesizer.interface;bundle-version="1.0.0",
  fr.inria.diverse.puzzle.common;bundle-version="1.0.0",
- fr.inria.diverse.puzzle.variabilityInferer;bundle-version="1.0.0",
+ fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface;bundle-version="1.0.0",
  fr.inria.diverse.puzzle.vm.metamodel;bundle-version="1.0.0",
  fr.inria.diverse.puzzle.configurator;bundle-version="1.0.0",
- fr.inria.diverse.puzzle.breaker;bundle-version="1.0.0"
+ fr.inria.diverse.puzzle.extractor.breaker;bundle-version="1.0.0"
 Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
