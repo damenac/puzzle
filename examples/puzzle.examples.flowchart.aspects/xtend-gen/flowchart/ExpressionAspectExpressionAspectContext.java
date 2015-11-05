@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Expression;
 import flowchart.ExpressionAspectExpressionAspectProperties;
+import flowchartpck.Expression;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class ExpressionAspectExpressionAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<Expression, ExpressionAspectExpressionAspectProperties> map = new java.util.WeakHashMap<flowchart.Expression, flowchart.ExpressionAspectExpressionAspectProperties>();
+  private Map<Expression, ExpressionAspectExpressionAspectProperties> map = new java.util.WeakHashMap<flowchartpck.Expression, flowchart.ExpressionAspectExpressionAspectProperties>();
   
   public Map<Expression, ExpressionAspectExpressionAspectProperties> getMap() {
     return map;

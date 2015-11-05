@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Subflow;
 import flowchart.SubflowAspectSubflowAspectProperties;
+import flowchartpck.Subflow;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
 

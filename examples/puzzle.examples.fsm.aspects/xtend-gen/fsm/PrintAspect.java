@@ -14,11 +14,7 @@ public class PrintAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final Print _self, final Hashtable<String, Object> context) {
     fsm.PrintAspectPrintAspectProperties _self_ = fsm.PrintAspectPrintAspectContext.getSelf(_self);
-     if (_self instanceof fsm.Print){
-     fsm.PrintAspect._privk3_eval(_self_, (fsm.Print)_self,context);
-    } else  if (_self instanceof fsm.Statement){
-     fsm.StatementAspect.eval((fsm.Statement)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_eval(_self_, _self,context);
   }
   
   protected static void _privk3_eval(final PrintAspectPrintAspectProperties _self_, final Print _self, final Hashtable<String, Object> context) {

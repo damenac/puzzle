@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.ArithmeticExpression;
 import flowchart.ArithmeticExpressionAspectArithmeticExpressionAspectProperties;
+import flowchartpck.ArithmeticExpression;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class ArithmeticExpressionAspectArithmeticExpressionAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<ArithmeticExpression, ArithmeticExpressionAspectArithmeticExpressionAspectProperties> map = new java.util.WeakHashMap<flowchart.ArithmeticExpression, flowchart.ArithmeticExpressionAspectArithmeticExpressionAspectProperties>();
+  private Map<ArithmeticExpression, ArithmeticExpressionAspectArithmeticExpressionAspectProperties> map = new java.util.WeakHashMap<flowchartpck.ArithmeticExpression, flowchart.ArithmeticExpressionAspectArithmeticExpressionAspectProperties>();
   
   public Map<ArithmeticExpression, ArithmeticExpressionAspectArithmeticExpressionAspectProperties> getMap() {
     return map;

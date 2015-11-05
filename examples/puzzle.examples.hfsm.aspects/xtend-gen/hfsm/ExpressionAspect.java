@@ -13,14 +13,14 @@ public class ExpressionAspect {
     Object result = null;
      if (_self instanceof hfsm.StringLit){
     result = hfsm.StringLitAspect.eval((hfsm.StringLit)_self,context);
-    } else  if (_self instanceof hfsm.BoolLit){
-    result = hfsm.BoolLitAspect.eval((hfsm.BoolLit)_self,context);
     } else  if (_self instanceof hfsm.IntegerLit){
     result = hfsm.IntegerLitAspect.eval((hfsm.IntegerLit)_self,context);
-    } else  if (_self instanceof hfsm.Literal){
-    result = hfsm.LiteralAspect.eval((hfsm.Literal)_self,context);
     } else  if (_self instanceof hfsm.ArithmeticExpression){
     result = hfsm.ArithmeticExpressionAspect.eval((hfsm.ArithmeticExpression)_self,context);
+    } else  if (_self instanceof hfsm.BoolLit){
+    result = hfsm.BoolLitAspect.eval((hfsm.BoolLit)_self,context);
+    } else  if (_self instanceof hfsm.Literal){
+    result = hfsm.LiteralAspect.eval((hfsm.Literal)_self,context);
     } else  if (_self instanceof hfsm.RelationalExpression){
     result = hfsm.RelationalExpressionAspect.eval((hfsm.RelationalExpression)_self,context);
     } else  if (_self instanceof hfsm.Expression){

@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated flowchart -->
       <package
-            uri="flowchart"
-            class="flowchart.FlowchartPackage"
+            uri="flowchartpck"
+            class="flowchartpck.FlowchartpckPackage"
             genModel="models/flowchart.genmodel"/>
    </extension>
 

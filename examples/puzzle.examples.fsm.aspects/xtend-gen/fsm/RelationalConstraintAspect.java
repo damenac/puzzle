@@ -16,11 +16,7 @@ public class RelationalConstraintAspect extends ConstraintAspect {
   public static boolean evalConstraint(final RelationalConstraint _self, final Hashtable<String, Object> context) {
     fsm.RelationalConstraintAspectRelationalConstraintAspectProperties _self_ = fsm.RelationalConstraintAspectRelationalConstraintAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.RelationalConstraint){
-    result = fsm.RelationalConstraintAspect._privk3_evalConstraint(_self_, (fsm.RelationalConstraint)_self,context);
-    } else  if (_self instanceof fsm.Constraint){
-    result = fsm.ConstraintAspect.evalConstraint((fsm.Constraint)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_evalConstraint(_self_, _self,context);
     return (boolean)result;
   }
   

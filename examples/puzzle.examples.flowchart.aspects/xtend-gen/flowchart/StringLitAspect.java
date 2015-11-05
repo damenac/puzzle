@@ -1,8 +1,8 @@
 package flowchart;
 
 import flowchart.LiteralAspect;
-import flowchart.StringLit;
 import flowchart.StringLitAspectStringLitAspectProperties;
+import flowchartpck.StringLit;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
@@ -14,13 +14,7 @@ public class StringLitAspect extends LiteralAspect {
   public static Object eval(final StringLit _self, final Hashtable<String, Object> context) {
     flowchart.StringLitAspectStringLitAspectProperties _self_ = flowchart.StringLitAspectStringLitAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof flowchart.StringLit){
-    result = flowchart.StringLitAspect._privk3_eval(_self_, (flowchart.StringLit)_self,context);
-    } else  if (_self instanceof flowchart.Literal){
-    result = flowchart.LiteralAspect.eval((flowchart.Literal)_self,context);
-    } else  if (_self instanceof flowchart.Expression){
-    result = flowchart.ExpressionAspect.eval((flowchart.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

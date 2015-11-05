@@ -2,7 +2,6 @@ package fr.inria.diverse.k3.sle.common.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,7 +25,6 @@ import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.xmi.XMLResource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.jdt.core.JavaCore;
 
@@ -148,37 +146,6 @@ public class ProjectManagementServices {
 		return null;
 	}
 	
-//	private void createGenModel(final EPackage rootPackage, final String ecoreLocation,
-//	        final String genModelLocation) {
-//
-//	        GenModel genModel = GenModelFactory.eINSTANCE.createGenModel();
-//	        genModel.setComplianceLevel(GenJDKLevel.JDK70_LITERAL);
-//	        genModel.setModelDirectory("models");
-//	        genModel.getForeignModel().add(new Path(ecoreLocation).lastSegment());
-//	        genModel.setModelName(rootPackage.getName());
-//	        genModel.initialize(Collections.singleton(rootPackage));
-//
-//	        GenPackage genPackage = (GenPackage)genModel.getGenPackages().get(0);
-//	        genPackage.setPrefix(rootPackage.getNsPrefix());
-//
-//	        try {
-//	            URI genModelURI = URI.createFileURI(genModelLocation);
-//	            final XMIResourceImpl genModelResource = new XMIResourceImpl(genModelURI);
-//	            genModelResource.getDefaultSaveOptions().put(XMLResource.OPTION_ENCODING,
-//	                "UTF-8");
-//	            genModelResource.getContents().add(genModel);
-//	            genModelResource.save(Collections.EMPTY_MAP);
-//	        } catch (IOException e) {
-//	            String msg = null;
-//	            if (e instanceof FileNotFoundException) {
-//	                msg = "Unable to open output file ";
-//	            } else {
-//	                msg = "Unexpected IO Exception writing ";
-//	            }
-//	            throw new RuntimeException(msg, e);
-//	        }
-//	    }
-	
 	/**
 	 * Generates the corresponding GenModel file for an ecore package in the parameter
 	 * @param ePackage
@@ -223,12 +190,13 @@ public class ProjectManagementServices {
 	    generator.generate(genModel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, "model project", new BasicMonitor.Printing(System.out));
 	}
 	
-	public static void createXtendConfigurationFile(IProject project) throws IOException{
+	public static void createXtendConfigurationFile(IProject project, String moduleName) throws IOException{
 		createPluginFile(project);
 		createPropertiesFile(project);
 		createFolderByName(project, "src");
 		createFolderByName(project, "xtend-gen");
 		createFolderByName(project, "META-INF");
+		createFolderByName(project, "src/" + moduleName.replace("Module", "").toLowerCase());
 		createManifest(project);
 		createDotProject(project);
 		createClasspath(project);

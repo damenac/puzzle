@@ -14,13 +14,7 @@ public class IntegerLitAspect extends LiteralAspect {
   public static Object eval(final IntegerLit _self, final Hashtable<String, Object> context) {
     fsm.IntegerLitAspectIntegerLitAspectProperties _self_ = fsm.IntegerLitAspectIntegerLitAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.IntegerLit){
-    result = fsm.IntegerLitAspect._privk3_eval(_self_, (fsm.IntegerLit)_self,context);
-    } else  if (_self instanceof fsm.Literal){
-    result = fsm.LiteralAspect.eval((fsm.Literal)_self,context);
-    } else  if (_self instanceof fsm.Expression){
-    result = fsm.ExpressionAspect.eval((fsm.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

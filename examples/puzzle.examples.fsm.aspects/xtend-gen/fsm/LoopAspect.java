@@ -17,11 +17,7 @@ public class LoopAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final Loop _self, final Hashtable<String, Object> context) {
     fsm.LoopAspectLoopAspectProperties _self_ = fsm.LoopAspectLoopAspectContext.getSelf(_self);
-     if (_self instanceof fsm.Loop){
-     fsm.LoopAspect._privk3_eval(_self_, (fsm.Loop)_self,context);
-    } else  if (_self instanceof fsm.Statement){
-     fsm.StatementAspect.eval((fsm.Statement)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_eval(_self_, _self,context);
   }
   
   protected static void _privk3_eval(final LoopAspectLoopAspectProperties _self_, final Loop _self, final Hashtable<String, Object> context) {

@@ -23,11 +23,7 @@ public class StateAspect {
   
   public static void exitState(final State _self, final Hashtable<String, Object> context) {
     fsm.StateAspectStateAspectProperties _self_ = fsm.StateAspectStateAspectContext.getSelf(_self);
-     if (_self instanceof fsm.FinalState){
-     fsm.FinalStateAspect.exitState((fsm.FinalState)_self,context);
-    } else  if (_self instanceof fsm.State){
-     fsm.StateAspect._privk3_exitState(_self_, (fsm.State)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_exitState(_self_, _self,context);
   }
   
   protected static void _privk3_entryState(final StateAspectStateAspectProperties _self_, final State _self, final Hashtable<String, Object> context) {

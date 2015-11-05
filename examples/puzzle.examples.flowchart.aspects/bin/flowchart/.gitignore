@@ -62,3 +62,6 @@
 /.DecisionAspectDecisionAspectContext.java._trace
 /.DecisionAspectDecisionAspectProperties.java._trace
 /SubflowAspect.java
+/.BoolLit.java._trace
+/.BoolLitBoolLitAspectContext.java._trace
+/.BoolLitBoolLitAspectProperties.java._trace

@@ -17,11 +17,7 @@ public class ArithmeticExpressionAspect extends ExpressionAspect {
   public static Object eval(final ArithmeticExpression _self, final Hashtable<String, Object> context) {
     fsm.ArithmeticExpressionAspectArithmeticExpressionAspectProperties _self_ = fsm.ArithmeticExpressionAspectArithmeticExpressionAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.ArithmeticExpression){
-    result = fsm.ArithmeticExpressionAspect._privk3_eval(_self_, (fsm.ArithmeticExpression)_self,context);
-    } else  if (_self instanceof fsm.Expression){
-    result = fsm.ExpressionAspect.eval((fsm.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

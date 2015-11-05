@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Action;
 import flowchart.ActionAspectActionAspectProperties;
+import flowchartpck.Action;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class ActionAspectActionAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<Action, ActionAspectActionAspectProperties> map = new java.util.WeakHashMap<flowchart.Action, flowchart.ActionAspectActionAspectProperties>();
+  private Map<Action, ActionAspectActionAspectProperties> map = new java.util.WeakHashMap<flowchartpck.Action, flowchart.ActionAspectActionAspectProperties>();
   
   public Map<Action, ActionAspectActionAspectProperties> getMap() {
     return map;

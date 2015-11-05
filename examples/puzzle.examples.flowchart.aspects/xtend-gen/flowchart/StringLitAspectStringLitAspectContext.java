@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.StringLit;
 import flowchart.StringLitAspectStringLitAspectProperties;
+import flowchartpck.StringLit;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class StringLitAspectStringLitAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<StringLit, StringLitAspectStringLitAspectProperties> map = new java.util.WeakHashMap<flowchart.StringLit, flowchart.StringLitAspectStringLitAspectProperties>();
+  private Map<StringLit, StringLitAspectStringLitAspectProperties> map = new java.util.WeakHashMap<flowchartpck.StringLit, flowchart.StringLitAspectStringLitAspectProperties>();
   
   public Map<StringLit, StringLitAspectStringLitAspectProperties> getMap() {
     return map;

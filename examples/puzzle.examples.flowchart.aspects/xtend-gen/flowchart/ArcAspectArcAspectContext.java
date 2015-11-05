@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Arc;
 import flowchart.ArcAspectArcAspectProperties;
+import flowchartpck.Arc;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class ArcAspectArcAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<Arc, ArcAspectArcAspectProperties> map = new java.util.WeakHashMap<flowchart.Arc, flowchart.ArcAspectArcAspectProperties>();
+  private Map<Arc, ArcAspectArcAspectProperties> map = new java.util.WeakHashMap<flowchartpck.Arc, flowchart.ArcAspectArcAspectProperties>();
   
   public Map<Arc, ArcAspectArcAspectProperties> getMap() {
     return map;

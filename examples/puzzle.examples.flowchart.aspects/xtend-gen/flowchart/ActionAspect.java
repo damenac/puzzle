@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Action;
 import flowchart.ActionAspectActionAspectProperties;
+import flowchartpck.Action;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
 

@@ -14,13 +14,7 @@ public class StringLitAspect extends LiteralAspect {
   public static Object eval(final StringLit _self, final Hashtable<String, Object> context) {
     fsm.StringLitAspectStringLitAspectProperties _self_ = fsm.StringLitAspectStringLitAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.StringLit){
-    result = fsm.StringLitAspect._privk3_eval(_self_, (fsm.StringLit)_self,context);
-    } else  if (_self instanceof fsm.Literal){
-    result = fsm.LiteralAspect.eval((fsm.Literal)_self,context);
-    } else  if (_self instanceof fsm.Expression){
-    result = fsm.ExpressionAspect.eval((fsm.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

@@ -16,11 +16,7 @@ public class AssignationAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final Assignation _self, final Hashtable<String, Object> context) {
     fsm.AssignationAspectAssignationAspectProperties _self_ = fsm.AssignationAspectAssignationAspectContext.getSelf(_self);
-     if (_self instanceof fsm.Assignation){
-     fsm.AssignationAspect._privk3_eval(_self_, (fsm.Assignation)_self,context);
-    } else  if (_self instanceof fsm.Statement){
-     fsm.StatementAspect.eval((fsm.Statement)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_eval(_self_, _self,context);
   }
   
   protected static void _privk3_eval(final AssignationAspectAssignationAspectProperties _self_, final Assignation _self, final Hashtable<String, Object> context) {

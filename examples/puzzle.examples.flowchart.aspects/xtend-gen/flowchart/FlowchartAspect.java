@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Flowchart;
 import flowchart.FlowchartAspectFlowchartAspectProperties;
+import flowchartpck.Flowchart;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 
 @Aspect(className = Flowchart.class)

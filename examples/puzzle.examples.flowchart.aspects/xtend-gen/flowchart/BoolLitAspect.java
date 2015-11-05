@@ -1,8 +1,8 @@
 package flowchart;
 
-import flowchart.BoolLit;
 import flowchart.BoolLitAspectBoolLitAspectProperties;
 import flowchart.LiteralAspect;
+import flowchartpck.BoolLit;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
@@ -15,13 +15,7 @@ public class BoolLitAspect extends LiteralAspect {
   public static Object eval(final BoolLit _self, final Hashtable<String, Object> context) {
     flowchart.BoolLitAspectBoolLitAspectProperties _self_ = flowchart.BoolLitAspectBoolLitAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof flowchart.BoolLit){
-    result = flowchart.BoolLitAspect._privk3_eval(_self_, (flowchart.BoolLit)_self,context);
-    } else  if (_self instanceof flowchart.Literal){
-    result = flowchart.LiteralAspect.eval((flowchart.Literal)_self,context);
-    } else  if (_self instanceof flowchart.Expression){
-    result = flowchart.ExpressionAspect.eval((flowchart.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

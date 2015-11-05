@@ -14,13 +14,7 @@ public class BoolLitAspect extends LiteralAspect {
   public static Object eval(final BoolLit _self, final Hashtable<String, Object> context) {
     fsm.BoolLitAspectBoolLitAspectProperties _self_ = fsm.BoolLitAspectBoolLitAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.BoolLit){
-    result = fsm.BoolLitAspect._privk3_eval(_self_, (fsm.BoolLit)_self,context);
-    } else  if (_self instanceof fsm.Literal){
-    result = fsm.LiteralAspect.eval((fsm.Literal)_self,context);
-    } else  if (_self instanceof fsm.Expression){
-    result = fsm.ExpressionAspect.eval((fsm.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

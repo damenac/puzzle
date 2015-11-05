@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Literal;
 import flowchart.LiteralAspectLiteralAspectProperties;
+import flowchartpck.Literal;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class LiteralAspectLiteralAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<Literal, LiteralAspectLiteralAspectProperties> map = new java.util.WeakHashMap<flowchart.Literal, flowchart.LiteralAspectLiteralAspectProperties>();
+  private Map<Literal, LiteralAspectLiteralAspectProperties> map = new java.util.WeakHashMap<flowchartpck.Literal, flowchart.LiteralAspectLiteralAspectProperties>();
   
   public Map<Literal, LiteralAspectLiteralAspectProperties> getMap() {
     return map;

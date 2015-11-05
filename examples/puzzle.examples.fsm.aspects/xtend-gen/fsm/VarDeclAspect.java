@@ -15,11 +15,7 @@ public class VarDeclAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final VarDecl _self, final Hashtable<String, Object> context) {
     fsm.VarDeclAspectVarDeclAspectProperties _self_ = fsm.VarDeclAspectVarDeclAspectContext.getSelf(_self);
-     if (_self instanceof fsm.VarDecl){
-     fsm.VarDeclAspect._privk3_eval(_self_, (fsm.VarDecl)_self,context);
-    } else  if (_self instanceof fsm.Statement){
-     fsm.StatementAspect.eval((fsm.Statement)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_eval(_self_, _self,context);
   }
   
   protected static void _privk3_eval(final VarDeclAspectVarDeclAspectProperties _self_, final VarDecl _self, final Hashtable<String, Object> context) {

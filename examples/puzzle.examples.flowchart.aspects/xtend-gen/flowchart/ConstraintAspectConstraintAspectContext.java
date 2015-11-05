@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Constraint;
 import flowchart.ConstraintAspectConstraintAspectProperties;
+import flowchartpck.Constraint;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class ConstraintAspectConstraintAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<Constraint, ConstraintAspectConstraintAspectProperties> map = new java.util.WeakHashMap<flowchart.Constraint, flowchart.ConstraintAspectConstraintAspectProperties>();
+  private Map<Constraint, ConstraintAspectConstraintAspectProperties> map = new java.util.WeakHashMap<flowchartpck.Constraint, flowchart.ConstraintAspectConstraintAspectProperties>();
   
   public Map<Constraint, ConstraintAspectConstraintAspectProperties> getMap() {
     return map;

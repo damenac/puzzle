@@ -1,11 +1,11 @@
 package flowchart;
 
 import com.google.common.base.Objects;
-import flowchart.ArithmeticExpression;
 import flowchart.ArithmeticExpressionAspectArithmeticExpressionAspectProperties;
-import flowchart.ArithmeticOperator;
-import flowchart.Expression;
 import flowchart.ExpressionAspect;
+import flowchartpck.ArithmeticExpression;
+import flowchartpck.ArithmeticOperator;
+import flowchartpck.Expression;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
@@ -17,11 +17,7 @@ public class ArithmeticExpressionAspect extends ExpressionAspect {
   public static Object eval(final ArithmeticExpression _self, final Hashtable<String, Object> context) {
     flowchart.ArithmeticExpressionAspectArithmeticExpressionAspectProperties _self_ = flowchart.ArithmeticExpressionAspectArithmeticExpressionAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof flowchart.ArithmeticExpression){
-    result = flowchart.ArithmeticExpressionAspect._privk3_eval(_self_, (flowchart.ArithmeticExpression)_self,context);
-    } else  if (_self instanceof flowchart.Expression){
-    result = flowchart.ExpressionAspect.eval((flowchart.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

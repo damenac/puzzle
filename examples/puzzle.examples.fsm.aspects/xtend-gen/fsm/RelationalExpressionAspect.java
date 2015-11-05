@@ -17,11 +17,7 @@ public class RelationalExpressionAspect extends ExpressionAspect {
   public static Object eval(final RelationalExpression _self, final Hashtable<String, Object> context) {
     fsm.RelationalExpressionAspectRelationalExpressionAspectProperties _self_ = fsm.RelationalExpressionAspectRelationalExpressionAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof fsm.RelationalExpression){
-    result = fsm.RelationalExpressionAspect._privk3_eval(_self_, (fsm.RelationalExpression)_self,context);
-    } else  if (_self instanceof fsm.Expression){
-    result = fsm.ExpressionAspect.eval((fsm.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

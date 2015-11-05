@@ -1,11 +1,11 @@
 package flowchart;
 
 import com.google.common.base.Objects;
-import flowchart.Expression;
 import flowchart.ExpressionAspect;
-import flowchart.RelationalExpression;
 import flowchart.RelationalExpressionAspectRelationalExpressionAspectProperties;
-import flowchart.RelationalOperator;
+import flowchartpck.Expression;
+import flowchartpck.RelationalExpression;
+import flowchartpck.RelationalOperator;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
@@ -17,11 +17,7 @@ public class RelationalExpressionAspect extends ExpressionAspect {
   public static Object eval(final RelationalExpression _self, final Hashtable<String, Object> context) {
     flowchart.RelationalExpressionAspectRelationalExpressionAspectProperties _self_ = flowchart.RelationalExpressionAspectRelationalExpressionAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof flowchart.RelationalExpression){
-    result = flowchart.RelationalExpressionAspect._privk3_eval(_self_, (flowchart.RelationalExpression)_self,context);
-    } else  if (_self instanceof flowchart.Expression){
-    result = flowchart.ExpressionAspect.eval((flowchart.Expression)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

@@ -1,0 +1,12 @@
+package flowchart
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import java.util.Hashtable
+
+@Aspect(className=Decision)
+public class DecisionAspect {
+
+	def void eval(Hashtable<String, Object> context) {
+	}
+}

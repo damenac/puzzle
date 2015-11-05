@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.BoolLit;
 import flowchart.BoolLitAspectBoolLitAspectProperties;
+import flowchartpck.BoolLit;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class BoolLitAspectBoolLitAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<BoolLit, BoolLitAspectBoolLitAspectProperties> map = new java.util.WeakHashMap<flowchart.BoolLit, flowchart.BoolLitAspectBoolLitAspectProperties>();
+  private Map<BoolLit, BoolLitAspectBoolLitAspectProperties> map = new java.util.WeakHashMap<flowchartpck.BoolLit, flowchart.BoolLitAspectBoolLitAspectProperties>();
   
   public Map<BoolLit, BoolLitAspectBoolLitAspectProperties> getMap() {
     return map;

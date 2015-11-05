@@ -5,10 +5,15 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.internal.xtend.xtend.XtendFile;
+import org.eclipse.xtext.xbase.resource.BatchLinkableResource;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
@@ -19,10 +24,14 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMember;
 import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.EcoreCloningServices;
+import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
+import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
+import fr.inria.diverse.k3.sle.common.utils.XtendQueries;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality;
 
@@ -116,19 +125,64 @@ public class BreakerImpl {
 	private void buildSemanticModules(EcoreGraph dependenciesGraph, ArrayList<Language> languages) throws CoreException, IOException{
 		for (EcoreGroup group : dependenciesGraph.getGroups()) {
 			// Create the module project with the folders.
+			String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
-				EcoreGraph.getLanguageModuleName(group.getVertex()).trim() + ".semantics");
-			ProjectManagementServices.createXtendConfigurationFile(moduleProject);
+					moduleName + ".semantics");
+			ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName);
+			
+			ArrayList<Aspect> aspects = findAspects(group, languages);
+			
+			for (Aspect aspect : aspects) {
+				System.out.println(aspect.getAspectTypeRef().getType().eResource().getURI().toString());
+				System.out.println(aspect.getAspectTypeRef().getType().eResource().getURI().toFileString());
+				System.out.println();
+			}
 			
 			// Refresh projects
 			ProjectManagementServices.refreshProject(moduleProject);
 		}
 	}
 	
+	/**
+	 * Returns the set of aspects associated to the group in the parameter. 
+	 * @param group
+	 * @param languages
+	 * @return
+	 */
+	private ArrayList<Aspect> findAspects(EcoreGroup group,
+			ArrayList<Language> languages) {
+		ArrayList<Aspect> aspects = new ArrayList<Aspect>();
+		
+		for (EcoreVertex vertex : group.getVertex()) {
+			ArrayList<Aspect> aspectsByMetaclass = findAspectsByMetaclass(vertex.getClassifier(), languages);
+			aspects.addAll(aspectsByMetaclass);
+		}
+		return aspects;
+	}
+	
+	private ArrayList<Aspect> findAspectsByMetaclass(EClassifier classifier, ArrayList<Language> languages) {
+		ArrayList<Aspect> aspects = new ArrayList<Aspect>();
+		for (Language language : languages) {
+			EPackage languageMetamodel = MelangeServices.getEPackageFromLanguage(language);
+			
+			if(EcoreQueries.searchEClassByName(languageMetamodel, classifier.getName()) != null){
+				for (Aspect aspect : language.getSemantics()) {
+					if(aspect.getAspectedClass().getName().equals(classifier.getName())){
+						aspects.add(aspect);
+					}
+				}
+				break;
+			}
+		}
+		return aspects;
+	}
+	
 	// ---------------------------------------------
 	// Utilities
 	// ---------------------------------------------
+
 	
+
 	/**
 	 * Creates a metamodel by module taking into consideration the corresponding dependencies with other modules
 	 * by establishing the required interfaces.

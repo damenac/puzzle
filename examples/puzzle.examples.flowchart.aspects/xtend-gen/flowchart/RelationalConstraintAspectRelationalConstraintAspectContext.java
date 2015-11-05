@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.RelationalConstraint;
 import flowchart.RelationalConstraintAspectRelationalConstraintAspectProperties;
+import flowchartpck.RelationalConstraint;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class RelationalConstraintAspectRelationalConstraintAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<RelationalConstraint, RelationalConstraintAspectRelationalConstraintAspectProperties> map = new java.util.WeakHashMap<flowchart.RelationalConstraint, flowchart.RelationalConstraintAspectRelationalConstraintAspectProperties>();
+  private Map<RelationalConstraint, RelationalConstraintAspectRelationalConstraintAspectProperties> map = new java.util.WeakHashMap<flowchartpck.RelationalConstraint, flowchart.RelationalConstraintAspectRelationalConstraintAspectProperties>();
   
   public Map<RelationalConstraint, RelationalConstraintAspectRelationalConstraintAspectProperties> getMap() {
     return map;

@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.Decision;
 import flowchart.DecisionAspectDecisionAspectProperties;
+import flowchartpck.Decision;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
 

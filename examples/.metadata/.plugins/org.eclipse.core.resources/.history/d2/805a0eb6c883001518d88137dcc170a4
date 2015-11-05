@@ -1,0 +1,26 @@
+package fsm
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.ArrayList
+import java.util.Hashtable
+import java.util.Scanner
+
+import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.common.util.BasicEList
+
+import static extension fsm.TransitionAspect.*
+import static extension fsm.TriggerAspect.*
+import static extension fsm.ExpressionAspect.*
+import static extension fsm.ProgramAspect.*
+import static extension fsm.StateAspect.*
+
+@Aspect(className=BoolLit)
+public class BoolLitAspect extends LiteralAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		return _self.value
+	}
+}

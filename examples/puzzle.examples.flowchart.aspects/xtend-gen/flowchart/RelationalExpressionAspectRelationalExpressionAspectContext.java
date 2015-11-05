@@ -1,7 +1,7 @@
 package flowchart;
 
-import flowchart.RelationalExpression;
 import flowchart.RelationalExpressionAspectRelationalExpressionAspectProperties;
+import flowchartpck.RelationalExpression;
 import java.util.Map;
 
 @SuppressWarnings("all")
@@ -14,7 +14,7 @@ public class RelationalExpressionAspectRelationalExpressionAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<RelationalExpression, RelationalExpressionAspectRelationalExpressionAspectProperties> map = new java.util.WeakHashMap<flowchart.RelationalExpression, flowchart.RelationalExpressionAspectRelationalExpressionAspectProperties>();
+  private Map<RelationalExpression, RelationalExpressionAspectRelationalExpressionAspectProperties> map = new java.util.WeakHashMap<flowchartpck.RelationalExpression, flowchart.RelationalExpressionAspectRelationalExpressionAspectProperties>();
   
   public Map<RelationalExpression, RelationalExpressionAspectRelationalExpressionAspectProperties> getMap() {
     return map;
