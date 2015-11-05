@@ -134,8 +134,7 @@ public class BreakerImpl {
 			
 			for (Aspect aspect : aspects) {
 				System.out.println(aspect.getAspectTypeRef().getType().eResource().getURI().toString());
-				System.out.println(aspect.getAspectTypeRef().getType().eResource().getURI().toFileString());
-				System.out.println();
+				ProjectManagementServices.copyAspectResource(aspect.getAspectTypeRef().getType().eResource(), moduleProject, moduleName);
 			}
 			
 			// Refresh projects

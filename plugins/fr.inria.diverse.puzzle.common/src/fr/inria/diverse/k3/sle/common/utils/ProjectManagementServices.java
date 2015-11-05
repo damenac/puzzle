@@ -1,8 +1,10 @@
 package fr.inria.diverse.k3.sle.common.utils;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -25,6 +27,7 @@ import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.jdt.core.JavaCore;
 
@@ -146,6 +149,49 @@ public class ProjectManagementServices {
 		return null;
 	}
 	
+	public static void copyAspectResource(Resource eResource,
+			IProject moduleProject, String moduleName) throws IOException {
+		
+		
+		System.out.println("path: " + eResource.getURI().path());
+		
+		URI fileURIResource0 = URI.createFileURI(eResource.getURI().path());
+		System.out.println("lastSegment: " + fileURIResource0.lastSegment());
+		System.out.println("segments: " + fileURIResource0.segments()[1]);
+		
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IProject project = root.getProject(fileURIResource0.segments()[1]);
+		
+		String fileName = fileURIResource0.lastSegment();
+		File xtendFile = getFile(project, fileName);
+		System.out.println("xtendFile: " +  xtendFile);
+		System.out.println("xtendFile: " +  xtendFile.exists());
+		
+		BufferedReader br = new BufferedReader(new FileReader(xtendFile));
+		String line = br.readLine();
+		String content = "";
+		
+		String pck = moduleName.replace("Module", "").toLowerCase();
+		
+		while(line != null){
+			if(line.startsWith("package")){
+				line = "package " + pck + "\n\n";
+				line += "import " + moduleName + ".*\n";
+			}
+			content += line + "\n";
+			line = br.readLine();
+		}
+		br.close();
+		
+		File newXtendFile = new File(moduleProject.getLocation().toString() + "/src/" + pck + "/" + fileName);
+		newXtendFile.createNewFile();
+		PrintWriter pw = new PrintWriter(newXtendFile);
+		pw.print(content);
+		pw.close();
+		
+		System.out.println(content);
+	}
+	
 	/**
 	 * Generates the corresponding GenModel file for an ecore package in the parameter
 	 * @param ePackage
@@ -160,7 +206,7 @@ public class ProjectManagementServices {
 		genModel.setEditDirectory("/" + projectName + ".editor/src");
 		genModel.setEditPluginID(projectName + ".editor");
         genModel.setModelDirectory("/" + projectName + "/src");
-        genModel.setModelPluginID(projectName + ".tests");
+        genModel.setModelPluginID(projectName);
         genModel.setOperationReflection(true);
         genModel.setTestsDirectory("/" + projectName + ".tests/src");
         genModel.setTestsPluginID(projectName);
@@ -327,4 +373,6 @@ public class ProjectManagementServices {
 		pw.print(content);
 		pw.close();
 	}
+
+	
 }

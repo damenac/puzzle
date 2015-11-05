@@ -1,7 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	flowchart.Constraint = flowchart.ConstraintAspect
-	flowchart.RelationalExpression = flowchart.RelationalExpressionAspect
-	flowchart.RelationalConstraint = flowchart.RelationalConstraintAspect
-	flowchart.Flowchart = flowchart.FlowchartAspect
-	flowchart.ArithmeticExpression = flowchart.ArithmeticExpressionAspect
-	flowchart.BoolLit = flowchart.BoolLit
