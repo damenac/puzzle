@@ -1,27 +1,17 @@
 INDEX VERSION 1.127+/Users/dmendeza/workspaces/puzzle/examples/.metadata/.plugins/org.eclipse.jdt.core
 3268842789.index
-4139171719.index
 536928443.index
 2608658396.index
 3662842480.index
 1737328943.index
 1946699264.index
 723594467.index
-854213029.index
 320220354.index
-2548877724.index
-195255250.index
-3371458172.index
-3579114462.index
 1810767916.index
 3549896161.index
 1660715089.index
-3120485604.index
-2909275144.index
 2578088888.index
 1798452802.index
-644293503.index
 1564014476.index
 11653024.index
 837731524.index
-467607002.index
