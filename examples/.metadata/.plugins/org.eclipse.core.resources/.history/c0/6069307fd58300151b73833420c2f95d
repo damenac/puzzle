@@ -1,0 +1,20 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.Transition = fsmaspects.TransitionAspect
+	fsm.Loop = fsmaspects.LoopAspect
+	fsm.FinalState = fsmaspects.FinalStateAspect
+	fsm.Constraint = fsmaspects.ConstraintAspect
+	fsm.Expression = fsmaspects.ExpressionAspect
+	fsm.Trigger = fsm.TriggerAspect, fsmaspects.TriggerAspect
+	fsm.Assignation = fsmaspects.AssignationAspect
+	fsm.Literal = fsmaspects.LiteralAspect
+	fsm.RelationalConstraint = fsmaspects.RelationalConstraintAspect
+	fsm.Print = fsmaspects.PrintAspect
+	fsm.ArithmeticExpression = fsmaspects.ArithmeticExpressionAspect
+	fsm.IntegerLit = fsmaspects.IntegerLitAspect
+	fsm.Wait = fsm.WaitAspect
+	fsm.Conditional = fsmaspects.ConditionalAspect
+	fsm.VarDecl = fsm.VarDeclAspect
+	fsm.State = fsmaspects.StateAspect
+	fsm.Statement = fsmaspects.StatementAspect
+	fsm.RelationalExpression = fsmaspects.RelationalExpressionAspect
+	fsm.StateMachine = fsmaspects.StateMachineAspect

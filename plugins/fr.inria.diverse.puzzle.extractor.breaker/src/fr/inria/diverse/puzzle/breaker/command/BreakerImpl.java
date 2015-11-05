@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.internal.xtend.xtend.XtendFile;
-import org.eclipse.xtext.xbase.resource.BatchLinkableResource;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
@@ -130,11 +129,16 @@ public class BreakerImpl {
 					moduleName + ".semantics");
 			ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName);
 			
+			ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
+			for (EcoreVertex vertex : group.getVertex()) {
+				classifiers.add(vertex.getClassifier());
+			}
+			
 			ArrayList<Aspect> aspects = findAspects(group, languages);
 			
 			for (Aspect aspect : aspects) {
 				System.out.println(aspect.getAspectTypeRef().getType().eResource().getURI().toString());
-				ProjectManagementServices.copyAspectResource(aspect.getAspectTypeRef().getType().eResource(), moduleProject, moduleName);
+				ProjectManagementServices.copyAspectResource(aspect.getAspectTypeRef().getType().eResource(), moduleProject, moduleName, classifiers);
 			}
 			
 			// Refresh projects

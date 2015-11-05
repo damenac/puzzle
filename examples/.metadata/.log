@@ -933,3 +933,1968 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
 	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
 	... 17 more
+!SESSION 2015-11-05 16:42:39.335 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-05 16:42:42.802
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-05 16:42:48.704
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:43:13.049
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:243)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:43:13.290
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:243)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:43:14.033
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:243)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:43:14.135
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:243)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:43:14.141
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:243)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+!SESSION 2015-11-05 16:45:35.972 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-05 16:45:39.536
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-05 16:45:46.195
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:45:57.714
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:45:58.054
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:45:58.797
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:45:58.880
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:45:58.887
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:46:10.562
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.FlowchartModule.semantics/src/flowchart/Node.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:46:10.563
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.FlowchartModule.semantics/src/flowchart/Subflow.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:46:10.564
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.FlowchartModule.semantics/src/flowchart/Arc.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:46:10.564
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.FlowchartModule.semantics/src/flowchart/Action.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:46:10.570
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.FlowchartModule.semantics/src/flowchart/Decision.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:46:10.571
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.FlowchartModule.semantics/src/flowchart/Flowchart.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+!SESSION 2015-11-05 16:47:09.821 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-05 16:47:13.418
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-05 16:47:19.759
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:47:31.502
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:47:31.741
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:47:32.471
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:47:32.574
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:47:32.581
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.404
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Assignation.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.405
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/State.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.405
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/VarDecl.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.405
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Program.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.410
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Statement.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.410
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Print.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.411
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Conditional.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.416
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Println.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.421
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Wait.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.425
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/FinalState.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.425
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Trigger.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.427
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Transition.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.431
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Loop.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:02.439
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/StateMachine.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:03.253
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/FinalState.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:03.255
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Loop.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:03.261
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Trigger.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:03.266
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Transition.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:48:03.273
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/StateMachine.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:04.214
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/ArithmeticExpression.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:06.258
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/ArithmeticExpression.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:07.805
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/ArithmeticExpression.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:25.650
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Assignation.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:36.251
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/BoolLit.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 4 376 2015-11-05 16:49:40.521
+!MESSAGE Marker id 152955 not found.
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:45.346
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Conditional.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:53.198
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Constraint.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:49:54.239
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Constraint.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:03.063
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Expression.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:04.092
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Expression.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:13.060
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/FinalState.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:14.597
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/FinalState.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:15.774
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/FinalState.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:25.074
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/IntegerLit.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:26.091
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/IntegerLit.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:34.491
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Literal.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:35.397
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Literal.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:44.881
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Loop.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:46.371
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Loop.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:50:46.371
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Program.xtend'.
+
+!STACK 0
+java.lang.IllegalArgumentException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:223)
+	at org.eclipse.xtext.xbase.file.AbstractFileSystemSupport.getContents(AbstractFileSystemSupport.java:35)
+	at org.eclipse.xtend.core.macro.declaration.ChangeListenerAddingFileSystemSupport.getContents(ChangeListenerAddingFileSystemSupport.java:92)
+	at org.eclipse.xtext.xbase.file.ParallelFileSystemSupport.getContents(ParallelFileSystemSupport.java:97)
+	at org.eclipse.xtend.core.macro.CodeGenerationContextImpl.getContents(CodeGenerationContextImpl.java:108)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectMappingBuilder.writePropertyFile(AspectMappingBuilder.java:205)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:136)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:218)
+	... 15 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:05.205
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Print.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:06.458
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Print.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:39.556
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/VarDecl.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:39.556
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Assignation.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:39.558
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Loop.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:39.561
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Transition.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:39.561
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/Conditional.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:39.564
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/State.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:51:39.566
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.StateMachineModule.semantics/src/statemachine/StateMachine.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:52:02.253
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/State.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:52:03.198
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/State.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 4 376 2015-11-05 16:52:06.757
+!MESSAGE Marker id 159847 not found.
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:52:28.685
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Constraint.xtend'.
+
+!STACK 0
+java.lang.IllegalArgumentException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:223)
+	at org.eclipse.xtext.xbase.file.AbstractFileSystemSupport.getContents(AbstractFileSystemSupport.java:35)
+	at org.eclipse.xtend.core.macro.declaration.ChangeListenerAddingFileSystemSupport.getContents(ChangeListenerAddingFileSystemSupport.java:92)
+	at org.eclipse.xtext.xbase.file.ParallelFileSystemSupport.getContents(ParallelFileSystemSupport.java:97)
+	at org.eclipse.xtend.core.macro.CodeGenerationContextImpl.getContents(CodeGenerationContextImpl.java:108)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectMappingBuilder.writePropertyFile(AspectMappingBuilder.java:205)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:136)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:218)
+	... 15 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:52:28.688
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/StateMachine.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:52:30.409
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/StateMachine.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:53:30.951
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/StringLit.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:53:31.820
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/StringLit.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.ui 4 0 2015-11-05 16:53:44.310
+!MESSAGE Unhandled event loop exception
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: java.lang.RuntimeException: Operator [super] is not supported.
+Semantic Object: XtendFile.xtendTypes[0]->XtendClass'TransitionAspect'.members[2]->XtendFunction'validGuard'.expression->XBlockExpression.expressions[0]->XReturnExpression.expression->XBinaryOperation.rightOperand->XBinaryOperation.rightOperand->XBinaryOperation
+Context: XEqualityExpression
+	at org.eclipse.xtext.ui.editor.quickfix.IssueResolution.apply(IssueResolution.java:78)
+	at org.eclipse.xtext.ui.editor.quickfix.QuickAssistCompletionProposal.apply(QuickAssistCompletionProposal.java:33)
+	at org.eclipse.xtext.ui.editor.hover.AnnotationWithQuickFixesHover$AnnotationInformationControl.apply(AnnotationWithQuickFixesHover.java:535)
+	at org.eclipse.xtext.ui.editor.hover.AnnotationWithQuickFixesHover$AnnotationInformationControl.access$2(AnnotationWithQuickFixesHover.java:512)
+	at org.eclipse.xtext.ui.editor.hover.AnnotationWithQuickFixesHover$AnnotationInformationControl$5.widgetSelected(AnnotationWithQuickFixesHover.java:506)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4199)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendSelectionEvent(Widget.java:1540)
+	at org.eclipse.swt.widgets.Link.textView_clickOnLink_atIndex(Link.java:117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5948)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+	at org.eclipse.swt.widgets.Widget.mouseDownSuper(Widget.java:1101)
+	at org.eclipse.swt.widgets.Widget.mouseDown(Widget.java:1093)
+	at org.eclipse.swt.widgets.Control.mouseDown(Control.java:2563)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5638)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Widget.callSuper(Widget.java:221)
+	at org.eclipse.swt.widgets.Widget.windowSendEvent(Widget.java:2105)
+	at org.eclipse.swt.widgets.Shell.windowSendEvent(Shell.java:2329)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5702)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSendSuper(Native Method)
+	at org.eclipse.swt.widgets.Display.applicationSendEvent(Display.java:5139)
+	at org.eclipse.swt.widgets.Display.applicationProc(Display.java:5288)
+	at org.eclipse.swt.internal.cocoa.OS.objc_msgSend(Native Method)
+	at org.eclipse.swt.internal.cocoa.NSApplication.sendEvent(NSApplication.java:128)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3666)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
+Caused by: java.lang.RuntimeException: Operator [super] is not supported.
+Semantic Object: XtendFile.xtendTypes[0]->XtendClass'TransitionAspect'.members[2]->XtendFunction'validGuard'.expression->XBlockExpression.expressions[0]->XReturnExpression.expression->XBinaryOperation.rightOperand->XBinaryOperation.rightOperand->XBinaryOperation
+Context: XEqualityExpression
+	at org.eclipse.xtext.serializer.diagnostic.ISerializationDiagnostic$ExceptionThrowingAcceptor.accept(ISerializationDiagnostic.java:77)
+	at org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer.sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(XbaseSemanticSequencer.java:138)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:202)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptEObjectRuleCall(SequenceFeeder.java:299)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptRuleCall(SequenceFeeder.java:325)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.accept(SequenceFeeder.java:215)
+	at org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer.sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(XbaseSemanticSequencer.java:128)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:202)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptEObjectRuleCall(SequenceFeeder.java:299)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptRuleCall(SequenceFeeder.java:325)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.accept(SequenceFeeder.java:215)
+	at org.eclipse.xtext.xbase.serializer.XbaseSemanticSequencer.sequence_XAdditiveExpression_XAndExpression_XAssignment_XEqualityExpression_XMultiplicativeExpression_XOrExpression_XOtherOperatorExpression_XRelationalExpression(XbaseSemanticSequencer.java:132)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:202)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptEObjectRuleCall(SequenceFeeder.java:299)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptRuleCall(SequenceFeeder.java:325)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.accept(SequenceFeeder.java:222)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.accept(BacktrackingSemanticSequencer.java:408)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.createSequence(BacktrackingSemanticSequencer.java:454)
+	at org.eclipse.xtext.xbase.serializer.AbstractXbaseSemanticSequencer.sequence_XReturnExpression(AbstractXbaseSemanticSequencer.java:612)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:387)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptEObjectRuleCall(SequenceFeeder.java:299)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptRuleCall(SequenceFeeder.java:325)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.accept(SequenceFeeder.java:239)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.accept(BacktrackingSemanticSequencer.java:401)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.createSequence(BacktrackingSemanticSequencer.java:454)
+	at org.eclipse.xtext.xbase.serializer.AbstractXbaseSemanticSequencer.sequence_XBlockExpression(AbstractXbaseSemanticSequencer.java:370)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:241)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptEObjectRuleCall(SequenceFeeder.java:299)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptRuleCall(SequenceFeeder.java:325)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.accept(SequenceFeeder.java:222)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.accept(BacktrackingSemanticSequencer.java:408)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.createSequence(BacktrackingSemanticSequencer.java:454)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.sequence_Member(AbstractXtendSemanticSequencer.java:938)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:570)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptEObjectRuleCall(SequenceFeeder.java:299)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptRuleCall(SequenceFeeder.java:325)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.accept(SequenceFeeder.java:239)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.accept(BacktrackingSemanticSequencer.java:401)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.createSequence(BacktrackingSemanticSequencer.java:454)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.sequence_Type(AbstractXtendSemanticSequencer.java:1205)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:522)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptEObjectRuleCall(SequenceFeeder.java:299)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.acceptRuleCall(SequenceFeeder.java:325)
+	at org.eclipse.xtext.serializer.acceptor.SequenceFeeder.accept(SequenceFeeder.java:239)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.accept(BacktrackingSemanticSequencer.java:401)
+	at org.eclipse.xtext.serializer.sequencer.BacktrackingSemanticSequencer.createSequence(BacktrackingSemanticSequencer.java:454)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.sequence_File(AbstractXtendSemanticSequencer.java:758)
+	at org.eclipse.xtend.core.serializer.AbstractXtendSemanticSequencer.createSequence(AbstractXtendSemanticSequencer.java:557)
+	at org.eclipse.xtext.serializer.impl.Serializer.serialize(Serializer.java:86)
+	at org.eclipse.xtext.serializer.impl.Serializer.serialize(Serializer.java:109)
+	at org.eclipse.xtext.serializer.impl.Serializer.serialize(Serializer.java:124)
+	at org.eclipse.xtext.serializer.impl.Serializer.serializeReplacement(Serializer.java:142)
+	at org.eclipse.xtext.ui.editor.model.edit.DefaultTextEditComposer.getObjectEdits(DefaultTextEditComposer.java:176)
+	at org.eclipse.xtext.ui.editor.model.edit.DefaultTextEditComposer.getTextEdit(DefaultTextEditComposer.java:146)
+	at org.eclipse.xtext.ui.editor.model.edit.DefaultTextEditComposer.endRecording(DefaultTextEditComposer.java:129)
+	at org.eclipse.xtext.ui.editor.model.edit.ReconcilingUnitOfWork.exec(ReconcilingUnitOfWork.java:57)
+	at org.eclipse.xtext.ui.editor.model.edit.ReconcilingUnitOfWork.exec(ReconcilingUnitOfWork.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.modify(XtextDocument.java:428)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.internalModify(XtextDocument.java:162)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.modify(XtextDocument.java:155)
+	at org.eclipse.xtext.ui.editor.model.edit.SemanticModificationWrapper.apply(SemanticModificationWrapper.java:32)
+	at org.eclipse.xtext.ui.editor.quickfix.IssueResolution.apply(IssueResolution.java:76)
+	... 51 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:54:01.693
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Transition.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:54:02.792
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Transition.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:54:30.334
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Println.xtend'.
+
+!STACK 0
+java.lang.IllegalArgumentException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:223)
+	at org.eclipse.xtext.xbase.file.AbstractFileSystemSupport.getContents(AbstractFileSystemSupport.java:35)
+	at org.eclipse.xtend.core.macro.declaration.ChangeListenerAddingFileSystemSupport.getContents(ChangeListenerAddingFileSystemSupport.java:92)
+	at org.eclipse.xtext.xbase.file.ParallelFileSystemSupport.getContents(ParallelFileSystemSupport.java:97)
+	at org.eclipse.xtend.core.macro.CodeGenerationContextImpl.getContents(CodeGenerationContextImpl.java:108)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectMappingBuilder.writePropertyFile(AspectMappingBuilder.java:205)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:136)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:218)
+	... 15 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:54:30.335
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Print.xtend'.
+
+!STACK 0
+java.lang.IllegalArgumentException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:223)
+	at org.eclipse.xtext.xbase.file.AbstractFileSystemSupport.getContents(AbstractFileSystemSupport.java:35)
+	at org.eclipse.xtend.core.macro.declaration.ChangeListenerAddingFileSystemSupport.getContents(ChangeListenerAddingFileSystemSupport.java:92)
+	at org.eclipse.xtext.xbase.file.ParallelFileSystemSupport.getContents(ParallelFileSystemSupport.java:97)
+	at org.eclipse.xtend.core.macro.CodeGenerationContextImpl.getContents(CodeGenerationContextImpl.java:108)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectMappingBuilder.writePropertyFile(AspectMappingBuilder.java:205)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:136)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:218)
+	... 15 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-05 16:54:30.335
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.aspects/src/fsmaspects/Trigger.xtend'.
+
+!STACK 0
+java.lang.IllegalArgumentException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:223)
+	at org.eclipse.xtext.xbase.file.AbstractFileSystemSupport.getContents(AbstractFileSystemSupport.java:35)
+	at org.eclipse.xtend.core.macro.declaration.ChangeListenerAddingFileSystemSupport.getContents(ChangeListenerAddingFileSystemSupport.java:92)
+	at org.eclipse.xtext.xbase.file.ParallelFileSystemSupport.getContents(ParallelFileSystemSupport.java:97)
+	at org.eclipse.xtend.core.macro.CodeGenerationContextImpl.getContents(CodeGenerationContextImpl.java:108)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectMappingBuilder.writePropertyFile(AspectMappingBuilder.java:205)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:136)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/puzzle.examples.fsm.aspects/META-INF/xtend-gen/puzzle.examples.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:218)
+	... 15 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:57:48.897
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:57:49.045
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:57:49.529
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:57:49.586
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-05 16:57:49.592
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more

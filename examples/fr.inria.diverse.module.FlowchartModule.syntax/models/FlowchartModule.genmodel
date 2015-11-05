@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.module.FlowchartModule.syntax/src" editDirectory="/fr.inria.diverse.module.FlowchartModule.syntax.editor/src" modelPluginID="fr.inria.diverse.module.FlowchartModule.syntax" modelName="FlowchartModule" testsDirectory="/fr.inria.diverse.module.FlowchartModule.syntax.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="fr.inria.diverse.module.FlowchartModule.syntax.editor" testsPluginID="fr.inria.diverse.module.FlowchartModule.syntax" operationReflection="true">
+  <foreignModel>FlowchartModule.ecore</foreignModel>
+  <genPackages prefix="FlowchartModule" disposableProviderFactory="true">
+    <ecorePackage href="FlowchartModule.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="FlowchartModule.ecore#//Flowchart"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FlowchartModule.ecore#//Flowchart/nodes"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FlowchartModule.ecore#//Flowchart/transitions"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="FlowchartModule.ecore#//Node"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FlowchartModule.ecore#//Node/name"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FlowchartModule.ecore#//Node/outgoing"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FlowchartModule.ecore#//Node/incoming"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FlowchartModule.ecore#//Arc"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="FlowchartModule.ecore#//Arc/name"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FlowchartModule.ecore#//Arc/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FlowchartModule.ecore#//Arc/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FlowchartModule.ecore#//Subflow"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FlowchartModule.ecore#//Action"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FlowchartModule.ecore#//Decision"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="FlowchartModule.ecore#//Decision/guard"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="FlowchartModule.ecore#//Constraint"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

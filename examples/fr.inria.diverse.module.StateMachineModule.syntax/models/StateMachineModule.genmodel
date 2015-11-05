@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.module.StateMachineModule.syntax/src" editDirectory="/fr.inria.diverse.module.StateMachineModule.syntax.editor/src" modelPluginID="fr.inria.diverse.module.StateMachineModule.syntax" modelName="StateMachineModule" testsDirectory="/fr.inria.diverse.module.StateMachineModule.syntax.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="fr.inria.diverse.module.StateMachineModule.syntax.editor" testsPluginID="fr.inria.diverse.module.StateMachineModule.syntax" operationReflection="true">
+  <foreignModel>StateMachineModule.ecore</foreignModel>
+  <genPackages prefix="StateMachineModule" disposableProviderFactory="true">
+    <ecorePackage href="StateMachineModule.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="StateMachineModule.ecore#//PseudostateKind"/>
+    </genEnums>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//StateMachine"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//StateMachine/subvertex"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//StateMachine/transitions"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="StateMachineModule.ecore#//AbstractState"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//AbstractState/incoming"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//AbstractState/outgoing"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//State"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//State/doActivity"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//State/entry"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//State/exit"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Transition"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Transition/trigger"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Transition/target"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Transition/source"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Transition/effect"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Transition/guard"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Trigger"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="StateMachineModule.ecore#//Trigger/expression"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Pseudostate"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="StateMachineModule.ecore#//Pseudostate/kind"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//FinalState"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="StateMachineModule.ecore#//Statement"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Program"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Program/statements"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Conditional"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Conditional/condition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Conditional/body"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Loop"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Loop/guard"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Loop/body"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//VarDecl"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="StateMachineModule.ecore#//VarDecl/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//VarDecl/expr"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//ConsoleOutput"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="StateMachineModule.ecore#//ConsoleOutput/input"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Println"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Print"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Assignation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Assignation/varRef"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="StateMachineModule.ecore#//Assignation/expression"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Wait"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="StateMachineModule.ecore#//Wait/miliseconds"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="StateMachineModule.ecore#//NamedElement/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Constraint"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="StateMachineModule.ecore#//Expression"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

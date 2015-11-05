@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Collections;
 
 import org.eclipse.core.resources.IProject;
@@ -26,6 +27,7 @@ import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
@@ -150,7 +152,7 @@ public class ProjectManagementServices {
 	}
 	
 	public static void copyAspectResource(Resource eResource,
-			IProject moduleProject, String moduleName) throws IOException {
+			IProject moduleProject, String moduleName, ArrayList<EClassifier> classifiers) throws IOException {
 		
 		
 		System.out.println("path: " + eResource.getURI().path());
@@ -175,9 +177,17 @@ public class ProjectManagementServices {
 		
 		while(line != null){
 			if(line.startsWith("package")){
-				line = "package " + pck + "\n\n";
-				line += "import " + moduleName + ".*\n";
+				line = "package " + pck + "\n";
 			}
+			
+			if(line.startsWith("import")){
+				for (EClassifier eClassifier : classifiers) {
+					if(line.endsWith("." + eClassifier.getName())){
+						line = "import " + moduleName + "." + eClassifier.getName() + "\n";
+					}
+				}
+			}
+			
 			content += line + "\n";
 			line = br.readLine();
 		}
