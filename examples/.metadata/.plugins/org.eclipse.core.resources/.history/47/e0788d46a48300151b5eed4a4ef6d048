@@ -1,0 +1,10 @@
+source.. = src/,\
+           xtend-gen/
+output.. = bin/
+bin.includes = plugin.xml,\
+               META-INF/,\
+               .,\
+               lib/,\
+               lib/hamcrest-core-1.3.jar
+src.includes = lib/
+jars.compile.order = .

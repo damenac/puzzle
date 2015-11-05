@@ -241,7 +241,7 @@ public class EcoreGraph {
 	 * @return
 	 */
 	public static String getLanguageModuleName(ArrayList<EcoreVertex> languageModule){
-		return languageModule.get(0).getClassifier().getName();
+		return languageModule.get(0).getClassifier().getName() + "Module";
 	}
 	
 	/**

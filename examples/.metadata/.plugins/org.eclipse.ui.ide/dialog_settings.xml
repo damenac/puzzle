@@ -12,6 +12,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/dmendeza/workspaces/puzzle/examples/fr.inria.diverse.module.ConstraintModule.syntax"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/fr.inria.diverse.examples.fsm.core.aspects.simulteneous"/>
 			<item value="/Users/dmendeza/workspaces/melange/examples/puzzle/fr.inria.diverse.k3.sle.examples.expressions.aspects"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples"/>

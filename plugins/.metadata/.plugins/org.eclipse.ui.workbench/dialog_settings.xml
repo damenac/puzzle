@@ -23,8 +23,6 @@
 		<item value="org.eclipse.pde.ui.NewProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.pde.PDE"/>
-			<item value="org.eclipse.ui.Examples"/>
-			<item value="org.eclipse.ui.Examples/fr.inria.diverse.k3.example.category"/>
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">

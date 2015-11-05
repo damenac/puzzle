@@ -79,22 +79,28 @@ public class BreakerImpl {
 	 * Builds the syntactic modules according to the decomposed dependencies graph. 
 	 * @param ecoreGraph
 	 * @throws CoreException
+	 * @throws IOException 
 	 */
-	private void buildSyntacticModules(EcoreGraph ecoreGraph) throws CoreException {
+	private void buildSyntacticModules(EcoreGraph ecoreGraph) throws CoreException, IOException {
 		for (EcoreGroup group : ecoreGraph.getGroups()) {
 			// Build the module metamodel with the required interface.
 			EPackage moduleEPackage = this.createEPackageByModule(group);
 
+			String languageName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
+			
 			// Create the module project with the folders.
 			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
-					EcoreGraph.getLanguageModuleName(group.getVertex()).trim() + ".syntax");
+					languageName + ".syntax");
 			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 						
 			// Serialize the module metamodel in the corresponding project. 
-			ModelUtils.saveEcoreFile(modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore", moduleEPackage);
+			String ecoreLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore";
+			ModelUtils.saveEcoreFile(ecoreLocation, moduleEPackage);
 			
 			// Create the genmodel and generate the code of the module.
-			// TODO
+			String genModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".genmodel";
+			ProjectManagementServices.generateGenmodelFile(moduleProject, moduleEPackage, ecoreLocation, genModelLocation, moduleProject.getName(), languageName);
+			
 			
 			// Refresh projects
 			ProjectManagementServices.refreshProject(moduleProject);

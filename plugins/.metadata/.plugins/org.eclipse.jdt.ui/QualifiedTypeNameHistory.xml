@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="java.util.Set"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.PCMQueryServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
 <fullyQualifiedTypeName name="G"/>
@@ -28,7 +26,6 @@
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.FamilyDSLs"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="org.junit.Ignore"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticDeepVennDiagram"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SemanticSignatureAndBodyVennDiagram"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.command.BreakerImpl"/>
+<fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>
