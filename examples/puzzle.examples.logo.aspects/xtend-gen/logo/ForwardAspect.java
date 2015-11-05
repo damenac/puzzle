@@ -17,13 +17,7 @@ public class ForwardAspect extends PrimitiveAspect {
   public static int eval(final Forward _self, final Context context) {
     logo.ForwardAspectForwardAspectProperties _self_ = logo.ForwardAspectForwardAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.Forward){
-    result = logo.ForwardAspect._privk3_eval(_self_, (kmLogo.Forward)_self,context);
-    } else  if (_self instanceof kmLogo.Primitive){
-    result = logo.PrimitiveAspect.eval((kmLogo.Primitive)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (int)result;
   }
   

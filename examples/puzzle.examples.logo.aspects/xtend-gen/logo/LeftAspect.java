@@ -17,13 +17,7 @@ public class LeftAspect extends PrimitiveAspect {
   public static int eval(final Left _self, final Context context) {
     logo.LeftAspectLeftAspectProperties _self_ = logo.LeftAspectLeftAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.Left){
-    result = logo.LeftAspect._privk3_eval(_self_, (kmLogo.Left)_self,context);
-    } else  if (_self instanceof kmLogo.Primitive){
-    result = logo.PrimitiveAspect.eval((kmLogo.Primitive)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (int)result;
   }
   

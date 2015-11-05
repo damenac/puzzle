@@ -16,13 +16,7 @@ public class ParameterCallAspect extends ExpressionAspect {
   public static Object eval(final ParameterCall _self, final Context context) {
     logo.ParameterCallAspectParameterCallAspectProperties _self_ = logo.ParameterCallAspectParameterCallAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.ParameterCall){
-    result = logo.ParameterCallAspect._privk3_eval(_self_, (kmLogo.ParameterCall)_self,context);
-    } else  if (_self instanceof kmLogo.Expression){
-    result = logo.ExpressionAspect.eval((kmLogo.Expression)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

@@ -14,17 +14,7 @@ public class ControlStructureAspect extends InstructionAspect {
   public static int eval(final ControlStructure _self, final Context context) {
     logo.ControlStructureAspectControlStructureAspectProperties _self_ = logo.ControlStructureAspectControlStructureAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.While){
-    result = logo.WhileAspect.eval((kmLogo.While)_self,context);
-    } else  if (_self instanceof kmLogo.Repeat){
-    result = logo.RepeatAspect.eval((kmLogo.Repeat)_self,context);
-    } else  if (_self instanceof kmLogo.If){
-    result = logo.IfAspect.eval((kmLogo.If)_self,context);
-    } else  if (_self instanceof kmLogo.ControlStructure){
-    result = logo.ControlStructureAspect._privk3_eval(_self_, (kmLogo.ControlStructure)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (int)result;
   }
   

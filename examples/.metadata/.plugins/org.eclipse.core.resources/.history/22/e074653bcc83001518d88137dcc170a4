@@ -1,0 +1,41 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+import java.util.Hashtable
+import kmLogo.ArithmeticExpression
+import kmLogo.ArithmeticOperator
+import kmLogo.Block
+import kmLogo.BoolLit
+import kmLogo.Clear
+import kmLogo.ControlStructure
+import kmLogo.Expression
+import kmLogo.If
+import kmLogo.IntegerLit
+import kmLogo.Left
+import kmLogo.Literal
+import kmLogo.LogoProgram
+import kmLogo.Parameter
+import kmLogo.ParameterCall
+import kmLogo.PenDown
+import kmLogo.PenUp
+import kmLogo.ProcCall
+import kmLogo.RelationalExpression
+import kmLogo.RelationalOperator
+import kmLogo.Repeat
+import kmLogo.Right
+import kmLogo.StringLit
+import kmLogo.While
+
+import static extension logo.BlockAspect.*
+import static extension logo.ExpressionAspect.*
+import static extension logo.InstructionAspect.*
+import static extension logo.ParameterAspect.*
+
+@Aspect(className=ControlStructure)
+public class ControlStructureAspect extends InstructionAspect{
+	@OverrideAspectMethod
+	def int eval (Context context) {
+		return 0
+	}
+}

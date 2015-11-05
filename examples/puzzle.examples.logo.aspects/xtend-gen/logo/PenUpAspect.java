@@ -15,13 +15,7 @@ public class PenUpAspect extends PrimitiveAspect {
   public static int eval(final PenUp _self, final Context context) {
     logo.PenUpAspectPenUpAspectProperties _self_ = logo.PenUpAspectPenUpAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.PenUp){
-    result = logo.PenUpAspect._privk3_eval(_self_, (kmLogo.PenUp)_self,context);
-    } else  if (_self instanceof kmLogo.Primitive){
-    result = logo.PrimitiveAspect.eval((kmLogo.Primitive)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (int)result;
   }
   

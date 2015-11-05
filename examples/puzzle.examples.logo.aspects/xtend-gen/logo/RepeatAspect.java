@@ -18,13 +18,7 @@ public class RepeatAspect extends ControlStructureAspect {
   public static int eval(final Repeat _self, final Context context) {
     logo.RepeatAspectRepeatAspectProperties _self_ = logo.RepeatAspectRepeatAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.Repeat){
-    result = logo.RepeatAspect._privk3_eval(_self_, (kmLogo.Repeat)_self,context);
-    } else  if (_self instanceof kmLogo.ControlStructure){
-    result = logo.ControlStructureAspect.eval((kmLogo.ControlStructure)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (int)result;
   }
   

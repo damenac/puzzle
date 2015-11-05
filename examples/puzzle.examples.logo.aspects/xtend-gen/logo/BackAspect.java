@@ -17,13 +17,7 @@ public class BackAspect extends PrimitiveAspect {
   public static int eval(final Back _self, final Context context) {
     logo.BackAspectBackAspectProperties _self_ = logo.BackAspectBackAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.Back){
-    result = logo.BackAspect._privk3_eval(_self_, (kmLogo.Back)_self,context);
-    } else  if (_self instanceof kmLogo.Primitive){
-    result = logo.PrimitiveAspect.eval((kmLogo.Primitive)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (int)result;
   }
   

@@ -23,13 +23,7 @@ public class ProcCallAspect extends ExpressionAspect {
   public static Object eval(final ProcCall _self, final Context context) {
     logo.ProcCallAspectProcCallAspectProperties _self_ = logo.ProcCallAspectProcCallAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.ProcCall){
-    result = logo.ProcCallAspect._privk3_eval(_self_, (kmLogo.ProcCall)_self,context);
-    } else  if (_self instanceof kmLogo.Expression){
-    result = logo.ExpressionAspect.eval((kmLogo.Expression)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

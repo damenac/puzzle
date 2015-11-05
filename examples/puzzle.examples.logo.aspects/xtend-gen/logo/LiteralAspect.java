@@ -14,19 +14,7 @@ public class LiteralAspect extends ExpressionAspect {
   public static Object eval(final Literal _self, final Context context) {
     logo.LiteralAspectLiteralAspectProperties _self_ = logo.LiteralAspectLiteralAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.StringLit){
-    result = logo.StringLitAspect.eval((kmLogo.StringLit)_self,context);
-    } else  if (_self instanceof kmLogo.BoolLit){
-    result = logo.BoolLitAspect.eval((kmLogo.BoolLit)_self,context);
-    } else  if (_self instanceof kmLogo.IntegerLit){
-    result = logo.IntegerLitAspect.eval((kmLogo.IntegerLit)_self,context);
-    } else  if (_self instanceof kmLogo.Literal){
-    result = logo.LiteralAspect._privk3_eval(_self_, (kmLogo.Literal)_self,context);
-    } else  if (_self instanceof kmLogo.Expression){
-    result = logo.ExpressionAspect.eval((kmLogo.Expression)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

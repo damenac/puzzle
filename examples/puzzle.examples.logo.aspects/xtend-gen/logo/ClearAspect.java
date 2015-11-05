@@ -15,13 +15,7 @@ public class ClearAspect extends PrimitiveAspect {
   public static int eval(final Clear _self, final Context context) {
     logo.ClearAspectClearAspectProperties _self_ = logo.ClearAspectClearAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof kmLogo.Clear){
-    result = logo.ClearAspect._privk3_eval(_self_, (kmLogo.Clear)_self,context);
-    } else  if (_self instanceof kmLogo.Primitive){
-    result = logo.PrimitiveAspect.eval((kmLogo.Primitive)_self,context);
-    } else  if (_self instanceof kmLogo.Instruction){
-    result = logo.InstructionAspect.eval((kmLogo.Instruction)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (int)result;
   }
   
