@@ -2,6 +2,7 @@ package logo
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
 import kmLogo.Back
 
 import static extension logo.ExpressionAspect.*

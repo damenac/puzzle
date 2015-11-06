@@ -33,6 +33,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.jdt.core.JavaCore;
 
+import fr.inria.diverse.melange.metamodel.melange.Aspect;
+
 /**
  * @author David Mendez Acuna
  */
@@ -152,22 +154,15 @@ public class ProjectManagementServices {
 	}
 	
 	public static void copyAspectResource(Resource eResource,
-			IProject moduleProject, String moduleName, ArrayList<EClassifier> classifiers) throws IOException {
-		
-		
-		System.out.println("path: " + eResource.getURI().path());
+			IProject moduleProject, String moduleName, ArrayList<EClassifier> classifiers, ArrayList<Aspect> requiredAspects) throws IOException {
 		
 		URI fileURIResource0 = URI.createFileURI(eResource.getURI().path());
-		System.out.println("lastSegment: " + fileURIResource0.lastSegment());
-		System.out.println("segments: " + fileURIResource0.segments()[1]);
 		
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(fileURIResource0.segments()[1]);
 		
 		String fileName = fileURIResource0.lastSegment();
 		File xtendFile = getFile(project, fileName);
-		System.out.println("xtendFile: " +  xtendFile);
-		System.out.println("xtendFile: " +  xtendFile.exists());
 		
 		BufferedReader br = new BufferedReader(new FileReader(xtendFile));
 		String line = br.readLine();
@@ -177,10 +172,10 @@ public class ProjectManagementServices {
 		
 		while(line != null){
 			if(line.startsWith("package")){
-				line = "package " + pck;
+				line = "package " + pck + "\n";
 			}
 			
-			if(line.startsWith("import")){
+			if(line.startsWith("import") && !line.contains("static extension")){
 				for (EClassifier eClassifier : classifiers) {
 					if(line.endsWith("." + eClassifier.getName())){
 						line = "import " + moduleName + "." + eClassifier.getName() + "\n";
@@ -188,7 +183,24 @@ public class ProjectManagementServices {
 				}
 			}
 			
-			content += line + "\n";
+			else if(line.startsWith("import") && line.contains("static extension")){
+				boolean include = true;
+				for (Aspect aspect : requiredAspects) {
+					if(line.endsWith(aspect.getAspectTypeRef().getType().getSimpleName() + ".*")){
+						include = false;
+						break;
+					}
+				}
+				if(include)
+					line = line.replaceAll("import static extension \\w+.", "import static extension " + pck +".");
+				else{
+					line = "";
+				}
+			}
+			
+			if(!line.equals(""))
+				content += line + "\n";
+			
 			line = br.readLine();
 		}
 		br.close();
@@ -198,8 +210,6 @@ public class ProjectManagementServices {
 		PrintWriter pw = new PrintWriter(newXtendFile);
 		pw.print(content);
 		pw.close();
-		
-		System.out.println(content);
 	}
 	
 	/**

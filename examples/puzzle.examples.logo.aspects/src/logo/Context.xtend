@@ -9,7 +9,7 @@ class Context {
 		public var Hashtable<String, Object> variablesTable 
 		public var Turtle turtle
 		
-		new() {
+		new() { 
 			stack = new ArrayList<Hashtable<String,Integer>>()
 			turtle = new Turtle()
 		}

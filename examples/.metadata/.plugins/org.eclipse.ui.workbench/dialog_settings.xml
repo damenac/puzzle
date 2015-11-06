@@ -16,12 +16,12 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.emf.importer.ui.EMFModelWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.xtend.ide.wizards.NewXtendClassWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.xtend.ide.wizards"/>
+			<item value="org.eclipse.xtend.ide.wizards/org.eclipse.xtend.project.Examples"/>
 			<item value="org.eclipse.ui.Examples"/>
-			<item value="org.eclipse.ui.Examples/org.eclipse.emf.examples.EMF"/>
-			<item value="org.eclipse.ui.Examples/org.eclipse.emf.validation.examples.category"/>
+			<item value="org.eclipse.ui.Examples/org.eclipse.xtend.ui.Examples"/>
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">

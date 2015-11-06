@@ -1,6 +1,8 @@
 package flowchart;
 
+import flowchart.ConstraintAspect;
 import flowchart.DecisionAspectDecisionAspectProperties;
+import flowchartpck.Constraint;
 import flowchartpck.Decision;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
@@ -14,5 +16,7 @@ public class DecisionAspect {
   }
   
   protected static void _privk3_eval(final DecisionAspectDecisionAspectProperties _self_, final Decision _self, final Hashtable<String, Object> context) {
+    Constraint _guard = _self.getGuard();
+    ConstraintAspect.evalConstraint(_guard, context);
   }
 }

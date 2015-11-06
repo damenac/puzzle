@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 
@@ -376,5 +377,29 @@ public class EcoreQueries {
 	public static EClassifier getRootClass(EPackage metamodel){
 		//TODO To something real here!
 		return metamodel.getEClassifiers().get(0);
+	}
+
+	/**
+	 * Return a native ecore type according to the parameter. 
+	 * @param typeName
+	 * @return
+	 */
+	public static EClassifier searchNativeTypeByName(String typeName) {
+		if(typeName.equals("EString") || typeName.equalsIgnoreCase("String"))
+			return EcorePackage.eINSTANCE.getEString();
+		else if(typeName.equals("EInt") || typeName.equalsIgnoreCase("int"))
+			return EcorePackage.eINSTANCE.getEInt();
+		else if(typeName.equals("EDouble") || typeName.equalsIgnoreCase("double"))
+			return EcorePackage.eINSTANCE.getEDouble();
+		else if(typeName.equals("ELong") || typeName.equalsIgnoreCase("long"))
+			return EcorePackage.eINSTANCE.getELong();
+		else if(typeName.equals("EBoolean") || typeName.equalsIgnoreCase("boolean"))
+			return EcorePackage.eINSTANCE.getEBoolean();
+		else if(typeName.equals("EMap") || typeName.equalsIgnoreCase("Hashtable"))
+			return EcorePackage.eINSTANCE.getEMap();
+		else if(typeName.equals("EObject") || typeName.equalsIgnoreCase("Object"))
+			return EcorePackage.eINSTANCE.getEObject();
+					
+		return null;
 	}
 }
