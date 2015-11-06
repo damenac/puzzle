@@ -6,17 +6,6 @@
 	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
 	<item value="/Users/dmendeza/workspaces/fmsynthesis/ca.uwaterloo.gsd.refm" key="org.eclipse.jdt.ui.last.external.project"/>
-	<section name="org.eclipse.ltk.ui.refactoring.settings">
-		<item value="false" key="renameSubpackages"/>
-		<item value="false" key="updateQualifiedNames"/>
-		<item value="*" key="patterns"/>
-		<item value="false" key="updateSimilarElements"/>
-		<item value="1" key="updateSimilarElementsMatchStrategy"/>
-		<item value="false" key="updateTextualMatches"/>
-	</section>
-	<section name="GenerateConstructorUsingFieldsSelectionDialog">
-		<item value="false" key="OmitCallToSuper"/>
-	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
 		<item value="true" key="group_libraries"/>
@@ -30,6 +19,85 @@
 		<item value="618" key="DIALOG_HEIGHT"/>
 		<item value="360" key="DIALOG_X_ORIGIN"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="SourceActionDialog.constructors">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="1" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
+		<item value="true" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE"/>
+		<item value="300" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT"/>
+		<item value="350" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
+	</section>
+	<section name="FatJarPackageWizard">
+		<item value="/Users/dmendeza/workspaces/puzzle/plugins" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
+		<item value="CommonalitiesDetector - fr.inria.diverse.puzzle.metrics" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
+		<item value="2" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar"/>
+			<item value="/Users/dmendeza/workspaces/puzzle-testing/refm-competition-ws/fr.inria.diverse.refm.competition.mendez/lib/fr.inria.diverse.vmsynthesis.jar"/>
+			<item value="fr.inria.diverse.generator.pcm/exe/fr.inria.diverse.generator.pcm.jar"/>
+			<item value="fr.inria.diverse.generator.dag/exe/fr.inria.diverse.generator.dag.jar"/>
+		</list>
+		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
+			<item value="/Users/dmendeza/workspaces/puzzle/plugins.xml"/>
+			<item value=".xml"/>
+		</list>
+	</section>
+	<section name="BreadcrumbItemDropDown">
+	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="AddGetterSetterDialog">
+		<item value="false" key="SortOrdering"/>
+		<item value="false" key="RemoveFinal"/>
+	</section>
+	<section name="JarPackageWizard">
+		<item value="false" key="JarPackageWizardPage.INCLUDE_DIRECTORY_ENTRIES"/>
+		<item value="" key="JarManifestWizardPage.MANIFEST_LOCATION"/>
+		<item value="false" key="JarManifestWizardPage.SEAL_JAR"/>
+		<item value="true" key="JarPackageWizardPage.COMPRESS"/>
+		<item value="false" key="JarManifestWizardPage.REUSE_MANIFEST"/>
+		<item value="false" key="jarOptionsWizardPage.STORE_USE_SRC_FOLDERS"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_WARNINGS"/>
+		<item value="" key="jarOptionsWizardPage.DESCRIPTION_LOCATION"/>
+		<item value="true" key="jarOptionsWizardPage.BUILD_IF_NEEDED"/>
+		<item value="true" key="JarPackageWizardPage.EXPORT_JAVA_FILES"/>
+		<item value="true" key="jarOptionsWizardPage.EXPORT_ERRORS"/>
+		<item value="true" key="JarManifestWizardPage.GENERATE_MANIFEST"/>
+		<item value="true" key="JarPackageWizardPage.EXPORT_CLASS_FILES"/>
+		<item value="true" key="JarPackageWizardPage.OVERWRITE"/>
+		<item value="false" key="jarOptionsWizardPage.SAVE_DESCRIPTION"/>
+		<item value="false" key="JarPackageWizardPage.REFACTORINGS"/>
+		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
+		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
+		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.generator.pcm.jar"/>
+			<item value="fr.inria.diverse.generator.pcm/lib/fr.inria.diverse.generator.dag.jar"/>
+			<item value="fr.inria.diverse.puzzle.common/lib/fr.inria.diverse.graph.jar"/>
+			<item value="fr.inria.diverse.vmsynthesis/lib/fr.inria.diverse.puzzle.vm.metamodel.jar"/>
+			<item value="fr.inria.diverse.vmsynthesis.interface/lib/fr.inria.diverse.vmsynthesis.jar"/>
+		</list>
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="false" key="renameSubpackages"/>
+		<item value="false" key="updateQualifiedNames"/>
+		<item value="*" key="patterns"/>
+		<item value="false" key="updateSimilarElements"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="false" key="updateTextualMatches"/>
+	</section>
+	<section name="GenerateConstructorUsingFieldsSelectionDialog">
+		<item value="false" key="OmitCallToSuper"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.dialogs.FilteredTypesSelectionDialog">
 		<item value="true" key="ShowStatusLine"/>
@@ -49,18 +117,6 @@
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 	</section>
-	<section name="SourceActionDialog.constructors">
-		<item value="false" key="SynchronizedModifier"/>
-		<item value="false" key="Comments"/>
-		<item value="1" key="VisibilityModifier"/>
-		<item value="false" key="FinalModifier"/>
-	</section>
-	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
-		<item value="true" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE"/>
-		<item value="300" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT"/>
-		<item value="350" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
-		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
-	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
 		<item value="529" key="DIALOG_WIDTH"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
@@ -71,23 +127,6 @@
 	<section name="RefactoringWizard.preview">
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
-	</section>
-	<section name="FatJarPackageWizard">
-		<item value="/Users/dmendeza/workspaces/puzzle/plugins" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="CommonalitiesDetector - fr.inria.diverse.puzzle.metrics" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
-		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
-		<item value="2" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
-		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
-			<item value="fr.inria.diverse.puzzle.metrics/experiment-1/commonalitiesDetector.jar"/>
-			<item value="/Users/dmendeza/workspaces/puzzle-testing/refm-competition-ws/fr.inria.diverse.refm.competition.mendez/lib/fr.inria.diverse.vmsynthesis.jar"/>
-			<item value="fr.inria.diverse.generator.pcm/exe/fr.inria.diverse.generator.pcm.jar"/>
-			<item value="fr.inria.diverse.generator.dag/exe/fr.inria.diverse.generator.dag.jar"/>
-		</list>
-		<list key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION_HISTORY">
-			<item value="/Users/dmendeza/workspaces/puzzle/plugins.xml"/>
-			<item value=".xml"/>
-		</list>
 	</section>
 	<section name="DialogBounds_AddDelegateMethodsDialog">
 		<item value="545" key="DIALOG_WIDTH"/>
@@ -101,8 +140,6 @@
 		<item value="false" key="Comments"/>
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="FinalModifier"/>
-	</section>
-	<section name="RenameInformationPopup">
 	</section>
 	<section name="ClasspathContainerSelectionPage">
 		<item value="1" key="index"/>
@@ -167,40 +204,5 @@
 			<list key="workingSets">
 			</list>
 		</section>
-	</section>
-	<section name="completion_proposal_size">
-	</section>
-	<section name="AddGetterSetterDialog">
-		<item value="false" key="SortOrdering"/>
-		<item value="false" key="RemoveFinal"/>
-	</section>
-	<section name="JarPackageWizard">
-		<item value="false" key="JarPackageWizardPage.INCLUDE_DIRECTORY_ENTRIES"/>
-		<item value="" key="JarManifestWizardPage.MANIFEST_LOCATION"/>
-		<item value="false" key="JarManifestWizardPage.SEAL_JAR"/>
-		<item value="true" key="JarPackageWizardPage.COMPRESS"/>
-		<item value="false" key="JarManifestWizardPage.REUSE_MANIFEST"/>
-		<item value="false" key="jarOptionsWizardPage.STORE_USE_SRC_FOLDERS"/>
-		<item value="true" key="jarOptionsWizardPage.EXPORT_WARNINGS"/>
-		<item value="" key="jarOptionsWizardPage.DESCRIPTION_LOCATION"/>
-		<item value="true" key="jarOptionsWizardPage.BUILD_IF_NEEDED"/>
-		<item value="true" key="JarPackageWizardPage.EXPORT_JAVA_FILES"/>
-		<item value="true" key="jarOptionsWizardPage.EXPORT_ERRORS"/>
-		<item value="true" key="JarManifestWizardPage.GENERATE_MANIFEST"/>
-		<item value="true" key="JarPackageWizardPage.EXPORT_CLASS_FILES"/>
-		<item value="true" key="JarPackageWizardPage.OVERWRITE"/>
-		<item value="false" key="jarOptionsWizardPage.SAVE_DESCRIPTION"/>
-		<item value="false" key="JarPackageWizardPage.REFACTORINGS"/>
-		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
-		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
-		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
-			<item value="fr.inria.diverse.puzzle.instantancesGenerator/lib/fr.inria.diverse.generator.pcm.jar"/>
-			<item value="fr.inria.diverse.generator.pcm/lib/fr.inria.diverse.generator.dag.jar"/>
-			<item value="fr.inria.diverse.puzzle.common/lib/fr.inria.diverse.graph.jar"/>
-			<item value="fr.inria.diverse.vmsynthesis/lib/fr.inria.diverse.puzzle.vm.metamodel.jar"/>
-			<item value="fr.inria.diverse.vmsynthesis.interface/lib/fr.inria.diverse.vmsynthesis.jar"/>
-		</list>
-	</section>
-	<section name="JavaElementSearchActions">
 	</section>
 </section>

@@ -14,10 +14,10 @@ public class LiteralAspect extends ExpressionAspect {
   public static Object eval(final Literal _self, final Hashtable<String, Object> context) {
     hfsm.LiteralAspectLiteralAspectProperties _self_ = hfsm.LiteralAspectLiteralAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof hfsm.StringLit){
-    result = hfsm.StringLitAspect.eval((hfsm.StringLit)_self,context);
-    } else  if (_self instanceof hfsm.IntegerLit){
+     if (_self instanceof hfsm.IntegerLit){
     result = hfsm.IntegerLitAspect.eval((hfsm.IntegerLit)_self,context);
+    } else  if (_self instanceof hfsm.StringLit){
+    result = hfsm.StringLitAspect.eval((hfsm.StringLit)_self,context);
     } else  if (_self instanceof hfsm.BoolLit){
     result = hfsm.BoolLitAspect.eval((hfsm.BoolLit)_self,context);
     } else  if (_self instanceof hfsm.Literal){

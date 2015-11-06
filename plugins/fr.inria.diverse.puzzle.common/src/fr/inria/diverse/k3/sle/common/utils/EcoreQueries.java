@@ -1,10 +1,14 @@
 package fr.inria.diverse.k3.sle.common.utils;
 
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
+
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 
 /**
@@ -64,6 +68,12 @@ public class EcoreQueries {
 		return null;
 	}
 	
+	/**
+	 * Searches the ereference with the given name in the given eclass. Returns null if there is not such ereference. 
+	 * @param eClass
+	 * @param name
+	 * @return
+	 */
 	public static EReference searchEReferenceByName(EClass eClass, String name){
 		for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {
 			if((eStructuralFeature instanceof EReference) && (eStructuralFeature.getName().equals(name))){
@@ -74,8 +84,21 @@ public class EcoreQueries {
 	}
 	
 	/**
+	 * Searches the eattribute with the given name in the given eclass. Returns null if there is not such eattribute. 
+	 * @param eClass
+	 * @param name
+	 * @return
+	 */
+	public static EAttribute searchEAttributeByName(EClass eClass, String name) {
+		for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {
+			if(eStructuralFeature instanceof EAttribute && eStructuralFeature.getName().equals(name))
+				return (EAttribute) eStructuralFeature;
+		}
+		return null;
+	}
+	
+	/**
 	 * Returns the eclassifier annotated with @Required
-	 * TODO This should support not only one but several annotated eclassifiers.
 	 * @param metamodel
 	 * @return
 	 */
@@ -90,6 +113,22 @@ public class EcoreQueries {
 				return annotatedEClassifier;
 		}
 		return null;
+	}
+	
+	/**
+	 * Returns the collection of eclassifiers annotated with @Required
+	 * @param metamodel
+	 * @return
+	 */
+	public static void searchRequiredConcepts(EPackage metamodel,
+			ArrayList<EClassifier> requiredClassifiers) {
+		for (EClassifier eClassifier : metamodel.getEClassifiers()) {
+			if(eClassifier.getEAnnotation("Required") != null)
+				requiredClassifiers.add(eClassifier);
+		}
+		for(EPackage ePackage : metamodel.getESubpackages()){
+			searchRequiredConcepts(ePackage, requiredClassifiers);
+		}
 	}
 	
 	/**

@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EEnumLiteral;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -128,12 +129,35 @@ public class EcoreCloningServices {
 		newEEnum.setName(oldEEnum.getName());
 		newEEnum.setSerializable(oldEEnum.isSerializable());
 		
+		for (EEnumLiteral oldLiteral : oldEEnum.getELiterals()) {
+			EEnumLiteral newLiteral = this.cloneEEnumLiteral(oldLiteral);
+			newEEnum.getELiterals().add(newLiteral);
+		}
+		
 		oldClassifiers.put(oldEEnum.getName(), oldEEnum);
 		clonedClassifiers.put(newEEnum.getName(), newEEnum);
 		
 		return newEEnum;
 	}
 
+	/**
+	 * Clones the enum literal in the parameter.
+	 * @param oldLiteral
+	 * @return
+	 */
+	private EEnumLiteral cloneEEnumLiteral(EEnumLiteral oldLiteral) {
+		EEnumLiteral newEEnumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
+		newEEnumLiteral.setInstance(oldLiteral.getInstance());
+		newEEnumLiteral.setLiteral(oldLiteral.getLiteral());
+		newEEnumLiteral.setName(oldLiteral.getName());
+		newEEnumLiteral.setValue(oldLiteral.getValue());
+		return newEEnumLiteral;
+	}
+
+	/**
+	 * Assigns the correct type to each (local) reference of the eclasses of the given metamodel
+	 * @param metamodel
+	 */
 	public void resolveLocalReferences(EPackage metamodel) {
 		for (EClassifier eClassifier : metamodel.getEClassifiers()) {
 			if(eClassifier instanceof EClass){
@@ -152,6 +176,32 @@ public class EcoreCloningServices {
 				}
 			}
 		}
+	}
+	
+	/**
+	 * Assigns the correct type to each (local) attribute of the eclasses of the given metamodel
+	 * @param metamodel
+	 */
+	public void resolveLocalAttributes(EPackage metamodel) {
+		for (EClassifier eClassifier : metamodel.getEClassifiers()) {
+			if(eClassifier instanceof EClass){
+				EClass eClass = (EClass)eClassifier;
+				for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {
+					if(eStructuralFeature instanceof EAttribute){
+						EAttribute eAttribute = (EAttribute) eStructuralFeature;
+						if(eAttribute.getEType() == null){
+							EAttribute oldEAttribute = EcoreQueries.
+									searchEAttributeByName((EClass)oldClassifiers.get(eClass.getName()), 
+											eAttribute.getName());
+							System.out.println("oldEAttribute: " + oldEAttribute.getName());
+							EClassifier eAttributeType = clonedClassifiers.get(oldEAttribute.getEType().getName());
+							eAttribute.setEType(eAttributeType);
+						}
+					}
+				}
+			}
+		}
+		
 	}
 	
 	public void resolveInterfaceReferences(EPackage metamodel) {

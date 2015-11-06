@@ -1,18 +1,13 @@
 package fr.inria.diverse.puzzle.breaker.command;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
-import org.eclipse.core.runtime.CoreException;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.internal.xtend.xtend.XtendFile;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
@@ -28,7 +23,6 @@ import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
-import fr.inria.diverse.k3.sle.common.utils.XtendQueries;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -74,8 +68,8 @@ public class BreakerImpl {
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
 		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
-		buildSyntacticModules(dependenciesGraph);
-		buildSemanticModules(dependenciesGraph, languages);
+		
+		buildModules(dependenciesGraph, languages);
 		
 		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
 		System.out.println("Modularization Quality: " + mq);
@@ -83,67 +77,79 @@ public class BreakerImpl {
 		return dependenciesGraph;
 	}
 
-	/**
-	 * Builds the syntactic modules according to the decomposed dependencies graph. 
-	 * @param ecoreGraph
-	 * @throws CoreException
-	 * @throws IOException 
-	 */
-	private void buildSyntacticModules(EcoreGraph ecoreGraph) throws CoreException, IOException {
-		for (EcoreGroup group : ecoreGraph.getGroups()) {
-			// Build the module metamodel with the required interface.
-			EPackage moduleEPackage = this.createEPackageByModule(group);
-
-			String languageName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
-			
-			// Create the module project with the folders.
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
-					languageName + ".syntax");
-			String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
-						
-			// Serialize the module metamodel in the corresponding project. 
-			String ecoreLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore";
-			ModelUtils.saveEcoreFile(ecoreLocation, moduleEPackage);
-			
-			// Create the genmodel and generate the code of the module.
-			String genModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".genmodel";
-			ProjectManagementServices.generateGenmodelFile(moduleProject, moduleEPackage, ecoreLocation, genModelLocation, moduleProject.getName(), languageName);
-			
-			
-			// Refresh projects
-			ProjectManagementServices.refreshProject(moduleProject);
+	private void buildModules(EcoreGraph dependenciesGraph,
+			ArrayList<Language> languages) throws Exception {
+		for (EcoreGroup group : dependenciesGraph.getGroups()) {
+			ArrayList<EClassifier> requiredClassifiers = buildSyntacticModule(group);
+			buildSemanticModule(group, languages, requiredClassifiers);
 		}
+		
 	}
 
 	/**
-	 * Builds the semantic modules according to the decomposed dependencies graph. 
-	 * @param ecoreGraph
+	 * Builds a syntactic module for the given constructs group.
+	 * Returns the set of classifiers required by the generated module. 
+	 * @param group
 	 * @throws CoreException
 	 * @throws IOException 
 	 */
-	private void buildSemanticModules(EcoreGraph dependenciesGraph, ArrayList<Language> languages) throws CoreException, IOException{
-		for (EcoreGroup group : dependenciesGraph.getGroups()) {
-			// Create the module project with the folders.
-			String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
-			IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
-					moduleName + ".semantics");
-			ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName);
-			
-			ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
-			for (EcoreVertex vertex : group.getVertex()) {
-				classifiers.add(vertex.getClassifier());
-			}
-			
-			ArrayList<Aspect> aspects = findAspects(group, languages);
-			
-			for (Aspect aspect : aspects) {
-				System.out.println(aspect.getAspectTypeRef().getType().eResource().getURI().toString());
-				ProjectManagementServices.copyAspectResource(aspect.getAspectTypeRef().getType().eResource(), moduleProject, moduleName, classifiers);
-			}
-			
-			// Refresh projects
-			ProjectManagementServices.refreshProject(moduleProject);
+	private ArrayList<EClassifier> buildSyntacticModule(EcoreGroup group) throws Exception {
+		ArrayList<EClassifier> requiredClassifiers = new ArrayList<EClassifier>();
+		
+		EPackage moduleEPackage = this.createEPackageByModule(group);
+		
+		EcoreQueries.searchRequiredConcepts(moduleEPackage, requiredClassifiers);
+		
+		String languageName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
+		
+		// Create the module project with the folders.
+		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
+				languageName + ".syntax");
+		String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
+					
+		// Serialize the module metamodel in the corresponding project. 
+		String ecoreLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore";
+		ModelUtils.saveEcoreFile(ecoreLocation, moduleEPackage);
+		
+		// Create the genmodel and generate the code of the module.
+		String genModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".genmodel";
+		ProjectManagementServices.generateGenmodelFile(moduleProject, moduleEPackage, ecoreLocation, genModelLocation, moduleProject.getName(), languageName);
+		
+		// Refresh projects
+		ProjectManagementServices.refreshProject(moduleProject);
+		
+		return requiredClassifiers;
+	}
+
+	/**
+	 * Builds a semantic module for the given constructs group. 
+	 * @param group
+	 * @throws CoreException
+	 * @throws IOException 
+	 */
+	private void buildSemanticModule(EcoreGroup group,
+			ArrayList<Language> languages, ArrayList<EClassifier> requiredClassifiers) throws Exception {
+		
+		// Create the module project with the folders.
+		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
+		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
+				moduleName + ".semantics");
+		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName);
+		
+		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
+		for (EcoreVertex vertex : group.getVertex()) {
+			classifiers.add(vertex.getClassifier());
 		}
+		
+		ArrayList<Aspect> aspects = findAspects(group, languages);
+		
+		for (Aspect aspect : aspects) {
+			System.out.println(aspect.getAspectTypeRef().getType().eResource().getURI().toString());
+			ProjectManagementServices.copyAspectResource(aspect.getAspectTypeRef().getType().eResource(), moduleProject, moduleName, classifiers);
+		}
+		
+		// Refresh projects
+		ProjectManagementServices.refreshProject(moduleProject);
 	}
 	
 	/**
@@ -211,6 +217,7 @@ public class BreakerImpl {
 			}
 		}
 		EcoreCloningServices.getInstance().resolveLocalReferences(newPackage);
+		EcoreCloningServices.getInstance().resolveLocalAttributes(newPackage);
 		EcoreCloningServices.getInstance().resolveInterfaceReferences(newPackage);
 		EcoreCloningServices.getInstance().resolveLocalSuperTypes(newPackage);
 		return newPackage;

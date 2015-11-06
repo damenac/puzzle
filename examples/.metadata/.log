@@ -2898,3 +2898,663 @@ Caused by: java.lang.NullPointerException
 	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
 	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
 	... 17 more
+!SESSION 2015-11-06 09:13:02.979 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-06 09:13:06.987
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-06 09:13:18.654
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:13:30.002
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:13:30.256
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:13:30.885
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:13:30.983
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:13:30.990
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-06 09:13:57.726
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.ExpressionModule.semantics/src/expression/ArithmeticExpression.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-06 09:13:57.741
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.module.ExpressionModule.semantics/src/expression/RelationalExpression.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+!SESSION 2015-11-06 09:34:01.727 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-06 09:34:05.442
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-06 09:34:13.461
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:34:24.966
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:34:25.197
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:34:25.837
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:34:25.921
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:34:25.928
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+!SESSION 2015-11-06 09:36:41.236 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-06 09:36:45.139
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-06 09:36:57.431
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:37:08.860
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:37:09.091
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:37:09.780
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generatePackageClass(GenPackageGeneratorAdapter.java:621)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenPackageGeneratorAdapter.generateModel(GenPackageGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getTypeGenPackage(GenTypedElementImpl.java:82)
+	at org.eclipse.emf.codegen.ecore.templates.model.PackageClass.generate(PackageClass.java:1789)
+	... 18 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:37:09.861
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+
+!ENTRY org.eclipse.emf.codegen.ecore 2 0 2015-11-06 09:37:09.867
+!MESSAGE org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+!STACK 0
+org.eclipse.emf.common.util.WrappedException: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2091)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:246)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModules(BreakerImpl.java:110)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:77)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.emf.codegen.jet.JETException: InvocationTargetException
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:469)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:1962)
+	... 12 more
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor40.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.emf.codegen.jet.JETEmitter.generate(JETEmitter.java:461)
+	... 13 more
+Caused by: java.lang.NullPointerException
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenBaseImpl.getBoundType(GenBaseImpl.java:3329)
+	at org.eclipse.emf.codegen.ecore.genmodel.impl.GenTypedElementImpl.getRawImportedBoundType(GenTypedElementImpl.java:182)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class$2.run(Class.java:2807)
+	at org.eclipse.emf.codegen.ecore.templates.model.Class.generate(Class.java:4800)
+	... 17 more
+!SESSION 2015-11-06 09:38:19.696 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-06 09:38:23.639
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-06 09:38:33.760
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-11-06 09:43:59.915 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-06 09:44:03.501
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-06 09:44:07.629
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2015-11-06 10:02:09.086 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-06 10:02:12.701
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2015-11-06 10:02:46.980 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-06 10:02:50.570
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-06 10:02:55.446
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2015-11-06 10:03:54.020
+!MESSAGE An internal error occurred during: "Computing Git status for repository puzzle".
+!STACK 0
+java.lang.IllegalArgumentException: Path must include project and resource name: /fr.inria.diverse.module.LogoProgramModule.syntax
+	at org.eclipse.core.runtime.Assert.isLegal(Assert.java:63)
+	at org.eclipse.core.internal.resources.Workspace.newResource(Workspace.java:2137)
+	at org.eclipse.core.internal.resources.Container.getFile(Container.java:208)
+	at org.eclipse.core.internal.localstore.FileStoreRoot.getManager(FileStoreRoot.java:62)
+	at org.eclipse.core.internal.localstore.FileStoreRoot.computeURI(FileStoreRoot.java:72)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.locationURIFor(FileSystemResourceManager.java:762)
+	at org.eclipse.core.internal.resources.Resource.getLocationURI(Resource.java:1158)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.allPathsForLocationNonCanonical(FileSystemResourceManager.java:83)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.allPathsForLocation(FileSystemResourceManager.java:64)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.allResourcesFor(FileSystemResourceManager.java:216)
+	at org.eclipse.core.internal.resources.WorkspaceRoot.findContainersForLocationURI(WorkspaceRoot.java:89)
+	at org.eclipse.core.internal.resources.WorkspaceRoot.findContainersForLocationURI(WorkspaceRoot.java:80)
+	at org.eclipse.egit.core.IteratorService.findContainer(IteratorService.java:68)
+	at org.eclipse.egit.core.AdaptableFileTreeIterator.createSubtreeIterator(AdaptableFileTreeIterator.java:82)
+	at org.eclipse.jgit.treewalk.AbstractTreeIterator.createSubtreeIterator(AbstractTreeIterator.java:535)
+	at org.eclipse.jgit.treewalk.TreeWalk.enterSubtree(TreeWalk.java:912)
+	at org.eclipse.jgit.treewalk.TreeWalk.next(TreeWalk.java:566)
+	at org.eclipse.jgit.lib.IndexDiff.diff(IndexDiff.java:389)
+	at org.eclipse.egit.core.internal.indexdiff.IndexDiffCacheEntry.calcIndexDiffDataFull(IndexDiffCacheEntry.java:486)
+	at org.eclipse.egit.core.internal.indexdiff.IndexDiffCacheEntry.access$7(IndexDiffCacheEntry.java:475)
+	at org.eclipse.egit.core.internal.indexdiff.IndexDiffCacheEntry$4.run(IndexDiffCacheEntry.java:286)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

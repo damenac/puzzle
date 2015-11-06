@@ -13,16 +13,16 @@ public class ExpressionAspect {
     Object result = null;
      if (_self instanceof tfsm.BoolLit){
     result = tfsm.BoolLitAspect.eval((tfsm.BoolLit)_self,context);
-    } else  if (_self instanceof tfsm.ArithmeticExpression){
-    result = tfsm.ArithmeticExpressionAspect.eval((tfsm.ArithmeticExpression)_self,context);
+    } else  if (_self instanceof tfsm.RelationalExpression){
+    result = tfsm.RelationalExpressionAspect.eval((tfsm.RelationalExpression)_self,context);
     } else  if (_self instanceof tfsm.IntegerLit){
     result = tfsm.IntegerLitAspect.eval((tfsm.IntegerLit)_self,context);
     } else  if (_self instanceof tfsm.StringLit){
     result = tfsm.StringLitAspect.eval((tfsm.StringLit)_self,context);
+    } else  if (_self instanceof tfsm.ArithmeticExpression){
+    result = tfsm.ArithmeticExpressionAspect.eval((tfsm.ArithmeticExpression)_self,context);
     } else  if (_self instanceof tfsm.Literal){
     result = tfsm.LiteralAspect.eval((tfsm.Literal)_self,context);
-    } else  if (_self instanceof tfsm.RelationalExpression){
-    result = tfsm.RelationalExpressionAspect.eval((tfsm.RelationalExpression)_self,context);
     } else  if (_self instanceof tfsm.Expression){
     result = tfsm.ExpressionAspect._privk3_eval(_self_, (tfsm.Expression)_self,context);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };

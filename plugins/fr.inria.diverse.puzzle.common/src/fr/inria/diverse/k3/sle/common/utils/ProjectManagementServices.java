@@ -177,7 +177,7 @@ public class ProjectManagementServices {
 		
 		while(line != null){
 			if(line.startsWith("package")){
-				line = "package " + pck + "\n";
+				line = "package " + pck;
 			}
 			
 			if(line.startsWith("import")){
