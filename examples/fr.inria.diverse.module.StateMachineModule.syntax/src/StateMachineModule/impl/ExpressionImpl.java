@@ -10,7 +10,6 @@ import java.lang.reflect.InvocationTargetException;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EObject;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
@@ -48,7 +47,7 @@ public class ExpressionImpl extends EObjectImpl implements Expression {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObject eval(Object context) {
+	public Object eval(Object context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

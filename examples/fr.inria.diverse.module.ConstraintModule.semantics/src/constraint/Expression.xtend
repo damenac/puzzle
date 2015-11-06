@@ -1,4 +1,5 @@
 package constraint
+
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import java.util.Hashtable
 import ConstraintModule.Expression

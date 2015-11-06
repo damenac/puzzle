@@ -105,6 +105,10 @@ public class BreakerImpl {
 		
 		EPackage moduleEPackage = this.createEPackageByModule(group);
 		
+		// Adding the constructs that are not used in the syntax but in the semantics
+		ArrayList<Aspect> allAspects = findAspects(group, languages);
+		addMetaclassesRequiredByTheSemantics(allAspects, moduleEPackage);
+		
 		// Adding the required operations to the required interface
 		EcoreQueries.searchRequiredConcepts(moduleEPackage, requiredClassifiers);
 		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
@@ -129,6 +133,15 @@ public class BreakerImpl {
 		ProjectManagementServices.refreshProject(moduleProject);
 		
 		return requiredClassifiers;
+	}
+
+	private void addMetaclassesRequiredByTheSemantics(
+			ArrayList<Aspect> allAspects, EPackage moduleEPackage) {
+		
+		for (Aspect aspect : allAspects) {
+			System.out.println("ecore fragment: " + aspect.getEcoreFragment().getEClassifiers());
+		}
+		
 	}
 
 	/**

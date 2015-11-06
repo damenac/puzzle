@@ -6,7 +6,6 @@ import StateMachineModule.VarDecl;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
-import org.eclipse.emf.ecore.EObject;
 import statemachine.AssignationAspectAssignationAspectProperties;
 import statemachine.StatementAspect;
 
@@ -23,7 +22,7 @@ public class AssignationAspect extends StatementAspect {
     VarDecl _varRef = _self.getVarRef();
     String _name = _varRef.getName();
     Expression _expression = _self.getExpression();
-    EObject _eval = _expression.eval(context);
+    Object _eval = _expression.eval(context);
     context.put(_name, _eval);
   }
 }

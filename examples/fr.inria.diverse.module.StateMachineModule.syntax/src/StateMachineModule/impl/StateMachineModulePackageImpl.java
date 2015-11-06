@@ -905,7 +905,7 @@ public class StateMachineModulePackageImpl extends EPackageImpl implements State
 
 		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getExpression__Eval__Object(), ecorePackage.getEObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExpression__Eval__Object(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals

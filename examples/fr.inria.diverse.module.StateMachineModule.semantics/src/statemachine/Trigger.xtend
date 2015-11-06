@@ -1,4 +1,5 @@
 package statemachine
+
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import org.eclipse.emf.common.util.EList
 import StateMachineModule.Trigger

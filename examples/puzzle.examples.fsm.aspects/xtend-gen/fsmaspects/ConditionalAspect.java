@@ -5,7 +5,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fsm.Conditional;
 import fsm.Expression;
 import fsm.Program;
-import fsm.RelationalExpression;
 import fsmaspects.ConditionalAspectConditionalAspectProperties;
 import fsmaspects.ExpressionAspect;
 import fsmaspects.ProgramAspect;
@@ -23,7 +22,7 @@ public class ConditionalAspect extends StatementAspect {
   
   protected static void _privk3_eval(final ConditionalAspectConditionalAspectProperties _self_, final Conditional _self, final Hashtable<String, Object> context) {
     Expression _condition = _self.getCondition();
-    Object _eval = ExpressionAspect.eval(((RelationalExpression) _condition), context);
+    Object _eval = ExpressionAspect.eval(_condition, context);
     if ((((Boolean) _eval)).booleanValue()) {
       Program _body = _self.getBody();
       ProgramAspect.eval(_body, context);

@@ -4,7 +4,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fsm.Loop;
 import fsm.Program;
-import fsm.RelationalExpression;
 import fsmaspects.ExpressionAspect;
 import fsmaspects.LoopAspectLoopAspectProperties;
 import fsmaspects.ProgramAspect;
@@ -21,7 +20,7 @@ public class LoopAspect extends StatementAspect {
   }
   
   protected static void _privk3_eval(final LoopAspectLoopAspectProperties _self_, final Loop _self, final Hashtable<String, Object> context) {
-    while ((((Boolean) ExpressionAspect.eval(((RelationalExpression) _self.getGuard()), context))).booleanValue()) {
+    while ((((Boolean) ExpressionAspect.eval(_self.getGuard(), context))).booleanValue()) {
       Program _body = _self.getBody();
       ProgramAspect.eval(_body, context);
     }

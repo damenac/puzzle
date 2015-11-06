@@ -397,8 +397,10 @@ public class EcoreQueries {
 			return EcorePackage.eINSTANCE.getEBoolean();
 		else if(typeName.equals("EMap") || typeName.equalsIgnoreCase("Hashtable"))
 			return EcorePackage.eINSTANCE.getEMap();
-		else if(typeName.equals("EObject") || typeName.equalsIgnoreCase("Object"))
+		else if(typeName.equals("EObject"))
 			return EcorePackage.eINSTANCE.getEObject();
+		else if(typeName.equals("EJavaObject") || typeName.equalsIgnoreCase("Object"))
+			return EcorePackage.eINSTANCE.getEJavaObject();
 					
 		return null;
 	}

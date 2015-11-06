@@ -1,10 +1,13 @@
 package statemachine;
 
 import StateMachineModule.Conditional;
+import StateMachineModule.Expression;
+import StateMachineModule.Program;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
 import statemachine.ConditionalAspectConditionalAspectProperties;
+import statemachine.ProgramAspect;
 import statemachine.StatementAspect;
 
 @Aspect(className = Conditional.class)
@@ -17,8 +20,11 @@ public class ConditionalAspect extends StatementAspect {
   }
   
   protected static void _privk3_eval(final ConditionalAspectConditionalAspectProperties _self_, final Conditional _self, final Hashtable<String, Object> context) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nRelationalExpression cannot be resolved to a type."
-      + "\neval cannot be resolved");
+    Expression _condition = _self.getCondition();
+    Object _eval = _condition.eval(context);
+    if ((((Boolean) _eval)).booleanValue()) {
+      Program _body = _self.getBody();
+      ProgramAspect.eval(_body, context);
+    }
   }
 }

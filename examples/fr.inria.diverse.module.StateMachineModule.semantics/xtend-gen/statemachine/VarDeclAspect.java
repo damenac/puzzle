@@ -5,7 +5,6 @@ import StateMachineModule.VarDecl;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
-import org.eclipse.emf.ecore.EObject;
 import statemachine.StatementAspect;
 import statemachine.VarDeclAspectVarDeclAspectProperties;
 
@@ -21,7 +20,7 @@ public class VarDeclAspect extends StatementAspect {
   protected static void _privk3_eval(final VarDeclAspectVarDeclAspectProperties _self_, final VarDecl _self, final Hashtable<String, Object> context) {
     String _name = _self.getName();
     Expression _expr = _self.getExpr();
-    EObject _eval = _expr.eval(context);
+    Object _eval = _expr.eval(context);
     context.put(_name, _eval);
   }
 }

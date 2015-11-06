@@ -21,6 +21,6 @@ public interface Expression extends EObject {
 	 * @model
 	 * @generated
 	 */
-	EObject eval(Object context);
+	Object eval(Object context);
 
 } // Expression
