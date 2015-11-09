@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="builder"
+    nsURI="http://builder/1.0" nsPrefix="builder">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelBuildRequestor">
+    <eOperations name="initBuildDetection"/>
+    <eOperations name="getModelBuilder"/>
+    <eOperations name="getBuildManager"/>
+    <eOperations name="postBuildRequest"/>
+    <eOperations name="detectOn"/>
+    <eOperations name="detectOff"/>
+    <eOperations name="build">
+      <eParameters name="model" eType="#//EModelDB"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="builder" lowerBound="1"
+        eType="#//ModelBuilderBase" containment="true" eOpposite="#//ModelBuilderBase/requestor"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelBuilderManager">
+    <eOperations name="setDirty">
+      <eParameters name="model" eType="#//EModelDB"/>
+      <eParameters name="builder" eType="#//ModelBuilderBase"/>
+    </eOperations>
+    <eOperations name="build">
+      <eParameters name="model" eType="#//EModelDB"/>
+      <eParameters name="recursive" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dirtyBuilders" upperBound="-1"
+        eType="#//MapModelDBToModelBuilderBase" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelBuilderBase">
+    <eOperations name="build">
+      <eParameters name="model" eType="#//EModelDB"/>
+    </eOperations>
+    <eOperations name="buildBody" eExceptions="#//ModelBuilderException">
+      <eParameters name="model" eType="#//EModelDB"/>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requestor" lowerBound="1"
+        eType="#//ModelBuildRequestor" eOpposite="#//ModelBuildRequestor/builder"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MapModelDBToModelBuilderBase">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="#//EModelDB"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//ModelBuilderBase"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="EModelDB"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PMModelBuilder" eSuperTypes="#//ModelBuilderBase"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PMResourceManager" eSuperTypes="#//ModelBuildRequestor"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DBProject">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelBuilderManager" lowerBound="1"
+        eType="#//ModelBuilderManager" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ModelBuilderException"/>
+</ecore:EPackage>

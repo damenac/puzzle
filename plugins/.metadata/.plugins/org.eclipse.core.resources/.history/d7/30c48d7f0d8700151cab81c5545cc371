@@ -1,0 +1,29 @@
+package fr.inria.diverse.puzzle.breaker.command;
+
+import fr.inria.diverse.melange.metamodel.melange.Aspect;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+public class AspectLanguageMapping {
+
+	// ----------------------------------------------
+	// Attributes
+	// ----------------------------------------------
+	
+	private Aspect aspect;
+	private Language language;
+	
+	// ----------------------------------------------
+	// Constructor
+	// ----------------------------------------------
+	
+	public AspectLanguageMapping(Aspect aspect, Language language){
+		this.aspect = aspect;
+		this.language = language;
+	}
+	
+	// ----------------------------------------------
+	// Getters and setters
+	// ----------------------------------------------
+	
+	
+}

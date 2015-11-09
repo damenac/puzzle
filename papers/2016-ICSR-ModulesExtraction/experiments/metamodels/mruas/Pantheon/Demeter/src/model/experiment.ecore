@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="experiment"
+    nsURI="http:///org/generationcp/model/data/experiment.ecore" nsPrefix="org.generationcp.model.data.experiment">
+  <eClassifiers xsi:type="ecore:EClass" name="BiologicalSample" eSuperTypes="study.ecore#//Variate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="germplasm" eType="ecore:EClass germplasm.ecore#//Germplasm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="treatments" upperBound="-1"
+        eType="ecore:EClass germplasm.ecore#//Treatment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="growthConditions" upperBound="-1"
+        eType="ecore:EClass germplasm.ecore#//GrowthCondition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="organismPart" eType="ecore:EClass germplasm.ecore#//PlantOntologyTerm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="developmentStage" eType="ecore:EClass germplasm.ecore#//PlantOntologyTerm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantity" eType="ecore:EClass value.ecore#//Value"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BiologicalSampleExtraction" eSuperTypes="germplasm.ecore#//DerivativeMethod"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BiologicalSampleIsolation" eSuperTypes="germplasm.ecore#//DerivativeMethod"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LaboratoryGermplasmStudy" eSuperTypes="germplasm.ecore#//GermplasmStudy">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="samples" upperBound="-1"
+        eType="#//BiologicalSample"/>
+  </eClassifiers>
+</ecore:EPackage>

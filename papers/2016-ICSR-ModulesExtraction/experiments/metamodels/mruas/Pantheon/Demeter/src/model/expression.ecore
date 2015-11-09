@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="expression"
+    nsURI="http:///org/generationcp/model/data/expression.ecore" nsPrefix="org.generationcp.model.data.expression">
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionStudy" eSuperTypes="experiment.ecore#//LaboratoryGermplasmStudy"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneOntologyTerm" eSuperTypes="ontology.ecore#//SimpleOntologyTerm"/>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneProduct" eSuperTypes="core.ecore#//Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="gene" eType="ecore:EClass linkagemap.ecore#//Gene"
+        eOpposite="linkagemap.ecore#//Gene/geneProduct"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="organismContext" eType="ecore:EClass identification.ecore#//SimpleIdentifier"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="molecularFunctions" upperBound="-1"
+        eType="#//GeneOntologyTerm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="biologicalProcesses" upperBound="-1"
+        eType="#//GeneOntologyTerm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="cellularCompartments" upperBound="-1"
+        eType="#//GeneOntologyTerm"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hybridization" eSuperTypes="study.ecore#//ExperimentalBatch"/>
+</ecore:EPackage>

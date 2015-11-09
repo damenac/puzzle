@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="dsl"
+    nsURI="http://www.eclipse.org/net4j/tools/workingset" nsPrefix="dsl">
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanLiteral" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringExpression" eSuperTypes="#//BooleanExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StringLiteral" eSuperTypes="#//StringExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PropertyAccess" eSuperTypes="#//StringExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComparisonOperator">
+    <eLiterals name="EQ" literal="="/>
+    <eLiterals name="EQ2" value="1" literal="=="/>
+    <eLiterals name="NE" value="2" literal="!="/>
+    <eLiterals name="NE2" value="3" literal="&lt;>"/>
+    <eLiterals name="GT" value="4" literal=">"/>
+    <eLiterals name="GE" value="5" literal=">="/>
+    <eLiterals name="LT" value="6" literal="&lt;"/>
+    <eLiterals name="LE" value="7" literal="&lt;="/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StringOperator">
+    <eLiterals name="EQ" literal="="/>
+    <eLiterals name="EQ2" value="1" literal="=="/>
+    <eLiterals name="NE" value="2" literal="!="/>
+    <eLiterals name="NE2" value="3" literal="&lt;>"/>
+    <eLiterals name="GT" value="4" literal=">"/>
+    <eLiterals name="GE" value="5" literal=">="/>
+    <eLiterals name="LT" value="6" literal="&lt;"/>
+    <eLiterals name="LE" value="7" literal="&lt;="/>
+    <eLiterals name="LIKE" value="8" literal="like"/>
+    <eLiterals name="LIKE2" value="9" literal="~"/>
+    <eLiterals name="UNLIKE" value="10" literal="unlike"/>
+    <eLiterals name="UNLIKE2" value="11" literal="!~"/>
+    <eLiterals name="STARTS" value="12" literal="starts"/>
+    <eLiterals name="ENDS" value="13" literal="ends"/>
+    <eLiterals name="CONTAINS" value="14" literal="contains"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Type">
+    <eLiterals name="FILE" literal="file"/>
+    <eLiterals name="FOLDER" value="1" literal="folder"/>
+    <eLiterals name="CONTAINER" value="2" literal="container"/>
+    <eLiterals name="PROJECT" value="3" literal="project"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Kind">
+    <eLiterals name="REFERENCE" literal="reference"/>
+    <eLiterals name="NATURE" value="1" literal="nature"/>
+    <eLiterals name="BUILDER" value="2" literal="builder"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="XorExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanComparison" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//BooleanExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//ComparisonOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringComparison" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//StringExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//StringOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//StringExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NotExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//BooleanExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IsExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="HasExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//Kind"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="what" eType="#//StringExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestExpression" eSuperTypes="#//BooleanExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="args" upperBound="-1" eType="#//StringExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expected" eType="#//StringExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConcatExpression" eSuperTypes="#//StringExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//StringExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//StringExpression"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

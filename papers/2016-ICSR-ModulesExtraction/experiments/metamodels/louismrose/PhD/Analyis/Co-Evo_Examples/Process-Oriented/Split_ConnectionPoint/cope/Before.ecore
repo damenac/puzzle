@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="po_split"
+    nsURI="po_split" nsPrefix="po_split">
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectionPoints" upperBound="-1"
+        eType="#//ConnectionPoint" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="channels" upperBound="-1"
+        eType="#//Channel" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectionPoint" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Channel">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reader" lowerBound="1"
+        eType="#//ReadingConnectionPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="writer" lowerBound="1"
+        eType="#//WritingConnectionPoint"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReadingConnectionPoint" eSuperTypes="#//ConnectionPoint"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WritingConnectionPoint" eSuperTypes="#//ConnectionPoint"/>
+</ecore:EPackage>

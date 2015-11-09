@@ -1,0 +1,6 @@
+\section{Evaluation \& validation plan}
+\label{sec:evaluation}
+
+Currently, the plan for the evaluation of the approach is based on two case studies. The first one is a family of languages for finite state machines that presents the syntax and semantics variation points that can be found in languages for expressing state machines and that have been largely studied in the literature (e.g., \cite{Crane:2007,Fecher:2005}). It is worth to mention that this is a real-world case study that can be found in the context of Thales. The second case study is a family of languages for extended feature models that shows the different interpretation that constructs such as feature attributes have received.
+
+The two case studies include the three dimensions of the variability. However, whereas the former requires the implementation of operational semantics the second one requires the implementation of translational semantics. Like this, we validate that our ideas are useful not only for executable DSLs but also for generative approaches that use transformations. 

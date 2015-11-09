@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="psf"
+    nsURI="http://www.eclipse.org/buckminster/PSFProvider-1.0" nsPrefix="psf">
+  <eClassifiers xsi:type="ecore:EClass" name="PSFProvider" eSuperTypes="../../org.eclipse.buckminster.rmap/model/rmap.ecore#//Provider">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="psfFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="attribute"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

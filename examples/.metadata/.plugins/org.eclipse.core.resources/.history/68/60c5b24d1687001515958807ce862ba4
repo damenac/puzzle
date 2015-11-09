@@ -1,0 +1,5 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	kmLogo.ParameterCall = logo.ParameterCallAspect
+	kmLogo.Parameter = logo.ParameterAspect
+	kmLogo.Clear = logo.ClearAspect
+	kmLogo.Expression = logo.ExpressionAspect

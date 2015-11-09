@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EClassifier;
 
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 
 public class MetaclassAspectMapping {
 
@@ -13,7 +14,7 @@ public class MetaclassAspectMapping {
 	// ----------------------------------------------
 	
 	private EClassifier metaclass;
-	private ArrayList<Aspect> aspects;
+	private ArrayList<AspectLanguageMapping> aspects;
 	
 	// ----------------------------------------------
 	// Constructor
@@ -21,13 +22,13 @@ public class MetaclassAspectMapping {
 	
 	public MetaclassAspectMapping(EClassifier metaclass){
 		this.metaclass = metaclass;
-		this.aspects = new ArrayList<Aspect>();
+		this.aspects = new ArrayList<AspectLanguageMapping>();
 	}
 	
-	public MetaclassAspectMapping(EClassifier metaclass, Aspect aspect){
+	public MetaclassAspectMapping(EClassifier metaclass, Aspect aspect, Language language){
 		this.metaclass = metaclass;
-		this.aspects = new ArrayList<Aspect>();
-		this.aspects.add(aspect);
+		this.aspects = new ArrayList<AspectLanguageMapping>();
+		this.aspects.add(new AspectLanguageMapping(aspect, language));
 	}
 	
 	// ----------------------------------------------
@@ -42,11 +43,11 @@ public class MetaclassAspectMapping {
 		this.metaclass = metaclass;
 	}
 	
-	public ArrayList<Aspect> getAspects() {
+	public ArrayList<AspectLanguageMapping> getAspects() {
 		return aspects;
 	}
 	
-	public void setAspects(ArrayList<Aspect> aspects) {
+	public void setAspects(ArrayList<AspectLanguageMapping> aspects) {
 		this.aspects = aspects;
 	}
 	

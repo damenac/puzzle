@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_bDIm8CdxEeKsSJflfBDxuw" name="tdt4250" nsURI="http://tdt4250/1.0" nsPrefix="tdt4250">
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_bDIm8SdxEeKsSJflfBDxuw" name="Course">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDJOACdxEeKsSJflfBDxuw" name="ID">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDJ1ECdxEeKsSJflfBDxuw" name="credit">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDKcICdxEeKsSJflfBDxuw" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDLDMCdxEeKsSJflfBDxuw" name="has" upperBound="-1" eType="_bDNfcCdxEeKsSJflfBDxuw" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDLqQCdxEeKsSJflfBDxuw" name="isAttended" upperBound="-1" eType="_bDTmECdxEeKsSJflfBDxuw" eOpposite="_bDUNICdxEeKsSJflfBDxuw"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDMRUCdxEeKsSJflfBDxuw" name="isCoordinated" upperBound="-1" eType="_bDYekCdxEeKsSJflfBDxuw" eOpposite="_bDZFoidxEeKsSJflfBDxuw"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_bDNfcCdxEeKsSJflfBDxuw" name="Assignment">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDOGgCdxEeKsSJflfBDxuw" name="ID">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDOtkCdxEeKsSJflfBDxuw" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDPUoCdxEeKsSJflfBDxuw" name="content">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDQiwCdxEeKsSJflfBDxuw" name="mandatory">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDRJ0CdxEeKsSJflfBDxuw" name="isSolved" upperBound="-1" eType="_bDSX8CdxEeKsSJflfBDxuw"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_bDSX8CdxEeKsSJflfBDxuw" name="Answer">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDS_ACdxEeKsSJflfBDxuw" name="content">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_bDTmECdxEeKsSJflfBDxuw" name="Student" eSuperTypes="_bDXQcCdxEeKsSJflfBDxuw">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDUNICdxEeKsSJflfBDxuw" name="attends" upperBound="-1" eType="_bDIm8SdxEeKsSJflfBDxuw" eOpposite="_bDLqQCdxEeKsSJflfBDxuw"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDU0MCdxEeKsSJflfBDxuw" name="submit" upperBound="-1" eType="_bDSX8CdxEeKsSJflfBDxuw"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" xmi:id="_bDVbQCdxEeKsSJflfBDxuw" name="ResponsibilityRole">
+    <eLiterals xmi:id="_bDWCUCdxEeKsSJflfBDxuw" name="LECTURER"/>
+    <eLiterals xmi:id="_bDWCUSdxEeKsSJflfBDxuw" name="COORDINATOR" value="1"/>
+    <eLiterals xmi:id="_bDWpYCdxEeKsSJflfBDxuw" name="ASSISTANT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_bDXQcCdxEeKsSJflfBDxuw" name="Person">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDXQcSdxEeKsSJflfBDxuw" name="ID">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDX3gCdxEeKsSJflfBDxuw" name="name">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_bDYekCdxEeKsSJflfBDxuw" name="Teacher" eSuperTypes="_bDXQcCdxEeKsSJflfBDxuw">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" xmi:id="_bDZFoCdxEeKsSJflfBDxuw" name="role" eType="_bDVbQCdxEeKsSJflfBDxuw"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDZFoidxEeKsSJflfBDxuw" name="coordinates" upperBound="-1" eType="_bDIm8SdxEeKsSJflfBDxuw" eOpposite="_bDMRUCdxEeKsSJflfBDxuw"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" xmi:id="_bDZssCdxEeKsSJflfBDxuw" name="Root">
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDaTwCdxEeKsSJflfBDxuw" name="containsA" upperBound="-1" eType="_bDIm8SdxEeKsSJflfBDxuw"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" xmi:id="_bDaTwidxEeKsSJflfBDxuw" name="containsB" upperBound="-1" eType="_bDXQcCdxEeKsSJflfBDxuw"/>
+  </eClassifiers>
+</ecore:EPackage>

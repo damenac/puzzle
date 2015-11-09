@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="feature"
+    nsURI="www.chw-thesis-WS09.de/feature" nsPrefix="f">
+  <eSubpackages name="statics" nsURI="www.chw-thesis-WS09.de/root/statics" nsPrefix="s">
+    <eClassifiers xsi:type="ecore:EClass" name="DPackage" eSuperTypes="#//common/IComponent #//common/CodeElement #//common/IInfoElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+          eType="#//common/IComponent"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="level" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DClass" eSuperTypes="#//common/IComponent #//common/CodeElement #//common/IInfoElement #//metrics/NOMMetric #//metrics/NOAMetric">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+          eType="#//dynamics/DClassInstance" eOpposite="#//dynamics/DClassInstance/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
+          eType="#//statics/DAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="methods" upperBound="-1"
+          eType="#//statics/DMethod" eOpposite="#//statics/DMethod/parent"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DMethod" eSuperTypes="#//common/CodeElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="instances" upperBound="-1"
+          eType="#//dynamics/DMethodInstance" eOpposite="#//dynamics/DMethodInstance/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" upperBound="-1"
+          eType="#//statics/DAttribute"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//statics/DClass"
+          eOpposite="#//statics/DClass/methods"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DAttribute" eSuperTypes="#//common/CodeElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="dynamics" nsURI="www.chw-thesis-WS09.de/root/dynamics" nsPrefix="d">
+    <eClassifiers xsi:type="ecore:EEnum" name="InstanceAction">
+      <eLiterals name="CREATE"/>
+      <eLiterals name="DESTROY" value="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DClassInstance" eSuperTypes="#//common/ITraceElement #//common/IInfoElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="action" eType="#//dynamics/InstanceAction"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="objectID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+          eType="#//statics/DClass" eOpposite="#//statics/DClass/instances"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DMethodInstance" eSuperTypes="#//metrics/PercentDurationMetric #//metrics/AbsoluteDurationMetric #//common/ITraceElement #//common/IInfoElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="calleeId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELongObject"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ess" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//statics/DMethod"
+          eOpposite="#//statics/DMethod/instances"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="callerClassInstance"
+          eType="#//dynamics/DClassInstance"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="calleeClassInstance"
+          eType="#//dynamics/DClassInstance"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="common" nsURI="www.chw-thesis-WS09.de/root/common" nsPrefix="c">
+    <eClassifiers xsi:type="ecore:EClass" name="ITraceElement" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="tin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+          defaultValueLiteral="-1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="traceId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="eoi" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IComponent" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IInfoElement" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="metaphorObject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="contents" eType="#//common/StringArray"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="rowDescriptions" eType="#//common/StringArray"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CodeElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="line" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="StringArray" instanceClassName="java.lang.String[]"/>
+  </eSubpackages>
+  <eSubpackages name="metrics" nsURI="www.chw-thesis-WS09.de/root/metrics" nsPrefix="m">
+    <eClassifiers xsi:type="ecore:EClass" name="IStaticsMetric" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IDynamicsMetric" abstract="true" interface="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="NOAMetric" abstract="true" interface="true"
+        eSuperTypes="#//metrics/IStaticsMetric">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="noa" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NOMMetric" abstract="true" interface="true"
+        eSuperTypes="#//metrics/IStaticsMetric">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PercentDurationMetric" eSuperTypes="#//metrics/IDynamicsMetric">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="durPercent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbsoluteDurationMetric" eSuperTypes="#//metrics/IDynamicsMetric">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="durAbsolute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="logging"
+    nsURI="net.sourceforge.tagsea.logging" nsPrefix="net.sourceforge.tagsea.logging">
+  <eClassifiers xsi:type="ecore:EClass" name="ModelLog" eSuperTypes="#//Log">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//Event" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WaypointEvent" abstract="true" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="waypoint" lowerBound="1"
+        eType="#//WaypointState" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogFile">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="modelLog" eType="#//ModelLog"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uiEvents" upperBound="-1"
+        eType="#//UILog" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="currentWaypoints" eType="#//CurrentWaypoints"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WaypointState">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="waypointType" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" lowerBound="1"
+        upperBound="-1" eType="#//WaypointAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tagNames" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UILog" eSuperTypes="#//Log">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="events" upperBound="-1"
+        eType="#//UIEvent" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentWaypoints" eSuperTypes="#//Log">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="waypoints" upperBound="-1"
+        eType="#//WaypointState" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WaypointAttribute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NewWaypointEvent" eSuperTypes="#//WaypointEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeletedWaypointEvent" eSuperTypes="#//WaypointEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WaypointChangeEvent" eSuperTypes="#//WaypointEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newAttributes" upperBound="-1"
+        eType="#//WaypointAttribute" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldAttributes" upperBound="-1"
+        eType="#//WaypointAttribute" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagNameChangeEvent" eSuperTypes="#//TagEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WaypointTagNameChangeEvent" eSuperTypes="#//WaypointEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newTagName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldTagName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WaypointTagsChanged" eSuperTypes="#//WaypointEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldTags" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TagWaypointsChangedEvent" eSuperTypes="#//TagEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="oldWaypoints" upperBound="-1"
+        eType="#//WaypointState" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="newWaypoints" upperBound="-1"
+        eType="#//WaypointState" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NewTagEvent" eSuperTypes="#//TagEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DeletedTagEvent" eSuperTypes="#//TagEvent"/>
+  <eClassifiers xsi:type="ecore:EClass" name="JobEvent" eSuperTypes="#//Event">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" lowerBound="1" eType="#//JobState"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="JobState">
+    <eLiterals name="created"/>
+    <eLiterals name="queued"/>
+    <eLiterals name="waiting"/>
+    <eLiterals name="running"/>
+    <eLiterals name="quiting"/>
+    <eLiterals name="done"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Log" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="0"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uname" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="anonymous"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="country" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NavigateEvent" eSuperTypes="#//UIEvent">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="waypoint" lowerBound="1"
+        eType="#//WaypointState" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ViewEvent" eSuperTypes="#//UIEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ViewEventType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="viewid" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filterString" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ViewEventType">
+    <eLiterals name="Opened"/>
+    <eLiterals name="Top"/>
+    <eLiterals name="activated"/>
+    <eLiterals name="deactivated"/>
+    <eLiterals name="hidden"/>
+    <eLiterals name="closed"/>
+    <eLiterals name="filtered"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FiltersChangedEvent" eSuperTypes="#//UIEvent">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="oldFilters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="newFilters" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UIEvent" eSuperTypes="#//Event"/>
+</ecore:EPackage>

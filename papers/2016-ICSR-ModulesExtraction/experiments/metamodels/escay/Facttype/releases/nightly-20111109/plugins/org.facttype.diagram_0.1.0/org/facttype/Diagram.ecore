@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="diagram"
+    nsURI="http://www.facttype.org/Diagram" nsPrefix="diagram">
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Type"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="factTypeDiagrams" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//FactTypeDiagram"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FactTypeDiagram">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Description"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sentenceTemplates" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//SentenceTemplate"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Column"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="alternativeKeys" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AlternativeKey"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rules" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Maximum">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Minimum">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SentenceTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Content"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contentEnd" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Content">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Column"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Column">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="concept" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primaryKey" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="notEmpty" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Value"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlternativeKey">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Column"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Description"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Column"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SubsetRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="super" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//SubsetRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EqualityRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="super" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//EqualityRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PartialEqualityRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="super" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="excluding" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//PartialEqualityRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OccurenceFrequencyRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="minimum" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Minimum"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="maximum" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//Maximum"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NoOverlappingRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExclusionRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//ExclusionRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeneralConstraint" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//DerivationRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DerivationRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" unique="false"
+        upperBound="-1" eType="ecore:EClass platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//EventRule"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ValueRule" eSuperTypes="platform:/resource/org.facttype.diagram/src-gen/org/facttype/Diagram.ecore#//AbstractRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

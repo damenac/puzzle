@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="core" nsURI="http://www.wazaabi.org/core" nsPrefix="wc">
+  <eClassifiers xsi:type="ecore:EEnum" name="Alignment">
+    <eLiterals name="LEAD" value="16384"/>
+    <eLiterals name="CENTER" value="16777216"/>
+    <eLiterals name="TRAIL" value="131072"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Orientation">
+    <eLiterals name="HORIZONTAL" value="256"/>
+    <eLiterals name="VERTICAL" value="512"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Direction">
+    <eLiterals name="LEFT_TO_RIGHT" value="33554432" literal="LEFT_TO_RIGHT"/>
+    <eLiterals name="RIGHT_TO_LEFT" value="67108864" literal="RIGHT_TO_LEFT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Position">
+    <eLiterals name="TOP" value="128" literal="TOP"/>
+    <eLiterals name="BOTTOM" value="1024" literal="BOTTOM"/>
+  </eClassifiers>
+  <eSubpackages name="widgets" nsURI="http://www.wazaabi.org/core/widgets" nsPrefix="wcw">
+    <eClassifiers xsi:type="ecore:EClass" name="Widget" abstract="true" eSuperTypes="#//annotations/AnnotatedElement ../../org.eclipse.wazaabi.mm.edp/model/EDP.ecore#//EventDispatcher #//styles/StyledElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ProgressBar" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="orientation"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=OrientationRule"/>
+        <details key="default" value="value=HORIZONTAL"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="maximum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=100"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="minimum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=0"/>
+      </eAnnotations>
+      <eOperations name="setMaximum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;maximum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(maximum);"/>
+        </eAnnotations>
+        <eParameters name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getMaximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 100;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setMinimum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;minimum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(minimum);"/>
+        </eAnnotations>
+        <eParameters name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getMinimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 0;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Container" eSuperTypes="#//widgets/AbstractComponent">
+      <eOperations name="getElementsById" upperBound="-1" eType="#//widgets/AbstractComponent">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="&#x9;&#x9;EList&lt;AbstractComponent> widgets = new org.eclipse.emf.common.util.BasicEList&lt;AbstractComponent>();&#xD;&#xA;&#x9;&#x9;for(AbstractComponent child : this.getChildren()) {&#xD;&#xA;&#x9;&#x9;  &#x9;if (id.equals(child.getId()))&#xD;&#xA;&#x9;&#x9;   &#x9;&#x9;widgets.add(child);&#xD;&#xA;&#x9;&#x9;   &#x9;else if (child instanceof Container) {&#xD;&#xA;&#x9;&#x9;    &#x9;widgets.addAll(((Container) child).getElementsById(id));&#xD;&#xA;&#x9;&#x9;    }&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;return widgets;"/>
+        </eAnnotations>
+        <eParameters name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+          eType="#//widgets/AbstractComponent" containment="true">
+        <eAnnotations source="http://www.wazaabi.org/Annotation">
+          <details key="doc" value="Children about .... .... "/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TextComponent" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="horizontal-scrollbar"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=ScrollBarRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="vertical-scrollbar"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=ScrollBarRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="multi-line"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=BooleanRule"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractComponent" abstract="true"
+        eSuperTypes="#//widgets/Widget">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="tooltip-text"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=StringRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="background-color"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=ColorRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="foreground-color"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=ColorRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="font"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=FontRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="direction"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=DirectionRule"/>
+        <details key="default" value="value=LEFT_TO_RIGHT"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="enabled"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=BooleanRule"/>
+        <details key="default" value="value=true"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="error-text"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=StringRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="visible"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=BooleanRule"/>
+        <details key="default" value="value=true"/>
+      </eAnnotations>
+      <eOperations name="getDirection" eType="#//Direction">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.DirectionRule rule = (org.eclipse.wazaabi.mm.core.styles.DirectionRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;direction&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.DIRECTION_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setDirection">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.DirectionRule rule = (org.eclipse.wazaabi.mm.core.styles.DirectionRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;direction&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.DIRECTION_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createDirectionRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;direction&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(direction);"/>
+        </eAnnotations>
+        <eParameters name="direction" eType="#//Direction"/>
+      </eOperations>
+      <eOperations name="getToolTipText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;tooltip-text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setToolTipText">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;tooltip-text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createStringRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;tooltip-text&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(text);"/>
+        </eAnnotations>
+        <eParameters name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getErrorText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;error-text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setErrorText">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (text == null || &quot;&quot;.equals(text))&#xD;&#xA;&#x9;removeFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&#x9;&quot;error-text&quot;, org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE); //$NON-NLS-1$&#xD;&#xA;else {&#xD;&#xA;&#x9;org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&#x9;&quot;error-text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;&#x9;if (rule == null) {&#xD;&#xA;&#x9;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.createStringRule();&#xD;&#xA;&#x9;&#x9;rule.setPropertyName(&quot;error-text&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;getStyleRules().add(rule);&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;rule.setValue(text);&#xD;&#xA;}"/>
+        </eAnnotations>
+        <eParameters name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="setEnabled">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (enabled)&#xD;&#xA;&#x9;removeFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&#x9;&quot;enabled&quot;, org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.BOOLEAN_RULE); //$NON-NLS-1$&#xD;&#xA;else {&#xD;&#xA;&#x9;org.eclipse.wazaabi.mm.core.styles.BooleanRule rule = (org.eclipse.wazaabi.mm.core.styles.BooleanRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&#x9;&quot;enabled&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.BOOLEAN_RULE);&#xD;&#xA;&#x9;if (rule == null) {&#xD;&#xA;&#x9;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.createBooleanRule();&#xD;&#xA;&#x9;&#x9;rule.setPropertyName(&quot;enabled&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;getStyleRules().add(rule);&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;rule.setValue(false);&#xD;&#xA;}"/>
+        </eAnnotations>
+        <eParameters name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eOperations>
+      <eOperations name="getTabIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="&#x9;org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&#x9;&quot;tab-index&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;&#x9;if (rule != null)&#xA;&#x9;&#x9;return rule.getValue();&#xA;&#x9;return -1;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setTabIndex">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;tab-index&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule == null) {&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xA;&#x9;rule.setPropertyName(&quot;tab-index&quot;); //$NON-NLS-1$&#xA;&#x9;getStyleRules().add(rule);&#xA;}&#xA;rule.setValue(tabIndex);"/>
+        </eAnnotations>
+        <eParameters name="tabIndex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="focus" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractButton" abstract="true" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="text"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=StringRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="image"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=ImageRule"/>
+      </eAnnotations>
+      <eOperations name="getImage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.ImageRule rule = (org.eclipse.wazaabi.mm.core.styles.ImageRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;image&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.IMAGE_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setImage">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.ImageRule rule = (org.eclipse.wazaabi.mm.core.styles.ImageRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;image&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.IMAGE_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createImageRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;image&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(imageUri);"/>
+        </eAnnotations>
+        <eParameters name="imageUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="setText">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createStringRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;text&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(text);"/>
+        </eAnnotations>
+        <eParameters name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PushButton" eSuperTypes="#//widgets/AbstractButton"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Label" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="text"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=StringRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="image"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=ImageRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="lookandfeel"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=HyperlinkRule"/>
+      </eAnnotations>
+      <eOperations name="getImage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.ImageRule rule = (org.eclipse.wazaabi.mm.core.styles.ImageRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;image&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.IMAGE_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getText" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setImage">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.ImageRule rule = (org.eclipse.wazaabi.mm.core.styles.ImageRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;image&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.IMAGE_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createImageRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;image&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(imageUri);"/>
+        </eAnnotations>
+        <eParameters name="imageUri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="setText">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;text&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createStringRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;text&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(text);"/>
+        </eAnnotations>
+        <eParameters name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RadioButton" eSuperTypes="#//widgets/AbstractButton">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CheckBox" eSuperTypes="#//widgets/AbstractButton">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Slider" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="orientation"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=OrientationRule"/>
+        <details key="default" value="value=HORIZONTAL"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="maximum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=100"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="minimum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="increment"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=1"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="pageIncrement"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=10"/>
+      </eAnnotations>
+      <eOperations name="getOrientation" eType="#//Orientation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.OrientationRule rule = (org.eclipse.wazaabi.mm.core.styles.OrientationRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;orientation&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.ORIENTATION_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setOrientation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.OrientationRule rule = (org.eclipse.wazaabi.mm.core.styles.OrientationRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;orientation&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.ORIENTATION_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createOrientationRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;orientation&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(orientation);"/>
+        </eAnnotations>
+        <eParameters name="orientation" eType="#//Orientation"/>
+      </eOperations>
+      <eOperations name="setMaximum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;maximum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(maximum);"/>
+        </eAnnotations>
+        <eParameters name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getMaximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 100;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setMinimum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;minimum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(minimum);"/>
+        </eAnnotations>
+        <eParameters name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getMinimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 0;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getPageIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;pageIncrement&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule != null)&#xA;&#x9;return rule.getValue();&#xA;return 10;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setPageIncrement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;pageIncrement&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule == null) {&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xA;&#x9;rule.setPropertyName(&quot;pageIncrement&quot;); //$NON-NLS-1$&#xA;&#x9;getStyleRules().add(rule);&#xA;}&#xA;rule.setValue(pageIncrement);"/>
+        </eAnnotations>
+        <eParameters name="pageIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;pageIncrement&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule != null)&#xA;&#x9;return rule.getValue();&#xA;return 10;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setIncrement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;increment&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule == null) {&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xA;&#x9;rule.setPropertyName(&quot;increment&quot;); //$NON-NLS-1$&#xA;&#x9;getStyleRules().add(rule);&#xA;}&#xA;rule.setValue(increment);"/>
+        </eAnnotations>
+        <eParameters name="increment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Spinner" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="increment"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=1"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="minimum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="maximum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=100"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="digits"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="textlimit"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=100"/>
+      </eAnnotations>
+      <eOperations name="setMaximum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;maximum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(maximum);"/>
+        </eAnnotations>
+        <eParameters name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getMaximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 100;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setMinimum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;minimum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(minimum);"/>
+        </eAnnotations>
+        <eParameters name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getMinimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 0;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setIncrement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;increment&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;increment&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(increment);"/>
+        </eAnnotations>
+        <eParameters name="increment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;increment&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 1;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setDigits">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;digits&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;digits&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(digits);"/>
+        </eAnnotations>
+        <eParameters name="digits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getDigits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;digits&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 0;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setTextLimit">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;textlimit&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;textlimit&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(textlimit);"/>
+        </eAnnotations>
+        <eParameters name="textlimit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getTextLimit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;textlimit&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 100;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Scale" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="orientation"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=OrientationRule"/>
+        <details key="default" value="value=HORIZONTAL"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="maximum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=100"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="minimum"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=0"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="increment"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=1"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="pageIncrement"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=IntRule"/>
+        <details key="default" value="value=10"/>
+      </eAnnotations>
+      <eOperations name="getOrientation" eType="#//Orientation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.OrientationRule rule = (org.eclipse.wazaabi.mm.core.styles.OrientationRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;orientation&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.ORIENTATION_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setOrientation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.OrientationRule rule = (org.eclipse.wazaabi.mm.core.styles.OrientationRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;orientation&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.ORIENTATION_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createOrientationRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;orientation&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(orientation);"/>
+        </eAnnotations>
+        <eParameters name="orientation" eType="#//Orientation"/>
+      </eOperations>
+      <eOperations name="getMaximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 100;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setMaximum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;maximum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;maximum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(maximum);"/>
+        </eAnnotations>
+        <eParameters name="maximum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getMinimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule != null)&#xD;&#xA;&#x9;return rule.getValue();&#xD;&#xA;return 0;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setMinimum">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xD;&#xA;&#x9;&#x9;&quot;minimum&quot;, //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xD;&#xA;if (rule == null) {&#xD;&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xD;&#xA;&#x9;rule.setPropertyName(&quot;minimum&quot;); //$NON-NLS-1$&#xD;&#xA;&#x9;getStyleRules().add(rule);&#xD;&#xA;}&#xD;&#xA;rule.setValue(minimum);"/>
+        </eAnnotations>
+        <eParameters name="minimum" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;pageIncrement&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule != null)&#xA;&#x9;return rule.getValue();&#xA;return 10;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setIncrement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;increment&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule == null) {&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xA;&#x9;rule.setPropertyName(&quot;increment&quot;); //$NON-NLS-1$&#xA;&#x9;getStyleRules().add(rule);&#xA;}&#xA;rule.setValue(increment);"/>
+        </eAnnotations>
+        <eParameters name="increment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eOperations name="getPageIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;pageIncrement&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule != null)&#xA;&#x9;return rule.getValue();&#xA;return 10;"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="setPageIncrement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.IntRule rule = (org.eclipse.wazaabi.mm.core.styles.IntRule) getFirstStyleRule(&#xA;&#x9;&#x9;&quot;pageIncrement&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.INT_RULE);&#xA;if (rule == null) {&#xA;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xA;&#x9;&#x9;&#x9;.createIntRule();&#xA;&#x9;rule.setPropertyName(&quot;pageIncrement&quot;); //$NON-NLS-1$&#xA;&#x9;getStyleRules().add(rule);&#xA;}&#xA;rule.setValue(pageIncrement);"/>
+        </eAnnotations>
+        <eParameters name="pageIncrement" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="lookandfeel"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles/collections&#xD;&#xA;EClass=LookAndFeelRule"/>
+        <details key="default" value="value=TABLE"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="allow-row-selection"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=BooleanRule"/>
+        <details key="default" value="value=true"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="show-horizontal-lines"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=BooleanRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="header-visible"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=BooleanRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="checkable"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=BooleanRule"/>
+        <details key="default" value="value=false"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          transient="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="selection" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          transient="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkedElements" upperBound="-1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"
+          transient="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MenuComponent" eSuperTypes="#//widgets/Widget">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="direction"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=DirectionRule"/>
+        <details key="default" value="value=LEFT_TO_RIGHT"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="image"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=ImageRule"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="type"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=StringRule"/>
+        <details key="default" value="value=push"/>
+      </eAnnotations>
+      <eOperations name="setType">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xA;&#x9;&#x9;&#x9;&#x9;&quot;type&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xA;&#x9;&#x9;if (rule == null) {&#xA;&#x9;&#x9;&#x9;rule = org.eclipse.wazaabi.mm.core.styles.CoreStylesFactory.eINSTANCE&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.createStringRule();&#xA;&#x9;&#x9;&#x9;rule.setPropertyName(&quot;type&quot;); //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;getStyleRules().add(rule);&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;rule.setValue(text);"/>
+        </eAnnotations>
+        <eParameters name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="getType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="org.eclipse.wazaabi.mm.core.styles.StringRule rule = (org.eclipse.wazaabi.mm.core.styles.StringRule) getFirstStyleRule(&#xA;&#x9;&#x9;&#x9;&quot;type&quot;, //$NON-NLS-1$&#xA;&#x9;&#x9;&#x9;org.eclipse.wazaabi.mm.core.styles.CoreStylesPackage.Literals.STRING_RULE);&#xA;&#x9;&#x9;if (rule != null)&#xA;&#x9;&#x9;&#x9;return rule.getValue();&#xA;&#x9;return null;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
+          eType="#//widgets/MenuComponent" containment="true">
+        <eAnnotations source="http://www.wazaabi.org/Annotation">
+          <details key="doc" value="Children about .... .... "/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="enabled" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Separator" eSuperTypes="#//widgets/AbstractComponent">
+      <eAnnotations source="http://www.wazaabi.org/style/property/definition">
+        <details key="name" value="orientation"/>
+        <details key="type" value="package=http://www.wazaabi.org/core/styles&#xD;&#xA;EClass=OrientationRule"/>
+        <details key="default" value="value=HORIZONTAL"/>
+      </eAnnotations>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="styles" nsURI="http://www.wazaabi.org/core/styles" nsPrefix="wcs">
+    <eClassifiers xsi:type="ecore:EClass" name="StyledElement" abstract="true">
+      <eOperations name="getFirstStyleRule" eType="#//styles/StyleRule">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (propertyName == null || &quot;&quot;.equals(propertyName)) //$NON-NLS-1$&#xD;&#xA;&#x9;return null;&#xD;&#xA;for (StyleRule rule : getStyleRules())&#xD;&#xA;&#x9;if (propertyName.equals(rule.getPropertyName())&#xD;&#xA;&#x9;&#x9;&#x9;&amp;&amp; (eClass == null || (eClass != null &amp;&amp; eClass == rule&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;.eClass())))&#xD;&#xA;&#x9;&#x9;return rule;&#xD;&#xA;return null;"/>
+        </eAnnotations>
+        <eParameters name="propertyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="eClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </eOperations>
+      <eOperations name="removeFirstStyleRule">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (propertyName == null || &quot;&quot;.equals(propertyName)) //$NON-NLS-1$&#xD;&#xA;&#x9;return;&#xD;&#xA;StyleRule toRemove = null;&#xD;&#xA;for (StyleRule rule : getStyleRules())&#xD;&#xA;&#x9;if (propertyName.equals(rule.getPropertyName())&#xD;&#xA;&#x9;&#x9;&#x9;&amp;&amp; ((eClass != null &amp;&amp; eClass == rule.eClass()) || eClass == null)) {&#xD;&#xA;&#x9;&#x9;toRemove = rule;&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;if (toRemove != null)&#xD;&#xA;&#x9;getStyleRules().remove(toRemove);"/>
+        </eAnnotations>
+        <eParameters name="propertyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="eClass" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EClass"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="styleRules" upperBound="-1"
+          eType="#//styles/StyleRule" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StyleRule" abstract="true" interface="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="propertyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ColorRule" eSuperTypes="#//styles/StyleRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="red" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="green" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="blue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StringRule" eSuperTypes="#//styles/StyleRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrientationRule" eSuperTypes="#//styles/StyleRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//Orientation"
+          defaultValueLiteral="HORIZONTAL"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BooleanRule" eSuperTypes="#//styles/StyleRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntRule" eSuperTypes="#//styles/StyleRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BlankRule" abstract="true" eSuperTypes="#//styles/StyleRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FontRule" eSuperTypes="#//styles/StyleRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+          unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="italic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="bold" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          unsettable="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LayoutRule" abstract="true" eSuperTypes="#//styles/StyleRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StackLayoutRule" eSuperTypes="#//styles/LayoutRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginHeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="marginWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="top" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LayoutDataRule" abstract="true" eSuperTypes="#//styles/StyleRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DirectionRule" eSuperTypes="#//styles/StyleRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//Direction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Marker" eSuperTypes="#//styles/StyleRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ImageRule" eSuperTypes="#//styles/StringRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TabbedLayoutRule" eSuperTypes="#//styles/StackLayoutRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximizeVisible" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimizeVisible" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="#//Position"
+          defaultValueLiteral="TOP"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TabRule" eSuperTypes="#//styles/LayoutDataRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="closable" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          unsettable="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BarLayoutRule" eSuperTypes="#//styles/LayoutRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="draggable" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          unsettable="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpandRule" eSuperTypes="#//styles/LayoutDataRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="expanded" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="false"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="image" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpandLayoutRule" eSuperTypes="#//styles/LayoutRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SashFormLayoutRule" eSuperTypes="#//styles/LayoutRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="orientation" eType="#//Orientation"
+          defaultValueLiteral="VERTICAL"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HyperlinkRule" eSuperTypes="#//styles/LayoutRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SashRule" eSuperTypes="#//styles/LayoutDataRule">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScrollBarRule" eSuperTypes="#//styles/StyleRule"/>
+    <eSubpackages name="collections" nsURI="http://www.wazaabi.org/core/styles/collections"
+        nsPrefix="wcscol">
+      <eClassifiers xsi:type="ecore:EEnum" name="LookAndFeel">
+        <eLiterals name="TABLE"/>
+        <eLiterals name="TREE" value="1"/>
+        <eLiterals name="COMBOBOX" value="2"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="LookAndFeelRule" eSuperTypes="#//styles/StyleRule">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//styles/collections/LookAndFeel"
+            defaultValueLiteral="TABLE"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="AbstractColumnDescriptor" abstract="true"
+          eSuperTypes="#//styles/StyleRule ../../org.eclipse.wazaabi.mm.edp/model/EDP.ecore#//handlers/Parameterized">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="editingSupport" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EReference" name="cellEditor" eType="#//extras/CellEditor"
+            containment="true"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="resizable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+            defaultValueLiteral="false"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="headerAlignment" eType="#//Alignment"
+            defaultValueLiteral="LEAD"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="PathSelector" eSuperTypes="#//styles/StyleRule">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="eClassifierName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="context" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+            defaultValueLiteral="."/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="paths" upperBound="-1"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="DynamicProvider" eSuperTypes="#//styles/StyleRule">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="uri" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ColumnDescriptor" eSuperTypes="#//styles/collections/AbstractColumnDescriptor">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="20"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="WeightedColumnDescriptor" eSuperTypes="#//styles/collections/AbstractColumnDescriptor">
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="weight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="20"/>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumWidth" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+            defaultValueLiteral="20"/>
+      </eClassifiers>
+    </eSubpackages>
+  </eSubpackages>
+  <eSubpackages name="annotations" nsURI="http://www.wazaabi.org/core/annotations"
+      nsPrefix="wca">
+    <eClassifiers xsi:type="ecore:EClass" name="AnnotatedElement" abstract="true"
+        interface="true">
+      <eOperations name="setAnnotation">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="if (source != null &amp;&amp; !&quot;&quot;.equals(source) &amp;&amp; key != null //$NON-NLS-1$&#xD;&#xA;&#x9;&#x9;&amp;&amp; !&quot;&quot;.equals(key)) { //$NON-NLS-1$&#xD;&#xA;&#x9;Annotation annotation = null;&#xD;&#xA;&#x9;for (Annotation _annotation : getAnnotations())&#xD;&#xA;&#x9;&#x9;if (source.equals(_annotation.getSource())) {&#xD;&#xA;&#x9;&#x9;&#x9;annotation = _annotation;&#xD;&#xA;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;if (annotation == null) {&#xD;&#xA;&#x9;&#x9;annotation = org.eclipse.wazaabi.mm.core.annotations.CoreAnnotationsFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.createAnnotation();&#xD;&#xA;&#x9;&#x9;annotation.setSource(source);&#xD;&#xA;&#x9;&#x9;getAnnotations().add(annotation);&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;org.eclipse.wazaabi.mm.core.annotations.AnnotationContent content = null;&#xD;&#xA;&#x9;for (org.eclipse.wazaabi.mm.core.annotations.AnnotationContent _content : annotation.getContents())&#xD;&#xA;&#x9;&#x9;if (key.equals(_content.getKey())) {&#xD;&#xA;&#x9;&#x9;&#x9;content = _content;&#xD;&#xA;&#x9;&#x9;&#x9;break;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;if (content == null) {&#xD;&#xA;&#x9;&#x9;content = org.eclipse.wazaabi.mm.core.annotations.CoreAnnotationsFactory.eINSTANCE&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;.createAnnotationContent();&#xD;&#xA;&#x9;&#x9;annotation.getContents().add(content);&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;content.setKey(key);&#xD;&#xA;&#x9;content.setValue(value);&#xD;&#xA;}"/>
+        </eAnnotations>
+        <eParameters name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="annotations" upperBound="-1"
+          eType="#//annotations/Annotation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Annotation">
+      <eOperations name="getValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eOperations name="setValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+        <eParameters name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        <eParameters name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="source" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+          eType="#//annotations/AnnotationContent" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AnnotationContent">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="handlers" nsURI="http://www.wazaabi.org/core/handlers" nsPrefix="wchdlrs">
+    <eClassifiers xsi:type="ecore:EClass" name="RefreshAction" eSuperTypes="../../org.eclipse.wazaabi.mm.edp/model/EDP.ecore#//handlers/Operation"/>
+  </eSubpackages>
+  <eSubpackages name="extras" nsURI="http://www.wazaabi.org/core/extras" nsPrefix="wce">
+    <eClassifiers xsi:type="ecore:EClass" name="CellEditor" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TextCellEditor" eSuperTypes="#//extras/CellEditor"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CheckboxCellEditor" eSuperTypes="#//extras/CellEditor"/>
+  </eSubpackages>
+</ecore:EPackage>

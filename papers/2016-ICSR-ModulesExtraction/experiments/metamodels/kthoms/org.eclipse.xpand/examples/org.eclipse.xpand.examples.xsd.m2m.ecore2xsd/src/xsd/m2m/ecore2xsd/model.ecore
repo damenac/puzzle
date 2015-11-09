@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="MyWorld"
+    nsURI="http://my.test.ns/mymodel" nsPrefix="pref">
+  <eSubpackages name="Literature">
+    <eClassifiers xsi:type="ecore:EClass" name="Book">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Sellable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Price" eType="#//Finance/Money"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Library">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Books" upperBound="-1"
+          eType="#//Literature/Book"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="Person">
+    <eClassifiers xsi:type="ecore:EClass" name="Person">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Street" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="City" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Books" upperBound="-1"
+          eType="#//Literature/Book"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="BankAccount" eType="#//Finance/Account"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="Finance">
+    <eClassifiers xsi:type="ecore:EDataType" name="Money" instanceClassName="int"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Account">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Money" eType="#//Finance/Money"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Bank">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="Accounts" upperBound="-1"
+          eType="#//Finance/Account"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

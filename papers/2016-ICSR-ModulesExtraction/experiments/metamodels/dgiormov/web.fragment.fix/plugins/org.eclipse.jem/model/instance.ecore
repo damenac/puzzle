@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="instantiation"
+    nsURI="http:///org/eclipse/jem/internal/instantiation.ecore" nsPrefix="org.eclipse.jem.internal.instantiation">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Java Instantiation Package"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="IJavaDataTypeInstance" instanceClassName="org.eclipse.jem.internal.instantiation.base.IJavaDataTypeInstance"
+      abstract="true" interface="true" eSuperTypes="#//IJavaInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IJavaInstance" instanceClassName="org.eclipse.jem.internal.instantiation.base.IJavaInstance"
+      abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IJavaObjectInstance" instanceClassName="org.eclipse.jem.internal.instantiation.base.IJavaObjectInstance"
+      abstract="true" interface="true" eSuperTypes="#//IJavaInstance">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This interface is the instance of an java object in the java model."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JavaAllocation" abstract="true">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is the abstract base class of the allocation class. It is the value of the &quot;allocation&quot; property on a Java Object so that the actual allocation can be controlled. For example, there could be one for just init string, or one for serialized."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InitStringAllocation" eSuperTypes="#//JavaAllocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This is used when the allocation string can be parsed by the remote vm. It uses the allocString."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initString" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the initialization string for this object."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImplicitAllocation" eSuperTypes="#//JavaAllocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This class is for an implicit allocation where the object comes from the feature of another object. It is the live Java value from the remote vm."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="ecore:EClass ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EStructuralFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParseTreeAllocation" eSuperTypes="#//JavaAllocation">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Allocations via Parse Trees."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//PTExpression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTExpression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PTArrayAccess" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Array access. e.g. x[3]. &#xD;&#xA;&#xD;&#xA;Unlike AST, the entire expression of type x[3][4] will be done in one expression rather than having a separate ArrayAccess for each dimension. This is just a simplification. This can only be used if it is a simple array access where it is of the form {expression}[expression][expression]."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="array" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression representing the array to access."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="indexes" lowerBound="1"
+        upperBound="-1" eType="#//PTExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expressions representing the indexes of the access."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTArrayCreation" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Array Creation expression, e.g. new int[3] or new java.langString[][] {{&quot;a&quot;}, {&quot;b&quot;}}"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The fully-qualified type, e.g. int[][] or java.lang.String[], including the number of dimension brackets."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dimensions" upperBound="-1"
+        eType="#//PTExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The list of expressions for the dimensions. You can have [3][4][] but [][33] is invalid. So for each dimension that has an expression, there will be an entry in the list, in the correct order. When you reach the empty dimensions, the list will end too. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="initializer" eType="#//PTArrayInitializer"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the initializer, if any, for this array. E.g. new int[] {2,3}. It is the {2,3}."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTArrayInitializer" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Array initialization expression. This is the entire expression, e.g. {2, 3}, or {{2,3}, 4}. In the second case, the {2,3} will be an ArrayInitializer contained within the expressions list for the top ArrayInitializer."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
+        eType="#//PTExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This isthe list of expressions within the initializer, e.g. {2, 3}, or {{2,3}, 4}. In the first case it will be two NumberLiterals. In the second case, the {2,3} will be an ArrayInitializer, followed by a NumberLiteral."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTBooleanLiteral" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a primitive boolean literal, i.e. true or false directly in the code."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="booleanValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value of the literal."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTCastExpression" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Cast expression, e.g. (short) 10"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the fully-qualified type of the cast, e.g. int or java.lang.String"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression being casted."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTCharacterLiteral" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a primitive character expression, e.g. 'a' or '\r'."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapedValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the escaped character. In other words the literal exactly as it is in the java file. E.g. 'a' or '\r'. Including the surrounding single quotes themselves."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="charValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"
+        transient="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The actual primitive character without the quotes. Escape are evaluated and turned into their character value. This is a transient field. If not set when created when queried it will create it. Typically it will be set when created from an AST node since the node already has evaluated it."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTClassInstanceCreation" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Class instance creation expression. E.g. new String(&quot;a&quot;)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the type of the class. E.g. java.lang.String. This should be fully-qualified for allocation purposes. It should also be in reflection format, i.e. if X is an inner class of j.Y, then the type here should be &quot;j.Y$X&quot;. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//PTExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The arguments to the constructor."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTConditionalExpression" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The test Expresson, e.g. (x=3) ? 1 : 2"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The condition expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="true" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The true expression"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="false" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The false expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTFieldAccess" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Access a field expression, e.g. java.awt.Color.red"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression representing the object that the field is in, e.g. java.awt.Color."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="field" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the field being accessed, e.g. red."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTInfixExpression" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An expression with an operator that has two operands, e.g. 3 + 4."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="leftOperand" eType="#//PTExpression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//PTInfixOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The operator, e.g. +"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rightOperand" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The right expression. i.e. 4 of &quot;3 + 4&quot;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="extendedOperands" upperBound="-1"
+        eType="#//PTExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Used when there are a series of infix operations of the same operator, e.g. 1 + 2 + 3 + 4. 1 and 2 will go into left and right, while {3, 4} will go into the extended operands. "/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PTInfixOperator">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Enumerator for the operator on an InfixExpression."/>
+    </eAnnotations>
+    <eLiterals name="TIMES">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="* operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="DIVIDE" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="/ operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="REMAINDER" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="% operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="PLUS" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="+ operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MINUS" value="4">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="- operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LEFT_SHIFT" value="5">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;&lt; operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RIGHT_SHIFT_SIGNED" value="6">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=">> operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="RIGHT_SHIFT_UNSIGNED" value="7">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=">>> operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LESS" value="8">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;  operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="GREATER" value="9">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="> operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="LESS_EQUALS" value="10">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&lt;= operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="GREATER_EQUALS" value="11">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value=">= operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="EQUALS" value="12">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="== operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="NOT_EQUALS" value="13">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="!= operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="XOR" value="14">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="^ operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="AND" value="15">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&amp; operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="OR" value="16">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="|  operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CONDITIONAL_AND" value="17">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="&amp;&amp; operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="CONDITIONAL_OR" value="18">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="|| operator"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTInstanceof" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Instanceof expression, e.g. x instanceof java.lang.String"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The value to test, e.g. x in x instanceof java.lang.String"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of the instance test, e.g. java.lang.String. It must be fully-qualified. If it is an inner class, it needs to be in reflection format, i.e. Y is inner class of j.X, then a reference to Y must be j.X$Y."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTMethodInvocation" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="MethodInvocation expression, e.g. x.getY(3)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="receiver" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Who the method is invoked against. This may be not set, which means &quot;this&quot;. It may also be a Name, which would mean a class like &quot;java.lang.String&quot;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name of the method being invoked."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" upperBound="-1"
+        eType="#//PTExpression" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The list of arguments, if any, to the method."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTName" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a name. This can happen for the receiver of a method invocation, e.g. x.getY() or java.lang.String.valueOf(10). In these cases you would have a name of &quot;x&quot; or &quot;java.lang.String&quot;."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The name, which can be a type or a variable. If it is a type, then  it must be fully-qualified. If it is an inner class, it needs to be in reflection format, i.e. Y is inner class of j.X, then a reference to Y must be j.X$Y."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTNullLiteral" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents the expression &quot;null&quot;"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTNumberLiteral" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represent a number primitive literal, e.g. 10. One optimization that will be performed is that if an expression is of the form +number or -number, it will be converted from a PrefixExpression with a NumberLiteral to just a NumberLiteral. This will simplify the model."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="token" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The token value, e.g. 10, 10d, or -10.75"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTParenthesizedExpression" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An expression within parenthesis, e.g. (x+3)"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression wrapped by the parenthesis, e.g. (x+3) then the expression is &quot;x+3&quot;"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTPrefixExpression" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="A one operand operator, where the operator comes before the operand, e.g. - (x+3). In AST, even -3 is modeled as a PrefixExpression of operator &quot;-&quot; and expression of NumberLiteral(3). But we optimize this away and just use a NumberLiteral(-3) directly instead."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="#//PTPrefixOperator">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The operator of this expression."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//PTExpression"
+        containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The expression that the operator is applied to."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PTPrefixOperator">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="The prefix expression operator. We are not modeling ++ and --."/>
+    </eAnnotations>
+    <eLiterals name="PLUS">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="+ operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="MINUS" value="1">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="- operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="COMPLEMENT" value="2">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="~ operator"/>
+      </eAnnotations>
+    </eLiterals>
+    <eLiterals name="NOT" value="3">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="! operator"/>
+      </eAnnotations>
+    </eLiterals>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTStringLiteral" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Representation of a string literal, e.g. &quot;asdf&quot;."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="escapedValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the escaped string. In other words the literal exactly as it is in the java file. E.g. &quot;ab&quot; or &quot;c\r&quot;. Including the surrounding quotes themselves."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="literalValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The actual string without the quotes. Escape are evaluated and turned into their character value. This is a transient field. If not set when created when queried it will create it. Typically it will be set when created from an AST node since the node already has evaluated it."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTThisLiteral" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Represents &quot;this&quot;, e.g. this.getX() will be a MethodInvocation with the receiver being a ThisLiteral. We can't handle the format XYZ.this because that is for inner classes and we don't support that right now."/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTTypeLiteral" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This represents a literal of the form j.XYZ.class. For instance in a method invocation x.getX(jXYZ.class) the argument will be a TypeLiteral."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The type of the literal.  It must be fully-qualified. If it is an inner class, it needs to be in reflection format, i.e. Y is inner class of j.X, then a reference to Y must be j.X$Y."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTInvalidExpression" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This is used when we have some expression we just can't evaluate for our purposes. It allows us to tell the evaluation what is actually wrong. It should be placed as the root expression to prevent processing much of the tree and then finally fail."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A message as to why it is invalid."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTInstanceReference" eSuperTypes="#//PTExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+        eType="#//IJavaInstance"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PTAnonymousClassDeclaration" eSuperTypes="#//PTExpression">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="An anonymous class declaration. Currently we only store the &#xD;&#xA;entire declaration as a string, including the &quot;new AClass() {...}&quot;."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="declaration" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The declaration text."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="imports" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" transient="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="This is the imports needed in the main class by this declaration. This is a transient attribute. It is not serialized, nor is it parsed into from existing code. Its only purpose is to help code generation on a brand new declaration to know what imports should be added to the main class."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+</ecore:EPackage>

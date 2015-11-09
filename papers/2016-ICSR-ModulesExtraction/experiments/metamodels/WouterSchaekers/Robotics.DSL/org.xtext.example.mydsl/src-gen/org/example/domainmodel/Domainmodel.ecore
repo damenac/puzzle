@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="domainmodel" nsURI="http://www.example.org/domainmodel/Domainmodel"
+    nsPrefix="domainmodel">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="Domainmodel">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+        eType="#//DomainRule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainRule" eType="#//Primitive"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Primitive">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primitive" eType="#//Point"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Point">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Body" eSuperTypes="#//Primitive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationFrame" eSuperTypes="#//Primitive"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Frame" eSuperTypes="#//Primitive">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientationFrame" eType="#//OrientationFrame"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" eType="#//Point"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeometricRelation" eSuperTypes="#//DomainRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="geometricRelation" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionSemantics">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencePoint" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionSemanticsReference" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
+        eType="#//Point" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemantics.point"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false" eType="#//Body"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemantics.body"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refPoint" ordered="false"
+        eType="#//Point" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemantics.referencePoint"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refBody" ordered="false"
+        eType="#//Body" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemantics.referenceBody"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionSemantics" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionSemanticsDerived" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionSemanticsReference"
+        eType="#//PositionSemanticsReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
+        eType="#//Point" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemanticsReference.point"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" ordered="false" eType="#//Body"
+        derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemanticsReference.body"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refPoint" ordered="false"
+        eType="#//Point" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemanticsReference.refPoint"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="refBody" ordered="false"
+        eType="#//Body" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionSemanticsReference.refBody"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionSemantics" eType="#//PositionSemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" eType="#//OrientationFrame"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceFrame" eType="#//OrientationFrame"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation" eType="#//OrientationSemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frame" eType="#//Primitive"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencePoint" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceFrame" eType="#//Primitive"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose" eType="#//PoseSemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearVelocitySemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearVelocityCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linearVelocity" eType="#//LinearVelocitySemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AngularVelocitySemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AngularVelocityCoordinateSemantics"
+      eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="angularVelocity" eType="#//AngularVelocitySemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwistSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwistCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twist" eType="#//TwistSemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TorqueSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TorqueCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="torque" eType="#//TorqueSemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForceSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForceCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="force" eType="#//ForceSemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WrenchSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" eType="#//Point"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Body"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referenceBody" eType="#//Body"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WrenchCoordinateSemantics" eSuperTypes="#//GeometricRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="wrench" eType="#//WrenchSemantics"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="coordinateFrame" eType="#//OrientationFrame"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticRelation" eSuperTypes="#//DomainRule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticRelation" eType="#//PositionOperation"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionOperation" eType="#//PositionChangePoint"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionChangePoint">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="ChangePoint"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="ChangePoint" value="if self.positionFirstDerived &lt;> null and self.positionSecondDerived &lt;> null then self.positionFirstDerived.point = self.positionSecondDerived.refPoint else true endif"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="point" ordered="false"
+        eType="#//Point" derived="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="derivation" value="positionAllNonRef0.point"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionAllNonRef0" eType="#//PositionSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionAllNonRef1" eType="#//PositionSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionAllRef0" eType="#//PositionSemanticsReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionAllRef1" eType="#//PositionSemanticsReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionFirstRef" eType="#//PositionSemanticsReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionSecondNonRef" eType="#//PositionSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionFirstNonRef" eType="#//PositionSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionSecondRef" eType="#//PositionSemanticsReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionFirstDerived" eType="#//PositionSemanticsDerived"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="positionSecondDerived"
+        eType="#//PositionSemanticsDerived"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionChangeRefPoint" eSuperTypes="#//PositionOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position0" eType="#//PositionSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position1" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionCompose" eSuperTypes="#//PositionOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position0" eType="#//PositionSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position1" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PositionInverse" eSuperTypes="#//PositionOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationOperation" eSuperTypes="#//SemanticRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientationOperation" eType="#//OrientationChangeOrientFrame"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationChangeOrientFrame">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orienation0" eType="#//OrientationSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation1" eType="#//OrientationSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationChangeRefOrientFrame" eSuperTypes="#//OrientationOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation0" eType="#//OrientationSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation1" eType="#//OrientationSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationCompose" eSuperTypes="#//OrientationOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation0" eType="#//OrientationSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation1" eType="#//OrientationSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrientationInverse" eSuperTypes="#//OrientationOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orienatation" eType="#//OrientationSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseOperation" eSuperTypes="#//SemanticRelation"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseChangePoint" eSuperTypes="#//PoseOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose" eType="#//PoseSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseChangeRefPoint" eSuperTypes="#//PoseOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose" eType="#//PoseSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseChangeOrientFrame" eSuperTypes="#//PoseOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose" eType="#//PoseSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation" eType="#//OrientationSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseChangeRefOrientFrame" eSuperTypes="#//PoseOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose" eType="#//PoseSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="orientation" eType="#//OrientationSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseCompose" eSuperTypes="#//PoseOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose0" eType="#//PoseSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose1" eType="#//PoseSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PoseInverse" eSuperTypes="#//PoseOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pose" eType="#//PoseSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearVelocityOperation" eSuperTypes="#//SemanticRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linearVelocityOperation"
+        eType="#//LinearVelocityChangePoint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearVelocityChangePoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linearVelocity" eType="#//LinearVelocitySemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//PositionSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="angularVelocity" eType="#//AngularVelocitySemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearVelocityCompose" eSuperTypes="#//LinearVelocityOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linearVelocity0" eType="#//LinearVelocitySemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linearVelocity1" eType="#//LinearVelocitySemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LinearVelocityInverse" eSuperTypes="#//LinearVelocityOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="linearVelocity" eType="#//LinearVelocitySemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AngularVelocityOperation" eSuperTypes="#//SemanticRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="angularVelocityOperation"
+        eType="#//AngularVelocityCompose" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AngularVelocityCompose">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="angularVelocity0" eType="#//AngularVelocitySemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="angularVelocity1" eType="#//AngularVelocitySemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AngularVelocityInverse" eSuperTypes="#//AngularVelocityOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="angularVelocity" eType="#//AngularVelocitySemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwistOperation" eSuperTypes="#//SemanticRelation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twistOperation" eType="#//TwistChangePoint"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwistChangePoint">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twist" eType="#//TwistSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="position" eType="#//PositionSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwistCompose" eSuperTypes="#//TwistOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twist0" eType="#//TwistSemantics"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twist1" eType="#//TwistSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwistInverse" eSuperTypes="#//TwistOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twist" eType="#//TwistSemantics"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TwistIntegrate" eSuperTypes="#//TwistOperation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="twist" eType="#//TwistSemantics"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

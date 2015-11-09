@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="emf" nsURI="http://emf/1.0" nsPrefix="emf">
+  <eSubpackages name="database">
+    <eClassifiers xsi:type="ecore:EClass" name="Attack"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttackDate" eSuperTypes="#//database/Classification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MainBase"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Classification" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="number" lowerBound="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="attack" upperBound="-1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="GeoIP"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttackDay" eSuperTypes="#//database/Classification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IPAddress" eSuperTypes="#//database/Classification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Country" eSuperTypes="#//database/Classification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GroupedAttack" eSuperTypes="#//database/Classification"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Parameters"/>
+    <eClassifiers xsi:type="ecore:EClass" name="AttackUsername" eSuperTypes="#//database/Classification"/>
+  </eSubpackages>
+  <eSubpackages name="ui">
+    <eClassifiers xsi:type="ecore:EClass" name="PieChartPanel" eSuperTypes="#//ui/GraphPanel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainPanel" lowerBound="1"
+          eType="#//ui/GraphPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="XYBarChartPanel" eSuperTypes="#//ui/GraphPanel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainPanel" lowerBound="1"
+          eType="#//ui/GraphPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CategoryBarChartPanel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainPanel" lowerBound="1"
+          eType="#//ui/GraphPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MainFrame">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="spreadSheet" lowerBound="1"
+          eType="#//ui/Spreadsheet"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TableNonEdit"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Spreadsheet">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tableNonEdit" lowerBound="1"
+          eType="#//ui/TableNonEdit"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MenuPanel"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SubJFrame" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subFrameController" lowerBound="1"
+          eType="#//controller/SubFrameController"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IPFrame" eSuperTypes="#//ui/SubJFrame"/>
+    <eClassifiers xsi:type="ecore:EClass" name="CountryFrame" eSuperTypes="#//ui/SubJFrame"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DateFrame" eSuperTypes="#//ui/SubJFrame"/>
+    <eClassifiers xsi:type="ecore:EClass" name="UsernameFrame" eSuperTypes="#//ui/SubJFrame"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GroupedAttackFrame" eSuperTypes="#//ui/SubJFrame"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GraphPanel" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainFrame" lowerBound="1"
+          eType="#//ui/MainFrame"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="controller">
+    <eClassifiers xsi:type="ecore:EClass" name="ApplicationController">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainBase" lowerBound="1"
+          eType="#//database/MainBase"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" lowerBound="1"
+          eType="#//database/Parameters"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SubFrameController">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="classification" lowerBound="1"
+          eType="#//database/Classification"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="ui.menu">
+    <eClassifiers xsi:type="ecore:EClass" name="Menu">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationController"
+          lowerBound="1" eType="#//controller/ApplicationController"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainFrame" lowerBound="1"
+          eType="#//ui/MainFrame"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FilesMenu">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="menu" lowerBound="1"
+          eType="#//ui.menu/Menu"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ImportDataItem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filesMenu" lowerBound="1"
+          eType="#//ui.menu/FilesMenu"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ParameterItem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filesMenu" lowerBound="1"
+          eType="#//ui.menu/FilesMenu"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="QuitItem">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="filesMenu" lowerBound="1"
+          eType="#//ui.menu/FilesMenu"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="ui.buttons">
+    <eClassifiers xsi:type="ecore:EClass" name="ResultPerCountryButton">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="" eType="#//ui/MainFrame"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowButtonPanel" lowerBound="1"
+          eType="#//ui.buttons/ButtonsRowPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResultPerDayButton">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowButtonPanel" lowerBound="1"
+          eType="#//ui.buttons/ButtonsRowPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResultPerIPButton">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowButtonPanel" lowerBound="1"
+          eType="#//ui.buttons/ButtonsRowPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResultPerUsernameButton">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowButtonPanel" lowerBound="1"
+          eType="#//ui.buttons/ButtonsRowPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ResultPerGroupedAttackButton">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowButtonPanel" lowerBound="1"
+          eType="#//ui.buttons/ButtonsRowPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ButtonsRowPanel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="applicationController"
+          lowerBound="1" eType="#//controller/ApplicationController"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="mainFrame" lowerBound="1"
+          eType="#//ui/MainFrame"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="UpdateButton">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowButtonPanel" lowerBound="1"
+          eType="#//ui.buttons/ButtonsRowPanel"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MapButton">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="rowButtonPanel" lowerBound="1"
+          eType="#//ui.buttons/ButtonsRowPanel"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="ui.maps">
+    <eClassifiers xsi:type="ecore:EClass" name="JMapPanel" eSuperTypes="#//ui/GraphPanel">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="EReference0" eType="#//ui/GraphPanel"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="point" upperBound="-1"
+          eType="#//ui.maps/JMapPoint"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="JMapPoint">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="point" upperBound="-1"
+          eType="#//ui.maps/JMapPanel"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

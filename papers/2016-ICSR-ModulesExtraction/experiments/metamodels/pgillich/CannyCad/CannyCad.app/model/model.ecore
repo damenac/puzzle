@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model"
+    nsURI="http://cannycad.com/cad/model/1.0" nsPrefix="com.cannycad.cad">
+  <eSubpackages name="domain" nsURI="http://cannycad.com/cad/model/domain/1.0" nsPrefix="com.cannycad.cad.model">
+    <eClassifiers xsi:type="ecore:EClass" name="DrawingElement" abstract="true">
+      <eOperations name="init">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="setId(getWorld().generateId());"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getParentElement" eType="#//domain/DrawingElement">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (DrawingElement)eContainer();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getWorld" eType="#//domain/World">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return getParentElement().getWorld();"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="references" ordered="false"
+          unique="false" upperBound="-1" eType="#//domain/DrawingElement" changeable="false"
+          volatile="true" transient="true" derived="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong"
+          iD="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="World" eSuperTypes="#//domain/DrawingElement">
+      <eOperations name="init">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="setParentWorld(parent); super.init();"/>
+        </eAnnotations>
+        <eParameters name="parent" eType="#//domain/World"/>
+      </eOperations>
+      <eOperations name="generateId" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return getParentWorld().generateId();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getDrawing" eType="#//domain/Drawing">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return getParentWorld().getDrawing();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getWorld" eType="#//domain/World">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parentWorld" lowerBound="1"
+          eType="#//domain/World" eOpposite="#//domain/World/worlds"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="worlds" upperBound="-1"
+          eType="#//domain/World" containment="true" eOpposite="#//domain/World/parentWorld">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="namespace" value=""/>
+          <details key="group" value="#references"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constructors" eType="#//domain/Constructor"
+          containment="true" eOpposite="#//domain/Constructor/world">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="group" value="#references"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Drawing" eSuperTypes="#//domain/World">
+      <eOperations name="init">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="super.init();"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="generateId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return (latestId += 1);"/>
+        </eAnnotations>
+      </eOperations>
+      <eOperations name="getDrawing" eType="#//domain/Drawing">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="return this;"/>
+        </eAnnotations>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="latestId" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ELong" changeable="false"
+          defaultValueLiteral="0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="Vector2D" instanceClassName="com.cannycad.cad.domain.Vector2D"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Point" eSuperTypes="#//domain/DrawingElement">
+      <eOperations name="init">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="setConstructor(parent); super.init();"/>
+        </eAnnotations>
+        <eParameters name="parent" eType="#//domain/Constructor"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" lowerBound="1"
+          eType="#//domain/Vector2D"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constructor" lowerBound="1"
+          eType="#//domain/Constructor" eOpposite="#//domain/Constructor/points"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="formations" upperBound="-1"
+          eType="#//domain/Formation">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="group" value="#references"/>
+          <details key="namespace" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constructor" eSuperTypes="#//domain/DrawingElement">
+      <eOperations name="init">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="setWorld(parent); super.init();"/>
+        </eAnnotations>
+        <eParameters name="parent" eType="#//domain/World"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="world" lowerBound="1"
+          eType="#//domain/World" eOpposite="#//domain/World/constructors"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="formations" ordered="false"
+          upperBound="-1" eType="#//domain/Formation" containment="true" eOpposite="#//domain/Formation/constructor">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="kind" value="group"/>
+          <details key="namespace" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="points" ordered="false"
+          upperBound="-1" eType="#//domain/Point" containment="true" eOpposite="#//domain/Point/constructor"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Formation" eSuperTypes="#//domain/DrawingElement">
+      <eOperations name="init">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="body" value="setConstructor(parent); super.init();"/>
+        </eAnnotations>
+        <eParameters name="parent" eType="#//domain/Constructor"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="location" lowerBound="1"
+          eType="#//domain/Point"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constructor" lowerBound="1"
+          eType="#//domain/Constructor" eOpposite="#//domain/Constructor/formations"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//domain/Formation">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1"
+          eType="#//domain/Point">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="name" value="from"/>
+          <details key="namespace" value=""/>
+        </eAnnotations>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="to" eType="#//domain/Point">
+        <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+          <details key="name" value="to"/>
+        </eAnnotations>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LineP2P" eSuperTypes="#//domain/SingleConstructor">
+      <eOperations name="getLine" lowerBound="1" eType="#//domain/Line"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SingleConstructor" eSuperTypes="#//domain/Constructor">
+      <eOperations name="getFormation" lowerBound="1" eType="#//domain/Formation"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

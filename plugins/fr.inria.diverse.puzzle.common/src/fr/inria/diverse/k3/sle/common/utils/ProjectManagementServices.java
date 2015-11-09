@@ -154,7 +154,8 @@ public class ProjectManagementServices {
 	}
 	
 	public static void copyAspectResource(Resource eResource,
-			IProject moduleProject, String moduleName, ArrayList<EClassifier> classifiers, ArrayList<Aspect> requiredAspects) throws IOException {
+			IProject moduleProject, String moduleName, ArrayList<EClassifier> classifiers, 
+			ArrayList<Aspect> requiredAspects) throws IOException {
 		
 		URI fileURIResource0 = URI.createFileURI(eResource.getURI().path());
 		

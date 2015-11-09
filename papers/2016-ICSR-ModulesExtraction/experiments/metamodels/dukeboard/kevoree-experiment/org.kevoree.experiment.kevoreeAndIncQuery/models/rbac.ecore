@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="rbac"
+    nsURI="http://rbac/1.0" nsPrefix="rbac">
+  <eSubpackages name="rbac" nsURI="rbac.rbac" nsPrefix="rbac.rbac">
+    <eClassifiers xsi:type="ecore:EClass" name="Policy">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
+          eType="#//rbac/PolicyElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="User" eSuperTypes="#//rbac/PolicyElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="assignedRoles" upperBound="-1"
+          eType="#//rbac/Role"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="delegations" upperBound="-1"
+          eType="#//rbac/User"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="session" eType="#//rbac/Session"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Role" eSuperTypes="#//rbac/PolicyElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ssod" upperBound="-1"
+          eType="#//rbac/Role"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dsod" upperBound="-1"
+          eType="#//rbac/Role"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hierarchy" upperBound="-1"
+          eType="#//rbac/Role"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="permissions" upperBound="-1"
+          eType="#//rbac/Permission"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Permission" eSuperTypes="#//rbac/PolicyElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+          eType="#//rbac/Operation" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//rbac/PolicyElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resources" upperBound="-1"
+          eType="#//rbac/Resource"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Resource" eSuperTypes="#//rbac/PolicyElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PolicyElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Session" eSuperTypes="#//rbac/PolicyElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="activeRoles" upperBound="-1"
+          eType="#//rbac/Role"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

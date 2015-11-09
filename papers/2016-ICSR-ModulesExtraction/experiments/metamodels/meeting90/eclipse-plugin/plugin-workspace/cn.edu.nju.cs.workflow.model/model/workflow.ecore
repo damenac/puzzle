@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model"
+    nsURI="cs.nju.edu.cn" nsPrefix="cn.edu.nju.cs">
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="comment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowProcess">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootWorkflow" eType="#//Workflow"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bpelProcess" lowerBound="1"
+        eType="ecore:EClass bpel.ecore#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implPortTypes" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//PortType"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="toImplPortTypes" upperBound="-1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//PortType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Workflow" eSuperTypes="#//WorkflowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodes" upperBound="-1"
+        eType="#//WorkflowNode" containment="true" eOpposite="#//WorkflowNode/workflow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//Edge" containment="true" eOpposite="#//Edge/workflow"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comments" upperBound="-1"
+        eType="#//Comment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="activity" lowerBound="1"
+        eType="ecore:EClass bpel.ecore#//Activity"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootActivity" eType="ecore:EClass bpel.ecore#//Activity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WorkflowNode" eSuperTypes="#//WorkflowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflow" lowerBound="1"
+        eType="#//Workflow" eOpposite="#//Workflow/nodes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="input" lowerBound="1" eType="#//InputPort"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" upperBound="-1"
+        eType="#//OutputPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="adviceEdges" upperBound="-1"
+        eType="#//AdviceEdge" containment="true" eOpposite="#//AdviceEdge/joinPoint"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStartNode" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isFinishNode" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//WorkflowNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SimpleTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="porttype" eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//PortType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operation" eType="ecore:EClass platform:/plugin/org.eclipse.wst.wsdl/model/WSDL.ecore#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partnerActivity" eType="ecore:EClass bpel.ecore#//BPELExtensibleElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="partnerLink" eType="ecore:EClass bpel.ecore#//PartnerLink"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompoundTask" eSuperTypes="#//Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subworkflow" lowerBound="1"
+        eType="#//Workflow" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LoopTask" eSuperTypes="#//CompoundTask">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="whileCondition" lowerBound="1"
+        eType="#//WhileCondition" containment="true" eOpposite="#//WhileCondition/looptask"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Choice" eSuperTypes="#//WorkflowNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" eSuperTypes="#//WorkflowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="workflow" lowerBound="1"
+        eType="#//Workflow" eOpposite="#//Workflow/edges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//OutputPort" eOpposite="#//OutputPort/edges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//InputPort" eOpposite="#//InputPort/edges"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port" eSuperTypes="#//WorkflowElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InputPort" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//WorkflowNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//Edge" eOpposite="#//Edge/target"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputValue" eType="ecore:EClass bpel.ecore#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assign" eType="ecore:EClass bpel.ecore#//Assign"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutputPort" eSuperTypes="#//Port">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" eType="#//WorkflowNode"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//Edge" eOpposite="#//Edge/source"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputValue" eType="ecore:EClass bpel.ecore#//Variable"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FaultPort" eSuperTypes="#//OutputPort"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalOutputPort" eSuperTypes="#//OutputPort">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="AdviceType">
+    <eLiterals name="before"/>
+    <eLiterals name="around_soapmessagein" value="1" literal="around_soapmessagein"/>
+    <eLiterals name="after_soapmessagein" value="2"/>
+    <eLiterals name="around" value="3"/>
+    <eLiterals name="before_soapmessageout" value="4"/>
+    <eLiterals name="around_soapmessageout" value="5"/>
+    <eLiterals name="after" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdviceTask" eSuperTypes="#//CompoundTask">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edges" upperBound="-1"
+        eType="#//AdviceEdge" containment="true" eOpposite="#//AdviceEdge/adviceTask"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AdviceEdge" eSuperTypes="#//WorkflowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="adviceTask" eType="#//AdviceTask"
+        eOpposite="#//AdviceTask/edges"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="joinPoint" eType="#//WorkflowNode"
+        eOpposite="#//WorkflowNode/adviceEdges"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="advicetype" lowerBound="1"
+        eType="#//AdviceType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="WhileCondition" eSuperTypes="#//WorkflowElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="looptask" lowerBound="1"
+        eType="#//LoopTask" eOpposite="#//LoopTask/whileCondition"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="condition" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
