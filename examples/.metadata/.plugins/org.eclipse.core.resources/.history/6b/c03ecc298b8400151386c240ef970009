@@ -1,0 +1,53 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Arc;
+import family.flowchartmt.Constraint;
+import flowchartpck.Decision;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import org.eclipse.emf.common.util.EList;
+
+@SuppressWarnings("all")
+public class DecisionAdapter extends EObjectAdapter<Decision> implements family.flowchartmt.Decision {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public DecisionAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName() ;
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o) ;
+  }
+  
+  @Override
+  public EList<Arc> getOutgoing() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoing(), family.flowchart.adapters.flowchartmt.ArcAdapter.class) ;
+  }
+  
+  @Override
+  public EList<Arc> getIncoming() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncoming(), family.flowchart.adapters.flowchartmt.ArcAdapter.class) ;
+  }
+  
+  @Override
+  public Constraint getGuard() {
+    return adaptersFactory.createConstraintAdapter(adaptee.getGuard()) ;
+  }
+  
+  @Override
+  public void setGuard(final Constraint o) {
+    adaptee.setGuard(((family.flowchart.adapters.flowchartmt.ConstraintAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public void eval(final java.util.Hashtable<java.lang.String, java.lang.Object> context) {
+    flowchart.DecisionAspect.eval(adaptee, context
+    ) ;
+  }
+}

@@ -1,0 +1,11 @@
+package family.flowchartmt;
+
+import family.flowchartmt.Expression;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface VarReference extends EObject, Expression {
+  public abstract String getKey();
+  
+  public abstract void setKey(final String newKey);
+}

@@ -1,0 +1,30 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import flowchartpck.VarReference;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class VarReferenceAdapter extends EObjectAdapter<VarReference> implements family.flowchartmt.VarReference {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public VarReferenceAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getKey() {
+    return adaptee.getKey() ;
+  }
+  
+  @Override
+  public void setKey(final String o) {
+    adaptee.setKey(o) ;
+  }
+  
+  @Override
+  public Object eval(final java.util.Hashtable<java.lang.String, java.lang.Object> context) {
+    return flowchart.ExpressionAspect.eval(adaptee, context
+    ) ;
+  }
+}

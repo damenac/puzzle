@@ -1,0 +1,53 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Arc;
+import family.flowchartmt.Node;
+import flowchartpck.Subflow;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import org.eclipse.emf.common.util.EList;
+
+@SuppressWarnings("all")
+public class SubflowAdapter extends EObjectAdapter<Subflow> implements family.flowchartmt.Subflow {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public SubflowAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName() ;
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o) ;
+  }
+  
+  @Override
+  public EList<Node> getNodes() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getNodes(), family.flowchart.adapters.flowchartmt.NodeAdapter.class) ;
+  }
+  
+  @Override
+  public EList<Arc> getTransitions() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getTransitions(), family.flowchart.adapters.flowchartmt.ArcAdapter.class) ;
+  }
+  
+  @Override
+  public EList<Arc> getOutgoing() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoing(), family.flowchart.adapters.flowchartmt.ArcAdapter.class) ;
+  }
+  
+  @Override
+  public EList<Arc> getIncoming() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncoming(), family.flowchart.adapters.flowchartmt.ArcAdapter.class) ;
+  }
+  
+  @Override
+  public void eval(final java.util.Hashtable<java.lang.String, java.lang.Object> context) {
+    flowchart.SubflowAspect.eval(adaptee, context
+    ) ;
+  }
+}

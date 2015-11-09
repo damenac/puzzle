@@ -1,0 +1,44 @@
+package family;
+
+@SuppressWarnings("all")
+public class StandaloneSetup {
+  public static void doSetup() {
+    StandaloneSetup setup = new StandaloneSetup() ;
+    setup.doEMFRegistration() ;
+    setup.doAdaptersRegistration() ;
+  }
+  
+  public void doEMFRegistration() {
+    org.eclipse.emf.ecore.EPackage.Registry.INSTANCE.put(
+    	flowchartpck.FlowchartpckPackage.eNS_URI,
+    	flowchartpck.FlowchartpckPackage.eINSTANCE
+    ) ;
+    
+    org.eclipse.emf.ecore.resource.Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
+    	"*",
+    	new org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl()
+    ) ;
+    org.eclipse.emf.ecore.resource.Resource.Factory.Registry.INSTANCE.getProtocolToFactoryMap().put(
+    	"melange",
+    	new fr.inria.diverse.melange.resource.MelangeResourceFactoryImpl()
+    ) ;
+  }
+  
+  public void doAdaptersRegistration() {
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl flowchart = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.LanguageDescriptorImpl(
+    	"family.Flowchart", "A language for Flowcharts", "flowchartpck", "family.FlowchartMT"
+    ) ;
+    flowchart.addAdapter("family.FlowchartMT", family.flowchart.adapters.flowchartmt.FlowchartAdapter.class) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getLanguageMap().put(
+    	"family.Flowchart",
+    	flowchart
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl flowchartMT = new fr.inria.diverse.melange.resource.MelangeRegistryImpl.ModelTypeDescriptorImpl(
+    	"family.FlowchartMT", "", "http://flowchartmt/"
+    ) ;
+    fr.inria.diverse.melange.resource.MelangeRegistry.INSTANCE.getModelTypeMap().put(
+    	"family.FlowchartMT",
+    	flowchartMT
+    ) ;
+  }
+}

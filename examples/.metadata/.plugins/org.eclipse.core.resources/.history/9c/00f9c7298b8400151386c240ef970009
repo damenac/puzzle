@@ -1,0 +1,19 @@
+package family.flowchartmt;
+
+import family.flowchartmt.Arc;
+import java.util.Hashtable;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Node extends EObject {
+  public abstract String getName();
+  
+  public abstract void setName(final String newName);
+  
+  public abstract EList<Arc> getOutgoing();
+  
+  public abstract EList<Arc> getIncoming();
+  
+  public abstract void eval(final Hashtable context);
+}

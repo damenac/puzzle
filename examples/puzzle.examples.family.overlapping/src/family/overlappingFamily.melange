@@ -36,38 +36,38 @@ language FSM {
 /**
  * A language for Logo 
  */
-//language Logo {
-//	
-//	syntax "platform:/resource/puzzle.examples.logo/models/logo.ecore"
-//	 
-//	with logo.InstructionAspect 
-//	with logo.PrimitiveAspect
-//	with logo.BackAspect
-//	with logo.ForwardAspect
-//	with logo.LeftAspect
-//	with logo.RightAspect
-//	with logo.PenDownAspect
-//	with logo.PenUpAspect
-//	with logo.ClearAspect
-//	with logo.ExpressionAspect
-//	with logo.LiteralAspect
-//	with logo.IntegerLitAspect
-//	with logo.StringLitAspect
-//	with logo.BoolLitAspect
-//	with logo.ArithmeticExpressionAspect
-//	with logo.RelationalExpressionAspect
-//	with logo.ProcCallAspect
-//	with logo.BlockAspect
-//	with logo.ControlStructureAspect
-//	with logo.IfAspect
-//	with logo.RepeatAspect
-//	with logo.WhileAspect
-//	with logo.ParameterAspect
-//	with logo.ParameterCallAspect
-//	with logo.LogoProgramAspect
-//	
-//	exactType LogoMT
-//}
+language Logo {
+	
+	syntax "platform:/resource/puzzle.examples.logo/models/logo.ecore"
+	 
+	with logo.InstructionAspect 
+	with logo.PrimitiveAspect
+	with logo.BackAspect
+	with logo.ForwardAspect
+	with logo.LeftAspect
+	with logo.RightAspect
+	with logo.PenDownAspect
+	with logo.PenUpAspect
+	with logo.ClearAspect
+	with logo.ExpressionAspect
+	with logo.LiteralAspect
+	with logo.IntegerLitAspect
+	with logo.StringLitAspect
+	with logo.BoolLitAspect
+	with logo.ArithmeticExpressionAspect
+	with logo.RelationalExpressionAspect
+	with logo.ProcCallAspect
+	with logo.BlockAspect
+	with logo.ControlStructureAspect
+	with logo.IfAspect
+	with logo.RepeatAspect
+	with logo.WhileAspect
+	with logo.ParameterAspect
+	with logo.ParameterCallAspect
+	with logo.LogoProgramAspect
+	
+	exactType LogoMT
+}
 
 
 /**

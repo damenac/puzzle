@@ -1,0 +1,24 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.FlowchartMT;
+import family.flowchartmt.FlowchartMTFactory;
+import fr.inria.diverse.melange.adapters.ResourceAdapter;
+import java.io.IOException;
+
+@SuppressWarnings("all")
+public class FlowchartAdapter extends ResourceAdapter implements FlowchartMT {
+  public FlowchartAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public FlowchartMTFactory getFactory() {
+    return new family.flowchart.adapters.flowchartmt.FlowchartMTFactoryAdapter() ;
+  }
+  
+  @Override
+  public void save(final String uri) throws IOException {
+    this.adaptee.setURI(org.eclipse.emf.common.util.URI.createURI(uri));
+    this.adaptee.save(null);
+  }
+}

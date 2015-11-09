@@ -1,0 +1,5 @@
+package fr.inria.diverse.puzzle.breaker.command;
+
+public class MetaclassAspectMapping {
+
+}

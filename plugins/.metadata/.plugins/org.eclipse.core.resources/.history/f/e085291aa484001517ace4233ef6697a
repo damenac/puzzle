@@ -1,0 +1,13 @@
+package fr.inria.diverse.melange.ui.annotations
+
+import org.eclipse.xtend.lib.macro.AbstractClassProcessor
+import org.eclipse.xtend.lib.macro.Active
+
+//@Active(VariationPointProcessor)
+annotation VariationPoint {
+
+}
+
+public class VariationPointProcessor extends AbstractClassProcessor {
+	
+}

@@ -1,0 +1,238 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.ActionAdapter;
+import family.flowchart.adapters.flowchartmt.ArcAdapter;
+import family.flowchart.adapters.flowchartmt.ArithmeticExpressionAdapter;
+import family.flowchart.adapters.flowchartmt.BoolLitAdapter;
+import family.flowchart.adapters.flowchartmt.ConstraintAdapter;
+import family.flowchart.adapters.flowchartmt.DecisionAdapter;
+import family.flowchart.adapters.flowchartmt.ExpressionAdapter;
+import family.flowchart.adapters.flowchartmt.FlowchartAdapter;
+import family.flowchart.adapters.flowchartmt.IntegerLitAdapter;
+import family.flowchart.adapters.flowchartmt.LiteralAdapter;
+import family.flowchart.adapters.flowchartmt.NodeAdapter;
+import family.flowchart.adapters.flowchartmt.RelationalConstraintAdapter;
+import family.flowchart.adapters.flowchartmt.RelationalExpressionAdapter;
+import family.flowchart.adapters.flowchartmt.StringLitAdapter;
+import family.flowchart.adapters.flowchartmt.SubflowAdapter;
+import family.flowchart.adapters.flowchartmt.VarReferenceAdapter;
+import flowchartpck.Action;
+import flowchartpck.Arc;
+import flowchartpck.ArithmeticExpression;
+import flowchartpck.BoolLit;
+import flowchartpck.Constraint;
+import flowchartpck.Decision;
+import flowchartpck.Expression;
+import flowchartpck.Flowchart;
+import flowchartpck.IntegerLit;
+import flowchartpck.Literal;
+import flowchartpck.Node;
+import flowchartpck.RelationalConstraint;
+import flowchartpck.RelationalExpression;
+import flowchartpck.StringLit;
+import flowchartpck.Subflow;
+import flowchartpck.VarReference;
+import fr.inria.diverse.melange.adapters.AdaptersFactory;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+import java.util.WeakHashMap;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public class FlowchartMTAdaptersFactory implements AdaptersFactory {
+  private static FlowchartMTAdaptersFactory instance;
+  
+  private WeakHashMap<EObject, EObjectAdapter> register;
+  
+  public FlowchartMTAdaptersFactory() {
+    register = new WeakHashMap();
+  }
+  
+  public static FlowchartMTAdaptersFactory getInstance() {
+    if (instance == null) {
+    	instance = new family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory() ;
+    }
+    return instance ;
+  }
+  
+  public EObjectAdapter createAdapter(final EObject o) {
+    EObjectAdapter res = register.get(o);
+    if(res != null){
+    	 return res;
+    }
+    else{
+    	if (o instanceof flowchartpck.Flowchart){
+    		res = createFlowchartAdapter((flowchartpck.Flowchart) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.Arc){
+    		res = createArcAdapter((flowchartpck.Arc) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.Subflow){
+    		res = createSubflowAdapter((flowchartpck.Subflow) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.Action){
+    		res = createActionAdapter((flowchartpck.Action) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.Decision){
+    		res = createDecisionAdapter((flowchartpck.Decision) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.RelationalConstraint){
+    		res = createRelationalConstraintAdapter((flowchartpck.RelationalConstraint) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.Constraint){
+    		res = createConstraintAdapter((flowchartpck.Constraint) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.IntegerLit){
+    		res = createIntegerLitAdapter((flowchartpck.IntegerLit) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.StringLit){
+    		res = createStringLitAdapter((flowchartpck.StringLit) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.BoolLit){
+    		res = createBoolLitAdapter((flowchartpck.BoolLit) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.Literal){
+    		res = createLiteralAdapter((flowchartpck.Literal) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.ArithmeticExpression){
+    		res = createArithmeticExpressionAdapter((flowchartpck.ArithmeticExpression) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.RelationalExpression){
+    		res = createRelationalExpressionAdapter((flowchartpck.RelationalExpression) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.VarReference){
+    		res = createVarReferenceAdapter((flowchartpck.VarReference) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    	if (o instanceof flowchartpck.Expression){
+    		res = createExpressionAdapter((flowchartpck.Expression) o) ;
+    		register.put(o,res);
+    		return res;
+    	}
+    }
+    
+    return null ;
+  }
+  
+  public FlowchartAdapter createFlowchartAdapter(final Flowchart adaptee) {
+    family.flowchart.adapters.flowchartmt.FlowchartAdapter adap = new family.flowchart.adapters.flowchartmt.FlowchartAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public NodeAdapter createNodeAdapter(final Node adaptee) {
+    family.flowchart.adapters.flowchartmt.NodeAdapter adap = new family.flowchart.adapters.flowchartmt.NodeAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ArcAdapter createArcAdapter(final Arc adaptee) {
+    family.flowchart.adapters.flowchartmt.ArcAdapter adap = new family.flowchart.adapters.flowchartmt.ArcAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public SubflowAdapter createSubflowAdapter(final Subflow adaptee) {
+    family.flowchart.adapters.flowchartmt.SubflowAdapter adap = new family.flowchart.adapters.flowchartmt.SubflowAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ActionAdapter createActionAdapter(final Action adaptee) {
+    family.flowchart.adapters.flowchartmt.ActionAdapter adap = new family.flowchart.adapters.flowchartmt.ActionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public DecisionAdapter createDecisionAdapter(final Decision adaptee) {
+    family.flowchart.adapters.flowchartmt.DecisionAdapter adap = new family.flowchart.adapters.flowchartmt.DecisionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ConstraintAdapter createConstraintAdapter(final Constraint adaptee) {
+    family.flowchart.adapters.flowchartmt.ConstraintAdapter adap = new family.flowchart.adapters.flowchartmt.ConstraintAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public RelationalConstraintAdapter createRelationalConstraintAdapter(final RelationalConstraint adaptee) {
+    family.flowchart.adapters.flowchartmt.RelationalConstraintAdapter adap = new family.flowchart.adapters.flowchartmt.RelationalConstraintAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ExpressionAdapter createExpressionAdapter(final Expression adaptee) {
+    family.flowchart.adapters.flowchartmt.ExpressionAdapter adap = new family.flowchart.adapters.flowchartmt.ExpressionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public LiteralAdapter createLiteralAdapter(final Literal adaptee) {
+    family.flowchart.adapters.flowchartmt.LiteralAdapter adap = new family.flowchart.adapters.flowchartmt.LiteralAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public IntegerLitAdapter createIntegerLitAdapter(final IntegerLit adaptee) {
+    family.flowchart.adapters.flowchartmt.IntegerLitAdapter adap = new family.flowchart.adapters.flowchartmt.IntegerLitAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public StringLitAdapter createStringLitAdapter(final StringLit adaptee) {
+    family.flowchart.adapters.flowchartmt.StringLitAdapter adap = new family.flowchart.adapters.flowchartmt.StringLitAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public BoolLitAdapter createBoolLitAdapter(final BoolLit adaptee) {
+    family.flowchart.adapters.flowchartmt.BoolLitAdapter adap = new family.flowchart.adapters.flowchartmt.BoolLitAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public ArithmeticExpressionAdapter createArithmeticExpressionAdapter(final ArithmeticExpression adaptee) {
+    family.flowchart.adapters.flowchartmt.ArithmeticExpressionAdapter adap = new family.flowchart.adapters.flowchartmt.ArithmeticExpressionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public RelationalExpressionAdapter createRelationalExpressionAdapter(final RelationalExpression adaptee) {
+    family.flowchart.adapters.flowchartmt.RelationalExpressionAdapter adap = new family.flowchart.adapters.flowchartmt.RelationalExpressionAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+  
+  public VarReferenceAdapter createVarReferenceAdapter(final VarReference adaptee) {
+    family.flowchart.adapters.flowchartmt.VarReferenceAdapter adap = new family.flowchart.adapters.flowchartmt.VarReferenceAdapter() ;
+    adap.setAdaptee(adaptee) ;
+    return adap ;
+  }
+}

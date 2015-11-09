@@ -1,0 +1,51 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Node;
+import flowchartpck.Arc;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class ArcAdapter extends EObjectAdapter<Arc> implements family.flowchartmt.Arc {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public ArcAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public String getName() {
+    return adaptee.getName() ;
+  }
+  
+  @Override
+  public void setName(final String o) {
+    adaptee.setName(o) ;
+  }
+  
+  @Override
+  public Node getSource() {
+    return adaptersFactory.createNodeAdapter(adaptee.getSource()) ;
+  }
+  
+  @Override
+  public void setSource(final Node o) {
+    adaptee.setSource(((family.flowchart.adapters.flowchartmt.NodeAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public Node getTarget() {
+    return adaptersFactory.createNodeAdapter(adaptee.getTarget()) ;
+  }
+  
+  @Override
+  public void setTarget(final Node o) {
+    adaptee.setTarget(((family.flowchart.adapters.flowchartmt.NodeAdapter) o).getAdaptee()) ;
+  }
+  
+  @Override
+  public void eval(final java.util.Hashtable<java.lang.String, java.lang.Object> context) {
+    flowchart.ArcAspect.eval(adaptee, context
+    ) ;
+  }
+}

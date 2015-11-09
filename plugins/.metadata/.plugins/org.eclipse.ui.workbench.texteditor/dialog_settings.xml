@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="venn" key="selection"/>
+		<item value="ecore fragment" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ecore fragment"/>
 			<item value="venn"/>
 			<item value="accounting.ecore"/>
 			<item value="account.ecore"/>
@@ -15,7 +16,6 @@
 			<item value="search"/>
 			<item value="load"/>
 			<item value="Vertex"/>
-			<item value="service"/>
 		</list>
 		<list key="replacehistory">
 			<item value="V"/>

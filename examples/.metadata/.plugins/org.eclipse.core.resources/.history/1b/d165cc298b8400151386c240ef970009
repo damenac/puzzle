@@ -1,0 +1,20 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import flowchartpck.Expression;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class ExpressionAdapter extends EObjectAdapter<Expression> implements family.flowchartmt.Expression {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public ExpressionAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Object eval(final java.util.Hashtable<java.lang.String, java.lang.Object> context) {
+    return flowchart.ExpressionAspect.eval(adaptee, context
+    ) ;
+  }
+}

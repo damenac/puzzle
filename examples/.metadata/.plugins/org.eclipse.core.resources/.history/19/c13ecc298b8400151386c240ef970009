@@ -1,0 +1,14 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import flowchartpck.Constraint;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class ConstraintAdapter extends EObjectAdapter<Constraint> implements family.flowchartmt.Constraint {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public ConstraintAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+}

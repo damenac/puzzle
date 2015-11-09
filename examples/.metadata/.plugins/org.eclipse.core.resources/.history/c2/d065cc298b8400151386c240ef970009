@@ -1,0 +1,25 @@
+package family.flowchart.adapters.flowchartmt;
+
+import family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory;
+import family.flowchartmt.Expression;
+import flowchartpck.RelationalConstraint;
+import fr.inria.diverse.melange.adapters.EObjectAdapter;
+
+@SuppressWarnings("all")
+public class RelationalConstraintAdapter extends EObjectAdapter<RelationalConstraint> implements family.flowchartmt.RelationalConstraint {
+  private FlowchartMTAdaptersFactory adaptersFactory;
+  
+  public RelationalConstraintAdapter() {
+    super(family.flowchart.adapters.flowchartmt.FlowchartMTAdaptersFactory.getInstance()) ;
+  }
+  
+  @Override
+  public Expression getExpression() {
+    return adaptersFactory.createExpressionAdapter(adaptee.getExpression()) ;
+  }
+  
+  @Override
+  public void setExpression(final Expression o) {
+    adaptee.setExpression(((family.flowchart.adapters.flowchartmt.ExpressionAdapter) o).getAdaptee()) ;
+  }
+}

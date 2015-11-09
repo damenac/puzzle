@@ -4,8 +4,8 @@
 		<item value="false" key="EditorSelectionDialog.STORE_ID_INTERNAL_EXTERNAL"/>
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="750" key="dialogHeight"/>
-		<item value="1200" key="dialogWidth"/>
+		<item value="563" key="dialogHeight"/>
+		<item value="900" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -25,7 +25,7 @@
 		</list>
 	</section>
 	<section name="InstallationDialogSettings">
-		<item value="702" key="DIALOG_WIDTH"/>
+		<item value="922" key="DIALOG_WIDTH"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 		<item value="652" key="DIALOG_HEIGHT"/>
 		<item value="-86" key="DIALOG_X_ORIGIN"/>

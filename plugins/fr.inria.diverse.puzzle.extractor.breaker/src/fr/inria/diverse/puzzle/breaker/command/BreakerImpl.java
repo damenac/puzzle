@@ -19,6 +19,7 @@ import org.eclipse.xtext.common.types.JvmTypeReference;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
@@ -69,6 +70,7 @@ public class BreakerImpl {
 	 */
 	public EcoreGraph breakDownFamily(ArrayList<Language> languages, SynthesisProperties synthesisProperties, IProject lplProject) throws Exception{
 		ConceptComparison conceptComparisonOperator = synthesisProperties.getConceptComparisonOperator();
+		MethodComparison methodComparison = synthesisProperties.getMethodComparisonOperator();
 		GraphPartition graphPartition = synthesisProperties.getGraphPartition();
 		
 		ArrayList<TupleConceptMember> conceptMemberList = FamiliesServices.getInstance().getConceptMemberMappingList(languages);
@@ -77,7 +79,7 @@ public class BreakerImpl {
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
 		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		
-		buildModules(dependenciesGraph, languages);
+		buildModules(dependenciesGraph, languages, methodComparison);
 		
 		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
 		System.out.println("Modularization Quality: " + mq);
@@ -86,11 +88,114 @@ public class BreakerImpl {
 	}
 
 	private void buildModules(EcoreGraph dependenciesGraph,
-			ArrayList<Language> languages) throws Exception {
+			ArrayList<Language> languages, MethodComparison methodComparison) throws Exception {
+		
+		ArrayList<MetaclassAspectMapping> mapping = new ArrayList<MetaclassAspectMapping>();
+		ArrayList<Aspect> aspects = findAllAspects(languages);
+		for (Aspect aspect : aspects) {
+			System.out.println("aspect: " + aspect.getAspectedClass().getName() + " - " + aspect.getAspectTypeRef().getType().getSimpleName());
+		}
+		findAspectMapping(aspects, mapping);
+
+		System.out.println("mapping: ");
+		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
+			System.out.println("metaclass: " + metaclassAspectMapping.getMetaclass().getName());
+			for (Aspect aspect : metaclassAspectMapping.getAspects()) {
+				System.out.print(" aspect: " + aspect.getAspectTypeRef().getType().getSimpleName() + ",");
+			}
+			System.out.println();
+		}
+		
+		ArrayList<MetaclassAspectMapping> mappingVariability =  detectSemanticVariability(mapping, methodComparison);
+		System.out.println("COUCOU!");
+		System.out.println("mapping: ");
+		for (MetaclassAspectMapping metaclassAspectMapping : mappingVariability) {
+			System.out.println("metaclass: " + metaclassAspectMapping.getMetaclass().getName());
+			for (Aspect aspect : metaclassAspectMapping.getAspects()) {
+				System.out.print(" aspect: " + aspect.getAspectTypeRef().getType().getSimpleName() + ",");
+			}
+			System.out.println();
+		}
+		
 		for (EcoreGroup group : dependenciesGraph.getGroups()) {
 			ArrayList<EClassifier> requiredClassifiers = buildSyntacticModule(group, languages);
-			buildSemanticModule(group, languages, requiredClassifiers);
+			buildSemanticModule(group, mapping, languages, requiredClassifiers);
 		}
+	}
+
+	/**
+	 * 
+	 * @param mapping
+	 * @param methodComparison
+	 * @return
+	 */
+	private ArrayList<MetaclassAspectMapping> detectSemanticVariability(
+			ArrayList<MetaclassAspectMapping> mapping, MethodComparison methodComparison) {
+		ArrayList<MetaclassAspectMapping> mappingVariability = new ArrayList<MetaclassAspectMapping>();
+		
+		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
+			MetaclassAspectMapping newEntry = new MetaclassAspectMapping(metaclassAspectMapping.getMetaclass());
+			for (Aspect aspect : metaclassAspectMapping.getAspects()) {
+				if(!aspectExists(aspect, newEntry, methodComparison)){
+					newEntry.getAspects().add(aspect);
+				}
+			}
+			mappingVariability.add(newEntry);
+		}
+		
+		return mappingVariability;
+	}
+
+	private boolean aspectExists(Aspect aspect,
+			MetaclassAspectMapping newEntry, MethodComparison methodComparison) {
+		for (Aspect aspectI : newEntry.getAspects()) {
+			if(aspectsEqual(aspect, aspectI, methodComparison)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean aspectsEqual(Aspect rightAspect, Aspect leftAspect,
+			MethodComparison methodComparison) {
+		boolean nameEqual = rightAspect.getAspectTypeRef().getType().getSimpleName().equals(
+				leftAspect.getAspectTypeRef().getType().getSimpleName());
+		
+		ArrayList<JvmOperation> rightOperations = collectJvmOperations(rightAspect);
+		ArrayList<JvmOperation> leftOperations = collectJvmOperations(leftAspect);
+		
+		boolean operationsEqual = true;
+		for (JvmOperation jvmOperation : rightOperations) {
+			if(!operationExists(jvmOperation, leftOperations, methodComparison)){
+				operationsEqual = false;
+				break;
+			}
+		}
+		
+		boolean operationsSizeEqual = rightOperations.size() == leftOperations.size();
+		
+		return nameEqual && operationsEqual && operationsSizeEqual;
+	}
+
+	private boolean operationExists(JvmOperation jvmOperation,
+			ArrayList<JvmOperation> leftOperations,
+			MethodComparison methodComparison) {
+		for (JvmOperation jvmOperationJ : leftOperations) {
+			if(methodComparison.equal(jvmOperation, jvmOperationJ))
+				return true;
+		}
+		return false;
+	}
+
+	private ArrayList<JvmOperation> collectJvmOperations(Aspect aspect) {
+		ArrayList<JvmOperation> jvmOperations = new ArrayList<JvmOperation>();
+		for (EObject eObject : aspect.getAspectTypeRef().getType().eContents()) {
+			if(eObject instanceof JvmOperation){
+				JvmOperation operation = (JvmOperation) eObject;
+				jvmOperations.add(operation);
+			}
+		}
+		return jvmOperations;
 	}
 
 	/**
@@ -141,7 +246,6 @@ public class BreakerImpl {
 		for (Aspect aspect : allAspects) {
 			System.out.println("ecore fragment: " + aspect.getEcoreFragment().getEClassifiers());
 		}
-		
 	}
 
 	/**
@@ -231,7 +335,7 @@ public class BreakerImpl {
 	 * @throws CoreException
 	 * @throws IOException 
 	 */
-	private void buildSemanticModule(EcoreGroup group,
+	private void buildSemanticModule(EcoreGroup group, ArrayList<MetaclassAspectMapping> mapping,
 			ArrayList<Language> languages, ArrayList<EClassifier> requiredClassifiers) throws Exception {
 		
 		// Create the module project with the folders.
@@ -239,21 +343,48 @@ public class BreakerImpl {
 		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
 				moduleName + ".semantics");
 		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName);
-		
 		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
 		for (EcoreVertex vertex : group.getVertex()) {
 			classifiers.add(vertex.getClassifier());
 		}
 		
-		ArrayList<Aspect> aspects = findAspects(group, languages);
 		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
-		
-		for (Aspect aspect : aspects) {
-			ProjectManagementServices.copyAspectResource(aspect.getAspectTypeRef().getType().eResource(), moduleProject, moduleName, classifiers, requiredAspects);
+		ArrayList<MetaclassAspectMapping> localMapping = filterAspects(group, mapping);
+		for (MetaclassAspectMapping metaclassAspectMapping : localMapping) {
+			if(metaclassAspectMapping.getAspects().size() == 1){
+				ProjectManagementServices.copyAspectResource(metaclassAspectMapping.getAspects().get(0).
+						getAspectTypeRef().getType().eResource(), moduleProject, moduleName, classifiers, requiredAspects);
+			}
 		}
-		
 		// Refresh projects
 		ProjectManagementServices.refreshProject(moduleProject);
+	}
+	
+	private ArrayList<MetaclassAspectMapping> filterAspects(EcoreGroup group,
+			ArrayList<MetaclassAspectMapping> mapping) {
+		ArrayList<MetaclassAspectMapping> filteredMapping = new ArrayList<MetaclassAspectMapping>();
+		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
+			if(belongsTo(metaclassAspectMapping.getMetaclass(), group)){
+				filteredMapping.add(metaclassAspectMapping);
+			}
+		}
+		return filteredMapping;
+	}
+
+	private boolean belongsTo(EClassifier metaclass, EcoreGroup group) {
+		for (EcoreVertex vertex : group.getVertex()) {
+			if(vertex.getClassifier().getName().equals(metaclass.getName()))
+				return true;
+		}
+		return false;
+	}
+
+	private ArrayList<Aspect> findAllAspects(ArrayList<Language> languages) {
+		ArrayList<Aspect> allAspects = new ArrayList<Aspect>();
+		for (Language _language : languages) {
+			allAspects.addAll(_language.getSemantics());
+		}
+		return allAspects;
 	}
 	
 	/**
@@ -265,12 +396,37 @@ public class BreakerImpl {
 	private ArrayList<Aspect> findAspects(EcoreGroup group,
 			ArrayList<Language> languages) {
 		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
-		
 		for (EcoreVertex vertex : group.getVertex()) {
 			classifiers.add(vertex.getClassifier());
 		}
-		
 		return this.findAspects(classifiers, languages);
+	}
+	
+	/**
+	 * 
+	 * @param aspects
+	 * @param mapping 
+	 * @return
+	 */
+	private void findAspectMapping(
+			ArrayList<Aspect> aspects, ArrayList<MetaclassAspectMapping> mapping) {
+		for (Aspect aspect : aspects) {
+			MetaclassAspectMapping map = getMappingByClassifier(aspect.getAspectedClass(), mapping);
+			if(map == null){
+				map = new MetaclassAspectMapping(aspect.getAspectedClass(), aspect);
+				mapping.add(map);
+			}else{
+				map.getAspects().add(aspect);
+			}
+		}
+	}
+	
+	public MetaclassAspectMapping getMappingByClassifier(EClassifier classifier, ArrayList<MetaclassAspectMapping> mapping){
+		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
+			if(metaclassAspectMapping.getMetaclass().getName().equals(classifier.getName()))
+				return metaclassAspectMapping;
+		}
+		return null;
 	}
 	
 	/**

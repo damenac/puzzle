@@ -1,0 +1,7 @@
+package family.flowchartmt;
+
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Constraint extends EObject {
+}

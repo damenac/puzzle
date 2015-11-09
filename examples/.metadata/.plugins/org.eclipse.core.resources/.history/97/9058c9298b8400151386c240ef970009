@@ -1,0 +1,23 @@
+package family.flowchartmt;
+
+import family.flowchartmt.Expression;
+import family.flowchartmt.RelationalOperator;
+import java.util.Hashtable;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface RelationalExpression extends EObject, Expression {
+  public abstract RelationalOperator getOperator();
+  
+  public abstract void setOperator(final RelationalOperator newOperator);
+  
+  public abstract Expression getLeft();
+  
+  public abstract void setLeft(final Expression newLeft);
+  
+  public abstract Expression getRight();
+  
+  public abstract void setRight(final Expression newRight);
+  
+  public abstract Object eval(final Hashtable context);
+}

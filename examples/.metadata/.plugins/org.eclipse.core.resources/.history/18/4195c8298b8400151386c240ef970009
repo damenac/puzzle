@@ -1,0 +1,12 @@
+package family.flowchartmt;
+
+import family.flowchartmt.Constraint;
+import family.flowchartmt.Expression;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface RelationalConstraint extends EObject, Constraint {
+  public abstract Expression getExpression();
+  
+  public abstract void setExpression(final Expression newExpression);
+}

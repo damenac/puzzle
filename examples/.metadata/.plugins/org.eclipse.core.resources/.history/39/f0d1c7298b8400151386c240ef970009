@@ -1,0 +1,15 @@
+package family.flowchartmt;
+
+import family.flowchartmt.Arc;
+import family.flowchartmt.Node;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
+
+@SuppressWarnings("all")
+public interface Flowchart extends EObject {
+  public abstract EList<Node> getNodes();
+  
+  public abstract EList<Arc> getTransitions();
+  
+  public abstract void eval();
+}
