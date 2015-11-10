@@ -1,0 +1,4 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.Constraint = fsmaspects.ConstraintAspect
+	fsm.StateMachine = fsmaspects.StateMachineAspect
+	fsm.StringLit = fsmaspects.StringLitAspect

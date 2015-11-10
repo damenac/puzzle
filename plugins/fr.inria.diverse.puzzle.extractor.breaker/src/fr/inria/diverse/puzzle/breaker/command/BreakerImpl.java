@@ -32,6 +32,8 @@ import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
+import fr.inria.diverse.k3.sle.common.vos.AspectLanguageMapping;
+import fr.inria.diverse.k3.sle.common.vos.MetaclassAspectMapping;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -87,117 +89,24 @@ public class BreakerImpl {
 		return dependenciesGraph;
 	}
 
+	/**
+	 * Build the modules corresponding to the partition defined in the given dependencies graph. 
+	 * @param dependenciesGraph
+	 * @param languages
+	 * @param methodComparison
+	 * @throws Exception
+	 */
 	private void buildModules(EcoreGraph dependenciesGraph,
 			ArrayList<Language> languages, MethodComparison methodComparison) throws Exception {
 		
 		ArrayList<MetaclassAspectMapping> mapping = new ArrayList<MetaclassAspectMapping>();
 		findAspectMapping(languages, mapping);
-
-		System.out.println("mapping: ");
-		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
-			System.out.println("metaclass: " + metaclassAspectMapping.getMetaclass().getName());
-			for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
-				System.out.print(" aspect: " + aspectMapping.getAspect().getAspectTypeRef().getType().getSimpleName() + 
-						" - " + aspectMapping.getLanguagesList() + ",");
-			}
-			System.out.println();
-		}
-		
 		ArrayList<MetaclassAspectMapping> mappingVariability =  detectSemanticVariability(mapping, methodComparison);
-		System.out.println("COUCOU!");
-		System.out.println("mapping: ");
-		for (MetaclassAspectMapping metaclassAspectMapping : mappingVariability) {
-			System.out.println("metaclass: " + metaclassAspectMapping.getMetaclass().getName());
-			for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
-				System.out.print(" aspect: " + aspectMapping.getAspect().getAspectTypeRef().getType().getSimpleName() + 
-						" - " + aspectMapping.getLanguagesList() + ",");
-			}
-			System.out.println();
-		}
 		
 		for (EcoreGroup group : dependenciesGraph.getGroups()) {
 			ArrayList<EClassifier> requiredClassifiers = buildSyntacticModule(group, languages);
-			buildSemanticModule(group, mapping, languages, requiredClassifiers);
+			buildSemanticModule(group, mappingVariability, languages, requiredClassifiers);
 		}
-	}
-
-	/**
-	 * Detects the semantical variability. 
-	 * @param mapping
-	 * @param methodComparison
-	 * @return
-	 */
-	private ArrayList<MetaclassAspectMapping> detectSemanticVariability(
-			ArrayList<MetaclassAspectMapping> mapping, MethodComparison methodComparison) {
-		ArrayList<MetaclassAspectMapping> mappingVariability = new ArrayList<MetaclassAspectMapping>();
-		
-		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
-			MetaclassAspectMapping newEntry = new MetaclassAspectMapping(metaclassAspectMapping.getMetaclass());
-			for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
-				AspectLanguageMapping legacyMapping = findAspectMapping(aspectMapping.getAspect(), newEntry, methodComparison);
-				if(legacyMapping == null){
-					newEntry.getAspects().add(aspectMapping);
-				}else{
-					legacyMapping.setLanguagesList(legacyMapping.getLanguagesList() + 
-							aspectMapping.getLanguage().getName());
-				}
-			}
-			mappingVariability.add(newEntry);
-		}
-		
-		return mappingVariability;
-	}
-
-	private AspectLanguageMapping findAspectMapping(Aspect aspect,
-			MetaclassAspectMapping newEntry, MethodComparison methodComparison) {
-		for (AspectLanguageMapping aspectI : newEntry.getAspects()) {
-			if(aspectsEqual(aspect, aspectI.getAspect(), methodComparison)){
-				return aspectI;
-			}
-		}
-		return null;
-	}
-
-	private boolean aspectsEqual(Aspect rightAspect, Aspect leftAspect,
-			MethodComparison methodComparison) {
-		boolean nameEqual = rightAspect.getAspectTypeRef().getType().getSimpleName().equals(
-				leftAspect.getAspectTypeRef().getType().getSimpleName());
-		
-		ArrayList<JvmOperation> rightOperations = collectJvmOperations(rightAspect);
-		ArrayList<JvmOperation> leftOperations = collectJvmOperations(leftAspect);
-		
-		boolean operationsEqual = true;
-		for (JvmOperation jvmOperation : rightOperations) {
-			if(!operationExists(jvmOperation, leftOperations, methodComparison)){
-				operationsEqual = false;
-				break;
-			}
-		}
-		
-		boolean operationsSizeEqual = rightOperations.size() == leftOperations.size();
-		
-		return nameEqual && operationsEqual && operationsSizeEqual;
-	}
-
-	private boolean operationExists(JvmOperation jvmOperation,
-			ArrayList<JvmOperation> leftOperations,
-			MethodComparison methodComparison) {
-		for (JvmOperation jvmOperationJ : leftOperations) {
-			if(methodComparison.equal(jvmOperation, jvmOperationJ))
-				return true;
-		}
-		return false;
-	}
-
-	private ArrayList<JvmOperation> collectJvmOperations(Aspect aspect) {
-		ArrayList<JvmOperation> jvmOperations = new ArrayList<JvmOperation>();
-		for (EObject eObject : aspect.getAspectTypeRef().getType().eContents()) {
-			if(eObject instanceof JvmOperation){
-				JvmOperation operation = (JvmOperation) eObject;
-				jvmOperations.add(operation);
-			}
-		}
-		return jvmOperations;
 	}
 
 	/**
@@ -244,10 +153,7 @@ public class BreakerImpl {
 
 	private void addMetaclassesRequiredByTheSemantics(
 			ArrayList<Aspect> allAspects, EPackage moduleEPackage) {
-		
-		for (Aspect aspect : allAspects) {
-			System.out.println("ecore fragment: " + aspect.getEcoreFragment().getEClassifiers());
-		}
+		//TODO
 	}
 
 	/**
@@ -289,6 +195,33 @@ public class BreakerImpl {
 		return eOperations;
 	}
 
+	/**
+	 * Detects the semantical variability. 
+	 * @param mapping
+	 * @param methodComparison
+	 * @return
+	 */
+	private ArrayList<MetaclassAspectMapping> detectSemanticVariability(
+			ArrayList<MetaclassAspectMapping> mapping, MethodComparison methodComparison) {
+		ArrayList<MetaclassAspectMapping> mappingVariability = new ArrayList<MetaclassAspectMapping>();
+		
+		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
+			MetaclassAspectMapping newEntry = new MetaclassAspectMapping(metaclassAspectMapping.getMetaclass());
+			for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
+				AspectLanguageMapping legacyMapping = findAspectMapping(aspectMapping.getAspect(), newEntry, methodComparison);
+				if(legacyMapping == null){
+					newEntry.getAspects().add(aspectMapping);
+				}else{
+					legacyMapping.setLanguagesList(legacyMapping.getLanguagesList() + 
+							aspectMapping.getLanguage().getName());
+				}
+			}
+			mappingVariability.add(newEntry);
+		}
+		
+		return mappingVariability;
+	}
+	
 	/**
 	 * Finds an ecore type from a java type. 
 	 * @param returnType
@@ -345,6 +278,7 @@ public class BreakerImpl {
 		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
 				moduleName + ".semantics");
 		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName);
+		
 		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
 		for (EcoreVertex vertex : group.getVertex()) {
 			classifiers.add(vertex.getClassifier());
@@ -352,12 +286,13 @@ public class BreakerImpl {
 		
 		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
 		ArrayList<MetaclassAspectMapping> localMapping = filterAspects(group, mapping);
+		
 		for (MetaclassAspectMapping metaclassAspectMapping : localMapping) {
-			if(metaclassAspectMapping.getAspects().size() == 1){
-				ProjectManagementServices.copyAspectResource(metaclassAspectMapping.getAspects().get(0).
-						getAspect().getAspectTypeRef().getType().eResource(), moduleProject, moduleName, classifiers, requiredAspects);
+			for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
+				ProjectManagementServices.copyAspectResource(aspectLanguageMapping, moduleProject, moduleName, classifiers, requiredAspects);
 			}
 		}
+		
 		// Refresh projects
 		ProjectManagementServices.refreshProject(moduleProject);
 	}
@@ -462,6 +397,56 @@ public class BreakerImpl {
 			}
 		}
 		return aspects;
+	}
+	
+	private AspectLanguageMapping findAspectMapping(Aspect aspect,
+			MetaclassAspectMapping newEntry, MethodComparison methodComparison) {
+		for (AspectLanguageMapping aspectI : newEntry.getAspects()) {
+			if(aspectsEqual(aspect, aspectI.getAspect(), methodComparison)){
+				return aspectI;
+			}
+		}
+		return null;
+	}
+
+	private boolean aspectsEqual(Aspect rightAspect, Aspect leftAspect,
+			MethodComparison methodComparison) {
+		boolean nameEqual = rightAspect.getAspectTypeRef().getType().getSimpleName().equals(
+				leftAspect.getAspectTypeRef().getType().getSimpleName());
+		
+		ArrayList<JvmOperation> rightOperations = collectJvmOperations(rightAspect);
+		ArrayList<JvmOperation> leftOperations = collectJvmOperations(leftAspect);
+		
+		boolean operationsEqual = true;
+		for (JvmOperation jvmOperation : rightOperations) {
+			if(!operationExists(jvmOperation, leftOperations, methodComparison)){
+				operationsEqual = false;
+				break;
+			}
+		}
+		boolean operationsSizeEqual = rightOperations.size() == leftOperations.size();
+		return nameEqual && operationsEqual && operationsSizeEqual;
+	}
+
+	private boolean operationExists(JvmOperation jvmOperation,
+			ArrayList<JvmOperation> leftOperations,
+			MethodComparison methodComparison) {
+		for (JvmOperation jvmOperationJ : leftOperations) {
+			if(methodComparison.equal(jvmOperation, jvmOperationJ))
+				return true;
+		}
+		return false;
+	}
+
+	private ArrayList<JvmOperation> collectJvmOperations(Aspect aspect) {
+		ArrayList<JvmOperation> jvmOperations = new ArrayList<JvmOperation>();
+		for (EObject eObject : aspect.getAspectTypeRef().getType().eContents()) {
+			if(eObject instanceof JvmOperation){
+				JvmOperation operation = (JvmOperation) eObject;
+				jvmOperations.add(operation);
+			}
+		}
+		return jvmOperations;
 	}
 	
 	// ---------------------------------------------
