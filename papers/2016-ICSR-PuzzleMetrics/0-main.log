@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  4 NOV 2015 12:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  10 NOV 2015 13:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,75 +1013,61 @@ Underfull \vbox (badness 2158) has occurred while \output is active []
 
  [2]
 
+LaTeX Warning: Reference `sec:background' on page 3 undefined on input line 20.
+
+
+
+LaTeX Warning: Reference `sec:validation' on page 3 undefined on input line 20.
+
+
+
 LaTeX Warning: Reference `sec:threads' on page 3 undefined on input line 20.
 
 
 LaTeX Warning: Reference `sec:relatedwork' on page 3 undefined on input line 20
 .
 
-
-LaTeX Warning: Reference `sec:conclusions' on page 3 undefined on input line 20
-.
-
-) (./sections/basicconcepts.tex
-Overfull \hbox (5.49342pt too wide) in paragraph at lines 17--17
- [][][]$\T1/cmtt/m/n/9 https : / / github . com / diverse-[]project / k3 / wiki
- / Defining-[]aspects-[]in-[]Kermeta-[]3$[]| 
- []
-
-[3] [4] <images/domains-fig.pdf, id=194, 680.04547pt x 433.51385pt>
-File: images/domains-fig.pdf Graphic file (type pdf)
-
-<use images/domains-fig.pdf>
-Package pdftex.def Info: images/domains-fig.pdf used on input line 44.
-(pdftex.def)             Requested size: 347.12354pt x 221.28758pt.
-) (./sections/familiesanalysis.tex [5 <./images/domains-fig.pdf>] [6] [7]
-<images/domains-inaction.pdf, id=385, 667.49374pt x 869.2475pt>
+) (./sections/familiesanalysis.tex [3] [4]
+<images/domains-inaction.pdf, id=143, 667.49374pt x 869.2475pt>
 File: images/domains-inaction.pdf Graphic file (type pdf)
 
 <use images/domains-inaction.pdf>
 Package pdftex.def Info: images/domains-inaction.pdf used on input line 129.
 (pdftex.def)             Requested size: 347.12354pt x 452.05109pt.
 
-<images/metrics.pdf, id=390, 713.05894pt x 229.54327pt>
+<images/metrics.pdf, id=148, 713.05894pt x 229.54327pt>
 File: images/metrics.pdf Graphic file (type pdf)
 
 <use images/metrics.pdf>
 Package pdftex.def Info: images/metrics.pdf used on input line 143.
 (pdftex.def)             Requested size: 347.12354pt x 111.74515pt.
- [8] [9 <./images/domains-inaction.pdf>] [10 <./images/metrics.pdf>]) (./sectio
-ns/casestudies.tex) (./0-main.bbl [11] [12])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
-
-(./0-main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+ [5] [6 <./images/domains-inaction.pdf>] [7 <./images/metrics.pdf>]) (./section
+s/puzzlemetrics.tex) (./sections/conclusions.tex)
+(./0-main.bbl [8] [9])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
+ [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
+ (./0-main.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
 Package rerunfilecheck Info: File `0-main.out' has not changed.
-(rerunfilecheck)             Checksum: B238E02796B60FF6A3C096E84608D51D;1219.
+(rerunfilecheck)             Checksum: 10B4C8265B46B52AC0A99C094EBE7436;693.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  ) 
 Here is how much of TeX's memory you used:
- 19489 strings out of 493308
- 332551 string characters out of 6137815
- 414963 words of memory out of 5000000
- 22441 multiletter control sequences out of 15000+600000
- 20057 words of font info for 56 fonts, out of 8000000 for 9000
+ 19464 strings out of 493308
+ 332194 string characters out of 6137815
+ 414907 words of memory out of 5000000
+ 22430 multiletter control sequences out of 15000+600000
+ 20046 words of font info for 56 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,16n,75p,1174b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
 
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
@@ -1092,23 +1078,23 @@ cal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local
 /texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/te
 xlive/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbi1000.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/te
-xlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0-main.pdf (13 pages, 1104141 bytes).
+l/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx0900.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/cm-super/sftt1000.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/cm-super/sfxc1200.pfb>
+Output written on 0-main.pdf (10 pages, 816363 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
- 472 compressed objects within 5 object streams
- 78 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 437 PDF objects out of 1000 (max. 8388607)
+ 313 compressed objects within 4 object streams
+ 65 named destinations out of 1000 (max. 500000)
+ 95 words of extra memory for PDF output out of 10000 (max. 10000000)
 

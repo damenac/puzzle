@@ -22,8 +22,10 @@ By definition, DSLs are scoped to specific domains so they provide restricted se
 
 Naturally, commonalities can be found not only at the level of the syntax but also at the level of the semantics. For the technological space discussed in this paper, syntactic commonalities appear where DSLs share some metaclasses and semantic commonalities appear where DSLs share some domain-specific actions.
 
-\vspace{-1mm}
-\subsubsection{Example:} Let us now introduce a toy example to illustrate the concepts introduced so far. Consider the following set of three DSLs:
+
+\subsection{Illustrating Scenario}
+
+Let us now introduce a toy example to illustrate the concepts introduced so far. Consider the following set of three DSLs:
 
 \begin{itemize}
 \item \textbf{Finite State Machines (FSM):} FSM is a DSL for expressing simple state machines with states and transitions between the states. Each state has an associated action that allow the modification of some data (variables) in a given execution context. In turn, each transition may define a guard (evaluated in the execution context) that expresses the condition(s) under the transition can be fired.

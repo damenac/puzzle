@@ -98,7 +98,6 @@ public class ProjectManagementServices {
 	 */
 	public static void refreshProject(IProject project) throws CoreException {
 		project.refreshLocal(IResource.DEPTH_INFINITE, null);
-//		project.build(IResource.DEPTH_INFINITE, "org.eclipse.xtext.ui.shared.xtextBuilder", new HashMap<String, String>(), null);
 	}
 
 	/**
