@@ -53,6 +53,13 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass logoProgramEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass instructionEClass = null;
 
 	/**
@@ -228,13 +235,6 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass logoProgramEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum arithmeticOperatorEEnum = null;
 
 	/**
@@ -303,6 +303,24 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(KmLogoPackage.eNS_URI, theKmLogoPackage);
 		return theKmLogoPackage;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLogoProgram() {
+		return logoProgramEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogoProgram_Instructions() {
+		return (EReference)logoProgramEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -778,24 +796,6 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLogoProgram() {
-		return logoProgramEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLogoProgram_Instructions() {
-		return (EReference)logoProgramEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getArithmeticOperator() {
 		return arithmeticOperatorEEnum;
 	}
@@ -958,7 +958,6 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		penDownEClass.getESuperTypes().add(this.getPrimitive());
 		penUpEClass.getESuperTypes().add(this.getPrimitive());
 		clearEClass.getESuperTypes().add(this.getPrimitive());
-		expressionEClass.getESuperTypes().add(this.getInstruction());
 		literalEClass.getESuperTypes().add(this.getExpression());
 		integerLitEClass.getESuperTypes().add(this.getLiteral());
 		stringLitEClass.getESuperTypes().add(this.getLiteral());

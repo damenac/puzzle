@@ -11,6 +11,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -91,12 +92,13 @@ public class ProjectManagementServices {
 	}
 
 	/**
-	 * 
+	 * Refreshes the given project. 
 	 * @param project
 	 * @throws CoreException
 	 */
 	public static void refreshProject(IProject project) throws CoreException {
 		project.refreshLocal(IResource.DEPTH_INFINITE, null);
+//		project.build(IResource.DEPTH_INFINITE, "org.eclipse.xtext.ui.shared.xtextBuilder", new HashMap<String, String>(), null);
 	}
 
 	/**
@@ -130,6 +132,12 @@ public class ProjectManagementServices {
 		}
 	}
 
+	/**
+	 * Returns a file with the given name in the given project. 
+	 * @param project
+	 * @param fileName
+	 * @return
+	 */
 	public static File getFile(IProject project, final String fileName) {
 		if(project != null){
 			File projectFile = new File(project.getLocation().toString());
@@ -138,6 +146,12 @@ public class ProjectManagementServices {
 		return null;
 	}
 	
+	/**
+	 * Returns a file with the given name by searching in the files hierarchy starting in the given file.
+	 * @param root
+	 * @param fileName
+	 * @return
+	 */
 	private static File findFile(File root, String fileName){
 		File[] files = root.listFiles();
 		for (int i = 0; i < root.listFiles().length; i++) {
@@ -154,6 +168,15 @@ public class ProjectManagementServices {
 		return null;
 	}
 	
+	/**
+	 * Copy an aspect to the modularized semantic module. 
+	 * @param aspectLanguageMapping
+	 * @param moduleProject
+	 * @param moduleName
+	 * @param classifiers
+	 * @param requiredAspects
+	 * @throws IOException
+	 */
 	public static void copyAspectResource(AspectLanguageMapping aspectLanguageMapping,
 			IProject moduleProject, String moduleName, ArrayList<EClassifier> classifiers, 
 			ArrayList<Aspect> requiredAspects) throws IOException {
@@ -172,10 +195,12 @@ public class ProjectManagementServices {
 		String content = "";
 		
 		String pck = moduleName.replace("Module", "").toLowerCase();
+		String prefix = aspectLanguageMapping.getLanguagesList() + "Like";
 		
 		while(line != null){
 			if(line.startsWith("package")){
-				line = "package " + aspectLanguageMapping.getLanguagesList() + "." + pck + "\n";
+				line = "package " + prefix + "." + pck + "\n\n";
+				line += "import commons.*\n";
 			}
 			
 			if(line.startsWith("import") && !line.contains("static extension")){
@@ -209,19 +234,79 @@ public class ProjectManagementServices {
 		br.close();
 		
 		
-		File pckRootFolder = new File(moduleProject.getLocation().toString() + "/src/" + aspectLanguageMapping.getLanguagesList());
+		File pckRootFolder = new File(moduleProject.getLocation().toString() + "/src/" + prefix);
 		pckRootFolder.mkdirs();
 		
-		File pckFolder = new File(moduleProject.getLocation().toString() + "/src/" + aspectLanguageMapping.getLanguagesList() + "/" + pck);
+		File pckFolder = new File(moduleProject.getLocation().toString() + "/src/" + prefix + "/" + pck);
 		pckFolder.mkdirs();
 		
-		File newXtendFile = new File(moduleProject.getLocation().toString() + "/src/" + aspectLanguageMapping.getLanguagesList() + "/" + pck + "/" + fileName);
+		File newXtendFile = new File(moduleProject.getLocation().toString() + "/src/" + prefix + "/" + pck + "/" + fileName);
 		newXtendFile.createNewFile();
 		PrintWriter pw = new PrintWriter(newXtendFile);
 		pw.print(content);
 		pw.close();
 	}
 	
+	/**
+	 * Copy a non aspected resource to the commons semantics project in the parameter. 
+	 * @param file
+	 * @param commonsProject
+	 * @throws Exception 
+	 */
+	public static void copyNonAspectResource(File file, IProject commonsProject) throws Exception {
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		String line = br.readLine();
+		String content = "";
+		
+		while(line != null){
+			if(line.startsWith("package")){
+				line = "package commons";
+			}
+			
+			content += line + "\n";
+			line = br.readLine();
+		}
+		br.close();
+		
+		File newXtendFile = new File(commonsProject.getLocation().toString() + "/src/commons" + "/" + file.getName());
+		newXtendFile.createNewFile();
+		PrintWriter pw = new PrintWriter(newXtendFile);
+		pw.print(content);
+		pw.close();
+	}
+	
+	/**
+	 * Returns a collection with all the xtend files existing in the given project.
+	 * @param project
+	 * @return
+	 */
+	public static ArrayList<File> collectAllXtendFiles(IProject project) {
+		 ArrayList<File> xtendFiles = new ArrayList<File>();
+		if(project != null){
+			File projectFile = new File(project.getLocation().toString());
+			collectAllXtendFiles(projectFile, xtendFiles);
+		}
+		return xtendFiles;
+	}
+	
+	/**
+	 * Returns a collection with all the xtend files existing in the hierarchy starting by the given file. 
+	 * @param root
+	 * @return
+	 */
+	private static void collectAllXtendFiles(File root, ArrayList<File> xtendFiles ) {
+		File[] files = root.listFiles();
+		for (int i = 0; i < root.listFiles().length; i++) {
+			if(!files[i].isDirectory() && files[i].getName().endsWith(".xtend"))
+				xtendFiles.add(files[i]);
+		}
+		for (int i = 0; i < files.length; i++) {
+			if(files[i].isDirectory() && !files[i].getName().equals("bin") && !files[i].getName().equals(".settings")){
+				collectAllXtendFiles(files[i], xtendFiles);
+			}
+		}
+	}
+
 	/**
 	 * Generates the corresponding GenModel file for an ecore package in the parameter
 	 * @param ePackage
@@ -266,13 +351,13 @@ public class ProjectManagementServices {
 	    generator.generate(genModel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, "model project", new BasicMonitor.Printing(System.out));
 	}
 	
-	public static void createXtendConfigurationFile(IProject project, String moduleName) throws IOException{
+	public static void createXtendConfigurationFile(IProject project, String moduleName, boolean commons) throws IOException{
 		createPluginFile(project);
 		createPropertiesFile(project);
 		createFolderByName(project, "src");
 		createFolderByName(project, "xtend-gen");
 		createFolderByName(project, "META-INF");
-		createManifest(project);
+		createManifest(project, commons);
 		createDotProject(project);
 		createClasspath(project);
 	}
@@ -306,11 +391,16 @@ public class ProjectManagementServices {
 		pw.close();
 	}
 	
-	private static void createManifest(IProject project) throws IOException{
+	private static void createManifest(IProject project, boolean commons) throws IOException{
 		File file = new File(project.getLocation().toString() + "/META-INF/MANIFEST.MF");
 		file.createNewFile();
 		String content = "Bundle-SymbolicName: " + project.getName() + ";singleton:=true\n";
-		content += "Export-Package: aspects\n";
+		
+		if(commons)
+			content += "Export-Package: commons\n";
+		else
+			content += "Export-Package: aspects\n";
+		
 		content += "Bundle-Version: 1.0.0\n";
 		content += "Bundle-Name: " + project.getName() + "\n";
 		content += "Bundle-ClassPath: .\n";
@@ -320,11 +410,18 @@ public class ProjectManagementServices {
 		content += " com.google.guava;bundle-version=\"0.0.0\";visibility:=private,\n";
 		content += " org.eclipse.emf.ecore.xmi;bundle-version=\"2.8.0\";visibility:=reexport,\n";
 		content += " org.eclipse.emf.ecore;bundle-version=\"2.8.0\";visibility:=reexport,\n";
-		content += " org.eclipse.emf.common;bundle-version=\"2.8.0\";visibility:=reexport,\n";
-		content += " " + project.getName().replace("semantics", "syntax") + ";bundle-version=\"1.0.0\"\n";
+		
+		if(!commons)
+			content += " fr.inria.diverse.commons.semantics;visibility:=reexport,\n";
+		
+		if(!commons)
+			content += " " + project.getName().replace("semantics", "syntax") + ";bundle-version=\"1.0.0\",\n";
+		
+		content += " org.eclipse.emf.common;bundle-version=\"2.8.0\";visibility:=reexport\n";
 		content += "Bundle-ManifestVersion: 2\n";
 		content += "Bundle-RequiredExecutionEnvironment: JavaSE-1.7\n";
 		content += "Manifest-Version: 1.0\n";
+		
 		PrintWriter pw = new PrintWriter(file);
 		pw.print(content);
 		pw.close();
@@ -402,6 +499,4 @@ public class ProjectManagementServices {
 		pw.print(content);
 		pw.close();
 	}
-
-	
 }

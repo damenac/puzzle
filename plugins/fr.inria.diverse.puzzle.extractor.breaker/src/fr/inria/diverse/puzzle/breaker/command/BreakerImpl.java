@@ -1,9 +1,14 @@
 package fr.inria.diverse.puzzle.breaker.command;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
@@ -13,6 +18,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EcoreFactory;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.common.types.JvmFormalParameter;
 import org.eclipse.xtext.common.types.JvmOperation;
 import org.eclipse.xtext.common.types.JvmTypeReference;
@@ -82,6 +88,7 @@ public class BreakerImpl {
 		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		
 		buildModules(dependenciesGraph, languages, methodComparison);
+		createSemanticsCommonsProject(languages);
 		
 		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
 		System.out.println("Modularization Quality: " + mq);
@@ -277,7 +284,7 @@ public class BreakerImpl {
 		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
 				moduleName + ".semantics");
-		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName);
+		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName, false);
 		
 		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
 		for (EcoreVertex vertex : group.getVertex()) {
@@ -297,6 +304,103 @@ public class BreakerImpl {
 		ProjectManagementServices.refreshProject(moduleProject);
 	}
 	
+	/**
+	 * Creates a project with all the xtend classes used by different modules in the family. 
+	 * @param languages. Set of languages under study. 
+	 * @throws Exception 
+	 */
+	private void createSemanticsCommonsProject(ArrayList<Language> languages) throws Exception{
+		IProject commonsProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.commons.semantics");
+		ProjectManagementServices.createXtendConfigurationFile(commonsProject, "commons", true);
+		ProjectManagementServices.createFolderByName(commonsProject, "src/commons");
+		
+		ArrayList<File> commonResources = this.findCommonResources(languages);
+		for (File file : commonResources) {
+			ProjectManagementServices.copyNonAspectResource(file, commonsProject);
+		}
+		ProjectManagementServices.refreshProject(commonsProject);
+	}
+	
+	/**
+	 * Scan all the semantic projects of the given languages and returns all the
+	 * xtend files that are not implementing an aspect. 
+	 * 
+	 * @param languages
+	 * @return
+	 */
+	private ArrayList<File> findCommonResources(
+			ArrayList<Language> languages) {
+		
+		ArrayList<IProject> semanticProjects = collectSemanticProjects(languages);
+		ArrayList<File> commonResources = new ArrayList<File>();
+		for (IProject iProject : semanticProjects) {
+			findUnaspectedResources(languages, iProject, commonResources);
+		}
+		return commonResources;
+	}
+	
+	/**
+	 * Collects the semantic projects of the given set of languages. 
+	 * @param languages
+	 * @return
+	 */
+	private ArrayList<IProject> collectSemanticProjects(ArrayList<Language> languages){
+		ArrayList<IProject> semanticProjects = new ArrayList<IProject>();
+		for (Language language : languages) {
+			for (Aspect aspect : language.getSemantics()) {
+				Resource eResource = aspect.getAspectTypeRef().getType().eResource();
+				URI fileURIResource0 = URI.createFileURI(eResource.getURI().path());
+				
+				IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+				IProject project = root.getProject(fileURIResource0.segments()[1]);
+				
+				if(!semanticProjects.contains(project))
+					semanticProjects.add(project);
+			}
+		}
+		return semanticProjects;
+	}
+
+	/**
+	 * Fills the commonResources parameter with all the xtend files in the given project that
+	 * do not contain an aspect from the given collection of languages. 
+	 * 
+	 * @param languages
+	 * @param iProject
+	 * @param commonResources
+	 */
+	private void findUnaspectedResources(ArrayList<Language> languages,
+			IProject iProject, ArrayList<File> commonResources) {
+		
+		ArrayList<Aspect> allAspects = this.findAllAspects(languages);
+		ArrayList<File> xtendFiles = ProjectManagementServices.collectAllXtendFiles(iProject);
+		ArrayList<File> unaspectedFiles = new ArrayList<File>();
+		
+		for (int i = 0; i < xtendFiles.size(); i++) {
+			File file = xtendFiles.get(i);
+			boolean aspected = false;
+			for (int j = 0; j < allAspects.size() && !aspected; j++) {
+				Aspect aspect = allAspects.get(j);
+				String aspectURIstring = aspect.getAspectTypeRef().getType().eResource().getURI().toString();
+				String left = aspectURIstring.substring(aspectURIstring.lastIndexOf("/"));
+				String right = file.getPath().substring(file.getPath().lastIndexOf("/"));
+				if(left.equals(right)){
+					aspected = true;
+				}
+			}
+			if(!aspected){
+				unaspectedFiles.add(file);
+			}
+		}
+		commonResources.addAll(unaspectedFiles);
+	}
+	
+	/**
+	 * Returns only the aspects corresponding to the given group. 
+	 * @param group
+	 * @param mapping
+	 * @return
+	 */
 	private ArrayList<MetaclassAspectMapping> filterAspects(EcoreGroup group,
 			ArrayList<MetaclassAspectMapping> mapping) {
 		ArrayList<MetaclassAspectMapping> filteredMapping = new ArrayList<MetaclassAspectMapping>();
@@ -308,6 +412,12 @@ public class BreakerImpl {
 		return filteredMapping;
 	}
 
+	/**
+	 * Returns true if the given classifier belongs to the given ecore group. 
+	 * @param metaclass
+	 * @param group
+	 * @return
+	 */
 	private boolean belongsTo(EClassifier metaclass, EcoreGroup group) {
 		for (EcoreVertex vertex : group.getVertex()) {
 			if(vertex.getClassifier().getName().equals(metaclass.getName()))
@@ -329,6 +439,19 @@ public class BreakerImpl {
 			classifiers.add(vertex.getClassifier());
 		}
 		return this.findAspects(classifiers, languages);
+	}
+	
+	/**
+	 * Returns the collection of all the aspects associated to the given set of languages.
+	 * @param languages
+	 * @return
+	 */
+	private ArrayList<Aspect> findAllAspects(ArrayList<Language> languages) {
+		ArrayList<Aspect> allAspects = new ArrayList<Aspect>();
+		for (Language language : languages) {
+			allAspects.addAll(language.getSemantics());
+		}
+		return allAspects;
 	}
 	
 	/**

@@ -20,7 +20,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="PenDown" eSuperTypes="//Primitive"/>
   <eClassifiers xsi:type="ecore:EClass" name="PenUp" eSuperTypes="//Primitive"/>
   <eClassifiers xsi:type="ecore:EClass" name="Clear" eSuperTypes="//Primitive"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="//Instruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Literal" eSuperTypes="//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerLit" eSuperTypes="//Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">

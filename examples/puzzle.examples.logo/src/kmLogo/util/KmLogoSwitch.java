@@ -144,7 +144,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 			case KmLogoPackage.EXPRESSION: {
 				Expression expression = (Expression)theEObject;
 				T result = caseExpression(expression);
-				if (result == null) result = caseInstruction(expression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -152,7 +151,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				Literal literal = (Literal)theEObject;
 				T result = caseLiteral(literal);
 				if (result == null) result = caseExpression(literal);
-				if (result == null) result = caseInstruction(literal);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -161,7 +159,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				T result = caseIntegerLit(integerLit);
 				if (result == null) result = caseLiteral(integerLit);
 				if (result == null) result = caseExpression(integerLit);
-				if (result == null) result = caseInstruction(integerLit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -170,7 +167,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				T result = caseStringLit(stringLit);
 				if (result == null) result = caseLiteral(stringLit);
 				if (result == null) result = caseExpression(stringLit);
-				if (result == null) result = caseInstruction(stringLit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -179,7 +175,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				T result = caseBoolLit(boolLit);
 				if (result == null) result = caseLiteral(boolLit);
 				if (result == null) result = caseExpression(boolLit);
-				if (result == null) result = caseInstruction(boolLit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -187,7 +182,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				ArithmeticExpression arithmeticExpression = (ArithmeticExpression)theEObject;
 				T result = caseArithmeticExpression(arithmeticExpression);
 				if (result == null) result = caseExpression(arithmeticExpression);
-				if (result == null) result = caseInstruction(arithmeticExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -195,7 +189,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				RelationalExpression relationalExpression = (RelationalExpression)theEObject;
 				T result = caseRelationalExpression(relationalExpression);
 				if (result == null) result = caseExpression(relationalExpression);
-				if (result == null) result = caseInstruction(relationalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -203,7 +196,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				ProcCall procCall = (ProcCall)theEObject;
 				T result = caseProcCall(procCall);
 				if (result == null) result = caseExpression(procCall);
-				if (result == null) result = caseInstruction(procCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -256,7 +248,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				Parameter parameter = (Parameter)theEObject;
 				T result = caseParameter(parameter);
 				if (result == null) result = caseExpression(parameter);
-				if (result == null) result = caseInstruction(parameter);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -264,12 +255,26 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				ParameterCall parameterCall = (ParameterCall)theEObject;
 				T result = caseParameterCall(parameterCall);
 				if (result == null) result = caseExpression(parameterCall);
-				if (result == null) result = caseInstruction(parameterCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logo Program</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logo Program</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogoProgram(LogoProgram object) {
+		return null;
 	}
 
 	/**
@@ -644,21 +649,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseParameterCall(ParameterCall object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Logo Program</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Logo Program</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseLogoProgram(LogoProgram object) {
 		return null;
 	}
 

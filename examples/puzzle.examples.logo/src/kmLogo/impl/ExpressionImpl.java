@@ -4,7 +4,10 @@ package kmLogo.impl;
 
 import kmLogo.Expression;
 import kmLogo.KmLogoPackage;
+
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class ExpressionImpl extends InstructionImpl implements Expression {
+public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

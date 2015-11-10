@@ -2,6 +2,7 @@
  */
 package kmLogo;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +14,5 @@ package kmLogo;
  * @model abstract="true"
  * @generated
  */
-public interface Expression extends Instruction {
+public interface Expression extends EObject {
 } // Expression

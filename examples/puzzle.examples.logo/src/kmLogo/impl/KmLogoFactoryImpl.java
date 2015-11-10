@@ -124,6 +124,16 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public LogoProgram createLogoProgram() {
+		LogoProgramImpl logoProgram = new LogoProgramImpl();
+		return logoProgram;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Back createBack() {
 		BackImpl back = new BackImpl();
 		return back;
@@ -337,16 +347,6 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	public ParameterCall createParameterCall() {
 		ParameterCallImpl parameterCall = new ParameterCallImpl();
 		return parameterCall;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LogoProgram createLogoProgram() {
-		LogoProgramImpl logoProgram = new LogoProgramImpl();
-		return logoProgram;
 	}
 
 	/**

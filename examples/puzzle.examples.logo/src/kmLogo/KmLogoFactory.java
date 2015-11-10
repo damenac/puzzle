@@ -22,6 +22,15 @@ public interface KmLogoFactory extends EFactory {
 	KmLogoFactory eINSTANCE = kmLogo.impl.KmLogoFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Logo Program</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logo Program</em>'.
+	 * @generated
+	 */
+	LogoProgram createLogoProgram();
+
+	/**
 	 * Returns a new object of class '<em>Back</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -218,15 +227,6 @@ public interface KmLogoFactory extends EFactory {
 	 * @generated
 	 */
 	ParameterCall createParameterCall();
-
-	/**
-	 * Returns a new object of class '<em>Logo Program</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Logo Program</em>'.
-	 * @generated
-	 */
-	LogoProgram createLogoProgram();
 
 	/**
 	 * Returns the package supported by this factory.
