@@ -33,6 +33,27 @@
 \usepackage{todonotes}
 \usepackage{bbding}
 \usepackage{xcolor,colortbl}
+
+\lstset{ %
+language=C++,                % choose the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+numbers=left,                   % where to put the line-numbers
+numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
+numbersep=5pt,                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+morekeywords={language,syntax,with},
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
+
 \setcounter{tocdepth}{3}
 \newtheorem{mydef}{Definition}
 
@@ -58,8 +79,8 @@
 
 \mainmatter  % start of an individual contribution
 
-\title{Identifying Reusable Language Modules from Legacy Domain-Specific Languages}
-\titlerunning{Identifying Reusable Language Modules from Legacy DSLs}
+\title{Identifying Reusable Language Modules from Existing Domain-Specific Languages}
+\titlerunning{Identifying Reusable Language Modules from Existing DSLs}
 
 
 \author{David M\'endez-Acu\~na \and Jos\'e A. Galindo \and Benoit Combemale \and \\ Arnaud Blouin \and Benoit Baudry}
@@ -71,7 +92,7 @@
 
 \begin{abstract} 
 
-The use of domain-specific languages (DSLs) has become a successful technique in the implementation of complex systems. However, the construction of this type of languages is time-consuming and requires highly-specialized knowledge and skills. Hence, researchers are currently seeking approaches to leverage reuse during the DSLs development in order to minimize implementation from scratch. An important step towards achieving this objective is to identify commonalities among existing DSLs. These commonalities constitute potential reuse that can be exploited by using reverse-engineering methods. In this paper, we present an approach intended to identify sets of DSLs with potential reuse. We also provide a mechanism that allows language designers to measure such potential reuse in order to objectively evaluate whether it is enough to justify the applicability of a given reverse-engineering process. We validate our approach by evaluating a large amount of DSLs we take from public \texttt{GitHub} repositories.
+The use of domain-specific languages (DSLs) has become a successful technique in the implementation of complex systems. However, the construction of this type of languages is time-consuming and requires highly-specialized knowledge and skills. Hence, researchers are currently seeking approaches to leverage reuse during the DSLs development in order to minimize implementation from scratch. Indeed, we can find several approaches that support modular definition of DSLs. Still, the design of language modules that can be actually reusable is a difficult task. With little information, language designers have to define language modules intended to be reused in future contexts that, of course, they do not know in advance. In this paper, we explore a different approach by presenting a strategy to identify reusable language modules from existing DSLs. Our idea is to detect sets of language constructs that are tipically used together and extract them in interdependent language modules. We validate our approach by using realistic DSLs that we obtain from public \texttt{GitHub} repositories.
 
 \end{abstract}
 

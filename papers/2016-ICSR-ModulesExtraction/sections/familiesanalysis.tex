@@ -1,14 +1,21 @@
 \section{Proposed approach}
 \label{sec:apprach}
 
-Given a set of existing DSLs (that we term as the \textit{input set}) our approach is intended to identify commonalities --and so, potential reuse--. Then, we provide some metrics that permit to objectively evaluate those commonalities. The reminder of this section explain how we tackle this problem.
-
-\subsection{Identifying commonalities}
+\subsection{Identifying overlapping}
 \label{sec:metrics}
 
-In the first part of our approach, we perform static analysis in syntax and semantics of a given set of DSLs in order to build a pair of Venn diagrams that allows language designers to easily visually identify commonalities among DSLs under study. The idea is to visualize each DSL as a pair of two sets: The first one is a set of metaclasses representing the syntax, and the second one is a set of domain-specific actions representing the semantics. Syntactic and semantic commonalities are represented as intersections between the corresponding sets. To this end, we designed an algorithm that is able to compute the all intersections among the syntax of the DSLs in the input set. 
+Given a set of existing DSLs (that we term as the \textit{input set}) our approach is intended to identify a catalog of reusable language modules. To that end, we detect groups of language constructs that usually appear together. Our hypothesis is that if a set of constructs is usually used together is because there can be some strong domain relationships between the concepts they represent. 
 
-Our algorithm for detecting \textbf{syntactic intersections} can be described as by the function that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these metamodels. Note that there can be intersections among any of the combinations of the input set. Hence, in the result there is a tuple for each of the possible combinations of the input metamodels (i.e., the power set). Similarly, our algorithm for detecting \textbf{semantic intersections} can be described as a function that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the intersections among these aspects. 
+To detect language modules, we first perform analysis analysis on the input DSLs and we find overlapping among them. Our analysis can be illustrated by means of a Venn Diagram such as the one presented in Figure \ref{fig:shape} that uses our illustrating scenario and includes both syntax and semantic overlapping. Syntactic and semantic overlapping is represented as intersections between the corresponding sets. To this end, we designed an algorithm that is able to compute the all overlapping among the syntax of the DSLs in the input set. 
+
+Our algorithm for detecting \textbf{syntactic overlapping} can be described as by the function that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the overlapping among these metamodels. Note that there can be overlapping among any of the combinations of the input set. Hence, in the result there is a tuple for each of the possible combinations of the input metamodels (i.e., the power set). Similarly, our algorithm for detecting \textbf{semantic overlapping} can be described as a function that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the overlapping among these aspects.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{images/domains-inaction.pdf}
+\caption{Visualizing syntactic and semantic commonalities}
+\label{fig:shape}
+\end{figure}
 
 %\begin{equation}
 %  Venn_{syn} : set(MM) \rightarrow set(<set(MM),set(MC)>)
@@ -49,7 +56,7 @@ Our algorithm for detecting \textbf{syntactic intersections} can be described as
 %  I_{sem}(dsas) = \bigcap _{i=0}^{|dsas|}dsas_i
 %\end{equation}
 
-\subsubsection{Comparison operators:} A syntactic intersection is a set of metaclasses that are equal in two or more DSLs. Similarly, a semantic intersection is a set of domain-specific actions that are equal in two or more DSLs. At this point we need to clearly define the notion of equality between metaclasses and domain-specific actions. That is, we need to establish the criteria under we consider that two metaclasses/domain-specific actions are equal.
+\subsubsection{Comparison operators:} A syntactic overlapping is a set of metaclasses that are equal in two or more DSLs. Similarly, a semantic overlapping is a set of domain-specific actions that are equal in two or more DSLs. At this point we need to clearly define the notion of equality between metaclasses and domain-specific actions. That is, we need to establish the criteria under we consider that two metaclasses/domain-specific actions are equal.
 
 \begin{itemize}
 \item \textbf{Comparison of metaclasses:} The name of a metaclass usually corresponds to a word that evokes the domain concept the metaclass represents. Thus, intuitively one can think that a first approach to compare meta-classes is by comparing their names. As we will see later in this paper, this approach results quite useful and it is quite probable that, we can find potential reuse.
@@ -121,36 +128,35 @@ Our algorithm for detecting \textbf{syntactic intersections} can be described as
 
 %It is worth nothing that there is this phenomenon of \textit{semantical variability}. A necessary condition to decide whether two language constructs are equivalent is that both, the metaclass and the associated domain-specific actions are equivalent. This condition guarantees that the specification is the same not only at the level of the abstract syntax but also at the level of the semantics. However, there is a phenomenon in the literature that corresponds to semantical variability \cite{Cengarle:2009}. There is semantical variability when there there are two constructs that have the same abstract syntax (i.e., their metaclasses are equal) but that differ in the domain-specific actions. This case is of interest for us because even in the presence of semantical variability we can have some potential reuse. If the metaclasses of two constructs are the same we can reuse them even if their domain-specific actions are different. 
 
-\vspace{-2mm}
-\subsubsection{Visualizing the results:} Figure \ref{fig:shape} shows the Venn Diagram for the case of our motivating scenario. In that figure we can see that the family is an overlapping family in terms of the abstract syntax. In the case of the semantics the results are quite interesting. Note that depending on the type of comparison operator we have different results. When the comparison operator is the naming, we have the same overlapping shape that in the case of the abstract syntax. However, when the operators become more restrictive the overlapping region is reduced. 
-
-\begin{figure}
-\centering
-\includegraphics[width=1\linewidth]{images/domains-inaction.pdf}
-\caption{Visualizing syntactic and semantic commonalities}
-\label{fig:shape}
-\end{figure}
-
 %\vspace{-2mm}
 %\subsubsection{Visualizing semantical variability:} Note that the phenomenon of semantical variability is evident in the example presented. Where there are syntactic commonalities between DSLs Logo and FSM, there are not semantic commonalities. As an additional feature of our approach, we provide a visualization of the semantical variability phenomenon. The idea is that language designers can see what are the variations in the domain specific actions.
 
 \subsection{Extracting reusable language modules}
 
-After being identifying commonalities among the input set, we extract a set of reusable language modules. The idea is to be able to extract set of DSLs that are used by different DSLs. Our partitioning strategy can be graphically summarized in Figure X. We propose to break down the set of DSLs by extracting the intersections in the Venn diagram. 
+\subsubsection{Breaking down the input set:} After being identifying commonalities among the input set, we extract a set of reusable language modules. To do so, we focus the attention on analyzing overlapping among the sets. Each overlapping contains a set of metaclasses/domain specific actions that are used together in a given set of DSLs. In the illustrating scenario we can see that the overlapping among Logo, FSM, and Flowchart is a set of language constructs that permit to express expressions. They go well together and it makes sense to group them. Similarly, the overlapping between Flowchart and FSM is a set of constructs about constraints. Note that this example show us that it is not appropriated to put constraints and expressions in one language module. In that case, Logo would include constraints that is not necessary. 
 
-\subsubsection{Breaking down the input set}
-
-Figure \ref{fig:breakingdown} shows the way in which we break down the input set. 
+From that observation, we propose to create one module for each overlapping as presented in Figure \ref{fig:breakingdown}. For each different overlapping, we create a language module. Of course, there are certain dependencies among modules that we need to express. Besides, breaking down DSLs in language modules only makes sense if we can later compose those modules to obtain complete DSLs. Then, a composition strategy is needed. 
 
 \begin{figure}
 \centering
-\includegraphics[width=1.05\linewidth]{images/breakdown.pdf}
-\caption{Breaking down the input set by separating intersections}
+\includegraphics[width=1\linewidth]{images/breakdown.pdf}
+\caption{Breaking down the input set by separating overlapping}
 \label{fig:breakingdown}
 \end{figure}
 
-\subsubsection{Modularization support}
+\subsubsection{Encapsulating language modules:} Let us now, to explain how we support the capability of encapsulating subsets of language constructs in separated and interdependent language modules. Different modules specify different constructs; a complete DSL is obtained by composing a set of modules. Accordingly, the main requirement for supporting separation of features in DSLs relies on the capability of expressing dependencies between language modules. In the following, we explain each of them and we present the corresponding tool support. 
 
-\subsection{Composing reusable language modules}
+%Note that both DSLs and modules are, at the end, set of language constructs. Hence, one may think that a module is also a DSL. Although this is technically true, there is a substantial difference between DSLs and modules. A DSL is a closed set of constructs that materializes a complete DSL specification that is ready to be used. Contrariwise, a module is set of constructs whose specification may depend on other constructs defined in other modules. A module can be used (and considered itself as a DSL) as long as their dependencies are fulfilled.
 
-It is important to highlight that our approach is useful only if the extracted language modules can be later composed to obtain new DSLs. In this section we present our composition approach that shows how this composition is supported. 
+There is a \textit{requiring module} that uses some constructs provided by a \textit{providing module}. The requiring module has a dependency relationship towards the providing one that, in the small, is materialized by the fact that some of the classes of the requiring module have references (simple references or containment references) to some constructs of the providing one. In order to avoid direct references between modules, we introduce the notion of interfaces for dealing with modules' dependencies. In the case of aggregation, the requiring language has a \textit{required interface} whereas the providing one has the \textit{provided interface}. A required interface contains the set of constructs required by the requiring module which are supposed to be replaced by actual construct provided by other module(s).
+
+It is important to highlight that we use \textit{model types} \cite{Steel:2007} to express both required and provided interfaces. As illustrated on top of Figure \ref{fig:approaches-interfaces}, the relationship between a module and its required interface is \textit{referencing}. A module can have some references to the constructs declared in its required interface. In turn, the relationship between a module and its provided interface is \textit{implements} (deeply explained in \cite{Degueule:2015}). A module implements the functionality exposed in its model type. If the required interface is a subtype of the provided interface, then the provided interface fulfills the requirements declared in a required interface. %Note that the partial sub-typing relationship defined in \cite{Guy:2012}, permits a required interface being partially fulfilled by a provided interface. The result of the composition will be a module with a new required interface that contains only those elements that were not provided.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{images/approach-interfaces.pdf}
+\caption{Interfaces for language modules}
+\label{fig:approaches-interfaces}
+\end{figure}
+
+The tool support we provide for specifying interfaces on language modules is based on annotations at the level of the abstract syntax (i.e., the metamodel). That means that the required constructs of a requiring module are declared as meta-classes in the metamodel as the same as the actual constructs of the module. However, the required constructs are annotated with \texttt{@Required} to distinguish them from the actual constructs.

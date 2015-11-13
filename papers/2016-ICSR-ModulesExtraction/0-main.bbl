@@ -1,16 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Berger:2014}
-C.~Berger, H.~Rendel, and B.~Rumpe.
-\newblock Measuring the ability to form a product line from existing products.
-\newblock volume abs/1409.6583. 2014.
-
-\bibitem{Berger:126283}
-C.~Berger, H.~Rendel, B.~Rumpe, C.~Busse, T.~Jablonski, and F.~Wolf.
-\newblock {P}roduct {L}ine {M}etrics for {L}egacy {S}oftware in {P}ractice.
-\newblock In {\em SPLC 2010 : Proceedings of the 14th International Software
-  Product Line Conference}, pages 247--250. Univ., Lancaster, 2010.
-
 \bibitem{Biegel:2010}
 B.~Biegel and S.~Diehl.
 \newblock Jccd: A flexible and extensible api for implementing custom code
@@ -18,6 +7,11 @@ B.~Biegel and S.~Diehl.
 \newblock In {\em Proceedings of the IEEE/ACM International Conference on
   Automated Software Engineering}, ASE '10, pages 167--168, New York, NY, USA,
   2010. ACM.
+
+\bibitem{Caldiera:1991}
+G.~Caldiera and V.~R. Basili.
+\newblock Identifying and qualifying reusable software components.
+\newblock {\em Computer}, 24(2):61--70, Feb. 1991.
 
 \bibitem{Clark:2013}
 T.~Clark and B.~Barn.
@@ -166,14 +160,6 @@ M.~V\"olter, S.~Benz, C.~Dietrich, B.~Engelmann, M.~Helander, L.~C.~L. Kats,
 \newblock {\em {DSL} Engineering - Designing, Implementing and Using
   Domain-Specific Languages}.
 \newblock dslbook.org, 2013.
-
-\bibitem{Zschaler:2010b}
-S.~Zschaler, D.~S. Kolovos, N.~Drivalos, R.~F. Paige, and A.~Rashid.
-\newblock Domain-specific metamodelling languages for software language
-  engineering.
-\newblock In M.~van~den Brand, D.~Ga?evi?, and J.~Gray, editors, {\em Software
-  Language Engineering}, volume 5969 of {\em Lecture Notes in Computer
-  Science}, pages 334--353. Springer Berlin Heidelberg, 2010.
 
 \bibitem{Zschaler:2010}
 S.~Zschaler, P.~S\'anchez, J.~a. Santos, M.~Alf\'erez, A.~Rashid, L.~Fuentes,
