@@ -67,6 +67,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 
 \newcommand\etal[0]{\emph{et al.}\xspace}
 \newcommand\td[1]{\todo[inline]{#1}\xspace}
+\newcommand\toolname[0]{Puzzle\xspace}
 
 \setcounter{tocdepth}{3}
 
@@ -92,25 +93,30 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 
 \begin{abstract} 
 
-The use of domain-specific languages (DSLs) has become a successful technique in the implementation of complex systems. However, the construction of this type of languages is time-consuming and requires highly-specialized knowledge and skills. Hence, researchers are currently seeking approaches to leverage reuse during the DSLs development in order to minimize implementation from scratch. Indeed, we can find several approaches that support modular definition of DSLs. Still, the design of language modules that can be actually reusable is a difficult task. With little information, language designers have to define language modules intended to be reused in future contexts that, of course, they do not know in advance. In this paper, we explore a different approach by presenting a strategy to identify reusable language modules from existing DSLs. Our idea is to detect sets of language constructs that are tipically used together and extract them in interdependent language modules. We validate our approach by using realistic DSLs that we obtain from public \texttt{GitHub} repositories.
+The use of domain-specific languages (DSLs) has become a successful technique in the implementation of complex systems. However, the construction of this type of languages is time-consuming and requires highly-specialized knowledge and skills. 
+In such context, a common practice for enabling reuse is the definition of languages modules that can be later put togueter  in order to build up new DSLs. However, the identification and reuse of those modules in a set of existing languages is currently relying on manual and costly tasks thus, hindering the reuse exploitation when developing DSLs. 
+%Hence, researchers are currently seeking approaches to leverage reuse during the DSLs development in order to minimize implementation from scratch. Indeed, we can find several approaches that support modular definition of DSLs. Still, the design of language modules that can be actually reusable is a difficult task. With little information, language designers have to define language modules intended to be reused in future contexts that, of course, they do not know in advance. 
+In this paper, we propose a solution to i) detect and identify possible reuse in a set of DSLs; and ii) break down those languages into modules that can be later exploited to minimize costs when constructing new languages and when maintaining the existing ones. Finally, we validate our approach by using realistic DSLs coming out from industrial projects and obtained from public \texttt{GitHub} repositories.
 
 \end{abstract}
 
 \input{sections/introduction}
 \input{sections/basicconcepts}
 %\input{sections/runningexample}
+\input{sections/motivation}
 \input{sections/familiesanalysis}
 \input{sections/casestudies}
 %\input{sections/puzzlemetrics}
 %\input{sections/threadstovalidity}
-%\input{sections/relatedwork}
-%\input{sections/conclusions}
+\input{sections/relatedwork}
+\input{sections/conclusions}
 
 \section*{Acknowledgments}
-The research presented in this paper is supported by the European Union within the FP7 Marie Curie Initial Training Network ``RELATE" under grant agreement number 264840 and VaryMDE, a collaboration between Thales and INRIA.
+The research presented in this paper is supported by the European Union within the FP7 Marie Curie Initial Training Network ``RELATE" under grant agreement number 264840 and VaryMDE, a collaboration between Thales and INRIA and the project Cybersecurity involving DGA (French department of defence) and INRIA.
 
 % BIBLIOGRAPHY
 \bibliographystyle{abbrv}
 \bibliography{0-main}
 
 \end{document}
+\grid
