@@ -1,5 +1,5 @@
-Bundle-SymbolicName: puzzle.examples.family.overlapping;singleton:=true
-Bundle-Name: puzzle.examples.family.overlapping
+Bundle-SymbolicName: puzzle.examples.family.fsm;singleton:=true
+Bundle-Name: puzzle.examples.family.fsm
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private,
@@ -11,12 +11,9 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.melange.lib;bundle-version="0.1.0";visibility:=reexport,
  fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:=reexport,
  fr.inria.diverse.melange.adapters;bundle-version="0.1.0";visibility:=reexport,
- puzzle.examples.overlap.logo.metamodel;bundle-version="1.0.0",
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.2.0",
- puzzle.examples.overlap.flowchart.metamodel;bundle-version="1.0.0",
- puzzle.examples.overlap.flowchart.aspects;bundle-version="1.0.0",
- puzzle.examples.overlap.fsm.aspects;bundle-version="1.0.0",
- puzzle.examples.overlap.logo.aspects;bundle-version="1.0.0"
+ puzzle.examples.fsm.uml.metamodel;bundle-version="1.0.0",
+ puzzle.examples.fsm.rhapsody.metamodel;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0
