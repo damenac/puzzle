@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;puzzle.examples.fsm.rhapsody/models/fsmUml.ecore&apos; to &apos;fsmRhapsody.ecore&apos;" description="Rename resource &apos;fsmUml.ecore&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="models/fsmUml.ecore" name="fsmRhapsody.ecore" stamp="1447929296434" updateReferences="true"/>
+</session>

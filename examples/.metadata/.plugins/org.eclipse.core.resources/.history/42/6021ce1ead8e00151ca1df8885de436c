@@ -1,0 +1,95 @@
+package family
+
+/**
+ * A language for simple state machines.
+ */
+language FSM {
+	syntax "platform:/resource/puzzle.examples.overlap.fsm.metamodel/models/fsm.ecore"
+	
+//	with fsmaspects.StateMachineAspect
+//	with fsmaspects.StateAspect
+//	with fsmaspects.TransitionAspect
+//	with fsmaspects.TriggerAspect
+//	with fsmaspects.FinalStateAspect
+//	with fsmaspects.ExpressionAspect
+//	with fsmaspects.LiteralAspect
+//	with fsmaspects.IntegerLitAspect
+//	with fsmaspects.StringLitAspect
+//	with fsmaspects.BoolLitAspect
+//	with fsmaspects.ArithmeticExpressionAspect
+//	with fsmaspects.RelationalExpressionAspect
+//	with fsmaspects.ConstraintAspect
+//	with fsmaspects.RelationalConstraintAspect
+//	with fsmaspects.StatementAspect
+//	with fsmaspects.ProgramAspect
+//	with fsmaspects.VarDeclAspect
+//	with fsmaspects.ConditionalAspect
+//	with fsmaspects.LoopAspect
+//	with fsmaspects.PrintlnAspect
+//	with fsmaspects.PrintAspect
+//	with fsmaspects.AssignationAspect
+//	with fsmaspects.WaitAspect
+	
+	exactType FsmMT
+}
+
+/**
+ * A language for Logo 
+ */
+language Logo {
+	
+	syntax "platform:/resource/puzzle.examples.overlap.logo.metamodel/models/logo.ecore"
+	 
+//	with logo.InstructionAspect 
+//	with logo.PrimitiveAspect
+//	with logo.BackAspect
+//	with logo.ForwardAspect
+//	with logo.LeftAspect
+//	with logo.RightAspect
+//	with logo.PenDownAspect
+//	with logo.PenUpAspect
+//	with logo.ClearAspect
+//	with logo.ExpressionAspect
+//	with logo.LiteralAspect
+//	with logo.IntegerLitAspect
+//	with logo.StringLitAspect
+//	with logo.BoolLitAspect
+//	with logo.ArithmeticExpressionAspect
+//	with logo.RelationalExpressionAspect
+//	with logo.ProcCallAspect
+//	with logo.BlockAspect
+//	with logo.ControlStructureAspect
+//	with logo.IfAspect
+//	with logo.RepeatAspect
+//	with logo.WhileAspect
+//	with logo.ParameterAspect
+//	with logo.ParameterCallAspect
+//	with logo.LogoProgramAspect
+	
+	exactType LogoMT
+}
+
+
+/**
+ * A language for Flowcharts 
+ */
+language Flowchart {
+	
+	syntax "platform:/resource/puzzle.examples.overlap.flowchart.metamodel/models/flowchart.ecore"
+	
+//	with flowchart.FlowchartAspect
+//	with flowchart.NodeAspect
+//	with flowchart.ArcAspect
+//	with flowchart.SubflowAspect
+//	with flowchart.ActionAspect
+//	with flowchart.DecisionAspect
+//	with flowchart.ExpressionAspect
+//	with flowchart.LiteralAspect
+//	with flowchart.IntegerLitAspect
+//	with flowchart.StringLitAspect
+//	with flowchart.BoolLitAspect
+//	with flowchart.ArithmeticExpressionAspect
+//	with flowchart.RelationalExpressionAspect
+	
+	exactType FlowchartMT
+}
