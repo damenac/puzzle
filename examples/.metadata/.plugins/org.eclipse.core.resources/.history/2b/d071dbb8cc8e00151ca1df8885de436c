@@ -1,0 +1,5 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.OrTrigger = fsmaspects.OrTriggerAspect
+	fsm.AndTrigger = fsmaspects.AndTriggerAspect
+	fsm.NotTrigger = fsmaspects.NotTriggerAspect
+	fsm.Region = fsmaspects.RegionAspect

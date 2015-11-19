@@ -6,29 +6,16 @@ package family
 language UML {
 	syntax "platform:/resource/puzzle.examples.fsm.uml.metamodel/models/fsmUml.ecore"
 	
-//	with fsmaspects.StateMachineAspect
-//	with fsmaspects.StateAspect
-//	with fsmaspects.TransitionAspect
-//	with fsmaspects.TriggerAspect
-//	with fsmaspects.FinalStateAspect
-//	with fsmaspects.ExpressionAspect
-//	with fsmaspects.LiteralAspect
-//	with fsmaspects.IntegerLitAspect
-//	with fsmaspects.StringLitAspect
-//	with fsmaspects.BoolLitAspect
-//	with fsmaspects.ArithmeticExpressionAspect
-//	with fsmaspects.RelationalExpressionAspect
-//	with fsmaspects.ConstraintAspect
-//	with fsmaspects.RelationalConstraintAspect
-//	with fsmaspects.StatementAspect
-//	with fsmaspects.ProgramAspect
-//	with fsmaspects.VarDeclAspect
-//	with fsmaspects.ConditionalAspect
-//	with fsmaspects.LoopAspect
-//	with fsmaspects.PrintlnAspect
-//	with fsmaspects.PrintAspect
-//	with fsmaspects.AssignationAspect
-//	with fsmaspects.WaitAspect
+	with fsmumlaspects.StateMachineAspect
+	with fsmumlaspects.RegionAspect
+	with fsmumlaspects.StateAspect
+	with fsmumlaspects.TransitionAspect
+	with fsmumlaspects.TriggerAspect
+	with fsmumlaspects.AndTriggerAspect
+	with fsmumlaspects.FinalStateAspect
+	with fsmumlaspects.ConstraintAspect
+	with fsmumlaspects.StatementAspect
+	with fsmumlaspects.ProgramAspect
 	
 	exactType UMLMT
 }
@@ -39,6 +26,16 @@ language UML {
 language Rhapsody{
 	syntax "platform:/resource/puzzle.examples.fsm.rhapsody.metamodel/models/fsmRhapsody.ecore"
 
+	with fsmrhapsodyaspects.StateMachineAspect
+	with fsmrhapsodyaspects.RegionAspect
+	with fsmrhapsodyaspects.StateAspect
+	with fsmrhapsodyaspects.TransitionAspect
+	with fsmrhapsodyaspects.TriggerAspect
+	with fsmrhapsodyaspects.FinalStateAspect
+	with fsmrhapsodyaspects.ConstraintAspect
+	with fsmrhapsodyaspects.StatementAspect
+	with fsmrhapsodyaspects.ProgramAspect
+
 	exactType RhapsodyMT
 }
 
@@ -47,6 +44,19 @@ language Rhapsody{
  */
 language Harel {
 	syntax "platform:/resource/puzzle.examples.fsm.harel.metamodel/models/fsmHarel.ecore"
+	
+	with fsmharelaspects.StateMachineAspect
+	with fsmharelaspects.RegionAspect
+	with fsmharelaspects.StateAspect
+	with fsmharelaspects.TransitionAspect
+	with fsmharelaspects.TriggerAspect
+	with fsmharelaspects.AndTriggerAspect
+	with fsmharelaspects.OrTriggerAspect
+	with fsmharelaspects.NotTriggerAspect
+	with fsmharelaspects.FinalStateAspect
+	with fsmharelaspects.ConstraintAspect
+	with fsmharelaspects.StatementAspect
+	with fsmharelaspects.ProgramAspect
 	
 	exactType HarelMT
 }

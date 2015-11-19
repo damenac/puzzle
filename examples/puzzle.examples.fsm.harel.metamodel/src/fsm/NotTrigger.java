@@ -11,8 +11,7 @@ package fsm;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link fsm.NotTrigger#getLeft <em>Left</em>}</li>
- *   <li>{@link fsm.NotTrigger#getRight <em>Right</em>}</li>
+ *   <li>{@link fsm.NotTrigger#getTrigger <em>Trigger</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,55 +21,29 @@ package fsm;
  */
 public interface NotTrigger extends Trigger {
 	/**
-	 * Returns the value of the '<em><b>Left</b></em>' reference.
+	 * Returns the value of the '<em><b>Trigger</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Left</em>' reference isn't clear,
+	 * If the meaning of the '<em>Trigger</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Left</em>' reference.
-	 * @see #setLeft(Trigger)
-	 * @see fsm.FsmPackage#getNotTrigger_Left()
+	 * @return the value of the '<em>Trigger</em>' reference.
+	 * @see #setTrigger(Trigger)
+	 * @see fsm.FsmPackage#getNotTrigger_Trigger()
 	 * @model required="true"
 	 * @generated
 	 */
-	Trigger getLeft();
+	Trigger getTrigger();
 
 	/**
-	 * Sets the value of the '{@link fsm.NotTrigger#getLeft <em>Left</em>}' reference.
+	 * Sets the value of the '{@link fsm.NotTrigger#getTrigger <em>Trigger</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Left</em>' reference.
-	 * @see #getLeft()
+	 * @param value the new value of the '<em>Trigger</em>' reference.
+	 * @see #getTrigger()
 	 * @generated
 	 */
-	void setLeft(Trigger value);
-
-	/**
-	 * Returns the value of the '<em><b>Right</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Right</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Right</em>' reference.
-	 * @see #setRight(Trigger)
-	 * @see fsm.FsmPackage#getNotTrigger_Right()
-	 * @model required="true"
-	 * @generated
-	 */
-	Trigger getRight();
-
-	/**
-	 * Sets the value of the '{@link fsm.NotTrigger#getRight <em>Right</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Right</em>' reference.
-	 * @see #getRight()
-	 * @generated
-	 */
-	void setRight(Trigger value);
+	void setTrigger(Trigger value);
 
 } // NotTrigger

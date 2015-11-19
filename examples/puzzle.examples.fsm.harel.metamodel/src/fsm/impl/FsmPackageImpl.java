@@ -477,17 +477,8 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getNotTrigger_Left() {
+	public EReference getNotTrigger_Trigger() {
 		return (EReference)notTriggerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getNotTrigger_Right() {
-		return (EReference)notTriggerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -737,8 +728,7 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 		createEAttribute(triggerEClass, TRIGGER__EXPRESSION);
 
 		notTriggerEClass = createEClass(NOT_TRIGGER);
-		createEReference(notTriggerEClass, NOT_TRIGGER__LEFT);
-		createEReference(notTriggerEClass, NOT_TRIGGER__RIGHT);
+		createEReference(notTriggerEClass, NOT_TRIGGER__TRIGGER);
 
 		andTriggerEClass = createEClass(AND_TRIGGER);
 		createEReference(andTriggerEClass, AND_TRIGGER__LEFT);
@@ -855,8 +845,7 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 		initEAttribute(getTrigger_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, Trigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(notTriggerEClass, NotTrigger.class, "NotTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNotTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, NotTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getNotTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, NotTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNotTrigger_Trigger(), this.getTrigger(), null, "trigger", null, 1, 1, NotTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(andTriggerEClass, AndTrigger.class, "AndTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAndTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

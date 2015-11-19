@@ -1,0 +1,18 @@
+package fsmaspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import static extension fsmaspects.TriggerAspect.*
+
+import org.eclipse.emf.common.util.EList
+import fsm.NotTrigger
+
+// *.*
+// ASPECT
+@Aspect(className=NotTrigger)
+class NotTriggerAspect {
+	
+	def public boolean evalTrigger(EList<String> events){
+		return _self.right.evalTrigger(events) && _self.left.evalTrigger(events);
+	}
+}

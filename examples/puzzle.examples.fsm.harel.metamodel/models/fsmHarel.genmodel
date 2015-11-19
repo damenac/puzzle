@@ -75,10 +75,7 @@
     <genClasses>
       <ecoreClass href="fsmHarel.ecore#//NotTrigger"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="fsmHarel.ecore#//NotTrigger/left"/>
-      </genFeatures>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="fsmHarel.ecore#//NotTrigger/right"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmHarel.ecore#//NotTrigger/trigger"/>
       </genFeatures>
     </genClasses>
     <genClasses>

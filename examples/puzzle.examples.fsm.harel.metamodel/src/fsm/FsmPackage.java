@@ -506,22 +506,13 @@ public interface FsmPackage extends EPackage {
 	int NOT_TRIGGER__EXPRESSION = TRIGGER__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Left</b></em>' reference.
+	 * The feature id for the '<em><b>Trigger</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NOT_TRIGGER__LEFT = TRIGGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT_TRIGGER__RIGHT = TRIGGER_FEATURE_COUNT + 1;
+	int NOT_TRIGGER__TRIGGER = TRIGGER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Not Trigger</em>' class.
@@ -530,7 +521,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NOT_TRIGGER_FEATURE_COUNT = TRIGGER_FEATURE_COUNT + 2;
+	int NOT_TRIGGER_FEATURE_COUNT = TRIGGER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Not Trigger</em>' class.
@@ -1615,26 +1606,15 @@ public interface FsmPackage extends EPackage {
 	EClass getNotTrigger();
 
 	/**
-	 * Returns the meta object for the reference '{@link fsm.NotTrigger#getLeft <em>Left</em>}'.
+	 * Returns the meta object for the reference '{@link fsm.NotTrigger#getTrigger <em>Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Left</em>'.
-	 * @see fsm.NotTrigger#getLeft()
+	 * @return the meta object for the reference '<em>Trigger</em>'.
+	 * @see fsm.NotTrigger#getTrigger()
 	 * @see #getNotTrigger()
 	 * @generated
 	 */
-	EReference getNotTrigger_Left();
-
-	/**
-	 * Returns the meta object for the reference '{@link fsm.NotTrigger#getRight <em>Right</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Right</em>'.
-	 * @see fsm.NotTrigger#getRight()
-	 * @see #getNotTrigger()
-	 * @generated
-	 */
-	EReference getNotTrigger_Right();
+	EReference getNotTrigger_Trigger();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.AndTrigger <em>And Trigger</em>}'.
@@ -2082,20 +2062,12 @@ public interface FsmPackage extends EPackage {
 		EClass NOT_TRIGGER = eINSTANCE.getNotTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Trigger</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NOT_TRIGGER__LEFT = eINSTANCE.getNotTrigger_Left();
-
-		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NOT_TRIGGER__RIGHT = eINSTANCE.getNotTrigger_Right();
+		EReference NOT_TRIGGER__TRIGGER = eINSTANCE.getNotTrigger_Trigger();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.AndTriggerImpl <em>And Trigger</em>}' class.

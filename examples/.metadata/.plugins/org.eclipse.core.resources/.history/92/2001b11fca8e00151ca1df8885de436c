@@ -1,0 +1,9 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.Transition = fsmaspects.TransitionAspect
+	fsm.FinalState = fsmaspects.FinalStateAspect
+	fsm.Trigger = fsmaspects.TriggerAspect
+	fsm.Program = fsmaspects.ProgramAspect
+	fsm.State = fsmaspects.StateAspect
+	fsm.AndTrigger = fsmaspects.AndTriggerAspect
+	fsm.StateMachine = fsmaspects.StateMachineAspect
+	fsm.Region = fsmaspects.RegionAspect

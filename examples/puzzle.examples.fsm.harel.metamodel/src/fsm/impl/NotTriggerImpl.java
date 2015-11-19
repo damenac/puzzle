@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link fsm.impl.NotTriggerImpl#getLeft <em>Left</em>}</li>
- *   <li>{@link fsm.impl.NotTriggerImpl#getRight <em>Right</em>}</li>
+ *   <li>{@link fsm.impl.NotTriggerImpl#getTrigger <em>Trigger</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,24 +28,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	/**
-	 * The cached value of the '{@link #getLeft() <em>Left</em>}' reference.
+	 * The cached value of the '{@link #getTrigger() <em>Trigger</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLeft()
+	 * @see #getTrigger()
 	 * @generated
 	 * @ordered
 	 */
-	protected Trigger left;
-
-	/**
-	 * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRight()
-	 * @generated
-	 * @ordered
-	 */
-	protected Trigger right;
+	protected Trigger trigger;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,16 +61,16 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger getLeft() {
-		if (left != null && left.eIsProxy()) {
-			InternalEObject oldLeft = (InternalEObject)left;
-			left = (Trigger)eResolveProxy(oldLeft);
-			if (left != oldLeft) {
+	public Trigger getTrigger() {
+		if (trigger != null && trigger.eIsProxy()) {
+			InternalEObject oldTrigger = (InternalEObject)trigger;
+			trigger = (Trigger)eResolveProxy(oldTrigger);
+			if (trigger != oldTrigger) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.NOT_TRIGGER__LEFT, oldLeft, left));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.NOT_TRIGGER__TRIGGER, oldTrigger, trigger));
 			}
 		}
-		return left;
+		return trigger;
 	}
 
 	/**
@@ -89,8 +78,8 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger basicGetLeft() {
-		return left;
+	public Trigger basicGetTrigger() {
+		return trigger;
 	}
 
 	/**
@@ -98,49 +87,11 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setLeft(Trigger newLeft) {
-		Trigger oldLeft = left;
-		left = newLeft;
+	public void setTrigger(Trigger newTrigger) {
+		Trigger oldTrigger = trigger;
+		trigger = newTrigger;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NOT_TRIGGER__LEFT, oldLeft, left));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Trigger getRight() {
-		if (right != null && right.eIsProxy()) {
-			InternalEObject oldRight = (InternalEObject)right;
-			right = (Trigger)eResolveProxy(oldRight);
-			if (right != oldRight) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.NOT_TRIGGER__RIGHT, oldRight, right));
-			}
-		}
-		return right;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Trigger basicGetRight() {
-		return right;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRight(Trigger newRight) {
-		Trigger oldRight = right;
-		right = newRight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NOT_TRIGGER__RIGHT, oldRight, right));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NOT_TRIGGER__TRIGGER, oldTrigger, trigger));
 	}
 
 	/**
@@ -151,12 +102,9 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.NOT_TRIGGER__LEFT:
-				if (resolve) return getLeft();
-				return basicGetLeft();
-			case FsmPackage.NOT_TRIGGER__RIGHT:
-				if (resolve) return getRight();
-				return basicGetRight();
+			case FsmPackage.NOT_TRIGGER__TRIGGER:
+				if (resolve) return getTrigger();
+				return basicGetTrigger();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,11 +117,8 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.NOT_TRIGGER__LEFT:
-				setLeft((Trigger)newValue);
-				return;
-			case FsmPackage.NOT_TRIGGER__RIGHT:
-				setRight((Trigger)newValue);
+			case FsmPackage.NOT_TRIGGER__TRIGGER:
+				setTrigger((Trigger)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,11 +132,8 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.NOT_TRIGGER__LEFT:
-				setLeft((Trigger)null);
-				return;
-			case FsmPackage.NOT_TRIGGER__RIGHT:
-				setRight((Trigger)null);
+			case FsmPackage.NOT_TRIGGER__TRIGGER:
+				setTrigger((Trigger)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,10 +147,8 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.NOT_TRIGGER__LEFT:
-				return left != null;
-			case FsmPackage.NOT_TRIGGER__RIGHT:
-				return right != null;
+			case FsmPackage.NOT_TRIGGER__TRIGGER:
+				return trigger != null;
 		}
 		return super.eIsSet(featureID);
 	}
