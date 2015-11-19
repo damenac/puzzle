@@ -38,5 +38,8 @@ class StateAspect {
 	def public void exitState(Hashtable<String, Object> context){
 		if(_self.exit != null)
 			_self.exit.eval(context)
+			
+		_self.ownedRegions.forEach[_region | _region.saveDeepHistoryState(context)]
+		_self.ownedRegions.forEach[_region | _region.saveHistoryState(context)]
 	}
 }

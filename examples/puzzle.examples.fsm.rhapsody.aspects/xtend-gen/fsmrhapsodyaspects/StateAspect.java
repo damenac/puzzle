@@ -69,5 +69,10 @@ public class StateAspect {
       Program _exit_1 = _self.getExit();
       ProgramAspect.eval(_exit_1, context);
     }
+    EList<Region> _ownedRegions = _self.getOwnedRegions();
+    final Consumer<Region> _function = (Region _region) -> {
+      RegionAspect.saveHistoryState(_region, context);
+    };
+    _ownedRegions.forEach(_function);
   }
 }
