@@ -6,8 +6,11 @@ import java.util.Hashtable
 
 import static extension fsmaspects.ConstraintAspect.*
 import static extension fsmaspects.StateAspect.*
+import static extension fsmaspects.StatementAspect.*
+
 import fsm.Transition
 import fsm.State
+import fsm.Statement
 
 // *.*
 // ASPECT
@@ -23,7 +26,11 @@ class TransitionAspect {
 				(_self.target as State).entryState(context)
 				(_self.target as State).evalState(context)				
 			}
-		} 
+		}
+		
+		for(Statement _statement : _self.effect){
+			_statement.eval(context)
+		}
 	}
 	
 	def public boolean validGuard(Hashtable<String, Object> context){
@@ -32,6 +39,7 @@ class TransitionAspect {
 	
 	def public boolean alreadyFired(Hashtable<String, Object> context){
 		return _self.fired
+		
 	}
 	
 	def public void resetFired(){

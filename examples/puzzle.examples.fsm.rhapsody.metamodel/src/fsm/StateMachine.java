@@ -12,8 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link fsm.StateMachine#getSubvertex <em>Subvertex</em>}</li>
- *   <li>{@link fsm.StateMachine#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link fsm.StateMachine#getRegions <em>Regions</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,35 +22,19 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface StateMachine extends NamedElement {
 	/**
-	 * Returns the value of the '<em><b>Subvertex</b></em>' containment reference list.
-	 * The list contents are of type {@link fsm.AbstractState}.
+	 * Returns the value of the '<em><b>Regions</b></em>' containment reference list.
+	 * The list contents are of type {@link fsm.Region}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Subvertex</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Regions</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subvertex</em>' containment reference list.
-	 * @see fsm.FsmPackage#getStateMachine_Subvertex()
+	 * @return the value of the '<em>Regions</em>' containment reference list.
+	 * @see fsm.FsmPackage#getStateMachine_Regions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<AbstractState> getSubvertex();
-
-	/**
-	 * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.
-	 * The list contents are of type {@link fsm.Transition}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Transitions</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transitions</em>' containment reference list.
-	 * @see fsm.FsmPackage#getStateMachine_Transitions()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Transition> getTransitions();
+	EList<Region> getRegions();
 
 } // StateMachine

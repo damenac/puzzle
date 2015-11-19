@@ -73,6 +73,13 @@ public class FsmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FsmPackage.REGION: {
+				Region region = (Region)theEObject;
+				T result = caseRegion(region);
+				if (result == null) result = caseNamedElement(region);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FsmPackage.ABSTRACT_STATE: {
 				AbstractState abstractState = (AbstractState)theEObject;
 				T result = caseAbstractState(abstractState);
@@ -213,6 +220,21 @@ public class FsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStateMachine(StateMachine object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Region</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Region</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRegion(Region object) {
 		return null;
 	}
 

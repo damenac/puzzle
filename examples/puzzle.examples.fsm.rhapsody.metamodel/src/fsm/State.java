@@ -2,6 +2,8 @@
  */
 package fsm;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -14,6 +16,7 @@ package fsm;
  *   <li>{@link fsm.State#getDoActivity <em>Do Activity</em>}</li>
  *   <li>{@link fsm.State#getEntry <em>Entry</em>}</li>
  *   <li>{@link fsm.State#getExit <em>Exit</em>}</li>
+ *   <li>{@link fsm.State#getOwnedRegions <em>Owned Regions</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,5 +102,23 @@ public interface State extends AbstractState {
 	 * @generated
 	 */
 	void setExit(Program value);
+
+	/**
+	 * Returns the value of the '<em><b>Owned Regions</b></em>' containment reference list.
+	 * The list contents are of type {@link fsm.Region}.
+	 * It is bidirectional and its opposite is '{@link fsm.Region#getOwnerState <em>Owner State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Owned Regions</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owned Regions</em>' containment reference list.
+	 * @see fsm.FsmPackage#getState_OwnedRegions()
+	 * @see fsm.Region#getOwnerState
+	 * @model opposite="ownerState" containment="true"
+	 * @generated
+	 */
+	EList<Region> getOwnedRegions();
 
 } // State

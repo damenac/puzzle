@@ -14,6 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link fsm.AbstractState#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link fsm.AbstractState#getOutgoing <em>Outgoing</em>}</li>
+ *   <li>{@link fsm.AbstractState#getOwnerRegion <em>Owner Region</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,5 +58,33 @@ public interface AbstractState extends NamedElement {
 	 * @generated
 	 */
 	EList<Transition> getOutgoing();
+
+	/**
+	 * Returns the value of the '<em><b>Owner Region</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link fsm.Region#getSubvertex <em>Subvertex</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Owner Region</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owner Region</em>' container reference.
+	 * @see #setOwnerRegion(Region)
+	 * @see fsm.FsmPackage#getAbstractState_OwnerRegion()
+	 * @see fsm.Region#getSubvertex
+	 * @model opposite="subvertex" required="true" transient="false"
+	 * @generated
+	 */
+	Region getOwnerRegion();
+
+	/**
+	 * Sets the value of the '{@link fsm.AbstractState#getOwnerRegion <em>Owner Region</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Owner Region</em>' container reference.
+	 * @see #getOwnerRegion()
+	 * @generated
+	 */
+	void setOwnerRegion(Region value);
 
 } // AbstractState

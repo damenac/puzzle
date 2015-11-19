@@ -57,6 +57,7 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case FsmPackage.STATE_MACHINE: return createStateMachine();
+			case FsmPackage.REGION: return createRegion();
 			case FsmPackage.STATE: return createState();
 			case FsmPackage.TRANSITION: return createTransition();
 			case FsmPackage.TRIGGER: return createTrigger();
@@ -87,6 +88,16 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 	public StateMachine createStateMachine() {
 		StateMachineImpl stateMachine = new StateMachineImpl();
 		return stateMachine;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Region createRegion() {
+		RegionImpl region = new RegionImpl();
+		return region;
 	}
 
 	/**

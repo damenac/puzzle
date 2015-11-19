@@ -2,10 +2,9 @@
  */
 package fsm.impl;
 
-import fsm.AbstractState;
 import fsm.FsmPackage;
+import fsm.Region;
 import fsm.StateMachine;
-import fsm.Transition;
 
 import java.util.Collection;
 
@@ -26,8 +25,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link fsm.impl.StateMachineImpl#getSubvertex <em>Subvertex</em>}</li>
- *   <li>{@link fsm.impl.StateMachineImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link fsm.impl.StateMachineImpl#getRegions <em>Regions</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,24 +33,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	/**
-	 * The cached value of the '{@link #getSubvertex() <em>Subvertex</em>}' containment reference list.
+	 * The cached value of the '{@link #getRegions() <em>Regions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubvertex()
+	 * @see #getRegions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<AbstractState> subvertex;
-
-	/**
-	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransitions()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Transition> transitions;
+	protected EList<Region> regions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,23 +66,11 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<AbstractState> getSubvertex() {
-		if (subvertex == null) {
-			subvertex = new EObjectContainmentEList<AbstractState>(AbstractState.class, this, FsmPackage.STATE_MACHINE__SUBVERTEX);
+	public EList<Region> getRegions() {
+		if (regions == null) {
+			regions = new EObjectContainmentEList<Region>(Region.class, this, FsmPackage.STATE_MACHINE__REGIONS);
 		}
-		return subvertex;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Transition> getTransitions() {
-		if (transitions == null) {
-			transitions = new EObjectContainmentEList<Transition>(Transition.class, this, FsmPackage.STATE_MACHINE__TRANSITIONS);
-		}
-		return transitions;
+		return regions;
 	}
 
 	/**
@@ -105,10 +81,8 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.STATE_MACHINE__SUBVERTEX:
-				return ((InternalEList<?>)getSubvertex()).basicRemove(otherEnd, msgs);
-			case FsmPackage.STATE_MACHINE__TRANSITIONS:
-				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
+			case FsmPackage.STATE_MACHINE__REGIONS:
+				return ((InternalEList<?>)getRegions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -121,10 +95,8 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.STATE_MACHINE__SUBVERTEX:
-				return getSubvertex();
-			case FsmPackage.STATE_MACHINE__TRANSITIONS:
-				return getTransitions();
+			case FsmPackage.STATE_MACHINE__REGIONS:
+				return getRegions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -138,13 +110,9 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.STATE_MACHINE__SUBVERTEX:
-				getSubvertex().clear();
-				getSubvertex().addAll((Collection<? extends AbstractState>)newValue);
-				return;
-			case FsmPackage.STATE_MACHINE__TRANSITIONS:
-				getTransitions().clear();
-				getTransitions().addAll((Collection<? extends Transition>)newValue);
+			case FsmPackage.STATE_MACHINE__REGIONS:
+				getRegions().clear();
+				getRegions().addAll((Collection<? extends Region>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -158,11 +126,8 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.STATE_MACHINE__SUBVERTEX:
-				getSubvertex().clear();
-				return;
-			case FsmPackage.STATE_MACHINE__TRANSITIONS:
-				getTransitions().clear();
+			case FsmPackage.STATE_MACHINE__REGIONS:
+				getRegions().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -176,10 +141,8 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.STATE_MACHINE__SUBVERTEX:
-				return subvertex != null && !subvertex.isEmpty();
-			case FsmPackage.STATE_MACHINE__TRANSITIONS:
-				return transitions != null && !transitions.isEmpty();
+			case FsmPackage.STATE_MACHINE__REGIONS:
+				return regions != null && !regions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -5,11 +5,20 @@
     <ecorePackage href="fsmRhapsody.ecore#/"/>
     <genClasses>
       <ecoreClass href="fsmRhapsody.ecore#//StateMachine"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//StateMachine/regions"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="fsmRhapsody.ecore#//Region"/>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//StateMachine/subvertex"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//Region/subvertex"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//StateMachine/transitions"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//Region/transitions"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//Region/ownerState"/>
       </genFeatures>
     </genClasses>
     <genClasses image="false">
@@ -19,6 +28,9 @@
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//AbstractState/outgoing"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//AbstractState/ownerRegion"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -31,6 +43,9 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//State/exit"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsmRhapsody.ecore#//State/ownedRegions"/>
       </genFeatures>
     </genClasses>
     <genClasses>

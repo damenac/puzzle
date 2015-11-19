@@ -64,7 +64,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 20;
+	int NAMED_ELEMENT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -113,22 +113,13 @@ public interface FsmPackage extends EPackage {
 	int STATE_MACHINE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Subvertex</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Regions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__SUBVERTEX = NAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MACHINE__TRANSITIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int STATE_MACHINE__REGIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>State Machine</em>' class.
@@ -137,7 +128,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int STATE_MACHINE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>State Machine</em>' class.
@@ -149,6 +140,70 @@ public interface FsmPackage extends EPackage {
 	int STATE_MACHINE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fsm.impl.RegionImpl <em>Region</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fsm.impl.RegionImpl
+	 * @see fsm.impl.FsmPackageImpl#getRegion()
+	 * @generated
+	 */
+	int REGION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Subvertex</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__SUBVERTEX = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__TRANSITIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Owner State</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION__OWNER_STATE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Region</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Region</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REGION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fsm.impl.AbstractStateImpl <em>Abstract State</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -156,7 +211,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getAbstractState()
 	 * @generated
 	 */
-	int ABSTRACT_STATE = 1;
+	int ABSTRACT_STATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -186,13 +241,22 @@ public interface FsmPackage extends EPackage {
 	int ABSTRACT_STATE__OUTGOING = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATE__OWNER_REGION = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Abstract State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ABSTRACT_STATE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Abstract State</em>' class.
@@ -211,7 +275,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 2;
+	int STATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -241,6 +305,15 @@ public interface FsmPackage extends EPackage {
 	int STATE__OUTGOING = ABSTRACT_STATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__OWNER_REGION = ABSTRACT_STATE__OWNER_REGION;
+
+	/**
 	 * The feature id for the '<em><b>Do Activity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -268,13 +341,22 @@ public interface FsmPackage extends EPackage {
 	int STATE__EXIT = ABSTRACT_STATE_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Owned Regions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__OWNED_REGIONS = ABSTRACT_STATE_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = ABSTRACT_STATE_FEATURE_COUNT + 3;
+	int STATE_FEATURE_COUNT = ABSTRACT_STATE_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>State</em>' class.
@@ -293,7 +375,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 3;
+	int TRANSITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -375,7 +457,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getTrigger()
 	 * @generated
 	 */
-	int TRIGGER = 4;
+	int TRIGGER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -412,7 +494,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getNotTrigger()
 	 * @generated
 	 */
-	int NOT_TRIGGER = 5;
+	int NOT_TRIGGER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -467,7 +549,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getAndTrigger()
 	 * @generated
 	 */
-	int AND_TRIGGER = 6;
+	int AND_TRIGGER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -522,7 +604,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getOrTrigger()
 	 * @generated
 	 */
-	int OR_TRIGGER = 7;
+	int OR_TRIGGER = 8;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -577,7 +659,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getPseudostate()
 	 * @generated
 	 */
-	int PSEUDOSTATE = 8;
+	int PSEUDOSTATE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -607,6 +689,15 @@ public interface FsmPackage extends EPackage {
 	int PSEUDOSTATE__OUTGOING = ABSTRACT_STATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PSEUDOSTATE__OWNER_REGION = ABSTRACT_STATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Pseudostate</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -632,7 +723,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getInitialState()
 	 * @generated
 	 */
-	int INITIAL_STATE = 9;
+	int INITIAL_STATE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -662,6 +753,15 @@ public interface FsmPackage extends EPackage {
 	int INITIAL_STATE__OUTGOING = PSEUDOSTATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_STATE__OWNER_REGION = PSEUDOSTATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Initial State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -687,7 +787,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getFork()
 	 * @generated
 	 */
-	int FORK = 10;
+	int FORK = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -717,6 +817,15 @@ public interface FsmPackage extends EPackage {
 	int FORK__OUTGOING = PSEUDOSTATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORK__OWNER_REGION = PSEUDOSTATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Fork</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -742,7 +851,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getJoin()
 	 * @generated
 	 */
-	int JOIN = 11;
+	int JOIN = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -772,6 +881,15 @@ public interface FsmPackage extends EPackage {
 	int JOIN__OUTGOING = PSEUDOSTATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JOIN__OWNER_REGION = PSEUDOSTATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Join</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -797,7 +915,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getDeepHistory()
 	 * @generated
 	 */
-	int DEEP_HISTORY = 12;
+	int DEEP_HISTORY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -827,6 +945,15 @@ public interface FsmPackage extends EPackage {
 	int DEEP_HISTORY__OUTGOING = PSEUDOSTATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEEP_HISTORY__OWNER_REGION = PSEUDOSTATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Deep History</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -852,7 +979,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getShallowHistory()
 	 * @generated
 	 */
-	int SHALLOW_HISTORY = 13;
+	int SHALLOW_HISTORY = 14;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -882,6 +1009,15 @@ public interface FsmPackage extends EPackage {
 	int SHALLOW_HISTORY__OUTGOING = PSEUDOSTATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHALLOW_HISTORY__OWNER_REGION = PSEUDOSTATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Shallow History</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,7 +1043,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getJunction()
 	 * @generated
 	 */
-	int JUNCTION = 14;
+	int JUNCTION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -937,6 +1073,15 @@ public interface FsmPackage extends EPackage {
 	int JUNCTION__OUTGOING = PSEUDOSTATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTION__OWNER_REGION = PSEUDOSTATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Junction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -962,7 +1107,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getConditional()
 	 * @generated
 	 */
-	int CONDITIONAL = 15;
+	int CONDITIONAL = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -992,6 +1137,15 @@ public interface FsmPackage extends EPackage {
 	int CONDITIONAL__OUTGOING = PSEUDOSTATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL__OWNER_REGION = PSEUDOSTATE__OWNER_REGION;
+
+	/**
 	 * The number of structural features of the '<em>Conditional</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1017,7 +1171,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getFinalState()
 	 * @generated
 	 */
-	int FINAL_STATE = 16;
+	int FINAL_STATE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1047,6 +1201,15 @@ public interface FsmPackage extends EPackage {
 	int FINAL_STATE__OUTGOING = STATE__OUTGOING;
 
 	/**
+	 * The feature id for the '<em><b>Owner Region</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__OWNER_REGION = STATE__OWNER_REGION;
+
+	/**
 	 * The feature id for the '<em><b>Do Activity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1074,6 +1237,15 @@ public interface FsmPackage extends EPackage {
 	int FINAL_STATE__EXIT = STATE__EXIT;
 
 	/**
+	 * The feature id for the '<em><b>Owned Regions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__OWNED_REGIONS = STATE__OWNED_REGIONS;
+
+	/**
 	 * The number of structural features of the '<em>Final State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1099,7 +1271,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 17;
+	int CONSTRAINT = 18;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -1127,7 +1299,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 18;
+	int STATEMENT = 19;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -1155,7 +1327,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getProgram()
 	 * @generated
 	 */
-	int PROGRAM = 19;
+	int PROGRAM = 20;
 
 	/**
 	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -1196,26 +1368,58 @@ public interface FsmPackage extends EPackage {
 	EClass getStateMachine();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fsm.StateMachine#getSubvertex <em>Subvertex</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fsm.StateMachine#getRegions <em>Regions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Regions</em>'.
+	 * @see fsm.StateMachine#getRegions()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EReference getStateMachine_Regions();
+
+	/**
+	 * Returns the meta object for class '{@link fsm.Region <em>Region</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Region</em>'.
+	 * @see fsm.Region
+	 * @generated
+	 */
+	EClass getRegion();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fsm.Region#getSubvertex <em>Subvertex</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Subvertex</em>'.
-	 * @see fsm.StateMachine#getSubvertex()
-	 * @see #getStateMachine()
+	 * @see fsm.Region#getSubvertex()
+	 * @see #getRegion()
 	 * @generated
 	 */
-	EReference getStateMachine_Subvertex();
+	EReference getRegion_Subvertex();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link fsm.StateMachine#getTransitions <em>Transitions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link fsm.Region#getTransitions <em>Transitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
-	 * @see fsm.StateMachine#getTransitions()
-	 * @see #getStateMachine()
+	 * @see fsm.Region#getTransitions()
+	 * @see #getRegion()
 	 * @generated
 	 */
-	EReference getStateMachine_Transitions();
+	EReference getRegion_Transitions();
+
+	/**
+	 * Returns the meta object for the container reference '{@link fsm.Region#getOwnerState <em>Owner State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Owner State</em>'.
+	 * @see fsm.Region#getOwnerState()
+	 * @see #getRegion()
+	 * @generated
+	 */
+	EReference getRegion_OwnerState();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.AbstractState <em>Abstract State</em>}'.
@@ -1248,6 +1452,17 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAbstractState_Outgoing();
+
+	/**
+	 * Returns the meta object for the container reference '{@link fsm.AbstractState#getOwnerRegion <em>Owner Region</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Owner Region</em>'.
+	 * @see fsm.AbstractState#getOwnerRegion()
+	 * @see #getAbstractState()
+	 * @generated
+	 */
+	EReference getAbstractState_OwnerRegion();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.State <em>State</em>}'.
@@ -1291,6 +1506,17 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_Exit();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link fsm.State#getOwnedRegions <em>Owned Regions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Regions</em>'.
+	 * @see fsm.State#getOwnedRegions()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_OwnedRegions();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.Transition <em>Transition</em>}'.
@@ -1660,12 +1886,30 @@ public interface FsmPackage extends EPackage {
 		EClass STATE_MACHINE = eINSTANCE.getStateMachine();
 
 		/**
+		 * The meta object literal for the '<em><b>Regions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE_MACHINE__REGIONS = eINSTANCE.getStateMachine_Regions();
+
+		/**
+		 * The meta object literal for the '{@link fsm.impl.RegionImpl <em>Region</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fsm.impl.RegionImpl
+		 * @see fsm.impl.FsmPackageImpl#getRegion()
+		 * @generated
+		 */
+		EClass REGION = eINSTANCE.getRegion();
+
+		/**
 		 * The meta object literal for the '<em><b>Subvertex</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE_MACHINE__SUBVERTEX = eINSTANCE.getStateMachine_Subvertex();
+		EReference REGION__SUBVERTEX = eINSTANCE.getRegion_Subvertex();
 
 		/**
 		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
@@ -1673,7 +1917,15 @@ public interface FsmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATE_MACHINE__TRANSITIONS = eINSTANCE.getStateMachine_Transitions();
+		EReference REGION__TRANSITIONS = eINSTANCE.getRegion_Transitions();
+
+		/**
+		 * The meta object literal for the '<em><b>Owner State</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference REGION__OWNER_STATE = eINSTANCE.getRegion_OwnerState();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.AbstractStateImpl <em>Abstract State</em>}' class.
@@ -1700,6 +1952,14 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_STATE__OUTGOING = eINSTANCE.getAbstractState_Outgoing();
+
+		/**
+		 * The meta object literal for the '<em><b>Owner Region</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ABSTRACT_STATE__OWNER_REGION = eINSTANCE.getAbstractState_OwnerRegion();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.StateImpl <em>State</em>}' class.
@@ -1734,6 +1994,14 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__EXIT = eINSTANCE.getState_Exit();
+
+		/**
+		 * The meta object literal for the '<em><b>Owned Regions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__OWNED_REGIONS = eINSTANCE.getState_OwnedRegions();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.TransitionImpl <em>Transition</em>}' class.

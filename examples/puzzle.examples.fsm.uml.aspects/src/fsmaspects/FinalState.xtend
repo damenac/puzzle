@@ -11,8 +11,9 @@ import fsm.FinalState
 @Aspect(className=FinalState)
 class FinalStateAspect extends StateAspect {
 	
-	@OverrideAspectMethod 
+	@OverrideAspectMethod
 	def public void exitState(Hashtable<String, Object> context){
+		_self.super_exitState(context)
 		System.exit(0)
 	}
 }
