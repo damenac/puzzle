@@ -9689,3 +9689,51 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/puzzle.example
 	at org.eclipse.equinox.launcher.Main.main(Main.java:1438)
 !SUBENTRY 1 org.eclipse.core.resources 4 368 2015-11-19 14:08:51.222
 !MESSAGE Resource '/puzzle.examples.fsm.harel.metamodel/src/fsm/Pseudostate.java' does not exist.
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 15:13:31.668
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.fsm.aspects/src/fsmaspects/Expression.xtend'.
+
+!STACK 0
+java.lang.IllegalArgumentException: Resource is out of sync with the file system: '/puzzle.examples.overlap.fsm.aspects/META-INF/xtend-gen/puzzle.examples.overlap.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:223)
+	at org.eclipse.xtext.xbase.file.AbstractFileSystemSupport.getContents(AbstractFileSystemSupport.java:35)
+	at org.eclipse.xtend.core.macro.declaration.ChangeListenerAddingFileSystemSupport.getContents(ChangeListenerAddingFileSystemSupport.java:92)
+	at org.eclipse.xtext.xbase.file.ParallelFileSystemSupport.getContents(ParallelFileSystemSupport.java:97)
+	at org.eclipse.xtend.core.macro.CodeGenerationContextImpl.getContents(CodeGenerationContextImpl.java:108)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectMappingBuilder.writePropertyFile(AspectMappingBuilder.java:205)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:136)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource is out of sync with the file system: '/puzzle.examples.overlap.fsm.aspects/META-INF/xtend-gen/puzzle.examples.overlap.fsm.aspects.k3_aspect_mapping.properties'.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:793)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:218)
+	... 15 more
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 15:19:35.527
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.uml.aspects/src/fsmaspects/AndTrigger.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor$2.apply(AspectProcessor.java:159)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor$2.apply(AspectProcessor.java:156)
+	at org.eclipse.xtext.xbase.lib.IteratorExtensions.exists(IteratorExtensions.java:257)
+	at org.eclipse.xtext.xbase.lib.IterableExtensions.exists(IterableExtensions.java:222)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:163)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
