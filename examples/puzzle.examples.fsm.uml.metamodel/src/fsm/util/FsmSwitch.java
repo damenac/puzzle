@@ -116,6 +116,15 @@ public class FsmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FsmPackage.INITIAL_STATE: {
+				InitialState initialState = (InitialState)theEObject;
+				T result = caseInitialState(initialState);
+				if (result == null) result = casePseudostate(initialState);
+				if (result == null) result = caseAbstractState(initialState);
+				if (result == null) result = caseNamedElement(initialState);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FsmPackage.FORK: {
 				Fork fork = (Fork)theEObject;
 				T result = caseFork(fork);
@@ -310,6 +319,21 @@ public class FsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePseudostate(Pseudostate object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Initial State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Initial State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInitialState(InitialState object) {
 		return null;
 	}
 

@@ -58,6 +58,15 @@ public interface FsmFactory extends EFactory {
 	Trigger createTrigger();
 
 	/**
+	 * Returns a new object of class '<em>Initial State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Initial State</em>'.
+	 * @generated
+	 */
+	InitialState createInitialState();
+
+	/**
 	 * Returns a new object of class '<em>Fork</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

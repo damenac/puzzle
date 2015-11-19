@@ -104,6 +104,10 @@ public class FsmAdapterFactory extends AdapterFactoryImpl {
 				return createPseudostateAdapter();
 			}
 			@Override
+			public Adapter caseInitialState(InitialState object) {
+				return createInitialStateAdapter();
+			}
+			@Override
 			public Adapter caseFork(Fork object) {
 				return createForkAdapter();
 			}
@@ -290,6 +294,20 @@ public class FsmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPseudostateAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link fsm.InitialState <em>Initial State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see fsm.InitialState
+	 * @generated
+	 */
+	public Adapter createInitialStateAdapter() {
 		return null;
 	}
 

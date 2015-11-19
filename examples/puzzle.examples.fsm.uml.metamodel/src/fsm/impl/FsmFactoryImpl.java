@@ -61,6 +61,7 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 			case FsmPackage.TRANSITION: return createTransition();
 			case FsmPackage.TRIGGER: return createTrigger();
 			case FsmPackage.AND_TRIGGER: return createAndTrigger();
+			case FsmPackage.INITIAL_STATE: return createInitialState();
 			case FsmPackage.FORK: return createFork();
 			case FsmPackage.JOIN: return createJoin();
 			case FsmPackage.DEEP_HISTORY: return createDeepHistory();
@@ -124,6 +125,16 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 	public AndTrigger createAndTrigger() {
 		AndTriggerImpl andTrigger = new AndTriggerImpl();
 		return andTrigger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InitialState createInitialState() {
+		InitialStateImpl initialState = new InitialStateImpl();
+		return initialState;
 	}
 
 	/**

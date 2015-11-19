@@ -28,6 +28,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pseudostate" abstract="true" eSuperTypes="//AbstractState"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InitialState" eSuperTypes="//Pseudostate"/>
   <eClassifiers xsi:type="ecore:EClass" name="Fork" eSuperTypes="//Pseudostate"/>
   <eClassifiers xsi:type="ecore:EClass" name="Join" eSuperTypes="//Pseudostate"/>
   <eClassifiers xsi:type="ecore:EClass" name="ShallowHistory" eSuperTypes="//Pseudostate"/>

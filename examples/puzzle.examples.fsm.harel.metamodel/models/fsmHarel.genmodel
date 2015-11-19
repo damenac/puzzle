@@ -88,6 +88,9 @@
       <ecoreClass href="fsmHarel.ecore#//Pseudostate"/>
     </genClasses>
     <genClasses>
+      <ecoreClass href="fsmHarel.ecore#//InitialState"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="fsmHarel.ecore#//Fork"/>
     </genClasses>
     <genClasses>

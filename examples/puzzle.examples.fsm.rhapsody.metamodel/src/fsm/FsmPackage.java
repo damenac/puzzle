@@ -64,7 +64,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 15;
+	int NAMED_ELEMENT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -460,6 +460,61 @@ public interface FsmPackage extends EPackage {
 	int PSEUDOSTATE_OPERATION_COUNT = ABSTRACT_STATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link fsm.impl.InitialStateImpl <em>Initial State</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see fsm.impl.InitialStateImpl
+	 * @see fsm.impl.FsmPackageImpl#getInitialState()
+	 * @generated
+	 */
+	int INITIAL_STATE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_STATE__NAME = PSEUDOSTATE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_STATE__INCOMING = PSEUDOSTATE__INCOMING;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_STATE__OUTGOING = PSEUDOSTATE__OUTGOING;
+
+	/**
+	 * The number of structural features of the '<em>Initial State</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_STATE_FEATURE_COUNT = PSEUDOSTATE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Initial State</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INITIAL_STATE_OPERATION_COUNT = PSEUDOSTATE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link fsm.impl.ForkImpl <em>Fork</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -467,7 +522,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getFork()
 	 * @generated
 	 */
-	int FORK = 6;
+	int FORK = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -522,7 +577,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getJoin()
 	 * @generated
 	 */
-	int JOIN = 7;
+	int JOIN = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -577,7 +632,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getShallowHistory()
 	 * @generated
 	 */
-	int SHALLOW_HISTORY = 8;
+	int SHALLOW_HISTORY = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -632,7 +687,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getJunction()
 	 * @generated
 	 */
-	int JUNCTION = 9;
+	int JUNCTION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -687,7 +742,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getConditional()
 	 * @generated
 	 */
-	int CONDITIONAL = 10;
+	int CONDITIONAL = 11;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -742,7 +797,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getFinalState()
 	 * @generated
 	 */
-	int FINAL_STATE = 11;
+	int FINAL_STATE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -824,7 +879,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 12;
+	int CONSTRAINT = 13;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -852,7 +907,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 13;
+	int STATEMENT = 14;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -880,7 +935,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getProgram()
 	 * @generated
 	 */
-	int PROGRAM = 14;
+	int PROGRAM = 15;
 
 	/**
 	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -1112,6 +1167,16 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPseudostate();
+
+	/**
+	 * Returns the meta object for class '{@link fsm.InitialState <em>Initial State</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Initial State</em>'.
+	 * @see fsm.InitialState
+	 * @generated
+	 */
+	EClass getInitialState();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.Fork <em>Fork</em>}'.
@@ -1421,6 +1486,16 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PSEUDOSTATE = eINSTANCE.getPseudostate();
+
+		/**
+		 * The meta object literal for the '{@link fsm.impl.InitialStateImpl <em>Initial State</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see fsm.impl.InitialStateImpl
+		 * @see fsm.impl.FsmPackageImpl#getInitialState()
+		 * @generated
+		 */
+		EClass INITIAL_STATE = eINSTANCE.getInitialState();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.ForkImpl <em>Fork</em>}' class.

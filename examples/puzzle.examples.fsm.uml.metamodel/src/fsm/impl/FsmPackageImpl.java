@@ -11,6 +11,7 @@ import fsm.FinalState;
 import fsm.Fork;
 import fsm.FsmFactory;
 import fsm.FsmPackage;
+import fsm.InitialState;
 import fsm.Join;
 import fsm.Junction;
 import fsm.NamedElement;
@@ -85,6 +86,13 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 	 * @generated
 	 */
 	private EClass pseudostateEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass initialStateEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -427,6 +435,15 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getInitialState() {
+		return initialStateEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFork() {
 		return forkEClass;
 	}
@@ -596,6 +613,8 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 
 		pseudostateEClass = createEClass(PSEUDOSTATE);
 
+		initialStateEClass = createEClass(INITIAL_STATE);
+
 		forkEClass = createEClass(FORK);
 
 		joinEClass = createEClass(JOIN);
@@ -655,6 +674,7 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 		transitionEClass.getESuperTypes().add(this.getNamedElement());
 		andTriggerEClass.getESuperTypes().add(this.getTrigger());
 		pseudostateEClass.getESuperTypes().add(this.getAbstractState());
+		initialStateEClass.getESuperTypes().add(this.getPseudostate());
 		forkEClass.getESuperTypes().add(this.getPseudostate());
 		joinEClass.getESuperTypes().add(this.getPseudostate());
 		deepHistoryEClass.getESuperTypes().add(this.getPseudostate());
@@ -693,6 +713,8 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 		initEReference(getAndTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pseudostateEClass, Pseudostate.class, "Pseudostate", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(initialStateEClass, InitialState.class, "InitialState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(forkEClass, Fork.class, "Fork", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

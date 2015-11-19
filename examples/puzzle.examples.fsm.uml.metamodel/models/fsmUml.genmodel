@@ -70,6 +70,9 @@
       <ecoreClass href="fsmUml.ecore#//Pseudostate"/>
     </genClasses>
     <genClasses>
+      <ecoreClass href="fsmUml.ecore#//InitialState"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="fsmUml.ecore#//Fork"/>
     </genClasses>
     <genClasses>

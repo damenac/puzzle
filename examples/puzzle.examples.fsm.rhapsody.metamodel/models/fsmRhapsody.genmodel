@@ -61,6 +61,9 @@
       <ecoreClass href="fsmRhapsody.ecore#//Pseudostate"/>
     </genClasses>
     <genClasses>
+      <ecoreClass href="fsmRhapsody.ecore#//InitialState"/>
+    </genClasses>
+    <genClasses>
       <ecoreClass href="fsmRhapsody.ecore#//Fork"/>
     </genClasses>
     <genClasses>
