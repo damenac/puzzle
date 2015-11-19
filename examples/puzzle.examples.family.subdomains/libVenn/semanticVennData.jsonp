@@ -1,6 +1,0 @@
-var semanticVennData = [{sets : [0], label : 'fsm', size : 39,},
-              {sets : [1], label : 'hfsm', size : 44,},
-              {sets : [2], label : 'tfsm', size : 44,},
-              {sets : [0,1], size:19},
-              {sets : [0,2], size:19},
-              {sets : [1,2], size:31}];

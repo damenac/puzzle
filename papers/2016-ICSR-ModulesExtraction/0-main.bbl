@@ -1,5 +1,12 @@
 \begin{thebibliography}{10}
 
+\bibitem{Bettini:2013}
+L.~Bettini, D.~Stoll, M.~V\"olter, and S.~Colameo.
+\newblock Approaches and tools for implementing type systems in xtext.
+\newblock In K.~Czarnecki and G.~Hedin, editors, {\em Software Language
+  Engineering}, volume 7745 of {\em Lecture Notes in Computer Science}, pages
+  392--412. Springer Berlin Heidelberg, 2013.
+
 \bibitem{Biegel:2010}
 B.~Biegel and S.~Diehl.
 \newblock Jccd: A flexible and extensible api for implementing custom code
@@ -133,6 +140,11 @@ P.~D. Mosses.
 \newblock In D.~Bj{\o}rner, M.~Broy, and A.~V. Zamulin, editors, {\em
   Perspectives of System Informatics}, volume 2244 of {\em Lecture Notes in
   Computer Science}, pages 165--190. Springer Berlin Heidelberg, 2001.
+
+\bibitem{Olson:1987}
+A.~Olson, T.~Kieren, and S.~Ludwig.
+\newblock Linking logo, levels and language in mathematics.
+\newblock {\em Educational Studies in Mathematics}, 18(4):359--370, 1987.
 
 \bibitem{Oney:2012}
 S.~Oney, B.~Myers, and J.~Brandt.
