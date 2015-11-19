@@ -1,6 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsm.Transition = fsmaspects.TransitionAspect
-	fsm.OrTrigger = fsmaspects.OrTriggerAspect
-	fsm.FinalState = fsmharelaspects.FinalStateAspect
-	fsm.Statement = fsmaspects.StatementAspect
-	fsm.Region = fsmaspects.RegionAspect

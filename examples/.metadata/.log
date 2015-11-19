@@ -9991,3 +9991,159 @@ org.antlr.runtime.tree.RewriteEmptyStreamException: rule formalParameterList
 	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
 	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-11-19 20:06:23.338 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-19 20:06:27.235
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-19 20:07:14.164
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:40.655
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/FinalState.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:40.656
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/Transition.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:40.657
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/State.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:40.665
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/StateMachine.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:40.686
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/Region.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:41.575
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/StateMachine.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:41.580
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/Transition.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-11-19 20:15:41.603
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.commons.semantics/src/commons/Region.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+!SESSION 2015-11-19 23:46:46.144 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-19 23:46:50.021
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-11-19 23:46:54.891
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+

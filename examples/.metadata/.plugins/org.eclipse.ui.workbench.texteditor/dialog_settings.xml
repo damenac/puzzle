@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Venn" key="selection"/>
+		<item value="getActiveT" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="Venn"/>
-			<item value="svg"/>
-			<item value="Month"/>
-			<item value="evalConstraint"/>
-			<item value="Trigger"/>
-			<item value="flow"/>
-			<item value="fr.inria.triskell.k3.sample.logo"/>
-			<item value="cou"/>
+			<item value="``"/>
+			<item value="getActiveT"/>
+			<item value="getActiveTran"/>
+			<item value="findOldActiveS"/>
+			<item value="step"/>
+			<item value="findNewActiveState"/>
+			<item value="findNew"/>
+			<item value="findNewActiveS"/>
 		</list>
 		<list key="replacehistory">
 			<item value="logo"/>

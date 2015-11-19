@@ -1,6 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsm.Trigger = fsmaspects.TriggerAspect
-	fsm.Transition = fsmaspects.TransitionAspect
-	fsm.AndTrigger = fsmumlaspects.AndTriggerAspect
-	fsm.StateMachine = fsmaspects.StateMachineAspect
-	fsm.Region = fsmumlaspects.RegionAspect
