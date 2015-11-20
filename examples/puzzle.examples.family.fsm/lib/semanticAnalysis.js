@@ -8,40 +8,102 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalStateMachine [from: FSM]",
+          "name": "evalStateMachine [from: UML, Rhapsody, Harel]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "initStateMachine [from: FSM]",
+          "name": "chain [from: UML, Rhapsody, Harel]",
           "parent": "StateMachineAspect"    }
 ,
           {
-          "name": "step [from: FSM]",
+          "name": "events [from: UML, Rhapsody, Harel]",
           "parent": "StateMachineAspect"    }
+              ]
+    }
 ,
           {
-          "name": "getCurrentState [from: FSM]",
-          "parent": "StateMachineAspect"    }
+          "name": "RegionAspect",
+          "parent": "Family",
+          "children": [
+          {
+          "name": "initRegion [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
 ,
           {
-          "name": "getActiveTransitions [from: FSM]",
-          "parent": "StateMachineAspect"    }
+          "name": "getContextPathByRegion [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
 ,
           {
-          "name": "findOldActiveStates [from: FSM]",
-          "parent": "StateMachineAspect"    }
+          "name": "step [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
 ,
           {
-          "name": "findNewActiveStates [from: FSM]",
-          "parent": "StateMachineAspect"    }
+          "name": "removeStatesFromContext [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
 ,
           {
-          "name": "findNewActiveTransitions [from: FSM]",
-          "parent": "StateMachineAspect"    }
+          "name": "addStatesToContext [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
 ,
           {
-          "name": "events [from: FSM]",
-          "parent": "StateMachineAspect"    }
+          "name": "getCurrentState [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "getActiveTransitions [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "findOldActiveStates [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "findNewActiveStates [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "findNewActiveTransitions [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "getAllParents [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "getAllChildren [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "deepestConflictingTransition [from: UML, Rhapsody]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "getContextPath [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "saveDeepHistoryState [from: UML, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "getAllSubstates [from: UML, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "saveHistoryState [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "deepHistory [from: UML, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "history [from: UML, Rhapsody, Harel]",
+          "parent": "RegionAspect"    }
+,
+          {
+          "name": "highestConflictingTransition [from: Harel]",
+          "parent": "RegionAspect"    }
               ]
     }
 ,
@@ -50,16 +112,58 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "entryState [from: FSM]",
-          "parent": "StateAspect"    }
+          "name": "+entryState",
+          "parent": "StateAspect",
+          "children": [
+          {
+          "name": "entryState [from: UML]",
+          "parent": "+entryState"    }
 ,
           {
-          "name": "evalState [from: FSM]",
-          "parent": "StateAspect"    }
+          "name": "entryState [from: Rhapsody]",
+          "parent": "+entryState"    }
 ,
           {
-          "name": "exitState [from: FSM]",
-          "parent": "StateAspect"    }
+          "name": "entryState [from: Harel]",
+          "parent": "+entryState"    }
+              ]
+    }
+,
+          {
+          "name": "+evalState",
+          "parent": "StateAspect",
+          "children": [
+          {
+          "name": "evalState [from: UML]",
+          "parent": "+evalState"    }
+,
+          {
+          "name": "evalState [from: Rhapsody]",
+          "parent": "+evalState"    }
+,
+          {
+          "name": "evalState [from: Harel]",
+          "parent": "+evalState"    }
+              ]
+    }
+,
+          {
+          "name": "+exitState",
+          "parent": "StateAspect",
+          "children": [
+          {
+          "name": "exitState [from: UML]",
+          "parent": "+exitState"    }
+,
+          {
+          "name": "exitState [from: Rhapsody]",
+          "parent": "+exitState"    }
+,
+          {
+          "name": "exitState [from: Harel]",
+          "parent": "+exitState"    }
+              ]
+    }
               ]
     }
 ,
@@ -68,23 +172,23 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalTransition [from: FSM]",
+          "name": "evalTransition [from: UML, Rhapsody, Harel]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "validGuard [from: FSM]",
+          "name": "validGuard [from: UML, Rhapsody, Harel]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "alreadyFired [from: FSM]",
+          "name": "alreadyFired [from: UML, Rhapsody, Harel]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "resetFired [from: FSM]",
+          "name": "resetFired [from: UML, Rhapsody, Harel]",
           "parent": "TransitionAspect"    }
 ,
           {
-          "name": "fired [from: FSM]",
+          "name": "fired [from: UML, Rhapsody, Harel]",
           "parent": "TransitionAspect"    }
               ]
     }
@@ -94,8 +198,18 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalTrigger [from: FSM]",
+          "name": "evalTrigger [from: UML, Rhapsody, Harel]",
           "parent": "TriggerAspect"    }
+              ]
+    }
+,
+          {
+          "name": "AndTriggerAspect",
+          "parent": "Family",
+          "children": [
+          {
+          "name": "evalTrigger [from: UML, Harel]",
+          "parent": "AndTriggerAspect"    }
               ]
     }
 ,
@@ -104,150 +218,20 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "exitState [from: FSM]",
-          "parent": "FinalStateAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ExpressionAspect",
-          "parent": "Family",
+          "name": "+exitState",
+          "parent": "FinalStateAspect",
           "children": [
           {
-          "name": "+eval",
-          "parent": "ExpressionAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowchart]",
-          "parent": "+eval"    }
+          "name": "exitState [from: UML]",
+          "parent": "+exitState"    }
 ,
           {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
-              ]
-    }
+          "name": "exitState [from: Rhapsody]",
+          "parent": "+exitState"    }
 ,
           {
-          "name": "LiteralAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "+eval",
-          "parent": "LiteralAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowchart]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
-              ]
-    }
-,
-          {
-          "name": "IntegerLitAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "+eval",
-          "parent": "IntegerLitAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowchart]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
-              ]
-    }
-,
-          {
-          "name": "StringLitAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "+eval",
-          "parent": "StringLitAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowchart]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
-              ]
-    }
-,
-          {
-          "name": "BoolLitAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "+eval",
-          "parent": "BoolLitAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Flowchart]",
-          "parent": "+eval"    }
-              ]
-    }
-              ]
-    }
-,
-          {
-          "name": "ArithmeticExpressionAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "+eval",
-          "parent": "ArithmeticExpressionAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowchart]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
-              ]
-    }
-,
-          {
-          "name": "RelationalExpressionAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "+eval",
-          "parent": "RelationalExpressionAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowchart]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
+          "name": "exitState [from: Harel]",
+          "parent": "+exitState"    }
               ]
     }
               ]
@@ -258,18 +242,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "evalConstraint [from: FSM]",
+          "name": "evalConstraint [from: UML, Rhapsody, Harel]",
           "parent": "ConstraintAspect"    }
-              ]
-    }
-,
-          {
-          "name": "RelationalConstraintAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "evalConstraint [from: FSM]",
-          "parent": "RelationalConstraintAspect"    }
               ]
     }
 ,
@@ -278,8 +252,22 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from: FSM]",
-          "parent": "StatementAspect"    }
+          "name": "+eval",
+          "parent": "StatementAspect",
+          "children": [
+          {
+          "name": "eval [from: UML]",
+          "parent": "+eval"    }
+,
+          {
+          "name": "eval [from: Rhapsody]",
+          "parent": "+eval"    }
+,
+          {
+          "name": "eval [from: Harel]",
+          "parent": "+eval"    }
+              ]
+    }
               ]
     }
 ,
@@ -288,326 +276,42 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from: FSM]",
-          "parent": "ProgramAspect"    }
+          "name": "+eval",
+          "parent": "ProgramAspect",
+          "children": [
+          {
+          "name": "eval [from: UML]",
+          "parent": "+eval"    }
+,
+          {
+          "name": "eval [from: Rhapsody]",
+          "parent": "+eval"    }
+,
+          {
+          "name": "eval [from: Harel]",
+          "parent": "+eval"    }
+              ]
+    }
               ]
     }
 ,
           {
-          "name": "VarDeclAspect",
+          "name": "OrTriggerAspect",
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from: FSM]",
-          "parent": "VarDeclAspect"    }
+          "name": "evalTrigger [from: Harel]",
+          "parent": "OrTriggerAspect"    }
               ]
     }
 ,
           {
-          "name": "ConditionalAspect",
+          "name": "NotTriggerAspect",
           "parent": "Family",
           "children": [
           {
-          "name": "eval [from: FSM]",
-          "parent": "ConditionalAspect"    }
-              ]
-    }
-,
-          {
-          "name": "LoopAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: FSM]",
-          "parent": "LoopAspect"    }
-              ]
-    }
-,
-          {
-          "name": "PrintlnAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: FSM]",
-          "parent": "PrintlnAspect"    }
-              ]
-    }
-,
-          {
-          "name": "PrintAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: FSM]",
-          "parent": "PrintAspect"    }
-              ]
-    }
-,
-          {
-          "name": "AssignationAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: FSM]",
-          "parent": "AssignationAspect"    }
-              ]
-    }
-,
-          {
-          "name": "WaitAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: FSM]",
-          "parent": "WaitAspect"    }
-              ]
-    }
-,
-          {
-          "name": "InstructionAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "InstructionAspect"    }
-              ]
-    }
-,
-          {
-          "name": "PrimitiveAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "PrimitiveAspect"    }
-              ]
-    }
-,
-          {
-          "name": "BackAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "BackAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ForwardAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ForwardAspect"    }
-              ]
-    }
-,
-          {
-          "name": "LeftAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "LeftAspect"    }
-              ]
-    }
-,
-          {
-          "name": "RightAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "RightAspect"    }
-              ]
-    }
-,
-          {
-          "name": "PenDownAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "PenDownAspect"    }
-              ]
-    }
-,
-          {
-          "name": "PenUpAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "PenUpAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ClearAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ClearAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ProcCallAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ProcCallAspect"    }
-,
-          {
-          "name": "res [from: Logo]",
-          "parent": "ProcCallAspect"    }
-              ]
-    }
-,
-          {
-          "name": "BlockAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "BlockAspect"    }
-,
-          {
-          "name": "res [from: Logo]",
-          "parent": "BlockAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ControlStructureAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ControlStructureAspect"    }
-              ]
-    }
-,
-          {
-          "name": "IfAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "IfAspect"    }
-              ]
-    }
-,
-          {
-          "name": "RepeatAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "RepeatAspect"    }
-              ]
-    }
-,
-          {
-          "name": "WhileAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "WhileAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ParameterAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ParameterAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ParameterCallAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ParameterCallAspect"    }
-              ]
-    }
-,
-          {
-          "name": "LogoProgramAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "LogoProgramAspect"    }
-              ]
-    }
-,
-          {
-          "name": "FlowchartAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Flowchart]",
-          "parent": "FlowchartAspect"    }
-              ]
-    }
-,
-          {
-          "name": "NodeAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Flowchart]",
-          "parent": "NodeAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ArcAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Flowchart]",
-          "parent": "ArcAspect"    }
-              ]
-    }
-,
-          {
-          "name": "SubflowAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Flowchart]",
-          "parent": "SubflowAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ActionAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Flowchart]",
-          "parent": "ActionAspect"    }
-              ]
-    }
-,
-          {
-          "name": "DecisionAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Flowchart]",
-          "parent": "DecisionAspect"    }
+          "name": "evalTrigger [from: Harel]",
+          "parent": "NotTriggerAspect"    }
               ]
     }
               ]
