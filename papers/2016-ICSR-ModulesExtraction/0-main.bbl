@@ -81,6 +81,21 @@ J.-M. Favre, D.~Gasevic, R.~L‰mmel, and E.~Pek.
 \newblock In {\em Software Language Engineering}, volume 6563 of {\em LNCS},
   pages 316--326. Springer, 2011.
 
+\bibitem{Harel:2004}
+D.~Harel and H.~Kugler.
+\newblock The rhapsody semantics of statecharts (or, on the executable core of
+  the uml).
+\newblock In H.~Ehrig, W.~Damm, J.~Desel, M.~Groﬂe-Rhode, W.~Reif,
+  E.~Schnieder, and E.~Westk‰mper, editors, {\em Integration of Software
+  Specification Techniques for Applications in Engineering}, volume 3147 of
+  {\em Lecture Notes in Computer Science}, pages 325--354. Springer Berlin
+  Heidelberg, 2004.
+
+\bibitem{Harel:1996}
+D.~Harel and A.~Naamad.
+\newblock The statemate semantics of statecharts.
+\newblock {\em ACM Trans. Softw. Eng. Methodol.}, 5(4):293--333, Oct. 1996.
+
 \bibitem{Harel:2004b}
 D.~Harel and B.~Rumpe.
 \newblock Meaningful modeling: what's the semantics of ``semantics"?
@@ -158,6 +173,10 @@ P.~D. Mosses.
 A.~Olson, T.~Kieren, and S.~Ludwig.
 \newblock Linking logo, levels and language in mathematics.
 \newblock {\em Educational Studies in Mathematics}, 18(4):359--370, 1987.
+
+\bibitem{UML:2011}
+O.~M.~G. (OMG).
+\newblock Uml 2.4.1 superstructure specification, 2011.
 
 \bibitem{Oney:2012}
 S.~Oney, B.~Myers, and J.~Brandt.

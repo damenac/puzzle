@@ -15,7 +15,7 @@
 \BOOKMARK [2][-]{subsection.1.4.3}{Encapsulating language modules}{section.1.4}% 15
 \BOOKMARK [1][-]{section.1.5}{Evaluation}{chapter.1}% 16
 \BOOKMARK [2][-]{subsection.1.5.1}{Evaluating correctness: The state machines case study}{section.1.5}% 17
-\BOOKMARK [3][-]{section*.12}{The oracle.}{subsection.1.5.1}% 18
+\BOOKMARK [3][-]{section*.13}{Oracle.}{subsection.1.5.1}% 18
 \BOOKMARK [3][-]{section*.14}{Results.}{subsection.1.5.1}% 19
 \BOOKMARK [2][-]{subsection.1.5.2}{Evaluating relevance: Identifying potential reuse in the wild}{section.1.5}% 20
 \BOOKMARK [1][-]{section.1.6}{Tool demonstration}{chapter.1}% 21
