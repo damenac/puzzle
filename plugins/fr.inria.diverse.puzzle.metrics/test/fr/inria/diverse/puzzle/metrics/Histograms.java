@@ -10,6 +10,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.MelangeFactory;
@@ -54,7 +55,7 @@ public class Histograms {
 
 	@Test
 	public void computeHistogramCount() throws Exception{
-		ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
+		ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
 
 		SyntacticNamingVennDiagram metrics = new SyntacticNamingVennDiagram();
 		int[][] theMatrix = metrics.getCommonalitiesMatrix(languages, conceptComparisonOperator);

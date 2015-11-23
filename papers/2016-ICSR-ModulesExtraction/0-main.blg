@@ -4,45 +4,45 @@ The top-level auxiliary file: 0-main.aux
 The style file: abbrv.bst
 Database file #1: 0-main.bib
 Warning--I didn't find a database entry for "Steel:2007"
-You've used 28 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            719 strings with 9556 characters,
-and the built_in function-call counts, 12683 in all, are:
-= -- 1217
-> -- 649
-< -- 29
-+ -- 243
-- -- 211
-* -- 978
-:= -- 2006
-add.period$ -- 101
-call.type$ -- 28
-change.case$ -- 172
+            726 strings with 9900 characters,
+and the built_in function-call counts, 13104 in all, are:
+= -- 1264
+> -- 665
+< -- 30
++ -- 248
+- -- 215
+* -- 997
+:= -- 2070
+add.period$ -- 106
+call.type$ -- 29
+change.case$ -- 176
 chr.to.int$ -- 0
-cite$ -- 28
-duplicate$ -- 520
-empty$ -- 971
-format.name$ -- 211
-if$ -- 2787
+cite$ -- 29
+duplicate$ -- 544
+empty$ -- 1009
+format.name$ -- 215
+if$ -- 2889
 int.to.chr$ -- 0
-int.to.str$ -- 28
-missing$ -- 29
-newline$ -- 143
-num.names$ -- 82
-pop$ -- 195
+int.to.str$ -- 29
+missing$ -- 30
+newline$ -- 148
+num.names$ -- 86
+pop$ -- 204
 preamble$ -- 1
-purify$ -- 145
+purify$ -- 148
 quote$ -- 0
-skip$ -- 362
+skip$ -- 377
 stack$ -- 0
-substring$ -- 736
-swap$ -- 184
-text.length$ -- 29
+substring$ -- 750
+swap$ -- 192
+text.length$ -- 30
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 110
+type$ -- 114
 warning$ -- 0
-while$ -- 115
-width$ -- 30
-write$ -- 343
+while$ -- 120
+width$ -- 31
+write$ -- 358
 (There was 1 warning)

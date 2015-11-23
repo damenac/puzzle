@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="Histograms" project="fr.inria.diverse.puzzle.metrics" tests="2" started="2" failures="0" errors="0" ignored="1">
-  <testsuite name="fr.inria.diverse.puzzle.metrics.Histograms" time="19.117">
-    <testcase name="computeHistograms" classname="fr.inria.diverse.puzzle.metrics.Histograms" time="0.0" ignored="true"/>
-    <testcase name="computeHistogramCount" classname="fr.inria.diverse.puzzle.metrics.Histograms" time="19.117"/>
-  </testsuite>
-</testrun>

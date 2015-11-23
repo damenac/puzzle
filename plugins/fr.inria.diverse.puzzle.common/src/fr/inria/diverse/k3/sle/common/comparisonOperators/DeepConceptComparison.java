@@ -13,10 +13,14 @@ public class DeepConceptComparison implements ConceptComparison {
 
 	@Override
 	public boolean equals(EClassifier left, EClassifier right) {
-		if(left instanceof EClass && right instanceof EClass)
-			return this.compareEClasses((EClass) left, (EClass) right);
-		else if(left instanceof EEnum && right instanceof EEnum)
-			return this.compareEEnums((EEnum) left, (EEnum) right);
+		if(left != null && left.getName() != null && right != null && right.getName() != null){
+			if(left instanceof EClass && right instanceof EClass)
+				return this.compareEClasses((EClass) left, (EClass) right);
+			else if(left instanceof EEnum && right instanceof EEnum)
+				return this.compareEEnums((EEnum) left, (EEnum) right);
+			else
+				return false;
+		}
 		else
 			return false;
 	}
@@ -105,7 +109,6 @@ public class DeepConceptComparison implements ConceptComparison {
 		
 		for (EEnumLiteral eLiteral : left.getELiterals()) {
 			if(!existsLiteral(right, eLiteral)){
-				System.out.println("eLiteral: " + eLiteral);
 				return false;
 			}
 				

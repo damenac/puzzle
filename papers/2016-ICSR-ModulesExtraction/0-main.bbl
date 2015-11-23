@@ -34,12 +34,6 @@ T.~Cleenewerck.
   Programming and Component Engineering}, volume 2830 of {\em Lecture Notes in
   Computer Science}, pages 245--264. Springer Berlin Heidelberg, 2003.
 
-\bibitem{Combemale:2014}
-B.~Combemale, J.~Deantoni, B.~Baudry, R.~France, J.-M. J\'ez\'equel, and
-  J.~Gray.
-\newblock Globalizing modeling languages.
-\newblock {\em Computer}, 47(6):68--71, June 2014.
-
 \bibitem{Combemale:2013}
 B.~Combemale, C.~Hardebolle, C.~Jacquet, F.~Boulanger, and B.~Baudry.
 \newblock Bridging the chasm between executable metamodeling and models of
@@ -107,6 +101,12 @@ H.~Krahn, B.~Rumpe, and S.~V\"olkel.
 \newblock {\em International Journal on Software Tools for Technology
   Transfer}, 12(5):353--372, 2010.
 
+\bibitem{Kuhn:2015}
+T.~K\"{u}hn, W.~Cazzola, and D.~M. Olivares.
+\newblock Choosy and picky: Configuration of language product lines.
+\newblock In {\em Proceedings of the 19th International Conference on Software
+  Product Line}, SPLC '15, pages 71--80, New York, NY, USA, 2015. ACM.
+
 \bibitem{Lafi:2011}
 L.~Lafi, S.~Hammoudi, and J.~Feki.
 \newblock Metamodel matching techniques in mda: Challenge, issues and
@@ -164,6 +164,14 @@ S.~Oney, B.~Myers, and J.~Brandt.
 E.~Vacchi and W.~Cazzola.
 \newblock Neverlang: A framework for feature-oriented language development.
 \newblock {\em Computer Languages, Systems \& Structures}, 43:1 -- 40, 2015.
+
+\bibitem{vacchi:2014}
+E.~Vacchi, W.~Cazzola, B.~Combemale, and M.~Acher.
+\newblock {Automating Variability Model Inference for Component-Based Language
+  Implementations}.
+\newblock In P.~Heymans and J.~Rubin, editors, {\em {SPLC'14 - 18th
+  International Software Product Line Conference}}, Florence, Italie, Sept.
+  2014. ACM.
 
 \bibitem{Storm:2013}
 T.~van~der Storm, W.~Cook, and A.~Loh.

@@ -32,7 +32,7 @@ In summary, there are: 17 language constructs that are shared by all the DSLs; 1
 
 Figure \ref{fig:puzzle-modularization} shows the results for the second and third part of our approach: identifying and extracting reusable language modules. Note that there is a language module (core) that contains all the language constructs that are shared by the three DSLs. Then, the other language modules encapsulate pseudostates and triggers separately since they represent the differences among the DSLs. Note that in order to obtain the Harel's state charts language, we need to compose the modules 1, 2, and 5. In turn, to obtain UML we need to compose modules 1, 3, and 4. Finally, to obtain Rhapsody we need to compose modules 1 and 5.
 
-\begin{figure}
+\begin{figure}[h!]
 \centering
 \includegraphics[width=1\linewidth]{images/puzzle-modularization.pdf}
 \caption{Results for the state machines case study: extracting language modules}
@@ -41,26 +41,26 @@ Figure \ref{fig:puzzle-modularization} shows the results for the second and thir
 
 \subsection{Evaluating \textit{relevance}: Identifying potential reuse in the wild}
 
-Our analysis of potential reuse in the wild was guided by two research questions: (1) What is the probability that a DSL share some commonalities with another one? (2) How big is the average of commonality shared by the existing DSLs? In order to answer those questions, we performed some statistical analysis on empirical data. The reminder of this section is dedicated to explain such analysis in detail. 
+Our analysis of potential reuse in the wild was guided by two research questions: (1) What is the probability that a DSL shares some commonalities with another DSL? (2) How big is the average of commonality shared by the existing DSLs? In order to answer those questions, we performed a statistical analysis on empirical data. The reminder of this section is dedicated to explain such analysis in detail. 
 
 \vspace{-3mm}
-\subsubsection{Sample data:} In order to collect empirical data, we explored \texttt{GitHub} repositories in search of DSLs that are built on the same technological space that we used in our approach. Namely, metamodels written in Ecore with operational semantics defined in Xtend as domain-specific actions. The objective was to build a realistic data set composed of DSLs developed by diverse development teams. 
+\subsubsection{Collecting empirical data:} To collect empirical data, we explored \texttt{GitHub} repositories in search of DSLs that are built on the same technological space that we used in our approach. Namely, metamodels written in Ecore with operational semantics defined as domain-specific actions in Xtend. The objective was to build a realistic data set composed of DSLs developed by diverse development teams. 
 
 As a result of this search, we found \textbf{2424} metamodels (after discarding metamodels with errors). Contrariwise, due to the fact that Kermeta 3 and its implementation in Xtend is a quite recent idea, we only found some few DSLs all of them developed in our research team (which is the team that developed Kermeta 3). We decided to conduct analysis only in the metamodels. We consider that such analysis a good insight to know if there is potential reuse. 
 
-In the following, we refer to our sample data as the set $S : set(MM)$.
+In the following, we refer to our empirical data as $S$ which is a set of metamodels.
 
 \vspace{-3mm}
-\subsubsection{Q.1: \textit{What is the probability that a DSL share some commonalities with another one?}} In order to answer this first question, we use our sample data and compute the relative frequency of the event \texttt{E}: \textit{``the metamodel has commonalities with, at least, another one"}.
+\subsubsection{Q.1: \textit{What is the probability that a DSL shares some commonalities with another DSL?}} To answer this first question, we use our empirical data and compute the relative frequency of the event \texttt{E}: \textit{``the metamodel has commonalities with, at least, another DSL"}. Formally:
 
 \begin{equation}
 \begin{split}
-P(E) \approx ~ & Relative Frequency (E) = \frac{\{S_{E} \subseteq S \}}{|S|}\\
-& where S_{E} = \{x \in S \mid (\exists y \in S \mid (x \neq y ~ \wedge x \cap y \neq \emptyset )) \}
+P(E) & \approx ~ Relative Frequency (E) = \frac{|S_{E}|}{|S|}\\
+& where ~ S_{E} = \{x \in S \mid (\exists y \in S \mid (x \neq y ~ \wedge x \cap y \neq \emptyset )) \}
 \end{split}
 \end{equation}
 
-Once we execute the experiment, we obtained that the relative frequency of the event is 33/90 = 0.5. That means that there is a 50\% of probabilities that a metamodel share commonalities with another one. 
+Once we execute the experiment, we obtained that the relative frequency of the event is $974/2424 = 0.40$. That means that there is a $40\%$ of probabilities that a metamodel share commonalities with another one. 
 
 \vspace{-3mm}
 \subsubsection{Q.2: \textit{How big is the average of commonality shared by the existing DSLs?}} To answer this question we analyzed all the metamodels in the sample data and we compute the average of commonality among them. Note that this value give us some insights about how can be the commonality in the general case. 
