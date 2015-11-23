@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  23 NOV 2015 12:53
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  23 NOV 2015 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1027,113 +1027,110 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 4.
 
 
-Overfull \hbox (5.49342pt too wide) in paragraph at lines 10--10
+Overfull \hbox (5.49342pt too wide) in paragraph at lines 13--13
  [][][]$\T1/cmtt/m/n/9 https : / / github . com / diverse-[]project / k3 / wiki
  / Defining-[]aspects-[]in-[]Kermeta-[]3$[]| 
  []
 
-[3] <images/k3-example-fig.pdf, id=224, 676.32233pt x 265.40715pt>
+[3] <images/k3-example-fig.pdf, id=215, 676.32233pt x 265.40715pt>
 File: images/k3-example-fig.pdf Graphic file (type pdf)
 
 <use images/k3-example-fig.pdf>
-Package pdftex.def Info: images/k3-example-fig.pdf used on input line 24.
+Package pdftex.def Info: images/k3-example-fig.pdf used on input line 22.
 (pdftex.def)             Requested size: 347.12354pt x 136.21844pt.
 ) (./sections/runningexample.tex [4 <./images/k3-example-fig.pdf>] <images/clon
-ing.pdf, id=662, 560.7359pt x 191.70842pt>
+ing.pdf, id=658, 560.7359pt x 191.70842pt>
 File: images/cloning.pdf Graphic file (type pdf)
 
 <use images/cloning.pdf>
-Package pdftex.def Info: images/cloning.pdf used on input line 14.
+Package pdftex.def Info: images/cloning.pdf used on input line 12.
 (pdftex.def)             Requested size: 347.12354pt x 118.67955pt.
-
-<images/domains-inaction.pdf, id=666, 531.09727pt x 252.55675pt>
+ [5 <./images/cloning.pdf>]
+<images/domains-inaction.pdf, id=879, 531.09727pt x 252.55675pt>
 File: images/domains-inaction.pdf Graphic file (type pdf)
 
 <use images/domains-inaction.pdf>
-Package pdftex.def Info: images/domains-inaction.pdf used on input line 27.
+Package pdftex.def Info: images/domains-inaction.pdf used on input line 23.
 (pdftex.def)             Requested size: 347.12354pt x 165.0694pt.
- [5 <./images/cloning.pdf>])
-(./sections/familiesanalysis.tex
-<images/breakdown.pdf, id=886, 701.11662pt x 501.2328pt>
+) (./sections/familiesanalysis.tex [6 <./images/domains-inaction.pdf>]
+<images/breakdown.pdf, id=934, 701.11662pt x 501.2328pt>
 File: images/breakdown.pdf Graphic file (type pdf)
 
 <use images/breakdown.pdf>
 Package pdftex.def Info: images/breakdown.pdf used on input line 8.
 (pdftex.def)             Requested size: 347.12354pt x 248.1607pt.
-
-Underfull \vbox (badness 1675) has occurred while \output is active []
-
- [6 <./images/domains-inaction.pdf>] [7 <./images/breakdown.pdf>]
-Underfull \vbox (badness 3039) has occurred while \output is active []
-
- [8]
+ [7 <./images/breakdown.pdf>] [8]
 
 LaTeX Warning: Citation `Steel:2007' on page 9 undefined on input line 142.
 
-
-LaTeX Warning: Citation `Degueule:2015' on page 9 undefined on input line 142.
-
-<images/approach-interfaces.pdf, id=1277, 491.8636pt x 144.10297pt>
+[9] <images/approach-interfaces.pdf, id=1281, 491.8636pt x 144.10297pt>
 File: images/approach-interfaces.pdf Graphic file (type pdf)
 
 <use images/approach-interfaces.pdf>
 Package pdftex.def Info: images/approach-interfaces.pdf used on input line 146.
 
 (pdftex.def)             Requested size: 347.12354pt x 101.70033pt.
- [9]) (./sections/casestudies.tex [10 <./images/approach-interfaces.pdf>]
-<images/oracle.pdf, id=1813, 571.56805pt x 159.6095pt>
+) (./sections/casestudies.tex [10 <./images/approach-interfaces.pdf>]
+<images/oracle.pdf, id=1804, 571.56805pt x 159.6095pt>
 File: images/oracle.pdf Graphic file (type pdf)
  <use images/oracle.pdf>
 Package pdftex.def Info: images/oracle.pdf used on input line 16.
 (pdftex.def)             Requested size: 347.12354pt x 96.933pt.
 
-<images/puzzle-overlapping.pdf, id=1815, 674.52pt x 370.38374pt>
+<images/puzzle-overlapping.pdf, id=1806, 674.52pt x 370.38374pt>
 File: images/puzzle-overlapping.pdf Graphic file (type pdf)
 
 <use images/puzzle-overlapping.pdf>
 Package pdftex.def Info: images/puzzle-overlapping.pdf used on input line 28.
 (pdftex.def)             Requested size: 347.12354pt x 190.61128pt.
-
-<images/puzzle-modularization.pdf, id=1817, 690.29262pt x 338.65039pt>
+ [11 <./images/oracle.pdf>]
+<images/puzzle-modularization.pdf, id=1848, 690.29262pt x 338.65039pt>
 File: images/puzzle-modularization.pdf Graphic file (type pdf)
 
 <use images/puzzle-modularization.pdf>
 Package pdftex.def Info: images/puzzle-modularization.pdf used on input line 37
 .
 (pdftex.def)             Requested size: 347.12354pt x 170.29623pt.
- [11 <./images/oracle.pdf>] [12 <./images/puzzle-overlapping.pdf>]) (./sections
-/puzzlemetrics.tex)
-(./sections/relatedwork.tex) (./sections/conclusions.tex [13 <./images/puzzle-m
-odularization.pdf>]) (./0-main.bbl [14] [15])
+ [12 <./images/puzzle-overlapping.pdf>])
+(./sections/puzzlemetrics.tex) (./sections/relatedwork.tex)
+(./sections/conclusions.tex [13 <./images/puzzle-modularization.pdf>])
+(./0-main.bbl [14] [15])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
  [16]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
  (./0-main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
-Package rerunfilecheck Info: File `0-main.out' has not changed.
-(rerunfilecheck)             Checksum: 746586C49CFC2FA833C950B5E24ABCD6;1895.
+
+
+Package rerunfilecheck Warning: File `0-main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `0-main.out':
+(rerunfilecheck)             Before: 00C81CA2E80A9CF69B7F610FC10EF8F9;2007
+(rerunfilecheck)             After:  33AB91027BD3E8B82FACB826AD389B0C;1914.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 19635 strings out of 493308
- 335421 string characters out of 6137815
- 441967 words of memory out of 5000000
- 22548 multiletter control sequences out of 15000+600000
+ 19627 strings out of 493308
+ 335298 string characters out of 6137815
+ 440967 words of memory out of 5000000
+ 22543 multiletter control sequences out of 15000+600000
  20730 words of font info for 57 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,15n,97p,1444b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
+ 63i,16n,97p,1444b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
 st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
-, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
+
+pdfTeX warning (dest): name{subsection.1.3.1} has been referenced but does not 
+exist, replaced by a fixed one
 
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
@@ -1157,10 +1154,10 @@ f-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2013/texmf-
 dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-di
 st/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2013/texmf-dist
 /fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0-main.pdf (16 pages, 2975328 bytes).
+Output written on 0-main.pdf (16 pages, 2990379 bytes).
 PDF statistics:
- 2358 PDF objects out of 2487 (max. 8388607)
- 1382 compressed objects within 14 object streams
- 90 named destinations out of 1000 (max. 500000)
+ 2345 PDF objects out of 2487 (max. 8388607)
+ 1372 compressed objects within 14 object streams
+ 87 named destinations out of 1000 (max. 500000)
  253 words of extra memory for PDF output out of 10000 (max. 10000000)
 

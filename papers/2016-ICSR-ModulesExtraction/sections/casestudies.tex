@@ -7,7 +7,7 @@ The second part of the evaluation is intended to demonstrate that our approach i
 
 \subsection{Evaluating \textit{correctness}: The state machines case study}
 
-The case study is composed of three different DSLs for expressing state machines:  UML state diagrams \cite{UML:2011}, Rhapsody \cite{Harel:2004}, and Harel's state charts \cite{Harel:1996}. Because the three DSLs are intended to express the same formalism, they have commonalities. For example, all of them provide basic concepts such as \texttt{StateMachine}, \texttt{State}, \texttt{Transition}, or \texttt{Trigger}. However, not all those DSLs are equal. In fact, they have some syntactic and semantic differences which are well documented in the Crane's article \cite{Crane:2007}. To validate our approach we implemented these three DSLs while strictly following that documentation. Thus, we obtained a set of DSLs to test our tool and we know in advance the results that the tool should provide. We use that as an oracle to test our approach. 
+The case study is composed of three different DSLs for expressing state machines:  UML state diagrams, Rhapsody, and Harel's state charts. Because the three DSLs are intended to express the same formalism, they have commonalities. For example, all of them provide basic concepts such as \texttt{StateMachine}, \texttt{State}, \texttt{Transition}, or \texttt{Trigger}. However, not all those DSLs are equal. In fact, they have some syntactic and semantic differences which are well documented in the Crane's article \cite{Crane:2007}. To validate our approach we implemented these three DSLs while strictly following that documentation. Thus, we obtained a set of DSLs to test our tool and we know in advance the results that the tool should provide. We use that as an oracle to test our approach. 
 
 \subsubsection{Oracle.} Figure \ref{fig:oracle} shows a table with the constructs contained by each DSL in the case study. Note that not all the DSLs have exactly the same constructs. The main differences are in the support for types of triggers. Whereas Rhapsody only supports simple triggers. Harel's state charts and UML provide support composing triggers. In particular, in Harel's state charts triggers can be composed by using \texttt{AND}, \texttt{OR}, and \texttt{NOT} operators. In turn, in UML triggers can be composed by using only the \texttt{AND} operator. Another difference between the DSL of our case study corresponds to the different support for pseudostates. Whereas there are pseudostates that are supported by all the DSLs (\texttt{Fork}, \texttt{Join}, \texttt{ShallowHistory}, and \texttt{Junction}); there are certain psueudostates such as \texttt{DeepHistory}, \texttt{Conditional}, or \texttt{Choice} that are not supported in all of the DSLs.
 
@@ -41,25 +41,33 @@ Figure \ref{fig:puzzle-modularization} shows the results for the second and thir
 
 \subsection{Evaluating \textit{relevance}: Identifying potential reuse in the wild}
 
-In order to identify potential reuse in the wild, we explored the public \texttt{GitHub} repositories in search of DSLs that are built on the same technological space that we used in our approach. Namely, metamodels written in Ecore with operational semantics defined in Xtend as domain-specific actions. The objective was to build a data set composed of DSLs developed by diverse development teams. 
+Our analysis of potential reuse in the wild was guided by two research questions: (1) What is the probability that a DSL share some commonalities with another one? (2) How big is the average of commonality shared by the existing DSLs? In order to answer those questions, we performed some statistical analysis on empirical data. The reminder of this section is dedicated to explain such analysis in detail. 
 
-As a result of this search, we found 2800 Ecore metamodels after discarding metamodels with errors. Contrariwise, due to the fact that Kermeta 3 and its implementation in Xtend is a quite recent idea, we only found some few DSLs all of them developed in our research team (which is the team that developed Kermeta 3). We decided to conduct analysis only in the metamodels. We consider that such analysis a good insight to know if there is potential reuse.
+\vspace{-3mm}
+\subsubsection{Sample data:} In order to collect empirical data, we explored \texttt{GitHub} repositories in search of DSLs that are built on the same technological space that we used in our approach. Namely, metamodels written in Ecore with operational semantics defined in Xtend as domain-specific actions. The objective was to build a realistic data set composed of DSLs developed by diverse development teams. 
 
-\subsubsection{The questions.} Our analysis to evaluate potential reuse in the wild was guided by two questions: 1) What is the probability that a metamodel share some commonalities with another one? and 2) How big is the average commonality between metamodels?
+As a result of this search, we found \textbf{2424} metamodels (after discarding metamodels with errors). Contrariwise, due to the fact that Kermeta 3 and its implementation in Xtend is a quite recent idea, we only found some few DSLs all of them developed in our research team (which is the team that developed Kermeta 3). We decided to conduct analysis only in the metamodels. We consider that such analysis a good insight to know if there is potential reuse. 
 
-\subsubsection{The experiments.} In order to answer the first question, we conducted an experiment intended to compute the number of metamodels that share at least one construct with another metamodel. In other words, we consider our data set as a data sample in order to predict the probability that a metamodel share commonalities with another one. To do that, we 
+In the following, we refer to our sample data as the set $S : set(MM)$.
 
-one was intended to know what is the average of metamodels to which a metamodel share something. To do so, we execute a pair-wise analysis between all the metamodels and compute a matrix. 
+\vspace{-3mm}
+\subsubsection{Q.1: \textit{What is the probability that a DSL share some commonalities with another one?}} In order to answer this first question, we use our sample data and compute the relative frequency of the event \texttt{E}: \textit{``the metamodel has commonalities with, at least, another one"}.
 
-\subsubsection{The answers.}
+\begin{equation}
+\begin{split}
+P(E) \approx ~ & Relative Frequency (E) = \frac{\{S_{E} \subseteq S \}}{|S|}\\
+& where S_{E} = \{x \in S \mid (\exists y \in S \mid (x \neq y ~ \wedge x \cap y \neq \emptyset )) \}
+\end{split}
+\end{equation}
 
-The experiments were conducted using a version of \toolname implemented in Java. Further, \toolname was installed in the Grid5000 Cloud, which is a cluster with more than 5000 cores from were we took XX dual-CPU Dell Blades with Intel Xeon X3470 CPUs running at 2.93GHz, with 16 threads 
+Once we execute the experiment, we obtained that the relative frequency of the event is 33/90 = 0.5. That means that there is a 50\% of probabilities that a metamodel share commonalities with another one. 
+
+\vspace{-3mm}
+\subsubsection{Q.2: \textit{How big is the average of commonality shared by the existing DSLs?}} To answer this question we analyzed all the metamodels in the sample data and we compute the average of commonality among them. Note that this value give us some insights about how can be the commonality in the general case. 
+
+\vspace{-3mm}
+\subsubsection{Execution platform:} The experiments were conducted using a version of \toolname implemented in Java. Further, \toolname was installed in the Grid5000 Cloud, which is a cluster with more than 5000 cores from were we took XX dual-CPU Dell Blades with Intel Xeon X3470 CPUs running at 2.93GHz, with 16 threads 
 per CPU, and CentOS v6. Each dual-CPU Dell Blade has 36GB of RAM. 
-
-\subsection{Tool demonstration}
-\label{sec:tooldemo}
-
-The tooling supporting the approach presented in this paper is implemented on top of the Eclipse Modeling Framework. We provide a tool demonstration\footnote{Tool demonstration: \url{www.tooldemo.com}} that illustrates the use of our tool in both: the example presented in section \ref{sec:motivation} and the case study of the state machines presented in section \ref{sec:validation}.
 
 
 %\begin{table*}[htbp]

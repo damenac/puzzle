@@ -1,53 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 0-main.aux
-Case mismatch error between cite keys Degueule:2015 and degueule:2015
----line 77 of file 0-main.aux
- : \citation{Degueule:2015
- :                        }
-I'm skipping whatever remains of this command
 The style file: abbrv.bst
 Database file #1: 0-main.bib
 Warning--I didn't find a database entry for "Steel:2007"
-You've used 31 entries,
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            739 strings with 10168 characters,
-and the built_in function-call counts, 13800 in all, are:
-= -- 1320
-> -- 705
-< -- 31
-+ -- 265
-- -- 228
-* -- 1059
-:= -- 2183
-add.period$ -- 110
-call.type$ -- 31
-change.case$ -- 186
+            719 strings with 9556 characters,
+and the built_in function-call counts, 12683 in all, are:
+= -- 1217
+> -- 649
+< -- 29
++ -- 243
+- -- 211
+* -- 978
+:= -- 2006
+add.period$ -- 101
+call.type$ -- 28
+change.case$ -- 172
 chr.to.int$ -- 0
-cite$ -- 31
-duplicate$ -- 563
-empty$ -- 1063
-format.name$ -- 228
-if$ -- 3029
+cite$ -- 28
+duplicate$ -- 520
+empty$ -- 971
+format.name$ -- 211
+if$ -- 2787
 int.to.chr$ -- 0
-int.to.str$ -- 31
-missing$ -- 31
-newline$ -- 157
-num.names$ -- 90
-pop$ -- 214
+int.to.str$ -- 28
+missing$ -- 29
+newline$ -- 143
+num.names$ -- 82
+pop$ -- 195
 preamble$ -- 1
-purify$ -- 156
+purify$ -- 145
 quote$ -- 0
-skip$ -- 397
+skip$ -- 362
 stack$ -- 0
-substring$ -- 806
-swap$ -- 198
-text.length$ -- 31
+substring$ -- 736
+swap$ -- 184
+text.length$ -- 29
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 122
+type$ -- 110
 warning$ -- 0
-while$ -- 126
-width$ -- 33
-write$ -- 375
-(There was 1 error message)
+while$ -- 115
+width$ -- 30
+write$ -- 343
+(There was 1 warning)

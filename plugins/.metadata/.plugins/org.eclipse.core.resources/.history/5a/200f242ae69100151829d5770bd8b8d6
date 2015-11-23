@@ -83,7 +83,7 @@ public class Histograms {
 		}
 		histogram.add(new Integer(count));
 		
-		int interval = 1;
+		int interval = 10;
 		
 		int maxI = 0;
 		for (int i = 1; i <= max; i+=interval) {
@@ -94,7 +94,7 @@ public class Histograms {
 				Integer currentValue = histogramByConstructs.get(currentKey);
 				int proxI = i + interval;
 								
-				if(/*currentValue >= i &&*/ currentValue < proxI){
+				if(currentValue < proxI){
 					count ++;
 				}
 			}
@@ -111,12 +111,11 @@ public class Histograms {
 				count ++;
 			}
 		}
-		histogram.add(new Integer(count));
+//		histogram.add(new Integer(count));
 		
 		
 		for (int i = 0; i < histogram.size(); i++) {
-			if(histogram.get(i) != 0)
-				System.out.println(i*interval + "," + histogram.get(i));
+			System.out.println(i*interval + "," + histogram.get(i));
 		}
 	}	
 	

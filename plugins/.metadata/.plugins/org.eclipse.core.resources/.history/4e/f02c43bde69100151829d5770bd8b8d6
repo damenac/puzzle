@@ -94,7 +94,7 @@ public class Histograms {
 				Integer currentValue = histogramByConstructs.get(currentKey);
 				int proxI = i + interval;
 								
-				if(/*currentValue >= i &&*/ currentValue < proxI){
+				if(currentValue >= i && currentValue < proxI){
 					count ++;
 				}
 			}
@@ -115,8 +115,7 @@ public class Histograms {
 		
 		
 		for (int i = 0; i < histogram.size(); i++) {
-			if(histogram.get(i) != 0)
-				System.out.println(i*interval + "," + histogram.get(i));
+			System.out.println(i*interval + "," + histogram.get(i));
 		}
 	}	
 	
