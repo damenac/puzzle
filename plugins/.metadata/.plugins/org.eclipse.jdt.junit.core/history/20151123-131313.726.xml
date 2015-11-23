@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="EmpiricalStudy" project="fr.inria.diverse.puzzle.metrics" tests="5" started="5" failures="0" errors="0" ignored="4">
+  <testsuite name="fr.inria.diverse.puzzle.metrics.EmpiricalStudy" time="19.788">
+    <testcase name="testIntersectionPairs" classname="fr.inria.diverse.puzzle.metrics.EmpiricalStudy" time="0.0" ignored="true"/>
+    <testcase name="generateMelangeScript" classname="fr.inria.diverse.puzzle.metrics.EmpiricalStudy" time="0.0" ignored="true"/>
+    <testcase name="computeHistograms" classname="fr.inria.diverse.puzzle.metrics.EmpiricalStudy" time="19.787"/>
+    <testcase name="drawHugeVennDiagram" classname="fr.inria.diverse.puzzle.metrics.EmpiricalStudy" time="0.0" ignored="true"/>
+    <testcase name="lunchEmpiricalStudy" classname="fr.inria.diverse.puzzle.metrics.EmpiricalStudy" time="0.001" ignored="true"/>
+  </testsuite>
+</testrun>

@@ -130,7 +130,7 @@ public class SyntacticNamingVennDiagram implements SpecialFamilySyntacticChart {
 		}
 		return answer;
 	}
-	
+		
 	public Hashtable<Integer, Integer> computeLanguagesCommonality(int[][] commonalitiesMatrix){
 		Hashtable<Integer, Integer> answer = new Hashtable<Integer, Integer>();
 		for (int i = 0; i < commonalitiesMatrix.length; i++) {

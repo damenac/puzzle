@@ -91,7 +91,7 @@ public class EmpiricalStudy {
 		}
 	}
 	
-	
+	@Ignore
 	@Test
 	public void drawHugeVennDiagram() throws Exception{
 		ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
@@ -109,23 +109,15 @@ public class EmpiricalStudy {
 		familysMetric.createReport1LargeAnalysis(languages);
 	}
 	
-	@Ignore
+//	@Ignore
 	@Test
 	public void computeHistograms() throws Exception{
 		ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
 
-//		File syntacticVennData = new File("./libVenn/syntacticVennData.jsonp" );
-//		if(!syntacticVennData.exists())
-//			syntacticVennData.createNewFile();
-//		
-//		PrintWriter out = new PrintWriter( syntacticVennData );
-//		SpecialFamilySyntacticChart syntacticVennDiagram = new SyntacticVennDiagram();
-//        out.print(syntacticVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator));
-//        out.close();
-        
 		SyntacticNamingVennDiagram metrics = new SyntacticNamingVennDiagram();
 		int[][] theMatrix = metrics.getCommonalitiesMatrix(languages, conceptComparisonOperator);
 		Hashtable<Integer, Integer> histogramByConstructs = metrics.computeConstructsCommonality(theMatrix);
+		
 		int max = -1;
 		for (int i = 0; i < theMatrix.length; i++) {
 			int current = histogramByConstructs.get(i);
