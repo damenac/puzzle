@@ -14,12 +14,11 @@
 \BOOKMARK [2][-]{subsection.1.4.3}{Encapsulating language modules}{section.1.4}% 14
 \BOOKMARK [1][-]{section.1.5}{Evaluation}{chapter.1}% 15
 \BOOKMARK [2][-]{subsection.1.5.1}{Evaluating correctness: The state machines case study}{section.1.5}% 16
-\BOOKMARK [3][-]{section*.13}{Oracle.}{subsection.1.5.1}% 17
-\BOOKMARK [3][-]{section*.15}{Results.}{subsection.1.5.1}% 18
+\BOOKMARK [3][-]{section*.13}{The test oracle:}{subsection.1.5.1}% 17
+\BOOKMARK [3][-]{section*.15}{Results:}{subsection.1.5.1}% 18
 \BOOKMARK [2][-]{subsection.1.5.2}{Evaluating relevance: Identifying potential reuse in the wild}{section.1.5}% 19
 \BOOKMARK [3][-]{section*.18}{Collecting empirical data:}{subsection.1.5.2}% 20
-\BOOKMARK [3][-]{section*.19}{Q.1: What is the probability that a DSL shares some commonalities with another DSL?}{subsection.1.5.2}% 21
-\BOOKMARK [3][-]{section*.20}{Q.2: How big is the average of commonality shared by the existing DSLs?}{subsection.1.5.2}% 22
-\BOOKMARK [3][-]{section*.21}{Execution platform:}{subsection.1.5.2}% 23
-\BOOKMARK [1][-]{section.1.6}{Related work}{chapter.1}% 24
-\BOOKMARK [1][-]{section.1.7}{Conclusions}{chapter.1}% 25
+\BOOKMARK [3][-]{section*.19}{What is the probability that a DSL has some overlapping with another DSL?}{subsection.1.5.2}% 21
+\BOOKMARK [3][-]{section*.20}{How big is the average overlapping existing among DSLs?}{subsection.1.5.2}% 22
+\BOOKMARK [1][-]{section.1.6}{Related work}{chapter.1}% 23
+\BOOKMARK [1][-]{section.1.7}{Conclusions}{chapter.1}% 24

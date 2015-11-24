@@ -1,15 +1,20 @@
 \section{Evaluation}
 \label{sec:validation}
 
-In this section we present the validation of our approach. As aforementioned, this validation is twofold. On one hand, we demonstrate that our approach is correct. To do so, we take use a case study that is well documented in \cite{Crane:2007} and where we exactly know the commonalities existing among the input set. We execute our approach and we compare the results while expecting that the input of our tool matches with the commonalities we know. It is important to mention that this case study corresponds to a real problematic in the industry. Concretely, it is one of the motivations of the VaryMDE\footnote{\url{http://varymde.gforge.inria.fr/}} project which is a collaboration between Thales Research \& Technology, and INRIA.  
-
-The second part of the evaluation is intended to demonstrate that our approach is relevant. We demonstrate, with empirical data, that the phenomenon of syntactic and semantic commonalities is currently appearing in real DSLs and, so, there is an important amount of potential reuse in the wild and our approach can be actually useful. 
+We use this section to present a twofold evaluation of our approach. First, we evaluate \textit{correctness}. To this end, we use a test oracle consisting of a well-documented case study where we exactly know the existing overlapping among the involved DSLs. We execute our approach on the case study and we check that the input matches the expected overlapping. Second, we evaluate \textit{relevance}. More concretely, we use empirical data to demonstrate that the phenomenon of syntactic and semantic overlapping is actually appearing in realistic DSLs that we obtain from public \texttt{GitHub} repositories. Thus, we show that there is room in real projects to the applicability of our approach.  
 
 \subsection{Evaluating \textit{correctness}: The state machines case study}
 
-The case study is composed of three different DSLs for expressing state machines:  UML state diagrams, Rhapsody, and Harel's state charts. Because the three DSLs are intended to express the same formalism, they have commonalities. For example, all of them provide basic concepts such as \texttt{StateMachine}, \texttt{State}, \texttt{Transition}, or \texttt{Trigger}. However, not all those DSLs are equal. In fact, they have some syntactic and semantic differences which are well documented in the Crane's article \cite{Crane:2007}. To validate our approach we implemented these three DSLs while strictly following that documentation. Thus, we obtained a set of DSLs to test our tool and we know in advance the results that the tool should provide. We use that as an oracle to test our approach. 
+The case study we use to evaluate the correctness of our approach was introduced by Crane et al \cite{Crane:2007}, and it is composed of three different DSLs for expressing state machines: UML state diagrams, Rhapsody, and Harel's state charts. This case study describes a realistic problematic that has an impact on the industry. As a matter of fact, it is one of the motivations of the VaryMDE\footnote{\url{http://varymde.gforge.inria.fr/}} project which is a collaboration between Thales Research \& Technology, and INRIA.
 
-\subsubsection{Oracle.} Figure \ref{fig:oracle} shows a table with the constructs contained by each DSL in the case study. Note that not all the DSLs have exactly the same constructs. The main differences are in the support for types of triggers. Whereas Rhapsody only supports simple triggers. Harel's state charts and UML provide support composing triggers. In particular, in Harel's state charts triggers can be composed by using \texttt{AND}, \texttt{OR}, and \texttt{NOT} operators. In turn, in UML triggers can be composed by using only the \texttt{AND} operator. Another difference between the DSL of our case study corresponds to the different support for pseudostates. Whereas there are pseudostates that are supported by all the DSLs (\texttt{Fork}, \texttt{Join}, \texttt{ShallowHistory}, and \texttt{Junction}); there are certain psueudostates such as \texttt{DeepHistory}, \texttt{Conditional}, or \texttt{Choice} that are not supported in all of the DSLs.
+\vspace{-3mm}
+\subsubsection{The test oracle:} Naturally, because the three DSLs are intended to express the same formalism, they have commonalities, namely, overlapping. For example, all of them provide basic concepts such as \texttt{StateMachine}, \texttt{State}, \texttt{Transition}, or \texttt{Trigger}. However, not all those DSLs are exactly equal. They have both syntactic and semantic differences which are well documented in the Crane's article \cite{Crane:2007}.
+
+Syntactic differences are materialized by the fact that not all the DSLs provide exactly the same constructs. Figure \ref{fig:oracle} shows a table with the language constructs provided by each DSL. There are differences in the support for transition's triggers and pseudostates. Whereas Rhapsody only supports simple triggers. Harel's state charts and UML provide support composed triggers. More concretely, in Harel's state charts triggers can be composed by using \texttt{AND}, \texttt{OR}, and \texttt{NOT} operators. In turn, in UML triggers can be composed by using  the \texttt{AND} operator.
+
+In addition, whereas there are pseudostates that are supported by all the DSLs (\texttt{Fork}, \texttt{Join}, \texttt{ShallowHistory}, and \texttt{Junction}); there are two psueudostates i.e., \texttt{DeepHistory} and \texttt{Choice} that are only supported by UML. The \texttt{Conditional} pseudostate is only provided by Harel's state charts.
+
+In summary, there are: \textbf{17} language constructs that are shared by all the DSLs; \textbf{1} construct that is exclusive of UML; \textbf{2} constructs that are exclusive of Harel's state charts; \textbf{2} constructs shared by UML and Harel's state charts; and, finally, \textbf{1} construct shared by Harel's state charts and Rhapsody. 
 
 \begin{figure}
 \centering
@@ -18,10 +23,12 @@ The case study is composed of three different DSLs for expressing state machines
 \label{fig:oracle}
 \end{figure}
 
-In summary, there are: 17 language constructs that are shared by all the DSLs; 1 construct that is exclusive of UML, 2 constructs that are exclusive of Harel's state charts; 2 constructs shared by UML and Harel's state charts; and 1 construct shared by Harel's state charts and Rhapsody. 
+Semantic differences are materialized by the fact that not all the DSLs have the same behavior at execution time. For example, whereas in Harel's state charts simultaneous events are attended in parallel, both UML and Rhapsody follow the run to completion principle so simultaneous events are attended sequentially. 
 
-\vspace{-2mm}
-\subsubsection{Results.} Figure \ref{fig:puzzle-overlapping} shows the results of the first part of the analysis. It presents the Venn diagram produced for the case study of the state machines. Note that the numbers correspond to our oracle demonstrating that our approach is correct. Due to lack of space, we do not present the semantic results. However, in a later section we present a tool demonstration that shows the complete functionality of our tool.
+As a direct consequence of those semantic differences, not all the domain-specific actions are the same. For instance, due to the semantic difference in the events treatment policy explained above, the methods \texttt{eval()} and \texttt{step()} in the \texttt{StateMachine} metaclass are different in each DSL. 
+
+\vspace{-3mm}
+\subsubsection{Results:} Let us now analyze the results we obtained from the execution of our approach on the test oracle. Figure \ref{fig:puzzle-overlapping} shows the results of the first part of the analysis. It presents the Venn diagram that shows syntactic and semantic overlapping. Note that, in the case of the syntactic overlapping, the cardinalities of the intersections in the Venn diagram match the test oracle thus, demonstrating that our approach to comparison of metaclasses is correct. In turn, the methods \texttt{eval()} and \texttt{step()} of the \texttt{StateMachine} metaclass are correctly identified as different in each DSL.
 
 \begin{figure}
 \centering
@@ -30,7 +37,7 @@ In summary, there are: 17 language constructs that are shared by all the DSLs; 1
 \label{fig:puzzle-overlapping}
 \end{figure}
 
-Figure \ref{fig:puzzle-modularization} shows the results for the second and third part of our approach: identifying and extracting reusable language modules. Note that there is a language module (core) that contains all the language constructs that are shared by the three DSLs. Then, the other language modules encapsulate pseudostates and triggers separately since they represent the differences among the DSLs. Note that in order to obtain the Harel's state charts language, we need to compose the modules 1, 2, and 5. In turn, to obtain UML we need to compose modules 1, 3, and 4. Finally, to obtain Rhapsody we need to compose modules 1 and 5.
+Figure \ref{fig:puzzle-modularization} shows the results for the second and third steps of our approach: identifying and extracting reusable language modules. There is a language module that contains all the language constructs shared by the three DSLs. This language module can be considered as a basic DSL for state machines that supports the basic constructs. It can be used in the construction of new DSLs for state machines. In addition, there are other language modules encapsulate pseudostates and triggers separately. Note that in order to obtain the Harel's state charts language, we need to compose the modules 1, 2, and 5. In turn, to obtain UML we need to compose modules 1, 3, and 4. Finally, to obtain Rhapsody we need to compose modules 1 and 5.
 
 \begin{figure}[h!]
 \centering
@@ -41,17 +48,17 @@ Figure \ref{fig:puzzle-modularization} shows the results for the second and thir
 
 \subsection{Evaluating \textit{relevance}: Identifying potential reuse in the wild}
 
-Our analysis of potential reuse in the wild was guided by two research questions: (1) What is the probability that a DSL shares some commonalities with another DSL? (2) How big is the average of commonality shared by the existing DSLs? In order to answer those questions, we performed a statistical analysis on empirical data. The reminder of this section is dedicated to explain such analysis in detail. 
+In order to evaluate the relevance of our approach, we conducted an study on empirical data intended to answer two questions: 1) What is the probability that a DSL has some overlapping with another DSL?; and 2) How big is the average overlapping shared by the existing DSLs? The reminder of this section is dedicated to explain how we obtain the empirical data we use and how we use that data to answer the questions. 
 
 \vspace{-3mm}
 \subsubsection{Collecting empirical data:} To collect empirical data, we explored \texttt{GitHub} repositories in search of DSLs that are built on the same technological space that we used in our approach. Namely, metamodels written in Ecore with operational semantics defined as domain-specific actions in Xtend. The objective was to build a realistic data set composed of DSLs developed by diverse development teams. 
 
-As a result of this search, we found \textbf{2424} metamodels (after discarding metamodels with errors). Contrariwise, due to the fact that Kermeta 3 and its implementation in Xtend is a quite recent idea, we only found some few DSLs all of them developed in our research team (which is the team that developed Kermeta 3). We decided to conduct analysis only in the metamodels. We consider that such analysis a good insight to know if there is potential reuse. 
+As a result of this search, we found \textbf{2424} metamodels (after discarding metamodels with errors). Contrariwise, due to the fact that Kermeta 3 and its implementation in Xtend is a quite recent idea, we found very few data for the semantics part. 
 
-In the following, we refer to our empirical data as $S$ which is a set of metamodels.
+We decided to conduct analysis only in the metamodels. We consider that such analysis a good insight to know if there is potential reuse.  In the following, we refer to our empirical data as $S$ which is a set of metamodels.
 
 \vspace{-3mm}
-\subsubsection{Q.1: \textit{What is the probability that a DSL shares some commonalities with another DSL?}} To answer this first question, we use our empirical data and compute the relative frequency of the event \texttt{E}: \textit{``the metamodel has commonalities with, at least, another DSL"}. Formally:
+\subsubsection{What is the probability that a DSL has some overlapping with another DSL?} To answer this first question, we compute the relative frequency of the event \texttt{E}: \textit{``the metamodel has overlapping with, at least, another metamodel"} in the set $S$. Formally:
 
 \begin{equation}
 \begin{split}
@@ -60,14 +67,26 @@ P(E) & \approx ~ Relative Frequency (E) = \frac{|S_{E}|}{|S|}\\
 \end{split}
 \end{equation}
 
-Once we execute the experiment, we obtained that the relative frequency of the event is $974/2424 = 0.40$. That means that there is a $40\%$ of probabilities that a metamodel share commonalities with another one. 
+Note that computing such probability corresponds to scan the set $S$ in search of occurrences of the event $E$. After doing so, we obtained that that the relative frequency is \textbf{974/2424 = 0.40}.
+
+From a pragmatic point of view, this result means that there are \textbf{40\%} of probabilities that, during the construction of a new DSL, a language designer is replicating at least one metaclass defined in a legacy DSL that is available in \texttt{GitHub}. This probability is quite elevated if we take into account that our comparison operator for metaclases is quite restrictive.
+
+Although this result is quite encouraging, we still wonder how important is the potential reuse. This motivate the following question:
 
 \vspace{-3mm}
-\subsubsection{Q.2: \textit{How big is the average of commonality shared by the existing DSLs?}} To answer this question we analyzed all the metamodels in the sample data and we compute the average of commonality among them. Note that this value give us some insights about how can be the commonality in the general case. 
+\subsubsection{How big is the average overlapping existing among DSLs?} To compute the average of overlapping among the metamodels in the set $S$ we built the matrix illustrated in Figure \ref{fig:matrix-evaluation}. Basically, we performed a pair-wise comparison between the metamodels to obtain the overlapping between all the possible pairs. Then, we compute the average of overlapping that each metamodel has with the other metamodels of the set. To compute that average, we consider only the metamodels where the overlapping is at least 1 metaclass. Finally, we compute the average of these averages.
 
-\vspace{-3mm}
-\subsubsection{Execution platform:} The experiments were conducted using a version of \toolname implemented in Java. Further, \toolname was installed in the Grid5000 Cloud, which is a cluster with more than 5000 cores from were we took XX dual-CPU Dell Blades with Intel Xeon X3470 CPUs running at 2.93GHz, with 16 threads 
-per CPU, and CentOS v6. Each dual-CPU Dell Blade has 36GB of RAM. 
+After executing this experiment, we obtain that the average of overlapping is 7. If we analyze the results of questions one and two at the same time, we can conclude that during the construction of the \textbf{40\%} of the new DSLs language designers are replicating, in average, \textbf{7} language constructs.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.75\linewidth]{images/matrix-evaluation.pdf}
+\caption{Computing average commonalities}
+\label{fig:matrix-evaluation}
+\end{figure}
+
+%\vspace{-3mm}
+%\subsubsection{Execution platform:} The experiments were conducted using a version of \toolname implemented in Java. Further, \toolname was installed in the Grid5000 Cloud, which is a cluster with more than 5000 cores from were we took XX dual-CPU Dell Blades with Intel Xeon X3470 CPUs running at 2.93GHz, with 16 threads per CPU, and CentOS v6. Each dual-CPU Dell Blade has 36GB of RAM. 
 
 
 %\begin{table*}[htbp]
