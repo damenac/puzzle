@@ -1,7 +1,9 @@
 package fr.inria.diverse.k3.sle.common.utils;
 
 import java.util.ArrayList;
+
 import org.eclipse.emf.ecore.EPackage;
+
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
 /**
@@ -51,5 +53,18 @@ public class MelangeServices {
 			}
 		}
 		return ePackages;
+	}
+	
+	public static int countLanguageConstructs(Language language){
+		EPackage _package = getEPackageFromLanguage(language);
+		return countMetaclasses(_package);
+	}
+	
+	private static int countMetaclasses(EPackage _package){
+		int answer = _package.getEClassifiers().size();
+		for (EPackage subPackage : _package.getESubpackages()) {
+			answer += countMetaclasses(subPackage);
+		}
+		return answer;
 	}
 }
