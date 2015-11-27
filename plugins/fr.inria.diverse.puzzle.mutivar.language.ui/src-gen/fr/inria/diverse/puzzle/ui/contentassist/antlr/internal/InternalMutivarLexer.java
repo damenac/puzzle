@@ -456,10 +456,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:30:7: ( 'involves' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:30:9: 'involves'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:30:7: ( 'default' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:30:9: 'default'
             {
-            match("involves"); 
+            match("default"); 
 
 
             }
@@ -477,10 +477,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:31:7: ( 'variation' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:31:9: 'variation'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:31:7: ( 'involves' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:31:9: 'involves'
             {
-            match("variation"); 
+            match("involves"); 
 
 
             }
@@ -498,10 +498,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:32:7: ( 'abstract' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:32:9: 'abstract'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:32:7: ( 'variation' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:32:9: 'variation'
             {
-            match("abstract"); 
+            match("variation"); 
 
 
             }
@@ -519,10 +519,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:33:7: ( 'default' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:33:9: 'default'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:33:7: ( 'abstract' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:33:9: 'abstract'
             {
-            match("default"); 
+            match("abstract"); 
 
 
             }
@@ -540,10 +540,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3713:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3713:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3742:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3742:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3713:11: ( '^' )?
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3742:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -552,7 +552,7 @@ public class InternalMutivarLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3713:11: '^'
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3742:11: '^'
                     {
                     match('^'); 
 
@@ -570,7 +570,7 @@ public class InternalMutivarLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3713:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3742:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -619,10 +619,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3715:10: ( ( '0' .. '9' )+ )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3715:12: ( '0' .. '9' )+
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3744:10: ( ( '0' .. '9' )+ )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3744:12: ( '0' .. '9' )+
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3715:12: ( '0' .. '9' )+
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3744:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -636,7 +636,7 @@ public class InternalMutivarLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3715:13: '0' .. '9'
+            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3744:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -668,10 +668,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -689,10 +689,10 @@ public class InternalMutivarLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -708,7 +708,7 @@ public class InternalMutivarLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:21: '\\\\' .
+                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -716,7 +716,7 @@ public class InternalMutivarLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -741,10 +741,10 @@ public class InternalMutivarLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -760,7 +760,7 @@ public class InternalMutivarLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:54: '\\\\' .
+                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -768,7 +768,7 @@ public class InternalMutivarLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3746:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -811,12 +811,12 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3719:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3719:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3748:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3748:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3719:24: ( options {greedy=false; } : . )*
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3748:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -841,7 +841,7 @@ public class InternalMutivarLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3719:52: .
+            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3748:52: .
             	    {
             	    matchAny(); 
 
@@ -871,12 +871,12 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -889,7 +889,7 @@ public class InternalMutivarLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -909,7 +909,7 @@ public class InternalMutivarLexer extends Lexer {
                 }
             } while (true);
 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:40: ( ( '\\r' )? '\\n' )?
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -918,9 +918,9 @@ public class InternalMutivarLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:41: ( '\\r' )? '\\n'
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:41: ( '\\r' )? '\\n'
                     {
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:41: ( '\\r' )?
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -929,7 +929,7 @@ public class InternalMutivarLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3721:41: '\\r'
+                            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3750:41: '\\r'
                             {
                             match('\r'); 
 
@@ -961,10 +961,10 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3723:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3723:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3752:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3752:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3723:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3752:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1018,8 +1018,8 @@ public class InternalMutivarLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3725:16: ( . )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3725:18: .
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3754:16: ( . )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3754:18: .
             {
             matchAny(); 
 
@@ -1264,7 +1264,7 @@ public class InternalMutivarLexer extends Lexer {
     static final String DFA12_maxS =
         "\1\uffff\1\156\1\141\1\162\1\uffff\1\157\2\uffff\1\170\1\150\1\141\2\uffff\1\154\1\141\1\145\1\172\2\uffff\2\uffff\1\57\2\uffff\1\160\1\166\1\uffff\1\156\1\172\1\164\1\uffff\1\157\1\161\2\uffff\1\143\1\151\1\156\2\uffff\1\164\1\163\1\162\1\146\5\uffff\2\157\1\147\1\150\1\uffff\1\151\1\164\1\165\2\154\1\144\1\145\1\164\1\151\1\141\1\162\1\154\1\165\2\157\1\172\1\151\1\165\1\144\1\141\2\162\1\141\1\165\1\164\1\166\1\141\1\147\1\156\1\uffff\1\162\1\144\1\162\1\164\1\156\1\141\1\164\1\154\1\172\1\145\1\147\1\157\1\141\3\145\1\157\1\141\1\143\1\151\1\164\1\uffff\1\163\1\145\1\156\1\154\2\163\1\156\1\162\2\164\1\157\2\172\1\155\1\141\4\172\1\171\1\151\1\172\1\156\2\uffff\1\145\1\157\1\154\4\uffff\1\172\1\166\1\uffff\1\172\1\141\1\144\1\166\1\uffff\1\145\1\157\1\uffff\1\164\1\165\1\141\1\172\1\151\1\165\1\154\1\162\1\uffff\1\156\1\162\1\145\1\151\1\164\1\145\1\172\1\141\2\172\1\uffff\1\142\1\uffff\1\172\1\uffff\1\151\1\uffff\1\154\1\151\1\164\1\171\1\172\1\uffff";
     static final String DFA12_acceptS =
-        "\4\uffff\1\4\1\uffff\1\6\1\11\3\uffff\1\20\1\21\4\uffff\1\30\1\31\3\uffff\1\35\1\36\2\uffff\1\30\3\uffff\1\4\2\uffff\1\6\1\11\3\uffff\1\20\1\21\4\uffff\1\31\1\32\1\33\1\34\1\35\4\uffff\1\17\35\uffff\1\5\25\uffff\1\1\27\uffff\1\27\1\24\3\uffff\1\16\1\10\1\12\1\14\2\uffff\1\26\4\uffff\1\15\2\uffff\1\25\10\uffff\1\22\12\uffff\1\13\1\uffff\1\23\1\uffff\1\7\1\uffff\1\2\5\uffff\1\3";
+        "\4\uffff\1\4\1\uffff\1\6\1\11\3\uffff\1\20\1\21\4\uffff\1\30\1\31\3\uffff\1\35\1\36\2\uffff\1\30\3\uffff\1\4\2\uffff\1\6\1\11\3\uffff\1\20\1\21\4\uffff\1\31\1\32\1\33\1\34\1\35\4\uffff\1\17\35\uffff\1\5\25\uffff\1\1\27\uffff\1\24\1\25\3\uffff\1\16\1\10\1\12\1\14\2\uffff\1\27\4\uffff\1\15\2\uffff\1\26\10\uffff\1\22\12\uffff\1\13\1\uffff\1\23\1\uffff\1\7\1\uffff\1\2\5\uffff\1\3";
     static final String DFA12_specialS =
         "\1\1\22\uffff\1\0\1\2\u00a0\uffff}>";
     static final String[] DFA12_transitionS = {

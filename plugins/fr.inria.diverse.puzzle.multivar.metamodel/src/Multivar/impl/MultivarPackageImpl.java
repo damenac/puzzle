@@ -442,6 +442,15 @@ public class MultivarPackageImpl extends EPackageImpl implements MultivarPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getVariabilityPoint_Default() {
+		return (EReference)variabilityPointEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVariation() {
 		return variationEClass;
 	}
@@ -453,15 +462,6 @@ public class MultivarPackageImpl extends EPackageImpl implements MultivarPackage
 	 */
 	public EAttribute getVariation_Module() {
 		return (EAttribute)variationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVariation_Default() {
-		return (EAttribute)variationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -531,10 +531,10 @@ public class MultivarPackageImpl extends EPackageImpl implements MultivarPackage
 		variabilityPointEClass = createEClass(VARIABILITY_POINT);
 		createEReference(variabilityPointEClass, VARIABILITY_POINT__VARIATIONS);
 		createEReference(variabilityPointEClass, VARIABILITY_POINT__INVOLVED_FEATURES);
+		createEReference(variabilityPointEClass, VARIABILITY_POINT__DEFAULT);
 
 		variationEClass = createEClass(VARIATION);
 		createEAttribute(variationEClass, VARIATION__MODULE);
-		createEAttribute(variationEClass, VARIATION__DEFAULT);
 	}
 
 	/**
@@ -613,10 +613,10 @@ public class MultivarPackageImpl extends EPackageImpl implements MultivarPackage
 		initEClass(variabilityPointEClass, VariabilityPoint.class, "VariabilityPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariabilityPoint_Variations(), this.getVariation(), null, "variations", null, 1, -1, VariabilityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariabilityPoint_InvolvedFeatures(), this.getLanguageFeature(), null, "involvedFeatures", null, 0, -1, VariabilityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariabilityPoint_Default(), this.getVariation(), null, "default", null, 1, 1, VariabilityPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(variationEClass, Variation.class, "Variation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariation_Module(), ecorePackage.getEString(), "module", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariation_Default(), ecorePackage.getEBoolean(), "default", null, 0, 1, Variation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

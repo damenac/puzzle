@@ -38,8 +38,17 @@ languagefeatures {
 orthogonalvariability {
 	
 	variationpoint EventsDispatchingPolicy involves StateMachines {
-		default variation RTC languagemodule CoreFSMRTC
+		variation RTC languagemodule CoreFSMRTC
 		variation SimultaneousEvetns languagemodule CoreFSMSimultaneous
+		
+		default RTC
+	}
+	
+	variationpoint TransitionEffectsPolicy involves Effect {
+		variation Parallel languagemodule TransitionEffectParallel
+		variation Sequential languagemodule TransitionEffectSequential
+		
+		default Parallel
 	}
 }
 

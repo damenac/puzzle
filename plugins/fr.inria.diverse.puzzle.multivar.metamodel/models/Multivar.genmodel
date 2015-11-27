@@ -44,10 +44,10 @@
     <genClasses ecoreClass="Multivar.ecore#//VariabilityPoint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Multivar.ecore#//VariabilityPoint/variations"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Multivar.ecore#//VariabilityPoint/involvedFeatures"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Multivar.ecore#//VariabilityPoint/default"/>
     </genClasses>
     <genClasses ecoreClass="Multivar.ecore#//Variation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Multivar.ecore#//Variation/module"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Multivar.ecore#//Variation/default"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

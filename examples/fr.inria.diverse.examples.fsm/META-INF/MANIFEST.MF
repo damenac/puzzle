@@ -15,7 +15,9 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.examples.fsm.core;bundle-version="1.0.0",
  fr.inria.diverse.examples.fsm.core.aspects.rtc;bundle-version="1.0.0",
  fr.inria.diverse.examples.fsm.transition.effect;bundle-version="1.0.0",
- fr.inria.diverse.examples.fsm.transition.effect.parallel.aspects;bundle-version="1.0.0"
+ fr.inria.diverse.examples.fsm.transition.effect.parallel.aspects;bundle-version="1.0.0",
+ fr.inria.diverse.examples.fsm.core.aspects.simultaneous;bundle-version="1.0.0",
+ fr.inria.diverse.examples.fsm.transition.effect.sequential.aspects;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0

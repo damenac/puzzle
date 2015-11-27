@@ -2159,7 +2159,7 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariabilityPoint"
-    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:854:1: ruleVariabilityPoint returns [EObject current=null] : (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= '}' ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:854:1: ruleVariabilityPoint returns [EObject current=null] : (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= 'default' ( (otherlv_10= RULE_ID ) ) otherlv_11= '}' ) ;
     public final EObject ruleVariabilityPoint() throws RecognitionException {
         EObject current = null;
 
@@ -2168,6 +2168,8 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_11=null;
         AntlrDatatypeRuleToken lv_name_1_0 = null;
 
         EObject lv_variations_7_0 = null;
@@ -2178,11 +2180,11 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:857:28: ( (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= '}' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:858:1: (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= '}' )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:857:28: ( (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= 'default' ( (otherlv_10= RULE_ID ) ) otherlv_11= '}' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:858:1: (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= 'default' ( (otherlv_10= RULE_ID ) ) otherlv_11= '}' )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:858:1: (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= '}' )
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:858:3: otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= '}'
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:858:1: (otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= 'default' ( (otherlv_10= RULE_ID ) ) otherlv_11= '}' )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:858:3: otherlv_0= 'variationpoint' ( (lv_name_1_0= ruleEString ) ) (otherlv_2= 'involves' ( ( ruleEString ) ) (otherlv_4= ',' ( ( ruleEString ) ) )* )? otherlv_6= '{' ( (lv_variations_7_0= ruleVariation ) ) ( (lv_variations_8_0= ruleVariation ) )* otherlv_9= 'default' ( (otherlv_10= RULE_ID ) ) otherlv_11= '}'
             {
             otherlv_0=(Token)match(input,30,FollowSets000.FOLLOW_30_in_ruleVariabilityPoint1918); 
 
@@ -2365,7 +2367,7 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( ((LA21_0>=32 && LA21_0<=33)) ) {
+                if ( (LA21_0==33) ) {
                     alt21=1;
                 }
 
@@ -2408,9 +2410,34 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_9=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleVariabilityPoint2082); 
+            otherlv_9=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleVariabilityPoint2082); 
 
-                	newLeafNode(otherlv_9, grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_6());
+                	newLeafNode(otherlv_9, grammarAccess.getVariabilityPointAccess().getDefaultKeyword_6());
+                
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:962:1: ( (otherlv_10= RULE_ID ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:963:1: (otherlv_10= RULE_ID )
+            {
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:963:1: (otherlv_10= RULE_ID )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:964:3: otherlv_10= RULE_ID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getVariabilityPointRule());
+            	        }
+                    
+            otherlv_10=(Token)match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_ruleVariabilityPoint2102); 
+
+            		newLeafNode(otherlv_10, grammarAccess.getVariabilityPointAccess().getDefaultVariationCrossReference_7_0()); 
+            	
+
+            }
+
+
+            }
+
+            otherlv_11=(Token)match(input,16,FollowSets000.FOLLOW_16_in_ruleVariabilityPoint2114); 
+
+                	newLeafNode(otherlv_11, grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_8());
                 
 
             }
@@ -2433,7 +2460,7 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariation"
-    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:970:1: entryRuleVariation returns [EObject current=null] : iv_ruleVariation= ruleVariation EOF ;
+    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:987:1: entryRuleVariation returns [EObject current=null] : iv_ruleVariation= ruleVariation EOF ;
     public final EObject entryRuleVariation() throws RecognitionException {
         EObject current = null;
 
@@ -2441,17 +2468,17 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:971:2: (iv_ruleVariation= ruleVariation EOF )
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:972:2: iv_ruleVariation= ruleVariation EOF
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:988:2: (iv_ruleVariation= ruleVariation EOF )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:989:2: iv_ruleVariation= ruleVariation EOF
             {
              newCompositeNode(grammarAccess.getVariationRule()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariation_in_entryRuleVariation2118);
+            pushFollow(FollowSets000.FOLLOW_ruleVariation_in_entryRuleVariation2150);
             iv_ruleVariation=ruleVariation();
 
             state._fsp--;
 
              current =iv_ruleVariation; 
-            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleVariation2128); 
+            match(input,EOF,FollowSets000.FOLLOW_EOF_in_entryRuleVariation2160); 
 
             }
 
@@ -2469,29 +2496,28 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariation"
-    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:979:1: ruleVariation returns [EObject current=null] : ( () ( (lv_default_1_0= 'default' ) )? otherlv_2= 'variation' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'languagemodule' ( (lv_module_5_0= ruleEString ) ) )? ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:996:1: ruleVariation returns [EObject current=null] : ( () otherlv_1= 'variation' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'languagemodule' ( (lv_module_4_0= ruleEString ) ) )? ) ;
     public final EObject ruleVariation() throws RecognitionException {
         EObject current = null;
 
-        Token lv_default_1_0=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_name_3_0 = null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_name_2_0 = null;
 
-        AntlrDatatypeRuleToken lv_module_5_0 = null;
+        AntlrDatatypeRuleToken lv_module_4_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:982:28: ( ( () ( (lv_default_1_0= 'default' ) )? otherlv_2= 'variation' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'languagemodule' ( (lv_module_5_0= ruleEString ) ) )? ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:983:1: ( () ( (lv_default_1_0= 'default' ) )? otherlv_2= 'variation' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'languagemodule' ( (lv_module_5_0= ruleEString ) ) )? )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:999:28: ( ( () otherlv_1= 'variation' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'languagemodule' ( (lv_module_4_0= ruleEString ) ) )? ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1000:1: ( () otherlv_1= 'variation' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'languagemodule' ( (lv_module_4_0= ruleEString ) ) )? )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:983:1: ( () ( (lv_default_1_0= 'default' ) )? otherlv_2= 'variation' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'languagemodule' ( (lv_module_5_0= ruleEString ) ) )? )
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:983:2: () ( (lv_default_1_0= 'default' ) )? otherlv_2= 'variation' ( (lv_name_3_0= ruleEString ) ) (otherlv_4= 'languagemodule' ( (lv_module_5_0= ruleEString ) ) )?
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1000:1: ( () otherlv_1= 'variation' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'languagemodule' ( (lv_module_4_0= ruleEString ) ) )? )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1000:2: () otherlv_1= 'variation' ( (lv_name_2_0= ruleEString ) ) (otherlv_3= 'languagemodule' ( (lv_module_4_0= ruleEString ) ) )?
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:983:2: ()
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:984:5: 
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1000:2: ()
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1001:5: 
             {
 
                     current = forceCreateModelElement(
@@ -2501,54 +2527,21 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:989:2: ( (lv_default_1_0= 'default' ) )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
+            otherlv_1=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleVariation2206); 
 
-            if ( (LA22_0==32) ) {
-                alt22=1;
-            }
-            switch (alt22) {
-                case 1 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:990:1: (lv_default_1_0= 'default' )
-                    {
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:990:1: (lv_default_1_0= 'default' )
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:991:3: lv_default_1_0= 'default'
-                    {
-                    lv_default_1_0=(Token)match(input,32,FollowSets000.FOLLOW_32_in_ruleVariation2180); 
-
-                            newLeafNode(lv_default_1_0, grammarAccess.getVariationAccess().getDefaultDefaultKeyword_1_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getVariationRule());
-                    	        }
-                           		setWithLastConsumed(current, "default", true, "default");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_2=(Token)match(input,33,FollowSets000.FOLLOW_33_in_ruleVariation2206); 
-
-                	newLeafNode(otherlv_2, grammarAccess.getVariationAccess().getVariationKeyword_2());
+                	newLeafNode(otherlv_1, grammarAccess.getVariationAccess().getVariationKeyword_1());
                 
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1008:1: ( (lv_name_3_0= ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1009:1: (lv_name_3_0= ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1010:1: ( (lv_name_2_0= ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1011:1: (lv_name_2_0= ruleEString )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1009:1: (lv_name_3_0= ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1010:3: lv_name_3_0= ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1011:1: (lv_name_2_0= ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1012:3: lv_name_2_0= ruleEString
             {
              
-            	        newCompositeNode(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_3_0()); 
+            	        newCompositeNode(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_2_0()); 
             	    
             pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleVariation2227);
-            lv_name_3_0=ruleEString();
+            lv_name_2_0=ruleEString();
 
             state._fsp--;
 
@@ -2559,7 +2552,7 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
                    		set(
                    			current, 
                    			"name",
-                    		lv_name_3_0, 
+                    		lv_name_2_0, 
                     		"EString");
             	        afterParserOrEnumRuleCall();
             	    
@@ -2569,32 +2562,32 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1026:2: (otherlv_4= 'languagemodule' ( (lv_module_5_0= ruleEString ) ) )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
+            // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1028:2: (otherlv_3= 'languagemodule' ( (lv_module_4_0= ruleEString ) ) )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA23_0==22) ) {
-                alt23=1;
+            if ( (LA22_0==22) ) {
+                alt22=1;
             }
-            switch (alt23) {
+            switch (alt22) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1026:4: otherlv_4= 'languagemodule' ( (lv_module_5_0= ruleEString ) )
+                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1028:4: otherlv_3= 'languagemodule' ( (lv_module_4_0= ruleEString ) )
                     {
-                    otherlv_4=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleVariation2240); 
+                    otherlv_3=(Token)match(input,22,FollowSets000.FOLLOW_22_in_ruleVariation2240); 
 
-                        	newLeafNode(otherlv_4, grammarAccess.getVariationAccess().getLanguagemoduleKeyword_4_0());
+                        	newLeafNode(otherlv_3, grammarAccess.getVariationAccess().getLanguagemoduleKeyword_3_0());
                         
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1030:1: ( (lv_module_5_0= ruleEString ) )
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1031:1: (lv_module_5_0= ruleEString )
+                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1032:1: ( (lv_module_4_0= ruleEString ) )
+                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1033:1: (lv_module_4_0= ruleEString )
                     {
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1031:1: (lv_module_5_0= ruleEString )
-                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1032:3: lv_module_5_0= ruleEString
+                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1033:1: (lv_module_4_0= ruleEString )
+                    // ../fr.inria.diverse.puzzle.mutivar.language/src-gen/fr/inria/diverse/puzzle/parser/antlr/internal/InternalMutivar.g:1034:3: lv_module_4_0= ruleEString
                     {
                      
-                    	        newCompositeNode(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_4_1_0()); 
+                    	        newCompositeNode(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_3_1_0()); 
                     	    
                     pushFollow(FollowSets000.FOLLOW_ruleEString_in_ruleVariation2261);
-                    lv_module_5_0=ruleEString();
+                    lv_module_4_0=ruleEString();
 
                     state._fsp--;
 
@@ -2605,7 +2598,7 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
                            		set(
                            			current, 
                            			"module",
-                            		lv_module_5_0, 
+                            		lv_module_4_0, 
                             		"EString");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -2733,13 +2726,14 @@ public class InternalMutivarParser extends AbstractInternalAntlrParser {
         public static final BitSet FOLLOW_ruleEString_in_ruleVariabilityPoint1975 = new BitSet(new long[]{0x0000000000104000L});
         public static final BitSet FOLLOW_20_in_ruleVariabilityPoint1988 = new BitSet(new long[]{0x0000000000000030L});
         public static final BitSet FOLLOW_ruleEString_in_ruleVariabilityPoint2011 = new BitSet(new long[]{0x0000000000104000L});
-        public static final BitSet FOLLOW_14_in_ruleVariabilityPoint2027 = new BitSet(new long[]{0x0000000300000000L});
-        public static final BitSet FOLLOW_ruleVariation_in_ruleVariabilityPoint2048 = new BitSet(new long[]{0x0000000300010000L});
-        public static final BitSet FOLLOW_ruleVariation_in_ruleVariabilityPoint2069 = new BitSet(new long[]{0x0000000300010000L});
-        public static final BitSet FOLLOW_16_in_ruleVariabilityPoint2082 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariation_in_entryRuleVariation2118 = new BitSet(new long[]{0x0000000000000000L});
-        public static final BitSet FOLLOW_EOF_in_entryRuleVariation2128 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_ruleVariation2180 = new BitSet(new long[]{0x0000000200000000L});
+        public static final BitSet FOLLOW_14_in_ruleVariabilityPoint2027 = new BitSet(new long[]{0x0000000200000000L});
+        public static final BitSet FOLLOW_ruleVariation_in_ruleVariabilityPoint2048 = new BitSet(new long[]{0x0000000300000000L});
+        public static final BitSet FOLLOW_ruleVariation_in_ruleVariabilityPoint2069 = new BitSet(new long[]{0x0000000300000000L});
+        public static final BitSet FOLLOW_32_in_ruleVariabilityPoint2082 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_RULE_ID_in_ruleVariabilityPoint2102 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_16_in_ruleVariabilityPoint2114 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariation_in_entryRuleVariation2150 = new BitSet(new long[]{0x0000000000000000L});
+        public static final BitSet FOLLOW_EOF_in_entryRuleVariation2160 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_33_in_ruleVariation2206 = new BitSet(new long[]{0x0000000000000030L});
         public static final BitSet FOLLOW_ruleEString_in_ruleVariation2227 = new BitSet(new long[]{0x0000000000400002L});
         public static final BitSet FOLLOW_22_in_ruleVariation2240 = new BitSet(new long[]{0x0000000000000030L});

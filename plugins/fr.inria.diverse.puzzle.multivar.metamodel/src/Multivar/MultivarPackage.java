@@ -527,13 +527,22 @@ public interface MultivarPackage extends EPackage {
 	int VARIABILITY_POINT__INVOLVED_FEATURES = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Default</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABILITY_POINT__DEFAULT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Variability Point</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABILITY_POINT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int VARIABILITY_POINT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Variability Point</em>' class.
@@ -573,22 +582,13 @@ public interface MultivarPackage extends EPackage {
 	int VARIATION__MODULE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Default</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIATION__DEFAULT = NAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Variation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int VARIATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Variation</em>' class.
@@ -909,6 +909,17 @@ public interface MultivarPackage extends EPackage {
 	EReference getVariabilityPoint_InvolvedFeatures();
 
 	/**
+	 * Returns the meta object for the reference '{@link Multivar.VariabilityPoint#getDefault <em>Default</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Default</em>'.
+	 * @see Multivar.VariabilityPoint#getDefault()
+	 * @see #getVariabilityPoint()
+	 * @generated
+	 */
+	EReference getVariabilityPoint_Default();
+
+	/**
 	 * Returns the meta object for class '{@link Multivar.Variation <em>Variation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -928,17 +939,6 @@ public interface MultivarPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVariation_Module();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Multivar.Variation#isDefault <em>Default</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Default</em>'.
-	 * @see Multivar.Variation#isDefault()
-	 * @see #getVariation()
-	 * @generated
-	 */
-	EAttribute getVariation_Default();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1218,6 +1218,14 @@ public interface MultivarPackage extends EPackage {
 		EReference VARIABILITY_POINT__INVOLVED_FEATURES = eINSTANCE.getVariabilityPoint_InvolvedFeatures();
 
 		/**
+		 * The meta object literal for the '<em><b>Default</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABILITY_POINT__DEFAULT = eINSTANCE.getVariabilityPoint_Default();
+
+		/**
 		 * The meta object literal for the '{@link Multivar.impl.VariationImpl <em>Variation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1234,14 +1242,6 @@ public interface MultivarPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VARIATION__MODULE = eINSTANCE.getVariation_Module();
-
-		/**
-		 * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARIATION__DEFAULT = eINSTANCE.getVariation_Default();
 
 	}
 

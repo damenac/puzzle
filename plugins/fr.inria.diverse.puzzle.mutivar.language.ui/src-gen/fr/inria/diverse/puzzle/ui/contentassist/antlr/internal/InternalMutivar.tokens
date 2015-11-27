@@ -1,13 +1,13 @@
 '('=26
 ')'=27
 ','=19
-'abstract'=32
+'abstract'=33
 'alternative'=28
 'children'=22
-'default'=33
+'default'=30
 'excludes'=20
 'import'=11
-'involves'=30
+'involves'=31
 'languagefeature'=17
 'languagefeatures'=12
 'languagemodule'=21
@@ -17,7 +17,7 @@
 'orthogonalvariability'=13
 'requires'=18
 'root'=15
-'variation'=31
+'variation'=32
 'variationpoint'=29
 '{'=14
 '}'=16

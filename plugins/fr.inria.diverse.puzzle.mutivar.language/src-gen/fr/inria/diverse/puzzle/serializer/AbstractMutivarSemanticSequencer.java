@@ -171,7 +171,8 @@ public abstract class AbstractMutivarSemanticSequencer extends AbstractDelegatin
 	 *         name=EString 
 	 *         (involvedFeatures+=[LanguageFeature|EString] involvedFeatures+=[LanguageFeature|EString]*)? 
 	 *         variations+=Variation 
-	 *         variations+=Variation*
+	 *         variations+=Variation* 
+	 *         default=[Variation|ID]
 	 *     )
 	 */
 	protected void sequence_VariabilityPoint(EObject context, VariabilityPoint semanticObject) {
@@ -181,7 +182,7 @@ public abstract class AbstractMutivarSemanticSequencer extends AbstractDelegatin
 	
 	/**
 	 * Constraint:
-	 *     (default?='default'? name=EString module=EString?)
+	 *     (name=EString module=EString?)
 	 */
 	protected void sequence_Variation(EObject context, Variation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

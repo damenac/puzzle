@@ -64,7 +64,7 @@ public class MutivarParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariabilityPointAccess().getGroup_2(), "rule__VariabilityPoint__Group_2__0");
 					put(grammarAccess.getVariabilityPointAccess().getGroup_2_2(), "rule__VariabilityPoint__Group_2_2__0");
 					put(grammarAccess.getVariationAccess().getGroup(), "rule__Variation__Group__0");
-					put(grammarAccess.getVariationAccess().getGroup_4(), "rule__Variation__Group_4__0");
+					put(grammarAccess.getVariationAccess().getGroup_3(), "rule__Variation__Group_3__0");
 					put(grammarAccess.getLanguageProductLineAccess().getImplementationFileAssignment_1_1(), "rule__LanguageProductLine__ImplementationFileAssignment_1_1");
 					put(grammarAccess.getLanguageProductLineAccess().getProductLineVariabilityAssignment_2_1(), "rule__LanguageProductLine__ProductLineVariabilityAssignment_2_1");
 					put(grammarAccess.getLanguageProductLineAccess().getLanguageVariabilityAssignment_3_1(), "rule__LanguageProductLine__LanguageVariabilityAssignment_3_1");
@@ -93,9 +93,9 @@ public class MutivarParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariabilityPointAccess().getInvolvedFeaturesAssignment_2_2_1(), "rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1");
 					put(grammarAccess.getVariabilityPointAccess().getVariationsAssignment_4(), "rule__VariabilityPoint__VariationsAssignment_4");
 					put(grammarAccess.getVariabilityPointAccess().getVariationsAssignment_5(), "rule__VariabilityPoint__VariationsAssignment_5");
-					put(grammarAccess.getVariationAccess().getDefaultAssignment_1(), "rule__Variation__DefaultAssignment_1");
-					put(grammarAccess.getVariationAccess().getNameAssignment_3(), "rule__Variation__NameAssignment_3");
-					put(grammarAccess.getVariationAccess().getModuleAssignment_4_1(), "rule__Variation__ModuleAssignment_4_1");
+					put(grammarAccess.getVariabilityPointAccess().getDefaultAssignment_7(), "rule__VariabilityPoint__DefaultAssignment_7");
+					put(grammarAccess.getVariationAccess().getNameAssignment_2(), "rule__Variation__NameAssignment_2");
+					put(grammarAccess.getVariationAccess().getModuleAssignment_3_1(), "rule__Variation__ModuleAssignment_3_1");
 				}
 			};
 		}

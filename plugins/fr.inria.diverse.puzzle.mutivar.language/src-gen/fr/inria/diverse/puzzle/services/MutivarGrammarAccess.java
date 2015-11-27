@@ -615,15 +615,21 @@ public class MutivarGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cVariationsVariationParserRuleCall_4_0 = (RuleCall)cVariationsAssignment_4.eContents().get(0);
 		private final Assignment cVariationsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cVariationsVariationParserRuleCall_5_0 = (RuleCall)cVariationsAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cDefaultKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cDefaultAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cDefaultVariationCrossReference_7_0 = (CrossReference)cDefaultAssignment_7.eContents().get(0);
+		private final RuleCall cDefaultVariationIDTerminalRuleCall_7_0_1 = (RuleCall)cDefaultVariationCrossReference_7_0.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//VariabilityPoint:
 		//	"variationpoint" name=EString ("involves" involvedFeatures+=[LanguageFeature|EString] (","
-		//	involvedFeatures+=[LanguageFeature|EString])*)? "{" variations+=Variation variations+=Variation* "}";
+		//	involvedFeatures+=[LanguageFeature|EString])*)? "{" variations+=Variation variations+=Variation* "default"
+		//	default=[Variation] "}";
 		@Override public ParserRule getRule() { return rule; }
 
 		//"variationpoint" name=EString ("involves" involvedFeatures+=[LanguageFeature|EString] (","
-		//involvedFeatures+=[LanguageFeature|EString])*)? "{" variations+=Variation variations+=Variation* "}"
+		//involvedFeatures+=[LanguageFeature|EString])*)? "{" variations+=Variation variations+=Variation* "default"
+		//default=[Variation] "}"
 		public Group getGroup() { return cGroup; }
 
 		//"variationpoint"
@@ -680,60 +686,64 @@ public class MutivarGrammarAccess extends AbstractGrammarElementFinder {
 		//Variation
 		public RuleCall getVariationsVariationParserRuleCall_5_0() { return cVariationsVariationParserRuleCall_5_0; }
 
+		//"default"
+		public Keyword getDefaultKeyword_6() { return cDefaultKeyword_6; }
+
+		//default=[Variation]
+		public Assignment getDefaultAssignment_7() { return cDefaultAssignment_7; }
+
+		//[Variation]
+		public CrossReference getDefaultVariationCrossReference_7_0() { return cDefaultVariationCrossReference_7_0; }
+
+		//ID
+		public RuleCall getDefaultVariationIDTerminalRuleCall_7_0_1() { return cDefaultVariationIDTerminalRuleCall_7_0_1; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class VariationElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Variation");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cVariationAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cDefaultAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cDefaultDefaultKeyword_1_0 = (Keyword)cDefaultAssignment_1.eContents().get(0);
-		private final Keyword cVariationKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNameEStringParserRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cLanguagemoduleKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cModuleAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cModuleEStringParserRuleCall_4_1_0 = (RuleCall)cModuleAssignment_4_1.eContents().get(0);
+		private final Keyword cVariationKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameEStringParserRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLanguagemoduleKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cModuleAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cModuleEStringParserRuleCall_3_1_0 = (RuleCall)cModuleAssignment_3_1.eContents().get(0);
 		
 		//Variation:
-		//	{Variation} default?="default"? "variation" name=EString ("languagemodule" module=EString)?;
+		//	{Variation} "variation" name=EString ("languagemodule" module=EString)?;
 		@Override public ParserRule getRule() { return rule; }
 
-		//{Variation} default?="default"? "variation" name=EString ("languagemodule" module=EString)?
+		//{Variation} "variation" name=EString ("languagemodule" module=EString)?
 		public Group getGroup() { return cGroup; }
 
 		//{Variation}
 		public Action getVariationAction_0() { return cVariationAction_0; }
 
-		//default?="default"?
-		public Assignment getDefaultAssignment_1() { return cDefaultAssignment_1; }
-
-		//"default"
-		public Keyword getDefaultDefaultKeyword_1_0() { return cDefaultDefaultKeyword_1_0; }
-
 		//"variation"
-		public Keyword getVariationKeyword_2() { return cVariationKeyword_2; }
+		public Keyword getVariationKeyword_1() { return cVariationKeyword_1; }
 
 		//name=EString
-		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//EString
-		public RuleCall getNameEStringParserRuleCall_3_0() { return cNameEStringParserRuleCall_3_0; }
+		public RuleCall getNameEStringParserRuleCall_2_0() { return cNameEStringParserRuleCall_2_0; }
 
 		//("languagemodule" module=EString)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"languagemodule"
-		public Keyword getLanguagemoduleKeyword_4_0() { return cLanguagemoduleKeyword_4_0; }
+		public Keyword getLanguagemoduleKeyword_3_0() { return cLanguagemoduleKeyword_3_0; }
 
 		//module=EString
-		public Assignment getModuleAssignment_4_1() { return cModuleAssignment_4_1; }
+		public Assignment getModuleAssignment_3_1() { return cModuleAssignment_3_1; }
 
 		//EString
-		public RuleCall getModuleEStringParserRuleCall_4_1_0() { return cModuleEStringParserRuleCall_4_1_0; }
+		public RuleCall getModuleEStringParserRuleCall_3_1_0() { return cModuleEStringParserRuleCall_3_1_0; }
 	}
 	
 	
@@ -918,7 +928,8 @@ public class MutivarGrammarAccess extends AbstractGrammarElementFinder {
 
 	//VariabilityPoint:
 	//	"variationpoint" name=EString ("involves" involvedFeatures+=[LanguageFeature|EString] (","
-	//	involvedFeatures+=[LanguageFeature|EString])*)? "{" variations+=Variation variations+=Variation* "}";
+	//	involvedFeatures+=[LanguageFeature|EString])*)? "{" variations+=Variation variations+=Variation* "default"
+	//	default=[Variation] "}";
 	public VariabilityPointElements getVariabilityPointAccess() {
 		return pVariabilityPoint;
 	}
@@ -928,7 +939,7 @@ public class MutivarGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Variation:
-	//	{Variation} default?="default"? "variation" name=EString ("languagemodule" module=EString)?;
+	//	{Variation} "variation" name=EString ("languagemodule" module=EString)?;
 	public VariationElements getVariationAccess() {
 		return pVariation;
 	}

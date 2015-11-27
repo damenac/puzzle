@@ -9,6 +9,7 @@ import Multivar.Variation;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link Multivar.impl.VariabilityPointImpl#getVariations <em>Variations</em>}</li>
  *   <li>{@link Multivar.impl.VariabilityPointImpl#getInvolvedFeatures <em>Involved Features</em>}</li>
+ *   <li>{@link Multivar.impl.VariabilityPointImpl#getDefault <em>Default</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +57,16 @@ public class VariabilityPointImpl extends NamedElementImpl implements Variabilit
 	 * @ordered
 	 */
 	protected EList<LanguageFeature> involvedFeatures;
+
+	/**
+	 * The cached value of the '{@link #getDefault() <em>Default</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDefault()
+	 * @generated
+	 * @ordered
+	 */
+	protected Variation default_;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,6 +116,44 @@ public class VariabilityPointImpl extends NamedElementImpl implements Variabilit
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Variation getDefault() {
+		if (default_ != null && default_.eIsProxy()) {
+			InternalEObject oldDefault = (InternalEObject)default_;
+			default_ = (Variation)eResolveProxy(oldDefault);
+			if (default_ != oldDefault) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MultivarPackage.VARIABILITY_POINT__DEFAULT, oldDefault, default_));
+			}
+		}
+		return default_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Variation basicGetDefault() {
+		return default_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDefault(Variation newDefault) {
+		Variation oldDefault = default_;
+		default_ = newDefault;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MultivarPackage.VARIABILITY_POINT__DEFAULT, oldDefault, default_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -124,6 +175,9 @@ public class VariabilityPointImpl extends NamedElementImpl implements Variabilit
 				return getVariations();
 			case MultivarPackage.VARIABILITY_POINT__INVOLVED_FEATURES:
 				return getInvolvedFeatures();
+			case MultivarPackage.VARIABILITY_POINT__DEFAULT:
+				if (resolve) return getDefault();
+				return basicGetDefault();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -145,6 +199,9 @@ public class VariabilityPointImpl extends NamedElementImpl implements Variabilit
 				getInvolvedFeatures().clear();
 				getInvolvedFeatures().addAll((Collection<? extends LanguageFeature>)newValue);
 				return;
+			case MultivarPackage.VARIABILITY_POINT__DEFAULT:
+				setDefault((Variation)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -163,6 +220,9 @@ public class VariabilityPointImpl extends NamedElementImpl implements Variabilit
 			case MultivarPackage.VARIABILITY_POINT__INVOLVED_FEATURES:
 				getInvolvedFeatures().clear();
 				return;
+			case MultivarPackage.VARIABILITY_POINT__DEFAULT:
+				setDefault((Variation)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -179,6 +239,8 @@ public class VariabilityPointImpl extends NamedElementImpl implements Variabilit
 				return variations != null && !variations.isEmpty();
 			case MultivarPackage.VARIABILITY_POINT__INVOLVED_FEATURES:
 				return involvedFeatures != null && !involvedFeatures.isEmpty();
+			case MultivarPackage.VARIABILITY_POINT__DEFAULT:
+				return default_ != null;
 		}
 		return super.eIsSet(featureID);
 	}

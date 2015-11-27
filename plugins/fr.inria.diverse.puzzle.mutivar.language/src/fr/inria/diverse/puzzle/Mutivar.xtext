@@ -63,12 +63,12 @@ VariabilityPoint returns VariabilityPoint:
 	name=EString
 	('involves' involvedFeatures+=[LanguageFeature|EString] ( "," involvedFeatures+=[LanguageFeature|EString])* )?
 	'{'
-		variations+=Variation ( variations+=Variation )* 
+		variations+=Variation ( variations+=Variation )*
+		'default' default=[Variation]
 	'}';
 
 Variation returns Variation:
 	{Variation}
-	(default?='default')?
 	'variation'
 	name=EString
 		('languagemodule' module=EString)? ;

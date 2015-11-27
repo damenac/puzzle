@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMutivarParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'languagefeatures'", "'orthogonalvariability'", "'{'", "'root'", "'}'", "'languagefeature'", "'requires'", "','", "'excludes'", "'languagemodule'", "'children'", "'mandatory'", "'optional'", "'or'", "'('", "')'", "'alternative'", "'variationpoint'", "'involves'", "'variation'", "'abstract'", "'default'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'languagefeatures'", "'orthogonalvariability'", "'{'", "'root'", "'}'", "'languagefeature'", "'requires'", "','", "'excludes'", "'languagemodule'", "'children'", "'mandatory'", "'optional'", "'or'", "'('", "')'", "'alternative'", "'variationpoint'", "'default'", "'involves'", "'variation'", "'abstract'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
@@ -2260,7 +2260,7 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( (LA6_0==17||LA6_0==32) ) {
+                if ( (LA6_0==17||LA6_0==33) ) {
                     alt6=1;
                 }
 
@@ -3165,7 +3165,7 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==32) ) {
+            if ( (LA9_0==33) ) {
                 alt9=1;
             }
             switch (alt9) {
@@ -6935,7 +6935,7 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==30) ) {
+            if ( (LA19_0==31) ) {
                 alt19=1;
             }
             switch (alt19) {
@@ -7193,7 +7193,7 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( (LA20_0==31||LA20_0==33) ) {
+                if ( (LA20_0==32) ) {
                     alt20=1;
                 }
 
@@ -7239,17 +7239,22 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group__6"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2756:1: rule__VariabilityPoint__Group__6 : rule__VariabilityPoint__Group__6__Impl ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2756:1: rule__VariabilityPoint__Group__6 : rule__VariabilityPoint__Group__6__Impl rule__VariabilityPoint__Group__7 ;
     public final void rule__VariabilityPoint__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2760:1: ( rule__VariabilityPoint__Group__6__Impl )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2761:2: rule__VariabilityPoint__Group__6__Impl
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2760:1: ( rule__VariabilityPoint__Group__6__Impl rule__VariabilityPoint__Group__7 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2761:2: rule__VariabilityPoint__Group__6__Impl rule__VariabilityPoint__Group__7
             {
             pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group__6__Impl_in_rule__VariabilityPoint__Group__65460);
             rule__VariabilityPoint__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group__7_in_rule__VariabilityPoint__Group__65463);
+            rule__VariabilityPoint__Group__7();
 
             state._fsp--;
 
@@ -7272,21 +7277,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group__6__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2767:1: rule__VariabilityPoint__Group__6__Impl : ( '}' ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2768:1: rule__VariabilityPoint__Group__6__Impl : ( 'default' ) ;
     public final void rule__VariabilityPoint__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2771:1: ( ( '}' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2772:1: ( '}' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2772:1: ( ( 'default' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2773:1: ( 'default' )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2772:1: ( '}' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2773:1: '}'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2773:1: ( 'default' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2774:1: 'default'
             {
-             before(grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_6()); 
-            match(input,16,FollowSets000.FOLLOW_16_in_rule__VariabilityPoint__Group__6__Impl5488); 
-             after(grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_6()); 
+             before(grammarAccess.getVariabilityPointAccess().getDefaultKeyword_6()); 
+            match(input,30,FollowSets000.FOLLOW_30_in_rule__VariabilityPoint__Group__6__Impl5491); 
+             after(grammarAccess.getVariabilityPointAccess().getDefaultKeyword_6()); 
 
             }
 
@@ -7308,22 +7313,177 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__VariabilityPoint__Group__6__Impl"
 
 
+    // $ANTLR start "rule__VariabilityPoint__Group__7"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2787:1: rule__VariabilityPoint__Group__7 : rule__VariabilityPoint__Group__7__Impl rule__VariabilityPoint__Group__8 ;
+    public final void rule__VariabilityPoint__Group__7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2791:1: ( rule__VariabilityPoint__Group__7__Impl rule__VariabilityPoint__Group__8 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2792:2: rule__VariabilityPoint__Group__7__Impl rule__VariabilityPoint__Group__8
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group__7__Impl_in_rule__VariabilityPoint__Group__75522);
+            rule__VariabilityPoint__Group__7__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group__8_in_rule__VariabilityPoint__Group__75525);
+            rule__VariabilityPoint__Group__8();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__VariabilityPoint__Group__7"
+
+
+    // $ANTLR start "rule__VariabilityPoint__Group__7__Impl"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2799:1: rule__VariabilityPoint__Group__7__Impl : ( ( rule__VariabilityPoint__DefaultAssignment_7 ) ) ;
+    public final void rule__VariabilityPoint__Group__7__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2803:1: ( ( ( rule__VariabilityPoint__DefaultAssignment_7 ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2804:1: ( ( rule__VariabilityPoint__DefaultAssignment_7 ) )
+            {
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2804:1: ( ( rule__VariabilityPoint__DefaultAssignment_7 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2805:1: ( rule__VariabilityPoint__DefaultAssignment_7 )
+            {
+             before(grammarAccess.getVariabilityPointAccess().getDefaultAssignment_7()); 
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2806:1: ( rule__VariabilityPoint__DefaultAssignment_7 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2806:2: rule__VariabilityPoint__DefaultAssignment_7
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__DefaultAssignment_7_in_rule__VariabilityPoint__Group__7__Impl5552);
+            rule__VariabilityPoint__DefaultAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVariabilityPointAccess().getDefaultAssignment_7()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__VariabilityPoint__Group__7__Impl"
+
+
+    // $ANTLR start "rule__VariabilityPoint__Group__8"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2816:1: rule__VariabilityPoint__Group__8 : rule__VariabilityPoint__Group__8__Impl ;
+    public final void rule__VariabilityPoint__Group__8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2820:1: ( rule__VariabilityPoint__Group__8__Impl )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2821:2: rule__VariabilityPoint__Group__8__Impl
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group__8__Impl_in_rule__VariabilityPoint__Group__85582);
+            rule__VariabilityPoint__Group__8__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__VariabilityPoint__Group__8"
+
+
+    // $ANTLR start "rule__VariabilityPoint__Group__8__Impl"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2827:1: rule__VariabilityPoint__Group__8__Impl : ( '}' ) ;
+    public final void rule__VariabilityPoint__Group__8__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2831:1: ( ( '}' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2832:1: ( '}' )
+            {
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2832:1: ( '}' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2833:1: '}'
+            {
+             before(grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_8()); 
+            match(input,16,FollowSets000.FOLLOW_16_in_rule__VariabilityPoint__Group__8__Impl5610); 
+             after(grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_8()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__VariabilityPoint__Group__8__Impl"
+
+
     // $ANTLR start "rule__VariabilityPoint__Group_2__0"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2800:1: rule__VariabilityPoint__Group_2__0 : rule__VariabilityPoint__Group_2__0__Impl rule__VariabilityPoint__Group_2__1 ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2864:1: rule__VariabilityPoint__Group_2__0 : rule__VariabilityPoint__Group_2__0__Impl rule__VariabilityPoint__Group_2__1 ;
     public final void rule__VariabilityPoint__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2804:1: ( rule__VariabilityPoint__Group_2__0__Impl rule__VariabilityPoint__Group_2__1 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2805:2: rule__VariabilityPoint__Group_2__0__Impl rule__VariabilityPoint__Group_2__1
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2868:1: ( rule__VariabilityPoint__Group_2__0__Impl rule__VariabilityPoint__Group_2__1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2869:2: rule__VariabilityPoint__Group_2__0__Impl rule__VariabilityPoint__Group_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__0__Impl_in_rule__VariabilityPoint__Group_2__05533);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__0__Impl_in_rule__VariabilityPoint__Group_2__05659);
             rule__VariabilityPoint__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__1_in_rule__VariabilityPoint__Group_2__05536);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__1_in_rule__VariabilityPoint__Group_2__05662);
             rule__VariabilityPoint__Group_2__1();
 
             state._fsp--;
@@ -7347,20 +7507,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2__0__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2812:1: rule__VariabilityPoint__Group_2__0__Impl : ( 'involves' ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2876:1: rule__VariabilityPoint__Group_2__0__Impl : ( 'involves' ) ;
     public final void rule__VariabilityPoint__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2816:1: ( ( 'involves' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2817:1: ( 'involves' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2880:1: ( ( 'involves' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2881:1: ( 'involves' )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2817:1: ( 'involves' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2818:1: 'involves'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2881:1: ( 'involves' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2882:1: 'involves'
             {
              before(grammarAccess.getVariabilityPointAccess().getInvolvesKeyword_2_0()); 
-            match(input,30,FollowSets000.FOLLOW_30_in_rule__VariabilityPoint__Group_2__0__Impl5564); 
+            match(input,31,FollowSets000.FOLLOW_31_in_rule__VariabilityPoint__Group_2__0__Impl5690); 
              after(grammarAccess.getVariabilityPointAccess().getInvolvesKeyword_2_0()); 
 
             }
@@ -7384,21 +7544,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2__1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2831:1: rule__VariabilityPoint__Group_2__1 : rule__VariabilityPoint__Group_2__1__Impl rule__VariabilityPoint__Group_2__2 ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2895:1: rule__VariabilityPoint__Group_2__1 : rule__VariabilityPoint__Group_2__1__Impl rule__VariabilityPoint__Group_2__2 ;
     public final void rule__VariabilityPoint__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2835:1: ( rule__VariabilityPoint__Group_2__1__Impl rule__VariabilityPoint__Group_2__2 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2836:2: rule__VariabilityPoint__Group_2__1__Impl rule__VariabilityPoint__Group_2__2
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2899:1: ( rule__VariabilityPoint__Group_2__1__Impl rule__VariabilityPoint__Group_2__2 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2900:2: rule__VariabilityPoint__Group_2__1__Impl rule__VariabilityPoint__Group_2__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__1__Impl_in_rule__VariabilityPoint__Group_2__15595);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__1__Impl_in_rule__VariabilityPoint__Group_2__15721);
             rule__VariabilityPoint__Group_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__2_in_rule__VariabilityPoint__Group_2__15598);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__2_in_rule__VariabilityPoint__Group_2__15724);
             rule__VariabilityPoint__Group_2__2();
 
             state._fsp--;
@@ -7422,23 +7582,23 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2__1__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2843:1: rule__VariabilityPoint__Group_2__1__Impl : ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2907:1: rule__VariabilityPoint__Group_2__1__Impl : ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) ) ;
     public final void rule__VariabilityPoint__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2847:1: ( ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2848:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2911:1: ( ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2912:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2848:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2849:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2912:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2913:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 )
             {
              before(grammarAccess.getVariabilityPointAccess().getInvolvedFeaturesAssignment_2_1()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2850:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2850:2: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2914:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2914:2: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1_in_rule__VariabilityPoint__Group_2__1__Impl5625);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1_in_rule__VariabilityPoint__Group_2__1__Impl5751);
             rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1();
 
             state._fsp--;
@@ -7469,16 +7629,16 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2__2"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2860:1: rule__VariabilityPoint__Group_2__2 : rule__VariabilityPoint__Group_2__2__Impl ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2924:1: rule__VariabilityPoint__Group_2__2 : rule__VariabilityPoint__Group_2__2__Impl ;
     public final void rule__VariabilityPoint__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2864:1: ( rule__VariabilityPoint__Group_2__2__Impl )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2865:2: rule__VariabilityPoint__Group_2__2__Impl
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2928:1: ( rule__VariabilityPoint__Group_2__2__Impl )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2929:2: rule__VariabilityPoint__Group_2__2__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__2__Impl_in_rule__VariabilityPoint__Group_2__25655);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2__2__Impl_in_rule__VariabilityPoint__Group_2__25781);
             rule__VariabilityPoint__Group_2__2__Impl();
 
             state._fsp--;
@@ -7502,20 +7662,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2__2__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2871:1: rule__VariabilityPoint__Group_2__2__Impl : ( ( rule__VariabilityPoint__Group_2_2__0 )* ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2935:1: rule__VariabilityPoint__Group_2__2__Impl : ( ( rule__VariabilityPoint__Group_2_2__0 )* ) ;
     public final void rule__VariabilityPoint__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2875:1: ( ( ( rule__VariabilityPoint__Group_2_2__0 )* ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2876:1: ( ( rule__VariabilityPoint__Group_2_2__0 )* )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2939:1: ( ( ( rule__VariabilityPoint__Group_2_2__0 )* ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2940:1: ( ( rule__VariabilityPoint__Group_2_2__0 )* )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2876:1: ( ( rule__VariabilityPoint__Group_2_2__0 )* )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2877:1: ( rule__VariabilityPoint__Group_2_2__0 )*
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2940:1: ( ( rule__VariabilityPoint__Group_2_2__0 )* )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2941:1: ( rule__VariabilityPoint__Group_2_2__0 )*
             {
              before(grammarAccess.getVariabilityPointAccess().getGroup_2_2()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2878:1: ( rule__VariabilityPoint__Group_2_2__0 )*
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2942:1: ( rule__VariabilityPoint__Group_2_2__0 )*
             loop21:
             do {
                 int alt21=2;
@@ -7528,9 +7688,9 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2878:2: rule__VariabilityPoint__Group_2_2__0
+            	    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2942:2: rule__VariabilityPoint__Group_2_2__0
             	    {
-            	    pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__0_in_rule__VariabilityPoint__Group_2__2__Impl5682);
+            	    pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__0_in_rule__VariabilityPoint__Group_2__2__Impl5808);
             	    rule__VariabilityPoint__Group_2_2__0();
 
             	    state._fsp--;
@@ -7567,21 +7727,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2_2__0"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2894:1: rule__VariabilityPoint__Group_2_2__0 : rule__VariabilityPoint__Group_2_2__0__Impl rule__VariabilityPoint__Group_2_2__1 ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2958:1: rule__VariabilityPoint__Group_2_2__0 : rule__VariabilityPoint__Group_2_2__0__Impl rule__VariabilityPoint__Group_2_2__1 ;
     public final void rule__VariabilityPoint__Group_2_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2898:1: ( rule__VariabilityPoint__Group_2_2__0__Impl rule__VariabilityPoint__Group_2_2__1 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2899:2: rule__VariabilityPoint__Group_2_2__0__Impl rule__VariabilityPoint__Group_2_2__1
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2962:1: ( rule__VariabilityPoint__Group_2_2__0__Impl rule__VariabilityPoint__Group_2_2__1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2963:2: rule__VariabilityPoint__Group_2_2__0__Impl rule__VariabilityPoint__Group_2_2__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__0__Impl_in_rule__VariabilityPoint__Group_2_2__05719);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__0__Impl_in_rule__VariabilityPoint__Group_2_2__05845);
             rule__VariabilityPoint__Group_2_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__1_in_rule__VariabilityPoint__Group_2_2__05722);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__1_in_rule__VariabilityPoint__Group_2_2__05848);
             rule__VariabilityPoint__Group_2_2__1();
 
             state._fsp--;
@@ -7605,20 +7765,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2_2__0__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2906:1: rule__VariabilityPoint__Group_2_2__0__Impl : ( ',' ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2970:1: rule__VariabilityPoint__Group_2_2__0__Impl : ( ',' ) ;
     public final void rule__VariabilityPoint__Group_2_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2910:1: ( ( ',' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2911:1: ( ',' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2974:1: ( ( ',' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2975:1: ( ',' )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2911:1: ( ',' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2912:1: ','
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2975:1: ( ',' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2976:1: ','
             {
              before(grammarAccess.getVariabilityPointAccess().getCommaKeyword_2_2_0()); 
-            match(input,19,FollowSets000.FOLLOW_19_in_rule__VariabilityPoint__Group_2_2__0__Impl5750); 
+            match(input,19,FollowSets000.FOLLOW_19_in_rule__VariabilityPoint__Group_2_2__0__Impl5876); 
              after(grammarAccess.getVariabilityPointAccess().getCommaKeyword_2_2_0()); 
 
             }
@@ -7642,16 +7802,16 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2_2__1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2925:1: rule__VariabilityPoint__Group_2_2__1 : rule__VariabilityPoint__Group_2_2__1__Impl ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2989:1: rule__VariabilityPoint__Group_2_2__1 : rule__VariabilityPoint__Group_2_2__1__Impl ;
     public final void rule__VariabilityPoint__Group_2_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2929:1: ( rule__VariabilityPoint__Group_2_2__1__Impl )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2930:2: rule__VariabilityPoint__Group_2_2__1__Impl
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2993:1: ( rule__VariabilityPoint__Group_2_2__1__Impl )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2994:2: rule__VariabilityPoint__Group_2_2__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__1__Impl_in_rule__VariabilityPoint__Group_2_2__15781);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__Group_2_2__1__Impl_in_rule__VariabilityPoint__Group_2_2__15907);
             rule__VariabilityPoint__Group_2_2__1__Impl();
 
             state._fsp--;
@@ -7675,23 +7835,23 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__Group_2_2__1__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2936:1: rule__VariabilityPoint__Group_2_2__1__Impl : ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3000:1: rule__VariabilityPoint__Group_2_2__1__Impl : ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) ) ;
     public final void rule__VariabilityPoint__Group_2_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2940:1: ( ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2941:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3004:1: ( ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3005:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2941:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2942:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3005:1: ( ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3006:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 )
             {
              before(grammarAccess.getVariabilityPointAccess().getInvolvedFeaturesAssignment_2_2_1()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2943:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2943:2: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3007:1: ( rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3007:2: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1_in_rule__VariabilityPoint__Group_2_2__1__Impl5808);
+            pushFollow(FollowSets000.FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1_in_rule__VariabilityPoint__Group_2_2__1__Impl5934);
             rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1();
 
             state._fsp--;
@@ -7722,21 +7882,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__0"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2957:1: rule__Variation__Group__0 : rule__Variation__Group__0__Impl rule__Variation__Group__1 ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3021:1: rule__Variation__Group__0 : rule__Variation__Group__0__Impl rule__Variation__Group__1 ;
     public final void rule__Variation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2961:1: ( rule__Variation__Group__0__Impl rule__Variation__Group__1 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2962:2: rule__Variation__Group__0__Impl rule__Variation__Group__1
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3025:1: ( rule__Variation__Group__0__Impl rule__Variation__Group__1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3026:2: rule__Variation__Group__0__Impl rule__Variation__Group__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__0__Impl_in_rule__Variation__Group__05842);
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__0__Impl_in_rule__Variation__Group__05968);
             rule__Variation__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__1_in_rule__Variation__Group__05845);
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__1_in_rule__Variation__Group__05971);
             rule__Variation__Group__1();
 
             state._fsp--;
@@ -7760,21 +7920,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__0__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2969:1: rule__Variation__Group__0__Impl : ( () ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3033:1: rule__Variation__Group__0__Impl : ( () ) ;
     public final void rule__Variation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2973:1: ( ( () ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2974:1: ( () )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3037:1: ( ( () ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3038:1: ( () )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2974:1: ( () )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2975:1: ()
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3038:1: ( () )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3039:1: ()
             {
              before(grammarAccess.getVariationAccess().getVariationAction_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2976:1: ()
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2978:1: 
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3040:1: ()
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3042:1: 
             {
             }
 
@@ -7797,21 +7957,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2988:1: rule__Variation__Group__1 : rule__Variation__Group__1__Impl rule__Variation__Group__2 ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3052:1: rule__Variation__Group__1 : rule__Variation__Group__1__Impl rule__Variation__Group__2 ;
     public final void rule__Variation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2992:1: ( rule__Variation__Group__1__Impl rule__Variation__Group__2 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:2993:2: rule__Variation__Group__1__Impl rule__Variation__Group__2
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3056:1: ( rule__Variation__Group__1__Impl rule__Variation__Group__2 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3057:2: rule__Variation__Group__1__Impl rule__Variation__Group__2
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__1__Impl_in_rule__Variation__Group__15903);
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__1__Impl_in_rule__Variation__Group__16029);
             rule__Variation__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__2_in_rule__Variation__Group__15906);
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__2_in_rule__Variation__Group__16032);
             rule__Variation__Group__2();
 
             state._fsp--;
@@ -7835,42 +7995,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__1__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3000:1: rule__Variation__Group__1__Impl : ( ( rule__Variation__DefaultAssignment_1 )? ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3064:1: rule__Variation__Group__1__Impl : ( 'variation' ) ;
     public final void rule__Variation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3004:1: ( ( ( rule__Variation__DefaultAssignment_1 )? ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3005:1: ( ( rule__Variation__DefaultAssignment_1 )? )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3068:1: ( ( 'variation' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3069:1: ( 'variation' )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3005:1: ( ( rule__Variation__DefaultAssignment_1 )? )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3006:1: ( rule__Variation__DefaultAssignment_1 )?
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3069:1: ( 'variation' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3070:1: 'variation'
             {
-             before(grammarAccess.getVariationAccess().getDefaultAssignment_1()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3007:1: ( rule__Variation__DefaultAssignment_1 )?
-            int alt22=2;
-            int LA22_0 = input.LA(1);
-
-            if ( (LA22_0==33) ) {
-                alt22=1;
-            }
-            switch (alt22) {
-                case 1 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3007:2: rule__Variation__DefaultAssignment_1
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__Variation__DefaultAssignment_1_in_rule__Variation__Group__1__Impl5933);
-                    rule__Variation__DefaultAssignment_1();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getVariationAccess().getDefaultAssignment_1()); 
+             before(grammarAccess.getVariationAccess().getVariationKeyword_1()); 
+            match(input,32,FollowSets000.FOLLOW_32_in_rule__Variation__Group__1__Impl6060); 
+             after(grammarAccess.getVariationAccess().getVariationKeyword_1()); 
 
             }
 
@@ -7893,21 +8032,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__2"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3017:1: rule__Variation__Group__2 : rule__Variation__Group__2__Impl rule__Variation__Group__3 ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3083:1: rule__Variation__Group__2 : rule__Variation__Group__2__Impl rule__Variation__Group__3 ;
     public final void rule__Variation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3021:1: ( rule__Variation__Group__2__Impl rule__Variation__Group__3 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3022:2: rule__Variation__Group__2__Impl rule__Variation__Group__3
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3087:1: ( rule__Variation__Group__2__Impl rule__Variation__Group__3 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3088:2: rule__Variation__Group__2__Impl rule__Variation__Group__3
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__2__Impl_in_rule__Variation__Group__25964);
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__2__Impl_in_rule__Variation__Group__26091);
             rule__Variation__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__3_in_rule__Variation__Group__25967);
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__3_in_rule__Variation__Group__26094);
             rule__Variation__Group__3();
 
             state._fsp--;
@@ -7931,21 +8070,31 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__2__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3029:1: rule__Variation__Group__2__Impl : ( 'variation' ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3095:1: rule__Variation__Group__2__Impl : ( ( rule__Variation__NameAssignment_2 ) ) ;
     public final void rule__Variation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3033:1: ( ( 'variation' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3034:1: ( 'variation' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3099:1: ( ( ( rule__Variation__NameAssignment_2 ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3100:1: ( ( rule__Variation__NameAssignment_2 ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3034:1: ( 'variation' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3035:1: 'variation'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3100:1: ( ( rule__Variation__NameAssignment_2 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3101:1: ( rule__Variation__NameAssignment_2 )
             {
-             before(grammarAccess.getVariationAccess().getVariationKeyword_2()); 
-            match(input,31,FollowSets000.FOLLOW_31_in_rule__Variation__Group__2__Impl5995); 
-             after(grammarAccess.getVariationAccess().getVariationKeyword_2()); 
+             before(grammarAccess.getVariationAccess().getNameAssignment_2()); 
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3102:1: ( rule__Variation__NameAssignment_2 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3102:2: rule__Variation__NameAssignment_2
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__NameAssignment_2_in_rule__Variation__Group__2__Impl6121);
+            rule__Variation__NameAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVariationAccess().getNameAssignment_2()); 
 
             }
 
@@ -7968,22 +8117,17 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__3"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3048:1: rule__Variation__Group__3 : rule__Variation__Group__3__Impl rule__Variation__Group__4 ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3112:1: rule__Variation__Group__3 : rule__Variation__Group__3__Impl ;
     public final void rule__Variation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3052:1: ( rule__Variation__Group__3__Impl rule__Variation__Group__4 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3053:2: rule__Variation__Group__3__Impl rule__Variation__Group__4
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3116:1: ( rule__Variation__Group__3__Impl )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3117:2: rule__Variation__Group__3__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__3__Impl_in_rule__Variation__Group__36026);
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__3__Impl_in_rule__Variation__Group__36151);
             rule__Variation__Group__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__4_in_rule__Variation__Group__36029);
-            rule__Variation__Group__4();
 
             state._fsp--;
 
@@ -8006,31 +8150,42 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variation__Group__3__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3060:1: rule__Variation__Group__3__Impl : ( ( rule__Variation__NameAssignment_3 ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3123:1: rule__Variation__Group__3__Impl : ( ( rule__Variation__Group_3__0 )? ) ;
     public final void rule__Variation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3064:1: ( ( ( rule__Variation__NameAssignment_3 ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3065:1: ( ( rule__Variation__NameAssignment_3 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3127:1: ( ( ( rule__Variation__Group_3__0 )? ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3128:1: ( ( rule__Variation__Group_3__0 )? )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3065:1: ( ( rule__Variation__NameAssignment_3 ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3066:1: ( rule__Variation__NameAssignment_3 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3128:1: ( ( rule__Variation__Group_3__0 )? )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3129:1: ( rule__Variation__Group_3__0 )?
             {
-             before(grammarAccess.getVariationAccess().getNameAssignment_3()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3067:1: ( rule__Variation__NameAssignment_3 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3067:2: rule__Variation__NameAssignment_3
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__NameAssignment_3_in_rule__Variation__Group__3__Impl6056);
-            rule__Variation__NameAssignment_3();
+             before(grammarAccess.getVariationAccess().getGroup_3()); 
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3130:1: ( rule__Variation__Group_3__0 )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA22_0==21) ) {
+                alt22=1;
+            }
+            switch (alt22) {
+                case 1 :
+                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3130:2: rule__Variation__Group_3__0
+                    {
+                    pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_3__0_in_rule__Variation__Group__3__Impl6178);
+                    rule__Variation__Group_3__0();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
-             after(grammarAccess.getVariationAccess().getNameAssignment_3()); 
+             after(grammarAccess.getVariationAccess().getGroup_3()); 
 
             }
 
@@ -8052,18 +8207,23 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Variation__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Variation__Group__4"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3077:1: rule__Variation__Group__4 : rule__Variation__Group__4__Impl ;
-    public final void rule__Variation__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__Variation__Group_3__0"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3148:1: rule__Variation__Group_3__0 : rule__Variation__Group_3__0__Impl rule__Variation__Group_3__1 ;
+    public final void rule__Variation__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3081:1: ( rule__Variation__Group__4__Impl )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3082:2: rule__Variation__Group__4__Impl
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3152:1: ( rule__Variation__Group_3__0__Impl rule__Variation__Group_3__1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3153:2: rule__Variation__Group_3__0__Impl rule__Variation__Group_3__1
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group__4__Impl_in_rule__Variation__Group__46086);
-            rule__Variation__Group__4__Impl();
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_3__0__Impl_in_rule__Variation__Group_3__06217);
+            rule__Variation__Group_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_3__1_in_rule__Variation__Group_3__06220);
+            rule__Variation__Group_3__1();
 
             state._fsp--;
 
@@ -8082,46 +8242,25 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variation__Group__4"
+    // $ANTLR end "rule__Variation__Group_3__0"
 
 
-    // $ANTLR start "rule__Variation__Group__4__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3088:1: rule__Variation__Group__4__Impl : ( ( rule__Variation__Group_4__0 )? ) ;
-    public final void rule__Variation__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Variation__Group_3__0__Impl"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3160:1: rule__Variation__Group_3__0__Impl : ( 'languagemodule' ) ;
+    public final void rule__Variation__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3092:1: ( ( ( rule__Variation__Group_4__0 )? ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3093:1: ( ( rule__Variation__Group_4__0 )? )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3164:1: ( ( 'languagemodule' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3165:1: ( 'languagemodule' )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3093:1: ( ( rule__Variation__Group_4__0 )? )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3094:1: ( rule__Variation__Group_4__0 )?
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3165:1: ( 'languagemodule' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3166:1: 'languagemodule'
             {
-             before(grammarAccess.getVariationAccess().getGroup_4()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3095:1: ( rule__Variation__Group_4__0 )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==21) ) {
-                alt23=1;
-            }
-            switch (alt23) {
-                case 1 :
-                    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3095:2: rule__Variation__Group_4__0
-                    {
-                    pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_4__0_in_rule__Variation__Group__4__Impl6113);
-                    rule__Variation__Group_4__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getVariationAccess().getGroup_4()); 
+             before(grammarAccess.getVariationAccess().getLanguagemoduleKeyword_3_0()); 
+            match(input,21,FollowSets000.FOLLOW_21_in_rule__Variation__Group_3__0__Impl6248); 
+             after(grammarAccess.getVariationAccess().getLanguagemoduleKeyword_3_0()); 
 
             }
 
@@ -8140,26 +8279,21 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variation__Group__4__Impl"
+    // $ANTLR end "rule__Variation__Group_3__0__Impl"
 
 
-    // $ANTLR start "rule__Variation__Group_4__0"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3115:1: rule__Variation__Group_4__0 : rule__Variation__Group_4__0__Impl rule__Variation__Group_4__1 ;
-    public final void rule__Variation__Group_4__0() throws RecognitionException {
+    // $ANTLR start "rule__Variation__Group_3__1"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3179:1: rule__Variation__Group_3__1 : rule__Variation__Group_3__1__Impl ;
+    public final void rule__Variation__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3119:1: ( rule__Variation__Group_4__0__Impl rule__Variation__Group_4__1 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3120:2: rule__Variation__Group_4__0__Impl rule__Variation__Group_4__1
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3183:1: ( rule__Variation__Group_3__1__Impl )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3184:2: rule__Variation__Group_3__1__Impl
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_4__0__Impl_in_rule__Variation__Group_4__06154);
-            rule__Variation__Group_4__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_4__1_in_rule__Variation__Group_4__06157);
-            rule__Variation__Group_4__1();
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_3__1__Impl_in_rule__Variation__Group_3__16279);
+            rule__Variation__Group_3__1__Impl();
 
             state._fsp--;
 
@@ -8178,105 +8312,35 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variation__Group_4__0"
+    // $ANTLR end "rule__Variation__Group_3__1"
 
 
-    // $ANTLR start "rule__Variation__Group_4__0__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3127:1: rule__Variation__Group_4__0__Impl : ( 'languagemodule' ) ;
-    public final void rule__Variation__Group_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3131:1: ( ( 'languagemodule' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3132:1: ( 'languagemodule' )
-            {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3132:1: ( 'languagemodule' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3133:1: 'languagemodule'
-            {
-             before(grammarAccess.getVariationAccess().getLanguagemoduleKeyword_4_0()); 
-            match(input,21,FollowSets000.FOLLOW_21_in_rule__Variation__Group_4__0__Impl6185); 
-             after(grammarAccess.getVariationAccess().getLanguagemoduleKeyword_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Variation__Group_4__0__Impl"
-
-
-    // $ANTLR start "rule__Variation__Group_4__1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3146:1: rule__Variation__Group_4__1 : rule__Variation__Group_4__1__Impl ;
-    public final void rule__Variation__Group_4__1() throws RecognitionException {
+    // $ANTLR start "rule__Variation__Group_3__1__Impl"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3190:1: rule__Variation__Group_3__1__Impl : ( ( rule__Variation__ModuleAssignment_3_1 ) ) ;
+    public final void rule__Variation__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3150:1: ( rule__Variation__Group_4__1__Impl )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3151:2: rule__Variation__Group_4__1__Impl
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3194:1: ( ( ( rule__Variation__ModuleAssignment_3_1 ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3195:1: ( ( rule__Variation__ModuleAssignment_3_1 ) )
             {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__Group_4__1__Impl_in_rule__Variation__Group_4__16216);
-            rule__Variation__Group_4__1__Impl();
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3195:1: ( ( rule__Variation__ModuleAssignment_3_1 ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3196:1: ( rule__Variation__ModuleAssignment_3_1 )
+            {
+             before(grammarAccess.getVariationAccess().getModuleAssignment_3_1()); 
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3197:1: ( rule__Variation__ModuleAssignment_3_1 )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3197:2: rule__Variation__ModuleAssignment_3_1
+            {
+            pushFollow(FollowSets000.FOLLOW_rule__Variation__ModuleAssignment_3_1_in_rule__Variation__Group_3__1__Impl6306);
+            rule__Variation__ModuleAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Variation__Group_4__1"
-
-
-    // $ANTLR start "rule__Variation__Group_4__1__Impl"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3157:1: rule__Variation__Group_4__1__Impl : ( ( rule__Variation__ModuleAssignment_4_1 ) ) ;
-    public final void rule__Variation__Group_4__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3161:1: ( ( ( rule__Variation__ModuleAssignment_4_1 ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3162:1: ( ( rule__Variation__ModuleAssignment_4_1 ) )
-            {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3162:1: ( ( rule__Variation__ModuleAssignment_4_1 ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3163:1: ( rule__Variation__ModuleAssignment_4_1 )
-            {
-             before(grammarAccess.getVariationAccess().getModuleAssignment_4_1()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3164:1: ( rule__Variation__ModuleAssignment_4_1 )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3164:2: rule__Variation__ModuleAssignment_4_1
-            {
-            pushFollow(FollowSets000.FOLLOW_rule__Variation__ModuleAssignment_4_1_in_rule__Variation__Group_4__1__Impl6243);
-            rule__Variation__ModuleAssignment_4_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getVariationAccess().getModuleAssignment_4_1()); 
+             after(grammarAccess.getVariationAccess().getModuleAssignment_3_1()); 
 
             }
 
@@ -8295,24 +8359,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variation__Group_4__1__Impl"
+    // $ANTLR end "rule__Variation__Group_3__1__Impl"
 
 
     // $ANTLR start "rule__LanguageProductLine__ImplementationFileAssignment_1_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3179:1: rule__LanguageProductLine__ImplementationFileAssignment_1_1 : ( ruleEString ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3212:1: rule__LanguageProductLine__ImplementationFileAssignment_1_1 : ( ruleEString ) ;
     public final void rule__LanguageProductLine__ImplementationFileAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3183:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3184:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3216:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3217:1: ( ruleEString )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3184:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3185:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3217:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3218:1: ruleEString
             {
              before(grammarAccess.getLanguageProductLineAccess().getImplementationFileEStringParserRuleCall_1_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageProductLine__ImplementationFileAssignment_1_16282);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageProductLine__ImplementationFileAssignment_1_16345);
             ruleEString();
 
             state._fsp--;
@@ -8340,20 +8404,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageProductLine__ProductLineVariabilityAssignment_2_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3194:1: rule__LanguageProductLine__ProductLineVariabilityAssignment_2_1 : ( ruleProductLineVariability ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3227:1: rule__LanguageProductLine__ProductLineVariabilityAssignment_2_1 : ( ruleProductLineVariability ) ;
     public final void rule__LanguageProductLine__ProductLineVariabilityAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3198:1: ( ( ruleProductLineVariability ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3199:1: ( ruleProductLineVariability )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3231:1: ( ( ruleProductLineVariability ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3232:1: ( ruleProductLineVariability )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3199:1: ( ruleProductLineVariability )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3200:1: ruleProductLineVariability
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3232:1: ( ruleProductLineVariability )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3233:1: ruleProductLineVariability
             {
              before(grammarAccess.getLanguageProductLineAccess().getProductLineVariabilityProductLineVariabilityParserRuleCall_2_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleProductLineVariability_in_rule__LanguageProductLine__ProductLineVariabilityAssignment_2_16313);
+            pushFollow(FollowSets000.FOLLOW_ruleProductLineVariability_in_rule__LanguageProductLine__ProductLineVariabilityAssignment_2_16376);
             ruleProductLineVariability();
 
             state._fsp--;
@@ -8381,20 +8445,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageProductLine__LanguageVariabilityAssignment_3_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3209:1: rule__LanguageProductLine__LanguageVariabilityAssignment_3_1 : ( ruleLanguageVariability ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3242:1: rule__LanguageProductLine__LanguageVariabilityAssignment_3_1 : ( ruleLanguageVariability ) ;
     public final void rule__LanguageProductLine__LanguageVariabilityAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3213:1: ( ( ruleLanguageVariability ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3214:1: ( ruleLanguageVariability )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3246:1: ( ( ruleLanguageVariability ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3247:1: ( ruleLanguageVariability )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3214:1: ( ruleLanguageVariability )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3215:1: ruleLanguageVariability
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3247:1: ( ruleLanguageVariability )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3248:1: ruleLanguageVariability
             {
              before(grammarAccess.getLanguageProductLineAccess().getLanguageVariabilityLanguageVariabilityParserRuleCall_3_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLanguageVariability_in_rule__LanguageProductLine__LanguageVariabilityAssignment_3_16344);
+            pushFollow(FollowSets000.FOLLOW_ruleLanguageVariability_in_rule__LanguageProductLine__LanguageVariabilityAssignment_3_16407);
             ruleLanguageVariability();
 
             state._fsp--;
@@ -8422,20 +8486,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProductLineVariability__FeaturesAssignment_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3224:1: rule__ProductLineVariability__FeaturesAssignment_1 : ( ruleLanguageFeature ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3257:1: rule__ProductLineVariability__FeaturesAssignment_1 : ( ruleLanguageFeature ) ;
     public final void rule__ProductLineVariability__FeaturesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3228:1: ( ( ruleLanguageFeature ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3229:1: ( ruleLanguageFeature )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3261:1: ( ( ruleLanguageFeature ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3262:1: ( ruleLanguageFeature )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3229:1: ( ruleLanguageFeature )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3230:1: ruleLanguageFeature
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3262:1: ( ruleLanguageFeature )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3263:1: ruleLanguageFeature
             {
              before(grammarAccess.getProductLineVariabilityAccess().getFeaturesLanguageFeatureParserRuleCall_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_16375);
+            pushFollow(FollowSets000.FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_16438);
             ruleLanguageFeature();
 
             state._fsp--;
@@ -8463,20 +8527,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProductLineVariability__FeaturesAssignment_2"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3239:1: rule__ProductLineVariability__FeaturesAssignment_2 : ( ruleLanguageFeature ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3272:1: rule__ProductLineVariability__FeaturesAssignment_2 : ( ruleLanguageFeature ) ;
     public final void rule__ProductLineVariability__FeaturesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3243:1: ( ( ruleLanguageFeature ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3244:1: ( ruleLanguageFeature )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3276:1: ( ( ruleLanguageFeature ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3277:1: ( ruleLanguageFeature )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3244:1: ( ruleLanguageFeature )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3245:1: ruleLanguageFeature
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3277:1: ( ruleLanguageFeature )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3278:1: ruleLanguageFeature
             {
              before(grammarAccess.getProductLineVariabilityAccess().getFeaturesLanguageFeatureParserRuleCall_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_26406);
+            pushFollow(FollowSets000.FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_26469);
             ruleLanguageFeature();
 
             state._fsp--;
@@ -8504,24 +8568,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProductLineVariability__RootFeatureAssignment_4"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3254:1: rule__ProductLineVariability__RootFeatureAssignment_4 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3287:1: rule__ProductLineVariability__RootFeatureAssignment_4 : ( ( ruleEString ) ) ;
     public final void rule__ProductLineVariability__RootFeatureAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3258:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3259:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3291:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3292:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3259:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3260:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3292:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3293:1: ( ruleEString )
             {
              before(grammarAccess.getProductLineVariabilityAccess().getRootFeatureLanguageFeatureCrossReference_4_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3261:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3262:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3294:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3295:1: ruleEString
             {
              before(grammarAccess.getProductLineVariabilityAccess().getRootFeatureLanguageFeatureEStringParserRuleCall_4_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__ProductLineVariability__RootFeatureAssignment_46441);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__ProductLineVariability__RootFeatureAssignment_46504);
             ruleEString();
 
             state._fsp--;
@@ -8553,20 +8617,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageVariability__VariabilityPointsAssignment_2_0"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3273:1: rule__LanguageVariability__VariabilityPointsAssignment_2_0 : ( ruleVariabilityPoint ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3306:1: rule__LanguageVariability__VariabilityPointsAssignment_2_0 : ( ruleVariabilityPoint ) ;
     public final void rule__LanguageVariability__VariabilityPointsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3277:1: ( ( ruleVariabilityPoint ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3278:1: ( ruleVariabilityPoint )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3310:1: ( ( ruleVariabilityPoint ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3311:1: ( ruleVariabilityPoint )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3278:1: ( ruleVariabilityPoint )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3279:1: ruleVariabilityPoint
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3311:1: ( ruleVariabilityPoint )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3312:1: ruleVariabilityPoint
             {
              before(grammarAccess.getLanguageVariabilityAccess().getVariabilityPointsVariabilityPointParserRuleCall_2_0_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_06476);
+            pushFollow(FollowSets000.FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_06539);
             ruleVariabilityPoint();
 
             state._fsp--;
@@ -8594,20 +8658,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageVariability__VariabilityPointsAssignment_2_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3288:1: rule__LanguageVariability__VariabilityPointsAssignment_2_1 : ( ruleVariabilityPoint ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3321:1: rule__LanguageVariability__VariabilityPointsAssignment_2_1 : ( ruleVariabilityPoint ) ;
     public final void rule__LanguageVariability__VariabilityPointsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3292:1: ( ( ruleVariabilityPoint ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3293:1: ( ruleVariabilityPoint )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3325:1: ( ( ruleVariabilityPoint ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3326:1: ( ruleVariabilityPoint )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3293:1: ( ruleVariabilityPoint )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3294:1: ruleVariabilityPoint
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3326:1: ( ruleVariabilityPoint )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3327:1: ruleVariabilityPoint
             {
              before(grammarAccess.getLanguageVariabilityAccess().getVariabilityPointsVariabilityPointParserRuleCall_2_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_16507);
+            pushFollow(FollowSets000.FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_16570);
             ruleVariabilityPoint();
 
             state._fsp--;
@@ -8635,24 +8699,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__AbstractAssignment_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3303:1: rule__LanguageFeature__AbstractAssignment_1 : ( ( 'abstract' ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3336:1: rule__LanguageFeature__AbstractAssignment_1 : ( ( 'abstract' ) ) ;
     public final void rule__LanguageFeature__AbstractAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3307:1: ( ( ( 'abstract' ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3308:1: ( ( 'abstract' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3340:1: ( ( ( 'abstract' ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3341:1: ( ( 'abstract' ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3308:1: ( ( 'abstract' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3309:1: ( 'abstract' )
-            {
-             before(grammarAccess.getLanguageFeatureAccess().getAbstractAbstractKeyword_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3310:1: ( 'abstract' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3311:1: 'abstract'
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3341:1: ( ( 'abstract' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3342:1: ( 'abstract' )
             {
              before(grammarAccess.getLanguageFeatureAccess().getAbstractAbstractKeyword_1_0()); 
-            match(input,32,FollowSets000.FOLLOW_32_in_rule__LanguageFeature__AbstractAssignment_16543); 
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3343:1: ( 'abstract' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3344:1: 'abstract'
+            {
+             before(grammarAccess.getLanguageFeatureAccess().getAbstractAbstractKeyword_1_0()); 
+            match(input,33,FollowSets000.FOLLOW_33_in_rule__LanguageFeature__AbstractAssignment_16606); 
              after(grammarAccess.getLanguageFeatureAccess().getAbstractAbstractKeyword_1_0()); 
 
             }
@@ -8680,20 +8744,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__NameAssignment_3"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3326:1: rule__LanguageFeature__NameAssignment_3 : ( ruleEString ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3359:1: rule__LanguageFeature__NameAssignment_3 : ( ruleEString ) ;
     public final void rule__LanguageFeature__NameAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3330:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3331:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3363:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3364:1: ( ruleEString )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3331:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3332:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3364:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3365:1: ruleEString
             {
              before(grammarAccess.getLanguageFeatureAccess().getNameEStringParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__NameAssignment_36582);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__NameAssignment_36645);
             ruleEString();
 
             state._fsp--;
@@ -8721,24 +8785,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__DependsAssignment_4_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3341:1: rule__LanguageFeature__DependsAssignment_4_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3374:1: rule__LanguageFeature__DependsAssignment_4_1 : ( ( ruleEString ) ) ;
     public final void rule__LanguageFeature__DependsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3345:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3346:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3378:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3379:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3346:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3347:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3379:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3380:1: ( ruleEString )
             {
              before(grammarAccess.getLanguageFeatureAccess().getDependsLanguageFeatureCrossReference_4_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3348:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3349:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3381:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3382:1: ruleEString
             {
              before(grammarAccess.getLanguageFeatureAccess().getDependsLanguageFeatureEStringParserRuleCall_4_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_16617);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_16680);
             ruleEString();
 
             state._fsp--;
@@ -8770,24 +8834,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__DependsAssignment_4_2_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3360:1: rule__LanguageFeature__DependsAssignment_4_2_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3393:1: rule__LanguageFeature__DependsAssignment_4_2_1 : ( ( ruleEString ) ) ;
     public final void rule__LanguageFeature__DependsAssignment_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3364:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3365:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3397:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3398:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3365:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3366:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3398:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3399:1: ( ruleEString )
             {
              before(grammarAccess.getLanguageFeatureAccess().getDependsLanguageFeatureCrossReference_4_2_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3367:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3368:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3400:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3401:1: ruleEString
             {
              before(grammarAccess.getLanguageFeatureAccess().getDependsLanguageFeatureEStringParserRuleCall_4_2_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_2_16656);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_2_16719);
             ruleEString();
 
             state._fsp--;
@@ -8819,24 +8883,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__ExcludesAssignment_5_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3379:1: rule__LanguageFeature__ExcludesAssignment_5_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3412:1: rule__LanguageFeature__ExcludesAssignment_5_1 : ( ( ruleEString ) ) ;
     public final void rule__LanguageFeature__ExcludesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3383:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3384:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3416:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3417:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3384:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3385:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3417:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3418:1: ( ruleEString )
             {
              before(grammarAccess.getLanguageFeatureAccess().getExcludesLanguageFeatureCrossReference_5_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3386:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3387:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3419:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3420:1: ruleEString
             {
              before(grammarAccess.getLanguageFeatureAccess().getExcludesLanguageFeatureEStringParserRuleCall_5_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_16695);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_16758);
             ruleEString();
 
             state._fsp--;
@@ -8868,24 +8932,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__ExcludesAssignment_5_2_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3398:1: rule__LanguageFeature__ExcludesAssignment_5_2_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3431:1: rule__LanguageFeature__ExcludesAssignment_5_2_1 : ( ( ruleEString ) ) ;
     public final void rule__LanguageFeature__ExcludesAssignment_5_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3402:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3403:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3435:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3436:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3403:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3404:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3436:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3437:1: ( ruleEString )
             {
              before(grammarAccess.getLanguageFeatureAccess().getExcludesLanguageFeatureCrossReference_5_2_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3405:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3406:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3438:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3439:1: ruleEString
             {
              before(grammarAccess.getLanguageFeatureAccess().getExcludesLanguageFeatureEStringParserRuleCall_5_2_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_2_16734);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_2_16797);
             ruleEString();
 
             state._fsp--;
@@ -8917,20 +8981,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__ModuleAssignment_7_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3417:1: rule__LanguageFeature__ModuleAssignment_7_1 : ( ruleEString ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3450:1: rule__LanguageFeature__ModuleAssignment_7_1 : ( ruleEString ) ;
     public final void rule__LanguageFeature__ModuleAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3421:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3422:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3454:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3455:1: ( ruleEString )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3422:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3423:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3455:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3456:1: ruleEString
             {
              before(grammarAccess.getLanguageFeatureAccess().getModuleEStringParserRuleCall_7_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__ModuleAssignment_7_16769);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__LanguageFeature__ModuleAssignment_7_16832);
             ruleEString();
 
             state._fsp--;
@@ -8958,20 +9022,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__ChildrenAssignment_8_2"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3432:1: rule__LanguageFeature__ChildrenAssignment_8_2 : ( ruleRelation ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3465:1: rule__LanguageFeature__ChildrenAssignment_8_2 : ( ruleRelation ) ;
     public final void rule__LanguageFeature__ChildrenAssignment_8_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3436:1: ( ( ruleRelation ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3437:1: ( ruleRelation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3469:1: ( ( ruleRelation ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3470:1: ( ruleRelation )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3437:1: ( ruleRelation )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3438:1: ruleRelation
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3470:1: ( ruleRelation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3471:1: ruleRelation
             {
              before(grammarAccess.getLanguageFeatureAccess().getChildrenRelationParserRuleCall_8_2_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_26800);
+            pushFollow(FollowSets000.FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_26863);
             ruleRelation();
 
             state._fsp--;
@@ -8999,20 +9063,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LanguageFeature__ChildrenAssignment_8_3"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3447:1: rule__LanguageFeature__ChildrenAssignment_8_3 : ( ruleRelation ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3480:1: rule__LanguageFeature__ChildrenAssignment_8_3 : ( ruleRelation ) ;
     public final void rule__LanguageFeature__ChildrenAssignment_8_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3451:1: ( ( ruleRelation ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3452:1: ( ruleRelation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3484:1: ( ( ruleRelation ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3485:1: ( ruleRelation )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3452:1: ( ruleRelation )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3453:1: ruleRelation
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3485:1: ( ruleRelation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3486:1: ruleRelation
             {
              before(grammarAccess.getLanguageFeatureAccess().getChildrenRelationParserRuleCall_8_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_36831);
+            pushFollow(FollowSets000.FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_36894);
             ruleRelation();
 
             state._fsp--;
@@ -9040,24 +9104,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MandatoryChild__FeatureAssignment_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3462:1: rule__MandatoryChild__FeatureAssignment_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3495:1: rule__MandatoryChild__FeatureAssignment_1 : ( ( ruleEString ) ) ;
     public final void rule__MandatoryChild__FeatureAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3466:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3467:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3499:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3500:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3467:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3468:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3500:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3501:1: ( ruleEString )
             {
              before(grammarAccess.getMandatoryChildAccess().getFeatureLanguageFeatureCrossReference_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3469:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3470:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3502:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3503:1: ruleEString
             {
              before(grammarAccess.getMandatoryChildAccess().getFeatureLanguageFeatureEStringParserRuleCall_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__MandatoryChild__FeatureAssignment_16866);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__MandatoryChild__FeatureAssignment_16929);
             ruleEString();
 
             state._fsp--;
@@ -9089,24 +9153,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OptionalChild__FeatureAssignment_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3481:1: rule__OptionalChild__FeatureAssignment_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3514:1: rule__OptionalChild__FeatureAssignment_1 : ( ( ruleEString ) ) ;
     public final void rule__OptionalChild__FeatureAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3485:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3486:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3518:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3519:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3486:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3487:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3519:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3520:1: ( ruleEString )
             {
              before(grammarAccess.getOptionalChildAccess().getFeatureLanguageFeatureCrossReference_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3488:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3489:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3521:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3522:1: ruleEString
             {
              before(grammarAccess.getOptionalChildAccess().getFeatureLanguageFeatureEStringParserRuleCall_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__OptionalChild__FeatureAssignment_16905);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__OptionalChild__FeatureAssignment_16968);
             ruleEString();
 
             state._fsp--;
@@ -9138,24 +9202,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrGroupChild__FeaturesAssignment_2"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3500:1: rule__OrGroupChild__FeaturesAssignment_2 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3533:1: rule__OrGroupChild__FeaturesAssignment_2 : ( ( ruleEString ) ) ;
     public final void rule__OrGroupChild__FeaturesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3504:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3505:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3537:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3538:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3505:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3506:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3538:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3539:1: ( ruleEString )
             {
              before(grammarAccess.getOrGroupChildAccess().getFeaturesLanguageFeatureCrossReference_2_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3507:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3508:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3540:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3541:1: ruleEString
             {
              before(grammarAccess.getOrGroupChildAccess().getFeaturesLanguageFeatureEStringParserRuleCall_2_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_26944);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_27007);
             ruleEString();
 
             state._fsp--;
@@ -9187,24 +9251,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrGroupChild__FeaturesAssignment_3_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3519:1: rule__OrGroupChild__FeaturesAssignment_3_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3552:1: rule__OrGroupChild__FeaturesAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__OrGroupChild__FeaturesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3523:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3524:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3556:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3557:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3524:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3525:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3557:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3558:1: ( ruleEString )
             {
              before(grammarAccess.getOrGroupChildAccess().getFeaturesLanguageFeatureCrossReference_3_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3526:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3527:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3559:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3560:1: ruleEString
             {
              before(grammarAccess.getOrGroupChildAccess().getFeaturesLanguageFeatureEStringParserRuleCall_3_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_3_16983);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_3_17046);
             ruleEString();
 
             state._fsp--;
@@ -9236,24 +9300,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlternativeGroup__FeaturesAssignment_2"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3538:1: rule__AlternativeGroup__FeaturesAssignment_2 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3571:1: rule__AlternativeGroup__FeaturesAssignment_2 : ( ( ruleEString ) ) ;
     public final void rule__AlternativeGroup__FeaturesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3542:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3543:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3575:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3576:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3543:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3544:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3576:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3577:1: ( ruleEString )
             {
              before(grammarAccess.getAlternativeGroupAccess().getFeaturesLanguageFeatureCrossReference_2_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3545:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3546:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3578:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3579:1: ruleEString
             {
              before(grammarAccess.getAlternativeGroupAccess().getFeaturesLanguageFeatureEStringParserRuleCall_2_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_27022);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_27085);
             ruleEString();
 
             state._fsp--;
@@ -9285,24 +9349,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AlternativeGroup__FeaturesAssignment_3_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3557:1: rule__AlternativeGroup__FeaturesAssignment_3_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3590:1: rule__AlternativeGroup__FeaturesAssignment_3_1 : ( ( ruleEString ) ) ;
     public final void rule__AlternativeGroup__FeaturesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3561:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3562:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3594:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3595:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3562:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3563:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3595:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3596:1: ( ruleEString )
             {
              before(grammarAccess.getAlternativeGroupAccess().getFeaturesLanguageFeatureCrossReference_3_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3564:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3565:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3597:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3598:1: ruleEString
             {
              before(grammarAccess.getAlternativeGroupAccess().getFeaturesLanguageFeatureEStringParserRuleCall_3_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_3_17061);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_3_17124);
             ruleEString();
 
             state._fsp--;
@@ -9334,20 +9398,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__NameAssignment_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3576:1: rule__VariabilityPoint__NameAssignment_1 : ( ruleEString ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3609:1: rule__VariabilityPoint__NameAssignment_1 : ( ruleEString ) ;
     public final void rule__VariabilityPoint__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3580:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3581:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3613:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3614:1: ( ruleEString )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3581:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3582:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3614:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3615:1: ruleEString
             {
              before(grammarAccess.getVariabilityPointAccess().getNameEStringParserRuleCall_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__VariabilityPoint__NameAssignment_17096);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__VariabilityPoint__NameAssignment_17159);
             ruleEString();
 
             state._fsp--;
@@ -9375,24 +9439,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3591:1: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3624:1: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1 : ( ( ruleEString ) ) ;
     public final void rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3595:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3596:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3628:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3629:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3596:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3597:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3629:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3630:1: ( ruleEString )
             {
              before(grammarAccess.getVariabilityPointAccess().getInvolvedFeaturesLanguageFeatureCrossReference_2_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3598:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3599:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3631:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3632:1: ruleEString
             {
              before(grammarAccess.getVariabilityPointAccess().getInvolvedFeaturesLanguageFeatureEStringParserRuleCall_2_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_17131);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_17194);
             ruleEString();
 
             state._fsp--;
@@ -9424,24 +9488,24 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3610:1: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 : ( ( ruleEString ) ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3643:1: rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1 : ( ( ruleEString ) ) ;
     public final void rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3614:1: ( ( ( ruleEString ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3615:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3647:1: ( ( ( ruleEString ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3648:1: ( ( ruleEString ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3615:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3616:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3648:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3649:1: ( ruleEString )
             {
              before(grammarAccess.getVariabilityPointAccess().getInvolvedFeaturesLanguageFeatureCrossReference_2_2_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3617:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3618:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3650:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3651:1: ruleEString
             {
              before(grammarAccess.getVariabilityPointAccess().getInvolvedFeaturesLanguageFeatureEStringParserRuleCall_2_2_1_0_1()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_17170);
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_17233);
             ruleEString();
 
             state._fsp--;
@@ -9473,20 +9537,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__VariationsAssignment_4"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3629:1: rule__VariabilityPoint__VariationsAssignment_4 : ( ruleVariation ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3662:1: rule__VariabilityPoint__VariationsAssignment_4 : ( ruleVariation ) ;
     public final void rule__VariabilityPoint__VariationsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3633:1: ( ( ruleVariation ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3634:1: ( ruleVariation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3666:1: ( ( ruleVariation ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3667:1: ( ruleVariation )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3634:1: ( ruleVariation )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3635:1: ruleVariation
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3667:1: ( ruleVariation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3668:1: ruleVariation
             {
              before(grammarAccess.getVariabilityPointAccess().getVariationsVariationParserRuleCall_4_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_47205);
+            pushFollow(FollowSets000.FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_47268);
             ruleVariation();
 
             state._fsp--;
@@ -9514,20 +9578,20 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariabilityPoint__VariationsAssignment_5"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3644:1: rule__VariabilityPoint__VariationsAssignment_5 : ( ruleVariation ) ;
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3677:1: rule__VariabilityPoint__VariationsAssignment_5 : ( ruleVariation ) ;
     public final void rule__VariabilityPoint__VariationsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3648:1: ( ( ruleVariation ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3649:1: ( ruleVariation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3681:1: ( ( ruleVariation ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3682:1: ( ruleVariation )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3649:1: ( ruleVariation )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3650:1: ruleVariation
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3682:1: ( ruleVariation )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3683:1: ruleVariation
             {
              before(grammarAccess.getVariabilityPointAccess().getVariationsVariationParserRuleCall_5_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_57236);
+            pushFollow(FollowSets000.FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_57299);
             ruleVariation();
 
             state._fsp--;
@@ -9554,30 +9618,30 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__VariabilityPoint__VariationsAssignment_5"
 
 
-    // $ANTLR start "rule__Variation__DefaultAssignment_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3659:1: rule__Variation__DefaultAssignment_1 : ( ( 'default' ) ) ;
-    public final void rule__Variation__DefaultAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__VariabilityPoint__DefaultAssignment_7"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3692:1: rule__VariabilityPoint__DefaultAssignment_7 : ( ( RULE_ID ) ) ;
+    public final void rule__VariabilityPoint__DefaultAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3663:1: ( ( ( 'default' ) ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3664:1: ( ( 'default' ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3696:1: ( ( ( RULE_ID ) ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3697:1: ( ( RULE_ID ) )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3664:1: ( ( 'default' ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3665:1: ( 'default' )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3697:1: ( ( RULE_ID ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3698:1: ( RULE_ID )
             {
-             before(grammarAccess.getVariationAccess().getDefaultDefaultKeyword_1_0()); 
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3666:1: ( 'default' )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3667:1: 'default'
+             before(grammarAccess.getVariabilityPointAccess().getDefaultVariationCrossReference_7_0()); 
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3699:1: ( RULE_ID )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3700:1: RULE_ID
             {
-             before(grammarAccess.getVariationAccess().getDefaultDefaultKeyword_1_0()); 
-            match(input,33,FollowSets000.FOLLOW_33_in_rule__Variation__DefaultAssignment_17272); 
-             after(grammarAccess.getVariationAccess().getDefaultDefaultKeyword_1_0()); 
+             before(grammarAccess.getVariabilityPointAccess().getDefaultVariationIDTerminalRuleCall_7_0_1()); 
+            match(input,RULE_ID,FollowSets000.FOLLOW_RULE_ID_in_rule__VariabilityPoint__DefaultAssignment_77334); 
+             after(grammarAccess.getVariabilityPointAccess().getDefaultVariationIDTerminalRuleCall_7_0_1()); 
 
             }
 
-             after(grammarAccess.getVariationAccess().getDefaultDefaultKeyword_1_0()); 
+             after(grammarAccess.getVariabilityPointAccess().getDefaultVariationCrossReference_7_0()); 
 
             }
 
@@ -9596,29 +9660,29 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variation__DefaultAssignment_1"
+    // $ANTLR end "rule__VariabilityPoint__DefaultAssignment_7"
 
 
-    // $ANTLR start "rule__Variation__NameAssignment_3"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3682:1: rule__Variation__NameAssignment_3 : ( ruleEString ) ;
-    public final void rule__Variation__NameAssignment_3() throws RecognitionException {
+    // $ANTLR start "rule__Variation__NameAssignment_2"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3711:1: rule__Variation__NameAssignment_2 : ( ruleEString ) ;
+    public final void rule__Variation__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3686:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3687:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3715:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3716:1: ( ruleEString )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3687:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3688:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3716:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3717:1: ruleEString
             {
-             before(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_3_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Variation__NameAssignment_37311);
+             before(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_2_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Variation__NameAssignment_27369);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_3_0()); 
+             after(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_2_0()); 
 
             }
 
@@ -9637,29 +9701,29 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variation__NameAssignment_3"
+    // $ANTLR end "rule__Variation__NameAssignment_2"
 
 
-    // $ANTLR start "rule__Variation__ModuleAssignment_4_1"
-    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3697:1: rule__Variation__ModuleAssignment_4_1 : ( ruleEString ) ;
-    public final void rule__Variation__ModuleAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Variation__ModuleAssignment_3_1"
+    // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3726:1: rule__Variation__ModuleAssignment_3_1 : ( ruleEString ) ;
+    public final void rule__Variation__ModuleAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3701:1: ( ( ruleEString ) )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3702:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3730:1: ( ( ruleEString ) )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3731:1: ( ruleEString )
             {
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3702:1: ( ruleEString )
-            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3703:1: ruleEString
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3731:1: ( ruleEString )
+            // ../fr.inria.diverse.puzzle.mutivar.language.ui/src-gen/fr/inria/diverse/puzzle/ui/contentassist/antlr/internal/InternalMutivar.g:3732:1: ruleEString
             {
-             before(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_4_1_0()); 
-            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Variation__ModuleAssignment_4_17342);
+             before(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_3_1_0()); 
+            pushFollow(FollowSets000.FOLLOW_ruleEString_in_rule__Variation__ModuleAssignment_3_17400);
             ruleEString();
 
             state._fsp--;
 
-             after(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_4_1_0()); 
+             after(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_3_1_0()); 
 
             }
 
@@ -9678,7 +9742,7 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variation__ModuleAssignment_4_1"
+    // $ANTLR end "rule__Variation__ModuleAssignment_3_1"
 
     // Delegated rules
 
@@ -9754,15 +9818,15 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_13_in_rule__LanguageProductLine__Group_3__0__Impl1449 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__LanguageProductLine__Group_3__1__Impl_in_rule__LanguageProductLine__Group_3__11480 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__LanguageProductLine__LanguageVariabilityAssignment_3_1_in_rule__LanguageProductLine__Group_3__1__Impl1507 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ProductLineVariability__Group__0__Impl_in_rule__ProductLineVariability__Group__01541 = new BitSet(new long[]{0x0000000100020000L});
+        public static final BitSet FOLLOW_rule__ProductLineVariability__Group__0__Impl_in_rule__ProductLineVariability__Group__01541 = new BitSet(new long[]{0x0000000200020000L});
         public static final BitSet FOLLOW_rule__ProductLineVariability__Group__1_in_rule__ProductLineVariability__Group__01544 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_14_in_rule__ProductLineVariability__Group__0__Impl1572 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ProductLineVariability__Group__1__Impl_in_rule__ProductLineVariability__Group__11603 = new BitSet(new long[]{0x0000000100028000L});
+        public static final BitSet FOLLOW_rule__ProductLineVariability__Group__1__Impl_in_rule__ProductLineVariability__Group__11603 = new BitSet(new long[]{0x0000000200028000L});
         public static final BitSet FOLLOW_rule__ProductLineVariability__Group__2_in_rule__ProductLineVariability__Group__11606 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__ProductLineVariability__FeaturesAssignment_1_in_rule__ProductLineVariability__Group__1__Impl1633 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ProductLineVariability__Group__2__Impl_in_rule__ProductLineVariability__Group__21663 = new BitSet(new long[]{0x0000000100028000L});
+        public static final BitSet FOLLOW_rule__ProductLineVariability__Group__2__Impl_in_rule__ProductLineVariability__Group__21663 = new BitSet(new long[]{0x0000000200028000L});
         public static final BitSet FOLLOW_rule__ProductLineVariability__Group__3_in_rule__ProductLineVariability__Group__21666 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__ProductLineVariability__FeaturesAssignment_2_in_rule__ProductLineVariability__Group__2__Impl1693 = new BitSet(new long[]{0x0000000100020002L});
+        public static final BitSet FOLLOW_rule__ProductLineVariability__FeaturesAssignment_2_in_rule__ProductLineVariability__Group__2__Impl1693 = new BitSet(new long[]{0x0000000200020002L});
         public static final BitSet FOLLOW_rule__ProductLineVariability__Group__3__Impl_in_rule__ProductLineVariability__Group__31724 = new BitSet(new long[]{0x0000000000000030L});
         public static final BitSet FOLLOW_rule__ProductLineVariability__Group__4_in_rule__ProductLineVariability__Group__31727 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_15_in_rule__ProductLineVariability__Group__3__Impl1755 = new BitSet(new long[]{0x0000000000000002L});
@@ -9786,9 +9850,9 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_rule__LanguageVariability__VariabilityPointsAssignment_2_0_in_rule__LanguageVariability__Group_2__0__Impl2198 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__LanguageVariability__Group_2__1__Impl_in_rule__LanguageVariability__Group_2__12228 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__LanguageVariability__VariabilityPointsAssignment_2_1_in_rule__LanguageVariability__Group_2__1__Impl2255 = new BitSet(new long[]{0x0000000020000002L});
-        public static final BitSet FOLLOW_rule__LanguageFeature__Group__0__Impl_in_rule__LanguageFeature__Group__02290 = new BitSet(new long[]{0x0000000100020000L});
+        public static final BitSet FOLLOW_rule__LanguageFeature__Group__0__Impl_in_rule__LanguageFeature__Group__02290 = new BitSet(new long[]{0x0000000200020000L});
         public static final BitSet FOLLOW_rule__LanguageFeature__Group__1_in_rule__LanguageFeature__Group__02293 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__LanguageFeature__Group__1__Impl_in_rule__LanguageFeature__Group__12351 = new BitSet(new long[]{0x0000000100020000L});
+        public static final BitSet FOLLOW_rule__LanguageFeature__Group__1__Impl_in_rule__LanguageFeature__Group__12351 = new BitSet(new long[]{0x0000000200020000L});
         public static final BitSet FOLLOW_rule__LanguageFeature__Group__2_in_rule__LanguageFeature__Group__12354 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__LanguageFeature__AbstractAssignment_1_in_rule__LanguageFeature__Group__1__Impl2381 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__LanguageFeature__Group__2__Impl_in_rule__LanguageFeature__Group__22412 = new BitSet(new long[]{0x0000000000000030L});
@@ -9910,85 +9974,88 @@ public class InternalMutivarParser extends AbstractInternalContentAssistParser {
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group__0__Impl_in_rule__VariabilityPoint__Group__05094 = new BitSet(new long[]{0x0000000000000030L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group__1_in_rule__VariabilityPoint__Group__05097 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_29_in_rule__VariabilityPoint__Group__0__Impl5125 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__1__Impl_in_rule__VariabilityPoint__Group__15156 = new BitSet(new long[]{0x0000000040004000L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__1__Impl_in_rule__VariabilityPoint__Group__15156 = new BitSet(new long[]{0x0000000080004000L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group__2_in_rule__VariabilityPoint__Group__15159 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__NameAssignment_1_in_rule__VariabilityPoint__Group__1__Impl5186 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__2__Impl_in_rule__VariabilityPoint__Group__25216 = new BitSet(new long[]{0x0000000040004000L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__2__Impl_in_rule__VariabilityPoint__Group__25216 = new BitSet(new long[]{0x0000000080004000L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group__3_in_rule__VariabilityPoint__Group__25219 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__0_in_rule__VariabilityPoint__Group__2__Impl5246 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__3__Impl_in_rule__VariabilityPoint__Group__35277 = new BitSet(new long[]{0x0000000280000000L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__3__Impl_in_rule__VariabilityPoint__Group__35277 = new BitSet(new long[]{0x0000000100000000L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group__4_in_rule__VariabilityPoint__Group__35280 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_14_in_rule__VariabilityPoint__Group__3__Impl5308 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__4__Impl_in_rule__VariabilityPoint__Group__45339 = new BitSet(new long[]{0x0000000280010000L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__4__Impl_in_rule__VariabilityPoint__Group__45339 = new BitSet(new long[]{0x0000000140000000L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group__5_in_rule__VariabilityPoint__Group__45342 = new BitSet(new long[]{0x0000000000000002L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__VariationsAssignment_4_in_rule__VariabilityPoint__Group__4__Impl5369 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__5__Impl_in_rule__VariabilityPoint__Group__55399 = new BitSet(new long[]{0x0000000280010000L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__5__Impl_in_rule__VariabilityPoint__Group__55399 = new BitSet(new long[]{0x0000000140000000L});
         public static final BitSet FOLLOW_rule__VariabilityPoint__Group__6_in_rule__VariabilityPoint__Group__55402 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__VariationsAssignment_5_in_rule__VariabilityPoint__Group__5__Impl5429 = new BitSet(new long[]{0x0000000280000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__6__Impl_in_rule__VariabilityPoint__Group__65460 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_16_in_rule__VariabilityPoint__Group__6__Impl5488 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__0__Impl_in_rule__VariabilityPoint__Group_2__05533 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__1_in_rule__VariabilityPoint__Group_2__05536 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_30_in_rule__VariabilityPoint__Group_2__0__Impl5564 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__1__Impl_in_rule__VariabilityPoint__Group_2__15595 = new BitSet(new long[]{0x0000000000080000L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__2_in_rule__VariabilityPoint__Group_2__15598 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1_in_rule__VariabilityPoint__Group_2__1__Impl5625 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__2__Impl_in_rule__VariabilityPoint__Group_2__25655 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__0_in_rule__VariabilityPoint__Group_2__2__Impl5682 = new BitSet(new long[]{0x0000000000080002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__0__Impl_in_rule__VariabilityPoint__Group_2_2__05719 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__1_in_rule__VariabilityPoint__Group_2_2__05722 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_19_in_rule__VariabilityPoint__Group_2_2__0__Impl5750 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__1__Impl_in_rule__VariabilityPoint__Group_2_2__15781 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1_in_rule__VariabilityPoint__Group_2_2__1__Impl5808 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group__0__Impl_in_rule__Variation__Group__05842 = new BitSet(new long[]{0x0000000280000000L});
-        public static final BitSet FOLLOW_rule__Variation__Group__1_in_rule__Variation__Group__05845 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group__1__Impl_in_rule__Variation__Group__15903 = new BitSet(new long[]{0x0000000280000000L});
-        public static final BitSet FOLLOW_rule__Variation__Group__2_in_rule__Variation__Group__15906 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__DefaultAssignment_1_in_rule__Variation__Group__1__Impl5933 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group__2__Impl_in_rule__Variation__Group__25964 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Variation__Group__3_in_rule__Variation__Group__25967 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_31_in_rule__Variation__Group__2__Impl5995 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group__3__Impl_in_rule__Variation__Group__36026 = new BitSet(new long[]{0x0000000000200000L});
-        public static final BitSet FOLLOW_rule__Variation__Group__4_in_rule__Variation__Group__36029 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__NameAssignment_3_in_rule__Variation__Group__3__Impl6056 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group__4__Impl_in_rule__Variation__Group__46086 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group_4__0_in_rule__Variation__Group__4__Impl6113 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group_4__0__Impl_in_rule__Variation__Group_4__06154 = new BitSet(new long[]{0x0000000000000030L});
-        public static final BitSet FOLLOW_rule__Variation__Group_4__1_in_rule__Variation__Group_4__06157 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_21_in_rule__Variation__Group_4__0__Impl6185 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__Group_4__1__Impl_in_rule__Variation__Group_4__16216 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_rule__Variation__ModuleAssignment_4_1_in_rule__Variation__Group_4__1__Impl6243 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageProductLine__ImplementationFileAssignment_1_16282 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleProductLineVariability_in_rule__LanguageProductLine__ProductLineVariabilityAssignment_2_16313 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLanguageVariability_in_rule__LanguageProductLine__LanguageVariabilityAssignment_3_16344 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_16375 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_26406 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__ProductLineVariability__RootFeatureAssignment_46441 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_06476 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_16507 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_32_in_rule__LanguageFeature__AbstractAssignment_16543 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__NameAssignment_36582 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_16617 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_2_16656 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_16695 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_2_16734 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__ModuleAssignment_7_16769 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_26800 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_36831 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__MandatoryChild__FeatureAssignment_16866 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__OptionalChild__FeatureAssignment_16905 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_26944 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_3_16983 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_27022 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_3_17061 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__VariabilityPoint__NameAssignment_17096 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_17131 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_17170 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_47205 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_57236 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_33_in_rule__Variation__DefaultAssignment_17272 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Variation__NameAssignment_37311 = new BitSet(new long[]{0x0000000000000002L});
-        public static final BitSet FOLLOW_ruleEString_in_rule__Variation__ModuleAssignment_4_17342 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__VariationsAssignment_5_in_rule__VariabilityPoint__Group__5__Impl5429 = new BitSet(new long[]{0x0000000100000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__6__Impl_in_rule__VariabilityPoint__Group__65460 = new BitSet(new long[]{0x0000000000000020L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__7_in_rule__VariabilityPoint__Group__65463 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_30_in_rule__VariabilityPoint__Group__6__Impl5491 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__7__Impl_in_rule__VariabilityPoint__Group__75522 = new BitSet(new long[]{0x0000000000010000L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__8_in_rule__VariabilityPoint__Group__75525 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__DefaultAssignment_7_in_rule__VariabilityPoint__Group__7__Impl5552 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group__8__Impl_in_rule__VariabilityPoint__Group__85582 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_16_in_rule__VariabilityPoint__Group__8__Impl5610 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__0__Impl_in_rule__VariabilityPoint__Group_2__05659 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__1_in_rule__VariabilityPoint__Group_2__05662 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_31_in_rule__VariabilityPoint__Group_2__0__Impl5690 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__1__Impl_in_rule__VariabilityPoint__Group_2__15721 = new BitSet(new long[]{0x0000000000080000L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__2_in_rule__VariabilityPoint__Group_2__15724 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_1_in_rule__VariabilityPoint__Group_2__1__Impl5751 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2__2__Impl_in_rule__VariabilityPoint__Group_2__25781 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__0_in_rule__VariabilityPoint__Group_2__2__Impl5808 = new BitSet(new long[]{0x0000000000080002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__0__Impl_in_rule__VariabilityPoint__Group_2_2__05845 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__1_in_rule__VariabilityPoint__Group_2_2__05848 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_19_in_rule__VariabilityPoint__Group_2_2__0__Impl5876 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__Group_2_2__1__Impl_in_rule__VariabilityPoint__Group_2_2__15907 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_1_in_rule__VariabilityPoint__Group_2_2__1__Impl5934 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__Group__0__Impl_in_rule__Variation__Group__05968 = new BitSet(new long[]{0x0000000100000000L});
+        public static final BitSet FOLLOW_rule__Variation__Group__1_in_rule__Variation__Group__05971 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__Group__1__Impl_in_rule__Variation__Group__16029 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__Variation__Group__2_in_rule__Variation__Group__16032 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_32_in_rule__Variation__Group__1__Impl6060 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__Group__2__Impl_in_rule__Variation__Group__26091 = new BitSet(new long[]{0x0000000000200000L});
+        public static final BitSet FOLLOW_rule__Variation__Group__3_in_rule__Variation__Group__26094 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__NameAssignment_2_in_rule__Variation__Group__2__Impl6121 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__Group__3__Impl_in_rule__Variation__Group__36151 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__Group_3__0_in_rule__Variation__Group__3__Impl6178 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__Group_3__0__Impl_in_rule__Variation__Group_3__06217 = new BitSet(new long[]{0x0000000000000030L});
+        public static final BitSet FOLLOW_rule__Variation__Group_3__1_in_rule__Variation__Group_3__06220 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_21_in_rule__Variation__Group_3__0__Impl6248 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__Group_3__1__Impl_in_rule__Variation__Group_3__16279 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_rule__Variation__ModuleAssignment_3_1_in_rule__Variation__Group_3__1__Impl6306 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageProductLine__ImplementationFileAssignment_1_16345 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleProductLineVariability_in_rule__LanguageProductLine__ProductLineVariabilityAssignment_2_16376 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLanguageVariability_in_rule__LanguageProductLine__LanguageVariabilityAssignment_3_16407 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_16438 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleLanguageFeature_in_rule__ProductLineVariability__FeaturesAssignment_26469 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__ProductLineVariability__RootFeatureAssignment_46504 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_06539 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariabilityPoint_in_rule__LanguageVariability__VariabilityPointsAssignment_2_16570 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_33_in_rule__LanguageFeature__AbstractAssignment_16606 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__NameAssignment_36645 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_16680 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__DependsAssignment_4_2_16719 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_16758 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__ExcludesAssignment_5_2_16797 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__LanguageFeature__ModuleAssignment_7_16832 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_26863 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleRelation_in_rule__LanguageFeature__ChildrenAssignment_8_36894 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__MandatoryChild__FeatureAssignment_16929 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__OptionalChild__FeatureAssignment_16968 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_27007 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__OrGroupChild__FeaturesAssignment_3_17046 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_27085 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__AlternativeGroup__FeaturesAssignment_3_17124 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__VariabilityPoint__NameAssignment_17159 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_17194 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__VariabilityPoint__InvolvedFeaturesAssignment_2_2_17233 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_47268 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleVariation_in_rule__VariabilityPoint__VariationsAssignment_57299 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_RULE_ID_in_rule__VariabilityPoint__DefaultAssignment_77334 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__Variation__NameAssignment_27369 = new BitSet(new long[]{0x0000000000000002L});
+        public static final BitSet FOLLOW_ruleEString_in_rule__Variation__ModuleAssignment_3_17400 = new BitSet(new long[]{0x0000000000000002L});
     }
 
 

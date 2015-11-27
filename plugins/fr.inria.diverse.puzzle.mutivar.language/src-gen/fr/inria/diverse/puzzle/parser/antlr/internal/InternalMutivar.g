@@ -955,9 +955,26 @@ ruleVariabilityPoint returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_9='}' 
+)*	otherlv_9='default' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_9, grammarAccess.getVariabilityPointAccess().getDefaultKeyword_6());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getVariabilityPointRule());
+	        }
+        }
+	otherlv_10=RULE_ID
+	{
+		newLeafNode(otherlv_10, grammarAccess.getVariabilityPointAccess().getDefaultVariationCrossReference_7_0()); 
+	}
+
+)
+)	otherlv_11='}' 
+    {
+    	newLeafNode(otherlv_11, grammarAccess.getVariabilityPointAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;
@@ -986,60 +1003,45 @@ ruleVariation returns [EObject current=null]
             grammarAccess.getVariationAccess().getVariationAction_0(),
             $current);
     }
-)(
-(
-		lv_default_1_0=	'default' 
+)	otherlv_1='variation' 
     {
-        newLeafNode(lv_default_1_0, grammarAccess.getVariationAccess().getDefaultDefaultKeyword_1_0());
-    }
- 
-	    {
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getVariationRule());
-	        }
-       		setWithLastConsumed($current, "default", true, "default");
-	    }
-
-)
-)?	otherlv_2='variation' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getVariationAccess().getVariationKeyword_2());
+    	newLeafNode(otherlv_1, grammarAccess.getVariationAccess().getVariationKeyword_1());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getVariationAccess().getNameEStringParserRuleCall_2_0()); 
 	    }
-		lv_name_3_0=ruleEString		{
+		lv_name_2_0=ruleEString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVariationRule());
 	        }
        		set(
        			$current, 
        			"name",
-        		lv_name_3_0, 
+        		lv_name_2_0, 
         		"EString");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_4='languagemodule' 
+)(	otherlv_3='languagemodule' 
     {
-    	newLeafNode(otherlv_4, grammarAccess.getVariationAccess().getLanguagemoduleKeyword_4_0());
+    	newLeafNode(otherlv_3, grammarAccess.getVariationAccess().getLanguagemoduleKeyword_3_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getVariationAccess().getModuleEStringParserRuleCall_3_1_0()); 
 	    }
-		lv_module_5_0=ruleEString		{
+		lv_module_4_0=ruleEString		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVariationRule());
 	        }
        		set(
        			$current, 
        			"module",
-        		lv_module_5_0, 
+        		lv_module_4_0, 
         		"EString");
 	        afterParserOrEnumRuleCall();
 	    }
