@@ -12,7 +12,7 @@ Given a set of existing DSLs  our approach is intended to identify a catalog of 
 
 \subsection{Identifying overlapping}
 \label{sec:metrics}
-
+\todo[inline]{Donde esta el algoritmo?? parece que cuentas de nuevo lo de arriba. Toca hablar de como comparas los lenguages y generas el grafo para despues partirlo. Parece naive una cosa que no lo es. Se que lo haces por que eres buen profe, pero aqui hay que sacar pecho de lo super-mega-dificil que es.}
 Our algorithm for identifying \textbf{syntactic overlapping} can be described as by the function that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the overlapping (i.e., metaclasses that are \textit{equal}) among these metamodels. Note that there can be overlapping among any of the combinations of the input set. Hence, in the result there is a tuple for each of the possible combinations of the input metamodels (i.e., the power set). Similarly, our algorithm for detecting \textbf{semantic overlapping} can be described as a function that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the overlapping (i.e., domain-specific actions that are \textit{equal}) among these aspects.
 
 %\begin{equation}
@@ -56,9 +56,10 @@ Our algorithm for identifying \textbf{syntactic overlapping} can be described as
 
 It is worth noting that a syntactic overlapping is a set of metaclasses that are equal in two or more DSLs. Similarly, a semantic overlapping is a set of domain-specific actions that are equal in two or more DSLs. At this point we need to clearly define the notion of equality between metaclasses and domain-specific actions. That is, we need to establish the criteria under we consider that two metaclasses/domain-specific actions are equal.
 
+
 \vspace{-3mm}
 \subsubsection{Comparison of metaclasses:} The name of a metaclass usually corresponds to a word that evokes the domain concept the metaclass represents. Thus, intuitively one can think that a first approach to compare meta-classes is by comparing their names. Certainly, this approach results quite useful and it is quite probable that, we can find potential reuse.
-
+\todo[inline]{me falta material. donde esta el fdx que representa el operador de igualdad. Explicame cuantos operadores hay, puedo tener mas? Tu solucion cuantos acepta? }
 Unfortunately, comparison of metaclasses by using only their names might have some problems. There are cases in which two meta-classes with the same name are not exactly the same since they do not represent the same domain concept or because there are domains that use similar vocabulary. In such cases, an approach that certainly helps is to compare meta-classes not only by their names but also by their attributes and references.
 
 %\begin{equation}
@@ -86,7 +87,7 @@ Unfortunately, comparison of metaclasses by using only their names might have so
 %\end{equation}
 
 Our comparison operator for metaclasses is quite restrictive. It identifies two metaclasses as a commonality if and only if their specifications are exactly the same. Hence, potential reuse is guaranteed in the sense that we are sure that there are not additional elements to consider. However, we are aware that there are other approaches to compute commonalities within metaclasses. So, at the implementation level our approach is flexible and additional comparison operators such as the surveyed in \cite{Lafi:2011} can be easily incorporated.
-
+\todo[inline]{toca usar el ejemplo con algunos operadores de ejemplo.}
 \vspace{-3mm}
 \subsubsection{Comparison of domain-specific actions:} Like methods in Java, domain-specific actions have a signature that specifies its contract (i.e., return type, visibility, parameters, name, and so on), and a body where the behavior is actually implemented. In that sense, the comparison of two domain-specific actions can be performed by checking if their signatures are equal. This approach is practical and also reflects potential reuse; one might think that the probability that two domain-specific actions with the same signatures are the same is elevated.
 
@@ -127,12 +128,14 @@ However, during the conduction of this research we realized that there are cases
 
 %\vspace{-2mm}
 %\subsubsection{Visualizing semantical variability:} Note that the phenomenon of semantical variability is evident in the example presented. Where there are syntactic commonalities between DSLs Logo and FSM, there are not semantic commonalities. As an additional feature of our approach, we provide a visualization of the semantical variability phenomenon. The idea is that language designers can see what are the variations in the domain specific actions.
+\todo[inline]{Usa el ejemplo para ejemplificar}
 
 \subsection{Breaking down the input set}
 
 After being identifying overlapping among the DSLs in the input set, we extract a set of reusable language modules. To this end, we adopt the idea presented by V\"oelter et al \cite[p. 60-61]{voelter:2013}; we break-down the overlapping by creating one language module for each different intersection as illustrated in Figure \ref{fig:breakingdown}. The reasoning to this solution is quite simple: by definition, an intersection is a set of language constructs that are shared by two or more DSLs. If we extract those language constructs in separated language modules, the language module can be defined once and reused by all the DSLs that require it. So, we can consider that the extracted language module is reusable. 
 
 %In the illustrating scenario we can see that the overlapping among Logo, FSM, and Flowchart is a set of language constructs that permit to express expressions. They go well together and it makes sense to group them. Similarly, the overlapping between Flowchart and FSM is a set of constructs about constraints. Note that this example show us that it is not appropriated to put constraints and expressions in one language module. In that case, Logo would include constraints that is not necessary. 
+\todo[inline]{Usa el ejemplo para ejemplificar... no te preocupes por el espacio. Despues recortamos}
 
 \subsection{Encapsulating language modules}
 
@@ -150,5 +153,5 @@ It is important to highlight that we use \textit{model types} \cite{Steel:2007} 
 \end{figure}
 
 \vspace{-3mm}
-
+\todo[inline]{Usa el ejemplo para ejemplificar... no te preocupes por el espacio. Despues recortamos... mira si esa figura puede ser mas pequenya}
 %The tool support we provide for specifying interfaces on language modules is based on annotations at the level of the abstract syntax (i.e., the metamodel). That means that the required constructs of a requiring module are declared as meta-classes in the metamodel as the same as the actual constructs of the module. However, the required constructs are annotated with \texttt{@Required} to distinguish them from the actual constructs.

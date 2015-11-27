@@ -1,9 +1,14 @@
 \section{Evaluation}
 \label{sec:validation}
 
-We use this section to present a twofold evaluation of our approach. First, we evaluate \textit{correctness}. To this end, we use a test oracle consisting of a well-documented case study where we exactly know the existing overlapping among the involved DSLs. We execute our approach on the case study and we check that the input matches the expected overlapping. Second, we evaluate \textit{relevance}. More concretely, we use empirical data to demonstrate that the phenomenon of syntactic and semantic overlapping is actually appearing in realistic DSLs that we obtain from public \texttt{GitHub} repositories. Thus, we show that there is room in real projects to the applicability of our approach.  
+The evaluation of our approach is twofold. First, we evaluate \textit{correctness}. To this end, we use a test oracle consisting of a well-documented case study where we exactly know the existing overlapping among the involved DSLs. We execute our approach on the case study and we check that the input matches the expected overlapping. Second, we evaluate \textit{relevance}. More concretely, we use empirical data to demonstrate that the phenomenon of syntactic and semantic overlapping is actually appearing in realistic DSLs that we obtain from public \texttt{GitHub} repositories. Thus, we show that there is room in real projects to the applicability of our approach.  
 
-\subsection{Evaluating \textit{correctness}: The state machines case study}
+\textbf{Implementation and hardware used $\rightarrow$} The approach presented within this paper is implemented in the puzzle toolsuite~\footnote{\url{puzzle.github.io}}. Puzzle have been developed as an Eclipse-based~\footnote{eclipse} language workbench. Metamodels are specified in the Ecore language whereas domain-specific actions are specified as methods in Xtend programming language~\footnote{\url{http://www.eclipse.org/xtend/}}. The mapping between metaclasses and domain-specific actions is specified by using the notion of aspect introduced by the Kermeta 3~\footnote{\url{https://github.com/diverse-project/k3/wiki/Defining-aspects-in-Kermeta-3}} that realize the ideas presented in \cite{}. \todo{cita tambien a melange si procede.}
+
+\todo[inline]{podriamos comentar al final esto ya que no reportamos en tiempo... pero mejor tener los datos}
+For the first experiment, Puzzle was executed in a Pc running MacOs X with XX Gb of ram and with a XXX Intel CPU. Then, for the second, a custom version of puzzle was extracted as an executable jar and executed within Grid5000~\url{https://www.grid5000.fr} to distribute the workload of analyzing all the possible overlaping within more than 2000 models. Concretely we used 1000 Intel Xeon CPUs at 2100Ghz available in the Nancy cluster.  
+
+\subsection{Experiment 1: Evaluating \textit{correctness} with the state machines case study}
 
 The case study we use to evaluate the correctness of our approach was introduced by Crane et al \cite{Crane:2007}, and it is composed of three different DSLs for expressing state machines: UML state diagrams, Rhapsody, and Harel's state charts. This case study describes a realistic problematic that has an impact on the industry. As a matter of fact, it is one of the motivations of the VaryMDE\footnote{\url{http://varymde.gforge.inria.fr/}} project which is a collaboration between Thales Research \& Technology, and INRIA.
 
@@ -32,8 +37,8 @@ As a direct consequence of those semantic differences, not all the domain-specif
 
 \begin{figure}
 \centering
-\includegraphics[width=1\linewidth]{images/puzzle-overlapping.pdf}
-\caption{Results for the state machines case study: identifying overlapping}
+\includegraphics[draft,width=1\linewidth]{images/puzzle-overlapping.pdf}
+\caption{Overlapping detected using the Puzzle toolsuite in the state machines case study. }
 \label{fig:puzzle-overlapping}
 \end{figure}
 
@@ -46,16 +51,16 @@ Figure \ref{fig:puzzle-modularization} shows the results for the second and thir
 \label{fig:puzzle-modularization}
 \end{figure}
 
-\subsection{Evaluating \textit{relevance}: Identifying potential reuse in the wild}
+\subsection{Experiment 2: Evaluating \textit{relevance} by identifying potential reuse in the wild}
 
 In order to evaluate the relevance of our approach, we conducted an study on empirical data intended to answer two questions: 1) What is the probability that a DSL has some overlapping with another DSL?; and 2) How big is the average overlapping shared by the existing DSLs? The reminder of this section is dedicated to explain how we obtain the empirical data we use and how we use that data to answer the questions. 
-
+\todo[inline]{que funcion de igualdad has usado aqui? no puedo replicar tu experimento en mi maquina.}
 \vspace{-3mm}
 \subsubsection{Collecting empirical data:} To collect empirical data, we explored \texttt{GitHub} repositories in search of DSLs that are built on the same technological space that we used in our approach. Namely, metamodels written in Ecore with operational semantics defined as domain-specific actions in Xtend. The objective was to build a realistic data set composed of DSLs developed by diverse development teams. 
 
 As a result of this search, we found \textbf{2424} metamodels (after discarding metamodels with errors). Contrariwise, due to the fact that Kermeta 3 and its implementation in Xtend is a quite recent idea, we found very few data for the semantics part. 
 
-We decided to conduct analysis only in the metamodels. We consider that such analysis a good insight to know if there is potential reuse.  In the following, we refer to our empirical data as $S$ which is a set of metamodels.
+We decided to conduct analysis only in the metamodels thus, the syntactic part of the languages. We consider that such analysis a good insight to know if there is potential reuse.  In the following, we refer to our empirical data as $S$ which is a set of metamodels.
 
 \vspace{-3mm}
 \subsubsection{What is the probability that a DSL has some overlapping with another DSL?} To answer this first question, we compute the relative frequency of the event \texttt{E}: \textit{``the metamodel has overlapping with, at least, another metamodel"} in the set $S$. Formally:
@@ -77,7 +82,7 @@ Although this result is quite encouraging, we still wonder how important is the 
 \subsubsection{How big is the average overlapping existing among DSLs?} To compute the average of overlapping among the metamodels in the set $S$ we built the matrix illustrated in Figure \ref{fig:matrix-evaluation}. Basically, we performed a pair-wise comparison between the metamodels to obtain the overlapping between all the possible pairs. Then, we compute the average of overlapping that each metamodel has with the other metamodels of the set. To compute that average, we consider only the metamodels where the overlapping is at least 1 metaclass. Finally, we compute the average of these averages.
 
 After executing this experiment, we obtain that the average of overlapping is 3.04. If we analyze the results of questions one and two at the same time, we can conclude that during the construction of the \textbf{40\%} of the new DSLs language designers are replicating, in average, \textbf{3.04} language constructs.
-
+\todo[inline]{porque es tan restrictivo???}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.75\linewidth]{images/matrix-evaluation.pdf}
