@@ -1,0 +1,20 @@
+package family
+
+/**
+ * A language for UML state machines.
+ */
+language UML {
+	syntax "platform:/resource/puzzle.examples.fsm.uml.metamodel/models/fsmUml.ecore"
+	
+	
+	exactType UMLMT
+}
+
+/**
+ * A language for Rhapsody state machines.
+ */
+language Rhapsody{
+	syntax "platform:/resource/puzzle.examples.fsm.rhapsody.metamodel/models/fsmRhapsody.ecore"
+
+	exactType RhapsodyMT
+}

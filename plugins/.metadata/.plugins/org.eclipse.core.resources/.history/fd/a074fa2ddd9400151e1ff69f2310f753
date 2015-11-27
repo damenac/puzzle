@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Synvar" nsURI="http://fr.inria.diverse.puzzle.synvar.metamodel"
+    nsPrefix="Synvar">
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageProductLine">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="implementationFile" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="productLineVariability"
+        eType="#//ProductLineVariability" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="languageVariability" eType="#//LanguageVariability"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProductLineVariability">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rootFeature" lowerBound="1"
+        eType="#//LanguageFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
+        upperBound="-1" eType="#//LanguageFeature" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageFeature" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="abstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="module" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="depends" upperBound="-1"
+        eType="#//LanguageFeature"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="excludes" upperBound="-1"
+        eType="#//LanguageFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relation" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MandatoryChild" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="#//LanguageFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OptionalChild" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
+        eType="#//LanguageFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrGroupChild" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
+        upperBound="-1" eType="#//LanguageFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AlternativeGroup" eSuperTypes="#//Relation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
+        upperBound="-1" eType="#//LanguageFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LanguageVariability">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variabilityPoints" upperBound="-1"
+        eType="#//VariabilityPoint" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariabilityPoint" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variations" lowerBound="1"
+        upperBound="-1" eType="#//Variation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="involvedFeatures" upperBound="-1"
+        eType="#//LanguageFeature"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variation" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="module" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,11 @@
+import 'fsmFamily.melange'
+
+feature StateMachines {
+	implementation Constraint
+}
+
+abstract feature Transitions {
+	
+}
+
+root : StateMachines

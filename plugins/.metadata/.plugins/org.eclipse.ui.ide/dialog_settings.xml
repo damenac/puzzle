@@ -30,6 +30,18 @@
 		<item value="org.eclipse.ui.wizards.new.project" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.team.cvs.ui.newWizards"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.emf.ecp.view.ide"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="fr.inria.diverse.k3.category"/>
+			<item value="org.eclipse.m2e"/>
+			<item value="fr.inria.diverse.melange.category"/>
+			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.sirius.category"/>
+			<item value="org.eclipse.team.svn.ui.repository"/>
+			<item value="org.eclipse.xtext.projectwiz"/>
+			<item value="org.eclipse.ui.Other"/>
 		</list>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">

@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.inria.diverse.puzzle.mutivar.language
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.inria.diverse.puzzle.mutivar.language; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ fr.inria.diverse.puzzle.multivar.metamodel,
+ org.eclipse.xtext.util,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.inria.diverse.puzzle,
+ fr.inria.diverse.puzzle.services,
+ fr.inria.diverse.puzzle.serializer,
+ fr.inria.diverse.puzzle.parser.antlr,
+ fr.inria.diverse.puzzle.parser.antlr.internal,
+ fr.inria.diverse.puzzle.validation,
+ fr.inria.diverse.puzzle.scoping,
+ fr.inria.diverse.puzzle.generator,
+ fr.inria.diverse.puzzle.formatting

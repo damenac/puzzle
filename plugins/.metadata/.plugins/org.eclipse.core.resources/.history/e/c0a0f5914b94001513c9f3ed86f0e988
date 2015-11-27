@@ -1,0 +1,138 @@
+/**
+ */
+package Synvar;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Feature</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link Synvar.Feature#isAbstract <em>Abstract</em>}</li>
+ *   <li>{@link Synvar.Feature#getModule <em>Module</em>}</li>
+ *   <li>{@link Synvar.Feature#getDepends <em>Depends</em>}</li>
+ *   <li>{@link Synvar.Feature#getExcludes <em>Excludes</em>}</li>
+ *   <li>{@link Synvar.Feature#getParent <em>Parent</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see Synvar.SynvarPackage#getFeature()
+ * @model
+ * @generated
+ */
+public interface Feature extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Abstract</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Abstract</em>' attribute.
+	 * @see #setAbstract(boolean)
+	 * @see Synvar.SynvarPackage#getFeature_Abstract()
+	 * @model
+	 * @generated
+	 */
+	boolean isAbstract();
+
+	/**
+	 * Sets the value of the '{@link Synvar.Feature#isAbstract <em>Abstract</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Abstract</em>' attribute.
+	 * @see #isAbstract()
+	 * @generated
+	 */
+	void setAbstract(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Module</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Module</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Module</em>' attribute.
+	 * @see #setModule(String)
+	 * @see Synvar.SynvarPackage#getFeature_Module()
+	 * @model
+	 * @generated
+	 */
+	String getModule();
+
+	/**
+	 * Sets the value of the '{@link Synvar.Feature#getModule <em>Module</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Module</em>' attribute.
+	 * @see #getModule()
+	 * @generated
+	 */
+	void setModule(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Depends</b></em>' reference list.
+	 * The list contents are of type {@link Synvar.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Depends</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Depends</em>' reference list.
+	 * @see Synvar.SynvarPackage#getFeature_Depends()
+	 * @model
+	 * @generated
+	 */
+	EList<Feature> getDepends();
+
+	/**
+	 * Returns the value of the '<em><b>Excludes</b></em>' reference list.
+	 * The list contents are of type {@link Synvar.Feature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Excludes</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Excludes</em>' reference list.
+	 * @see Synvar.SynvarPackage#getFeature_Excludes()
+	 * @model
+	 * @generated
+	 */
+	EList<Feature> getExcludes();
+
+	/**
+	 * Returns the value of the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent</em>' reference.
+	 * @see #setParent(Feature)
+	 * @see Synvar.SynvarPackage#getFeature_Parent()
+	 * @model required="true"
+	 * @generated
+	 */
+	Feature getParent();
+
+	/**
+	 * Sets the value of the '{@link Synvar.Feature#getParent <em>Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent</em>' reference.
+	 * @see #getParent()
+	 * @generated
+	 */
+	void setParent(Feature value);
+
+} // Feature

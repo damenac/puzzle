@@ -1,0 +1,1192 @@
+/**
+ */
+package Synvar;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+/**
+ * <!-- begin-user-doc -->
+ * The <b>Package</b> for the model.
+ * It contains accessors for the meta objects to represent
+ * <ul>
+ *   <li>each class,</li>
+ *   <li>each feature of each class,</li>
+ *   <li>each operation of each class,</li>
+ *   <li>each enum,</li>
+ *   <li>and each data type</li>
+ * </ul>
+ * <!-- end-user-doc -->
+ * @see Synvar.SynvarFactory
+ * @model kind="package"
+ * @generated
+ */
+public interface SynvarPackage extends EPackage {
+	/**
+	 * The package name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNAME = "Synvar";
+
+	/**
+	 * The package namespace URI.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_URI = "http://fr.inria.diverse.puzzle.synvar.metamodel";
+
+	/**
+	 * The package namespace name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String eNS_PREFIX = "Synvar";
+
+	/**
+	 * The singleton instance of the package.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	SynvarPackage eINSTANCE = Synvar.impl.SynvarPackageImpl.init();
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.NamedElementImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getNamedElement()
+	 * @generated
+	 */
+	int NAMED_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.LanguageProductLineImpl <em>Language Product Line</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.LanguageProductLineImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getLanguageProductLine()
+	 * @generated
+	 */
+	int LANGUAGE_PRODUCT_LINE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Implementation File</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE__IMPLEMENTATION_FILE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Product Line Variability</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE__PRODUCT_LINE_VARIABILITY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Language Variability</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE__LANGUAGE_VARIABILITY = 2;
+
+	/**
+	 * The number of structural features of the '<em>Language Product Line</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Language Product Line</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.ProductLineVariabilityImpl <em>Product Line Variability</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.ProductLineVariabilityImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getProductLineVariability()
+	 * @generated
+	 */
+	int PRODUCT_LINE_VARIABILITY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Root Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_LINE_VARIABILITY__ROOT_FEATURE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_LINE_VARIABILITY__FEATURES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Product Line Variability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_LINE_VARIABILITY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Product Line Variability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRODUCT_LINE_VARIABILITY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.LanguageFeatureImpl <em>Language Feature</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.LanguageFeatureImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getLanguageFeature()
+	 * @generated
+	 */
+	int LANGUAGE_FEATURE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Abstract</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE__ABSTRACT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Module</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE__MODULE = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Depends</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE__DEPENDS = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Excludes</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE__EXCLUDES = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Language Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Language Feature</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.RelationImpl <em>Relation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.RelationImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getRelation()
+	 * @generated
+	 */
+	int RELATION = 4;
+
+	/**
+	 * The number of structural features of the '<em>Relation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Relation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RELATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.MandatoryChildImpl <em>Mandatory Child</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.MandatoryChildImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getMandatoryChild()
+	 * @generated
+	 */
+	int MANDATORY_CHILD = 5;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANDATORY_CHILD__FEATURE = RELATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Mandatory Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANDATORY_CHILD_FEATURE_COUNT = RELATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Mandatory Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MANDATORY_CHILD_OPERATION_COUNT = RELATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.OptionalChildImpl <em>Optional Child</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.OptionalChildImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getOptionalChild()
+	 * @generated
+	 */
+	int OPTIONAL_CHILD = 6;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONAL_CHILD__FEATURE = RELATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Optional Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONAL_CHILD_FEATURE_COUNT = RELATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Optional Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPTIONAL_CHILD_OPERATION_COUNT = RELATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.OrGroupChildImpl <em>Or Group Child</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.OrGroupChildImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getOrGroupChild()
+	 * @generated
+	 */
+	int OR_GROUP_CHILD = 7;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_GROUP_CHILD__FEATURES = RELATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Or Group Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_GROUP_CHILD_FEATURE_COUNT = RELATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Or Group Child</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_GROUP_CHILD_OPERATION_COUNT = RELATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.AlternativeGroupImpl <em>Alternative Group</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.AlternativeGroupImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getAlternativeGroup()
+	 * @generated
+	 */
+	int ALTERNATIVE_GROUP = 8;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALTERNATIVE_GROUP__FEATURES = RELATION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Alternative Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALTERNATIVE_GROUP_FEATURE_COUNT = RELATION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Alternative Group</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ALTERNATIVE_GROUP_OPERATION_COUNT = RELATION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.LanguageVariabilityImpl <em>Language Variability</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.LanguageVariabilityImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getLanguageVariability()
+	 * @generated
+	 */
+	int LANGUAGE_VARIABILITY = 9;
+
+	/**
+	 * The feature id for the '<em><b>Variability Points</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_VARIABILITY__VARIABILITY_POINTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Language Variability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_VARIABILITY_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Language Variability</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_VARIABILITY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.VariabilityPointImpl <em>Variability Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.VariabilityPointImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getVariabilityPoint()
+	 * @generated
+	 */
+	int VARIABILITY_POINT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABILITY_POINT__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Variations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABILITY_POINT__VARIATIONS = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Involved Features</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABILITY_POINT__INVOLVED_FEATURES = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Variability Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABILITY_POINT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Variability Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABILITY_POINT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Synvar.impl.VariationImpl <em>Variation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Synvar.impl.VariationImpl
+	 * @see Synvar.impl.SynvarPackageImpl#getVariation()
+	 * @generated
+	 */
+	int VARIATION = 11;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION__NAME = NAMED_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Module</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION__MODULE = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Variation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Variation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIATION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see Synvar.NamedElement
+	 * @generated
+	 */
+	EClass getNamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Synvar.NamedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Synvar.NamedElement#getName()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EAttribute getNamedElement_Name();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.LanguageProductLine <em>Language Product Line</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Language Product Line</em>'.
+	 * @see Synvar.LanguageProductLine
+	 * @generated
+	 */
+	EClass getLanguageProductLine();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Synvar.LanguageProductLine#getImplementationFile <em>Implementation File</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Implementation File</em>'.
+	 * @see Synvar.LanguageProductLine#getImplementationFile()
+	 * @see #getLanguageProductLine()
+	 * @generated
+	 */
+	EAttribute getLanguageProductLine_ImplementationFile();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link Synvar.LanguageProductLine#getProductLineVariability <em>Product Line Variability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Product Line Variability</em>'.
+	 * @see Synvar.LanguageProductLine#getProductLineVariability()
+	 * @see #getLanguageProductLine()
+	 * @generated
+	 */
+	EReference getLanguageProductLine_ProductLineVariability();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link Synvar.LanguageProductLine#getLanguageVariability <em>Language Variability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Language Variability</em>'.
+	 * @see Synvar.LanguageProductLine#getLanguageVariability()
+	 * @see #getLanguageProductLine()
+	 * @generated
+	 */
+	EReference getLanguageProductLine_LanguageVariability();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.ProductLineVariability <em>Product Line Variability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Product Line Variability</em>'.
+	 * @see Synvar.ProductLineVariability
+	 * @generated
+	 */
+	EClass getProductLineVariability();
+
+	/**
+	 * Returns the meta object for the reference '{@link Synvar.ProductLineVariability#getRootFeature <em>Root Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Root Feature</em>'.
+	 * @see Synvar.ProductLineVariability#getRootFeature()
+	 * @see #getProductLineVariability()
+	 * @generated
+	 */
+	EReference getProductLineVariability_RootFeature();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Synvar.ProductLineVariability#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Features</em>'.
+	 * @see Synvar.ProductLineVariability#getFeatures()
+	 * @see #getProductLineVariability()
+	 * @generated
+	 */
+	EReference getProductLineVariability_Features();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.LanguageFeature <em>Language Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Language Feature</em>'.
+	 * @see Synvar.LanguageFeature
+	 * @generated
+	 */
+	EClass getLanguageFeature();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Synvar.LanguageFeature#isAbstract <em>Abstract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Abstract</em>'.
+	 * @see Synvar.LanguageFeature#isAbstract()
+	 * @see #getLanguageFeature()
+	 * @generated
+	 */
+	EAttribute getLanguageFeature_Abstract();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Synvar.LanguageFeature#getModule <em>Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Module</em>'.
+	 * @see Synvar.LanguageFeature#getModule()
+	 * @see #getLanguageFeature()
+	 * @generated
+	 */
+	EAttribute getLanguageFeature_Module();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Synvar.LanguageFeature#getDepends <em>Depends</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Depends</em>'.
+	 * @see Synvar.LanguageFeature#getDepends()
+	 * @see #getLanguageFeature()
+	 * @generated
+	 */
+	EReference getLanguageFeature_Depends();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Synvar.LanguageFeature#getExcludes <em>Excludes</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Excludes</em>'.
+	 * @see Synvar.LanguageFeature#getExcludes()
+	 * @see #getLanguageFeature()
+	 * @generated
+	 */
+	EReference getLanguageFeature_Excludes();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.Relation <em>Relation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Relation</em>'.
+	 * @see Synvar.Relation
+	 * @generated
+	 */
+	EClass getRelation();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.MandatoryChild <em>Mandatory Child</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mandatory Child</em>'.
+	 * @see Synvar.MandatoryChild
+	 * @generated
+	 */
+	EClass getMandatoryChild();
+
+	/**
+	 * Returns the meta object for the reference '{@link Synvar.MandatoryChild#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Feature</em>'.
+	 * @see Synvar.MandatoryChild#getFeature()
+	 * @see #getMandatoryChild()
+	 * @generated
+	 */
+	EReference getMandatoryChild_Feature();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.OptionalChild <em>Optional Child</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Optional Child</em>'.
+	 * @see Synvar.OptionalChild
+	 * @generated
+	 */
+	EClass getOptionalChild();
+
+	/**
+	 * Returns the meta object for the reference '{@link Synvar.OptionalChild#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Feature</em>'.
+	 * @see Synvar.OptionalChild#getFeature()
+	 * @see #getOptionalChild()
+	 * @generated
+	 */
+	EReference getOptionalChild_Feature();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.OrGroupChild <em>Or Group Child</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Or Group Child</em>'.
+	 * @see Synvar.OrGroupChild
+	 * @generated
+	 */
+	EClass getOrGroupChild();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Synvar.OrGroupChild#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Features</em>'.
+	 * @see Synvar.OrGroupChild#getFeatures()
+	 * @see #getOrGroupChild()
+	 * @generated
+	 */
+	EReference getOrGroupChild_Features();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.AlternativeGroup <em>Alternative Group</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Alternative Group</em>'.
+	 * @see Synvar.AlternativeGroup
+	 * @generated
+	 */
+	EClass getAlternativeGroup();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Synvar.AlternativeGroup#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Features</em>'.
+	 * @see Synvar.AlternativeGroup#getFeatures()
+	 * @see #getAlternativeGroup()
+	 * @generated
+	 */
+	EReference getAlternativeGroup_Features();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.LanguageVariability <em>Language Variability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Language Variability</em>'.
+	 * @see Synvar.LanguageVariability
+	 * @generated
+	 */
+	EClass getLanguageVariability();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Synvar.LanguageVariability#getVariabilityPoints <em>Variability Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Variability Points</em>'.
+	 * @see Synvar.LanguageVariability#getVariabilityPoints()
+	 * @see #getLanguageVariability()
+	 * @generated
+	 */
+	EReference getLanguageVariability_VariabilityPoints();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.VariabilityPoint <em>Variability Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variability Point</em>'.
+	 * @see Synvar.VariabilityPoint
+	 * @generated
+	 */
+	EClass getVariabilityPoint();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Synvar.VariabilityPoint#getVariations <em>Variations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Variations</em>'.
+	 * @see Synvar.VariabilityPoint#getVariations()
+	 * @see #getVariabilityPoint()
+	 * @generated
+	 */
+	EReference getVariabilityPoint_Variations();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Synvar.VariabilityPoint#getInvolvedFeatures <em>Involved Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Involved Features</em>'.
+	 * @see Synvar.VariabilityPoint#getInvolvedFeatures()
+	 * @see #getVariabilityPoint()
+	 * @generated
+	 */
+	EReference getVariabilityPoint_InvolvedFeatures();
+
+	/**
+	 * Returns the meta object for class '{@link Synvar.Variation <em>Variation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variation</em>'.
+	 * @see Synvar.Variation
+	 * @generated
+	 */
+	EClass getVariation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Synvar.Variation#getModule <em>Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Module</em>'.
+	 * @see Synvar.Variation#getModule()
+	 * @see #getVariation()
+	 * @generated
+	 */
+	EAttribute getVariation_Module();
+
+	/**
+	 * Returns the factory that creates the instances of the model.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the factory that creates the instances of the model.
+	 * @generated
+	 */
+	SynvarFactory getSynvarFactory();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * Defines literals for the meta objects that represent
+	 * <ul>
+	 *   <li>each class,</li>
+	 *   <li>each feature of each class,</li>
+	 *   <li>each operation of each class,</li>
+	 *   <li>each enum,</li>
+	 *   <li>and each data type</li>
+	 * </ul>
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	interface Literals {
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.NamedElementImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getNamedElement()
+		 * @generated
+		 */
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.LanguageProductLineImpl <em>Language Product Line</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.LanguageProductLineImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getLanguageProductLine()
+		 * @generated
+		 */
+		EClass LANGUAGE_PRODUCT_LINE = eINSTANCE.getLanguageProductLine();
+
+		/**
+		 * The meta object literal for the '<em><b>Implementation File</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_PRODUCT_LINE__IMPLEMENTATION_FILE = eINSTANCE.getLanguageProductLine_ImplementationFile();
+
+		/**
+		 * The meta object literal for the '<em><b>Product Line Variability</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_PRODUCT_LINE__PRODUCT_LINE_VARIABILITY = eINSTANCE.getLanguageProductLine_ProductLineVariability();
+
+		/**
+		 * The meta object literal for the '<em><b>Language Variability</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_PRODUCT_LINE__LANGUAGE_VARIABILITY = eINSTANCE.getLanguageProductLine_LanguageVariability();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.ProductLineVariabilityImpl <em>Product Line Variability</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.ProductLineVariabilityImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getProductLineVariability()
+		 * @generated
+		 */
+		EClass PRODUCT_LINE_VARIABILITY = eINSTANCE.getProductLineVariability();
+
+		/**
+		 * The meta object literal for the '<em><b>Root Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT_LINE_VARIABILITY__ROOT_FEATURE = eINSTANCE.getProductLineVariability_RootFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Features</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PRODUCT_LINE_VARIABILITY__FEATURES = eINSTANCE.getProductLineVariability_Features();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.LanguageFeatureImpl <em>Language Feature</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.LanguageFeatureImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getLanguageFeature()
+		 * @generated
+		 */
+		EClass LANGUAGE_FEATURE = eINSTANCE.getLanguageFeature();
+
+		/**
+		 * The meta object literal for the '<em><b>Abstract</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_FEATURE__ABSTRACT = eINSTANCE.getLanguageFeature_Abstract();
+
+		/**
+		 * The meta object literal for the '<em><b>Module</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_FEATURE__MODULE = eINSTANCE.getLanguageFeature_Module();
+
+		/**
+		 * The meta object literal for the '<em><b>Depends</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_FEATURE__DEPENDS = eINSTANCE.getLanguageFeature_Depends();
+
+		/**
+		 * The meta object literal for the '<em><b>Excludes</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_FEATURE__EXCLUDES = eINSTANCE.getLanguageFeature_Excludes();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.RelationImpl <em>Relation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.RelationImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getRelation()
+		 * @generated
+		 */
+		EClass RELATION = eINSTANCE.getRelation();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.MandatoryChildImpl <em>Mandatory Child</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.MandatoryChildImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getMandatoryChild()
+		 * @generated
+		 */
+		EClass MANDATORY_CHILD = eINSTANCE.getMandatoryChild();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MANDATORY_CHILD__FEATURE = eINSTANCE.getMandatoryChild_Feature();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.OptionalChildImpl <em>Optional Child</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.OptionalChildImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getOptionalChild()
+		 * @generated
+		 */
+		EClass OPTIONAL_CHILD = eINSTANCE.getOptionalChild();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPTIONAL_CHILD__FEATURE = eINSTANCE.getOptionalChild_Feature();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.OrGroupChildImpl <em>Or Group Child</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.OrGroupChildImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getOrGroupChild()
+		 * @generated
+		 */
+		EClass OR_GROUP_CHILD = eINSTANCE.getOrGroupChild();
+
+		/**
+		 * The meta object literal for the '<em><b>Features</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OR_GROUP_CHILD__FEATURES = eINSTANCE.getOrGroupChild_Features();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.AlternativeGroupImpl <em>Alternative Group</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.AlternativeGroupImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getAlternativeGroup()
+		 * @generated
+		 */
+		EClass ALTERNATIVE_GROUP = eINSTANCE.getAlternativeGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Features</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ALTERNATIVE_GROUP__FEATURES = eINSTANCE.getAlternativeGroup_Features();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.LanguageVariabilityImpl <em>Language Variability</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.LanguageVariabilityImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getLanguageVariability()
+		 * @generated
+		 */
+		EClass LANGUAGE_VARIABILITY = eINSTANCE.getLanguageVariability();
+
+		/**
+		 * The meta object literal for the '<em><b>Variability Points</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_VARIABILITY__VARIABILITY_POINTS = eINSTANCE.getLanguageVariability_VariabilityPoints();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.VariabilityPointImpl <em>Variability Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.VariabilityPointImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getVariabilityPoint()
+		 * @generated
+		 */
+		EClass VARIABILITY_POINT = eINSTANCE.getVariabilityPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Variations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABILITY_POINT__VARIATIONS = eINSTANCE.getVariabilityPoint_Variations();
+
+		/**
+		 * The meta object literal for the '<em><b>Involved Features</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABILITY_POINT__INVOLVED_FEATURES = eINSTANCE.getVariabilityPoint_InvolvedFeatures();
+
+		/**
+		 * The meta object literal for the '{@link Synvar.impl.VariationImpl <em>Variation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Synvar.impl.VariationImpl
+		 * @see Synvar.impl.SynvarPackageImpl#getVariation()
+		 * @generated
+		 */
+		EClass VARIATION = eINSTANCE.getVariation();
+
+		/**
+		 * The meta object literal for the '<em><b>Module</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIATION__MODULE = eINSTANCE.getVariation_Module();
+
+	}
+
+} //SynvarPackage

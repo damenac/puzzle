@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.synvar.metamodel/src"
+    modelPluginID="fr.inria.diverse.puzzle.synvar.metamodel" modelName="Synvar" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Synvar.ecore</foreignModel>
+  <genPackages prefix="Synvar" disposableProviderFactory="true" ecorePackage="Synvar.ecore#/">
+    <genClasses ecoreClass="Synvar.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synvar.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//LanguageProductLine">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synvar.ecore#//LanguageProductLine/implementationFile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synvar.ecore#//LanguageProductLine/productLineVariability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synvar.ecore#//LanguageProductLine/languageVariability"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//ProductLineVariability">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//ProductLineVariability/rootFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synvar.ecore#//ProductLineVariability/features"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//LanguageFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synvar.ecore#//LanguageFeature/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synvar.ecore#//LanguageFeature/module"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//LanguageFeature/depends"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//LanguageFeature/excludes"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Synvar.ecore#//Relation"/>
+    <genClasses ecoreClass="Synvar.ecore#//MandatoryChild">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//MandatoryChild/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//OptionalChild">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//OptionalChild/feature"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//OrGroupChild">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//OrGroupChild/features"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//AlternativeGroup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//AlternativeGroup/features"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//LanguageVariability">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synvar.ecore#//LanguageVariability/variabilityPoints"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//VariabilityPoint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synvar.ecore#//VariabilityPoint/variations"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synvar.ecore#//VariabilityPoint/involvedFeatures"/>
+    </genClasses>
+    <genClasses ecoreClass="Synvar.ecore#//Variation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synvar.ecore#//Variation/module"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

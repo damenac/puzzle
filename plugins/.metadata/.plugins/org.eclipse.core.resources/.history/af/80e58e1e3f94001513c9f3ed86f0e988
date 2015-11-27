@@ -1,0 +1,24 @@
+grammar fr.inria.diverse.puzzle.adl.Language with org.eclipse.xtext.xbase.Xbase
+
+generate language "http://www.inria.fr/diverse/puzzle/adl/Language"
+
+PuzzleComposition:
+	importSection = XImportSection?
+	(composition = CompositeLanguage);
+
+CompositeLanguage returns CompositeLanguage:
+	{CompositeLanguage}
+	'composite' name = [EString]
+	'{'
+		(links+=Connector (links+=Connector)*)?
+	'}';
+
+Connector returns Connector:
+	AggregationConnector;
+
+AggregationConnector returns AggregationConnector:
+	'connector'
+	'('
+		left=[EString] ','
+		right=[EString] 
+	')';

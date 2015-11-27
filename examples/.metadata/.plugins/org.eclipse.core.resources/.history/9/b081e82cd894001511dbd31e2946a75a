@@ -1,0 +1,28 @@
+package fsm
+
+language CoreFSM {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.fsm.core/models/fsmcore.ecore"
+	
+	exactType CoreFSMMT 
+}
+
+language CoreFSMRTC inherits CoreFSM{
+	with FSM.rtc.StateMachineAspect 
+	with FSM.rtc.RegionAspect 
+	with FSM.rtc.StateAspect
+	with FSM.rtc.TransitionAspect
+	with FSM.rtc.TriggerAspect
+	with FSM.rtc.FinalStateAspect
+}
+
+/**
+ * Transition effect: Contains the concept 'Effect' that enables effects in the transitions
+ */
+language TransitionEffect {
+	syntax "platform:/resource/fr.inria.diverse.examples.fsm.transition.effect/models/TransitionEffect.ecore"
+	
+	with transitioneffects.parallel.TransitionAspect
+	
+	exactType TransitionEffectMT
+}

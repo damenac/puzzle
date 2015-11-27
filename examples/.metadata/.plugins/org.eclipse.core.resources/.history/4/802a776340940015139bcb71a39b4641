@@ -1,0 +1,7 @@
+import 'fsmFamily.melange'
+
+composite UML {
+	
+	connector(UML, Rhapsody)
+	
+}

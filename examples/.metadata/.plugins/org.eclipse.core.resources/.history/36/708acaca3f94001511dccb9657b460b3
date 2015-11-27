@@ -1,0 +1,4 @@
+
+composite UML {
+	connector(UML, Rhapsody)
+}

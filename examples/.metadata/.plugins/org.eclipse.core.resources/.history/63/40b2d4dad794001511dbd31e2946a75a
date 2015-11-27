@@ -1,0 +1,25 @@
+import 'fsmFamily.melange'
+
+feature StateMachines {
+	implementation CoreFSM
+}
+
+abstract feature TransitionsDef parent StateMachines {}
+
+feature Effect parent TransitionsDef {
+	implementation TransitionEffect
+}
+
+feature Trigger parent TransitionsDef {
+	implementation SimpleTrigger
+}
+
+feature AndTrigger parent Trigger{
+	implementation AndTrigger
+}
+
+feature OrTrigger parent Trigger {
+	implementation OrTrigger
+}
+
+root : StateMachines

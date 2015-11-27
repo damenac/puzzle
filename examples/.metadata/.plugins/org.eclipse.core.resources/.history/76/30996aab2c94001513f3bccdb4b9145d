@@ -1,0 +1,5 @@
+import family
+
+composite{
+	connector(UML, Rhapsody)
+}

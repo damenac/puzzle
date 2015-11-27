@@ -12,10 +12,10 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/dmendeza/workspaces/puzzle/examples"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/fr.inria.diverse.module.ConstraintModule.syntax"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/fr.inria.diverse.examples.fsm.core.aspects.simulteneous"/>
 			<item value="/Users/dmendeza/workspaces/melange/examples/puzzle/fr.inria.diverse.k3.sle.examples.expressions.aspects"/>
-			<item value="/Users/dmendeza/workspaces/puzzle/examples"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
@@ -26,7 +26,7 @@
 		<item value="1" key="ResourceViewer.STORE_SORT_TYPE"/>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.pde.ui.NewProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.ui.wizards.new.project" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.ui.Basic"/>
 			<item value="org.eclipse.team.cvs.ui.newWizards"/>

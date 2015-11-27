@@ -1,0 +1,57 @@
+/**
+ */
+package Synvar;
+
+import org.eclipse.emf.common.util.EList;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Variability Point</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link Synvar.VariabilityPoint#getVariations <em>Variations</em>}</li>
+ *   <li>{@link Synvar.VariabilityPoint#getInvolvedFeatures <em>Involved Features</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see Synvar.SynvarPackage#getVariabilityPoint()
+ * @model
+ * @generated
+ */
+public interface VariabilityPoint extends NamedElement {
+	/**
+	 * Returns the value of the '<em><b>Variations</b></em>' containment reference list.
+	 * The list contents are of type {@link Synvar.Variation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variations</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variations</em>' containment reference list.
+	 * @see Synvar.SynvarPackage#getVariabilityPoint_Variations()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<Variation> getVariations();
+
+	/**
+	 * Returns the value of the '<em><b>Involved Features</b></em>' reference list.
+	 * The list contents are of type {@link Synvar.LanguageFeature}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Involved Features</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Involved Features</em>' reference list.
+	 * @see Synvar.SynvarPackage#getVariabilityPoint_InvolvedFeatures()
+	 * @model
+	 * @generated
+	 */
+	EList<LanguageFeature> getInvolvedFeatures();
+
+} // VariabilityPoint

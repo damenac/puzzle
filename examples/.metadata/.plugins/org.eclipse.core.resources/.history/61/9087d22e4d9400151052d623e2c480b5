@@ -1,0 +1,14 @@
+package fsm
+
+language CoreFSM { 
+	ecore "platform:/resource/fr.inria.diverse.examples.fsm.core/models/fsmcore.ecore"
+	exactType CoreFSMMT 
+	
+	// Variation # 1: Run-To-Completion
+	with FSM.rtc.StateMachineAspect 
+	with FSM.rtc.RegionAspect 
+	with FSM.rtc.StateAspect
+	with FSM.rtc.TransitionAspect
+	with FSM.rtc.TriggerAspect
+	with FSM.rtc.FinalStateAspect
+}

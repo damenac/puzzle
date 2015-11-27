@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.RandomNumber"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.CommonalitiesDetector"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ModelUtils"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Metamodel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.MelangeFactory"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.IndexPackage"/>
@@ -51,7 +50,6 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.command.MetaclassAspectMapping"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.command.AspectLanguageMapping"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.AspectLanguageMapping"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Metamodel"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
 </qualifiedTypeNameHistroy>

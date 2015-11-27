@@ -1,0 +1,31 @@
+import 'fsmFamily.melange'
+
+features{
+	
+	root StateMachines
+	
+	languagefeature StateMachines {
+		languagemodule CoreFSMRTC
+	}
+
+	abstract languagefeature TransitionsDef parent StateMachines {}
+	
+	languagefeature Effect parent TransitionsDef {
+		languagemodule TransitionEffect
+	}
+	
+	languagefeature Trigger parent TransitionsDef {
+		languagemodule SimpleTrigger
+	}
+	
+	languagefeature AndTrigger parent Trigger{
+		languagemodule AndTrigger
+	}
+	
+	languagefeature OrTrigger parent Trigger {
+		languagemodule OrTrigger
+	}
+	
+	
+}
+

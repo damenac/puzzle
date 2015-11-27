@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.inria.diverse.puzzle.mutivar.language.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.inria.diverse.puzzle.mutivar.language.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: fr.inria.diverse.puzzle.mutivar.language;visibility:=reexport,
+ org.eclipse.xtext.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.ui,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtext.common.types.ui,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.compare
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.inria.diverse.puzzle.ui.quickfix,
+ fr.inria.diverse.puzzle.ui.contentassist,
+ fr.inria.diverse.puzzle.ui.internal,
+ fr.inria.diverse.puzzle.ui.contentassist.antlr
+Bundle-Activator: fr.inria.diverse.puzzle.ui.internal.MutivarActivator

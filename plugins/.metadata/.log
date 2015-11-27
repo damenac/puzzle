@@ -9035,3 +9035,97 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.
 
 !ENTRY org.eclipse.core.net 1 0 2015-11-24 23:57:07.173
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2015-11-26 10:45:21.384 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-26 10:46:23.394
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 4 0 2015-11-26 11:10:31.780
+!MESSAGE org.eclipse.xtext.xtext.XtextLinker  - metamodelDecl: null / name: EString
+
+!STACK 0
+java.lang.NullPointerException: metamodelDecl: null / name: EString
+	at org.eclipse.xtext.xtext.ecoreInference.EClassifierInfos.getKey(EClassifierInfos.java:80)
+	at org.eclipse.xtext.xtext.ecoreInference.EClassifierInfos.getInfo(EClassifierInfos.java:114)
+	at org.eclipse.xtext.xtext.ecoreInference.EClassifierInfos.getInfo(EClassifierInfos.java:87)
+	at org.eclipse.xtext.xtext.ecoreInference.TypeHierarchyHelper.reportError(TypeHierarchyHelper.java:274)
+	at org.eclipse.xtext.xtext.ecoreInference.TypeHierarchyHelper.collectTypeData(TypeHierarchyHelper.java:62)
+	at org.eclipse.xtext.xtext.ecoreInference.TypeHierarchyHelper.<init>(TypeHierarchyHelper.java:46)
+	at org.eclipse.xtext.xtext.ecoreInference.Xtext2EcoreTransformer.normalizeAndValidateGeneratedPackages(Xtext2EcoreTransformer.java:605)
+	at org.eclipse.xtext.xtext.ecoreInference.Xtext2EcoreTransformer.transform(Xtext2EcoreTransformer.java:152)
+	at org.eclipse.xtext.xtext.XtextLinker.linkModel(XtextLinker.java:231)
+	at org.eclipse.xtext.resource.XtextResource.doLinking(XtextResource.java:308)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.doLinking(LazyLinkingResource.java:108)
+	at org.eclipse.xtext.xtext.GrammarResource.superDoLinking(GrammarResource.java:42)
+	at org.eclipse.xtext.xtext.GrammarResource$LinkingTrigger.installDerivedState(GrammarResource.java:76)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.installDerivedState(DerivedStateAwareResource.java:240)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.getContents(DerivedStateAwareResource.java:97)
+	at org.eclipse.emf.ecore.util.EcoreUtil.getAllContents(EcoreUtil.java:1176)
+	at org.eclipse.xtext.linking.lazy.LazyLinkingResource.resolveLazyCrossReferences(LazyLinkingResource.java:126)
+	at org.eclipse.xtext.EcoreUtil2.resolveLazyCrossReferences(EcoreUtil2.java:528)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.postParse(XtextDocumentReconcileStrategy.java:175)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.doReconcile(XtextDocumentReconcileStrategy.java:153)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.reconcile(XtextDocumentReconcileStrategy.java:67)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.doRun(XtextReconciler.java:442)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.access$3(XtextReconciler.java:422)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener$1.exec(XtextReconciler.java:133)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener$1.exec(XtextReconciler.java:1)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.modify(XtextDocument.java:428)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.process(XtextDocument.java:337)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$DocumentListener.performNecessaryUpdates(XtextReconciler.java:130)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.updateContentBeforeRead(XtextDocument.java:249)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:518)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.readOnly(XtextDocument.java:492)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.readOnly(XtextDocument.java:133)
+	at org.eclipse.xtext.ui.editor.hover.AbstractEObjectHover.getHoverRegion(AbstractEObjectHover.java:57)
+	at org.eclipse.xtext.ui.editor.hover.AbstractCompositeHover.getHoverRegion(AbstractCompositeHover.java:64)
+	at org.eclipse.jface.text.TextViewerHoverManager.computeInformation(TextViewerHoverManager.java:140)
+	at org.eclipse.jface.text.AbstractInformationControlManager.doShowInformation(AbstractInformationControlManager.java:1131)
+	at org.eclipse.jface.text.AbstractHoverInformationControlManager$MouseTracker.mouseHover(AbstractHoverInformationControlManager.java:519)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:208)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4199)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1467)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1490)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1475)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:1279)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4042)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3669)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$9.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1032)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:148)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:636)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:579)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:135)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SESSION 2015-11-27 08:18:31.674 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-11-27 08:18:39.315
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

@@ -1,0 +1,22 @@
+grammar fr.inria.diverse.puzzle.adl.Language with org.eclipse.xtext.common.Terminals
+
+import "http://www.inria.fr/diverse/melange" as melange
+
+generate language "http://www.inria.fr/diverse/puzzle/adl/Language"
+
+CompositeLanguage returns CompositeLanguage:
+	{CompositeLanguage}
+	'composite'
+	'{'
+		(links+=CompositionLink (links+=CompositionLink)*)?
+	'}';
+
+CompositionLink returns CompositionLink:
+	AggregationLink;
+
+AggregationLink returns AggregationLink:
+	'link'
+	'('
+		left=[melange::Language] ','
+		right=[melange::Language] 
+	')';

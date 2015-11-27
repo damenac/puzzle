@@ -1,7 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsm.State = fsmrhapsodyaspects.StateAspect
-	fsm.FinalState = fsmrhapsodyaspects.FinalStateAspect
-	fsm.Statement = fsmrhapsodyaspects.StatementAspect
-	fsm.Constraint = fsmrhapsodyaspects.ConstraintAspect
-	fsm.StateMachine = fsmrhapsodyaspects.StateMachineAspect
-	fsm.Region = fsmrhapsodyaspects.RegionAspect

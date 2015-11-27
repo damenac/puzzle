@@ -1,0 +1,157 @@
+var pieDataSyntacticCommonality = [{
+        value: 17,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 6,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particularities"
+    }
+];
+
+var pieDataSemanticCommonality = [{
+        value: 29,
+        color:"#FAAC58",
+        highlight: "#F7BE81",
+        label: "Commonalities"
+    },
+    {
+        value: 27,
+        color:"#F5F6CE",
+        highlight: "#FBFBEF",
+        label: "Particularities"
+    }
+];
+
+var barProductRelatedReusability = {
+   labels : ["UML","Rhapsody","Harel"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [85.0,94.44444444444444,77.27272727272727]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [34.93975903614458,39.726027397260275,33.33333333333333]
+      }
+    ]
+};
+var barIndividualizationRatio = {
+   labels : ["UML","Rhapsody","Harel"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [95.0,100.0,90.9090909090909]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0,0.0]
+      }
+    ]
+};
+var barRelationshipRatioUML = {
+   labels : ["Rhapsody","Harel"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [80.95238095238095,82.6086956521739]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0]
+      }
+    ]
+};
+var barRelationshipRatioRhapsody = {
+   labels : ["UML","Harel"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [80.95238095238095,81.81818181818183]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0]
+      }
+    ]
+};
+var barRelationshipRatioHarel = {
+   labels : ["UML","Rhapsody"],
+   datasets : [
+     {
+        fillColor : "rgba(220,220,220,0.5)",
+        strokeColor : "rgba(220,220,220,0.8)",
+        highlightFill: "rgba(220,220,220,0.75)",
+        highlightStroke: "rgba(220,220,220,1)",
+        data : [82.6086956521739,81.81818181818183]
+      },
+      {
+        fillColor : "rgba(151,187,205,0.5)",
+        strokeColor : "rgba(151,187,205,0.8)",
+        highlightFill : "rgba(151,187,205,0.75)",
+        highlightStroke : "rgba(151,187,205,1)",
+        data : [0.0,0.0]
+      }
+    ]
+};
+
+window.onload = function(){
+    var ctxSyntacticCommonalities = document.getElementById("chart-syntactic-commonalities").getContext("2d");
+    window.myPieSyntacticCommonalities = new Chart(ctxSyntacticCommonalities).Pie(pieDataSyntacticCommonality);
+
+    var ctxSemanticCommonalities = document.getElementById("chart-semantic-commonalities").getContext("2d");
+    window.myPieSemanticCommonalities = new Chart(ctxSemanticCommonalities).Pie(pieDataSemanticCommonality);
+
+    var ctxProductRelatedReusability = document.getElementById("pie-product-reusability").getContext("2d");
+    window.myBarProductReusability = new Chart(ctxProductRelatedReusability).Bar(barProductRelatedReusability, {
+       responsive : false
+    });
+
+    var ctxIndividualizationRatio = document.getElementById("pie-individualization-ratio").getContext("2d");
+    window.window.myBarIndividualizationRatio = new Chart(ctxIndividualizationRatio).Bar(barIndividualizationRatio, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatioUML = document.getElementById("pie-relationship-ratio-UML").getContext("2d");
+    window.window.window.myBarRelationshipRatioUML = new Chart(ctxRelationshipRatioUML).Bar(barRelationshipRatioUML, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatioRhapsody = document.getElementById("pie-relationship-ratio-Rhapsody").getContext("2d");
+    window.window.window.myBarRelationshipRatioRhapsody = new Chart(ctxRelationshipRatioRhapsody).Bar(barRelationshipRatioRhapsody, {
+       responsive : false
+    });
+
+    var ctxRelationshipRatioHarel = document.getElementById("pie-relationship-ratio-Harel").getContext("2d");
+    window.window.window.myBarRelationshipRatioHarel = new Chart(ctxRelationshipRatioHarel).Bar(barRelationshipRatioHarel, {
+       responsive : false
+    });
+
+};

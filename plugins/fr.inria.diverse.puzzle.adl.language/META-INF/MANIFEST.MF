@@ -1,0 +1,35 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.inria.diverse.puzzle.adl.language
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: fr.inria.diverse.puzzle.adl.language; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext;visibility:=reexport,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ fr.inria.diverse.melange;bundle-version="0.1.0",
+ fr.inria.diverse.melange.metamodel;bundle-version="0.1.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.common,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.common.types,
+ org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
+ org.eclipse.xtext.xbase
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: fr.inria.diverse.puzzle.adl,
+ fr.inria.diverse.puzzle.adl.services,
+ fr.inria.diverse.puzzle.adl.language,
+ fr.inria.diverse.puzzle.adl.language.impl,
+ fr.inria.diverse.puzzle.adl.language.util,
+ fr.inria.diverse.puzzle.adl.serializer,
+ fr.inria.diverse.puzzle.adl.parser.antlr,
+ fr.inria.diverse.puzzle.adl.parser.antlr.internal,
+ fr.inria.diverse.puzzle.adl.validation,
+ fr.inria.diverse.puzzle.adl.scoping,
+ fr.inria.diverse.puzzle.adl.generator,
+ fr.inria.diverse.puzzle.adl.formatting,
+ fr.inria.diverse.puzzle.adl.jvmmodel
+

@@ -1,0 +1,9 @@
+grammar fr.inria.diverse.puzzle.adl.Language with org.eclipse.xtext.common.Terminals
+
+generate language "http://www.inria.fr/diverse/puzzle/adl/Language"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

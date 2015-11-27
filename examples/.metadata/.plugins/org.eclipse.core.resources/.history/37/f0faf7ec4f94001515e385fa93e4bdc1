@@ -1,0 +1,13 @@
+import 'fsmFamily.melange'
+
+feature StateMachines {
+	implementation CoreFSM
+}
+
+abstract feature TransitionsDef parent StateMachines {}
+
+feature Effect parent TransitionsDef {
+	implementation Effect
+}
+
+root : StateMachines
