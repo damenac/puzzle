@@ -37,6 +37,7 @@ public class SyntacticDeepVennDiagram implements SpecialFamilySyntacticChart {
 				membersSizeTable.put(conceptMemberVO.getMemberName(), currentValue + 1);
 			}
 		}
+		
 		ArrayList<IndexPackage> indexes = new ArrayList<IndexPackage>();
 		String answer = "var syntacticDeepVennData = [";
 		for (int i = 0; i < languages.size(); i++) {
@@ -52,6 +53,7 @@ public class SyntacticDeepVennDiagram implements SpecialFamilySyntacticChart {
 			int commonalitySize = 0;
 			try {
 				commonalitySize = FamiliesServices.getIntersection(pair, comparisonOperator).size();
+				System.out.println("intersection: " + pair + " -> " + FamiliesServices.getIntersection(pair, comparisonOperator));
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -111,7 +113,8 @@ public class SyntacticDeepVennDiagram implements SpecialFamilySyntacticChart {
 			for (int j = 0; j < ePackages.size(); j++) {
 				if(i!=j){
 					EPackage ePackageJ = ePackages.get(j);
-					matrix[i][j] = FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator).size();
+					ArrayList<String> inter = FamiliesServices.getIntersection(ePackageI, ePackageJ, comparisonOperator);
+					matrix[i][j] = inter.size();
 				}
 			}
 		}

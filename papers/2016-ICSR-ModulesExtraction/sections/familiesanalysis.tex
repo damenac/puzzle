@@ -1,19 +1,23 @@
 \section{Proposed approach}
 \label{sec:apprach}
 
-Given a set of existing DSLs  our approach is intended to identify a catalog of reusable language modules from a given set of DSLs (that we refer to as the \textit{input set}). To this end, our approach is threefold (see Figure \ref{fig:breakingdown}). \textbf{First}, we identify commonalities existing in a given set of DSLs. Those commonalities are structured as the form of Venn diagrams containing syntax and semantic overlapping. \textbf{Second}, we break-down the Venn diagrams by separating all the intersections; for each different intersection, we create a language module by considering not only syntax but also semantics. \textbf{Third}, we encapsulate those language modules and we establish the dependencies among them by means of interfaces. The reminder of this section is dedicated to deeply explain our approach. 
+Our objective is to extract a catalog of reusable language modules from a given set of DSLs (that we refer to as the \textit{input set}). To this end, we propose an approach based on the aforementioned notions of overlapping and potential reuse. Concretely, in our approach we first identify syntactic and semantic overlapping among the DSLs of the input set. Then, we cut such overlapping in order to break-down the DSLs in reusable language modules. Those language modules are encapsulated in such a way that they can be later composed each other in order to obtain complete DSLs. The overall strategy is illustrated in Figure \ref{fig:breakingdown}. This section is dedicated to explain it in detail.
 
 \begin{figure}
 \centering
 \includegraphics[width=1\linewidth]{images/breakdown.pdf}
-\caption{Breaking down the input set by separating overlapping}
+\caption{Breaking down the input set by cutting overlapping}
 \label{fig:breakingdown}
 \end{figure}
 
-\subsection{Identifying overlapping}
-\label{sec:metrics}
-\todo[inline]{Donde esta el algoritmo?? parece que cuentas de nuevo lo de arriba. Toca hablar de como comparas los lenguages y generas el grafo para despues partirlo. Parece naive una cosa que no lo es. Se que lo haces por que eres buen profe, pero aqui hay que sacar pecho de lo super-mega-dificil que es.}
-Our algorithm for identifying \textbf{syntactic overlapping} can be described as by the function that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the overlapping (i.e., metaclasses that are \textit{equal}) among these metamodels. Note that there can be overlapping among any of the combinations of the input set. Hence, in the result there is a tuple for each of the possible combinations of the input metamodels (i.e., the power set). Similarly, our algorithm for detecting \textbf{semantic overlapping} can be described as a function that receives a set of aspects (one for each DSL of the input set) and returns a set of tuples containing all the overlapping (i.e., domain-specific actions that are \textit{equal}) among these aspects.
+\subsection{Identifying overlapping: \textit{match} and \textit{merge}}
+\label{sec:identifyingoverlapping}
+
+Our strategy to identify \textbf{syntactic overlapping} is based on the fact that a metamodel can be viewed as a direct graph where nodes represent metaclasses and arcs represent references between metaclasses. Since each DSL of the input set has a metamodel, we can represent each DSL as a directed graph. The objective now is to detect replicated nodes and organize them in the form of a Venn diagram as illustrated in the two first steps shown in Figure \ref{fig:breakingdown}.
+
+To this end we execute a twofold algorithm. First, we perform a matching process that receives a set of metamodels (one for each DSL of the input set) and returns a set of tuples containing all the overlapping (i.e., metaclasses that are \textit{equal}) among these metamodels. Second, we merge the matched metaclasses in order to create the intersections as actual common metaclasses shared by the DSLs in the input set. For each metaclass, we store the information about what are the DSLs that use it. Note that the merging process can be viewed as a mechanism to remove repeated metaclasses.
+
+Once the metaclasses are merged, we analyze the corresponding domain specific actions. Particularly, we check if the domain-specific actions associated to the matching metaclasses are equal as well. If so, we also have \textbf{semantic overlapping} and the merging process is extended also to the domain-specific actions. Otherwise, we create different clusters of domain-specific actions, one for each meta-class, thus establishing a \textbf{semantic variation point}. In other words, we create two different implementations of the semantics of the same metaclass that can be chosen at composition.
 
 %\begin{equation}
 %  Venn_{syn} : set(MM) \rightarrow set(<set(MM),set(MC)>)
@@ -54,17 +58,21 @@ Our algorithm for identifying \textbf{syntactic overlapping} can be described as
 %  I_{sem}(dsas) = \bigcap _{i=0}^{|dsas|}dsas_i
 %\end{equation}
 
-It is worth noting that a syntactic overlapping is a set of metaclasses that are equal in two or more DSLs. Similarly, a semantic overlapping is a set of domain-specific actions that are equal in two or more DSLs. At this point we need to clearly define the notion of equality between metaclasses and domain-specific actions. That is, we need to establish the criteria under we consider that two metaclasses/domain-specific actions are equal.
-
+It is worth noting that detection of both syntactic and semantic overlapping relies on comparison of metaclasses and domain-specific actions respectively. At this point we need to clearly define such notion of equality that, as a matter of fact, is quite important to avoid alterations on the DSLs after the extraction of reusable language modules.
 
 \vspace{-3mm}
-\subsubsection{Comparison of metaclasses:} The name of a metaclass usually corresponds to a word that evokes the domain concept the metaclass represents. Thus, intuitively one can think that a first approach to compare meta-classes is by comparing their names. Certainly, this approach results quite useful and it is quite probable that, we can find potential reuse.
-\todo[inline]{me falta material. donde esta el fdx que representa el operador de igualdad. Explicame cuantos operadores hay, puedo tener mas? Tu solucion cuantos acepta? }
-Unfortunately, comparison of metaclasses by using only their names might have some problems. There are cases in which two meta-classes with the same name are not exactly the same since they do not represent the same domain concept or because there are domains that use similar vocabulary. In such cases, an approach that certainly helps is to compare meta-classes not only by their names but also by their attributes and references.
+\subsubsection{Comparison of metaclasses:} An operator for metaclasses comparison can be specified as follows: 
 
-%\begin{equation}
-%  \doteq~: MC \times MC \rightarrow bool
-%\end{equation}
+\begin{equation}
+  \doteq~: MC \times MC \rightarrow bool
+\end{equation}
+
+To implement such operator, one can intuitively think that a first approach to compare meta-classes is by comparing their names. Certainly, this approach results quite useful and it is quite probable that, we can find potential reuse. For example, one can expect that in a set of DSLs for finite state machines DSL, the construct \texttt{Transition} can be considered as a commonality.
+
+Unfortunately, comparison of metaclasses by using only their names might have some problems. There are cases in which two meta-classes with the same name are not exactly the same since they do not represent the same domain concept or because there are domains that use similar vocabulary. For instance, whereas in many cases the transitions of a state machine are only specified in terms of triggers and constraints, there are certain DSLs for state machines that allow to annotate transitions are annotated with time flags \cite{Graf:2007}.
+
+In such cases, reuse is not that simple and a more restrictive operator should be considered. An approach that certainly helps is to compare metaclasses not only by their names but also by their attributes and references. Although this strategy can be quite restrictive, it guarantees that the detected reuse opportunities correspond to exact code clones so they can be extracted as reusable modules without any risk of altering the behavior of the DSLs. Hence, in our approach we use the later strategy. Nevertheless, we consider that certain flexibility might be to define those operators. We provide an extensible approach where other operators (such as the surveyed in \cite{Lafi:2011}) can be easily incorporated.
+
 %\vspace{-1mm}
 %\begin{equation}
 %\begin{split}
@@ -86,16 +94,19 @@ Unfortunately, comparison of metaclasses by using only their names might have so
 %  \end{split}
 %\end{equation}
 
-Our comparison operator for metaclasses is quite restrictive. It identifies two metaclasses as a commonality if and only if their specifications are exactly the same. Hence, potential reuse is guaranteed in the sense that we are sure that there are not additional elements to consider. However, we are aware that there are other approaches to compute commonalities within metaclasses. So, at the implementation level our approach is flexible and additional comparison operators such as the surveyed in \cite{Lafi:2011} can be easily incorporated.
-\todo[inline]{toca usar el ejemplo con algunos operadores de ejemplo.}
 \vspace{-3mm}
-\subsubsection{Comparison of domain-specific actions:} Like methods in Java, domain-specific actions have a signature that specifies its contract (i.e., return type, visibility, parameters, name, and so on), and a body where the behavior is actually implemented. In that sense, the comparison of two domain-specific actions can be performed by checking if their signatures are equal. This approach is practical and also reflects potential reuse; one might think that the probability that two domain-specific actions with the same signatures are the same is elevated.
+\subsubsection{Comparison of domain-specific actions:} In turn, the operator for comparison of domain-specific actions can be specified as follows:
 
-However, during the conduction of this research we realized that there are cases in which signatures comparison is not enough. Two domain-specific actions defined in different DSLs can perform different computations even if they have the same signatures. As a result, we only guarantee potential reuse where we compare also the bodies of the domain-specific actions. Note that such comparison can be arbitrary difficult. Indeed, if we try to compare  the behavior of the actions we will have to deal with the semantic equivalence problem that, indeed, is known as be undecidable \cite{Lucanu:2013}. In this case, we a conservative approach is to compare only the structure (abstract syntax tree) body of the domain-specific action. To this end, we use the API for java code comparison proposed in \cite{Biegel:2010}.
+\begin{equation}
+  \circeq~: DSA \times DSA \rightarrow bool
+\end{equation}
 
-%\begin{equation}
-%  \circeq~: DSA \times DSA \rightarrow bool
-%\end{equation}
+Like methods in Java,domain specific actions have a signature that specifies its contract (i.e., return type, visibility, parameters, name, and so on), and a body where the behavior is actually implemented. In that sense, the implementation of a comparison operator for domain-specific actions can be performed by checking if their signatures are equal. This approach is practical and also reflects potential reuse; one might think that the probability that two domain-specific actions with the same signatures are the same is elevated.
+
+However, during the conduction of this research we realized that there are cases in which signatures comparison is not enough. Two domain-specific actions defined in different DSLs can perform different computations even if they have the same signatures. For example, we can found semantic variation points in the implementation of DSLs for state machines what means that the domain-specific actions are implemented differently although their signatures are the same. As a result, we only guarantee potential reuse where we compare also the bodies of the domain-specific actions. 
+
+Note that such comparison can be arbitrary difficult. Indeed, if we try to compare  the behavior of the actions we will have to deal with the semantic equivalence problem that, indeed, is known as be undecidable \cite{Lucanu:2013}. In this case, we a conservative approach is to compare only the structure (abstract syntax tree) body of the domain-specific action (such as proposed by Biegel et al \cite{Biegel:2010}). In our approach we use the later strategy, again, in order to guarantee that semantic overlapping correspond to exact clones.
+
 %\vspace{-1mm}
 %\begin{equation}
 %\begin{split}
@@ -128,22 +139,17 @@ However, during the conduction of this research we realized that there are cases
 
 %\vspace{-2mm}
 %\subsubsection{Visualizing semantical variability:} Note that the phenomenon of semantical variability is evident in the example presented. Where there are syntactic commonalities between DSLs Logo and FSM, there are not semantic commonalities. As an additional feature of our approach, we provide a visualization of the semantical variability phenomenon. The idea is that language designers can see what are the variations in the domain specific actions.
-\todo[inline]{Usa el ejemplo para ejemplificar}
+%\todo[inline]{Usa el ejemplo para ejemplificar}
 
-\subsection{Breaking down the input set}
+\subsection{Breaking down the input set: \textit{cut} and \textit{encapsulate}}
 
-After being identifying overlapping among the DSLs in the input set, we extract a set of reusable language modules. To this end, we adopt the idea presented by V\"oelter et al \cite[p. 60-61]{voelter:2013}; we break-down the overlapping by creating one language module for each different intersection as illustrated in Figure \ref{fig:breakingdown}. The reasoning to this solution is quite simple: by definition, an intersection is a set of language constructs that are shared by two or more DSLs. If we extract those language constructs in separated language modules, the language module can be defined once and reused by all the DSLs that require it. So, we can consider that the extracted language module is reusable. 
+After being identified overlapping among the DSLs in the input set, we extract a set of reusable language modules. To this end, we adopt the idea presented by V\"oelter et al \cite[p. 60-61]{voelter:2013}: we break-down the overlapping by creating one language module for each different intersection as illustrated in the third step of Figure \ref{fig:breakingdown}. The reasoning to this solution is quite simple: by definition, an intersection is a set of language constructs that are shared by two or more DSLs. If we extract those language constructs in separated language modules, the language module can be defined once and reused by all the DSLs that require it. So, we can consider that the extracted language module is reusable. 
 
-%In the illustrating scenario we can see that the overlapping among Logo, FSM, and Flowchart is a set of language constructs that permit to express expressions. They go well together and it makes sense to group them. Similarly, the overlapping between Flowchart and FSM is a set of constructs about constraints. Note that this example show us that it is not appropriated to put constraints and expressions in one language module. In that case, Logo would include constraints that is not necessary. 
-\todo[inline]{Usa el ejemplo para ejemplificar... no te preocupes por el espacio. Despues recortamos}
+In our approach, we implemented this separation of overlapping as a graph partitioning algorithm. The algorithm receives the graph(s) obtained from the merging process and returns a set of node clusters: one cluster for each intersection of the Venn diagram. Arcs defined between nodes in different clusters can be considered as cross-cutting dependencies between clusters. Then, we encapsulate each nodes cluster in the form of language modules. Each module contains a metamodel, a set of domain-specific actions, and a set of dependences towards other language modules. 
 
-\subsection{Encapsulating language modules}
+Dependencies between language modules are supported by means of the classical required and provided roles in components-based software development. There is a \textit{requiring module} that uses some constructs provided by a \textit{providing module}. The requiring module has a dependency relationship towards the providing one that, in the small, is materialized by the fact that some of the classes of the requiring module have references (simple references, containment references, or inheritances) to some constructs of the providing one. In order to avoid direct references between modules, we introduce the notion of interfaces for dealing with modules' dependencies. The requiring language has a \textit{required interface} whereas the providing one has the \textit{provided interface}. A required interface contains the set of constructs required by the requiring module which are supposed to be replaced by actual construct provided by other module(s) (see Figure \ref{fig:approaches-interfaces}).
 
-Once we have identified the reusable language modules, we encapsulate them in such a way that each language module contains a metamodel and a set of domain-specific actions. Besides, the dependencies among the language modules are expressed. %Accordingly, we create one metamodel for each language module that contains all the meta-classes. In turn, we create a set of aspects that contain the set of domain-specific actions associated to each metamodel.
-
-The dependencies among language modules are expressed as follows: There is a \textit{requiring module} that uses some constructs provided by a \textit{providing module}. The requiring module has a dependency relationship towards the providing one that, in the small, is materialized by the fact that some of the classes of the requiring module have references (simple references, containment references, or inheritances) to some constructs of the providing one. In order to avoid direct references between modules, we introduce the notion of interfaces for dealing with modules' dependencies. The requiring language has a \textit{required interface} whereas the providing one has the \textit{provided interface}. A required interface contains the set of constructs required by the requiring module which are supposed to be replaced by actual construct provided by other module(s) (see Figure \ref{fig:approaches-interfaces}).
-
-It is important to highlight that we use \textit{model types} \cite{Steel:2007} to express both required and provided interfaces. A module can have some references to the constructs declared in its required interface. In turn, the relationship between a module and its provided interface is \textit{implements} (deeply explained in \cite{Degueule:2015}). A module implements the functionality exposed in its model type. If the required interface is a subtype of the provided interface, then the provided interface fulfills the requirements declared in a required interface. 
+We use \textit{model types} \cite{Steel:2007} to express both required and provided interfaces. A module can have some references to the constructs declared in its required interface. In turn, the relationship between a module and its provided interface is \textit{implements} (deeply explained in \cite{Degueule:2015}). A module implements the functionality exposed in its model type. If the required interface is a subtype of the provided interface, then the provided interface fulfills the requirements declared in a required interface. 
 
 \begin{figure}
 \centering
@@ -151,7 +157,4 @@ It is important to highlight that we use \textit{model types} \cite{Steel:2007} 
 \caption{Interfaces for language modules}
 \label{fig:approaches-interfaces}
 \end{figure}
-
 \vspace{-3mm}
-\todo[inline]{Usa el ejemplo para ejemplificar... no te preocupes por el espacio. Despues recortamos... mira si esa figura puede ser mas pequenya}
-%The tool support we provide for specifying interfaces on language modules is based on annotations at the level of the abstract syntax (i.e., the metamodel). That means that the required constructs of a requiring module are declared as meta-classes in the metamodel as the same as the actual constructs of the module. However, the required constructs are annotated with \texttt{@Required} to distinguish them from the actual constructs.

@@ -1,0 +1,9 @@
+var syntacticDeepVennData = [
+            {sets:["Information"], size: 12},
+            {sets:["Things That Overlap"], size: 12},
+            {sets:["Circles"], size: 12},
+            {sets: ["Information", "Things That Overlap"], size: 4, label: "Redundancy"},
+            {sets: ["Information", "Circles"], size: 4, label: "Pie Charts", },
+            {sets: ["Things That Overlap", "Circles"], size: 4, label: "Eclipses"},
+            {sets: ["Information", "Things That Overlap", "Circles"], size: 2, label: "Venn Diagrams"}
+    ];

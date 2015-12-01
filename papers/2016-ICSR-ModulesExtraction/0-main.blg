@@ -3,46 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: 0-main.aux
 The style file: abbrv.bst
 Database file #1: 0-main.bib
-Warning--I didn't find a database entry for "Steel:2007"
 You've used 29 entries,
             2118 wiz_defined-function locations,
-            726 strings with 9900 characters,
-and the built_in function-call counts, 13104 in all, are:
-= -- 1264
-> -- 665
-< -- 30
-+ -- 248
-- -- 215
-* -- 997
-:= -- 2070
-add.period$ -- 106
+            724 strings with 9727 characters,
+and the built_in function-call counts, 12904 in all, are:
+= -- 1247
+> -- 652
+< -- 28
++ -- 243
+- -- 211
+* -- 988
+:= -- 2045
+add.period$ -- 105
 call.type$ -- 29
-change.case$ -- 176
+change.case$ -- 175
 chr.to.int$ -- 0
 cite$ -- 29
-duplicate$ -- 544
-empty$ -- 1009
-format.name$ -- 215
-if$ -- 2889
+duplicate$ -- 530
+empty$ -- 995
+format.name$ -- 211
+if$ -- 2834
 int.to.chr$ -- 0
 int.to.str$ -- 29
 missing$ -- 30
 newline$ -- 148
-num.names$ -- 86
-pop$ -- 204
+num.names$ -- 84
+pop$ -- 199
 preamble$ -- 1
-purify$ -- 148
+purify$ -- 147
 quote$ -- 0
-skip$ -- 377
+skip$ -- 366
 stack$ -- 0
-substring$ -- 750
-swap$ -- 192
-text.length$ -- 30
+substring$ -- 749
+swap$ -- 181
+text.length$ -- 28
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 114
 warning$ -- 0
-while$ -- 120
+while$ -- 119
 width$ -- 31
-write$ -- 358
-(There was 1 warning)
+write$ -- 356

@@ -62,7 +62,7 @@ public class DeepConceptComparison implements ConceptComparison {
 		boolean identicalTypes = false;
 		if(left.getEType() != null && right.getEType() != null && 
 				left.getEType().getName() != null && right.getEType().getName() != null){
-			left.getEType().getName().equals(right.getEType().getName());
+			identicalTypes = left.getEType().getName().equals(right.getEType().getName());
 		}
 		else if(left.getEType() == null && right.getEType() == null){
 			identicalTypes = true;
@@ -89,7 +89,7 @@ public class DeepConceptComparison implements ConceptComparison {
 		boolean identicalTypes = false;
 		if(left.getEType() != null && right.getEType() != null && 
 				left.getEType().getName() != null && right.getEType().getName() != null){
-			left.getEType().getName().equals(right.getEType().getName());
+			identicalTypes = left.getEType().getName().equals(right.getEType().getName());
 		}
 		else if(left.getEType() == null && right.getEType() == null){
 			identicalTypes = true;

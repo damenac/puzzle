@@ -1,22 +1,25 @@
 \section{Background: Domain-specific languages in a nutshell}
 \label{sec:background}
-In this section we present some basic concepts that shows the scope of our approach.  
+ 
+We use this section to introduce some basic definitions intended to establish a unified vocabulary that facilitates the comprehension of the ideas presented in this paper. 
+ 
 \begin{itemize}
 
 
-\item{\textbf{Specification$\rightarrow$}} Like general purpose languages (GPLs), DSLs are defined in terms of syntax and semantics \cite{Harel:2004b}. Hence, the specification of a DSL is a tuple $<syn,sem,M_{syn\leftarrow sem}>$ \cite{Combemale:2013}. The parameter $syn$ (the \textit{\textbf{syn}tax}) refers to the structure of the DSL and specifies each language construct in terms of its name and the relationships it has with other language constructs. In turn, the parameter $sem$ (the \textit{\textbf{sem}antics}) refers to the meaning of the language constructs. This meaning corresponds to the dynamic behavior that establishes the manner in which language constructs are manipulated at runtime. Finally, the parameter $M_{syn\leftarrow sem}$ refers to the mapping between the language constructs and the semantics. 
- 
-\item{\textbf{Technological space$\rightarrow$}} Currently, there are diverse technological spaces available for the implementation of syntax and semantics of DSLs \cite{Mernik:2005b}. Language designers can, for example, choose between using context-free grammars or metamodels as specification formalism for syntax. Similarly, there are at least three technological spaces for expressing semantics: operationally, denotationally, and axiomatically \cite{Mosses:2001}.
+\item{\textbf{DSLs specification $\rightarrow$}} Like general purpose languages (GPLs), DSLs are defined in terms of syntax and semantics \cite{Harel:2004b}. Hence, the specification of a DSL is a tuple $<syn,sem,M_{syn\leftarrow sem}>$ \cite{Combemale:2013}. The parameter $syn$ (the \textit{\textbf{syn}tax}) refers to the structure of the DSL and specifies each language construct in terms of its name and the relationships it has with other language constructs. In turn, the parameter $sem$ (the \textit{\textbf{sem}antics}) refers to the meaning of the language constructs. This meaning corresponds to the dynamic behavior that establishes the manner in which language constructs are manipulated at runtime. Finally, the parameter $M_{syn\leftarrow sem}$ refers to the mapping between the language constructs and the semantics. 
 
-In this paper we are interested on executable DSLs (xDSLs) which syntax is specified by means of metamodels, and semantics is specified operationally as methods (a.k.a, \textit{domain-specific actions} \cite{Combemale:2013}). Each language construct is specified in a metaclass. The relationships between language constructs are specified as references between metaclasses. In turn, domain-specific actions are specified as java-like methods that are allocated in the metaclasses.
+\vspace{2mm}
+
+\item{\textbf{Technological space $\rightarrow$}} Currently, there are diverse technological spaces available for the implementation of syntax and semantics of DSLs \cite{Mernik:2005b}. Language designers can, for example, choose between context-free grammars or\\and metamodels to specify syntax. Similarly, there are at least three technological spaces for expressing semantics: operationally, denotationally, and axiomatically \cite{Mosses:2001}.
+
+\hspace{3mm} In this paper we are interested on executable DSLs (xDSLs) which syntax is specified by means of \textit{metamodels}, and semantics is specified operationally by means of \textit{domain-specific actions} \cite{Combemale:2013}. Each language construct is specified in a metaclass. The relationships between language constructs are specified as references between metaclasses. In turn, domain-specific actions are specified as java-like methods that are allocated in the metaclasses.
  
 %\subsubsection{Implementation.} In order to implement a DSL, language designers need tool sets that offer capabilities to specify a DSL according to the selected technological space. The ideas presented in this paper are implemented in an Eclipse-based language workbench. Metamodels are specified in the Ecore language whereas domain-specific actions are specified as methods in Xtend programming language\footnote{\url{http://www.eclipse.org/xtend/}}. The mapping between metaclasses and domain-specific actions is specified by using the notion of aspect introduced by the Kermeta 3\footnote{\url{https://github.com/diverse-project/k3/wiki/Defining-aspects-in-Kermeta-3}}. 
 
 \end{itemize}
 %\todo{Esto del vspace es porque algo no estamos haciendo bien \vspace{-3mm}}
-\textbf{Example: A DSL for finite state machines.} %Let us illustrate xDSLs by means of a simple example. Consider the metamodel for a simple language for finite state machines introduced at the top of Figure \ref{fig:k3-example}. 
-Figure \ref{fig:k3-example} shows a example xDSL for finite states machines. It contains thee classes \texttt{StateMachine}, \texttt{State}, and \texttt{Transition}; The class \texttt{StateMachine} contains both states and transitions which is represented with containment references. The code snippets at the bottom of Figure \ref{fig:k3-example} introduce some operational semantics to this metamodel\cite{Combemale:2013}. %by using K3. Note that the main feature of Kermeta 3 is the notion of aspect that permits to weave the operational semantics defined in a Xtend class to a metamodel defined in Ecore. 
-In our example, the metaclass \texttt{StateMachine} is enriched with the operation \texttt{eval()} that contains a loop that sequentially invokes the operation defined for the class \texttt{State}. This operation is also defined by using one aspect. The metaclass \texttt{Transition} is enriched with the operation \texttt{fire()}.
+\textbf{Example: A DSL for finite state machines.}
+Figure \ref{fig:k3-example} shows a example DSL for finite states machines. It contains three language constructs that are specified in metaclasses: \texttt{StateMachine}, \texttt{State}, and \texttt{Transition}. A \texttt{StateMachine} contains states and transitions. Those relationships are represented as containment references between the corresponding metaclasses. In turn, the code snippets at the bottom of Figure \ref{fig:k3-example} introduce the operational semantics to the DSL. In particular, the metaclass \texttt{StateMachine} is enriched with the operation \texttt{eval()} that contains a loop that sequentially invokes the \texttt{eval()} operation defined for the metaclass \texttt{State}. The metaclass \texttt{Transition} is enriched with the operation \texttt{fire()}.
 
 \begin{figure}
 \centering
@@ -25,7 +28,7 @@ In our example, the metaclass \texttt{StateMachine} is enriched with the operati
 \label{fig:k3-example}
 \end{figure}
 
-\todo[inline]{Este ejemplo debe ser algo que despues podamos usar para ejemplificar el funcionamiento del approach. Quizas, podamos mezclar esta sección con el motivating scenario y ahorrarnos una figura. Pero el ejemplo hay que usarlo para ejemplificar tu solucion, no solo para saber que es un xdsl.}
+%\todo[inline]{Este ejemplo debe ser algo que despues podamos usar para ejemplificar el funcionamiento del approach. Quizas, podamos mezclar esta sección con el motivating scenario y ahorrarnos una figura. Pero el ejemplo hay que usarlo para ejemplificar tu solucion, no solo para saber que es un xdsl.}
 %As said above, we use Melange to integrate and execute the definitions of the abstract syntax and semantics of a DSL. Melange is a language for modeling in the large that facilitates the integration of the different artifacts that compose the specification of a DSL. Listing \ref{lst:fsm} illustrates the use of Melange. At the left we have an abstract representation of a language that is composed of a metamodel and three aspects implementing the semantics. At the right of the figure we have the corresponding Melange script.
  
 %\vspace{4mm}

@@ -1,0 +1,9 @@
+var syntacticDeepVennData = [
+            {sets:["UML"], size: 20},
+            {sets:["Rhapsody"], size: 18},
+            {sets:["Harel"], size: 22},
+            {sets: ["UML", "Rhapsody"], size: 17},
+            {sets: ["UML", "Rhapsody", "Harel"], size: 17},
+            {sets: ["UML", "Harel"], size: 19},
+            {sets: ["Rhapsody", "Harel"], size: 18}
+    ];
