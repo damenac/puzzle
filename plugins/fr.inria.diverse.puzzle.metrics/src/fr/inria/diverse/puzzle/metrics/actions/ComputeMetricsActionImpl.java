@@ -14,7 +14,6 @@ import org.eclipse.emf.ecore.EPackage;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
@@ -28,6 +27,11 @@ import fr.inria.diverse.puzzle.metrics.chartMetrics.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
 import fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager;
 
+/**
+ * Action responsible to analyze a given set of DSls.  
+ * 
+ * @author David Mendez-Acuna
+ */
 public class ComputeMetricsActionImpl {
 
 	// -----------------------------------------------
@@ -108,21 +112,19 @@ public class ComputeMetricsActionImpl {
 		
 		familysMetric.createReport1FamilysShape(languages);
 		familysMetric.createReport1FamilysShapeData(languages);
-		
-		familysMetric.createReport2CostSaving(languages);
-		familysMetric.createReport2CostSavingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
-		familysMetric.createReport3ReuseMetrics(languages);
-		familysMetric.createDependenciesGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
-		familysMetric.createDependenciesGraph(languages);
-//		familysMetric.createFamilyMembershipGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
-//		familysMetric.createFamilyMembershipGraph(languages);
+//		familysMetric.createReport2CostSaving(languages);
+//		familysMetric.createReport2CostSavingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
+//		familysMetric.createReport3ReuseMetrics(languages);
+//		familysMetric.createDependenciesGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
+//		familysMetric.createDependenciesGraph(languages);
+		familysMetric.createFamilyMembershipGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
+		familysMetric.createFamilyMembershipGraph(languages);
 //		familysMetric.createTarjansGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
 //		familysMetric.createTarjansGraph(languages);
 		familysMetric.copyAnalysisSemanticsData(languages, conceptComparisonOperator, methodComparisonOperator);
 		familysMetric.copyAnalysisSemantics(languages);
 		
 		ProjectManagementServices.refreshProject(project);
-		System.out.println("SignatureAndSourceMethodComparison.getInstance().getAmountComputations(): " + SignatureAndSourceMethodComparison.getInstance().getAmountComputations());
 		return metrics;
 	}
 }

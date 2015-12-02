@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  1 DEC 2015 16:03
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  2 DEC 2015 15:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1042,36 +1042,39 @@ File: images/breakdown.pdf Graphic file (type pdf)
 <use images/breakdown.pdf>
 Package pdftex.def Info: images/breakdown.pdf used on input line 8.
 (pdftex.def)             Requested size: 347.12354pt x 148.95015pt.
- [5 <./images/domains-inaction.pdf>] [6 <./images/breakdown.pdf>] [7]
-<images/approach-interfaces.pdf, id=918, 491.8636pt x 144.10297pt>
+ [5 <./images/domains-inaction.pdf>]
+Underfull \vbox (badness 1642) has occurred while \output is active []
+
+ [6 <./images/breakdown.pdf>] [7] [8]
+<images/approach-interfaces.pdf, id=926, 491.8636pt x 144.10297pt>
 File: images/approach-interfaces.pdf Graphic file (type pdf)
 
 <use images/approach-interfaces.pdf>
 Package pdftex.def Info: images/approach-interfaces.pdf used on input line 156.
 
 (pdftex.def)             Requested size: 347.12354pt x 101.70033pt.
- [8]) (./sections/evaluation.tex
+) (./sections/evaluation.tex
 Overfull \hbox (5.49342pt too wide) in paragraph at lines 8--8
  [][][]$\T1/cmtt/m/n/9 https : / / github . com / diverse-[]project / k3 / wiki
  / Defining-[]aspects-[]in-[]Kermeta-[]3$[]| 
  []
 
 [9 <./images/approach-interfaces.pdf>]
-<images/oracle.pdf, id=1457, 600.82475pt x 167.32352pt>
+<images/oracle.pdf, id=1460, 600.82475pt x 167.32352pt>
 File: images/oracle.pdf Graphic file (type pdf)
 
 <use images/oracle.pdf>
 Package pdftex.def Info: images/oracle.pdf used on input line 25.
 (pdftex.def)             Requested size: 347.12354pt x 96.66983pt.
  [10 <./images/oracle.pdf>]
-<images/puzzle-overlapping.pdf, id=1500, 693.70612pt x 342.79854pt>
+<images/puzzle-overlapping.pdf, id=1503, 693.70612pt x 342.79854pt>
 File: images/puzzle-overlapping.pdf Graphic file (type pdf)
 
 <use images/puzzle-overlapping.pdf>
 Package pdftex.def Info: images/puzzle-overlapping.pdf used on input line 38.
 (pdftex.def)             Requested size: 347.12354pt x 171.53484pt.
 
-<images/puzzle-modularization.pdf, id=1504, 690.29262pt x 338.65039pt>
+<images/puzzle-modularization.pdf, id=1507, 690.29262pt x 338.65039pt>
 File: images/puzzle-modularization.pdf Graphic file (type pdf)
 
 <use images/puzzle-modularization.pdf>
@@ -1079,11 +1082,7 @@ Package pdftex.def Info: images/puzzle-modularization.pdf used on input line 49
 .
 (pdftex.def)             Requested size: 347.12354pt x 170.29623pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \vbox (badness 7099) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./images/puzzle-overlapping.pdf>]
 Overfull \hbox (1.23502pt too wide) in paragraph at lines 58--59
@@ -1092,35 +1091,41 @@ Overfull \hbox (1.23502pt too wide) in paragraph at lines 58--59
  []
 
 [12 <./images/puzzle-modularization.pdf>]
-<images/matrix-evaluation.pdf, id=1946, 427.53397pt x 167.68034pt>
+<images/matrix-evaluation.pdf, id=1949, 427.53397pt x 167.68034pt>
 File: images/matrix-evaluation.pdf Graphic file (type pdf)
 
 <use images/matrix-evaluation.pdf>
 Package pdftex.def Info: images/matrix-evaluation.pdf used on input line 83.
 (pdftex.def)             Requested size: 260.34265pt x 102.10576pt.
-) (./sections/relatedwork.tex [13 <./images/matrix-evaluation.pdf>]) (./section
-s/conclusions.tex) [14] (./0-main.bbl
-[15])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./sections/relatedwork.tex [13]) (./sections/conclusions.tex) (./0-main.bbl
+[14 <./images/matrix-evaluation.pdf>] [15])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
  [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (./0-main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
 Package rerunfilecheck Info: File `0-main.out' has not changed.
 (rerunfilecheck)             Checksum: 11309C08B23B3B8AF68864721C794E57;1251.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 117.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
- 19607 strings out of 493308
- 335076 string characters out of 6137815
+ 19608 strings out of 493308
+ 335087 string characters out of 6137815
  440967 words of memory out of 5000000
  22533 multiletter control sequences out of 15000+600000
  20730 words of font info for 57 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  63i,16n,97p,1082b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -1155,10 +1160,10 @@ exmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf
 -dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2013/texmf-d
 ist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0-main.pdf (16 pages, 2213697 bytes).
+Output written on 0-main.pdf (16 pages, 2214685 bytes).
 PDF statistics:
- 2098 PDF objects out of 2487 (max. 8388607)
- 1232 compressed objects within 13 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 2101 PDF objects out of 2487 (max. 8388607)
+ 1235 compressed objects within 13 object streams
+ 81 named destinations out of 1000 (max. 500000)
  173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

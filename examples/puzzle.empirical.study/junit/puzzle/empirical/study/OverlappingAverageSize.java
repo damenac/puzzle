@@ -20,7 +20,7 @@ public class OverlappingAverageSize {
 	// Attributes
 	// ------------------------------------------------
 	
-	private String dataFolder = "temp";
+	private String dataFolder = "githubmetamodels";
 	private ArrayList<Language> languages;
 	
 	// ------------------------------------------------

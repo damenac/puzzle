@@ -1,0 +1,5 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.Program = fsmaspects.ProgramAspect
+	fsm.ArithmeticExpression = fsmaspects.ArithmeticExpressionAspect
+	fsm.StateMachine = fsmaspects.StateMachineAspect
+	fsm.Wait = fsmaspects.WaitAspect

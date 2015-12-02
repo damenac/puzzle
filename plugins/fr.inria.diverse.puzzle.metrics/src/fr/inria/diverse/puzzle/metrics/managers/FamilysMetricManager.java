@@ -32,12 +32,22 @@ import fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticNamingVennDiagram;
 import fr.inria.diverse.puzzle.metrics.specialCharts.TarjansAlgorithmGraph;
 
 /**
- * Manager for metrics analyzing families of DSLs
+ * Manager responsible to analyze a given set of DSls.  
+ * 
  * @author David Mendez-Acuna
- *
  */
 public class FamilysMetricManager extends MetricsManager {
 
+	// -----------------------------------------------
+	// Constants
+	// -----------------------------------------------
+	
+	public final static String REPORT_PATH_OVERLAPPING_VENN = "Report-Overlapping-Venn.html";
+	
+	public final static String REPORT_PATH_OVERLAPPING_GRAPH = "Report-Overlapping-Graph.html";
+	
+	public final static String REPORT_PATH_SEMANTIC_VARIABILITY_TREE = "Report-SemanticVariability.html";
+	
 	// ------------------------------------------------------
 	// Constructor
 	// ------------------------------------------------------
@@ -57,7 +67,7 @@ public class FamilysMetricManager extends MetricsManager {
 	 * @throws IOException
 	 */
 	public void createReport1FamilysShape(ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-FamilysShape.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/" + REPORT_PATH_OVERLAPPING_VENN);
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -68,7 +78,7 @@ public class FamilysMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-1-FamilysShape.html" );
+        File fileReport = new File(project.getLocation().toString() + "/" + REPORT_PATH_OVERLAPPING_VENN );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -221,7 +231,7 @@ public class FamilysMetricManager extends MetricsManager {
 	 * @throws Exception
 	 */
 	public void createFamilyMembershipGraph(ArrayList<Language> languages) throws Exception{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-4b-FamilyMembershipGraph.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/" + REPORT_PATH_OVERLAPPING_GRAPH);
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -232,7 +242,7 @@ public class FamilysMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-4b-FamilyMembershipGraph.html" );
+        File fileReport = new File(project.getLocation().toString() + "/" + REPORT_PATH_OVERLAPPING_GRAPH );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -316,7 +326,7 @@ public class FamilysMetricManager extends MetricsManager {
 	}
 	
 	public void copyAnalysisSemantics(ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-5-SemanticVariability.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/" + REPORT_PATH_SEMANTIC_VARIABILITY_TREE);
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -327,7 +337,7 @@ public class FamilysMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-5-SemanticVariability.html" );
+        File fileReport = new File(project.getLocation().toString() + "/" + REPORT_PATH_SEMANTIC_VARIABILITY_TREE );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );

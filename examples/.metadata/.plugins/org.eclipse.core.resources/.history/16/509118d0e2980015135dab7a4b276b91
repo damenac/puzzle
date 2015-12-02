@@ -1,0 +1,7 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsmcore.StateMachine = FSM.rtc.StateMachineAspect
+	fsmcore.Region = FSM.rtc.RegionAspect
+	fsmcore.Trigger = FSM.rtc.TriggerAspect
+	fsmcore.State = FSM.rtc.StateAspect
+	fsmcore.FinalState = FSM.rtc.FinalStateAspect
+	fsmcore.Transition = FSM.rtc.TransitionAspect

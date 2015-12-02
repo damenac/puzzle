@@ -1,0 +1,5 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	kmLogo.RelationalExpression = logo.RelationalExpressionAspect
+	kmLogo.BoolLit = logo.BoolLitAspect
+	kmLogo.Block = logo.BlockAspect
+	kmLogo.IntegerLit = logo.IntegerLitAspect
