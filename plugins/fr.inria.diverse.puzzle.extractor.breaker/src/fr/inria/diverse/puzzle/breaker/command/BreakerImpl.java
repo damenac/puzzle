@@ -43,7 +43,7 @@ import fr.inria.diverse.k3.sle.common.vos.MetaclassAspectMapping;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-import fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality;
+//import fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality;
 
 public class BreakerImpl {
 
@@ -90,8 +90,8 @@ public class BreakerImpl {
 		buildModules(dependenciesGraph, languages, methodComparison);
 		createSemanticsCommonsProject(languages);
 		
-		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
-		System.out.println("Modularization Quality: " + mq);
+//		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
+//		System.out.println("Modularization Quality: " + mq);
 		
 		return dependenciesGraph;
 	}

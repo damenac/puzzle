@@ -1,6 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsmcore.StateMachine = FSM.simultaneous.StateMachineAspect
-	fsmcore.Trigger = FSM.simultaneous.TriggerAspect
-	fsmcore.State = FSM.simultaneous.StateAspect
-	fsmcore.Transition = FSM.simultaneous.TransitionAspect
-	fsmcore.FinalState = FSM.simultaneous.FinalStateAspect

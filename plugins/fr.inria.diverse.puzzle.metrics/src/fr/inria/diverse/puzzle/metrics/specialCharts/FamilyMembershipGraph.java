@@ -12,6 +12,7 @@ import fr.inria.diverse.k3.sle.common.tuples.TupleConceptMembers;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition;
 
 /**
  * Prints the family membership graph.
@@ -31,7 +32,7 @@ public class FamilyMembershipGraph implements SpecialFamilySyntacticChart{
 		ArrayList<TupleConceptMembers> conceptMembersList = FamiliesServices.getInstance().getConceptMemberGroupList(conceptMemberList, conceptComparisonOperator);
 		ArrayList<TupleMembersConcepts> membersConceptList = FamiliesServices.getInstance().getMembersGroupVsConceptVOList(conceptMembersList);
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
-//		(new MembershipGraphPartition()).graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
+		(new MembershipGraphPartition()).graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		
 		answer += "var G = new jsnx.DiGraph();\n";
 		int i = 0;

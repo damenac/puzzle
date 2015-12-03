@@ -1,4 +1,0 @@
-
-composite{
-	connector('UML', Rhapsody)
-}
