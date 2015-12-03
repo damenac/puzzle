@@ -57,11 +57,13 @@ public class FlowchartpckFactoryImpl extends EFactoryImpl implements Flowchartpc
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case FlowchartpckPackage.NAMED_ELEMENT: return createNamedElement();
 			case FlowchartpckPackage.FLOWCHART: return createFlowchart();
 			case FlowchartpckPackage.ARC: return createArc();
-			case FlowchartpckPackage.SUBFLOW: return createSubflow();
 			case FlowchartpckPackage.ACTION: return createAction();
 			case FlowchartpckPackage.DECISION: return createDecision();
+			case FlowchartpckPackage.START: return createStart();
+			case FlowchartpckPackage.END: return createEnd();
 			case FlowchartpckPackage.CONSTRAINT: return createConstraint();
 			case FlowchartpckPackage.RELATIONAL_CONSTRAINT: return createRelationalConstraint();
 			case FlowchartpckPackage.EXPRESSION: return createExpression();
@@ -72,6 +74,15 @@ public class FlowchartpckFactoryImpl extends EFactoryImpl implements Flowchartpc
 			case FlowchartpckPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
 			case FlowchartpckPackage.RELATIONAL_EXPRESSION: return createRelationalExpression();
 			case FlowchartpckPackage.VAR_REFERENCE: return createVarReference();
+			case FlowchartpckPackage.PROGRAM: return createProgram();
+			case FlowchartpckPackage.CONDITIONAL: return createConditional();
+			case FlowchartpckPackage.LOOP: return createLoop();
+			case FlowchartpckPackage.CONSOLE_OUTPUT: return createConsoleOutput();
+			case FlowchartpckPackage.PRINTLN: return createPrintln();
+			case FlowchartpckPackage.PRINT: return createPrint();
+			case FlowchartpckPackage.ASSIGNATION: return createAssignation();
+			case FlowchartpckPackage.WAIT: return createWait();
+			case FlowchartpckPackage.VAR_DECL: return createVarDecl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -116,6 +127,16 @@ public class FlowchartpckFactoryImpl extends EFactoryImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NamedElement createNamedElement() {
+		NamedElementImpl namedElement = new NamedElementImpl();
+		return namedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Flowchart createFlowchart() {
 		FlowchartImpl flowchart = new FlowchartImpl();
 		return flowchart;
@@ -136,16 +157,6 @@ public class FlowchartpckFactoryImpl extends EFactoryImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Subflow createSubflow() {
-		SubflowImpl subflow = new SubflowImpl();
-		return subflow;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Action createAction() {
 		ActionImpl action = new ActionImpl();
 		return action;
@@ -159,6 +170,26 @@ public class FlowchartpckFactoryImpl extends EFactoryImpl implements Flowchartpc
 	public Decision createDecision() {
 		DecisionImpl decision = new DecisionImpl();
 		return decision;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Start createStart() {
+		StartImpl start = new StartImpl();
+		return start;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public End createEnd() {
+		EndImpl end = new EndImpl();
+		return end;
 	}
 
 	/**
@@ -259,6 +290,96 @@ public class FlowchartpckFactoryImpl extends EFactoryImpl implements Flowchartpc
 	public VarReference createVarReference() {
 		VarReferenceImpl varReference = new VarReferenceImpl();
 		return varReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Program createProgram() {
+		ProgramImpl program = new ProgramImpl();
+		return program;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Conditional createConditional() {
+		ConditionalImpl conditional = new ConditionalImpl();
+		return conditional;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Loop createLoop() {
+		LoopImpl loop = new LoopImpl();
+		return loop;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConsoleOutput createConsoleOutput() {
+		ConsoleOutputImpl consoleOutput = new ConsoleOutputImpl();
+		return consoleOutput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Println createPrintln() {
+		PrintlnImpl println = new PrintlnImpl();
+		return println;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Print createPrint() {
+		PrintImpl print = new PrintImpl();
+		return print;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Assignation createAssignation() {
+		AssignationImpl assignation = new AssignationImpl();
+		return assignation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Wait createWait() {
+		WaitImpl wait = new WaitImpl();
+		return wait;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VarDecl createVarDecl() {
+		VarDeclImpl varDecl = new VarDeclImpl();
+		return varDecl;
 	}
 
 	/**

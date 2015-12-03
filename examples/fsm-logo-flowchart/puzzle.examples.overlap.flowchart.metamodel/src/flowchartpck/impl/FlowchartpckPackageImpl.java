@@ -6,23 +6,35 @@ import flowchartpck.Action;
 import flowchartpck.Arc;
 import flowchartpck.ArithmeticExpression;
 import flowchartpck.ArithmeticOperator;
+import flowchartpck.Assignation;
 import flowchartpck.BoolLit;
+import flowchartpck.Conditional;
+import flowchartpck.ConsoleOutput;
 import flowchartpck.Constraint;
 import flowchartpck.Decision;
+import flowchartpck.End;
 import flowchartpck.Expression;
 import flowchartpck.Flowchart;
 import flowchartpck.FlowchartpckFactory;
 import flowchartpck.FlowchartpckPackage;
 import flowchartpck.IntegerLit;
 import flowchartpck.Literal;
+import flowchartpck.Loop;
+import flowchartpck.NamedElement;
 import flowchartpck.Node;
+import flowchartpck.Print;
+import flowchartpck.Println;
+import flowchartpck.Program;
 import flowchartpck.RelationalConstraint;
 import flowchartpck.RelationalExpression;
 import flowchartpck.RelationalOperator;
+import flowchartpck.Start;
+import flowchartpck.Statement;
 import flowchartpck.StringLit;
-import flowchartpck.Subflow;
+import flowchartpck.VarDecl;
 import flowchartpck.VarReference;
 
+import flowchartpck.Wait;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -38,6 +50,13 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class FlowchartpckPackageImpl extends EPackageImpl implements FlowchartpckPackage {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass namedElementEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -64,13 +83,6 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass subflowEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass actionEClass = null;
 
 	/**
@@ -79,6 +91,20 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * @generated
 	 */
 	private EClass decisionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass startEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass endEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,6 +175,76 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * @generated
 	 */
 	private EClass varReferenceEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass statementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass programEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass loopEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass consoleOutputEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass printlnEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass printEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass assignationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass waitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass varDeclEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -230,6 +326,24 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNamedElement() {
+		return namedElementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFlowchart() {
 		return flowchartEClass;
 	}
@@ -248,7 +362,7 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFlowchart_Transitions() {
+	public EReference getFlowchart_Arcs() {
 		return (EReference)flowchartEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -266,17 +380,8 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getNode_Name() {
-		return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getNode_Outgoing() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
+		return (EReference)nodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -285,7 +390,7 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * @generated
 	 */
 	public EReference getNode_Incoming() {
-		return (EReference)nodeEClass.getEStructuralFeatures().get(2);
+		return (EReference)nodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -302,17 +407,8 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getArc_Name() {
-		return (EAttribute)arcEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getArc_Source() {
-		return (EReference)arcEClass.getEStructuralFeatures().get(1);
+		return (EReference)arcEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -321,16 +417,7 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * @generated
 	 */
 	public EReference getArc_Target() {
-		return (EReference)arcEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSubflow() {
-		return subflowEClass;
+		return (EReference)arcEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -340,6 +427,15 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 */
 	public EClass getAction() {
 		return actionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAction_DoProgram() {
+		return (EReference)actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -358,6 +454,24 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 */
 	public EReference getDecision_Guard() {
 		return (EReference)decisionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStart() {
+		return startEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEnd() {
+		return endEClass;
 	}
 
 	/**
@@ -554,6 +668,195 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getStatement() {
+		return statementEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getProgram() {
+		return programEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProgram_Statements() {
+		return (EReference)programEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConditional() {
+		return conditionalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditional_Condition() {
+		return (EReference)conditionalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditional_Body() {
+		return (EReference)conditionalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLoop() {
+		return loopEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLoop_Body() {
+		return (EReference)loopEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLoop_Guard() {
+		return (EReference)loopEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getConsoleOutput() {
+		return consoleOutputEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getConsoleOutput_Input() {
+		return (EAttribute)consoleOutputEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrintln() {
+		return printlnEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPrint() {
+		return printEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAssignation() {
+		return assignationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssignation_VarRef() {
+		return (EReference)assignationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssignation_Expression() {
+		return (EReference)assignationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getWait() {
+		return waitEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getWait_Miliseconds() {
+		return (EAttribute)waitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getVarDecl() {
+		return varDeclEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVarDecl_Name() {
+		return (EAttribute)varDeclEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getVarDecl_Expr() {
+		return (EReference)varDeclEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getArithmeticOperator() {
 		return arithmeticOperatorEEnum;
 	}
@@ -595,26 +898,30 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		isCreated = true;
 
 		// Create classes and their features
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
 		flowchartEClass = createEClass(FLOWCHART);
 		createEReference(flowchartEClass, FLOWCHART__NODES);
-		createEReference(flowchartEClass, FLOWCHART__TRANSITIONS);
+		createEReference(flowchartEClass, FLOWCHART__ARCS);
 
 		nodeEClass = createEClass(NODE);
-		createEAttribute(nodeEClass, NODE__NAME);
 		createEReference(nodeEClass, NODE__OUTGOING);
 		createEReference(nodeEClass, NODE__INCOMING);
 
 		arcEClass = createEClass(ARC);
-		createEAttribute(arcEClass, ARC__NAME);
 		createEReference(arcEClass, ARC__SOURCE);
 		createEReference(arcEClass, ARC__TARGET);
 
-		subflowEClass = createEClass(SUBFLOW);
-
 		actionEClass = createEClass(ACTION);
+		createEReference(actionEClass, ACTION__DO_PROGRAM);
 
 		decisionEClass = createEClass(DECISION);
 		createEReference(decisionEClass, DECISION__GUARD);
+
+		startEClass = createEClass(START);
+
+		endEClass = createEClass(END);
 
 		constraintEClass = createEClass(CONSTRAINT);
 
@@ -646,6 +953,37 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 
 		varReferenceEClass = createEClass(VAR_REFERENCE);
 		createEAttribute(varReferenceEClass, VAR_REFERENCE__KEY);
+
+		statementEClass = createEClass(STATEMENT);
+
+		programEClass = createEClass(PROGRAM);
+		createEReference(programEClass, PROGRAM__STATEMENTS);
+
+		conditionalEClass = createEClass(CONDITIONAL);
+		createEReference(conditionalEClass, CONDITIONAL__CONDITION);
+		createEReference(conditionalEClass, CONDITIONAL__BODY);
+
+		loopEClass = createEClass(LOOP);
+		createEReference(loopEClass, LOOP__BODY);
+		createEReference(loopEClass, LOOP__GUARD);
+
+		consoleOutputEClass = createEClass(CONSOLE_OUTPUT);
+		createEAttribute(consoleOutputEClass, CONSOLE_OUTPUT__INPUT);
+
+		printlnEClass = createEClass(PRINTLN);
+
+		printEClass = createEClass(PRINT);
+
+		assignationEClass = createEClass(ASSIGNATION);
+		createEReference(assignationEClass, ASSIGNATION__VAR_REF);
+		createEReference(assignationEClass, ASSIGNATION__EXPRESSION);
+
+		waitEClass = createEClass(WAIT);
+		createEAttribute(waitEClass, WAIT__MILISECONDS);
+
+		varDeclEClass = createEClass(VAR_DECL);
+		createEAttribute(varDeclEClass, VAR_DECL__NAME);
+		createEReference(varDeclEClass, VAR_DECL__EXPR);
 
 		// Create enums
 		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
@@ -680,10 +1018,12 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		subflowEClass.getESuperTypes().add(this.getFlowchart());
-		subflowEClass.getESuperTypes().add(this.getNode());
+		flowchartEClass.getESuperTypes().add(this.getNamedElement());
+		nodeEClass.getESuperTypes().add(this.getNamedElement());
 		actionEClass.getESuperTypes().add(this.getNode());
 		decisionEClass.getESuperTypes().add(this.getNode());
+		startEClass.getESuperTypes().add(this.getNode());
+		endEClass.getESuperTypes().add(this.getNode());
 		relationalConstraintEClass.getESuperTypes().add(this.getConstraint());
 		literalEClass.getESuperTypes().add(this.getExpression());
 		integerLitEClass.getESuperTypes().add(this.getLiteral());
@@ -692,28 +1032,41 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		arithmeticExpressionEClass.getESuperTypes().add(this.getExpression());
 		relationalExpressionEClass.getESuperTypes().add(this.getExpression());
 		varReferenceEClass.getESuperTypes().add(this.getExpression());
+		programEClass.getESuperTypes().add(this.getStatement());
+		conditionalEClass.getESuperTypes().add(this.getStatement());
+		loopEClass.getESuperTypes().add(this.getStatement());
+		consoleOutputEClass.getESuperTypes().add(this.getStatement());
+		printlnEClass.getESuperTypes().add(this.getConsoleOutput());
+		printEClass.getESuperTypes().add(this.getConsoleOutput());
+		assignationEClass.getESuperTypes().add(this.getStatement());
+		waitEClass.getESuperTypes().add(this.getStatement());
+		varDeclEClass.getESuperTypes().add(this.getStatement());
 
 		// Initialize classes, features, and operations; add parameters
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(flowchartEClass, Flowchart.class, "Flowchart", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFlowchart_Nodes(), this.getNode(), null, "nodes", null, 0, -1, Flowchart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFlowchart_Transitions(), this.getArc(), null, "transitions", null, 0, -1, Flowchart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFlowchart_Arcs(), this.getArc(), null, "arcs", null, 0, -1, Flowchart.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNode_Outgoing(), this.getArc(), this.getArc_Source(), "outgoing", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNode_Incoming(), this.getArc(), this.getArc_Target(), "incoming", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arcEClass, Arc.class, "Arc", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArc_Name(), ecorePackage.getEString(), "name", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArc_Source(), this.getNode(), this.getNode_Outgoing(), "source", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getArc_Target(), this.getNode(), this.getNode_Incoming(), "target", null, 0, 1, Arc.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(subflowEClass, Subflow.class, "Subflow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAction_DoProgram(), this.getProgram(), null, "doProgram", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(decisionEClass, Decision.class, "Decision", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDecision_Guard(), this.getConstraint(), null, "guard", null, 1, 1, Decision.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(startEClass, Start.class, "Start", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(endEClass, End.class, "End", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -746,6 +1099,37 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		initEClass(varReferenceEClass, VarReference.class, "VarReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVarReference_Key(), ecorePackage.getEString(), "key", null, 0, 1, VarReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(programEClass, Program.class, "Program", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getProgram_Statements(), this.getStatement(), null, "statements", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConditional_Condition(), this.getExpression(), null, "condition", null, 1, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditional_Body(), this.getProgram(), null, "body", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLoop_Body(), this.getProgram(), null, "body", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLoop_Guard(), this.getExpression(), null, "guard", null, 1, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(consoleOutputEClass, ConsoleOutput.class, "ConsoleOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getConsoleOutput_Input(), ecorePackage.getEString(), "input", null, 0, 1, ConsoleOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(printlnEClass, Println.class, "Println", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(assignationEClass, Assignation.class, "Assignation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAssignation_VarRef(), this.getVarDecl(), null, "varRef", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssignation_Expression(), this.getExpression(), null, "expression", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(waitEClass, Wait.class, "Wait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getWait_Miliseconds(), ecorePackage.getELong(), "miliseconds", null, 0, 1, Wait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVarDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVarDecl_Expr(), this.getExpression(), null, "expr", null, 1, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
 		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
@@ -763,78 +1147,6 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// gmf.diagram
-		createGmfAnnotations();
-		// gmf.node
-		createGmf_1Annotations();
-		// gmf.link
-		createGmf_2Annotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.diagram</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmfAnnotations() {
-		String source = "gmf.diagram";	
-		addAnnotation
-		  (flowchartEClass, 
-		   source, 
-		   new String[] {
-			 "foo", "bar"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.node</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmf_1Annotations() {
-		String source = "gmf.node";	
-		addAnnotation
-		  (nodeEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name",
-			 "label.icon", "false"
-		   });	
-		addAnnotation
-		  (actionEClass, 
-		   source, 
-		   new String[] {
-			 "figure", "org.eclipse.epsilon.eugenia.examples.flowchart.diagram.figures.SquareFigure"
-		   });	
-		addAnnotation
-		  (decisionEClass, 
-		   source, 
-		   new String[] {
-			 "figure", "org.eclipse.epsilon.eugenia.examples.flowchart.diagram.figures.DiamondFigure"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.link</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmf_2Annotations() {
-		String source = "gmf.link";	
-		addAnnotation
-		  (arcEClass, 
-		   source, 
-		   new String[] {
-			 "label", "name",
-			 "source", "source",
-			 "target", "target",
-			 "target.decoration", "arrow"
-		   });
 	}
 
 } //FlowchartpckPackageImpl

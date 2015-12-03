@@ -22,6 +22,15 @@ public interface FlowchartpckFactory extends EFactory {
 	FlowchartpckFactory eINSTANCE = flowchartpck.impl.FlowchartpckFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Named Element</em>'.
+	 * @generated
+	 */
+	NamedElement createNamedElement();
+
+	/**
 	 * Returns a new object of class '<em>Flowchart</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -40,15 +49,6 @@ public interface FlowchartpckFactory extends EFactory {
 	Arc createArc();
 
 	/**
-	 * Returns a new object of class '<em>Subflow</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Subflow</em>'.
-	 * @generated
-	 */
-	Subflow createSubflow();
-
-	/**
 	 * Returns a new object of class '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,6 +65,24 @@ public interface FlowchartpckFactory extends EFactory {
 	 * @generated
 	 */
 	Decision createDecision();
+
+	/**
+	 * Returns a new object of class '<em>Start</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Start</em>'.
+	 * @generated
+	 */
+	Start createStart();
+
+	/**
+	 * Returns a new object of class '<em>End</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>End</em>'.
+	 * @generated
+	 */
+	End createEnd();
 
 	/**
 	 * Returns a new object of class '<em>Constraint</em>'.
@@ -155,6 +173,87 @@ public interface FlowchartpckFactory extends EFactory {
 	 * @generated
 	 */
 	VarReference createVarReference();
+
+	/**
+	 * Returns a new object of class '<em>Program</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Program</em>'.
+	 * @generated
+	 */
+	Program createProgram();
+
+	/**
+	 * Returns a new object of class '<em>Conditional</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conditional</em>'.
+	 * @generated
+	 */
+	Conditional createConditional();
+
+	/**
+	 * Returns a new object of class '<em>Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Loop</em>'.
+	 * @generated
+	 */
+	Loop createLoop();
+
+	/**
+	 * Returns a new object of class '<em>Console Output</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Console Output</em>'.
+	 * @generated
+	 */
+	ConsoleOutput createConsoleOutput();
+
+	/**
+	 * Returns a new object of class '<em>Println</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Println</em>'.
+	 * @generated
+	 */
+	Println createPrintln();
+
+	/**
+	 * Returns a new object of class '<em>Print</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Print</em>'.
+	 * @generated
+	 */
+	Print createPrint();
+
+	/**
+	 * Returns a new object of class '<em>Assignation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assignation</em>'.
+	 * @generated
+	 */
+	Assignation createAssignation();
+
+	/**
+	 * Returns a new object of class '<em>Wait</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Wait</em>'.
+	 * @generated
+	 */
+	Wait createWait();
+
+	/**
+	 * Returns a new object of class '<em>Var Decl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Var Decl</em>'.
+	 * @generated
+	 */
+	VarDecl createVarDecl();
 
 	/**
 	 * Returns the package supported by this factory.

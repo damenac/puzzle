@@ -1,0 +1,16 @@
+package flowchart
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import flowchartpck.Flowchart
+import flowchartpck.Start
+
+import static extension flowchart.StartAspect.*
+
+@Aspect(className=Flowchart)
+public class FlowchartAspect {
+
+	def void exec() {
+		_self.nodes.findFirst[ node | node instanceof Start ].eval()
+	}
+}

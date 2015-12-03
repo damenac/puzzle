@@ -68,6 +68,10 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 	protected FlowchartpckSwitch<Adapter> modelSwitch =
 		new FlowchartpckSwitch<Adapter>() {
 			@Override
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
 			public Adapter caseFlowchart(Flowchart object) {
 				return createFlowchartAdapter();
 			}
@@ -80,16 +84,20 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 				return createArcAdapter();
 			}
 			@Override
-			public Adapter caseSubflow(Subflow object) {
-				return createSubflowAdapter();
-			}
-			@Override
 			public Adapter caseAction(Action object) {
 				return createActionAdapter();
 			}
 			@Override
 			public Adapter caseDecision(Decision object) {
 				return createDecisionAdapter();
+			}
+			@Override
+			public Adapter caseStart(Start object) {
+				return createStartAdapter();
+			}
+			@Override
+			public Adapter caseEnd(End object) {
+				return createEndAdapter();
 			}
 			@Override
 			public Adapter caseConstraint(Constraint object) {
@@ -132,6 +140,46 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 				return createVarReferenceAdapter();
 			}
 			@Override
+			public Adapter caseStatement(Statement object) {
+				return createStatementAdapter();
+			}
+			@Override
+			public Adapter caseProgram(Program object) {
+				return createProgramAdapter();
+			}
+			@Override
+			public Adapter caseConditional(Conditional object) {
+				return createConditionalAdapter();
+			}
+			@Override
+			public Adapter caseLoop(Loop object) {
+				return createLoopAdapter();
+			}
+			@Override
+			public Adapter caseConsoleOutput(ConsoleOutput object) {
+				return createConsoleOutputAdapter();
+			}
+			@Override
+			public Adapter casePrintln(Println object) {
+				return createPrintlnAdapter();
+			}
+			@Override
+			public Adapter casePrint(Print object) {
+				return createPrintAdapter();
+			}
+			@Override
+			public Adapter caseAssignation(Assignation object) {
+				return createAssignationAdapter();
+			}
+			@Override
+			public Adapter caseWait(Wait object) {
+				return createWaitAdapter();
+			}
+			@Override
+			public Adapter caseVarDecl(VarDecl object) {
+				return createVarDeclAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -150,6 +198,20 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.NamedElement
+	 * @generated
+	 */
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link flowchartpck.Flowchart <em>Flowchart</em>}'.
@@ -194,20 +256,6 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link flowchartpck.Subflow <em>Subflow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see flowchartpck.Subflow
-	 * @generated
-	 */
-	public Adapter createSubflowAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link flowchartpck.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -232,6 +280,34 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDecisionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Start <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Start
+	 * @generated
+	 */
+	public Adapter createStartAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.End <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.End
+	 * @generated
+	 */
+	public Adapter createEndAdapter() {
 		return null;
 	}
 
@@ -372,6 +448,146 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createVarReferenceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Statement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Statement
+	 * @generated
+	 */
+	public Adapter createStatementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Program <em>Program</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Program
+	 * @generated
+	 */
+	public Adapter createProgramAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Conditional <em>Conditional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Conditional
+	 * @generated
+	 */
+	public Adapter createConditionalAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Loop <em>Loop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Loop
+	 * @generated
+	 */
+	public Adapter createLoopAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.ConsoleOutput <em>Console Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.ConsoleOutput
+	 * @generated
+	 */
+	public Adapter createConsoleOutputAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Println <em>Println</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Println
+	 * @generated
+	 */
+	public Adapter createPrintlnAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Print <em>Print</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Print
+	 * @generated
+	 */
+	public Adapter createPrintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Assignation <em>Assignation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Assignation
+	 * @generated
+	 */
+	public Adapter createAssignationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.Wait <em>Wait</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.Wait
+	 * @generated
+	 */
+	public Adapter createWaitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link flowchartpck.VarDecl <em>Var Decl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see flowchartpck.VarDecl
+	 * @generated
+	 */
+	public Adapter createVarDeclAdapter() {
 		return null;
 	}
 

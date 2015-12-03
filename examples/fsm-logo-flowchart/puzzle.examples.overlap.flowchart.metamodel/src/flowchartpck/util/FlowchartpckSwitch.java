@@ -66,15 +66,23 @@ public class FlowchartpckSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case FlowchartpckPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case FlowchartpckPackage.FLOWCHART: {
 				Flowchart flowchart = (Flowchart)theEObject;
 				T result = caseFlowchart(flowchart);
+				if (result == null) result = caseNamedElement(flowchart);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case FlowchartpckPackage.NODE: {
 				Node node = (Node)theEObject;
 				T result = caseNode(node);
+				if (result == null) result = caseNamedElement(node);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -84,18 +92,11 @@ public class FlowchartpckSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case FlowchartpckPackage.SUBFLOW: {
-				Subflow subflow = (Subflow)theEObject;
-				T result = caseSubflow(subflow);
-				if (result == null) result = caseFlowchart(subflow);
-				if (result == null) result = caseNode(subflow);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case FlowchartpckPackage.ACTION: {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
 				if (result == null) result = caseNode(action);
+				if (result == null) result = caseNamedElement(action);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -103,6 +104,23 @@ public class FlowchartpckSwitch<T> extends Switch<T> {
 				Decision decision = (Decision)theEObject;
 				T result = caseDecision(decision);
 				if (result == null) result = caseNode(decision);
+				if (result == null) result = caseNamedElement(decision);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.START: {
+				Start start = (Start)theEObject;
+				T result = caseStart(start);
+				if (result == null) result = caseNode(start);
+				if (result == null) result = caseNamedElement(start);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.END: {
+				End end = (End)theEObject;
+				T result = caseEnd(end);
+				if (result == null) result = caseNode(end);
+				if (result == null) result = caseNamedElement(end);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -177,8 +195,94 @@ public class FlowchartpckSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case FlowchartpckPackage.STATEMENT: {
+				Statement statement = (Statement)theEObject;
+				T result = caseStatement(statement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.PROGRAM: {
+				Program program = (Program)theEObject;
+				T result = caseProgram(program);
+				if (result == null) result = caseStatement(program);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.CONDITIONAL: {
+				Conditional conditional = (Conditional)theEObject;
+				T result = caseConditional(conditional);
+				if (result == null) result = caseStatement(conditional);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.LOOP: {
+				Loop loop = (Loop)theEObject;
+				T result = caseLoop(loop);
+				if (result == null) result = caseStatement(loop);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.CONSOLE_OUTPUT: {
+				ConsoleOutput consoleOutput = (ConsoleOutput)theEObject;
+				T result = caseConsoleOutput(consoleOutput);
+				if (result == null) result = caseStatement(consoleOutput);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.PRINTLN: {
+				Println println = (Println)theEObject;
+				T result = casePrintln(println);
+				if (result == null) result = caseConsoleOutput(println);
+				if (result == null) result = caseStatement(println);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.PRINT: {
+				Print print = (Print)theEObject;
+				T result = casePrint(print);
+				if (result == null) result = caseConsoleOutput(print);
+				if (result == null) result = caseStatement(print);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.ASSIGNATION: {
+				Assignation assignation = (Assignation)theEObject;
+				T result = caseAssignation(assignation);
+				if (result == null) result = caseStatement(assignation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.WAIT: {
+				Wait wait = (Wait)theEObject;
+				T result = caseWait(wait);
+				if (result == null) result = caseStatement(wait);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case FlowchartpckPackage.VAR_DECL: {
+				VarDecl varDecl = (VarDecl)theEObject;
+				T result = caseVarDecl(varDecl);
+				if (result == null) result = caseStatement(varDecl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
+		return null;
 	}
 
 	/**
@@ -227,21 +331,6 @@ public class FlowchartpckSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Subflow</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Subflow</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSubflow(Subflow object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -268,6 +357,36 @@ public class FlowchartpckSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDecision(Decision object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Start</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Start</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStart(Start object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>End</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>End</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEnd(End object) {
 		return null;
 	}
 
@@ -418,6 +537,156 @@ public class FlowchartpckSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVarReference(VarReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Statement</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Statement</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatement(Statement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Program</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Program</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProgram(Program object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditional(Conditional object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Loop</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Loop</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLoop(Loop object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Console Output</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Console Output</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConsoleOutput(ConsoleOutput object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Println</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Println</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrintln(Println object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Print</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Print</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePrint(Print object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assignation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assignation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssignation(Assignation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Wait</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Wait</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWait(Wait object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Var Decl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Var Decl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVarDecl(VarDecl object) {
 		return null;
 	}
 

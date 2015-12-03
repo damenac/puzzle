@@ -8,9 +8,14 @@ import flowchartpck.Decision
 import static extension flowchart.ConstraintAspect.*
 
 @Aspect(className=Decision)
-public class DecisionAspect {
+public class DecisionAspect extends NodeAspect {
 
 	def void eval(Hashtable<String, Object> context) {
-		_self.guard.evalConstraint(context)
+		var guard = _self.guard.evalConstraint(context)
+		if(guard){
+			_self.outgoing.get(0).target.eval(context)
+		}else{
+			_self.outgoing.get(1).target.eval(context)
+		}
 	}
 }

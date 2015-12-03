@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/puzzle.examples.overlap.flowchart.metamodel/src" modelPluginID="puzzle.examples.overlap.flowchart.metamodel" modelName="Flowchart" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>flowchart.ecore</foreignModel>
+  <genPackages prefix="Flowchartpck" disposableProviderFactory="true">
+    <ecorePackage href="flowchart.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="flowchart.ecore#//ArithmeticOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//ArithmeticOperator/plus"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//ArithmeticOperator/minus"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//ArithmeticOperator/mult"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//ArithmeticOperator/div"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="flowchart.ecore#//RelationalOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//RelationalOperator/lessThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//RelationalOperator/greaterThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//RelationalOperator/equals"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//RelationalOperator/notEqual"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//RelationalOperator/lessThanOrEqualTo"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="flowchart.ecore#//RelationalOperator/greaterThanOrEqualTo"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="flowchart.ecore#//NamedElement/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Flowchart"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//Flowchart/nodes"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//Flowchart/arcs"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="flowchart.ecore#//Node"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//Node/outgoing"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//Node/incoming"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Arc"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//Arc/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//Arc/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Action"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Decision"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//Decision/guard"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Start"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//End"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Constraint"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//RelationalConstraint"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//RelationalConstraint/expression"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Expression"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//Literal"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//IntegerLit"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="flowchart.ecore#//IntegerLit/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//StringLit"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="flowchart.ecore#//StringLit/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//BoolLit"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="flowchart.ecore#//BoolLit/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//ArithmeticExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//ArithmeticExpression/left"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//ArithmeticExpression/right"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="flowchart.ecore#//ArithmeticExpression/operator"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//RelationalExpression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="flowchart.ecore#//RelationalExpression/operator"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//RelationalExpression/left"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="flowchart.ecore#//RelationalExpression/right"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="flowchart.ecore#//VarReference"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="flowchart.ecore#//VarReference/key"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

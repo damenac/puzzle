@@ -58,6 +58,43 @@ public interface FlowchartpckPackage extends EPackage {
 	FlowchartpckPackage eINSTANCE = flowchartpck.impl.FlowchartpckPackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link flowchartpck.impl.NamedElementImpl <em>Named Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.NamedElementImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getNamedElement()
+	 * @generated
+	 */
+	int NAMED_ELEMENT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Named Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link flowchartpck.impl.FlowchartImpl <em>Flowchart</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +102,16 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getFlowchart()
 	 * @generated
 	 */
-	int FLOWCHART = 0;
+	int FLOWCHART = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOWCHART__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
@@ -74,16 +120,16 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOWCHART__NODES = 0;
+	int FLOWCHART__NODES = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Arcs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FLOWCHART__TRANSITIONS = 1;
+	int FLOWCHART__ARCS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Flowchart</em>' class.
@@ -92,7 +138,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOWCHART_FEATURE_COUNT = 2;
+	int FLOWCHART_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Flowchart</em>' class.
@@ -101,7 +147,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FLOWCHART_OPERATION_COUNT = 0;
+	int FLOWCHART_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link flowchartpck.impl.NodeImpl <em>Node</em>}' class.
@@ -111,7 +157,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getNode()
 	 * @generated
 	 */
-	int NODE = 1;
+	int NODE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -120,7 +166,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__NAME = 0;
+	int NODE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -129,7 +175,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__OUTGOING = 1;
+	int NODE__OUTGOING = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -138,7 +184,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__INCOMING = 2;
+	int NODE__INCOMING = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Node</em>' class.
@@ -147,7 +193,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = 3;
+	int NODE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Node</em>' class.
@@ -156,7 +202,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_OPERATION_COUNT = 0;
+	int NODE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link flowchartpck.impl.ArcImpl <em>Arc</em>}' class.
@@ -166,16 +212,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getArc()
 	 * @generated
 	 */
-	int ARC = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARC__NAME = 0;
+	int ARC = 3;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -184,7 +221,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARC__SOURCE = 1;
+	int ARC__SOURCE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -193,7 +230,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARC__TARGET = 2;
+	int ARC__TARGET = 1;
 
 	/**
 	 * The number of structural features of the '<em>Arc</em>' class.
@@ -202,7 +239,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ARC_FEATURE_COUNT = 3;
+	int ARC_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Arc</em>' class.
@@ -212,79 +249,6 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @ordered
 	 */
 	int ARC_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link flowchartpck.impl.SubflowImpl <em>Subflow</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see flowchartpck.impl.SubflowImpl
-	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getSubflow()
-	 * @generated
-	 */
-	int SUBFLOW = 3;
-
-	/**
-	 * The feature id for the '<em><b>Nodes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBFLOW__NODES = FLOWCHART__NODES;
-
-	/**
-	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBFLOW__TRANSITIONS = FLOWCHART__TRANSITIONS;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBFLOW__NAME = FLOWCHART_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBFLOW__OUTGOING = FLOWCHART_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBFLOW__INCOMING = FLOWCHART_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Subflow</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBFLOW_FEATURE_COUNT = FLOWCHART_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Subflow</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SUBFLOW_OPERATION_COUNT = FLOWCHART_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link flowchartpck.impl.ActionImpl <em>Action</em>}' class.
@@ -324,13 +288,22 @@ public interface FlowchartpckPackage extends EPackage {
 	int ACTION__INCOMING = NODE__INCOMING;
 
 	/**
+	 * The feature id for the '<em><b>Do Program</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__DO_PROGRAM = NODE_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
+	int ACTION_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -406,6 +379,116 @@ public interface FlowchartpckPackage extends EPackage {
 	int DECISION_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link flowchartpck.impl.StartImpl <em>Start</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.StartImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getStart()
+	 * @generated
+	 */
+	int START = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START__NAME = NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START__OUTGOING = NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START__INCOMING = NODE__INCOMING;
+
+	/**
+	 * The number of structural features of the '<em>Start</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Start</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int START_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.EndImpl <em>End</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.EndImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getEnd()
+	 * @generated
+	 */
+	int END = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END__NAME = NODE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END__OUTGOING = NODE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END__INCOMING = NODE__INCOMING;
+
+	/**
+	 * The number of structural features of the '<em>End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_FEATURE_COUNT = NODE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>End</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int END_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link flowchartpck.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -413,7 +496,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 6;
+	int CONSTRAINT = 8;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -441,7 +524,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getRelationalConstraint()
 	 * @generated
 	 */
-	int RELATIONAL_CONSTRAINT = 7;
+	int RELATIONAL_CONSTRAINT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -478,7 +561,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 8;
+	int EXPRESSION = 10;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -506,7 +589,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getLiteral()
 	 * @generated
 	 */
-	int LITERAL = 9;
+	int LITERAL = 11;
 
 	/**
 	 * The number of structural features of the '<em>Literal</em>' class.
@@ -534,7 +617,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getIntegerLit()
 	 * @generated
 	 */
-	int INTEGER_LIT = 10;
+	int INTEGER_LIT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -571,7 +654,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getStringLit()
 	 * @generated
 	 */
-	int STRING_LIT = 11;
+	int STRING_LIT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -608,7 +691,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getBoolLit()
 	 * @generated
 	 */
-	int BOOL_LIT = 12;
+	int BOOL_LIT = 14;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -645,7 +728,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getArithmeticExpression()
 	 * @generated
 	 */
-	int ARITHMETIC_EXPRESSION = 13;
+	int ARITHMETIC_EXPRESSION = 15;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -700,7 +783,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getRelationalExpression()
 	 * @generated
 	 */
-	int RELATIONAL_EXPRESSION = 14;
+	int RELATIONAL_EXPRESSION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -755,7 +838,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getVarReference()
 	 * @generated
 	 */
-	int VAR_REFERENCE = 15;
+	int VAR_REFERENCE = 17;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -785,6 +868,403 @@ public interface FlowchartpckPackage extends EPackage {
 	int VAR_REFERENCE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link flowchartpck.impl.StatementImpl <em>Statement</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.StatementImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getStatement()
+	 * @generated
+	 */
+	int STATEMENT = 18;
+
+	/**
+	 * The number of structural features of the '<em>Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Statement</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.ProgramImpl <em>Program</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.ProgramImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getProgram()
+	 * @generated
+	 */
+	int PROGRAM = 19;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM__STATEMENTS = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Program</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Program</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.ConditionalImpl <em>Conditional</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.ConditionalImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getConditional()
+	 * @generated
+	 */
+	int CONDITIONAL = 20;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL__CONDITION = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL__BODY = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Conditional</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Conditional</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.LoopImpl <em>Loop</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.LoopImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getLoop()
+	 * @generated
+	 */
+	int LOOP = 21;
+
+	/**
+	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOOP__BODY = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOOP__GUARD = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Loop</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOOP_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Loop</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOOP_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.ConsoleOutputImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getConsoleOutput()
+	 * @generated
+	 */
+	int CONSOLE_OUTPUT = 22;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSOLE_OUTPUT__INPUT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Console Output</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSOLE_OUTPUT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Console Output</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSOLE_OUTPUT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.PrintlnImpl <em>Println</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.PrintlnImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getPrintln()
+	 * @generated
+	 */
+	int PRINTLN = 23;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINTLN__INPUT = CONSOLE_OUTPUT__INPUT;
+
+	/**
+	 * The number of structural features of the '<em>Println</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINTLN_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Println</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINTLN_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.PrintImpl <em>Print</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.PrintImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getPrint()
+	 * @generated
+	 */
+	int PRINT = 24;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT__INPUT = CONSOLE_OUTPUT__INPUT;
+
+	/**
+	 * The number of structural features of the '<em>Print</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Print</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.AssignationImpl <em>Assignation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.AssignationImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getAssignation()
+	 * @generated
+	 */
+	int ASSIGNATION = 25;
+
+	/**
+	 * The feature id for the '<em><b>Var Ref</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION__VAR_REF = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION__EXPRESSION = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Assignation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Assignation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.WaitImpl <em>Wait</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.WaitImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getWait()
+	 * @generated
+	 */
+	int WAIT = 26;
+
+	/**
+	 * The feature id for the '<em><b>Miliseconds</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT__MILISECONDS = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Wait</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Wait</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WAIT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link flowchartpck.impl.VarDeclImpl <em>Var Decl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see flowchartpck.impl.VarDeclImpl
+	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getVarDecl()
+	 * @generated
+	 */
+	int VAR_DECL = 27;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_DECL__NAME = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_DECL__EXPR = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Var Decl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_DECL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Var Decl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_DECL_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link flowchartpck.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -792,7 +1272,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int ARITHMETIC_OPERATOR = 16;
+	int ARITHMETIC_OPERATOR = 28;
 
 	/**
 	 * The meta object id for the '{@link flowchartpck.RelationalOperator <em>Relational Operator</em>}' enum.
@@ -802,8 +1282,29 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getRelationalOperator()
 	 * @generated
 	 */
-	int RELATIONAL_OPERATOR = 17;
+	int RELATIONAL_OPERATOR = 29;
 
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.NamedElement <em>Named Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see flowchartpck.NamedElement
+	 * @generated
+	 */
+	EClass getNamedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link flowchartpck.NamedElement#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see flowchartpck.NamedElement#getName()
+	 * @see #getNamedElement()
+	 * @generated
+	 */
+	EAttribute getNamedElement_Name();
 
 	/**
 	 * Returns the meta object for class '{@link flowchartpck.Flowchart <em>Flowchart</em>}'.
@@ -827,15 +1328,15 @@ public interface FlowchartpckPackage extends EPackage {
 	EReference getFlowchart_Nodes();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link flowchartpck.Flowchart#getTransitions <em>Transitions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link flowchartpck.Flowchart#getArcs <em>Arcs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Transitions</em>'.
-	 * @see flowchartpck.Flowchart#getTransitions()
+	 * @return the meta object for the containment reference list '<em>Arcs</em>'.
+	 * @see flowchartpck.Flowchart#getArcs()
 	 * @see #getFlowchart()
 	 * @generated
 	 */
-	EReference getFlowchart_Transitions();
+	EReference getFlowchart_Arcs();
 
 	/**
 	 * Returns the meta object for class '{@link flowchartpck.Node <em>Node</em>}'.
@@ -846,17 +1347,6 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getNode();
-
-	/**
-	 * Returns the meta object for the attribute '{@link flowchartpck.Node#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see flowchartpck.Node#getName()
-	 * @see #getNode()
-	 * @generated
-	 */
-	EAttribute getNode_Name();
 
 	/**
 	 * Returns the meta object for the reference list '{@link flowchartpck.Node#getOutgoing <em>Outgoing</em>}'.
@@ -891,17 +1381,6 @@ public interface FlowchartpckPackage extends EPackage {
 	EClass getArc();
 
 	/**
-	 * Returns the meta object for the attribute '{@link flowchartpck.Arc#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see flowchartpck.Arc#getName()
-	 * @see #getArc()
-	 * @generated
-	 */
-	EAttribute getArc_Name();
-
-	/**
 	 * Returns the meta object for the reference '{@link flowchartpck.Arc#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -924,16 +1403,6 @@ public interface FlowchartpckPackage extends EPackage {
 	EReference getArc_Target();
 
 	/**
-	 * Returns the meta object for class '{@link flowchartpck.Subflow <em>Subflow</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Subflow</em>'.
-	 * @see flowchartpck.Subflow
-	 * @generated
-	 */
-	EClass getSubflow();
-
-	/**
 	 * Returns the meta object for class '{@link flowchartpck.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -942,6 +1411,17 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAction();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Action#getDoProgram <em>Do Program</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Do Program</em>'.
+	 * @see flowchartpck.Action#getDoProgram()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_DoProgram();
 
 	/**
 	 * Returns the meta object for class '{@link flowchartpck.Decision <em>Decision</em>}'.
@@ -963,6 +1443,26 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDecision_Guard();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Start <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Start</em>'.
+	 * @see flowchartpck.Start
+	 * @generated
+	 */
+	EClass getStart();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.End <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>End</em>'.
+	 * @see flowchartpck.End
+	 * @generated
+	 */
+	EClass getEnd();
 
 	/**
 	 * Returns the meta object for class '{@link flowchartpck.Constraint <em>Constraint</em>}'.
@@ -1186,6 +1686,227 @@ public interface FlowchartpckPackage extends EPackage {
 	EAttribute getVarReference_Key();
 
 	/**
+	 * Returns the meta object for class '{@link flowchartpck.Statement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Statement</em>'.
+	 * @see flowchartpck.Statement
+	 * @generated
+	 */
+	EClass getStatement();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Program <em>Program</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Program</em>'.
+	 * @see flowchartpck.Program
+	 * @generated
+	 */
+	EClass getProgram();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link flowchartpck.Program#getStatements <em>Statements</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Statements</em>'.
+	 * @see flowchartpck.Program#getStatements()
+	 * @see #getProgram()
+	 * @generated
+	 */
+	EReference getProgram_Statements();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Conditional <em>Conditional</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conditional</em>'.
+	 * @see flowchartpck.Conditional
+	 * @generated
+	 */
+	EClass getConditional();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Conditional#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see flowchartpck.Conditional#getCondition()
+	 * @see #getConditional()
+	 * @generated
+	 */
+	EReference getConditional_Condition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Conditional#getBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Body</em>'.
+	 * @see flowchartpck.Conditional#getBody()
+	 * @see #getConditional()
+	 * @generated
+	 */
+	EReference getConditional_Body();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Loop <em>Loop</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Loop</em>'.
+	 * @see flowchartpck.Loop
+	 * @generated
+	 */
+	EClass getLoop();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Loop#getBody <em>Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Body</em>'.
+	 * @see flowchartpck.Loop#getBody()
+	 * @see #getLoop()
+	 * @generated
+	 */
+	EReference getLoop_Body();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Loop#getGuard <em>Guard</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Guard</em>'.
+	 * @see flowchartpck.Loop#getGuard()
+	 * @see #getLoop()
+	 * @generated
+	 */
+	EReference getLoop_Guard();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.ConsoleOutput <em>Console Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Console Output</em>'.
+	 * @see flowchartpck.ConsoleOutput
+	 * @generated
+	 */
+	EClass getConsoleOutput();
+
+	/**
+	 * Returns the meta object for the attribute '{@link flowchartpck.ConsoleOutput#getInput <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Input</em>'.
+	 * @see flowchartpck.ConsoleOutput#getInput()
+	 * @see #getConsoleOutput()
+	 * @generated
+	 */
+	EAttribute getConsoleOutput_Input();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Println <em>Println</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Println</em>'.
+	 * @see flowchartpck.Println
+	 * @generated
+	 */
+	EClass getPrintln();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Print <em>Print</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Print</em>'.
+	 * @see flowchartpck.Print
+	 * @generated
+	 */
+	EClass getPrint();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Assignation <em>Assignation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assignation</em>'.
+	 * @see flowchartpck.Assignation
+	 * @generated
+	 */
+	EClass getAssignation();
+
+	/**
+	 * Returns the meta object for the reference '{@link flowchartpck.Assignation#getVarRef <em>Var Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Var Ref</em>'.
+	 * @see flowchartpck.Assignation#getVarRef()
+	 * @see #getAssignation()
+	 * @generated
+	 */
+	EReference getAssignation_VarRef();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Assignation#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see flowchartpck.Assignation#getExpression()
+	 * @see #getAssignation()
+	 * @generated
+	 */
+	EReference getAssignation_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.Wait <em>Wait</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Wait</em>'.
+	 * @see flowchartpck.Wait
+	 * @generated
+	 */
+	EClass getWait();
+
+	/**
+	 * Returns the meta object for the attribute '{@link flowchartpck.Wait#getMiliseconds <em>Miliseconds</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Miliseconds</em>'.
+	 * @see flowchartpck.Wait#getMiliseconds()
+	 * @see #getWait()
+	 * @generated
+	 */
+	EAttribute getWait_Miliseconds();
+
+	/**
+	 * Returns the meta object for class '{@link flowchartpck.VarDecl <em>Var Decl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Var Decl</em>'.
+	 * @see flowchartpck.VarDecl
+	 * @generated
+	 */
+	EClass getVarDecl();
+
+	/**
+	 * Returns the meta object for the attribute '{@link flowchartpck.VarDecl#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see flowchartpck.VarDecl#getName()
+	 * @see #getVarDecl()
+	 * @generated
+	 */
+	EAttribute getVarDecl_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.VarDecl#getExpr <em>Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expr</em>'.
+	 * @see flowchartpck.VarDecl#getExpr()
+	 * @see #getVarDecl()
+	 * @generated
+	 */
+	EReference getVarDecl_Expr();
+
+	/**
 	 * Returns the meta object for enum '{@link flowchartpck.ArithmeticOperator <em>Arithmetic Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1229,6 +1950,24 @@ public interface FlowchartpckPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.NamedElementImpl <em>Named Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.NamedElementImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getNamedElement()
+		 * @generated
+		 */
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
 		 * The meta object literal for the '{@link flowchartpck.impl.FlowchartImpl <em>Flowchart</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1247,12 +1986,12 @@ public interface FlowchartpckPackage extends EPackage {
 		EReference FLOWCHART__NODES = eINSTANCE.getFlowchart_Nodes();
 
 		/**
-		 * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Arcs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FLOWCHART__TRANSITIONS = eINSTANCE.getFlowchart_Transitions();
+		EReference FLOWCHART__ARCS = eINSTANCE.getFlowchart_Arcs();
 
 		/**
 		 * The meta object literal for the '{@link flowchartpck.impl.NodeImpl <em>Node</em>}' class.
@@ -1263,14 +2002,6 @@ public interface FlowchartpckPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NODE = eINSTANCE.getNode();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Outgoing</b></em>' reference list feature.
@@ -1299,14 +2030,6 @@ public interface FlowchartpckPackage extends EPackage {
 		EClass ARC = eINSTANCE.getArc();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARC__NAME = eINSTANCE.getArc_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1323,16 +2046,6 @@ public interface FlowchartpckPackage extends EPackage {
 		EReference ARC__TARGET = eINSTANCE.getArc_Target();
 
 		/**
-		 * The meta object literal for the '{@link flowchartpck.impl.SubflowImpl <em>Subflow</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see flowchartpck.impl.SubflowImpl
-		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getSubflow()
-		 * @generated
-		 */
-		EClass SUBFLOW = eINSTANCE.getSubflow();
-
-		/**
 		 * The meta object literal for the '{@link flowchartpck.impl.ActionImpl <em>Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1341,6 +2054,14 @@ public interface FlowchartpckPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Do Program</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__DO_PROGRAM = eINSTANCE.getAction_DoProgram();
 
 		/**
 		 * The meta object literal for the '{@link flowchartpck.impl.DecisionImpl <em>Decision</em>}' class.
@@ -1359,6 +2080,26 @@ public interface FlowchartpckPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DECISION__GUARD = eINSTANCE.getDecision_Guard();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.StartImpl <em>Start</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.StartImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getStart()
+		 * @generated
+		 */
+		EClass START = eINSTANCE.getStart();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.EndImpl <em>End</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.EndImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getEnd()
+		 * @generated
+		 */
+		EClass END = eINSTANCE.getEnd();
 
 		/**
 		 * The meta object literal for the '{@link flowchartpck.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -1547,6 +2288,194 @@ public interface FlowchartpckPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VAR_REFERENCE__KEY = eINSTANCE.getVarReference_Key();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.StatementImpl <em>Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.StatementImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getStatement()
+		 * @generated
+		 */
+		EClass STATEMENT = eINSTANCE.getStatement();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.ProgramImpl <em>Program</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.ProgramImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getProgram()
+		 * @generated
+		 */
+		EClass PROGRAM = eINSTANCE.getProgram();
+
+		/**
+		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROGRAM__STATEMENTS = eINSTANCE.getProgram_Statements();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.ConditionalImpl <em>Conditional</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.ConditionalImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getConditional()
+		 * @generated
+		 */
+		EClass CONDITIONAL = eINSTANCE.getConditional();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL__CONDITION = eINSTANCE.getConditional_Condition();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL__BODY = eINSTANCE.getConditional_Body();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.LoopImpl <em>Loop</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.LoopImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getLoop()
+		 * @generated
+		 */
+		EClass LOOP = eINSTANCE.getLoop();
+
+		/**
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOOP__BODY = eINSTANCE.getLoop_Body();
+
+		/**
+		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LOOP__GUARD = eINSTANCE.getLoop_Guard();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.ConsoleOutputImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getConsoleOutput()
+		 * @generated
+		 */
+		EClass CONSOLE_OUTPUT = eINSTANCE.getConsoleOutput();
+
+		/**
+		 * The meta object literal for the '<em><b>Input</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONSOLE_OUTPUT__INPUT = eINSTANCE.getConsoleOutput_Input();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.PrintlnImpl <em>Println</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.PrintlnImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getPrintln()
+		 * @generated
+		 */
+		EClass PRINTLN = eINSTANCE.getPrintln();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.PrintImpl <em>Print</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.PrintImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getPrint()
+		 * @generated
+		 */
+		EClass PRINT = eINSTANCE.getPrint();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.AssignationImpl <em>Assignation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.AssignationImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getAssignation()
+		 * @generated
+		 */
+		EClass ASSIGNATION = eINSTANCE.getAssignation();
+
+		/**
+		 * The meta object literal for the '<em><b>Var Ref</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNATION__VAR_REF = eINSTANCE.getAssignation_VarRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNATION__EXPRESSION = eINSTANCE.getAssignation_Expression();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.WaitImpl <em>Wait</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.WaitImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getWait()
+		 * @generated
+		 */
+		EClass WAIT = eINSTANCE.getWait();
+
+		/**
+		 * The meta object literal for the '<em><b>Miliseconds</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WAIT__MILISECONDS = eINSTANCE.getWait_Miliseconds();
+
+		/**
+		 * The meta object literal for the '{@link flowchartpck.impl.VarDeclImpl <em>Var Decl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see flowchartpck.impl.VarDeclImpl
+		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getVarDecl()
+		 * @generated
+		 */
+		EClass VAR_DECL = eINSTANCE.getVarDecl();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VAR_DECL__NAME = eINSTANCE.getVarDecl_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VAR_DECL__EXPR = eINSTANCE.getVarDecl_Expr();
 
 		/**
 		 * The meta object literal for the '{@link flowchartpck.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

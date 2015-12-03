@@ -1,0 +1,23 @@
+package flowchart
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import java.util.Hashtable
+import flowchartpck.Decision
+
+import static extension flowchart.ConstraintAspect.*
+import flowchartpck.Node
+
+@Aspect(className=Decision)
+public class DecisionAspect extends NodeAspect {
+
+	def void eval(Hashtable<String, Object> context) {
+		var guard = _self.guard.evalConstraint(context)
+		if(guard){
+			(_self.outgoing.get(0) as Node).eval(context)
+		}else{
+			
+		}
+		
+	}
+}

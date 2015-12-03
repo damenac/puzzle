@@ -16,8 +16,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -29,13 +27,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link flowchartpck.impl.FlowchartImpl#getNodes <em>Nodes</em>}</li>
- *   <li>{@link flowchartpck.impl.FlowchartImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link flowchartpck.impl.FlowchartImpl#getArcs <em>Arcs</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowchart {
+public class FlowchartImpl extends NamedElementImpl implements Flowchart {
 	/**
 	 * The cached value of the '{@link #getNodes() <em>Nodes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -47,14 +45,14 @@ public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowc
 	protected EList<Node> nodes;
 
 	/**
-	 * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
+	 * The cached value of the '{@link #getArcs() <em>Arcs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTransitions()
+	 * @see #getArcs()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Arc> transitions;
+	protected EList<Arc> arcs;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,11 +90,11 @@ public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Arc> getTransitions() {
-		if (transitions == null) {
-			transitions = new EObjectContainmentEList<Arc>(Arc.class, this, FlowchartpckPackage.FLOWCHART__TRANSITIONS);
+	public EList<Arc> getArcs() {
+		if (arcs == null) {
+			arcs = new EObjectContainmentEList<Arc>(Arc.class, this, FlowchartpckPackage.FLOWCHART__ARCS);
 		}
-		return transitions;
+		return arcs;
 	}
 
 	/**
@@ -109,8 +107,8 @@ public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowc
 		switch (featureID) {
 			case FlowchartpckPackage.FLOWCHART__NODES:
 				return ((InternalEList<?>)getNodes()).basicRemove(otherEnd, msgs);
-			case FlowchartpckPackage.FLOWCHART__TRANSITIONS:
-				return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
+			case FlowchartpckPackage.FLOWCHART__ARCS:
+				return ((InternalEList<?>)getArcs()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -125,8 +123,8 @@ public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowc
 		switch (featureID) {
 			case FlowchartpckPackage.FLOWCHART__NODES:
 				return getNodes();
-			case FlowchartpckPackage.FLOWCHART__TRANSITIONS:
-				return getTransitions();
+			case FlowchartpckPackage.FLOWCHART__ARCS:
+				return getArcs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -144,9 +142,9 @@ public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowc
 				getNodes().clear();
 				getNodes().addAll((Collection<? extends Node>)newValue);
 				return;
-			case FlowchartpckPackage.FLOWCHART__TRANSITIONS:
-				getTransitions().clear();
-				getTransitions().addAll((Collection<? extends Arc>)newValue);
+			case FlowchartpckPackage.FLOWCHART__ARCS:
+				getArcs().clear();
+				getArcs().addAll((Collection<? extends Arc>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -163,8 +161,8 @@ public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowc
 			case FlowchartpckPackage.FLOWCHART__NODES:
 				getNodes().clear();
 				return;
-			case FlowchartpckPackage.FLOWCHART__TRANSITIONS:
-				getTransitions().clear();
+			case FlowchartpckPackage.FLOWCHART__ARCS:
+				getArcs().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -180,8 +178,8 @@ public class FlowchartImpl extends MinimalEObjectImpl.Container implements Flowc
 		switch (featureID) {
 			case FlowchartpckPackage.FLOWCHART__NODES:
 				return nodes != null && !nodes.isEmpty();
-			case FlowchartpckPackage.FLOWCHART__TRANSITIONS:
-				return transitions != null && !transitions.isEmpty();
+			case FlowchartpckPackage.FLOWCHART__ARCS:
+				return arcs != null && !arcs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

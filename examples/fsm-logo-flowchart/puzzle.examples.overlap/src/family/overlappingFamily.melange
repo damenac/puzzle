@@ -80,8 +80,9 @@ language Flowchart {
 	with flowchart.FlowchartAspect
 	with flowchart.NodeAspect
 	with flowchart.ArcAspect
-	with flowchart.SubflowAspect
 	with flowchart.ActionAspect
+	with flowchart.StartAspect
+	with flowchart.EndAspect
 	with flowchart.DecisionAspect
 	with flowchart.ExpressionAspect
 	with flowchart.LiteralAspect
