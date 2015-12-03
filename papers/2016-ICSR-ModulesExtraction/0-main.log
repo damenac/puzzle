@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  2 DEC 2015 15:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  3 DEC 2015 11:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1026,7 +1026,7 @@ Underfull \vbox (badness 1102) has occurred while \output is active []
 File: images/k3-example-fig.pdf Graphic file (type pdf)
 
 <use images/k3-example-fig.pdf>
-Package pdftex.def Info: images/k3-example-fig.pdf used on input line 26.
+Package pdftex.def Info: images/k3-example-fig.pdf used on input line 28.
 (pdftex.def)             Requested size: 347.12354pt x 136.21844pt.
 ) (./sections/runningexample.tex [3] [4 <./images/k3-example-fig.pdf>]
 <images/domains-inaction.pdf, id=602, 571.95506pt x 188.18394pt>
@@ -1043,14 +1043,14 @@ File: images/breakdown.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/breakdown.pdf used on input line 8.
 (pdftex.def)             Requested size: 347.12354pt x 148.95015pt.
  [5 <./images/domains-inaction.pdf>]
-Underfull \vbox (badness 1642) has occurred while \output is active []
+Underfull \vbox (badness 1231) has occurred while \output is active []
 
  [6 <./images/breakdown.pdf>] [7] [8]
 <images/approach-interfaces.pdf, id=926, 491.8636pt x 144.10297pt>
 File: images/approach-interfaces.pdf Graphic file (type pdf)
 
 <use images/approach-interfaces.pdf>
-Package pdftex.def Info: images/approach-interfaces.pdf used on input line 156.
+Package pdftex.def Info: images/approach-interfaces.pdf used on input line 160.
 
 (pdftex.def)             Requested size: 347.12354pt x 101.70033pt.
 ) (./sections/evaluation.tex
@@ -1060,32 +1060,45 @@ Overfull \hbox (5.49342pt too wide) in paragraph at lines 8--8
  []
 
 [9 <./images/approach-interfaces.pdf>]
+Overfull \hbox (0.56934pt too wide) in paragraph at lines 21--22
+\T1/cmr/m/n/10 DSLs (\T1/cmtt/m/n/10 Fork\T1/cmr/m/n/10 , \T1/cmtt/m/n/10 Join\
+T1/cmr/m/n/10 , \T1/cmtt/m/n/10 ShallowHistory\T1/cmr/m/n/10 , and \T1/cmtt/m/n
+/10 Junction\T1/cmr/m/n/10 ); there are two psueu-dostates
+ []
+
+
+Overfull \hbox (3.3742pt too wide) in paragraph at lines 21--22
+\T1/cmr/m/n/10 i.e., \T1/cmtt/m/n/10 DeepHistory \T1/cmr/m/n/10 and \T1/cmtt/m/
+n/10 Choice \T1/cmr/m/n/10 that are only sup-ported by UML. The \T1/cmtt/m/n/10
+ Conditional
+ []
+
 <images/oracle.pdf, id=1460, 600.82475pt x 167.32352pt>
 File: images/oracle.pdf Graphic file (type pdf)
 
 <use images/oracle.pdf>
-Package pdftex.def Info: images/oracle.pdf used on input line 25.
+Package pdftex.def Info: images/oracle.pdf used on input line 27.
 (pdftex.def)             Requested size: 347.12354pt x 96.66983pt.
  [10 <./images/oracle.pdf>]
 <images/puzzle-overlapping.pdf, id=1503, 693.70612pt x 342.79854pt>
 File: images/puzzle-overlapping.pdf Graphic file (type pdf)
 
 <use images/puzzle-overlapping.pdf>
-Package pdftex.def Info: images/puzzle-overlapping.pdf used on input line 38.
+Package pdftex.def Info: images/puzzle-overlapping.pdf used on input line 40.
 (pdftex.def)             Requested size: 347.12354pt x 171.53484pt.
 
 <images/puzzle-modularization.pdf, id=1507, 690.29262pt x 338.65039pt>
 File: images/puzzle-modularization.pdf Graphic file (type pdf)
 
 <use images/puzzle-modularization.pdf>
-Package pdftex.def Info: images/puzzle-modularization.pdf used on input line 49
+Package pdftex.def Info: images/puzzle-modularization.pdf used on input line 51
 .
 (pdftex.def)             Requested size: 347.12354pt x 170.29623pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [11 <./images/puzzle-overlapping.pdf>]
-Overfull \hbox (1.23502pt too wide) in paragraph at lines 58--59
+Overfull \hbox (1.23502pt too wide) in paragraph at lines 60--61
 []\T1/cmr/bx/n/10 Collecting em-pir-i-cal data $\OMS/cmsy/m/n/10 !$ \T1/cmr/m/n
 /10 To col-lect em-pir-i-cal data, we ex-plored \T1/cmtt/m/n/10 GitHub
  []
@@ -1095,7 +1108,7 @@ Overfull \hbox (1.23502pt too wide) in paragraph at lines 58--59
 File: images/matrix-evaluation.pdf Graphic file (type pdf)
 
 <use images/matrix-evaluation.pdf>
-Package pdftex.def Info: images/matrix-evaluation.pdf used on input line 83.
+Package pdftex.def Info: images/matrix-evaluation.pdf used on input line 85.
 (pdftex.def)             Requested size: 260.34265pt x 102.10576pt.
 
 
@@ -1160,7 +1173,7 @@ exmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf
 -dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2013/texmf-d
 ist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0-main.pdf (16 pages, 2214685 bytes).
+Output written on 0-main.pdf (16 pages, 2214504 bytes).
 PDF statistics:
  2101 PDF objects out of 2487 (max. 8388607)
  1235 compressed objects within 13 object streams
