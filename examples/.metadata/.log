@@ -2085,3 +2085,987 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.131
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/48/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.132
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/49/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.133
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/49/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.133
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/49/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.133
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/49/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.134
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/50/@members.0/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.134
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/50/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.134
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/50/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.134
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/50/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.134
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/51/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.135
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/51/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.135
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/51/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.135
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/51/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.136
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/52/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.136
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/52/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.136
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/52/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.136
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/52/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.136
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/53/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.137
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/53/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.137
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/53/@members.3/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.137
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.138
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.138
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.138
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.138
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.3/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.139
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.139
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/55/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.139
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/55/@members.1/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.139
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/56/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.139
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/56/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.140
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/56/@members.4/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.140
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/57/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.140
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/57/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.140
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/58/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.141
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/58/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.141
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/59/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.141
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/59/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.141
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.141
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.141
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.141
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.142
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/61/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.142
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/61/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.143
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/66/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.143
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/66/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.143
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/66/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.143
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/67/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.144
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/67/@members.1/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.144
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/67/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.144
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.144
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.1/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.145
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.145
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.145
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.145
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.145
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.145
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.146
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/70/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.146
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/70/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.146
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/70/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.146
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/71/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.146
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/71/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.146
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/71/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.146
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/72/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.147
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/72/@members.0/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.147
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/73/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.147
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/73/@members.0/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.147
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/75/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.147
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/76/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.147
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/76/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.148
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/77/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.148
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/77/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.148
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.0/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.148
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.148
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.149
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.149
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.149
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.149
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.149
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.149
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.150
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.150
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.0/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.150
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.150
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.150
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.151
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.151
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.151
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.151
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.151
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.151
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.151
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.152
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.152
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.152
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.152
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.152
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/83/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.152
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/83/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.153
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/83/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.153
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/85/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.153
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/85/@members.1/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.153
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/85/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.153
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.153
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.154
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.154
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.154
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/87/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.154
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/87/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.154
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/88/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.154
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/88/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.154
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/88/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.155
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/91/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.155
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/91/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.155
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.0/@returnType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.155
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.155
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.156
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.156
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.156
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.156
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.156
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:04:30.156
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.443
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/53/@members.3/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.443
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.444
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.444
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.444
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.2/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.444
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.3/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.444
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/54/@members.4/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.445
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/55/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.445
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/55/@members.1/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.445
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/56/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.445
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/56/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.445
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/56/@members.4/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.445
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/57/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.446
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/57/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.446
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/58/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.446
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/58/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.446
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/59/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.446
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/59/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.447
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.447
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.447
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.447
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/60/@members.2/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.447
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/61/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.448
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/61/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.449
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/66/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.449
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/66/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.449
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/66/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.449
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/67/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.449
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/67/@members.1/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.450
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/67/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.450
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.450
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.1/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.450
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.450
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/68/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.451
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.451
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.451
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.451
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/69/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.451
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/70/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.452
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/70/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.452
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/70/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.452
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/71/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.452
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/71/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.452
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/71/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.453
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/72/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.453
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/72/@members.0/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.453
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/73/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.453
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/73/@members.0/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.454
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/75/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.454
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/76/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.454
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/76/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.454
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/77/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.454
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/77/@members.0/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.454
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.0/@returnType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: int (simpleName: int) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/78/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.455
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.456
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/79/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.456
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.0/@returnType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.456
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: boolean (simpleName: boolean) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.456
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.456
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.456
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/80/@members.2/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.456
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.457
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.457
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.457
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.457
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/81/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.457
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.457
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.458
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.5/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.458
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.6/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.458
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/82/@members.6/@returnType to JvmGenericType: java.lang.Object (visibility: PUBLIC, simpleName: Object, identifier: java.lang.Object, deprecated: false) (abstract: false, static: false, final: false, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.458
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/83/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.458
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/83/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.458
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/83/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.458
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/85/@members.0/@returnType to JvmGenericType: org.eclipse.emf.common.util.EList (visibility: PUBLIC, simpleName: EList, identifier: org.eclipse.emf.common.util.EList, deprecated: false) (abstract: true, static: false, final: false, packageName: org.eclipse.emf.common.util) (interface: true, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/85/@members.1/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/85/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/86/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/87/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.459
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/87/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.460
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/87/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.460
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/87/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.460
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/88/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.460
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/88/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.460
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/88/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.460
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/89/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/89/@members.0/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/90/@members.0/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/90/@members.0/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/91/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/91/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.0/@returnType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.1/@parameters.0/@parameterType to JvmPrimitiveType: long (simpleName: long) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.461
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.462
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.2/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.462
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/92/@members.2/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.462
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.0/@returnType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.462
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.1/@parameters.0/@parameterType to JvmGenericType: java.lang.String (visibility: PUBLIC, simpleName: String, identifier: java.lang.String, deprecated: false) (abstract: false, static: false, final: true, packageName: java.lang) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.462
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.1/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.462
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.3/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.462
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.4/@parameters.0/@parameterType to JvmGenericType: java.util.Hashtable (visibility: PUBLIC, simpleName: Hashtable, identifier: java.util.Hashtable, deprecated: false) (abstract: false, static: false, final: false, packageName: java.util) (interface: false, strictFloatingPoint: false, anonymous: false) cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:36.463
+!MESSAGE org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy  - Reference from platform:/resource/puzzle.examples.overlap/src/family/overlappingFamily.melange#/93/@members.4/@returnType to JvmVoid: void cannot be exported as the target is not contained in a resource.
+
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:05:59.349
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.flowchart.aspects/src/flowchart/Assignation.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 15:07:56.308
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.fsm.harel.aspects/src/fsmharelaspects/AndTrigger.xtend'.
+
+!STACK 0
+java.lang.IllegalArgumentException: Resource '/puzzle.examples.fsm.harel.aspects/META-INF/xtend-gen/puzzle.examples.fsm.harel.aspects.k3_aspect_mapping.properties' is not local.
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:223)
+	at org.eclipse.xtext.xbase.file.AbstractFileSystemSupport.getContents(AbstractFileSystemSupport.java:35)
+	at org.eclipse.xtend.core.macro.declaration.ChangeListenerAddingFileSystemSupport.getContents(ChangeListenerAddingFileSystemSupport.java:92)
+	at org.eclipse.xtext.xbase.file.ParallelFileSystemSupport.getContents(ParallelFileSystemSupport.java:97)
+	at org.eclipse.xtend.core.macro.CodeGenerationContextImpl.getContents(CodeGenerationContextImpl.java:108)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectMappingBuilder.writePropertyFile(AspectMappingBuilder.java:205)
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:136)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:133)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:95)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.handleChangedContents(XtendParallelBuilderParticipant.java:70)
+	at org.eclipse.xtext.builder.BuilderParticipant.doGenerate(BuilderParticipant.java:498)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant.access$3(XtendParallelBuilderParticipant.java:1)
+	at org.eclipse.xtend.ide.builder.XtendParallelBuilderParticipant$1.run(XtendParallelBuilderParticipant.java:114)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.core.internal.resources.ResourceException: Resource '/puzzle.examples.fsm.harel.aspects/META-INF/xtend-gen/puzzle.examples.fsm.harel.aspects.k3_aspect_mapping.properties' is not local.
+	at org.eclipse.core.internal.resources.Resource.checkLocal(Resource.java:353)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:289)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.xtext.xbase.ui.file.EclipseFileSystemSupportImpl.getContentsAsStream(EclipseFileSystemSupportImpl.java:218)
+	... 15 more
