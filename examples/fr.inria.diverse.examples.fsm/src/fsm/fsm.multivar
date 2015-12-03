@@ -1,0 +1,54 @@
+import 'fsmFamily.melange'
+
+languagefeatures {
+	
+	languagefeature StateMachines {
+		languagemodule CoreFSMRTC
+	}
+
+	abstract languagefeature TransitionsDef {	
+		children {
+			optional Effect
+			mandatory Trigger
+		}
+	}
+	
+	languagefeature Effect {
+		languagemodule TransitionEffect
+	}
+	
+	languagefeature Trigger {
+		languagemodule SimpleTrigger
+		children {
+			or(AndTrigger, OrTrigger)
+		}
+	}
+	
+	languagefeature AndTrigger {
+		languagemodule AndTrigger
+	}
+	
+	languagefeature OrTrigger {
+		languagemodule OrTrigger
+	}
+	
+	root StateMachines
+}
+
+orthogonalvariability {
+	
+	variationpoint EventsDispatchingPolicy involves StateMachines {
+		variation RTC languagemodule CoreFSMRTC
+		variation SimultaneousEvetns languagemodule CoreFSMSimultaneous
+		
+		default RTC
+	}
+	
+	variationpoint TransitionEffectsPolicy involves Effect {
+		variation Parallel languagemodule TransitionEffectParallel
+		variation Sequential languagemodule TransitionEffectSequential
+		
+		default Parallel
+	}
+}
+

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin>
+
+   <extension
+         point="fr.inria.diverse.melange.modeltype">
+      <modeltype
+            uri="http://flowchartmt/"
+            id="family.FlowchartMT">
+      </modeltype>
+   </extension>
+   <extension
+         point="fr.inria.diverse.melange.language">
+      <language
+            exactType="family.FlowchartMT"
+            description="A language for Flowcharts"
+            uri="flowchartpck"
+            id="family.Flowchart">
+         <adapter
+               class="family.flowchart.adapters.flowchartmt.FlowchartAdapter"
+               modeltypeId="family.FlowchartMT">
+         </adapter>
+      </language>
+   </extension>
+
+</plugin>
