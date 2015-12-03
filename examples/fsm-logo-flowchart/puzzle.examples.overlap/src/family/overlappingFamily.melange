@@ -34,7 +34,7 @@ language FSM {
 }
 
 /**
- * A language for Logo 
+ * A language for manipulating Logo's tutle 
  */
 language Logo {
 	

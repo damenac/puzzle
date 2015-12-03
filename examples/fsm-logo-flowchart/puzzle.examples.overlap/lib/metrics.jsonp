@@ -5,7 +5,7 @@ var pieDataSyntacticCommonality = [{
         label: "Commonalities"
     },
     {
-        value: 47,
+        value: 48,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -19,7 +19,7 @@ var pieDataSemanticCommonality = [{
         label: "Commonalities"
     },
     {
-        value: 75,
+        value: 86,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -34,7 +34,7 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [29.03225806451613,32.142857142857146,50.0]
+        data : [29.03225806451613,32.142857142857146,30.0]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -53,7 +53,7 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [38.70967741935484,32.142857142857146,66.66666666666666]
+        data : [74.19354838709677,32.142857142857146,76.66666666666667]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -72,7 +72,7 @@ var barRelationshipRatioFSM = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [18.0,32.432432432432435]
+        data : [18.0,60.526315789473685]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -91,7 +91,7 @@ var barRelationshipRatioLogo = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [18.0,24.324324324324326]
+        data : [18.0,18.367346938775512]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
@@ -110,7 +110,7 @@ var barRelationshipRatioFlowchart = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [32.432432432432435,24.324324324324326]
+        data : [60.526315789473685,18.367346938775512]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",

@@ -57,7 +57,7 @@
                      label="Extract Reusable Modules"
                      style="push">
                </command>
-               <command
+               <!--<command
                      commandId="fr.inria.diverse.puzzle.Synthesize"
                      label="Synthesize LPL"
                      style="push">
@@ -70,7 +70,7 @@
                      commandId="fr.inria.diverse.puzzle.ConfigureDSL"
                      label="Configure DSL"
                      style="push">
-               </command>
+               </command>-->
                
             </menu>
       </menuContribution>
