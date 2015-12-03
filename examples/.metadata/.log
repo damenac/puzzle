@@ -1276,3 +1276,49 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 !ENTRY org.apache.log4j 2 0 2015-12-03 12:26:40.943
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+!SESSION 2015-12-03 12:56:12.016 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-12-03 12:56:16.325
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-12-03 12:57:00.472
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.ui 4 4 2015-12-03 12:58:06.739
+!MESSAGE Plug-in 'org.eclipse.m2e.scm' contributed an invalid Menu Extension (Path: 'org.eclipse.m2e.classpathMenu' is invalid): org.eclipse.m2e.materializeAction
+
+!ENTRY org.apache.log4j 4 0 2015-12-03 13:00:50.697
+!MESSAGE org.eclipse.xtext.builder.impl.XtextBuilder  - 
+
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.emf.ecore.resource.impl.ExtensibleURIConverterImpl.normalize(ExtensibleURIConverterImpl.java:407)
+	at org.eclipse.xtext.resource.XtextResourceSet$1.normalize(XtextResourceSet.java:290)
+	at org.eclipse.xtext.resource.XtextResourceSet.getResource(XtextResourceSet.java:239)
+	at org.eclipse.xtext.resource.SynchronizedXtextResourceSet.getResource(SynchronizedXtextResourceSet.java:25)
+	at org.eclipse.xtext.builder.resourceloader.SerialResourceLoader$1.next(SerialResourceLoader.java:47)
+	at org.eclipse.xtext.builder.resourceloader.AbstractResourceLoader$CheckedLoadOperation.next(AbstractResourceLoader.java:77)
+	at org.eclipse.xtext.builder.clustering.ClusteringBuilderState.doUpdate(ClusteringBuilderState.java:215)
+	at org.eclipse.xtext.builder.builderState.AbstractBuilderState.update(AbstractBuilderState.java:115)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.doBuild(XtextBuilder.java:248)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:280)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
