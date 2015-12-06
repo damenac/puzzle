@@ -76,16 +76,16 @@ From a pragmatic point of view, this result means that there are \textbf{50\%} o
 
 Although this result is quite encouraging, we still wonder how important is the potential reuse. This motivate the following question:
 
-\textbf{How big is the average overlapping existing among DSLs? $\rightarrow$} To compute the average of overlapping among the metamodels in the set $S$ we built the matrix illustrated in Figure \ref{fig:matrix-evaluation}. We performed a pair-wise comparison between the metamodels to obtain the size of the overlapping (i.e., amount of shared metaclasses) between all the possible pairs. Then, we compute the average of overlapping that each metamodel has with the other metamodels of the set. To compute that average, we consider only the metamodels where the overlapping is at least 1 metaclass. Finally, we compute the average of these averages.
+\textbf{How big is the average overlapping existing among DSLs? $\rightarrow$} To compute the average of overlapping among the metamodels in the set $S$, we performed a pair-wise comparison between the metamodels to obtain the size of the overlapping (i.e., amount of shared metaclasses) between all the possible pairs. Then, we compute the average of overlapping that each metamodel has with the other metamodels of the set. To compute that average, we consider only the metamodels where the overlapping is at least 1 metaclass. Finally, we compute the average of these averages.
 
 After executing this experiment, we obtain that the average of overlapping is 5.31. If we analyze the results of questions one and two at the same time, we can conclude that during the construction of the \textbf{50\%} of the new DSLs language designers are replicating, in average, \textbf{5.31} language constructs. If we take into account that, in our empirical data, the average number of constructs of a DSLs is \textbf{28.4}, we found that the reuse opportunities are about \textbf{18\%}. 
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.75\linewidth]{images/matrix-evaluation.pdf}
-\caption{Computing average commonalities}
-\label{fig:matrix-evaluation}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=0.75\linewidth]{images/matrix-evaluation.pdf}
+%\caption{Computing average commonalities}
+%\label{fig:matrix-evaluation}
+%\end{figure}
 
 %\vspace{-3mm}
 %\subsubsection{Execution platform:} The experiments were conducted using a version of \toolname implemented in Java. Further, \toolname was installed in the Grid5000 Cloud, which is a cluster with more than 5000 cores from were we took XX dual-CPU Dell Blades with Intel Xeon X3470 CPUs running at 2.93GHz, with 16 threads per CPU, and CentOS v6. Each dual-CPU Dell Blade has 36GB of RAM. 

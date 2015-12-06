@@ -91,6 +91,9 @@ language Flowchart {
 	with flowchart.BoolLitAspect
 	with flowchart.ArithmeticExpressionAspect
 	with flowchart.RelationalExpressionAspect
+	with flowchart.ConstraintAspect
+	with flowchart.RelationalConstraintAspect
+	with flowchart.StatementAspect
 	with flowchart.ProgramAspect
 	with flowchart.VarDeclAspect
 	with flowchart.ConditionalAspect

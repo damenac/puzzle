@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreArc"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.PairVO"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.RandomNumber"/>
@@ -55,9 +54,10 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Metamodel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

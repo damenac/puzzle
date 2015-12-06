@@ -108,11 +108,11 @@ public class BreakerImpl {
 		
 		ArrayList<MetaclassAspectMapping> mapping = new ArrayList<MetaclassAspectMapping>();
 		findAspectMapping(languages, mapping);
-		ArrayList<MetaclassAspectMapping> mappingVariability =  detectSemanticVariability(mapping, methodComparison);
+		mapping = detectSemanticVariability(mapping, methodComparison);
 		
 		for (EcoreGroup group : dependenciesGraph.getGroups()) {
 			ArrayList<EClassifier> requiredClassifiers = buildSyntacticModule(group, languages);
-			buildSemanticModule(group, mappingVariability, languages, requiredClassifiers);
+			buildSemanticModule(group, mapping, languages, requiredClassifiers);
 		}
 	}
 
@@ -221,6 +221,7 @@ public class BreakerImpl {
 				}else{
 					legacyMapping.setLanguagesList(legacyMapping.getLanguagesList() + 
 							aspectMapping.getLanguage().getName());
+					legacyMapping.getLanguagesObjectList().addAll(aspectMapping.getLanguagesObjectList());
 				}
 			}
 			mappingVariability.add(newEntry);
@@ -294,9 +295,15 @@ public class BreakerImpl {
 		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
 		ArrayList<MetaclassAspectMapping> localMapping = filterAspects(group, mapping);
 		
-		for (MetaclassAspectMapping metaclassAspectMapping : localMapping) {
-			for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
-				ProjectManagementServices.copyAspectResource(aspectLanguageMapping, moduleProject, moduleName, classifiers, requiredAspects);
+		boolean semanticVariability = thereIsSemanticVariability(localMapping);
+		
+		if(semanticVariability){
+			System.out.println("coucou! semantic variability: " + moduleName);
+		}else{
+			for (MetaclassAspectMapping metaclassAspectMapping : localMapping) {
+				for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
+					ProjectManagementServices.copyAspectResource(aspectLanguageMapping, moduleProject, moduleName, classifiers, requiredAspects);
+				}
 			}
 		}
 		
@@ -304,6 +311,18 @@ public class BreakerImpl {
 		ProjectManagementServices.refreshProject(moduleProject);
 	}
 	
+	private boolean thereIsSemanticVariability(
+			ArrayList<MetaclassAspectMapping> localMapping) {
+		for (MetaclassAspectMapping metaclassAspectMapping : localMapping) {
+			for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
+				if(aspectLanguageMapping.getLanguagesObjectList().size() > 1){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	/**
 	 * Creates a project with all the xtend classes used by different modules in the family. 
 	 * @param languages. Set of languages under study. 
@@ -467,9 +486,12 @@ public class BreakerImpl {
 				MetaclassAspectMapping map = getMappingByClassifier(aspect.getAspectedClass(), mapping);
 				if(map == null){
 					map = new MetaclassAspectMapping(aspect.getAspectedClass(), aspect, language);
+					map.getAspects().get(0).getLanguagesObjectList().add(language);
 					mapping.add(map);
 				}else{
-					map.getAspects().add(new AspectLanguageMapping(aspect, language));
+					AspectLanguageMapping newMap = new AspectLanguageMapping(aspect, language);
+					newMap.getLanguagesObjectList().add(language);
+					map.getAspects().add(newMap);
 				}
 			}
 		}

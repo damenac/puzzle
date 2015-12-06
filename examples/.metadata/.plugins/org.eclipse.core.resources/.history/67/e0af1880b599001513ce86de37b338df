@@ -1,6 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsm.Program = fsmaspects.ProgramAspect
-	fsm.RelationalExpression = fsmaspects.RelationalExpressionAspect
-	fsm.StateMachine = fsmaspects.StateMachineAspect
-	fsm.Wait = fsmaspects.WaitAspect
-	fsm.RelationalConstraint = fsmaspects.RelationalConstraintAspect

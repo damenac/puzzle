@@ -194,7 +194,7 @@ public class ProjectManagementServices {
 		String content = "";
 		
 		String pck = moduleName.replace("Module", "").toLowerCase();
-		String prefix = aspectLanguageMapping.getLanguagesList() + "Like";
+		String prefix = aspectLanguageMapping.getLanguagesList();// + "Like";
 		
 		while(line != null){
 			if(line.startsWith("package")){
