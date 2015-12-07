@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  6 DEC 2015 23:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2013.11.29)  7 DEC 2015 11:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,7 +1009,7 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 93.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 93.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 96.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -1017,11 +1017,11 @@ File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 (./sections/introduction.tex [1
 
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \vbox (badness 1102) has occurred while \output is active []
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]) (./sec
+tions/basicconcepts.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2])
-(./sections/basicconcepts.tex
+ [2]
 <images/k3-example-fig.pdf, id=149, 676.32233pt x 265.40715pt>
 File: images/k3-example-fig.pdf Graphic file (type pdf)
 
@@ -1029,31 +1029,28 @@ File: images/k3-example-fig.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/k3-example-fig.pdf used on input line 28.
 (pdftex.def)             Requested size: 347.12354pt x 136.21844pt.
 ) (./sections/runningexample.tex [3] [4 <./images/k3-example-fig.pdf>]
-<images/domains-inaction.pdf, id=605, 571.95506pt x 188.18394pt>
+<images/domains-inaction.pdf, id=606, 571.95506pt x 188.18394pt>
 File: images/domains-inaction.pdf Graphic file (type pdf)
 
 <use images/domains-inaction.pdf>
 Package pdftex.def Info: images/domains-inaction.pdf used on input line 23.
 (pdftex.def)             Requested size: 347.12354pt x 114.21199pt.
 ) (./sections/familiesanalysis.tex
-<images/breakdown.pdf, id=609, 639.24503pt x 275.12366pt>
+<images/breakdown.pdf, id=610, 639.24503pt x 275.12366pt>
 File: images/breakdown.pdf Graphic file (type pdf)
 
 <use images/breakdown.pdf>
 Package pdftex.def Info: images/breakdown.pdf used on input line 8.
 (pdftex.def)             Requested size: 347.12354pt x 149.39996pt.
- [5 <./images/domains-inaction.pdf>]
-Underfull \vbox (badness 1168) has occurred while \output is active []
-
- [6 <./images/breakdown.pdf>] [7] [8]
-<images/approach-interfaces.pdf, id=929, 491.8636pt x 144.10297pt>
+ [5 <./images/domains-inaction.pdf>] [6 <./images/breakdown.pdf>] [7]
+<images/approach-interfaces.pdf, id=921, 491.8636pt x 144.10297pt>
 File: images/approach-interfaces.pdf Graphic file (type pdf)
 
 <use images/approach-interfaces.pdf>
 Package pdftex.def Info: images/approach-interfaces.pdf used on input line 160.
 
 (pdftex.def)             Requested size: 347.12354pt x 101.70033pt.
-) (./sections/evaluation.tex
+) (./sections/evaluation.tex [8]
 Overfull \hbox (5.49342pt too wide) in paragraph at lines 8--8
  [][][]$\T1/cmtt/m/n/9 https : / / github . com / diverse-[]project / k3 / wiki
  / Defining-[]aspects-[]in-[]Kermeta-[]3$[]| 
@@ -1095,9 +1092,10 @@ Package pdftex.def Info: images/puzzle-modularization.pdf used on input line 51
 .
 (pdftex.def)             Requested size: 347.12354pt x 170.29623pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./images/puzzle-overlapping.pdf>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11 <./images/puzzle-overlapping.pdf>]
 Overfull \hbox (1.23502pt too wide) in paragraph at lines 60--61
 []\T1/cmr/bx/n/10 Collecting em-pir-i-cal data $\OMS/cmsy/m/n/10 !$ \T1/cmr/m/n
 /10 To col-lect em-pir-i-cal data, we ex-plored \T1/cmtt/m/n/10 GitHub
@@ -1122,7 +1120,7 @@ Here is how much of TeX's memory you used:
  22527 multiletter control sequences out of 15000+600000
  20730 words of font info for 57 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,16n,97p,1082b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,16n,97p,1108b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1162,7 +1160,7 @@ exmf-dist/fonts/type1/public/cm-super/sfti0900.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf
 -dist/fonts/type1/public/cm-super/sftt0900.pfb></usr/local/texlive/2013/texmf-d
 ist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on 0-main.pdf (16 pages, 2197772 bytes).
+Output written on 0-main.pdf (16 pages, 2196540 bytes).
 PDF statistics:
  2069 PDF objects out of 2073 (max. 8388607)
  1211 compressed objects within 13 object streams

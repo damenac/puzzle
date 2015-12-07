@@ -87,7 +87,7 @@ public class BreakerImpl {
 		EcoreGraph dependenciesGraph = new EcoreGraph(membersConceptList, conceptComparisonOperator);
 		graphPartition.graphPartition(dependenciesGraph, membersConceptList, conceptComparisonOperator);
 		
-		buildModules(dependenciesGraph, languages, methodComparison);
+		buildModules(dependenciesGraph, languages, conceptComparisonOperator, methodComparison);
 		createSemanticsCommonsProject(languages);
 		
 //		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
@@ -104,15 +104,16 @@ public class BreakerImpl {
 	 * @throws Exception
 	 */
 	private void buildModules(EcoreGraph dependenciesGraph,
-			ArrayList<Language> languages, MethodComparison methodComparison) throws Exception {
+			ArrayList<Language> languages, ConceptComparison conceptComparison,
+			MethodComparison methodComparison) throws Exception {
 		
-		ArrayList<MetaclassAspectMapping> mapping = new ArrayList<MetaclassAspectMapping>();
-		findAspectMapping(languages, mapping);
-		mapping = detectSemanticVariability(mapping, methodComparison);
+		ArrayList<MetaclassAspectMapping> originalMapping = new ArrayList<MetaclassAspectMapping>();
+		findAspectMapping(languages, originalMapping, conceptComparison);
+		ArrayList<MetaclassAspectMapping> semanticVariabilityMapping = detectSemanticVariability(originalMapping, methodComparison);
 		
 		for (EcoreGroup group : dependenciesGraph.getGroups()) {
 			ArrayList<EClassifier> requiredClassifiers = buildSyntacticModule(group, languages);
-			buildSemanticModule(group, mapping, languages, requiredClassifiers);
+			buildSemanticModule(group, originalMapping, semanticVariabilityMapping, languages, requiredClassifiers);
 		}
 	}
 
@@ -214,10 +215,13 @@ public class BreakerImpl {
 		
 		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
 			MetaclassAspectMapping newEntry = new MetaclassAspectMapping(metaclassAspectMapping.getMetaclass());
+			
 			for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
 				AspectLanguageMapping legacyMapping = findAspectMapping(aspectMapping.getAspect(), newEntry, methodComparison);
+				
 				if(legacyMapping == null){
-					newEntry.getAspects().add(aspectMapping);
+					AspectLanguageMapping newAspectLanguageMapping = new AspectLanguageMapping(aspectMapping.getAspect(), aspectMapping.getLanguage());
+					newEntry.getAspects().add(newAspectLanguageMapping);
 				}else{
 					legacyMapping.setLanguagesList(legacyMapping.getLanguagesList() + 
 							aspectMapping.getLanguage().getName());
@@ -278,7 +282,8 @@ public class BreakerImpl {
 	 * @throws CoreException
 	 * @throws IOException 
 	 */
-	private void buildSemanticModule(EcoreGroup group, ArrayList<MetaclassAspectMapping> mapping,
+	private void buildSemanticModule(EcoreGroup group, ArrayList<MetaclassAspectMapping> originalMapping, 
+			ArrayList<MetaclassAspectMapping> semanticVariabilityMapping,
 			ArrayList<Language> languages, ArrayList<EClassifier> requiredClassifiers) throws Exception {
 		
 		// Create the module project with the folders.
@@ -293,14 +298,19 @@ public class BreakerImpl {
 		}
 		
 		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
-		ArrayList<MetaclassAspectMapping> localMapping = filterAspects(group, mapping);
+		ArrayList<MetaclassAspectMapping> originalLocalMapping = filterAspects(group, originalMapping);
+		ArrayList<MetaclassAspectMapping> semanticVariabilityLocalMapping = filterAspects(group, semanticVariabilityMapping);
 		
-		boolean semanticVariability = thereIsSemanticVariability(localMapping);
+		boolean semanticVariability = thereIsSemanticVariability(semanticVariabilityLocalMapping);
 		
 		if(semanticVariability){
-			System.out.println("coucou! semantic variability: " + moduleName);
+			for (MetaclassAspectMapping metaclassAspectMapping : originalLocalMapping) {
+				for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
+					ProjectManagementServices.copyAspectResource(aspectLanguageMapping, moduleProject, moduleName, classifiers, requiredAspects);
+				}
+			}
 		}else{
-			for (MetaclassAspectMapping metaclassAspectMapping : localMapping) {
+			for (MetaclassAspectMapping metaclassAspectMapping : semanticVariabilityLocalMapping) {
 				for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
 					ProjectManagementServices.copyAspectResource(aspectLanguageMapping, moduleProject, moduleName, classifiers, requiredAspects);
 				}
@@ -313,13 +323,22 @@ public class BreakerImpl {
 	
 	private boolean thereIsSemanticVariability(
 			ArrayList<MetaclassAspectMapping> localMapping) {
+		ArrayList<Integer> aspectsAmount = new ArrayList<Integer>();
 		for (MetaclassAspectMapping metaclassAspectMapping : localMapping) {
-			for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
-				if(aspectLanguageMapping.getLanguagesObjectList().size() > 1){
+			aspectsAmount.add(metaclassAspectMapping.getAspects().size());
+			
+			System.out.println("mapping: " + metaclassAspectMapping.getMetaclass().getName() + " - "
+					+ metaclassAspectMapping.getAspects().size());
+			
+		}
+		System.out.println("aspectsAmount: " + aspectsAmount);
+		for (Integer x : aspectsAmount) {
+			for (Integer y : aspectsAmount) {
+				if(x!=y)
 					return true;
-				}
 			}
 		}
+		
 		return false;
 	}
 
@@ -480,10 +499,12 @@ public class BreakerImpl {
 	 * @return
 	 */
 	private void findAspectMapping(
-			ArrayList<Language> languages, ArrayList<MetaclassAspectMapping> mapping) {
+			ArrayList<Language> languages, ArrayList<MetaclassAspectMapping> mapping,
+			ConceptComparison conceptComparison) {
+		
 		for (Language language : languages) {
 			for (Aspect aspect : language.getSemantics()) {
-				MetaclassAspectMapping map = getMappingByClassifier(aspect.getAspectedClass(), mapping);
+				MetaclassAspectMapping map = getMappingByClassifier(aspect.getAspectedClass(), mapping, conceptComparison);
 				if(map == null){
 					map = new MetaclassAspectMapping(aspect.getAspectedClass(), aspect, language);
 					map.getAspects().get(0).getLanguagesObjectList().add(language);
@@ -497,9 +518,10 @@ public class BreakerImpl {
 		}
 	}
 	
-	public MetaclassAspectMapping getMappingByClassifier(EClassifier classifier, ArrayList<MetaclassAspectMapping> mapping){
+	public MetaclassAspectMapping getMappingByClassifier(EClassifier classifier, 
+			ArrayList<MetaclassAspectMapping> mapping, ConceptComparison conceptComparison){
 		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
-			if(metaclassAspectMapping.getMetaclass().getName().equals(classifier.getName()))
+			if(conceptComparison.equals( metaclassAspectMapping.getMetaclass(), classifier))
 				return metaclassAspectMapping;
 		}
 		return null;

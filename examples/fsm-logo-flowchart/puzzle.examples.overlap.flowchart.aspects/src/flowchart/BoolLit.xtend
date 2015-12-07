@@ -11,7 +11,6 @@ public class BoolLitAspect extends LiteralAspect{
 
 	@OverrideAspectMethod
 	def Object eval (Hashtable<String, Object> context) {
-		println("coucou!!!")
 		return _self.value
 	}
 }

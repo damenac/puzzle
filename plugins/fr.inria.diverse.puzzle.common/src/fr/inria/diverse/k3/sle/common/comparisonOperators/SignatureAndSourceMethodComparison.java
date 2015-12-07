@@ -16,6 +16,9 @@ import org.eposoft.jccd.data.SimilarityGroupManager;
 import org.eposoft.jccd.data.ast.ANode;
 import org.eposoft.jccd.detectors.APipeline;
 import org.eposoft.jccd.detectors.ASTDetector;
+import org.eposoft.jccd.preprocessors.java.GeneralizeMethodArgumentTypes;
+import org.eposoft.jccd.preprocessors.java.GeneralizeMethodReturnTypes;
+import org.eposoft.jccd.preprocessors.java.GeneralizeVariableDeclarationTypes;
 
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
@@ -58,6 +61,11 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 				JCCDFile[] files = { new JCCDFile(leftOperationJavaFile),
 						new JCCDFile(rightOperationJavaFile)};
 				detector.setSourceFiles(files);
+				
+				detector.addOperator(new GeneralizeMethodArgumentTypes());
+				detector.addOperator(new GeneralizeMethodReturnTypes());
+				detector.addOperator(new GeneralizeVariableDeclarationTypes());
+				
 				SimilarityGroupManager manager = detector.process();
 				simGroups = manager.getSimilarityGroups();
 				if (null == simGroups) {

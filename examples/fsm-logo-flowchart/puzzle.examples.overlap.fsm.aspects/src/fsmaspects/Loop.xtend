@@ -10,7 +10,6 @@ import fsm.Loop
 import static extension fsmaspects.ExpressionAspect.*
 import static extension fsmaspects.ProgramAspect.*
 
-
 @Aspect(className=Loop)
 class LoopAspect extends StatementAspect {
 	
