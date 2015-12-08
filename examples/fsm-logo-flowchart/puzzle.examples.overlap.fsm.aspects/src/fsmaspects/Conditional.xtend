@@ -9,7 +9,6 @@ import fsm.Conditional
 import static extension fsmaspects.ExpressionAspect.*
 import static extension fsmaspects.ProgramAspect.*
 
-
 @Aspect(className=Conditional)
 class ConditionalAspect extends StatementAspect {
 	

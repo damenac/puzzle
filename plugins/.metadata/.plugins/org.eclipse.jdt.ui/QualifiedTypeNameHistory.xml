@@ -1,12 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreArc"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.PairVO"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.RandomNumber"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.CommonalitiesDetector"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ModelUtils"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.MelangeFactory"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.IndexPackage"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.FamiliesServices"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
@@ -50,7 +44,6 @@
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.command.AspectLanguageMapping"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.AspectLanguageMapping"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.resource.Resource"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.preprocessors.java.GeneralizeMethodArgumentTypes"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.preprocessors.java.GeneralizeMethodReturnTypes"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.preprocessors.java.GeneralizeVariableDeclarationTypes"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.AspectLanguageMapping"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.preprocessors.java.GeneralizeTypes"/>
+<fullyQualifiedTypeName name="org.eposoft.jccd.preprocessors.java.RemoveImports"/>
 </qualifiedTypeNameHistroy>

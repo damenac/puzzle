@@ -78,7 +78,8 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 				for (int i = 0; i < simGroups.length; i++) {
 					final ASourceUnit[] nodes = simGroups[i].getNodes();
 					for (int j = 0; j < nodes.length; j++) {
-						if(nodes[j].getText().equals("FUNCTION_METHOD_DECL")){
+						if(nodes[j].getText().equals("FUNCTION_METHOD_DECL") || 
+								nodes[j].getText().equals("VOID_METHOD_DECL")){
 							return true;
 						}
 						

@@ -1,0 +1,165 @@
+package fr.inria.diverse.k3.sle.common.comparisonOperators;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Hashtable;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.xtext.common.types.JvmFormalParameter;
+import org.eclipse.xtext.common.types.JvmGenericType;
+import org.eclipse.xtext.common.types.JvmOperation;
+import org.eclipse.xtext.common.types.JvmTypeReference;
+import org.eposoft.jccd.data.ASourceUnit;
+import org.eposoft.jccd.data.JCCDFile;
+import org.eposoft.jccd.data.SimilarityGroup;
+import org.eposoft.jccd.data.SimilarityGroupManager;
+import org.eposoft.jccd.data.ast.ANode;
+import org.eposoft.jccd.detectors.APipeline;
+import org.eposoft.jccd.detectors.ASTDetector;
+import org.eposoft.jccd.preprocessors.java.GeneralizeTypes;
+import org.eposoft.jccd.preprocessors.java.RemoveImports;
+
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
+
+public class SignatureAndSourceMethodComparison implements MethodComparison {
+
+	private static SignatureAndSourceMethodComparison instance;
+	private Hashtable<String, SimilarityGroup[]> cache;
+	private int amountComputations;
+	
+	private SignatureAndSourceMethodComparison(){
+		cache = new Hashtable<String, SimilarityGroup[]>();
+		amountComputations = 0;
+	}
+	
+	public static SignatureAndSourceMethodComparison getInstance(){
+		if(instance == null)
+			instance = new SignatureAndSourceMethodComparison();
+		return instance;
+	}
+	
+	@Override
+	public boolean equal(JvmOperation left, JvmOperation right) {
+		boolean identicalModifiers = compareModifiers(left, right);
+		boolean identicalReturnType = compareReturnType(left, right);
+		boolean identicalName = compareName(left, right);
+		boolean identicalParameters = compareParameters(left, right);
+		boolean identicalExceptions = compareExceptions(left, right);
+		
+		if(identicalModifiers && identicalReturnType && identicalName && identicalParameters && identicalExceptions){
+			
+			String leftOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), left.eResource().getURI().segment(1));
+			String rightOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), right.eResource().getURI().segment(1));
+			
+			SimilarityGroup[] simGroups = cache.get(leftOperationJavaFile + "-" + rightOperationJavaFile);
+			
+			if(simGroups == null){
+				
+				APipeline<ANode> detector = new ASTDetector();
+				JCCDFile[] files = { new JCCDFile(leftOperationJavaFile),
+						new JCCDFile(rightOperationJavaFile)};
+				detector.setSourceFiles(files);
+				
+				detector.addOperator(new GeneralizeTypes());
+				detector.addOperator(new RemoveImports());
+				
+				SimilarityGroupManager manager = detector.process();
+				simGroups = manager.getSimilarityGroups();
+				if (null == simGroups) {
+					simGroups = new SimilarityGroup[0];
+				}else{
+					cache.put(leftOperationJavaFile + "-" + rightOperationJavaFile, simGroups);
+				}
+				amountComputations++;
+			}
+			
+			if ((null != simGroups) && (0 < simGroups.length)) {
+				for (int i = 0; i < simGroups.length; i++) {
+					final ASourceUnit[] nodes = simGroups[i].getNodes();
+					for (int j = 0; j < nodes.length; j++) {
+						if(nodes[j].getText().equals("FUNCTION_METHOD_DECL") || nodes[j].getText().equals("VOID_METHOD_DECL")){
+							return true;
+						}
+						
+						if (nodes[j] instanceof ANode){
+							ANode nn = (ANode) nodes[j];
+							if(nn.getChildCount() >= 3 && nn.getChild(2).getText().equals(left.getSimpleName())){
+								return true;
+							}
+						}
+					}
+				}
+			} else {
+				return false;
+			}
+		}
+		return false;
+	}
+
+	private String getAspectJavaFile(String fileName, String projectName) {
+		try {
+			IProject project = ProjectManagementServices.getEclipseProject(projectName);
+			File aspectFile = ProjectManagementServices.getFile(project, fileName + ".java");
+			return aspectFile.getAbsolutePath();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	private boolean compareModifiers(JvmOperation left, JvmOperation right) {
+		return left.getVisibility().getName().equals(right.getVisibility().getName()) &&
+				left.isAbstract() == right.isAbstract() &&
+				left.isStatic() == right.isStatic() &&
+				left.isSynchronized() == right.isSynchronized();
+	}
+
+	private boolean compareReturnType(JvmOperation left, JvmOperation right) {
+		return left.getReturnType().getSimpleName().equals(right.getReturnType().getSimpleName());
+	}
+	
+	private boolean compareName(JvmOperation left, JvmOperation right) {
+		return left.getSimpleName().equals(right.getSimpleName());
+	}
+	
+	private boolean compareParameters(JvmOperation left, JvmOperation right) {
+		if(left.getParameters().size() != right.getParameters().size())
+			return false;
+		
+		int i = 0;
+		for (JvmFormalParameter leftParam : left.getParameters()) {
+			JvmFormalParameter rightParam = right.getParameters().get(i);
+			if(!leftParam.getParameterType().getSimpleName().equals(rightParam.getParameterType().getSimpleName()))
+				return false;
+			i++;
+		}
+		return true;
+	}
+	
+	private boolean compareExceptions(JvmOperation left, JvmOperation right) {
+		if(left.getExceptions().size() != right.getExceptions().size())
+			return false;
+		
+		ArrayList<String> leftExceptionStrings = getExceptionsString(left);
+		ArrayList<String> rightExceptionStrings = getExceptionsString(right);
+		
+		for (String leftException : leftExceptionStrings) {
+			if(!rightExceptionStrings.contains(leftException))
+				return false;
+		}
+		return true;
+	}
+
+	private ArrayList<String> getExceptionsString(JvmOperation operation) {
+		ArrayList<String> answer = new ArrayList<String>();
+		for (JvmTypeReference exception : operation.getExceptions()) {
+			answer.add(exception.getSimpleName());
+		}
+		return answer;
+	}
+
+	public int getAmountComputations() {
+		return amountComputations;
+	}
+}

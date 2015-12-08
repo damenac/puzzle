@@ -97,8 +97,6 @@ language Flowchart {
 	with flowchart.ProgramAspect
 	with flowchart.VarDeclAspect
 	with flowchart.ConditionalAspect
-	with flowchart.VarDeclAspect
-	with flowchart.ConditionalAspect
 	with flowchart.LoopAspect
 	with flowchart.PrintlnAspect
 	with flowchart.PrintAspect
