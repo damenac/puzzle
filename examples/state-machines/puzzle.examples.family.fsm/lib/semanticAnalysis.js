@@ -112,58 +112,16 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+entryState",
-          "parent": "StateAspect",
-          "children": [
-          {
-          "name": "entryState [from: UML]",
-          "parent": "+entryState"    }
+          "name": "entryState [from: UML, Rhapsody, Harel]",
+          "parent": "StateAspect"    }
 ,
           {
-          "name": "entryState [from: Rhapsody]",
-          "parent": "+entryState"    }
+          "name": "evalState [from: UML, Rhapsody, Harel]",
+          "parent": "StateAspect"    }
 ,
           {
-          "name": "entryState [from: Harel]",
-          "parent": "+entryState"    }
-              ]
-    }
-,
-          {
-          "name": "+evalState",
-          "parent": "StateAspect",
-          "children": [
-          {
-          "name": "evalState [from: UML]",
-          "parent": "+evalState"    }
-,
-          {
-          "name": "evalState [from: Rhapsody]",
-          "parent": "+evalState"    }
-,
-          {
-          "name": "evalState [from: Harel]",
-          "parent": "+evalState"    }
-              ]
-    }
-,
-          {
-          "name": "+exitState",
-          "parent": "StateAspect",
-          "children": [
-          {
-          "name": "exitState [from: UML]",
-          "parent": "+exitState"    }
-,
-          {
-          "name": "exitState [from: Rhapsody]",
-          "parent": "+exitState"    }
-,
-          {
-          "name": "exitState [from: Harel]",
-          "parent": "+exitState"    }
-              ]
-    }
+          "name": "exitState [from: UML, Rhapsody, Harel]",
+          "parent": "StateAspect"    }
               ]
     }
 ,
@@ -218,22 +176,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+exitState",
-          "parent": "FinalStateAspect",
-          "children": [
-          {
-          "name": "exitState [from: UML]",
-          "parent": "+exitState"    }
-,
-          {
-          "name": "exitState [from: Rhapsody]",
-          "parent": "+exitState"    }
-,
-          {
-          "name": "exitState [from: Harel]",
-          "parent": "+exitState"    }
-              ]
-    }
+          "name": "exitState [from: UML, Rhapsody, Harel]",
+          "parent": "FinalStateAspect"    }
               ]
     }
 ,
@@ -252,22 +196,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "StatementAspect",
-          "children": [
-          {
-          "name": "eval [from: UML]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Rhapsody]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Harel]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: UML, Rhapsody, Harel]",
+          "parent": "StatementAspect"    }
               ]
     }
 ,
@@ -276,22 +206,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "ProgramAspect",
-          "children": [
-          {
-          "name": "eval [from: UML]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Rhapsody]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Harel]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: UML, Rhapsody, Harel]",
+          "parent": "ProgramAspect"    }
               ]
     }
 ,

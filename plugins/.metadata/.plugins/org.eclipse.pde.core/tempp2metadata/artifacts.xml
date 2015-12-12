@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?artifactRepository version='1.1.0'?>
+<repository name='file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/tempp2metadata - artifacts' type='org.eclipse.equinox.p2.artifact.repository.simpleRepository' version='1.0.0'>
+  <properties size='2'>
+    <property name='p2.timestamp' value='1449607354273'/>
+    <property name='p2.compressed' value='false'/>
+  </properties>
+  <mappings size='3'>
+    <rule filter='(&amp; (classifier=osgi.bundle))' output='${repoUrl}/plugins/${id}_${version}.jar'/>
+    <rule filter='(&amp; (classifier=binary))' output='${repoUrl}/binary/${id}_${version}'/>
+    <rule filter='(&amp; (classifier=org.eclipse.update.feature))' output='${repoUrl}/features/${id}_${version}.jar'/>
+  </mappings>
+  <artifacts size='26'>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='510'/>
+        <property name='download.size' value='47354568'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.adl.language.ui' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='544'/>
+        <property name='download.size' value='54146'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.vm.metamodel' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='510'/>
+        <property name='download.size' value='49790'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.mutivar.language' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='510'/>
+        <property name='download.size' value='97342'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='es.us.isa.fama' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='646'/>
+        <property name='download.size' value='51898566'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.adl.language' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='646'/>
+        <property name='download.size' value='75340'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.common' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='476'/>
+        <property name='download.size' value='76643'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.ui' version='0.1.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='578'/>
+        <property name='download.size' value='499008'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.extractor.interface' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='408'/>
+        <property name='download.size' value='2990'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.vm.metamodel.edit' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='510'/>
+        <property name='download.size' value='44472'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.synthesis.vmsynthesis.test' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='578'/>
+        <property name='download.size' value='1936'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.configurator' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='476'/>
+        <property name='download.size' value='4962124'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.extractor.breaker' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='408'/>
+        <property name='download.size' value='20504'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.mutivar.language.ui' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='544'/>
+        <property name='download.size' value='91489'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.vm.metamodel.editor' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='510'/>
+        <property name='download.size' value='61467'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='es.us.isa.fama.synthesizer.interface' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='476'/>
+        <property name='download.size' value='1524'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='de.trier.cs.jccd' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='578'/>
+        <property name='download.size' value='1645922'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.mutivar.language.tests' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='510'/>
+        <property name='download.size' value='2750'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.instantancesGenerator' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='476'/>
+        <property name='download.size' value='9626832'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.metrics' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='816'/>
+        <property name='download.size' value='78470'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.multivar.metamodel' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='476'/>
+        <property name='download.size' value='40002'/>
+      </properties>
+    </artifact>
+    <artifact classifier='org.eclipse.update.feature' id='fr.inria.diverse.puzzle.feature' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='download.contentType' value='application/zip'/>
+        <property name='download.size' value='642'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.synthesizer.interface' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='408'/>
+        <property name='download.size' value='4181'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.vmsynthesis' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='544'/>
+        <property name='download.size' value='23049'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.adl.language.tests' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='510'/>
+        <property name='download.size' value='2920'/>
+      </properties>
+    </artifact>
+    <artifact classifier='osgi.bundle' id='fr.inria.diverse.puzzle.adl.metamodel' version='1.0.0.201512082142'>
+      <properties size='2'>
+        <property name='artifact.size' value='476'/>
+        <property name='download.size' value='15133'/>
+      </properties>
+    </artifact>
+  </artifacts>
+</repository>

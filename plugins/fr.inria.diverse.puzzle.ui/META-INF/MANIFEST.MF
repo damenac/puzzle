@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: Melange IDE
+Bundle-Name: Puzzle
 Bundle-Vendor: DIVERSE
 Bundle-Version: 0.1.0.qualifier
 Bundle-SymbolicName: fr.inria.diverse.puzzle.ui;singleton:=true
@@ -42,4 +42,4 @@ Export-Package: fr.inria.diverse.melange.ui,
  fr.inria.diverse.melange.ui.contentassist,
  fr.inria.diverse.melange.ui.contentassist.antlr,
  fr.inria.diverse.melange.ui.contentassist.antlr.internal
-Bundle-Activator: fr.inria.diverse.melange.ui.internal.MelangeActivator
+Bundle-Activator: fr.inria.diverse.melange.ui.internal.PuzzleActivator

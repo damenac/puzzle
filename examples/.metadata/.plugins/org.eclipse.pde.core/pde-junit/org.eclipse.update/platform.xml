@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1449064951640" transient="false" version="3.0">
+<config date="1449777930867" transient="false" version="3.0">
 <site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
 <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature" url="features/org.eclipse.ecf.filetransfer.httpclient4.feature_3.9.2.v20141221-2352/" version="3.9.2.v20141221-2352">
 </feature>
@@ -53,7 +53,7 @@
 </feature>
 <feature id="org.eclipse.uml2.uml.edit" url="features/org.eclipse.uml2.uml.edit_5.0.2.v20150202-0947/" version="5.0.2.v20150202-0947">
 </feature>
-<feature id="org.eclipse.team.svn.sources" url="features/org.eclipse.team.svn.sources_3.0.1.I20150722-1700/" version="3.0.1.I20150722-1700">
+<feature id="org.eclipse.team.svn.sources" url="features/org.eclipse.team.svn.sources_3.0.2.I20151028-1700/" version="3.0.2.I20151028-1700">
 </feature>
 <feature id="fr.inria.diverse.k3.feature" url="features/fr.inria.diverse.k3.feature_3.2.0.v20150707-0702/" version="3.2.0.v20150707-0702">
 </feature>
@@ -247,7 +247,7 @@
 </feature>
 <feature id="org.eclipse.mylyn.team_feature" plugin-identifier="org.eclipse.mylyn.context.core" url="features/org.eclipse.mylyn.team_feature_3.14.2.v20150218-0125/" version="3.14.2.v20150218-0125">
 </feature>
-<feature id="org.eclipse.team.svn" url="features/org.eclipse.team.svn_3.0.1.I20150722-1700/" version="3.0.1.I20150722-1700">
+<feature id="org.eclipse.team.svn" url="features/org.eclipse.team.svn_3.0.2.I20151028-1700/" version="3.0.2.I20151028-1700">
 </feature>
 <feature id="org.eclipse.emf.common.ui" url="features/org.eclipse.emf.common.ui_2.9.0.v20150123-0452/" version="2.9.0.v20150123-0452">
 </feature>
@@ -547,7 +547,7 @@
 </feature>
 <feature id="org.eclipse.sirius.runtime" plugin-identifier="org.eclipse.sirius" url="features/org.eclipse.sirius.runtime_1.0.2.201501270932/" version="1.0.2.201501270932">
 </feature>
-<feature id="org.eclipse.team.svn.source" url="features/org.eclipse.team.svn.source_3.0.1.I20150722-1700/" version="3.0.1.I20150722-1700">
+<feature id="org.eclipse.team.svn.source" url="features/org.eclipse.team.svn.source_3.0.2.I20151028-1700/" version="3.0.2.I20151028-1700">
 </feature>
 <feature id="org.eclipse.emf.ecp.view.model.controls.feature" plugin-identifier="org.eclipse.emf.ecp.ui.view.editor.controls" url="features/org.eclipse.emf.ecp.view.model.controls.feature_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
 </feature>

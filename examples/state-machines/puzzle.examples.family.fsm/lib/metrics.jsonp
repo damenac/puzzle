@@ -13,13 +13,13 @@ var pieDataSyntacticCommonality = [{
 ];
 
 var pieDataSemanticCommonality = [{
-        value: 29,
+        value: 35,
         color:"#FAAC58",
         highlight: "#F7BE81",
         label: "Commonalities"
     },
     {
-        value: 27,
+        value: 9,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -41,7 +41,7 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [34.93975903614458,39.726027397260275,33.33333333333333]
+        data : [42.168674698795186,47.94520547945205,40.229885057471265]
       }
     ]
 };

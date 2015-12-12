@@ -1,9 +1,9 @@
 package fr.inria.diverse.melange.ui
 
-import fr.inria.diverse.melange.ui.internal.MelangeActivator
 import org.eclipse.core.runtime.IStatus
 import org.eclipse.core.runtime.Status
 import org.eclipse.ui.plugin.AbstractUIPlugin
+import fr.inria.diverse.melange.ui.internal.PuzzleActivator
 
 class MelangeUiModule extends AbstractMelangeUiModule
 {
@@ -12,10 +12,10 @@ class MelangeUiModule extends AbstractMelangeUiModule
 	}
 
 	def static void logErrorMessage(String message, Throwable e) {
-		MelangeActivator.instance.log.log(
+		PuzzleActivator.getInstance.log.log(
 			new Status(
 				IStatus::ERROR,
-				MelangeActivator.instance.bundle.symbolicName,
+				PuzzleActivator.getInstance.bundle.symbolicName,
 				IStatus::ERROR, message,
 				e
 			)

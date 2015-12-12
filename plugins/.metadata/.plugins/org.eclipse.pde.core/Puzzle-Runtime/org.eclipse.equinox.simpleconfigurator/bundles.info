@@ -697,10 +697,10 @@ org.eclipse.team.core,3.7.0.v20130514-1224,file:/Users/dmendeza/IDEs/eclipse-mel
 org.eclipse.team.cvs.core,3.3.600.v20131112-1442,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.cvs.core_3.3.600.v20131112-1442.jar,4,false
 org.eclipse.team.cvs.ssh2,3.2.400.v20131112-1442,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.cvs.ssh2_3.2.400.v20131112-1442.jar,4,false
 org.eclipse.team.cvs.ui,3.3.600.v20130514-1224,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.cvs.ui_3.3.600.v20130514-1224.jar,4,false
-org.eclipse.team.svn,3.0.1.I20150722-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn_3.0.1.I20150722-1700.jar,4,false
-org.eclipse.team.svn.core,3.0.1.I20150722-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.core_3.0.1.I20150722-1700.jar,4,false
+org.eclipse.team.svn,3.0.2.I20151028-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn_3.0.2.I20151028-1700.jar,4,false
+org.eclipse.team.svn.core,3.0.2.I20151028-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.core_3.0.2.I20151028-1700.jar,4,false
 org.eclipse.team.svn.core.nl1,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.core.nl1_3.0.0.I20150529-1700.jar,4,false
-org.eclipse.team.svn.help,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.help_3.0.0.I20150529-1700.jar,4,false
+org.eclipse.team.svn.help,3.0.2.I20151028-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.help_3.0.2.I20151028-1700.jar,4,false
 org.eclipse.team.svn.m2e,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.m2e_3.0.0.I20150529-1700.jar,4,false
 org.eclipse.team.svn.m2e.sources,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.m2e.sources_3.0.0.I20150529-1700/,4,false
 org.eclipse.team.svn.mylyn,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.mylyn_3.0.0.I20150529-1700.jar,4,false
@@ -711,8 +711,8 @@ org.eclipse.team.svn.resource.ignore.rules.jdt,3.0.0.I20150529-1700,file:/Users/
 org.eclipse.team.svn.resource.ignore.rules.jdt.sources,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.resource.ignore.rules.jdt.sources_3.0.0.I20150529-1700/,4,false
 org.eclipse.team.svn.revision.graph,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.revision.graph_3.0.0.I20150529-1700.jar,4,false
 org.eclipse.team.svn.revision.graph.sources,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.revision.graph.sources_3.0.0.I20150529-1700/,4,false
-org.eclipse.team.svn.sources,3.0.1.I20150722-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.sources_3.0.1.I20150722-1700/,4,false
-org.eclipse.team.svn.ui,3.0.1.I20150722-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.ui_3.0.1.I20150722-1700.jar,4,false
+org.eclipse.team.svn.sources,3.0.2.I20151028-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.sources_3.0.2.I20151028-1700/,4,false
+org.eclipse.team.svn.ui,3.0.2.I20151028-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.ui_3.0.2.I20151028-1700.jar,4,false
 org.eclipse.team.svn.ui.nl1,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.ui.nl1_3.0.0.I20150529-1700.jar,4,false
 org.eclipse.team.svn.ui.startup,3.0.0.I20150529-1700,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.svn.ui.startup_3.0.0.I20150529-1700.jar,4,false
 org.eclipse.team.ui,3.7.100.v20130710-1213,file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.team.ui_3.7.100.v20130710-1213.jar,4,false

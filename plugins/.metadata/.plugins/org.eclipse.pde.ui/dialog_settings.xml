@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="false" key="initLaunch"/>
 	<item value="false" key="generateActivator"/>
 	<item value="3.5 or greater" key="targetName"/>
 	<item value="false" key="uiPlugin"/>
@@ -8,6 +9,17 @@
 	<item value="false" key="osgiProject"/>
 	<section name="ConvertedProjectWizard">
 		<item value="false" key="apiAnalysis"/>
+	</section>
+	<section name="org.eclipse.pde.ui.dialogs.FeatureSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="354" key="DIALOG_X_ORIGIN"/>
+			<item value="57" key="DIALOG_Y_ORIGIN"/>
+		</section>
 	</section>
 	<section name="PDEFormActionManager">
 	</section>
