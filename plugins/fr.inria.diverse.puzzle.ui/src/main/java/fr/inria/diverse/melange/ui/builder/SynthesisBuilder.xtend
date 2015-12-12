@@ -20,6 +20,7 @@ import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
 import fr.inria.diverse.puzzle.breaker.breakers.MinimumAcyclicPartition
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
 import fr.inria.diverse.puzzle.breaker.breakers.SimulatedAnnealingPartitioning
+import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition
 
 /**
  * Builder for the action: Synthesize Language Product Line (LPL).
@@ -53,7 +54,7 @@ class SynthesisBuilder
 		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
-		var GraphPartition graphPartition = new MinimumAcyclicPartition();
+		var GraphPartition graphPartition = new MembershipGraphPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;
 	}

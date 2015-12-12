@@ -57,12 +57,12 @@
                      label="Extract Reusable Modules"
                      style="push">
                </command>
-               <!--<command
+               <command
                      commandId="fr.inria.diverse.puzzle.Synthesize"
                      label="Synthesize LPL"
                      style="push">
                </command>
-               <separator
+               <!--<separator
                      name="Separator2"
                      visible="true">
                </separator>
