@@ -7166,3 +7166,85 @@ org.eclipse.core.internal.resources.ResourceException: Failed to read the projec
 !ENTRY org.apache.log4j 2 0 2015-12-12 19:26:57.892
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+!SESSION 2015-12-14 09:08:44.330 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2015-12-14 09:08:49.298
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2015-12-14 09:08:55.742
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.osgi 2 0 2015-12-14 09:44:38.738
+!MESSAGE While loading class "org.eclipse.wst.sse.core.internal.preferences.PreferenceInitializer", thread "Thread[Worker-2,5,main]" timed out waiting (5002ms) for thread "Thread[Worker-132,5,main]" to finish starting bundle "org.eclipse.wst.sse.core_1.1.900.v201401101615 [2218]". To avoid deadlock, thread "Thread[Worker-2,5,main]" is proceeding but "org.eclipse.wst.sse.core.internal.preferences.PreferenceInitializer" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; osgi.identity="org.eclipse.wst.sse.core"; type="osgi.bundle"; version:Version="1.1.900.v201401101615"; singleton:="true" [id=2218] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:329)
+	at org.eclipse.osgi.container.Module.start(Module.java:389)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:454)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:531)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:324)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:320)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:337)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:160)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:568)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.runInitializer(PreferenceServiceRegistryHelper.java:293)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.applyRuntimeDefaults(PreferenceServiceRegistryHelper.java:131)
+	at org.eclipse.core.internal.preferences.PreferencesService.applyRuntimeDefaults(PreferencesService.java:368)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.applyRuntimeDefaults(DefaultPreferences.java:221)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.load(DefaultPreferences.java:274)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:409)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:670)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.node(EclipsePreferences.java:812)
+	at org.eclipse.core.internal.preferences.AbstractScope.getNode(AbstractScope.java:38)
+	at org.eclipse.core.runtime.preferences.DefaultScope.getNode(DefaultScope.java:76)
+	at org.eclipse.core.internal.preferences.PreferencesService$5.run(PreferencesService.java:613)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.preferences.PreferencesService.getNodes(PreferencesService.java:607)
+	at org.eclipse.core.internal.preferences.PreferencesService.getBoolean(PreferencesService.java:477)
+	at org.eclipse.wst.sse.core.internal.tasks.TaskScanningJob.isEnabledOnProject(TaskScanningJob.java:146)
+	at org.eclipse.wst.sse.core.internal.tasks.TaskScanningJob.addProjectDelta(TaskScanningJob.java:82)
+	at org.eclipse.wst.sse.core.internal.tasks.TaskScanningScheduler$ListenerVisitor.visit(TaskScanningScheduler.java:54)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:69)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:80)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:49)
+	at org.eclipse.wst.sse.core.internal.tasks.TaskScanningScheduler$ListenerVisitor.resourceChanged(TaskScanningScheduler.java:36)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:291)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:285)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:149)
+	at org.eclipse.core.internal.resources.Workspace.broadcastPostChange(Workspace.java:378)
+	at org.eclipse.core.internal.resources.Workspace.endOperation(Workspace.java:1498)
+	at org.eclipse.core.internal.resources.File.create(File.java:175)
+	at org.eclipse.core.internal.resources.File.create(File.java:188)
+	at org.eclipse.emf.ecore.resource.impl.PlatformResourceURIHandlerImpl$PlatformResourceOutputStream.flush(PlatformResourceURIHandlerImpl.java:128)
+	at org.eclipse.emf.ecore.resource.impl.PlatformResourceURIHandlerImpl$PlatformResourceOutputStream.close(PlatformResourceURIHandlerImpl.java:89)
+	at org.eclipse.emf.ecore.resource.impl.PlatformResourceURIHandlerImpl$WorkbenchHelper$1.close(PlatformResourceURIHandlerImpl.java:175)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generateJava(AbstractGeneratorAdapter.java:2086)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateInterface(GenClassGeneratorAdapter.java:117)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenClassGeneratorAdapter.generateModel(GenClassGeneratorAdapter.java:100)
+	at org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter.doGenerate(GenBaseGeneratorAdapter.java:215)
+	at org.eclipse.emf.codegen.ecore.generator.AbstractGeneratorAdapter.generate(AbstractGeneratorAdapter.java:317)
+	at org.eclipse.emf.codegen.ecore.generator.Generator.generate(Generator.java:708)
+	at fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices.generateGenmodelFile(ProjectManagementServices.java:350)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildSyntacticModule(BreakerImpl.java:154)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.buildModules(BreakerImpl.java:115)
+	at fr.inria.diverse.puzzle.breaker.command.BreakerImpl.breakDownFamily(BreakerImpl.java:90)
+	at fr.inria.diverse.puzzle.extractor.impl.ExtractorImpl.extractReusableModules(ExtractorImpl.java:38)
+	at fr.inria.diverse.melange.ui.builder.ExtractionBuilder.extractReusableModules(ExtractionBuilder.java:51)
+	at fr.inria.diverse.melange.ui.menu.ExtractReusableModules$1.run(ExtractReusableModules.java:56)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

@@ -61,7 +61,7 @@ public class Histogram {
 		int max = -1;
 		for (int i = 0; i < theMatrix.length; i++) {
 			int current = histogramByConstructs.get(i);
-			System.out.println(i + " - " + histogramByConstructs.get(i));
+//			System.out.println(i + " - " + histogramByConstructs.get(i));
 			if(current > max)
 				max = current;
 		}
@@ -82,7 +82,7 @@ public class Histogram {
 		histogram.add(new Integer(count));
 		
 		int maxI = 0;
-		int interval = 100;
+		int interval = 1;
 		
 		for (int i = 1; i <= max; i+=interval) {
 			it = histogramByConstructs.keySet().iterator();
