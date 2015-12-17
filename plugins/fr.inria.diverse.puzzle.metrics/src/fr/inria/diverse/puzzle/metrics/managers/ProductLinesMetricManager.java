@@ -188,7 +188,7 @@ public class ProductLinesMetricManager extends MetricsManager {
 	 * @throws Exception
 	 */
 	public void createDependenciesGraph() throws Exception{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-DependenciesGraph.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-DependenciesGraph.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -199,7 +199,7 @@ public class ProductLinesMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-1-DependenciesGraph.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-DependenciesGraph.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );

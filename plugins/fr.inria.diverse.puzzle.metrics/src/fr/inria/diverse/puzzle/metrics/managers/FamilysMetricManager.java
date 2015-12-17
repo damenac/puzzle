@@ -158,7 +158,7 @@ public class FamilysMetricManager extends MetricsManager {
 	}
 	
 	public void createReport3ReuseMetrics(ArrayList<Language> languages) throws URISyntaxException, IOException{
-		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-3-ReuseMetrics.html");
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-ReuseMetrics.html");
         File file = new File(FileLocator.resolve(path).toURI());
         BufferedReader br = new BufferedReader(new FileReader(file));
         String content = "";
@@ -170,7 +170,7 @@ public class FamilysMetricManager extends MetricsManager {
         content = content.replace("<!-- Coucou! REPLACE ME WITH THE CORRECT PATTERN -->", (new PairwiseRelationshipRatio()).getTables(languages));
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-3-ReuseMetrics.html" );
+        File fileReport = new File(project.getLocation().toString() + "/Report-ReuseMetrics.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );

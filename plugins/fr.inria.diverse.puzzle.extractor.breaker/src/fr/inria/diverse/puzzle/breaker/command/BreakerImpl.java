@@ -43,7 +43,6 @@ import fr.inria.diverse.k3.sle.common.vos.MetaclassAspectMapping;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
-//import fr.inria.diverse.puzzle.metrics.componentsMetrics.ModularizationQuality;
 
 public class BreakerImpl {
 

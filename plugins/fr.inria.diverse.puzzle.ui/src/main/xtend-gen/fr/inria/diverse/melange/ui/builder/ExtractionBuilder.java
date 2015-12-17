@@ -45,7 +45,7 @@ public class ExtractionBuilder extends AbstractBuilder {
           languages.add(((Language) element));
         }
       }
-      IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+      IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.puzzle.reverseEngineering");
       SynthesisProperties properties = this.getSynthesisProperties();
       ExtractorImpl _instance = ExtractorImpl.getInstance();
       _instance.extractReusableModules(properties, languages, lplProject);

@@ -73,7 +73,7 @@ language Logo {
 /**
  * A language for Flowcharts 
  */
-language Flowchart {
+language Flowcharts {
 	
 	syntax "platform:/resource/puzzle.examples.overlap.flowchart.metamodel/models/flowchart.ecore"
 	

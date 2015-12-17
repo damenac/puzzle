@@ -114,7 +114,7 @@ public class ComputeMetricsActionImpl {
 		familysMetric.createReport1FamilysShapeData(languages);
 //		familysMetric.createReport2CostSaving(languages);
 //		familysMetric.createReport2CostSavingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
-//		familysMetric.createReport3ReuseMetrics(languages);
+		familysMetric.createReport3ReuseMetrics(languages);
 //		familysMetric.createDependenciesGraphData(languages, conceptComparisonOperator, methodComparisonOperator);
 //		familysMetric.createDependenciesGraph(languages);
 		familysMetric.createFamilyMembershipGraphData(languages, conceptComparisonOperator, methodComparisonOperator);

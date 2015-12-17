@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.breaker.command.BreakerImpl;
+import fr.inria.diverse.puzzle.metrics.managers.ProductLinesMetricManager;
 
 public class ExtractorImpl {
 
@@ -35,6 +38,10 @@ public class ExtractorImpl {
 	// --------------------------------------------------
 	
 	public void extractReusableModules(SynthesisProperties properties, ArrayList<Language> languages, IProject project) throws Exception{
-		BreakerImpl.getInstance().breakDownFamily(languages, properties, project);
+		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(project);
+		metricsManager.createDependenciesGraph();
+		EcoreGraph graph = BreakerImpl.getInstance().breakDownFamily(languages, properties, project);
+		DependencyGraph dependenciesGraph = new DependencyGraph(graph);
+		metricsManager.createDependenciesGraphData(languages, properties.getConceptComparisonOperator(), dependenciesGraph);
 	}
 }

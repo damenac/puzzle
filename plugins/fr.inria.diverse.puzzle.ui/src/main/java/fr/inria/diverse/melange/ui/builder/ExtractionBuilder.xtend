@@ -37,7 +37,7 @@ class ExtractionBuilder extends AbstractBuilder {
 		}
 		
 		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
-		var IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+		var IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.puzzle.reverseEngineering");
 		var SynthesisProperties properties = this.synthesisProperties
 		
 		ExtractorImpl.instance.extractReusableModules(properties, languages, lplProject)
