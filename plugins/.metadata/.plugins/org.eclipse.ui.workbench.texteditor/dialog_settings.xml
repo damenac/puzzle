@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="aspectsAmount" key="selection"/>
+		<item value="Metrics" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Metrics"/>
 			<item value="aspectsAmount"/>
 			<item value="cou"/>
 			<item value="scop"/>
@@ -15,7 +16,6 @@
 			<item value="Context"/>
 			<item value="buildSemanticModule"/>
 			<item value="metaclassAspectMapping"/>
-			<item value="Flowchart.expression"/>
 		</list>
 		<list key="replacehistory">
 			<item value="V"/>
