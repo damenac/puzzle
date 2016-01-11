@@ -2,8 +2,6 @@ package puzzle.empirical.study;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.Iterator;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -56,65 +54,58 @@ public class Histogram {
 
 		SyntacticNamingVennDiagram metrics = new SyntacticNamingVennDiagram();
 		int[][] theMatrix = metrics.getCommonalitiesMatrix(languages, conceptComparisonOperator);
-		Hashtable<Integer, Integer> histogramByConstructs = metrics.computeConstructsCommonality(theMatrix);
+		int[] maxs = new int[theMatrix.length];
+		int[] counts = new int[theMatrix.length];
+		double[] avgs = new double[theMatrix.length];
 		
-		int max = -1;
+		System.out.println("\n\nOverlapping sizes matrix: ");
 		for (int i = 0; i < theMatrix.length; i++) {
-			int current = histogramByConstructs.get(i);
-//			System.out.println(i + " - " + histogramByConstructs.get(i));
-			if(current > max)
-				max = current;
-		}
-		
-		System.out.println("max: " + max);
-		
-		ArrayList<Integer> histogram = new ArrayList<Integer>();
-		
-		Iterator<Integer> it = histogramByConstructs.keySet().iterator();
-		int count = 0;
-		while (it.hasNext()) {
-			Integer currentKey = (Integer) it.next();
-			Integer currentValue = histogramByConstructs.get(currentKey);
-			if(currentValue == 0){
-				count ++;
-			}
-		}
-		histogram.add(new Integer(count));
-		
-		int maxI = 0;
-		int interval = 1;
-		
-		for (int i = 1; i <= max; i+=interval) {
-			it = histogramByConstructs.keySet().iterator();
-			count = 0;
-			while (it.hasNext()) {
-				Integer currentKey = (Integer) it.next();
-				Integer currentValue = histogramByConstructs.get(currentKey);
-				int proxI = i + interval;
-				if(currentValue >= i && currentValue < proxI){
-					count ++;
+			int max = -1;
+			int count = 0;
+			int sum = 0;
+			for (int j = 0; j < theMatrix.length; j++) {
+				if(i == j)
+					System.out.print("-|");
+				else{
+					System.out.print(theMatrix[i][j] + "|");
+					if(theMatrix[i][j] > max)
+						max = theMatrix[i][j];
+					
+					if(theMatrix[i][j] > 0){
+						count++;
+						sum += theMatrix[i][j];
+					}
 				}
+					
 			}
-			histogram.add(new Integer(count));
-			maxI = i;
+			maxs[i] = max;
+			counts[i] = count;
+			if(count == 0)
+				avgs[i] = 0;
+			else
+				avgs[i] = (double)((double)sum/(double)count);
+			System.out.println();
 		}
 		
-		it = histogramByConstructs.keySet().iterator();
-		count = 0;
-		while (it.hasNext()) {
-			Integer currentKey = (Integer) it.next();
-			Integer currentValue = histogramByConstructs.get(currentKey);
-			if(currentValue >= maxI && currentValue <= max){
-				count ++;
-			}
+		int remax = -1;
+		System.out.print("\nMaximum overlapping: [");
+		for (int i = 0; i < maxs.length; i++) {
+			System.out.print(maxs[i] + "|");
+			if(maxs[i] > remax)
+				remax = maxs[i];
 		}
-		histogram.add(new Integer(count));
+		System.out.print("]");
 		
-		
-		for (int i = 0; i < histogram.size(); i++) {
-			System.out.println(i * interval + "," + histogram.get(i));
+		System.out.print("\nCount overlapping: [");
+		for (int i = 0; i < counts.length; i++) {
+			System.out.print(counts[i] + "|");
 		}
+		System.out.print("]");
+		
+		System.out.print("\nAverage overlapping: [");
+		for (int i = 0; i < avgs.length; i++) {
+			System.out.print(avgs[i] + "|");
+		}
+		System.out.print("]");
 	}
-
-	
 }
