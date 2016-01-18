@@ -1,0 +1,13 @@
+grammar fr.inria.diverse.puzzle.adl.language.Puzzle 
+	with org.eclipse.xtext.common.Terminals
+	import "http://www.inria.fr/diverse/melange" as xbase
+
+generate puzzle "http://www.inria.fr/diverse/puzzle/adl/language/Puzzle"
+
+
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

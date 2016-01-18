@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature id="fr.inria.diverse.puzzle.adl.language.sdk"
-	label="Language SDK Feature "
+	label="Puzzle SDK Feature "
 	version="1.0.0.qualifier">
 	<plugin
 			id="fr.inria.diverse.puzzle.adl.language"

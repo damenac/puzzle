@@ -1,0 +1,12 @@
+grammar fr.inria.diverse.puzzle.adl.language.Puzzle 
+	with "http://www.inria.fr/diverse/melange" as melange
+
+generate puzzle "http://www.inria.fr/diverse/puzzle/adl/language/Puzzle"
+
+
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';

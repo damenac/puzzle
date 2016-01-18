@@ -1,3 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	Logo.ControlStructure = Logo.logoprogram.ControlStructureAspect
-	Logo.If = Logo.logoprogram.IfAspect

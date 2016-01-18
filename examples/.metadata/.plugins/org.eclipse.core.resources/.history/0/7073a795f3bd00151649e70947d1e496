@@ -1,0 +1,4 @@
+languageBinding {
+	
+	bind( RequiredLogo, ProvidedExpressions  )
+}

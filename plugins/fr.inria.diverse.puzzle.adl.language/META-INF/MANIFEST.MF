@@ -17,19 +17,20 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.eclipse.xtext.common.types,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional,
  org.eclipse.xtext.xbase
-Import-Package: org.apache.log4j
+Import-Package: fr.inria.diverse.melange,
+ org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: fr.inria.diverse.puzzle.adl,
- fr.inria.diverse.puzzle.adl.services,
- fr.inria.diverse.puzzle.adl.language,
- fr.inria.diverse.puzzle.adl.language.impl,
- fr.inria.diverse.puzzle.adl.language.util,
- fr.inria.diverse.puzzle.adl.serializer,
- fr.inria.diverse.puzzle.adl.parser.antlr,
- fr.inria.diverse.puzzle.adl.parser.antlr.internal,
- fr.inria.diverse.puzzle.adl.validation,
- fr.inria.diverse.puzzle.adl.scoping,
- fr.inria.diverse.puzzle.adl.generator,
- fr.inria.diverse.puzzle.adl.formatting,
- fr.inria.diverse.puzzle.adl.jvmmodel
+Export-Package: fr.inria.diverse.puzzle.adl.language,
+ fr.inria.diverse.puzzle.adl.language.services,
+ fr.inria.diverse.puzzle.adl.language.puzzle,
+ fr.inria.diverse.puzzle.adl.language.puzzle.impl,
+ fr.inria.diverse.puzzle.adl.language.puzzle.util,
+ fr.inria.diverse.puzzle.adl.language.serializer,
+ fr.inria.diverse.puzzle.adl.language.parser.antlr,
+ fr.inria.diverse.puzzle.adl.language.parser.antlr.internal,
+ fr.inria.diverse.puzzle.adl.language.validation,
+ fr.inria.diverse.puzzle.adl.language.scoping,
+ fr.inria.diverse.puzzle.adl.language.generator,
+ fr.inria.diverse.puzzle.adl.language.formatting,
+ fr.inria.diverse.puzzle.adl.language.jvmmodel
 

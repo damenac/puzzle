@@ -6,48 +6,49 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="puzzle"
-            id="fr.inria.diverse.puzzle.adl.Language"
-            name="Language Editor">
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle"
+            icon="icons/melange.png"
+            name="Puzzle Editor">
         </editor>
     </extension>
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+                    definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="fr.inria.diverse.puzzle.adl.Language.validate">
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="fr.inria.diverse.puzzle.adl.language.Puzzle.validate">
          <activeWhen>
             <reference
-                    definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+                    definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
             </reference>
          </activeWhen>
       	</handler>
       	<!-- copy qualified name -->
         <handler
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
             <activeWhen>
-				<reference definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened" />
+				<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened" />
             </activeWhen>
         </handler>
         <handler
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
             commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
             <activeWhen>
             	<and>
-            		<reference definitionId="fr.inria.diverse.puzzle.adl.Language.XtextEditor.opened" />
+            		<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.XtextEditor.opened" />
 	                <iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -56,22 +57,22 @@
         </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+        <definition id="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="fr.inria.diverse.puzzle.adl.Language" 
+                        value="fr.inria.diverse.puzzle.adl.language.Puzzle" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
         </definition>
-        <definition id="fr.inria.diverse.puzzle.adl.Language.XtextEditor.opened">
+        <definition id="fr.inria.diverse.puzzle.adl.language.Puzzle.XtextEditor.opened">
             <and>
                 <reference definitionId="isXtextEditorActive"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="fr.inria.diverse.puzzle.adl.Language" 
+                        value="fr.inria.diverse.puzzle.adl.language.Puzzle" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -80,33 +81,33 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="fr.inria.diverse.puzzle.adl.Language"
-            name="Language">
-            <keywordReference id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"/>
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle"
+            name="Puzzle">
+            <keywordReference id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"/>
         </page>
         <page
-            category="fr.inria.diverse.puzzle.adl.Language"
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="fr.inria.diverse.puzzle.adl.Language.coloring"
+            category="fr.inria.diverse.puzzle.adl.language.Puzzle"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle.coloring"
             name="Syntax Coloring">
-            <keywordReference id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"/>
+            <keywordReference id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"/>
         </page>
         <page
-            category="fr.inria.diverse.puzzle.adl.Language"
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="fr.inria.diverse.puzzle.adl.Language.templates"
+            category="fr.inria.diverse.puzzle.adl.language.Puzzle"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle.templates"
             name="Templates">
-            <keywordReference id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"/>
+            <keywordReference id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="fr.inria.diverse.puzzle.adl.Language"
-            name="Language">
-            <keywordReference id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"/>
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle"
+            name="Puzzle">
+            <keywordReference id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -116,14 +117,14 @@
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"
-            label="Language"/>
+            id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"
+            label="Puzzle"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="fr.inria.diverse.puzzle.adl.Language.validate"
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle.validate"
             name="Validate">
       </command>
       <!-- copy qualified name -->
@@ -144,12 +145,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="fr.inria.diverse.puzzle.adl.Language.validate"
+                 commandId="fr.inria.diverse.puzzle.adl.language.Puzzle.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+                    definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -159,7 +160,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName" 
          		style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened" />
+                	<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -167,7 +168,7 @@
          	<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
             	style="push" tooltip="Copy Qualified Name">
             	<visibleWhen checkEnabled="false">
-                	<reference definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened" />
+                	<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened" />
             	</visibleWhen>
          	</command>  
          </menuContribution>
@@ -176,7 +177,7 @@
 				style="push" tooltip="Copy Qualified Name">
          		<visibleWhen checkEnabled="false">
 	            	<and>
-	            		<reference definitionId="fr.inria.diverse.puzzle.adl.Language.XtextEditor.opened" />
+	            		<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -189,7 +190,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+                	<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -197,11 +198,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+                    definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -212,36 +213,36 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="puzzle">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="puzzle">
         </resourceServiceProvider>
     </extension>
 
 
-	<!-- marker definitions for fr.inria.diverse.puzzle.adl.Language -->
+	<!-- marker definitions for fr.inria.diverse.puzzle.adl.language.Puzzle -->
 	<extension
-	        id="language.check.fast"
-	        name="Language Problem"
+	        id="puzzle.check.fast"
+	        name="Puzzle Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.fast"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
-	        id="language.check.normal"
-	        name="Language Problem"
+	        id="puzzle.check.normal"
+	        name="Puzzle Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.normal"/>
 	    <persistent value="true"/>
 	</extension>
 	<extension
-	        id="language.check.expensive"
-	        name="Language Problem"
+	        id="puzzle.check.expensive"
+	        name="Puzzle Problem"
 	        point="org.eclipse.core.resources.markers">
 	    <super type="org.eclipse.xtext.ui.check.expensive"/>
 	    <persistent value="true"/>
@@ -250,7 +251,7 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
             fileExtensions="puzzle"
             >
       </participant>
@@ -258,21 +259,21 @@
    <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            category="fr.inria.diverse.puzzle.adl.Language"
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="fr.inria.diverse.puzzle.adl.Language.compiler.preferencePage"
+            category="fr.inria.diverse.puzzle.adl.language.Puzzle"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle.compiler.preferencePage"
             name="Compiler">
-            <keywordReference id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"/>
+            <keywordReference id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"/>
         </page>
     </extension>
     <extension
             point="org.eclipse.ui.propertyPages">
         <page
-            category="fr.inria.diverse.puzzle.adl.Language"
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-            id="fr.inria.diverse.puzzle.adl.Language.compiler.propertyPage"
+            category="fr.inria.diverse.puzzle.adl.language.Puzzle"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+            id="fr.inria.diverse.puzzle.adl.language.Puzzle.compiler.propertyPage"
             name="Compiler">
-            <keywordReference id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"/>
+            <keywordReference id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"/>
             <enabledWhen>
 	            <adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -283,20 +284,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="fr.inria.diverse.puzzle.adl.Language.OpenGeneratedCode"
+				id="fr.inria.diverse.puzzle.adl.language.Puzzle.OpenGeneratedCode"
 				style="push">
 					<visibleWhen checkEnabled="false">
-						<reference definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened" />
+						<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened" />
 					</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 				<activeWhen>
-					<reference definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened" />
+					<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened" />
 				</activeWhen>
 		</handler>
 	</extension>
@@ -305,11 +306,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+					definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -329,33 +330,33 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened"/>
+					<reference definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-    <!-- quickfix marker resolution generator for fr.inria.diverse.puzzle.adl.Language -->
+    <!-- quickfix marker resolution generator for fr.inria.diverse.puzzle.adl.language.Puzzle -->
     <extension
             point="org.eclipse.ui.ide.markerResolution">
         <markerResolutionGenerator
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="fr.inria.diverse.puzzle.adl.ui.language.check.fast">
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="fr.inria.diverse.puzzle.adl.language.ui.puzzle.check.fast">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="fr.inria.diverse.puzzle.adl.ui.language.check.normal">
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="fr.inria.diverse.puzzle.adl.language.ui.puzzle.check.normal">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
             </attribute>
         </markerResolutionGenerator>
         <markerResolutionGenerator
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
-            markerType="fr.inria.diverse.puzzle.adl.ui.language.check.expensive">
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="fr.inria.diverse.puzzle.adl.language.ui.puzzle.check.expensive">
             <attribute
                 name="FIXABLE_KEY"
                 value="true">
@@ -365,11 +366,11 @@
    	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler 
-			class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+					definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -381,7 +382,7 @@
                style="push">
             <visibleWhen checkEnabled="false">
                <reference
-                     definitionId="fr.inria.diverse.puzzle.adl.Language.Editor.opened">
+                     definitionId="fr.inria.diverse.puzzle.adl.language.Puzzle.Editor.opened">
                </reference>
             </visibleWhen>
          </command>
@@ -389,29 +390,29 @@
    </extension>
    <extension point="org.eclipse.ui.preferencePages">
 	    <page
-	        category="fr.inria.diverse.puzzle.adl.Language"
-	        class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-	        id="fr.inria.diverse.puzzle.adl.Language.refactoring"
+	        category="fr.inria.diverse.puzzle.adl.language.Puzzle"
+	        class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+	        id="fr.inria.diverse.puzzle.adl.language.Puzzle.refactoring"
 	        name="Refactoring">
-	        <keywordReference id="fr.inria.diverse.puzzle.adl.ui.keyword_Language"/>
+	        <keywordReference id="fr.inria.diverse.puzzle.adl.language.ui.keyword_Puzzle"/>
 	    </page>
 	</extension>
 
   <extension point="org.eclipse.compare.contentViewers">
-    <viewer id="fr.inria.diverse.puzzle.adl.Language.compare.contentViewers"
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+    <viewer id="fr.inria.diverse.puzzle.adl.language.Puzzle.compare.contentViewers"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
             extensions="puzzle">
     </viewer>
   </extension>
   <extension point="org.eclipse.compare.contentMergeViewers">
-    <viewer id="fr.inria.diverse.puzzle.adl.Language.compare.contentMergeViewers"
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-            extensions="puzzle" label="Language Compare">
+    <viewer id="fr.inria.diverse.puzzle.adl.language.Puzzle.compare.contentMergeViewers"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="puzzle" label="Puzzle Compare">
      </viewer>
   </extension>
   <extension point="org.eclipse.ui.editors.documentProviders">
-    <provider id="fr.inria.diverse.puzzle.adl.Language.editors.documentProviders"
-            class="fr.inria.diverse.puzzle.adl.ui.LanguageExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+    <provider id="fr.inria.diverse.puzzle.adl.language.Puzzle.editors.documentProviders"
+            class="fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
             extensions="puzzle">
     </provider>
   </extension>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.adl.language/src-gen"
+    editDirectory="/fr.inria.diverse.puzzle.adl.language.edit/src" editorDirectory="/fr.inria.diverse.puzzle.adl.language.editor/src"
+    modelPluginID="fr.inria.diverse.puzzle.adl.language" forceOverwrite="true" modelName="Puzzle"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="fr.inria.diverse.puzzle.adl.language.edit"
+    editorPluginID="fr.inria.diverse.puzzle.adl.language.editor" runtimeVersion="2.10">
+  <genPackages prefix="Puzzle" basePackage="fr.inria.diverse.puzzle.adl.language"
+      disposableProviderFactory="true" fileExtensions="puzzle" ecorePackage="Puzzle.ecore#/">
+    <genClasses ecoreClass="Puzzle.ecore#//LanguageBinding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Puzzle.ecore#//LanguageBinding/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Puzzle.ecore#//LanguageBinding/binding"/>
+    </genClasses>
+    <genClasses ecoreClass="Puzzle.ecore#//Binding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Puzzle.ecore#//Binding/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Puzzle.ecore#//Binding/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -5,9 +5,9 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://www.inria.fr/diverse/puzzle/adl/Language" 
-       class = "fr.inria.diverse.puzzle.adl.language.LanguagePackage"
-       genModel = "model/generated/Language.genmodel" /> 
+       uri = "http://www.inria.fr/diverse/puzzle/adl/language/Puzzle" 
+       class = "fr.inria.diverse.puzzle.adl.language.puzzle.PuzzlePackage"
+       genModel = "model/generated/Puzzle.genmodel" /> 
 	
   </extension>
 

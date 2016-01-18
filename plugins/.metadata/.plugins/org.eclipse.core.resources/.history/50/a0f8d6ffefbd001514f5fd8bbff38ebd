@@ -1,0 +1,11 @@
+grammar fr.inria.diverse.puzzle.adl.language.Puzzle with org.eclipse.xtext.common.Terminals
+
+generate puzzle "http://www.inria.fr/diverse/puzzle/adl/language/Puzzle"
+
+import "http://www.inria.fr/diverse/melange" as melange
+
+LanguageArchitecture :
+	languageUnits += M*;
+	
+Greeting:
+	'Hello' name=ID '!';

@@ -20,8 +20,8 @@ Require-Bundle: fr.inria.diverse.puzzle.adl.language;visibility:=reexport,
  org.eclipse.jdt.debug.ui
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: fr.inria.diverse.puzzle.adl.ui.quickfix,
- fr.inria.diverse.puzzle.adl.ui.contentassist,
- fr.inria.diverse.puzzle.adl.ui.internal,
- fr.inria.diverse.puzzle.adl.ui.contentassist.antlr
-Bundle-Activator: fr.inria.diverse.puzzle.adl.ui.internal.LanguageActivator
+Export-Package: fr.inria.diverse.puzzle.adl.language.ui.quickfix,
+ fr.inria.diverse.puzzle.adl.language.ui.contentassist,
+ fr.inria.diverse.puzzle.adl.language.ui.internal,
+ fr.inria.diverse.puzzle.adl.language.ui.contentassist.antlr
+Bundle-Activator: fr.inria.diverse.puzzle.adl.language.ui.internal.PuzzleActivator

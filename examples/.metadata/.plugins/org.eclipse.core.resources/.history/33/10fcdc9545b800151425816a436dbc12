@@ -1,7 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	kmLogo.Primitive = logo.PrimitiveAspect
-	kmLogo.Parameter = logo.ParameterAspect
-	kmLogo.BoolLit = logo.BoolLitAspect
-	kmLogo.LogoProgram = logo.LogoProgramAspect
-	kmLogo.Block = logo.BlockAspect
-	kmLogo.ProcCall = logo.ProcCallAspect
