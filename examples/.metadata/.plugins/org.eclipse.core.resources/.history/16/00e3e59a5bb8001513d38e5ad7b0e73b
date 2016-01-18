@@ -1,0 +1,43 @@
+package family
+
+/**
+ * A language for UML state machines.
+ */
+language UML {
+	syntax "platform:/resource/puzzle.examples.fsm.uml.metamodel/models/fsmUml.ecore"
+	
+	with fsmumlaspects.StateMachineAspect
+	with fsmumlaspects.RegionAspect
+	with fsmumlaspects.StateAspect
+	with fsmumlaspects.TransitionAspect
+	
+	exactType UMLMT
+}
+
+/**
+ * A language for Rhapsody state machines.
+ */
+language Rhapsody{
+	syntax "platform:/resource/puzzle.examples.fsm.rhapsody.metamodel/models/fsmRhapsody.ecore"
+
+	with fsmrhapsodyaspects.StateMachineAspect
+	with fsmrhapsodyaspects.RegionAspect
+	with fsmrhapsodyaspects.StateAspect
+	with fsmrhapsodyaspects.TransitionAspect
+
+	exactType RhapsodyMT
+}
+
+/**
+ * A language for Harel state machines.
+ */
+language Harel {
+	syntax "platform:/resource/puzzle.examples.fsm.harel.metamodel/models/fsmHarel.ecore"
+	
+	with fsmharelaspects.StateMachineAspect
+	with fsmharelaspects.RegionAspect
+	with fsmharelaspects.StateAspect
+	with fsmharelaspects.TransitionAspect
+	
+	exactType HarelMT
+}

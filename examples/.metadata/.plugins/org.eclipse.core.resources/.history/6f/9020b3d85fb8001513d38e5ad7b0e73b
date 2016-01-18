@@ -1,0 +1,34 @@
+package family
+
+language UML {
+	syntax "platform:/resource/puzzle.examples.fsm.uml.metamodel/models/fsmUml.ecore"
+	
+	with fsmumlaspects.StateMachineAspect
+	with fsmumlaspects.RegionAspect
+	with fsmumlaspects.StateAspect
+	with fsmumlaspects.TransitionAspect
+	
+	exactType UMLMT
+}
+
+language Rhapsody{
+	syntax "platform:/resource/puzzle.examples.fsm.rhapsody.metamodel/models/fsmRhapsody.ecore"
+
+	with fsmrhapsodyaspects.StateMachineAspect
+	with fsmrhapsodyaspects.RegionAspect
+	with fsmrhapsodyaspects.StateAspect
+	with fsmrhapsodyaspects.TransitionAspect
+
+	exactType RhapsodyMT
+}
+
+language Harel {
+	syntax "platform:/resource/puzzle.examples.fsm.harel.metamodel/models/fsmHarel.ecore"
+	
+	with fsmharelaspects.StateMachineAspect
+	with fsmharelaspects.RegionAspect
+	with fsmharelaspects.StateAspect
+	with fsmharelaspects.TransitionAspect
+	
+	exactType HarelMT
+}

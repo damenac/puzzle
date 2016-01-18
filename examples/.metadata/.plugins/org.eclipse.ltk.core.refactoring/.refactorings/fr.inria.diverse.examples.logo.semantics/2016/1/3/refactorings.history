@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Context.xtend&apos; to &apos;fr.inria.diverse.examples.expressions.semantics/src/Logo.expression&apos;&#x0A;- Original project: &apos;fr.inria.diverse.examples.logo.semantics&apos;&#x0A;- Destination element: &apos;fr.inria.diverse.examples.expressions.semantics/src/Logo.expression&apos;&#x0A;- Original element: &apos;Context.xtend&apos;" description="Copy file" destination="=fr.inria.diverse.examples.expressions.semantics/src&lt;Logo.expression" element1="src/Logo/logoprogram/Context.xtend" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1453116911265" units="0" version="1.0"/>
+</session>

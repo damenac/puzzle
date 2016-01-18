@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.examples.modularization/src/family/overlappingFamily.melange&apos; to &apos;modularization.melange&apos;" description="Rename resource &apos;overlappingFamily.melange&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/family/overlappingFamily.melange" name="modularization.melange" stamp="1453117247347" updateReferences="true"/>
+</session>
