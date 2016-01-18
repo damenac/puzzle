@@ -1,0 +1,22 @@
+package logo.semantics;
+
+import Logo.ProcCall;
+import java.util.Map;
+import logo.semantics.ProcCallAspectProcCallAspectProperties;
+
+@SuppressWarnings("all")
+public class ProcCallAspectProcCallAspectContext {
+  public final static ProcCallAspectProcCallAspectContext INSTANCE = new ProcCallAspectProcCallAspectContext();
+  
+  public static ProcCallAspectProcCallAspectProperties getSelf(final ProcCall _self) {
+    		if (!INSTANCE.map.containsKey(_self))
+    			INSTANCE.map.put(_self, new logo.semantics.ProcCallAspectProcCallAspectProperties());
+    		return INSTANCE.map.get(_self);
+  }
+  
+  private Map<ProcCall, ProcCallAspectProcCallAspectProperties> map = new java.util.WeakHashMap<Logo.ProcCall, logo.semantics.ProcCallAspectProcCallAspectProperties>();
+  
+  public Map<ProcCall, ProcCallAspectProcCallAspectProperties> getMap() {
+    return map;
+  }
+}

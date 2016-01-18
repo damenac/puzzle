@@ -14,5 +14,13 @@ language Logo {
 language Expressions {
 	
 	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/Expression.ecore"
+	
+	with expressions.semantics.ExpressionAspect
+	with expressions.semantics.LiteralAspect
+	with expressions.semantics.BoolLitAspect
+	with expressions.semantics.StringLitAspect
+	with expressions.semantics.ArithmeticExpressionAspect
+	with expressions.semantics.RelationalExpressionAspect
+	
 	exactType ExpressionsMT
 }

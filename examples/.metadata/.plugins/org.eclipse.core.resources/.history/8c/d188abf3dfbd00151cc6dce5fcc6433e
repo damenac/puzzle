@@ -1,0 +1,21 @@
+package Logo.logoprogram;
+
+import Logo.LogoProgram;
+import Logo.logoprogram.LogoProgramAspectLogoProgramAspectProperties;
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+
+@Aspect(className = LogoProgram.class)
+@SuppressWarnings("all")
+public class LogoProgramAspect {
+  public static int eval(final LogoProgram _self, final Context context) {
+    Logo.logoprogram.LogoProgramAspectLogoProgramAspectProperties _self_ = Logo.logoprogram.LogoProgramAspectLogoProgramAspectContext.getSelf(_self);
+    Object result = null;
+    result =_privk3_eval(_self_, _self,context);
+    return (int)result;
+  }
+  
+  protected static int _privk3_eval(final LogoProgramAspectLogoProgramAspectProperties _self_, final LogoProgram _self, final Context context) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method eval is undefined for the type LogoProgramAspect");
+  }
+}

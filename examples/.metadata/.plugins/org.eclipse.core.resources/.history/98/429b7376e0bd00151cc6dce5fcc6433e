@@ -1,0 +1,24 @@
+package logo.semantics;
+
+import Logo.If;
+import java.util.Map;
+import logo.semantics.IfAspectIfAspectProperties;
+
+@SuppressWarnings("all")
+public class IfAspectIfAspectContext {
+  public final static IfAspectIfAspectContext INSTANCE /* Skipped initializer because of errors */;
+  
+  public static IfAspectIfAspectProperties getSelf(final If _self) {
+    throw new Error("Unresolved compilation problems:"
+      + "\npass par la"
+      + "\nSuperclass must be a class");
+  }
+  
+  private Map<If, IfAspectIfAspectProperties> map /* Skipped initializer because of errors */;
+  
+  public Map<If, IfAspectIfAspectProperties> getMap() {
+    throw new Error("Unresolved compilation problems:"
+      + "\npass par la"
+      + "\nSuperclass must be a class");
+  }
+}

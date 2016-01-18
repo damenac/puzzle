@@ -1,0 +1,54 @@
+package logo.semantics;
+
+import Logo.ProcCall;
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import logo.semantics.ProcCallAspectProcCallAspectProperties;
+
+@Aspect(className = ProcCall.class)
+@SuppressWarnings("all")
+public class ProcCallAspect {
+  public static Object eval(final ProcCall _self, final Context context) {
+    logo.semantics.ProcCallAspectProcCallAspectProperties _self_ = logo.semantics.ProcCallAspectProcCallAspectContext.getSelf(_self);
+    Object result = null;
+    result =_privk3_eval(_self_, _self,context);
+    return (java.lang.Object)result;
+  }
+  
+  private static int res(final ProcCall _self) {
+    logo.semantics.ProcCallAspectProcCallAspectProperties _self_ = logo.semantics.ProcCallAspectProcCallAspectContext.getSelf(_self);
+    Object result = null;
+    result =_privk3_res(_self_, _self);
+    return (int)result;
+  }
+  
+  private static void res(final ProcCall _self, final int res) {
+    logo.semantics.ProcCallAspectProcCallAspectProperties _self_ = logo.semantics.ProcCallAspectProcCallAspectContext.getSelf(_self);
+    _privk3_res(_self_, _self,res);
+  }
+  
+  protected static Object _privk3_eval(final ProcCallAspectProcCallAspectProperties _self_, final ProcCall _self, final Context context) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method eval is undefined for the type ProcCallAspect"
+      + "\npush cannot be resolved"
+      + "\npop cannot be resolved");
+  }
+  
+  protected static int _privk3_res(final ProcCallAspectProcCallAspectProperties _self_, final ProcCall _self) {
+     return _self_.res; 
+  }
+  
+  protected static void _privk3_res(final ProcCallAspectProcCallAspectProperties _self_, final ProcCall _self, final int res) {
+    _self_.res = res; try {
+    
+    			for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    				if (m.getName().equals("set" + "Res")
+    						&& m.getParameterTypes().length == 1) {
+    					m.invoke(_self, res);
+    
+    				}
+    			}
+    		} catch (Exception e) {
+    			// Chut !
+    		} 
+  }
+}

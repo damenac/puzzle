@@ -1,0 +1,12 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	Logo.Left = Logo.logoprogram.LeftAspect
+	Logo.If = Logo.logoprogram.IfAspect
+	Logo.ProcCall = Logo.logoprogram.ProcCallAspect
+	Logo.Forward = Logo.logoprogram.ForwardAspect
+	Logo.Right = Logo.logoprogram.RightAspect
+	Logo.Repeat = Logo.logoprogram.RepeatAspect
+	Logo.ParameterCall = Logo.logoprogram.ParameterCallAspect
+	Logo.Parameter = Logo.logoprogram.ParameterAspect
+	Logo.PenUp = Logo.logoprogram.PenUpAspect
+	Logo.While = Logo.logoprogram.WhileAspect
+	Logo.LogoProgram = Logo.logoprogram.LogoProgramAspect

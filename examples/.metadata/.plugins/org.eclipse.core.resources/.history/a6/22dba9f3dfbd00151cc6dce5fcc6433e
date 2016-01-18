@@ -1,0 +1,24 @@
+package Logo.logoprogram;
+
+import Logo.Primitive;
+import Logo.logoprogram.PrimitiveAspectPrimitiveAspectProperties;
+import java.util.Map;
+
+@SuppressWarnings("all")
+public class PrimitiveAspectPrimitiveAspectContext {
+  public final static PrimitiveAspectPrimitiveAspectContext INSTANCE /* Skipped initializer because of errors */;
+  
+  public static PrimitiveAspectPrimitiveAspectProperties getSelf(final Primitive _self) {
+    throw new Error("Unresolved compilation problems:"
+      + "\npass par la"
+      + "\nSuperclass must be a class");
+  }
+  
+  private Map<Primitive, PrimitiveAspectPrimitiveAspectProperties> map /* Skipped initializer because of errors */;
+  
+  public Map<Primitive, PrimitiveAspectPrimitiveAspectProperties> getMap() {
+    throw new Error("Unresolved compilation problems:"
+      + "\npass par la"
+      + "\nSuperclass must be a class");
+  }
+}

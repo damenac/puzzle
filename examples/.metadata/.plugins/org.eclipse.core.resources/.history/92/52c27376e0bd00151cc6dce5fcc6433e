@@ -1,0 +1,22 @@
+package logo.semantics;
+
+import Logo.PenDown;
+import java.util.Map;
+import logo.semantics.PenDownAspectPenDownAspectProperties;
+
+@SuppressWarnings("all")
+public class PenDownAspectPenDownAspectContext {
+  public final static PenDownAspectPenDownAspectContext INSTANCE = new PenDownAspectPenDownAspectContext();
+  
+  public static PenDownAspectPenDownAspectProperties getSelf(final PenDown _self) {
+    		if (!INSTANCE.map.containsKey(_self))
+    			INSTANCE.map.put(_self, new logo.semantics.PenDownAspectPenDownAspectProperties());
+    		return INSTANCE.map.get(_self);
+  }
+  
+  private Map<PenDown, PenDownAspectPenDownAspectProperties> map = new java.util.WeakHashMap<Logo.PenDown, logo.semantics.PenDownAspectPenDownAspectProperties>();
+  
+  public Map<PenDown, PenDownAspectPenDownAspectProperties> getMap() {
+    return map;
+  }
+}

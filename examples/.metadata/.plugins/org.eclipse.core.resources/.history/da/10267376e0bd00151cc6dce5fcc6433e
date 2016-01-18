@@ -1,0 +1,5 @@
+package logo.semantics;
+
+@SuppressWarnings("all")
+public class RightAspectRightAspectProperties {
+}

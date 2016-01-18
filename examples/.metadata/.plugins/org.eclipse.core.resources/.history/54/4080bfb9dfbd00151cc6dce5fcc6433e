@@ -1,0 +1,17 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	Logo.Instruction = logo.semantics.InstructionAspect
+	Logo.Left = logo.semantics.LeftAspect
+	Logo.Clear = logo.semantics.ClearAspect
+	Logo.If = logo.semantics.IfAspect
+	Logo.Repeat = logo.semantics.RepeatAspect
+	Logo.Parameter = logo.semantics.ParameterAspect
+	Logo.Back = logo.semantics.BackAspect
+	Logo.PenUp = logo.semantics.PenUpAspect
+	Logo.ControlStructure = logo.semantics.ControlStructureAspect
+	Logo.While = Logo.logoprogram.WhileAspect
+	Logo.LogoProgram = logo.semantics.LogoProgramAspect
+	Logo.Block = logo.semantics.BlockAspect
+	Logo.Forward = logo.semantics.ForwardAspect
+	Logo.Primitive = logo.semantics.PrimitiveAspect
+	Logo.PenDown = logo.semantics.PenDownAspect
+	Logo.ParameterCall = logo.semantics.ParameterCallAspect
