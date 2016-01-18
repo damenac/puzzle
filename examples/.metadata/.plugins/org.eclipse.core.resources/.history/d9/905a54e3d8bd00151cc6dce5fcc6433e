@@ -5,6 +5,7 @@ package family
  */
 language Logo {
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.syntax/models/Logo.ecore"
+	
 	exactType LogoMT
 }
 
@@ -14,5 +15,7 @@ language Logo {
 language Expressions {
 	
 	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/Expression.ecore"
+	 
+	
 	exactType ExpressionsMT
 }

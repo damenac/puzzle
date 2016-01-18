@@ -3,7 +3,7 @@ package family
 /**
  * A language for simple state machines.
  */
-language FSM {
+language Logo {
 	syntax "platform:/resource/puzzle.examples.overlap.fsm.metamodel/models/fsm.ecore"
 	
 	with fsmaspects.StateMachineAspect
@@ -31,6 +31,10 @@ language FSM {
 	with fsmaspects.WaitAspect
 	
 	exactType FsmMT
+}
+
+modeltype IFSM {
+	syntax "platform:/resource/puzzle.examples.overlap.fsm.metamodel/models/fsm.ecore"
 }
 
 /**

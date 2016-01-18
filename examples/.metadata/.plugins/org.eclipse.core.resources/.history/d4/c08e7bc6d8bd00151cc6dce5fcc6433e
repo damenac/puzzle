@@ -33,6 +33,10 @@ language FSM {
 	exactType FsmMT
 }
 
+modeltype IFSM {
+	syntax "platform:/resource/puzzle.examples.overlap.fsm.metamodel/models/fsm.ecore"
+}
+
 /**
  * A language for manipulating Logo's tutle 
  */
