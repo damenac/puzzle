@@ -9,7 +9,10 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: ExpressionPck,
  ExpressionPck.impl,
- ExpressionPck.util
+ ExpressionPck.util,
+ ExpressionsPackProv,
+ ExpressionsPackProv.impl,
+ ExpressionsPackProv.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

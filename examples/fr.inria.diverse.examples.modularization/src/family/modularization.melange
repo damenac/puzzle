@@ -1,17 +1,33 @@
 package family
 
 /**
- * A language for simple state machines.
+ * A language unit for manipulating Logo's tutle 
  */
-language Logo {
+language Logo requires RequiredLogo {
+	
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.syntax/models/Logo.ecore"
+	
+	with logos.semantics.LogoProgramAspect
+	with logos.semantics.PrimitiveAspect
+	with logos.semantics.ForwardAspect
+	with logos.semantics.BackAspect
+	with logos.semantics.LeftAspect
+	with logos.semantics.RightAspect
+	
 	exactType LogoMT
 }
 
 /**
- * A language for manipulating Logo's tutle 
+ * Required interface for the Logo's language unit
  */
-language Expressions {
+modeltype RequiredLogo {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.syntax/models/LogoReq.ecore"
+}
+
+/**
+ * A language for simple expressions
+ */
+language Expressions implements ProvidedExpressions {
 	
 	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/Expression.ecore"
 	
@@ -23,4 +39,11 @@ language Expressions {
 	with expressions.semantics.RelationalExpressionAspect
 	
 	exactType ExpressionsMT
+}
+
+/**
+ * Provided interface for the Expressions language unit
+ */
+modeltype ProvidedExpressions {
+	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/ExpressionsProv.ecore"
 }
