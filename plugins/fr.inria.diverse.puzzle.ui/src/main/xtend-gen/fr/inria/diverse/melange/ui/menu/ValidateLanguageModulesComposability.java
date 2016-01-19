@@ -1,5 +1,6 @@
 package fr.inria.diverse.melange.ui.menu;
 
+import com.google.common.base.Objects;
 import com.google.inject.Inject;
 import fr.inria.diverse.melange.ui.builder.LanguageModulesValidationBuilder;
 import org.eclipse.core.commands.AbstractHandler;
@@ -16,8 +17,11 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
@@ -59,7 +63,17 @@ public class ValidateLanguageModulesComposability extends AbstractHandler {
           URI _createPlatformResourceURI_1 = URI.createPlatformResourceURI(_replace, true);
           Resource _resource_1 = rs.getResource(_createPlatformResourceURI_1, true);
           final DerivedStateAwareResource puzzleRes = ((DerivedStateAwareResource) _resource_1);
-          ValidateLanguageModulesComposability.this.builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor);
+          final String validation = ValidateLanguageModulesComposability.this.builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor);
+          Display _display = ValidateLanguageModulesComposability.getDisplay();
+          _display.syncExec(
+            new Runnable() {
+              @Override
+              public void run() {
+                Display _display = ValidateLanguageModulesComposability.getDisplay();
+                Shell _activeShell = _display.getActiveShell();
+                MessageDialog.openInformation(_activeShell, "Validation result", validation);
+              }
+            });
         } catch (final Throwable _t) {
           if (_t instanceof OperationCanceledException) {
             final OperationCanceledException e = (OperationCanceledException)_t;
@@ -74,5 +88,15 @@ public class ValidateLanguageModulesComposability extends AbstractHandler {
       }
     }.schedule();
     return null;
+  }
+  
+  public static Display getDisplay() {
+    Display display = Display.getCurrent();
+    boolean _equals = Objects.equal(display, null);
+    if (_equals) {
+      Display _default = Display.getDefault();
+      display = _default;
+    }
+    return display;
   }
 }

@@ -8,7 +8,10 @@ import java.util.Hashtable;
 
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.compare.Comparison;
+import org.eclipse.emf.compare.Match;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -212,6 +215,146 @@ public class ValidatorImpl {
 			return errorsReport;
 	}
 	
+	public PuzzleDiagnosis checkCompatibility(EPackage providedInterface,
+			EPackage requiredInterface, Comparison binding) {
+
+		PuzzleDiagnosis errorsReport = new PuzzleDiagnosis();
+
+		
+		EList<Match> matches = binding.getMatches();
+		for (Match _mapping : matches) {
+			
+			EObject _input = _mapping.getLeft();
+			EObject _output = _mapping.getRight();
+
+			if ((_input instanceof EClass) && (_output instanceof EClass)) {
+				System.out.println("EClass _mapping: " + _input + " -- " + _output);
+				EClass _inputEClass = (EClass) _input;
+				EClass _outputEClass = (EClass) _output;
+
+				// _inputEClass.abstract == false implies _outputEClass.asbtract == false
+				if (_inputEClass.isAbstract() == false
+						&& _outputEClass.isAbstract() == true) {
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INVALID_ABSTRACT_IMPLEMENTATION,
+							_inputEClass, _outputEClass);
+					errorsReport.addItem(errorItem);
+				}
+				
+				// _inputEClass.interface == false implies _outputEClass.interface == false
+				if(_inputEClass.isInterface() == false 
+						&& _outputEClass.isInterface() == true){
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INVALID_INTERFACE_IMPLEMENTATION,
+							_inputEClass, _outputEClass);
+					errorsReport.addItem(errorItem);
+				}
+			} else if ((_input instanceof EReference)
+					&& (_output instanceof EReference)) {
+				System.out.println("EReference _mapping: " + _input + " -- "
+						+ _output);
+				
+				EReference _inputEReference = (EReference) _input;
+				EReference _outputEReference = (EReference) _output;
+				
+				//_inputEReference.lowerBound == _outputEReference.lowerBound &&
+				//	_inputEReference.upperBound == _outputEReference.upperBound
+				if(_inputEReference.getLowerBound() != _outputEReference.getLowerBound() ||
+						_inputEReference.getUpperBound() != _outputEReference.getUpperBound()){
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.MULTIPLICITY_MISMATCH,
+							_inputEReference, _outputEReference);
+					errorsReport.addItem(errorItem);
+				}
+				
+				//_inputEReference.ordered == true implies _outputEReference.ordered == true
+				if(_inputEReference.isOrdered() == true &&
+						_outputEReference.isOrdered() == false){
+					
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INCOHERENT_ORDERED_FEATURES,
+							_inputEReference, _outputEReference);
+					errorsReport.addItem(errorItem);
+				}
+				
+				//_inputEReference.unique == true implies _outputEReference.unique == true
+				if(_inputEReference.isUnique() == true &&
+						_outputEReference.isUnique() == false){
+					
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INCOHERENT_UNIQUE_FEATURES,
+							_inputEReference, _outputEReference);
+					errorsReport.addItem(errorItem);
+				}
+				
+				//_inputEReference.containment == _outputEReference.containment
+				if(_inputEReference.isContainment() != _outputEReference.isContainment()){
+					
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INCOHERENT_CONTAINMENT_REFERENCES,
+							_inputEReference, _outputEReference);
+					errorsReport.addItem(errorItem);
+				}
+				
+			} else if ((_input instanceof EAttribute)
+					&& (_output instanceof EAttribute)) {
+				System.out.println("EAttribute _mapping: " + _input + " -- "
+						+ _output);
+				
+				EAttribute _inputEAttribute = (EAttribute) _input;
+				EAttribute _outputEAttribute = (EAttribute) _output;
+				
+				//_inputEAttribute.lowerBound == _outputEAttribute.lowerBound &&
+				//	_inputEAttribute.upperBound == _outputEAttribute.upperBound
+				if(_inputEAttribute.getLowerBound() != _outputEAttribute.getLowerBound() ||
+						_inputEAttribute.getUpperBound() != _outputEAttribute.getUpperBound()){
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.MULTIPLICITY_MISMATCH,
+							_inputEAttribute, _outputEAttribute);
+					errorsReport.addItem(errorItem);
+				}
+				
+				//_inputEReference.ordered == true implies _outputEReference.ordered == true
+				if(_inputEAttribute.isOrdered() == true &&
+						_outputEAttribute.isOrdered() == false){
+					
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INCOHERENT_ORDERED_FEATURES,
+							_inputEAttribute, _outputEAttribute);
+					errorsReport.addItem(errorItem);
+				}
+				
+				//_inputEReference.unique == true implies _outputEReference.unique == true
+				if(_inputEAttribute.isUnique() == true &&
+						_outputEAttribute.isUnique() == false){
+					
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INCOHERENT_UNIQUE_FEATURES,
+							_inputEAttribute, _outputEAttribute);
+					errorsReport.addItem(errorItem);
+				}
+				
+				//_outputEAttribute.type isSubtypeOf _inputEAttribute.type
+				int _inputDataTypeIndex = dataTypes.get(_inputEAttribute.getEAttributeType().getName());
+				int _outputDataTypeIndex = dataTypes.get(_outputEAttribute.getEAttributeType().getName());
+				
+				
+				
+				if(compatibilityMatrix[_outputDataTypeIndex][_inputDataTypeIndex] == 0){
+					PuzzleDiagnosisItem errorItem = new PuzzleDiagnosisItem(
+							PuzzleDiagnosisItemKind.INCOHERENT_ATTRIBUTE_DATATYPES,
+							_inputEAttribute, _outputEAttribute);
+					errorsReport.addItem(errorItem);
+				}
+			}
+		}
+
+		if (errorsReport.getItems().isEmpty())
+			return null;
+		else
+			return errorsReport;
+	}
+	
 	// -----------------------------------------------------
 	// Private services of the class
 	// -----------------------------------------------------
@@ -266,7 +409,7 @@ public class ValidatorImpl {
 	private int[][] loadCompatibilityMatrix(){
 		int[][] answer = new int[ValidatorImplConstants.DataTypesAmount + 1][ValidatorImplConstants.DataTypesAmount + 1];
 		
-		Bundle bundle = Platform.getBundle("fr.inria.diverse.sle.puzzle.compatibilityChecker");
+		Bundle bundle = Platform.getBundle("fr.inria.diverse.puzzle.validator");
 		URL fileURL = bundle.getEntry("data/compatibilityMatrix.txt");
 		File file = null;
 		try {

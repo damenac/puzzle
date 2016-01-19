@@ -1,7 +1,6 @@
 package fr.inria.diverse.melange.ui.menu
 
 import com.google.inject.Inject
-import fr.inria.diverse.melange.ui.builder.AnalysisBuilder
 import org.eclipse.core.commands.AbstractHandler
 import org.eclipse.core.commands.ExecutionEvent
 import org.eclipse.core.commands.ExecutionException
@@ -16,6 +15,8 @@ import org.eclipse.ui.handlers.HandlerUtil
 import org.eclipse.xtext.resource.DerivedStateAwareResource
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
 import fr.inria.diverse.melange.ui.builder.LanguageModulesValidationBuilder
+import org.eclipse.jface.dialogs.MessageDialog
+import org.eclipse.swt.widgets.Display
 
 /**
  * Handler for the action: Validate language modules composability
@@ -40,8 +41,14 @@ class ValidateLanguageModulesComposability extends AbstractHandler {
 					val melangeRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString, true), true) as DerivedStateAwareResource
 					val puzzleRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString.replace('.melange','.puzzle'), true), true) as DerivedStateAwareResource
 
-					builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor)
-					
+					val validation = builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor)
+
+					display.syncExec(
+						  new Runnable() {
+						    override void run(){
+						     MessageDialog.openInformation(display.activeShell, "Validation result", validation);
+						    }
+						  });
 				} catch (OperationCanceledException e) {
 					return Status.CANCEL_STATUS
 				} finally {
@@ -53,4 +60,12 @@ class ValidateLanguageModulesComposability extends AbstractHandler {
 		}.schedule
 		return null
 	}
+	
+	def static Display getDisplay() {
+      var Display display = Display.getCurrent();
+      //may be null if outside the UI thread
+      if (display == null)
+         display = Display.getDefault();
+      return display;		
+   }
 }
