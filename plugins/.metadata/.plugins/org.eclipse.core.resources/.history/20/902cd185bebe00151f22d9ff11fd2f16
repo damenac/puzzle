@@ -9,6 +9,7 @@ import fr.inria.diverse.melange.metamodel.melange.ModelType
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils
 import org.eclipse.emf.ecore.EPackage
 import fr.inria.diverse.puzzle.validator.command.ValidatorImpl
+import org.eclipse.emf.mapping.Mapping
 import org.eclipse.emf.compare.scope.IComparisonScope
 import org.eclipse.emf.compare.scope.DefaultComparisonScope
 import org.eclipse.emf.ecore.resource.ResourceSet
