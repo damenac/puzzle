@@ -44,6 +44,7 @@ fr.inria.diverse.puzzle.synthesis.vmsynthesis.test,1.0.0.qualifier,file:/Users/d
 fr.inria.diverse.puzzle.synthesizer.interface,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.interface/,4,false
 fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface/,4,false
 fr.inria.diverse.puzzle.ui,0.1.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.ui/,4,false
+fr.inria.diverse.puzzle.validator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.validator/,4,false
 fr.inria.diverse.puzzle.vm.metamodel,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel/,4,false
 fr.inria.diverse.puzzle.vm.metamodel.edit,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel.edit/,4,false
 fr.inria.diverse.puzzle.vm.metamodel.editor,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel.editor/,4,false

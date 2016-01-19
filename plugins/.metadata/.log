@@ -10964,3 +10964,6 @@ Binding(ALT+SHIFT+ARROW_LEFT,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.ui.textEditorScope,,cocoa,system)
+
+!ENTRY org.eclipse.core.resources 4 376 2016-01-19 13:57:50.167
+!MESSAGE Marker id 51987 not found.

@@ -314,4 +314,8 @@ public class ValidatorImpl {
 	    }
 		
 	}
+
+//	public void checkCompatibility(Object null1, Object null2, Object null3) {
+//	  throw new UnsupportedOperationException("TODO: auto-generated method stub");
+//	}
 }

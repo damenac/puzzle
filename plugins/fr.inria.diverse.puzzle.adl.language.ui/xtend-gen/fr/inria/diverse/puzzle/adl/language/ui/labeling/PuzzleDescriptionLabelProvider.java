@@ -3,7 +3,6 @@
  */
 package fr.inria.diverse.puzzle.adl.language.ui.labeling;
 
-import org.eclipse.xtext.resource.IReferenceDescription;
 import org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider;
 
 /**
@@ -13,8 +12,4 @@ import org.eclipse.xtext.ui.label.DefaultDescriptionLabelProvider;
  */
 @SuppressWarnings("all")
 public class PuzzleDescriptionLabelProvider extends DefaultDescriptionLabelProvider {
-	
-	public Object image(IReferenceDescription referenceDescription) {
-		return "icons/melange.png";
-	}
 }
