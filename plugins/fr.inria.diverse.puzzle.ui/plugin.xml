@@ -144,7 +144,7 @@
             commandId="fr.inria.diverse.puzzle.ConfigureDSL">
       </handler>
       <handler
-            class="fr.inria.diverse.melange.ui.menu.ValidateLanguageModulesComposability"
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ValidateLanguageModulesComposability"
             commandId="fr.inria.diverse.puzzle.ValidateComposability">
       </handler>
    </extension>

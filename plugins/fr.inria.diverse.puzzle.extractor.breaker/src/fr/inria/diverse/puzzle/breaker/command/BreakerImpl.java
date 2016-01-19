@@ -44,6 +44,11 @@ import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
+/**
+ * Implementation for the command: break-down family of DSLs
+ * @author David Mendez-Acuna
+ *
+ */
 public class BreakerImpl {
 
 	// ---------------------------------------------

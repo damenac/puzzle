@@ -1,0 +1,33 @@
+package fr.inria.diverse.puzzle.validator.command;
+
+/**
+ * Implementation for the command: validate language modules composability
+ * @author David Mendez-Acuna
+ *
+ */
+public class ValidatorImpl {
+
+	// ---------------------------------------------
+	// Constants
+	// ---------------------------------------------
+	
+	private static ValidatorImpl instance;
+
+	// ---------------------------------------------
+	// Constructor and singleton
+	// ---------------------------------------------
+	
+	private ValidatorImpl(){
+		
+	}
+	
+	public static ValidatorImpl getInstance(){
+		if(instance == null)
+			instance = new ValidatorImpl();
+		return instance;
+	}
+	
+	// ---------------------------------------------
+	// Methods
+	// ---------------------------------------------
+}

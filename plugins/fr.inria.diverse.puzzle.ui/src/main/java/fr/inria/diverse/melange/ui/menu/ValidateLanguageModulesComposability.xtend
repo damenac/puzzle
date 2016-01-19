@@ -37,9 +37,10 @@ class ValidateLanguageModulesComposability extends AbstractHandler {
 					val resource = selection.firstElement as IResource
 					val project = resource.project
 					val rs = rsProvider.get(project)
-					val res = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString, true), true) as DerivedStateAwareResource
+					val melangeRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString, true), true) as DerivedStateAwareResource
+					val puzzleRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString.replace('.melange','.puzzle'), true), true) as DerivedStateAwareResource
 
-					builder.validateLanguageModulesComposability(res, project, monitor)
+					builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor)
 					
 				} catch (OperationCanceledException e) {
 					return Status.CANCEL_STATUS

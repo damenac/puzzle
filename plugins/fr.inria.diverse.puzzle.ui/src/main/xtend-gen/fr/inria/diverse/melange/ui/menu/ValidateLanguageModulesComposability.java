@@ -52,8 +52,14 @@ public class ValidateLanguageModulesComposability extends AbstractHandler {
           String _string = _fullPath.toString();
           URI _createPlatformResourceURI = URI.createPlatformResourceURI(_string, true);
           Resource _resource = rs.getResource(_createPlatformResourceURI, true);
-          final DerivedStateAwareResource res = ((DerivedStateAwareResource) _resource);
-          ValidateLanguageModulesComposability.this.builder.validateLanguageModulesComposability(res, project, monitor);
+          final DerivedStateAwareResource melangeRes = ((DerivedStateAwareResource) _resource);
+          IPath _fullPath_1 = resource.getFullPath();
+          String _string_1 = _fullPath_1.toString();
+          String _replace = _string_1.replace(".melange", ".puzzle");
+          URI _createPlatformResourceURI_1 = URI.createPlatformResourceURI(_replace, true);
+          Resource _resource_1 = rs.getResource(_createPlatformResourceURI_1, true);
+          final DerivedStateAwareResource puzzleRes = ((DerivedStateAwareResource) _resource_1);
+          ValidateLanguageModulesComposability.this.builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor);
         } catch (final Throwable _t) {
           if (_t instanceof OperationCanceledException) {
             final OperationCanceledException e = (OperationCanceledException)_t;
