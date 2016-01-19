@@ -4,6 +4,7 @@ package fr.inria.diverse.puzzle.adl.language.puzzle.impl;
 
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
 import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding;
+import fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport;
 import fr.inria.diverse.puzzle.adl.language.puzzle.PuzzlePackage;
 
 import java.util.Collection;
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link fr.inria.diverse.puzzle.adl.language.puzzle.impl.LanguageBindingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.inria.diverse.puzzle.adl.language.puzzle.impl.LanguageBindingImpl#getMelangeImport <em>Melange Import</em>}</li>
  *   <li>{@link fr.inria.diverse.puzzle.adl.language.puzzle.impl.LanguageBindingImpl#getBinding <em>Binding</em>}</li>
  * </ul>
  * </p>
@@ -57,6 +59,16 @@ public class LanguageBindingImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getMelangeImport() <em>Melange Import</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMelangeImport()
+   * @generated
+   * @ordered
+   */
+  protected MelangeImport melangeImport;
 
   /**
    * The cached value of the '{@link #getBinding() <em>Binding</em>}' containment reference list.
@@ -117,6 +129,54 @@ public class LanguageBindingImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public MelangeImport getMelangeImport()
+  {
+    return melangeImport;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetMelangeImport(MelangeImport newMelangeImport, NotificationChain msgs)
+  {
+    MelangeImport oldMelangeImport = melangeImport;
+    melangeImport = newMelangeImport;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT, oldMelangeImport, newMelangeImport);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMelangeImport(MelangeImport newMelangeImport)
+  {
+    if (newMelangeImport != melangeImport)
+    {
+      NotificationChain msgs = null;
+      if (melangeImport != null)
+        msgs = ((InternalEObject)melangeImport).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT, null, msgs);
+      if (newMelangeImport != null)
+        msgs = ((InternalEObject)newMelangeImport).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT, null, msgs);
+      msgs = basicSetMelangeImport(newMelangeImport, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT, newMelangeImport, newMelangeImport));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Binding> getBinding()
   {
     if (binding == null)
@@ -136,6 +196,8 @@ public class LanguageBindingImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT:
+        return basicSetMelangeImport(null, msgs);
       case PuzzlePackage.LANGUAGE_BINDING__BINDING:
         return ((InternalEList<?>)getBinding()).basicRemove(otherEnd, msgs);
     }
@@ -154,6 +216,8 @@ public class LanguageBindingImpl extends MinimalEObjectImpl.Container implements
     {
       case PuzzlePackage.LANGUAGE_BINDING__NAME:
         return getName();
+      case PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT:
+        return getMelangeImport();
       case PuzzlePackage.LANGUAGE_BINDING__BINDING:
         return getBinding();
     }
@@ -173,6 +237,9 @@ public class LanguageBindingImpl extends MinimalEObjectImpl.Container implements
     {
       case PuzzlePackage.LANGUAGE_BINDING__NAME:
         setName((String)newValue);
+        return;
+      case PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT:
+        setMelangeImport((MelangeImport)newValue);
         return;
       case PuzzlePackage.LANGUAGE_BINDING__BINDING:
         getBinding().clear();
@@ -195,6 +262,9 @@ public class LanguageBindingImpl extends MinimalEObjectImpl.Container implements
       case PuzzlePackage.LANGUAGE_BINDING__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT:
+        setMelangeImport((MelangeImport)null);
+        return;
       case PuzzlePackage.LANGUAGE_BINDING__BINDING:
         getBinding().clear();
         return;
@@ -214,6 +284,8 @@ public class LanguageBindingImpl extends MinimalEObjectImpl.Container implements
     {
       case PuzzlePackage.LANGUAGE_BINDING__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case PuzzlePackage.LANGUAGE_BINDING__MELANGE_IMPORT:
+        return melangeImport != null;
       case PuzzlePackage.LANGUAGE_BINDING__BINDING:
         return binding != null && !binding.isEmpty();
     }

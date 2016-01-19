@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticDeepVennDiagram"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.managers.ProductLinesMetricManager"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding"/>
 </qualifiedTypeNameHistroy>

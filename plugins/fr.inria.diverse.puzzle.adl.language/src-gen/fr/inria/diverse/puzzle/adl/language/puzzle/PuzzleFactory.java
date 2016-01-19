@@ -32,6 +32,15 @@ public interface PuzzleFactory extends EFactory
   LanguageBinding createLanguageBinding();
 
   /**
+   * Returns a new object of class '<em>Melange Import</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Melange Import</em>'.
+   * @generated
+   */
+  MelangeImport createMelangeImport();
+
+  /**
    * Returns a new object of class '<em>Binding</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

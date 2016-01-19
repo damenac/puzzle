@@ -10,7 +10,11 @@
       disposableProviderFactory="true" fileExtensions="puzzle" ecorePackage="Puzzle.ecore#/">
     <genClasses ecoreClass="Puzzle.ecore#//LanguageBinding">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Puzzle.ecore#//LanguageBinding/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Puzzle.ecore#//LanguageBinding/melangeImport"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Puzzle.ecore#//LanguageBinding/binding"/>
+    </genClasses>
+    <genClasses ecoreClass="Puzzle.ecore#//MelangeImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Puzzle.ecore#//MelangeImport/melangeFile"/>
     </genClasses>
     <genClasses ecoreClass="Puzzle.ecore#//Binding">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Puzzle.ecore#//Binding/left"/>

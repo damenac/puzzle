@@ -6,7 +6,12 @@ generate puzzle "http://www.inria.fr/diverse/puzzle/adl/language/Puzzle"
 
 LanguageBinding :
 	('package' name = QualifiedName)?
+	melangeImport = MelangeImport
 	'languageBinding' '{' binding += Binding ( binding += Binding )* '}';
-	
+
+MelangeImport :
+	'import' melangeFile = STRING
+;
+
 Binding:
 	'bind' '(' left=ID ',' right=ID ')';

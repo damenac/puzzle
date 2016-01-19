@@ -76,13 +76,22 @@ public interface PuzzlePackage extends EPackage
   int LANGUAGE_BINDING__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Melange Import</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LANGUAGE_BINDING__MELANGE_IMPORT = 1;
+
+  /**
    * The feature id for the '<em><b>Binding</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LANGUAGE_BINDING__BINDING = 1;
+  int LANGUAGE_BINDING__BINDING = 2;
 
   /**
    * The number of structural features of the '<em>Language Binding</em>' class.
@@ -91,7 +100,35 @@ public interface PuzzlePackage extends EPackage
    * @generated
    * @ordered
    */
-  int LANGUAGE_BINDING_FEATURE_COUNT = 2;
+  int LANGUAGE_BINDING_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link fr.inria.diverse.puzzle.adl.language.puzzle.impl.MelangeImportImpl <em>Melange Import</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see fr.inria.diverse.puzzle.adl.language.puzzle.impl.MelangeImportImpl
+   * @see fr.inria.diverse.puzzle.adl.language.puzzle.impl.PuzzlePackageImpl#getMelangeImport()
+   * @generated
+   */
+  int MELANGE_IMPORT = 1;
+
+  /**
+   * The feature id for the '<em><b>Melange File</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MELANGE_IMPORT__MELANGE_FILE = 0;
+
+  /**
+   * The number of structural features of the '<em>Melange Import</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MELANGE_IMPORT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link fr.inria.diverse.puzzle.adl.language.puzzle.impl.BindingImpl <em>Binding</em>}' class.
@@ -101,7 +138,7 @@ public interface PuzzlePackage extends EPackage
    * @see fr.inria.diverse.puzzle.adl.language.puzzle.impl.PuzzlePackageImpl#getBinding()
    * @generated
    */
-  int BINDING = 1;
+  int BINDING = 2;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' attribute.
@@ -153,6 +190,17 @@ public interface PuzzlePackage extends EPackage
   EAttribute getLanguageBinding_Name();
 
   /**
+   * Returns the meta object for the containment reference '{@link fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding#getMelangeImport <em>Melange Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Melange Import</em>'.
+   * @see fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding#getMelangeImport()
+   * @see #getLanguageBinding()
+   * @generated
+   */
+  EReference getLanguageBinding_MelangeImport();
+
+  /**
    * Returns the meta object for the containment reference list '{@link fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding#getBinding <em>Binding</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -162,6 +210,27 @@ public interface PuzzlePackage extends EPackage
    * @generated
    */
   EReference getLanguageBinding_Binding();
+
+  /**
+   * Returns the meta object for class '{@link fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport <em>Melange Import</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Melange Import</em>'.
+   * @see fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport
+   * @generated
+   */
+  EClass getMelangeImport();
+
+  /**
+   * Returns the meta object for the attribute '{@link fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport#getMelangeFile <em>Melange File</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Melange File</em>'.
+   * @see fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport#getMelangeFile()
+   * @see #getMelangeImport()
+   * @generated
+   */
+  EAttribute getMelangeImport_MelangeFile();
 
   /**
    * Returns the meta object for class '{@link fr.inria.diverse.puzzle.adl.language.puzzle.Binding <em>Binding</em>}'.
@@ -237,12 +306,38 @@ public interface PuzzlePackage extends EPackage
     EAttribute LANGUAGE_BINDING__NAME = eINSTANCE.getLanguageBinding_Name();
 
     /**
+     * The meta object literal for the '<em><b>Melange Import</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LANGUAGE_BINDING__MELANGE_IMPORT = eINSTANCE.getLanguageBinding_MelangeImport();
+
+    /**
      * The meta object literal for the '<em><b>Binding</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference LANGUAGE_BINDING__BINDING = eINSTANCE.getLanguageBinding_Binding();
+
+    /**
+     * The meta object literal for the '{@link fr.inria.diverse.puzzle.adl.language.puzzle.impl.MelangeImportImpl <em>Melange Import</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see fr.inria.diverse.puzzle.adl.language.puzzle.impl.MelangeImportImpl
+     * @see fr.inria.diverse.puzzle.adl.language.puzzle.impl.PuzzlePackageImpl#getMelangeImport()
+     * @generated
+     */
+    EClass MELANGE_IMPORT = eINSTANCE.getMelangeImport();
+
+    /**
+     * The meta object literal for the '<em><b>Melange File</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MELANGE_IMPORT__MELANGE_FILE = eINSTANCE.getMelangeImport_MelangeFile();
 
     /**
      * The meta object literal for the '{@link fr.inria.diverse.puzzle.adl.language.puzzle.impl.BindingImpl <em>Binding</em>}' class.

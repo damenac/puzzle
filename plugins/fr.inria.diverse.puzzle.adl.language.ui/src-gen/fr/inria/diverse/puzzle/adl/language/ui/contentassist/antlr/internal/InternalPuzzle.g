@@ -85,6 +85,34 @@ finally {
 
 
 
+// Entry rule entryRuleMelangeImport
+entryRuleMelangeImport 
+:
+{ before(grammarAccess.getMelangeImportRule()); }
+	 ruleMelangeImport
+{ after(grammarAccess.getMelangeImportRule()); } 
+	 EOF 
+;
+
+// Rule MelangeImport
+ruleMelangeImport
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getMelangeImportAccess().getGroup()); }
+(rule__MelangeImport__Group__0)
+{ after(grammarAccess.getMelangeImportAccess().getGroup()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleBinding
 entryRuleBinding 
 :
@@ -3488,11 +3516,9 @@ rule__LanguageBinding__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getLanguageBindingAccess().getLanguageBindingKeyword_1()); }
-
-	'languageBinding' 
-
-{ after(grammarAccess.getLanguageBindingAccess().getLanguageBindingKeyword_1()); }
+{ before(grammarAccess.getLanguageBindingAccess().getMelangeImportAssignment_1()); }
+(rule__LanguageBinding__MelangeImportAssignment_1)
+{ after(grammarAccess.getLanguageBindingAccess().getMelangeImportAssignment_1()); }
 )
 
 ;
@@ -3519,11 +3545,11 @@ rule__LanguageBinding__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getLanguageBindingAccess().getLeftCurlyBracketKeyword_2()); }
+{ before(grammarAccess.getLanguageBindingAccess().getLanguageBindingKeyword_2()); }
 
-	'{' 
+	'languageBinding' 
 
-{ after(grammarAccess.getLanguageBindingAccess().getLeftCurlyBracketKeyword_2()); }
+{ after(grammarAccess.getLanguageBindingAccess().getLanguageBindingKeyword_2()); }
 )
 
 ;
@@ -3550,9 +3576,11 @@ rule__LanguageBinding__Group__3__Impl
     }
 :
 (
-{ before(grammarAccess.getLanguageBindingAccess().getBindingAssignment_3()); }
-(rule__LanguageBinding__BindingAssignment_3)
-{ after(grammarAccess.getLanguageBindingAccess().getBindingAssignment_3()); }
+{ before(grammarAccess.getLanguageBindingAccess().getLeftCurlyBracketKeyword_3()); }
+
+	'{' 
+
+{ after(grammarAccess.getLanguageBindingAccess().getLeftCurlyBracketKeyword_3()); }
 )
 
 ;
@@ -3580,7 +3608,7 @@ rule__LanguageBinding__Group__4__Impl
 :
 (
 { before(grammarAccess.getLanguageBindingAccess().getBindingAssignment_4()); }
-(rule__LanguageBinding__BindingAssignment_4)*
+(rule__LanguageBinding__BindingAssignment_4)
 { after(grammarAccess.getLanguageBindingAccess().getBindingAssignment_4()); }
 )
 
@@ -3596,6 +3624,7 @@ rule__LanguageBinding__Group__5
     }
 :
 	rule__LanguageBinding__Group__5__Impl
+	rule__LanguageBinding__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3607,17 +3636,47 @@ rule__LanguageBinding__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getLanguageBindingAccess().getRightCurlyBracketKeyword_5()); }
-
-	'}' 
-
-{ after(grammarAccess.getLanguageBindingAccess().getRightCurlyBracketKeyword_5()); }
+{ before(grammarAccess.getLanguageBindingAccess().getBindingAssignment_5()); }
+(rule__LanguageBinding__BindingAssignment_5)*
+{ after(grammarAccess.getLanguageBindingAccess().getBindingAssignment_5()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__LanguageBinding__Group__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__LanguageBinding__Group__6__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__LanguageBinding__Group__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getLanguageBindingAccess().getRightCurlyBracketKeyword_6()); }
+
+	'}' 
+
+{ after(grammarAccess.getLanguageBindingAccess().getRightCurlyBracketKeyword_6()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -3683,6 +3742,69 @@ rule__LanguageBinding__Group_0__1__Impl
 { before(grammarAccess.getLanguageBindingAccess().getNameAssignment_0_1()); }
 (rule__LanguageBinding__NameAssignment_0_1)
 { after(grammarAccess.getLanguageBindingAccess().getNameAssignment_0_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
+
+
+
+rule__MelangeImport__Group__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MelangeImport__Group__0__Impl
+	rule__MelangeImport__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MelangeImport__Group__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMelangeImportAccess().getImportKeyword_0()); }
+
+	'import' 
+
+{ after(grammarAccess.getMelangeImportAccess().getImportKeyword_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__MelangeImport__Group__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__MelangeImport__Group__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MelangeImport__Group__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMelangeImportAccess().getMelangeFileAssignment_1()); }
+(rule__MelangeImport__MelangeFileAssignment_1)
+{ after(grammarAccess.getMelangeImportAccess().getMelangeFileAssignment_1()); }
 )
 
 ;
@@ -17437,14 +17559,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__LanguageBinding__BindingAssignment_3
+rule__LanguageBinding__MelangeImportAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_3_0()); }
-	ruleBinding{ after(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_3_0()); }
+{ before(grammarAccess.getLanguageBindingAccess().getMelangeImportMelangeImportParserRuleCall_1_0()); }
+	ruleMelangeImport{ after(grammarAccess.getLanguageBindingAccess().getMelangeImportMelangeImportParserRuleCall_1_0()); }
 )
 
 ;
@@ -17460,6 +17582,36 @@ rule__LanguageBinding__BindingAssignment_4
 (
 { before(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_4_0()); }
 	ruleBinding{ after(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__LanguageBinding__BindingAssignment_5
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_5_0()); }
+	ruleBinding{ after(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_5_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__MelangeImport__MelangeFileAssignment_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getMelangeImportAccess().getMelangeFileSTRINGTerminalRuleCall_1_0()); }
+	RULE_STRING{ after(grammarAccess.getMelangeImportAccess().getMelangeFileSTRINGTerminalRuleCall_1_0()); }
 )
 
 ;

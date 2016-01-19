@@ -80,6 +80,11 @@ public class PuzzleAdapterFactory extends AdapterFactoryImpl
         return createLanguageBindingAdapter();
       }
       @Override
+      public Adapter caseMelangeImport(MelangeImport object)
+      {
+        return createMelangeImportAdapter();
+      }
+      @Override
       public Adapter caseBinding(Binding object)
       {
         return createBindingAdapter();
@@ -117,6 +122,21 @@ public class PuzzleAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createLanguageBindingAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport <em>Melange Import</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport
+   * @generated
+   */
+  public Adapter createMelangeImportAdapter()
   {
     return null;
   }

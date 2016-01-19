@@ -7,6 +7,7 @@ import com.google.inject.Inject;
 import com.google.inject.Provider;
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
 import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding;
+import fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport;
 import fr.inria.diverse.puzzle.adl.language.puzzle.PuzzlePackage;
 import fr.inria.diverse.puzzle.adl.language.services.PuzzleGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -80,6 +81,9 @@ public class PuzzleSemanticSequencer extends XbaseSemanticSequencer {
 				return; 
 			case PuzzlePackage.LANGUAGE_BINDING:
 				sequence_LanguageBinding(context, (LanguageBinding) semanticObject); 
+				return; 
+			case PuzzlePackage.MELANGE_IMPORT:
+				sequence_MelangeImport(context, (MelangeImport) semanticObject); 
 				return; 
 			}
 		else if(semanticObject.eClass().getEPackage() == TypesPackage.eINSTANCE) switch(semanticObject.eClass().getClassifierID()) {
@@ -332,9 +336,25 @@ public class PuzzleSemanticSequencer extends XbaseSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName? binding+=Binding binding+=Binding*)
+	 *     (name=QualifiedName? melangeImport=MelangeImport binding+=Binding binding+=Binding*)
 	 */
 	protected void sequence_LanguageBinding(EObject context, LanguageBinding semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     melangeFile=STRING
+	 */
+	protected void sequence_MelangeImport(EObject context, MelangeImport semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, PuzzlePackage.Literals.MELANGE_IMPORT__MELANGE_FILE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, PuzzlePackage.Literals.MELANGE_IMPORT__MELANGE_FILE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getMelangeImportAccess().getMelangeFileSTRINGTerminalRuleCall_1_0(), semanticObject.getMelangeFile());
+		feeder.finish();
 	}
 }

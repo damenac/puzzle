@@ -99,33 +99,33 @@ ruleLanguageBinding returns [EObject current=null]
 	    }
 
 )
-))?	otherlv_2='languageBinding' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getLanguageBindingAccess().getLanguageBindingKeyword_1());
-    }
-	otherlv_3='{' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getLanguageBindingAccess().getLeftCurlyBracketKeyword_2());
-    }
-(
+))?(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getLanguageBindingAccess().getMelangeImportMelangeImportParserRuleCall_1_0()); 
 	    }
-		lv_binding_4_0=ruleBinding		{
+		lv_melangeImport_2_0=ruleMelangeImport		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getLanguageBindingRule());
 	        }
-       		add(
+       		set(
        			$current, 
-       			"binding",
-        		lv_binding_4_0, 
-        		"Binding");
+       			"melangeImport",
+        		lv_melangeImport_2_0, 
+        		"MelangeImport");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(
+)	otherlv_3='languageBinding' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getLanguageBindingAccess().getLanguageBindingKeyword_2());
+    }
+	otherlv_4='{' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getLanguageBindingAccess().getLeftCurlyBracketKeyword_3());
+    }
+(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_4_0()); 
@@ -143,11 +143,72 @@ ruleLanguageBinding returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_6='}' 
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getLanguageBindingAccess().getBindingBindingParserRuleCall_5_0()); 
+	    }
+		lv_binding_6_0=ruleBinding		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getLanguageBindingRule());
+	        }
+       		add(
+       			$current, 
+       			"binding",
+        		lv_binding_6_0, 
+        		"Binding");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_7='}' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getLanguageBindingAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getLanguageBindingAccess().getRightCurlyBracketKeyword_6());
     }
 )
+;
+
+
+
+
+
+// Entry rule entryRuleMelangeImport
+entryRuleMelangeImport returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getMelangeImportRule()); }
+	 iv_ruleMelangeImport=ruleMelangeImport 
+	 { $current=$iv_ruleMelangeImport.current; } 
+	 EOF 
+;
+
+// Rule MelangeImport
+ruleMelangeImport returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='import' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getMelangeImportAccess().getImportKeyword_0());
+    }
+(
+(
+		lv_melangeFile_1_0=RULE_STRING
+		{
+			newLeafNode(lv_melangeFile_1_0, grammarAccess.getMelangeImportAccess().getMelangeFileSTRINGTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getMelangeImportRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"melangeFile",
+        		lv_melangeFile_1_0, 
+        		"STRING");
+	    }
+
+)
+))
 ;
 
 

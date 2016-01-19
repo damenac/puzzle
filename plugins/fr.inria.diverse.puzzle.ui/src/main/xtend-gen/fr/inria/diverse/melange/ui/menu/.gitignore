@@ -21,3 +21,5 @@
 /.Configure.java._trace
 /.AnalyzeLargeFamily.java._trace
 /.ExtractReusableModules.java._trace
+/.ValidateLanguagesComposability.java._trace
+/.ValidateLanguageModulesComposability.java._trace

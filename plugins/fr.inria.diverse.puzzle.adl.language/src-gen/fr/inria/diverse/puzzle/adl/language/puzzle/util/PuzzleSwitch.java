@@ -79,6 +79,13 @@ public class PuzzleSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case PuzzlePackage.MELANGE_IMPORT:
+      {
+        MelangeImport melangeImport = (MelangeImport)theEObject;
+        T result = caseMelangeImport(melangeImport);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case PuzzlePackage.BINDING:
       {
         Binding binding = (Binding)theEObject;
@@ -102,6 +109,22 @@ public class PuzzleSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLanguageBinding(LanguageBinding object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Melange Import</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Melange Import</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMelangeImport(MelangeImport object)
   {
     return null;
   }

@@ -26,20 +26,23 @@ public class PuzzleGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPackageKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Keyword cLanguageBindingKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cBindingAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cBindingBindingParserRuleCall_3_0 = (RuleCall)cBindingAssignment_3.eContents().get(0);
+		private final Assignment cMelangeImportAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMelangeImportMelangeImportParserRuleCall_1_0 = (RuleCall)cMelangeImportAssignment_1.eContents().get(0);
+		private final Keyword cLanguageBindingKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cBindingAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cBindingBindingParserRuleCall_4_0 = (RuleCall)cBindingAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cBindingAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cBindingBindingParserRuleCall_5_0 = (RuleCall)cBindingAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		////import "http://www.inria.fr/diverse/melange" as melange
 		//LanguageBinding:
-		//	("package" name=QualifiedName)? "languageBinding" "{" binding+=Binding binding+=Binding* "}";
+		//	("package" name=QualifiedName)? melangeImport=MelangeImport "languageBinding" "{" binding+=Binding binding+=Binding*
+		//	"}";
 		@Override public ParserRule getRule() { return rule; }
 
-		//("package" name=QualifiedName)? "languageBinding" "{" binding+=Binding binding+=Binding* "}"
+		//("package" name=QualifiedName)? melangeImport=MelangeImport "languageBinding" "{" binding+=Binding binding+=Binding* "}"
 		public Group getGroup() { return cGroup; }
 
 		//("package" name=QualifiedName)?
@@ -54,26 +57,56 @@ public class PuzzleGrammarAccess extends AbstractGrammarElementFinder {
 		//QualifiedName
 		public RuleCall getNameQualifiedNameParserRuleCall_0_1_0() { return cNameQualifiedNameParserRuleCall_0_1_0; }
 
+		//melangeImport=MelangeImport
+		public Assignment getMelangeImportAssignment_1() { return cMelangeImportAssignment_1; }
+
+		//MelangeImport
+		public RuleCall getMelangeImportMelangeImportParserRuleCall_1_0() { return cMelangeImportMelangeImportParserRuleCall_1_0; }
+
 		//"languageBinding"
-		public Keyword getLanguageBindingKeyword_1() { return cLanguageBindingKeyword_1; }
+		public Keyword getLanguageBindingKeyword_2() { return cLanguageBindingKeyword_2; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
 		//binding+=Binding
-		public Assignment getBindingAssignment_3() { return cBindingAssignment_3; }
-
-		//Binding
-		public RuleCall getBindingBindingParserRuleCall_3_0() { return cBindingBindingParserRuleCall_3_0; }
-
-		//binding+=Binding*
 		public Assignment getBindingAssignment_4() { return cBindingAssignment_4; }
 
 		//Binding
 		public RuleCall getBindingBindingParserRuleCall_4_0() { return cBindingBindingParserRuleCall_4_0; }
 
+		//binding+=Binding*
+		public Assignment getBindingAssignment_5() { return cBindingAssignment_5; }
+
+		//Binding
+		public RuleCall getBindingBindingParserRuleCall_5_0() { return cBindingBindingParserRuleCall_5_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+
+	public class MelangeImportElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "MelangeImport");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cImportKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cMelangeFileAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cMelangeFileSTRINGTerminalRuleCall_1_0 = (RuleCall)cMelangeFileAssignment_1.eContents().get(0);
+		
+		//MelangeImport:
+		//	"import" melangeFile=STRING;
+		@Override public ParserRule getRule() { return rule; }
+
+		//"import" melangeFile=STRING
+		public Group getGroup() { return cGroup; }
+
+		//"import"
+		public Keyword getImportKeyword_0() { return cImportKeyword_0; }
+
+		//melangeFile=STRING
+		public Assignment getMelangeFileAssignment_1() { return cMelangeFileAssignment_1; }
+
+		//STRING
+		public RuleCall getMelangeFileSTRINGTerminalRuleCall_1_0() { return cMelangeFileSTRINGTerminalRuleCall_1_0; }
 	}
 
 	public class BindingElements extends AbstractParserRuleElementFinder {
@@ -122,6 +155,7 @@ public class PuzzleGrammarAccess extends AbstractGrammarElementFinder {
 	
 	
 	private final LanguageBindingElements pLanguageBinding;
+	private final MelangeImportElements pMelangeImport;
 	private final BindingElements pBinding;
 	
 	private final Grammar grammar;
@@ -134,6 +168,7 @@ public class PuzzleGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaXbase = gaXbase;
 		this.pLanguageBinding = new LanguageBindingElements();
+		this.pMelangeImport = new MelangeImportElements();
 		this.pBinding = new BindingElements();
 	}
 	
@@ -166,13 +201,24 @@ public class PuzzleGrammarAccess extends AbstractGrammarElementFinder {
 	
 	////import "http://www.inria.fr/diverse/melange" as melange
 	//LanguageBinding:
-	//	("package" name=QualifiedName)? "languageBinding" "{" binding+=Binding binding+=Binding* "}";
+	//	("package" name=QualifiedName)? melangeImport=MelangeImport "languageBinding" "{" binding+=Binding binding+=Binding*
+	//	"}";
 	public LanguageBindingElements getLanguageBindingAccess() {
 		return pLanguageBinding;
 	}
 	
 	public ParserRule getLanguageBindingRule() {
 		return getLanguageBindingAccess().getRule();
+	}
+
+	//MelangeImport:
+	//	"import" melangeFile=STRING;
+	public MelangeImportElements getMelangeImportAccess() {
+		return pMelangeImport;
+	}
+	
+	public ParserRule getMelangeImportRule() {
+		return getMelangeImportAccess().getRule();
 	}
 
 	//Binding:

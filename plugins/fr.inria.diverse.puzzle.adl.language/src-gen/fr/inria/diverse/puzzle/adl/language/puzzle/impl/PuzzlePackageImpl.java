@@ -4,6 +4,7 @@ package fr.inria.diverse.puzzle.adl.language.puzzle.impl;
 
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
 import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding;
+import fr.inria.diverse.puzzle.adl.language.puzzle.MelangeImport;
 import fr.inria.diverse.puzzle.adl.language.puzzle.PuzzleFactory;
 import fr.inria.diverse.puzzle.adl.language.puzzle.PuzzlePackage;
 
@@ -28,6 +29,13 @@ public class PuzzlePackageImpl extends EPackageImpl implements PuzzlePackage
    * @generated
    */
   private EClass languageBindingEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass melangeImportEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -124,9 +132,39 @@ public class PuzzlePackageImpl extends EPackageImpl implements PuzzlePackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLanguageBinding_Binding()
+  public EReference getLanguageBinding_MelangeImport()
   {
     return (EReference)languageBindingEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLanguageBinding_Binding()
+  {
+    return (EReference)languageBindingEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getMelangeImport()
+  {
+    return melangeImportEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMelangeImport_MelangeFile()
+  {
+    return (EAttribute)melangeImportEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -191,7 +229,11 @@ public class PuzzlePackageImpl extends EPackageImpl implements PuzzlePackage
     // Create classes and their features
     languageBindingEClass = createEClass(LANGUAGE_BINDING);
     createEAttribute(languageBindingEClass, LANGUAGE_BINDING__NAME);
+    createEReference(languageBindingEClass, LANGUAGE_BINDING__MELANGE_IMPORT);
     createEReference(languageBindingEClass, LANGUAGE_BINDING__BINDING);
+
+    melangeImportEClass = createEClass(MELANGE_IMPORT);
+    createEAttribute(melangeImportEClass, MELANGE_IMPORT__MELANGE_FILE);
 
     bindingEClass = createEClass(BINDING);
     createEAttribute(bindingEClass, BINDING__LEFT);
@@ -231,7 +273,11 @@ public class PuzzlePackageImpl extends EPackageImpl implements PuzzlePackage
     // Initialize classes and features; add operations and parameters
     initEClass(languageBindingEClass, LanguageBinding.class, "LanguageBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLanguageBinding_Name(), ecorePackage.getEString(), "name", null, 0, 1, LanguageBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLanguageBinding_MelangeImport(), this.getMelangeImport(), null, "melangeImport", null, 0, 1, LanguageBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLanguageBinding_Binding(), this.getBinding(), null, "binding", null, 0, -1, LanguageBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(melangeImportEClass, MelangeImport.class, "MelangeImport", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMelangeImport_MelangeFile(), ecorePackage.getEString(), "melangeFile", null, 0, 1, MelangeImport.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(bindingEClass, Binding.class, "Binding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBinding_Left(), ecorePackage.getEString(), "left", null, 0, 1, Binding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

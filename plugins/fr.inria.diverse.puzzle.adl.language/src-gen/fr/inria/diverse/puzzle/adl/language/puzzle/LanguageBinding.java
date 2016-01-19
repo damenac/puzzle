@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding#getName <em>Name</em>}</li>
+ *   <li>{@link fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding#getMelangeImport <em>Melange Import</em>}</li>
  *   <li>{@link fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding#getBinding <em>Binding</em>}</li>
  * </ul>
  * </p>
@@ -50,6 +51,32 @@ public interface LanguageBinding extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Melange Import</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Melange Import</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Melange Import</em>' containment reference.
+   * @see #setMelangeImport(MelangeImport)
+   * @see fr.inria.diverse.puzzle.adl.language.puzzle.PuzzlePackage#getLanguageBinding_MelangeImport()
+   * @model containment="true"
+   * @generated
+   */
+  MelangeImport getMelangeImport();
+
+  /**
+   * Sets the value of the '{@link fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding#getMelangeImport <em>Melange Import</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Melange Import</em>' containment reference.
+   * @see #getMelangeImport()
+   * @generated
+   */
+  void setMelangeImport(MelangeImport value);
 
   /**
    * Returns the value of the '<em><b>Binding</b></em>' containment reference list.

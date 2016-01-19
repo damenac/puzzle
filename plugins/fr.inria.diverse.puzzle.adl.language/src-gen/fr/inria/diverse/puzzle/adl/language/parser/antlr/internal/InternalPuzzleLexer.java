@@ -32,7 +32,7 @@ public class InternalPuzzleLexer extends Lexer {
     public static final int T__54=54;
     public static final int T__60=60;
     public static final int T__61=61;
-    public static final int RULE_ID=4;
+    public static final int RULE_ID=5;
     public static final int RULE_DECIMAL=8;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -57,7 +57,7 @@ public class InternalPuzzleLexer extends Lexer {
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
-    public static final int RULE_STRING=5;
+    public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;
@@ -200,10 +200,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__17;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:15:7: ( 'bind' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:15:9: 'bind'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:15:7: ( 'import' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:15:9: 'import'
             {
-            match("bind"); 
+            match("import"); 
 
 
             }
@@ -221,10 +221,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__18;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:16:7: ( '(' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:16:9: '('
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:16:7: ( 'bind' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:16:9: 'bind'
             {
-            match('('); 
+            match("bind"); 
+
 
             }
 
@@ -241,10 +242,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:17:7: ( ',' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:17:9: ','
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:17:7: ( '(' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:17:9: '('
             {
-            match(','); 
+            match('('); 
 
             }
 
@@ -261,10 +262,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:18:7: ( ')' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:18:9: ')'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:18:7: ( ',' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:18:9: ','
             {
-            match(')'); 
+            match(','); 
 
             }
 
@@ -281,10 +282,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:19:7: ( '=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:19:9: '='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:19:7: ( ')' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:19:9: ')'
             {
-            match('='); 
+            match(')'); 
 
             }
 
@@ -301,11 +302,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:20:7: ( '+=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:20:9: '+='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:20:7: ( '=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:20:9: '='
             {
-            match("+="); 
-
+            match('='); 
 
             }
 
@@ -322,10 +322,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:21:7: ( '-=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:21:9: '-='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:21:7: ( '+=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:21:9: '+='
             {
-            match("-="); 
+            match("+="); 
 
 
             }
@@ -343,10 +343,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:22:7: ( '*=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:22:9: '*='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:22:7: ( '-=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:22:9: '-='
             {
-            match("*="); 
+            match("-="); 
 
 
             }
@@ -364,10 +364,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:23:7: ( '/=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:23:9: '/='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:23:7: ( '*=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:23:9: '*='
             {
-            match("/="); 
+            match("*="); 
 
 
             }
@@ -385,10 +385,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:24:7: ( '%=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:24:9: '%='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:24:7: ( '/=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:24:9: '/='
             {
-            match("%="); 
+            match("/="); 
 
 
             }
@@ -406,10 +406,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:25:7: ( '<' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:25:9: '<'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:25:7: ( '%=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:25:9: '%='
             {
-            match('<'); 
+            match("%="); 
+
 
             }
 
@@ -426,10 +427,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:26:7: ( '>' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:26:9: '>'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:26:7: ( '<' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:26:9: '<'
             {
-            match('>'); 
+            match('<'); 
 
             }
 
@@ -446,11 +447,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:27:7: ( '>=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:27:9: '>='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:27:7: ( '>' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:27:9: '>'
             {
-            match(">="); 
-
+            match('>'); 
 
             }
 
@@ -467,10 +467,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:28:7: ( '||' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:28:9: '||'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:28:7: ( '>=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:28:9: '>='
             {
-            match("||"); 
+            match(">="); 
 
 
             }
@@ -488,10 +488,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:29:7: ( '&&' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:29:9: '&&'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:29:7: ( '||' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:29:9: '||'
             {
-            match("&&"); 
+            match("||"); 
 
 
             }
@@ -509,10 +509,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:30:7: ( '==' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:30:9: '=='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:30:7: ( '&&' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:30:9: '&&'
             {
-            match("=="); 
+            match("&&"); 
 
 
             }
@@ -530,10 +530,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:31:7: ( '!=' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:31:9: '!='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:31:7: ( '==' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:31:9: '=='
             {
-            match("!="); 
+            match("=="); 
 
 
             }
@@ -551,10 +551,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:32:7: ( '===' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:32:9: '==='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:32:7: ( '!=' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:32:9: '!='
             {
-            match("==="); 
+            match("!="); 
 
 
             }
@@ -572,10 +572,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:33:7: ( '!==' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:33:9: '!=='
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:33:7: ( '===' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:33:9: '==='
             {
-            match("!=="); 
+            match("==="); 
 
 
             }
@@ -593,10 +593,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:34:7: ( 'instanceof' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:34:9: 'instanceof'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:34:7: ( '!==' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:34:9: '!=='
             {
-            match("instanceof"); 
+            match("!=="); 
 
 
             }
@@ -614,10 +614,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:35:7: ( '->' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:35:9: '->'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:35:7: ( 'instanceof' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:35:9: 'instanceof'
             {
-            match("->"); 
+            match("instanceof"); 
 
 
             }
@@ -635,10 +635,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:36:7: ( '..<' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:36:9: '..<'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:36:7: ( '->' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:36:9: '->'
             {
-            match("..<"); 
+            match("->"); 
 
 
             }
@@ -656,10 +656,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:37:7: ( '..' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:37:9: '..'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:37:7: ( '..<' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:37:9: '..<'
             {
-            match(".."); 
+            match("..<"); 
 
 
             }
@@ -677,10 +677,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:38:7: ( '=>' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:38:9: '=>'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:38:7: ( '..' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:38:9: '..'
             {
-            match("=>"); 
+            match(".."); 
 
 
             }
@@ -698,10 +698,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:39:7: ( '<>' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:39:9: '<>'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:39:7: ( '=>' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:39:9: '=>'
             {
-            match("<>"); 
+            match("=>"); 
 
 
             }
@@ -719,10 +719,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:40:7: ( '?:' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:40:9: '?:'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:40:7: ( '<>' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:40:9: '<>'
             {
-            match("?:"); 
+            match("<>"); 
 
 
             }
@@ -740,10 +740,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:41:7: ( '+' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:41:9: '+'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:41:7: ( '?:' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:41:9: '?:'
             {
-            match('+'); 
+            match("?:"); 
+
 
             }
 
@@ -760,10 +761,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:42:7: ( '-' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:42:9: '-'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:42:7: ( '+' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:42:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -780,10 +781,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:43:7: ( '*' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:43:9: '*'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:43:7: ( '-' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:43:9: '-'
             {
-            match('*'); 
+            match('-'); 
 
             }
 
@@ -800,11 +801,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:44:7: ( '**' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:44:9: '**'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:44:7: ( '*' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:44:9: '*'
             {
-            match("**"); 
-
+            match('*'); 
 
             }
 
@@ -821,10 +821,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__47;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:45:7: ( '/' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:45:9: '/'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:45:7: ( '**' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:45:9: '**'
             {
-            match('/'); 
+            match("**"); 
+
 
             }
 
@@ -841,10 +842,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__48;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:46:7: ( '%' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:46:9: '%'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:46:7: ( '/' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:46:9: '/'
             {
-            match('%'); 
+            match('/'); 
 
             }
 
@@ -861,10 +862,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__49;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:47:7: ( '!' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:47:9: '!'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:47:7: ( '%' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:47:9: '%'
             {
-            match('!'); 
+            match('%'); 
 
             }
 
@@ -881,11 +882,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__50;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:48:7: ( 'as' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:48:9: 'as'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:48:7: ( '!' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:48:9: '!'
             {
-            match("as"); 
-
+            match('!'); 
 
             }
 
@@ -902,10 +902,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__51;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:49:7: ( '++' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:49:9: '++'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:49:7: ( 'as' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:49:9: 'as'
             {
-            match("++"); 
+            match("as"); 
 
 
             }
@@ -923,10 +923,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__52;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:50:7: ( '--' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:50:9: '--'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:50:7: ( '++' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:50:9: '++'
             {
-            match("--"); 
+            match("++"); 
 
 
             }
@@ -944,10 +944,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__53;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:51:7: ( '.' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:51:9: '.'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:51:7: ( '--' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:51:9: '--'
             {
-            match('.'); 
+            match("--"); 
+
 
             }
 
@@ -964,11 +965,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__54;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:52:7: ( '::' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:52:9: '::'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:52:7: ( '.' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:52:9: '.'
             {
-            match("::"); 
-
+            match('.'); 
 
             }
 
@@ -985,10 +985,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__55;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:53:7: ( '?.' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:53:9: '?.'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:53:7: ( '::' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:53:9: '::'
             {
-            match("?."); 
+            match("::"); 
 
 
             }
@@ -1006,10 +1006,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__56;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:54:7: ( '#' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:54:9: '#'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:54:7: ( '?.' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:54:9: '?.'
             {
-            match('#'); 
+            match("?."); 
+
 
             }
 
@@ -1026,10 +1027,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__57;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:55:7: ( '[' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:55:9: '['
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:55:7: ( '#' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:55:9: '#'
             {
-            match('['); 
+            match('#'); 
 
             }
 
@@ -1046,10 +1047,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__58;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:56:7: ( ']' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:56:9: ']'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:56:7: ( '[' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:56:9: '['
             {
-            match(']'); 
+            match('['); 
 
             }
 
@@ -1066,10 +1067,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__59;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:57:7: ( '|' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:57:9: '|'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:57:7: ( ']' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:57:9: ']'
             {
-            match('|'); 
+            match(']'); 
 
             }
 
@@ -1086,10 +1087,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__60;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:58:7: ( ';' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:58:9: ';'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:58:7: ( '|' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:58:9: '|'
             {
-            match(';'); 
+            match('|'); 
 
             }
 
@@ -1106,11 +1107,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__61;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:59:7: ( 'if' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:59:9: 'if'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:59:7: ( ';' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:59:9: ';'
             {
-            match("if"); 
-
+            match(';'); 
 
             }
 
@@ -1127,10 +1127,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__62;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:60:7: ( 'else' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:60:9: 'else'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:60:7: ( 'if' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:60:9: 'if'
             {
-            match("else"); 
+            match("if"); 
 
 
             }
@@ -1148,10 +1148,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__63;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:61:7: ( 'switch' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:61:9: 'switch'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:61:7: ( 'else' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:61:9: 'else'
             {
-            match("switch"); 
+            match("else"); 
 
 
             }
@@ -1169,10 +1169,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__64;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:62:7: ( ':' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:62:9: ':'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:62:7: ( 'switch' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:62:9: 'switch'
             {
-            match(':'); 
+            match("switch"); 
+
 
             }
 
@@ -1189,11 +1190,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__65;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:63:7: ( 'default' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:63:9: 'default'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:63:7: ( ':' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:63:9: ':'
             {
-            match("default"); 
-
+            match(':'); 
 
             }
 
@@ -1210,10 +1210,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__66;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:64:7: ( 'case' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:64:9: 'case'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:64:7: ( 'default' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:64:9: 'default'
             {
-            match("case"); 
+            match("default"); 
 
 
             }
@@ -1231,10 +1231,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__67;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:65:7: ( 'for' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:65:9: 'for'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:65:7: ( 'case' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:65:9: 'case'
             {
-            match("for"); 
+            match("case"); 
 
 
             }
@@ -1252,10 +1252,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__68;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:66:7: ( 'while' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:66:9: 'while'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:66:7: ( 'for' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:66:9: 'for'
             {
-            match("while"); 
+            match("for"); 
 
 
             }
@@ -1273,10 +1273,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__69;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:67:7: ( 'do' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:67:9: 'do'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:67:7: ( 'while' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:67:9: 'while'
             {
-            match("do"); 
+            match("while"); 
 
 
             }
@@ -1294,10 +1294,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__70;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:68:7: ( 'var' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:68:9: 'var'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:68:7: ( 'do' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:68:9: 'do'
             {
-            match("var"); 
+            match("do"); 
 
 
             }
@@ -1315,10 +1315,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__71;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:69:7: ( 'val' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:69:9: 'val'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:69:7: ( 'var' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:69:9: 'var'
             {
-            match("val"); 
+            match("var"); 
 
 
             }
@@ -1336,10 +1336,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__72;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:70:7: ( 'extends' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:70:9: 'extends'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:70:7: ( 'val' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:70:9: 'val'
             {
-            match("extends"); 
+            match("val"); 
 
 
             }
@@ -1357,10 +1357,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__73;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:71:7: ( 'static' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:71:9: 'static'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:71:7: ( 'extends' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:71:9: 'extends'
             {
-            match("static"); 
+            match("extends"); 
 
 
             }
@@ -1378,10 +1378,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = T__74;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:72:7: ( 'import' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:72:9: 'import'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:72:7: ( 'static' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:72:9: 'static'
             {
-            match("import"); 
+            match("static"); 
 
 
             }
@@ -1712,10 +1712,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_HEX;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:10: ( ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )? )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:12: ( '0x' | '0X' ) ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+ ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             {
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:12: ( '0x' | '0X' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:12: ( '0x' | '0X' )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1743,7 +1743,7 @@ public class InternalPuzzleLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:13: '0x'
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:13: '0x'
                     {
                     match("0x"); 
 
@@ -1751,7 +1751,7 @@ public class InternalPuzzleLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:18: '0X'
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:18: '0X'
                     {
                     match("0X"); 
 
@@ -1761,7 +1761,7 @@ public class InternalPuzzleLexer extends Lexer {
 
             }
 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:24: ( '0' .. '9' | 'a' .. 'f' | 'A' .. 'F' | '_' )+
             int cnt2=0;
             loop2:
             do {
@@ -1799,7 +1799,7 @@ public class InternalPuzzleLexer extends Lexer {
                 cnt2++;
             } while (true);
 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:58: ( '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) ) )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -1808,10 +1808,10 @@ public class InternalPuzzleLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:59: '#' ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     {
                     match('#'); 
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:63: ( ( 'b' | 'B' ) ( 'i' | 'I' ) | ( 'l' | 'L' ) )
                     int alt3=2;
                     int LA3_0 = input.LA(1);
 
@@ -1829,7 +1829,7 @@ public class InternalPuzzleLexer extends Lexer {
                     }
                     switch (alt3) {
                         case 1 :
-                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:64: ( 'b' | 'B' ) ( 'i' | 'I' )
+                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:64: ( 'b' | 'B' ) ( 'i' | 'I' )
                             {
                             if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                                 input.consume();
@@ -1853,7 +1853,7 @@ public class InternalPuzzleLexer extends Lexer {
                             }
                             break;
                         case 2 :
-                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6186:84: ( 'l' | 'L' )
+                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6247:84: ( 'l' | 'L' )
                             {
                             if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
                                 input.consume();
@@ -1892,11 +1892,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6188:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6188:12: '0' .. '9' ( '0' .. '9' | '_' )*
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6249:10: ( '0' .. '9' ( '0' .. '9' | '_' )* )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6249:12: '0' .. '9' ( '0' .. '9' | '_' )*
             {
             matchRange('0','9'); 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6188:21: ( '0' .. '9' | '_' )*
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6249:21: ( '0' .. '9' | '_' )*
             loop5:
             do {
                 int alt5=2;
@@ -1945,11 +1945,11 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_DECIMAL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:14: ( RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )? )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:16: RULE_INT ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )? ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             {
             mRULE_INT(); 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:25: ( ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -1958,7 +1958,7 @@ public class InternalPuzzleLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:26: ( 'e' | 'E' ) ( '+' | '-' )? RULE_INT
                     {
                     if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
                         input.consume();
@@ -1969,7 +1969,7 @@ public class InternalPuzzleLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:36: ( '+' | '-' )?
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:36: ( '+' | '-' )?
                     int alt6=2;
                     int LA6_0 = input.LA(1);
 
@@ -2002,7 +2002,7 @@ public class InternalPuzzleLexer extends Lexer {
 
             }
 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:58: ( ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' ) | ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' ) )?
             int alt8=3;
             int LA8_0 = input.LA(1);
 
@@ -2014,7 +2014,7 @@ public class InternalPuzzleLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:59: ( 'b' | 'B' ) ( 'i' | 'I' | 'd' | 'D' )
                     {
                     if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
                         input.consume();
@@ -2038,7 +2038,7 @@ public class InternalPuzzleLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6190:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6251:87: ( 'l' | 'L' | 'd' | 'D' | 'f' | 'F' )
                     {
                     if ( input.LA(1)=='D'||input.LA(1)=='F'||input.LA(1)=='L'||input.LA(1)=='d'||input.LA(1)=='f'||input.LA(1)=='l' ) {
                         input.consume();
@@ -2071,10 +2071,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6192:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6192:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6253:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )* )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6253:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             {
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6192:11: ( '^' )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6253:11: ( '^' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -2083,7 +2083,7 @@ public class InternalPuzzleLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6192:11: '^'
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6253:11: '^'
                     {
                     match('^'); 
 
@@ -2101,7 +2101,7 @@ public class InternalPuzzleLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6192:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6253:44: ( 'a' .. 'z' | 'A' .. 'Z' | '$' | '_' | '0' .. '9' )*
             loop10:
             do {
                 int alt10=2;
@@ -2150,10 +2150,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? ) )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             {
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )? | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )? )
             int alt15=2;
             int LA15_0 = input.LA(1);
 
@@ -2171,10 +2171,10 @@ public class InternalPuzzleLexer extends Lexer {
             }
             switch (alt15) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* ( '\"' )?
                     {
                     match('\"'); 
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop11:
                     do {
                         int alt11=3;
@@ -2190,7 +2190,7 @@ public class InternalPuzzleLexer extends Lexer {
 
                         switch (alt11) {
                     	case 1 :
-                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:21: '\\\\' .
+                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2198,7 +2198,7 @@ public class InternalPuzzleLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2218,7 +2218,7 @@ public class InternalPuzzleLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:44: ( '\"' )?
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:44: ( '\"' )?
                     int alt12=2;
                     int LA12_0 = input.LA(1);
 
@@ -2227,7 +2227,7 @@ public class InternalPuzzleLexer extends Lexer {
                     }
                     switch (alt12) {
                         case 1 :
-                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:44: '\"'
+                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:44: '\"'
                             {
                             match('\"'); 
 
@@ -2240,10 +2240,10 @@ public class InternalPuzzleLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:49: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* ( '\\'' )?
                     {
                     match('\''); 
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:54: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop13:
                     do {
                         int alt13=3;
@@ -2259,7 +2259,7 @@ public class InternalPuzzleLexer extends Lexer {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:55: '\\\\' .
+                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:55: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -2267,7 +2267,7 @@ public class InternalPuzzleLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:62: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:62: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -2287,7 +2287,7 @@ public class InternalPuzzleLexer extends Lexer {
                         }
                     } while (true);
 
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:79: ( '\\'' )?
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:79: ( '\\'' )?
                     int alt14=2;
                     int LA14_0 = input.LA(1);
 
@@ -2296,7 +2296,7 @@ public class InternalPuzzleLexer extends Lexer {
                     }
                     switch (alt14) {
                         case 1 :
-                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6194:79: '\\''
+                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6255:79: '\\''
                             {
                             match('\''); 
 
@@ -2327,12 +2327,12 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6196:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6196:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6257:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6257:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6196:24: ( options {greedy=false; } : . )*
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6257:24: ( options {greedy=false; } : . )*
             loop16:
             do {
                 int alt16=2;
@@ -2357,7 +2357,7 @@ public class InternalPuzzleLexer extends Lexer {
 
                 switch (alt16) {
             	case 1 :
-            	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6196:52: .
+            	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6257:52: .
             	    {
             	    matchAny(); 
 
@@ -2387,12 +2387,12 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop17:
             do {
                 int alt17=2;
@@ -2405,7 +2405,7 @@ public class InternalPuzzleLexer extends Lexer {
 
                 switch (alt17) {
             	case 1 :
-            	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2425,7 +2425,7 @@ public class InternalPuzzleLexer extends Lexer {
                 }
             } while (true);
 
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:40: ( ( '\\r' )? '\\n' )?
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:40: ( ( '\\r' )? '\\n' )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
@@ -2434,9 +2434,9 @@ public class InternalPuzzleLexer extends Lexer {
             }
             switch (alt19) {
                 case 1 :
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:41: ( '\\r' )? '\\n'
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:41: ( '\\r' )? '\\n'
                     {
-                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:41: ( '\\r' )?
+                    // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:41: ( '\\r' )?
                     int alt18=2;
                     int LA18_0 = input.LA(1);
 
@@ -2445,7 +2445,7 @@ public class InternalPuzzleLexer extends Lexer {
                     }
                     switch (alt18) {
                         case 1 :
-                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6198:41: '\\r'
+                            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6259:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2477,10 +2477,10 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6200:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6200:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6261:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6261:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6200:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6261:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt20=0;
             loop20:
             do {
@@ -2534,8 +2534,8 @@ public class InternalPuzzleLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6202:16: ( . )
-            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6202:18: .
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6263:16: ( . )
+            // ../fr.inria.diverse.puzzle.adl.language/src-gen/fr/inria/diverse/puzzle/adl/language/parser/antlr/internal/InternalPuzzle.g:6263:18: .
             {
             matchAny(); 
 
@@ -3164,39 +3164,39 @@ public class InternalPuzzleLexer extends Lexer {
 
     protected DFA21 dfa21 = new DFA21(this);
     static final String DFA21_eotS =
-        "\1\uffff\2\60\2\uffff\1\60\3\uffff\1\72\1\75\1\101\1\104\1\110\1\112\1\114\1\116\1\120\1\122\1\124\1\60\1\131\1\134\1\60\1\137\4\uffff\12\60\2\172\1\56\5\uffff\1\60\1\uffff\1\60\2\uffff\1\60\3\uffff\1\u0082\32\uffff\1\u0084\1\uffff\1\60\1\u0086\1\60\1\u0089\4\uffff\1\u008a\6\uffff\7\60\1\u0092\14\60\1\uffff\1\172\4\uffff\3\60\4\uffff\1\60\1\uffff\1\60\3\uffff\7\60\1\uffff\2\60\1\u00b0\3\60\1\u00b4\1\u00b5\1\u00b6\2\60\1\u00b9\5\60\1\u00bf\2\60\1\u00c2\6\60\1\u00c9\1\60\1\uffff\3\60\3\uffff\1\u00ce\1\u00cf\1\uffff\5\60\1\uffff\2\60\1\uffff\3\60\1\u00db\2\60\1\uffff\1\u00de\1\u00df\1\60\1\u00e1\2\uffff\1\60\1\u00e3\4\60\1\u00e8\2\60\1\u00eb\1\u00ec\1\uffff\2\60\2\uffff\1\60\1\uffff\1\u00f0\1\uffff\1\u00f1\1\u00f2\2\60\1\uffff\1\u00f5\1\60\2\uffff\1\60\1\u00f8\1\u00f9\3\uffff\2\60\1\uffff\2\60\2\uffff\2\60\1\u0100\2\60\1\u0103\1\uffff\2\60\1\uffff\2\60\1\u0108\1\60\1\uffff\1\60\1\u010b\1\uffff";
+        "\1\uffff\2\60\2\uffff\2\60\3\uffff\1\75\1\100\1\104\1\107\1\113\1\115\1\117\1\121\1\123\1\125\1\127\1\131\1\134\1\60\1\137\4\uffff\12\60\2\172\1\56\5\uffff\1\60\1\uffff\1\60\2\uffff\2\60\1\u0082\1\60\3\uffff\1\u0085\32\uffff\1\u0087\1\uffff\1\u0089\4\uffff\1\u008a\6\uffff\7\60\1\u0092\14\60\1\uffff\1\172\4\uffff\4\60\1\uffff\1\60\7\uffff\7\60\1\uffff\2\60\1\u00b0\3\60\1\u00b4\1\u00b5\1\u00b6\2\60\1\u00b9\7\60\1\u00c1\1\u00c2\6\60\1\u00c9\1\60\1\uffff\3\60\3\uffff\1\u00ce\1\u00cf\1\uffff\7\60\2\uffff\3\60\1\u00db\2\60\1\uffff\1\u00de\1\u00df\1\60\1\u00e1\2\uffff\1\60\1\u00e3\3\60\1\u00e7\3\60\1\u00eb\1\u00ec\1\uffff\2\60\2\uffff\1\60\1\uffff\1\u00f0\1\uffff\1\u00f1\1\u00f2\1\60\1\uffff\1\60\1\u00f5\1\60\2\uffff\1\60\1\u00f8\1\u00f9\3\uffff\2\60\1\uffff\2\60\2\uffff\2\60\1\u0100\2\60\1\u0103\1\uffff\2\60\1\uffff\2\60\1\u0108\1\60\1\uffff\1\60\1\u010b\1\uffff";
     static final String DFA21_eofS =
         "\u010c\uffff";
     static final String DFA21_minS =
-        "\1\0\2\141\2\uffff\1\151\3\uffff\1\75\1\53\1\55\2\52\1\75\1\76\1\75\1\174\1\46\1\75\1\146\2\56\1\163\1\72\4\uffff\1\154\1\164\1\145\2\141\1\150\1\141\1\145\1\150\1\145\2\60\1\44\5\uffff\1\143\1\uffff\1\156\2\uffff\1\156\3\uffff\1\75\32\uffff\1\75\1\uffff\1\163\1\44\1\160\1\74\4\uffff\1\44\6\uffff\1\163\1\164\1\151\1\141\1\160\1\156\1\146\1\44\1\163\1\162\1\154\1\156\1\151\1\154\1\167\1\154\1\165\1\160\1\162\1\164\1\uffff\1\60\4\uffff\1\153\1\147\1\144\4\uffff\1\164\1\uffff\1\157\3\uffff\2\145\2\164\1\145\1\143\1\141\1\uffff\1\145\1\143\1\44\1\163\1\141\1\154\3\44\1\154\1\145\1\44\1\145\1\157\1\165\1\141\1\165\1\44\1\141\1\162\1\44\1\156\1\143\1\151\1\162\1\150\1\165\1\44\1\150\1\uffff\1\145\1\154\1\145\3\uffff\2\44\1\uffff\1\157\1\167\1\162\1\147\1\141\1\uffff\1\156\1\164\1\uffff\1\144\1\150\1\143\1\44\1\162\1\154\1\uffff\2\44\1\154\1\44\2\uffff\1\146\1\44\1\156\1\145\1\147\1\143\1\44\1\163\1\151\2\44\1\uffff\1\157\1\164\2\uffff\1\171\1\uffff\1\44\1\uffff\2\44\2\145\1\uffff\1\44\1\157\2\uffff\1\156\2\44\3\uffff\1\102\1\157\1\uffff\1\156\1\151\2\uffff\1\151\1\146\1\44\1\172\1\156\1\44\1\uffff\1\145\1\144\1\uffff\1\144\1\151\1\44\1\156\1\uffff\1\147\1\44\1\uffff";
+        "\1\0\2\141\2\uffff\1\146\1\151\3\uffff\1\75\1\53\1\55\2\52\1\75\1\76\1\75\1\174\1\46\1\75\2\56\1\163\1\72\4\uffff\1\154\1\164\1\145\2\141\1\150\1\141\1\145\1\150\1\145\2\60\1\44\5\uffff\1\143\1\uffff\1\156\2\uffff\1\160\1\163\1\44\1\156\3\uffff\1\75\32\uffff\1\75\1\uffff\1\74\4\uffff\1\44\6\uffff\1\163\1\164\1\151\1\141\1\160\1\156\1\146\1\44\1\163\1\162\1\154\1\156\1\151\1\154\1\167\1\154\1\165\1\160\1\162\1\164\1\uffff\1\60\4\uffff\1\153\1\147\1\157\1\164\1\uffff\1\144\7\uffff\2\145\2\164\1\145\1\143\1\141\1\uffff\1\145\1\143\1\44\1\163\1\141\1\154\3\44\1\154\1\145\1\44\1\145\1\157\1\165\1\141\1\165\1\162\1\141\2\44\1\156\1\143\1\151\1\162\1\150\1\165\1\44\1\150\1\uffff\1\145\1\154\1\145\3\uffff\2\44\1\uffff\1\157\1\167\1\162\1\147\1\141\1\164\1\156\2\uffff\1\144\1\150\1\143\1\44\1\162\1\154\1\uffff\2\44\1\154\1\44\2\uffff\1\146\1\44\1\156\1\145\1\147\1\44\1\143\1\163\1\151\2\44\1\uffff\1\157\1\164\2\uffff\1\171\1\uffff\1\44\1\uffff\2\44\1\145\1\uffff\1\145\1\44\1\157\2\uffff\1\156\2\44\3\uffff\1\102\1\157\1\uffff\1\156\1\151\2\uffff\1\151\1\146\1\44\1\172\1\156\1\44\1\uffff\1\145\1\144\1\uffff\1\144\1\151\1\44\1\156\1\uffff\1\147\1\44\1\uffff";
     static final String DFA21_maxS =
-        "\1\uffff\2\141\2\uffff\1\151\3\uffff\1\76\1\75\1\76\3\75\1\76\1\75\1\174\1\46\1\75\1\156\1\56\1\72\1\163\1\72\4\uffff\1\170\1\171\1\157\1\141\1\157\1\150\1\141\1\165\1\171\1\145\1\170\1\154\1\172\5\uffff\1\143\1\uffff\1\156\2\uffff\1\156\3\uffff\1\75\32\uffff\1\75\1\uffff\1\163\1\172\1\160\1\74\4\uffff\1\172\6\uffff\1\163\1\164\1\151\1\141\1\160\1\156\1\146\1\172\1\164\1\162\1\154\1\156\1\151\1\162\1\167\1\154\1\171\1\160\1\162\1\164\1\uffff\1\154\4\uffff\1\153\1\147\1\144\4\uffff\1\164\1\uffff\1\157\3\uffff\2\145\2\164\1\145\1\143\1\141\1\uffff\1\145\1\143\1\172\1\163\1\141\1\154\3\172\1\154\1\145\1\172\1\145\1\157\1\165\1\141\1\165\1\172\1\141\1\162\1\172\1\156\1\143\1\151\1\162\1\150\1\165\1\172\1\150\1\uffff\1\145\1\154\1\145\3\uffff\2\172\1\uffff\1\157\1\167\1\162\1\147\1\141\1\uffff\1\156\1\164\1\uffff\1\163\1\150\1\143\1\172\1\162\1\154\1\uffff\2\172\1\154\1\172\2\uffff\1\146\1\172\1\156\1\145\1\147\1\143\1\172\1\163\1\151\2\172\1\uffff\1\157\1\164\2\uffff\1\171\1\uffff\1\172\1\uffff\2\172\2\145\1\uffff\1\172\1\157\2\uffff\1\156\2\172\3\uffff\1\102\1\157\1\uffff\1\156\1\151\2\uffff\1\151\1\146\2\172\1\156\1\172\1\uffff\1\145\1\144\1\uffff\1\144\1\151\1\172\1\156\1\uffff\1\147\1\172\1\uffff";
+        "\1\uffff\2\141\2\uffff\1\156\1\151\3\uffff\1\76\1\75\1\76\3\75\1\76\1\75\1\174\1\46\1\75\1\56\1\72\1\163\1\72\4\uffff\1\170\1\171\1\157\1\141\1\157\1\150\1\141\1\165\1\171\1\145\1\170\1\154\1\172\5\uffff\1\143\1\uffff\1\156\2\uffff\1\160\1\163\1\172\1\156\3\uffff\1\75\32\uffff\1\75\1\uffff\1\74\4\uffff\1\172\6\uffff\1\163\1\164\1\151\1\141\1\160\1\156\1\146\1\172\1\164\1\162\1\154\1\156\1\151\1\162\1\167\1\154\1\171\1\160\1\162\1\164\1\uffff\1\154\4\uffff\1\153\1\147\1\157\1\164\1\uffff\1\144\7\uffff\2\145\2\164\1\145\1\143\1\141\1\uffff\1\145\1\143\1\172\1\163\1\141\1\154\3\172\1\154\1\145\1\172\1\145\1\157\1\165\1\141\1\165\1\162\1\141\2\172\1\156\1\143\1\151\1\162\1\150\1\165\1\172\1\150\1\uffff\1\145\1\154\1\145\3\uffff\2\172\1\uffff\1\157\1\167\1\162\1\147\1\141\1\164\1\156\2\uffff\1\163\1\150\1\143\1\172\1\162\1\154\1\uffff\2\172\1\154\1\172\2\uffff\1\146\1\172\1\156\1\145\1\147\1\172\1\143\1\163\1\151\2\172\1\uffff\1\157\1\164\2\uffff\1\171\1\uffff\1\172\1\uffff\2\172\1\145\1\uffff\1\145\1\172\1\157\2\uffff\1\156\2\172\3\uffff\1\102\1\157\1\uffff\1\156\1\151\2\uffff\1\151\1\146\2\172\1\156\1\172\1\uffff\1\145\1\144\1\uffff\1\144\1\151\1\172\1\156\1\uffff\1\147\1\172\1\uffff";
     static final String DFA21_acceptS =
-        "\3\uffff\1\3\1\4\1\uffff\1\6\1\7\1\10\20\uffff\1\54\1\55\1\56\1\60\15\uffff\1\121\2\122\1\125\1\126\1\uffff\1\121\1\uffff\1\3\1\4\1\uffff\1\6\1\7\1\10\1\uffff\1\34\1\11\1\12\1\47\1\37\1\13\1\31\1\50\1\40\1\14\1\42\1\41\1\15\1\123\1\124\1\43\1\16\1\44\1\35\1\17\1\21\1\20\1\22\1\57\1\23\1\115\1\uffff\1\45\4\uffff\1\51\1\36\1\53\1\114\1\uffff\1\52\1\64\1\54\1\55\1\56\1\60\24\uffff\1\116\1\uffff\1\117\1\120\1\122\1\125\3\uffff\1\26\1\24\1\27\1\25\1\uffff\1\61\1\uffff\1\32\1\33\1\46\7\uffff\1\71\35\uffff\1\67\3\uffff\1\72\1\73\1\101\2\uffff\1\110\5\uffff\1\5\2\uffff\1\62\6\uffff\1\66\4\uffff\1\104\1\103\13\uffff\1\100\2\uffff\1\113\1\102\1\uffff\1\70\1\uffff\1\106\4\uffff\1\76\2\uffff\1\63\1\75\3\uffff\1\105\1\107\1\1\2\uffff\1\74\2\uffff\1\65\1\111\6\uffff\1\77\2\uffff\1\30\4\uffff\1\112\2\uffff\1\2";
+        "\3\uffff\1\3\1\4\2\uffff\1\7\1\10\1\11\17\uffff\1\55\1\56\1\57\1\61\15\uffff\1\121\2\122\1\125\1\126\1\uffff\1\121\1\uffff\1\3\1\4\4\uffff\1\7\1\10\1\11\1\uffff\1\35\1\12\1\13\1\50\1\40\1\14\1\32\1\51\1\41\1\15\1\43\1\42\1\16\1\123\1\124\1\44\1\17\1\45\1\36\1\20\1\22\1\21\1\23\1\60\1\24\1\115\1\uffff\1\46\1\uffff\1\52\1\37\1\54\1\114\1\uffff\1\53\1\65\1\55\1\56\1\57\1\61\24\uffff\1\116\1\uffff\1\117\1\120\1\122\1\125\4\uffff\1\62\1\uffff\1\27\1\25\1\30\1\26\1\33\1\34\1\47\7\uffff\1\72\35\uffff\1\70\3\uffff\1\73\1\74\1\101\2\uffff\1\110\7\uffff\1\6\1\63\6\uffff\1\67\4\uffff\1\104\1\103\13\uffff\1\100\2\uffff\1\113\1\102\1\uffff\1\71\1\uffff\1\106\3\uffff\1\5\3\uffff\1\64\1\76\3\uffff\1\105\1\107\1\1\2\uffff\1\75\2\uffff\1\66\1\111\6\uffff\1\77\2\uffff\1\31\4\uffff\1\112\2\uffff\1\2";
     static final String DFA21_specialS =
         "\1\0\u010b\uffff}>";
     static final String[] DFA21_transitionS = {
-            "\11\56\2\55\2\56\1\55\22\56\1\55\1\23\1\53\1\31\1\52\1\16\1\22\1\54\1\6\1\10\1\14\1\12\1\7\1\13\1\25\1\15\1\47\11\50\1\30\1\34\1\17\1\11\1\20\1\26\1\56\32\52\1\32\1\56\1\33\1\51\1\52\1\56\1\27\1\5\1\40\1\37\1\35\1\41\2\52\1\24\2\52\1\2\1\52\1\44\1\52\1\1\1\52\1\46\1\36\1\45\1\52\1\43\1\42\3\52\1\3\1\21\1\4\uff82\56",
+            "\11\56\2\55\2\56\1\55\22\56\1\55\1\24\1\53\1\31\1\52\1\17\1\23\1\54\1\7\1\11\1\15\1\13\1\10\1\14\1\25\1\16\1\47\11\50\1\30\1\34\1\20\1\12\1\21\1\26\1\56\32\52\1\32\1\56\1\33\1\51\1\52\1\56\1\27\1\6\1\40\1\37\1\35\1\41\2\52\1\5\2\52\1\2\1\52\1\44\1\52\1\1\1\52\1\46\1\36\1\45\1\52\1\43\1\42\3\52\1\3\1\22\1\4\uff82\56",
             "\1\57",
             "\1\61",
             "",
             "",
-            "\1\64",
+            "\1\66\6\uffff\1\64\1\65",
+            "\1\67",
             "",
             "",
             "",
-            "\1\70\1\71",
-            "\1\74\21\uffff\1\73",
-            "\1\100\17\uffff\1\76\1\77",
-            "\1\103\22\uffff\1\102",
-            "\1\106\4\uffff\1\107\15\uffff\1\105",
-            "\1\111",
-            "\1\113",
-            "\1\115",
-            "\1\117",
-            "\1\121",
-            "\1\123",
-            "\1\126\6\uffff\1\127\1\125",
+            "\1\73\1\74",
+            "\1\77\21\uffff\1\76",
+            "\1\103\17\uffff\1\101\1\102",
+            "\1\106\22\uffff\1\105",
+            "\1\111\4\uffff\1\112\15\uffff\1\110",
+            "\1\114",
+            "\1\116",
+            "\1\120",
+            "\1\122",
+            "\1\124",
+            "\1\126",
             "\1\130",
             "\1\133\13\uffff\1\132",
             "\1\135",
@@ -3229,41 +3229,41 @@ public class InternalPuzzleLexer extends Lexer {
             "",
             "",
             "\1\u0080",
-            "",
-            "",
-            "",
             "\1\u0081",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u0083",
             "",
-            "\1\u0085",
-            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
-            "\1\u0087",
+            "",
+            "",
+            "\1\u0084",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\u0086",
+            "",
             "\1\u0088",
             "",
             "",
@@ -3305,13 +3305,13 @@ public class InternalPuzzleLexer extends Lexer {
             "\1\u00a2",
             "\1\u00a3",
             "\1\u00a4",
-            "",
-            "",
-            "",
-            "",
             "\1\u00a5",
             "",
             "\1\u00a6",
+            "",
+            "",
+            "",
+            "",
             "",
             "",
             "",
@@ -3340,9 +3340,9 @@ public class InternalPuzzleLexer extends Lexer {
             "\1\u00bc",
             "\1\u00bd",
             "\1\u00be",
-            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00bf",
             "\1\u00c0",
-            "\1\u00c1",
+            "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u00c3",
             "\1\u00c4",
@@ -3367,9 +3367,9 @@ public class InternalPuzzleLexer extends Lexer {
             "\1\u00d2",
             "\1\u00d3",
             "\1\u00d4",
-            "",
             "\1\u00d5",
             "\1\u00d6",
+            "",
             "",
             "\1\u00d7\16\uffff\1\u00d8",
             "\1\u00d9",
@@ -3389,8 +3389,8 @@ public class InternalPuzzleLexer extends Lexer {
             "\1\u00e4",
             "\1\u00e5",
             "\1\u00e6",
-            "\1\u00e7",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\1\u00e8",
             "\1\u00e9",
             "\1\u00ea",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
@@ -3407,8 +3407,8 @@ public class InternalPuzzleLexer extends Lexer {
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u00f3",
-            "\1\u00f4",
             "",
+            "\1\u00f4",
             "\1\60\13\uffff\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "\1\u00f6",
             "",
@@ -3494,37 +3494,37 @@ public class InternalPuzzleLexer extends Lexer {
 
                         else if ( (LA21_0=='}') ) {s = 4;}
 
-                        else if ( (LA21_0=='b') ) {s = 5;}
+                        else if ( (LA21_0=='i') ) {s = 5;}
 
-                        else if ( (LA21_0=='(') ) {s = 6;}
+                        else if ( (LA21_0=='b') ) {s = 6;}
 
-                        else if ( (LA21_0==',') ) {s = 7;}
+                        else if ( (LA21_0=='(') ) {s = 7;}
 
-                        else if ( (LA21_0==')') ) {s = 8;}
+                        else if ( (LA21_0==',') ) {s = 8;}
 
-                        else if ( (LA21_0=='=') ) {s = 9;}
+                        else if ( (LA21_0==')') ) {s = 9;}
 
-                        else if ( (LA21_0=='+') ) {s = 10;}
+                        else if ( (LA21_0=='=') ) {s = 10;}
 
-                        else if ( (LA21_0=='-') ) {s = 11;}
+                        else if ( (LA21_0=='+') ) {s = 11;}
 
-                        else if ( (LA21_0=='*') ) {s = 12;}
+                        else if ( (LA21_0=='-') ) {s = 12;}
 
-                        else if ( (LA21_0=='/') ) {s = 13;}
+                        else if ( (LA21_0=='*') ) {s = 13;}
 
-                        else if ( (LA21_0=='%') ) {s = 14;}
+                        else if ( (LA21_0=='/') ) {s = 14;}
 
-                        else if ( (LA21_0=='<') ) {s = 15;}
+                        else if ( (LA21_0=='%') ) {s = 15;}
 
-                        else if ( (LA21_0=='>') ) {s = 16;}
+                        else if ( (LA21_0=='<') ) {s = 16;}
 
-                        else if ( (LA21_0=='|') ) {s = 17;}
+                        else if ( (LA21_0=='>') ) {s = 17;}
 
-                        else if ( (LA21_0=='&') ) {s = 18;}
+                        else if ( (LA21_0=='|') ) {s = 18;}
 
-                        else if ( (LA21_0=='!') ) {s = 19;}
+                        else if ( (LA21_0=='&') ) {s = 19;}
 
-                        else if ( (LA21_0=='i') ) {s = 20;}
+                        else if ( (LA21_0=='!') ) {s = 20;}
 
                         else if ( (LA21_0=='.') ) {s = 21;}
 

@@ -65,6 +65,7 @@ public class PuzzleFactoryImpl extends EFactoryImpl implements PuzzleFactory
     switch (eClass.getClassifierID())
     {
       case PuzzlePackage.LANGUAGE_BINDING: return createLanguageBinding();
+      case PuzzlePackage.MELANGE_IMPORT: return createMelangeImport();
       case PuzzlePackage.BINDING: return createBinding();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -80,6 +81,17 @@ public class PuzzleFactoryImpl extends EFactoryImpl implements PuzzleFactory
   {
     LanguageBindingImpl languageBinding = new LanguageBindingImpl();
     return languageBinding;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MelangeImport createMelangeImport()
+  {
+    MelangeImportImpl melangeImport = new MelangeImportImpl();
+    return melangeImport;
   }
 
   /**

@@ -78,6 +78,7 @@ public class PuzzleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getAlternatives_1_0_3(), "rule__XImportDeclaration__Alternatives_1_0_3");
 					put(grammarAccess.getLanguageBindingAccess().getGroup(), "rule__LanguageBinding__Group__0");
 					put(grammarAccess.getLanguageBindingAccess().getGroup_0(), "rule__LanguageBinding__Group_0__0");
+					put(grammarAccess.getMelangeImportAccess().getGroup(), "rule__MelangeImport__Group__0");
 					put(grammarAccess.getBindingAccess().getGroup(), "rule__Binding__Group__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_0(), "rule__XAssignment__Group_0__0");
 					put(grammarAccess.getXAssignmentAccess().getGroup_1(), "rule__XAssignment__Group_1__0");
@@ -259,8 +260,10 @@ public class PuzzleParser extends AbstractContentAssistParser {
 					put(grammarAccess.getXImportDeclarationAccess().getGroup_1_0(), "rule__XImportDeclaration__Group_1_0__0");
 					put(grammarAccess.getQualifiedNameInStaticImportAccess().getGroup(), "rule__QualifiedNameInStaticImport__Group__0");
 					put(grammarAccess.getLanguageBindingAccess().getNameAssignment_0_1(), "rule__LanguageBinding__NameAssignment_0_1");
-					put(grammarAccess.getLanguageBindingAccess().getBindingAssignment_3(), "rule__LanguageBinding__BindingAssignment_3");
+					put(grammarAccess.getLanguageBindingAccess().getMelangeImportAssignment_1(), "rule__LanguageBinding__MelangeImportAssignment_1");
 					put(grammarAccess.getLanguageBindingAccess().getBindingAssignment_4(), "rule__LanguageBinding__BindingAssignment_4");
+					put(grammarAccess.getLanguageBindingAccess().getBindingAssignment_5(), "rule__LanguageBinding__BindingAssignment_5");
+					put(grammarAccess.getMelangeImportAccess().getMelangeFileAssignment_1(), "rule__MelangeImport__MelangeFileAssignment_1");
 					put(grammarAccess.getBindingAccess().getLeftAssignment_2(), "rule__Binding__LeftAssignment_2");
 					put(grammarAccess.getBindingAccess().getRightAssignment_4(), "rule__Binding__RightAssignment_4");
 					put(grammarAccess.getXAssignmentAccess().getFeatureAssignment_0_1(), "rule__XAssignment__FeatureAssignment_0_1");
