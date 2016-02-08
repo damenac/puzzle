@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1453216039970
+# List of external plug-in models previously loaded. Timestamp: 1454966108754
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.inject_3.0.0.v201312141243.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.ibm.icu_52.1.1.v201501240615.jar
@@ -545,10 +545,20 @@ file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.ltk.ui.refactoring
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.archetype.common_1.6.2.20150902-0001/
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.core_1.6.2.20150902-0002.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.core.ui_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.discovery_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.editor_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.editor.xml_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.jdt_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.jdt.ui_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.launching_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.lifecyclemapping.defaults_1.6.2.20150902-0002.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.maven.indexer_1.6.2.20150902-0001/
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.maven.runtime_1.6.2.20150902-0001/
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.maven.runtime.slf4j.simple_1.6.2.20150902-0001/
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.model.edit_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.profiles.core_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.profiles.ui_1.6.2.20150902-0002.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.refactoring_1.6.2.20150902-0002.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.scm_1.6.2.20150902-0002.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.m2e.workspace.cli_0.3.1.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.mylyn.bugzilla.core_3.14.2.v20150217-2341.jar
@@ -762,11 +772,16 @@ file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.core_1.
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.emf_1.2.300.v201501292352.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.environment_1.0.400.v200912181832.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.frameworks_1.2.200.v201304241450.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.frameworks.ui_1.2.300.v201401292115.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.project.facet.core_1.4.300.v201111030424.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.ui_1.1.500.v200911190730.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.common.uriresolver_1.2.100.v201305141800.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.sse.core_1.1.900.v201401101615.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.sse.ui_1.3.301.v201501151629.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.validation_1.2.600.v201501211647.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.validation.ui_1.2.500.v201310231530.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.xml.core_1.1.902.v201501211904.jar
+file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.xml.ui_1.1.501.v201501212057.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.wst.xsd.core_1.1.900.v201401141907.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.xpand_2.0.0.v201406030414.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.xsd_2.10.0.v20150123-0452.jar

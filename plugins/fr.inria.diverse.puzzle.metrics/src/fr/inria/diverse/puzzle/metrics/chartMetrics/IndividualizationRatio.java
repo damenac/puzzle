@@ -15,6 +15,7 @@ import fr.inria.diverse.k3.sle.common.utils.FamiliesServices;
 import fr.inria.diverse.k3.sle.common.utils.MelangeServices;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountConstructs;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.CountMethods;
 
 /**
  * Chart metric for the Individualization Ratio (IR)
@@ -99,20 +100,19 @@ public class IndividualizationRatio implements FamilyChartMetric {
 	}
 	
 	private String evaluateForSemantics(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception{
-		ArrayList<EPackage> ePackages = MelangeServices.getEPackagesByALanguagesList(languages);
 		String answer = "";
 		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
 		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);
 		
 		boolean first = true;
-		for (EPackage ePackage : ePackages) {
+		for (Language language : languages) {
 			double count = 0;
 			for (TupleConceptMethodMembers conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
-				if(conceptMethodMembersGroupVO.getMembers().size() >= 2 && conceptMethodMembersGroupVO.getMembers().contains(ePackage.getName())){
+				if(conceptMethodMembersGroupVO.getMembers().size() >= 2 && conceptMethodMembersGroupVO.getMembers().contains(language.getName())){
 					count++;
 				}
 			}
-			double individualizationRatio = (count/CountConstructs.countLanguageConstructs(ePackage))*100;
+			double individualizationRatio = (count/CountMethods.countLanguageMethods(language))*100;
 			
 			if(!first)
 				answer +=  ",";

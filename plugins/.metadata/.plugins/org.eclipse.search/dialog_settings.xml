@@ -168,6 +168,10 @@
 	<section name="org.eclipse.search.text.FileSearchResultPage">
 		<item value="1000" key="org.eclipse.search.resultpage.limit"/>
 	</section>
+	<section name="org.eclipse.jdt.ui.java_search_result">
+		<item value="1000" key="org.eclipse.jdt.search.resultpage.limit"/>
+		<item value="TRUE" key="org.eclipse.jdt.search.resultpage.limit_enabled"/>
+	</section>
 	<section name="Search">
 		<list key="Search.processedPageIds">
 			<item value="org.eclipse.search.internal.ui.text.TextSearchPage"/>

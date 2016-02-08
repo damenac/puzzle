@@ -144,8 +144,8 @@ public class PairwiseRelationshipRatio implements FamilyChartMetric {
 			ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList, Language languageI, Language languageJ,
 			MethodComparison methodComparisonOperator) {
 
-		String languageIName = MelangeServices.getEPackageFromLanguage(languageI).getName();
-		String languageJName = MelangeServices.getEPackageFromLanguage(languageJ).getName();
+		String languageIName = languageI.getName();
+		String languageJName = languageJ.getName();
 		ArrayList<String> answer = new ArrayList<String>();
 		for (TupleConceptMethodMembers conceptMethodMembersGroupVO : conceptMethodMemberGroupList) {
 			boolean isInI = conceptMethodMembersGroupVO.getMembers().contains(languageIName);

@@ -1,7 +1,6 @@
 package fr.inria.diverse.puzzle.metrics.auxiliarMetrics;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;

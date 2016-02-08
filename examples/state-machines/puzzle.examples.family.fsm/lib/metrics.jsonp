@@ -60,64 +60,7 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [0.0,0.0,0.0]
-      }
-    ]
-};
-var barRelationshipRatioUML = {
-   labels : ["Rhapsody","Harel"],
-   datasets : [
-     {
-        fillColor : "rgba(220,220,220,0.5)",
-        strokeColor : "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data : [80.95238095238095,82.6086956521739]
-      },
-      {
-        fillColor : "rgba(151,187,205,0.5)",
-        strokeColor : "rgba(151,187,205,0.8)",
-        highlightFill : "rgba(151,187,205,0.75)",
-        highlightStroke : "rgba(151,187,205,1)",
-        data : [0.0,0.0]
-      }
-    ]
-};
-var barRelationshipRatioRhapsody = {
-   labels : ["UML","Harel"],
-   datasets : [
-     {
-        fillColor : "rgba(220,220,220,0.5)",
-        strokeColor : "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data : [80.95238095238095,81.81818181818183]
-      },
-      {
-        fillColor : "rgba(151,187,205,0.5)",
-        strokeColor : "rgba(151,187,205,0.8)",
-        highlightFill : "rgba(151,187,205,0.75)",
-        highlightStroke : "rgba(151,187,205,1)",
-        data : [0.0,0.0]
-      }
-    ]
-};
-var barRelationshipRatioHarel = {
-   labels : ["UML","Rhapsody"],
-   datasets : [
-     {
-        fillColor : "rgba(220,220,220,0.5)",
-        strokeColor : "rgba(220,220,220,0.8)",
-        highlightFill: "rgba(220,220,220,0.75)",
-        highlightStroke: "rgba(220,220,220,1)",
-        data : [82.6086956521739,81.81818181818183]
-      },
-      {
-        fillColor : "rgba(151,187,205,0.5)",
-        strokeColor : "rgba(151,187,205,0.8)",
-        highlightFill : "rgba(151,187,205,0.75)",
-        highlightStroke : "rgba(151,187,205,1)",
-        data : [0.0,0.0]
+        data : [49.39759036144578,49.31506849315068,45.97701149425287]
       }
     ]
 };
@@ -136,21 +79,6 @@ window.onload = function(){
 
     var ctxIndividualizationRatio = document.getElementById("pie-individualization-ratio").getContext("2d");
     window.window.myBarIndividualizationRatio = new Chart(ctxIndividualizationRatio).Bar(barIndividualizationRatio, {
-       responsive : false
-    });
-
-    var ctxRelationshipRatioUML = document.getElementById("pie-relationship-ratio-UML").getContext("2d");
-    window.window.window.myBarRelationshipRatioUML = new Chart(ctxRelationshipRatioUML).Bar(barRelationshipRatioUML, {
-       responsive : false
-    });
-
-    var ctxRelationshipRatioRhapsody = document.getElementById("pie-relationship-ratio-Rhapsody").getContext("2d");
-    window.window.window.myBarRelationshipRatioRhapsody = new Chart(ctxRelationshipRatioRhapsody).Bar(barRelationshipRatioRhapsody, {
-       responsive : false
-    });
-
-    var ctxRelationshipRatioHarel = document.getElementById("pie-relationship-ratio-Harel").getContext("2d");
-    window.window.window.myBarRelationshipRatioHarel = new Chart(ctxRelationshipRatioHarel).Bar(barRelationshipRatioHarel, {
        responsive : false
     });
 

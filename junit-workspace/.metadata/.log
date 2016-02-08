@@ -1,24 +1,15 @@
-!SESSION 2016-01-08 14:37:56.169 -----------------------------------------------
+!SESSION 2016-02-06 15:47:44.692 -----------------------------------------------
 eclipse.buildId=4.4.2.M20150204-1700
 java.version=1.8.0_25
 java.vendor=Oracle Corporation
 BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
-Framework arguments:  -version 3 -port 53663 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames puzzle.empirical.study.Histogram -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -testpluginname puzzle.empirical.study
-Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -consoleLog -version 3 -port 53663 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames puzzle.empirical.study.Histogram -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/../junit-workspace -dev file:/Users/dmendeza/workspaces/puzzle/examples/.metadata/.plugins/org.eclipse.pde.core/pde-junit/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog -testpluginname puzzle.empirical.study
+Framework arguments:  -version 3 -port 61973 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTestFromInstancesFiles -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -testpluginname fr.inria.diverse.puzzle.synthesis.vmsynthesis.test
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -consoleLog -version 3 -port 61973 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -classNames fr.inria.diverse.puzzle.vmsynthesis.tests.RandomTestFromInstancesFiles -application org.eclipse.pde.junit.runtime.uitestapplication -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/plugins/../junit-workspace -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/pde-junit/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog -testpluginname fr.inria.diverse.puzzle.synthesis.vmsynthesis.test
 
-!ENTRY org.eclipse.emf.ecore 2 0 2016-01-08 14:38:01.280
-!MESSAGE Both 'puzzle.examples.fsm.harel.metamodel' and 'puzzle.examples.fsm.rhapsody.metamodel' register a package for 'http://puzzle.examples.fsm'
-
-!ENTRY org.eclipse.emf.ecore 2 0 2016-01-08 14:38:01.281
-!MESSAGE Both 'puzzle.examples.fsm.rhapsody.metamodel' and 'puzzle.examples.fsm.uml.metamodel' register a package for 'http://puzzle.examples.fsm'
-
-!ENTRY org.eclipse.emf.ecore 2 0 2016-01-08 14:38:01.282
-!MESSAGE Both 'puzzle.examples.fsm.uml.metamodel' and 'puzzle.examples.overlap.fsm.metamodel' register a package for 'http://puzzle.examples.fsm'
-
-!ENTRY org.eclipse.core.net 1 0 2016-01-08 14:38:02.583
+!ENTRY org.eclipse.core.net 1 0 2016-02-06 15:47:51.872
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
 
-!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2016-01-08 14:57:05.748
+!ENTRY org.eclipse.mylyn.tasks.ui 4 0 2016-02-06 15:47:58.174
 !MESSAGE FrameworkEvent ERROR
 !STACK 0
 org.osgi.framework.BundleException: Exception in org.eclipse.mylyn.internal.tasks.ui.TasksUiPlugin.stop() of bundle org.eclipse.mylyn.tasks.ui.

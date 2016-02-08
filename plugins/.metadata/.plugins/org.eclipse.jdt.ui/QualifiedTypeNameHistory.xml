@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SyntacticDeepVennDiagram"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.SemanticSignatureAndBodyVennDiagram"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.command.BreakerImpl"/>
-<fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
-<fullyQualifiedTypeName name="java.io.FileWriter"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.codegen.ecore.genmodel.GenModel"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel"/>
@@ -60,4 +52,12 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.DependencyGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGraph"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.validator.command.ValidatorImpl"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.validator.vos.PuzzleDiagnosis"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.validator.vos.PuzzleDiagnosisItem"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.validator.vos.PuzzleDiagnosisItemKind"/>
+<fullyQualifiedTypeName name="javax.swing.RowFilter.ComparisonType"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.compare.Comparison"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.compare.Match"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
 </qualifiedTypeNameHistroy>

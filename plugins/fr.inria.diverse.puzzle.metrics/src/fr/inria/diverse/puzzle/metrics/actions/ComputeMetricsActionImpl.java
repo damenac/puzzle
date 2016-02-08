@@ -87,7 +87,7 @@ public class ComputeMetricsActionImpl {
 		chartMetrics.add(new SizeOfCommonality());
 		chartMetrics.add(new ProductRelatedReusability());
 		chartMetrics.add(new IndividualizationRatio());
-		chartMetrics.add(new PairwiseRelationshipRatio());
+//		chartMetrics.add(new PairwiseRelationshipRatio());
 		
 		String generalMetricsString = "";
 		for (FamilyChartMetric chartMetric : chartMetrics) {

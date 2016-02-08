@@ -1,7 +1,0 @@
-package fr.inria.diverse.puzzle.validator.command;
-
-public class CompatibilityCheckerConstants {
-	
-	public final static int DataTypesAmount = 33;
-
-}

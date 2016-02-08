@@ -52,6 +52,9 @@ public class RandomTestFromInstancesFiles {
 	public boolean executeTest(InstanceVO instance, StringBuffer buffer) throws Exception {
 		Graph<Vertex, Arc> graph = instance.getDependenciesGraph();
 		PFeatureModel openFM = VmSynthesis.getInstance().synthesizeOpenFeatureModel(graph);
+		System.out.println("openFM");
+		TestServices.printFM(openFM);
+		
 		int originalNumProducts = instance.getOpenPCM().split("\n").length - 1;
 		int numProducts = instance.getClosedPCM().split("\n").length - 1;
 		
@@ -59,11 +62,29 @@ public class RandomTestFromInstancesFiles {
 		PCMQueryServices.getInstance().loadPCM(instance.getClosedPCM());
 		long before = System.currentTimeMillis();
 
+		System.out.println("closedFM");
+		TestServices.printFM(closedFM);
+		
 		synthesis.identifyMandatoryFeatures(closedFM);
+		System.out.println("identifyMandatoryFeatures");
+		TestServices.printFM(closedFM);
+		
 		synthesis.identifyXORs(closedFM);
+		System.out.println("identifyXORs");
+		TestServices.printFM(closedFM);
+		
 		synthesis.identifyORs(closedFM);
+		System.out.println("identifyORs");
+		TestServices.printFM(closedFM);
+		
 		synthesis.addAdditionalImpliesConstraints(closedFM);
+		System.out.println("addAdditionalImpliesConstraints");
+		TestServices.printFM(closedFM);
+		
 		synthesis.addAdditionalExcludesConstraints(closedFM);
+		System.out.println("addAdditionalExcludesConstraints");
+		TestServices.printFM(closedFM);
+		
 //		synthesis.groupImplicationsByLeftSide(closedFM);
 		
 		TestServices.printFM(closedFM);

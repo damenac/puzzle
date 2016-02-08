@@ -1,4 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	flowchartpck.RelationalExpression = flowchart.RelationalExpressionAspect
-	flowchartpck.Loop = flowchart.LoopAspect
-	flowchartpck.StringLit = flowchart.StringLitAspect

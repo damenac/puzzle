@@ -1,4 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	ExpressionPck.ArithmeticExpression = expressions.semantics.ArithmeticExpressionAspect
-	ExpressionPck.Literal = expressions.semantics.LiteralAspect
-	ExpressionPck.IntegerLit = expressions.semantics.IntegerLitAspect

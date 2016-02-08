@@ -1,4 +1,0 @@
-languageBinding {
-	
-	bind( RequiredLogo, ProvidedExpressions  )
-}

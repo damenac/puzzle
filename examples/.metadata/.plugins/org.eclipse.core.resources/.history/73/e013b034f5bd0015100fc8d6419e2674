@@ -1,5 +1,0 @@
-package family
-
-languageBinding {
-	bind( RequiredLogo, ProvidedExpressions  )
-}

@@ -1,5 +1,0 @@
-package fr.inria.diverse.puzzle.validator.command;
-
-public class ValidatorImpl {
-
-}

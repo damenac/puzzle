@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Puzzle" key="selection"/>
+		<item value="(1," key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="(1,"/>
+			<item value="origin"/>
 			<item value="Puzzle"/>
 			<item value="editor"/>
 			<item value="icon"/>
 			<item value="Metrics"/>
 			<item value="aspectsAmount"/>
 			<item value="cou"/>
-			<item value="scop"/>
-			<item value="unaspected"/>
 		</list>
 		<list key="replacehistory">
 			<item value="V"/>
@@ -28,7 +28,7 @@
 		<item value="263" key="DIALOG_WIDTH"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="1157" key="DIALOG_X_ORIGIN"/>
+		<item value="878" key="DIALOG_X_ORIGIN"/>
 		<item value="462" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
