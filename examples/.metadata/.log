@@ -5561,3 +5561,53 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 !ENTRY org.apache.log4j 2 0 2016-02-08 22:15:10.184
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+!SESSION 2016-02-09 14:29:37.918 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2016-02-09 14:29:43.505
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2016-02-09 14:29:51.659
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+
+!ENTRY org.eclipse.core.jobs 4 2 2016-02-09 14:30:53.536
+!MESSAGE An internal error occurred during: "Puzzle: Validate language modules composability...".
+!STACK 0
+java.lang.ClassCastException: fr.inria.diverse.puzzle.adl.language.puzzle.impl.LanguageBindingImpl cannot be cast to fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace
+	at fr.inria.diverse.melange.ui.builder.LanguageModulesValidationBuilder.validateLanguageModulesComposability(LanguageModulesValidationBuilder.java:45)
+	at fr.inria.diverse.melange.ui.menu.ValidateLanguageModulesComposability$1.run(ValidateLanguageModulesComposability.java:66)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2016-02-09 14:43:51.491 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2016-02-09 14:43:56.003
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2016-02-09 14:43:58.008
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2016-02-09 14:46:02.163 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2016-02-09 14:46:06.653
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2016-02-09 14:46:08.657
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+

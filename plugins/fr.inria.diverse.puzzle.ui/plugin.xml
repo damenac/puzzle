@@ -140,12 +140,15 @@
             commandId="fr.inria.diverse.puzzle.Synthesize">
       </handler>
       <handler
-            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.Configure"
             commandId="fr.inria.diverse.puzzle.ConfigureDSL">
       </handler>
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ValidateLanguageModulesComposability"
             commandId="fr.inria.diverse.puzzle.ValidateComposability">
+      </handler>
+      <handler
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ComposeLanguageModules"
+            commandId="fr.inria.diverse.puzzle.ComposeLanguageModules">
       </handler>
    </extension>
 
