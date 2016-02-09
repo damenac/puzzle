@@ -291,7 +291,7 @@
     <sharedElements xsi:type="advanced:Area" xmi:id="_ZfxqBJzmEeWT95nXqoZcYg" elementId="org.eclipse.ui.editorss" selectedElement="_ZfxqBZzmEeWT95nXqoZcYg">
       <children xsi:type="basic:PartStack" xmi:id="_ZfxqBZzmEeWT95nXqoZcYg" elementId="PartStack@b69be74" selectedElement="_SloJsM8xEeWcAfklVq2r8w">
         <children xsi:type="basic:Part" xmi:id="_SloJsM8xEeWcAfklVq2r8w" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="modularization.melange" iconURI="platform:/plugin/fr.inria.diverse.melange.ui/icons/melange.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;fr.inria.diverse.melange.Melange&quot; name=&quot;modularization.melange&quot; partName=&quot;modularization.melange&quot; title=&quot;modularization.melange&quot; tooltip=&quot;fr.inria.diverse.examples.modularization/src/family/modularization.melange&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/fr.inria.diverse.examples.modularization/src/family/modularization.melange&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;74&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;editor id=&quot;fr.inria.diverse.melange.Melange&quot; name=&quot;modularization.melange&quot; partName=&quot;modularization.melange&quot; title=&quot;modularization.melange&quot; tooltip=&quot;fr.inria.diverse.examples.modularization/src/family/modularization.melange&quot;>&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/fr.inria.diverse.examples.modularization/src/family/modularization.melange&quot;/>&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;349&quot; selectionTopPixel=&quot;0&quot;/>&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>fr.inria.diverse.melange.Melange</tags>
           <tags>removeOnHide</tags>
@@ -587,7 +587,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZfxqqpzmEeWT95nXqoZcYg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_KlTyQM8zEeWtfbf0B4DYpQ" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_Zf0utZzmEeWT95nXqoZcYg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_eDMHQM8zEeWVR-9rgmGB6g" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_Zf0utZzmEeWT95nXqoZcYg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZfyP2ZzmEeWT95nXqoZcYg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -611,7 +611,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZfyQB5zmEeWT95nXqoZcYg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_KlYDss8zEeWtfbf0B4DYpQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Zf0uYJzmEeWT95nXqoZcYg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_eDQ_wc8zEeWVR-9rgmGB6g" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Zf0uYJzmEeWT95nXqoZcYg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZfyQEZzmEeWT95nXqoZcYg" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1268,7 +1268,7 @@
     <bindings xmi:id="__0hIcM6eEeWZ9KKkqQ0M9A" keySequence="ALT+SHIFT+P" command="_Zf0uH5zmEeWT95nXqoZcYg"/>
     <bindings xmi:id="__0hvgs6eEeWZ9KKkqQ0M9A" keySequence="ALT+CTRL+P" command="_Zf0sb5zmEeWT95nXqoZcYg"/>
     <bindings xmi:id="__0n2IM6eEeWZ9KKkqQ0M9A" keySequence="ALT+SHIFT+X M" command="_Zf0tVJzmEeWT95nXqoZcYg"/>
-    <bindings xmi:id="_KQHlYc8zEeWtfbf0B4DYpQ" keySequence="COMMAND+CTRL+F" command="_Zf1TnZzmEeWT95nXqoZcYg"/>
+    <bindings xmi:id="_dtp8IM8zEeWVR-9rgmGB6g" keySequence="COMMAND+CTRL+F" command="_Zf1TnZzmEeWT95nXqoZcYg"/>
   </bindingTables>
   <bindingTables xmi:id="_ZfyReJzmEeWT95nXqoZcYg" elementId="org.eclipse.cdt.ui.macroExpansionHoverScope" bindingContext="_Zfy3NZzmEeWT95nXqoZcYg"/>
   <bindingTables xmi:id="_ZfyReZzmEeWT95nXqoZcYg" elementId="org.eclipse.cdt.ui.cEditorScope" bindingContext="_Zfy3HZzmEeWT95nXqoZcYg"/>
@@ -1336,7 +1336,7 @@
     <bindings xmi:id="_ZfyRpZzmEeWT95nXqoZcYg" keySequence="COMMAND+SHIFT+." command="_Zf0uepzmEeWT95nXqoZcYg"/>
   </bindingTables>
   <bindingTables xmi:id="_ZfyRppzmEeWT95nXqoZcYg" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_Zfy3M5zmEeWT95nXqoZcYg">
-    <bindings xmi:id="_KQHlYs8zEeWtfbf0B4DYpQ" keySequence="M1+W" command="_Zf1Tn5zmEeWT95nXqoZcYg"/>
+    <bindings xmi:id="_dtqjMM8zEeWVR-9rgmGB6g" keySequence="M1+W" command="_Zf1Tn5zmEeWT95nXqoZcYg"/>
   </bindingTables>
   <bindingTables xmi:id="_ZfyRqJzmEeWT95nXqoZcYg" bindingContext="_Zfy3PJzmEeWT95nXqoZcYg"/>
   <bindingTables xmi:id="_ZfyRqZzmEeWT95nXqoZcYg" bindingContext="_Zfy3PZzmEeWT95nXqoZcYg"/>

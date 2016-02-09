@@ -4,7 +4,6 @@ INDEX VERSION 1.127+/Users/dmendeza/workspaces/puzzle/examples/.metadata/.plugin
 1580278896.index
 156905802.index
 2536107348.index
-3472313269.index
 659797856.index
 3642207535.index
 94346249.index
@@ -42,10 +41,8 @@ INDEX VERSION 1.127+/Users/dmendeza/workspaces/puzzle/examples/.metadata/.plugin
 1271342938.index
 4089495626.index
 1726597951.index
-3765020915.index
 1139180610.index
 1833648217.index
-3707623757.index
 31031388.index
 145762171.index
 2885545355.index
@@ -55,7 +52,6 @@ INDEX VERSION 1.127+/Users/dmendeza/workspaces/puzzle/examples/.metadata/.plugin
 1819685514.index
 1998210670.index
 1456407662.index
-241682911.index
 914281076.index
 292480654.index
 3375385925.index

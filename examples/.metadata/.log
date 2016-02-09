@@ -5611,3 +5611,63 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 !ENTRY org.apache.log4j 2 0 2016-02-09 14:46:08.657
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+
+!ENTRY org.apache.log4j 4 0 2016-02-09 14:47:30.880
+!MESSAGE fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory  - 
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory.getBundle(PuzzleExecutableExtensionFactory.java:21)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:50)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:262)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.initDelegate(RegistryBuilderParticipant.java:182)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.getDelegate(RegistryBuilderParticipant.java:173)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.getDelegate(RegistryBuilderParticipant.java:168)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.build(RegistryBuilderParticipant.java:161)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant.build(RegistryBuilderParticipant.java:69)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.doBuild(XtextBuilder.java:252)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:280)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.apache.log4j 4 0 2016-02-09 14:47:30.881
+!MESSAGE org.eclipse.xtext.builder.impl.XtextBuilder  - 
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.puzzle.adl.language.ui.PuzzleExecutableExtensionFactory.getBundle(PuzzleExecutableExtensionFactory.java:21)
+	at org.eclipse.xtext.ui.guice.AbstractGuiceAwareExecutableExtensionFactory.create(AbstractGuiceAwareExecutableExtensionFactory.java:59)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:262)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.initDelegate(RegistryBuilderParticipant.java:182)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.getDelegate(RegistryBuilderParticipant.java:173)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.getDelegate(RegistryBuilderParticipant.java:168)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant$DeferredBuilderParticipant.build(RegistryBuilderParticipant.java:161)
+	at org.eclipse.xtext.builder.impl.RegistryBuilderParticipant.build(RegistryBuilderParticipant.java:69)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.doBuild(XtextBuilder.java:252)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.fullBuild(XtextBuilder.java:280)
+	at org.eclipse.xtext.builder.impl.XtextBuilder.build(XtextBuilder.java:117)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
