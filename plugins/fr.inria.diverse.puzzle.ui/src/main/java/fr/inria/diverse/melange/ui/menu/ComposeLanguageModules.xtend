@@ -43,14 +43,14 @@ class ComposeLanguageModules extends AbstractHandler {
 
 					println('coucou... composing')
 
-//					val validation = builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor)
-//
-//					display.syncExec(
-//						  new Runnable() {
-//						    override void run(){
-//						     MessageDialog.openInformation(display.activeShell, "Composition result", validation);
-//						    }
-//						  });
+					val composition = builder.composeLanguageModules(puzzleRes, melangeRes, project, monitor)
+
+					display.syncExec(
+						  new Runnable() {
+						    override void run(){
+						     MessageDialog.openInformation(display.activeShell, "Composition result", composition);
+						    }
+						  });
 				} catch (OperationCanceledException e) {
 					return Status.CANCEL_STATUS
 				} finally {

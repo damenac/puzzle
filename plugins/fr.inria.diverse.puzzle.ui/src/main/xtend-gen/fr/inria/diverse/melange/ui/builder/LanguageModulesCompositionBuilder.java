@@ -1,31 +1,21 @@
 package fr.inria.diverse.melange.ui.builder;
 
-import com.google.common.base.Objects;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.melange.metamodel.melange.Element;
+import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelType;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.melange.ui.builder.AbstractBuilder;
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
 import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding;
-import fr.inria.diverse.puzzle.validator.command.ValidatorImpl;
-import fr.inria.diverse.puzzle.validator.vos.PuzzleDiagnosis;
-import java.util.Map;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.compare.Comparison;
-import org.eclipse.emf.compare.EMFCompare;
-import org.eclipse.emf.compare.scope.DefaultComparisonScope;
-import org.eclipse.emf.compare.scope.IComparisonScope;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
-import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
@@ -36,7 +26,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
  */
 @SuppressWarnings("all")
 public class LanguageModulesCompositionBuilder extends AbstractBuilder {
-  public String validateLanguageModulesComposability(final Resource puzzleResource, final Resource melangeResource, final IProject project, final IProgressMonitor monitor) {
+  public String composeLanguageModules(final Resource puzzleResource, final Resource melangeResource, final IProject project, final IProgressMonitor monitor) {
     EList<EObject> _contents = puzzleResource.getContents();
     EObject _head = IterableExtensions.<EObject>head(_contents);
     final LanguageBinding bindingSpace = ((LanguageBinding) _head);
@@ -85,34 +75,70 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         Element _findFirst_1 = IterableExtensions.<Element>findFirst(_elements_1, _function_1);
         final ModelType providedModelType = ((ModelType) _findFirst_1);
         String _ecoreUri = requiredModelType.getEcoreUri();
-        final EPackage requiredEPackage = ModelUtils.loadEcoreResource(_ecoreUri);
+        final EPackage requiredModelTypeEPackage = ModelUtils.loadEcoreResource(_ecoreUri);
         String _ecoreUri_1 = providedModelType.getEcoreUri();
-        final EPackage providedEPackage = ModelUtils.loadEcoreResource(_ecoreUri_1);
-        Map<String, Object> _extensionToFactoryMap = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap();
-        XMIResourceFactoryImpl _xMIResourceFactoryImpl = new XMIResourceFactoryImpl();
-        _extensionToFactoryMap.put("xmi", _xMIResourceFactoryImpl);
-        final ResourceSet resourceSet1 = new ResourceSetImpl();
-        final ResourceSet resourceSet2 = new ResourceSetImpl();
-        String _ecoreUri_2 = requiredModelType.getEcoreUri();
-        URI _createURI = URI.createURI(_ecoreUri_2);
-        resourceSet1.getResource(_createURI, true);
-        String _ecoreUri_3 = providedModelType.getEcoreUri();
-        URI _createURI_1 = URI.createURI(_ecoreUri_3);
-        resourceSet2.getResource(_createURI_1, true);
-        final IComparisonScope scope = new DefaultComparisonScope(resourceSet1, resourceSet2, null);
-        EMFCompare.Builder _builder = EMFCompare.builder();
-        EMFCompare _build = _builder.build();
-        final Comparison comparison = _build.compare(scope);
-        ValidatorImpl _instance = ValidatorImpl.getInstance();
-        final PuzzleDiagnosis diagnosis = _instance.checkCompatibility(requiredEPackage, providedEPackage, comparison);
-        boolean _equals = Objects.equal(diagnosis, null);
-        if (_equals) {
-          String _answer = answer;
-          answer = (_answer + (((("    " + requiredModelTypeName) + " - ") + providedModelTypeName) + ": COMPATIBLE \n"));
-        } else {
-          String _answer_1 = answer;
-          answer = (_answer_1 + (((("    " + requiredModelTypeName) + " - ") + providedModelTypeName) + ": NOT COMPATIBLE \n"));
-        }
+        final EPackage providedModelTypeEPackage = ModelUtils.loadEcoreResource(_ecoreUri_1);
+        EList<Element> _elements_2 = modelTypingSpace.getElements();
+        final Function1<Element, Boolean> _function_2 = new Function1<Element, Boolean>() {
+          @Override
+          public Boolean apply(final Element element) {
+            boolean _and = false;
+            if (!(element instanceof Language)) {
+              _and = false;
+            } else {
+              EList<ModelType> _requires = ((Language) element).getRequires();
+              final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
+                @Override
+                public Boolean apply(final ModelType req) {
+                  String _name = req.getName();
+                  return Boolean.valueOf(_name.equals(requiredModelTypeName));
+                }
+              };
+              boolean _exists = IterableExtensions.<ModelType>exists(_requires, _function);
+              _and = _exists;
+            }
+            return Boolean.valueOf(_and);
+          }
+        };
+        Element _findFirst_2 = IterableExtensions.<Element>findFirst(_elements_2, _function_2);
+        Language requiringLanguage = ((Language) _findFirst_2);
+        EList<Element> _elements_3 = modelTypingSpace.getElements();
+        final Function1<Element, Boolean> _function_3 = new Function1<Element, Boolean>() {
+          @Override
+          public Boolean apply(final Element element) {
+            boolean _and = false;
+            if (!(element instanceof Language)) {
+              _and = false;
+            } else {
+              EList<ModelType> _implements = ((Language) element).getImplements();
+              final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
+                @Override
+                public Boolean apply(final ModelType impl) {
+                  String _name = impl.getName();
+                  return Boolean.valueOf(_name.equals(providedModelTypeName));
+                }
+              };
+              boolean _exists = IterableExtensions.<ModelType>exists(_implements, _function);
+              _and = _exists;
+            }
+            return Boolean.valueOf(_and);
+          }
+        };
+        Element _findFirst_3 = IterableExtensions.<Element>findFirst(_elements_3, _function_3);
+        final Language providingLanguage = ((Language) _findFirst_3);
+        String _name = requiredModelTypeEPackage.getName();
+        String _plus = ("Data ... requiredModelTypeEPackage: " + _name);
+        String _plus_1 = (_plus + " - ");
+        String _plus_2 = (_plus_1 + "providedModelTypeEPackage: ");
+        String _plus_3 = (_plus_2 + providedModelTypeEPackage);
+        String _plus_4 = (_plus_3 + " - ");
+        String _plus_5 = (_plus_4 + "requiringLanguage: ");
+        String _plus_6 = (_plus_5 + requiringLanguage);
+        String _plus_7 = (_plus_6 + " - ");
+        String _plus_8 = (_plus_7 + "providingLanguage: ");
+        String _plus_9 = (_plus_8 + providingLanguage);
+        String _plus_10 = (_plus_9 + " - ");
+        InputOutput.<String>println(_plus_10);
       }
     }
     return answer;

@@ -17,9 +17,11 @@ import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
@@ -63,6 +65,17 @@ public class ComposeLanguageModules extends AbstractHandler {
           Resource _resource_1 = rs.getResource(_createPlatformResourceURI_1, true);
           final DerivedStateAwareResource puzzleRes = ((DerivedStateAwareResource) _resource_1);
           InputOutput.<String>println("coucou... composing");
+          final String composition = ComposeLanguageModules.this.builder.composeLanguageModules(puzzleRes, melangeRes, project, monitor);
+          Display _display = ComposeLanguageModules.getDisplay();
+          _display.syncExec(
+            new Runnable() {
+              @Override
+              public void run() {
+                Display _display = ComposeLanguageModules.getDisplay();
+                Shell _activeShell = _display.getActiveShell();
+                MessageDialog.openInformation(_activeShell, "Composition result", composition);
+              }
+            });
         } catch (final Throwable _t) {
           if (_t instanceof OperationCanceledException) {
             final OperationCanceledException e = (OperationCanceledException)_t;

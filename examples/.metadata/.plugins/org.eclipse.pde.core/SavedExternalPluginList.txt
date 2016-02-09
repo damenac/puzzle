@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1455025570767
+# List of external plug-in models previously loaded. Timestamp: 1455043162306
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.inject_3.0.0.v201312141243.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.ibm.icu_52.1.1.v201501240615.jar
@@ -35,6 +35,7 @@ file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.configura
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.breaker/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.instantancesGenerator/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.merge/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.multivar.metamodel/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.mutivar.language/

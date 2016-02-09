@@ -19,6 +19,7 @@ import org.eclipse.emf.compare.Comparison
 import org.eclipse.emf.compare.EMFCompare
 import fr.inria.diverse.puzzle.validator.vos.PuzzleDiagnosis
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
+import fr.inria.diverse.melange.metamodel.melange.Language
 
 /**
  * Builder for the action: Analyze Family.
@@ -28,7 +29,7 @@ import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
  */
 class LanguageModulesCompositionBuilder extends AbstractBuilder {
 	
-	def String validateLanguageModulesComposability(Resource puzzleResource, Resource melangeResource, IProject project, IProgressMonitor monitor) {
+	def String composeLanguageModules(Resource puzzleResource, Resource melangeResource, IProject project, IProgressMonitor monitor) {
 		val bindingSpace = puzzleResource.contents.head as LanguageBinding
 		val modelTypingSpace = melangeResource.contents.head as ModelTypingSpace
 		
@@ -47,27 +48,21 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			val ModelType providedModelType = modelTypingSpace.elements.findFirst[ element |
 				element instanceof ModelType && (element as ModelType).name.equals(providedModelTypeName)] as ModelType
 				
-			val EPackage requiredEPackage = ModelUtils.loadEcoreResource(requiredModelType.ecoreUri)
-			val EPackage providedEPackage = ModelUtils.loadEcoreResource(providedModelType.ecoreUri)
+			val EPackage requiredModelTypeEPackage = ModelUtils.loadEcoreResource(requiredModelType.ecoreUri)
+			val EPackage providedModelTypeEPackage = ModelUtils.loadEcoreResource(providedModelType.ecoreUri)
 			
-			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-
-			val ResourceSet resourceSet1 = new ResourceSetImpl();
-			val ResourceSet resourceSet2 = new ResourceSetImpl();
-		
-			resourceSet1.getResource(URI.createURI(requiredModelType.ecoreUri), true);
-			resourceSet2.getResource(URI.createURI(providedModelType.ecoreUri), true);
 			
-			val IComparisonScope scope = new DefaultComparisonScope(resourceSet1, resourceSet2, null);
-			val Comparison comparison = EMFCompare.builder().build().compare(scope);
-			val PuzzleDiagnosis diagnosis = ValidatorImpl.instance.checkCompatibility(requiredEPackage, providedEPackage, comparison)
-		
-			if(diagnosis == null){
-				answer += '    ' + requiredModelTypeName + ' - ' + providedModelTypeName + ': COMPATIBLE \n'
-			}
-			else{
-				answer += '    ' + requiredModelTypeName + ' - ' + providedModelTypeName + ': NOT COMPATIBLE \n'
-			}
+			var Language requiringLanguage = modelTypingSpace.elements.findFirst[ element |
+				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(requiredModelTypeName)]] as Language
+			
+			val Language providingLanguage = modelTypingSpace.elements.findFirst[ element |
+				element instanceof Language && (element as Language).implements.exists[ impl | impl.name.equals(providedModelTypeName)]] as Language
+			
+			println('Data ... requiredModelTypeEPackage: ' + requiredModelTypeEPackage.name + ' - '
+				+ 'providedModelTypeEPackage: ' + providedModelTypeEPackage + ' - '
+				+ 'requiringLanguage: ' + requiringLanguage + ' - '
+				+ 'providingLanguage: ' + providingLanguage + ' - '
+			)
 		}
 		return answer
 	}
