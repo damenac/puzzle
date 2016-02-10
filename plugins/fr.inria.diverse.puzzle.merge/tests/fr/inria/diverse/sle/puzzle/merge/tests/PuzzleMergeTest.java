@@ -31,12 +31,12 @@ public class PuzzleMergeTest {
 				.loadEcore2EcoreFile("data-test/fsmcore-java.ecore2ecore",
 						requiredInterface, providedInterface);
 
-		EPackage newRequiredInterface = PuzzleMerge.getInstance().recalculateRequiredInterface(requiredInterface, 
-				binding, "CompleteFSM", null);
-		
-		File newRequiredInterfaceFile = new File("data-test/fsmcore-java-required.ecore");
-		ModelUtils.saveEcoreFile(
-				newRequiredInterfaceFile.getAbsolutePath(), newRequiredInterface);
+//		EPackage newRequiredInterface = PuzzleMerge.getInstance().recalculateRequiredInterface(requiredInterface, 
+//				binding, "CompleteFSM", null);
+//		
+//		File newRequiredInterfaceFile = new File("data-test/fsmcore-java-required.ecore");
+//		ModelUtils.saveEcoreFile(
+//				newRequiredInterfaceFile.getAbsolutePath(), newRequiredInterface);
 		
 //		EPackage mergedLanguage = PuzzleMerge.getInstance()
 //				.mergeAbstractSyntax(baseLanguage, providedInterface,
