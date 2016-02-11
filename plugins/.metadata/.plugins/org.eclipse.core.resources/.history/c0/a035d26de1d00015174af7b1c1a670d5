@@ -1,0 +1,10 @@
+package fr.inria.diverse.melange.ui.menu
+
+class CompositionTreeLeaf extends CompositionTreeNode {
+	
+	public Expression language
+	
+	new(Expression language){
+		this.language = language
+	}
+}

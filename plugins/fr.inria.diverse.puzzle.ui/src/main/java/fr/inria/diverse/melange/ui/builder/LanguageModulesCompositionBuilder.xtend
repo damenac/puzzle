@@ -20,6 +20,12 @@ import fr.inria.diverse.melange.eclipse.EclipseProjectHelper
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.pde.internal.core.natures.PDE
 import org.eclipse.core.runtime.NullProgressMonitor
+import fr.inria.diverse.melange.ui.vos.AbstractCompositionTreeNode
+import java.util.List
+import java.util.ArrayList
+import fr.inria.diverse.melange.ui.vos.CompositionStatementVO
+import fr.inria.diverse.melange.ui.vos.CompositionTreeNode
+import fr.inria.diverse.melange.ui.vos.CompositionTreeLeaf
 
 /**
  * Builder for the action: Analyze Family.
@@ -96,6 +102,7 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			val EPackage mergedPackage = PuzzleMerge.instance.mergeAbstractSyntax(providedLanguageEPackage, providedModelTypeEPackage, 
 				requiredLanguageEPackage, requiredModelTypeEPackage, comparison, recalculatedRequiredInterface, "")
 			
+			
 			mergedLanguage.metamodel = mergedPackage
 			mergedLanguage.requiredInterface = recalculatedRequiredInterface
 		}
@@ -138,5 +145,64 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			language.metamodelSerializationPath = metamodelMergedLocation
 			ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
 		}
+	}
+	
+	def AbstractCompositionTreeNode calculateCompositionTree(List<Binding> statements, ModelTypingSpace modelTypingSpace){
+		var ArrayList<CompositionStatementVO> statementsLeft = new ArrayList<CompositionStatementVO>()
+		var AbstractCompositionTreeNode compositionTree = null
+		
+		for(Binding _statement : statements){
+			statementsLeft.add(new CompositionStatementVO(_statement))
+		}
+		
+		while( statementsLeft.unconsideredStatementExsit ){
+			var unconsidered = statementsLeft.findFirst[ _statement | _statement.considered == false ]
+			val _realStatement = unconsidered.statement
+			
+			val Language requiringLanguage = modelTypingSpace.elements.findFirst[ element |
+				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(_realStatement.left)]] as Language
+			
+			val Language providingLanguage = modelTypingSpace.elements.findFirst[ element |
+				element instanceof Language && requiringLanguage != element && (element as Language).implements.exists[ impl | 
+					impl.name.equals(_realStatement.right)
+				]] as Language
+			
+			var CompositionTreeNode node = new CompositionTreeNode()
+			node._requiring = new CompositionTreeLeaf(requiringLanguage)
+			node._providing = new CompositionTreeLeaf(providingLanguage)
+			
+			if(compositionTree == null){
+				compositionTree = node
+			}else{
+				addNode(compositionTree, node)
+			}
+			unconsidered.considered = true
+		}
+		
+		return null
+	}
+	
+	def boolean unconsideredStatementExsit(ArrayList<CompositionStatementVO> statements){
+		for(CompositionStatementVO _statement : statements){
+			if(_statement.considered == false)
+				return true
+		}
+		return false
+	}
+	
+	def void addNode(AbstractCompositionTreeNode root, CompositionTreeNode node){
+		
+		if(root instanceof CompositionTreeNode){
+			val rootNode = root as CompositionTreeNode
+			
+			if(!(rootNode._requiring instanceof CompositionTreeLeaf)){
+				addNode(rootNode._requiring as CompositionTreeNode, node)
+			}
+			else if(!(rootNode._providing instanceof CompositionTreeLeaf)){
+				addNode(rootNode._providing as CompositionTreeNode, node)
+			}
+		}
+		
+		
 	}
 }

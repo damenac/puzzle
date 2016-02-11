@@ -1,0 +1,5 @@
+package fr.inria.diverse.melange.ui.menu.vos
+
+abstract class AbstractCompositionTreeNode {
+	
+}

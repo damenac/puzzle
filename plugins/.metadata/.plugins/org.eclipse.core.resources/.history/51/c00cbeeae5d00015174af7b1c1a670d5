@@ -1,0 +1,8 @@
+package fr.inria.diverse.melange.ui.vos
+
+class AggregationTreeNode extends AbstractCompositionTreeNode {
+	
+	public AbstractCompositionTreeNode _requiring
+	public AbstractCompositionTreeNode _providing
+	
+}

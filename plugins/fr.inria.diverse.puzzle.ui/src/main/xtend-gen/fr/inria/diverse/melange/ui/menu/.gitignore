@@ -24,3 +24,8 @@
 /.ValidateLanguagesComposability.java._trace
 /.ValidateLanguageModulesComposability.java._trace
 /.ComposeLanguageModules.java._trace
+/.AggregationTreeNode.java._trace
+/.CompositionTreeNode.java._trace
+/.CompositionTreeLeaf.java._trace
+/.CompositionStatementVO.java._trace
+/.AbstractCompositionTreeNode.java._trace

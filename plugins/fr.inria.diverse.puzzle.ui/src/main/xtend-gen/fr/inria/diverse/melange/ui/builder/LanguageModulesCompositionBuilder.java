@@ -10,12 +10,18 @@ import fr.inria.diverse.melange.metamodel.melange.ModelType;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.melange.ui.builder.AbstractBuilder;
 import fr.inria.diverse.melange.ui.builder.LanguageVO;
+import fr.inria.diverse.melange.ui.vos.AbstractCompositionTreeNode;
+import fr.inria.diverse.melange.ui.vos.CompositionStatementVO;
+import fr.inria.diverse.melange.ui.vos.CompositionTreeLeaf;
+import fr.inria.diverse.melange.ui.vos.CompositionTreeNode;
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
 import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding;
 import fr.inria.diverse.puzzle.match.impl.PuzzleMatch;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
 import fr.inria.diverse.sle.puzzle.merge.impl.PuzzleMerge;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import javax.inject.Inject;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.IPath;
@@ -242,6 +248,119 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         "/composition-gen/") + language.name) + ".ecore");
       language.metamodelSerializationPath = metamodelMergedLocation;
       ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
+    }
+  }
+  
+  public AbstractCompositionTreeNode calculateCompositionTree(final List<Binding> statements, final ModelTypingSpace modelTypingSpace) {
+    ArrayList<CompositionStatementVO> statementsLeft = new ArrayList<CompositionStatementVO>();
+    AbstractCompositionTreeNode compositionTree = null;
+    for (final Binding _statement : statements) {
+      CompositionStatementVO _compositionStatementVO = new CompositionStatementVO(_statement);
+      statementsLeft.add(_compositionStatementVO);
+    }
+    while (this.unconsideredStatementExsit(statementsLeft)) {
+      {
+        final Function1<CompositionStatementVO, Boolean> _function = new Function1<CompositionStatementVO, Boolean>() {
+          @Override
+          public Boolean apply(final CompositionStatementVO _statement) {
+            return Boolean.valueOf((_statement.considered == false));
+          }
+        };
+        CompositionStatementVO unconsidered = IterableExtensions.<CompositionStatementVO>findFirst(statementsLeft, _function);
+        final Binding _realStatement = unconsidered.statement;
+        EList<Element> _elements = modelTypingSpace.getElements();
+        final Function1<Element, Boolean> _function_1 = new Function1<Element, Boolean>() {
+          @Override
+          public Boolean apply(final Element element) {
+            boolean _and = false;
+            if (!(element instanceof Language)) {
+              _and = false;
+            } else {
+              EList<ModelType> _requires = ((Language) element).getRequires();
+              final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
+                @Override
+                public Boolean apply(final ModelType req) {
+                  String _name = req.getName();
+                  String _left = _realStatement.getLeft();
+                  return Boolean.valueOf(_name.equals(_left));
+                }
+              };
+              boolean _exists = IterableExtensions.<ModelType>exists(_requires, _function);
+              _and = _exists;
+            }
+            return Boolean.valueOf(_and);
+          }
+        };
+        Element _findFirst = IterableExtensions.<Element>findFirst(_elements, _function_1);
+        final Language requiringLanguage = ((Language) _findFirst);
+        EList<Element> _elements_1 = modelTypingSpace.getElements();
+        final Function1<Element, Boolean> _function_2 = new Function1<Element, Boolean>() {
+          @Override
+          public Boolean apply(final Element element) {
+            boolean _and = false;
+            boolean _and_1 = false;
+            if (!(element instanceof Language)) {
+              _and_1 = false;
+            } else {
+              boolean _notEquals = (!Objects.equal(requiringLanguage, element));
+              _and_1 = _notEquals;
+            }
+            if (!_and_1) {
+              _and = false;
+            } else {
+              EList<ModelType> _implements = ((Language) element).getImplements();
+              final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
+                @Override
+                public Boolean apply(final ModelType impl) {
+                  String _name = impl.getName();
+                  String _right = _realStatement.getRight();
+                  return Boolean.valueOf(_name.equals(_right));
+                }
+              };
+              boolean _exists = IterableExtensions.<ModelType>exists(_implements, _function);
+              _and = _exists;
+            }
+            return Boolean.valueOf(_and);
+          }
+        };
+        Element _findFirst_1 = IterableExtensions.<Element>findFirst(_elements_1, _function_2);
+        final Language providingLanguage = ((Language) _findFirst_1);
+        CompositionTreeNode node = new CompositionTreeNode();
+        CompositionTreeLeaf _compositionTreeLeaf = new CompositionTreeLeaf(requiringLanguage);
+        node._requiring = _compositionTreeLeaf;
+        CompositionTreeLeaf _compositionTreeLeaf_1 = new CompositionTreeLeaf(providingLanguage);
+        node._providing = _compositionTreeLeaf_1;
+        boolean _equals = Objects.equal(compositionTree, null);
+        if (_equals) {
+          compositionTree = node;
+        } else {
+          this.addNode(compositionTree, node);
+        }
+        unconsidered.considered = true;
+      }
+    }
+    return null;
+  }
+  
+  public boolean unconsideredStatementExsit(final ArrayList<CompositionStatementVO> statements) {
+    for (final CompositionStatementVO _statement : statements) {
+      if ((_statement.considered == false)) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  public void addNode(final AbstractCompositionTreeNode root, final CompositionTreeNode node) {
+    if ((root instanceof CompositionTreeNode)) {
+      final CompositionTreeNode rootNode = ((CompositionTreeNode) root);
+      if ((!(rootNode._requiring instanceof CompositionTreeLeaf))) {
+        this.addNode(((CompositionTreeNode) rootNode._requiring), node);
+      } else {
+        if ((!(rootNode._providing instanceof CompositionTreeLeaf))) {
+          this.addNode(((CompositionTreeNode) rootNode._providing), node);
+        }
+      }
     }
   }
 }
