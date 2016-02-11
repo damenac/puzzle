@@ -2,24 +2,34 @@ package fr.inria.diverse.melange.ui.builder;
 
 import com.google.common.base.Objects;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
+import fr.inria.diverse.melange.eclipse.EclipseProjectHelper;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.Metamodel;
 import fr.inria.diverse.melange.metamodel.melange.ModelType;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.melange.ui.builder.AbstractBuilder;
+import fr.inria.diverse.melange.ui.builder.LanguageVO;
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
 import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding;
 import fr.inria.diverse.puzzle.match.impl.PuzzleMatch;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
 import fr.inria.diverse.sle.puzzle.merge.impl.PuzzleMerge;
+import java.util.Collections;
+import javax.inject.Inject;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.jdt.core.JavaCore;
+import org.eclipse.pde.internal.core.natures.PDE;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -32,6 +42,11 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
  */
 @SuppressWarnings("all")
 public class LanguageModulesCompositionBuilder extends AbstractBuilder {
+  @Inject
+  private EclipseProjectHelper eclipseHelper;
+  
+  private IProject targetProject;
+  
   public String composeLanguageModules(final Resource puzzleResource, final Resource melangeResource, final IProject project, final IProgressMonitor monitor) {
     EList<EObject> _contents = puzzleResource.getContents();
     EObject _head = IterableExtensions.<EObject>head(_contents);
@@ -40,7 +55,21 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
     EObject _head_1 = IterableExtensions.<EObject>head(_contents_1);
     final ModelTypingSpace modelTypingSpace = ((ModelTypingSpace) _head_1);
     EcoreUtil.resolveAll(modelTypingSpace);
+    String _name = project.getName();
+    String _plus = (_name + ".");
+    String _plus_1 = (_plus + "composedLanguage");
+    NullProgressMonitor _nullProgressMonitor = new NullProgressMonitor();
+    IProject _createEclipseProject = this.eclipseHelper.createEclipseProject(_plus_1, 
+      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.NATURE_ID, PDE.PLUGIN_NATURE)), 
+      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.BUILDER_ID, PDE.MANIFEST_BUILDER_ID, PDE.SCHEMA_BUILDER_ID)), 
+      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("src-gen", "xtend-gen")), 
+      Collections.<IProject>unmodifiableList(CollectionLiterals.<IProject>newArrayList()), 
+      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("fr.inria.diverse.puzzle.annotations", "fr.inria.diverse.k3.al.annotationprocessor.plugin")), 
+      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), 
+      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), _nullProgressMonitor);
+    this.targetProject = _createEclipseProject;
     String answer = "Puzzle diagnostic: \n\n";
+    LanguageVO mergedLanguage = new LanguageVO();
     for (int i = 0; (i < bindingSpace.getBinding().size()); i++) {
       {
         EList<Binding> _binding = bindingSpace.getBinding();
@@ -146,30 +175,73 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         Metamodel _syntax_1 = providingLanguage.getSyntax();
         String _ecoreUri_3 = _syntax_1.getEcoreUri();
         final EPackage providedLanguageEPackage = ModelUtils.loadEcoreResource(_ecoreUri_3);
-        String _name = requiredModelTypeEPackage.getName();
-        String _plus = ("Data ... requiredModelTypeEPackage: " + _name);
-        String _plus_1 = (_plus + " - ");
-        String _plus_2 = (_plus_1 + "providedModelTypeEPackage: ");
-        String _name_1 = providedModelTypeEPackage.getName();
-        String _plus_3 = (_plus_2 + _name_1);
-        String _plus_4 = (_plus_3 + " - ");
-        String _plus_5 = (_plus_4 + "requiringLanguage: ");
-        String _name_2 = requiringLanguage.getName();
-        String _plus_6 = (_plus_5 + _name_2);
-        String _plus_7 = (_plus_6 + " - ");
-        String _plus_8 = (_plus_7 + "providingLanguage: ");
-        String _name_3 = providingLanguage.getName();
-        String _plus_9 = (_plus_8 + _name_3);
-        String _plus_10 = (_plus_9 + " - ");
-        InputOutput.<String>println(_plus_10);
+        String _name_1 = requiredModelTypeEPackage.getName();
+        String _plus_2 = ("Data ... requiredModelTypeEPackage: " + _name_1);
+        String _plus_3 = (_plus_2 + " - ");
+        String _plus_4 = (_plus_3 + "providedModelTypeEPackage: ");
+        String _name_2 = providedModelTypeEPackage.getName();
+        String _plus_5 = (_plus_4 + _name_2);
+        String _plus_6 = (_plus_5 + " - ");
+        String _plus_7 = (_plus_6 + "requiringLanguage: ");
+        String _name_3 = requiringLanguage.getName();
+        String _plus_8 = (_plus_7 + _name_3);
+        String _plus_9 = (_plus_8 + " - ");
+        String _plus_10 = (_plus_9 + "providingLanguage: ");
+        String _name_4 = providingLanguage.getName();
+        String _plus_11 = (_plus_10 + _name_4);
+        String _plus_12 = (_plus_11 + " - ");
+        InputOutput.<String>println(_plus_12);
         PuzzleMatch _instance = PuzzleMatch.getInstance();
         final MatchingDiagnostic comparison = _instance.match(requiredLanguageEPackage, providedLanguageEPackage);
         PuzzleMerge _instance_1 = PuzzleMerge.getInstance();
         EPackage recalculatedRequiredInterface = _instance_1.recalculateRequiredInterface(providedLanguageEPackage, comparison, "merged", requiredLanguageEPackage);
         PuzzleMerge _instance_2 = PuzzleMerge.getInstance();
-        _instance_2.mergeAbstractSyntax(providedLanguageEPackage, providedModelTypeEPackage, requiredLanguageEPackage, requiredModelTypeEPackage, comparison, recalculatedRequiredInterface, "");
+        final EPackage mergedPackage = _instance_2.mergeAbstractSyntax(providedLanguageEPackage, providedModelTypeEPackage, requiredLanguageEPackage, requiredModelTypeEPackage, comparison, recalculatedRequiredInterface, "");
+        mergedLanguage.metamodel = mergedPackage;
+        mergedLanguage.requiredInterface = recalculatedRequiredInterface;
       }
     }
     return answer;
+  }
+  
+  /**
+   * Serializes the .ecore files corresponding to the language in the parameter
+   * A language is composed of three different .ecore files: the metamodel, the provided interface and the required interface.
+   * 
+   * @param language
+   * 		The value object containing the information of the language whose .ecore files will be serialized.
+   */
+  public void serializeEcoreFiles(final LanguageVO language) {
+    IProject _project = this.targetProject.getProject();
+    IPath _location = _project.getLocation();
+    String mergedProjectName = _location.toString();
+    boolean _notEquals = (!Objects.equal(language.providedInterface, null));
+    if (_notEquals) {
+      String providedInterfaceMergedLocation = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + "-Provided.ecore");
+      ModelUtils.saveEcoreFile(providedInterfaceMergedLocation, language.providedInterface);
+    }
+    boolean _notEquals_1 = (!Objects.equal(language.providedInterface, null));
+    if (_notEquals_1) {
+      String providedInterfaceMergedLocation_1 = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + "MT.ecore");
+      ModelUtils.saveEcoreFile(providedInterfaceMergedLocation_1, language.providedInterface);
+    }
+    boolean _notEquals_2 = (!Objects.equal(language.requiredInterface, null));
+    if (_notEquals_2) {
+      String requiredInterfaceMergedLocation = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + "-Required.ecore");
+      EList<EClassifier> _eClassifiers = language.requiredInterface.getEClassifiers();
+      String _plus = ("serializeEcoreFiles.recalculatedRequiredInterface: " + _eClassifiers);
+      InputOutput.<String>println(_plus);
+      ModelUtils.saveEcoreFile(requiredInterfaceMergedLocation, language.requiredInterface);
+    }
+    boolean _notEquals_3 = (!Objects.equal(language.metamodel, null));
+    if (_notEquals_3) {
+      String metamodelMergedLocation = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + ".ecore");
+      language.metamodelSerializationPath = metamodelMergedLocation;
+      ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
+    }
   }
 }
