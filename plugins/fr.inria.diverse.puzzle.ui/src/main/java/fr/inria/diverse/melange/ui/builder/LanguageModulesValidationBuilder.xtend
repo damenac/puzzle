@@ -9,16 +9,11 @@ import fr.inria.diverse.melange.metamodel.melange.ModelType
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils
 import org.eclipse.emf.ecore.EPackage
 import fr.inria.diverse.puzzle.validator.command.ValidatorImpl
-import org.eclipse.emf.compare.scope.IComparisonScope
-import org.eclipse.emf.compare.scope.DefaultComparisonScope
-import org.eclipse.emf.ecore.resource.ResourceSet
-import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
-import org.eclipse.emf.common.util.URI
-import org.eclipse.emf.compare.Comparison
-import org.eclipse.emf.compare.EMFCompare
 import fr.inria.diverse.puzzle.validator.vos.PuzzleDiagnosis
 import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic
+import fr.inria.diverse.puzzle.match.impl.PuzzleMatch
 
 /**
  * Builder for the action: Analyze Family.
@@ -52,14 +47,7 @@ class LanguageModulesValidationBuilder extends AbstractBuilder {
 			
 			Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
 
-			val ResourceSet resourceSet1 = new ResourceSetImpl();
-			val ResourceSet resourceSet2 = new ResourceSetImpl();
-		
-			resourceSet1.getResource(URI.createURI(requiredModelType.ecoreUri), true);
-			resourceSet2.getResource(URI.createURI(providedModelType.ecoreUri), true);
-			
-			val IComparisonScope scope = new DefaultComparisonScope(resourceSet1, resourceSet2, null);
-			val Comparison comparison = EMFCompare.builder().build().compare(scope);
+			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiredEPackage, providedEPackage)
 			val PuzzleDiagnosis diagnosis = ValidatorImpl.instance.checkCompatibility(requiredEPackage, providedEPackage, comparison)
 		
 			if(diagnosis == null){

@@ -1,0 +1,60 @@
+package fr.inria.diverse.puzzle.match.impl;
+
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
+
+/**
+ * Implementation of matching for metamodels-based DSLs
+ * DiverSE Team - INRIA/IRISA Rennes.
+ * 
+ * @author David Mendez-Acuna
+ */
+public class PuzzleMatch {
+
+	// -----------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------
+	
+	private static PuzzleMatch instance;
+	
+	// -----------------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------------
+	
+	private PuzzleMatch(){}
+	
+	public static PuzzleMatch getInstance(){
+		if(instance == null)
+			instance = new PuzzleMatch();
+		return instance;
+	}
+	
+	// -----------------------------------------------------
+	// Methods
+	// -----------------------------------------------------
+	
+	public MatchingDiagnostic match(EObject left, EObject right){
+		MatchingDiagnostic diagnostic = new MatchingDiagnostic();
+		
+		if(left instanceof EPackage && right instanceof EPackage){
+			matchEPackage((EPackage)left, (EPackage)right);
+		}
+		
+		return diagnostic;
+	}
+	
+	private void matchEPackage(EPackage left, EPackage right){
+		for (int i = 0; i < left.getEClassifiers().size(); i++) {
+			for (int j = 0; j < right.getEClassifiers().size(); j++) {
+				
+			}
+		}
+	}
+	
+	private boolean matchEClassifier(EClassifier left, EClassifier right){
+		return left.getName().equals(right.getName());
+	}
+}

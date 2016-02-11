@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Hashtable;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.compare.Comparison;
-import org.eclipse.emf.compare.Match;
 import org.eclipse.emf.ecore.EAnnotation;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -28,6 +25,8 @@ import org.eclipse.emf.mapping.MappingRoot;
 import org.eclipse.emf.mapping.ecore2ecore.Ecore2EcoreFactory;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem;
 import fr.inria.diverse.sle.puzzle.merge.vos.ClassPair;
 
 import java.util.List;
@@ -66,7 +65,7 @@ public class PuzzleMerge {
 
 	public EPackage mergeAbstractSyntax(EPackage baseLanguage,
 			EPackage providedInterface, EPackage extensionLanguage,
-			EPackage requiredInterface, Comparison binding, 
+			EPackage requiredInterface, MatchingDiagnostic binding, 
 			EPackage recalculatedRequiredInterface, String languageName) {
 		
 		Hashtable<String, EClassifier> oldEClassifiers = new Hashtable<String, EClassifier>();
@@ -202,7 +201,7 @@ public class PuzzleMerge {
 	 * @param binding
 	 * @return
 	 */
-	public EPackage recalculateRequiredInterface(EPackage _extensionLanguageRequiredInterface, Comparison binding, 
+	public EPackage recalculateRequiredInterface(EPackage _extensionLanguageRequiredInterface, MatchingDiagnostic binding, 
 			String languageName, EPackage _baseLanguageRequiredInterface){
 		
 		Hashtable<String, EClassifier> _oldClassifiers = new Hashtable<String, EClassifier>();
@@ -223,9 +222,7 @@ public class PuzzleMerge {
 		
 		if(binding != null){
 			// 2. Remove the elements (attributes, references, and operations) of the required interface that are mapped in the binding
-			EList<Match> matches = binding.getMatches();
-			for (Match _mapping : matches) {
-				
+			for (MatchingDiagnosticItem _mapping : binding.getItems()) {
 				EObject _input = _mapping.getLeft();
 				EObject _output = _mapping.getRight();
 
@@ -256,8 +253,7 @@ public class PuzzleMerge {
 			}
 			
 			// 3. Remove the classes of the required interface that are mapped in the binding and whose requirements have been fully satisfied.
-			matches = binding.getMatches();
-			for (Match _mapping : matches) {
+			for (MatchingDiagnosticItem _mapping : binding.getItems()) {
 				
 				EObject _input = _mapping.getLeft();
 				EObject _output = _mapping.getRight();
@@ -958,7 +954,7 @@ public class PuzzleMerge {
 	 * @param binding
 	 */
 	private void resolveCrossCuttingEReferences(Hashtable<String, EClassifier> oldEClassifiers, Hashtable<String, EClassifier> unifiedEClassifiers,
-			EPackage targetPackage, Comparison binding, EPackage recalculatedRequiredInterface){
+			EPackage targetPackage, MatchingDiagnostic binding, EPackage recalculatedRequiredInterface){
 		
 		Enumeration<String> keys = unifiedEClassifiers.keys();
 		while(keys.hasMoreElements()){
@@ -1000,8 +996,8 @@ public class PuzzleMerge {
 						else {
 							String requiredTypeName = eReference.getEType().getName();
 							if(requiredTypeName != null){
-								EList<Match> matches = binding.getMatches();
-								for (Match _mapping : matches) {
+								List<MatchingDiagnosticItem> matches = binding.getItems();
+								for (MatchingDiagnosticItem _mapping : matches) {
 									
 									EObject _input = _mapping.getLeft();
 									EObject _output = _mapping.getRight();
@@ -1048,7 +1044,7 @@ public class PuzzleMerge {
 	 * @param binding
 	 */
 	private void resolveCrossCuttingESuperTypes(Hashtable<String, EClassifier> oldEClassifiers, Hashtable<String, EClassifier> unifiedEClassifiers,
-			EPackage targetPackage, Comparison binding, EPackage recalculatedRequiredInterface){
+			EPackage targetPackage, MatchingDiagnostic binding, EPackage recalculatedRequiredInterface){
 		
 		Enumeration<String> keys = unifiedEClassifiers.keys();
 		while(keys.hasMoreElements()){
