@@ -41,13 +41,12 @@ public class PuzzleMatch {
 	
 	public MatchingDiagnostic match(EObject left, EObject right){
 		MatchingDiagnostic diagnostic = new MatchingDiagnostic();
-		
 		ArrayList<MatchingDiagnosticItem> matches = new ArrayList<MatchingDiagnosticItem>();
 		
 		if(left instanceof EPackage && right instanceof EPackage){
 			matchEPackage((EPackage)left, (EPackage)right, matches);
 		}
-		
+		diagnostic.getItems().addAll(matches);
 		return diagnostic;
 	}
 	

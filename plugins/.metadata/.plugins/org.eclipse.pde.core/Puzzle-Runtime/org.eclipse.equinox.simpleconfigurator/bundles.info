@@ -35,6 +35,7 @@ fr.inria.diverse.puzzle.configurator,1.0.0.qualifier,file:/Users/dmendeza/worksp
 fr.inria.diverse.puzzle.extractor.breaker,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.breaker/,4,false
 fr.inria.diverse.puzzle.extractor.interface,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.interface/,4,false
 fr.inria.diverse.puzzle.instantancesGenerator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.instantancesGenerator/,4,false
+fr.inria.diverse.puzzle.match,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.match/,4,false
 fr.inria.diverse.puzzle.merge,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.merge/,4,false
 fr.inria.diverse.puzzle.metrics,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/,4,false
 fr.inria.diverse.puzzle.multivar.metamodel,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.multivar.metamodel/,4,false
