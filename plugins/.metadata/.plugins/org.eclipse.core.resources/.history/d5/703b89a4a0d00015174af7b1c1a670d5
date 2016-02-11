@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.match.vo;
+
+/**
+ * Value object for metamodels matching
+ * @author dmendeza
+ *
+ */
+public class MatchingDiagnostic {
+
+}

@@ -1,0 +1,22 @@
+package fr.inria.diverse.puzzle.match.impl;
+
+/**
+ * Implementation of matching for metamodels-based DSLs
+ * DiverSE Team - INRIA/IRISA Rennes.
+ * 
+ * @author David Mendez-Acuna
+ */
+public class PuzzleMatch {
+
+	// -----------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------
+	
+	// -----------------------------------------------------
+	// Constructor and singleton
+	// -----------------------------------------------------
+	
+	// -----------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------
+}

@@ -5,7 +5,6 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.compare.Comparison;
 import org.eclipse.emf.compare.Match;
 import org.eclipse.emf.ecore.EAnnotation;
@@ -29,10 +28,13 @@ import org.eclipse.emf.mapping.MappingRoot;
 import org.eclipse.emf.mapping.ecore2ecore.Ecore2EcoreFactory;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
+import fr.inria.diverse.sle.puzzle.merge.vos.ClassPair;
+
 import java.util.List;
 
 /**
- * Service of merging for languages DiverSE Team - INRIA/IRISA Rennes.
+ * Implementation of merge for metamodels-based DSLs
+ * DiverSE Team - INRIA/IRISA Rennes.
  * 
  * @author David Mendez-Acuna
  */

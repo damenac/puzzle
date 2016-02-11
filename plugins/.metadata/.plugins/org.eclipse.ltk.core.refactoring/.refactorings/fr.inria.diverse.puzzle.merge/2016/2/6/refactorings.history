@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ClassPair.java&apos; to &apos;fr.inria.diverse.puzzle.merge/src/fr.inria.diverse.sle.puzzle.merge.vos&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.merge&apos;&#x0A;- Destination element: &apos;fr.inria.diverse.puzzle.merge/src/fr.inria.diverse.sle.puzzle.merge.vos&apos;&#x0A;- Original element: &apos;fr.inria.diverse.sle.puzzle.merge.impl.ClassPair.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;fr.inria.diverse.sle.puzzle.merge.vos" element1="/src&lt;fr.inria.diverse.sle.puzzle.merge.impl{ClassPair.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1455182066936" units="1" version="1.0"/>
+</session>
