@@ -378,7 +378,17 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         CompositionTreeNode compositionNode = ((CompositionTreeNode) tree);
         LanguageVO requiringLanguage = this.evaluateCompositionTree(compositionNode._requiring);
         LanguageVO providingLanguage = this.evaluateCompositionTree(compositionNode._providing);
-        return null;
+        PuzzleMatch _instance = PuzzleMatch.getInstance();
+        final MatchingDiagnostic comparison = _instance.match(requiringLanguage.metamodel, providingLanguage.metamodel);
+        PuzzleMerge _instance_1 = PuzzleMerge.getInstance();
+        EPackage recalculatedRequiredInterface = _instance_1.recalculateRequiredInterface(providingLanguage.metamodel, comparison, "merged", requiringLanguage.metamodel);
+        PuzzleMerge _instance_2 = PuzzleMerge.getInstance();
+        final EPackage mergedPackage = _instance_2.mergeAbstractSyntax(providingLanguage.metamodel, providingLanguage.providedInterface, 
+          requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, "");
+        LanguageVO mergedLanguage = new LanguageVO();
+        mergedLanguage.metamodel = mergedPackage;
+        mergedLanguage.requiredInterface = recalculatedRequiredInterface;
+        return mergedLanguage;
       } else {
         return null;
       }

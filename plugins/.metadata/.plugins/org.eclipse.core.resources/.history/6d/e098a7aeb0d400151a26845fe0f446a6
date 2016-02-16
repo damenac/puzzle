@@ -216,21 +216,7 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			var LanguageVO requiringLanguage = compositionNode._requiring.evaluateCompositionTree
 			var LanguageVO providingLanguage = compositionNode._providing.evaluateCompositionTree
 			
-			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiringLanguage.metamodel, providingLanguage.metamodel)
-			
-			var EPackage recalculatedRequiredInterface = PuzzleMerge.getInstance().
-				recalculateRequiredInterface(providingLanguage.metamodel, 
-						comparison, "merged", requiringLanguage.metamodel);
-			 
-			val EPackage mergedPackage = PuzzleMerge.instance.mergeAbstractSyntax(providingLanguage.metamodel, providingLanguage.providedInterface, 
-				requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, "")
-			
-			var LanguageVO mergedLanguage = new LanguageVO()
-			mergedLanguage.metamodel = mergedPackage
-			mergedLanguage.requiredInterface = recalculatedRequiredInterface
-			// TODO do the proper for the provided interface
-			
-			return mergedLanguage
+			return null
 		}
 		// Error: The composition tree is not valid.
 		else {
