@@ -58,58 +58,59 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		
 		var String answer = 'Puzzle diagnostic: \n\n';
 		
-		var LanguageVO mergedLanguage = new LanguageVO
 		var AbstractCompositionTreeNode compositionTree = calculateCompositionTree(bindingSpace.binding, modelTypingSpace)
 		var LanguageVO composedLanguage = evaluateCompositionTree(compositionTree)
 		println('compositionTree: ' + compositionTree)
 		println('composedLanguage: ' + composedLanguage)
+		composedLanguage.serializeEcoreFiles
 		
-		// Obtaining required and provided interfaces for each binding
-		for(var int i = 0; i < bindingSpace.binding.size; i++){
-			var Binding binding = bindingSpace.binding.get(i)
-			
-			val requiredModelTypeName = binding.left
-			val providedModelTypeName = binding.right
-			
-			val ModelType requiredModelType = modelTypingSpace.elements.findFirst[ element |
-				element instanceof ModelType && (element as ModelType).name.equals(requiredModelTypeName)] as ModelType
-			
-			val ModelType providedModelType = modelTypingSpace.elements.findFirst[ element |
-				element instanceof ModelType && (element as ModelType).name.equals(providedModelTypeName)] as ModelType
-				
-			val EPackage requiredModelTypeEPackage = ModelUtils.loadEcoreResource(requiredModelType.ecoreUri)
-			val EPackage providedModelTypeEPackage = ModelUtils.loadEcoreResource(providedModelType.ecoreUri)
-			
-			val Language requiringLanguage = modelTypingSpace.elements.findFirst[ element |
-				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(requiredModelTypeName)]] as Language
-			
-			val Language providingLanguage = modelTypingSpace.elements.findFirst[ element |
-				element instanceof Language && requiringLanguage != element && (element as Language).implements.exists[ impl | 
-					impl.name.equals(providedModelTypeName)
-				]] as Language
-			
-			val EPackage requiredLanguageEPackage = ModelUtils.loadEcoreResource(requiringLanguage.syntax.ecoreUri)
-			val EPackage providedLanguageEPackage = ModelUtils.loadEcoreResource(providingLanguage.syntax.ecoreUri)
-			
-			println('Data ... requiredModelTypeEPackage: ' + requiredModelTypeEPackage.name + ' - '
-				+ 'providedModelTypeEPackage: ' + providedModelTypeEPackage.name + ' - '
-				+ 'requiringLanguage: ' + requiringLanguage.name + ' - '
-				+ 'providingLanguage: ' + providingLanguage.name + ' - '
-			)
-			
-			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiredLanguageEPackage, providedLanguageEPackage)
-			
-			var EPackage recalculatedRequiredInterface = PuzzleMerge.getInstance().
-				recalculateRequiredInterface(providedLanguageEPackage, 
-						comparison, "merged", requiredLanguageEPackage);
-			 
-			val EPackage mergedPackage = PuzzleMerge.instance.mergeAbstractSyntax(providedLanguageEPackage, providedModelTypeEPackage, 
-				requiredLanguageEPackage, requiredModelTypeEPackage, comparison, recalculatedRequiredInterface, "")
-			
-			
-			mergedLanguage.metamodel = mergedPackage
-			mergedLanguage.requiredInterface = recalculatedRequiredInterface
-		}
+//		// Obtaining required and provided interfaces for each binding
+//		for(var int i = 0; i < bindingSpace.binding.size; i++){
+//			var Binding binding = bindingSpace.binding.get(i)
+//			
+//			val requiredModelTypeName = binding.left
+//			val providedModelTypeName = binding.right
+//			
+//			val ModelType requiredModelType = modelTypingSpace.elements.findFirst[ element |
+//				element instanceof ModelType && (element as ModelType).name.equals(requiredModelTypeName)] as ModelType
+//			
+//			val ModelType providedModelType = modelTypingSpace.elements.findFirst[ element |
+//				element instanceof ModelType && (element as ModelType).name.equals(providedModelTypeName)] as ModelType
+//				
+//			val EPackage requiredModelTypeEPackage = ModelUtils.loadEcoreResource(requiredModelType.ecoreUri)
+//			val EPackage providedModelTypeEPackage = ModelUtils.loadEcoreResource(providedModelType.ecoreUri)
+//			
+//			val Language requiringLanguage = modelTypingSpace.elements.findFirst[ element |
+//				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(requiredModelTypeName)]] as Language
+//			
+//			val Language providingLanguage = modelTypingSpace.elements.findFirst[ element |
+//				element instanceof Language && requiringLanguage != element && (element as Language).implements.exists[ impl | 
+//					impl.name.equals(providedModelTypeName)
+//				]] as Language
+//			
+//			val EPackage requiredLanguageEPackage = ModelUtils.loadEcoreResource(requiringLanguage.syntax.ecoreUri)
+//			val EPackage providedLanguageEPackage = ModelUtils.loadEcoreResource(providingLanguage.syntax.ecoreUri)
+//			
+//			println('Data ... requiredModelTypeEPackage: ' + requiredModelTypeEPackage.name + ' - '
+//				+ 'providedModelTypeEPackage: ' + providedModelTypeEPackage.name + ' - '
+//				+ 'requiringLanguage: ' + requiringLanguage.name + ' - '
+//				+ 'providingLanguage: ' + providingLanguage.name + ' - '
+//			)
+//			
+//			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiredLanguageEPackage, providedLanguageEPackage)
+//			
+//			var EPackage recalculatedRequiredInterface = PuzzleMerge.getInstance().
+//				recalculateRequiredInterface(providedLanguageEPackage, 
+//						comparison, "merged", requiredLanguageEPackage);
+//			 
+//			val EPackage mergedPackage = PuzzleMerge.instance.mergeAbstractSyntax(providedLanguageEPackage, providedModelTypeEPackage, 
+//				requiredLanguageEPackage, requiredModelTypeEPackage, comparison, recalculatedRequiredInterface, "")
+//			
+//			
+//			mergedLanguage.metamodel = mergedPackage
+//			mergedLanguage.requiredInterface = recalculatedRequiredInterface
+//		}
+
 		return answer
 	}
 	
@@ -201,7 +202,7 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			
 			// Obtaining the provided interface if exists
 			// TODO Check the conflict between the provided interface and the exact type. 
-			if(leaf.language.requires.size > 0){
+			if(leaf.language.implements.size > 0){
 				language.providedInterface = 
 					ModelUtils.loadEcoreResource((leaf.language.implements.get(0) as ModelType).ecoreUri)
 			}
@@ -219,13 +220,15 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiringLanguage.metamodel, providingLanguage.metamodel)
 			
 			var EPackage recalculatedRequiredInterface = PuzzleMerge.getInstance().
-				recalculateRequiredInterface(providingLanguage.metamodel, 
-						comparison, "merged", requiringLanguage.metamodel);
+				recalculateRequiredInterface(requiringLanguage.requiredInterface, 
+						comparison, "merged", providingLanguage.requiredInterface);
 			 
 			val EPackage mergedPackage = PuzzleMerge.instance.mergeAbstractSyntax(providingLanguage.metamodel, providingLanguage.providedInterface, 
-				requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, "")
+				requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, 'CompleteDSLPckg')
 			
 			var LanguageVO mergedLanguage = new LanguageVO()
+			mergedLanguage.name = 'CompleteDSL'
+			mergedLanguage.mergedPackage = 'CompleteDSLPckg'
 			mergedLanguage.metamodel = mergedPackage
 			mergedLanguage.requiredInterface = recalculatedRequiredInterface
 			// TODO do the proper for the provided interface

@@ -75,143 +75,12 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
       Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), _nullProgressMonitor);
     this.targetProject = _createEclipseProject;
     String answer = "Puzzle diagnostic: \n\n";
-    LanguageVO mergedLanguage = new LanguageVO();
     EList<Binding> _binding = bindingSpace.getBinding();
     AbstractCompositionTreeNode compositionTree = this.calculateCompositionTree(_binding, modelTypingSpace);
     LanguageVO composedLanguage = this.evaluateCompositionTree(compositionTree);
     InputOutput.<String>println(("compositionTree: " + compositionTree));
     InputOutput.<String>println(("composedLanguage: " + composedLanguage));
-    for (int i = 0; (i < bindingSpace.getBinding().size()); i++) {
-      {
-        EList<Binding> _binding_1 = bindingSpace.getBinding();
-        Binding binding = _binding_1.get(i);
-        final String requiredModelTypeName = binding.getLeft();
-        final String providedModelTypeName = binding.getRight();
-        EList<Element> _elements = modelTypingSpace.getElements();
-        final Function1<Element, Boolean> _function = new Function1<Element, Boolean>() {
-          @Override
-          public Boolean apply(final Element element) {
-            boolean _and = false;
-            if (!(element instanceof ModelType)) {
-              _and = false;
-            } else {
-              String _name = ((ModelType) element).getName();
-              boolean _equals = _name.equals(requiredModelTypeName);
-              _and = _equals;
-            }
-            return Boolean.valueOf(_and);
-          }
-        };
-        Element _findFirst = IterableExtensions.<Element>findFirst(_elements, _function);
-        final ModelType requiredModelType = ((ModelType) _findFirst);
-        EList<Element> _elements_1 = modelTypingSpace.getElements();
-        final Function1<Element, Boolean> _function_1 = new Function1<Element, Boolean>() {
-          @Override
-          public Boolean apply(final Element element) {
-            boolean _and = false;
-            if (!(element instanceof ModelType)) {
-              _and = false;
-            } else {
-              String _name = ((ModelType) element).getName();
-              boolean _equals = _name.equals(providedModelTypeName);
-              _and = _equals;
-            }
-            return Boolean.valueOf(_and);
-          }
-        };
-        Element _findFirst_1 = IterableExtensions.<Element>findFirst(_elements_1, _function_1);
-        final ModelType providedModelType = ((ModelType) _findFirst_1);
-        String _ecoreUri = requiredModelType.getEcoreUri();
-        final EPackage requiredModelTypeEPackage = ModelUtils.loadEcoreResource(_ecoreUri);
-        String _ecoreUri_1 = providedModelType.getEcoreUri();
-        final EPackage providedModelTypeEPackage = ModelUtils.loadEcoreResource(_ecoreUri_1);
-        EList<Element> _elements_2 = modelTypingSpace.getElements();
-        final Function1<Element, Boolean> _function_2 = new Function1<Element, Boolean>() {
-          @Override
-          public Boolean apply(final Element element) {
-            boolean _and = false;
-            if (!(element instanceof Language)) {
-              _and = false;
-            } else {
-              EList<ModelType> _requires = ((Language) element).getRequires();
-              final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
-                @Override
-                public Boolean apply(final ModelType req) {
-                  String _name = req.getName();
-                  return Boolean.valueOf(_name.equals(requiredModelTypeName));
-                }
-              };
-              boolean _exists = IterableExtensions.<ModelType>exists(_requires, _function);
-              _and = _exists;
-            }
-            return Boolean.valueOf(_and);
-          }
-        };
-        Element _findFirst_2 = IterableExtensions.<Element>findFirst(_elements_2, _function_2);
-        final Language requiringLanguage = ((Language) _findFirst_2);
-        EList<Element> _elements_3 = modelTypingSpace.getElements();
-        final Function1<Element, Boolean> _function_3 = new Function1<Element, Boolean>() {
-          @Override
-          public Boolean apply(final Element element) {
-            boolean _and = false;
-            boolean _and_1 = false;
-            if (!(element instanceof Language)) {
-              _and_1 = false;
-            } else {
-              boolean _notEquals = (!Objects.equal(requiringLanguage, element));
-              _and_1 = _notEquals;
-            }
-            if (!_and_1) {
-              _and = false;
-            } else {
-              EList<ModelType> _implements = ((Language) element).getImplements();
-              final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
-                @Override
-                public Boolean apply(final ModelType impl) {
-                  String _name = impl.getName();
-                  return Boolean.valueOf(_name.equals(providedModelTypeName));
-                }
-              };
-              boolean _exists = IterableExtensions.<ModelType>exists(_implements, _function);
-              _and = _exists;
-            }
-            return Boolean.valueOf(_and);
-          }
-        };
-        Element _findFirst_3 = IterableExtensions.<Element>findFirst(_elements_3, _function_3);
-        final Language providingLanguage = ((Language) _findFirst_3);
-        Metamodel _syntax = requiringLanguage.getSyntax();
-        String _ecoreUri_2 = _syntax.getEcoreUri();
-        final EPackage requiredLanguageEPackage = ModelUtils.loadEcoreResource(_ecoreUri_2);
-        Metamodel _syntax_1 = providingLanguage.getSyntax();
-        String _ecoreUri_3 = _syntax_1.getEcoreUri();
-        final EPackage providedLanguageEPackage = ModelUtils.loadEcoreResource(_ecoreUri_3);
-        String _name_1 = requiredModelTypeEPackage.getName();
-        String _plus_2 = ("Data ... requiredModelTypeEPackage: " + _name_1);
-        String _plus_3 = (_plus_2 + " - ");
-        String _plus_4 = (_plus_3 + "providedModelTypeEPackage: ");
-        String _name_2 = providedModelTypeEPackage.getName();
-        String _plus_5 = (_plus_4 + _name_2);
-        String _plus_6 = (_plus_5 + " - ");
-        String _plus_7 = (_plus_6 + "requiringLanguage: ");
-        String _name_3 = requiringLanguage.getName();
-        String _plus_8 = (_plus_7 + _name_3);
-        String _plus_9 = (_plus_8 + " - ");
-        String _plus_10 = (_plus_9 + "providingLanguage: ");
-        String _name_4 = providingLanguage.getName();
-        String _plus_11 = (_plus_10 + _name_4);
-        String _plus_12 = (_plus_11 + " - ");
-        InputOutput.<String>println(_plus_12);
-        PuzzleMatch _instance = PuzzleMatch.getInstance();
-        final MatchingDiagnostic comparison = _instance.match(requiredLanguageEPackage, providedLanguageEPackage);
-        PuzzleMerge _instance_1 = PuzzleMerge.getInstance();
-        EPackage recalculatedRequiredInterface = _instance_1.recalculateRequiredInterface(providedLanguageEPackage, comparison, "merged", requiredLanguageEPackage);
-        PuzzleMerge _instance_2 = PuzzleMerge.getInstance();
-        final EPackage mergedPackage = _instance_2.mergeAbstractSyntax(providedLanguageEPackage, providedModelTypeEPackage, requiredLanguageEPackage, requiredModelTypeEPackage, comparison, recalculatedRequiredInterface, "");
-        mergedLanguage.metamodel = mergedPackage;
-        mergedLanguage.requiredInterface = recalculatedRequiredInterface;
-      }
-    }
+    this.serializeEcoreFiles(composedLanguage);
     return answer;
   }
   
@@ -362,12 +231,12 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         EPackage _loadEcoreResource_1 = ModelUtils.loadEcoreResource(_ecoreUri_1);
         language.requiredInterface = _loadEcoreResource_1;
       }
-      EList<ModelType> _requires_2 = leaf.language.getRequires();
-      int _size_1 = _requires_2.size();
+      EList<ModelType> _implements = leaf.language.getImplements();
+      int _size_1 = _implements.size();
       boolean _greaterThan_1 = (_size_1 > 0);
       if (_greaterThan_1) {
-        EList<ModelType> _implements = leaf.language.getImplements();
-        ModelType _get_1 = _implements.get(0);
+        EList<ModelType> _implements_1 = leaf.language.getImplements();
+        ModelType _get_1 = _implements_1.get(0);
         String _ecoreUri_2 = ((ModelType) _get_1).getEcoreUri();
         EPackage _loadEcoreResource_2 = ModelUtils.loadEcoreResource(_ecoreUri_2);
         language.providedInterface = _loadEcoreResource_2;
@@ -381,11 +250,13 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         PuzzleMatch _instance = PuzzleMatch.getInstance();
         final MatchingDiagnostic comparison = _instance.match(requiringLanguage.metamodel, providingLanguage.metamodel);
         PuzzleMerge _instance_1 = PuzzleMerge.getInstance();
-        EPackage recalculatedRequiredInterface = _instance_1.recalculateRequiredInterface(providingLanguage.metamodel, comparison, "merged", requiringLanguage.metamodel);
+        EPackage recalculatedRequiredInterface = _instance_1.recalculateRequiredInterface(requiringLanguage.requiredInterface, comparison, "merged", providingLanguage.requiredInterface);
         PuzzleMerge _instance_2 = PuzzleMerge.getInstance();
         final EPackage mergedPackage = _instance_2.mergeAbstractSyntax(providingLanguage.metamodel, providingLanguage.providedInterface, 
-          requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, "");
+          requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, "CompleteDSLPckg");
         LanguageVO mergedLanguage = new LanguageVO();
+        mergedLanguage.name = "CompleteDSL";
+        mergedLanguage.mergedPackage = "CompleteDSLPckg";
         mergedLanguage.metamodel = mergedPackage;
         mergedLanguage.requiredInterface = recalculatedRequiredInterface;
         return mergedLanguage;
