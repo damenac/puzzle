@@ -26,6 +26,19 @@ import java.util.ArrayList
 import fr.inria.diverse.melange.ui.vos.CompositionStatementVO
 import fr.inria.diverse.melange.ui.vos.CompositionTreeNode
 import fr.inria.diverse.melange.ui.vos.CompositionTreeLeaf
+import org.eclipse.core.resources.IResource
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel
+import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory
+import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel
+import java.util.Collections
+import org.eclipse.emf.codegen.ecore.genmodel.GenPackage
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
+import org.eclipse.core.runtime.Path
+import java.io.IOException
+import org.eclipse.emf.codegen.ecore.genmodel.util.GenModelUtil
+import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter
+import org.eclipse.emf.common.util.BasicMonitor
 
 /**
  * Builder for the action: Analyze Family.
@@ -36,6 +49,7 @@ import fr.inria.diverse.melange.ui.vos.CompositionTreeLeaf
 class LanguageModulesCompositionBuilder extends AbstractBuilder {
 	
 	@Inject EclipseProjectHelper eclipseHelper
+	
 	private IProject targetProject
 	
 	def String composeLanguageModules(Resource puzzleResource, Resource melangeResource, IProject project, IProgressMonitor monitor) {
@@ -49,8 +63,7 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 					#[JavaCore::BUILDER_ID,	PDE::MANIFEST_BUILDER_ID, PDE::SCHEMA_BUILDER_ID],
 					#["src-gen", "xtend-gen"],
 					#[],
-					#["fr.inria.diverse.puzzle.annotations", 
-						"fr.inria.diverse.k3.al.annotationprocessor.plugin"],
+					#["fr.inria.diverse.k3.al.annotationprocessor.plugin"],
 					#[],
 					#[],
 					new NullProgressMonitor
@@ -60,57 +73,15 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		
 		var AbstractCompositionTreeNode compositionTree = calculateCompositionTree(bindingSpace.binding, modelTypingSpace)
 		var LanguageVO composedLanguage = evaluateCompositionTree(compositionTree)
-		println('compositionTree: ' + compositionTree)
-		println('composedLanguage: ' + composedLanguage)
-		composedLanguage.serializeEcoreFiles
 		
-//		// Obtaining required and provided interfaces for each binding
-//		for(var int i = 0; i < bindingSpace.binding.size; i++){
-//			var Binding binding = bindingSpace.binding.get(i)
-//			
-//			val requiredModelTypeName = binding.left
-//			val providedModelTypeName = binding.right
-//			
+		composedLanguage.serializeEcoreFiles
+		var GenModel gen = composedLanguage.serializeGenmodelFiles
+		gen.generateCode
+		targetProject.refreshLocal(IResource.DEPTH_INFINITE, null)
+		
 //			val ModelType requiredModelType = modelTypingSpace.elements.findFirst[ element |
 //				element instanceof ModelType && (element as ModelType).name.equals(requiredModelTypeName)] as ModelType
 //			
-//			val ModelType providedModelType = modelTypingSpace.elements.findFirst[ element |
-//				element instanceof ModelType && (element as ModelType).name.equals(providedModelTypeName)] as ModelType
-//				
-//			val EPackage requiredModelTypeEPackage = ModelUtils.loadEcoreResource(requiredModelType.ecoreUri)
-//			val EPackage providedModelTypeEPackage = ModelUtils.loadEcoreResource(providedModelType.ecoreUri)
-//			
-//			val Language requiringLanguage = modelTypingSpace.elements.findFirst[ element |
-//				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(requiredModelTypeName)]] as Language
-//			
-//			val Language providingLanguage = modelTypingSpace.elements.findFirst[ element |
-//				element instanceof Language && requiringLanguage != element && (element as Language).implements.exists[ impl | 
-//					impl.name.equals(providedModelTypeName)
-//				]] as Language
-//			
-//			val EPackage requiredLanguageEPackage = ModelUtils.loadEcoreResource(requiringLanguage.syntax.ecoreUri)
-//			val EPackage providedLanguageEPackage = ModelUtils.loadEcoreResource(providingLanguage.syntax.ecoreUri)
-//			
-//			println('Data ... requiredModelTypeEPackage: ' + requiredModelTypeEPackage.name + ' - '
-//				+ 'providedModelTypeEPackage: ' + providedModelTypeEPackage.name + ' - '
-//				+ 'requiringLanguage: ' + requiringLanguage.name + ' - '
-//				+ 'providingLanguage: ' + providingLanguage.name + ' - '
-//			)
-//			
-//			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiredLanguageEPackage, providedLanguageEPackage)
-//			
-//			var EPackage recalculatedRequiredInterface = PuzzleMerge.getInstance().
-//				recalculateRequiredInterface(providedLanguageEPackage, 
-//						comparison, "merged", requiredLanguageEPackage);
-//			 
-//			val EPackage mergedPackage = PuzzleMerge.instance.mergeAbstractSyntax(providedLanguageEPackage, providedModelTypeEPackage, 
-//				requiredLanguageEPackage, requiredModelTypeEPackage, comparison, recalculatedRequiredInterface, "")
-//			
-//			
-//			mergedLanguage.metamodel = mergedPackage
-//			mergedLanguage.requiredInterface = recalculatedRequiredInterface
-//		}
-
 		return answer
 	}
 	
@@ -281,5 +252,82 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			language.metamodelSerializationPath = metamodelMergedLocation
 			ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
 		}
+	}
+	
+	/**
+	 * Serializes the .genmodel file corresponding to the language in the parameter. 
+	 * This genmodel file contains the packages of the metamodel and the required interface if any. 
+	 * 
+	 * TODO: Throw an exception where the metamodel serialization path is null. That is an error!
+	 * 
+	 * @param language
+	 * 			The value object containing the information of the language whose .genmodel file will be serialized.
+	 */
+	def GenModel serializeGenmodelFiles(LanguageVO language){
+		
+		if(language.metamodelSerializationPath != null){
+			var String mergedProjectName = targetProject.getProject()
+				.getLocation().toString();
+				
+			var String genmodelMetamodelMergedLocation = mergedProjectName + 
+					"/composition-gen/" + language.name + ".genmodel";
+			
+			return generateGenmodelFile(language.metamodel, language.metamodelSerializationPath, 
+					genmodelMetamodelMergedLocation, targetProject.getProject().name, 
+					language.name, language.mergedPackage);
+		}
+	}
+	
+	/**
+	 * Generates the corresponding GenModel file for an ecore package in the parameter
+	 * @param ePackage
+	 * @throws IOException 
+	 */
+	def private GenModel generateGenmodelFile(EPackage rootPackage, String ecoreLocation, 
+		String genModelLocation, String projectName, String languageName, String basePackage) throws IOException {
+		var GenModel genModel = GenModelFactory.eINSTANCE.createGenModel();
+		genModel.setComplianceLevel(GenJDKLevel.JDK80_LITERAL);
+		genModel.setEditDirectory("/" + projectName + ".edit/src");
+		genModel.setEditPluginID(projectName + ".edit");
+		genModel.setEditorDirectory("/" + projectName + ".editor/src");
+		genModel.setEditorPluginID(projectName + ".editor");
+        genModel.setModelDirectory("/" + projectName + "/src-gen");
+        genModel.setModelPluginID(projectName);
+        genModel.setOperationReflection(true);
+        genModel.setTestsDirectory("/" + projectName + ".tests/src");
+        genModel.setTestsPluginID(projectName + ".tests");
+        genModel.getForeignModel().add(new Path(ecoreLocation).lastSegment());
+        genModel.setModelName(languageName);
+        genModel.setRootExtendsInterface("org.eclipse.emf.ecore.EObject");
+        genModel.initialize(Collections.singleton(rootPackage));
+        genModel.setCanGenerate(true);
+        
+        var GenPackage genPackage = genModel.getGenPackages().get(0) as GenPackage;
+        var String genModelPrefix = rootPackage.getNsPrefix().charAt(0).toString.toUpperCase + 
+        								rootPackage.getNsPrefix().substring(1, rootPackage.getNsPrefix().length)
+        genPackage.setPrefix(genModelPrefix);
+        var URI genModelURI = URI.createFileURI(genModelLocation);
+        var XMIResourceImpl genModelResource = new XMIResourceImpl(genModelURI);
+        genModelResource.getContents().add(genModel);
+        genModelResource.save(Collections.EMPTY_MAP);
+
+        genModel.reconcile();
+    	genModel.setCanGenerate(true);
+    	genModel.setValidateModel(true);
+		
+		return genModel
+	}
+	
+	def void generateCode(GenModel genModel) {
+		genModel.reconcile
+		genModel.canGenerate = true
+		genModel.validateModel = true
+
+		val generator = GenModelUtil::createGenerator(genModel)
+		generator.generate(
+			genModel,
+			GenBaseGeneratorAdapter::MODEL_PROJECT_TYPE,
+			new BasicMonitor.Printing(System::out)
+		)
 	}
 }

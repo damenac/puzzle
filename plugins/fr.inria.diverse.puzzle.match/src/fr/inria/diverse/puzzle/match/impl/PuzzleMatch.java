@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
@@ -156,9 +157,40 @@ public class PuzzleMatch {
 	 * @param matches
 	 */
 	private void matchEStructuralFeatures(EStructuralFeature left,
-			EStructuralFeature rigth,
+			EStructuralFeature right,
 			ArrayList<MatchingDiagnosticItem> matches) {
-		// TODO Auto-generated method stub
+		
+		if(eStructuralFeaturesEqual(left, right)){
+			if(left instanceof EReference && right instanceof EReference)
+				matchEReferences(left, right, matches);
+		}
+	}
+
+	/**
+	 * Compares two structural features according to their names and types.
+	 * @param left
+	 * @param right
+	 * @return
+	 */
+	private boolean eStructuralFeaturesEqual(EStructuralFeature left,
+			EStructuralFeature right) {
+		return left.getName().equals(right.getName()) && left.getClass().getName().equals(right.getClass().getName());
+	}
+
+	/**
+	 * Matches two references
+	 * @param left
+	 * @param right
+	 * @param matches
+	 */
+	private void matchEReferences(EStructuralFeature left,
+			EStructuralFeature right, ArrayList<MatchingDiagnosticItem> matches) {
+		
+		//TODO Improve comparison while considering types and parameters. 
+		if(left.getName().equals(right.getName())){
+			MatchingDiagnosticItem match = new MatchingDiagnosticItem(left, right);
+			matches.add(match);
+		}
 		
 	}
 	
@@ -168,9 +200,14 @@ public class PuzzleMatch {
 	 * @param candidateJ
 	 * @param matches
 	 */
-	private void matchEOperations(EOperation left, EOperation rigth,
+	private void matchEOperations(EOperation left, EOperation right,
 			ArrayList<MatchingDiagnosticItem> matches) {
-		// TODO Auto-generated method stub
+		
+		//TODO Improve comparison while considering types and parameters. 
+		if(left.getName().equals(right.getName())){
+			MatchingDiagnosticItem match = new MatchingDiagnosticItem(left, right);
+			matches.add(match);
+		}
 		
 	}
 

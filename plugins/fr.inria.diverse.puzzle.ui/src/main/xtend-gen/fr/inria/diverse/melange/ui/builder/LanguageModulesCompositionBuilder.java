@@ -19,23 +19,38 @@ import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding;
 import fr.inria.diverse.puzzle.match.impl.PuzzleMatch;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
 import fr.inria.diverse.sle.puzzle.merge.impl.PuzzleMerge;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import javax.inject.Inject;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
+import org.eclipse.core.runtime.Path;
+import org.eclipse.emf.codegen.ecore.generator.Generator;
+import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
+import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory;
+import org.eclipse.emf.codegen.ecore.genmodel.GenPackage;
+import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter;
+import org.eclipse.emf.codegen.ecore.genmodel.util.GenModelUtil;
+import org.eclipse.emf.common.util.BasicMonitor;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.pde.internal.core.natures.PDE;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
@@ -54,34 +69,39 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
   private IProject targetProject;
   
   public String composeLanguageModules(final Resource puzzleResource, final Resource melangeResource, final IProject project, final IProgressMonitor monitor) {
-    EList<EObject> _contents = puzzleResource.getContents();
-    EObject _head = IterableExtensions.<EObject>head(_contents);
-    final LanguageBinding bindingSpace = ((LanguageBinding) _head);
-    EList<EObject> _contents_1 = melangeResource.getContents();
-    EObject _head_1 = IterableExtensions.<EObject>head(_contents_1);
-    final ModelTypingSpace modelTypingSpace = ((ModelTypingSpace) _head_1);
-    EcoreUtil.resolveAll(modelTypingSpace);
-    String _name = project.getName();
-    String _plus = (_name + ".");
-    String _plus_1 = (_plus + "composedLanguage");
-    NullProgressMonitor _nullProgressMonitor = new NullProgressMonitor();
-    IProject _createEclipseProject = this.eclipseHelper.createEclipseProject(_plus_1, 
-      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.NATURE_ID, PDE.PLUGIN_NATURE)), 
-      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.BUILDER_ID, PDE.MANIFEST_BUILDER_ID, PDE.SCHEMA_BUILDER_ID)), 
-      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("src-gen", "xtend-gen")), 
-      Collections.<IProject>unmodifiableList(CollectionLiterals.<IProject>newArrayList()), 
-      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("fr.inria.diverse.puzzle.annotations", "fr.inria.diverse.k3.al.annotationprocessor.plugin")), 
-      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), 
-      Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), _nullProgressMonitor);
-    this.targetProject = _createEclipseProject;
-    String answer = "Puzzle diagnostic: \n\n";
-    EList<Binding> _binding = bindingSpace.getBinding();
-    AbstractCompositionTreeNode compositionTree = this.calculateCompositionTree(_binding, modelTypingSpace);
-    LanguageVO composedLanguage = this.evaluateCompositionTree(compositionTree);
-    InputOutput.<String>println(("compositionTree: " + compositionTree));
-    InputOutput.<String>println(("composedLanguage: " + composedLanguage));
-    this.serializeEcoreFiles(composedLanguage);
-    return answer;
+    try {
+      EList<EObject> _contents = puzzleResource.getContents();
+      EObject _head = IterableExtensions.<EObject>head(_contents);
+      final LanguageBinding bindingSpace = ((LanguageBinding) _head);
+      EList<EObject> _contents_1 = melangeResource.getContents();
+      EObject _head_1 = IterableExtensions.<EObject>head(_contents_1);
+      final ModelTypingSpace modelTypingSpace = ((ModelTypingSpace) _head_1);
+      EcoreUtil.resolveAll(modelTypingSpace);
+      String _name = project.getName();
+      String _plus = (_name + ".");
+      String _plus_1 = (_plus + "composedLanguage");
+      NullProgressMonitor _nullProgressMonitor = new NullProgressMonitor();
+      IProject _createEclipseProject = this.eclipseHelper.createEclipseProject(_plus_1, 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.NATURE_ID, PDE.PLUGIN_NATURE)), 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.BUILDER_ID, PDE.MANIFEST_BUILDER_ID, PDE.SCHEMA_BUILDER_ID)), 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("src-gen", "xtend-gen")), 
+        Collections.<IProject>unmodifiableList(CollectionLiterals.<IProject>newArrayList()), 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("fr.inria.diverse.k3.al.annotationprocessor.plugin")), 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), _nullProgressMonitor);
+      this.targetProject = _createEclipseProject;
+      String answer = "Puzzle diagnostic: \n\n";
+      EList<Binding> _binding = bindingSpace.getBinding();
+      AbstractCompositionTreeNode compositionTree = this.calculateCompositionTree(_binding, modelTypingSpace);
+      LanguageVO composedLanguage = this.evaluateCompositionTree(compositionTree);
+      this.serializeEcoreFiles(composedLanguage);
+      GenModel gen = this.serializeGenmodelFiles(composedLanguage);
+      this.generateCode(gen);
+      this.targetProject.refreshLocal(IResource.DEPTH_INFINITE, null);
+      return answer;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
   
   /**
@@ -305,5 +325,94 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
       language.metamodelSerializationPath = metamodelMergedLocation;
       ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
     }
+  }
+  
+  /**
+   * Serializes the .genmodel file corresponding to the language in the parameter.
+   * This genmodel file contains the packages of the metamodel and the required interface if any.
+   * 
+   * TODO: Throw an exception where the metamodel serialization path is null. That is an error!
+   * 
+   * @param language
+   * 			The value object containing the information of the language whose .genmodel file will be serialized.
+   */
+  public GenModel serializeGenmodelFiles(final LanguageVO language) {
+    try {
+      boolean _notEquals = (!Objects.equal(language.metamodelSerializationPath, null));
+      if (_notEquals) {
+        IProject _project = this.targetProject.getProject();
+        IPath _location = _project.getLocation();
+        String mergedProjectName = _location.toString();
+        String genmodelMetamodelMergedLocation = (((mergedProjectName + 
+          "/composition-gen/") + language.name) + ".genmodel");
+        IProject _project_1 = this.targetProject.getProject();
+        String _name = _project_1.getName();
+        return this.generateGenmodelFile(language.metamodel, language.metamodelSerializationPath, genmodelMetamodelMergedLocation, _name, 
+          language.name, language.mergedPackage);
+      }
+      return null;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  /**
+   * Generates the corresponding GenModel file for an ecore package in the parameter
+   * @param ePackage
+   * @throws IOException
+   */
+  private GenModel generateGenmodelFile(final EPackage rootPackage, final String ecoreLocation, final String genModelLocation, final String projectName, final String languageName, final String basePackage) throws IOException {
+    GenModel genModel = GenModelFactory.eINSTANCE.createGenModel();
+    genModel.setComplianceLevel(GenJDKLevel.JDK80_LITERAL);
+    genModel.setEditDirectory((("/" + projectName) + ".edit/src"));
+    genModel.setEditPluginID((projectName + ".edit"));
+    genModel.setEditorDirectory((("/" + projectName) + ".editor/src"));
+    genModel.setEditorPluginID((projectName + ".editor"));
+    genModel.setModelDirectory((("/" + projectName) + "/src-gen"));
+    genModel.setModelPluginID(projectName);
+    genModel.setOperationReflection(true);
+    genModel.setTestsDirectory((("/" + projectName) + ".tests/src"));
+    genModel.setTestsPluginID((projectName + ".tests"));
+    EList<String> _foreignModel = genModel.getForeignModel();
+    Path _path = new Path(ecoreLocation);
+    String _lastSegment = _path.lastSegment();
+    _foreignModel.add(_lastSegment);
+    genModel.setModelName(languageName);
+    genModel.setRootExtendsInterface("org.eclipse.emf.ecore.EObject");
+    Set<EPackage> _singleton = Collections.<EPackage>singleton(rootPackage);
+    genModel.initialize(_singleton);
+    genModel.setCanGenerate(true);
+    EList<GenPackage> _genPackages = genModel.getGenPackages();
+    GenPackage _get = _genPackages.get(0);
+    GenPackage genPackage = ((GenPackage) _get);
+    String _nsPrefix = rootPackage.getNsPrefix();
+    char _charAt = _nsPrefix.charAt(0);
+    String _string = Character.valueOf(_charAt).toString();
+    String _upperCase = _string.toUpperCase();
+    String _nsPrefix_1 = rootPackage.getNsPrefix();
+    String _nsPrefix_2 = rootPackage.getNsPrefix();
+    int _length = _nsPrefix_2.length();
+    String _substring = _nsPrefix_1.substring(1, _length);
+    String genModelPrefix = (_upperCase + _substring);
+    genPackage.setPrefix(genModelPrefix);
+    URI genModelURI = URI.createFileURI(genModelLocation);
+    XMIResourceImpl genModelResource = new XMIResourceImpl(genModelURI);
+    EList<EObject> _contents = genModelResource.getContents();
+    _contents.add(genModel);
+    genModelResource.save(Collections.EMPTY_MAP);
+    genModel.reconcile();
+    genModel.setCanGenerate(true);
+    genModel.setValidateModel(true);
+    return genModel;
+  }
+  
+  public void generateCode(final GenModel genModel) {
+    genModel.reconcile();
+    genModel.setCanGenerate(true);
+    genModel.setValidateModel(true);
+    final Generator generator = GenModelUtil.createGenerator(genModel);
+    BasicMonitor.Printing _printing = new BasicMonitor.Printing(System.out);
+    generator.generate(genModel, 
+      GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, _printing);
   }
 }

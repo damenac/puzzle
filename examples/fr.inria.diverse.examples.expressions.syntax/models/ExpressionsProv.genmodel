@@ -5,6 +5,12 @@
     <ecorePackage href="ExpressionsProv.ecore#/"/>
     <genClasses image="false">
       <ecoreClass href="ExpressionsProv.ecore#//Expression"/>
+      <genOperations>
+        <ecoreOperation href="ExpressionsProv.ecore#//Expression/eval"/>
+        <genParameters>
+          <ecoreParameter href="ExpressionsProv.ecore#//Expression/eval/context"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
