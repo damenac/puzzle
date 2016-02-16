@@ -114,44 +114,6 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 	}
 	
 	/**
-	 * Serializes the .ecore files corresponding to the language in the parameter
-	 * A language is composed of three different .ecore files: the metamodel, the provided interface and the required interface.
-	 * 
-	 * @param language
-	 * 		The value object containing the information of the language whose .ecore files will be serialized. 
-	 */
-	def void serializeEcoreFiles(LanguageVO language) {
-		var String mergedProjectName = targetProject.getProject()
-				.getLocation().toString();
-		
-		if(language.providedInterface != null){
-			var String providedInterfaceMergedLocation = mergedProjectName + 
-					"/composition-gen/" + language.name + "-Provided.ecore";
-			ModelUtils.saveEcoreFile(providedInterfaceMergedLocation, language.providedInterface);
-		}
-		
-		if(language.providedInterface != null){
-			var String providedInterfaceMergedLocation = mergedProjectName + 
-					"/composition-gen/" + language.name + "MT.ecore";
-			ModelUtils.saveEcoreFile(providedInterfaceMergedLocation, language.providedInterface);
-		}
-		
-		if(language.requiredInterface != null){
-			var String requiredInterfaceMergedLocation = mergedProjectName + 
-					"/composition-gen/" + language.name + "-Required.ecore";
-			println("serializeEcoreFiles.recalculatedRequiredInterface: " + language.requiredInterface.EClassifiers)
-			ModelUtils.saveEcoreFile(requiredInterfaceMergedLocation, language.requiredInterface);
-		}
-		
-		if(language.metamodel != null){
-			var String metamodelMergedLocation = mergedProjectName + 
-				"/composition-gen/" + language.name + ".ecore";
-			language.metamodelSerializationPath = metamodelMergedLocation
-			ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
-		}
-	}
-	
-	/**
 	 * Computes a composition tree according to a set of composition statements (binding between language modules)
 	 */
 	def AbstractCompositionTreeNode calculateCompositionTree(List<Binding> statements, ModelTypingSpace modelTypingSpace){
@@ -177,6 +139,7 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			var CompositionTreeNode node = new CompositionTreeNode()
 			node._requiring = new CompositionTreeLeaf(requiringLanguage)
 			node._providing = new CompositionTreeLeaf(providingLanguage)
+			node._binding = _realStatement
 			
 			if(compositionTree == null){
 				compositionTree = node
@@ -227,17 +190,79 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		if(tree instanceof CompositionTreeLeaf){
 			var CompositionTreeLeaf leaf = tree as CompositionTreeLeaf
 			var LanguageVO language = new LanguageVO()
+			language.name = leaf.language.name
 			language.metamodel = ModelUtils.loadEcoreResource(leaf.language.syntax.ecoreUri)
+			
+			// Obtaining the required interface if exists
+			if(leaf.language.requires.size > 0){
+				language.requiredInterface = 
+					ModelUtils.loadEcoreResource((leaf.language.requires.get(0) as ModelType).ecoreUri)
+			}
+			
+			// Obtaining the provided interface if exists
+			// TODO Check the conflict between the provided interface and the exact type. 
+			if(leaf.language.requires.size > 0){
+				language.providedInterface = 
+					ModelUtils.loadEcoreResource((leaf.language.implements.get(0) as ModelType).ecoreUri)
+			}
 			
 			return language
 		}
 		// If the composition tree is a composition node, it performs the composition.
 		else if(tree instanceof CompositionTreeNode){
+			var CompositionTreeNode compositionNode = tree as CompositionTreeNode
 			
+			// Obtaining the language corresponding to the two nodes
+			var LanguageVO requiringLanguage = compositionNode._requiring.evaluateCompositionTree
+			var LanguageVO providingLanguage = compositionNode._providing.evaluateCompositionTree
+			
+			return null
 		}
 		// Error: The composition tree is not valid.
 		else {
 			return null
+		}
+	}
+	
+	// ------------------------------------------------------------------
+	// File management utilities
+	// ------------------------------------------------------------------
+	
+	/**
+	 * Serializes the .ecore files corresponding to the language in the parameter
+	 * A language is composed of three different .ecore files: the metamodel, the provided interface and the required interface.
+	 * 
+	 * @param language
+	 * 		The value object containing the information of the language whose .ecore files will be serialized. 
+	 */
+	def void serializeEcoreFiles(LanguageVO language) {
+		var String mergedProjectName = targetProject.getProject()
+				.getLocation().toString();
+		
+		if(language.providedInterface != null){
+			var String providedInterfaceMergedLocation = mergedProjectName + 
+					"/composition-gen/" + language.name + "-Provided.ecore";
+			ModelUtils.saveEcoreFile(providedInterfaceMergedLocation, language.providedInterface);
+		}
+		
+		if(language.providedInterface != null){
+			var String providedInterfaceMergedLocation = mergedProjectName + 
+					"/composition-gen/" + language.name + "MT.ecore";
+			ModelUtils.saveEcoreFile(providedInterfaceMergedLocation, language.providedInterface);
+		}
+		
+		if(language.requiredInterface != null){
+			var String requiredInterfaceMergedLocation = mergedProjectName + 
+					"/composition-gen/" + language.name + "-Required.ecore";
+			println("serializeEcoreFiles.recalculatedRequiredInterface: " + language.requiredInterface.EClassifiers)
+			ModelUtils.saveEcoreFile(requiredInterfaceMergedLocation, language.requiredInterface);
+		}
+		
+		if(language.metamodel != null){
+			var String metamodelMergedLocation = mergedProjectName + 
+				"/composition-gen/" + language.name + ".ecore";
+			language.metamodelSerializationPath = metamodelMergedLocation
+			ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
 		}
 	}
 }

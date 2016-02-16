@@ -216,47 +216,6 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
   }
   
   /**
-   * Serializes the .ecore files corresponding to the language in the parameter
-   * A language is composed of three different .ecore files: the metamodel, the provided interface and the required interface.
-   * 
-   * @param language
-   * 		The value object containing the information of the language whose .ecore files will be serialized.
-   */
-  public void serializeEcoreFiles(final LanguageVO language) {
-    IProject _project = this.targetProject.getProject();
-    IPath _location = _project.getLocation();
-    String mergedProjectName = _location.toString();
-    boolean _notEquals = (!Objects.equal(language.providedInterface, null));
-    if (_notEquals) {
-      String providedInterfaceMergedLocation = (((mergedProjectName + 
-        "/composition-gen/") + language.name) + "-Provided.ecore");
-      ModelUtils.saveEcoreFile(providedInterfaceMergedLocation, language.providedInterface);
-    }
-    boolean _notEquals_1 = (!Objects.equal(language.providedInterface, null));
-    if (_notEquals_1) {
-      String providedInterfaceMergedLocation_1 = (((mergedProjectName + 
-        "/composition-gen/") + language.name) + "MT.ecore");
-      ModelUtils.saveEcoreFile(providedInterfaceMergedLocation_1, language.providedInterface);
-    }
-    boolean _notEquals_2 = (!Objects.equal(language.requiredInterface, null));
-    if (_notEquals_2) {
-      String requiredInterfaceMergedLocation = (((mergedProjectName + 
-        "/composition-gen/") + language.name) + "-Required.ecore");
-      EList<EClassifier> _eClassifiers = language.requiredInterface.getEClassifiers();
-      String _plus = ("serializeEcoreFiles.recalculatedRequiredInterface: " + _eClassifiers);
-      InputOutput.<String>println(_plus);
-      ModelUtils.saveEcoreFile(requiredInterfaceMergedLocation, language.requiredInterface);
-    }
-    boolean _notEquals_3 = (!Objects.equal(language.metamodel, null));
-    if (_notEquals_3) {
-      String metamodelMergedLocation = (((mergedProjectName + 
-        "/composition-gen/") + language.name) + ".ecore");
-      language.metamodelSerializationPath = metamodelMergedLocation;
-      ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
-    }
-  }
-  
-  /**
    * Computes a composition tree according to a set of composition statements (binding between language modules)
    */
   public AbstractCompositionTreeNode calculateCompositionTree(final List<Binding> statements, final ModelTypingSpace modelTypingSpace) {
@@ -338,6 +297,7 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         node._requiring = _compositionTreeLeaf;
         CompositionTreeLeaf _compositionTreeLeaf_1 = new CompositionTreeLeaf(providingLanguage);
         node._providing = _compositionTreeLeaf_1;
+        node._binding = _realStatement;
         boolean _equals = Objects.equal(compositionTree, null);
         if (_equals) {
           compositionTree = node;
@@ -383,24 +343,86 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
    * tree given in the parameter.
    */
   public LanguageVO evaluateCompositionTree(final AbstractCompositionTreeNode tree) {
-    Object _xifexpression = null;
     if ((tree instanceof CompositionTreeLeaf)) {
       CompositionTreeLeaf leaf = ((CompositionTreeLeaf) tree);
       LanguageVO language = new LanguageVO();
+      String _name = leaf.language.getName();
+      language.name = _name;
       Metamodel _syntax = leaf.language.getSyntax();
       String _ecoreUri = _syntax.getEcoreUri();
       EPackage _loadEcoreResource = ModelUtils.loadEcoreResource(_ecoreUri);
       language.metamodel = _loadEcoreResource;
+      EList<ModelType> _requires = leaf.language.getRequires();
+      int _size = _requires.size();
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        EList<ModelType> _requires_1 = leaf.language.getRequires();
+        ModelType _get = _requires_1.get(0);
+        String _ecoreUri_1 = ((ModelType) _get).getEcoreUri();
+        EPackage _loadEcoreResource_1 = ModelUtils.loadEcoreResource(_ecoreUri_1);
+        language.requiredInterface = _loadEcoreResource_1;
+      }
+      EList<ModelType> _requires_2 = leaf.language.getRequires();
+      int _size_1 = _requires_2.size();
+      boolean _greaterThan_1 = (_size_1 > 0);
+      if (_greaterThan_1) {
+        EList<ModelType> _implements = leaf.language.getImplements();
+        ModelType _get_1 = _implements.get(0);
+        String _ecoreUri_2 = ((ModelType) _get_1).getEcoreUri();
+        EPackage _loadEcoreResource_2 = ModelUtils.loadEcoreResource(_ecoreUri_2);
+        language.providedInterface = _loadEcoreResource_2;
+      }
       return language;
     } else {
-      Object _xifexpression_1 = null;
       if ((tree instanceof CompositionTreeNode)) {
-        _xifexpression_1 = null;
+        CompositionTreeNode compositionNode = ((CompositionTreeNode) tree);
+        LanguageVO requiringLanguage = this.evaluateCompositionTree(compositionNode._requiring);
+        LanguageVO providingLanguage = this.evaluateCompositionTree(compositionNode._providing);
+        return null;
       } else {
         return null;
       }
-      _xifexpression = _xifexpression_1;
     }
-    return ((LanguageVO)_xifexpression);
+  }
+  
+  /**
+   * Serializes the .ecore files corresponding to the language in the parameter
+   * A language is composed of three different .ecore files: the metamodel, the provided interface and the required interface.
+   * 
+   * @param language
+   * 		The value object containing the information of the language whose .ecore files will be serialized.
+   */
+  public void serializeEcoreFiles(final LanguageVO language) {
+    IProject _project = this.targetProject.getProject();
+    IPath _location = _project.getLocation();
+    String mergedProjectName = _location.toString();
+    boolean _notEquals = (!Objects.equal(language.providedInterface, null));
+    if (_notEquals) {
+      String providedInterfaceMergedLocation = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + "-Provided.ecore");
+      ModelUtils.saveEcoreFile(providedInterfaceMergedLocation, language.providedInterface);
+    }
+    boolean _notEquals_1 = (!Objects.equal(language.providedInterface, null));
+    if (_notEquals_1) {
+      String providedInterfaceMergedLocation_1 = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + "MT.ecore");
+      ModelUtils.saveEcoreFile(providedInterfaceMergedLocation_1, language.providedInterface);
+    }
+    boolean _notEquals_2 = (!Objects.equal(language.requiredInterface, null));
+    if (_notEquals_2) {
+      String requiredInterfaceMergedLocation = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + "-Required.ecore");
+      EList<EClassifier> _eClassifiers = language.requiredInterface.getEClassifiers();
+      String _plus = ("serializeEcoreFiles.recalculatedRequiredInterface: " + _eClassifiers);
+      InputOutput.<String>println(_plus);
+      ModelUtils.saveEcoreFile(requiredInterfaceMergedLocation, language.requiredInterface);
+    }
+    boolean _notEquals_3 = (!Objects.equal(language.metamodel, null));
+    if (_notEquals_3) {
+      String metamodelMergedLocation = (((mergedProjectName + 
+        "/composition-gen/") + language.name) + ".ecore");
+      language.metamodelSerializationPath = metamodelMergedLocation;
+      ModelUtils.saveEcoreFile(metamodelMergedLocation, language.metamodel);
+    }
   }
 }
