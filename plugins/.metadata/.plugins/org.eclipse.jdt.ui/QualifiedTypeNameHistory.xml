@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel"/>
-<fullyQualifiedTypeName name="org.osgi.framework.Constants"/>
-<fullyQualifiedTypeName name="org.eclipse.osgi.service.environment.Constants"/>
-<fullyQualifiedTypeName name="org.eclipse.core.runtime.Path"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.codegen.ecore.genmodel.GenPackage"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.xmi.XMLResource"/>
 <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.Constants"/>
@@ -25,7 +17,6 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreVertex"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.MethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.command.MetaclassAspectMapping"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
@@ -39,7 +30,6 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Metamodel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Language"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
 <fullyQualifiedTypeName name="org.eposoft.jccd.preprocessors.java.GeneralizeMethodArgumentTypes"/>
 <fullyQualifiedTypeName name="org.eposoft.jccd.preprocessors.java.GeneralizeMethodReturnTypes"/>
@@ -60,4 +50,14 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.compare.Match"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.ModelUtils"/>
+<fullyQualifiedTypeName name="java.util.EventObject"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem"/>
 </qualifiedTypeNameHistroy>

@@ -59,6 +59,10 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		var String answer = 'Puzzle diagnostic: \n\n';
 		
 		var LanguageVO mergedLanguage = new LanguageVO
+		var AbstractCompositionTreeNode compositionTree = calculateCompositionTree(bindingSpace.binding, modelTypingSpace)
+		var LanguageVO composedLanguage = evaluateCompositionTree(compositionTree)
+		println('compositionTree: ' + compositionTree)
+		println('composedLanguage: ' + composedLanguage)
 		
 		// Obtaining required and provided interfaces for each binding
 		for(var int i = 0; i < bindingSpace.binding.size; i++){
@@ -147,6 +151,9 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		}
 	}
 	
+	/**
+	 * Computes a composition tree according to a set of composition statements (binding between language modules)
+	 */
 	def AbstractCompositionTreeNode calculateCompositionTree(List<Binding> statements, ModelTypingSpace modelTypingSpace){
 		var ArrayList<CompositionStatementVO> statementsLeft = new ArrayList<CompositionStatementVO>()
 		var AbstractCompositionTreeNode compositionTree = null
@@ -179,9 +186,12 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			unconsidered.considered = true
 		}
 		
-		return null
+		return compositionTree
 	}
 	
+	/**
+	 * Evaluates if there are statements that have not been considered in the composition process.
+	 */
 	def boolean unconsideredStatementExsit(ArrayList<CompositionStatementVO> statements){
 		for(CompositionStatementVO _statement : statements){
 			if(_statement.considered == false)
@@ -190,6 +200,9 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		return false
 	}
 	
+	/**
+	 * Adds a node to the composition tree as a leaf.
+	 */
 	def void addNode(AbstractCompositionTreeNode root, CompositionTreeNode node){
 		
 		if(root instanceof CompositionTreeNode){
@@ -202,7 +215,29 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 				addNode(rootNode._providing as CompositionTreeNode, node)
 			}
 		}
+	}
+	
+	/**
+	 * Executes the composition of a set of languages indexed in a composition
+	 * tree given in the parameter.
+	 */
+	def LanguageVO evaluateCompositionTree(AbstractCompositionTreeNode tree){
 		
-		
+		// If the composition tree is a leaf, it returns a VO with the information of the referenced language
+		if(tree instanceof CompositionTreeLeaf){
+			var CompositionTreeLeaf leaf = tree as CompositionTreeLeaf
+			var LanguageVO language = new LanguageVO()
+			language.metamodel = ModelUtils.loadEcoreResource(leaf.language.syntax.ecoreUri)
+			
+			return language
+		}
+		// If the composition tree is a composition node, it performs the composition.
+		else if(tree instanceof CompositionTreeNode){
+			
+		}
+		// Error: The composition tree is not valid.
+		else {
+			return null
+		}
 	}
 }

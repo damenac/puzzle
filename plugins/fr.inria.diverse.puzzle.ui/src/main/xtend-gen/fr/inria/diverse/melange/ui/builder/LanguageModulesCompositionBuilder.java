@@ -76,10 +76,15 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
     this.targetProject = _createEclipseProject;
     String answer = "Puzzle diagnostic: \n\n";
     LanguageVO mergedLanguage = new LanguageVO();
+    EList<Binding> _binding = bindingSpace.getBinding();
+    AbstractCompositionTreeNode compositionTree = this.calculateCompositionTree(_binding, modelTypingSpace);
+    LanguageVO composedLanguage = this.evaluateCompositionTree(compositionTree);
+    InputOutput.<String>println(("compositionTree: " + compositionTree));
+    InputOutput.<String>println(("composedLanguage: " + composedLanguage));
     for (int i = 0; (i < bindingSpace.getBinding().size()); i++) {
       {
-        EList<Binding> _binding = bindingSpace.getBinding();
-        Binding binding = _binding.get(i);
+        EList<Binding> _binding_1 = bindingSpace.getBinding();
+        Binding binding = _binding_1.get(i);
         final String requiredModelTypeName = binding.getLeft();
         final String providedModelTypeName = binding.getRight();
         EList<Element> _elements = modelTypingSpace.getElements();
@@ -251,6 +256,9 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
     }
   }
   
+  /**
+   * Computes a composition tree according to a set of composition statements (binding between language modules)
+   */
   public AbstractCompositionTreeNode calculateCompositionTree(final List<Binding> statements, final ModelTypingSpace modelTypingSpace) {
     ArrayList<CompositionStatementVO> statementsLeft = new ArrayList<CompositionStatementVO>();
     AbstractCompositionTreeNode compositionTree = null;
@@ -339,9 +347,12 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         unconsidered.considered = true;
       }
     }
-    return null;
+    return compositionTree;
   }
   
+  /**
+   * Evaluates if there are statements that have not been considered in the composition process.
+   */
   public boolean unconsideredStatementExsit(final ArrayList<CompositionStatementVO> statements) {
     for (final CompositionStatementVO _statement : statements) {
       if ((_statement.considered == false)) {
@@ -351,6 +362,9 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
     return false;
   }
   
+  /**
+   * Adds a node to the composition tree as a leaf.
+   */
   public void addNode(final AbstractCompositionTreeNode root, final CompositionTreeNode node) {
     if ((root instanceof CompositionTreeNode)) {
       final CompositionTreeNode rootNode = ((CompositionTreeNode) root);
@@ -362,5 +376,31 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         }
       }
     }
+  }
+  
+  /**
+   * Executes the composition of a set of languages indexed in a composition
+   * tree given in the parameter.
+   */
+  public LanguageVO evaluateCompositionTree(final AbstractCompositionTreeNode tree) {
+    Object _xifexpression = null;
+    if ((tree instanceof CompositionTreeLeaf)) {
+      CompositionTreeLeaf leaf = ((CompositionTreeLeaf) tree);
+      LanguageVO language = new LanguageVO();
+      Metamodel _syntax = leaf.language.getSyntax();
+      String _ecoreUri = _syntax.getEcoreUri();
+      EPackage _loadEcoreResource = ModelUtils.loadEcoreResource(_ecoreUri);
+      language.metamodel = _loadEcoreResource;
+      return language;
+    } else {
+      Object _xifexpression_1 = null;
+      if ((tree instanceof CompositionTreeNode)) {
+        _xifexpression_1 = null;
+      } else {
+        return null;
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return ((LanguageVO)_xifexpression);
   }
 }
