@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.xmi.XMLResource"/>
-<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
-<fullyQualifiedTypeName name="org.eclipse.xtext.Constants"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.codegen.ecore.Generator"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.common.util.BasicMonitor"/>
@@ -53,11 +50,14 @@
 <fullyQualifiedTypeName name="java.util.EventObject"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EOperation"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
 </qualifiedTypeNameHistroy>
