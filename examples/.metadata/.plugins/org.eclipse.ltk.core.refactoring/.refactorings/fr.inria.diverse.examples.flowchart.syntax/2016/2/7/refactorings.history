@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.examples.flowchart.syntax/models/LogoReq.ecore&apos; to &apos;flowchartReq.ecore&apos;" description="Rename resource &apos;LogoReq.ecore&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="models/LogoReq.ecore" name="flowchartReq.ecore" stamp="1455718169687" updateReferences="true"/>
+</session>

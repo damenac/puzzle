@@ -12,11 +12,11 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/dmendeza/workspaces/puzzle/examples/modularization"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/empirical-study"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/fsm-logo-flowchart"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/state-machines"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples"/>
-			<item value="/Users/dmendeza/workspaces/puzzle/examples/fr.inria.diverse.module.ConstraintModule.syntax"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>

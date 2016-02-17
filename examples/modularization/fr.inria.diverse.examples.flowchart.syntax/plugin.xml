@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated flowchart -->
+      <package
+            uri="flowchartpck"
+            class="flowchartpck.FlowchartpckPackage"
+            genModel="models/flowchart.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated flowchartReq -->
+      <package
+            uri="FlowchartReq"
+            class="FlowchartReq.FlowchartReqPackage"
+            genModel="models/flowchartReq.genmodel"/>
+   </extension>
+
+</plugin>

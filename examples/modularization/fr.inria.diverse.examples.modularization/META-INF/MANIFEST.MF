@@ -1,5 +1,5 @@
-Bundle-SymbolicName: puzzle.examples.overlap;singleton:=true
-Bundle-Name: puzzle.examples.overlap
+Bundle-SymbolicName: fr.inria.diverse.examples.complete.logo;singleton:=true
+Bundle-Name: fr.inria.diverse.examples.complete.logo
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private,

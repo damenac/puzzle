@@ -1,7 +1,0 @@
-package family
-
-import 'logo.melange'
-
-languageBinding {
-	bind( RequiredLogo, ProvidedExpressions  )
-}

@@ -14,8 +14,8 @@
 <item elementID="=puzzle.examples.overlap.logo.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.flowchart.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.fsm.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.overlap.flowchart.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.logo.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.overlap.flowchart.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1449144221333_5" label="empirical-study" name="empirical-study">
@@ -23,7 +23,7 @@
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1453115627999_5" label="modularization-example" name="modularization-example">
 <item elementID="=fr.inria.diverse.examples.expressions.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/fr.inria.diverse.examples.flowchart.syntax" type="4"/>
+<item elementID="=fr.inria.diverse.examples.flowchart.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.expressions.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.logo.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.simpleimperative.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
@@ -31,6 +31,7 @@
 <item elementID="=fr.inria.diverse.examples.complete.logo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.simpleimperative.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.simpleconstraints.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.flowchart.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.complete.flowchart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.simpleconstraints.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>

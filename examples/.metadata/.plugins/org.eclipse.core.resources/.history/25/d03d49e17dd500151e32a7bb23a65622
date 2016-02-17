@@ -1,0 +1,6 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	flowchartpck.End = flowchartpck.EndAspect
+	flowchartpck.Expression = flowchartpck.ExpressionAspect
+	flowchartpck.Constraint = flowchartpck.ConstraintAspect
+	flowchartpck.Action = flowchartpck.ActionAspect
+	flowchartpck.Print = flowchartpck.PrintAspect
