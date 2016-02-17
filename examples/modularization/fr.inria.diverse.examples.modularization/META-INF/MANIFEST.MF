@@ -15,7 +15,9 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.examples.expressions.semantics;bundle-version="1.0.0",
  fr.inria.diverse.examples.expressions.syntax;bundle-version="1.0.0",
  fr.inria.diverse.examples.logo.semantics;bundle-version="1.0.0",
- fr.inria.diverse.examples.logo.syntax;bundle-version="1.0.0"
+ fr.inria.diverse.examples.logo.syntax;bundle-version="1.0.0",
+ fr.inria.diverse.examples.simpleconstraints.semantics;bundle-version="1.0.0",
+ fr.inria.diverse.examples.simpleconstraints.syntax;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0

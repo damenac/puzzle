@@ -3,7 +3,6 @@
 package ExpressionsPackProv;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -75,22 +74,13 @@ public interface ExpressionsPackProvPackage extends EPackage {
 	int EXPRESSION_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Eval</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION___EVAL__OBJECT = 0;
-
-	/**
 	 * The number of operations of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION_OPERATION_COUNT = 1;
+	int EXPRESSION_OPERATION_COUNT = 0;
 
 
 	/**
@@ -102,16 +92,6 @@ public interface ExpressionsPackProvPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getExpression();
-
-	/**
-	 * Returns the meta object for the '{@link ExpressionsPackProv.Expression#eval(java.lang.Object) <em>Eval</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Eval</em>' operation.
-	 * @see ExpressionsPackProv.Expression#eval(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getExpression__Eval__Object();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -145,13 +125,6 @@ public interface ExpressionsPackProvPackage extends EPackage {
 		 * @generated
 		 */
 		EClass EXPRESSION = eINSTANCE.getExpression();
-		/**
-		 * The meta object literal for the '<em><b>Eval</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXPRESSION___EVAL__OBJECT = eINSTANCE.getExpression__Eval__Object();
 
 	}
 

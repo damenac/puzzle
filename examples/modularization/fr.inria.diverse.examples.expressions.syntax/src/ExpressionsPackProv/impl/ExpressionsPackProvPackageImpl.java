@@ -5,11 +5,8 @@ package ExpressionsPackProv.impl;
 import ExpressionsPackProv.Expression;
 import ExpressionsPackProv.ExpressionsPackProvFactory;
 import ExpressionsPackProv.ExpressionsPackProvPackage;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -101,15 +98,6 @@ public class ExpressionsPackProvPackageImpl extends EPackageImpl implements Expr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExpression__Eval__Object() {
-		return expressionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ExpressionsPackProvFactory getExpressionsPackProvFactory() {
 		return (ExpressionsPackProvFactory)getEFactoryInstance();
 	}
@@ -134,7 +122,6 @@ public class ExpressionsPackProvPackageImpl extends EPackageImpl implements Expr
 
 		// Create classes and their features
 		expressionEClass = createEClass(EXPRESSION);
-		createEOperation(expressionEClass, EXPRESSION___EVAL__OBJECT);
 	}
 
 	/**
@@ -168,9 +155,6 @@ public class ExpressionsPackProvPackageImpl extends EPackageImpl implements Expr
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		EOperation op = initEOperation(getExpression__Eval__Object(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
