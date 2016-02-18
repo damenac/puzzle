@@ -1,0 +1,7 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	simpleconstraintslanguage.Constraint = simple.constraints.ConstraintAspect
+	simpleconstraintslanguage.CInteger = simple.constraints.CIntegerAspect
+	simpleconstraintslanguage.CExpression = simple.constraints.CExpressionAspect
+	simpleconstraintslanguage.CVarRef = simple.constraints.CVarRefAspect
+	simpleconstraintslanguage.RelationalConstraint = simple.constraints.RelationalConstraintAspect
+	simpleconstraintslanguage.CLiteral = simple.constraints.CLiteralAspect

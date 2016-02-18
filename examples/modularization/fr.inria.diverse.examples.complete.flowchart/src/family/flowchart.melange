@@ -51,15 +51,11 @@ modeltype ProvidedExpressions {
 /**
  * A language for simple constraints
  */
-language Constraints implements ProvidedConstraints {
+language Constraints implements ProvidedConstraints requires RequiredConstraints {
 	
 	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraints.ecore"
 	
 	with simple.constraints.RelationalConstraintAspect
-	with simple.constraints.CExpressionAspect
-	with simple.constraints.CLiteralAspect
-	with simple.constraints.CIntegerAspect
-	with simple.constraints.CVarRefAspect
 	
 	exactType ConstraintsMT
 }
@@ -69,4 +65,11 @@ language Constraints implements ProvidedConstraints {
  */
 modeltype ProvidedConstraints {
 	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraintsProv.ecore"
+}
+
+/**
+ * Provided interface for the Constraints language unit
+ */
+modeltype RequiredConstraints {
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraintsReq.ecore"
 }

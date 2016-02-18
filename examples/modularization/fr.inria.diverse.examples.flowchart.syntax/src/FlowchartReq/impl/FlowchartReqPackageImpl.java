@@ -3,7 +3,6 @@
 package FlowchartReq.impl;
 
 import FlowchartReq.Constraint;
-import FlowchartReq.Expression;
 import FlowchartReq.FlowchartReqFactory;
 import FlowchartReq.FlowchartReqPackage;
 
@@ -20,13 +19,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartReqPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass expressionEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,24 +92,6 @@ public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExpression() {
-		return expressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExpression__Eval__Object() {
-		return expressionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getConstraint() {
 		return constraintEClass;
 	}
@@ -159,9 +133,6 @@ public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartRe
 		isCreated = true;
 
 		// Create classes and their features
-		expressionEClass = createEClass(EXPRESSION);
-		createEOperation(expressionEClass, EXPRESSION___EVAL__OBJECT);
-
 		constraintEClass = createEClass(CONSTRAINT);
 		createEOperation(constraintEClass, CONSTRAINT___EVAL_CONSTRAINT__OBJECT);
 	}
@@ -196,14 +167,9 @@ public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartRe
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		EOperation op = initEOperation(getExpression__Eval__Object(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getConstraint__EvalConstraint__Object(), ecorePackage.getEBoolean(), "evalConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getConstraint__EvalConstraint__Object(), ecorePackage.getEBoolean(), "evalConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
@@ -222,11 +188,6 @@ public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartRe
 	 */
 	protected void createRequiredAnnotations() {
 		String source = "Required";	
-		addAnnotation
-		  (expressionEClass, 
-		   source, 
-		   new String[] {
-		   });	
 		addAnnotation
 		  (constraintEClass, 
 		   source, 

@@ -516,43 +516,6 @@ public interface FlowchartpckPackage extends EPackage {
 	 */
 	int CONSTRAINT_OPERATION_COUNT = 1;
 
-	/**
-	 * The meta object id for the '{@link flowchartpck.impl.ExpressionImpl <em>Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see flowchartpck.impl.ExpressionImpl
-	 * @see flowchartpck.impl.FlowchartpckPackageImpl#getExpression()
-	 * @generated
-	 */
-	int EXPRESSION = 9;
-
-	/**
-	 * The number of structural features of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Eval Constraint</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION___EVAL_CONSTRAINT__OBJECT = 0;
-
-	/**
-	 * The number of operations of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_OPERATION_COUNT = 1;
-
 
 	/**
 	 * Returns the meta object for class '{@link flowchartpck.NamedElement <em>Named Element</em>}'.
@@ -743,26 +706,6 @@ public interface FlowchartpckPackage extends EPackage {
 	EOperation getConstraint__EvalConstraint__Object();
 
 	/**
-	 * Returns the meta object for class '{@link flowchartpck.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Expression</em>'.
-	 * @see flowchartpck.Expression
-	 * @generated
-	 */
-	EClass getExpression();
-
-	/**
-	 * Returns the meta object for the '{@link flowchartpck.Expression#evalConstraint(java.lang.Object) <em>Eval Constraint</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Eval Constraint</em>' operation.
-	 * @see flowchartpck.Expression#evalConstraint(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getExpression__EvalConstraint__Object();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -946,24 +889,6 @@ public interface FlowchartpckPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation CONSTRAINT___EVAL_CONSTRAINT__OBJECT = eINSTANCE.getConstraint__EvalConstraint__Object();
-
-		/**
-		 * The meta object literal for the '{@link flowchartpck.impl.ExpressionImpl <em>Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see flowchartpck.impl.ExpressionImpl
-		 * @see flowchartpck.impl.FlowchartpckPackageImpl#getExpression()
-		 * @generated
-		 */
-		EClass EXPRESSION = eINSTANCE.getExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Eval Constraint</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXPRESSION___EVAL_CONSTRAINT__OBJECT = eINSTANCE.getExpression__EvalConstraint__Object();
 
 	}
 

@@ -56,43 +56,6 @@ public interface FlowchartReqPackage extends EPackage {
 	FlowchartReqPackage eINSTANCE = FlowchartReq.impl.FlowchartReqPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link FlowchartReq.impl.ExpressionImpl <em>Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see FlowchartReq.impl.ExpressionImpl
-	 * @see FlowchartReq.impl.FlowchartReqPackageImpl#getExpression()
-	 * @generated
-	 */
-	int EXPRESSION = 0;
-
-	/**
-	 * The number of structural features of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Eval</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION___EVAL__OBJECT = 0;
-
-	/**
-	 * The number of operations of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_OPERATION_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link FlowchartReq.impl.ConstraintImpl <em>Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -100,7 +63,7 @@ public interface FlowchartReqPackage extends EPackage {
 	 * @see FlowchartReq.impl.FlowchartReqPackageImpl#getConstraint()
 	 * @generated
 	 */
-	int CONSTRAINT = 1;
+	int CONSTRAINT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Constraint</em>' class.
@@ -129,26 +92,6 @@ public interface FlowchartReqPackage extends EPackage {
 	 */
 	int CONSTRAINT_OPERATION_COUNT = 1;
 
-
-	/**
-	 * Returns the meta object for class '{@link FlowchartReq.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Expression</em>'.
-	 * @see FlowchartReq.Expression
-	 * @generated
-	 */
-	EClass getExpression();
-
-	/**
-	 * Returns the meta object for the '{@link FlowchartReq.Expression#eval(java.lang.Object) <em>Eval</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Eval</em>' operation.
-	 * @see FlowchartReq.Expression#eval(java.lang.Object)
-	 * @generated
-	 */
-	EOperation getExpression__Eval__Object();
 
 	/**
 	 * Returns the meta object for class '{@link FlowchartReq.Constraint <em>Constraint</em>}'.
@@ -193,24 +136,6 @@ public interface FlowchartReqPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link FlowchartReq.impl.ExpressionImpl <em>Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see FlowchartReq.impl.ExpressionImpl
-		 * @see FlowchartReq.impl.FlowchartReqPackageImpl#getExpression()
-		 * @generated
-		 */
-		EClass EXPRESSION = eINSTANCE.getExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Eval</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation EXPRESSION___EVAL__OBJECT = eINSTANCE.getExpression__Eval__Object();
-
 		/**
 		 * The meta object literal for the '{@link FlowchartReq.impl.ConstraintImpl <em>Constraint</em>}' class.
 		 * <!-- begin-user-doc -->

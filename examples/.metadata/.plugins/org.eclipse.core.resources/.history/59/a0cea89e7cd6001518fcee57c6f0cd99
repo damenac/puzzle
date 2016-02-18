@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SimpleConstraints -->
+      <package
+            uri="http://simpleconstraintslanguage"
+            class="simpleconstraintslanguage.SimpleconstraintslanguagePackage"
+            genModel="models/SimpleConstraints.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SimpleConstraintsProv -->
+      <package
+            uri="http://simpleconstraintsprov"
+            class="simpleconstraintsprov.SimpleconstraintsprovPackage"
+            genModel="models/SimpleConstraintsProv.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SimpleConstraintsReq -->
+      <package
+            uri="http://simpleconstraintslanguageReq"
+            class="simpleconstraintslanguageReq.SimpleconstraintslanguageReqPackage"
+            genModel="models/SimpleConstraintsReq.genmodel"/>
+   </extension>
+
+</plugin>

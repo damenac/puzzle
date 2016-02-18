@@ -12,7 +12,10 @@ Export-Package: simpleimperative,
  simpleimperative.util,
  simpleimperativeProv,
  simpleimperativeProv.impl,
- simpleimperativeProv.util
+ simpleimperativeProv.util,
+ simpleimperativeReq,
+ simpleimperativeReq.impl,
+ simpleimperativeReq.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

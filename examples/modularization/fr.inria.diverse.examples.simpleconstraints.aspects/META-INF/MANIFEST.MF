@@ -1,5 +1,5 @@
-Manifest-Version: 1.0
 Bundle-SymbolicName: fr.inria.diverse.examples.simpleconstraints.semantics;singleton:=true
+Export-Package: simple.constraints
 Bundle-Name: fr.inria.diverse.examples.simpleconstraints.semantics
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
@@ -13,5 +13,4 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version
  fr.inria.diverse.examples.simpleconstraints.syntax;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: simple.constraints
-
+Manifest-Version: 1.0

@@ -1,0 +1,9 @@
+package family
+
+import 'flowchart.melange'
+
+languageBinding {
+	bind( StateMachinesMT, ProvidedConstraints  )
+	bind( StateMachinesMT, ImperativeLanguage  )
+	bind( RequiredConstraints, ProvidedExpressions  )
+}

@@ -56,21 +56,10 @@ public class FlowchartReqFactoryImpl extends EFactoryImpl implements FlowchartRe
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case FlowchartReqPackage.EXPRESSION: return createExpression();
 			case FlowchartReqPackage.CONSTRAINT: return createConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Expression createExpression() {
-		ExpressionImpl expression = new ExpressionImpl();
-		return expression;
 	}
 
 	/**

@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Constraint extends EObject {
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -23,4 +22,5 @@ public interface Constraint extends EObject {
 	 * @generated
 	 */
 	boolean evalConstraint(Object context);
+
 } // Constraint

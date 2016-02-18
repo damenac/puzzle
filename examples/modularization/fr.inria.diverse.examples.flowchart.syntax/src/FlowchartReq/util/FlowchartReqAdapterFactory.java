@@ -68,10 +68,6 @@ public class FlowchartReqAdapterFactory extends AdapterFactoryImpl {
 	protected FlowchartReqSwitch<Adapter> modelSwitch =
 		new FlowchartReqSwitch<Adapter>() {
 			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
 			public Adapter caseConstraint(Constraint object) {
 				return createConstraintAdapter();
 			}
@@ -94,20 +90,6 @@ public class FlowchartReqAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link FlowchartReq.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see FlowchartReq.Expression
-	 * @generated
-	 */
-	public Adapter createExpressionAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link FlowchartReq.Constraint <em>Constraint</em>}'.

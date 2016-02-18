@@ -22,4 +22,12 @@
             genModel="models/simpleimperativeProv.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated simpleimperativeReq -->
+      <package
+            uri="simpleimperativeReq"
+            class="simpleimperativeReq.SimpleimperativeReqPackage"
+            genModel="models/simpleimperativeReq.genmodel"/>
+   </extension>
+
 </plugin>

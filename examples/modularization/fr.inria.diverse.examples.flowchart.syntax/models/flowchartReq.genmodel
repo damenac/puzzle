@@ -4,15 +4,6 @@
   <genPackages prefix="FlowchartReq" disposableProviderFactory="true">
     <ecorePackage href="flowchartReq.ecore#/"/>
     <genClasses>
-      <ecoreClass href="flowchartReq.ecore#//Expression"/>
-      <genOperations>
-        <ecoreOperation href="flowchartReq.ecore#//Expression/eval"/>
-        <genParameters>
-          <ecoreParameter href="flowchartReq.ecore#//Expression/eval/context"/>
-        </genParameters>
-      </genOperations>
-    </genClasses>
-    <genClasses>
       <ecoreClass href="flowchartReq.ecore#//Constraint"/>
       <genOperations>
         <ecoreOperation href="flowchartReq.ecore#//Constraint/evalConstraint"/>

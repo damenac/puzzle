@@ -7,7 +7,6 @@ import flowchartpck.Arc;
 import flowchartpck.Constraint;
 import flowchartpck.Decision;
 import flowchartpck.End;
-import flowchartpck.Expression;
 import flowchartpck.Flowchart;
 import flowchartpck.FlowchartpckFactory;
 import flowchartpck.FlowchartpckPackage;
@@ -92,13 +91,6 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * @generated
 	 */
 	private EClass constraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass expressionEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -328,24 +320,6 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getExpression() {
-		return expressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getExpression__EvalConstraint__Object() {
-		return expressionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public FlowchartpckFactory getFlowchartpckFactory() {
 		return (FlowchartpckFactory)getEFactoryInstance();
 	}
@@ -395,9 +369,6 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 
 		constraintEClass = createEClass(CONSTRAINT);
 		createEOperation(constraintEClass, CONSTRAINT___EVAL_CONSTRAINT__OBJECT);
-
-		expressionEClass = createEClass(EXPRESSION);
-		createEOperation(expressionEClass, EXPRESSION___EVAL_CONSTRAINT__OBJECT);
 	}
 
 	/**
@@ -465,11 +436,6 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		EOperation op = initEOperation(getConstraint__EvalConstraint__Object(), ecorePackage.getEBoolean(), "evalConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getExpression__EvalConstraint__Object(), ecorePackage.getEJavaObject(), "evalConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		// Create resource
 		createResource(eNS_URI);
 
@@ -488,11 +454,6 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		String source = "Required";	
 		addAnnotation
 		  (constraintEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (expressionEClass, 
 		   source, 
 		   new String[] {
 		   });

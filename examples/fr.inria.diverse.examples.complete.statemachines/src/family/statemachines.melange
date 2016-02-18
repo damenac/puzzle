@@ -13,13 +13,14 @@ language StateMachines requires RequiredStateMachines {
  * Required interface for the state machines language unit
  */
 modeltype RequiredStateMachines {
+	
 	syntax "platform:/resource/fr.inria.diverse.examples.statemachines.syntax/models/StateMachineReq.ecore"
 }
 
 /**
  * A language for simple expressions
  */
-language ImperativeLanguage implements ProvidedImperativeLanguage {
+language ImperativeLanguage implements ProvidedImperativeLanguage requires RequiredImperativeLanguage {
 	
 	syntax "platform:/resource/fr.inria.diverse.examples.simpleimperative.syntax/models/simpleimperative.ecore"
 	exactType ImperativeLanguageMT
@@ -33,18 +34,19 @@ modeltype ProvidedImperativeLanguage {
 }
 
 /**
+ * Provided interface for the Expressions language unit
+ */
+modeltype RequiredImperativeLanguage {
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleimperative.syntax/models/simpleimperativeReq.ecore"
+}
+
+/**
  * A language for simple constraints
  */
-language Constraints implements ProvidedConstraints {
+language Constraints implements ProvidedConstraints requires RequiredConstraints {
 	
 	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraints.ecore"
-	
 	with simple.constraints.RelationalConstraintAspect
-	with simple.constraints.CExpressionAspect
-	with simple.constraints.CLiteralAspect
-	with simple.constraints.CIntegerAspect
-	with simple.constraints.CVarRefAspect
-	
 	exactType ConstraintsMT
 }
 
@@ -53,6 +55,14 @@ language Constraints implements ProvidedConstraints {
  */
 modeltype ProvidedConstraints {
 	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraintsProv.ecore"
+}
+
+/**
+ * Provided interface for the Constraints language unit
+ */
+modeltype RequiredConstraints {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraintsReq.ecore"
 }
 
 /**
@@ -76,5 +86,6 @@ language Expressions implements ProvidedExpressions {
  * Provided interface for the Expressions language unit
  */
 modeltype ProvidedExpressions {
+	
 	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/ExpressionsProv.ecore"
 }

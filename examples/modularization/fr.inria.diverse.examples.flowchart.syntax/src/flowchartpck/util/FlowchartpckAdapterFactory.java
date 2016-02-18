@@ -104,10 +104,6 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 				return createConstraintAdapter();
 			}
 			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -250,20 +246,6 @@ public class FlowchartpckAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConstraintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link flowchartpck.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see flowchartpck.Expression
-	 * @generated
-	 */
-	public Adapter createExpressionAdapter() {
 		return null;
 	}
 

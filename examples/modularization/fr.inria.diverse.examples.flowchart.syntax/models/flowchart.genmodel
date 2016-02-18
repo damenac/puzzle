@@ -60,14 +60,5 @@
         </genParameters>
       </genOperations>
     </genClasses>
-    <genClasses>
-      <ecoreClass href="flowchart.ecore#//Expression"/>
-      <genOperations>
-        <ecoreOperation href="flowchart.ecore#//Expression/evalConstraint"/>
-        <genParameters>
-          <ecoreParameter href="flowchart.ecore#//Expression/evalConstraint/context"/>
-        </genParameters>
-      </genOperations>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>
