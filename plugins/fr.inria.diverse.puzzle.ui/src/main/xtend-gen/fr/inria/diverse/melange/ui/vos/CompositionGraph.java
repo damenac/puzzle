@@ -96,24 +96,30 @@ public class CompositionGraph {
         };
         Element _findFirst_1 = IterableExtensions.<Element>findFirst(_elements_1, _function_1);
         final Language rightLanguage = ((Language) _findFirst_1);
-        final Function1<CompositionNode, Boolean> _function_2 = new Function1<CompositionNode, Boolean>() {
-          @Override
-          public Boolean apply(final CompositionNode node) {
-            return Boolean.valueOf(Objects.equal(node.language, leftLanguage));
-          }
-        };
-        CompositionNode _findFirst_2 = IterableExtensions.<CompositionNode>findFirst(this.nodes, _function_2);
-        newArc.from = _findFirst_2;
-        final Function1<CompositionNode, Boolean> _function_3 = new Function1<CompositionNode, Boolean>() {
-          @Override
-          public Boolean apply(final CompositionNode node) {
-            return Boolean.valueOf(Objects.equal(node.language, rightLanguage));
-          }
-        };
-        CompositionNode _findFirst_3 = IterableExtensions.<CompositionNode>findFirst(this.nodes, _function_3);
-        newArc.to = _findFirst_3;
+        CompositionNode _findNode = this.findNode(leftLanguage);
+        newArc.from = _findNode;
+        CompositionNode _findNode_1 = this.findNode(rightLanguage);
+        newArc.to = _findNode_1;
         this.arcs.add(newArc);
+        newArc.from.outgoing.add(newArc);
+        newArc.to.incoming.add(newArc);
       }
     }
+  }
+  
+  public boolean depends(final Language from, final Language to) {
+    CompositionNode fromNode = this.findNode(from);
+    CompositionNode toNode = this.findNode(to);
+    return fromNode.thereIsPath(toNode);
+  }
+  
+  public CompositionNode findNode(final Language language) {
+    final Function1<CompositionNode, Boolean> _function = new Function1<CompositionNode, Boolean>() {
+      @Override
+      public Boolean apply(final CompositionNode node) {
+        return Boolean.valueOf(Objects.equal(node.language, language));
+      }
+    };
+    return IterableExtensions.<CompositionNode>findFirst(this.nodes, _function);
   }
 }

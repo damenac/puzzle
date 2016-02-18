@@ -8,8 +8,16 @@ import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace
 
 class CompositionGraph {
 	
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
+	
 	public List<CompositionNode> nodes
 	public List<CompositionArc> arcs
+	
+	// -------------------------------------------------
+	// Constructor
+	// -------------------------------------------------
 	
 	new(ArrayList<Language> bindedLanguages, List<Binding> statements, ModelTypingSpace modelTypingSpace){
 		
@@ -35,9 +43,27 @@ class CompositionGraph {
 					impl.name.equals(binding.right)
 				]] as Language
 			
-			newArc.from = this.nodes.findFirst[node | node.language == leftLanguage]
-			newArc.to = this.nodes.findFirst[node | node.language == rightLanguage]
+			newArc.from = findNode(leftLanguage)
+			newArc.to = findNode(rightLanguage)
 			this.arcs.add(newArc)
+			
+			newArc.from.outgoing.add(newArc)
+			newArc.to.incoming.add(newArc)
 		}
+	}
+	
+	// -------------------------------------------------
+	// Methods
+	// -------------------------------------------------
+	
+	def boolean depends(Language from, Language to){
+		var CompositionNode fromNode = findNode(from)
+		var CompositionNode toNode = findNode(to)
+		return fromNode.thereIsPath(toNode)
+	}
+	
+	
+	def CompositionNode findNode(Language language){
+		return this.nodes.findFirst[node | node.language == language]
 	}
 }

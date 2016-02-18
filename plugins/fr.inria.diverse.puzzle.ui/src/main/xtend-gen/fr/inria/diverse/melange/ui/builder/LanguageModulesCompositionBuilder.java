@@ -197,7 +197,17 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
       } else {
         if ((compositionTree instanceof CompositionTreeLeaf)) {
           CompositionTreeLeaf currentLeaf = ((CompositionTreeLeaf) compositionTree);
-          CompositionTreeNode node = new CompositionTreeNode();
+          CompositionTreeLeaf newLeaf = new CompositionTreeLeaf(bindedLanguage);
+          boolean _depends = graph.depends(currentLeaf.language, bindedLanguage);
+          if (_depends) {
+            CompositionTreeNode node = new CompositionTreeNode();
+            node._requiring = currentLeaf;
+            node._providing = newLeaf;
+          } else {
+            CompositionTreeNode node_1 = new CompositionTreeNode();
+            node_1._requiring = newLeaf;
+            node_1._providing = currentLeaf;
+          }
         } else {
           compositionTree.addNode(bindedLanguage);
         }

@@ -1,0 +1,22 @@
+package fr.inria.diverse.melange.ui.vos
+
+import fr.inria.diverse.melange.metamodel.melange.Language
+import java.util.List
+
+class CompositionNode {
+	
+	public Language language
+	public List<CompositionArc> incoming
+	public List<CompositionArc> outgoing 
+	
+	override public boolean equals(Object o){
+		var CompositionNode target = o as CompositionNode
+		return target.language.equals(this.language)
+	}
+	
+	def boolean thereIsPath(CompositionNode node) {
+		
+		return false
+	}
+	
+}
