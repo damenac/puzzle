@@ -1,0 +1,15 @@
+package fr.inria.diverse.melange.ui.vos
+
+import java.util.List
+import java.util.ArrayList
+
+class CompositionGraph {
+	
+	public List<CompositionNode> nodes
+	public List<CompositionArc> arcs
+	
+	new(){
+		this.nodes = new ArrayList<CompositionNode>()
+		this.arcs = new ArrayList<CompositionArc>()
+	}
+}

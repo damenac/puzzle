@@ -1,0 +1,30 @@
+package fr.inria.diverse.melange.ui.vos
+
+import java.util.List
+import java.util.ArrayList
+import fr.inria.diverse.melange.metamodel.melange.Language
+import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
+
+class CompositionGraph {
+	
+	public List<CompositionNode> nodes
+	public List<CompositionArc> arcs
+	
+	new(ArrayList<Language> bindedLanguages, List<Binding> statements){
+		
+		this.nodes = new ArrayList<CompositionNode>()
+		this.arcs = new ArrayList<CompositionArc>()
+		
+		for(Language language : bindedLanguages){
+			var CompositionNode newNode = new CompositionNode()
+			newNode.language = language
+			
+			if(!this.nodes.contains(newNode))
+				this.nodes.add(newNode)
+		}
+		
+		for(Binding binding : statements){
+			
+		}
+	}
+}

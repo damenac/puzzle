@@ -39,6 +39,7 @@ import java.io.IOException
 import org.eclipse.emf.codegen.ecore.genmodel.util.GenModelUtil
 import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter
 import org.eclipse.emf.common.util.BasicMonitor
+import fr.inria.diverse.melange.ui.vos.CompositionGraph
 
 /**
  * Builder for the action: Analyze Family.
@@ -110,46 +111,21 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 				bindedLanguages.add(providingLanguage)
 		}
 		
+		var CompositionGraph graph = new CompositionGraph(bindedLanguages, statements, modelTypingSpace)
+		
 		for(Language bindedLanguage : bindedLanguages){
 			if(compositionTree == null){
 				var CompositionTreeLeaf leaf = new CompositionTreeLeaf(bindedLanguage);
 				compositionTree = leaf;
+			}else if(compositionTree instanceof CompositionTreeLeaf){
+				var CompositionTreeLeaf currentLeaf = compositionTree as CompositionTreeLeaf
+				var CompositionTreeNode node = new CompositionTreeNode()
+//				if()
 			}else{
 				compositionTree.addNode(bindedLanguage)
 			}
 		}
 		return compositionTree
-	}
-	
-	/**
-	 * Evaluates if there are statements that have not been considered in the composition process.
-	 */
-	def boolean unconsideredStatementExsit(ArrayList<CompositionStatementVO> statements){
-		for(CompositionStatementVO _statement : statements){
-			if(_statement.considered == false)
-				return true
-		}
-		return false
-	}
-	
-	/**
-	 * Adds a node to the composition tree as a leaf.
-	 */
-	def void addNode(AbstractCompositionTreeNode root, CompositionTreeNode node){
-		
-		if(root instanceof CompositionTreeNode){
-			val rootNode = root as CompositionTreeNode
-			
-			if(!(rootNode._requiring instanceof CompositionTreeLeaf)){
-				addNode(rootNode._requiring as CompositionTreeNode, node)
-			}
-//			else if(!(rootNode._providing instanceof CompositionTreeLeaf)){
-//				addNode(rootNode._providing as CompositionTreeNode, node)
-//			}
-			else{
-									
-			}
-		}
 	}
 	
 	/**

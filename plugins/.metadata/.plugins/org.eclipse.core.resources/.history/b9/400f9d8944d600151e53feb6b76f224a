@@ -1,0 +1,8 @@
+package fr.inria.diverse.melange.ui.vos
+
+class BindingServices {
+	
+	def static boolean requires(Language required, Language provided){
+		
+	}
+}

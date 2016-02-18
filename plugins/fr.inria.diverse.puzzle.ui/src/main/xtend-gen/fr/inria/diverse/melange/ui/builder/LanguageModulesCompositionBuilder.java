@@ -11,6 +11,7 @@ import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.melange.ui.builder.AbstractBuilder;
 import fr.inria.diverse.melange.ui.builder.LanguageVO;
 import fr.inria.diverse.melange.ui.vos.AbstractCompositionTreeNode;
+import fr.inria.diverse.melange.ui.vos.CompositionGraph;
 import fr.inria.diverse.melange.ui.vos.CompositionStatementVO;
 import fr.inria.diverse.melange.ui.vos.CompositionTreeLeaf;
 import fr.inria.diverse.melange.ui.vos.CompositionTreeNode;
@@ -187,41 +188,22 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         }
       }
     }
+    CompositionGraph graph = new CompositionGraph(bindedLanguages, statements, modelTypingSpace);
     for (final Language bindedLanguage : bindedLanguages) {
       boolean _equals = Objects.equal(compositionTree, null);
       if (_equals) {
         CompositionTreeLeaf leaf = new CompositionTreeLeaf(bindedLanguage);
         compositionTree = leaf;
       } else {
-        compositionTree.addNode(bindedLanguage);
+        if ((compositionTree instanceof CompositionTreeLeaf)) {
+          CompositionTreeLeaf currentLeaf = ((CompositionTreeLeaf) compositionTree);
+          CompositionTreeNode node = new CompositionTreeNode();
+        } else {
+          compositionTree.addNode(bindedLanguage);
+        }
       }
     }
     return compositionTree;
-  }
-  
-  /**
-   * Evaluates if there are statements that have not been considered in the composition process.
-   */
-  public boolean unconsideredStatementExsit(final ArrayList<CompositionStatementVO> statements) {
-    for (final CompositionStatementVO _statement : statements) {
-      if ((_statement.considered == false)) {
-        return true;
-      }
-    }
-    return false;
-  }
-  
-  /**
-   * Adds a node to the composition tree as a leaf.
-   */
-  public void addNode(final AbstractCompositionTreeNode root, final CompositionTreeNode node) {
-    if ((root instanceof CompositionTreeNode)) {
-      final CompositionTreeNode rootNode = ((CompositionTreeNode) root);
-      if ((!(rootNode._requiring instanceof CompositionTreeLeaf))) {
-        this.addNode(((CompositionTreeNode) rootNode._requiring), node);
-      } else {
-      }
-    }
   }
   
   /**

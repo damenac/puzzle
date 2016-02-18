@@ -1,0 +1,12 @@
+package fr.inria.diverse.melange.ui.vos
+
+import fr.inria.diverse.melange.metamodel.melange.Language
+
+class CompositionNode {
+	
+	public Language language
+	
+	def public boolean equals(Object o){
+		
+	}
+}
