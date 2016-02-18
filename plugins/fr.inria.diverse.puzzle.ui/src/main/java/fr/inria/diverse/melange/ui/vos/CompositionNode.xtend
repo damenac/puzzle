@@ -6,15 +6,26 @@ import java.util.ArrayList
 
 class CompositionNode {
 	
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
+	
 	public Language language
 	public List<CompositionArc> incoming
 	public List<CompositionArc> outgoing 
+	
+	// -------------------------------------------------
+	// Constructor
+	// -------------------------------------------------
 	
 	new(){
 		this.incoming = new ArrayList<CompositionArc>()
 		this.outgoing = new ArrayList<CompositionArc>()
 	}
 	
+	// -------------------------------------------------
+	// Methods
+	// -------------------------------------------------
 	
 	/**
 	 * Indicates if there is a path between the current node and the one given in the parameter

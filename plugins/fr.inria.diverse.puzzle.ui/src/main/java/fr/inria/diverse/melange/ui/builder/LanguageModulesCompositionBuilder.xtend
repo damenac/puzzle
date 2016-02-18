@@ -131,7 +131,8 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 				}
 				compositionTree = node
 			}else{
-				compositionTree.addNode(bindedLanguage)
+				var CompositionTreeNode currentNode = compositionTree as CompositionTreeNode
+				currentNode.addNode(bindedLanguage)
 			}
 		}
 		return compositionTree

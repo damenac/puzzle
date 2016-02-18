@@ -209,7 +209,8 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
           }
           compositionTree = node;
         } else {
-          compositionTree.addNode(bindedLanguage);
+          CompositionTreeNode currentNode = ((CompositionTreeNode) compositionTree);
+          currentNode.addNode(bindedLanguage);
         }
       }
     }
