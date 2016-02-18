@@ -62,7 +62,6 @@ class CompositionGraph {
 		return fromNode.thereIsPath(toNode)
 	}
 	
-	
 	def CompositionNode findNode(Language language){
 		return this.nodes.findFirst[node | node.language == language]
 	}

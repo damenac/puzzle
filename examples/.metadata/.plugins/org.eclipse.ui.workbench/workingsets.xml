@@ -23,17 +23,19 @@
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1453115627999_5" label="modularization-example" name="modularization-example">
 <item elementID="=fr.inria.diverse.examples.expressions.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.flowchart.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.expressions.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.logo.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.simpleimperative.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.logo.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.complete.logo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.simpleimperative.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.simpleconstraints.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.flowchart.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.complete.flowchart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.complete.statemachines" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.simpleconstraints.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.flowchart.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.logo.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.simpleimperative.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.complete.logo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.statemachines.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.examples.flowchart.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438955570222_0" label="Window Working Set" name="Aggregate for window 1438955570222"/>
 </workingSetManager>

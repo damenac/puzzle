@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated StateMachine -->
+      <package
+            uri="StateMachines"
+            class="StateMachines.StateMachinesPackage"
+            genModel="models/StateMachine.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated StateMachineReq -->
+      <package
+            uri="StateMachineReq"
+            class="StateMachineReq.StateMachineReqPackage"
+            genModel="models/StateMachineReq.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated StateMachineProv -->
+      <package
+            uri="StateMachinesProv"
+            class="StateMachinesProv.StateMachinesPackage"
+            genModel="models/StateMachineProv.genmodel"/>
+   </extension>
+
+</plugin>

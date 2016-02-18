@@ -1,0 +1,56 @@
+package family
+
+/**
+ * A language unit for manipulating flowcharts constructs 
+ */
+language StateMachines requires RequiredStateMachines {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.statemachines.syntax/models/StateMachine.ecore"
+	exactType StateMachinesMT
+}
+
+/**
+ * Required interface for the flowcharts language unit
+ */
+modeltype RequiredStateMachines {
+	syntax "platform:/resource/fr.inria.diverse.examples.statemachines.syntax/models/StateMachineReq.ecore"
+}
+
+/**
+ * A language for simple expressions
+ */
+language ImperativeLanguage implements ProvidedImperativeLanguage {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/Expression.ecore"
+	exactType ImperativeLanguageMT
+}
+
+/**
+ * Provided interface for the Expressions language unit
+ */
+modeltype ProvidedImperativeLanguage {
+	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/ExpressionsProv.ecore"
+}
+
+/**
+ * A language for simple constraints
+ */
+language Constraints implements ProvidedConstraints {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraints.ecore"
+	
+	with simple.constraints.RelationalConstraintAspect
+	with simple.constraints.CExpressionAspect
+	with simple.constraints.CLiteralAspect
+	with simple.constraints.CIntegerAspect
+	with simple.constraints.CVarRefAspect
+	
+	exactType ConstraintsMT
+}
+
+/**
+ * Provided interface for the Constraints language unit
+ */
+modeltype ProvidedConstraints {
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraintsProv.ecore"
+}

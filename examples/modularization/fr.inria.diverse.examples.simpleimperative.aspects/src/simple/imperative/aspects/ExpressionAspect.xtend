@@ -3,17 +3,18 @@ package simple.imperative.aspects
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 
-import simpleimperativelanguage.Expression
-import simpleimperativelanguage.Literal
-import simpleimperativelanguage.IntegerLit
-import simpleimperativelanguage.StringLit
-import simpleimperativelanguage.BoolLit
-import simpleimperativelanguage.ArithmeticExpression
-import simpleimperativelanguage.VarReference
-import simpleimperativelanguage.RelationalExpression
+import simpleimperative.Expression
+import simpleimperative.Literal
+import simpleimperative.IntegerLit
+import simpleimperative.StringLit
+import simpleimperative.BoolLit
+import simpleimperative.ArithmeticExpression
+import simpleimperative.VarReference
+import simpleimperative.RelationalExpression
+import simpleimperative.GetFromMemory
 
 import java.util.Hashtable
-import simpleimperativelanguage.GetFromMemory
+
 
 @Aspect(className=Expression)
 abstract class ExpressionAspect {

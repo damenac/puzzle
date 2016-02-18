@@ -7,9 +7,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: simpleimperativelanguage,
- simpleimperativelanguage.impl,
- simpleimperativelanguage.util
+Export-Package: simpleimperative,
+ simpleimperative.impl,
+ simpleimperative.util,
+ simpleimperativeProv,
+ simpleimperativeProv.impl,
+ simpleimperativeProv.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

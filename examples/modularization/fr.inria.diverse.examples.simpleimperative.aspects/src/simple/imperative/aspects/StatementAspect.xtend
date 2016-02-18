@@ -3,21 +3,22 @@ package simple.imperative.aspects
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 	
-import simpleimperativelanguage.Statement
-import simpleimperativelanguage.Println
-import simpleimperativelanguage.Print
-import simpleimperativelanguage.Assignation
+import simpleimperative.Statement
+import simpleimperative.Println
+import simpleimperative.Print
+import simpleimperative.Assignation
 
 import java.util.Hashtable
-import simpleimperativelanguage.VarDecl
-import simpleimperativelanguage.Loop
-import simpleimperativelanguage.RelationalExpression
-import simpleimperativelanguage.Conditional
-import simpleimperativelanguage.Program
-import simpleimperativelanguage.PutInMemory
+import simpleimperative.VarDecl
+import simpleimperative.Loop
+import simpleimperative.RelationalExpression
+import simpleimperative.Conditional
+import simpleimperative.Program
+import simpleimperative.PutInMemory
+import simpleimperative.Wait
 
 import static extension simple.imperative.aspects.ExpressionAspect.*
-import simpleimperativelanguage.Wait
+
 
 @Aspect(className=Statement)
 abstract class StatementAspect {

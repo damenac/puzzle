@@ -9,9 +9,17 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated simpleimperative -->
       <package
-            uri="http://simple.imperative.language"
-            class="simpleimperativelanguage.SimpleimperativelanguagePackage"
+            uri="simpleimperative"
+            class="simpleimperative.SimpleimperativePackage"
             genModel="models/simpleimperative.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated simpleimperativeProv -->
+      <package
+            uri="simpleimperativeProv"
+            class="simpleimperativeProv.SimpleimperativeProvPackage"
+            genModel="models/simpleimperativeProv.genmodel"/>
    </extension>
 
 </plugin>
