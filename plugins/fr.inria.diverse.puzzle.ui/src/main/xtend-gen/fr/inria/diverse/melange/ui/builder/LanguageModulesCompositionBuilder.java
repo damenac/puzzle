@@ -68,6 +68,9 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
   
   private IProject targetProject;
   
+  /**
+   * Compose the language modules referenced in the melange and puzzle scripts given in the parameters
+   */
   public String composeLanguageModules(final Resource puzzleResource, final Resource melangeResource, final IProject project, final IProgressMonitor monitor) {
     try {
       EList<EObject> _contents = puzzleResource.getContents();
@@ -110,22 +113,13 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
   public AbstractCompositionTreeNode calculateCompositionTree(final List<Binding> statements, final ModelTypingSpace modelTypingSpace) {
     ArrayList<CompositionStatementVO> statementsLeft = new ArrayList<CompositionStatementVO>();
     AbstractCompositionTreeNode compositionTree = null;
+    ArrayList<Language> bindedLanguages = new ArrayList<Language>();
     for (final Binding _statement : statements) {
-      CompositionStatementVO _compositionStatementVO = new CompositionStatementVO(_statement);
-      statementsLeft.add(_compositionStatementVO);
-    }
-    while (this.unconsideredStatementExsit(statementsLeft)) {
       {
-        final Function1<CompositionStatementVO, Boolean> _function = new Function1<CompositionStatementVO, Boolean>() {
-          @Override
-          public Boolean apply(final CompositionStatementVO _statement) {
-            return Boolean.valueOf((_statement.considered == false));
-          }
-        };
-        CompositionStatementVO unconsidered = IterableExtensions.<CompositionStatementVO>findFirst(statementsLeft, _function);
-        final Binding _realStatement = unconsidered.statement;
+        CompositionStatementVO _compositionStatementVO = new CompositionStatementVO(_statement);
+        statementsLeft.add(_compositionStatementVO);
         EList<Element> _elements = modelTypingSpace.getElements();
-        final Function1<Element, Boolean> _function_1 = new Function1<Element, Boolean>() {
+        final Function1<Element, Boolean> _function = new Function1<Element, Boolean>() {
           @Override
           public Boolean apply(final Element element) {
             boolean _and = false;
@@ -137,7 +131,7 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
                 @Override
                 public Boolean apply(final ModelType req) {
                   String _name = req.getName();
-                  String _left = _realStatement.getLeft();
+                  String _left = _statement.getLeft();
                   return Boolean.valueOf(_name.equals(_left));
                 }
               };
@@ -147,10 +141,15 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
             return Boolean.valueOf(_and);
           }
         };
-        Element _findFirst = IterableExtensions.<Element>findFirst(_elements, _function_1);
+        Element _findFirst = IterableExtensions.<Element>findFirst(_elements, _function);
         final Language requiringLanguage = ((Language) _findFirst);
+        boolean _contains = bindedLanguages.contains(requiringLanguage);
+        boolean _not = (!_contains);
+        if (_not) {
+          bindedLanguages.add(requiringLanguage);
+        }
         EList<Element> _elements_1 = modelTypingSpace.getElements();
-        final Function1<Element, Boolean> _function_2 = new Function1<Element, Boolean>() {
+        final Function1<Element, Boolean> _function_1 = new Function1<Element, Boolean>() {
           @Override
           public Boolean apply(final Element element) {
             boolean _and = false;
@@ -169,7 +168,7 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
                 @Override
                 public Boolean apply(final ModelType impl) {
                   String _name = impl.getName();
-                  String _right = _realStatement.getRight();
+                  String _right = _statement.getRight();
                   return Boolean.valueOf(_name.equals(_right));
                 }
               };
@@ -179,21 +178,22 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
             return Boolean.valueOf(_and);
           }
         };
-        Element _findFirst_1 = IterableExtensions.<Element>findFirst(_elements_1, _function_2);
+        Element _findFirst_1 = IterableExtensions.<Element>findFirst(_elements_1, _function_1);
         final Language providingLanguage = ((Language) _findFirst_1);
-        CompositionTreeNode node = new CompositionTreeNode();
-        CompositionTreeLeaf _compositionTreeLeaf = new CompositionTreeLeaf(requiringLanguage);
-        node._requiring = _compositionTreeLeaf;
-        CompositionTreeLeaf _compositionTreeLeaf_1 = new CompositionTreeLeaf(providingLanguage);
-        node._providing = _compositionTreeLeaf_1;
-        node._binding = _realStatement;
-        boolean _equals = Objects.equal(compositionTree, null);
-        if (_equals) {
-          compositionTree = node;
-        } else {
-          this.addNode(compositionTree, node);
+        boolean _contains_1 = bindedLanguages.contains(providingLanguage);
+        boolean _not_1 = (!_contains_1);
+        if (_not_1) {
+          bindedLanguages.add(providingLanguage);
         }
-        unconsidered.considered = true;
+      }
+    }
+    for (final Language bindedLanguage : bindedLanguages) {
+      boolean _equals = Objects.equal(compositionTree, null);
+      if (_equals) {
+        CompositionTreeLeaf leaf = new CompositionTreeLeaf(bindedLanguage);
+        compositionTree = leaf;
+      } else {
+        compositionTree.addNode(bindedLanguage);
       }
     }
     return compositionTree;
@@ -220,9 +220,6 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
       if ((!(rootNode._requiring instanceof CompositionTreeLeaf))) {
         this.addNode(((CompositionTreeNode) rootNode._requiring), node);
       } else {
-        if ((!(rootNode._providing instanceof CompositionTreeLeaf))) {
-          this.addNode(((CompositionTreeNode) rootNode._providing), node);
-        }
       }
     }
   }

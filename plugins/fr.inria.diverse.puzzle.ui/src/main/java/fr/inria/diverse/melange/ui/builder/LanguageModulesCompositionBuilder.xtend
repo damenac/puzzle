@@ -52,6 +52,9 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 	
 	private IProject targetProject
 	
+	/**
+	 * Compose the language modules referenced in the melange and puzzle scripts given in the parameters
+	 */
 	def String composeLanguageModules(Resource puzzleResource, Resource melangeResource, IProject project, IProgressMonitor monitor) {
 		val bindingSpace = puzzleResource.contents.head as LanguageBinding
 		val modelTypingSpace = melangeResource.contents.head as ModelTypingSpace
@@ -79,9 +82,6 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		gen.generateCode
 		targetProject.refreshLocal(IResource.DEPTH_INFINITE, null)
 		
-//			val ModelType requiredModelType = modelTypingSpace.elements.findFirst[ element |
-//				element instanceof ModelType && (element as ModelType).name.equals(requiredModelTypeName)] as ModelType
-//			
 		return answer
 	}
 	
@@ -91,36 +91,33 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 	def AbstractCompositionTreeNode calculateCompositionTree(List<Binding> statements, ModelTypingSpace modelTypingSpace){
 		var ArrayList<CompositionStatementVO> statementsLeft = new ArrayList<CompositionStatementVO>()
 		var AbstractCompositionTreeNode compositionTree = null
+		var ArrayList<Language> bindedLanguages = new ArrayList<Language>();
 		
 		for(Binding _statement : statements){
 			statementsLeft.add(new CompositionStatementVO(_statement))
-		}
-		
-		while( statementsLeft.unconsideredStatementExsit ){
-			var unconsidered = statementsLeft.findFirst[ _statement | _statement.considered == false ]
-			val _realStatement = unconsidered.statement
-			
 			val Language requiringLanguage = modelTypingSpace.elements.findFirst[ element |
-				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(_realStatement.left)]] as Language
+				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(_statement.left)]] as Language
+			
+			if(!bindedLanguages.contains(requiringLanguage))
+				bindedLanguages.add(requiringLanguage)
 			
 			val Language providingLanguage = modelTypingSpace.elements.findFirst[ element |
 				element instanceof Language && requiringLanguage != element && (element as Language).implements.exists[ impl | 
-					impl.name.equals(_realStatement.right)
+					impl.name.equals(_statement.right)
 				]] as Language
-			
-			var CompositionTreeNode node = new CompositionTreeNode()
-			node._requiring = new CompositionTreeLeaf(requiringLanguage)
-			node._providing = new CompositionTreeLeaf(providingLanguage)
-			node._binding = _realStatement
-			
-			if(compositionTree == null){
-				compositionTree = node
-			}else{
-				addNode(compositionTree, node)
-			}
-			unconsidered.considered = true
+				
+			if(!bindedLanguages.contains(providingLanguage))
+				bindedLanguages.add(providingLanguage)
 		}
 		
+		for(Language bindedLanguage : bindedLanguages){
+			if(compositionTree == null){
+				var CompositionTreeLeaf leaf = new CompositionTreeLeaf(bindedLanguage);
+				compositionTree = leaf;
+			}else{
+				compositionTree.addNode(bindedLanguage)
+			}
+		}
 		return compositionTree
 	}
 	
@@ -146,8 +143,11 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			if(!(rootNode._requiring instanceof CompositionTreeLeaf)){
 				addNode(rootNode._requiring as CompositionTreeNode, node)
 			}
-			else if(!(rootNode._providing instanceof CompositionTreeLeaf)){
-				addNode(rootNode._providing as CompositionTreeNode, node)
+//			else if(!(rootNode._providing instanceof CompositionTreeLeaf)){
+//				addNode(rootNode._providing as CompositionTreeNode, node)
+//			}
+			else{
+									
 			}
 		}
 	}
