@@ -1,0 +1,54 @@
+package fr.inria.diverse.melange.ui.vos
+
+import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
+import fr.inria.diverse.melange.metamodel.melange.Language
+
+class CompositionTreeNode extends AbstractCompositionTreeNode {
+	
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
+	
+	public AbstractCompositionTreeNode _requiring
+	public AbstractCompositionTreeNode _providing
+	public Binding _binding
+	
+	// -------------------------------------------------
+	// Constructor
+	// -------------------------------------------------
+	
+	new(CompositionGraph graph) {
+		super(graph)
+	}
+	
+	// -------------------------------------------------
+	// Methods
+	// -------------------------------------------------
+	
+	/** 
+	 * Adds a node to the current tree
+	 */
+	def AbstractCompositionTreeNode addNode(AbstractCompositionTreeNode compositionTree, Language language){
+		if(compositionTree instanceof CompositionTreeLeaf){
+			var CompositionTreeLeaf currentLeaf = compositionTree as CompositionTreeLeaf
+			var CompositionTreeLeaf newLeaf = new CompositionTreeLeaf(graph, bindedLanguage)
+			var CompositionTreeNode node = new CompositionTreeNode(graph)
+			
+			if(graph.depends(currentLeaf.language, bindedLanguage)){
+				node._requiring = currentLeaf
+				node._providing = newLeaf
+			}else{
+				node._requiring = newLeaf
+				node._providing = currentLeaf
+			}
+			return node
+		}
+		
+		var CompositionTreeLeaf leaf = new CompositionTreeLeaf(this.graph, language)
+		if(this._providing.existsDependency(leaf)){
+			
+		}
+	}
+	
+	
+}

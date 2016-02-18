@@ -1,0 +1,24 @@
+package fr.inria.diverse.melange.ui.vos
+
+class AbstractCompositionTreeNode {
+
+	public CompositionGraph graph
+	
+	new(CompositionGraph graph){
+		this.graph = graph
+	}
+	
+	def boolean existsDependency(AbstractCompositionTreeNode node){
+		if(this instanceof CompositionTreeLeaf){
+			var CompositionTreeLeaf thisLeaf = this as CompositionTreeLeaf
+//			if(graph.depends(thisLeaf.language, node.)){
+//				
+//			}
+		}else{
+			
+		}
+		
+		
+		return false
+	}
+}
