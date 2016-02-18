@@ -20,7 +20,10 @@ class CompositionNode {
 	 * Indicates if there is a path between the current node and the one given in the parameter
 	 */
 	def boolean thereIsPath(CompositionNode node) {
-		if(this.outgoing.contains(node)){
+		val ArrayList<CompositionNode> outgoingNodes = new ArrayList<CompositionNode>()
+		this.outgoing.forall[ element | outgoingNodes.add(element.to) ]
+		
+		if(outgoingNodes.contains(node)){
 			return true
 		}
 		

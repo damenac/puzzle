@@ -1,9 +1,16 @@
 package fr.inria.diverse.melange.ui.vos;
 
 import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.melange.ui.vos.CompositionGraph;
 
 @SuppressWarnings("all")
-public abstract class AbstractCompositionTreeNode {
+public class AbstractCompositionTreeNode {
+  public CompositionGraph graph;
+  
+  public AbstractCompositionTreeNode(final CompositionGraph graph) {
+    this.graph = graph;
+  }
+  
   /**
    * Adds a node to the current tree
    */

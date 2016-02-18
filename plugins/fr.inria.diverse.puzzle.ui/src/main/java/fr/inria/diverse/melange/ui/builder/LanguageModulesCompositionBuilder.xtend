@@ -115,21 +115,21 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		
 		for(Language bindedLanguage : bindedLanguages){
 			if(compositionTree == null){
-				var CompositionTreeLeaf leaf = new CompositionTreeLeaf(bindedLanguage);
+				var CompositionTreeLeaf leaf = new CompositionTreeLeaf(graph, bindedLanguage);
 				compositionTree = leaf;
 			}else if(compositionTree instanceof CompositionTreeLeaf){
 				var CompositionTreeLeaf currentLeaf = compositionTree as CompositionTreeLeaf
-				var CompositionTreeLeaf newLeaf = new CompositionTreeLeaf(bindedLanguage)
+				var CompositionTreeLeaf newLeaf = new CompositionTreeLeaf(graph, bindedLanguage)
+				var CompositionTreeNode node = new CompositionTreeNode(graph)
 				
 				if(graph.depends(currentLeaf.language, bindedLanguage)){
-					var CompositionTreeNode node = new CompositionTreeNode()
 					node._requiring = currentLeaf
 					node._providing = newLeaf
 				}else{
-					var CompositionTreeNode node = new CompositionTreeNode()
 					node._requiring = newLeaf
 					node._providing = currentLeaf
 				}
+				compositionTree = node
 			}else{
 				compositionTree.addNode(bindedLanguage)
 			}

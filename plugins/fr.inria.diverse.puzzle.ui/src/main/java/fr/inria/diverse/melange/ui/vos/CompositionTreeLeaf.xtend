@@ -6,7 +6,8 @@ class CompositionTreeLeaf extends AbstractCompositionTreeNode {
 	
 	public Language language
 	
-	new(Language language){
+	new(CompositionGraph graph, Language language){
+		super(graph)
 		this.language = language
 	}
 }

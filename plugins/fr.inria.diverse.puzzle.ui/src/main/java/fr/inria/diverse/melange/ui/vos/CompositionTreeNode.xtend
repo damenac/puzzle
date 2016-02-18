@@ -8,4 +8,8 @@ class CompositionTreeNode extends AbstractCompositionTreeNode {
 	public AbstractCompositionTreeNode _providing
 	public Binding _binding
 	
+	new(CompositionGraph graph) {
+		super(graph)
+	}
+	
 }
