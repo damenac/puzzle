@@ -249,11 +249,14 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
         PuzzleMerge _instance_2 = PuzzleMerge.getInstance();
         final EPackage mergedPackage = _instance_2.mergeAbstractSyntax(providingLanguage.metamodel, providingLanguage.providedInterface, 
           requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, "CompleteDSLPckg");
+        PuzzleMerge _instance_3 = PuzzleMerge.getInstance();
+        EPackage recalculatedProvidedInterface = _instance_3.recalculateProvidedInterface(requiringLanguage.providedInterface, providingLanguage.providedInterface);
         LanguageVO mergedLanguage = new LanguageVO();
         mergedLanguage.name = "CompleteDSL";
         mergedLanguage.mergedPackage = "CompleteDSLPckg";
         mergedLanguage.metamodel = mergedPackage;
         mergedLanguage.requiredInterface = recalculatedRequiredInterface;
+        mergedLanguage.providedInterface = recalculatedProvidedInterface;
         return mergedLanguage;
       } else {
         return null;
@@ -381,6 +384,9 @@ public class LanguageModulesCompositionBuilder extends AbstractBuilder {
     return genModel;
   }
   
+  /**
+   * Generates the code associated to a generated model given in the parameter
+   */
   public void generateCode(final GenModel genModel) {
     genModel.reconcile();
     genModel.setCanGenerate(true);

@@ -8,7 +8,7 @@ class AbstractCompositionTreeNode {
 	// Attributes
 	// -------------------------------------------------
 	
-	public CompositionGraph graph
+	private CompositionGraph graph
 	
 	// -------------------------------------------------
 	// Constructor

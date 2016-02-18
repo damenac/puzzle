@@ -7,7 +7,7 @@ import fr.inria.diverse.melange.ui.vos.CompositionTreeNode;
 
 @SuppressWarnings("all")
 public class AbstractCompositionTreeNode {
-  public CompositionGraph graph;
+  private CompositionGraph graph;
   
   public AbstractCompositionTreeNode(final CompositionGraph graph) {
     this.graph = graph;

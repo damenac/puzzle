@@ -30,7 +30,8 @@ public class CompositionNode {
     final Function1<CompositionArc, Boolean> _function = new Function1<CompositionArc, Boolean>() {
       @Override
       public Boolean apply(final CompositionArc element) {
-        return Boolean.valueOf(outgoingNodes.add(element.to));
+        CompositionNode _to = element.getTo();
+        return Boolean.valueOf(outgoingNodes.add(_to));
       }
     };
     IterableExtensions.<CompositionArc>forall(this.outgoing, _function);
@@ -40,7 +41,8 @@ public class CompositionNode {
     }
     for (final CompositionArc arc : this.outgoing) {
       {
-        boolean exists = arc.to.thereIsPath(node);
+        CompositionNode _to = arc.getTo();
+        boolean exists = _to.thereIsPath(node);
         if (exists) {
           return true;
         }

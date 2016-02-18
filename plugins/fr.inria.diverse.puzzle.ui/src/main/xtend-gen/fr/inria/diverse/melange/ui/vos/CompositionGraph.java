@@ -16,9 +16,9 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class CompositionGraph {
-  public List<CompositionNode> nodes;
+  private List<CompositionNode> nodes;
   
-  public List<CompositionArc> arcs;
+  private List<CompositionArc> arcs;
   
   public CompositionGraph(final ArrayList<Language> bindedLanguages, final List<Binding> statements, final ModelTypingSpace modelTypingSpace) {
     ArrayList<CompositionNode> _arrayList = new ArrayList<CompositionNode>();
@@ -97,12 +97,14 @@ public class CompositionGraph {
         Element _findFirst_1 = IterableExtensions.<Element>findFirst(_elements_1, _function_1);
         final Language rightLanguage = ((Language) _findFirst_1);
         CompositionNode _findNode = this.findNode(leftLanguage);
-        newArc.from = _findNode;
+        newArc.setFrom(_findNode);
         CompositionNode _findNode_1 = this.findNode(rightLanguage);
-        newArc.to = _findNode_1;
+        newArc.setTo(_findNode_1);
         this.arcs.add(newArc);
-        newArc.from.outgoing.add(newArc);
-        newArc.to.incoming.add(newArc);
+        CompositionNode _from = newArc.getFrom();
+        _from.outgoing.add(newArc);
+        CompositionNode _to = newArc.getTo();
+        _to.incoming.add(newArc);
       }
     }
   }
@@ -121,5 +123,13 @@ public class CompositionGraph {
       }
     };
     return IterableExtensions.<CompositionNode>findFirst(this.nodes, _function);
+  }
+  
+  public List<CompositionNode> getNodes() {
+    return this.nodes;
+  }
+  
+  public List<CompositionArc> getArcs() {
+    return this.arcs;
   }
 }

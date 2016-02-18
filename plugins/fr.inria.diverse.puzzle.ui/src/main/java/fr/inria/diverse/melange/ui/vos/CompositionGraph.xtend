@@ -12,8 +12,8 @@ class CompositionGraph {
 	// Attributes
 	// -------------------------------------------------
 	
-	public List<CompositionNode> nodes
-	public List<CompositionArc> arcs
+	private List<CompositionNode> nodes
+	private List<CompositionArc> arcs
 	
 	// -------------------------------------------------
 	// Constructor
@@ -65,5 +65,13 @@ class CompositionGraph {
 	
 	def CompositionNode findNode(Language language){
 		return this.nodes.findFirst[node | node.language == language]
+	}
+	
+	def List<CompositionNode> getNodes(){
+		return nodes
+	}
+	
+	def List<CompositionArc> getArcs(){
+		return arcs
 	}
 }

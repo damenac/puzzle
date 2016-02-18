@@ -49,9 +49,16 @@ import fr.inria.diverse.melange.ui.vos.CompositionGraph
  */
 class LanguageModulesCompositionBuilder extends AbstractBuilder {
 	
-	@Inject EclipseProjectHelper eclipseHelper
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
 	
+	@Inject EclipseProjectHelper eclipseHelper
 	private IProject targetProject
+	
+	// -------------------------------------------------
+	// Methods
+	// -------------------------------------------------
 	
 	/**
 	 * Compose the language modules referenced in the melange and puzzle scripts given in the parameters
@@ -169,12 +176,15 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 			val EPackage mergedPackage = PuzzleMerge.instance.mergeAbstractSyntax(providingLanguage.metamodel, providingLanguage.providedInterface, 
 				requiringLanguage.metamodel, requiringLanguage.requiredInterface, comparison, recalculatedRequiredInterface, 'CompleteDSLPckg')
 			
+			var EPackage recalculatedProvidedInterface = PuzzleMerge.instance.
+				recalculateProvidedInterface(requiringLanguage.providedInterface, providingLanguage.providedInterface)
+			
 			var LanguageVO mergedLanguage = new LanguageVO()
 			mergedLanguage.name = 'CompleteDSL'
 			mergedLanguage.mergedPackage = 'CompleteDSLPckg'
 			mergedLanguage.metamodel = mergedPackage
 			mergedLanguage.requiredInterface = recalculatedRequiredInterface
-			// TODO do the proper for the provided interface
+			mergedLanguage.providedInterface = recalculatedProvidedInterface
 			
 			return mergedLanguage
 		}
@@ -290,6 +300,9 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		return genModel
 	}
 	
+	/**
+	 * Generates the code associated to a generated model given in the parameter
+	 */
 	def void generateCode(GenModel genModel) {
 		genModel.reconcile
 		genModel.canGenerate = true
