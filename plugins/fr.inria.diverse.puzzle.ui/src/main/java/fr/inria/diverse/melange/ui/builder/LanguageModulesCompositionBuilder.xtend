@@ -104,14 +104,16 @@ class LanguageModulesCompositionBuilder extends AbstractBuilder {
 		for(Binding _statement : statements){
 			statementsLeft.add(new CompositionStatementVO(_statement))
 			val Language requiringLanguage = modelTypingSpace.elements.findFirst[ element |
-				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(_statement.left)]] as Language
+				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(_statement.left)
+					&& req.name.contains((element as Language).name)
+				]] as Language
 			
 			if(!bindedLanguages.contains(requiringLanguage))
 				bindedLanguages.add(requiringLanguage)
 			
 			val Language providingLanguage = modelTypingSpace.elements.findFirst[ element |
 				element instanceof Language && requiringLanguage != element && (element as Language).implements.exists[ impl | 
-					impl.name.equals(_statement.right)
+					impl.name.equals(_statement.right) && impl.name.contains((element as Language).name)
 				]] as Language
 				
 			if(!bindedLanguages.contains(providingLanguage))

@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="ConditionalAspect" key="selection"/>
+		<item value="simpleimperative" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="simpleimperativelanguage"/>
 			<item value="ConditionalAspect"/>
 			<item value="VarDecl"/>
 			<item value="``"/>
@@ -15,9 +16,9 @@
 			<item value="getActiveTran"/>
 			<item value="findOldActiveS"/>
 			<item value="step"/>
-			<item value="findNewActiveState"/>
 		</list>
 		<list key="replacehistory">
+			<item value="simpleimperative"/>
 			<item value="logo"/>
 		</list>
 	</section>

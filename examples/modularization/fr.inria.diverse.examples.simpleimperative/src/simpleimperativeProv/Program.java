@@ -4,6 +4,8 @@ package simpleimperativeProv;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Program</b></em>'.
@@ -20,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Program extends Statement {
+public interface Program extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
 	 * The list contents are of type {@link simpleimperativeProv.Statement}.

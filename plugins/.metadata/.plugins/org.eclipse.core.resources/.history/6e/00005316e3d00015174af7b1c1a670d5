@@ -1,8 +1,0 @@
-package fr.inria.diverse.melange.ui.menu
-
-class AggregationTreeNode extends AbstractCompositionTreeNode {
-	
-	public CompositionTreeNode _requiring
-	public CompositionTreeNode _providing
-	
-}

@@ -51,9 +51,19 @@ public class CompositionGraph {
               final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
                 @Override
                 public Boolean apply(final ModelType req) {
+                  boolean _and = false;
                   String _name = req.getName();
                   String _left = binding.getLeft();
-                  return Boolean.valueOf(_name.equals(_left));
+                  boolean _equals = _name.equals(_left);
+                  if (!_equals) {
+                    _and = false;
+                  } else {
+                    String _name_1 = req.getName();
+                    String _name_2 = ((Language) element).getName();
+                    boolean _contains = _name_1.contains(_name_2);
+                    _and = _contains;
+                  }
+                  return Boolean.valueOf(_and);
                 }
               };
               boolean _exists = IterableExtensions.<ModelType>exists(_requires, _function);
@@ -83,9 +93,19 @@ public class CompositionGraph {
               final Function1<ModelType, Boolean> _function = new Function1<ModelType, Boolean>() {
                 @Override
                 public Boolean apply(final ModelType impl) {
+                  boolean _and = false;
                   String _name = impl.getName();
                   String _right = binding.getRight();
-                  return Boolean.valueOf(_name.equals(_right));
+                  boolean _equals = _name.equals(_right);
+                  if (!_equals) {
+                    _and = false;
+                  } else {
+                    String _name_1 = impl.getName();
+                    String _name_2 = ((Language) element).getName();
+                    boolean _contains = _name_1.contains(_name_2);
+                    _and = _contains;
+                  }
+                  return Boolean.valueOf(_and);
                 }
               };
               boolean _exists = IterableExtensions.<ModelType>exists(_implements, _function);

@@ -36,11 +36,13 @@ class CompositionGraph {
 			var CompositionArc newArc = new CompositionArc()
 			
 			val Language leftLanguage = modelTypingSpace.elements.findFirst[ element |
-				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(binding.left)]] as Language
+				element instanceof Language && (element as Language).requires.exists[ req | req.name.equals(binding.left)
+					&& req.name.contains((element as Language).name)
+				]] as Language
 			
 			val Language rightLanguage = modelTypingSpace.elements.findFirst[ element |
 				element instanceof Language && leftLanguage != element && (element as Language).implements.exists[ impl | 
-					impl.name.equals(binding.right)
+					impl.name.equals(binding.right) && impl.name.contains((element as Language).name)
 				]] as Language
 			
 			newArc.from = findNode(leftLanguage)
