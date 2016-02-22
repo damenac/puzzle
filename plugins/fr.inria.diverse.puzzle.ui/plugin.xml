@@ -44,7 +44,7 @@
                   icon="icons/triskell.png"
                   label="Puzzle">
                <command
-                     commandId="fr.inria.diverse.puzzle.AnalyzeFamily"
+                     commandId="fr.inria.diverse.puzzle.PerformLanguagesAnalysis"
                      label="Perform languages analysis"
                      style="push">
                </command>
@@ -53,12 +53,12 @@
                      visible="true">
                </separator>
                <command
-                     commandId="fr.inria.diverse.puzzle.ExtractReusableModules"
+                     commandId="fr.inria.diverse.puzzle.ReverseEngineeringReusableModules"
                      label="Reverse-engineering reusable modules"
                      style="push">
                </command>
                <command
-                     commandId="fr.inria.diverse.puzzle.Synthesize"
+                     commandId="fr.inria.diverse.puzzle.ReverseEngineeringLanguageProductLine"
                      label="Reverse-engineering product line"
                      style="push">
                </command>
@@ -76,7 +76,7 @@
                      visible="true">
                </separator>
                <command
-                     commandId="fr.inria.diverse.puzzle.ValidateComposability"
+                     commandId="fr.inria.diverse.puzzle.ValidateLanguageModulesComposability"
                      label="Validate language modules composability"
                      style="push">
                </command>
@@ -101,15 +101,15 @@
    <extension
          point="org.eclipse.ui.commands">
       <command
-            id="fr.inria.diverse.puzzle.AnalyzeFamily"
+            id="fr.inria.diverse.puzzle.PerformLanguagesAnalysis"
             name="Perform languages analysis">
       </command>
       <command
-            id="fr.inria.diverse.puzzle.ExtractReusableModules"
+            id="fr.inria.diverse.puzzle.ReverseEngineeringReusableModules"
             name="Reverse-engineering reusable modules">
       </command>
       <command
-            id="fr.inria.diverse.puzzle.Synthesize"
+            id="fr.inria.diverse.puzzle.ReverseEngineeringLanguageProductLine"
             name="Reverse-engineering product line">
       </command>
       <command
@@ -117,7 +117,7 @@
             name="Derive language from configuration">
       </command>
       <command
-            id="fr.inria.diverse.puzzle.ValidateComposability"
+            id="fr.inria.diverse.puzzle.ValidateLanguageModulesComposability"
             name="Validate language modules composability">
       </command>
       <command
@@ -128,23 +128,23 @@
    <extension
          point="org.eclipse.ui.handlers">
       <handler
-            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.AnalyzeFamily"
-            commandId="fr.inria.diverse.puzzle.AnalyzeFamily">
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.PerformLanguagesAnalysis"
+            commandId="fr.inria.diverse.puzzle.PerformLanguagesAnalysis">
       </handler>
       <handler
-            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ExtractReusableModules"
-            commandId="fr.inria.diverse.puzzle.ExtractReusableModules">
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ReverseEngineeringReusableModules"
+            commandId="fr.inria.diverse.puzzle.ReverseEngineeringReusableModules">
       </handler>
       <handler
-            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.Synthesize"
-            commandId="fr.inria.diverse.puzzle.Synthesize">
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ReverseEngineeringLanguageProductLine"
+            commandId="fr.inria.diverse.puzzle.ReverseEngineeringLanguageProductLine">
       </handler>
       <handler
             commandId="fr.inria.diverse.puzzle.ConfigureDSL">
       </handler>
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ValidateLanguageModulesComposability"
-            commandId="fr.inria.diverse.puzzle.ValidateComposability">
+            commandId="fr.inria.diverse.puzzle.ValidateLanguageModulesComposability">
       </handler>
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ComposeLanguageModules"

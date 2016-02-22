@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: fr.inria.diverse.examples.complete.statemachines.composedLanguage
-Bundle-SymbolicName: fr.inria.diverse.examples.complete.statemachines.composedLanguage;singleton:=true
-Bundle-Version: 0.1.0
-Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-

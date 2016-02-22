@@ -16,7 +16,7 @@ import org.eclipse.xtext.resource.DerivedStateAwareResource
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
 import org.eclipse.jface.dialogs.MessageDialog
 import org.eclipse.swt.widgets.Display
-import fr.inria.diverse.melange.ui.builder.LanguageModulesCompositionBuilder
+import fr.inria.diverse.melange.ui.builder.ComposeLanguageModulesBuilder
 
 /**
  * Handler for the action: Compose language modules
@@ -24,7 +24,7 @@ import fr.inria.diverse.melange.ui.builder.LanguageModulesCompositionBuilder
  */
 class ComposeLanguageModules extends AbstractHandler {
 	
-	@Inject LanguageModulesCompositionBuilder builder
+	@Inject ComposeLanguageModulesBuilder builder
 	@Inject XtextResourceSetProvider rsProvider
 
 	override execute(ExecutionEvent event) throws ExecutionException {

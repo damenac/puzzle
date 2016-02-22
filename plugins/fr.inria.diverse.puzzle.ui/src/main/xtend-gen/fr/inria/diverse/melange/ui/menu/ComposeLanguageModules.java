@@ -2,7 +2,7 @@ package fr.inria.diverse.melange.ui.menu;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
-import fr.inria.diverse.melange.ui.builder.LanguageModulesCompositionBuilder;
+import fr.inria.diverse.melange.ui.builder.ComposeLanguageModulesBuilder;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -35,7 +35,7 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 @SuppressWarnings("all")
 public class ComposeLanguageModules extends AbstractHandler {
   @Inject
-  private LanguageModulesCompositionBuilder builder;
+  private ComposeLanguageModulesBuilder builder;
   
   @Inject
   private XtextResourceSetProvider rsProvider;
