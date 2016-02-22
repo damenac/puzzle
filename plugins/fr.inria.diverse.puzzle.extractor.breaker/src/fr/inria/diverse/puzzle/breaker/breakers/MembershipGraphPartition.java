@@ -53,16 +53,17 @@ public class MembershipGraphPartition implements GraphPartition {
 	 * TODO: The algorithm is creating one new vertex for each reference! We need to avoid repeated ones. 
 	 */
 	private void computeRequiredVertexSet(ArrayList<EClassifier> concepts, EcoreGroup group, ConceptComparison conceptComparisonOperator) {
+		ArrayList<EClassifier> consideredTypes = new ArrayList<EClassifier>();
 		for (EClassifier eClassifier : concepts) {
 			if(eClassifier instanceof EClass){
 				EClass eClass = (EClass) eClassifier;
 				for(EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()){
 					EcoreVertex vertex = group.findVertexByEcoreReference(eStructuralFeature.getEType(), conceptComparisonOperator);
-					if(vertex == null){
+					if(vertex == null && eStructuralFeature.getEType() != null && !consideredTypes.contains(eStructuralFeature.getEType())){
 						vertex = new EcoreVertex(eStructuralFeature.getEType().getName(), eStructuralFeature.getEType());
+						consideredTypes.add(eStructuralFeature.getEType());
+						group.getRequiredVertex().add(vertex);
 					}
-					group.getRequiredVertex().add(vertex);
-					
 				}
 			}
 		}

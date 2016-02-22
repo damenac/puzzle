@@ -64,7 +64,7 @@ public class EcoreGroup {
 	 */
 	public EcoreVertex findVertexByEcoreReference(EClassifier eType,
 			ConceptComparison conceptComparisonOperator) {
-		for (EcoreVertex ecoreVertex : requiredVertex) {
+		for (EcoreVertex ecoreVertex : vertex) {
 			if(conceptComparisonOperator.equals(eType, ecoreVertex.getClassifier())){
 				return ecoreVertex;
 			}
