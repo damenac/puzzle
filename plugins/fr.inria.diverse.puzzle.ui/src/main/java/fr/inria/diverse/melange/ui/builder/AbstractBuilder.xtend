@@ -4,14 +4,11 @@ import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition
-import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
 import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingMethodComparison
-import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison
-import fr.inria.diverse.puzzle.breaker.breakers.MinimumAcyclicPartition
+import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition
 
 /**
  * Abstract builder. Responsible for managing the parameters of the reverse-engineering process. 
@@ -28,7 +25,7 @@ class AbstractBuilder {
 		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
-		var GraphPartition graphPartition = new MinimumAcyclicPartition();
+		var GraphPartition graphPartition = new MembershipGraphPartition();
 		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
 		return properties;
 	}

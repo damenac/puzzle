@@ -38,10 +38,30 @@ public class ExtractorImpl {
 	// --------------------------------------------------
 	
 	public void extractReusableModules(SynthesisProperties properties, ArrayList<Language> languages, IProject project) throws Exception{
+		
+		// Step 1.1: Break-down the family
+		EcoreGraph modularizationGraph = BreakerImpl.getInstance().breakDownFamily(languages, properties, project);
+		
+		// Step 1.2: Generate reports with modularization metrics and dependencies graph visualizers
 		ProductLinesMetricManager metricsManager = new ProductLinesMetricManager(project);
+		metricsManager.createProductLineCouplingReport(languages);
+		metricsManager.createProductLineCouplingReportData(languages, properties.getConceptComparisonOperator(), 
+				properties.getMethodComparisonOperator(), modularizationGraph);
+		metricsManager.createProductLineIntraconnectivityReport(languages);
+		metricsManager.createProductLineIntraConnectivityReportData(languages, properties.getConceptComparisonOperator(), 
+				properties.getMethodComparisonOperator(), modularizationGraph);
+		metricsManager.createProductLineInterconnectivityReport(languages);
+		metricsManager.createProductLineInterConnectivityReportData(languages, properties.getConceptComparisonOperator(), 
+				properties.getMethodComparisonOperator(), modularizationGraph);
+		
+		// Step 1.3: Compute the dependencies graph.
+		DependencyGraph dependenciesGraph = new DependencyGraph(modularizationGraph);
 		metricsManager.createDependenciesGraph();
-		EcoreGraph graph = BreakerImpl.getInstance().breakDownFamily(languages, properties, project);
-		DependencyGraph dependenciesGraph = new DependencyGraph(graph);
-		metricsManager.createDependenciesGraphData(languages, properties.getConceptComparisonOperator(), dependenciesGraph);
+		metricsManager.createDependenciesGraphData(languages, properties.getConceptComparisonOperator(), 
+				dependenciesGraph);
+		
+		// Step 1.4: Validates that the dependencies graph is acyclic.
+		if(dependenciesGraph.thereIsLoop())
+			throw new Exception("The obtained dependencies graph is not acyclic! Check your graph partitioning algorithm.");
 	}
 }

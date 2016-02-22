@@ -9,15 +9,7 @@ import java.util.ArrayList
 import fr.inria.diverse.melange.metamodel.melange.Element
 import fr.inria.diverse.puzzle.synthesizer.impl.SynthesizerManager
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices
-import fr.inria.diverse.k3.sle.common.commands.MethodComparison
-import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
-import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference
-import fr.inria.diverse.k3.sle.common.commands.GraphPartition
-import fr.inria.diverse.k3.sle.common.commands.ConceptComparison
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
-import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
-import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition
 
 /**
  * Builder for the action: Synthesize Language Product Line (LPL).
@@ -25,7 +17,7 @@ import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition
  * 
  * @author David Mendez-Acuna
  */
-class ReverseEngineeringLanguageProductLineBuilder
+class ReverseEngineeringLanguageProductLineBuilder extends AbstractBuilder
 {
 	/**
 	 * Synthesizes a language product line from the family of DSLs described in the resource.
@@ -40,19 +32,10 @@ class ReverseEngineeringLanguageProductLineBuilder
 		}
 		
 		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
-		var IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+		var IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.puzzle.reverseEngineering");
 		var SynthesisProperties properties = this.synthesisProperties
 		
 		SynthesizerManager.instance.synthesizeLanguageProductLine(properties, languages, lplProject)
 		ProjectManagementServices.refreshProject(lplProject)
-	}
-	
-	def private SynthesisProperties getSynthesisProperties(){
-		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
-		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
-		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
-		var GraphPartition graphPartition = new MembershipGraphPartition();
-		var SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
-		return properties;
 	}
 }
