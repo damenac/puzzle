@@ -59,6 +59,8 @@ public class EcoreGroup {
 	 * @param eType
 	 * @param conceptComparisonOperator
 	 * @return
+	 * 
+	 * FIXME: You are not identifying correctly the vertex!
 	 */
 	public EcoreVertex findVertexByEcoreReference(EClassifier eType,
 			ConceptComparison conceptComparisonOperator) {

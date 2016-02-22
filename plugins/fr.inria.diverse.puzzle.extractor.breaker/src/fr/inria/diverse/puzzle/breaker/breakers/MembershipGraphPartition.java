@@ -49,6 +49,8 @@ public class MembershipGraphPartition implements GraphPartition {
 	 * 
 	 * TODO: This method might be required by other graph partitioning algorithms... 
 	 * 		 Is GraphParition an abstract class instead of an interface?
+	 * 
+	 * TODO: The algorithm is creating one new vertex for each reference! We need to avoid repeated ones. 
 	 */
 	private void computeRequiredVertexSet(ArrayList<EClassifier> concepts, EcoreGroup group, ConceptComparison conceptComparisonOperator) {
 		for (EClassifier eClassifier : concepts) {
