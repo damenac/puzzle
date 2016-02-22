@@ -1,9 +1,11 @@
 package fr.inria.diverse.k3.sle.common.graphs;
 
 import java.util.ArrayList;
+import org.eclipse.emf.ecore.EClassifier;
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 
 /**
- * Class representing a set of vertex in an ecore graph. 
+ * Class representing a set of vertexes in an ecore graph. 
  * 
  * @author David Mendez-Acuna
  *
@@ -16,6 +18,7 @@ public class EcoreGroup {
 	
 	private String name;
 	private ArrayList<EcoreVertex> vertex;
+	private ArrayList<EcoreVertex> requiredVertex;
 
 	// -----------------------------------------------
 	// Constructor
@@ -24,6 +27,7 @@ public class EcoreGroup {
 	public EcoreGroup(String name){
 		this.name = name;
 		this.vertex = new ArrayList<EcoreVertex>();
+		this.requiredVertex = new ArrayList<EcoreVertex>();
 	}
 
 	// -----------------------------------------------
@@ -39,7 +43,30 @@ public class EcoreGroup {
 	}
 
 	public ArrayList<EcoreVertex> getVertex() {
-		return vertex;
+		return this.vertex;
 	}
 	
+	public ArrayList<EcoreVertex> getRequiredVertex() {
+		return this.requiredVertex;
+	}
+
+	// -----------------------------------------------
+	// Methods
+	// -----------------------------------------------
+	
+	/**
+	 * Finds the vertex that matches the ecore type given in the parameter.
+	 * @param eType
+	 * @param conceptComparisonOperator
+	 * @return
+	 */
+	public EcoreVertex findVertexByEcoreReference(EClassifier eType,
+			ConceptComparison conceptComparisonOperator) {
+		for (EcoreVertex ecoreVertex : requiredVertex) {
+			if(conceptComparisonOperator.equals(eType, ecoreVertex.getClassifier())){
+				return ecoreVertex;
+			}
+		}
+		return null;
+	}
 }

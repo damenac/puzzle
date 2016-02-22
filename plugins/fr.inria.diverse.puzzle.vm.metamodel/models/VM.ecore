@@ -71,6 +71,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="PAbstractSyntax">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecorePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreProject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreRequiredInterfacePath"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreProvidedInterfacePath"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PSemantics">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="xtendPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

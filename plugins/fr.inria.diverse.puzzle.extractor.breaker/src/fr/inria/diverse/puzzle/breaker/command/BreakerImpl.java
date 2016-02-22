@@ -94,9 +94,6 @@ public class BreakerImpl {
 		buildModules(dependenciesGraph, languages, conceptComparisonOperator, methodComparison);
 		createSemanticsCommonsProject(languages);
 		
-//		double mq = (new ModularizationQuality()).compute(dependenciesGraph);
-//		System.out.println("Modularization Quality: " + mq);
-		
 		return dependenciesGraph;
 	}
 

@@ -13,7 +13,6 @@
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
-<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreVertex"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.MethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.breaker.command.MetaclassAspectMapping"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.common.types.JvmOperation"/>
@@ -50,14 +49,15 @@
 <fullyQualifiedTypeName name="java.util.EventObject"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EObject"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EOperation"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EEnum"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreVertex"/>
 </qualifiedTypeNameHistroy>

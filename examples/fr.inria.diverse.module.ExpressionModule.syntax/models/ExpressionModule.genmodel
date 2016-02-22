@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.module.ExpressionModule.syntax/src" editDirectory="/fr.inria.diverse.module.ExpressionModule.syntax.editor/src" modelPluginID="fr.inria.diverse.module.ExpressionModule.syntax" modelName="ExpressionModule" testsDirectory="/fr.inria.diverse.module.ExpressionModule.syntax.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="fr.inria.diverse.module.ExpressionModule.syntax.editor" testsPluginID="fr.inria.diverse.module.ExpressionModule.syntax" operationReflection="true">
+  <foreignModel>ExpressionModule.ecore</foreignModel>
+  <genPackages prefix="ExpressionModule" disposableProviderFactory="true">
+    <ecorePackage href="ExpressionModule.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ExpressionModule.ecore#//ArithmeticOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//ArithmeticOperator/plus"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//ArithmeticOperator/minus"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//ArithmeticOperator/mult"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//ArithmeticOperator/div"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="ExpressionModule.ecore#//RelationalOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//RelationalOperator/lessThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//RelationalOperator/greaterThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//RelationalOperator/equals"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//RelationalOperator/notEqual"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//RelationalOperator/lessThanOrEqualTo"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="ExpressionModule.ecore#//RelationalOperator/greaterThanOrEqualTo"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses image="false">
+      <ecoreClass href="ExpressionModule.ecore#//Expression"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="ExpressionModule.ecore#//Literal"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ExpressionModule.ecore#//IntegerLit"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExpressionModule.ecore#//IntegerLit/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ExpressionModule.ecore#//StringLit"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExpressionModule.ecore#//StringLit/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ExpressionModule.ecore#//BoolLit"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExpressionModule.ecore#//BoolLit/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ExpressionModule.ecore#//ArithmeticExpression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExpressionModule.ecore#//ArithmeticExpression/operator"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ExpressionModule.ecore#//ArithmeticExpression/left"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ExpressionModule.ecore#//ArithmeticExpression/right"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ExpressionModule.ecore#//RelationalExpression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="ExpressionModule.ecore#//RelationalExpression/operator"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ExpressionModule.ecore#//RelationalExpression/left"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ExpressionModule.ecore#//RelationalExpression/right"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
