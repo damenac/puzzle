@@ -112,6 +112,7 @@ public class PFeatureItemProvider extends PNamedElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(VmPackage.Literals.PFEATURE__CHILDREN);
 			childrenFeatures.add(VmPackage.Literals.PFEATURE__GROUPS);
+			childrenFeatures.add(VmPackage.Literals.PFEATURE__IMPLEMENTATION_MODULE);
 		}
 		return childrenFeatures;
 	}
@@ -172,6 +173,7 @@ public class PFeatureItemProvider extends PNamedElementItemProvider {
 				return;
 			case VmPackage.PFEATURE__CHILDREN:
 			case VmPackage.PFEATURE__GROUPS:
+			case VmPackage.PFEATURE__IMPLEMENTATION_MODULE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -198,6 +200,11 @@ public class PFeatureItemProvider extends PNamedElementItemProvider {
 			(createChildParameter
 				(VmPackage.Literals.PFEATURE__GROUPS,
 				 VmFactory.eINSTANCE.createPFeatureGroup()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(VmPackage.Literals.PFEATURE__IMPLEMENTATION_MODULE,
+				 VmFactory.eINSTANCE.createPLanguageModule()));
 	}
 
 }

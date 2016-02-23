@@ -62,6 +62,8 @@ public class PAbstractSyntaxItemProvider
 
 			addEcorePathPropertyDescriptor(object);
 			addEcoreProjectPropertyDescriptor(object);
+			addEcoreRequiredInterfacePathPropertyDescriptor(object);
+			addEcoreProvidedInterfacePathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +113,50 @@ public class PAbstractSyntaxItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Ecore Required Interface Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEcoreRequiredInterfacePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PAbstractSyntax_ecoreRequiredInterfacePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PAbstractSyntax_ecoreRequiredInterfacePath_feature", "_UI_PAbstractSyntax_type"),
+				 VmPackage.Literals.PABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ecore Provided Interface Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEcoreProvidedInterfacePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_PAbstractSyntax_ecoreProvidedInterfacePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PAbstractSyntax_ecoreProvidedInterfacePath_feature", "_UI_PAbstractSyntax_type"),
+				 VmPackage.Literals.PABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns PAbstractSyntax.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -150,6 +196,8 @@ public class PAbstractSyntaxItemProvider
 		switch (notification.getFeatureID(PAbstractSyntax.class)) {
 			case VmPackage.PABSTRACT_SYNTAX__ECORE_PATH:
 			case VmPackage.PABSTRACT_SYNTAX__ECORE_PROJECT:
+			case VmPackage.PABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH:
+			case VmPackage.PABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

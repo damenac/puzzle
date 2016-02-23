@@ -305,6 +305,15 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPFeature_ImplementationModule() {
+		return (EReference)pFeatureEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPFeatureGroup() {
 		return pFeatureGroupEClass;
 	}
@@ -521,6 +530,24 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPAbstractSyntax_EcoreRequiredInterfacePath() {
+		return (EAttribute)pAbstractSyntaxEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPAbstractSyntax_EcoreProvidedInterfacePath() {
+		return (EAttribute)pAbstractSyntaxEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPSemantics() {
 		return pSemanticsEClass;
 	}
@@ -602,6 +629,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEReference(pFeatureEClass, PFEATURE__PARENT);
 		createEReference(pFeatureEClass, PFEATURE__GROUPS);
 		createEReference(pFeatureEClass, PFEATURE__PARENT_GROUP);
+		createEReference(pFeatureEClass, PFEATURE__IMPLEMENTATION_MODULE);
 
 		pFeatureGroupEClass = createEClass(PFEATURE_GROUP);
 		createEReference(pFeatureGroupEClass, PFEATURE_GROUP__FEATURES);
@@ -635,6 +663,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		pAbstractSyntaxEClass = createEClass(PABSTRACT_SYNTAX);
 		createEAttribute(pAbstractSyntaxEClass, PABSTRACT_SYNTAX__ECORE_PATH);
 		createEAttribute(pAbstractSyntaxEClass, PABSTRACT_SYNTAX__ECORE_PROJECT);
+		createEAttribute(pAbstractSyntaxEClass, PABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH);
+		createEAttribute(pAbstractSyntaxEClass, PABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH);
 
 		pSemanticsEClass = createEClass(PSEMANTICS);
 		createEAttribute(pSemanticsEClass, PSEMANTICS__XTEND_PATH);
@@ -695,6 +725,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getPFeature_Parent(), this.getPFeature(), this.getPFeature_Children(), "parent", null, 0, 1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPFeature_Groups(), this.getPFeatureGroup(), null, "groups", null, 0, -1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPFeature_ParentGroup(), this.getPFeatureGroup(), this.getPFeatureGroup_Features(), "parentGroup", null, 0, 1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPFeature_ImplementationModule(), this.getPLanguageModule(), null, "implementationModule", null, 0, 1, PFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pFeatureGroupEClass, PFeatureGroup.class, "PFeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPFeatureGroup_Features(), this.getPFeature(), this.getPFeature_ParentGroup(), "features", null, 1, -1, PFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -728,6 +759,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEClass(pAbstractSyntaxEClass, PAbstractSyntax.class, "PAbstractSyntax", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPAbstractSyntax_EcorePath(), ecorePackage.getEString(), "ecorePath", null, 0, 1, PAbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPAbstractSyntax_EcoreProject(), ecorePackage.getEString(), "ecoreProject", null, 0, 1, PAbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPAbstractSyntax_EcoreRequiredInterfacePath(), ecorePackage.getEString(), "ecoreRequiredInterfacePath", null, 0, 1, PAbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPAbstractSyntax_EcoreProvidedInterfacePath(), ecorePackage.getEString(), "ecoreProvidedInterfacePath", null, 0, 1, PAbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pSemanticsEClass, PSemantics.class, "PSemantics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPSemantics_XtendPath(), ecorePackage.getEString(), "xtendPath", null, 0, 1, PSemantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

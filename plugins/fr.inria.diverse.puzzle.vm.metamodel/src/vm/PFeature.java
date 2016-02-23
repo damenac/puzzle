@@ -17,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link vm.PFeature#getParent <em>Parent</em>}</li>
  *   <li>{@link vm.PFeature#getGroups <em>Groups</em>}</li>
  *   <li>{@link vm.PFeature#getParentGroup <em>Parent Group</em>}</li>
+ *   <li>{@link vm.PFeature#getImplementationModule <em>Implementation Module</em>}</li>
  * </ul>
  * </p>
  *
@@ -140,5 +141,31 @@ public interface PFeature extends PNamedElement {
 	 * @generated
 	 */
 	void setParentGroup(PFeatureGroup value);
+
+	/**
+	 * Returns the value of the '<em><b>Implementation Module</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Implementation Module</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Implementation Module</em>' containment reference.
+	 * @see #setImplementationModule(PLanguageModule)
+	 * @see vm.VmPackage#getPFeature_ImplementationModule()
+	 * @model containment="true"
+	 * @generated
+	 */
+	PLanguageModule getImplementationModule();
+
+	/**
+	 * Sets the value of the '{@link vm.PFeature#getImplementationModule <em>Implementation Module</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Implementation Module</em>' containment reference.
+	 * @see #getImplementationModule()
+	 * @generated
+	 */
+	void setImplementationModule(PLanguageModule value);
 
 } // PFeature

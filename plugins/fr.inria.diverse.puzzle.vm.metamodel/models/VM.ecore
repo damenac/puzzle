@@ -20,6 +20,8 @@
         eType="#//PFeatureGroup" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentGroup" eType="#//PFeatureGroup"
         eOpposite="#//PFeatureGroup/features"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementationModule" eType="#//PLanguageModule"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PFeatureGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"

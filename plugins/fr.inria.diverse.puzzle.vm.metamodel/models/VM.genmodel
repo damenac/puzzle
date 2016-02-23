@@ -28,6 +28,7 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference VM.ecore#//PFeature/parent"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeature/groups"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//PFeature/parentGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeature/implementationModule"/>
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//PFeatureGroup">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureGroup/features"/>
@@ -60,6 +61,8 @@
     <genClasses ecoreClass="VM.ecore#//PAbstractSyntax">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecorePath"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecoreProject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecoreRequiredInterfacePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecoreProvidedInterfacePath"/>
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//PSemantics">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PSemantics/xtendPath"/>

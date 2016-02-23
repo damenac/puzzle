@@ -214,13 +214,22 @@ public interface VmPackage extends EPackage {
 	int PFEATURE__PARENT_GROUP = PNAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Implementation Module</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PFEATURE__IMPLEMENTATION_MODULE = PNAMED_ELEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>PFeature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 5;
+	int PFEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>PFeature</em>' class.
@@ -619,13 +628,31 @@ public interface VmPackage extends EPackage {
 	int PABSTRACT_SYNTAX__ECORE_PROJECT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Ecore Required Interface Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = 2;
+
+	/**
+	 * The feature id for the '<em><b>Ecore Provided Interface Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = 3;
+
+	/**
 	 * The number of structural features of the '<em>PAbstract Syntax</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PABSTRACT_SYNTAX_FEATURE_COUNT = 2;
+	int PABSTRACT_SYNTAX_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>PAbstract Syntax</em>' class.
@@ -820,6 +847,17 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPFeature_ParentGroup();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vm.PFeature#getImplementationModule <em>Implementation Module</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Implementation Module</em>'.
+	 * @see vm.PFeature#getImplementationModule()
+	 * @see #getPFeature()
+	 * @generated
+	 */
+	EReference getPFeature_ImplementationModule();
 
 	/**
 	 * Returns the meta object for class '{@link vm.PFeatureGroup <em>PFeature Group</em>}'.
@@ -1077,6 +1115,28 @@ public interface VmPackage extends EPackage {
 	EAttribute getPAbstractSyntax_EcoreProject();
 
 	/**
+	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcoreRequiredInterfacePath <em>Ecore Required Interface Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Required Interface Path</em>'.
+	 * @see vm.PAbstractSyntax#getEcoreRequiredInterfacePath()
+	 * @see #getPAbstractSyntax()
+	 * @generated
+	 */
+	EAttribute getPAbstractSyntax_EcoreRequiredInterfacePath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcoreProvidedInterfacePath <em>Ecore Provided Interface Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Provided Interface Path</em>'.
+	 * @see vm.PAbstractSyntax#getEcoreProvidedInterfacePath()
+	 * @see #getPAbstractSyntax()
+	 * @generated
+	 */
+	EAttribute getPAbstractSyntax_EcoreProvidedInterfacePath();
+
+	/**
 	 * Returns the meta object for class '{@link vm.PSemantics <em>PSemantics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1244,6 +1304,14 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PFEATURE__PARENT_GROUP = eINSTANCE.getPFeature_ParentGroup();
+
+		/**
+		 * The meta object literal for the '<em><b>Implementation Module</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PFEATURE__IMPLEMENTATION_MODULE = eINSTANCE.getPFeature_ImplementationModule();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.PFeatureGroupImpl <em>PFeature Group</em>}' class.
@@ -1454,6 +1522,22 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PABSTRACT_SYNTAX__ECORE_PROJECT = eINSTANCE.getPAbstractSyntax_EcoreProject();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Required Interface Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = eINSTANCE.getPAbstractSyntax_EcoreRequiredInterfacePath();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Provided Interface Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = eINSTANCE.getPAbstractSyntax_EcoreProvidedInterfacePath();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.PSemanticsImpl <em>PSemantics</em>}' class.

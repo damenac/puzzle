@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import vm.PFeature;
 import vm.PFeatureGroup;
+import vm.PLanguageModule;
 import vm.VmPackage;
 
 /**
@@ -35,6 +36,7 @@ import vm.VmPackage;
  *   <li>{@link vm.impl.PFeatureImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link vm.impl.PFeatureImpl#getGroups <em>Groups</em>}</li>
  *   <li>{@link vm.impl.PFeatureImpl#getParentGroup <em>Parent Group</em>}</li>
+ *   <li>{@link vm.impl.PFeatureImpl#getImplementationModule <em>Implementation Module</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,6 +92,16 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 	 * @ordered
 	 */
 	protected PFeatureGroup parentGroup;
+
+	/**
+	 * The cached value of the '{@link #getImplementationModule() <em>Implementation Module</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImplementationModule()
+	 * @generated
+	 * @ordered
+	 */
+	protected PLanguageModule implementationModule;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -261,6 +273,49 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public PLanguageModule getImplementationModule() {
+		return implementationModule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetImplementationModule(PLanguageModule newImplementationModule, NotificationChain msgs) {
+		PLanguageModule oldImplementationModule = implementationModule;
+		implementationModule = newImplementationModule;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE__IMPLEMENTATION_MODULE, oldImplementationModule, newImplementationModule);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setImplementationModule(PLanguageModule newImplementationModule) {
+		if (newImplementationModule != implementationModule) {
+			NotificationChain msgs = null;
+			if (implementationModule != null)
+				msgs = ((InternalEObject)implementationModule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VmPackage.PFEATURE__IMPLEMENTATION_MODULE, null, msgs);
+			if (newImplementationModule != null)
+				msgs = ((InternalEObject)newImplementationModule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VmPackage.PFEATURE__IMPLEMENTATION_MODULE, null, msgs);
+			msgs = basicSetImplementationModule(newImplementationModule, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.PFEATURE__IMPLEMENTATION_MODULE, newImplementationModule, newImplementationModule));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -295,6 +350,8 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 			case VmPackage.PFEATURE__PARENT_GROUP:
 				return basicSetParentGroup(null, msgs);
+			case VmPackage.PFEATURE__IMPLEMENTATION_MODULE:
+				return basicSetImplementationModule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -332,6 +389,8 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 			case VmPackage.PFEATURE__PARENT_GROUP:
 				if (resolve) return getParentGroup();
 				return basicGetParentGroup();
+			case VmPackage.PFEATURE__IMPLEMENTATION_MODULE:
+				return getImplementationModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -362,6 +421,9 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 			case VmPackage.PFEATURE__PARENT_GROUP:
 				setParentGroup((PFeatureGroup)newValue);
 				return;
+			case VmPackage.PFEATURE__IMPLEMENTATION_MODULE:
+				setImplementationModule((PLanguageModule)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -389,6 +451,9 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 			case VmPackage.PFEATURE__PARENT_GROUP:
 				setParentGroup((PFeatureGroup)null);
 				return;
+			case VmPackage.PFEATURE__IMPLEMENTATION_MODULE:
+				setImplementationModule((PLanguageModule)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -411,6 +476,8 @@ public class PFeatureImpl extends PNamedElementImpl implements PFeature {
 				return groups != null && !groups.isEmpty();
 			case VmPackage.PFEATURE__PARENT_GROUP:
 				return parentGroup != null;
+			case VmPackage.PFEATURE__IMPLEMENTATION_MODULE:
+				return implementationModule != null;
 		}
 		return super.eIsSet(featureID);
 	}
