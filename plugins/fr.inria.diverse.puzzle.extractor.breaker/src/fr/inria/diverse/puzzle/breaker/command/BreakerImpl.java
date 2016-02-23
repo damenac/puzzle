@@ -127,8 +127,9 @@ public class BreakerImpl {
 	 */
 	private ArrayList<EClassifier> buildSyntacticModule(EcoreGroup group, ArrayList<Language> languages) throws Exception {
 		ArrayList<EClassifier> requiredClassifiers = new ArrayList<EClassifier>();
+		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex());
 		
-		EPackage moduleEPackage = this.createEPackageByModule(group);
+		EPackage moduleEPackage = this.createEPackageByModule(group, moduleName);
 		
 		// Adding the constructs that are not used in the syntax but in the semantics
 		ArrayList<Aspect> allAspects = findAspects(group, languages);
@@ -137,7 +138,9 @@ public class BreakerImpl {
 		// Adding the required operations to the required interface
 		EcoreQueries.searchRequiredConcepts(moduleEPackage, requiredClassifiers);
 		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
-		addRequiredOperationsToRequiredInterface(requiredAspects, moduleEPackage);
+		this.addRequiredOperationsToRequiredInterface(requiredAspects, moduleEPackage);
+		
+		EPackage moduleRequiredInteface = this.createEPackageByClassifiersCollection(requiredClassifiers, moduleName + "Req");
 		
 		String languageName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 		
@@ -150,14 +153,53 @@ public class BreakerImpl {
 		String ecoreLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore";
 		ModelUtils.saveEcoreFile(ecoreLocation, moduleEPackage);
 		
-		// Create the genmodel and generate the code of the module.
+		// Serialize the module's required interface in the corresponding project. 
+		String requiredInterfaceLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + "Req.ecore";
+		ModelUtils.saveEcoreFile(requiredInterfaceLocation, moduleRequiredInteface);
+		
+		// Create the module's genmodel and generate the code of the module.
 		String genModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".genmodel";
 		ProjectManagementServices.generateGenmodelFile(moduleProject, moduleEPackage, ecoreLocation, genModelLocation, moduleProject.getName(), languageName);
+		
+		// Create the required interface's genmodel and generate the corresponding code.
+		String requiredInterfaceGenModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + "Req.genmodel";
+		ProjectManagementServices.generateGenmodelFile(moduleProject, moduleRequiredInteface, requiredInterfaceLocation, requiredInterfaceGenModelLocation, moduleProject.getName(), languageName);
+				
 		
 		// Refresh projects
 		ProjectManagementServices.refreshProject(moduleProject);
 		
 		return requiredClassifiers;
+	}
+	
+	/**
+	 * Creates a metamodel by module taking into consideration the corresponding dependencies with other modules
+	 * by establishing the required interfaces.
+	 * @param moduleConceptsVO
+	 * @return
+	 */
+	private EPackage createEPackageByModule(EcoreGroup group, String moduleName) {
+		EcoreCloningServices.getInstance().resetClonedClassifiers();
+		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
+		newPackage.setName(moduleName.trim());
+		newPackage.setNsPrefix(moduleName.trim());
+		newPackage.setNsURI(moduleName.trim());
+		
+		for (EcoreVertex vertex : group.getVertex()) {
+			if(vertex.getClassifier() instanceof EClass){
+				EClass newClass = EcoreCloningServices.getInstance().cloneEClass((EClass)vertex.getClassifier());
+				newPackage.getEClassifiers().add(newClass);
+			}
+			else if(vertex.getClassifier() instanceof EEnum){
+				EEnum newEEnum = EcoreCloningServices.getInstance().cloneEEnum((EEnum)vertex.getClassifier());
+				newPackage.getEClassifiers().add(newEEnum);
+			}
+		}
+		EcoreCloningServices.getInstance().resolveLocalReferences(newPackage);
+		EcoreCloningServices.getInstance().resolveLocalAttributes(newPackage);
+		EcoreCloningServices.getInstance().resolveInterfaceReferences(newPackage);
+		EcoreCloningServices.getInstance().resolveLocalSuperTypes(newPackage);
+		return newPackage;
 	}
 
 	private void addMetaclassesRequiredByTheSemantics(
@@ -179,6 +221,37 @@ public class BreakerImpl {
 		}
 	}
 
+	/**
+	 * Creates an EPackage with the classifiers in the parameter to build an interface.
+	 * @param requiredClassifiers
+	 * @return
+	 */
+	private EPackage createEPackageByClassifiersCollection(
+			ArrayList<EClassifier> requiredClassifiers, String moduleName) {
+		EcoreCloningServices.getInstance().resetClonedClassifiers();
+		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
+		newPackage.setName(moduleName);
+		newPackage.setNsPrefix(moduleName);
+		newPackage.setNsURI(moduleName);
+		
+		for (EClassifier eClassifier : requiredClassifiers) {
+			if(eClassifier instanceof EClass){
+				EClass newClass = EcoreCloningServices.getInstance().cloneEClass((EClass)eClassifier);
+				newPackage.getEClassifiers().add(newClass);
+			}
+			else if(eClassifier instanceof EEnum){
+				EEnum newEEnum = EcoreCloningServices.getInstance().cloneEEnum((EEnum)eClassifier);
+				newPackage.getEClassifiers().add(newEEnum);
+			}
+		}
+		
+		EcoreCloningServices.getInstance().resolveLocalReferences(newPackage);
+		EcoreCloningServices.getInstance().resolveLocalAttributes(newPackage);
+		EcoreCloningServices.getInstance().resolveInterfaceReferences(newPackage);
+		EcoreCloningServices.getInstance().resolveLocalSuperTypes(newPackage);
+		return newPackage;
+	}
+	
 	/**
 	 * Returns a list of eoperations that represents the list of methods defined in the given aspect. 
 	 * @param aspect
@@ -615,40 +688,5 @@ public class BreakerImpl {
 			}
 		}
 		return jvmOperations;
-	}
-	
-	// ---------------------------------------------
-	// Utilities
-	// ---------------------------------------------
-
-	/**
-	 * Creates a metamodel by module taking into consideration the corresponding dependencies with other modules
-	 * by establishing the required interfaces.
-	 * @param moduleConceptsVO
-	 * @return
-	 */
-	private EPackage createEPackageByModule(EcoreGroup group) {
-		EcoreCloningServices.getInstance().resetClonedClassifiers();
-		EPackage newPackage = EcoreFactory.eINSTANCE.createEPackage();
-		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex());
-		newPackage.setName(moduleName.trim());
-		newPackage.setNsPrefix(moduleName.trim());
-		newPackage.setNsURI(moduleName.trim());
-		
-		for (EcoreVertex vertex : group.getVertex()) {
-			if(vertex.getClassifier() instanceof EClass){
-				EClass newClass = EcoreCloningServices.getInstance().cloneEClass((EClass)vertex.getClassifier());
-				newPackage.getEClassifiers().add(newClass);
-			}
-			else if(vertex.getClassifier() instanceof EEnum){
-				EEnum newEEnum = EcoreCloningServices.getInstance().cloneEEnum((EEnum)vertex.getClassifier());
-				newPackage.getEClassifiers().add(newEEnum);
-			}
-		}
-		EcoreCloningServices.getInstance().resolveLocalReferences(newPackage);
-		EcoreCloningServices.getInstance().resolveLocalAttributes(newPackage);
-		EcoreCloningServices.getInstance().resolveInterfaceReferences(newPackage);
-		EcoreCloningServices.getInstance().resolveLocalSuperTypes(newPackage);
-		return newPackage;
 	}
 }

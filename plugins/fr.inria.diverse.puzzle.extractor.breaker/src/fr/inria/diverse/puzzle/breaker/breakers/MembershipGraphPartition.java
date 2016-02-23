@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
@@ -58,11 +59,13 @@ public class MembershipGraphPartition implements GraphPartition {
 			if(eClassifier instanceof EClass){
 				EClass eClass = (EClass) eClassifier;
 				for(EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()){
-					EcoreVertex vertex = group.findVertexByEcoreReference(eStructuralFeature.getEType(), conceptComparisonOperator);
-					if(vertex == null && eStructuralFeature.getEType() != null && !consideredTypes.contains(eStructuralFeature.getEType())){
-						vertex = new EcoreVertex(eStructuralFeature.getEType().getName(), eStructuralFeature.getEType());
-						consideredTypes.add(eStructuralFeature.getEType());
-						group.getRequiredVertex().add(vertex);
+					if(eStructuralFeature instanceof EReference){
+						EcoreVertex vertex = group.findVertexByEcoreReference(eStructuralFeature.getEType(), conceptComparisonOperator);
+						if(vertex == null && eStructuralFeature.getEType() != null && !consideredTypes.contains(eStructuralFeature.getEType())){
+							vertex = new EcoreVertex(eStructuralFeature.getEType().getName(), eStructuralFeature.getEType());
+							consideredTypes.add(eStructuralFeature.getEType());
+							group.getRequiredVertex().add(vertex);
+						}
 					}
 				}
 			}
