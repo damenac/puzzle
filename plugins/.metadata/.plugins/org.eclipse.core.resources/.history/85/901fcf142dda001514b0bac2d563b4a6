@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: extractor
+Bundle-SymbolicName: fr.inria.diverse.puzzle.extractor.interface
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.inria.diverse.puzzle.extractor.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ fr.inria.diverse.puzzle.common;bundle-version="1.0.0",
+ fr.inria.diverse.melange.metamodel;bundle-version="0.1.0",
+ org.eclipse.core.resources;bundle-version="3.9.1",
+ fr.inria.diverse.puzzle.extractor.breaker;bundle-version="1.0.0",
+ fr.inria.diverse.puzzle.metrics;bundle-version="1.0.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: fr.inria.diverse.puzzle.extractor,
+ fr.inria.diverse.puzzle.extractor.impl

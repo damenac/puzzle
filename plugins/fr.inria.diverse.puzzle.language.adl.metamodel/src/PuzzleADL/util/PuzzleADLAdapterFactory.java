@@ -92,6 +92,14 @@ public class PuzzleADLAdapterFactory extends AdapterFactoryImpl {
 				return createInterfaceBindingAdapter();
 			}
 			@Override
+			public Adapter caseAbstractSyntaxImplementation(AbstractSyntaxImplementation object) {
+				return createAbstractSyntaxImplementationAdapter();
+			}
+			@Override
+			public Adapter caseSemanticsImplementation(SemanticsImplementation object) {
+				return createSemanticsImplementationAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -192,6 +200,34 @@ public class PuzzleADLAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createInterfaceBindingAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link PuzzleADL.AbstractSyntaxImplementation <em>Abstract Syntax Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see PuzzleADL.AbstractSyntaxImplementation
+	 * @generated
+	 */
+	public Adapter createAbstractSyntaxImplementationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link PuzzleADL.SemanticsImplementation <em>Semantics Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see PuzzleADL.SemanticsImplementation
+	 * @generated
+	 */
+	public Adapter createSemanticsImplementationAdapter() {
 		return null;
 	}
 

@@ -76,6 +76,24 @@ public interface PuzzleADLFactory extends EFactory {
 	InterfaceBinding createInterfaceBinding();
 
 	/**
+	 * Returns a new object of class '<em>Abstract Syntax Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Abstract Syntax Implementation</em>'.
+	 * @generated
+	 */
+	AbstractSyntaxImplementation createAbstractSyntaxImplementation();
+
+	/**
+	 * Returns a new object of class '<em>Semantics Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Semantics Implementation</em>'.
+	 * @generated
+	 */
+	SemanticsImplementation createSemanticsImplementation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -16,11 +16,26 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="providedInterface" eType="#//ProvidedInterface"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="abstractSyntax" lowerBound="1"
+        eType="#//AbstractSyntaxImplementation" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="semanticsImplementation"
+        eType="#//SemanticsImplementation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RequiredInterface" eSuperTypes="#//NamedElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ProvidedInterface" eSuperTypes="#//NamedElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RequiredInterface" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecorePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProvidedInterface" eSuperTypes="#//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecorePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InterfaceBinding">
     <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//RequiredInterface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//ProvidedInterface"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractSyntaxImplementation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecorePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticsImplementation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aspectsIdentifiers" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

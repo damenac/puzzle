@@ -1,0 +1,39 @@
+#
+
+pluginName = ADL Edit Support
+providerName = www.example.org
+
+_UI_CreateChild_text = {0}
+_UI_CreateChild_text2 = {1} {0}
+_UI_CreateChild_text3 = {1}
+_UI_CreateChild_tooltip = Create New {0} Under {1} Feature
+_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}.
+_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent.
+
+_UI_PropertyDescriptor_description = The {0} of the {1}
+
+_UI_NamedElement_type = Named Element
+_UI_LanguageArchitecture_type = Language Architecture
+_UI_LanguageModule_type = Language Module
+_UI_RequiredInterface_type = Required Interface
+_UI_ProvidedInterface_type = Provided Interface
+_UI_InterfaceBinding_type = Interface Binding
+_UI_Unknown_type = Object
+
+_UI_Unknown_datatype= Value
+
+_UI_NamedElement_name_feature = Name
+_UI_LanguageArchitecture_languageModules_feature = Language Modules
+_UI_LanguageArchitecture_interfaceBindings_feature = Interface Bindings
+_UI_LanguageModule_requiredInterface_feature = Required Interface
+_UI_LanguageModule_providedInterface_feature = Provided Interface
+_UI_InterfaceBinding_from_feature = From
+_UI_InterfaceBinding_to_feature = To
+_UI_Unknown_feature = Unspecified
+
+_UI_AbstractSyntaxImplementation_type = Abstract Syntax Implementation
+_UI_SemanticsImplementation_type = Semantics Implementation
+_UI_LanguageModule_abstractSyntax_feature = Abstract Syntax
+_UI_LanguageModule_semanticsImplementation_feature = Semantics Implementation
+_UI_AbstractSyntaxImplementation_ecorePath_feature = Ecore Path
+_UI_SemanticsImplementation_aspectsIdentifiers_feature = Aspects Identifiers

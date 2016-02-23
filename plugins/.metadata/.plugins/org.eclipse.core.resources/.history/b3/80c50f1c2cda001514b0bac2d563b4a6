@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.language.adl.metamodel/src"
+    modelPluginID="fr.inria.diverse.puzzle.language.adl.metamodel" modelName="ADL"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ADL.ecore</foreignModel>
+  <genPackages prefix="PuzzleADL" disposableProviderFactory="true" ecorePackage="ADL.ecore#/">
+    <genClasses ecoreClass="ADL.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ADL.ecore#//LanguageArchitecture">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ADL.ecore#//LanguageArchitecture/languageModules"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ADL.ecore#//LanguageArchitecture/interfaceBindings"/>
+    </genClasses>
+    <genClasses ecoreClass="ADL.ecore#//LanguageModule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ADL.ecore#//LanguageModule/requiredInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ADL.ecore#//LanguageModule/providedInterface"/>
+    </genClasses>
+    <genClasses ecoreClass="ADL.ecore#//RequiredInterface"/>
+    <genClasses ecoreClass="ADL.ecore#//ProvidedInterface"/>
+    <genClasses ecoreClass="ADL.ecore#//InterfaceBinding">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ADL.ecore#//InterfaceBinding/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ADL.ecore#//InterfaceBinding/to"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

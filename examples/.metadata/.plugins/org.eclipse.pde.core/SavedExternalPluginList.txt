@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1456230487713
+# List of external plug-in models previously loaded. Timestamp: 1456233780522
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.inject_3.0.0.v201312141243.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.ibm.icu_52.1.1.v201501240615.jar
@@ -32,16 +32,15 @@ file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.configura
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.breaker/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.instantancesGenerator/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.adl.metamodel/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.adl.metamodel.edit/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.adl.metamodel.editor/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding.tests/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding.ui/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.match/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.merge/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.multivar.metamodel/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.mutivar.language/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.mutivar.language.tests/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.mutivar.language.ui/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesis.vmsynthesis.test/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface/

@@ -1,11 +1,19 @@
 package fr.inria.diverse.puzzle.extractor.impl;
 
 import java.util.ArrayList;
-
 import org.eclipse.core.resources.IProject;
-
+import PuzzleADL.AbstractSyntaxImplementation;
+import PuzzleADL.InterfaceBinding;
+import PuzzleADL.LanguageArchitecture;
+import PuzzleADL.LanguageModule;
+import PuzzleADL.ProvidedInterface;
+import PuzzleADL.PuzzleADLFactory;
+import PuzzleADL.RequiredInterface;
+import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
+import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.breaker.command.BreakerImpl;
@@ -63,5 +71,80 @@ public class ExtractorImpl {
 		// Step 1.4: Validates that the dependencies graph is acyclic.
 		if(dependenciesGraph.thereIsLoop())
 			throw new Exception("The obtained dependencies graph is not acyclic! Check your graph partitioning algorithm.");
+	
+		// Step 1.5: Computes the ADL script to explicitly serialize the architecture model
+		LanguageArchitecture languageArchitectureModel = this.createLanguageArchitectureModel("Architecture", modularizationGraph, dependenciesGraph);
+		String modelFile = project.getLocation().toString() + "/architectureModel.adl";
+		ModelUtils.saveXMIFile(languageArchitectureModel, modelFile);
+	}
+
+	/**
+	 * Produces a language architecture model according to the information in the
+	 * modularization graph given in the parameter. 
+	 * 
+	 * @param modularizationGraph
+	 * @return
+	 */
+	private LanguageArchitecture createLanguageArchitectureModel(String languageName,
+			EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph) {
+		LanguageArchitecture languageArchitectureModel = PuzzleADLFactory.eINSTANCE.createLanguageArchitecture();
+		
+		// Creating the one language module for each ecore constructs group.
+		for (EcoreGroup group : modularizationGraph.getGroups()) {
+			LanguageModule languageModule = PuzzleADLFactory.eINSTANCE.createLanguageModule();
+			languageModule.setName(group.getName());
+			
+			AbstractSyntaxImplementation as = PuzzleADLFactory.eINSTANCE.createAbstractSyntaxImplementation();
+			as.setEcorePath(group.getMetamodelPath());
+			languageModule.setAbstractSyntax(as);
+			
+			if(group.getRequiredInterfacePath() != null){
+				RequiredInterface requiredInterface = PuzzleADLFactory.eINSTANCE.createRequiredInterface();
+				requiredInterface.setName(group.getName() + "Req");
+				requiredInterface.setEcorePath(group.getRequiredInterfacePath());
+				languageModule.setRequiredInterface(requiredInterface);
+			}
+			
+			if(group.getProvidedInterfacePath() != null){
+				ProvidedInterface providedInterface = PuzzleADLFactory.eINSTANCE.createProvidedInterface();
+				providedInterface.setName(group.getName() + "Prov");
+				providedInterface.setEcorePath(group.getProvidedInterfacePath());
+				languageModule.setProvidedInterface(providedInterface);
+			}
+			
+			languageArchitectureModel.getLanguageModules().add(languageModule);
+		}
+		
+		// Creating dependencies between modules i.e., binding between interfaces according to the arcs in the 
+		// dependencies graph.
+		for (Arc arc : dependenciesGraph.getArcs()) {
+			EcoreGroup fromGroup = modularizationGraph.getEcoreGroupByDependencyNode(arc.getFrom());
+			EcoreGroup toGroup = modularizationGraph.getEcoreGroupByDependencyNode(arc.getTo());
+			
+			LanguageModule fromModule = this.getLanguageModuleByEcoreGroup(languageArchitectureModel, fromGroup);
+			LanguageModule toModule = this.getLanguageModuleByEcoreGroup(languageArchitectureModel, toGroup);
+			
+			if(fromModule.getRequiredInterface() != null && toModule.getProvidedInterface() != null){
+				InterfaceBinding binding = PuzzleADLFactory.eINSTANCE.createInterfaceBinding();
+				binding.setFrom(fromModule.getRequiredInterface());
+				binding.setTo(toModule.getProvidedInterface());
+				languageArchitectureModel.getInterfaceBindings().add(binding);
+			}
+		}
+		return languageArchitectureModel;
+	}
+
+	/**
+	 * Returns the language module created for the ecore group in the parameter. 
+	 * @param languageArchitectureModel 
+	 * @param group
+	 * @return
+	 */
+	private LanguageModule getLanguageModuleByEcoreGroup(LanguageArchitecture languageArchitectureModel, EcoreGroup group) {
+		for (LanguageModule module : languageArchitectureModel.getLanguageModules()) {
+			if(module.getName().equals(group.getName()))
+				return module;
+		}
+		return null;
 	}
 }

@@ -186,13 +186,31 @@ public interface PuzzleADLPackage extends EPackage {
 	int LANGUAGE_MODULE__PROVIDED_INTERFACE = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Abstract Syntax</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_MODULE__ABSTRACT_SYNTAX = NAMED_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Semantics Implementation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION = NAMED_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Language Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_MODULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LANGUAGE_MODULE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Language Module</em>' class.
@@ -223,13 +241,22 @@ public interface PuzzleADLPackage extends EPackage {
 	int REQUIRED_INTERFACE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Ecore Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_INTERFACE__ECORE_PATH = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Required Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIRED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int REQUIRED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Required Interface</em>' class.
@@ -260,13 +287,22 @@ public interface PuzzleADLPackage extends EPackage {
 	int PROVIDED_INTERFACE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
+	 * The feature id for the '<em><b>Ecore Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_INTERFACE__ECORE_PATH = NAMED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Provided Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int PROVIDED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Provided Interface</em>' class.
@@ -322,6 +358,81 @@ public interface PuzzleADLPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTERFACE_BINDING_OPERATION_COUNT = 0;
+
+
+	/**
+	 * The meta object id for the '{@link PuzzleADL.impl.AbstractSyntaxImplementationImpl <em>Abstract Syntax Implementation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see PuzzleADL.impl.AbstractSyntaxImplementationImpl
+	 * @see PuzzleADL.impl.PuzzleADLPackageImpl#getAbstractSyntaxImplementation()
+	 * @generated
+	 */
+	int ABSTRACT_SYNTAX_IMPLEMENTATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Ecore Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_PATH = 0;
+
+	/**
+	 * The number of structural features of the '<em>Abstract Syntax Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_SYNTAX_IMPLEMENTATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Abstract Syntax Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_SYNTAX_IMPLEMENTATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link PuzzleADL.impl.SemanticsImplementationImpl <em>Semantics Implementation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see PuzzleADL.impl.SemanticsImplementationImpl
+	 * @see PuzzleADL.impl.PuzzleADLPackageImpl#getSemanticsImplementation()
+	 * @generated
+	 */
+	int SEMANTICS_IMPLEMENTATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Aspects Identifiers</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTICS_IMPLEMENTATION__ASPECTS_IDENTIFIERS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Semantics Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTICS_IMPLEMENTATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Semantics Implementation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTICS_IMPLEMENTATION_OPERATION_COUNT = 0;
 
 
 	/**
@@ -410,6 +521,28 @@ public interface PuzzleADLPackage extends EPackage {
 	EReference getLanguageModule_ProvidedInterface();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link PuzzleADL.LanguageModule#getAbstractSyntax <em>Abstract Syntax</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Abstract Syntax</em>'.
+	 * @see PuzzleADL.LanguageModule#getAbstractSyntax()
+	 * @see #getLanguageModule()
+	 * @generated
+	 */
+	EReference getLanguageModule_AbstractSyntax();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link PuzzleADL.LanguageModule#getSemanticsImplementation <em>Semantics Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Semantics Implementation</em>'.
+	 * @see PuzzleADL.LanguageModule#getSemanticsImplementation()
+	 * @see #getLanguageModule()
+	 * @generated
+	 */
+	EReference getLanguageModule_SemanticsImplementation();
+
+	/**
 	 * Returns the meta object for class '{@link PuzzleADL.RequiredInterface <em>Required Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -420,6 +553,17 @@ public interface PuzzleADLPackage extends EPackage {
 	EClass getRequiredInterface();
 
 	/**
+	 * Returns the meta object for the attribute '{@link PuzzleADL.RequiredInterface#getEcorePath <em>Ecore Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Path</em>'.
+	 * @see PuzzleADL.RequiredInterface#getEcorePath()
+	 * @see #getRequiredInterface()
+	 * @generated
+	 */
+	EAttribute getRequiredInterface_EcorePath();
+
+	/**
 	 * Returns the meta object for class '{@link PuzzleADL.ProvidedInterface <em>Provided Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -428,6 +572,17 @@ public interface PuzzleADLPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProvidedInterface();
+
+	/**
+	 * Returns the meta object for the attribute '{@link PuzzleADL.ProvidedInterface#getEcorePath <em>Ecore Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Path</em>'.
+	 * @see PuzzleADL.ProvidedInterface#getEcorePath()
+	 * @see #getProvidedInterface()
+	 * @generated
+	 */
+	EAttribute getProvidedInterface_EcorePath();
 
 	/**
 	 * Returns the meta object for class '{@link PuzzleADL.InterfaceBinding <em>Interface Binding</em>}'.
@@ -460,6 +615,48 @@ public interface PuzzleADLPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInterfaceBinding_To();
+
+	/**
+	 * Returns the meta object for class '{@link PuzzleADL.AbstractSyntaxImplementation <em>Abstract Syntax Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Abstract Syntax Implementation</em>'.
+	 * @see PuzzleADL.AbstractSyntaxImplementation
+	 * @generated
+	 */
+	EClass getAbstractSyntaxImplementation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link PuzzleADL.AbstractSyntaxImplementation#getEcorePath <em>Ecore Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Path</em>'.
+	 * @see PuzzleADL.AbstractSyntaxImplementation#getEcorePath()
+	 * @see #getAbstractSyntaxImplementation()
+	 * @generated
+	 */
+	EAttribute getAbstractSyntaxImplementation_EcorePath();
+
+	/**
+	 * Returns the meta object for class '{@link PuzzleADL.SemanticsImplementation <em>Semantics Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Semantics Implementation</em>'.
+	 * @see PuzzleADL.SemanticsImplementation
+	 * @generated
+	 */
+	EClass getSemanticsImplementation();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link PuzzleADL.SemanticsImplementation#getAspectsIdentifiers <em>Aspects Identifiers</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Aspects Identifiers</em>'.
+	 * @see PuzzleADL.SemanticsImplementation#getAspectsIdentifiers()
+	 * @see #getSemanticsImplementation()
+	 * @generated
+	 */
+	EAttribute getSemanticsImplementation_AspectsIdentifiers();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -555,6 +752,22 @@ public interface PuzzleADLPackage extends EPackage {
 		EReference LANGUAGE_MODULE__PROVIDED_INTERFACE = eINSTANCE.getLanguageModule_ProvidedInterface();
 
 		/**
+		 * The meta object literal for the '<em><b>Abstract Syntax</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_MODULE__ABSTRACT_SYNTAX = eINSTANCE.getLanguageModule_AbstractSyntax();
+
+		/**
+		 * The meta object literal for the '<em><b>Semantics Implementation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION = eINSTANCE.getLanguageModule_SemanticsImplementation();
+
+		/**
 		 * The meta object literal for the '{@link PuzzleADL.impl.RequiredInterfaceImpl <em>Required Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -565,6 +778,14 @@ public interface PuzzleADLPackage extends EPackage {
 		EClass REQUIRED_INTERFACE = eINSTANCE.getRequiredInterface();
 
 		/**
+		 * The meta object literal for the '<em><b>Ecore Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIRED_INTERFACE__ECORE_PATH = eINSTANCE.getRequiredInterface_EcorePath();
+
+		/**
 		 * The meta object literal for the '{@link PuzzleADL.impl.ProvidedInterfaceImpl <em>Provided Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -573,6 +794,14 @@ public interface PuzzleADLPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROVIDED_INTERFACE = eINSTANCE.getProvidedInterface();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDED_INTERFACE__ECORE_PATH = eINSTANCE.getProvidedInterface_EcorePath();
 
 		/**
 		 * The meta object literal for the '{@link PuzzleADL.impl.InterfaceBindingImpl <em>Interface Binding</em>}' class.
@@ -599,6 +828,42 @@ public interface PuzzleADLPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INTERFACE_BINDING__TO = eINSTANCE.getInterfaceBinding_To();
+
+		/**
+		 * The meta object literal for the '{@link PuzzleADL.impl.AbstractSyntaxImplementationImpl <em>Abstract Syntax Implementation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see PuzzleADL.impl.AbstractSyntaxImplementationImpl
+		 * @see PuzzleADL.impl.PuzzleADLPackageImpl#getAbstractSyntaxImplementation()
+		 * @generated
+		 */
+		EClass ABSTRACT_SYNTAX_IMPLEMENTATION = eINSTANCE.getAbstractSyntaxImplementation();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_PATH = eINSTANCE.getAbstractSyntaxImplementation_EcorePath();
+
+		/**
+		 * The meta object literal for the '{@link PuzzleADL.impl.SemanticsImplementationImpl <em>Semantics Implementation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see PuzzleADL.impl.SemanticsImplementationImpl
+		 * @see PuzzleADL.impl.PuzzleADLPackageImpl#getSemanticsImplementation()
+		 * @generated
+		 */
+		EClass SEMANTICS_IMPLEMENTATION = eINSTANCE.getSemanticsImplementation();
+
+		/**
+		 * The meta object literal for the '<em><b>Aspects Identifiers</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMANTICS_IMPLEMENTATION__ASPECTS_IDENTIFIERS = eINSTANCE.getSemanticsImplementation_AspectsIdentifiers();
 
 	}
 

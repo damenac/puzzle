@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import fr.inria.diverse.graph.Vertex;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.tuples.TupleMembersConcepts;
 
@@ -299,5 +300,13 @@ public class EcoreGraph {
 			newVertex.add(this.getNodeById(this, ecoreVertex.getVertexId()));
 		 }
 		 this.vertex = newVertex;
+	}
+
+	public EcoreGroup getEcoreGroupByDependencyNode(Vertex dependencyVertex) {
+		for (EcoreGroup group : this.groups) {
+			if(group.getDependenciesGraphVertex().equals(dependencyVertex))
+				return group;
+		}
+		return null;
 	}
 }

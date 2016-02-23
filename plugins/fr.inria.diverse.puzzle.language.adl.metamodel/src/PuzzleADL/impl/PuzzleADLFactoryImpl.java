@@ -62,6 +62,8 @@ public class PuzzleADLFactoryImpl extends EFactoryImpl implements PuzzleADLFacto
 			case PuzzleADLPackage.REQUIRED_INTERFACE: return createRequiredInterface();
 			case PuzzleADLPackage.PROVIDED_INTERFACE: return createProvidedInterface();
 			case PuzzleADLPackage.INTERFACE_BINDING: return createInterfaceBinding();
+			case PuzzleADLPackage.ABSTRACT_SYNTAX_IMPLEMENTATION: return createAbstractSyntaxImplementation();
+			case PuzzleADLPackage.SEMANTICS_IMPLEMENTATION: return createSemanticsImplementation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -125,6 +127,26 @@ public class PuzzleADLFactoryImpl extends EFactoryImpl implements PuzzleADLFacto
 	public InterfaceBinding createInterfaceBinding() {
 		InterfaceBindingImpl interfaceBinding = new InterfaceBindingImpl();
 		return interfaceBinding;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractSyntaxImplementation createAbstractSyntaxImplementation() {
+		AbstractSyntaxImplementationImpl abstractSyntaxImplementation = new AbstractSyntaxImplementationImpl();
+		return abstractSyntaxImplementation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SemanticsImplementation createSemanticsImplementation() {
+		SemanticsImplementationImpl semanticsImplementation = new SemanticsImplementationImpl();
+		return semanticsImplementation;
 	}
 
 	/**

@@ -210,6 +210,52 @@ public class PuzzleADLItemProviderAdapterFactory extends PuzzleADLAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link PuzzleADL.AbstractSyntaxImplementation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AbstractSyntaxImplementationItemProvider abstractSyntaxImplementationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link PuzzleADL.AbstractSyntaxImplementation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAbstractSyntaxImplementationAdapter() {
+		if (abstractSyntaxImplementationItemProvider == null) {
+			abstractSyntaxImplementationItemProvider = new AbstractSyntaxImplementationItemProvider(this);
+		}
+
+		return abstractSyntaxImplementationItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link PuzzleADL.SemanticsImplementation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SemanticsImplementationItemProvider semanticsImplementationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link PuzzleADL.SemanticsImplementation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSemanticsImplementationAdapter() {
+		if (semanticsImplementationItemProvider == null) {
+			semanticsImplementationItemProvider = new SemanticsImplementationItemProvider(this);
+		}
+
+		return semanticsImplementationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -314,6 +360,8 @@ public class PuzzleADLItemProviderAdapterFactory extends PuzzleADLAdapterFactory
 		if (requiredInterfaceItemProvider != null) requiredInterfaceItemProvider.dispose();
 		if (providedInterfaceItemProvider != null) providedInterfaceItemProvider.dispose();
 		if (interfaceBindingItemProvider != null) interfaceBindingItemProvider.dispose();
+		if (abstractSyntaxImplementationItemProvider != null) abstractSyntaxImplementationItemProvider.dispose();
+		if (semanticsImplementationItemProvider != null) semanticsImplementationItemProvider.dispose();
 	}
 
 }

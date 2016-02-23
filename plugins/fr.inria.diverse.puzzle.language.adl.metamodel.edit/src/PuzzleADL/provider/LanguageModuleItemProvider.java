@@ -64,6 +64,8 @@ public class LanguageModuleItemProvider extends NamedElementItemProvider {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(PuzzleADLPackage.Literals.LANGUAGE_MODULE__REQUIRED_INTERFACE);
 			childrenFeatures.add(PuzzleADLPackage.Literals.LANGUAGE_MODULE__PROVIDED_INTERFACE);
+			childrenFeatures.add(PuzzleADLPackage.Literals.LANGUAGE_MODULE__ABSTRACT_SYNTAX);
+			childrenFeatures.add(PuzzleADLPackage.Literals.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION);
 		}
 		return childrenFeatures;
 	}
@@ -121,6 +123,8 @@ public class LanguageModuleItemProvider extends NamedElementItemProvider {
 		switch (notification.getFeatureID(LanguageModule.class)) {
 			case PuzzleADLPackage.LANGUAGE_MODULE__REQUIRED_INTERFACE:
 			case PuzzleADLPackage.LANGUAGE_MODULE__PROVIDED_INTERFACE:
+			case PuzzleADLPackage.LANGUAGE_MODULE__ABSTRACT_SYNTAX:
+			case PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -147,6 +151,16 @@ public class LanguageModuleItemProvider extends NamedElementItemProvider {
 			(createChildParameter
 				(PuzzleADLPackage.Literals.LANGUAGE_MODULE__PROVIDED_INTERFACE,
 				 PuzzleADLFactory.eINSTANCE.createProvidedInterface()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PuzzleADLPackage.Literals.LANGUAGE_MODULE__ABSTRACT_SYNTAX,
+				 PuzzleADLFactory.eINSTANCE.createAbstractSyntaxImplementation()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(PuzzleADLPackage.Literals.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION,
+				 PuzzleADLFactory.eINSTANCE.createSemanticsImplementation()));
 	}
 
 }

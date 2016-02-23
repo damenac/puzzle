@@ -106,6 +106,18 @@ public class PuzzleADLSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PuzzleADLPackage.ABSTRACT_SYNTAX_IMPLEMENTATION: {
+				AbstractSyntaxImplementation abstractSyntaxImplementation = (AbstractSyntaxImplementation)theEObject;
+				T result = caseAbstractSyntaxImplementation(abstractSyntaxImplementation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PuzzleADLPackage.SEMANTICS_IMPLEMENTATION: {
+				SemanticsImplementation semanticsImplementation = (SemanticsImplementation)theEObject;
+				T result = caseSemanticsImplementation(semanticsImplementation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -197,6 +209,36 @@ public class PuzzleADLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseInterfaceBinding(InterfaceBinding object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Syntax Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Syntax Implementation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractSyntaxImplementation(AbstractSyntaxImplementation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Semantics Implementation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Semantics Implementation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSemanticsImplementation(SemanticsImplementation object) {
 		return null;
 	}
 
