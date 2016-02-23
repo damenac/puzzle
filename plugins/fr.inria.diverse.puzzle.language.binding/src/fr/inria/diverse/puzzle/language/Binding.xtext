@@ -1,0 +1,14 @@
+grammar fr.inria.diverse.puzzle.language.Binding with org.eclipse.xtext.xbase.Xbase
+
+generate binding "http://www.inria.fr/diverse/puzzle/language/Binding"
+
+LanguageBinding :
+	('package' name = QualifiedName)?
+	melangeImport = MelangeImport 
+	'languageBinding' '{' binding += Binding ( binding += Binding )* '}';
+
+MelangeImport :
+	'import' melangeFile = STRING;
+
+Binding:
+	'bind' '(' left=ID ',' right=ID ')';

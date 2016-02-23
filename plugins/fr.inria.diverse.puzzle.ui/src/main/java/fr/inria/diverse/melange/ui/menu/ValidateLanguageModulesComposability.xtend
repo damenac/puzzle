@@ -39,7 +39,7 @@ class ValidateLanguageModulesComposability extends AbstractHandler {
 					val project = resource.project
 					val rs = rsProvider.get(project)
 					val melangeRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString, true), true) as DerivedStateAwareResource
-					val puzzleRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString.replace('.melange','.puzzle'), true), true) as DerivedStateAwareResource
+					val puzzleRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString.replace('.melange','.binding'), true), true) as DerivedStateAwareResource
 
 					val validation = builder.validateLanguageModulesComposability(puzzleRes, melangeRes, project, monitor)
 

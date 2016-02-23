@@ -59,7 +59,7 @@ public class ValidateLanguageModulesComposability extends AbstractHandler {
           final DerivedStateAwareResource melangeRes = ((DerivedStateAwareResource) _resource);
           IPath _fullPath_1 = resource.getFullPath();
           String _string_1 = _fullPath_1.toString();
-          String _replace = _string_1.replace(".melange", ".puzzle");
+          String _replace = _string_1.replace(".melange", ".binding");
           URI _createPlatformResourceURI_1 = URI.createPlatformResourceURI(_replace, true);
           Resource _resource_1 = rs.getResource(_createPlatformResourceURI_1, true);
           final DerivedStateAwareResource puzzleRes = ((DerivedStateAwareResource) _resource_1);

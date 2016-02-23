@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.inria.fr/diverse/puzzle/language/Binding" 
+       class = "fr.inria.diverse.puzzle.language.binding.BindingPackage"
+       genModel = "model/generated/Binding.genmodel" /> 
+	
+  </extension>
+
+
+
+
+</plugin>

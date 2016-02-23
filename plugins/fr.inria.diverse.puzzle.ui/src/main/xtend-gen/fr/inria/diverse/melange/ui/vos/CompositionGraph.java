@@ -7,7 +7,7 @@ import fr.inria.diverse.melange.metamodel.melange.ModelType;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.melange.ui.vos.CompositionArc;
 import fr.inria.diverse.melange.ui.vos.CompositionNode;
-import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
+import fr.inria.diverse.puzzle.language.binding.Binding;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;

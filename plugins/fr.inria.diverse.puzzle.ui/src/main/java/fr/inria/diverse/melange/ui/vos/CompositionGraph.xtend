@@ -3,8 +3,8 @@ package fr.inria.diverse.melange.ui.vos
 import java.util.List
 import java.util.ArrayList
 import fr.inria.diverse.melange.metamodel.melange.Language
-import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace
+import fr.inria.diverse.puzzle.language.binding.Binding
 
 class CompositionGraph {
 	

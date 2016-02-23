@@ -1,6 +1,6 @@
 package fr.inria.diverse.melange.ui.vos;
 
-import fr.inria.diverse.puzzle.adl.language.puzzle.Binding;
+import fr.inria.diverse.puzzle.language.binding.Binding;
 
 @SuppressWarnings("all")
 public class CompositionStatementVO {

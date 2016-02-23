@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.examples.complete.statemachines/src/family/statemachines.puzzle&apos; to &apos;statemachines.binding&apos;" description="Rename resource &apos;statemachines.puzzle&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/family/statemachines.puzzle" name="statemachines.binding" stamp="1456230466215" updateReferences="true"/>
+</session>

@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1456224171102
+# List of external plug-in models previously loaded. Timestamp: 1456230487713
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.google.inject_3.0.0.v201312141243.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/com.ibm.icu_52.1.1.v201501240615.jar
@@ -27,14 +27,14 @@ file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.metam
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.resource_0.1.0.201512011225.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.ui_0.1.0.201512011225.jar
 file:/Users/dmendeza/IDEs/eclipse-melange/plugins/fr.inria.diverse.melange.ui.templates_0.1.0.201512011225.jar
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.adl.language/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.adl.language.tests/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.adl.language.ui/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.configurator/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.breaker/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.extractor.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.instantancesGenerator/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding.tests/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding.ui/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.match/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.merge/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/

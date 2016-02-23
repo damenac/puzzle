@@ -1,0 +1,26 @@
+grammar fr.inria.diverse.puzzle.binding.Language with org.eclipse.xtext.common.Terminals
+
+generate language "http://www.inria.fr/diverse/puzzle/binding/Language"
+
+LanguageBinding :
+
+('package' name = QualifiedName)?
+
+melangeImport = MelangeImport
+
+'languageBinding' '{' binding += Binding ( binding += Binding )* '}';
+
+
+
+MelangeImport :
+
+'import' melangeFile = STRING
+
+;
+
+
+
+Binding:
+
+'bind' '(' left=ID ',' right=ID ')';
+

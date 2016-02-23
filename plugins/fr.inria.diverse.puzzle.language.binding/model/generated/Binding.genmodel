@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.language.binding/src-gen"
+    editDirectory="/fr.inria.diverse.puzzle.language.binding.edit/src" editorDirectory="/fr.inria.diverse.puzzle.language.binding.editor/src"
+    modelPluginID="fr.inria.diverse.puzzle.language.binding" forceOverwrite="true"
+    modelName="Binding" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="6.0" copyrightFields="false" editPluginID="fr.inria.diverse.puzzle.language.binding.edit"
+    editorPluginID="fr.inria.diverse.puzzle.language.binding.editor" runtimeVersion="2.10">
+  <genPackages prefix="Binding" basePackage="fr.inria.diverse.puzzle.language" disposableProviderFactory="true"
+      fileExtensions="binding" ecorePackage="Binding.ecore#/">
+    <genClasses ecoreClass="Binding.ecore#//LanguageBinding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Binding.ecore#//LanguageBinding/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Binding.ecore#//LanguageBinding/melangeImport"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Binding.ecore#//LanguageBinding/binding"/>
+    </genClasses>
+    <genClasses ecoreClass="Binding.ecore#//MelangeImport">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Binding.ecore#//MelangeImport/melangeFile"/>
+    </genClasses>
+    <genClasses ecoreClass="Binding.ecore#//Binding">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Binding.ecore#//Binding/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Binding.ecore#//Binding/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

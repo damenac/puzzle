@@ -4,16 +4,16 @@ import org.eclipse.core.resources.IProject
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.emf.ecore.resource.Resource
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace
-import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding
 import fr.inria.diverse.melange.metamodel.melange.ModelType
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils
 import org.eclipse.emf.ecore.EPackage
 import fr.inria.diverse.puzzle.validator.command.ValidatorImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import fr.inria.diverse.puzzle.validator.vos.PuzzleDiagnosis
-import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic
 import fr.inria.diverse.puzzle.match.impl.PuzzleMatch
+import fr.inria.diverse.puzzle.language.binding.Binding
+import fr.inria.diverse.puzzle.language.binding.LanguageBinding
 
 /**
  * Builder for the action: Analyze Family.

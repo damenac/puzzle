@@ -6,11 +6,9 @@ import org.eclipse.core.resources.IProject
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.emf.ecore.resource.Resource
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace
-import fr.inria.diverse.puzzle.adl.language.puzzle.LanguageBinding
 import fr.inria.diverse.melange.metamodel.melange.ModelType
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils
 import org.eclipse.emf.ecore.EPackage
-import fr.inria.diverse.puzzle.adl.language.puzzle.Binding
 import fr.inria.diverse.melange.metamodel.melange.Language
 import org.eclipse.emf.ecore.util.EcoreUtil
 import fr.inria.diverse.sle.puzzle.merge.impl.PuzzleMerge
@@ -41,6 +39,8 @@ import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter
 import org.eclipse.emf.common.util.BasicMonitor
 import fr.inria.diverse.melange.ui.vos.CompositionGraph
 import fr.inria.diverse.melange.ui.vos.LanguageVO
+import fr.inria.diverse.puzzle.language.binding.LanguageBinding
+import fr.inria.diverse.puzzle.language.binding.Binding
 
 /**
  * Builder for the action: Analyze Family.
