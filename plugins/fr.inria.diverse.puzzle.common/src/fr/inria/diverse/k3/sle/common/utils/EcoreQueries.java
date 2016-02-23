@@ -378,6 +378,22 @@ public class EcoreQueries {
 		//TODO To something real here!
 		return metamodel.getEClassifiers().get(0);
 	}
+	
+	/**
+	 * Collects all the classifier existing in the first package in the parameter.
+	 * The result is stored in the collection in the second parameter. 
+	 * @param collection
+	 * @param moduleEPackage
+	 */
+	public static void collectEClassifiers(EPackage moduleEPackage, ArrayList<EClassifier> collection) {
+		for(EClassifier _eclassifier : moduleEPackage.getEClassifiers()){
+			collection.add(_eclassifier);
+		}
+		
+		for(EPackage _subPackage : moduleEPackage.getESubpackages()){
+			collectEClassifiers(_subPackage, collection);
+		}
+	}
 
 	/**
 	 * Return a native ecore type according to the parameter. 

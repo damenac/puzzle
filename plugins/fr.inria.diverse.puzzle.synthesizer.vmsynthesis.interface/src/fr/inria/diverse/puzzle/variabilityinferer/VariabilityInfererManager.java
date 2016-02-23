@@ -103,6 +103,7 @@ public class VariabilityInfererManager {
 			PAbstractSyntax moduleAbstractSyntax = VmFactory.eINSTANCE.createPAbstractSyntax();
 			moduleAbstractSyntax.setEcorePath(ecoreGroup.getMetamodelPath());
 			moduleAbstractSyntax.setEcoreRequiredInterfacePath(ecoreGroup.getRequiredInterfacePath());
+			moduleAbstractSyntax.setEcoreProvidedInterfacePath(ecoreGroup.getProvidedInterfacePath());
 			moduleAbstractSyntax.setEcoreProject(ecoreGroup.getImplementationProjectName());
 			
 			languageModule.setAs(moduleAbstractSyntax);

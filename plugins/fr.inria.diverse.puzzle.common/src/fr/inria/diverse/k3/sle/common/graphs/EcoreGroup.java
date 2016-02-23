@@ -25,6 +25,7 @@ public class EcoreGroup {
 	private Vertex dependenciesGraphVertex;
 	private String metamodelPath;
 	private String requiredInterfacePath;
+	private String providedInterfacePath;
 	private String implementationProjectName;
 
 	// -----------------------------------------------
@@ -79,6 +80,14 @@ public class EcoreGroup {
 
 	public void setRequiredInterfacePath(String requiredInterfacePath) {
 		this.requiredInterfacePath = requiredInterfacePath;
+	}
+	
+	public String getProvidedInterfacePath() {
+		return providedInterfacePath;
+	}
+
+	public void setProvidedInterfacePath(String providedInterfacePath) {
+		this.providedInterfacePath = providedInterfacePath;
 	}
 	
 	public String getImplementationProjectName() {

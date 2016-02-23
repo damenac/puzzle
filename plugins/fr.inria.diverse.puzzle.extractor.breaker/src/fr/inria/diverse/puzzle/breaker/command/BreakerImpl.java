@@ -130,6 +130,8 @@ public class BreakerImpl {
 		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex());
 		
 		EPackage moduleEPackage = this.createEPackageByModule(group, moduleName);
+		ArrayList<EClassifier> metamodelClassifiers = new ArrayList<EClassifier>();
+		EcoreQueries.collectEClassifiers(moduleEPackage, metamodelClassifiers);
 		
 		// Adding the constructs that are not used in the syntax but in the semantics
 		ArrayList<Aspect> allAspects = findAspects(group, languages);
@@ -141,6 +143,7 @@ public class BreakerImpl {
 		this.addRequiredOperationsToRequiredInterface(requiredAspects, moduleEPackage);
 		
 		EPackage moduleRequiredInteface = this.createEPackageByClassifiersCollection(requiredClassifiers, moduleName + "Req");
+		EPackage moduleProvidedInteface = this.createEPackageByClassifiersCollection(metamodelClassifiers, moduleName + "P");
 		
 		String languageName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 		
@@ -160,6 +163,11 @@ public class BreakerImpl {
 		group.setRequiredInterfacePath(requiredInterfaceLocation);
 		ModelUtils.saveEcoreFile(requiredInterfaceLocation, moduleRequiredInteface);
 		
+		// Serialize the module's provided interface in the corresponding project. 
+		String providedInterfaceLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + "Prov.ecore";
+		group.setProvidedInterfacePath(providedInterfaceLocation);
+		ModelUtils.saveEcoreFile(providedInterfaceLocation, moduleProvidedInteface);
+		
 		// Create the module's genmodel and generate the code of the module.
 		String genModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".genmodel";
 		ProjectManagementServices.generateGenmodelFile(moduleProject, moduleEPackage, ecoreLocation, genModelLocation, moduleProject.getName(), languageName);
@@ -168,6 +176,9 @@ public class BreakerImpl {
 		String requiredInterfaceGenModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + "Req.genmodel";
 		ProjectManagementServices.generateGenmodelFile(moduleProject, moduleRequiredInteface, requiredInterfaceLocation, requiredInterfaceGenModelLocation, moduleProject.getName(), languageName);
 				
+		// Create the required interface's genmodel and generate the corresponding code.
+		String providedInterfaceGenModelLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + "Prov.genmodel";
+		ProjectManagementServices.generateGenmodelFile(moduleProject, moduleProvidedInteface, providedInterfaceLocation, providedInterfaceGenModelLocation, moduleProject.getName(), languageName);
 		
 		// Refresh projects
 		ProjectManagementServices.refreshProject(moduleProject);
