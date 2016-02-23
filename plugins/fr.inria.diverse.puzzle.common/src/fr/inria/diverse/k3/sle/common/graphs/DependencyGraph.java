@@ -37,6 +37,7 @@ public class DependencyGraph extends Graph<Vertex, Arc> {
 			String moduleName = group.getName();
 			DependencyVertex dependencyVertex = new DependencyVertex(moduleName);
 			dependencyVertex.getInternalVertex().addAll(group.getVertex());
+			group.setDependenciesGraphVertex(dependencyVertex);
 			this.vertex.add(dependencyVertex);
 		}
 		

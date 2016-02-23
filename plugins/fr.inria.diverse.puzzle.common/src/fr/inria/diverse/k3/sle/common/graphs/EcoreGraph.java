@@ -223,6 +223,21 @@ public class EcoreGraph {
 	}
 	
 	/**
+	 * Returns a vertex of the node such that the name of the corresponding dependenvies graph matches
+	 * the string in the parameter. 
+	 * @param name
+	 * @return
+	 */
+	public EcoreGroup getGroupByDependenciesGraphName(String name) {
+		for (EcoreGroup _group : groups) {
+			if(_group.getDependenciesGraphVertex() != null 
+					&& _group.getDependenciesGraphVertex().getIdentifier().equals(name))
+				return _group;
+		}
+		return null;
+	}
+	
+	/**
 	 * Puts all the visited flag in false for all the vertex in the graph.
 	 */
 	public void resetVisited(){

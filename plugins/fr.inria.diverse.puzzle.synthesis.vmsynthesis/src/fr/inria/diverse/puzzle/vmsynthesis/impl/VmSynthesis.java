@@ -1185,8 +1185,4 @@ public class VmSynthesis {
 		}
 		return null;
 	}
-	
-	public static void main(String[] args){
-		VmSynthesis synthesis = VmSynthesis.getInstance();
-	}
 }

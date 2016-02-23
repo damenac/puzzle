@@ -147,14 +147,17 @@ public class BreakerImpl {
 		// Create the module project with the folders.
 		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
 				languageName + ".syntax");
+		group.setImplementationProjectName(moduleProject.getName());
 		String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 					
 		// Serialize the module metamodel in the corresponding project. 
 		String ecoreLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + ".ecore";
+		group.setMetamodelPath(ecoreLocation);
 		ModelUtils.saveEcoreFile(ecoreLocation, moduleEPackage);
 		
 		// Serialize the module's required interface in the corresponding project. 
 		String requiredInterfaceLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + "Req.ecore";
+		group.setRequiredInterfacePath(requiredInterfaceLocation);
 		ModelUtils.saveEcoreFile(requiredInterfaceLocation, moduleRequiredInteface);
 		
 		// Create the module's genmodel and generate the code of the module.

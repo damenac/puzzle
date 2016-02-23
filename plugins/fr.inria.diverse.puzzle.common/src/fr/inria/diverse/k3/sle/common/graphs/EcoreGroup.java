@@ -1,7 +1,10 @@
 package fr.inria.diverse.k3.sle.common.graphs;
 
 import java.util.ArrayList;
+
 import org.eclipse.emf.ecore.EClassifier;
+
+import fr.inria.diverse.graph.Vertex;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 
 /**
@@ -19,6 +22,10 @@ public class EcoreGroup {
 	private String name;
 	private ArrayList<EcoreVertex> vertex;
 	private ArrayList<EcoreVertex> requiredVertex;
+	private Vertex dependenciesGraphVertex;
+	private String metamodelPath;
+	private String requiredInterfacePath;
+	private String implementationProjectName;
 
 	// -----------------------------------------------
 	// Constructor
@@ -50,10 +57,42 @@ public class EcoreGroup {
 		return this.requiredVertex;
 	}
 
+	public Vertex getDependenciesGraphVertex() {
+		return dependenciesGraphVertex;
+	}
+
+	public void setDependenciesGraphVertex(Vertex dependenciesGraphVertex) {
+		this.dependenciesGraphVertex = dependenciesGraphVertex;
+	}
+	
+	public String getMetamodelPath() {
+		return metamodelPath;
+	}
+
+	public void setMetamodelPath(String metamodelPath) {
+		this.metamodelPath = metamodelPath;
+	}
+
+	public String getRequiredInterfacePath() {
+		return requiredInterfacePath;
+	}
+
+	public void setRequiredInterfacePath(String requiredInterfacePath) {
+		this.requiredInterfacePath = requiredInterfacePath;
+	}
+	
+	public String getImplementationProjectName() {
+		return implementationProjectName;
+	}
+
+	public void setImplementationProjectName(String implementationProjectName) {
+		this.implementationProjectName = implementationProjectName;
+	}
+	
 	// -----------------------------------------------
 	// Methods
 	// -----------------------------------------------
-	
+
 	/**
 	 * Finds the vertex that matches the ecore type given in the parameter.
 	 * @param eType

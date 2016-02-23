@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
+import vm.PAbstractSyntax;
 import vm.PFeature;
 import vm.PFeatureModel;
 import vm.PLanguageModule;
@@ -14,6 +15,7 @@ import fr.inria.diverse.graph.Vertex;
 import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -68,7 +70,7 @@ public class VariabilityInfererManager {
 		PFeatureModel openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
 				synthesisProperties, languages, modularizationGraph, dependenciesGraph);
 
-		this.addModulesInformation(openFeaturesModel, dependenciesGraph);
+		this.addModulesInformation(openFeaturesModel, modularizationGraph);
 		
 		return openFeaturesModel;
 	}
@@ -80,8 +82,8 @@ public class VariabilityInfererManager {
 	 * @param modularizationGraph
 	 */
 	private void addModulesInformation(PFeatureModel featureModel,
-			Graph<Vertex, Arc> dependenciesGraph) {
-		this.findLanguageModule(featureModel.getRootFeature(), dependenciesGraph);
+			EcoreGraph modularizationGraph) {
+		this.findLanguageModule(featureModel.getRootFeature(), modularizationGraph);
 	}
 
 	/**
@@ -91,19 +93,25 @@ public class VariabilityInfererManager {
 	 * @param modularizationGraph
 	 */
 	private void findLanguageModule(PFeature rootFeature,
-			Graph<Vertex, Arc> dependenciesGraph) {
+			EcoreGraph modularizationGraph) {
 		
-		Vertex vertex = dependenciesGraph.searchVertexByIdentifier(rootFeature.getName());
-		
-		if(vertex != null){
+		EcoreGroup ecoreGroup = modularizationGraph.getGroupByDependenciesGraphName(rootFeature.getName());
+		if(ecoreGroup != null){
 			PLanguageModule languageModule = VmFactory.eINSTANCE.createPLanguageModule();
-			languageModule.setName(vertex.getIdentifier());
+			languageModule.setName(ecoreGroup.getName());
+			
+			PAbstractSyntax moduleAbstractSyntax = VmFactory.eINSTANCE.createPAbstractSyntax();
+			moduleAbstractSyntax.setEcorePath(ecoreGroup.getMetamodelPath());
+			moduleAbstractSyntax.setEcoreRequiredInterfacePath(ecoreGroup.getRequiredInterfacePath());
+			moduleAbstractSyntax.setEcoreProject(ecoreGroup.getImplementationProjectName());
+			
+			languageModule.setAs(moduleAbstractSyntax);
 			rootFeature.setImplementationModule(languageModule);
 		}
 		
 		// Recursion
 		for(PFeature child : rootFeature.getChildren()){
-			this.findLanguageModule(child, dependenciesGraph);
+			this.findLanguageModule(child, modularizationGraph);
 		}
 	}
 
