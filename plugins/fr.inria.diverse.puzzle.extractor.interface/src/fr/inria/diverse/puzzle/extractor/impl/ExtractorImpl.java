@@ -74,7 +74,7 @@ public class ExtractorImpl {
 	
 		// Step 1.5: Computes the ADL script to explicitly serialize the architecture model
 		LanguageArchitecture languageArchitectureModel = this.createLanguageArchitectureModel("Architecture", modularizationGraph, dependenciesGraph);
-		String modelFile = project.getLocation().toString() + "/architectureModel.adl";
+		String modelFile = project.getLocation().toString() + "/architectureModel.puzzleadl";
 		ModelUtils.saveXMIFile(languageArchitectureModel, modelFile);
 	}
 

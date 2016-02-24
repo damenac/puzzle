@@ -4403,3 +4403,31 @@ Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza
 !ENTRY org.apache.log4j 2 0 2016-02-23 14:23:21.495
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+!SESSION 2016-02-24 09:44:54.562 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2016-02-24 09:44:58.344
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2016-02-24 09:45:20.552
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+
+!SESSION 2016-02-24 09:53:52.720 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.platform.ide
+Command-line arguments:  -product org.eclipse.platform.ide -data /Users/dmendeza/workspaces/puzzle/examples/ -dev file:/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins/org.eclipse.pde.core/Puzzle-Runtime/dev.properties -os macosx -ws cocoa -arch x86_64 -consoleLog
+
+!ENTRY org.eclipse.core.net 1 0 2016-02-24 09:53:57.483
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2016-02-24 09:55:20.294
+!MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
+

@@ -12010,3 +12010,21 @@ Caused by: java.lang.NullPointerException
 !ENTRY org.apache.log4j 2 0 2016-02-23 13:57:45.254
 !MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
 
+!SESSION 2016-02-24 09:44:10.505 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2016-02-24 09:44:16.068
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.apache.log4j 2 0 2016-02-24 09:53:02.683
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-24 09:53:24.483
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+

@@ -1,9 +1,0 @@
-grammar fr.inria.diverse.puzzle.language.Adl with org.eclipse.xtext.common.Terminals
-
-generate adl "http://www.inria.fr/diverse/puzzle/language/Adl"
-
-LanguageArchitecture :
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
