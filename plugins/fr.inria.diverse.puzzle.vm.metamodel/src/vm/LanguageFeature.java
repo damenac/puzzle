@@ -2,6 +2,8 @@
  */
 package vm;
 
+import PuzzleADL.LanguageModule;
+
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -143,26 +145,26 @@ public interface LanguageFeature extends PNamedElement {
 	void setParentGroup(LanguageFeatureGroup value);
 
 	/**
-	 * Returns the value of the '<em><b>Implementation Module</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Implementation Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Implementation Module</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Implementation Module</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Implementation Module</em>' containment reference.
+	 * @return the value of the '<em>Implementation Module</em>' reference.
 	 * @see #setImplementationModule(LanguageModule)
 	 * @see vm.VmPackage#getLanguageFeature_ImplementationModule()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	LanguageModule getImplementationModule();
 
 	/**
-	 * Sets the value of the '{@link vm.LanguageFeature#getImplementationModule <em>Implementation Module</em>}' containment reference.
+	 * Sets the value of the '{@link vm.LanguageFeature#getImplementationModule <em>Implementation Module</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Implementation Module</em>' containment reference.
+	 * @param value the new value of the '<em>Implementation Module</em>' reference.
 	 * @see #getImplementationModule()
 	 * @generated
 	 */

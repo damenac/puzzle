@@ -4,11 +4,10 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.AbstractSyntax;
+import PuzzleADL.LanguageArchitecture;
+import PuzzleADL.LanguageModule;
 import vm.LanguageFeature;
 import vm.LanguageFeatureModel;
-import vm.LanguageModule;
-import vm.VmFactory;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
 import fr.inria.diverse.graph.Vertex;
@@ -57,11 +56,12 @@ public class VariabilityInfererManager {
 	 * @param modularizationGraph
 	 * @param dependenciesGraph
 	 * @param project
+	 * @param languageArchitectureModel 
 	 * @throws Exception
 	 */
 	public LanguageFeatureModel synthesizeOpenFeaturesModel(SynthesisProperties synthesisProperties,
 			ArrayList<Language> languages, EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph,
-			IProject project) throws Exception {
+			IProject project, LanguageArchitecture languageArchitectureModel) throws Exception {
 		
 		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
@@ -69,7 +69,7 @@ public class VariabilityInfererManager {
 		LanguageFeatureModel openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
 				synthesisProperties, languages, modularizationGraph, dependenciesGraph);
 
-		this.addModulesInformation(openFeaturesModel, modularizationGraph);
+		this.addModulesInformation(openFeaturesModel, modularizationGraph, languageArchitectureModel);
 		
 		return openFeaturesModel;
 	}
@@ -79,10 +79,11 @@ public class VariabilityInfererManager {
 	 * 	i.e., the implementation of the language features.
 	 * @param featureModel
 	 * @param modularizationGraph
+	 * @param languageArchitectureModel 
 	 */
 	private void addModulesInformation(LanguageFeatureModel featureModel,
-			EcoreGraph modularizationGraph) {
-		this.findLanguageModule(featureModel.getRootFeature(), modularizationGraph);
+			EcoreGraph modularizationGraph, LanguageArchitecture languageArchitectureModel) {
+		this.findLanguageModule(featureModel.getRootFeature(), modularizationGraph, languageArchitectureModel);
 	}
 
 	/**
@@ -90,31 +91,37 @@ public class VariabilityInfererManager {
 	 * Then, it advances in the features tree by invoking this method recursively. 
 	 * @param rootFeature
 	 * @param modularizationGraph
+	 * @param languageArchitectureModel 
 	 */
 	private void findLanguageModule(LanguageFeature rootFeature,
-			EcoreGraph modularizationGraph) {
+			EcoreGraph modularizationGraph, LanguageArchitecture languageArchitectureModel) {
 		
 		EcoreGroup ecoreGroup = modularizationGraph.getGroupByDependenciesGraphName(rootFeature.getName());
 		if(ecoreGroup != null){
-			LanguageModule languageModule = VmFactory.eINSTANCE.createLanguageModule();
-			languageModule.setName(ecoreGroup.getName());
-			
-			AbstractSyntax moduleAbstractSyntax = VmFactory.eINSTANCE.createAbstractSyntax();
-			moduleAbstractSyntax.setEcorePath(ecoreGroup.getMetamodelPath());
-			moduleAbstractSyntax.setEcoreRequiredInterfacePath(ecoreGroup.getRequiredInterfacePath());
-			moduleAbstractSyntax.setEcoreProvidedInterfacePath(ecoreGroup.getProvidedInterfacePath());
-			moduleAbstractSyntax.setEcoreProject(ecoreGroup.getImplementationProjectName());
-			
-			languageModule.setAs(moduleAbstractSyntax);
+			LanguageModule languageModule = this.getLanguageModuleByEcoreGroup(languageArchitectureModel, ecoreGroup);
 			rootFeature.setImplementationModule(languageModule);
 		}
 		
 		// Recursion
 		for(LanguageFeature child : rootFeature.getChildren()){
-			this.findLanguageModule(child, modularizationGraph);
+			this.findLanguageModule(child, modularizationGraph, languageArchitectureModel);
 		}
 	}
 
+	/**
+	 * Returns the language module created for the ecore group in the parameter. 
+	 * @param languageArchitectureModel 
+	 * @param group
+	 * @return
+	 */
+	private LanguageModule getLanguageModuleByEcoreGroup(LanguageArchitecture languageArchitectureModel, EcoreGroup group) {
+		for (LanguageModule module : languageArchitectureModel.getLanguageModules()) {
+			if(module.getName().equals(group.getName()))
+				return module;
+		}
+		return null;
+	}
+	
 	/**
 	 * Synthesizes and returns the closed features model.
 	 * @param synthesisProperties
@@ -139,6 +146,4 @@ public class VariabilityInfererManager {
 
 		return closedFeaturesModel;
 	}
-	
-	
 }

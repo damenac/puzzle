@@ -3,6 +3,8 @@
 package vm.provider;
 
 
+import PuzzleADL.PuzzleADLFactory;
+
 import java.util.Collection;
 import java.util.List;
 
@@ -204,7 +206,7 @@ public class LanguageFeatureItemProvider extends PNamedElementItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(VmPackage.Literals.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE,
-				 VmFactory.eINSTANCE.createLanguageModule()));
+				 PuzzleADLFactory.eINSTANCE.createLanguageModule()));
 	}
 
 }

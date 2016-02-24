@@ -2,6 +2,8 @@
  */
 package vm.provider;
 
+import PuzzleADL.provider.ADLEditPlugin;
+
 import org.eclipse.emf.common.EMFPlugin;
 
 import org.eclipse.emf.common.util.ResourceLocator;
@@ -38,6 +40,7 @@ public final class VMEditPlugin extends EMFPlugin {
 	public VMEditPlugin() {
 		super
 		  (new ResourceLocator [] {
+		     ADLEditPlugin.INSTANCE,
 		   });
 	}
 

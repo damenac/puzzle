@@ -95,7 +95,7 @@ public class SynthesizerManager {
 		// Step 2.1: Synthesize the open variability model i.e., the one that only contains
 		//			 the technological constraints so it explotes the variability.
 		LanguageFeatureModel openFeaturesModel = VariabilityInfererManager.getInstance().synthesizeOpenFeaturesModel(
-				properties, languages, modularizationGraph, dependenciesGraph, project);
+				properties, languages, modularizationGraph, dependenciesGraph, project, languageArchitectureModel);
 		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/openFM.vm");
 		
 		// Step 2.1: Synthesize the closed variability model i.e., the one that contains

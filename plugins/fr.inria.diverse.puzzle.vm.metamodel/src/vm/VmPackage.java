@@ -214,7 +214,7 @@ public interface VmPackage extends EPackage {
 	int LANGUAGE_FEATURE__PARENT_GROUP = PNAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Implementation Module</b></em>' containment reference.
+	 * The feature id for the '<em><b>Implementation Module</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -545,171 +545,6 @@ public interface VmPackage extends EPackage {
 	int BINARY_EXPRESSION_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.LanguageModuleImpl <em>Language Module</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vm.impl.LanguageModuleImpl
-	 * @see vm.impl.VmPackageImpl#getLanguageModule()
-	 * @generated
-	 */
-	int LANGUAGE_MODULE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_MODULE__NAME = PNAMED_ELEMENT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>As</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_MODULE__AS = PNAMED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Sem</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_MODULE__SEM = PNAMED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Language Module</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_MODULE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Language Module</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LANGUAGE_MODULE_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link vm.impl.AbstractSyntaxImpl <em>Abstract Syntax</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vm.impl.AbstractSyntaxImpl
-	 * @see vm.impl.VmPackageImpl#getAbstractSyntax()
-	 * @generated
-	 */
-	int ABSTRACT_SYNTAX = 11;
-
-	/**
-	 * The feature id for the '<em><b>Ecore Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_SYNTAX__ECORE_PATH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Ecore Project</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_SYNTAX__ECORE_PROJECT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Ecore Required Interface Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = 2;
-
-	/**
-	 * The feature id for the '<em><b>Ecore Provided Interface Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = 3;
-
-	/**
-	 * The number of structural features of the '<em>Abstract Syntax</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_SYNTAX_FEATURE_COUNT = 4;
-
-	/**
-	 * The number of operations of the '<em>Abstract Syntax</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_SYNTAX_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link vm.impl.SemanticsImpl <em>Semantics</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see vm.impl.SemanticsImpl
-	 * @see vm.impl.VmPackageImpl#getSemantics()
-	 * @generated
-	 */
-	int SEMANTICS = 12;
-
-	/**
-	 * The feature id for the '<em><b>Xtend Path</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMANTICS__XTEND_PATH = 0;
-
-	/**
-	 * The feature id for the '<em><b>Xtend Project</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMANTICS__XTEND_PROJECT = 1;
-
-	/**
-	 * The number of structural features of the '<em>Semantics</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMANTICS_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Semantics</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEMANTICS_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -717,7 +552,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getUninaryOperator()
 	 * @generated
 	 */
-	int UNINARY_OPERATOR = 13;
+	int UNINARY_OPERATOR = 10;
 
 	/**
 	 * The meta object id for the '{@link vm.BinaryOperator <em>Binary Operator</em>}' enum.
@@ -727,7 +562,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getBinaryOperator()
 	 * @generated
 	 */
-	int BINARY_OPERATOR = 14;
+	int BINARY_OPERATOR = 11;
 
 
 	/**
@@ -849,10 +684,10 @@ public interface VmPackage extends EPackage {
 	EReference getLanguageFeature_ParentGroup();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.LanguageFeature#getImplementationModule <em>Implementation Module</em>}'.
+	 * Returns the meta object for the reference '{@link vm.LanguageFeature#getImplementationModule <em>Implementation Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Implementation Module</em>'.
+	 * @return the meta object for the reference '<em>Implementation Module</em>'.
 	 * @see vm.LanguageFeature#getImplementationModule()
 	 * @see #getLanguageFeature()
 	 * @generated
@@ -1051,124 +886,6 @@ public interface VmPackage extends EPackage {
 	EAttribute getBinaryExpression_Operator();
 
 	/**
-	 * Returns the meta object for class '{@link vm.LanguageModule <em>Language Module</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Language Module</em>'.
-	 * @see vm.LanguageModule
-	 * @generated
-	 */
-	EClass getLanguageModule();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link vm.LanguageModule#getAs <em>As</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>As</em>'.
-	 * @see vm.LanguageModule#getAs()
-	 * @see #getLanguageModule()
-	 * @generated
-	 */
-	EReference getLanguageModule_As();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link vm.LanguageModule#getSem <em>Sem</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Sem</em>'.
-	 * @see vm.LanguageModule#getSem()
-	 * @see #getLanguageModule()
-	 * @generated
-	 */
-	EReference getLanguageModule_Sem();
-
-	/**
-	 * Returns the meta object for class '{@link vm.AbstractSyntax <em>Abstract Syntax</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Abstract Syntax</em>'.
-	 * @see vm.AbstractSyntax
-	 * @generated
-	 */
-	EClass getAbstractSyntax();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcorePath <em>Ecore Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ecore Path</em>'.
-	 * @see vm.AbstractSyntax#getEcorePath()
-	 * @see #getAbstractSyntax()
-	 * @generated
-	 */
-	EAttribute getAbstractSyntax_EcorePath();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcoreProject <em>Ecore Project</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ecore Project</em>'.
-	 * @see vm.AbstractSyntax#getEcoreProject()
-	 * @see #getAbstractSyntax()
-	 * @generated
-	 */
-	EAttribute getAbstractSyntax_EcoreProject();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcoreRequiredInterfacePath <em>Ecore Required Interface Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ecore Required Interface Path</em>'.
-	 * @see vm.AbstractSyntax#getEcoreRequiredInterfacePath()
-	 * @see #getAbstractSyntax()
-	 * @generated
-	 */
-	EAttribute getAbstractSyntax_EcoreRequiredInterfacePath();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcoreProvidedInterfacePath <em>Ecore Provided Interface Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ecore Provided Interface Path</em>'.
-	 * @see vm.AbstractSyntax#getEcoreProvidedInterfacePath()
-	 * @see #getAbstractSyntax()
-	 * @generated
-	 */
-	EAttribute getAbstractSyntax_EcoreProvidedInterfacePath();
-
-	/**
-	 * Returns the meta object for class '{@link vm.Semantics <em>Semantics</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Semantics</em>'.
-	 * @see vm.Semantics
-	 * @generated
-	 */
-	EClass getSemantics();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vm.Semantics#getXtendPath <em>Xtend Path</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Xtend Path</em>'.
-	 * @see vm.Semantics#getXtendPath()
-	 * @see #getSemantics()
-	 * @generated
-	 */
-	EAttribute getSemantics_XtendPath();
-
-	/**
-	 * Returns the meta object for the attribute '{@link vm.Semantics#getXtendProject <em>Xtend Project</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Xtend Project</em>'.
-	 * @see vm.Semantics#getXtendProject()
-	 * @see #getSemantics()
-	 * @generated
-	 */
-	EAttribute getSemantics_XtendProject();
-
-	/**
 	 * Returns the meta object for enum '{@link vm.UninaryOperator <em>Uninary Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1306,7 +1023,7 @@ public interface VmPackage extends EPackage {
 		EReference LANGUAGE_FEATURE__PARENT_GROUP = eINSTANCE.getLanguageFeature_ParentGroup();
 
 		/**
-		 * The meta object literal for the '<em><b>Implementation Module</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Implementation Module</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1470,100 +1187,6 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BINARY_EXPRESSION__OPERATOR = eINSTANCE.getBinaryExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link vm.impl.LanguageModuleImpl <em>Language Module</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vm.impl.LanguageModuleImpl
-		 * @see vm.impl.VmPackageImpl#getLanguageModule()
-		 * @generated
-		 */
-		EClass LANGUAGE_MODULE = eINSTANCE.getLanguageModule();
-
-		/**
-		 * The meta object literal for the '<em><b>As</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LANGUAGE_MODULE__AS = eINSTANCE.getLanguageModule_As();
-
-		/**
-		 * The meta object literal for the '<em><b>Sem</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LANGUAGE_MODULE__SEM = eINSTANCE.getLanguageModule_Sem();
-
-		/**
-		 * The meta object literal for the '{@link vm.impl.AbstractSyntaxImpl <em>Abstract Syntax</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vm.impl.AbstractSyntaxImpl
-		 * @see vm.impl.VmPackageImpl#getAbstractSyntax()
-		 * @generated
-		 */
-		EClass ABSTRACT_SYNTAX = eINSTANCE.getAbstractSyntax();
-
-		/**
-		 * The meta object literal for the '<em><b>Ecore Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_SYNTAX__ECORE_PATH = eINSTANCE.getAbstractSyntax_EcorePath();
-
-		/**
-		 * The meta object literal for the '<em><b>Ecore Project</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_SYNTAX__ECORE_PROJECT = eINSTANCE.getAbstractSyntax_EcoreProject();
-
-		/**
-		 * The meta object literal for the '<em><b>Ecore Required Interface Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = eINSTANCE.getAbstractSyntax_EcoreRequiredInterfacePath();
-
-		/**
-		 * The meta object literal for the '<em><b>Ecore Provided Interface Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = eINSTANCE.getAbstractSyntax_EcoreProvidedInterfacePath();
-
-		/**
-		 * The meta object literal for the '{@link vm.impl.SemanticsImpl <em>Semantics</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see vm.impl.SemanticsImpl
-		 * @see vm.impl.VmPackageImpl#getSemantics()
-		 * @generated
-		 */
-		EClass SEMANTICS = eINSTANCE.getSemantics();
-
-		/**
-		 * The meta object literal for the '<em><b>Xtend Path</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEMANTICS__XTEND_PATH = eINSTANCE.getSemantics_XtendPath();
-
-		/**
-		 * The meta object literal for the '<em><b>Xtend Project</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SEMANTICS__XTEND_PROJECT = eINSTANCE.getSemantics_XtendProject();
 
 		/**
 		 * The meta object literal for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.

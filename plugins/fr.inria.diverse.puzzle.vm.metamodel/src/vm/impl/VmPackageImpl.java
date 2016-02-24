@@ -2,6 +2,8 @@
  */
 package vm.impl;
 
+import PuzzleADL.PuzzleADLPackage;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -10,7 +12,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import vm.AbstractSyntax;
 import vm.BinaryExpression;
 import vm.BinaryOperator;
 import vm.BooleanExpression;
@@ -20,9 +21,7 @@ import vm.LanguageFeatureGroup;
 import vm.LanguageFeatureGroupCardinality;
 import vm.LanguageFeatureModel;
 import vm.LanguageFeatureRef;
-import vm.LanguageModule;
 import vm.PNamedElement;
-import vm.Semantics;
 import vm.UnaryExpression;
 import vm.UninaryOperator;
 import vm.VmFactory;
@@ -110,27 +109,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass languageModuleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass abstractSyntaxEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass semanticsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum uninaryOperatorEEnum = null;
 
 	/**
@@ -185,6 +163,9 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		VmPackageImpl theVmPackage = (VmPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof VmPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new VmPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		PuzzleADLPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theVmPackage.createPackageContents();
@@ -476,105 +457,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getLanguageModule() {
-		return languageModuleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLanguageModule_As() {
-		return (EReference)languageModuleEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLanguageModule_Sem() {
-		return (EReference)languageModuleEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAbstractSyntax() {
-		return abstractSyntaxEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractSyntax_EcorePath() {
-		return (EAttribute)abstractSyntaxEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractSyntax_EcoreProject() {
-		return (EAttribute)abstractSyntaxEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractSyntax_EcoreRequiredInterfacePath() {
-		return (EAttribute)abstractSyntaxEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getAbstractSyntax_EcoreProvidedInterfacePath() {
-		return (EAttribute)abstractSyntaxEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSemantics() {
-		return semanticsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSemantics_XtendPath() {
-		return (EAttribute)semanticsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSemantics_XtendProject() {
-		return (EAttribute)semanticsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getUninaryOperator() {
 		return uninaryOperatorEEnum;
 	}
@@ -656,20 +538,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__RIGHT);
 		createEAttribute(binaryExpressionEClass, BINARY_EXPRESSION__OPERATOR);
 
-		languageModuleEClass = createEClass(LANGUAGE_MODULE);
-		createEReference(languageModuleEClass, LANGUAGE_MODULE__AS);
-		createEReference(languageModuleEClass, LANGUAGE_MODULE__SEM);
-
-		abstractSyntaxEClass = createEClass(ABSTRACT_SYNTAX);
-		createEAttribute(abstractSyntaxEClass, ABSTRACT_SYNTAX__ECORE_PATH);
-		createEAttribute(abstractSyntaxEClass, ABSTRACT_SYNTAX__ECORE_PROJECT);
-		createEAttribute(abstractSyntaxEClass, ABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH);
-		createEAttribute(abstractSyntaxEClass, ABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH);
-
-		semanticsEClass = createEClass(SEMANTICS);
-		createEAttribute(semanticsEClass, SEMANTICS__XTEND_PATH);
-		createEAttribute(semanticsEClass, SEMANTICS__XTEND_PROJECT);
-
 		// Create enums
 		uninaryOperatorEEnum = createEEnum(UNINARY_OPERATOR);
 		binaryOperatorEEnum = createEEnum(BINARY_OPERATOR);
@@ -698,6 +566,9 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		PuzzleADLPackage thePuzzleADLPackage = (PuzzleADLPackage)EPackage.Registry.INSTANCE.getEPackage(PuzzleADLPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -709,7 +580,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		languageFeatureRefEClass.getESuperTypes().add(this.getBooleanExpression());
 		unaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
 		binaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
-		languageModuleEClass.getESuperTypes().add(this.getPNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(pNamedElementEClass, PNamedElement.class, "PNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -725,7 +595,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getLanguageFeature_Parent(), this.getLanguageFeature(), this.getLanguageFeature_Children(), "parent", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLanguageFeature_Groups(), this.getLanguageFeatureGroup(), null, "groups", null, 0, -1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLanguageFeature_ParentGroup(), this.getLanguageFeatureGroup(), this.getLanguageFeatureGroup_Features(), "parentGroup", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLanguageFeature_ImplementationModule(), this.getLanguageModule(), null, "implementationModule", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLanguageFeature_ImplementationModule(), thePuzzleADLPackage.getLanguageModule(), null, "implementationModule", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(languageFeatureGroupEClass, LanguageFeatureGroup.class, "LanguageFeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLanguageFeatureGroup_Features(), this.getLanguageFeature(), this.getLanguageFeature_ParentGroup(), "features", null, 1, -1, LanguageFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -751,20 +621,6 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getBinaryExpression_Left(), this.getBooleanExpression(), null, "left", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBinaryExpression_Right(), this.getBooleanExpression(), null, "right", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryExpression_Operator(), this.getBinaryOperator(), "operator", null, 0, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(languageModuleEClass, LanguageModule.class, "LanguageModule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLanguageModule_As(), this.getAbstractSyntax(), null, "as", null, 0, 1, LanguageModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLanguageModule_Sem(), this.getSemantics(), null, "sem", null, 0, 1, LanguageModule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(abstractSyntaxEClass, AbstractSyntax.class, "AbstractSyntax", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAbstractSyntax_EcorePath(), ecorePackage.getEString(), "ecorePath", null, 0, 1, AbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractSyntax_EcoreProject(), ecorePackage.getEString(), "ecoreProject", null, 0, 1, AbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractSyntax_EcoreRequiredInterfacePath(), ecorePackage.getEString(), "ecoreRequiredInterfacePath", null, 0, 1, AbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAbstractSyntax_EcoreProvidedInterfacePath(), ecorePackage.getEString(), "ecoreProvidedInterfacePath", null, 0, 1, AbstractSyntax.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(semanticsEClass, Semantics.class, "Semantics", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSemantics_XtendPath(), ecorePackage.getEString(), "xtendPath", null, 0, 1, Semantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSemantics_XtendProject(), ecorePackage.getEString(), "xtendProject", null, 0, 1, Semantics.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(uninaryOperatorEEnum, UninaryOperator.class, "UninaryOperator");

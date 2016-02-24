@@ -20,8 +20,7 @@
         eType="#//LanguageFeatureGroup" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentGroup" eType="#//LanguageFeatureGroup"
         eOpposite="#//LanguageFeatureGroup/features"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementationModule" eType="#//LanguageModule"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="implementationModule" eType="ecore:EClass ../../fr.inria.diverse.puzzle.language.adl.metamodel/models/ADL.ecore#//LanguageModule"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LanguageFeatureGroup">
     <eStructuralFeatures xsi:type="ecore:EReference" name="features" lowerBound="1"
@@ -63,23 +62,5 @@
     <eLiterals name="or" value="1"/>
     <eLiterals name="implies" value="2"/>
     <eLiterals name="xor" value="3"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LanguageModule" eSuperTypes="#//PNamedElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="as" eType="#//AbstractSyntax"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sem" eType="#//Semantics"
-        containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AbstractSyntax">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecorePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreProject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreRequiredInterfacePath"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecoreProvidedInterfacePath"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Semantics">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xtendPath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="xtendProject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

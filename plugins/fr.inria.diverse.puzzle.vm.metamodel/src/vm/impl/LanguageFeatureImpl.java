@@ -2,6 +2,8 @@
  */
 package vm.impl;
 
+import PuzzleADL.LanguageModule;
+
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,7 +23,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import vm.LanguageFeature;
 import vm.LanguageFeatureGroup;
-import vm.LanguageModule;
 import vm.VmPackage;
 
 /**
@@ -94,7 +95,7 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	protected LanguageFeatureGroup parentGroup;
 
 	/**
-	 * The cached value of the '{@link #getImplementationModule() <em>Implementation Module</em>}' containment reference.
+	 * The cached value of the '{@link #getImplementationModule() <em>Implementation Module</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getImplementationModule()
@@ -274,6 +275,14 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	 * @generated
 	 */
 	public LanguageModule getImplementationModule() {
+		if (implementationModule != null && implementationModule.eIsProxy()) {
+			InternalEObject oldImplementationModule = (InternalEObject)implementationModule;
+			implementationModule = (LanguageModule)eResolveProxy(oldImplementationModule);
+			if (implementationModule != oldImplementationModule) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE, oldImplementationModule, implementationModule));
+			}
+		}
 		return implementationModule;
 	}
 
@@ -282,14 +291,8 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImplementationModule(LanguageModule newImplementationModule, NotificationChain msgs) {
-		LanguageModule oldImplementationModule = implementationModule;
-		implementationModule = newImplementationModule;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE, oldImplementationModule, newImplementationModule);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public LanguageModule basicGetImplementationModule() {
+		return implementationModule;
 	}
 
 	/**
@@ -298,17 +301,10 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	 * @generated
 	 */
 	public void setImplementationModule(LanguageModule newImplementationModule) {
-		if (newImplementationModule != implementationModule) {
-			NotificationChain msgs = null;
-			if (implementationModule != null)
-				msgs = ((InternalEObject)implementationModule).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE, null, msgs);
-			if (newImplementationModule != null)
-				msgs = ((InternalEObject)newImplementationModule).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE, null, msgs);
-			msgs = basicSetImplementationModule(newImplementationModule, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE, newImplementationModule, newImplementationModule));
+		LanguageModule oldImplementationModule = implementationModule;
+		implementationModule = newImplementationModule;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE, oldImplementationModule, implementationModule));
 	}
 
 	/**
@@ -350,8 +346,6 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 			case VmPackage.LANGUAGE_FEATURE__PARENT_GROUP:
 				return basicSetParentGroup(null, msgs);
-			case VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE:
-				return basicSetImplementationModule(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -390,7 +384,8 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 				if (resolve) return getParentGroup();
 				return basicGetParentGroup();
 			case VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE:
-				return getImplementationModule();
+				if (resolve) return getImplementationModule();
+				return basicGetImplementationModule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
