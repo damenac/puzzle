@@ -1,16 +1,16 @@
 package fr.inria.diverse.puzzle.vmsynthesis.tests;
 
-import vm.PConstraint;
-import vm.PFeature;
-import vm.PFeatureGroup;
-import vm.PFeatureModel;
+import vm.LanguageConstraint;
+import vm.LanguageFeature;
+import vm.LanguageFeatureGroup;
+import vm.LanguageFeatureModel;
 import es.us.isa.FAMA.Reasoner.questions.NumberOfProductsQuestion;
 import es.us.isa.FAMA.Reasoner.questions.ProductsQuestion;
 import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureModel;
 import es.us.isa.FAMA.models.variabilityModel.GenericProduct;
 import es.us.isa.FAMA.models.variabilityModel.VariabilityElement;
 import es.us.isa.fama.PluginQuestionTrader;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPFeatureModelToFAMAAttributed;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.FromLanguageFeatureModelToFAMAAttributed;
 
 public class TestServices {
 
@@ -18,22 +18,22 @@ public class TestServices {
 	// Auxiliary Methods
 	// -------------------------------------------------
 	
-	public static void printFM(PFeatureModel fm){
+	public static void printFM(LanguageFeatureModel fm){
 		System.out.println();
 		System.out.println(fm.getName());
 		printFeature("", " + ", fm.getRootFeature());
 		
 		System.out.println("\nConstraints size: " + fm.getConstraints().size());
-		for (PConstraint constraint : fm.getConstraints()) {
+		for (LanguageConstraint constraint : fm.getConstraints()) {
 			System.out.println(constraint.getName());
 		}
 	}
 	
-	public static void printFeature(String space, String groupString, PFeature feature){
+	public static void printFeature(String space, String groupString, LanguageFeature feature){
 		System.out.println(space + groupString + feature.getName() + " [mandatory: " + feature.isMandatory() + "]");
 		int i = 1;
-		for (PFeatureGroup group : feature.getGroups()) {
-			for (PFeature childFeature : group.getFeatures()) {
+		for (LanguageFeatureGroup group : feature.getGroups()) {
+			for (LanguageFeature childFeature : group.getFeatures()) {
 				printFeature("    " + space, " Group " + i + " (" + 
 						group.getCardinality().getLowerBound() + "," + group.getCardinality().getUpperBound() 
 							+ "): ", childFeature);
@@ -42,9 +42,9 @@ public class TestServices {
 		}
 	}
 	
-	public static double printAllValidProducts(PFeatureModel fm, String PCM){
-//		FAMAFeatureModel famaFm = FromPFeatureModelToFAMA.getInstance().fromPFeatureModelToFAMA(fm);
-		FAMAAttributedFeatureModel famaFm = FromPFeatureModelToFAMAAttributed.getInstance().fromPFeatureModelToFAMA(fm);
+	public static double printAllValidProducts(LanguageFeatureModel fm, String PCM){
+//		FAMAFeatureModel famaFm = FromLanguageFeatureModelToFAMA.getInstance().fromLanguageFeatureModelToFAMA(fm);
+		FAMAAttributedFeatureModel famaFm = FromLanguageFeatureModelToFAMAAttributed.getInstance().fromLanguageFeatureModelToFAMA(fm);
 		
 		PluginQuestionTrader qt = new PluginQuestionTrader();
 		qt.setVariabilityModel(famaFm);

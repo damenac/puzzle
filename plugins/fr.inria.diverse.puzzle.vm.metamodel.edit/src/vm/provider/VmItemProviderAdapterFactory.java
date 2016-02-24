@@ -72,256 +72,256 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PFeatureModel} instances.
+	 * This keeps track of the one adapter used for all {@link vm.LanguageFeatureModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PFeatureModelItemProvider pFeatureModelItemProvider;
+	protected LanguageFeatureModelItemProvider languageFeatureModelItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PFeatureModel}.
+	 * This creates an adapter for a {@link vm.LanguageFeatureModel}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPFeatureModelAdapter() {
-		if (pFeatureModelItemProvider == null) {
-			pFeatureModelItemProvider = new PFeatureModelItemProvider(this);
+	public Adapter createLanguageFeatureModelAdapter() {
+		if (languageFeatureModelItemProvider == null) {
+			languageFeatureModelItemProvider = new LanguageFeatureModelItemProvider(this);
 		}
 
-		return pFeatureModelItemProvider;
+		return languageFeatureModelItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PFeature} instances.
+	 * This keeps track of the one adapter used for all {@link vm.LanguageFeature} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PFeatureItemProvider pFeatureItemProvider;
+	protected LanguageFeatureItemProvider languageFeatureItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PFeature}.
+	 * This creates an adapter for a {@link vm.LanguageFeature}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPFeatureAdapter() {
-		if (pFeatureItemProvider == null) {
-			pFeatureItemProvider = new PFeatureItemProvider(this);
+	public Adapter createLanguageFeatureAdapter() {
+		if (languageFeatureItemProvider == null) {
+			languageFeatureItemProvider = new LanguageFeatureItemProvider(this);
 		}
 
-		return pFeatureItemProvider;
+		return languageFeatureItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PFeatureGroup} instances.
+	 * This keeps track of the one adapter used for all {@link vm.LanguageFeatureGroup} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PFeatureGroupItemProvider pFeatureGroupItemProvider;
+	protected LanguageFeatureGroupItemProvider languageFeatureGroupItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PFeatureGroup}.
+	 * This creates an adapter for a {@link vm.LanguageFeatureGroup}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPFeatureGroupAdapter() {
-		if (pFeatureGroupItemProvider == null) {
-			pFeatureGroupItemProvider = new PFeatureGroupItemProvider(this);
+	public Adapter createLanguageFeatureGroupAdapter() {
+		if (languageFeatureGroupItemProvider == null) {
+			languageFeatureGroupItemProvider = new LanguageFeatureGroupItemProvider(this);
 		}
 
-		return pFeatureGroupItemProvider;
+		return languageFeatureGroupItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PFeatureGroupCardinality} instances.
+	 * This keeps track of the one adapter used for all {@link vm.LanguageFeatureGroupCardinality} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PFeatureGroupCardinalityItemProvider pFeatureGroupCardinalityItemProvider;
+	protected LanguageFeatureGroupCardinalityItemProvider languageFeatureGroupCardinalityItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PFeatureGroupCardinality}.
+	 * This creates an adapter for a {@link vm.LanguageFeatureGroupCardinality}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPFeatureGroupCardinalityAdapter() {
-		if (pFeatureGroupCardinalityItemProvider == null) {
-			pFeatureGroupCardinalityItemProvider = new PFeatureGroupCardinalityItemProvider(this);
+	public Adapter createLanguageFeatureGroupCardinalityAdapter() {
+		if (languageFeatureGroupCardinalityItemProvider == null) {
+			languageFeatureGroupCardinalityItemProvider = new LanguageFeatureGroupCardinalityItemProvider(this);
 		}
 
-		return pFeatureGroupCardinalityItemProvider;
+		return languageFeatureGroupCardinalityItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PConstraint} instances.
+	 * This keeps track of the one adapter used for all {@link vm.LanguageConstraint} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PConstraintItemProvider pConstraintItemProvider;
+	protected LanguageConstraintItemProvider languageConstraintItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PConstraint}.
+	 * This creates an adapter for a {@link vm.LanguageConstraint}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPConstraintAdapter() {
-		if (pConstraintItemProvider == null) {
-			pConstraintItemProvider = new PConstraintItemProvider(this);
+	public Adapter createLanguageConstraintAdapter() {
+		if (languageConstraintItemProvider == null) {
+			languageConstraintItemProvider = new LanguageConstraintItemProvider(this);
 		}
 
-		return pConstraintItemProvider;
+		return languageConstraintItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PFeatureRef} instances.
+	 * This keeps track of the one adapter used for all {@link vm.LanguageFeatureRef} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PFeatureRefItemProvider pFeatureRefItemProvider;
+	protected LanguageFeatureRefItemProvider languageFeatureRefItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PFeatureRef}.
+	 * This creates an adapter for a {@link vm.LanguageFeatureRef}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPFeatureRefAdapter() {
-		if (pFeatureRefItemProvider == null) {
-			pFeatureRefItemProvider = new PFeatureRefItemProvider(this);
+	public Adapter createLanguageFeatureRefAdapter() {
+		if (languageFeatureRefItemProvider == null) {
+			languageFeatureRefItemProvider = new LanguageFeatureRefItemProvider(this);
 		}
 
-		return pFeatureRefItemProvider;
+		return languageFeatureRefItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PUnaryExpression} instances.
+	 * This keeps track of the one adapter used for all {@link vm.UnaryExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PUnaryExpressionItemProvider pUnaryExpressionItemProvider;
+	protected UnaryExpressionItemProvider unaryExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PUnaryExpression}.
+	 * This creates an adapter for a {@link vm.UnaryExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPUnaryExpressionAdapter() {
-		if (pUnaryExpressionItemProvider == null) {
-			pUnaryExpressionItemProvider = new PUnaryExpressionItemProvider(this);
+	public Adapter createUnaryExpressionAdapter() {
+		if (unaryExpressionItemProvider == null) {
+			unaryExpressionItemProvider = new UnaryExpressionItemProvider(this);
 		}
 
-		return pUnaryExpressionItemProvider;
+		return unaryExpressionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PBinaryExpression} instances.
+	 * This keeps track of the one adapter used for all {@link vm.BinaryExpression} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PBinaryExpressionItemProvider pBinaryExpressionItemProvider;
+	protected BinaryExpressionItemProvider binaryExpressionItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PBinaryExpression}.
+	 * This creates an adapter for a {@link vm.BinaryExpression}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPBinaryExpressionAdapter() {
-		if (pBinaryExpressionItemProvider == null) {
-			pBinaryExpressionItemProvider = new PBinaryExpressionItemProvider(this);
+	public Adapter createBinaryExpressionAdapter() {
+		if (binaryExpressionItemProvider == null) {
+			binaryExpressionItemProvider = new BinaryExpressionItemProvider(this);
 		}
 
-		return pBinaryExpressionItemProvider;
+		return binaryExpressionItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PLanguageModule} instances.
+	 * This keeps track of the one adapter used for all {@link vm.LanguageModule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PLanguageModuleItemProvider pLanguageModuleItemProvider;
+	protected LanguageModuleItemProvider languageModuleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PLanguageModule}.
+	 * This creates an adapter for a {@link vm.LanguageModule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPLanguageModuleAdapter() {
-		if (pLanguageModuleItemProvider == null) {
-			pLanguageModuleItemProvider = new PLanguageModuleItemProvider(this);
+	public Adapter createLanguageModuleAdapter() {
+		if (languageModuleItemProvider == null) {
+			languageModuleItemProvider = new LanguageModuleItemProvider(this);
 		}
 
-		return pLanguageModuleItemProvider;
+		return languageModuleItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PAbstractSyntax} instances.
+	 * This keeps track of the one adapter used for all {@link vm.AbstractSyntax} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PAbstractSyntaxItemProvider pAbstractSyntaxItemProvider;
+	protected AbstractSyntaxItemProvider abstractSyntaxItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PAbstractSyntax}.
+	 * This creates an adapter for a {@link vm.AbstractSyntax}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPAbstractSyntaxAdapter() {
-		if (pAbstractSyntaxItemProvider == null) {
-			pAbstractSyntaxItemProvider = new PAbstractSyntaxItemProvider(this);
+	public Adapter createAbstractSyntaxAdapter() {
+		if (abstractSyntaxItemProvider == null) {
+			abstractSyntaxItemProvider = new AbstractSyntaxItemProvider(this);
 		}
 
-		return pAbstractSyntaxItemProvider;
+		return abstractSyntaxItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link vm.PSemantics} instances.
+	 * This keeps track of the one adapter used for all {@link vm.Semantics} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PSemanticsItemProvider pSemanticsItemProvider;
+	protected SemanticsItemProvider semanticsItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link vm.PSemantics}.
+	 * This creates an adapter for a {@link vm.Semantics}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPSemanticsAdapter() {
-		if (pSemanticsItemProvider == null) {
-			pSemanticsItemProvider = new PSemanticsItemProvider(this);
+	public Adapter createSemanticsAdapter() {
+		if (semanticsItemProvider == null) {
+			semanticsItemProvider = new SemanticsItemProvider(this);
 		}
 
-		return pSemanticsItemProvider;
+		return semanticsItemProvider;
 	}
 
 	/**
@@ -423,17 +423,17 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 	 * @generated
 	 */
 	public void dispose() {
-		if (pFeatureModelItemProvider != null) pFeatureModelItemProvider.dispose();
-		if (pFeatureItemProvider != null) pFeatureItemProvider.dispose();
-		if (pFeatureGroupItemProvider != null) pFeatureGroupItemProvider.dispose();
-		if (pFeatureGroupCardinalityItemProvider != null) pFeatureGroupCardinalityItemProvider.dispose();
-		if (pConstraintItemProvider != null) pConstraintItemProvider.dispose();
-		if (pFeatureRefItemProvider != null) pFeatureRefItemProvider.dispose();
-		if (pUnaryExpressionItemProvider != null) pUnaryExpressionItemProvider.dispose();
-		if (pBinaryExpressionItemProvider != null) pBinaryExpressionItemProvider.dispose();
-		if (pLanguageModuleItemProvider != null) pLanguageModuleItemProvider.dispose();
-		if (pAbstractSyntaxItemProvider != null) pAbstractSyntaxItemProvider.dispose();
-		if (pSemanticsItemProvider != null) pSemanticsItemProvider.dispose();
+		if (languageFeatureModelItemProvider != null) languageFeatureModelItemProvider.dispose();
+		if (languageFeatureItemProvider != null) languageFeatureItemProvider.dispose();
+		if (languageFeatureGroupItemProvider != null) languageFeatureGroupItemProvider.dispose();
+		if (languageFeatureGroupCardinalityItemProvider != null) languageFeatureGroupCardinalityItemProvider.dispose();
+		if (languageConstraintItemProvider != null) languageConstraintItemProvider.dispose();
+		if (languageFeatureRefItemProvider != null) languageFeatureRefItemProvider.dispose();
+		if (unaryExpressionItemProvider != null) unaryExpressionItemProvider.dispose();
+		if (binaryExpressionItemProvider != null) binaryExpressionItemProvider.dispose();
+		if (languageModuleItemProvider != null) languageModuleItemProvider.dispose();
+		if (abstractSyntaxItemProvider != null) abstractSyntaxItemProvider.dispose();
+		if (semanticsItemProvider != null) semanticsItemProvider.dispose();
 	}
 
 }

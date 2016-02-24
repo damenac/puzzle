@@ -57,17 +57,17 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case VmPackage.PFEATURE_MODEL: return createPFeatureModel();
-			case VmPackage.PFEATURE: return createPFeature();
-			case VmPackage.PFEATURE_GROUP: return createPFeatureGroup();
-			case VmPackage.PFEATURE_GROUP_CARDINALITY: return createPFeatureGroupCardinality();
-			case VmPackage.PCONSTRAINT: return createPConstraint();
-			case VmPackage.PFEATURE_REF: return createPFeatureRef();
-			case VmPackage.PUNARY_EXPRESSION: return createPUnaryExpression();
-			case VmPackage.PBINARY_EXPRESSION: return createPBinaryExpression();
-			case VmPackage.PLANGUAGE_MODULE: return createPLanguageModule();
-			case VmPackage.PABSTRACT_SYNTAX: return createPAbstractSyntax();
-			case VmPackage.PSEMANTICS: return createPSemantics();
+			case VmPackage.LANGUAGE_FEATURE_MODEL: return createLanguageFeatureModel();
+			case VmPackage.LANGUAGE_FEATURE: return createLanguageFeature();
+			case VmPackage.LANGUAGE_FEATURE_GROUP: return createLanguageFeatureGroup();
+			case VmPackage.LANGUAGE_FEATURE_GROUP_CARDINALITY: return createLanguageFeatureGroupCardinality();
+			case VmPackage.LANGUAGE_CONSTRAINT: return createLanguageConstraint();
+			case VmPackage.LANGUAGE_FEATURE_REF: return createLanguageFeatureRef();
+			case VmPackage.UNARY_EXPRESSION: return createUnaryExpression();
+			case VmPackage.BINARY_EXPRESSION: return createBinaryExpression();
+			case VmPackage.LANGUAGE_MODULE: return createLanguageModule();
+			case VmPackage.ABSTRACT_SYNTAX: return createAbstractSyntax();
+			case VmPackage.SEMANTICS: return createSemantics();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,10 +81,10 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case VmPackage.PUNINARY_OPERATOR:
-				return createPUninaryOperatorFromString(eDataType, initialValue);
-			case VmPackage.PBINARY_OPERATOR:
-				return createPBinaryOperatorFromString(eDataType, initialValue);
+			case VmPackage.UNINARY_OPERATOR:
+				return createUninaryOperatorFromString(eDataType, initialValue);
+			case VmPackage.BINARY_OPERATOR:
+				return createBinaryOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -98,10 +98,10 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case VmPackage.PUNINARY_OPERATOR:
-				return convertPUninaryOperatorToString(eDataType, instanceValue);
-			case VmPackage.PBINARY_OPERATOR:
-				return convertPBinaryOperatorToString(eDataType, instanceValue);
+			case VmPackage.UNINARY_OPERATOR:
+				return convertUninaryOperatorToString(eDataType, instanceValue);
+			case VmPackage.BINARY_OPERATOR:
+				return convertBinaryOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -112,9 +112,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PFeatureModel createPFeatureModel() {
-		PFeatureModelImpl pFeatureModel = new PFeatureModelImpl();
-		return pFeatureModel;
+	public LanguageFeatureModel createLanguageFeatureModel() {
+		LanguageFeatureModelImpl languageFeatureModel = new LanguageFeatureModelImpl();
+		return languageFeatureModel;
 	}
 
 	/**
@@ -122,9 +122,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PFeature createPFeature() {
-		PFeatureImpl pFeature = new PFeatureImpl();
-		return pFeature;
+	public LanguageFeature createLanguageFeature() {
+		LanguageFeatureImpl languageFeature = new LanguageFeatureImpl();
+		return languageFeature;
 	}
 
 	/**
@@ -132,9 +132,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PFeatureGroup createPFeatureGroup() {
-		PFeatureGroupImpl pFeatureGroup = new PFeatureGroupImpl();
-		return pFeatureGroup;
+	public LanguageFeatureGroup createLanguageFeatureGroup() {
+		LanguageFeatureGroupImpl languageFeatureGroup = new LanguageFeatureGroupImpl();
+		return languageFeatureGroup;
 	}
 
 	/**
@@ -142,9 +142,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PFeatureGroupCardinality createPFeatureGroupCardinality() {
-		PFeatureGroupCardinalityImpl pFeatureGroupCardinality = new PFeatureGroupCardinalityImpl();
-		return pFeatureGroupCardinality;
+	public LanguageFeatureGroupCardinality createLanguageFeatureGroupCardinality() {
+		LanguageFeatureGroupCardinalityImpl languageFeatureGroupCardinality = new LanguageFeatureGroupCardinalityImpl();
+		return languageFeatureGroupCardinality;
 	}
 
 	/**
@@ -152,9 +152,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PConstraint createPConstraint() {
-		PConstraintImpl pConstraint = new PConstraintImpl();
-		return pConstraint;
+	public LanguageConstraint createLanguageConstraint() {
+		LanguageConstraintImpl languageConstraint = new LanguageConstraintImpl();
+		return languageConstraint;
 	}
 
 	/**
@@ -162,9 +162,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PFeatureRef createPFeatureRef() {
-		PFeatureRefImpl pFeatureRef = new PFeatureRefImpl();
-		return pFeatureRef;
+	public LanguageFeatureRef createLanguageFeatureRef() {
+		LanguageFeatureRefImpl languageFeatureRef = new LanguageFeatureRefImpl();
+		return languageFeatureRef;
 	}
 
 	/**
@@ -172,9 +172,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PUnaryExpression createPUnaryExpression() {
-		PUnaryExpressionImpl pUnaryExpression = new PUnaryExpressionImpl();
-		return pUnaryExpression;
+	public UnaryExpression createUnaryExpression() {
+		UnaryExpressionImpl unaryExpression = new UnaryExpressionImpl();
+		return unaryExpression;
 	}
 
 	/**
@@ -182,9 +182,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PBinaryExpression createPBinaryExpression() {
-		PBinaryExpressionImpl pBinaryExpression = new PBinaryExpressionImpl();
-		return pBinaryExpression;
+	public BinaryExpression createBinaryExpression() {
+		BinaryExpressionImpl binaryExpression = new BinaryExpressionImpl();
+		return binaryExpression;
 	}
 
 	/**
@@ -192,9 +192,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PLanguageModule createPLanguageModule() {
-		PLanguageModuleImpl pLanguageModule = new PLanguageModuleImpl();
-		return pLanguageModule;
+	public LanguageModule createLanguageModule() {
+		LanguageModuleImpl languageModule = new LanguageModuleImpl();
+		return languageModule;
 	}
 
 	/**
@@ -202,9 +202,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PAbstractSyntax createPAbstractSyntax() {
-		PAbstractSyntaxImpl pAbstractSyntax = new PAbstractSyntaxImpl();
-		return pAbstractSyntax;
+	public AbstractSyntax createAbstractSyntax() {
+		AbstractSyntaxImpl abstractSyntax = new AbstractSyntaxImpl();
+		return abstractSyntax;
 	}
 
 	/**
@@ -212,9 +212,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PSemantics createPSemantics() {
-		PSemanticsImpl pSemantics = new PSemanticsImpl();
-		return pSemantics;
+	public Semantics createSemantics() {
+		SemanticsImpl semantics = new SemanticsImpl();
+		return semantics;
 	}
 
 	/**
@@ -222,8 +222,8 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PUninaryOperator createPUninaryOperatorFromString(EDataType eDataType, String initialValue) {
-		PUninaryOperator result = PUninaryOperator.get(initialValue);
+	public UninaryOperator createUninaryOperatorFromString(EDataType eDataType, String initialValue) {
+		UninaryOperator result = UninaryOperator.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -233,7 +233,7 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertPUninaryOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertUninaryOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
@@ -242,8 +242,8 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PBinaryOperator createPBinaryOperatorFromString(EDataType eDataType, String initialValue) {
-		PBinaryOperator result = PBinaryOperator.get(initialValue);
+	public BinaryOperator createBinaryOperatorFromString(EDataType eDataType, String initialValue) {
+		BinaryOperator result = BinaryOperator.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -253,7 +253,7 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertPBinaryOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertBinaryOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

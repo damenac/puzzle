@@ -7,17 +7,17 @@ import fr.inria.diverse.generator.pcm.PCMQueryServices;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
 import fr.inria.diverse.graph.Vertex;
-import vm.PBinaryExpression;
-import vm.PBinaryOperator;
-import vm.PBooleanExpression;
-import vm.PConstraint;
-import vm.PFeature;
-import vm.PFeatureGroup;
-import vm.PFeatureGroupCardinality;
-import vm.PFeatureModel;
-import vm.PFeatureRef;
-import vm.PUnaryExpression;
-import vm.PUninaryOperator;
+import vm.BinaryExpression;
+import vm.BinaryOperator;
+import vm.BooleanExpression;
+import vm.LanguageConstraint;
+import vm.LanguageFeature;
+import vm.LanguageFeatureGroup;
+import vm.LanguageFeatureGroupCardinality;
+import vm.LanguageFeatureModel;
+import vm.LanguageFeatureRef;
+import vm.UnaryExpression;
+import vm.UninaryOperator;
 import vm.VmFactory;
 
 /**
@@ -58,13 +58,13 @@ public class VmSynthesis {
 	 * @param dependenciesGraph
 	 * @return
 	 */
-	public PFeatureModel synthesizeOpenFeatureModel(Graph<Vertex, Arc> dependenciesGraph) {
-		PFeatureModel featureModel = VmFactory.eINSTANCE.createPFeatureModel();
+	public LanguageFeatureModel synthesizeOpenFeatureModel(Graph<Vertex, Arc> dependenciesGraph) {
+		LanguageFeatureModel featureModel = VmFactory.eINSTANCE.createLanguageFeatureModel();
 
 		// TODO Put a real family name to the feature model.
 		featureModel.setName("FeatureModel");
 
-		PFeature rootFeature = VmFactory.eINSTANCE.createPFeature();
+		LanguageFeature rootFeature = VmFactory.eINSTANCE.createLanguageFeature();
 		rootFeature.setMandatory(true);
 		rootFeature.setName("Root");
 
@@ -74,14 +74,14 @@ public class VmSynthesis {
 		for (Vertex dependencyVertex : firstLevelVertex) {
 			dependencyVertex.setIncluded(true);
 
-			PFeature feature = VmFactory.eINSTANCE.createPFeature();
+			LanguageFeature feature = VmFactory.eINSTANCE.createLanguageFeature();
 			feature.setName(dependencyVertex.getIdentifier());
 			feature.setParent(rootFeature);
 
-			PFeatureGroup featureGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+			LanguageFeatureGroup featureGroup = VmFactory.eINSTANCE.createLanguageFeatureGroup();
 			featureGroup.getFeatures().add(feature);
 
-			PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+			LanguageFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createLanguageFeatureGroupCardinality();
 			cardinality.setLowerBound(0);
 			cardinality.setUpperBound(1);
 			featureGroup.setCardinality(cardinality);
@@ -94,7 +94,7 @@ public class VmSynthesis {
 			List<Vertex> directDependentVertex = dependenciesGraph.getDirectDependentVertex(currentLevel);
 			for (Vertex dependencyVertex : directDependentVertex) {
 				if (!dependencyVertex.isIncluded()) {
-					PFeature feature = VmFactory.eINSTANCE.createPFeature();
+					LanguageFeature feature = VmFactory.eINSTANCE.createLanguageFeature();
 					feature.setName(dependencyVertex.getIdentifier());
 					dependencyVertex.setIncluded(true);
 
@@ -103,15 +103,15 @@ public class VmSynthesis {
 						if (currentLevel.contains(dependencyArc.getTo())) {
 							if (first) {
 								// Esta feature no tiene padre. Asignelo.
-								PFeature parent = this.getPFeatureByName(dependencyArc.getTo().getIdentifier(),
+								LanguageFeature parent = this.getLanguageFeatureByName(dependencyArc.getTo().getIdentifier(),
 										rootFeature);
 								feature.setParent(parent);
 
-								PFeatureGroup featureGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+								LanguageFeatureGroup featureGroup = VmFactory.eINSTANCE.createLanguageFeatureGroup();
 								featureGroup.getFeatures().add(feature);
 
-								PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE
-										.createPFeatureGroupCardinality();
+								LanguageFeatureGroupCardinality cardinality = VmFactory.eINSTANCE
+										.createLanguageFeatureGroupCardinality();
 								cardinality.setLowerBound(0);
 								cardinality.setUpperBound(1);
 								featureGroup.setCardinality(cardinality);
@@ -131,21 +131,21 @@ public class VmSynthesis {
 		return featureModel;
 	}
 
-	private void addCrosslevelRequires(PFeatureModel featureModel, Graph<Vertex, Arc> dependenciesGraph) {
+	private void addCrosslevelRequires(LanguageFeatureModel featureModel, Graph<Vertex, Arc> dependenciesGraph) {
 		for (Arc arc : dependenciesGraph.getArcs()) {
 			if (!this.isFather(featureModel.getRootFeature(), arc.getTo().getIdentifier(),
 					arc.getFrom().getIdentifier())) {
-				PFeature requiredFeature = this.getPFeatureByName(arc.getTo().getIdentifier(),
+				LanguageFeature requiredFeature = this.getLanguageFeatureByName(arc.getTo().getIdentifier(),
 						featureModel.getRootFeature());
-				PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
-				PBinaryExpression binaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
-				PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
-				left.setRef(this.getPFeatureByName(arc.getFrom().getIdentifier(), featureModel.getRootFeature()));
-				PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+				LanguageConstraint constraint = VmFactory.eINSTANCE.createLanguageConstraint();
+				BinaryExpression binaryExpression = VmFactory.eINSTANCE.createBinaryExpression();
+				LanguageFeatureRef left = VmFactory.eINSTANCE.createLanguageFeatureRef();
+				left.setRef(this.getLanguageFeatureByName(arc.getFrom().getIdentifier(), featureModel.getRootFeature()));
+				LanguageFeatureRef right = VmFactory.eINSTANCE.createLanguageFeatureRef();
 				right.setRef(requiredFeature);
 				binaryExpression.setLeft(left);
 				binaryExpression.setRight(right);
-				binaryExpression.setOperator(PBinaryOperator.IMPLIES);
+				binaryExpression.setOperator(BinaryOperator.IMPLIES);
 				constraint.setExpression(binaryExpression);
 				constraint.setName(left.getRef().getName() + " implies " + right.getRef().getName());
 				featureModel.getConstraints().add(constraint);
@@ -154,15 +154,15 @@ public class VmSynthesis {
 
 	}
 
-	private boolean isFather(PFeature root, String father, String child) {
+	private boolean isFather(LanguageFeature root, String father, String child) {
 		if (root.getName().equals(father)) {
-			for (PFeature children : root.getChildren()) {
+			for (LanguageFeature children : root.getChildren()) {
 				if (children.getName().equals(child)) {
 					return true;
 				}
 			}
 		} else {
-			for (PFeature children : root.getChildren()) {
+			for (LanguageFeature children : root.getChildren()) {
 				boolean isFather = this.isFather(children, father, child);
 				if (isFather) {
 					return true;
@@ -172,8 +172,8 @@ public class VmSynthesis {
 		return false;
 	}
 
-	public PFeatureModel synthesizeClosedFeatureModel(String PCM, PFeatureModel openFeatureModel) throws Exception {
-		PFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
+	public LanguageFeatureModel synthesizeClosedFeatureModel(String PCM, LanguageFeatureModel openFeatureModel) throws Exception {
+		LanguageFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
 		PCMQueryServices.getInstance().loadPCM(PCM);
 
 		this.identifyMandatoryFeatures(closedFeatureModel);
@@ -195,8 +195,8 @@ public class VmSynthesis {
 	 * @param fm.
 	 *            Feature model under study.
 	 */
-	public void identifyMandatoryFeatures(PFeatureModel fm) {
-		for (PFeature child : fm.getRootFeature().getChildren()) {
+	public void identifyMandatoryFeatures(LanguageFeatureModel fm) {
+		for (LanguageFeature child : fm.getRootFeature().getChildren()) {
 			this.identifyMandatoryFeatures(child, true);
 		}
 	}
@@ -211,14 +211,14 @@ public class VmSynthesis {
 	 *            Indicates if the current feature is the feature of the feature
 	 *            model.
 	 */
-	private void identifyMandatoryFeatures(PFeature rootFeature, boolean isRoot) {
+	private void identifyMandatoryFeatures(LanguageFeature rootFeature, boolean isRoot) {
 		if (isRoot) {
 			if (PCMQueryServices.getInstance().existsProductWithoutFeature(rootFeature.getName()))
 				rootFeature.setMandatory(false);
 			else {
 				rootFeature.setMandatory(true);
 				if (rootFeature.getParent() != null) {
-					for (PFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
+					for (LanguageFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
 						if (parentGroup.getFeatures().get(0).getName().equals(rootFeature.getName())) {
 							parentGroup.getCardinality().setLowerBound(1);
 							parentGroup.getCardinality().setUpperBound(1);
@@ -235,7 +235,7 @@ public class VmSynthesis {
 			} else {
 				rootFeature.setMandatory(true);
 				if (rootFeature.getParent() != null) {
-					for (PFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
+					for (LanguageFeatureGroup parentGroup : rootFeature.getParent().getGroups()) {
 						if (parentGroup.getFeatures().get(0).getName().equals(rootFeature.getName())) {
 							parentGroup.getCardinality().setLowerBound(1);
 							parentGroup.getCardinality().setUpperBound(1);
@@ -245,7 +245,7 @@ public class VmSynthesis {
 			}
 		}
 
-		for (PFeature child : rootFeature.getChildren()) {
+		for (LanguageFeature child : rootFeature.getChildren()) {
 			this.identifyMandatoryFeatures(child, false);
 		}
 	}
@@ -256,7 +256,7 @@ public class VmSynthesis {
 	 * @param fm.
 	 *            Feature model under study.
 	 */
-	public void identifyXORs(PFeatureModel fm) {
+	public void identifyXORs(LanguageFeatureModel fm) {
 		this.identifyXORs(fm.getRootFeature());
 	}
 
@@ -269,10 +269,10 @@ public class VmSynthesis {
 	 * @param allXORs.
 	 *            A collection where the XOR groups will be stored.
 	 */
-	private void identifyXORs(PFeature rootFeature) {
-		ArrayList<ArrayList<PFeature>> allXORs = new ArrayList<ArrayList<PFeature>>();
-		ArrayList<PFeature> initialGroup = new ArrayList<PFeature>();
-		for (PFeatureGroup group : rootFeature.getGroups()) {
+	private void identifyXORs(LanguageFeature rootFeature) {
+		ArrayList<ArrayList<LanguageFeature>> allXORs = new ArrayList<ArrayList<LanguageFeature>>();
+		ArrayList<LanguageFeature> initialGroup = new ArrayList<LanguageFeature>();
+		for (LanguageFeatureGroup group : rootFeature.getGroups()) {
 			if (group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1
 					&& group.getFeatures().size() > 0) {
 				initialGroup.add(group.getFeatures().get(0));
@@ -280,13 +280,13 @@ public class VmSynthesis {
 		}
 		this.identifyXORByCombination(initialGroup, allXORs);
 		this.sortBySize(allXORs);
-		ArrayList<PFeature> added = new ArrayList<PFeature>();
+		ArrayList<LanguageFeature> added = new ArrayList<LanguageFeature>();
 
-		for (ArrayList<PFeature> xor : allXORs) {
+		for (ArrayList<LanguageFeature> xor : allXORs) {
 			if (this.isStillValid(added, xor)) {
 				// Create new XOR group
-				for (PFeature pFeature : xor) {
-					PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
+				for (LanguageFeature pFeature : xor) {
+					LanguageFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
 					rootFeature.getGroups().remove(featureGroup);
 				}
 				this.createXORGroup(rootFeature, xor);
@@ -296,7 +296,7 @@ public class VmSynthesis {
 			}
 		}
 
-		for (PFeature child : rootFeature.getChildren()) {
+		for (LanguageFeature child : rootFeature.getChildren()) {
 			this.identifyXORs(child);
 		}
 	}
@@ -309,8 +309,8 @@ public class VmSynthesis {
 	 * @param feature
 	 * @return
 	 */
-	private PFeatureGroup getGroupByFeature(PFeature rootFeature, PFeature feature) {
-		for (PFeatureGroup currentGroup : rootFeature.getGroups()) {
+	private LanguageFeatureGroup getGroupByFeature(LanguageFeature rootFeature, LanguageFeature feature) {
+		for (LanguageFeatureGroup currentGroup : rootFeature.getGroups()) {
 			if (currentGroup.getFeatures().contains(feature))
 				return currentGroup;
 		}
@@ -324,13 +324,13 @@ public class VmSynthesis {
 	 * @param rootFeature
 	 * @param xor
 	 */
-	private void createXORGroup(PFeature rootFeature, ArrayList<PFeature> xorFeatures) {
-		PFeatureGroup XORGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+	private void createXORGroup(LanguageFeature rootFeature, ArrayList<LanguageFeature> xorFeatures) {
+		LanguageFeatureGroup XORGroup = VmFactory.eINSTANCE.createLanguageFeatureGroup();
 		XORGroup.getFeatures().addAll(xorFeatures);
 
-		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		LanguageFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createLanguageFeatureGroupCardinality();
 		ArrayList<String> features = new ArrayList<String>();
-		for (PFeature pFeature : xorFeatures) {
+		for (LanguageFeature pFeature : xorFeatures) {
 			features.add(pFeature.getName());
 		}
 
@@ -351,7 +351,7 @@ public class VmSynthesis {
 	 * 
 	 * @param group
 	 */
-	private void sortBySize(ArrayList<ArrayList<PFeature>> group) {
+	private void sortBySize(ArrayList<ArrayList<LanguageFeature>> group) {
 		// TODO Implement it!!
 	}
 
@@ -363,7 +363,7 @@ public class VmSynthesis {
 	 * @param xor
 	 * @return
 	 */
-	private boolean isStillValid(ArrayList<PFeature> features, ArrayList<PFeature> xor) {
+	private boolean isStillValid(ArrayList<LanguageFeature> features, ArrayList<LanguageFeature> xor) {
 		for (int i = 0; i < features.size(); i++) {
 			for (int j = 0; j < xor.size(); j++) {
 				if (features.get(i).getName().equals(xor.get(j).getName()))
@@ -380,9 +380,9 @@ public class VmSynthesis {
 	 * @param group
 	 * @param allXORs
 	 */
-	private void identifyXORByCombination(ArrayList<PFeature> group, ArrayList<ArrayList<PFeature>> allXORs) {
+	private void identifyXORByCombination(ArrayList<LanguageFeature> group, ArrayList<ArrayList<LanguageFeature>> allXORs) {
 		ArrayList<String> features = new ArrayList<String>();
-		for (PFeature feature : group) {
+		for (LanguageFeature feature : group) {
 			features.add(feature.getName());
 		}
 		boolean xor = PCMQueryServices.getInstance().xor(features);
@@ -390,9 +390,9 @@ public class VmSynthesis {
 			allXORs.add(group);
 			return;
 		} else {
-//			for (PFeature feature : group) {
-//				ArrayList<PFeature> recursiveFeatures = new ArrayList<PFeature>();
-//				for (PFeature recursiveFeature : group) {
+//			for (LanguageFeature feature : group) {
+//				ArrayList<LanguageFeature> recursiveFeatures = new ArrayList<LanguageFeature>();
+//				for (LanguageFeature recursiveFeature : group) {
 //					if (!recursiveFeature.getName().equals(feature.getName()))
 //						recursiveFeatures.add(recursiveFeature);
 //				}
@@ -409,7 +409,7 @@ public class VmSynthesis {
 	 * @param fm.
 	 *            Feature model under study.
 	 */
-	public void identifyORs(PFeatureModel fm) {
+	public void identifyORs(LanguageFeatureModel fm) {
 		this.identifyORs(fm.getRootFeature());
 	}
 
@@ -420,9 +420,9 @@ public class VmSynthesis {
 	 * @param rootFeature.
 	 *            The root feature of the hierarchy.
 	 */
-	private void identifyORs(PFeature rootFeature) {
-		ArrayList<PFeature> or = new ArrayList<PFeature>();
-		for (PFeatureGroup group : rootFeature.getGroups()) {
+	private void identifyORs(LanguageFeature rootFeature) {
+		ArrayList<LanguageFeature> or = new ArrayList<LanguageFeature>();
+		for (LanguageFeatureGroup group : rootFeature.getGroups()) {
 			if (group.getCardinality().getLowerBound() == 0 && group.getCardinality().getUpperBound() == 1
 					&& group.getFeatures().size() == 1) {
 				or.add(group.getFeatures().get(0));
@@ -430,14 +430,14 @@ public class VmSynthesis {
 		}
 
 		if (or.size() > 1) {
-			for (PFeature pFeature : or) {
-				PFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
+			for (LanguageFeature pFeature : or) {
+				LanguageFeatureGroup featureGroup = this.getGroupByFeature(rootFeature, pFeature);
 				rootFeature.getGroups().remove(featureGroup);
 			}
 			this.createORGroup(rootFeature, or);
 		}
 
-		for (PFeature child : rootFeature.getChildren()) {
+		for (LanguageFeature child : rootFeature.getChildren()) {
 			this.identifyORs(child);
 		}
 	}
@@ -449,13 +449,13 @@ public class VmSynthesis {
 	 * @param rootFeature
 	 * @param or
 	 */
-	private void createORGroup(PFeature rootFeature, ArrayList<PFeature> orFeatures) {
-		PFeatureGroup ORGroup = VmFactory.eINSTANCE.createPFeatureGroup();
+	private void createORGroup(LanguageFeature rootFeature, ArrayList<LanguageFeature> orFeatures) {
+		LanguageFeatureGroup ORGroup = VmFactory.eINSTANCE.createLanguageFeatureGroup();
 		ORGroup.getFeatures().addAll(orFeatures);
 
-		PFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+		LanguageFeatureGroupCardinality cardinality = VmFactory.eINSTANCE.createLanguageFeatureGroupCardinality();
 		ArrayList<String> features = new ArrayList<String>();
-		for (PFeature pFeature : orFeatures) {
+		for (LanguageFeature pFeature : orFeatures) {
 			features.add(pFeature.getName());
 		}
 
@@ -475,14 +475,14 @@ public class VmSynthesis {
 	 * Identifies the implications existing between the features of the feature model given in the parameter.
 	 * @param fm
 	 */
-	public void addAdditionalImpliesConstraints(PFeatureModel fm) {
-		ArrayList<PFeature> features = new ArrayList<PFeature>();
-		this.collectPFeatures(features, fm.getRootFeature());
+	public void addAdditionalImpliesConstraints(LanguageFeatureModel fm) {
+		ArrayList<LanguageFeature> features = new ArrayList<LanguageFeature>();
+		this.collectLanguageFeatures(features, fm.getRootFeature());
 
 		for (int i = 1; i < features.size(); i++) {
 			for (int j = 1; j < features.size(); j++) {
-				PFeature origin = features.get(i);
-				PFeature destination = features.get(j);
+				LanguageFeature origin = features.get(i);
+				LanguageFeature destination = features.get(j);
 
 				if (!origin.getName().equals(destination.getName())) {
 					boolean child = this.featureAIsParentOfB(destination, origin);
@@ -503,23 +503,23 @@ public class VmSynthesis {
 	 * @param fm
 	 * @return
 	 */
-	private boolean implicationExists(PFeature origin, PFeature destination,
-			PFeatureModel fm) {
+	private boolean implicationExists(LanguageFeature origin, LanguageFeature destination,
+			LanguageFeatureModel fm) {
 		
-		PConstraint implies = VmFactory.eINSTANCE.createPConstraint();
-		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+		LanguageConstraint implies = VmFactory.eINSTANCE.createLanguageConstraint();
+		LanguageFeatureRef left = VmFactory.eINSTANCE.createLanguageFeatureRef();
 		left.setRef(origin);
-		PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+		LanguageFeatureRef right = VmFactory.eINSTANCE.createLanguageFeatureRef();
 		right.setRef(destination);
 
-		PBinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+		BinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createBinaryExpression();
 		pBinaryExpression.setLeft(left);
 		pBinaryExpression.setRight(right);
-		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
+		pBinaryExpression.setOperator(BinaryOperator.IMPLIES);
 
 		implies.setExpression(pBinaryExpression);
 		
-		for (PConstraint constraint : fm.getConstraints()) {
+		for (LanguageConstraint constraint : fm.getConstraints()) {
 			if(pBooleanExpressionEquals(constraint.getExpression(), implies.getExpression())){
 				return true;
 			}
@@ -527,7 +527,7 @@ public class VmSynthesis {
 		return false;
 	}
 
-	private boolean featureAIsParentOfB(PFeature A, PFeature B) {
+	private boolean featureAIsParentOfB(LanguageFeature A, LanguageFeature B) {
 		if (B.getParent() == null)
 			return false;
 		else if (A.getName().equals(B.getParent().getName()))
@@ -543,19 +543,19 @@ public class VmSynthesis {
 	 * @param destination
 	 * @param fm
 	 */
-	private void createImplies(PFeature origin, PFeature destination,
-			PFeatureModel fm) {
+	private void createImplies(LanguageFeature origin, LanguageFeature destination,
+			LanguageFeatureModel fm) {
 		
-		PConstraint implies = VmFactory.eINSTANCE.createPConstraint();
-		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+		LanguageConstraint implies = VmFactory.eINSTANCE.createLanguageConstraint();
+		LanguageFeatureRef left = VmFactory.eINSTANCE.createLanguageFeatureRef();
 		left.setRef(origin);
-		PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+		LanguageFeatureRef right = VmFactory.eINSTANCE.createLanguageFeatureRef();
 		right.setRef(destination);
 
-		PBinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+		BinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createBinaryExpression();
 		pBinaryExpression.setLeft(left);
 		pBinaryExpression.setRight(right);
-		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
+		pBinaryExpression.setOperator(BinaryOperator.IMPLIES);
 
 		implies.setExpression(pBinaryExpression);
 		implies.setName(left.getRef().getName() + " implies " + right.getRef().getName());
@@ -568,14 +568,14 @@ public class VmSynthesis {
 	 * 
 	 * @param fm
 	 */
-	public void addAdditionalExcludesConstraints(PFeatureModel fm) {
-		ArrayList<PFeature> features = new ArrayList<PFeature>();
-		this.collectPFeatures(features, fm.getRootFeature());
+	public void addAdditionalExcludesConstraints(LanguageFeatureModel fm) {
+		ArrayList<LanguageFeature> features = new ArrayList<LanguageFeature>();
+		this.collectLanguageFeatures(features, fm.getRootFeature());
 
 		for (int i = 1; i < features.size(); i++) {
 			for (int j = 1; j < features.size(); j++) {
-				PFeature origin = features.get(i);
-				PFeature destination = features.get(j);
+				LanguageFeature origin = features.get(i);
+				LanguageFeature destination = features.get(j);
 
 				if (!origin.getName().equals(destination.getName())) {
 					if (!origin.getParentGroup().equals(destination.getParentGroup()) && PCMQueryServices.getInstance()
@@ -594,25 +594,25 @@ public class VmSynthesis {
 	 * @param destination
 	 * @param fm
 	 */
-	private void createExcludes(PFeature origin, PFeature destination,
-			PFeatureModel fm) {
+	private void createExcludes(LanguageFeature origin, LanguageFeature destination,
+			LanguageFeatureModel fm) {
 		
 
-		PConstraint excludes = VmFactory.eINSTANCE.createPConstraint();
-		PFeatureRef left = VmFactory.eINSTANCE.createPFeatureRef();
+		LanguageConstraint excludes = VmFactory.eINSTANCE.createLanguageConstraint();
+		LanguageFeatureRef left = VmFactory.eINSTANCE.createLanguageFeatureRef();
 		left.setRef(origin);
 
-		PFeatureRef right = VmFactory.eINSTANCE.createPFeatureRef();
+		LanguageFeatureRef right = VmFactory.eINSTANCE.createLanguageFeatureRef();
 		right.setRef(destination);
 
-		PUnaryExpression notImplies = VmFactory.eINSTANCE.createPUnaryExpression();
+		UnaryExpression notImplies = VmFactory.eINSTANCE.createUnaryExpression();
 		notImplies.setExpr(right);
-		notImplies.setOperator(PUninaryOperator.NOT);
+		notImplies.setOperator(UninaryOperator.NOT);
 
-		PBinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createPBinaryExpression();
+		BinaryExpression pBinaryExpression = VmFactory.eINSTANCE.createBinaryExpression();
 		pBinaryExpression.setLeft(left);
 		pBinaryExpression.setRight(notImplies);
-		pBinaryExpression.setOperator(PBinaryOperator.IMPLIES);
+		pBinaryExpression.setOperator(BinaryOperator.IMPLIES);
 
 		excludes.setExpression(pBinaryExpression);
 		excludes.setName(left.getRef().getName() + " excludes " + right.getRef().getName());
@@ -624,32 +624,32 @@ public class VmSynthesis {
 	 * Groups the includes constraints in the given feature model that have the same right side. 
 	 * @param featureModel. 
 	 */
-	public void groupImplicationsByRightSide(PFeatureModel featureModel) {
+	public void groupImplicationsByRightSide(LanguageFeatureModel featureModel) {
 		
 		// Step 1. Collect the implication groups in the variable 'groups'
 		ArrayList<RightImplicationsGroup> groups = new ArrayList<RightImplicationsGroup>();
-		for (PConstraint constraintI : featureModel.getConstraints()) {
-			if(constraintI.getExpression() instanceof PBinaryExpression
-					&& ((PBinaryExpression)constraintI.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())){
+		for (LanguageConstraint constraintI : featureModel.getConstraints()) {
+			if(constraintI.getExpression() instanceof BinaryExpression
+					&& ((BinaryExpression)constraintI.getExpression()).getOperator().getName().equals(BinaryOperator.IMPLIES.getName())){
 				
-				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
+				BinaryExpression impliesI = (BinaryExpression) constraintI.getExpression();
 				
-				if(impliesI.getRight() instanceof PFeatureRef){
-					PFeatureRef rightFeatureRefI = (PFeatureRef) impliesI.getRight();
+				if(impliesI.getRight() instanceof LanguageFeatureRef){
+					LanguageFeatureRef rightFeatureRefI = (LanguageFeatureRef) impliesI.getRight();
 					if(!this.existsImplicationGroup(groups, rightFeatureRefI)){
 						RightImplicationsGroup newGroup = new RightImplicationsGroup(rightFeatureRefI, false);
 						
-						for (PConstraint constraintJ : featureModel.getConstraints()) {
-							if(constraintJ.getExpression() instanceof PBinaryExpression
-									&& ((PBinaryExpression)constraintJ.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())
+						for (LanguageConstraint constraintJ : featureModel.getConstraints()) {
+							if(constraintJ.getExpression() instanceof BinaryExpression
+									&& ((BinaryExpression)constraintJ.getExpression()).getOperator().getName().equals(BinaryOperator.IMPLIES.getName())
 									&& constraintI != constraintJ){
 								
-								PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();
+								BinaryExpression impliesJ = (BinaryExpression) constraintJ.getExpression();
 								
-								if(impliesI.getRight() instanceof PFeatureRef &&
-										impliesJ.getRight() instanceof PFeatureRef){
-									PFeatureRef leftFeatureRef = (PFeatureRef) impliesJ.getLeft();
-									PFeatureRef rightFeatureRefJ = (PFeatureRef) impliesJ.getRight();
+								if(impliesI.getRight() instanceof LanguageFeatureRef &&
+										impliesJ.getRight() instanceof LanguageFeatureRef){
+									LanguageFeatureRef leftFeatureRef = (LanguageFeatureRef) impliesJ.getLeft();
+									LanguageFeatureRef rightFeatureRefJ = (LanguageFeatureRef) impliesJ.getRight();
 									
 									if(rightFeatureRefI.getRef().getName().equals(rightFeatureRefJ.getRef().getName())){
 										if(!this.containsFeatureRef(newGroup.getLeftSide(), leftFeatureRef))
@@ -674,7 +674,7 @@ public class VmSynthesis {
 		// Step 3. Creating one constraint for each real group. 
 		for (RightImplicationsGroup group : realGroups) {
 			if(group.getRightSide() != null){
-				PConstraint constraint = this.fromRightImplicationToConstraint(group);
+				LanguageConstraint constraint = this.fromRightImplicationToConstraint(group);
 				featureModel.getConstraints().add(constraint);
 			}
 		}
@@ -684,35 +684,35 @@ public class VmSynthesis {
 	 * Groups the excludes constraints contained in the given feature model that have the same right side. 
 	 * @param featureModel
 	 */
-	public void groupNotImplicationsByRightSide(PFeatureModel featureModel) {
+	public void groupNotImplicationsByRightSide(LanguageFeatureModel featureModel) {
 		// Step 1. Collect the implication groups in the variable 'groups'
 		ArrayList<RightImplicationsGroup> groups = new ArrayList<RightImplicationsGroup>();
-		for (PConstraint constraintI : featureModel.getConstraints()) {
-			if(constraintI.getExpression() instanceof PBinaryExpression
-					&& ((PBinaryExpression)constraintI.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())){
+		for (LanguageConstraint constraintI : featureModel.getConstraints()) {
+			if(constraintI.getExpression() instanceof BinaryExpression
+					&& ((BinaryExpression)constraintI.getExpression()).getOperator().getName().equals(BinaryOperator.IMPLIES.getName())){
 			
-				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
+				BinaryExpression impliesI = (BinaryExpression) constraintI.getExpression();
 			
-				if(impliesI.getRight() instanceof PUnaryExpression){
-					PUnaryExpression unaryExprssionI = (PUnaryExpression) impliesI.getRight();
-					PFeatureRef rightFeatureRefI = (PFeatureRef) unaryExprssionI.getExpr();
+				if(impliesI.getRight() instanceof UnaryExpression){
+					UnaryExpression unaryExprssionI = (UnaryExpression) impliesI.getRight();
+					LanguageFeatureRef rightFeatureRefI = (LanguageFeatureRef) unaryExprssionI.getExpr();
 					if(!this.existsImplicationGroup(groups, rightFeatureRefI)){
 						RightImplicationsGroup newGroup = new RightImplicationsGroup(rightFeatureRefI, true);
 						
-						for (PConstraint constraintJ : featureModel.getConstraints()) {
-							if(constraintJ.getExpression() instanceof PBinaryExpression
-									&& ((PBinaryExpression)constraintJ.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())
+						for (LanguageConstraint constraintJ : featureModel.getConstraints()) {
+							if(constraintJ.getExpression() instanceof BinaryExpression
+									&& ((BinaryExpression)constraintJ.getExpression()).getOperator().getName().equals(BinaryOperator.IMPLIES.getName())
 									&& constraintI != constraintJ){
 								
-								PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();
+								BinaryExpression impliesJ = (BinaryExpression) constraintJ.getExpression();
 								
-								if(impliesI.getRight() instanceof PUnaryExpression &&
-										impliesJ.getRight() instanceof PUnaryExpression){
+								if(impliesI.getRight() instanceof UnaryExpression &&
+										impliesJ.getRight() instanceof UnaryExpression){
 									
-									PFeatureRef leftFeatureRef = (PFeatureRef) impliesJ.getLeft();
+									LanguageFeatureRef leftFeatureRef = (LanguageFeatureRef) impliesJ.getLeft();
 									
-									PUnaryExpression unaryExprssionJ = (PUnaryExpression) impliesJ.getRight();
-									PFeatureRef rightFeatureRefJ = (PFeatureRef) unaryExprssionJ.getExpr();
+									UnaryExpression unaryExprssionJ = (UnaryExpression) impliesJ.getRight();
+									LanguageFeatureRef rightFeatureRefJ = (LanguageFeatureRef) unaryExprssionJ.getExpr();
 									
 									if(rightFeatureRefI.getRef().getName().equals(rightFeatureRefJ.getRef().getName())){
 										if(!this.containsFeatureRef(newGroup.getLeftSide(), leftFeatureRef))
@@ -736,7 +736,7 @@ public class VmSynthesis {
 		
 		// Step 3. Creating one constraint for each real group. 
 		for (RightImplicationsGroup group : realGroups) {
-			PConstraint constraint = this.fromRightNotImplicationToConstraint(group);
+			LanguageConstraint constraint = this.fromRightNotImplicationToConstraint(group);
 			featureModel.getConstraints().add(constraint);
 		}
 	}
@@ -753,7 +753,7 @@ public class VmSynthesis {
 		
 		if(group.getLeftSide().size() >= 2){
 			ArrayList<String> leftFeatures = new ArrayList<String>();
-			for (PFeatureRef featureRef : group.getLeftSide()) {
+			for (LanguageFeatureRef featureRef : group.getLeftSide()) {
 				leftFeatures.add(featureRef.getRef().getName());
 			}
 			
@@ -764,9 +764,9 @@ public class VmSynthesis {
 			}
 			
 			// Recursive case: Now we need to search for real groups in the combinations of the features of the current real group. 
-			for (PFeatureRef currentFeature : group.getLeftSide()) {
+			for (LanguageFeatureRef currentFeature : group.getLeftSide()) {
 				RightImplicationsGroup newGroup = new RightImplicationsGroup(group.getRightSide(), false);
-				for (PFeatureRef fRef : group.getLeftSide()) {
+				for (LanguageFeatureRef fRef : group.getLeftSide()) {
 					if(!fRef.getRef().getName().equals(currentFeature.getRef().getName()))
 						newGroup.getLeftSide().add(fRef);
 				}
@@ -787,7 +787,7 @@ public class VmSynthesis {
 		
 		if(group.getLeftSide().size() >= 2){
 			ArrayList<String> leftFeatures = new ArrayList<String>();
-			for (PFeatureRef featureRef : group.getLeftSide()) {
+			for (LanguageFeatureRef featureRef : group.getLeftSide()) {
 				leftFeatures.add(featureRef.getRef().getName());
 			}
 			
@@ -798,9 +798,9 @@ public class VmSynthesis {
 			}
 			
 			// Recursive case: Now we need to search for real groups in the combinations of the features of the current real group. 
-			for (PFeatureRef currentFeature : group.getLeftSide()) {
+			for (LanguageFeatureRef currentFeature : group.getLeftSide()) {
 				RightImplicationsGroup newGroup = new RightImplicationsGroup(group.getRightSide(), true);
-				for (PFeatureRef fRef : group.getLeftSide()) {
+				for (LanguageFeatureRef fRef : group.getLeftSide()) {
 					if(!fRef.getRef().getName().equals(currentFeature.getRef().getName()))
 						newGroup.getLeftSide().add(fRef);
 				}
@@ -814,22 +814,22 @@ public class VmSynthesis {
 	 * @param group
 	 * @return
 	 */
-	private PConstraint fromRightImplicationToConstraint(
+	private LanguageConstraint fromRightImplicationToConstraint(
 			RightImplicationsGroup group) {
 		
-		PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+		LanguageConstraint constraint = VmFactory.eINSTANCE.createLanguageConstraint();
 		constraint.setName(group.toString());
 		
-		PBinaryExpression implies = VmFactory.eINSTANCE.createPBinaryExpression();
-		implies.setOperator(PBinaryOperator.IMPLIES);
-		implies.setRight(this.clonePFeatureRef(group.getRightSide()));
+		BinaryExpression implies = VmFactory.eINSTANCE.createBinaryExpression();
+		implies.setOperator(BinaryOperator.IMPLIES);
+		implies.setRight(this.cloneLanguageFeatureRef(group.getRightSide()));
 		
-		PBooleanExpression currentExpression = this.clonePFeatureRef(group.getLeftSide().get(0));
+		BooleanExpression currentExpression = this.cloneLanguageFeatureRef(group.getLeftSide().get(0));
 		for (int i = 1; i < group.getLeftSide().size(); i++) {
-			PBinaryExpression binary = VmFactory.eINSTANCE.createPBinaryExpression();
-			binary.setOperator(PBinaryOperator.AND);
+			BinaryExpression binary = VmFactory.eINSTANCE.createBinaryExpression();
+			binary.setOperator(BinaryOperator.AND);
 			binary.setLeft(currentExpression);
-			binary.setRight(this.clonePFeatureRef(group.getLeftSide().get(i)));
+			binary.setRight(this.cloneLanguageFeatureRef(group.getLeftSide().get(i)));
 			currentExpression = binary;
 		}
 		
@@ -843,25 +843,25 @@ public class VmSynthesis {
 	 * @param group
 	 * @return
 	 */
-	private PConstraint fromRightNotImplicationToConstraint(
+	private LanguageConstraint fromRightNotImplicationToConstraint(
 			RightImplicationsGroup group) {
-		PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+		LanguageConstraint constraint = VmFactory.eINSTANCE.createLanguageConstraint();
 		constraint.setName(group.toString());
 		
-		PBinaryExpression implies = VmFactory.eINSTANCE.createPBinaryExpression();
-		implies.setOperator(PBinaryOperator.IMPLIES);
+		BinaryExpression implies = VmFactory.eINSTANCE.createBinaryExpression();
+		implies.setOperator(BinaryOperator.IMPLIES);
 		
-		PUnaryExpression notImplies = VmFactory.eINSTANCE.createPUnaryExpression();
-		notImplies.setOperator(PUninaryOperator.NOT);
-		notImplies.setExpr(this.clonePFeatureRef(group.getRightSide()));
+		UnaryExpression notImplies = VmFactory.eINSTANCE.createUnaryExpression();
+		notImplies.setOperator(UninaryOperator.NOT);
+		notImplies.setExpr(this.cloneLanguageFeatureRef(group.getRightSide()));
 		implies.setRight(notImplies);
 		
-		PBooleanExpression currentExpression = this.clonePFeatureRef(group.getLeftSide().get(0));
+		BooleanExpression currentExpression = this.cloneLanguageFeatureRef(group.getLeftSide().get(0));
 		for (int i = 1; i < group.getLeftSide().size(); i++) {
-			PBinaryExpression binary = VmFactory.eINSTANCE.createPBinaryExpression();
-			binary.setOperator(PBinaryOperator.AND);
+			BinaryExpression binary = VmFactory.eINSTANCE.createBinaryExpression();
+			binary.setOperator(BinaryOperator.AND);
 			binary.setLeft(currentExpression);
-			binary.setRight(this.clonePFeatureRef(group.getLeftSide().get(i)));
+			binary.setRight(this.cloneLanguageFeatureRef(group.getLeftSide().get(i)));
 			currentExpression = binary;
 		}
 		
@@ -871,20 +871,20 @@ public class VmSynthesis {
 	}
 	
 	
-	public void groupImplicationsByLeftSide(PFeatureModel featureModel) throws Exception {
+	public void groupImplicationsByLeftSide(LanguageFeatureModel featureModel) throws Exception {
 		ArrayList<LeftImplicationsGroup> groups = new ArrayList<LeftImplicationsGroup>();
-		for (PConstraint constraintI : featureModel.getConstraints()) {
+		for (LanguageConstraint constraintI : featureModel.getConstraints()) {
 			
-			if(constraintI.getExpression() instanceof PBinaryExpression
-					&& ((PBinaryExpression)constraintI.getExpression()).getOperator().getName().equals(PBinaryOperator.IMPLIES.getName())){
+			if(constraintI.getExpression() instanceof BinaryExpression
+					&& ((BinaryExpression)constraintI.getExpression()).getOperator().getName().equals(BinaryOperator.IMPLIES.getName())){
 				
-				PBinaryExpression impliesI = (PBinaryExpression) constraintI.getExpression();
+				BinaryExpression impliesI = (BinaryExpression) constraintI.getExpression();
 				if(!this.existsGroup(groups, impliesI.getLeft())){
 					LeftImplicationsGroup newGroup = new LeftImplicationsGroup(impliesI.getLeft());
 					newGroup.getRightSide().add(impliesI.getRight());
 					
-					for (PConstraint constraintJ : featureModel.getConstraints()) {
-						PBinaryExpression impliesJ = (PBinaryExpression) constraintJ.getExpression();
+					for (LanguageConstraint constraintJ : featureModel.getConstraints()) {
+						BinaryExpression impliesJ = (BinaryExpression) constraintJ.getExpression();
 						if(this.pBooleanExpressionEquals(impliesI.getLeft(), impliesJ.getLeft()) && constraintI != constraintJ){
 							newGroup.getRightSide().add(impliesJ.getRight());
 						}
@@ -898,24 +898,24 @@ public class VmSynthesis {
 		featureModel.getConstraints().clear();
 		
 		for (LeftImplicationsGroup group : groups) {
-			PConstraint constraint = this.fromLeftImplicationToConstraint(featureModel.getRootFeature(), group);
+			LanguageConstraint constraint = this.fromLeftImplicationToConstraint(featureModel.getRootFeature(), group);
 			featureModel.getConstraints().add(constraint);
 		}
 	}
 	
-	private PConstraint fromLeftImplicationToConstraint(PFeature root, LeftImplicationsGroup group) throws Exception {
+	private LanguageConstraint fromLeftImplicationToConstraint(LanguageFeature root, LeftImplicationsGroup group) throws Exception {
 		
-		PConstraint constraint = VmFactory.eINSTANCE.createPConstraint();
+		LanguageConstraint constraint = VmFactory.eINSTANCE.createLanguageConstraint();
 		constraint.setName(group.toString());
 		
-		PBinaryExpression implies = VmFactory.eINSTANCE.createPBinaryExpression();
-		implies.setOperator(PBinaryOperator.IMPLIES);
+		BinaryExpression implies = VmFactory.eINSTANCE.createBinaryExpression();
+		implies.setOperator(BinaryOperator.IMPLIES);
 		implies.setLeft(this.cloneExpression(root, group.getLeftSide()));
 		
-		PBooleanExpression currentExpression = this.cloneExpression(root, group.getRightSide().get(0));
+		BooleanExpression currentExpression = this.cloneExpression(root, group.getRightSide().get(0));
 		for (int i = 1; i < group.getRightSide().size(); i++) {
-			PBinaryExpression binary = VmFactory.eINSTANCE.createPBinaryExpression();
-			binary.setOperator(PBinaryOperator.AND);
+			BinaryExpression binary = VmFactory.eINSTANCE.createBinaryExpression();
+			binary.setOperator(BinaryOperator.AND);
 			binary.setLeft(currentExpression);
 			binary.setRight(this.cloneExpression(root, group.getRightSide().get(i)));
 			currentExpression = binary;
@@ -932,7 +932,7 @@ public class VmSynthesis {
 	// ----------------------------------------------------------
 	
 	private boolean existsGroup(ArrayList<LeftImplicationsGroup> groups,
-			PBooleanExpression expr) {
+			BooleanExpression expr) {
 		for (LeftImplicationsGroup group : groups) {
 			if(this.pBooleanExpressionEquals(group.getLeftSide(), expr)){
 				return true;
@@ -941,25 +941,25 @@ public class VmSynthesis {
 		return false;
 	}
 	
-	private boolean pBooleanExpressionEquals(PBooleanExpression o1, PBooleanExpression o2){
-		if(o1 instanceof PBinaryExpression && o2 instanceof PBinaryExpression){
-			PBinaryExpression o1Binary = (PBinaryExpression) o1;
-			PBinaryExpression o2Binary = (PBinaryExpression) o2;
+	private boolean pBooleanExpressionEquals(BooleanExpression o1, BooleanExpression o2){
+		if(o1 instanceof BinaryExpression && o2 instanceof BinaryExpression){
+			BinaryExpression o1Binary = (BinaryExpression) o1;
+			BinaryExpression o2Binary = (BinaryExpression) o2;
 			boolean operator = o1Binary.getOperator().getName().equals(o2Binary.getOperator().getName());
 			boolean leftSideEquals = this.pBooleanExpressionEquals(o1Binary.getLeft(), o2Binary.getLeft());
 			boolean rightSideEquals = this.pBooleanExpressionEquals(o1Binary.getRight(), o2Binary.getRight());
 			return operator && leftSideEquals && rightSideEquals;
 		}
-		else if(o1 instanceof PUnaryExpression && o2 instanceof PUnaryExpression){
-			PUnaryExpression o1Unary = (PUnaryExpression) o1;
-			PUnaryExpression o2Unary = (PUnaryExpression) o2;
+		else if(o1 instanceof UnaryExpression && o2 instanceof UnaryExpression){
+			UnaryExpression o1Unary = (UnaryExpression) o1;
+			UnaryExpression o2Unary = (UnaryExpression) o2;
 			boolean operator = o1Unary.getOperator().getName().equals(o2Unary.getOperator().getName());
 			boolean expr = this.pBooleanExpressionEquals(o1Unary.getExpr(), o2Unary.getExpr());
 			return operator && expr;
 		}
-		else if(o1 instanceof PFeatureRef && o2 instanceof PFeatureRef){
-			PFeatureRef o1FeatureRef = (PFeatureRef) o1;
-			PFeatureRef o2FeatureRef = (PFeatureRef) o2;
+		else if(o1 instanceof LanguageFeatureRef && o2 instanceof LanguageFeatureRef){
+			LanguageFeatureRef o1FeatureRef = (LanguageFeatureRef) o1;
+			LanguageFeatureRef o2FeatureRef = (LanguageFeatureRef) o2;
 			return o1FeatureRef.getRef().getName().equals(o2FeatureRef.getRef().getName());
 		}
 		else{
@@ -975,7 +975,7 @@ public class VmSynthesis {
 	 */
 	private boolean existsImplicationGroup(
 			ArrayList<RightImplicationsGroup> groups,
-			PFeatureRef featureRef) {
+			LanguageFeatureRef featureRef) {
 		for (RightImplicationsGroup group : groups) {
 			if(group.getRightSide().getRef().getName().equals(featureRef.getRef().getName()))
 				return true;
@@ -989,9 +989,9 @@ public class VmSynthesis {
 	 * @param featureRef
 	 * @return
 	 */
-	private boolean containsFeatureRef(ArrayList<PFeatureRef> refs,
-			PFeatureRef featureRef) {
-		for (PFeatureRef pFeatureRef : refs) {
+	private boolean containsFeatureRef(ArrayList<LanguageFeatureRef> refs,
+			LanguageFeatureRef featureRef) {
+		for (LanguageFeatureRef pFeatureRef : refs) {
 			if(pFeatureRef.getRef().getName().equals(featureRef.getRef().getName()))
 				return true;
 		}
@@ -1003,8 +1003,8 @@ public class VmSynthesis {
 	 * @param pFeatureRef
 	 * @return
 	 */
-	private PBooleanExpression clonePFeatureRef(PFeatureRef pFeatureRef) {
-		PFeatureRef clone = VmFactory.eINSTANCE.createPFeatureRef();
+	private BooleanExpression cloneLanguageFeatureRef(LanguageFeatureRef pFeatureRef) {
+		LanguageFeatureRef clone = VmFactory.eINSTANCE.createLanguageFeatureRef();
 		clone.setRef(pFeatureRef.getRef());
 		return clone;
 	}
@@ -1016,10 +1016,10 @@ public class VmSynthesis {
 	 * @param arrayList
 	 * @param root
 	 */
-	private void collectPFeatures(ArrayList<PFeature> arrayList, PFeature root){
+	private void collectLanguageFeatures(ArrayList<LanguageFeature> arrayList, LanguageFeature root){
 		arrayList.add(root);
-		for (PFeature pFeature : root.getChildren()) {
-			this.collectPFeatures(arrayList, pFeature);
+		for (LanguageFeature pFeature : root.getChildren()) {
+			this.collectLanguageFeatures(arrayList, pFeature);
 		}
 	}
 	
@@ -1031,13 +1031,13 @@ public class VmSynthesis {
 	 * @return
 	 * @throws Exception
 	 */
-	public PFeatureModel cloneFeatureModel(PFeatureModel openFeatureModel) throws Exception {
-		PFeatureModel clone = VmFactory.eINSTANCE.createPFeatureModel();
+	public LanguageFeatureModel cloneFeatureModel(LanguageFeatureModel openFeatureModel) throws Exception {
+		LanguageFeatureModel clone = VmFactory.eINSTANCE.createLanguageFeatureModel();
 		clone.setName(openFeatureModel.getName());
 		clone.setRootFeature(this.cloneFeature(openFeatureModel.getRootFeature()));
 
-		for (PConstraint constraint : openFeatureModel.getConstraints()) {
-			PConstraint clonedConstraint = this.cloneConstraint(clone.getRootFeature(), constraint);
+		for (LanguageConstraint constraint : openFeatureModel.getConstraints()) {
+			LanguageConstraint clonedConstraint = this.cloneConstraint(clone.getRootFeature(), constraint);
 			clone.getConstraints().add(clonedConstraint);
 		}
 		return clone;
@@ -1049,22 +1049,22 @@ public class VmSynthesis {
 	 * @param rootFeature
 	 * @return
 	 */
-	private PFeature cloneFeature(PFeature rootFeature) {
-		PFeature clone = VmFactory.eINSTANCE.createPFeature();
+	private LanguageFeature cloneFeature(LanguageFeature rootFeature) {
+		LanguageFeature clone = VmFactory.eINSTANCE.createLanguageFeature();
 		clone.setMandatory(rootFeature.isMandatory());
 		clone.setName(rootFeature.getName());
 
-		for (PFeature child : rootFeature.getChildren()) {
-			PFeature cloneChild = this.cloneFeature(child);
+		for (LanguageFeature child : rootFeature.getChildren()) {
+			LanguageFeature cloneChild = this.cloneFeature(child);
 			clone.getChildren().add(cloneChild);
 		}
 
-		for (PFeatureGroup group : rootFeature.getGroups()) {
-			PFeatureGroup newGroup = this.cloneFeatureGroup(group);
+		for (LanguageFeatureGroup group : rootFeature.getGroups()) {
+			LanguageFeatureGroup newGroup = this.cloneFeatureGroup(group);
 			clone.getGroups().add(newGroup);
 
-			for (PFeature feature : group.getFeatures()) {
-				PFeature groupFeature = this.getPFeatureByName(feature.getName(), clone);
+			for (LanguageFeature feature : group.getFeatures()) {
+				LanguageFeature groupFeature = this.getLanguageFeatureByName(feature.getName(), clone);
 				newGroup.getFeatures().add(groupFeature);
 			}
 		}
@@ -1077,9 +1077,9 @@ public class VmSynthesis {
 	 * @param group
 	 * @return
 	 */
-	private PFeatureGroup cloneFeatureGroup(PFeatureGroup group) {
-		PFeatureGroup clone = VmFactory.eINSTANCE.createPFeatureGroup();
-		PFeatureGroupCardinality clonedCardinality = this.cloneFeatureGroupCardinality(group.getCardinality());
+	private LanguageFeatureGroup cloneFeatureGroup(LanguageFeatureGroup group) {
+		LanguageFeatureGroup clone = VmFactory.eINSTANCE.createLanguageFeatureGroup();
+		LanguageFeatureGroupCardinality clonedCardinality = this.cloneFeatureGroupCardinality(group.getCardinality());
 		clone.setCardinality(clonedCardinality);
 		return clone;
 	}
@@ -1090,8 +1090,8 @@ public class VmSynthesis {
 	 * @param cardinality
 	 * @return
 	 */
-	private PFeatureGroupCardinality cloneFeatureGroupCardinality(PFeatureGroupCardinality cardinality) {
-		PFeatureGroupCardinality clone = VmFactory.eINSTANCE.createPFeatureGroupCardinality();
+	private LanguageFeatureGroupCardinality cloneFeatureGroupCardinality(LanguageFeatureGroupCardinality cardinality) {
+		LanguageFeatureGroupCardinality clone = VmFactory.eINSTANCE.createLanguageFeatureGroupCardinality();
 		clone.setLowerBound(cardinality.getLowerBound());
 		clone.setUpperBound(cardinality.getUpperBound());
 		return clone;
@@ -1105,8 +1105,8 @@ public class VmSynthesis {
 	 * @return
 	 * @throws Exception
 	 */
-	private PConstraint cloneConstraint(PFeature root, PConstraint constraint) throws Exception {
-		PConstraint clone = VmFactory.eINSTANCE.createPConstraint();
+	private LanguageConstraint cloneConstraint(LanguageFeature root, LanguageConstraint constraint) throws Exception {
+		LanguageConstraint clone = VmFactory.eINSTANCE.createLanguageConstraint();
 		clone.setName(constraint.getName());
 		clone.setExpression(this.cloneExpression(root, constraint.getExpression()));
 		return clone;
@@ -1120,22 +1120,22 @@ public class VmSynthesis {
 	 * @return
 	 * @throws Exception
 	 */
-	private PBooleanExpression cloneExpression(PFeature root, PBooleanExpression expression) throws Exception {
-		if (expression instanceof PBinaryExpression) {
-			PBinaryExpression binaryExpression = (PBinaryExpression) expression;
-			PBinaryExpression clone = VmFactory.eINSTANCE.createPBinaryExpression();
+	private BooleanExpression cloneExpression(LanguageFeature root, BooleanExpression expression) throws Exception {
+		if (expression instanceof BinaryExpression) {
+			BinaryExpression binaryExpression = (BinaryExpression) expression;
+			BinaryExpression clone = VmFactory.eINSTANCE.createBinaryExpression();
 			clone.setLeft(this.cloneExpression(root, binaryExpression.getLeft()));
 			clone.setRight(this.cloneExpression(root, binaryExpression.getRight()));
 			clone.setOperator(this.getOperator(binaryExpression.getOperator()));
 			return clone;
-		} else if (expression instanceof PFeatureRef) {
-			PFeatureRef featureRef = (PFeatureRef) expression;
-			PFeatureRef clone = VmFactory.eINSTANCE.createPFeatureRef();
-			clone.setRef(this.getPFeatureByName(featureRef.getRef().getName(), root));
+		} else if (expression instanceof LanguageFeatureRef) {
+			LanguageFeatureRef featureRef = (LanguageFeatureRef) expression;
+			LanguageFeatureRef clone = VmFactory.eINSTANCE.createLanguageFeatureRef();
+			clone.setRef(this.getLanguageFeatureByName(featureRef.getRef().getName(), root));
 			return clone;
-		} else if (expression instanceof PUnaryExpression) {
-			PUnaryExpression punaryExpression = (PUnaryExpression) expression;
-			PUnaryExpression clone = VmFactory.eINSTANCE.createPUnaryExpression();
+		} else if (expression instanceof UnaryExpression) {
+			UnaryExpression punaryExpression = (UnaryExpression) expression;
+			UnaryExpression clone = VmFactory.eINSTANCE.createUnaryExpression();
 			clone.setExpr(this.cloneExpression(root, punaryExpression.getExpr()));
 			clone.setOperator(this.getOperator(punaryExpression.getOperator()));
 			return clone;
@@ -1144,28 +1144,28 @@ public class VmSynthesis {
 		}
 	}
 
-	private PBinaryOperator getOperator(PBinaryOperator operator) {
-		if (operator.getName().equals(PBinaryOperator.AND.getName()))
-			return PBinaryOperator.AND;
-		else if (operator.getName().equals(PBinaryOperator.OR.getName()))
-			return PBinaryOperator.OR;
-		else if (operator.getName().equals(PBinaryOperator.IMPLIES.getName()))
-			return PBinaryOperator.IMPLIES;
-		else if (operator.getName().equals(PBinaryOperator.XOR.getName()))
-			return PBinaryOperator.XOR;
+	private BinaryOperator getOperator(BinaryOperator operator) {
+		if (operator.getName().equals(BinaryOperator.AND.getName()))
+			return BinaryOperator.AND;
+		else if (operator.getName().equals(BinaryOperator.OR.getName()))
+			return BinaryOperator.OR;
+		else if (operator.getName().equals(BinaryOperator.IMPLIES.getName()))
+			return BinaryOperator.IMPLIES;
+		else if (operator.getName().equals(BinaryOperator.XOR.getName()))
+			return BinaryOperator.XOR;
 		else
 			return null;
 	}
 
-	private PUninaryOperator getOperator(PUninaryOperator operator) {
-		if (operator.getName().equals(PUninaryOperator.NOT))
-			return PUninaryOperator.NOT;
+	private UninaryOperator getOperator(UninaryOperator operator) {
+		if (operator.getName().equals(UninaryOperator.NOT))
+			return UninaryOperator.NOT;
 		else
 			return null;
 	}
 
 	/**
-	 * Finds a PFeature by the name in the features model in the parameter.
+	 * Finds a LanguageFeature by the name in the features model in the parameter.
 	 * 
 	 * @param featureName.
 	 *            Name of the feature.
@@ -1174,12 +1174,12 @@ public class VmSynthesis {
 	 *            searched.
 	 * @return
 	 */
-	private PFeature getPFeatureByName(String featureName, PFeature featureModelRoot) {
+	private LanguageFeature getLanguageFeatureByName(String featureName, LanguageFeature featureModelRoot) {
 		if (featureModelRoot.getName().equals(featureName)) {
 			return featureModelRoot;
 		}
-		for (PFeature feature : featureModelRoot.getChildren()) {
-			PFeature found = this.getPFeatureByName(featureName, feature);
+		for (LanguageFeature feature : featureModelRoot.getChildren()) {
+			LanguageFeature found = this.getLanguageFeatureByName(featureName, feature);
 			if (found != null)
 				return found;
 		}

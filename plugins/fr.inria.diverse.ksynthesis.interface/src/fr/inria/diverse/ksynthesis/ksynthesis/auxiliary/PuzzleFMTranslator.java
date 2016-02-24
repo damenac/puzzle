@@ -1,7 +1,7 @@
 package fr.inria.diverse.ksynthesis.ksynthesis.auxiliary;
 
-import vm.PFeature;
-import vm.PFeatureModel;
+import vm.LanguageFeature;
+import vm.LanguageFeatureModel;
 import vm.VmFactory;
 import fr.familiar.variable.FeatureModelVariable;
 
@@ -41,9 +41,9 @@ public class PuzzleFMTranslator {
 	 * @param fmv The feature model as an FeatureModelVariable object.
 	 * @return
 	 */
-	public PFeatureModel fromFeatureModelVariableToFeatureModel(
+	public LanguageFeatureModel fromFeatureModelVariableToFeatureModel(
 			FeatureModelVariable fmv) {
-		PFeatureModel fm = VmFactory.eINSTANCE.createPFeatureModel();
+		LanguageFeatureModel fm = VmFactory.eINSTANCE.createLanguageFeatureModel();
 		
 		gsd.synthesis.FeatureModel<String> originalFeatureModel = fmv.getHierarchy();
 		gsd.synthesis.FeatureGraph<String> diagram = originalFeatureModel.getDiagram();
@@ -52,17 +52,17 @@ public class PuzzleFMTranslator {
 	}
 	
 	/**
-	 * Finds a PFeature by the name in the features model in the parameter.
+	 * Finds a LanguageFeature by the name in the features model in the parameter.
 	 * @param featureName. Name of the feature.
 	 * @param featuresModelRoot. Root of the features model where the feature should be searched. 
 	 * @return
 	 */
-	private PFeature getPFeatureByName(String featureName, PFeature featureModelRoot) {
+	public LanguageFeature getLanguageFeatureByName(String featureName, LanguageFeature featureModelRoot) {
 		if(featureModelRoot.getName().equals(featureName)){
 			return featureModelRoot;
 		}
-		for (PFeature feature : featureModelRoot.getChildren()) {
-			PFeature found = this.getPFeatureByName(featureName, feature);
+		for (LanguageFeature feature : featureModelRoot.getChildren()) {
+			LanguageFeature found = this.getLanguageFeatureByName(featureName, feature);
 			if(found != null)
 				return found;
 		}

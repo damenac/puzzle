@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.vm.metamodel/src" modelPluginID="fr.inria.diverse.puzzle.vm.metamodel"
+    modelName="VM" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>VM.ecore</foreignModel>
+  <genPackages prefix="Vm" disposableProviderFactory="true" ecorePackage="VM.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VM.ecore#//PUninaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PUninaryOperator/not"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="VM.ecore#//PBinaryOperator">
+      <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PBinaryOperator/and"/>
+      <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PBinaryOperator/or"/>
+      <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PBinaryOperator/implies"/>
+      <genEnumLiterals ecoreEnumLiteral="VM.ecore#//PBinaryOperator/xor"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="VM.ecore#//PNamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PNamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PFeatureModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureModel/rootFeature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureModel/constraints"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PFeature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PFeature/mandatory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeature/children"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference VM.ecore#//PFeature/parent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeature/groups"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//PFeature/parentGroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeature/implementationModule"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PFeatureGroup">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureGroup/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureGroup/cardinality"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PFeatureGroupCardinality">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PFeatureGroupCardinality/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PFeatureGroupCardinality/upperBound"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PConstraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PConstraint/expression"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="VM.ecore#//PBooleanExpression"/>
+    <genClasses ecoreClass="VM.ecore#//PFeatureRef">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//PFeatureRef/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PUnaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PUnaryExpression/expr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PUnaryExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PBinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PBinaryExpression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PBinaryExpression/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PBinaryExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PLanguageModule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PLanguageModule/as"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//PLanguageModule/sem"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PAbstractSyntax">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecorePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecoreProject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecoreRequiredInterfacePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PAbstractSyntax/ecoreProvidedInterfacePath"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//PSemantics">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PSemantics/xtendPath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PSemantics/xtendProject"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -4,7 +4,7 @@ import org.eclipse.core.resources.IProject
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.resources.IResource
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils
-import vm.PFeatureModel
+import vm.LanguageFeatureModel
 import fr.inria.diverse.puzzle.configurator.ConfigurationFacade
 
 /**
@@ -16,7 +16,7 @@ import fr.inria.diverse.puzzle.configurator.ConfigurationFacade
 class ConfigurationBuilder extends AbstractBuilder {
 	
 	def void configureDSL(IResource res, IProject project, IProgressMonitor monitor) {
-		var PFeatureModel fm = ModelUtils.loadXMIFile(res.location.toString) as PFeatureModel
+		var LanguageFeatureModel fm = ModelUtils.loadXMIFile(res.location.toString) as LanguageFeatureModel
 		ConfigurationFacade.instance.configure(fm)
 	}
 }

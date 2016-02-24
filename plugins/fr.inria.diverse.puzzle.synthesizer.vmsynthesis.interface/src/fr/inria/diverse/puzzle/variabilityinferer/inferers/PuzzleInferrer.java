@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.PFeatureModel;
+import vm.LanguageFeatureModel;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
 import fr.inria.diverse.graph.Vertex;
@@ -18,15 +18,15 @@ import fr.inria.diverse.puzzle.vmsynthesis.impl.VmSynthesis;
 public class PuzzleInferrer implements FeaturesModelInference{
 
 	@Override
-	public PFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, 
+	public LanguageFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties, 
 			ArrayList<Language> languages, EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph) throws Exception{
 		return VmSynthesis.getInstance().synthesizeOpenFeatureModel(dependenciesGraph);
 	}
 
 	@Override
-	public PFeatureModel inferClosedFeaturesModel(IProject targetProject,
+	public LanguageFeatureModel inferClosedFeaturesModel(IProject targetProject,
 			SynthesisProperties properties, ArrayList<Language> languages,
-			EcoreGraph modularizationGraph, PFeatureModel openFeaturesModel) throws Exception {
+			EcoreGraph modularizationGraph, LanguageFeatureModel openFeaturesModel) throws Exception {
 		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.OPEN_COMPARE_FORMAT);
 		return VmSynthesis.getInstance().synthesizeClosedFeatureModel(PCM, openFeaturesModel);
 	}

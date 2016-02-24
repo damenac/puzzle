@@ -2,7 +2,7 @@ package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
 import java.util.ArrayList;
 
-import vm.PFeatureRef;
+import vm.LanguageFeatureRef;
 
 public class RightImplicationsGroup {
 
@@ -10,35 +10,35 @@ public class RightImplicationsGroup {
 	// Attributes
 	// -----------------------------------------------
 	
-	private PFeatureRef rightSide;
+	private LanguageFeatureRef rightSide;
 	
 	private boolean notImplication;
 	
-	private ArrayList<PFeatureRef> leftSide;
+	private ArrayList<LanguageFeatureRef> leftSide;
 	
 	// -----------------------------------------------
 	// Constructors
 	// -----------------------------------------------
 	
-	public RightImplicationsGroup(PFeatureRef rightSide, boolean notImplication){
+	public RightImplicationsGroup(LanguageFeatureRef rightSide, boolean notImplication){
 		this.rightSide = rightSide;
 		this.notImplication = notImplication;
-		this.leftSide = new ArrayList<PFeatureRef>();
+		this.leftSide = new ArrayList<LanguageFeatureRef>();
 	}
 
 	// -----------------------------------------------
 	// Getters and setters
 	// -----------------------------------------------
 	
-	public PFeatureRef getRightSide() {
+	public LanguageFeatureRef getRightSide() {
 		return rightSide;
 	}
 
-	public void setRightSide(PFeatureRef rightSide) {
+	public void setRightSide(LanguageFeatureRef rightSide) {
 		this.rightSide = rightSide;
 	}
 
-	public ArrayList<PFeatureRef> getLeftSide() {
+	public ArrayList<LanguageFeatureRef> getLeftSide() {
 		return leftSide;
 	}
 	
@@ -57,7 +57,7 @@ public class RightImplicationsGroup {
 	public String toString(){
 		String leftSide = "";
 		boolean first = true;
-		for (PFeatureRef pFeatureRef : this.leftSide) {
+		for (LanguageFeatureRef pFeatureRef : this.leftSide) {
 			if(!first)
 				leftSide += " and";
 			
@@ -77,7 +77,7 @@ public class RightImplicationsGroup {
 		boolean rightSideEqual = this.rightSide.getRef().getName().
 				equals(group.rightSide.getRef().getName());
 		boolean leftSideEqual = true;
-		for (PFeatureRef pFeatureRef : leftSide) {
+		for (LanguageFeatureRef pFeatureRef : leftSide) {
 			if(!this.containsFeature(group.getLeftSide(), pFeatureRef)){
 				leftSideEqual = false;
 				break;
@@ -86,9 +86,9 @@ public class RightImplicationsGroup {
 		return rightSideEqual && leftSideEqual && group.getLeftSide().size() == this.leftSide.size();
 	}
 
-	private boolean containsFeature(ArrayList<PFeatureRef> leftSide2,
-			PFeatureRef pFeatureRef) {
-		for (PFeatureRef feature : leftSide2) {
+	private boolean containsFeature(ArrayList<LanguageFeatureRef> leftSide2,
+			LanguageFeatureRef pFeatureRef) {
+		for (LanguageFeatureRef feature : leftSide2) {
 			if(feature.getRef().getName().equals(pFeatureRef.getRef().getName()))
 				return true;
 		}

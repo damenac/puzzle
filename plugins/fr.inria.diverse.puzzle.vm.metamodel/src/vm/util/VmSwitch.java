@@ -72,82 +72,82 @@ public class VmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PFEATURE_MODEL: {
-				PFeatureModel pFeatureModel = (PFeatureModel)theEObject;
-				T result = casePFeatureModel(pFeatureModel);
-				if (result == null) result = casePNamedElement(pFeatureModel);
+			case VmPackage.LANGUAGE_FEATURE_MODEL: {
+				LanguageFeatureModel languageFeatureModel = (LanguageFeatureModel)theEObject;
+				T result = caseLanguageFeatureModel(languageFeatureModel);
+				if (result == null) result = casePNamedElement(languageFeatureModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PFEATURE: {
-				PFeature pFeature = (PFeature)theEObject;
-				T result = casePFeature(pFeature);
-				if (result == null) result = casePNamedElement(pFeature);
+			case VmPackage.LANGUAGE_FEATURE: {
+				LanguageFeature languageFeature = (LanguageFeature)theEObject;
+				T result = caseLanguageFeature(languageFeature);
+				if (result == null) result = casePNamedElement(languageFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PFEATURE_GROUP: {
-				PFeatureGroup pFeatureGroup = (PFeatureGroup)theEObject;
-				T result = casePFeatureGroup(pFeatureGroup);
+			case VmPackage.LANGUAGE_FEATURE_GROUP: {
+				LanguageFeatureGroup languageFeatureGroup = (LanguageFeatureGroup)theEObject;
+				T result = caseLanguageFeatureGroup(languageFeatureGroup);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PFEATURE_GROUP_CARDINALITY: {
-				PFeatureGroupCardinality pFeatureGroupCardinality = (PFeatureGroupCardinality)theEObject;
-				T result = casePFeatureGroupCardinality(pFeatureGroupCardinality);
+			case VmPackage.LANGUAGE_FEATURE_GROUP_CARDINALITY: {
+				LanguageFeatureGroupCardinality languageFeatureGroupCardinality = (LanguageFeatureGroupCardinality)theEObject;
+				T result = caseLanguageFeatureGroupCardinality(languageFeatureGroupCardinality);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PCONSTRAINT: {
-				PConstraint pConstraint = (PConstraint)theEObject;
-				T result = casePConstraint(pConstraint);
-				if (result == null) result = casePNamedElement(pConstraint);
+			case VmPackage.LANGUAGE_CONSTRAINT: {
+				LanguageConstraint languageConstraint = (LanguageConstraint)theEObject;
+				T result = caseLanguageConstraint(languageConstraint);
+				if (result == null) result = casePNamedElement(languageConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PBOOLEAN_EXPRESSION: {
-				PBooleanExpression pBooleanExpression = (PBooleanExpression)theEObject;
-				T result = casePBooleanExpression(pBooleanExpression);
+			case VmPackage.BOOLEAN_EXPRESSION: {
+				BooleanExpression booleanExpression = (BooleanExpression)theEObject;
+				T result = caseBooleanExpression(booleanExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PFEATURE_REF: {
-				PFeatureRef pFeatureRef = (PFeatureRef)theEObject;
-				T result = casePFeatureRef(pFeatureRef);
-				if (result == null) result = casePBooleanExpression(pFeatureRef);
+			case VmPackage.LANGUAGE_FEATURE_REF: {
+				LanguageFeatureRef languageFeatureRef = (LanguageFeatureRef)theEObject;
+				T result = caseLanguageFeatureRef(languageFeatureRef);
+				if (result == null) result = caseBooleanExpression(languageFeatureRef);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PUNARY_EXPRESSION: {
-				PUnaryExpression pUnaryExpression = (PUnaryExpression)theEObject;
-				T result = casePUnaryExpression(pUnaryExpression);
-				if (result == null) result = casePBooleanExpression(pUnaryExpression);
+			case VmPackage.UNARY_EXPRESSION: {
+				UnaryExpression unaryExpression = (UnaryExpression)theEObject;
+				T result = caseUnaryExpression(unaryExpression);
+				if (result == null) result = caseBooleanExpression(unaryExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PBINARY_EXPRESSION: {
-				PBinaryExpression pBinaryExpression = (PBinaryExpression)theEObject;
-				T result = casePBinaryExpression(pBinaryExpression);
-				if (result == null) result = casePBooleanExpression(pBinaryExpression);
+			case VmPackage.BINARY_EXPRESSION: {
+				BinaryExpression binaryExpression = (BinaryExpression)theEObject;
+				T result = caseBinaryExpression(binaryExpression);
+				if (result == null) result = caseBooleanExpression(binaryExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PLANGUAGE_MODULE: {
-				PLanguageModule pLanguageModule = (PLanguageModule)theEObject;
-				T result = casePLanguageModule(pLanguageModule);
-				if (result == null) result = casePNamedElement(pLanguageModule);
+			case VmPackage.LANGUAGE_MODULE: {
+				LanguageModule languageModule = (LanguageModule)theEObject;
+				T result = caseLanguageModule(languageModule);
+				if (result == null) result = casePNamedElement(languageModule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PABSTRACT_SYNTAX: {
-				PAbstractSyntax pAbstractSyntax = (PAbstractSyntax)theEObject;
-				T result = casePAbstractSyntax(pAbstractSyntax);
+			case VmPackage.ABSTRACT_SYNTAX: {
+				AbstractSyntax abstractSyntax = (AbstractSyntax)theEObject;
+				T result = caseAbstractSyntax(abstractSyntax);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VmPackage.PSEMANTICS: {
-				PSemantics pSemantics = (PSemantics)theEObject;
-				T result = casePSemantics(pSemantics);
+			case VmPackage.SEMANTICS: {
+				Semantics semantics = (Semantics)theEObject;
+				T result = caseSemantics(semantics);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -171,182 +171,182 @@ public class VmSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PFeature Model</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language Feature Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PFeature Model</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language Feature Model</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePFeatureModel(PFeatureModel object) {
+	public T caseLanguageFeatureModel(LanguageFeatureModel object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PFeature</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PFeature</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language Feature</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePFeature(PFeature object) {
+	public T caseLanguageFeature(LanguageFeature object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PFeature Group</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language Feature Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PFeature Group</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language Feature Group</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePFeatureGroup(PFeatureGroup object) {
+	public T caseLanguageFeatureGroup(LanguageFeatureGroup object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PFeature Group Cardinality</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language Feature Group Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PFeature Group Cardinality</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language Feature Group Cardinality</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePFeatureGroupCardinality(PFeatureGroupCardinality object) {
+	public T caseLanguageFeatureGroupCardinality(LanguageFeatureGroupCardinality object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PConstraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PConstraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePConstraint(PConstraint object) {
+	public T caseLanguageConstraint(LanguageConstraint object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PBoolean Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PBoolean Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePBooleanExpression(PBooleanExpression object) {
+	public T caseBooleanExpression(BooleanExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PFeature Ref</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language Feature Ref</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PFeature Ref</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language Feature Ref</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePFeatureRef(PFeatureRef object) {
+	public T caseLanguageFeatureRef(LanguageFeatureRef object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PUnary Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PUnary Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Unary Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePUnaryExpression(PUnaryExpression object) {
+	public T caseUnaryExpression(UnaryExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PBinary Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PBinary Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePBinaryExpression(PBinaryExpression object) {
+	public T caseBinaryExpression(BinaryExpression object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PLanguage Module</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Language Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PLanguage Module</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Language Module</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePLanguageModule(PLanguageModule object) {
+	public T caseLanguageModule(LanguageModule object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PAbstract Syntax</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract Syntax</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PAbstract Syntax</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract Syntax</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePAbstractSyntax(PAbstractSyntax object) {
+	public T caseAbstractSyntax(AbstractSyntax object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PSemantics</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Semantics</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PSemantics</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Semantics</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePSemantics(PSemantics object) {
+	public T caseSemantics(Semantics object) {
 		return null;
 	}
 

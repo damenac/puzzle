@@ -95,14 +95,14 @@ public interface VmPackage extends EPackage {
 	int PNAMED_ELEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PFeatureModelImpl <em>PFeature Model</em>}' class.
+	 * The meta object id for the '{@link vm.impl.LanguageFeatureModelImpl <em>Language Feature Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PFeatureModelImpl
-	 * @see vm.impl.VmPackageImpl#getPFeatureModel()
+	 * @see vm.impl.LanguageFeatureModelImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageFeatureModel()
 	 * @generated
 	 */
-	int PFEATURE_MODEL = 1;
+	int LANGUAGE_FEATURE_MODEL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -111,7 +111,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_MODEL__NAME = PNAMED_ELEMENT__NAME;
+	int LANGUAGE_FEATURE_MODEL__NAME = PNAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Root Feature</b></em>' containment reference.
@@ -120,7 +120,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_MODEL__ROOT_FEATURE = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LANGUAGE_FEATURE_MODEL__ROOT_FEATURE = PNAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
@@ -129,35 +129,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_MODEL__CONSTRAINTS = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LANGUAGE_FEATURE_MODEL__CONSTRAINTS = PNAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>PFeature Model</em>' class.
+	 * The number of structural features of the '<em>Language Feature Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_MODEL_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LANGUAGE_FEATURE_MODEL_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>PFeature Model</em>' class.
+	 * The number of operations of the '<em>Language Feature Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_MODEL_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LANGUAGE_FEATURE_MODEL_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PFeatureImpl <em>PFeature</em>}' class.
+	 * The meta object id for the '{@link vm.impl.LanguageFeatureImpl <em>Language Feature</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PFeatureImpl
-	 * @see vm.impl.VmPackageImpl#getPFeature()
+	 * @see vm.impl.LanguageFeatureImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageFeature()
 	 * @generated
 	 */
-	int PFEATURE = 2;
+	int LANGUAGE_FEATURE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -166,7 +166,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE__NAME = PNAMED_ELEMENT__NAME;
+	int LANGUAGE_FEATURE__NAME = PNAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
@@ -175,7 +175,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE__MANDATORY = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LANGUAGE_FEATURE__MANDATORY = PNAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -184,7 +184,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE__CHILDREN = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LANGUAGE_FEATURE__CHILDREN = PNAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -193,7 +193,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE__PARENT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LANGUAGE_FEATURE__PARENT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
@@ -202,7 +202,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE__GROUPS = PNAMED_ELEMENT_FEATURE_COUNT + 3;
+	int LANGUAGE_FEATURE__GROUPS = PNAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent Group</b></em>' reference.
@@ -211,7 +211,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE__PARENT_GROUP = PNAMED_ELEMENT_FEATURE_COUNT + 4;
+	int LANGUAGE_FEATURE__PARENT_GROUP = PNAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Module</b></em>' containment reference.
@@ -220,35 +220,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE__IMPLEMENTATION_MODULE = PNAMED_ELEMENT_FEATURE_COUNT + 5;
+	int LANGUAGE_FEATURE__IMPLEMENTATION_MODULE = PNAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
-	 * The number of structural features of the '<em>PFeature</em>' class.
+	 * The number of structural features of the '<em>Language Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 6;
+	int LANGUAGE_FEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
-	 * The number of operations of the '<em>PFeature</em>' class.
+	 * The number of operations of the '<em>Language Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LANGUAGE_FEATURE_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PFeatureGroupImpl <em>PFeature Group</em>}' class.
+	 * The meta object id for the '{@link vm.impl.LanguageFeatureGroupImpl <em>Language Feature Group</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PFeatureGroupImpl
-	 * @see vm.impl.VmPackageImpl#getPFeatureGroup()
+	 * @see vm.impl.LanguageFeatureGroupImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageFeatureGroup()
 	 * @generated
 	 */
-	int PFEATURE_GROUP = 3;
+	int LANGUAGE_FEATURE_GROUP = 3;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -257,7 +257,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP__FEATURES = 0;
+	int LANGUAGE_FEATURE_GROUP__FEATURES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Cardinality</b></em>' containment reference.
@@ -266,35 +266,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP__CARDINALITY = 1;
+	int LANGUAGE_FEATURE_GROUP__CARDINALITY = 1;
 
 	/**
-	 * The number of structural features of the '<em>PFeature Group</em>' class.
+	 * The number of structural features of the '<em>Language Feature Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP_FEATURE_COUNT = 2;
+	int LANGUAGE_FEATURE_GROUP_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>PFeature Group</em>' class.
+	 * The number of operations of the '<em>Language Feature Group</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP_OPERATION_COUNT = 0;
+	int LANGUAGE_FEATURE_GROUP_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PFeatureGroupCardinalityImpl <em>PFeature Group Cardinality</em>}' class.
+	 * The meta object id for the '{@link vm.impl.LanguageFeatureGroupCardinalityImpl <em>Language Feature Group Cardinality</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PFeatureGroupCardinalityImpl
-	 * @see vm.impl.VmPackageImpl#getPFeatureGroupCardinality()
+	 * @see vm.impl.LanguageFeatureGroupCardinalityImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageFeatureGroupCardinality()
 	 * @generated
 	 */
-	int PFEATURE_GROUP_CARDINALITY = 4;
+	int LANGUAGE_FEATURE_GROUP_CARDINALITY = 4;
 
 	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -303,7 +303,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP_CARDINALITY__LOWER_BOUND = 0;
+	int LANGUAGE_FEATURE_GROUP_CARDINALITY__LOWER_BOUND = 0;
 
 	/**
 	 * The feature id for the '<em><b>Upper Bound</b></em>' attribute.
@@ -312,35 +312,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP_CARDINALITY__UPPER_BOUND = 1;
+	int LANGUAGE_FEATURE_GROUP_CARDINALITY__UPPER_BOUND = 1;
 
 	/**
-	 * The number of structural features of the '<em>PFeature Group Cardinality</em>' class.
+	 * The number of structural features of the '<em>Language Feature Group Cardinality</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP_CARDINALITY_FEATURE_COUNT = 2;
+	int LANGUAGE_FEATURE_GROUP_CARDINALITY_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>PFeature Group Cardinality</em>' class.
+	 * The number of operations of the '<em>Language Feature Group Cardinality</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_GROUP_CARDINALITY_OPERATION_COUNT = 0;
+	int LANGUAGE_FEATURE_GROUP_CARDINALITY_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PConstraintImpl <em>PConstraint</em>}' class.
+	 * The meta object id for the '{@link vm.impl.LanguageConstraintImpl <em>Language Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PConstraintImpl
-	 * @see vm.impl.VmPackageImpl#getPConstraint()
+	 * @see vm.impl.LanguageConstraintImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageConstraint()
 	 * @generated
 	 */
-	int PCONSTRAINT = 5;
+	int LANGUAGE_CONSTRAINT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -349,7 +349,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PCONSTRAINT__NAME = PNAMED_ELEMENT__NAME;
+	int LANGUAGE_CONSTRAINT__NAME = PNAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -358,63 +358,63 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PCONSTRAINT__EXPRESSION = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LANGUAGE_CONSTRAINT__EXPRESSION = PNAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>PConstraint</em>' class.
+	 * The number of structural features of the '<em>Language Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PCONSTRAINT_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LANGUAGE_CONSTRAINT_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>PConstraint</em>' class.
+	 * The number of operations of the '<em>Language Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PCONSTRAINT_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LANGUAGE_CONSTRAINT_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PBooleanExpressionImpl <em>PBoolean Expression</em>}' class.
+	 * The meta object id for the '{@link vm.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PBooleanExpressionImpl
-	 * @see vm.impl.VmPackageImpl#getPBooleanExpression()
+	 * @see vm.impl.BooleanExpressionImpl
+	 * @see vm.impl.VmPackageImpl#getBooleanExpression()
 	 * @generated
 	 */
-	int PBOOLEAN_EXPRESSION = 6;
+	int BOOLEAN_EXPRESSION = 6;
 
 	/**
-	 * The number of structural features of the '<em>PBoolean Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PBOOLEAN_EXPRESSION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>PBoolean Expression</em>' class.
+	 * The number of structural features of the '<em>Boolean Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PBOOLEAN_EXPRESSION_OPERATION_COUNT = 0;
+	int BOOLEAN_EXPRESSION_FEATURE_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PFeatureRefImpl <em>PFeature Ref</em>}' class.
+	 * The number of operations of the '<em>Boolean Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PFeatureRefImpl
-	 * @see vm.impl.VmPackageImpl#getPFeatureRef()
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPRESSION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vm.impl.LanguageFeatureRefImpl <em>Language Feature Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.LanguageFeatureRefImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageFeatureRef()
 	 * @generated
 	 */
-	int PFEATURE_REF = 7;
+	int LANGUAGE_FEATURE_REF = 7;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -423,35 +423,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_REF__REF = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int LANGUAGE_FEATURE_REF__REF = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>PFeature Ref</em>' class.
+	 * The number of structural features of the '<em>Language Feature Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_REF_FEATURE_COUNT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int LANGUAGE_FEATURE_REF_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>PFeature Ref</em>' class.
+	 * The number of operations of the '<em>Language Feature Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PFEATURE_REF_OPERATION_COUNT = PBOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
+	int LANGUAGE_FEATURE_REF_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PUnaryExpressionImpl <em>PUnary Expression</em>}' class.
+	 * The meta object id for the '{@link vm.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PUnaryExpressionImpl
-	 * @see vm.impl.VmPackageImpl#getPUnaryExpression()
+	 * @see vm.impl.UnaryExpressionImpl
+	 * @see vm.impl.VmPackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int PUNARY_EXPRESSION = 8;
+	int UNARY_EXPRESSION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -460,7 +460,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUNARY_EXPRESSION__EXPR = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int UNARY_EXPRESSION__EXPR = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -469,35 +469,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PUNARY_EXPRESSION__OPERATOR = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int UNARY_EXPRESSION__OPERATOR = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>PUnary Expression</em>' class.
+	 * The number of structural features of the '<em>Unary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUNARY_EXPRESSION_FEATURE_COUNT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+	int UNARY_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>PUnary Expression</em>' class.
+	 * The number of operations of the '<em>Unary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUNARY_EXPRESSION_OPERATION_COUNT = PBOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
+	int UNARY_EXPRESSION_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PBinaryExpressionImpl <em>PBinary Expression</em>}' class.
+	 * The meta object id for the '{@link vm.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PBinaryExpressionImpl
-	 * @see vm.impl.VmPackageImpl#getPBinaryExpression()
+	 * @see vm.impl.BinaryExpressionImpl
+	 * @see vm.impl.VmPackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int PBINARY_EXPRESSION = 9;
+	int BINARY_EXPRESSION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -506,7 +506,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PBINARY_EXPRESSION__LEFT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int BINARY_EXPRESSION__LEFT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -515,7 +515,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PBINARY_EXPRESSION__RIGHT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int BINARY_EXPRESSION__RIGHT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Operator</b></em>' attribute.
@@ -524,35 +524,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PBINARY_EXPRESSION__OPERATOR = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+	int BINARY_EXPRESSION__OPERATOR = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>PBinary Expression</em>' class.
+	 * The number of structural features of the '<em>Binary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PBINARY_EXPRESSION_FEATURE_COUNT = PBOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
+	int BINARY_EXPRESSION_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>PBinary Expression</em>' class.
+	 * The number of operations of the '<em>Binary Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PBINARY_EXPRESSION_OPERATION_COUNT = PBOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
+	int BINARY_EXPRESSION_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PLanguageModuleImpl <em>PLanguage Module</em>}' class.
+	 * The meta object id for the '{@link vm.impl.LanguageModuleImpl <em>Language Module</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PLanguageModuleImpl
-	 * @see vm.impl.VmPackageImpl#getPLanguageModule()
+	 * @see vm.impl.LanguageModuleImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageModule()
 	 * @generated
 	 */
-	int PLANGUAGE_MODULE = 10;
+	int LANGUAGE_MODULE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -561,7 +561,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLANGUAGE_MODULE__NAME = PNAMED_ELEMENT__NAME;
+	int LANGUAGE_MODULE__NAME = PNAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>As</b></em>' containment reference.
@@ -570,7 +570,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLANGUAGE_MODULE__AS = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LANGUAGE_MODULE__AS = PNAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Sem</b></em>' containment reference.
@@ -579,35 +579,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLANGUAGE_MODULE__SEM = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LANGUAGE_MODULE__SEM = PNAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>PLanguage Module</em>' class.
+	 * The number of structural features of the '<em>Language Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLANGUAGE_MODULE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LANGUAGE_MODULE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>PLanguage Module</em>' class.
+	 * The number of operations of the '<em>Language Module</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLANGUAGE_MODULE_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LANGUAGE_MODULE_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PAbstractSyntaxImpl <em>PAbstract Syntax</em>}' class.
+	 * The meta object id for the '{@link vm.impl.AbstractSyntaxImpl <em>Abstract Syntax</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PAbstractSyntaxImpl
-	 * @see vm.impl.VmPackageImpl#getPAbstractSyntax()
+	 * @see vm.impl.AbstractSyntaxImpl
+	 * @see vm.impl.VmPackageImpl#getAbstractSyntax()
 	 * @generated
 	 */
-	int PABSTRACT_SYNTAX = 11;
+	int ABSTRACT_SYNTAX = 11;
 
 	/**
 	 * The feature id for the '<em><b>Ecore Path</b></em>' attribute.
@@ -616,7 +616,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PABSTRACT_SYNTAX__ECORE_PATH = 0;
+	int ABSTRACT_SYNTAX__ECORE_PATH = 0;
 
 	/**
 	 * The feature id for the '<em><b>Ecore Project</b></em>' attribute.
@@ -625,7 +625,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PABSTRACT_SYNTAX__ECORE_PROJECT = 1;
+	int ABSTRACT_SYNTAX__ECORE_PROJECT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ecore Required Interface Path</b></em>' attribute.
@@ -634,7 +634,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = 2;
+	int ABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = 2;
 
 	/**
 	 * The feature id for the '<em><b>Ecore Provided Interface Path</b></em>' attribute.
@@ -643,35 +643,35 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = 3;
+	int ABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = 3;
 
 	/**
-	 * The number of structural features of the '<em>PAbstract Syntax</em>' class.
+	 * The number of structural features of the '<em>Abstract Syntax</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PABSTRACT_SYNTAX_FEATURE_COUNT = 4;
+	int ABSTRACT_SYNTAX_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>PAbstract Syntax</em>' class.
+	 * The number of operations of the '<em>Abstract Syntax</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PABSTRACT_SYNTAX_OPERATION_COUNT = 0;
+	int ABSTRACT_SYNTAX_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PSemanticsImpl <em>PSemantics</em>}' class.
+	 * The meta object id for the '{@link vm.impl.SemanticsImpl <em>Semantics</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PSemanticsImpl
-	 * @see vm.impl.VmPackageImpl#getPSemantics()
+	 * @see vm.impl.SemanticsImpl
+	 * @see vm.impl.VmPackageImpl#getSemantics()
 	 * @generated
 	 */
-	int PSEMANTICS = 12;
+	int SEMANTICS = 12;
 
 	/**
 	 * The feature id for the '<em><b>Xtend Path</b></em>' attribute.
@@ -680,7 +680,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PSEMANTICS__XTEND_PATH = 0;
+	int SEMANTICS__XTEND_PATH = 0;
 
 	/**
 	 * The feature id for the '<em><b>Xtend Project</b></em>' attribute.
@@ -689,45 +689,45 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PSEMANTICS__XTEND_PROJECT = 1;
+	int SEMANTICS__XTEND_PROJECT = 1;
 
 	/**
-	 * The number of structural features of the '<em>PSemantics</em>' class.
+	 * The number of structural features of the '<em>Semantics</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PSEMANTICS_FEATURE_COUNT = 2;
+	int SEMANTICS_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of operations of the '<em>PSemantics</em>' class.
+	 * The number of operations of the '<em>Semantics</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PSEMANTICS_OPERATION_COUNT = 0;
+	int SEMANTICS_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link vm.PUninaryOperator <em>PUninary Operator</em>}' enum.
+	 * The meta object id for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.PUninaryOperator
-	 * @see vm.impl.VmPackageImpl#getPUninaryOperator()
+	 * @see vm.UninaryOperator
+	 * @see vm.impl.VmPackageImpl#getUninaryOperator()
 	 * @generated
 	 */
-	int PUNINARY_OPERATOR = 13;
+	int UNINARY_OPERATOR = 13;
 
 	/**
-	 * The meta object id for the '{@link vm.PBinaryOperator <em>PBinary Operator</em>}' enum.
+	 * The meta object id for the '{@link vm.BinaryOperator <em>Binary Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.PBinaryOperator
-	 * @see vm.impl.VmPackageImpl#getPBinaryOperator()
+	 * @see vm.BinaryOperator
+	 * @see vm.impl.VmPackageImpl#getBinaryOperator()
 	 * @generated
 	 */
-	int PBINARY_OPERATOR = 14;
+	int BINARY_OPERATOR = 14;
 
 
 	/**
@@ -752,441 +752,441 @@ public interface VmPackage extends EPackage {
 	EAttribute getPNamedElement_Name();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PFeatureModel <em>PFeature Model</em>}'.
+	 * Returns the meta object for class '{@link vm.LanguageFeatureModel <em>Language Feature Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PFeature Model</em>'.
-	 * @see vm.PFeatureModel
+	 * @return the meta object for class '<em>Language Feature Model</em>'.
+	 * @see vm.LanguageFeatureModel
 	 * @generated
 	 */
-	EClass getPFeatureModel();
+	EClass getLanguageFeatureModel();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PFeatureModel#getRootFeature <em>Root Feature</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.LanguageFeatureModel#getRootFeature <em>Root Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Root Feature</em>'.
-	 * @see vm.PFeatureModel#getRootFeature()
-	 * @see #getPFeatureModel()
+	 * @see vm.LanguageFeatureModel#getRootFeature()
+	 * @see #getLanguageFeatureModel()
 	 * @generated
 	 */
-	EReference getPFeatureModel_RootFeature();
+	EReference getLanguageFeatureModel_RootFeature();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vm.PFeatureModel#getConstraints <em>Constraints</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vm.LanguageFeatureModel#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Constraints</em>'.
-	 * @see vm.PFeatureModel#getConstraints()
-	 * @see #getPFeatureModel()
+	 * @see vm.LanguageFeatureModel#getConstraints()
+	 * @see #getLanguageFeatureModel()
 	 * @generated
 	 */
-	EReference getPFeatureModel_Constraints();
+	EReference getLanguageFeatureModel_Constraints();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PFeature <em>PFeature</em>}'.
+	 * Returns the meta object for class '{@link vm.LanguageFeature <em>Language Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PFeature</em>'.
-	 * @see vm.PFeature
+	 * @return the meta object for class '<em>Language Feature</em>'.
+	 * @see vm.LanguageFeature
 	 * @generated
 	 */
-	EClass getPFeature();
+	EClass getLanguageFeature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PFeature#isMandatory <em>Mandatory</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.LanguageFeature#isMandatory <em>Mandatory</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Mandatory</em>'.
-	 * @see vm.PFeature#isMandatory()
-	 * @see #getPFeature()
+	 * @see vm.LanguageFeature#isMandatory()
+	 * @see #getLanguageFeature()
 	 * @generated
 	 */
-	EAttribute getPFeature_Mandatory();
+	EAttribute getLanguageFeature_Mandatory();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vm.PFeature#getChildren <em>Children</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vm.LanguageFeature#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Children</em>'.
-	 * @see vm.PFeature#getChildren()
-	 * @see #getPFeature()
+	 * @see vm.LanguageFeature#getChildren()
+	 * @see #getLanguageFeature()
 	 * @generated
 	 */
-	EReference getPFeature_Children();
+	EReference getLanguageFeature_Children();
 
 	/**
-	 * Returns the meta object for the container reference '{@link vm.PFeature#getParent <em>Parent</em>}'.
+	 * Returns the meta object for the container reference '{@link vm.LanguageFeature#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Parent</em>'.
-	 * @see vm.PFeature#getParent()
-	 * @see #getPFeature()
+	 * @see vm.LanguageFeature#getParent()
+	 * @see #getLanguageFeature()
 	 * @generated
 	 */
-	EReference getPFeature_Parent();
+	EReference getLanguageFeature_Parent();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link vm.PFeature#getGroups <em>Groups</em>}'.
+	 * Returns the meta object for the containment reference list '{@link vm.LanguageFeature#getGroups <em>Groups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Groups</em>'.
-	 * @see vm.PFeature#getGroups()
-	 * @see #getPFeature()
+	 * @see vm.LanguageFeature#getGroups()
+	 * @see #getLanguageFeature()
 	 * @generated
 	 */
-	EReference getPFeature_Groups();
+	EReference getLanguageFeature_Groups();
 
 	/**
-	 * Returns the meta object for the reference '{@link vm.PFeature#getParentGroup <em>Parent Group</em>}'.
+	 * Returns the meta object for the reference '{@link vm.LanguageFeature#getParentGroup <em>Parent Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Parent Group</em>'.
-	 * @see vm.PFeature#getParentGroup()
-	 * @see #getPFeature()
+	 * @see vm.LanguageFeature#getParentGroup()
+	 * @see #getLanguageFeature()
 	 * @generated
 	 */
-	EReference getPFeature_ParentGroup();
+	EReference getLanguageFeature_ParentGroup();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PFeature#getImplementationModule <em>Implementation Module</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.LanguageFeature#getImplementationModule <em>Implementation Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Implementation Module</em>'.
-	 * @see vm.PFeature#getImplementationModule()
-	 * @see #getPFeature()
+	 * @see vm.LanguageFeature#getImplementationModule()
+	 * @see #getLanguageFeature()
 	 * @generated
 	 */
-	EReference getPFeature_ImplementationModule();
+	EReference getLanguageFeature_ImplementationModule();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PFeatureGroup <em>PFeature Group</em>}'.
+	 * Returns the meta object for class '{@link vm.LanguageFeatureGroup <em>Language Feature Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PFeature Group</em>'.
-	 * @see vm.PFeatureGroup
+	 * @return the meta object for class '<em>Language Feature Group</em>'.
+	 * @see vm.LanguageFeatureGroup
 	 * @generated
 	 */
-	EClass getPFeatureGroup();
+	EClass getLanguageFeatureGroup();
 
 	/**
-	 * Returns the meta object for the reference list '{@link vm.PFeatureGroup#getFeatures <em>Features</em>}'.
+	 * Returns the meta object for the reference list '{@link vm.LanguageFeatureGroup#getFeatures <em>Features</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Features</em>'.
-	 * @see vm.PFeatureGroup#getFeatures()
-	 * @see #getPFeatureGroup()
+	 * @see vm.LanguageFeatureGroup#getFeatures()
+	 * @see #getLanguageFeatureGroup()
 	 * @generated
 	 */
-	EReference getPFeatureGroup_Features();
+	EReference getLanguageFeatureGroup_Features();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PFeatureGroup#getCardinality <em>Cardinality</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.LanguageFeatureGroup#getCardinality <em>Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Cardinality</em>'.
-	 * @see vm.PFeatureGroup#getCardinality()
-	 * @see #getPFeatureGroup()
+	 * @see vm.LanguageFeatureGroup#getCardinality()
+	 * @see #getLanguageFeatureGroup()
 	 * @generated
 	 */
-	EReference getPFeatureGroup_Cardinality();
+	EReference getLanguageFeatureGroup_Cardinality();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PFeatureGroupCardinality <em>PFeature Group Cardinality</em>}'.
+	 * Returns the meta object for class '{@link vm.LanguageFeatureGroupCardinality <em>Language Feature Group Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PFeature Group Cardinality</em>'.
-	 * @see vm.PFeatureGroupCardinality
+	 * @return the meta object for class '<em>Language Feature Group Cardinality</em>'.
+	 * @see vm.LanguageFeatureGroupCardinality
 	 * @generated
 	 */
-	EClass getPFeatureGroupCardinality();
+	EClass getLanguageFeatureGroupCardinality();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PFeatureGroupCardinality#getLowerBound <em>Lower Bound</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.LanguageFeatureGroupCardinality#getLowerBound <em>Lower Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Lower Bound</em>'.
-	 * @see vm.PFeatureGroupCardinality#getLowerBound()
-	 * @see #getPFeatureGroupCardinality()
+	 * @see vm.LanguageFeatureGroupCardinality#getLowerBound()
+	 * @see #getLanguageFeatureGroupCardinality()
 	 * @generated
 	 */
-	EAttribute getPFeatureGroupCardinality_LowerBound();
+	EAttribute getLanguageFeatureGroupCardinality_LowerBound();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PFeatureGroupCardinality#getUpperBound <em>Upper Bound</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.LanguageFeatureGroupCardinality#getUpperBound <em>Upper Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Upper Bound</em>'.
-	 * @see vm.PFeatureGroupCardinality#getUpperBound()
-	 * @see #getPFeatureGroupCardinality()
+	 * @see vm.LanguageFeatureGroupCardinality#getUpperBound()
+	 * @see #getLanguageFeatureGroupCardinality()
 	 * @generated
 	 */
-	EAttribute getPFeatureGroupCardinality_UpperBound();
+	EAttribute getLanguageFeatureGroupCardinality_UpperBound();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PConstraint <em>PConstraint</em>}'.
+	 * Returns the meta object for class '{@link vm.LanguageConstraint <em>Language Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PConstraint</em>'.
-	 * @see vm.PConstraint
+	 * @return the meta object for class '<em>Language Constraint</em>'.
+	 * @see vm.LanguageConstraint
 	 * @generated
 	 */
-	EClass getPConstraint();
+	EClass getLanguageConstraint();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PConstraint#getExpression <em>Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.LanguageConstraint#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see vm.PConstraint#getExpression()
-	 * @see #getPConstraint()
+	 * @see vm.LanguageConstraint#getExpression()
+	 * @see #getLanguageConstraint()
 	 * @generated
 	 */
-	EReference getPConstraint_Expression();
+	EReference getLanguageConstraint_Expression();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PBooleanExpression <em>PBoolean Expression</em>}'.
+	 * Returns the meta object for class '{@link vm.BooleanExpression <em>Boolean Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PBoolean Expression</em>'.
-	 * @see vm.PBooleanExpression
+	 * @return the meta object for class '<em>Boolean Expression</em>'.
+	 * @see vm.BooleanExpression
 	 * @generated
 	 */
-	EClass getPBooleanExpression();
+	EClass getBooleanExpression();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PFeatureRef <em>PFeature Ref</em>}'.
+	 * Returns the meta object for class '{@link vm.LanguageFeatureRef <em>Language Feature Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PFeature Ref</em>'.
-	 * @see vm.PFeatureRef
+	 * @return the meta object for class '<em>Language Feature Ref</em>'.
+	 * @see vm.LanguageFeatureRef
 	 * @generated
 	 */
-	EClass getPFeatureRef();
+	EClass getLanguageFeatureRef();
 
 	/**
-	 * Returns the meta object for the reference '{@link vm.PFeatureRef#getRef <em>Ref</em>}'.
+	 * Returns the meta object for the reference '{@link vm.LanguageFeatureRef#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Ref</em>'.
-	 * @see vm.PFeatureRef#getRef()
-	 * @see #getPFeatureRef()
+	 * @see vm.LanguageFeatureRef#getRef()
+	 * @see #getLanguageFeatureRef()
 	 * @generated
 	 */
-	EReference getPFeatureRef_Ref();
+	EReference getLanguageFeatureRef_Ref();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PUnaryExpression <em>PUnary Expression</em>}'.
+	 * Returns the meta object for class '{@link vm.UnaryExpression <em>Unary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PUnary Expression</em>'.
-	 * @see vm.PUnaryExpression
+	 * @return the meta object for class '<em>Unary Expression</em>'.
+	 * @see vm.UnaryExpression
 	 * @generated
 	 */
-	EClass getPUnaryExpression();
+	EClass getUnaryExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PUnaryExpression#getExpr <em>Expr</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.UnaryExpression#getExpr <em>Expr</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Expr</em>'.
-	 * @see vm.PUnaryExpression#getExpr()
-	 * @see #getPUnaryExpression()
+	 * @see vm.UnaryExpression#getExpr()
+	 * @see #getUnaryExpression()
 	 * @generated
 	 */
-	EReference getPUnaryExpression_Expr();
+	EReference getUnaryExpression_Expr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PUnaryExpression#getOperator <em>Operator</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.UnaryExpression#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see vm.PUnaryExpression#getOperator()
-	 * @see #getPUnaryExpression()
+	 * @see vm.UnaryExpression#getOperator()
+	 * @see #getUnaryExpression()
 	 * @generated
 	 */
-	EAttribute getPUnaryExpression_Operator();
+	EAttribute getUnaryExpression_Operator();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PBinaryExpression <em>PBinary Expression</em>}'.
+	 * Returns the meta object for class '{@link vm.BinaryExpression <em>Binary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PBinary Expression</em>'.
-	 * @see vm.PBinaryExpression
+	 * @return the meta object for class '<em>Binary Expression</em>'.
+	 * @see vm.BinaryExpression
 	 * @generated
 	 */
-	EClass getPBinaryExpression();
+	EClass getBinaryExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PBinaryExpression#getLeft <em>Left</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.BinaryExpression#getLeft <em>Left</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Left</em>'.
-	 * @see vm.PBinaryExpression#getLeft()
-	 * @see #getPBinaryExpression()
+	 * @see vm.BinaryExpression#getLeft()
+	 * @see #getBinaryExpression()
 	 * @generated
 	 */
-	EReference getPBinaryExpression_Left();
+	EReference getBinaryExpression_Left();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PBinaryExpression#getRight <em>Right</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.BinaryExpression#getRight <em>Right</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Right</em>'.
-	 * @see vm.PBinaryExpression#getRight()
-	 * @see #getPBinaryExpression()
+	 * @see vm.BinaryExpression#getRight()
+	 * @see #getBinaryExpression()
 	 * @generated
 	 */
-	EReference getPBinaryExpression_Right();
+	EReference getBinaryExpression_Right();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PBinaryExpression#getOperator <em>Operator</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.BinaryExpression#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see vm.PBinaryExpression#getOperator()
-	 * @see #getPBinaryExpression()
+	 * @see vm.BinaryExpression#getOperator()
+	 * @see #getBinaryExpression()
 	 * @generated
 	 */
-	EAttribute getPBinaryExpression_Operator();
+	EAttribute getBinaryExpression_Operator();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PLanguageModule <em>PLanguage Module</em>}'.
+	 * Returns the meta object for class '{@link vm.LanguageModule <em>Language Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PLanguage Module</em>'.
-	 * @see vm.PLanguageModule
+	 * @return the meta object for class '<em>Language Module</em>'.
+	 * @see vm.LanguageModule
 	 * @generated
 	 */
-	EClass getPLanguageModule();
+	EClass getLanguageModule();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PLanguageModule#getAs <em>As</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.LanguageModule#getAs <em>As</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>As</em>'.
-	 * @see vm.PLanguageModule#getAs()
-	 * @see #getPLanguageModule()
+	 * @see vm.LanguageModule#getAs()
+	 * @see #getLanguageModule()
 	 * @generated
 	 */
-	EReference getPLanguageModule_As();
+	EReference getLanguageModule_As();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.PLanguageModule#getSem <em>Sem</em>}'.
+	 * Returns the meta object for the containment reference '{@link vm.LanguageModule#getSem <em>Sem</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Sem</em>'.
-	 * @see vm.PLanguageModule#getSem()
-	 * @see #getPLanguageModule()
+	 * @see vm.LanguageModule#getSem()
+	 * @see #getLanguageModule()
 	 * @generated
 	 */
-	EReference getPLanguageModule_Sem();
+	EReference getLanguageModule_Sem();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PAbstractSyntax <em>PAbstract Syntax</em>}'.
+	 * Returns the meta object for class '{@link vm.AbstractSyntax <em>Abstract Syntax</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PAbstract Syntax</em>'.
-	 * @see vm.PAbstractSyntax
+	 * @return the meta object for class '<em>Abstract Syntax</em>'.
+	 * @see vm.AbstractSyntax
 	 * @generated
 	 */
-	EClass getPAbstractSyntax();
+	EClass getAbstractSyntax();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcorePath <em>Ecore Path</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcorePath <em>Ecore Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Ecore Path</em>'.
-	 * @see vm.PAbstractSyntax#getEcorePath()
-	 * @see #getPAbstractSyntax()
+	 * @see vm.AbstractSyntax#getEcorePath()
+	 * @see #getAbstractSyntax()
 	 * @generated
 	 */
-	EAttribute getPAbstractSyntax_EcorePath();
+	EAttribute getAbstractSyntax_EcorePath();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcoreProject <em>Ecore Project</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcoreProject <em>Ecore Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Ecore Project</em>'.
-	 * @see vm.PAbstractSyntax#getEcoreProject()
-	 * @see #getPAbstractSyntax()
+	 * @see vm.AbstractSyntax#getEcoreProject()
+	 * @see #getAbstractSyntax()
 	 * @generated
 	 */
-	EAttribute getPAbstractSyntax_EcoreProject();
+	EAttribute getAbstractSyntax_EcoreProject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcoreRequiredInterfacePath <em>Ecore Required Interface Path</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcoreRequiredInterfacePath <em>Ecore Required Interface Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Ecore Required Interface Path</em>'.
-	 * @see vm.PAbstractSyntax#getEcoreRequiredInterfacePath()
-	 * @see #getPAbstractSyntax()
+	 * @see vm.AbstractSyntax#getEcoreRequiredInterfacePath()
+	 * @see #getAbstractSyntax()
 	 * @generated
 	 */
-	EAttribute getPAbstractSyntax_EcoreRequiredInterfacePath();
+	EAttribute getAbstractSyntax_EcoreRequiredInterfacePath();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PAbstractSyntax#getEcoreProvidedInterfacePath <em>Ecore Provided Interface Path</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.AbstractSyntax#getEcoreProvidedInterfacePath <em>Ecore Provided Interface Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Ecore Provided Interface Path</em>'.
-	 * @see vm.PAbstractSyntax#getEcoreProvidedInterfacePath()
-	 * @see #getPAbstractSyntax()
+	 * @see vm.AbstractSyntax#getEcoreProvidedInterfacePath()
+	 * @see #getAbstractSyntax()
 	 * @generated
 	 */
-	EAttribute getPAbstractSyntax_EcoreProvidedInterfacePath();
+	EAttribute getAbstractSyntax_EcoreProvidedInterfacePath();
 
 	/**
-	 * Returns the meta object for class '{@link vm.PSemantics <em>PSemantics</em>}'.
+	 * Returns the meta object for class '{@link vm.Semantics <em>Semantics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PSemantics</em>'.
-	 * @see vm.PSemantics
+	 * @return the meta object for class '<em>Semantics</em>'.
+	 * @see vm.Semantics
 	 * @generated
 	 */
-	EClass getPSemantics();
+	EClass getSemantics();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PSemantics#getXtendPath <em>Xtend Path</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.Semantics#getXtendPath <em>Xtend Path</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Xtend Path</em>'.
-	 * @see vm.PSemantics#getXtendPath()
-	 * @see #getPSemantics()
+	 * @see vm.Semantics#getXtendPath()
+	 * @see #getSemantics()
 	 * @generated
 	 */
-	EAttribute getPSemantics_XtendPath();
+	EAttribute getSemantics_XtendPath();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PSemantics#getXtendProject <em>Xtend Project</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.Semantics#getXtendProject <em>Xtend Project</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Xtend Project</em>'.
-	 * @see vm.PSemantics#getXtendProject()
-	 * @see #getPSemantics()
+	 * @see vm.Semantics#getXtendProject()
+	 * @see #getSemantics()
 	 * @generated
 	 */
-	EAttribute getPSemantics_XtendProject();
+	EAttribute getSemantics_XtendProject();
 
 	/**
-	 * Returns the meta object for enum '{@link vm.PUninaryOperator <em>PUninary Operator</em>}'.
+	 * Returns the meta object for enum '{@link vm.UninaryOperator <em>Uninary Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>PUninary Operator</em>'.
-	 * @see vm.PUninaryOperator
+	 * @return the meta object for enum '<em>Uninary Operator</em>'.
+	 * @see vm.UninaryOperator
 	 * @generated
 	 */
-	EEnum getPUninaryOperator();
+	EEnum getUninaryOperator();
 
 	/**
-	 * Returns the meta object for enum '{@link vm.PBinaryOperator <em>PBinary Operator</em>}'.
+	 * Returns the meta object for enum '{@link vm.BinaryOperator <em>Binary Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>PBinary Operator</em>'.
-	 * @see vm.PBinaryOperator
+	 * @return the meta object for enum '<em>Binary Operator</em>'.
+	 * @see vm.BinaryOperator
 	 * @generated
 	 */
-	EEnum getPBinaryOperator();
+	EEnum getBinaryOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1230,14 +1230,14 @@ public interface VmPackage extends EPackage {
 		EAttribute PNAMED_ELEMENT__NAME = eINSTANCE.getPNamedElement_Name();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PFeatureModelImpl <em>PFeature Model</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.LanguageFeatureModelImpl <em>Language Feature Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PFeatureModelImpl
-		 * @see vm.impl.VmPackageImpl#getPFeatureModel()
+		 * @see vm.impl.LanguageFeatureModelImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageFeatureModel()
 		 * @generated
 		 */
-		EClass PFEATURE_MODEL = eINSTANCE.getPFeatureModel();
+		EClass LANGUAGE_FEATURE_MODEL = eINSTANCE.getLanguageFeatureModel();
 
 		/**
 		 * The meta object literal for the '<em><b>Root Feature</b></em>' containment reference feature.
@@ -1245,7 +1245,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE_MODEL__ROOT_FEATURE = eINSTANCE.getPFeatureModel_RootFeature();
+		EReference LANGUAGE_FEATURE_MODEL__ROOT_FEATURE = eINSTANCE.getLanguageFeatureModel_RootFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Constraints</b></em>' containment reference list feature.
@@ -1253,17 +1253,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE_MODEL__CONSTRAINTS = eINSTANCE.getPFeatureModel_Constraints();
+		EReference LANGUAGE_FEATURE_MODEL__CONSTRAINTS = eINSTANCE.getLanguageFeatureModel_Constraints();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PFeatureImpl <em>PFeature</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.LanguageFeatureImpl <em>Language Feature</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PFeatureImpl
-		 * @see vm.impl.VmPackageImpl#getPFeature()
+		 * @see vm.impl.LanguageFeatureImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageFeature()
 		 * @generated
 		 */
-		EClass PFEATURE = eINSTANCE.getPFeature();
+		EClass LANGUAGE_FEATURE = eINSTANCE.getLanguageFeature();
 
 		/**
 		 * The meta object literal for the '<em><b>Mandatory</b></em>' attribute feature.
@@ -1271,7 +1271,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PFEATURE__MANDATORY = eINSTANCE.getPFeature_Mandatory();
+		EAttribute LANGUAGE_FEATURE__MANDATORY = eINSTANCE.getLanguageFeature_Mandatory();
 
 		/**
 		 * The meta object literal for the '<em><b>Children</b></em>' containment reference list feature.
@@ -1279,7 +1279,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE__CHILDREN = eINSTANCE.getPFeature_Children();
+		EReference LANGUAGE_FEATURE__CHILDREN = eINSTANCE.getLanguageFeature_Children();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
@@ -1287,7 +1287,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE__PARENT = eINSTANCE.getPFeature_Parent();
+		EReference LANGUAGE_FEATURE__PARENT = eINSTANCE.getLanguageFeature_Parent();
 
 		/**
 		 * The meta object literal for the '<em><b>Groups</b></em>' containment reference list feature.
@@ -1295,7 +1295,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE__GROUPS = eINSTANCE.getPFeature_Groups();
+		EReference LANGUAGE_FEATURE__GROUPS = eINSTANCE.getLanguageFeature_Groups();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent Group</b></em>' reference feature.
@@ -1303,7 +1303,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE__PARENT_GROUP = eINSTANCE.getPFeature_ParentGroup();
+		EReference LANGUAGE_FEATURE__PARENT_GROUP = eINSTANCE.getLanguageFeature_ParentGroup();
 
 		/**
 		 * The meta object literal for the '<em><b>Implementation Module</b></em>' containment reference feature.
@@ -1311,17 +1311,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE__IMPLEMENTATION_MODULE = eINSTANCE.getPFeature_ImplementationModule();
+		EReference LANGUAGE_FEATURE__IMPLEMENTATION_MODULE = eINSTANCE.getLanguageFeature_ImplementationModule();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PFeatureGroupImpl <em>PFeature Group</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.LanguageFeatureGroupImpl <em>Language Feature Group</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PFeatureGroupImpl
-		 * @see vm.impl.VmPackageImpl#getPFeatureGroup()
+		 * @see vm.impl.LanguageFeatureGroupImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageFeatureGroup()
 		 * @generated
 		 */
-		EClass PFEATURE_GROUP = eINSTANCE.getPFeatureGroup();
+		EClass LANGUAGE_FEATURE_GROUP = eINSTANCE.getLanguageFeatureGroup();
 
 		/**
 		 * The meta object literal for the '<em><b>Features</b></em>' reference list feature.
@@ -1329,7 +1329,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE_GROUP__FEATURES = eINSTANCE.getPFeatureGroup_Features();
+		EReference LANGUAGE_FEATURE_GROUP__FEATURES = eINSTANCE.getLanguageFeatureGroup_Features();
 
 		/**
 		 * The meta object literal for the '<em><b>Cardinality</b></em>' containment reference feature.
@@ -1337,17 +1337,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE_GROUP__CARDINALITY = eINSTANCE.getPFeatureGroup_Cardinality();
+		EReference LANGUAGE_FEATURE_GROUP__CARDINALITY = eINSTANCE.getLanguageFeatureGroup_Cardinality();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PFeatureGroupCardinalityImpl <em>PFeature Group Cardinality</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.LanguageFeatureGroupCardinalityImpl <em>Language Feature Group Cardinality</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PFeatureGroupCardinalityImpl
-		 * @see vm.impl.VmPackageImpl#getPFeatureGroupCardinality()
+		 * @see vm.impl.LanguageFeatureGroupCardinalityImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageFeatureGroupCardinality()
 		 * @generated
 		 */
-		EClass PFEATURE_GROUP_CARDINALITY = eINSTANCE.getPFeatureGroupCardinality();
+		EClass LANGUAGE_FEATURE_GROUP_CARDINALITY = eINSTANCE.getLanguageFeatureGroupCardinality();
 
 		/**
 		 * The meta object literal for the '<em><b>Lower Bound</b></em>' attribute feature.
@@ -1355,7 +1355,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PFEATURE_GROUP_CARDINALITY__LOWER_BOUND = eINSTANCE.getPFeatureGroupCardinality_LowerBound();
+		EAttribute LANGUAGE_FEATURE_GROUP_CARDINALITY__LOWER_BOUND = eINSTANCE.getLanguageFeatureGroupCardinality_LowerBound();
 
 		/**
 		 * The meta object literal for the '<em><b>Upper Bound</b></em>' attribute feature.
@@ -1363,17 +1363,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PFEATURE_GROUP_CARDINALITY__UPPER_BOUND = eINSTANCE.getPFeatureGroupCardinality_UpperBound();
+		EAttribute LANGUAGE_FEATURE_GROUP_CARDINALITY__UPPER_BOUND = eINSTANCE.getLanguageFeatureGroupCardinality_UpperBound();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PConstraintImpl <em>PConstraint</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.LanguageConstraintImpl <em>Language Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PConstraintImpl
-		 * @see vm.impl.VmPackageImpl#getPConstraint()
+		 * @see vm.impl.LanguageConstraintImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageConstraint()
 		 * @generated
 		 */
-		EClass PCONSTRAINT = eINSTANCE.getPConstraint();
+		EClass LANGUAGE_CONSTRAINT = eINSTANCE.getLanguageConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -1381,27 +1381,27 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PCONSTRAINT__EXPRESSION = eINSTANCE.getPConstraint_Expression();
+		EReference LANGUAGE_CONSTRAINT__EXPRESSION = eINSTANCE.getLanguageConstraint_Expression();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PBooleanExpressionImpl <em>PBoolean Expression</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PBooleanExpressionImpl
-		 * @see vm.impl.VmPackageImpl#getPBooleanExpression()
+		 * @see vm.impl.BooleanExpressionImpl
+		 * @see vm.impl.VmPackageImpl#getBooleanExpression()
 		 * @generated
 		 */
-		EClass PBOOLEAN_EXPRESSION = eINSTANCE.getPBooleanExpression();
+		EClass BOOLEAN_EXPRESSION = eINSTANCE.getBooleanExpression();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PFeatureRefImpl <em>PFeature Ref</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.LanguageFeatureRefImpl <em>Language Feature Ref</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PFeatureRefImpl
-		 * @see vm.impl.VmPackageImpl#getPFeatureRef()
+		 * @see vm.impl.LanguageFeatureRefImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageFeatureRef()
 		 * @generated
 		 */
-		EClass PFEATURE_REF = eINSTANCE.getPFeatureRef();
+		EClass LANGUAGE_FEATURE_REF = eINSTANCE.getLanguageFeatureRef();
 
 		/**
 		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
@@ -1409,17 +1409,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PFEATURE_REF__REF = eINSTANCE.getPFeatureRef_Ref();
+		EReference LANGUAGE_FEATURE_REF__REF = eINSTANCE.getLanguageFeatureRef_Ref();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PUnaryExpressionImpl <em>PUnary Expression</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.UnaryExpressionImpl <em>Unary Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PUnaryExpressionImpl
-		 * @see vm.impl.VmPackageImpl#getPUnaryExpression()
+		 * @see vm.impl.UnaryExpressionImpl
+		 * @see vm.impl.VmPackageImpl#getUnaryExpression()
 		 * @generated
 		 */
-		EClass PUNARY_EXPRESSION = eINSTANCE.getPUnaryExpression();
+		EClass UNARY_EXPRESSION = eINSTANCE.getUnaryExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
@@ -1427,7 +1427,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PUNARY_EXPRESSION__EXPR = eINSTANCE.getPUnaryExpression_Expr();
+		EReference UNARY_EXPRESSION__EXPR = eINSTANCE.getUnaryExpression_Expr();
 
 		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -1435,17 +1435,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PUNARY_EXPRESSION__OPERATOR = eINSTANCE.getPUnaryExpression_Operator();
+		EAttribute UNARY_EXPRESSION__OPERATOR = eINSTANCE.getUnaryExpression_Operator();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PBinaryExpressionImpl <em>PBinary Expression</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PBinaryExpressionImpl
-		 * @see vm.impl.VmPackageImpl#getPBinaryExpression()
+		 * @see vm.impl.BinaryExpressionImpl
+		 * @see vm.impl.VmPackageImpl#getBinaryExpression()
 		 * @generated
 		 */
-		EClass PBINARY_EXPRESSION = eINSTANCE.getPBinaryExpression();
+		EClass BINARY_EXPRESSION = eINSTANCE.getBinaryExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
@@ -1453,7 +1453,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PBINARY_EXPRESSION__LEFT = eINSTANCE.getPBinaryExpression_Left();
+		EReference BINARY_EXPRESSION__LEFT = eINSTANCE.getBinaryExpression_Left();
 
 		/**
 		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
@@ -1461,7 +1461,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PBINARY_EXPRESSION__RIGHT = eINSTANCE.getPBinaryExpression_Right();
+		EReference BINARY_EXPRESSION__RIGHT = eINSTANCE.getBinaryExpression_Right();
 
 		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
@@ -1469,17 +1469,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PBINARY_EXPRESSION__OPERATOR = eINSTANCE.getPBinaryExpression_Operator();
+		EAttribute BINARY_EXPRESSION__OPERATOR = eINSTANCE.getBinaryExpression_Operator();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PLanguageModuleImpl <em>PLanguage Module</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.LanguageModuleImpl <em>Language Module</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PLanguageModuleImpl
-		 * @see vm.impl.VmPackageImpl#getPLanguageModule()
+		 * @see vm.impl.LanguageModuleImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageModule()
 		 * @generated
 		 */
-		EClass PLANGUAGE_MODULE = eINSTANCE.getPLanguageModule();
+		EClass LANGUAGE_MODULE = eINSTANCE.getLanguageModule();
 
 		/**
 		 * The meta object literal for the '<em><b>As</b></em>' containment reference feature.
@@ -1487,7 +1487,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PLANGUAGE_MODULE__AS = eINSTANCE.getPLanguageModule_As();
+		EReference LANGUAGE_MODULE__AS = eINSTANCE.getLanguageModule_As();
 
 		/**
 		 * The meta object literal for the '<em><b>Sem</b></em>' containment reference feature.
@@ -1495,17 +1495,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PLANGUAGE_MODULE__SEM = eINSTANCE.getPLanguageModule_Sem();
+		EReference LANGUAGE_MODULE__SEM = eINSTANCE.getLanguageModule_Sem();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PAbstractSyntaxImpl <em>PAbstract Syntax</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.AbstractSyntaxImpl <em>Abstract Syntax</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PAbstractSyntaxImpl
-		 * @see vm.impl.VmPackageImpl#getPAbstractSyntax()
+		 * @see vm.impl.AbstractSyntaxImpl
+		 * @see vm.impl.VmPackageImpl#getAbstractSyntax()
 		 * @generated
 		 */
-		EClass PABSTRACT_SYNTAX = eINSTANCE.getPAbstractSyntax();
+		EClass ABSTRACT_SYNTAX = eINSTANCE.getAbstractSyntax();
 
 		/**
 		 * The meta object literal for the '<em><b>Ecore Path</b></em>' attribute feature.
@@ -1513,7 +1513,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PABSTRACT_SYNTAX__ECORE_PATH = eINSTANCE.getPAbstractSyntax_EcorePath();
+		EAttribute ABSTRACT_SYNTAX__ECORE_PATH = eINSTANCE.getAbstractSyntax_EcorePath();
 
 		/**
 		 * The meta object literal for the '<em><b>Ecore Project</b></em>' attribute feature.
@@ -1521,7 +1521,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PABSTRACT_SYNTAX__ECORE_PROJECT = eINSTANCE.getPAbstractSyntax_EcoreProject();
+		EAttribute ABSTRACT_SYNTAX__ECORE_PROJECT = eINSTANCE.getAbstractSyntax_EcoreProject();
 
 		/**
 		 * The meta object literal for the '<em><b>Ecore Required Interface Path</b></em>' attribute feature.
@@ -1529,7 +1529,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = eINSTANCE.getPAbstractSyntax_EcoreRequiredInterfacePath();
+		EAttribute ABSTRACT_SYNTAX__ECORE_REQUIRED_INTERFACE_PATH = eINSTANCE.getAbstractSyntax_EcoreRequiredInterfacePath();
 
 		/**
 		 * The meta object literal for the '<em><b>Ecore Provided Interface Path</b></em>' attribute feature.
@@ -1537,17 +1537,17 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = eINSTANCE.getPAbstractSyntax_EcoreProvidedInterfacePath();
+		EAttribute ABSTRACT_SYNTAX__ECORE_PROVIDED_INTERFACE_PATH = eINSTANCE.getAbstractSyntax_EcoreProvidedInterfacePath();
 
 		/**
-		 * The meta object literal for the '{@link vm.impl.PSemanticsImpl <em>PSemantics</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.SemanticsImpl <em>Semantics</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PSemanticsImpl
-		 * @see vm.impl.VmPackageImpl#getPSemantics()
+		 * @see vm.impl.SemanticsImpl
+		 * @see vm.impl.VmPackageImpl#getSemantics()
 		 * @generated
 		 */
-		EClass PSEMANTICS = eINSTANCE.getPSemantics();
+		EClass SEMANTICS = eINSTANCE.getSemantics();
 
 		/**
 		 * The meta object literal for the '<em><b>Xtend Path</b></em>' attribute feature.
@@ -1555,7 +1555,7 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PSEMANTICS__XTEND_PATH = eINSTANCE.getPSemantics_XtendPath();
+		EAttribute SEMANTICS__XTEND_PATH = eINSTANCE.getSemantics_XtendPath();
 
 		/**
 		 * The meta object literal for the '<em><b>Xtend Project</b></em>' attribute feature.
@@ -1563,27 +1563,27 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PSEMANTICS__XTEND_PROJECT = eINSTANCE.getPSemantics_XtendProject();
+		EAttribute SEMANTICS__XTEND_PROJECT = eINSTANCE.getSemantics_XtendProject();
 
 		/**
-		 * The meta object literal for the '{@link vm.PUninaryOperator <em>PUninary Operator</em>}' enum.
+		 * The meta object literal for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.PUninaryOperator
-		 * @see vm.impl.VmPackageImpl#getPUninaryOperator()
+		 * @see vm.UninaryOperator
+		 * @see vm.impl.VmPackageImpl#getUninaryOperator()
 		 * @generated
 		 */
-		EEnum PUNINARY_OPERATOR = eINSTANCE.getPUninaryOperator();
+		EEnum UNINARY_OPERATOR = eINSTANCE.getUninaryOperator();
 
 		/**
-		 * The meta object literal for the '{@link vm.PBinaryOperator <em>PBinary Operator</em>}' enum.
+		 * The meta object literal for the '{@link vm.BinaryOperator <em>Binary Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.PBinaryOperator
-		 * @see vm.impl.VmPackageImpl#getPBinaryOperator()
+		 * @see vm.BinaryOperator
+		 * @see vm.impl.VmPackageImpl#getBinaryOperator()
 		 * @generated
 		 */
-		EEnum PBINARY_OPERATOR = eINSTANCE.getPBinaryOperator();
+		EEnum BINARY_OPERATOR = eINSTANCE.getBinaryOperator();
 
 	}
 

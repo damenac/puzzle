@@ -2,39 +2,54 @@ package fr.inria.diverse.puzzle.vmsynthesis.impl;
 
 import java.util.ArrayList;
 
-import vm.PBinaryExpression;
-import vm.PBooleanExpression;
-import vm.PFeatureRef;
-import vm.PUnaryExpression;
+import vm.BinaryExpression;
+import vm.BooleanExpression;
+import vm.LanguageFeatureRef;
+import vm.UnaryExpression;
 
 public class LeftImplicationsGroup {
 
-	private PBooleanExpression leftSide;
+	// -----------------------------------------------------------
+	// Attributes
+	// -----------------------------------------------------------
 	
-	private ArrayList<PBooleanExpression> rightSide;
+	private BooleanExpression leftSide;
+	private ArrayList<BooleanExpression> rightSide;
 
-	public LeftImplicationsGroup(PBooleanExpression leftSide) {
+	// -----------------------------------------------------------
+	// Constructor
+	// -----------------------------------------------------------
+	
+	public LeftImplicationsGroup(BooleanExpression leftSide) {
 		super();
 		this.leftSide = leftSide;
-		this.rightSide = new ArrayList<PBooleanExpression>();
+		this.rightSide = new ArrayList<BooleanExpression>();
 	}
 
-	public PBooleanExpression getLeftSide() {
+	// -----------------------------------------------------------
+	// Getters and setters
+	// -----------------------------------------------------------
+	
+	public BooleanExpression getLeftSide() {
 		return leftSide;
 	}
 
-	public void setLeftSide(PBooleanExpression leftSide) {
+	public void setLeftSide(BooleanExpression leftSide) {
 		this.leftSide = leftSide;
 	}
 
-	public ArrayList<PBooleanExpression> getRightSide() {
+	public ArrayList<BooleanExpression> getRightSide() {
 		return rightSide;
 	}
+	
+	// -----------------------------------------------------------
+	// Methods
+	// -----------------------------------------------------------
 	
 	public String toString(){
 		String rightSide = "";
 		boolean first = true;
-		for (PBooleanExpression expr : this.rightSide) {
+		for (BooleanExpression expr : this.rightSide) {
 			if(!first)
 				rightSide += " and ";
 			rightSide += this.stringRepresentation(expr);
@@ -43,27 +58,26 @@ public class LeftImplicationsGroup {
 		return this.stringRepresentation(leftSide) + " implies " + rightSide;
 	}
 	
-	private String stringRepresentation(PBooleanExpression expr){
-		if(expr instanceof PBinaryExpression){
-			PBinaryExpression exprBinary = (PBinaryExpression) expr;
+	private String stringRepresentation(BooleanExpression expr){
+		if(expr instanceof BinaryExpression){
+			BinaryExpression exprBinary = (BinaryExpression) expr;
 			String operator = exprBinary.getOperator().getName();
 			String leftSide = this.stringRepresentation(exprBinary.getLeft());
 			String rightSide = this.stringRepresentation(exprBinary.getRight());
 			return "( " + leftSide + " " + operator + " " + rightSide + " )";
 		}
-		else if(expr instanceof PUnaryExpression){
-			PUnaryExpression exprUnary = (PUnaryExpression)expr;
+		else if(expr instanceof UnaryExpression){
+			UnaryExpression exprUnary = (UnaryExpression)expr;
 			String operator = exprUnary.getOperator().getName();
 			String expression = this.stringRepresentation(exprUnary.getExpr());
 			return "( " + operator + " " + expression + " )";
 		}
-		else if(expr instanceof PFeatureRef){
-			PFeatureRef exprFeatureRef = (PFeatureRef) expr;
+		else if(expr instanceof LanguageFeatureRef){
+			LanguageFeatureRef exprFeatureRef = (LanguageFeatureRef) expr;
 			return exprFeatureRef.getRef().getName();
 		}
 		else{
 			return null;
 		}
 	}
-
 }

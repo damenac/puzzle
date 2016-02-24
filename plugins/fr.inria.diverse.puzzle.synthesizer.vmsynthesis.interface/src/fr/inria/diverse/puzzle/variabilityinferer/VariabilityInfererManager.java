@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.PAbstractSyntax;
-import vm.PFeature;
-import vm.PFeatureModel;
-import vm.PLanguageModule;
+import vm.AbstractSyntax;
+import vm.LanguageFeature;
+import vm.LanguageFeatureModel;
+import vm.LanguageModule;
 import vm.VmFactory;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
@@ -16,7 +16,6 @@ import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
-import fr.inria.diverse.k3.sle.common.graphs.EcoreVertex;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 
@@ -60,14 +59,14 @@ public class VariabilityInfererManager {
 	 * @param project
 	 * @throws Exception
 	 */
-	public PFeatureModel synthesizeOpenFeaturesModel(SynthesisProperties synthesisProperties,
+	public LanguageFeatureModel synthesizeOpenFeaturesModel(SynthesisProperties synthesisProperties,
 			ArrayList<Language> languages, EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph,
 			IProject project) throws Exception {
 		
 		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
 		
-		PFeatureModel openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
+		LanguageFeatureModel openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
 				synthesisProperties, languages, modularizationGraph, dependenciesGraph);
 
 		this.addModulesInformation(openFeaturesModel, modularizationGraph);
@@ -81,7 +80,7 @@ public class VariabilityInfererManager {
 	 * @param featureModel
 	 * @param modularizationGraph
 	 */
-	private void addModulesInformation(PFeatureModel featureModel,
+	private void addModulesInformation(LanguageFeatureModel featureModel,
 			EcoreGraph modularizationGraph) {
 		this.findLanguageModule(featureModel.getRootFeature(), modularizationGraph);
 	}
@@ -92,15 +91,15 @@ public class VariabilityInfererManager {
 	 * @param rootFeature
 	 * @param modularizationGraph
 	 */
-	private void findLanguageModule(PFeature rootFeature,
+	private void findLanguageModule(LanguageFeature rootFeature,
 			EcoreGraph modularizationGraph) {
 		
 		EcoreGroup ecoreGroup = modularizationGraph.getGroupByDependenciesGraphName(rootFeature.getName());
 		if(ecoreGroup != null){
-			PLanguageModule languageModule = VmFactory.eINSTANCE.createPLanguageModule();
+			LanguageModule languageModule = VmFactory.eINSTANCE.createLanguageModule();
 			languageModule.setName(ecoreGroup.getName());
 			
-			PAbstractSyntax moduleAbstractSyntax = VmFactory.eINSTANCE.createPAbstractSyntax();
+			AbstractSyntax moduleAbstractSyntax = VmFactory.eINSTANCE.createAbstractSyntax();
 			moduleAbstractSyntax.setEcorePath(ecoreGroup.getMetamodelPath());
 			moduleAbstractSyntax.setEcoreRequiredInterfacePath(ecoreGroup.getRequiredInterfacePath());
 			moduleAbstractSyntax.setEcoreProvidedInterfacePath(ecoreGroup.getProvidedInterfacePath());
@@ -111,7 +110,7 @@ public class VariabilityInfererManager {
 		}
 		
 		// Recursion
-		for(PFeature child : rootFeature.getChildren()){
+		for(LanguageFeature child : rootFeature.getChildren()){
 			this.findLanguageModule(child, modularizationGraph);
 		}
 	}
@@ -127,15 +126,15 @@ public class VariabilityInfererManager {
 	 * @return
 	 * @throws Exception
 	 */
-	public PFeatureModel synthesizeClosedFeaturesModel(
+	public LanguageFeatureModel synthesizeClosedFeaturesModel(
 			SynthesisProperties synthesisProperties, ArrayList<Language> languages,
 			EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph,
-			IProject project, PFeatureModel openFeaturesModel) throws Exception {
+			IProject project, LanguageFeatureModel openFeaturesModel) throws Exception {
 		
 		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
 		
-		PFeatureModel closedFeaturesModel = inferrer.inferClosedFeaturesModel(
+		LanguageFeatureModel closedFeaturesModel = inferrer.inferClosedFeaturesModel(
 				project, synthesisProperties, languages, modularizationGraph, openFeaturesModel);
 
 		return closedFeaturesModel;

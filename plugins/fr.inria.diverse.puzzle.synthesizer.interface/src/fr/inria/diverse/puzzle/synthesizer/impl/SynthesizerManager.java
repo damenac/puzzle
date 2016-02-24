@@ -11,7 +11,7 @@ import PuzzleADL.LanguageModule;
 import PuzzleADL.ProvidedInterface;
 import PuzzleADL.PuzzleADLFactory;
 import PuzzleADL.RequiredInterface;
-import vm.PFeatureModel;
+import vm.LanguageFeatureModel;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
 import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
@@ -94,13 +94,13 @@ public class SynthesizerManager {
 		
 		// Step 2.1: Synthesize the open variability model i.e., the one that only contains
 		//			 the technological constraints so it explotes the variability.
-		PFeatureModel openFeaturesModel = VariabilityInfererManager.getInstance().synthesizeOpenFeaturesModel(
+		LanguageFeatureModel openFeaturesModel = VariabilityInfererManager.getInstance().synthesizeOpenFeaturesModel(
 				properties, languages, modularizationGraph, dependenciesGraph, project);
 		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/openFM.vm");
 		
 		// Step 2.1: Synthesize the closed variability model i.e., the one that contains
 		//			 not only the technological constraints but also considers the PCM.
-		PFeatureModel closedFeaturesModel = VariabilityInfererManager.getInstance().synthesizeClosedFeaturesModel(
+		LanguageFeatureModel closedFeaturesModel = VariabilityInfererManager.getInstance().synthesizeClosedFeaturesModel(
 				properties, languages, modularizationGraph, dependenciesGraph, project, openFeaturesModel);
 		ModelUtils.saveXMIFile(closedFeaturesModel, project.getLocation() + "/closedFM.vm");
 

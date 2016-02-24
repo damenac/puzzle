@@ -72,52 +72,52 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 				return createPNamedElementAdapter();
 			}
 			@Override
-			public Adapter casePFeatureModel(PFeatureModel object) {
-				return createPFeatureModelAdapter();
+			public Adapter caseLanguageFeatureModel(LanguageFeatureModel object) {
+				return createLanguageFeatureModelAdapter();
 			}
 			@Override
-			public Adapter casePFeature(PFeature object) {
-				return createPFeatureAdapter();
+			public Adapter caseLanguageFeature(LanguageFeature object) {
+				return createLanguageFeatureAdapter();
 			}
 			@Override
-			public Adapter casePFeatureGroup(PFeatureGroup object) {
-				return createPFeatureGroupAdapter();
+			public Adapter caseLanguageFeatureGroup(LanguageFeatureGroup object) {
+				return createLanguageFeatureGroupAdapter();
 			}
 			@Override
-			public Adapter casePFeatureGroupCardinality(PFeatureGroupCardinality object) {
-				return createPFeatureGroupCardinalityAdapter();
+			public Adapter caseLanguageFeatureGroupCardinality(LanguageFeatureGroupCardinality object) {
+				return createLanguageFeatureGroupCardinalityAdapter();
 			}
 			@Override
-			public Adapter casePConstraint(PConstraint object) {
-				return createPConstraintAdapter();
+			public Adapter caseLanguageConstraint(LanguageConstraint object) {
+				return createLanguageConstraintAdapter();
 			}
 			@Override
-			public Adapter casePBooleanExpression(PBooleanExpression object) {
-				return createPBooleanExpressionAdapter();
+			public Adapter caseBooleanExpression(BooleanExpression object) {
+				return createBooleanExpressionAdapter();
 			}
 			@Override
-			public Adapter casePFeatureRef(PFeatureRef object) {
-				return createPFeatureRefAdapter();
+			public Adapter caseLanguageFeatureRef(LanguageFeatureRef object) {
+				return createLanguageFeatureRefAdapter();
 			}
 			@Override
-			public Adapter casePUnaryExpression(PUnaryExpression object) {
-				return createPUnaryExpressionAdapter();
+			public Adapter caseUnaryExpression(UnaryExpression object) {
+				return createUnaryExpressionAdapter();
 			}
 			@Override
-			public Adapter casePBinaryExpression(PBinaryExpression object) {
-				return createPBinaryExpressionAdapter();
+			public Adapter caseBinaryExpression(BinaryExpression object) {
+				return createBinaryExpressionAdapter();
 			}
 			@Override
-			public Adapter casePLanguageModule(PLanguageModule object) {
-				return createPLanguageModuleAdapter();
+			public Adapter caseLanguageModule(LanguageModule object) {
+				return createLanguageModuleAdapter();
 			}
 			@Override
-			public Adapter casePAbstractSyntax(PAbstractSyntax object) {
-				return createPAbstractSyntaxAdapter();
+			public Adapter caseAbstractSyntax(AbstractSyntax object) {
+				return createAbstractSyntaxAdapter();
 			}
 			@Override
-			public Adapter casePSemantics(PSemantics object) {
-				return createPSemanticsAdapter();
+			public Adapter caseSemantics(Semantics object) {
+				return createSemanticsAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -154,170 +154,170 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PFeatureModel <em>PFeature Model</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.LanguageFeatureModel <em>Language Feature Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PFeatureModel
+	 * @see vm.LanguageFeatureModel
 	 * @generated
 	 */
-	public Adapter createPFeatureModelAdapter() {
+	public Adapter createLanguageFeatureModelAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PFeature <em>PFeature</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.LanguageFeature <em>Language Feature</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PFeature
+	 * @see vm.LanguageFeature
 	 * @generated
 	 */
-	public Adapter createPFeatureAdapter() {
+	public Adapter createLanguageFeatureAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PFeatureGroup <em>PFeature Group</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.LanguageFeatureGroup <em>Language Feature Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PFeatureGroup
+	 * @see vm.LanguageFeatureGroup
 	 * @generated
 	 */
-	public Adapter createPFeatureGroupAdapter() {
+	public Adapter createLanguageFeatureGroupAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PFeatureGroupCardinality <em>PFeature Group Cardinality</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.LanguageFeatureGroupCardinality <em>Language Feature Group Cardinality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PFeatureGroupCardinality
+	 * @see vm.LanguageFeatureGroupCardinality
 	 * @generated
 	 */
-	public Adapter createPFeatureGroupCardinalityAdapter() {
+	public Adapter createLanguageFeatureGroupCardinalityAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PConstraint <em>PConstraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.LanguageConstraint <em>Language Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PConstraint
+	 * @see vm.LanguageConstraint
 	 * @generated
 	 */
-	public Adapter createPConstraintAdapter() {
+	public Adapter createLanguageConstraintAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PBooleanExpression <em>PBoolean Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.BooleanExpression <em>Boolean Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PBooleanExpression
+	 * @see vm.BooleanExpression
 	 * @generated
 	 */
-	public Adapter createPBooleanExpressionAdapter() {
+	public Adapter createBooleanExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PFeatureRef <em>PFeature Ref</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.LanguageFeatureRef <em>Language Feature Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PFeatureRef
+	 * @see vm.LanguageFeatureRef
 	 * @generated
 	 */
-	public Adapter createPFeatureRefAdapter() {
+	public Adapter createLanguageFeatureRefAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PUnaryExpression <em>PUnary Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.UnaryExpression <em>Unary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PUnaryExpression
+	 * @see vm.UnaryExpression
 	 * @generated
 	 */
-	public Adapter createPUnaryExpressionAdapter() {
+	public Adapter createUnaryExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PBinaryExpression <em>PBinary Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.BinaryExpression <em>Binary Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PBinaryExpression
+	 * @see vm.BinaryExpression
 	 * @generated
 	 */
-	public Adapter createPBinaryExpressionAdapter() {
+	public Adapter createBinaryExpressionAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PLanguageModule <em>PLanguage Module</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.LanguageModule <em>Language Module</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PLanguageModule
+	 * @see vm.LanguageModule
 	 * @generated
 	 */
-	public Adapter createPLanguageModuleAdapter() {
+	public Adapter createLanguageModuleAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PAbstractSyntax <em>PAbstract Syntax</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.AbstractSyntax <em>Abstract Syntax</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PAbstractSyntax
+	 * @see vm.AbstractSyntax
 	 * @generated
 	 */
-	public Adapter createPAbstractSyntaxAdapter() {
+	public Adapter createAbstractSyntaxAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PSemantics <em>PSemantics</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.Semantics <em>Semantics</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PSemantics
+	 * @see vm.Semantics
 	 * @generated
 	 */
-	public Adapter createPSemanticsAdapter() {
+	public Adapter createSemanticsAdapter() {
 		return null;
 	}
 

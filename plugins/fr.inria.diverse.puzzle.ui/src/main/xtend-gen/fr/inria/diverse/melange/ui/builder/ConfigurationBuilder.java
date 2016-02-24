@@ -8,7 +8,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
-import vm.PFeatureModel;
+import vm.LanguageFeatureModel;
 
 /**
  * Builder for the action: Configure.
@@ -22,7 +22,7 @@ public class ConfigurationBuilder extends AbstractBuilder {
     IPath _location = res.getLocation();
     String _string = _location.toString();
     EObject _loadXMIFile = ModelUtils.loadXMIFile(_string);
-    PFeatureModel fm = ((PFeatureModel) _loadXMIFile);
+    LanguageFeatureModel fm = ((LanguageFeatureModel) _loadXMIFile);
     ConfigurationFacade _instance = ConfigurationFacade.getInstance();
     _instance.configure(fm);
   }

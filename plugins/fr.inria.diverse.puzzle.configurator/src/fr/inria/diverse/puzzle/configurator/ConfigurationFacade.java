@@ -1,7 +1,7 @@
 package fr.inria.diverse.puzzle.configurator;
 
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
-import vm.PFeatureModel;
+import vm.LanguageFeatureModel;
 
 public class ConfigurationFacade {
 
@@ -17,8 +17,8 @@ public class ConfigurationFacade {
 		return instance;
 	}
 	
-	public void configure(PFeatureModel fetureModel){
-		FAMAFeatureModel famaFeatureModel = FromPFeatureModelToFAMA.getInstance().fromPFeatureModelToFAMA(fetureModel);
+	public void configure(LanguageFeatureModel fetureModel){
+		FAMAFeatureModel famaFeatureModel = FromLanguageFeatureModelToFAMA.getInstance().fromLanguageFeatureModelToFAMA(fetureModel);
 		Configurator configurator = new Configurator();
 		configurator.configure(famaFeatureModel);
 	}

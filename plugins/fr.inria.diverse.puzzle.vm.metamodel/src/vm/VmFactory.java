@@ -22,103 +22,103 @@ public interface VmFactory extends EFactory {
 	VmFactory eINSTANCE = vm.impl.VmFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>PFeature Model</em>'.
+	 * Returns a new object of class '<em>Language Feature Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PFeature Model</em>'.
+	 * @return a new object of class '<em>Language Feature Model</em>'.
 	 * @generated
 	 */
-	PFeatureModel createPFeatureModel();
+	LanguageFeatureModel createLanguageFeatureModel();
 
 	/**
-	 * Returns a new object of class '<em>PFeature</em>'.
+	 * Returns a new object of class '<em>Language Feature</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PFeature</em>'.
+	 * @return a new object of class '<em>Language Feature</em>'.
 	 * @generated
 	 */
-	PFeature createPFeature();
+	LanguageFeature createLanguageFeature();
 
 	/**
-	 * Returns a new object of class '<em>PFeature Group</em>'.
+	 * Returns a new object of class '<em>Language Feature Group</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PFeature Group</em>'.
+	 * @return a new object of class '<em>Language Feature Group</em>'.
 	 * @generated
 	 */
-	PFeatureGroup createPFeatureGroup();
+	LanguageFeatureGroup createLanguageFeatureGroup();
 
 	/**
-	 * Returns a new object of class '<em>PFeature Group Cardinality</em>'.
+	 * Returns a new object of class '<em>Language Feature Group Cardinality</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PFeature Group Cardinality</em>'.
+	 * @return a new object of class '<em>Language Feature Group Cardinality</em>'.
 	 * @generated
 	 */
-	PFeatureGroupCardinality createPFeatureGroupCardinality();
+	LanguageFeatureGroupCardinality createLanguageFeatureGroupCardinality();
 
 	/**
-	 * Returns a new object of class '<em>PConstraint</em>'.
+	 * Returns a new object of class '<em>Language Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PConstraint</em>'.
+	 * @return a new object of class '<em>Language Constraint</em>'.
 	 * @generated
 	 */
-	PConstraint createPConstraint();
+	LanguageConstraint createLanguageConstraint();
 
 	/**
-	 * Returns a new object of class '<em>PFeature Ref</em>'.
+	 * Returns a new object of class '<em>Language Feature Ref</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PFeature Ref</em>'.
+	 * @return a new object of class '<em>Language Feature Ref</em>'.
 	 * @generated
 	 */
-	PFeatureRef createPFeatureRef();
+	LanguageFeatureRef createLanguageFeatureRef();
 
 	/**
-	 * Returns a new object of class '<em>PUnary Expression</em>'.
+	 * Returns a new object of class '<em>Unary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PUnary Expression</em>'.
+	 * @return a new object of class '<em>Unary Expression</em>'.
 	 * @generated
 	 */
-	PUnaryExpression createPUnaryExpression();
+	UnaryExpression createUnaryExpression();
 
 	/**
-	 * Returns a new object of class '<em>PBinary Expression</em>'.
+	 * Returns a new object of class '<em>Binary Expression</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PBinary Expression</em>'.
+	 * @return a new object of class '<em>Binary Expression</em>'.
 	 * @generated
 	 */
-	PBinaryExpression createPBinaryExpression();
+	BinaryExpression createBinaryExpression();
 
 	/**
-	 * Returns a new object of class '<em>PLanguage Module</em>'.
+	 * Returns a new object of class '<em>Language Module</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PLanguage Module</em>'.
+	 * @return a new object of class '<em>Language Module</em>'.
 	 * @generated
 	 */
-	PLanguageModule createPLanguageModule();
+	LanguageModule createLanguageModule();
 
 	/**
-	 * Returns a new object of class '<em>PAbstract Syntax</em>'.
+	 * Returns a new object of class '<em>Abstract Syntax</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PAbstract Syntax</em>'.
+	 * @return a new object of class '<em>Abstract Syntax</em>'.
 	 * @generated
 	 */
-	PAbstractSyntax createPAbstractSyntax();
+	AbstractSyntax createAbstractSyntax();
 
 	/**
-	 * Returns a new object of class '<em>PSemantics</em>'.
+	 * Returns a new object of class '<em>Semantics</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>PSemantics</em>'.
+	 * @return a new object of class '<em>Semantics</em>'.
 	 * @generated
 	 */
-	PSemantics createPSemantics();
+	Semantics createSemantics();
 
 	/**
 	 * Returns the package supported by this factory.
