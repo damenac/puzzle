@@ -39,7 +39,8 @@ public class ReverseEngineeringLanguageProductLineBuilder extends AbstractBuilde
           languages.add(((Language) element));
         }
       }
-      IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.puzzle.reverseEngineering");
+      IProject lplProject = ProjectManagementServices.createEclipseEmptyProject("fr.inria.diverse.puzzle.reverseEngineering");
+      this.decorateProjectWithFolderStructure(lplProject);
       SynthesisProperties properties = this.getSynthesisProperties();
       SynthesizerManager _instance = SynthesizerManager.getInstance();
       _instance.synthesizeLanguageProductLine(properties, languages, lplProject);
@@ -47,5 +48,18 @@ public class ReverseEngineeringLanguageProductLineBuilder extends AbstractBuilde
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+  
+  /**
+   * Decorates the project in the parameter with the structure to contain a language product line
+   * @param project. Project to decorate.
+   */
+  public String decorateProjectWithFolderStructure(final IProject project) {
+    String _xblockexpression = null;
+    {
+      ProjectManagementServices.createFolderByName(project, "reports");
+      _xblockexpression = ProjectManagementServices.createFolderByName(project, "models");
+    }
+    return _xblockexpression;
   }
 }

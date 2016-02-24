@@ -1,7 +1,7 @@
 package fr.inria.diverse.melange.ui.menu;
 
 import com.google.inject.Inject;
-import fr.inria.diverse.melange.ui.builder.AnalysisBuilder;
+import fr.inria.diverse.melange.ui.builder.PerformLanguagesAnalysisBuilder;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -30,7 +30,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 @SuppressWarnings("all")
 public class PerformLanguagesAnalysis extends AbstractHandler {
   @Inject
-  private AnalysisBuilder builder;
+  private PerformLanguagesAnalysisBuilder builder;
   
   @Inject
   private XtextResourceSetProvider rsProvider;
@@ -57,6 +57,10 @@ public class PerformLanguagesAnalysis extends AbstractHandler {
         } catch (final Throwable _t) {
           if (_t instanceof OperationCanceledException) {
             final OperationCanceledException e = (OperationCanceledException)_t;
+            return Status.CANCEL_STATUS;
+          } else if (_t instanceof Exception) {
+            final Exception e_1 = (Exception)_t;
+            e_1.printStackTrace();
             return Status.CANCEL_STATUS;
           } else {
             throw Exceptions.sneakyThrow(_t);

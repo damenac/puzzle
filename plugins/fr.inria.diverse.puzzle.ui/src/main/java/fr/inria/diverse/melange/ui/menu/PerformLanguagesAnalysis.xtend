@@ -1,7 +1,6 @@
 package fr.inria.diverse.melange.ui.menu
 
 import com.google.inject.Inject
-import fr.inria.diverse.melange.ui.builder.AnalysisBuilder
 import org.eclipse.core.commands.AbstractHandler
 import org.eclipse.core.commands.ExecutionEvent
 import org.eclipse.core.commands.ExecutionException
@@ -15,6 +14,7 @@ import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.ui.handlers.HandlerUtil
 import org.eclipse.xtext.resource.DerivedStateAwareResource
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
+import fr.inria.diverse.melange.ui.builder.PerformLanguagesAnalysisBuilder
 
 /**
  * Hanlder for the action: Analyze Family
@@ -22,7 +22,7 @@ import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
  */
 class PerformLanguagesAnalysis extends AbstractHandler {
 	
-	@Inject AnalysisBuilder builder
+	@Inject PerformLanguagesAnalysisBuilder builder
 	@Inject XtextResourceSetProvider rsProvider
 
 	override execute(ExecutionEvent event) throws ExecutionException {
@@ -41,6 +41,9 @@ class PerformLanguagesAnalysis extends AbstractHandler {
 					builder.computeMetrics(res, project, monitor)
 					
 				} catch (OperationCanceledException e) {
+					return Status.CANCEL_STATUS
+				} catch (Exception e) {
+					e.printStackTrace
 					return Status.CANCEL_STATUS
 				} finally {
 					monitor.done

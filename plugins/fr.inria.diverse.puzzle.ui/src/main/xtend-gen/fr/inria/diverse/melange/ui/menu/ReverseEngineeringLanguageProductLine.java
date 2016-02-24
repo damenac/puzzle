@@ -58,6 +58,10 @@ public class ReverseEngineeringLanguageProductLine extends AbstractHandler {
           if (_t instanceof OperationCanceledException) {
             final OperationCanceledException e = (OperationCanceledException)_t;
             return Status.CANCEL_STATUS;
+          } else if (_t instanceof Exception) {
+            final Exception e_1 = (Exception)_t;
+            e_1.printStackTrace();
+            return Status.CANCEL_STATUS;
           } else {
             throw Exceptions.sneakyThrow(_t);
           }

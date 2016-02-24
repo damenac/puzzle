@@ -22,7 +22,6 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.FamilyChartMetric;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.IndividualizationRatio;
-import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.ProductRelatedReusability;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.SizeOfCommonality;
 import fr.inria.diverse.puzzle.metrics.managers.FamilysMetricManager;
@@ -87,7 +86,6 @@ public class ComputeMetricsActionImpl {
 		chartMetrics.add(new SizeOfCommonality());
 		chartMetrics.add(new ProductRelatedReusability());
 		chartMetrics.add(new IndividualizationRatio());
-//		chartMetrics.add(new PairwiseRelationshipRatio());
 		
 		String generalMetricsString = "";
 		for (FamilyChartMetric chartMetric : chartMetrics) {

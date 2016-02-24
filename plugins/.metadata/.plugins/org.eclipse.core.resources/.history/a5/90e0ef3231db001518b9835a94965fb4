@@ -1,0 +1,229 @@
+package fr.inria.diverse.puzzle.metrics.managers;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ArrayList;
+
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+import fr.inria.diverse.puzzle.metrics.componentsMetrics.CouplingMetricsTable;
+import fr.inria.diverse.puzzle.metrics.componentsMetrics.InterConnectivity;
+import fr.inria.diverse.puzzle.metrics.componentsMetrics.IntraConnectivty;
+import fr.inria.diverse.puzzle.metrics.specialCharts.ExternalDependenciesGraph;
+import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialProductLineSyntacticChart;
+
+/**
+ * Manager for metrics analyzing language product lines
+ * @author David Mendez-Acuna
+ *
+ */
+public class ProductLinesMetricManager extends MetricsManager {
+
+	// ------------------------------------------------------
+	// Constructor
+	// ------------------------------------------------------
+	
+	public ProductLinesMetricManager(IProject project) throws Exception{
+		super(project);
+	}
+
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	/**
+	 * Creates a report with the metrics for coupling of the product line. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
+	public void createProductLineCouplingReport(ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-1-Coupling.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/reports/Report-1-Coupling.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the data of the report with the metrics for coupling of a language product line. 
+	 * @param languages
+	 * @param conceptComparisonOperator
+	 * @param methodComparisonOperator
+	 * @param graphPartition
+	 * @throws Exception
+	 */
+	public void createProductLineCouplingReportData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, 
+			EcoreGraph modularizationGraph) throws Exception{
+        File fileReport = new File(project.getLocation().toString() + "/reports/lib/coupling.js" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print((new CouplingMetricsTable()).getVariablesDeclaration(languages, 
+				conceptComparisonOperator, methodComparisonOperator, modularizationGraph, null));
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates a report with the metrics for intra connectivity of the product line. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
+	public void createProductLineIntraconnectivityReport(ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-2-IntraConnectivity.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/reports/Report-2-IntraConnectivity.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates a report with the metrics for intra connectivity of the product line. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
+	public void createProductLineInterconnectivityReport(ArrayList<Language> languages) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-3-InterConnectivity.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/reports/Report-3-InterConnectivity.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the data of the report with the metrics for coupling of a language product line. 
+	 * @param languages
+	 * @param conceptComparisonOperator
+	 * @param methodComparisonOperator
+	 * @param graphPartition
+	 * @throws Exception
+	 */
+	public void createProductLineIntraConnectivityReportData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, 
+			EcoreGraph modularizationGraph) throws Exception{
+        File fileReport = new File(project.getLocation().toString() + "/lib/intraconnectivity.js" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print((new IntraConnectivty()).getVariablesDeclaration(languages, 
+				conceptComparisonOperator, methodComparisonOperator, modularizationGraph, null));
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the data of the report with the metrics for coupling of a language product line. 
+	 * @param languages
+	 * @param conceptComparisonOperator
+	 * @param methodComparisonOperator
+	 * @param graphPartition
+	 * @throws Exception
+	 */
+	public void createProductLineInterConnectivityReportData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, 
+			EcoreGraph modularizationGraph) throws Exception{
+        File fileReport = new File(project.getLocation().toString() + "/lib/interconnectivity.js" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print((new InterConnectivity()).getVariablesDeclaration(languages, 
+				conceptComparisonOperator, methodComparisonOperator, modularizationGraph, null));
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the file the the instructions to draw the graph that shows the graph grouping using the family membership criterion.
+	 * @param targetProject. The project where the file should be created.
+	 * @param languages. The set of languages belonging to the family under study.
+	 * @throws Exception
+	 */
+	public void createDependenciesGraph() throws Exception{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/Report-DependenciesGraph.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/Report-DependenciesGraph.html" );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the file with the data input of the graph that shows the graph grouping using the family membership criterion.
+	 * @param targetProject. The project where the file should be created.
+	 * @param languages. The set of languages belonging to the family under study.
+	 * @param conceptComparisonOperator
+	 * @param methodComparisonOperator
+	 * @throws Exception
+	 */
+	public void createDependenciesGraphData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, DependencyGraph dependenciesGraph) throws Exception{
+		File generalMetrics = new File(project.getLocation().toString() + "/lib/externalDependenciesGraph.js" );
+		if(!generalMetrics.exists())
+			generalMetrics.createNewFile();
+		PrintWriter outMetrics = new PrintWriter( generalMetrics );
+		SpecialProductLineSyntacticChart externalDependenciesGraph = new ExternalDependenciesGraph();
+		outMetrics.print(externalDependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator, 
+				null, dependenciesGraph));
+		outMetrics.close();
+	}
+}

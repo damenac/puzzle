@@ -1,7 +1,9 @@
 package fr.inria.diverse.puzzle.extractor.impl;
 
 import java.util.ArrayList;
+
 import org.eclipse.core.resources.IProject;
+
 import PuzzleADL.AbstractSyntaxImplementation;
 import PuzzleADL.InterfaceBinding;
 import PuzzleADL.LanguageArchitecture;
@@ -74,7 +76,7 @@ public class ExtractorImpl {
 	
 		// Step 1.5: Computes the ADL script to explicitly serialize the architecture model
 		LanguageArchitecture languageArchitectureModel = this.createLanguageArchitectureModel("Architecture", modularizationGraph, dependenciesGraph);
-		String modelFile = project.getLocation().toString() + "/architectureModel.puzzleadl";
+		String modelFile = project.getLocation().toString() + "/models/1-LanguagesArchitectureModel.puzzleadl";
 		ModelUtils.saveXMIFile(languageArchitectureModel, modelFile);
 	}
 

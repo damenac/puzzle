@@ -2,7 +2,7 @@ package fr.inria.diverse.melange.ui.menu;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
-import fr.inria.diverse.melange.ui.builder.LanguageModulesValidationBuilder;
+import fr.inria.diverse.melange.ui.builder.ValidateLanguageModulesComposabilityBuilder;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
@@ -34,7 +34,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 @SuppressWarnings("all")
 public class ValidateLanguageModulesComposability extends AbstractHandler {
   @Inject
-  private LanguageModulesValidationBuilder builder;
+  private ValidateLanguageModulesComposabilityBuilder builder;
   
   @Inject
   private XtextResourceSetProvider rsProvider;

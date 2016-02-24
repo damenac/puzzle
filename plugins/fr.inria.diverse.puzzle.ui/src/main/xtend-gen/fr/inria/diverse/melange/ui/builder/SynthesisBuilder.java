@@ -46,7 +46,7 @@ public class SynthesisBuilder {
           languages.add(((Language) element));
         }
       }
-      IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.examples.breaking.lpl");
+      IProject lplProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.examples.breaking.lpl");
       SynthesisProperties properties = this.getSynthesisProperties();
       SynthesizerManager _instance = SynthesizerManager.getInstance();
       _instance.synthesizeLanguageProductLine(properties, languages, lplProject);

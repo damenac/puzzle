@@ -14,9 +14,9 @@ import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.ui.handlers.HandlerUtil
 import org.eclipse.xtext.resource.DerivedStateAwareResource
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
-import fr.inria.diverse.melange.ui.builder.LanguageModulesValidationBuilder
 import org.eclipse.jface.dialogs.MessageDialog
 import org.eclipse.swt.widgets.Display
+import fr.inria.diverse.melange.ui.builder.ValidateLanguageModulesComposabilityBuilder
 
 /**
  * Handler for the action: Validate language modules composability
@@ -24,7 +24,7 @@ import org.eclipse.swt.widgets.Display
  */
 class ValidateLanguageModulesComposability extends AbstractHandler {
 	
-	@Inject LanguageModulesValidationBuilder builder
+	@Inject ValidateLanguageModulesComposabilityBuilder builder
 	@Inject XtextResourceSetProvider rsProvider
 
 	override execute(ExecutionEvent event) throws ExecutionException {

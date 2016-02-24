@@ -89,20 +89,20 @@ public class SynthesizerManager {
 		
 		// Step 1.5: Computes the ADL script to explicitly serialize the architecture model
 		LanguageArchitecture languageArchitectureModel = this.createLanguageArchitectureModel("Architecture", modularizationGraph, dependenciesGraph);
-		String modelFile = project.getLocation().toString() + "/architectureModel.puzzleadl";
+		String modelFile = project.getLocation().toString() + "/models/1-LanguagesArchitectureModel.puzzleadl";
 		ModelUtils.saveXMIFile(languageArchitectureModel, modelFile);
 		
 		// Step 2.1: Synthesize the open variability model i.e., the one that only contains
 		//			 the technological constraints so it explotes the variability.
 		LanguageFeatureModel openFeaturesModel = VariabilityInfererManager.getInstance().synthesizeOpenFeaturesModel(
 				properties, languages, modularizationGraph, dependenciesGraph, project, languageArchitectureModel);
-		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/openFM.vm");
+		ModelUtils.saveXMIFile(openFeaturesModel, project.getLocation() + "/models/2-LanguagesVariabilityOpenModel.vm");
 		
 		// Step 2.1: Synthesize the closed variability model i.e., the one that contains
 		//			 not only the technological constraints but also considers the PCM.
 		LanguageFeatureModel closedFeaturesModel = VariabilityInfererManager.getInstance().synthesizeClosedFeaturesModel(
 				properties, languages, modularizationGraph, dependenciesGraph, project, openFeaturesModel);
-		ModelUtils.saveXMIFile(closedFeaturesModel, project.getLocation() + "/closedFM.vm");
+		ModelUtils.saveXMIFile(closedFeaturesModel, project.getLocation() + "/models/3-LanguagesVariabilityClosedModel.vm");
 
 		// Step 4: Refresh the product line project. 
 		ProjectManagementServices.refreshProject(project);

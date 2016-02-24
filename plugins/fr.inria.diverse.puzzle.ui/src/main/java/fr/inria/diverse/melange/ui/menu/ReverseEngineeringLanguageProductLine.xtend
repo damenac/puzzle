@@ -42,6 +42,9 @@ class ReverseEngineeringLanguageProductLine extends AbstractHandler {
 					
 				} catch (OperationCanceledException e) {
 					return Status.CANCEL_STATUS
+				} catch (Exception e) {
+					e.printStackTrace
+					return Status.CANCEL_STATUS
 				} finally {
 					monitor.done
 				}

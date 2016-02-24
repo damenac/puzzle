@@ -61,7 +61,7 @@ public class ProductLinesMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-1-Coupling.html" );
+        File fileReport = new File(project.getLocation().toString() + "/reports/Report-1-Coupling.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -80,7 +80,7 @@ public class ProductLinesMetricManager extends MetricsManager {
 	public void createProductLineCouplingReportData(ArrayList<Language> languages, 
 			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, 
 			EcoreGraph modularizationGraph) throws Exception{
-        File fileReport = new File(project.getLocation().toString() + "/lib/coupling.js" );
+        File fileReport = new File(project.getLocation().toString() + "/reports/libs/lib/coupling.js" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -107,7 +107,7 @@ public class ProductLinesMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-2-IntraConnectivity.html" );
+        File fileReport = new File(project.getLocation().toString() + "/reports/Report-2-IntraConnectivity.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -133,7 +133,7 @@ public class ProductLinesMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-3-InterConnectivity.html" );
+        File fileReport = new File(project.getLocation().toString() + "/reports/Report-3-InterConnectivity.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -152,7 +152,7 @@ public class ProductLinesMetricManager extends MetricsManager {
 	public void createProductLineIntraConnectivityReportData(ArrayList<Language> languages, 
 			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, 
 			EcoreGraph modularizationGraph) throws Exception{
-        File fileReport = new File(project.getLocation().toString() + "/lib/intraconnectivity.js" );
+        File fileReport = new File(project.getLocation().toString() + "/reports/libs/lib/intraconnectivity.js" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -172,7 +172,7 @@ public class ProductLinesMetricManager extends MetricsManager {
 	public void createProductLineInterConnectivityReportData(ArrayList<Language> languages, 
 			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator, 
 			EcoreGraph modularizationGraph) throws Exception{
-        File fileReport = new File(project.getLocation().toString() + "/lib/interconnectivity.js" );
+        File fileReport = new File(project.getLocation().toString() + "/reports/libs/lib/interconnectivity.js" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -199,7 +199,7 @@ public class ProductLinesMetricManager extends MetricsManager {
         }
         br.close();
         
-        File fileReport = new File(project.getLocation().toString() + "/Report-DependenciesGraph.html" );
+        File fileReport = new File(project.getLocation().toString() + "/reports/Report-4-DependenciesGraph.html" );
 		if(!fileReport.exists())
 			fileReport.createNewFile();
 		PrintWriter outRileReport = new PrintWriter( fileReport );
@@ -217,7 +217,7 @@ public class ProductLinesMetricManager extends MetricsManager {
 	 */
 	public void createDependenciesGraphData(ArrayList<Language> languages, 
 			ConceptComparison conceptComparisonOperator, DependencyGraph dependenciesGraph) throws Exception{
-		File generalMetrics = new File(project.getLocation().toString() + "/lib/externalDependenciesGraph.js" );
+		File generalMetrics = new File(project.getLocation().toString() + "/reports/libs/lib/externalDependenciesGraph.js" );
 		if(!generalMetrics.exists())
 			generalMetrics.createNewFile();
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );

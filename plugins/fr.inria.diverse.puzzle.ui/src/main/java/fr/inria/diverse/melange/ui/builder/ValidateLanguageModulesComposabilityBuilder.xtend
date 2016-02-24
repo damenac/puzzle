@@ -21,7 +21,7 @@ import fr.inria.diverse.puzzle.language.binding.LanguageBinding
  * 
  * @author David Mendez-Acuna
  */
-class LanguageModulesValidationBuilder extends AbstractBuilder {
+class ValidateLanguageModulesComposabilityBuilder extends AbstractBuilder {
 	
 	def String validateLanguageModulesComposability(Resource puzzleResource, Resource melangeResource, IProject project, IProgressMonitor monitor) {
 		val bindingSpace = puzzleResource.contents.head as LanguageBinding

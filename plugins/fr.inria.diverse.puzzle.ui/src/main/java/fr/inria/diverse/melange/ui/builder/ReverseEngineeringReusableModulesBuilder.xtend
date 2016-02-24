@@ -29,10 +29,20 @@ class ReverseEngineeringReusableModulesBuilder extends AbstractBuilder {
 		}
 		
 		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
-		var IProject lplProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.puzzle.reverseEngineering");
+		var IProject lplProject = ProjectManagementServices.createEclipseEmptyProject("fr.inria.diverse.puzzle.reverseEngineering");
+		this.decorateProjectWithFolderStructure(lplProject)
 		var SynthesisProperties properties = this.synthesisProperties
 		
 		ExtractorImpl.instance.extractReusableModules(properties, languages, lplProject)
 		ProjectManagementServices.refreshProject(lplProject)
+	}
+	
+	/**
+	 * Decorates the project in the parameter with the structure to contain a language product line
+	 * @param project. Project to decorate.
+	 */
+	def decorateProjectWithFolderStructure(IProject project) {
+		ProjectManagementServices.createFolderByName(project, "reports")
+		ProjectManagementServices.createFolderByName(project, "models")
 	}
 }

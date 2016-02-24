@@ -11,7 +11,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IProjectDescription;
@@ -48,7 +47,7 @@ public class ProjectManagementServices {
 	 * @param projectName
 	 * @throws CoreException
 	 */
-	public static IProject createEclipseProject(String projectName)
+	public static IProject createEclipseJavaProject(String projectName)
 			throws CoreException {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(projectName);
@@ -57,6 +56,25 @@ public class ProjectManagementServices {
 
 		IProjectDescription description = project.getDescription();
 		description.setNatureIds(new String[] { JavaCore.NATURE_ID });
+		project.setDescription(description, null);
+
+		return project;
+	}
+	
+	/**
+	 * Creates an eclipse java project in the workspace
+	 * 
+	 * @param projectName
+	 * @throws CoreException
+	 */
+	public static IProject createEclipseEmptyProject(String projectName)
+			throws CoreException {
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IProject project = root.getProject(projectName);
+		project.create(null);
+		project.open(null);
+
+		IProjectDescription description = project.getDescription();
 		project.setDescription(description, null);
 
 		return project;

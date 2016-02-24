@@ -29,16 +29,14 @@ public abstract class MetricsManager {
 	public MetricsManager(IProject project) throws Exception{
 		this.project = project;
 		
-		//Copying the java script libraries if they dont exist
+		//Copying the java script libraries if they don't exist
 		URL libFolderPath = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/libs");
 		File libFolder = new File(FileLocator.resolve(libFolderPath).toURI());
         
 		File projectFolder = null;
         if(this.project != null){
-        	projectFolder = new File(project.getLocation().toString());
+        	projectFolder = new File(project.getLocation().toString() + "/reports/libs");
         	ProjectManagementServices.copyFolder(libFolder, projectFolder);
         }
-        
-        
 	}
 }

@@ -148,7 +148,7 @@ public class BreakerImpl {
 		String languageName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 		
 		// Create the module project with the folders.
-		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
+		IProject moduleProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.module." + 
 				languageName + ".syntax");
 		group.setImplementationProjectName(moduleProject.getName());
 		group.setImplementationProjectLocation(moduleProject.getLocation().removeLastSegments(1).toString());
@@ -377,7 +377,7 @@ public class BreakerImpl {
 		
 		// Create the module project with the folders.
 		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
-		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
+		IProject moduleProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.module." + 
 				moduleName + ".semantics");
 		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName, false);
 		
@@ -437,7 +437,7 @@ public class BreakerImpl {
 	 * @throws Exception 
 	 */
 	private void createSemanticsCommonsProject(ArrayList<Language> languages) throws Exception{
-		IProject commonsProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.commons.semantics");
+		IProject commonsProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.commons.semantics");
 		ProjectManagementServices.createXtendConfigurationFile(commonsProject, "commons", true);
 		ProjectManagementServices.createFolderByName(commonsProject, "src/commons");
 		
