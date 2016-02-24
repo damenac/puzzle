@@ -161,40 +161,62 @@ public class StateMachineAspect {
   }
   
   protected static String _privk3_chain(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self) {
-     return _self_.chain; 
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getChain") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (java.lang.String) ret;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.chain;
   }
   
   protected static void _privk3_chain(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final String chain) {
     _self_.chain = chain; try {
-    
-    			for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    				if (m.getName().equals("set" + "Chain")
-    						&& m.getParameterTypes().length == 1) {
-    					m.invoke(_self, chain);
-    
-    				}
-    			}
-    		} catch (Exception e) {
-    			// Chut !
-    		} 
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setChain")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, chain);
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
   }
   
   protected static ArrayList<ArrayList<String>> _privk3_events(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self) {
-     return _self_.events; 
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getEvents") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (java.util.ArrayList) ret;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.events;
   }
   
   protected static void _privk3_events(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self, final ArrayList<ArrayList<String>> events) {
     _self_.events = events; try {
-    
-    			for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    				if (m.getName().equals("set" + "Events")
-    						&& m.getParameterTypes().length == 1) {
-    					m.invoke(_self, events);
-    
-    				}
-    			}
-    		} catch (Exception e) {
-    			// Chut !
-    		} 
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setEvents")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, events);
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
   }
 }

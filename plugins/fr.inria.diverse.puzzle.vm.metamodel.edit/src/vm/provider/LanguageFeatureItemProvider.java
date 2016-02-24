@@ -52,6 +52,7 @@ public class LanguageFeatureItemProvider extends PNamedElementItemProvider {
 
 			addMandatoryPropertyDescriptor(object);
 			addParentGroupPropertyDescriptor(object);
+			addSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -96,6 +97,28 @@ public class LanguageFeatureItemProvider extends PNamedElementItemProvider {
 				 false,
 				 true,
 				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Selected feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LanguageFeature_selected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LanguageFeature_selected_feature", "_UI_LanguageFeature_type"),
+				 VmPackage.Literals.LANGUAGE_FEATURE__SELECTED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -171,6 +194,7 @@ public class LanguageFeatureItemProvider extends PNamedElementItemProvider {
 
 		switch (notification.getFeatureID(LanguageFeature.class)) {
 			case VmPackage.LANGUAGE_FEATURE__MANDATORY:
+			case VmPackage.LANGUAGE_FEATURE__SELECTED:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case VmPackage.LANGUAGE_FEATURE__CHILDREN:

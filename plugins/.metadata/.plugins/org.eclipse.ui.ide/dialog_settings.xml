@@ -4,8 +4,8 @@
 		<item value="484" key="DIALOG_WIDTH"/>
 		<item value="false" key="TOGGLE_SELECTED"/>
 		<item value="354" key="DIALOG_HEIGHT"/>
-		<item value="459" key="DIALOG_X_ORIGIN"/>
-		<item value="176" key="DIALOG_Y_ORIGIN"/>
+		<item value="326" key="DIALOG_X_ORIGIN"/>
+		<item value="227" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
@@ -13,41 +13,9 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
 			<item value="/Users/dmendeza/workspaces/puzzle/plugins"/>
-			<item value="/Users/dmendeza/workspaces/puzzle/plugins/Sat4jFiller"/>
-			<item value="/Users/dmendeza/workspaces/puzzle/plugins/Configurator"/>
-			<item value="/Users/dmendeza/workspaces/gbecan/KSynthesis"/>
-			<item value="/Users/dmendeza/workspaces/gbecan/Evaluation"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
-	</section>
-	<section name="WORKBENCH_SETTINGS">
-		<list key="ENABLED_TRANSFERS">
-		</list>
-	</section>
-	<section name="NewWizardAction">
-		<item value="org.eclipse.ui.wizards.new.project" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
-		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.ui.Basic"/>
-			<item value="org.eclipse.team.cvs.ui.newWizards"/>
-			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
-			<item value="org.eclipse.emf.ecp.view.ide"/>
-			<item value="org.eclipse.jdt.ui.java"/>
-			<item value="fr.inria.diverse.k3.category"/>
-			<item value="org.eclipse.m2e"/>
-			<item value="fr.inria.diverse.melange.category"/>
-			<item value="org.eclipse.pde.PDE"/>
-			<item value="org.eclipse.sirius.category"/>
-			<item value="org.eclipse.team.svn.ui.repository"/>
-			<item value="org.eclipse.xtext.projectwiz"/>
-			<item value="org.eclipse.ui.Other"/>
-		</list>
-	</section>
-	<section name="ChooseWorkspaceDialogSettings">
-		<item value="393" key="DIALOG_X_ORIGIN"/>
-		<item value="242" key="DIALOG_Y_ORIGIN"/>
-	</section>
-	<section name="BasicNewProjectResourceWizard">
 	</section>
 </section>

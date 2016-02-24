@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;fr.inria.diverse.puzzle.syntaxBreaker&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.syntaxBreaker&apos;&#x0A;- Original element: &apos;fr.inria.diverse.puzzle.breaker.popup.actions.BreakDownFamily.java&apos;" description="Delete element" element1="/src&lt;fr.inria.diverse.puzzle.breaker.popup.actions{BreakDownFamily.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1440661493152" subPackages="false" version="1.0"/>
-</session>

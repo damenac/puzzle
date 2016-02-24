@@ -1,0 +1,95 @@
+package fr.inria.diverse.puzzle.derivator.impl;
+
+import java.util.ArrayList;
+
+import org.eclipse.core.resources.IProject;
+
+import vm.LanguageFeature;
+import vm.LanguageFeatureModel;
+import PuzzleADL.LanguageArchitecture;
+import PuzzleADL.LanguageModule;
+
+/**
+ * Implementation of the command DerivateLangaugeFromConfiguration
+ * 
+ * @author David Mendez-Acuna
+ *
+ */
+
+public class PuzzleDerivator implements IDerivator{
+
+	// --------------------------------------------------
+	// Methods
+	// --------------------------------------------------
+	
+	@Override
+	public void derivateLangaugeFromConfiguration(IProject derivationProject,
+			LanguageArchitecture languageArchitectureModel,
+			LanguageFeatureModel configuredFeatureModel) {
+		
+		String melangeFileContents = "package family";
+		
+		ArrayList<LanguageFeature> selectedFeatures = new ArrayList<LanguageFeature>();
+		this.collectSelectedFeatures(configuredFeatureModel.getRootFeature(), selectedFeatures);
+		
+		ArrayList<LanguageModule> selectedLanguageModules = this.collectSelectedLangaugeModules(selectedFeatures, languageArchitectureModel);
+	}
+	
+	/**
+	 * Collects the selected features in the configured feature model, and stores the result in the collection given in the parameter.
+	 * @param rootFeature. Root feature of the configured feature model. 
+	 * @param selectedFeatures. Collection where the result must be stored. 
+	 */
+	private void collectSelectedFeatures(
+			LanguageFeature rootFeature,
+			ArrayList<LanguageFeature> selectedFeatures) {
+		// Base case: the root feature is selected, in such a case it is added to the collection
+		if(rootFeature.isSelected())
+			selectedFeatures.add(rootFeature);
+		// Recursive case: scan the child features.
+		for (LanguageFeature languageFeature : rootFeature.getChildren()) {
+			this.collectSelectedFeatures(languageFeature, selectedFeatures);
+		}
+	}
+
+	/**
+	 * Collects the set of language modules implementing the features included in the collection of language features in the parameter. 
+	 * @param selectedFeatures. Collection of language features under study. 
+	 * @return
+	 */
+	private ArrayList<LanguageModule> collectSelectedLangaugeModules(
+			ArrayList<LanguageFeature> selectedFeatures, LanguageArchitecture architectureModel) {
+		
+		
+		return null;
+	}
+	
+	/**
+	 * Creates the definition in melange for a language module given in the parameter.
+	 * @param module Language module under study. 
+	 * @return
+	 */
+	private String createLanguageModuleDeclaration(LanguageModule module){
+		String answer = "language " + module.getName();
+		
+		if(module.getProvidedInterface() != null)
+			answer += " implements " + module.getName() + "Prov";
+		
+		if(module.getRequiredInterface() != null)
+			answer += " requires " + module.getName() + "Req";
+		
+		answer += "{\n";
+		answer += "     syntax platform:/resource/" + module.getAbstractSyntax().getEcorePath() + "\n";
+		
+		if(module.getSemanticsImplementation() != null){
+			answer += "\n";
+			for(String aspect : module.getSemanticsImplementation().getAspectsIdentifiers()){
+				answer += "     with " + aspect + "\n";
+			}
+		}
+		answer += "\n     exacttype " + module.getName() + "MT";
+		answer += "}\n";
+		
+		return answer;
+	}
+}

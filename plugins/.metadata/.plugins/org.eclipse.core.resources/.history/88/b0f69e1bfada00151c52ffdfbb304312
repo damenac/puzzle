@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Derivator
+Bundle-SymbolicName: fr.inria.diverse.puzzle.derivator
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: fr.inria.diverse.puzzle.derivator.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ fr.inria.diverse.puzzle.language.adl.metamodel;bundle-version="1.0.0",
+ fr.inria.diverse.puzzle.vm.metamodel;bundle-version="1.0.0",
+ org.eclipse.core.resources;bundle-version="3.9.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

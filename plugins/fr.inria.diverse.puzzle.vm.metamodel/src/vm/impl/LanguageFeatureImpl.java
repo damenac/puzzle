@@ -38,6 +38,7 @@ import vm.VmPackage;
  *   <li>{@link vm.impl.LanguageFeatureImpl#getGroups <em>Groups</em>}</li>
  *   <li>{@link vm.impl.LanguageFeatureImpl#getParentGroup <em>Parent Group</em>}</li>
  *   <li>{@link vm.impl.LanguageFeatureImpl#getImplementationModule <em>Implementation Module</em>}</li>
+ *   <li>{@link vm.impl.LanguageFeatureImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  * </p>
  *
@@ -103,6 +104,26 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	 * @ordered
 	 */
 	protected LanguageModule implementationModule;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -312,6 +333,27 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelected(boolean newSelected) {
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.LANGUAGE_FEATURE__SELECTED, oldSelected, selected));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -386,6 +428,8 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 			case VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE:
 				if (resolve) return getImplementationModule();
 				return basicGetImplementationModule();
+			case VmPackage.LANGUAGE_FEATURE__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -419,6 +463,9 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 			case VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE:
 				setImplementationModule((LanguageModule)newValue);
 				return;
+			case VmPackage.LANGUAGE_FEATURE__SELECTED:
+				setSelected((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -449,6 +496,9 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 			case VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE:
 				setImplementationModule((LanguageModule)null);
 				return;
+			case VmPackage.LANGUAGE_FEATURE__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -473,6 +523,8 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 				return parentGroup != null;
 			case VmPackage.LANGUAGE_FEATURE__IMPLEMENTATION_MODULE:
 				return implementationModule != null;
+			case VmPackage.LANGUAGE_FEATURE__SELECTED:
+				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -489,6 +541,8 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mandatory: ");
 		result.append(mandatory);
+		result.append(", selected: ");
+		result.append(selected);
 		result.append(')');
 		return result.toString();
 	}

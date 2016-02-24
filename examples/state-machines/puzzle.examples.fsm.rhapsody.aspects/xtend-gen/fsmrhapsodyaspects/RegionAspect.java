@@ -816,21 +816,32 @@ public class RegionAspect {
   }
   
   protected static State _privk3_history(final RegionAspectRegionAspectProperties _self_, final Region _self) {
-     return _self_.history; 
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getHistory") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (fsm.State) ret;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.history;
   }
   
   protected static void _privk3_history(final RegionAspectRegionAspectProperties _self_, final Region _self, final State history) {
     _self_.history = history; try {
-    
-    			for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    				if (m.getName().equals("set" + "History")
-    						&& m.getParameterTypes().length == 1) {
-    					m.invoke(_self, history);
-    
-    				}
-    			}
-    		} catch (Exception e) {
-    			// Chut !
-    		} 
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setHistory")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, history);
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
   }
 }

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;fr.inria.diverse.puzzle.graphsGenerator&apos; to &apos;fr.inria.diverse.puzzle.instantancesGenerator&apos;&#x0A;- Original element: &apos;fr.inria.diverse.puzzle.graphsGenerator&apos;&#x0A;- Renamed element: &apos;fr.inria.diverse.puzzle.graphsGenerator&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;fr.inria.diverse.puzzle.graphsGenerator&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=fr.inria.diverse.puzzle.graphsGenerator" name="fr.inria.diverse.puzzle.instantancesGenerator" references="true" stamp="1442913236286" version="1.0"/>
-</session>

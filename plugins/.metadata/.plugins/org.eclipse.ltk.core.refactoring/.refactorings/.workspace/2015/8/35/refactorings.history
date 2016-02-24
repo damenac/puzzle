@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;fr.inria.diverse.puzzle.breaker.total&apos; to &apos;fr.inria.diverse.puzzle.syntaxBreaker&apos;&#x0A;- Original element: &apos;fr.inria.diverse.puzzle.breaker.total&apos;&#x0A;- Renamed element: &apos;fr.inria.diverse.puzzle.breaker.total&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;fr.inria.diverse.puzzle.breaker.total&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=fr.inria.diverse.puzzle.breaker.total" name="fr.inria.diverse.puzzle.syntaxBreaker" references="true" stamp="1440661385543" version="1.0"/>
-</session>

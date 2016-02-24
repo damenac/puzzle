@@ -1,0 +1,11 @@
+package fr.inria.diverse.puzzle.derivator.impl;
+
+/**
+ * Interface to the command DerivateLangaugeFromConfiguration
+ * 
+ * @author David Mendez-Acuna
+ *
+ */
+public interface IDerivator {
+
+}

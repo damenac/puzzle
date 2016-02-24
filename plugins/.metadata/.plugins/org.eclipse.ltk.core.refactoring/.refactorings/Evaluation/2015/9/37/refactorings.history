@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;aircraft_fm.xml&apos; to &apos;data&apos;&#x0A;- Original project: &apos;Evaluation&apos;&#x0A;- Destination element: &apos;data&apos;&#x0A;- Original element: &apos;aircraft_fm.xml&apos;" description="Copy file" element1="input/splot-models-2012-08-07/aircraft_fm.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1441718803520" target="/fr.inria.diverse.puzzle.variabilityInferer/data" units="0" version="1.0"/>
-</session>

@@ -128,21 +128,32 @@ public class TransitionAspect {
   }
   
   protected static boolean _privk3_fired(final TransitionAspectTransitionAspectProperties _self_, final Transition _self) {
-     return _self_.fired; 
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getFired") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (boolean) ret;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.fired;
   }
   
   protected static void _privk3_fired(final TransitionAspectTransitionAspectProperties _self_, final Transition _self, final boolean fired) {
     _self_.fired = fired; try {
-    
-    			for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    				if (m.getName().equals("set" + "Fired")
-    						&& m.getParameterTypes().length == 1) {
-    					m.invoke(_self, fired);
-    
-    				}
-    			}
-    		} catch (Exception e) {
-    			// Chut !
-    		} 
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setFired")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, fired);
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
   }
 }

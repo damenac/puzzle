@@ -20,6 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link vm.LanguageFeature#getGroups <em>Groups</em>}</li>
  *   <li>{@link vm.LanguageFeature#getParentGroup <em>Parent Group</em>}</li>
  *   <li>{@link vm.LanguageFeature#getImplementationModule <em>Implementation Module</em>}</li>
+ *   <li>{@link vm.LanguageFeature#isSelected <em>Selected</em>}</li>
  * </ul>
  * </p>
  *
@@ -169,5 +170,31 @@ public interface LanguageFeature extends PNamedElement {
 	 * @generated
 	 */
 	void setImplementationModule(LanguageModule value);
+
+	/**
+	 * Returns the value of the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Selected</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Selected</em>' attribute.
+	 * @see #setSelected(boolean)
+	 * @see vm.VmPackage#getLanguageFeature_Selected()
+	 * @model
+	 * @generated
+	 */
+	boolean isSelected();
+
+	/**
+	 * Sets the value of the '{@link vm.LanguageFeature#isSelected <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Selected</em>' attribute.
+	 * @see #isSelected()
+	 * @generated
+	 */
+	void setSelected(boolean value);
 
 } // LanguageFeature

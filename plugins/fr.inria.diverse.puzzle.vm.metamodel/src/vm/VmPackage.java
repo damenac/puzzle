@@ -223,13 +223,22 @@ public interface VmPackage extends EPackage {
 	int LANGUAGE_FEATURE__IMPLEMENTATION_MODULE = PNAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE__SELECTED = PNAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Language Feature</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 6;
+	int LANGUAGE_FEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of operations of the '<em>Language Feature</em>' class.
@@ -695,6 +704,17 @@ public interface VmPackage extends EPackage {
 	EReference getLanguageFeature_ImplementationModule();
 
 	/**
+	 * Returns the meta object for the attribute '{@link vm.LanguageFeature#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see vm.LanguageFeature#isSelected()
+	 * @see #getLanguageFeature()
+	 * @generated
+	 */
+	EAttribute getLanguageFeature_Selected();
+
+	/**
 	 * Returns the meta object for class '{@link vm.LanguageFeatureGroup <em>Language Feature Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1029,6 +1049,14 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference LANGUAGE_FEATURE__IMPLEMENTATION_MODULE = eINSTANCE.getLanguageFeature_ImplementationModule();
+
+		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LANGUAGE_FEATURE__SELECTED = eINSTANCE.getLanguageFeature_Selected();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.LanguageFeatureGroupImpl <em>Language Feature Group</em>}' class.

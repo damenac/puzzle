@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;fr.inria.diverse.puzzle.breaker.popup.actions.BreakDownFamilyImpl&apos; to &apos;SynthesisManager&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.syntaxBreaker&apos;&#x0A;- Original element: &apos;fr.inria.diverse.puzzle.breaker.popup.actions.BreakDownFamilyImpl&apos;&#x0A;- Renamed element: &apos;fr.inria.diverse.puzzle.breaker.popup.actions.SynthesisManager&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BreakDownFamilyImpl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;fr.inria.diverse.puzzle.breaker.popup.actions{BreakDownFamilyImpl.java[BreakDownFamilyImpl" matchStrategy="1" name="SynthesisManager" qualified="false" references="true" similarDeclarations="false" stamp="1441368547935" textual="false" version="1.0"/>
-</session>

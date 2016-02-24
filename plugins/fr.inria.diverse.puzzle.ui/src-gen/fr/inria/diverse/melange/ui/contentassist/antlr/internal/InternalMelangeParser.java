@@ -8456,7 +8456,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:2784:1: ( rule__Language__Group_0_6_2_0__0 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getLanguageAccess().getGroup_0_6_2_0()); 
+//                       before(grammarAccess.getLanguageAccess().getGroup_0_6_2_0()); 
                     }
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:2785:1: ( rule__Language__Group_0_6_2_0__0 )
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:2785:2: rule__Language__Group_0_6_2_0__0
@@ -8470,7 +8470,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getLanguageAccess().getGroup_0_6_2_0()); 
+//                       after(grammarAccess.getLanguageAccess().getGroup_0_6_2_0()); 
                     }
 
                     }
@@ -8485,7 +8485,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:2790:1: ( rule__Language__Group_0_6_2_1__0 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getLanguageAccess().getGroup_0_6_2_1()); 
+//                       before(grammarAccess.getLanguageAccess().getGroup_0_6_2_1()); 
                     }
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:2791:1: ( rule__Language__Group_0_6_2_1__0 )
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:2791:2: rule__Language__Group_0_6_2_1__0
@@ -8499,7 +8499,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getLanguageAccess().getGroup_0_6_2_1()); 
+//                       after(grammarAccess.getLanguageAccess().getGroup_0_6_2_1()); 
                     }
 
                     }
@@ -14651,7 +14651,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:4437:1: ( rule__Language__Group_0_6__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getGroup_0_6()); 
+//               before(grammarAccess.getLanguageAccess().getGroup_0_6()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:4438:1: ( rule__Language__Group_0_6__0 )?
             int alt53=2;
@@ -14676,7 +14676,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getGroup_0_6()); 
+//               after(grammarAccess.getLanguageAccess().getGroup_0_6()); 
             }
 
             }
@@ -16050,11 +16050,11 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:4951:1: 'resource'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getResourceKeyword_0_6_0()); 
+//               before(grammarAccess.getLanguageAccess().getResourceKeyword_0_6_0()); 
             }
             match(input,61,FOLLOW_61_in_rule__Language__Group_0_6__0__Impl10664); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getResourceKeyword_0_6_0()); 
+//               after(grammarAccess.getLanguageAccess().getResourceKeyword_0_6_0()); 
             }
 
             }
@@ -16129,7 +16129,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:4982:1: ( rule__Language__ResourceTypeAssignment_0_6_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getResourceTypeAssignment_0_6_1()); 
+//               before(grammarAccess.getLanguageAccess().getResourceTypeAssignment_0_6_1()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:4983:1: ( rule__Language__ResourceTypeAssignment_0_6_1 )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:4983:2: rule__Language__ResourceTypeAssignment_0_6_1
@@ -16143,7 +16143,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getResourceTypeAssignment_0_6_1()); 
+//               after(grammarAccess.getLanguageAccess().getResourceTypeAssignment_0_6_1()); 
             }
 
             }
@@ -16213,7 +16213,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5010:1: ( rule__Language__Alternatives_0_6_2 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getAlternatives_0_6_2()); 
+//               before(grammarAccess.getLanguageAccess().getAlternatives_0_6_2()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5011:1: ( rule__Language__Alternatives_0_6_2 )?
             int alt57=2;
@@ -16249,7 +16249,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getAlternatives_0_6_2()); 
+//               after(grammarAccess.getLanguageAccess().getAlternatives_0_6_2()); 
             }
 
             }
@@ -16324,7 +16324,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5045:1: ( 'uri' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getUriKeyword_0_6_2_0_0()); 
+//               before(grammarAccess.getLanguageAccess().getUriKeyword_0_6_2_0_0()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5046:1: ( 'uri' )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5047:2: 'uri'
@@ -16334,7 +16334,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getUriKeyword_0_6_2_0_0()); 
+//               after(grammarAccess.getLanguageAccess().getUriKeyword_0_6_2_0_0()); 
             }
 
             }
@@ -16404,7 +16404,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5075:1: ( rule__Language__ResourceUriAssignment_0_6_2_0_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getResourceUriAssignment_0_6_2_0_1()); 
+//               before(grammarAccess.getLanguageAccess().getResourceUriAssignment_0_6_2_0_1()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5076:1: ( rule__Language__ResourceUriAssignment_0_6_2_0_1 )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5076:2: rule__Language__ResourceUriAssignment_0_6_2_0_1
@@ -16418,7 +16418,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getResourceUriAssignment_0_6_2_0_1()); 
+//               after(grammarAccess.getLanguageAccess().getResourceUriAssignment_0_6_2_0_1()); 
             }
 
             }
@@ -16493,11 +16493,11 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5108:1: 'setup'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getSetupKeyword_0_6_2_1_0()); 
+//               before(grammarAccess.getLanguageAccess().getSetupKeyword_0_6_2_1_0()); 
             }
             match(input,63,FOLLOW_63_in_rule__Language__Group_0_6_2_1__0__Impl10975); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getSetupKeyword_0_6_2_1_0()); 
+//               after(grammarAccess.getLanguageAccess().getSetupKeyword_0_6_2_1_0()); 
             }
 
             }
@@ -16567,7 +16567,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5138:1: ( rule__Language__XtextSetupRefAssignment_0_6_2_1_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getXtextSetupRefAssignment_0_6_2_1_1()); 
+//               before(grammarAccess.getLanguageAccess().getXtextSetupRefAssignment_0_6_2_1_1()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5139:1: ( rule__Language__XtextSetupRefAssignment_0_6_2_1_1 )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5139:2: rule__Language__XtextSetupRefAssignment_0_6_2_1_1
@@ -16581,7 +16581,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getXtextSetupRefAssignment_0_6_2_1_1()); 
+//               after(grammarAccess.getLanguageAccess().getXtextSetupRefAssignment_0_6_2_1_1()); 
             }
 
             }
@@ -16656,7 +16656,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5171:1: ( rule__Language__Group_2_0__0 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getGroup_2_0()); 
+//               before(grammarAccess.getLanguageAccess().getGroup_2_0()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5172:1: ( rule__Language__Group_2_0__0 )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5172:2: rule__Language__Group_2_0__0
@@ -16670,7 +16670,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getGroup_2_0()); 
+//               after(grammarAccess.getLanguageAccess().getGroup_2_0()); 
             }
 
             }
@@ -16740,11 +16740,11 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5199:1: '}'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getRightCurlyBracketKeyword_2_1()); 
+//               before(grammarAccess.getLanguageAccess().getRightCurlyBracketKeyword_2_1()); 
             }
             match(input,64,FOLLOW_64_in_rule__Language__Group_2__1__Impl11155); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getRightCurlyBracketKeyword_2_1()); 
+//               after(grammarAccess.getLanguageAccess().getRightCurlyBracketKeyword_2_1()); 
             }
 
             }
@@ -16819,11 +16819,11 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5234:1: 'exactType'
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getExactTypeKeyword_2_0_0()); 
+//               before(grammarAccess.getLanguageAccess().getExactTypeKeyword_2_0_0()); 
             }
             match(input,65,FOLLOW_65_in_rule__Language__Group_2_0__0__Impl11221); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getExactTypeKeyword_2_0_0()); 
+//               after(grammarAccess.getLanguageAccess().getExactTypeKeyword_2_0_0()); 
             }
 
             }
@@ -16898,7 +16898,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5265:1: ( rule__Language__ExactTypeNameAssignment_2_0_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getExactTypeNameAssignment_2_0_1()); 
+//               before(grammarAccess.getLanguageAccess().getExactTypeNameAssignment_2_0_1()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5266:1: ( rule__Language__ExactTypeNameAssignment_2_0_1 )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5266:2: rule__Language__ExactTypeNameAssignment_2_0_1
@@ -16912,7 +16912,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getExactTypeNameAssignment_2_0_1()); 
+//               after(grammarAccess.getLanguageAccess().getExactTypeNameAssignment_2_0_1()); 
             }
 
             }
@@ -16982,7 +16982,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5293:1: ( rule__Language__Group_2_0_2__0 )?
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getGroup_2_0_2()); 
+//               before(grammarAccess.getLanguageAccess().getGroup_2_0_2()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5294:1: ( rule__Language__Group_2_0_2__0 )?
             int alt58=2;
@@ -17007,7 +17007,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getGroup_2_0_2()); 
+//               after(grammarAccess.getLanguageAccess().getGroup_2_0_2()); 
             }
 
             }
@@ -17082,7 +17082,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5328:1: ( 'uri' )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getUriKeyword_2_0_2_0()); 
+//               before(grammarAccess.getLanguageAccess().getUriKeyword_2_0_2_0()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5329:1: ( 'uri' )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5330:2: 'uri'
@@ -17092,7 +17092,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getUriKeyword_2_0_2_0()); 
+//               after(grammarAccess.getLanguageAccess().getUriKeyword_2_0_2_0()); 
             }
 
             }
@@ -17162,7 +17162,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5358:1: ( rule__Language__ExactTypeUriAssignment_2_0_2_1 )
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getExactTypeUriAssignment_2_0_2_1()); 
+//               before(grammarAccess.getLanguageAccess().getExactTypeUriAssignment_2_0_2_1()); 
             }
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5359:1: ( rule__Language__ExactTypeUriAssignment_2_0_2_1 )
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:5359:2: rule__Language__ExactTypeUriAssignment_2_0_2_1
@@ -17176,7 +17176,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             }
 
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getExactTypeUriAssignment_2_0_2_1()); 
+//               after(grammarAccess.getLanguageAccess().getExactTypeUriAssignment_2_0_2_1()); 
             }
 
             }
@@ -61621,7 +61621,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21619:7: ( rule__Language__OperatorsAssignment_1 )
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
+//                       before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
                     }
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21620:7: ( rule__Language__OperatorsAssignment_1 )
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21620:8: rule__Language__OperatorsAssignment_1
@@ -61635,7 +61635,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     }
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
+//                       after(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
                     }
 
                     }
@@ -61644,7 +61644,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21624:7: ( ( rule__Language__OperatorsAssignment_1 )=> rule__Language__OperatorsAssignment_1 )*
                     {
                     if ( state.backtracking==0 ) {
-                       before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
+//                       before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
                     }
                     // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21625:7: ( ( rule__Language__OperatorsAssignment_1 )=> rule__Language__OperatorsAssignment_1 )*
                     loop154:
@@ -61670,7 +61670,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
                     } while (true);
 
                     if ( state.backtracking==0 ) {
-                       after(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
+//                       after(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
                     }
 
                     }
@@ -62673,7 +62673,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21970:1: ruleResourceType
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getResourceTypeResourceTypeEnumRuleCall_0_6_1_0()); 
+//               before(grammarAccess.getLanguageAccess().getResourceTypeResourceTypeEnumRuleCall_0_6_1_0()); 
             }
             pushFollow(FOLLOW_ruleResourceType_in_rule__Language__ResourceTypeAssignment_0_6_144432);
             ruleResourceType();
@@ -62681,7 +62681,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getResourceTypeResourceTypeEnumRuleCall_0_6_1_0()); 
+//               after(grammarAccess.getLanguageAccess().getResourceTypeResourceTypeEnumRuleCall_0_6_1_0()); 
             }
 
             }
@@ -62718,11 +62718,11 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21985:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getResourceUriSTRINGTerminalRuleCall_0_6_2_0_1_0()); 
+//               before(grammarAccess.getLanguageAccess().getResourceUriSTRINGTerminalRuleCall_0_6_2_0_1_0()); 
             }
             match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Language__ResourceUriAssignment_0_6_2_0_144463); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getResourceUriSTRINGTerminalRuleCall_0_6_2_0_1_0()); 
+//               after(grammarAccess.getLanguageAccess().getResourceUriSTRINGTerminalRuleCall_0_6_2_0_1_0()); 
             }
 
             }
@@ -62759,7 +62759,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:22000:1: ruleJvmTypeReference
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getXtextSetupRefJvmTypeReferenceParserRuleCall_0_6_2_1_1_0()); 
+//               before(grammarAccess.getLanguageAccess().getXtextSetupRefJvmTypeReferenceParserRuleCall_0_6_2_1_1_0()); 
             }
             pushFollow(FOLLOW_ruleJvmTypeReference_in_rule__Language__XtextSetupRefAssignment_0_6_2_1_144494);
             ruleJvmTypeReference();
@@ -62767,7 +62767,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getXtextSetupRefJvmTypeReferenceParserRuleCall_0_6_2_1_1_0()); 
+//               after(grammarAccess.getLanguageAccess().getXtextSetupRefJvmTypeReferenceParserRuleCall_0_6_2_1_1_0()); 
             }
 
             }
@@ -62804,7 +62804,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:22015:1: ruleOperator
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getOperatorsOperatorParserRuleCall_1_0()); 
+//               before(grammarAccess.getLanguageAccess().getOperatorsOperatorParserRuleCall_1_0()); 
             }
             pushFollow(FOLLOW_ruleOperator_in_rule__Language__OperatorsAssignment_144525);
             ruleOperator();
@@ -62812,7 +62812,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getOperatorsOperatorParserRuleCall_1_0()); 
+//               after(grammarAccess.getLanguageAccess().getOperatorsOperatorParserRuleCall_1_0()); 
             }
 
             }
@@ -62849,7 +62849,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:22030:1: ruleValidID
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getExactTypeNameValidIDParserRuleCall_2_0_1_0()); 
+//               before(grammarAccess.getLanguageAccess().getExactTypeNameValidIDParserRuleCall_2_0_1_0()); 
             }
             pushFollow(FOLLOW_ruleValidID_in_rule__Language__ExactTypeNameAssignment_2_0_144556);
             ruleValidID();
@@ -62857,7 +62857,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             state._fsp--;
             if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getExactTypeNameValidIDParserRuleCall_2_0_1_0()); 
+//               after(grammarAccess.getLanguageAccess().getExactTypeNameValidIDParserRuleCall_2_0_1_0()); 
             }
 
             }
@@ -62894,11 +62894,11 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
             // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:22045:1: RULE_STRING
             {
             if ( state.backtracking==0 ) {
-               before(grammarAccess.getLanguageAccess().getExactTypeUriSTRINGTerminalRuleCall_2_0_2_1_0()); 
+//               before(grammarAccess.getLanguageAccess().getExactTypeUriSTRINGTerminalRuleCall_2_0_2_1_0()); 
             }
             match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Language__ExactTypeUriAssignment_2_0_2_144587); if (state.failed) return ;
             if ( state.backtracking==0 ) {
-               after(grammarAccess.getLanguageAccess().getExactTypeUriSTRINGTerminalRuleCall_2_0_2_1_0()); 
+//               after(grammarAccess.getLanguageAccess().getExactTypeUriSTRINGTerminalRuleCall_2_0_2_1_0()); 
             }
 
             }
@@ -71903,7 +71903,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
         // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21619:7: ( rule__Language__OperatorsAssignment_1 )
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
+//           before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
         }
         // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21620:7: ( rule__Language__OperatorsAssignment_1 )
         // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21620:8: rule__Language__OperatorsAssignment_1
@@ -71923,7 +71923,7 @@ public class InternalMelangeParser extends AbstractInternalContentAssistParser {
         // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21624:7: ( ( rule__Language__OperatorsAssignment_1 )=> rule__Language__OperatorsAssignment_1 )*
         {
         if ( state.backtracking==0 ) {
-           before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
+//           before(grammarAccess.getLanguageAccess().getOperatorsAssignment_1()); 
         }
         // ../fr.inria.diverse.melange.ui/src-gen/fr/inria/diverse/melange/ui/contentassist/antlr/internal/InternalMelange.g:21625:7: ( ( rule__Language__OperatorsAssignment_1 )=> rule__Language__OperatorsAssignment_1 )*
         loop160:

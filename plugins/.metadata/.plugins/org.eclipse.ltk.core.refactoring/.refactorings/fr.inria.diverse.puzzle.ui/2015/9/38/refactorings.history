@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;fr.inria.diverse.puzzle.ui&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.ui&apos;&#x0A;- Original element: &apos;fr.inria.diverse.melange.ui.menu.ComputeMetrics.java&apos;" description="Delete element" element1="/src\/main\/xtend-gen&lt;fr.inria.diverse.melange.ui.menu{ComputeMetrics.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1442309322567" subPackages="false" version="1.0"/>
-</session>

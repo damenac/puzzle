@@ -295,6 +295,15 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getLanguageFeature_Selected() {
+		return (EAttribute)languageFeatureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLanguageFeatureGroup() {
 		return languageFeatureGroupEClass;
 	}
@@ -512,6 +521,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEReference(languageFeatureEClass, LANGUAGE_FEATURE__GROUPS);
 		createEReference(languageFeatureEClass, LANGUAGE_FEATURE__PARENT_GROUP);
 		createEReference(languageFeatureEClass, LANGUAGE_FEATURE__IMPLEMENTATION_MODULE);
+		createEAttribute(languageFeatureEClass, LANGUAGE_FEATURE__SELECTED);
 
 		languageFeatureGroupEClass = createEClass(LANGUAGE_FEATURE_GROUP);
 		createEReference(languageFeatureGroupEClass, LANGUAGE_FEATURE_GROUP__FEATURES);
@@ -596,6 +606,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getLanguageFeature_Groups(), this.getLanguageFeatureGroup(), null, "groups", null, 0, -1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLanguageFeature_ParentGroup(), this.getLanguageFeatureGroup(), this.getLanguageFeatureGroup_Features(), "parentGroup", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLanguageFeature_ImplementationModule(), thePuzzleADLPackage.getLanguageModule(), null, "implementationModule", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLanguageFeature_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(languageFeatureGroupEClass, LanguageFeatureGroup.class, "LanguageFeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLanguageFeatureGroup_Features(), this.getLanguageFeature(), this.getLanguageFeature_ParentGroup(), "features", null, 1, -1, LanguageFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

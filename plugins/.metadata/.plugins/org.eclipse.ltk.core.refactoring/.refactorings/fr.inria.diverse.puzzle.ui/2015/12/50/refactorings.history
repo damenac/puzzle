@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;fr.inria.diverse.melange.ui.internal.MelangeActivator&apos; to &apos;PuzzleActivator&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.ui&apos;&#x0A;- Original element: &apos;fr.inria.diverse.melange.ui.internal.MelangeActivator&apos;&#x0A;- Renamed element: &apos;fr.inria.diverse.melange.ui.internal.PuzzleActivator&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;MelangeActivator&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src-gen&lt;fr.inria.diverse.melange.ui.internal{MelangeActivator.java[MelangeActivator" matchStrategy="1" name="PuzzleActivator" qualified="false" references="true" similarDeclarations="false" stamp="1449607305582" textual="false" version="1.0"/>
-</session>

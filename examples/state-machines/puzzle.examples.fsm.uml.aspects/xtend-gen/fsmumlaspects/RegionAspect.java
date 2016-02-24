@@ -866,40 +866,62 @@ public class RegionAspect {
   }
   
   protected static ArrayList<AbstractState> _privk3_deepHistory(final RegionAspectRegionAspectProperties _self_, final Region _self) {
-     return _self_.deepHistory; 
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getDeepHistory") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (java.util.ArrayList) ret;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.deepHistory;
   }
   
   protected static void _privk3_deepHistory(final RegionAspectRegionAspectProperties _self_, final Region _self, final ArrayList<AbstractState> deepHistory) {
     _self_.deepHistory = deepHistory; try {
-    
-    			for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    				if (m.getName().equals("set" + "DeepHistory")
-    						&& m.getParameterTypes().length == 1) {
-    					m.invoke(_self, deepHistory);
-    
-    				}
-    			}
-    		} catch (Exception e) {
-    			// Chut !
-    		} 
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setDeepHistory")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, deepHistory);
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
   }
   
   protected static State _privk3_history(final RegionAspectRegionAspectProperties _self_, final Region _self) {
-     return _self_.history; 
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getHistory") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (fsm.State) ret;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.history;
   }
   
   protected static void _privk3_history(final RegionAspectRegionAspectProperties _self_, final Region _self, final State history) {
     _self_.history = history; try {
-    
-    			for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    				if (m.getName().equals("set" + "History")
-    						&& m.getParameterTypes().length == 1) {
-    					m.invoke(_self, history);
-    
-    				}
-    			}
-    		} catch (Exception e) {
-    			// Chut !
-    		} 
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setHistory")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, history);
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
   }
 }

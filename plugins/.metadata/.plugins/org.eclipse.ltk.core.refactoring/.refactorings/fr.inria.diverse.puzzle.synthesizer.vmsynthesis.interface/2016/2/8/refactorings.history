@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FromFAMAToPFeatureModel.java&apos; to &apos;FromFAMAToLanguageFeatureModel.java&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface&apos;&#x0A;- Original element: &apos;fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FromFAMAToPFeatureModel.java&apos;&#x0A;- Renamed element: &apos;fr.inria.diverse.puzzle.variabilityinferer.auxiliar.FromFAMAToLanguageFeatureModel.java&apos;" description="Rename compilation unit &apos;FromFAMAToPFeatureModel.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;fr.inria.diverse.puzzle.variabilityinferer.auxiliar{FromFAMAToPFeatureModel.java" name="FromFAMAToLanguageFeatureModel.java" references="false" stamp="1456305929960" version="1.0"/>
-</session>

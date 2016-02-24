@@ -140,7 +140,8 @@
             commandId="fr.inria.diverse.puzzle.ReverseEngineeringLanguageProductLine">
       </handler>
       <handler
-            commandId="fr.inria.diverse.puzzle.ConfigureDSL">
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.DeriveLanguageFromConfiguration"
+            commandId="fr.inria.diverse.puzzle.DeriveFromConfiguration">
       </handler>
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ValidateLanguageModulesComposability"

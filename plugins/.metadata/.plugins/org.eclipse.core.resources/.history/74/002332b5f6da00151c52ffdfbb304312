@@ -1,0 +1,29 @@
+package fr.inria.diverse.puzzle.derivator.impl;
+
+import org.eclipse.core.resources.IProject;
+
+import vm.LanguageFeatureModel;
+import PuzzleADL.LanguageArchitecture;
+
+/**
+ * Implementation of the command DerivateLangaugeFromConfiguration
+ * 
+ * @author David Mendez-Acuna
+ *
+ */
+
+public class PuzzleDerivator implements IDerivator{
+
+	// --------------------------------------------------
+	// Methods
+	// --------------------------------------------------
+	
+	@Override
+	public void derivateLangaugeFromConfiguration(IProject derivationProject,
+			LanguageArchitecture languageArchitectureModel,
+			LanguageFeatureModel configuredFeatureModel) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
