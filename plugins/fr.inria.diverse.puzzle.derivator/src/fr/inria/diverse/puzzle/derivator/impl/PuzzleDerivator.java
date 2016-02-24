@@ -52,8 +52,8 @@ public class PuzzleDerivator implements IDerivator{
 		
 		ArrayList<LanguageFeature> selectedFeatures = new ArrayList<LanguageFeature>();
 		this.collectSelectedFeatures(configuredFeatureModel.getRootFeature(), selectedFeatures);
-		
 		ArrayList<LanguageModule> selectedLanguageModules = this.collectSelectedLangaugeModules(selectedFeatures);
+
 		for (LanguageModule languageModule : selectedLanguageModules) {
 			melangeFileContents += this.createLanguageModuleDeclaration(languageModule) + "\n";
 			if(languageModule.getRequiredInterface() != null)
@@ -65,7 +65,8 @@ public class PuzzleDerivator implements IDerivator{
 		System.out.println("*** THE RESULT FOR MELANGE: ");
 		System.out.println(melangeFileContents);
 		
-		String bindings = this.getBindingsDeclaration(languageArchitectureModel, configuredFeatureModel.getName());
+		String bindings = this.getBindingsDeclaration(languageArchitectureModel, configuredFeatureModel.getName(), 
+				selectedLanguageModules, selectedFeatures);
 		System.out.println("*** THE RESULT FOR BINDING: ");
 		System.out.println(bindings);
 	}
@@ -157,17 +158,69 @@ public class PuzzleDerivator implements IDerivator{
 	/**
 	 * Returns a string with the declaration of the bindings from the given language architecture model. 
 	 * @param languageArchitectureModel
+	 * @param selectedLanguageModules 
+	 * @param selectedFeatures 
 	 * @return
 	 */
-	private String getBindingsDeclaration(
-			LanguageArchitecture languageArchitectureModel, String familyName) {
+	private String getBindingsDeclaration(LanguageArchitecture languageArchitectureModel, 
+			String familyName, ArrayList<LanguageModule> selectedLanguageModules, ArrayList<LanguageFeature> selectedFeatures) {
 		String answer = "package family\n\n";
-		answer += "import " + familyName + ".melange\n\n";
+		answer += "import \"" + familyName + ".melange\"\n\n";
 		answer += "languageBinding {\n";
+		
 		for (InterfaceBinding binding : languageArchitectureModel.getInterfaceBindings()) {
-			answer += "     bind( " + binding.getFrom().getName() + ", " + binding.getTo().getName() + ")\n";
+			LanguageModule requiringModule = this.getModuleByRequiredInterface(selectedLanguageModules, binding.getFrom());
+			LanguageModule providingModule = this.getModuleByProvidedInterface(selectedLanguageModules, binding.getTo());
+			LanguageFeature requiringFeature = this.getLanguageFeatureByLanguageModule(requiringModule, selectedFeatures);
+			LanguageFeature providingFeature = this.getLanguageFeatureByLanguageModule(providingModule, selectedFeatures);
+			
+			if(requiringFeature != null && requiringFeature.isSelected() && 
+					providingFeature != null && providingFeature.isSelected())
+				answer += "     bind( " + binding.getFrom().getName() + ", " + binding.getTo().getName() + " )\n";
 		}
 		answer += "}\n";
 		return answer;
+	}
+	
+	/**
+	 * Returns the language module corresponding to the given required interface.
+	 * @param modulesList
+	 * @param requiredInterface
+	 * @return
+	 */
+	private LanguageModule getModuleByRequiredInterface(ArrayList<LanguageModule> modulesList, RequiredInterface requiredInterface){
+		for (LanguageModule languageModule : modulesList) {
+			if(languageModule.getRequiredInterface() != null && languageModule.getRequiredInterface().getName().equals(requiredInterface.getName()))
+				return languageModule;
+		}
+		return null;
+	}
+	
+	/**
+	 * Returns the language module corresponding to the given provided interface.
+	 * @param modulesList
+	 * @param requiredInterface
+	 * @return
+	 */
+	private LanguageModule getModuleByProvidedInterface(ArrayList<LanguageModule> modulesList, ProvidedInterface providedInterface){
+		for (LanguageModule languageModule : modulesList) {
+			if(languageModule.getProvidedInterface() != null && languageModule.getProvidedInterface().getName().equals(providedInterface.getName()))
+				return languageModule;
+		}
+		return null;
+	}
+	
+	/**
+	 * Returns the language feature corresponding to the language module in the parameter. 
+	 * @param languageModule
+	 * @param featuresList 
+	 * @return
+	 */
+	private LanguageFeature getLanguageFeatureByLanguageModule(LanguageModule languageModule, ArrayList<LanguageFeature> featuresList) {
+		for (LanguageFeature languageFeature : featuresList) {
+			if(languageFeature.getImplementationModule() != null && languageFeature.getImplementationModule().equals(languageModule))
+				return languageFeature;
+		}
+		return null;
 	}
 }

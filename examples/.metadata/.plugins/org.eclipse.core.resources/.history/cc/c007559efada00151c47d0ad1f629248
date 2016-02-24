@@ -1,5 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	kmLogo.ArithmeticExpression = logo.ArithmeticExpressionAspect
-	kmLogo.Back = logo.BackAspect
-	kmLogo.Repeat = logo.RepeatAspect
-	kmLogo.ControlStructure = logo.ControlStructureAspect
