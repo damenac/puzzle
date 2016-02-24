@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ASCII"?>
+<vm:LanguageFeatureModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel" name="FeatureModel">
+  <rootFeature name="Root" mandatory="true">
+    <children name="ExpressionModule" parentGroup="//@rootFeature/@groups.0" selected="true">
+      <children name="ConstraintModule" parentGroup="//@rootFeature/@children.0/@groups.0" selected="true">
+        <children name="StateMachineModule" parentGroup="//@rootFeature/@children.0/@children.0/@groups.0">
+          <implementationModule href="architectureModel.puzzleadl#//@languageModules.0"/>
+        </children>
+        <children name="FlowchartModule" parentGroup="//@rootFeature/@children.0/@children.0/@groups.1">
+          <implementationModule href="architectureModel.puzzleadl#//@languageModules.4"/>
+        </children>
+        <groups features="//@rootFeature/@children.0/@children.0/@children.0">
+          <cardinality upperBound="1"/>
+        </groups>
+        <groups features="//@rootFeature/@children.0/@children.0/@children.1">
+          <cardinality upperBound="1"/>
+        </groups>
+        <implementationModule href="architectureModel.puzzleadl#//@languageModules.1"/>
+      </children>
+      <children name="LogoProgramModule" parentGroup="//@rootFeature/@children.0/@groups.1">
+        <implementationModule href="architectureModel.puzzleadl#//@languageModules.3"/>
+      </children>
+      <groups features="//@rootFeature/@children.0/@children.0">
+        <cardinality upperBound="1"/>
+      </groups>
+      <groups features="//@rootFeature/@children.0/@children.1">
+        <cardinality upperBound="1"/>
+      </groups>
+      <implementationModule href="architectureModel.puzzleadl#//@languageModules.2"/>
+    </children>
+    <groups features="//@rootFeature/@children.0">
+      <cardinality upperBound="1"/>
+    </groups>
+  </rootFeature>
+</vm:LanguageFeatureModel>

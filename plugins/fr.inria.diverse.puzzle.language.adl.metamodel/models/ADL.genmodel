@@ -21,9 +21,11 @@
     </genClasses>
     <genClasses ecoreClass="ADL.ecore#//RequiredInterface">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//RequiredInterface/ecorePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//RequiredInterface/ecoreRelativePath"/>
     </genClasses>
     <genClasses ecoreClass="ADL.ecore#//ProvidedInterface">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//ProvidedInterface/ecorePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//ProvidedInterface/ecoreRelativePath"/>
     </genClasses>
     <genClasses ecoreClass="ADL.ecore#//InterfaceBinding">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ADL.ecore#//InterfaceBinding/from"/>
@@ -31,6 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="ADL.ecore#//AbstractSyntaxImplementation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//AbstractSyntaxImplementation/ecorePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//AbstractSyntaxImplementation/ecoreRelativePath"/>
     </genClasses>
     <genClasses ecoreClass="ADL.ecore#//SemanticsImplementation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ADL.ecore#//SemanticsImplementation/aspectsIdentifiers"/>

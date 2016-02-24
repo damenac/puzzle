@@ -96,12 +96,14 @@ public class ExtractorImpl {
 			
 			AbstractSyntaxImplementation as = PuzzleADLFactory.eINSTANCE.createAbstractSyntaxImplementation();
 			as.setEcorePath(group.getMetamodelPath());
+			as.setEcoreRelativePath(group.getMetamodelPath().replace(group.getImplementationProjectLocation(), ""));
 			languageModule.setAbstractSyntax(as);
 			
 			if(group.getRequiredInterfacePath() != null){
 				RequiredInterface requiredInterface = PuzzleADLFactory.eINSTANCE.createRequiredInterface();
 				requiredInterface.setName(group.getName() + "Req");
 				requiredInterface.setEcorePath(group.getRequiredInterfacePath());
+				requiredInterface.setEcoreRelativePath(group.getMetamodelPath().replace(group.getImplementationProjectLocation(), ""));
 				languageModule.setRequiredInterface(requiredInterface);
 			}
 			
@@ -109,9 +111,9 @@ public class ExtractorImpl {
 				ProvidedInterface providedInterface = PuzzleADLFactory.eINSTANCE.createProvidedInterface();
 				providedInterface.setName(group.getName() + "Prov");
 				providedInterface.setEcorePath(group.getProvidedInterfacePath());
+				providedInterface.setEcoreRelativePath(group.getMetamodelPath().replace(group.getImplementationProjectLocation(), ""));
 				languageModule.setProvidedInterface(providedInterface);
 			}
-			
 			languageArchitectureModel.getLanguageModules().add(languageModule);
 		}
 		

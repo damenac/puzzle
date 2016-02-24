@@ -12,6 +12,7 @@ package PuzzleADL;
  * The following features are supported:
  * <ul>
  *   <li>{@link PuzzleADL.ProvidedInterface#getEcorePath <em>Ecore Path</em>}</li>
+ *   <li>{@link PuzzleADL.ProvidedInterface#getEcoreRelativePath <em>Ecore Relative Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,4 +47,30 @@ public interface ProvidedInterface extends NamedElement {
 	 * @generated
 	 */
 	void setEcorePath(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ecore Relative Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ecore Relative Path</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ecore Relative Path</em>' attribute.
+	 * @see #setEcoreRelativePath(String)
+	 * @see PuzzleADL.PuzzleADLPackage#getProvidedInterface_EcoreRelativePath()
+	 * @model
+	 * @generated
+	 */
+	String getEcoreRelativePath();
+
+	/**
+	 * Sets the value of the '{@link PuzzleADL.ProvidedInterface#getEcoreRelativePath <em>Ecore Relative Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ecore Relative Path</em>' attribute.
+	 * @see #getEcoreRelativePath()
+	 * @generated
+	 */
+	void setEcoreRelativePath(String value);
 } // ProvidedInterface

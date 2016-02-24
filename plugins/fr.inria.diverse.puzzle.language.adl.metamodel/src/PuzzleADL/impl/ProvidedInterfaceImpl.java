@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link PuzzleADL.impl.ProvidedInterfaceImpl#getEcorePath <em>Ecore Path</em>}</li>
+ *   <li>{@link PuzzleADL.impl.ProvidedInterfaceImpl#getEcoreRelativePath <em>Ecore Relative Path</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,6 +42,25 @@ public class ProvidedInterfaceImpl extends NamedElementImpl implements ProvidedI
 	 * @ordered
 	 */
 	protected String ecorePath = ECORE_PATH_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEcoreRelativePath() <em>Ecore Relative Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEcoreRelativePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ECORE_RELATIVE_PATH_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getEcoreRelativePath() <em>Ecore Relative Path</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEcoreRelativePath()
+	 * @generated
+	 * @ordered
+	 */
+	protected String ecoreRelativePath = ECORE_RELATIVE_PATH_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,11 +107,34 @@ public class ProvidedInterfaceImpl extends NamedElementImpl implements ProvidedI
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getEcoreRelativePath() {
+		return ecoreRelativePath;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEcoreRelativePath(String newEcoreRelativePath) {
+		String oldEcoreRelativePath = ecoreRelativePath;
+		ecoreRelativePath = newEcoreRelativePath;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_RELATIVE_PATH, oldEcoreRelativePath, ecoreRelativePath));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_PATH:
 				return getEcorePath();
+			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_RELATIVE_PATH:
+				return getEcoreRelativePath();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -106,6 +149,9 @@ public class ProvidedInterfaceImpl extends NamedElementImpl implements ProvidedI
 		switch (featureID) {
 			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_PATH:
 				setEcorePath((String)newValue);
+				return;
+			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_RELATIVE_PATH:
+				setEcoreRelativePath((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -122,6 +168,9 @@ public class ProvidedInterfaceImpl extends NamedElementImpl implements ProvidedI
 			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_PATH:
 				setEcorePath(ECORE_PATH_EDEFAULT);
 				return;
+			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_RELATIVE_PATH:
+				setEcoreRelativePath(ECORE_RELATIVE_PATH_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -136,6 +185,8 @@ public class ProvidedInterfaceImpl extends NamedElementImpl implements ProvidedI
 		switch (featureID) {
 			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_PATH:
 				return ECORE_PATH_EDEFAULT == null ? ecorePath != null : !ECORE_PATH_EDEFAULT.equals(ecorePath);
+			case PuzzleADLPackage.PROVIDED_INTERFACE__ECORE_RELATIVE_PATH:
+				return ECORE_RELATIVE_PATH_EDEFAULT == null ? ecoreRelativePath != null : !ECORE_RELATIVE_PATH_EDEFAULT.equals(ecoreRelativePath);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -152,6 +203,8 @@ public class ProvidedInterfaceImpl extends NamedElementImpl implements ProvidedI
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (ecorePath: ");
 		result.append(ecorePath);
+		result.append(", ecoreRelativePath: ");
+		result.append(ecoreRelativePath);
 		result.append(')');
 		return result.toString();
 	}

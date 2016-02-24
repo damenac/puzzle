@@ -79,7 +79,7 @@ public class PuzzleDerivator implements IDerivator{
 			LanguageFeature rootFeature,
 			ArrayList<LanguageFeature> selectedFeatures) {
 		// Base case: the root feature is selected, in such a case it is added to the collection
-		if(rootFeature.isSelected())
+		if(rootFeature.isSelected() && rootFeature.getImplementationModule() != null)
 			selectedFeatures.add(rootFeature);
 		// Recursive case: scan the child features.
 		for (LanguageFeature languageFeature : rootFeature.getChildren()) {
@@ -116,7 +116,7 @@ public class PuzzleDerivator implements IDerivator{
 			answer += " requires " + module.getRequiredInterface().getName();
 		
 		answer += "{\n";
-		answer += "     syntax platform:/resource/" + module.getAbstractSyntax().getEcorePath() + "\n";
+		answer += "     syntax platform:/resource" + module.getAbstractSyntax().getEcoreRelativePath() + "\n";
 		
 		if(module.getSemanticsImplementation() != null){
 			answer += "\n";
@@ -138,7 +138,7 @@ public class PuzzleDerivator implements IDerivator{
 	private String createModelTypeForRequiredInterface(
 			RequiredInterface requiredInterface) {
 		String answer = "modeltype " + requiredInterface.getName() + "{\n";
-		answer += "     syntax " + requiredInterface.getEcorePath() + "\n}";
+		answer += "     syntax platform:/resource" + requiredInterface.getEcoreRelativePath() + "\n}\n";
 		return answer;
 	}
 	
@@ -150,7 +150,7 @@ public class PuzzleDerivator implements IDerivator{
 	private String createModelTypeForProvidedInterface(
 			ProvidedInterface providedInterface) {
 		String answer = "modeltype " + providedInterface.getName() + "{\n";
-		answer += "     syntax " + providedInterface.getEcorePath() + "\n}\n";
+		answer += "     syntax platform:/resource" + providedInterface.getEcoreRelativePath() + "\n}\n";
 		return answer;
 	}
 	
@@ -167,7 +167,7 @@ public class PuzzleDerivator implements IDerivator{
 		for (InterfaceBinding binding : languageArchitectureModel.getInterfaceBindings()) {
 			answer += "     bind( " + binding.getFrom().getName() + ", " + binding.getTo().getName() + ")\n";
 		}
-		answer += "}/n";
+		answer += "}\n";
 		return answer;
 	}
 }

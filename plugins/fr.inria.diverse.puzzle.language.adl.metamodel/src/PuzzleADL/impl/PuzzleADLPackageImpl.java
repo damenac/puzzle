@@ -257,6 +257,15 @@ public class PuzzleADLPackageImpl extends EPackageImpl implements PuzzleADLPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getRequiredInterface_EcoreRelativePath() {
+		return (EAttribute)requiredInterfaceEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getProvidedInterface() {
 		return providedInterfaceEClass;
 	}
@@ -268,6 +277,15 @@ public class PuzzleADLPackageImpl extends EPackageImpl implements PuzzleADLPacka
 	 */
 	public EAttribute getProvidedInterface_EcorePath() {
 		return (EAttribute)providedInterfaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProvidedInterface_EcoreRelativePath() {
+		return (EAttribute)providedInterfaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -313,6 +331,15 @@ public class PuzzleADLPackageImpl extends EPackageImpl implements PuzzleADLPacka
 	 */
 	public EAttribute getAbstractSyntaxImplementation_EcorePath() {
 		return (EAttribute)abstractSyntaxImplementationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getAbstractSyntaxImplementation_EcoreRelativePath() {
+		return (EAttribute)abstractSyntaxImplementationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -376,9 +403,11 @@ public class PuzzleADLPackageImpl extends EPackageImpl implements PuzzleADLPacka
 
 		requiredInterfaceEClass = createEClass(REQUIRED_INTERFACE);
 		createEAttribute(requiredInterfaceEClass, REQUIRED_INTERFACE__ECORE_PATH);
+		createEAttribute(requiredInterfaceEClass, REQUIRED_INTERFACE__ECORE_RELATIVE_PATH);
 
 		providedInterfaceEClass = createEClass(PROVIDED_INTERFACE);
 		createEAttribute(providedInterfaceEClass, PROVIDED_INTERFACE__ECORE_PATH);
+		createEAttribute(providedInterfaceEClass, PROVIDED_INTERFACE__ECORE_RELATIVE_PATH);
 
 		interfaceBindingEClass = createEClass(INTERFACE_BINDING);
 		createEReference(interfaceBindingEClass, INTERFACE_BINDING__FROM);
@@ -386,6 +415,7 @@ public class PuzzleADLPackageImpl extends EPackageImpl implements PuzzleADLPacka
 
 		abstractSyntaxImplementationEClass = createEClass(ABSTRACT_SYNTAX_IMPLEMENTATION);
 		createEAttribute(abstractSyntaxImplementationEClass, ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_PATH);
+		createEAttribute(abstractSyntaxImplementationEClass, ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_RELATIVE_PATH);
 
 		semanticsImplementationEClass = createEClass(SEMANTICS_IMPLEMENTATION);
 		createEAttribute(semanticsImplementationEClass, SEMANTICS_IMPLEMENTATION__ASPECTS_IDENTIFIERS);
@@ -440,9 +470,11 @@ public class PuzzleADLPackageImpl extends EPackageImpl implements PuzzleADLPacka
 
 		initEClass(requiredInterfaceEClass, RequiredInterface.class, "RequiredInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRequiredInterface_EcorePath(), ecorePackage.getEString(), "ecorePath", null, 0, 1, RequiredInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRequiredInterface_EcoreRelativePath(), ecorePackage.getEString(), "ecoreRelativePath", null, 0, 1, RequiredInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(providedInterfaceEClass, ProvidedInterface.class, "ProvidedInterface", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProvidedInterface_EcorePath(), ecorePackage.getEString(), "ecorePath", null, 0, 1, ProvidedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProvidedInterface_EcoreRelativePath(), ecorePackage.getEString(), "ecoreRelativePath", null, 0, 1, ProvidedInterface.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(interfaceBindingEClass, InterfaceBinding.class, "InterfaceBinding", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getInterfaceBinding_From(), this.getRequiredInterface(), null, "from", null, 1, 1, InterfaceBinding.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -450,6 +482,7 @@ public class PuzzleADLPackageImpl extends EPackageImpl implements PuzzleADLPacka
 
 		initEClass(abstractSyntaxImplementationEClass, AbstractSyntaxImplementation.class, "AbstractSyntaxImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAbstractSyntaxImplementation_EcorePath(), ecorePackage.getEString(), "ecorePath", null, 0, 1, AbstractSyntaxImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAbstractSyntaxImplementation_EcoreRelativePath(), ecorePackage.getEString(), "ecoreRelativePath", null, 0, 1, AbstractSyntaxImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semanticsImplementationEClass, SemanticsImplementation.class, "SemanticsImplementation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSemanticsImplementation_AspectsIdentifiers(), ecorePackage.getEString(), "aspectsIdentifiers", null, 0, -1, SemanticsImplementation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

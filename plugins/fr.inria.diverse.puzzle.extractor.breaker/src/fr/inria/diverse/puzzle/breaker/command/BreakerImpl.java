@@ -151,6 +151,7 @@ public class BreakerImpl {
 		IProject moduleProject = ProjectManagementServices.createEclipseProject("fr.inria.diverse.module." + 
 				languageName + ".syntax");
 		group.setImplementationProjectName(moduleProject.getName());
+		group.setImplementationProjectLocation(moduleProject.getLocation().removeLastSegments(1).toString());
 		String modelsFolderPath = ProjectManagementServices.createFolderByName(moduleProject, "models");
 					
 		// Serialize the module metamodel in the corresponding project. 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated StateMachineModule -->
+      <package
+            uri="StateMachineModule"
+            class="StateMachineModule.StateMachineModulePackage"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated StateMachineModuleReq -->
+      <package
+            uri="StateMachineModuleReq"
+            class="StateMachineModuleReq.StateMachineModuleReqPackage"/>
+   </extension>
+
+</plugin>

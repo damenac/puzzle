@@ -1,4 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	flowchartpck.ArithmeticExpression = flowchartpck.ArithmeticExpressionAspect
-	flowchartpck.Println = flowchartpck.PrintlnAspect
-	flowchartpck.Loop = flowchartpck.LoopAspect

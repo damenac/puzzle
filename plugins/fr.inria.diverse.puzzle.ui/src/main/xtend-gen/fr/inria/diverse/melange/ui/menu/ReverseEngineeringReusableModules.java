@@ -1,6 +1,6 @@
 package fr.inria.diverse.melange.ui.menu;
 
-import fr.inria.diverse.melange.ui.builder.ExtractionBuilder;
+import fr.inria.diverse.melange.ui.builder.ReverseEngineeringReusableModulesBuilder;
 import javax.inject.Inject;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
@@ -24,13 +24,13 @@ import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
- * Hanlder for the action: Extract reusable modules
+ * Handler for the action: Extract reusable modules
  * @author David Mendez-Acuna
  */
 @SuppressWarnings("all")
 public class ReverseEngineeringReusableModules extends AbstractHandler {
   @Inject
-  private ExtractionBuilder builder;
+  private ReverseEngineeringReusableModulesBuilder builder;
   
   @Inject
   private XtextResourceSetProvider rsProvider;

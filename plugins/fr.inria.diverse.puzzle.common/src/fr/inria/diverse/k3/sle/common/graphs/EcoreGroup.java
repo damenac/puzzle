@@ -27,6 +27,7 @@ public class EcoreGroup {
 	private String requiredInterfacePath;
 	private String providedInterfacePath;
 	private String implementationProjectName;
+	private String implementationProjectLocation;
 
 	// -----------------------------------------------
 	// Constructor
@@ -96,6 +97,15 @@ public class EcoreGroup {
 
 	public void setImplementationProjectName(String implementationProjectName) {
 		this.implementationProjectName = implementationProjectName;
+	}
+	
+	public String getImplementationProjectLocation() {
+		return implementationProjectLocation;
+	}
+
+	public void setImplementationProjectLocation(
+			String implementationProjectLocation) {
+		this.implementationProjectLocation = implementationProjectLocation;
 	}
 	
 	// -----------------------------------------------

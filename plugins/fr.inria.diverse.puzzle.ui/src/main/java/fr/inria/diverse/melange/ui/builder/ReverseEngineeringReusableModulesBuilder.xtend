@@ -17,7 +17,7 @@ import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices
  * 
  * @author David Mendez-Acuna
  */
-class ExtractionBuilder extends AbstractBuilder {
+class ReverseEngineeringReusableModulesBuilder extends AbstractBuilder {
 	
 	def void extractReusableModules(Resource res, IProject project, IProgressMonitor monitor) {
 		val root = res.contents.head as ModelTypingSpace

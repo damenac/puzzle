@@ -7,7 +7,6 @@ import fr.inria.diverse.k3.sle.common.utils.ModelUtils
 import vm.LanguageFeatureModel
 import fr.inria.diverse.puzzle.derivator.impl.IDerivator
 import fr.inria.diverse.puzzle.derivator.impl.PuzzleDerivator
-import java.util.ArrayList
 import PuzzleADL.LanguageArchitecture
 
 /**

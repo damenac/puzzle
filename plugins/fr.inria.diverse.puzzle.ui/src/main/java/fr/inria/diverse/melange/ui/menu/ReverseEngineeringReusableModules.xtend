@@ -13,18 +13,18 @@ import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.core.resources.IResource
 import org.eclipse.core.runtime.OperationCanceledException
 import org.eclipse.core.runtime.Status
-import fr.inria.diverse.melange.ui.builder.ExtractionBuilder
 import org.eclipse.emf.common.util.URI
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
 import org.eclipse.xtext.resource.DerivedStateAwareResource
+import fr.inria.diverse.melange.ui.builder.ReverseEngineeringReusableModulesBuilder
 
 /**
- * Hanlder for the action: Extract reusable modules
+ * Handler for the action: Extract reusable modules
  * @author David Mendez-Acuna
  */
 class ReverseEngineeringReusableModules extends AbstractHandler {
 	
-	@Inject ExtractionBuilder builder
+	@Inject ReverseEngineeringReusableModulesBuilder builder
 	@Inject XtextResourceSetProvider rsProvider
 	
 	override execute(ExecutionEvent event) throws ExecutionException {

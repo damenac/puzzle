@@ -61,6 +61,7 @@ public class AbstractSyntaxImplementationItemProvider
 			super.getPropertyDescriptors(object);
 
 			addEcorePathPropertyDescriptor(object);
+			addEcoreRelativePathPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -79,6 +80,28 @@ public class AbstractSyntaxImplementationItemProvider
 				 getString("_UI_AbstractSyntaxImplementation_ecorePath_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractSyntaxImplementation_ecorePath_feature", "_UI_AbstractSyntaxImplementation_type"),
 				 PuzzleADLPackage.Literals.ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_PATH,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Ecore Relative Path feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEcoreRelativePathPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_AbstractSyntaxImplementation_ecoreRelativePath_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_AbstractSyntaxImplementation_ecoreRelativePath_feature", "_UI_AbstractSyntaxImplementation_type"),
+				 PuzzleADLPackage.Literals.ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_RELATIVE_PATH,
 				 true,
 				 false,
 				 false,
@@ -126,6 +149,7 @@ public class AbstractSyntaxImplementationItemProvider
 
 		switch (notification.getFeatureID(AbstractSyntaxImplementation.class)) {
 			case PuzzleADLPackage.ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_PATH:
+			case PuzzleADLPackage.ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_RELATIVE_PATH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

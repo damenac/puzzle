@@ -250,13 +250,22 @@ public interface PuzzleADLPackage extends EPackage {
 	int REQUIRED_INTERFACE__ECORE_PATH = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Ecore Relative Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int REQUIRED_INTERFACE__ECORE_RELATIVE_PATH = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Required Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REQUIRED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int REQUIRED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Required Interface</em>' class.
@@ -296,13 +305,22 @@ public interface PuzzleADLPackage extends EPackage {
 	int PROVIDED_INTERFACE__ECORE_PATH = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Ecore Relative Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROVIDED_INTERFACE__ECORE_RELATIVE_PATH = NAMED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Provided Interface</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROVIDED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int PROVIDED_INTERFACE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Provided Interface</em>' class.
@@ -380,13 +398,22 @@ public interface PuzzleADLPackage extends EPackage {
 	int ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_PATH = 0;
 
 	/**
+	 * The feature id for the '<em><b>Ecore Relative Path</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_RELATIVE_PATH = 1;
+
+	/**
 	 * The number of structural features of the '<em>Abstract Syntax Implementation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_SYNTAX_IMPLEMENTATION_FEATURE_COUNT = 1;
+	int ABSTRACT_SYNTAX_IMPLEMENTATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Abstract Syntax Implementation</em>' class.
@@ -564,6 +591,17 @@ public interface PuzzleADLPackage extends EPackage {
 	EAttribute getRequiredInterface_EcorePath();
 
 	/**
+	 * Returns the meta object for the attribute '{@link PuzzleADL.RequiredInterface#getEcoreRelativePath <em>Ecore Relative Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Relative Path</em>'.
+	 * @see PuzzleADL.RequiredInterface#getEcoreRelativePath()
+	 * @see #getRequiredInterface()
+	 * @generated
+	 */
+	EAttribute getRequiredInterface_EcoreRelativePath();
+
+	/**
 	 * Returns the meta object for class '{@link PuzzleADL.ProvidedInterface <em>Provided Interface</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -583,6 +621,17 @@ public interface PuzzleADLPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getProvidedInterface_EcorePath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link PuzzleADL.ProvidedInterface#getEcoreRelativePath <em>Ecore Relative Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Relative Path</em>'.
+	 * @see PuzzleADL.ProvidedInterface#getEcoreRelativePath()
+	 * @see #getProvidedInterface()
+	 * @generated
+	 */
+	EAttribute getProvidedInterface_EcoreRelativePath();
 
 	/**
 	 * Returns the meta object for class '{@link PuzzleADL.InterfaceBinding <em>Interface Binding</em>}'.
@@ -636,6 +685,17 @@ public interface PuzzleADLPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAbstractSyntaxImplementation_EcorePath();
+
+	/**
+	 * Returns the meta object for the attribute '{@link PuzzleADL.AbstractSyntaxImplementation#getEcoreRelativePath <em>Ecore Relative Path</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ecore Relative Path</em>'.
+	 * @see PuzzleADL.AbstractSyntaxImplementation#getEcoreRelativePath()
+	 * @see #getAbstractSyntaxImplementation()
+	 * @generated
+	 */
+	EAttribute getAbstractSyntaxImplementation_EcoreRelativePath();
 
 	/**
 	 * Returns the meta object for class '{@link PuzzleADL.SemanticsImplementation <em>Semantics Implementation</em>}'.
@@ -786,6 +846,14 @@ public interface PuzzleADLPackage extends EPackage {
 		EAttribute REQUIRED_INTERFACE__ECORE_PATH = eINSTANCE.getRequiredInterface_EcorePath();
 
 		/**
+		 * The meta object literal for the '<em><b>Ecore Relative Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute REQUIRED_INTERFACE__ECORE_RELATIVE_PATH = eINSTANCE.getRequiredInterface_EcoreRelativePath();
+
+		/**
 		 * The meta object literal for the '{@link PuzzleADL.impl.ProvidedInterfaceImpl <em>Provided Interface</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -802,6 +870,14 @@ public interface PuzzleADLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PROVIDED_INTERFACE__ECORE_PATH = eINSTANCE.getProvidedInterface_EcorePath();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Relative Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROVIDED_INTERFACE__ECORE_RELATIVE_PATH = eINSTANCE.getProvidedInterface_EcoreRelativePath();
 
 		/**
 		 * The meta object literal for the '{@link PuzzleADL.impl.InterfaceBindingImpl <em>Interface Binding</em>}' class.
@@ -846,6 +922,14 @@ public interface PuzzleADLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_PATH = eINSTANCE.getAbstractSyntaxImplementation_EcorePath();
+
+		/**
+		 * The meta object literal for the '<em><b>Ecore Relative Path</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_SYNTAX_IMPLEMENTATION__ECORE_RELATIVE_PATH = eINSTANCE.getAbstractSyntaxImplementation_EcoreRelativePath();
 
 		/**
 		 * The meta object literal for the '{@link PuzzleADL.impl.SemanticsImplementationImpl <em>Semantics Implementation</em>}' class.
