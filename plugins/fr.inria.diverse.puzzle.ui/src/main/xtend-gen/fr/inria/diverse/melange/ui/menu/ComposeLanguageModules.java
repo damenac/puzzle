@@ -11,7 +11,6 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.OperationCanceledException;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.common.util.URI;
@@ -60,7 +59,7 @@ public class ComposeLanguageModules extends AbstractHandler {
           final DerivedStateAwareResource melangeRes = ((DerivedStateAwareResource) _resource);
           IPath _fullPath_1 = resource.getFullPath();
           String _string_1 = _fullPath_1.toString();
-          String _replace = _string_1.replace(".melange", ".puzzle");
+          String _replace = _string_1.replace(".melange", ".binding");
           URI _createPlatformResourceURI_1 = URI.createPlatformResourceURI(_replace, true);
           Resource _resource_1 = rs.getResource(_createPlatformResourceURI_1, true);
           final DerivedStateAwareResource puzzleRes = ((DerivedStateAwareResource) _resource_1);
@@ -77,8 +76,9 @@ public class ComposeLanguageModules extends AbstractHandler {
               }
             });
         } catch (final Throwable _t) {
-          if (_t instanceof OperationCanceledException) {
-            final OperationCanceledException e = (OperationCanceledException)_t;
+          if (_t instanceof Exception) {
+            final Exception e = (Exception)_t;
+            e.printStackTrace();
             return Status.CANCEL_STATUS;
           } else {
             throw Exceptions.sneakyThrow(_t);

@@ -39,7 +39,7 @@ class ComposeLanguageModules extends AbstractHandler {
 					val project = resource.project
 					val rs = rsProvider.get(project)
 					val melangeRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString, true), true) as DerivedStateAwareResource
-					val puzzleRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString.replace('.melange','.puzzle'), true), true) as DerivedStateAwareResource
+					val puzzleRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString.replace('.melange','.binding'), true), true) as DerivedStateAwareResource
 
 					println('coucou... composing')
 
@@ -51,7 +51,8 @@ class ComposeLanguageModules extends AbstractHandler {
 						     MessageDialog.openInformation(display.activeShell, "Composition result", composition);
 						    }
 						  });
-				} catch (OperationCanceledException e) {
+				} catch (Exception e) {
+					e.printStackTrace
 					return Status.CANCEL_STATUS
 				} finally {
 					monitor.done

@@ -37,13 +37,24 @@ import fr.inria.diverse.k3.sle.common.vos.AspectLanguageMapping;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 
 /**
- * @author David Mendez Acuna
+ * Class that provides services for projects management in a given eclipse workspace.
+ * @author David Mendez-Acuna
  */
 public class ProjectManagementServices {
 
+	// -------------------------------------------------------------------------
+	// Constants
+	// -------------------------------------------------------------------------
+	
+	public static final String XTEND_NATURE_ID = "org.eclipse.xtext.ui.shared.xtextNature";
+	public static final String PLUGIN_NATURE_ID = "org.eclipse.pde.PluginNature";
+	
+	// -------------------------------------------------------------------------
+	// Methods
+	// -------------------------------------------------------------------------
+	
 	/**
 	 * Creates an eclipse project in the workspace
-	 * 
 	 * @param projectName
 	 * @throws CoreException
 	 */
@@ -63,7 +74,6 @@ public class ProjectManagementServices {
 	
 	/**
 	 * Creates an eclipse java project in the workspace
-	 * 
 	 * @param projectName
 	 * @throws CoreException
 	 */
@@ -81,8 +91,28 @@ public class ProjectManagementServices {
 	}
 	
 	/**
+	 * Creates an Xtend project in the workspace
+	 * @param projectName
+	 * @throws CoreException
+	 */
+	public static IProject createEclipseXtendProject(String projectName)
+			throws CoreException {
+		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+		IProject project = root.getProject(projectName);
+		project.create(null);
+		project.open(null);
+
+		IProjectDescription description = project.getDescription();
+		description.setNatureIds(new String[] { JavaCore.NATURE_ID });
+		description.setNatureIds(new String[] { XTEND_NATURE_ID });
+		description.setNatureIds(new String[] { PLUGIN_NATURE_ID });
+		project.setDescription(description, null);
+
+		return project;
+	}
+	
+	/**
 	 * Returns an eclipse project in the workspace by its name. Returns null if the project does not exist.
-	 * 
 	 * @param projectName
 	 * @throws CoreException
 	 */
@@ -368,13 +398,13 @@ public class ProjectManagementServices {
 	    generator.generate(genModel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, "model project", new BasicMonitor.Printing(System.out));
 	}
 	
-	public static void createXtendConfigurationFile(IProject project, String moduleName, boolean commons) throws IOException{
+	public static void createXtendConfigurationFile(IProject project, String moduleName, boolean commons, String exportedPackage) throws IOException{
 		createPluginFile(project);
 		createPropertiesFile(project);
 		createFolderByName(project, "src");
 		createFolderByName(project, "xtend-gen");
 		createFolderByName(project, "META-INF");
-		createManifest(project, commons);
+		createManifest(project, commons, exportedPackage);
 		createDotProject(project);
 		createClasspath(project);
 	}
@@ -408,7 +438,7 @@ public class ProjectManagementServices {
 		pw.close();
 	}
 	
-	private static void createManifest(IProject project, boolean commons) throws IOException{
+	private static void createManifest(IProject project, boolean commons, String exportedPackage) throws IOException{
 		File file = new File(project.getLocation().toString() + "/META-INF/MANIFEST.MF");
 		file.createNewFile();
 		String content = "Bundle-SymbolicName: " + project.getName() + ";singleton:=true\n";
@@ -416,7 +446,7 @@ public class ProjectManagementServices {
 		if(commons)
 			content += "Export-Package: commons\n";
 		else
-			content += "Export-Package: aspects\n";
+			content += "Export-Package: " +  exportedPackage + "\n";
 		
 		content += "Bundle-Version: 1.0.0\n";
 		content += "Bundle-Name: " + project.getName() + "\n";

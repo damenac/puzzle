@@ -379,7 +379,7 @@ public class BreakerImpl {
 		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 		IProject moduleProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.module." + 
 				moduleName + ".semantics");
-		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName, false);
+		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName, false, "aspects");
 		
 		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
 		for (EcoreVertex vertex : group.getVertex()) {
@@ -438,7 +438,7 @@ public class BreakerImpl {
 	 */
 	private void createSemanticsCommonsProject(ArrayList<Language> languages) throws Exception{
 		IProject commonsProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.commons.semantics");
-		ProjectManagementServices.createXtendConfigurationFile(commonsProject, "commons", true);
+		ProjectManagementServices.createXtendConfigurationFile(commonsProject, "commons", true, "aspects");
 		ProjectManagementServices.createFolderByName(commonsProject, "src/commons");
 		
 		ArrayList<File> commonResources = this.findCommonResources(languages);

@@ -1,5 +1,8 @@
 package fr.inria.diverse.puzzle.derivator.impl;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
@@ -14,9 +17,7 @@ import PuzzleADL.RequiredInterface;
 
 /**
  * Implementation of the command DerivateLangaugeFromConfiguration
- * 
  * @author David Mendez-Acuna
- *
  */
 
 public class PuzzleDerivator implements IDerivator{
@@ -46,7 +47,7 @@ public class PuzzleDerivator implements IDerivator{
 	@Override
 	public void derivateLangaugeFromConfiguration(IProject derivationProject,
 			LanguageArchitecture languageArchitectureModel,
-			LanguageFeatureModel configuredFeatureModel) {
+			LanguageFeatureModel configuredFeatureModel) throws IOException {
 		
 		String melangeFileContents = "package family\n\n";
 		
@@ -62,13 +63,25 @@ public class PuzzleDerivator implements IDerivator{
 				melangeFileContents += this.createModelTypeForProvidedInterface(languageModule.getProvidedInterface()) + "\n";
 		}
 		
-		System.out.println("*** THE RESULT FOR MELANGE: ");
-		System.out.println(melangeFileContents);
+		System.out.println("Melange file path: " + derivationProject.getLocation().toString() + "/src/family/dsl.melange");
+		File melangeFile = new File(derivationProject.getLocation().toString() + "/src/family/dsl.melange");
+		if(!melangeFile.exists())
+			melangeFile.createNewFile();
+		
+		PrintWriter pwMelange = new PrintWriter(melangeFile);
+		pwMelange.println(melangeFileContents);
+		pwMelange.close();
 		
 		String bindings = this.getBindingsDeclaration(languageArchitectureModel, configuredFeatureModel.getName(), 
 				selectedLanguageModules, selectedFeatures);
-		System.out.println("*** THE RESULT FOR BINDING: ");
-		System.out.println(bindings);
+		
+		File bindingsFile = new File(derivationProject.getLocation().toString() + "/src/family/dsl.binding");
+		if(!bindingsFile.exists())
+			bindingsFile.createNewFile();
+		
+		PrintWriter pwBindings = new PrintWriter(bindingsFile);
+		pwBindings.println(bindings);
+		pwBindings.close();
 	}
 
 	/**
@@ -117,7 +130,7 @@ public class PuzzleDerivator implements IDerivator{
 			answer += " requires " + module.getRequiredInterface().getName();
 		
 		answer += "{\n";
-		answer += "     syntax platform:/resource" + module.getAbstractSyntax().getEcoreRelativePath() + "\n";
+		answer += "     syntax \"platform:/resource" + module.getAbstractSyntax().getEcoreRelativePath() + "\"\n";
 		
 		if(module.getSemanticsImplementation() != null){
 			answer += "\n";
@@ -125,7 +138,7 @@ public class PuzzleDerivator implements IDerivator{
 				answer += "     with " + aspect + "\n";
 			}
 		}
-		answer += "\n     exacttype " + module.getName() + "MT\n";
+		answer += "\n     exactType " + module.getName() + "MT\n";
 		answer += "}\n";
 		
 		return answer;
@@ -139,7 +152,7 @@ public class PuzzleDerivator implements IDerivator{
 	private String createModelTypeForRequiredInterface(
 			RequiredInterface requiredInterface) {
 		String answer = "modeltype " + requiredInterface.getName() + "{\n";
-		answer += "     syntax platform:/resource" + requiredInterface.getEcoreRelativePath() + "\n}\n";
+		answer += "     syntax \"platform:/resource" + requiredInterface.getEcoreRelativePath() + "\"\n}\n";
 		return answer;
 	}
 	
@@ -151,7 +164,7 @@ public class PuzzleDerivator implements IDerivator{
 	private String createModelTypeForProvidedInterface(
 			ProvidedInterface providedInterface) {
 		String answer = "modeltype " + providedInterface.getName() + "{\n";
-		answer += "     syntax platform:/resource" + providedInterface.getEcoreRelativePath() + "\n}\n";
+		answer += "     syntax \"platform:/resource" + providedInterface.getEcoreRelativePath() + "\"\n}\n";
 		return answer;
 	}
 	
