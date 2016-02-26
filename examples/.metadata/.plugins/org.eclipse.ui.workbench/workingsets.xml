@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1449143803306_1" label="state-machines" name="state-machines">
-<item elementID="=puzzle.examples.fsm.uml.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.uml.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.harel.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.family.fsm" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.harel.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.rhapsody.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.rhapsody.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-</workingSet>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1449144070068_4" label="fsm-logo-flowcharts" name="fsm-logo-flowcharts">
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456491778868_2" label="fsm-flowcharts-logo" name="fsm-flowcharts-logo">
 <item elementID="=puzzle.examples.overlap.flowchart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.fsm.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.logo.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
@@ -19,24 +10,15 @@
 <item elementID="=puzzle.examples.overlap.logo.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1449144221333_5" label="empirical-study" name="empirical-study">
-<item elementID="=puzzle.empirical.study" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456491789929_3" label="protocol-languages" name="protocol-languages">
+<item elementID="=fr.inria.diverse.puzzle.pqr.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.fmpl.basic.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.xyz" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.pqr" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.abc.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FMPL" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.xyz.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.abc" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1453115627999_5" label="modularization-example" name="modularization-example">
-<item elementID="=fr.inria.diverse.examples.expressions.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.expressions.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.logo.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.simpleimperative.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.simpleconstraints.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.complete.flowchart" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.complete.statemachines" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.simpleconstraints.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.flowchart.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.logo.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.simpleimperative.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.complete.logo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.statemachines.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=fr.inria.diverse.examples.flowchart.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-</workingSet>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1438955570222_0" label="Window Working Set" name="Aggregate for window 1438955570222"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456491426915_0" label="Window Working Set" name="Aggregate for window 1456491426915"/>
 </workingSetManager>

@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.abc.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import abc.A
+	
+@Aspect(className=A)
+class AAspect {
+	
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/FMPL/src" modelPluginID="FMPL" modelName="FMPL-basic"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>FMPL-basic.ecore</foreignModel>
+  <genPackages prefix="Fmpl" disposableProviderFactory="true" ecorePackage="FMPL-basic.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FMPL-basic.ecore#//RelationalOperator">
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//RelationalOperator/greater"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//RelationalOperator/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//RelationalOperator/less"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//RelationalOperator/greaterEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//RelationalOperator/lessEqual"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//RelationalOperator/and"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="FMPL-basic.ecore#//ArithmeticOperator">
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//ArithmeticOperator/plus"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//ArithmeticOperator/minus"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//ArithmeticOperator/mult"/>
+      <genEnumLiterals ecoreEnumLiteral="FMPL-basic.ecore#//ArithmeticOperator/div"/>
+    </genEnums>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Policy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Policy/automatas"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Policy/statements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Policy/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Policy/parserURI"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Automata">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Automata/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Automata/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Automata/transitions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Automata/init"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Transition/from"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Transition/to"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Transition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//State/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FMPL-basic.ecore#//Expression"/>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Exec">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Exec/transition"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Cond">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Cond/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Cond/then"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Read">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Read/initBit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Read/length"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Write">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Write/initBit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Write/length"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Write/var"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Init">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Init/automata"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//Relational">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Relational/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//Relational/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//Relational/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//ArithmeticExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//ArithmeticExpression/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//ArithmeticExpression/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//ArithmeticExpression/operator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FMPL-basic.ecore#//Literal"/>
+    <genClasses ecoreClass="FMPL-basic.ecore#//IntegerLit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//IntegerLit/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//StringLit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//StringLit/value"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//VarDeclaration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute FMPL-basic.ecore#//VarDeclaration/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference FMPL-basic.ecore#//VarDeclaration/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="FMPL-basic.ecore#//VarReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference FMPL-basic.ecore#//VarReference/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="FMPL-basic.ecore#//Field"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,12 @@
+package fr.inria.diverse.puzzle.abc.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import abc.B
+
+@Aspect(className=B) 
+class CAspect {
+	
+	def void eval(){
+		println('Evaluating B')
+	}
+}

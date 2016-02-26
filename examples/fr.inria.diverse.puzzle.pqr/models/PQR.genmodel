@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.pqr/src" modelPluginID="fr.inria.diverse.puzzle.pqr" modelName="PQR" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>PQR.ecore</foreignModel>
+  <genPackages prefix="Pqr" disposableProviderFactory="true">
+    <ecorePackage href="PQR.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="PQR.ecore#//P"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PQR.ecore#//P/pes"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="PQR.ecore#//Q"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="PQR.ecore#//Q/res"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="PQR.ecore#//R"/>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../fr.inria.diverse.puzzle.abc/models/ABC.genmodel#//abc"/>
+  <usedGenPackages href="../../fr.inria.diverse.puzzle.xyz/models/XYZ.genmodel#//xyz"/>
+</genmodel:GenModel>

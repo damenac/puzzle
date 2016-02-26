@@ -1,0 +1,32 @@
+package Expressions;
+
+@SuppressWarnings("all")
+public class ExpressionsInterpreter {
+  private String basepath;
+  
+  public ExpressionsInterpreter(final String basepath) {
+    this.basepath = basepath;
+  }
+  
+  public void eval(final String modelPath) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nPolicy cannot be resolved to a type."
+      + "\nPolicy cannot be resolved to a type."
+      + "\nThe method or field FmplPackage is undefined"
+      + "\nThe method or field FmplPackage is undefined"
+      + "\nThe method or field FmplPackage is undefined"
+      + "\neNS_URI cannot be resolved"
+      + "\neNS_URI cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\ngetAutomatas cannot be resolved"
+      + "\nget cannot be resolved"
+      + "\ncurrentState cannot be resolved"
+      + "\nname cannot be resolved");
+  }
+  
+  public static void main(final String[] args) {
+    ExpressionsInterpreter _expressionsInterpreter = new ExpressionsInterpreter("input");
+    _expressionsInterpreter.eval("models/input.xmi");
+  }
+}

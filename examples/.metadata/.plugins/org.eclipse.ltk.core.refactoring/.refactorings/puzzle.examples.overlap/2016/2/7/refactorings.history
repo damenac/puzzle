@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete 4 elements from project &apos;puzzle.examples.overlap&apos;&#x0A;- Original project: &apos;puzzle.examples.overlap&apos;&#x0A;- Original elements:&#x0A;     Report-Overlapping-Graph.html&#x0A;     Report-Overlapping-Venn.html&#x0A;     Report-ReuseMetrics.html&#x0A;     Report-SemanticVariability.html" description="Delete elements" element1="Report-Overlapping-Venn.html" element2="Report-SemanticVariability.html" element3="Report-Overlapping-Graph.html" element4="Report-ReuseMetrics.html" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="4" stamp="1455717540617" subPackages="false" version="1.0"/>
-</session>

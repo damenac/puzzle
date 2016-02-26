@@ -6,7 +6,6 @@
 </mruHistory>
 <favorites>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.inria.diverse.puzzle.language.binding/.launch/puzzle-runtime.launch&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.inria.diverse.puzzle.language.binding/.launch/Generate Language Infrastructure (fr.inria.diverse.puzzle.language.binding).launch&quot;/&gt;&#10;"/>
 </favorites>
 </launchGroup>
 <launchGroup id="org.eclipse.debug.ui.launchGroup.profile">
@@ -23,7 +22,6 @@
 </mruHistory>
 <favorites>
 <launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.inria.diverse.puzzle.language.binding/.launch/puzzle-runtime.launch&quot;/&gt;&#10;"/>
-<launch memento="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;launchConfiguration local=&quot;false&quot; path=&quot;/fr.inria.diverse.puzzle.language.binding/.launch/Generate Language Infrastructure (fr.inria.diverse.puzzle.language.binding).launch&quot;/&gt;&#10;"/>
 </favorites>
 </launchGroup>
 </launchHistory>

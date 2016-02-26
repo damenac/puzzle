@@ -1,16 +1,8 @@
 eclipse.preferences.version=1
-org.eclipse.jdt.core.classpathVariable.ECLIPSE_CORE_RESOURCES=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.core.resources_3.9.1.v20140825-1431.jar
-org.eclipse.jdt.core.classpathVariable.ECLIPSE_CORE_RUNTIME=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.core.runtime_3.10.0.v20140318-2214.jar
-org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=/Users/dmendeza/IDEs/eclipse-melange/
-org.eclipse.jdt.core.classpathVariable.EMF_CODEGEN=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.emf.codegen_2.10.0.v20150123-0452.jar
-org.eclipse.jdt.core.classpathVariable.EMF_CODEGEN_ECORE=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.emf.codegen.ecore_2.10.2.v20150123-0452.jar
-org.eclipse.jdt.core.classpathVariable.EMF_COMMON=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.emf.common_2.10.1.v20150123-0348.jar
-org.eclipse.jdt.core.classpathVariable.EMF_ECORE=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.eclipse.emf.ecore_2.10.2.v20150123-0348.jar
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=
 org.eclipse.jdt.core.classpathVariable.JRE_LIB=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/jre/lib/rt.jar
 org.eclipse.jdt.core.classpathVariable.JRE_SRC=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home/src.zip
 org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=src
-org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.junit_4.11.0.v201303080030/
-org.eclipse.jdt.core.classpathVariable.JUNIT_SRC_HOME=/Users/dmendeza/IDEs/eclipse-melange/plugins/org.junit.source_4.11.0.v201303080030.jar
 org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
 org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
 org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8

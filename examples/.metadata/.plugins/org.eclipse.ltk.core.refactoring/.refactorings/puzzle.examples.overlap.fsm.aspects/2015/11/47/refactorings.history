@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;MANIFEST.MF&apos; to &apos;META-INF&apos;&#x0A;- Original project: &apos;puzzle.examples.overlap.fsm.aspects&apos;&#x0A;- Destination element: &apos;META-INF&apos;&#x0A;- Original element: &apos;MANIFEST.MF&apos;" description="Copy file" element1="META-INF/MANIFEST.MF" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1447943610094" target="/puzzle.examples.fsm.uml.aspects/META-INF" units="0" version="1.0"/>
-</session>

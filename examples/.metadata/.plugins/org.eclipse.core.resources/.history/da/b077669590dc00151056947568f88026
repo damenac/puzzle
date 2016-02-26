@@ -1,0 +1,14 @@
+package fr.inria.diverse.puzzle.pqr.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import pqr.P
+import fr.inria.diverse.puzzle.abc.semantics.AAspect
+
+@Aspect(className=P)
+class PAspect extends AAspect {
+	
+	def void eval(){
+		println("Evaluating P")
+	}
+}

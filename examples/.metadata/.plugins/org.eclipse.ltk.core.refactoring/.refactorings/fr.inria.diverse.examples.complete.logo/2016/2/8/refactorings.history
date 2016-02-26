@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;fr.inria.diverse.examples.complete.logo/src/family/logo.puzzle&apos; to &apos;logo.binding&apos;" description="Rename resource &apos;logo.puzzle&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/family/logo.puzzle" name="logo.binding" stamp="1456230457882" updateReferences="true"/>
-</session>

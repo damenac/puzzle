@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 2 elements to &apos;fr.inria.diverse.examples.logo.semantics/src/Logo.logoprogram&apos;&#x0A;- Original project: &apos;fr.inria.diverse.commons.semantics&apos;&#x0A;- Destination element: &apos;fr.inria.diverse.examples.logo.semantics/src/Logo.logoprogram&apos;&#x0A;- Original elements:&#x0A;     Context.xtend&#x0A;     Turtle.xtend" description="Copy files" destination="=fr.inria.diverse.examples.logo.semantics/src&lt;Logo.logoprogram" element1="src/commons/Context.xtend" element2="src/commons/Turtle.xtend" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1453115773940" units="0" version="1.0"/>
-</session>

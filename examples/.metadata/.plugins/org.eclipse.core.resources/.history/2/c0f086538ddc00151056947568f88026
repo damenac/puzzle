@@ -1,0 +1,9 @@
+package fr.inria.diverse.puzzle.xyz.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import 
+	
+class XAspect {
+	
+}

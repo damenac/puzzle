@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;fr.inria.diverse.examples.modularization.composedLanguage&apos;" deleteContents="true" description="Delete resource &apos;fr.inria.diverse.examples.modularization.composedLanguage&apos;" element1="/fr.inria.diverse.examples.modularization.composedLanguage" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1455187581682"/>
-</session>

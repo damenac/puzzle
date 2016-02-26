@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;puzzle.examples.family.fsm/src/family/overlappingFamily.melange&apos; to &apos;fsmFamily.melange&apos;" description="Rename resource &apos;overlappingFamily.melange&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/family/overlappingFamily.melange" name="fsmFamily.melange" stamp="1447931131129" updateReferences="true"/>
-</session>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;fr.inria.diverse.examples.complete.flowchart/src/family/flowchart.puzzle&apos; to &apos;flowchart.binding&apos;" description="Rename resource &apos;flowchart.puzzle&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/family/flowchart.puzzle" name="flowchart.binding" stamp="1456230400424" updateReferences="true"/>
-</session>
