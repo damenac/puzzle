@@ -1,5 +1,5 @@
 Bundle-SymbolicName: puzzle.examples.overlap.flowchart.semantics;singleton:=true
-Export-Package: flowchartpck,flowchart
+Export-Package: flowchartpck
 Bundle-Version: 1.0.0
 Bundle-Name: puzzle.examples.overlap.flowchart.semantics
 Bundle-ClassPath: .
