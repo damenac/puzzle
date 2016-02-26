@@ -2263,3 +2263,51 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.xtext.xbase.file.FileLo
 !ENTRY org.apache.log4j 2 0 2016-02-25 11:04:48.829
 !MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
 
+
+!ENTRY org.eclipse.ui 4 4 2016-02-26 13:17:16.272
+!MESSAGE Conflicting handlers for org.eclipse.jdt.ui.edit.text.java.source.quickMenu: {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@73ded04d} vs {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@23e83fea}
+
+!ENTRY org.eclipse.ui 4 4 2016-02-26 13:17:16.274
+!MESSAGE Conflicting handlers for org.eclipse.jdt.ui.edit.text.java.refactor.quickMenu: {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@25b8c3aa} vs {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@3bf93d3b}
+
+!ENTRY org.eclipse.ui 4 4 2016-02-26 13:23:42.956
+!MESSAGE Conflicting handlers for org.eclipse.jdt.ui.edit.text.java.source.quickMenu: {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@73ded04d} vs {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@23e83fea}
+
+!ENTRY org.eclipse.ui 4 4 2016-02-26 13:23:42.958
+!MESSAGE Conflicting handlers for org.eclipse.jdt.ui.edit.text.java.refactor.quickMenu: {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@25b8c3aa} vs {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@3bf93d3b}
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:24:56.877
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:25:22.071
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:25:57.883
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:26:02.364
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:26:36.905
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:26:37.160
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:26:50.228
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:26:50.453
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+
+
+!ENTRY org.apache.log4j 2 0 2016-02-26 13:27:02.238
+!MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
+

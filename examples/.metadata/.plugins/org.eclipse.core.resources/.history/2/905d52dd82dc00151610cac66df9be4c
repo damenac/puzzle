@@ -1,0 +1,7 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.Transition = fsmaspects.TransitionAspect
+	fsm.Print = fsmaspects.PrintAspect
+	fsm.RelationalExpression = fsmaspects.RelationalExpressionAspect
+	fsm.StateMachine = fsmaspects.StateMachineAspect
+	fsm.Literal = fsmaspects.LiteralAspect
+	fsm.Conditional = fsmaspects.ConditionalAspect

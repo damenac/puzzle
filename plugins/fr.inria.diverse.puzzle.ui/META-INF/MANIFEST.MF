@@ -43,8 +43,5 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xbase.lib
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: fr.inria.diverse.melange.ui,
- fr.inria.diverse.melange.ui.annotations,
- fr.inria.diverse.melange.ui.contentassist,
- fr.inria.diverse.melange.ui.contentassist.antlr,
- fr.inria.diverse.melange.ui.contentassist.antlr.internal
+ fr.inria.diverse.melange.ui.annotations
 Bundle-Activator: fr.inria.diverse.melange.ui.internal.PuzzleActivator

@@ -23,7 +23,7 @@ import com.google.inject.Module;
  */
 public class PuzzleActivator extends AbstractUIPlugin {
 	
-	public static final String FR_INRIA_DIVERSE_MELANGE_MELANGE = "fr.inria.diverse.melange.Melange";
+	public static final String FR_INRIA_DIVERSE_PUZZLE_PUZZLE = "fr.inria.diverse.puzzle.Puzzle";
 	
 	private static final Logger logger = Logger.getLogger(PuzzleActivator.class);
 	
@@ -73,7 +73,7 @@ public class PuzzleActivator extends AbstractUIPlugin {
 	}
 
 	protected Module getRuntimeModule(String grammar) {
-		if (FR_INRIA_DIVERSE_MELANGE_MELANGE.equals(grammar)) {
+		if (FR_INRIA_DIVERSE_PUZZLE_PUZZLE.equals(grammar)) {
 			return new fr.inria.diverse.melange.MelangeRuntimeModule();
 		}
 		
@@ -81,8 +81,8 @@ public class PuzzleActivator extends AbstractUIPlugin {
 	}
 	
 	protected Module getUiModule(String grammar) {
-		if (FR_INRIA_DIVERSE_MELANGE_MELANGE.equals(grammar)) {
-			return new fr.inria.diverse.melange.ui.MelangeUiModule(this);
+		if (FR_INRIA_DIVERSE_PUZZLE_PUZZLE.equals(grammar)) {
+			return new fr.inria.diverse.melange.MelangeRuntimeModule();
 		}
 		
 		throw new IllegalArgumentException(grammar);

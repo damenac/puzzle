@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ASCII"?>
+<flowchartpck:Flowchart
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:flowchartpck="flowchartpck"
+    xsi:schemaLocation="flowchartpck ../../puzzle.examples.overlap.flowchart.metamodel/models/flowchart.ecore">
+  <nodes xsi:type="flowchartpck:Start"
+      name="Begin"
+      outgoing="//@arcs.0"/>
+  <nodes xsi:type="flowchartpck:Action"
+      name="A"
+      outgoing="//@arcs.1"
+      incoming="//@arcs.0">
+    <doProgram>
+      <statements
+          xsi:type="flowchartpck:VarDecl"
+          name="x">
+        <expr
+            xsi:type="flowchartpck:IntegerLit"
+            value="1"/>
+      </statements>
+      <statements
+          xsi:type="flowchartpck:Println"
+          input="Evaluating A"/>
+    </doProgram>
+  </nodes>
+  <nodes xsi:type="flowchartpck:Action"
+      name="B"
+      outgoing="//@arcs.2"
+      incoming="//@arcs.1">
+    <doProgram>
+      <statements
+          xsi:type="flowchartpck:VarDecl"
+          name="y">
+        <expr
+            xsi:type="flowchartpck:ArithmeticExpression"
+            operator="mult">
+          <left
+              xsi:type="flowchartpck:VarReference"
+              key="x"/>
+          <right
+              xsi:type="flowchartpck:IntegerLit"
+              value="3"/>
+        </expr>
+      </statements>
+      <statements
+          xsi:type="flowchartpck:Println"
+          input="Evaluating B"/>
+    </doProgram>
+  </nodes>
+  <nodes xsi:type="flowchartpck:Decision"
+      name="?"
+      incoming="//@arcs.2">
+    <guard xsi:type="flowchartpck:RelationalConstraint">
+      <expression
+          xsi:type="flowchartpck:RelationalExpression"
+          operator="greaterThan">
+        <left
+            xsi:type="flowchartpck:VarReference"
+            key="y"/>
+        <right
+            xsi:type="flowchartpck:IntegerLit"
+            value="4"/>
+      </expression>
+    </guard>
+  </nodes>
+  <nodes xsi:type="flowchartpck:Action"
+      name="C">
+    <doProgram>
+      <statements
+          xsi:type="flowchartpck:Println"
+          input="Evaluating C"/>
+    </doProgram>
+  </nodes>
+  <nodes xsi:type="flowchartpck:Action"
+      name="D">
+    <doProgram>
+      <statements
+          xsi:type="flowchartpck:Println"
+          input="Evaluating D"/>
+    </doProgram>
+  </nodes>
+  <nodes xsi:type="flowchartpck:End"
+      name="End"/>
+  <arcs source="//@nodes.0"
+      target="//@nodes.1"/>
+  <arcs source="//@nodes.1"
+      target="//@nodes.2"/>
+  <arcs source="//@nodes.2"
+      target="//@nodes.3"/>
+</flowchartpck:Flowchart>

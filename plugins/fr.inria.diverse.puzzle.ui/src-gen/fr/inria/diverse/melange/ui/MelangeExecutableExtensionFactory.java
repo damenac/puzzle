@@ -23,7 +23,7 @@ public class MelangeExecutableExtensionFactory extends AbstractGuiceAwareExecuta
 	
 	@Override
 	protected Injector getInjector() {
-		return PuzzleActivator.getInstance().getInjector(PuzzleActivator.FR_INRIA_DIVERSE_MELANGE_MELANGE);
+		return PuzzleActivator.getInstance().getInjector(PuzzleActivator.FR_INRIA_DIVERSE_PUZZLE_PUZZLE);
 	}
 	
 }
