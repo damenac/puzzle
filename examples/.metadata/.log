@@ -1677,3 +1677,9 @@ Caused by: org.eclipse.jface.text.BadLocationException
 	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
 	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.internalReadOnly(XtextDocument.java:520)
 	... 35 more
+
+!ENTRY org.eclipse.core.resources 4 380 2016-02-26 15:02:45.431
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.core.resources 4 380 2016-02-26 15:02:45.432
+!MESSAGE The resource tree is locked for modifications.
