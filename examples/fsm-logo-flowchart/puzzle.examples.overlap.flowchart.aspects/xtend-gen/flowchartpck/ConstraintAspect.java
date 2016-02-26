@@ -2,6 +2,8 @@ package flowchartpck;
 
 import flowchartpck.Constraint;
 import flowchartpck.ConstraintAspectConstraintAspectProperties;
+import flowchartpck.RelationalConstraint;
+import flowchartpck.RelationalConstraintAspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
 
@@ -16,6 +18,9 @@ public class ConstraintAspect {
   }
   
   protected static boolean _privk3_evalConstraint(final ConstraintAspectConstraintAspectProperties _self_, final Constraint _self, final Hashtable<String, Object> context) {
+    if ((_self instanceof RelationalConstraint)) {
+      return RelationalConstraintAspect.evalConstraint(((RelationalConstraint) _self), context);
+    }
     return false;
   }
 }

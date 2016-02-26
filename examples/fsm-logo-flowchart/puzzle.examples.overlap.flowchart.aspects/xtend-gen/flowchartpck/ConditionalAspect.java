@@ -20,6 +20,11 @@ public class ConditionalAspect extends StatementAspect {
     _privk3_eval(_self_, _self,context);
   }
   
+  private static void super_eval(final Conditional _self, final Hashtable<String, Object> context) {
+    flowchartpck.StatementAspectStatementAspectProperties _self_ = flowchartpck.StatementAspectStatementAspectContext.getSelf(_self);
+     flowchartpck.StatementAspect._privk3_eval(_self_, _self,context);
+  }
+  
   protected static void _privk3_eval(final ConditionalAspectConditionalAspectProperties _self_, final Conditional _self, final Hashtable<String, Object> context) {
     Expression _condition = _self.getCondition();
     Object _eval = ExpressionAspect.eval(_condition, context);

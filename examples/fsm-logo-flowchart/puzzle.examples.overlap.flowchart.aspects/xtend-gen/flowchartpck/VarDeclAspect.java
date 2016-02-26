@@ -18,6 +18,11 @@ public class VarDeclAspect extends StatementAspect {
     _privk3_eval(_self_, _self,context);
   }
   
+  private static void super_eval(final VarDecl _self, final Hashtable<String, Object> context) {
+    flowchartpck.StatementAspectStatementAspectProperties _self_ = flowchartpck.StatementAspectStatementAspectContext.getSelf(_self);
+     flowchartpck.StatementAspect._privk3_eval(_self_, _self,context);
+  }
+  
   protected static void _privk3_eval(final VarDeclAspectVarDeclAspectProperties _self_, final VarDecl _self, final Hashtable<String, Object> context) {
     String _name = _self.getName();
     Expression _expr = _self.getExpr();

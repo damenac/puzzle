@@ -10,18 +10,22 @@ import flowchartpck.NodeAspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @Aspect(className = Decision.class)
 @SuppressWarnings("all")
 public class DecisionAspect extends NodeAspect {
   public static void eval(final Decision _self, final Hashtable<String, Object> context) {
     flowchartpck.DecisionAspectDecisionAspectProperties _self_ = flowchartpck.DecisionAspectDecisionAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof flowchartpck.Decision){
+     flowchartpck.DecisionAspect._privk3_eval(_self_, (flowchartpck.Decision)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   protected static void _privk3_eval(final DecisionAspectDecisionAspectProperties _self_, final Decision _self, final Hashtable<String, Object> context) {
     Constraint _guard = _self.getGuard();
     boolean guard = ConstraintAspect.evalConstraint(_guard, context);
+    InputOutput.<String>println(("Evaluating constraint " + Boolean.valueOf(guard)));
     if (guard) {
       EList<Arc> _outgoing = _self.getOutgoing();
       Arc _get = _outgoing.get(0);

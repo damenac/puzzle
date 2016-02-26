@@ -11,6 +11,7 @@ public class EndAspect extends NodeAspect {
 
 	@OverrideAspectMethod
 	def void eval(Hashtable<String, Object> context){
+		println('Finalizing the execution of the flowchart')
 		System.exit(0)
 	}
 }

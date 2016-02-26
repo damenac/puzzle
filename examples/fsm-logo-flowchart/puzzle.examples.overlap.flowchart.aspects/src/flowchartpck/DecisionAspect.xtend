@@ -12,6 +12,7 @@ public class DecisionAspect extends NodeAspect {
 
 	def void eval(Hashtable<String, Object> context) {
 		var guard = _self.guard.evalConstraint(context)
+		println('Evaluating constraint ' + guard)
 		if(guard){
 			_self.outgoing.get(0).target.eval(context)
 		}else{

@@ -19,6 +19,11 @@ public class AssignationAspect extends StatementAspect {
     _privk3_eval(_self_, _self,context);
   }
   
+  private static void super_eval(final Assignation _self, final Hashtable<String, Object> context) {
+    flowchartpck.StatementAspectStatementAspectProperties _self_ = flowchartpck.StatementAspectStatementAspectContext.getSelf(_self);
+     flowchartpck.StatementAspect._privk3_eval(_self_, _self,context);
+  }
+  
   protected static void _privk3_eval(final AssignationAspectAssignationAspectProperties _self_, final Assignation _self, final Hashtable<String, Object> context) {
     VarDecl _varRef = _self.getVarRef();
     String _name = _varRef.getName();

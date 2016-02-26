@@ -16,6 +16,7 @@ public class FlowchartAspect {
 	@Main
 	def void exec() {
 		var Hashtable<String, Object> context = new Hashtable<String, Object>()
-		_self.nodes.findFirst[ node | node instanceof Start ].eval(context)
+		var Start start = _self.nodes.findFirst[ node | node instanceof Start ] as Start
+		start.eval(context)
 	}
 }

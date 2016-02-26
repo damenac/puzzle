@@ -17,6 +17,11 @@ public class PrintAspect extends StatementAspect {
     _privk3_eval(_self_, _self,context);
   }
   
+  private static void super_eval(final Print _self, final Hashtable<String, Object> context) {
+    flowchartpck.StatementAspectStatementAspectProperties _self_ = flowchartpck.StatementAspectStatementAspectContext.getSelf(_self);
+     flowchartpck.StatementAspect._privk3_eval(_self_, _self,context);
+  }
+  
   protected static void _privk3_eval(final PrintAspectPrintAspectProperties _self_, final Print _self, final Hashtable<String, Object> context) {
     String _input = _self.getInput();
     InputOutput.<String>print(_input);

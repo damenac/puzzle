@@ -17,6 +17,11 @@ public class WaitAspect extends StatementAspect {
     _privk3_eval(_self_, _self,context);
   }
   
+  private static void super_eval(final Wait _self, final Hashtable<String, Object> context) {
+    flowchartpck.StatementAspectStatementAspectProperties _self_ = flowchartpck.StatementAspectStatementAspectContext.getSelf(_self);
+     flowchartpck.StatementAspect._privk3_eval(_self_, _self,context);
+  }
+  
   protected static void _privk3_eval(final WaitAspectWaitAspectProperties _self_, final Wait _self, final Hashtable<String, Object> context) {
     try {
       synchronized (_self) {

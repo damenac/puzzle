@@ -3,8 +3,8 @@ package flowchartpck;
 import flowchartpck.Flowchart;
 import flowchartpck.FlowchartAspectFlowchartAspectProperties;
 import flowchartpck.Node;
-import flowchartpck.NodeAspect;
 import flowchartpck.Start;
+import flowchartpck.StartAspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import java.util.Hashtable;
@@ -28,6 +28,7 @@ public class FlowchartAspect {
       return Boolean.valueOf((node instanceof Start));
     };
     Node _findFirst = IterableExtensions.<Node>findFirst(_nodes, _function);
-    NodeAspect.eval(_findFirst, context);
+    Start start = ((Start) _findFirst);
+    StartAspect.eval(start, context);
   }
 }

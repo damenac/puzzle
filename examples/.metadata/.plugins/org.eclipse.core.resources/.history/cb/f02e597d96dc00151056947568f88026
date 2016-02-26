@@ -1,0 +1,36 @@
+package flowchartpck
+
+import java.util.Hashtable
+import flowchartpck.Program
+import flowchartpck.Statement
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import static extension flowchartpck.ConditionalAspect.*
+import static extension flowchartpck.LoopAspect.*
+import static extension flowchartpck.ConsoleOutputAspect.*
+import static extension flowchartpck.LoopAspect.*
+import static extension flowchartpck.LoopAspect.*
+
+@Aspect(className=Program)
+class ProgramAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def void eval(Hashtable<String, Object> context){
+		for(Statement _statement : _self.statements){
+			if(_statement instanceof Program){
+				(_statement as Program).eval(context)
+			}
+			else if(_statement instanceof Conditional){
+				(_statement as Conditional).eval(context)
+			}
+			else if(_statement instanceof Loop){
+				(_statement as Loop).eval(context)
+			}
+			else if(_statement instanceof ConsoleOutput){
+				(_statement as ConsoleOutput).eval(context)
+			}
+		}
+	}
+}

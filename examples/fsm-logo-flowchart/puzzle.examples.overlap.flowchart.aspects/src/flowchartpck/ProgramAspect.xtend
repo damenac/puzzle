@@ -1,10 +1,11 @@
 package flowchartpck
 
-import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import java.util.Hashtable
 import flowchartpck.Program
 import flowchartpck.Statement
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 
 @Aspect(className=Program)
 class ProgramAspect extends StatementAspect {

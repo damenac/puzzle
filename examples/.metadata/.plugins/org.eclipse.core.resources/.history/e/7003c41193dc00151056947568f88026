@@ -1,0 +1,25 @@
+package fr.inria.diverse.puzzle.abc.semantics;
+
+@SuppressWarnings("all")
+public class ABCInterpreter {
+  public ABCInterpreter() {
+  }
+  
+  public Object eval(final String modelPath) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nA cannot be resolved to a type."
+      + "\nA cannot be resolved to a type."
+      + "\nThe method or field AbcPackage is undefined"
+      + "\nThe method or field AbcPackage is undefined"
+      + "\nThe method or field AbcPackage is undefined"
+      + "\neNS_URI cannot be resolved"
+      + "\neNS_URI cannot be resolved"
+      + "\neINSTANCE cannot be resolved"
+      + "\neval cannot be resolved");
+  }
+  
+  public static void main(final String[] args) {
+    Interpreter _aBCInterpreter = new Interpreter();
+    _aBCInterpreter.eval("instances/abc.xmi");
+  }
+}
