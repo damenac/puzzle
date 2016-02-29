@@ -41,7 +41,7 @@
               key="x"/>
           <right
               xsi:type="flowchartpck:IntegerLit"
-              value="3"/>
+              value="6"/>
         </expr>
       </statements>
       <statements

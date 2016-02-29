@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;RelationalConstraintAspect.xtend&apos; to &apos;puzzle.examples.overlap.flowchart.semantics/src/flowchartpck&apos;&#x0A;- Original project: &apos;puzzle.examples.overlap.flowchart.semantics&apos;&#x0A;- Destination element: &apos;puzzle.examples.overlap.flowchart.semantics/src/flowchartpck&apos;&#x0A;- Original element: &apos;RelationalConstraintAspect.xtend&apos;" description="Copy file" destination="/src&lt;flowchartpck" element1="src/flowchartpck/RelationalConstraintAspect.xtend" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1456737286280" units="0" version="1.0"/>
+</session>

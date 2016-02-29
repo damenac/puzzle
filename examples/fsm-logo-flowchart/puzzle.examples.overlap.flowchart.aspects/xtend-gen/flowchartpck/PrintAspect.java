@@ -14,7 +14,9 @@ public class PrintAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final Print _self, final Hashtable<String, Object> context) {
     flowchartpck.PrintAspectPrintAspectProperties _self_ = flowchartpck.PrintAspectPrintAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof flowchartpck.Print){
+     flowchartpck.PrintAspect._privk3_eval(_self_, (flowchartpck.Print)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Print _self, final Hashtable<String, Object> context) {

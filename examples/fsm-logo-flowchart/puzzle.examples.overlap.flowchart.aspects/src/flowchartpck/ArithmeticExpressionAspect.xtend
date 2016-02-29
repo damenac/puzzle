@@ -26,6 +26,7 @@ public class ArithmeticExpressionAspect extends ExpressionAspect{
 		else if(_self.operator == ArithmeticOperator.DIV){
 			result = (_self.left.eval(context) as Integer) / (_self.right.eval(context) as Integer)
 		}
-		return result
+		else 
+			return result
 	}
 }

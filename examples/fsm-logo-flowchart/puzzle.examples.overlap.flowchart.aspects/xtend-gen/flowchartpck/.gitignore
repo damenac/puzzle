@@ -174,3 +174,8 @@
 /WaitAspectWaitAspectContext.java
 /WaitAspectWaitAspectProperties.java
 /.Interpreter.java._trace
+/.VarReferenceAspect.java._trace
+/.VarReferenceAspectRelationalConstraintAspectContext.java._trace
+/.VarReferenceAspectRelationalConstraintAspectProperties.java._trace
+/.VarReferenceAspectVarReferenceAspectContext.java._trace
+/.VarReferenceAspectVarReferenceAspectProperties.java._trace

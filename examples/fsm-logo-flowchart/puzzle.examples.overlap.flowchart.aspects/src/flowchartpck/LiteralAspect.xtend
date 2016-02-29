@@ -11,6 +11,13 @@ public class LiteralAspect extends ExpressionAspect{
 
 	@OverrideAspectMethod
 	def Object eval (Hashtable<String, Object> context) {
-		return 0
+		if(_self instanceof IntegerLit)
+			return (_self as IntegerLit).value
+		else if(_self instanceof StringLit)
+			return (_self as StringLit).value
+		else if(_self instanceof BoolLit)
+			return (_self as BoolLit).value
+		else 
+			return 0
 	}
 }

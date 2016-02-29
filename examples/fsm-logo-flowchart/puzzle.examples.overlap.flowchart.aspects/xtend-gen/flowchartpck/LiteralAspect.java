@@ -1,8 +1,11 @@
 package flowchartpck;
 
+import flowchartpck.BoolLit;
 import flowchartpck.ExpressionAspect;
+import flowchartpck.IntegerLit;
 import flowchartpck.Literal;
 import flowchartpck.LiteralAspectLiteralAspectProperties;
+import flowchartpck.StringLit;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.Hashtable;
@@ -24,6 +27,18 @@ public class LiteralAspect extends ExpressionAspect {
   }
   
   protected static Object _privk3_eval(final LiteralAspectLiteralAspectProperties _self_, final Literal _self, final Hashtable<String, Object> context) {
-    return Integer.valueOf(0);
+    if ((_self instanceof IntegerLit)) {
+      return Integer.valueOf(((IntegerLit) _self).getValue());
+    } else {
+      if ((_self instanceof StringLit)) {
+        return ((StringLit) _self).getValue();
+      } else {
+        if ((_self instanceof BoolLit)) {
+          return Boolean.valueOf(((BoolLit) _self).isValue());
+        } else {
+          return Integer.valueOf(0);
+        }
+      }
+    }
   }
 }

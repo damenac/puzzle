@@ -1,0 +1,21 @@
+package flowchartpck
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import java.util.Hashtable
+import flowchartpck.Expression
+
+import static extension flowchartpck.ArithmeticExpressionAspect.*
+
+@Aspect(className=Expression)
+public class ExpressionAspect {
+
+	def Object eval(Hashtable<String, Object> context) {
+		if(_self instanceof Literal)
+			return (_self as Literal).eval(context)
+		else if(_self instanceof ArithmeticExpression)
+			return (_self instanceof ArithmeticExpression).eval(context)
+		return 0 
+	}
+
+}

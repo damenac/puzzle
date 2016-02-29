@@ -1,0 +1,2 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	xyz.Z = fr.inria.diverse.puzzle.xyz.semantics.ZAspect

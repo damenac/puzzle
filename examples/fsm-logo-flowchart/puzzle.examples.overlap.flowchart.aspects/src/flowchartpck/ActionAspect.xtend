@@ -14,6 +14,8 @@ public class ActionAspect extends NodeAspect {
 	@OverrideAspectMethod
 	def void eval(Hashtable<String, Object> context) {
 		_self.doProgram.eval(context)
+		println('   ... context = ' + context.toString)
 		_self.outgoing.forEach[ arc | arc.target.eval(context)]
+		
 	}
 }
