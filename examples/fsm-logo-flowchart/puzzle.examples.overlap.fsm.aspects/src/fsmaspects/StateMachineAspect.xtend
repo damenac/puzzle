@@ -37,7 +37,6 @@ class StateMachineAspect {
 		println("Executing the state machine. Please enter the input events:\n")
 		_self.initStateMachine(context)
 		
-		
 		print("    step: ---> current active state (s): ")
 		var _it = context.keySet.iterator
 		while(_it.hasNext){
@@ -70,6 +69,16 @@ class StateMachineAspect {
 				val EList<String> events = new BasicEList<String>()
 				events.add(_event)
 				_self.step(context, events)
+				
+				print("    step: ---> current active state (s): ")
+				_it = context.keySet.iterator
+				while(_it.hasNext){
+					var String _key = _it.next
+					var Object _value = context.get(_key)
+					if(_key.startsWith("currentState"))
+						(_value as ArrayList<AbstractState>).forEach[ _vertex |
+							print( _vertex.name + " ")]
+				}
 			}
 		}
 	}
@@ -116,6 +125,7 @@ class StateMachineAspect {
 			activeTransitions.addAll(_self.getActiveTransitions(_state, events))
 		}
 		
+		
 		for(Transition transition : activeTransitions){
 			_self.findOldActiveStates(attendedStates, transition, context)
 			_self.findNewActiveTransitions(currentTransitions, transition, context)
@@ -158,7 +168,7 @@ class StateMachineAspect {
 			while(_it.hasNext){
 				var String _key = _it.next
 				var Object _value = context.get(_key)
-				if(_key.startsWith("currentState-" + _self.name))
+				if(_key.startsWith("currentState"))
 					(_value as ArrayList<AbstractState>).forEach[ _vertex |
 						currentState.add(_vertex)]
 			}

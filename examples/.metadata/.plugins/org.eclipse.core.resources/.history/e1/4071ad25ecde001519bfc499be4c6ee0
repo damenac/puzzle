@@ -1,0 +1,7 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.Trigger = fsmaspects.TriggerAspect
+	fsm.VarDecl = fsmaspects.VarDeclAspect
+	fsm.Assignation = fsmaspects.AssignationAspect
+	fsm.FinalState = fsmaspects.FinalStateAspect
+	fsm.StringLit = fsmaspects.StringLitAspect
+	fsm.StateMachine = fsmaspects.StateMachineAspect

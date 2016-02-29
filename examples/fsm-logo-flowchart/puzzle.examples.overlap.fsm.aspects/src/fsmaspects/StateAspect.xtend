@@ -6,11 +6,12 @@ import java.util.Hashtable
 
 import static extension fsmaspects.ProgramAspect.*
 import fsm.State
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 
 // *.*
 // ASPECT
 @Aspect(className=State)
-class StateAspect {
+class StateAspect extends AbstractStateAspect {
 	
 	def public void entryState(Hashtable<String, Object> context){
 		if(_self.entry != null)
@@ -31,6 +32,7 @@ class StateAspect {
 		}
 	}
 	
+	@OverrideAspectMethod
 	def public void exitState(Hashtable<String, Object> context){
 		if(_self.exit != null)
 			_self.exit.eval(context)

@@ -1,0 +1,22 @@
+package fsmaspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import java.util.Hashtable
+import fsm.State
+
+import static extension fsmaspects.StateAspect.*
+
+
+// *.*
+// ASPECT
+@Aspect(className=State)
+class AbstractStateAspect {
+	
+	def public void evalState(Hashtable<String, Object> context) {
+		if(_self instanceof State)
+			(_self as State).evalState(context)
+		
+		
+	}
+}

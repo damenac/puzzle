@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ASCII"?>
+<fsm:StateMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:fsm="http://puzzle.examples.fsm"
+    xsi:schemaLocation="http://puzzle.examples.fsm ../../puzzle.examples.overlap.fsm.metamodel/models/fsm.ecore">
+  <subvertex
+      xsi:type="fsm:Pseudostate"
+      name="Start"
+      outgoing="//@transitions.0"/>
+  <subvertex
+      xsi:type="fsm:State"
+      name="A"
+      incoming="//@transitions.0"
+      outgoing="//@transitions.1"/>
+  <subvertex
+      xsi:type="fsm:State"
+      name="B"
+      incoming="//@transitions.1 //@transitions.2"
+      outgoing="//@transitions.2"/>
+  <subvertex
+      xsi:type="fsm:State"
+      name="C"/>
+  <subvertex
+      xsi:type="fsm:FinalState"
+      name="End"/>
+  <transitions
+      name="init"
+      target="//@subvertex.1"
+      source="//@subvertex.0"/>
+  <transitions
+      name="AToB"
+      target="//@subvertex.2"
+      source="//@subvertex.1">
+    <trigger
+        expression="x"/>
+    <effect
+        xsi:type="fsm:Program">
+      <statements
+          xsi:type="fsm:Println"
+          input="Leaving A ..."/>
+    </effect>
+  </transitions>
+  <transitions
+      name="BToB"
+      target="//@subvertex.2"
+      source="//@subvertex.2">
+    <trigger
+        expression="y"/>
+    <effect
+        xsi:type="fsm:Program">
+      <statements
+          xsi:type="fsm:Println"
+          input="Leaving B"/>
+    </effect>
+  </transitions>
+  <transitions
+      name="BToC">
+    <trigger
+        expression="z"/>
+    <effect
+        xsi:type="fsm:Program">
+      <statements
+          xsi:type="fsm:Println"
+          input="Evaluating B"/>
+    </effect>
+  </transitions>
+</fsm:StateMachine>
