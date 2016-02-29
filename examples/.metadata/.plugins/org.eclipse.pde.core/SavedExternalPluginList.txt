@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1456752118571
+# List of external plug-in models previously loaded. Timestamp: 1456753565680
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.inject_3.0.0.v201312141243.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.ibm.icu_52.1.1.v201501240615.jar
@@ -40,6 +40,9 @@ file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding.tests/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.binding.ui/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.vm.metamodel/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.vm.metamodel.edit/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.vm.metamodel.editor/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.match/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.merge/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/
@@ -48,9 +51,6 @@ file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesiz
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.ui/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.validator/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel.edit/
-file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.vm.metamodel.editor/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesis.vmsynthesis/
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/javaewah_0.7.9.v201401101600.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/javax.annotation_1.2.0.v201401042248.jar

@@ -17,7 +17,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.emf.codegen.ecore,
  fr.inria.diverse.melange.metamodel;bundle-version="0.1.0",
  de.trier.cs.jccd;bundle-version="1.0.0",
- fr.inria.diverse.puzzle.vm.metamodel;bundle-version="1.0.0"
+ fr.inria.diverse.puzzle.language.vm.metamodel;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.eclipse.emf.common.util,
