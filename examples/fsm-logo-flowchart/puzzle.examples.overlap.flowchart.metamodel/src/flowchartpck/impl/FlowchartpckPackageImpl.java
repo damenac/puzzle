@@ -33,8 +33,8 @@ import flowchartpck.Statement;
 import flowchartpck.StringLit;
 import flowchartpck.VarDecl;
 import flowchartpck.VarReference;
-
 import flowchartpck.Wait;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -704,7 +704,7 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConditional_Condition() {
+	public EReference getConditional_ThenInstructions() {
 		return (EReference)conditionalEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -713,8 +713,17 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConditional_Body() {
+	public EReference getConditional_ElseInstructions() {
 		return (EReference)conditionalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditional_Condition() {
+		return (EReference)conditionalEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -960,8 +969,9 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		createEReference(programEClass, PROGRAM__STATEMENTS);
 
 		conditionalEClass = createEClass(CONDITIONAL);
+		createEReference(conditionalEClass, CONDITIONAL__THEN_INSTRUCTIONS);
+		createEReference(conditionalEClass, CONDITIONAL__ELSE_INSTRUCTIONS);
 		createEReference(conditionalEClass, CONDITIONAL__CONDITION);
-		createEReference(conditionalEClass, CONDITIONAL__BODY);
 
 		loopEClass = createEClass(LOOP);
 		createEReference(loopEClass, LOOP__BODY);
@@ -1105,8 +1115,9 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		initEReference(getProgram_Statements(), this.getStatement(), null, "statements", null, 0, -1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConditional_ThenInstructions(), this.getProgram(), null, "thenInstructions", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditional_ElseInstructions(), this.getProgram(), null, "elseInstructions", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditional_Condition(), this.getExpression(), null, "condition", null, 1, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConditional_Body(), this.getProgram(), null, "body", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoop_Body(), this.getProgram(), null, "body", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

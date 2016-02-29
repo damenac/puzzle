@@ -1,0 +1,37 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import kmLogo.Instruction
+import kmLogo.Primitive
+import kmLogo.ProcDeclaration
+import kmLogo.Block
+import kmLogo.ControlStructure
+import kmLogo.VarDeclaration
+
+import java.util.Hashtable
+
+import static extension logo.PrimitiveAspect.*
+import static extension logo.ProcDeclarationAspect.*
+import static extension logo.BlockAspect.*
+import static extension logo.ControlStructureAspect.*
+import static extension logo.VarDeclarationAspect.*
+
+// *.*
+// ASPECT
+ @Aspect(className=Instruction) 
+class InstructionAspect {
+ 
+	def public void eval (Hashtable<String, Object> context ) {
+		if(_self instanceof Primitive)
+			(_self as Primitive).eval(context)
+		else if(_self instanceof ProcDeclaration)
+			(_self as ProcDeclaration).eval(context)
+		else if(_self instanceof Block)
+			(_self as Block).eval(context)
+		else if(_self instanceof ControlStructure)
+			(_self as ControlStructure).eval(context)
+		else if(_self instanceof VarDeclaration)
+			(_self as VarDeclaration).eval(context)
+	}  
+}

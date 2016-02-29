@@ -15,7 +15,9 @@ class ConditionalAspect extends StatementAspect {
 	@OverrideAspectMethod
 	def void eval(Hashtable<String, Object> context){
 		if(_self.condition.eval(context) as Boolean){
-			_self.body.eval(context)
+			_self.thenInstructions.eval(context)
+		}else{
+			_self.elseInstructions.eval(context)
 		}
 	}
 }

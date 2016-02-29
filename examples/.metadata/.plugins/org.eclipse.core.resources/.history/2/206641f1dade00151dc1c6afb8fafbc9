@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ASCII"?>
+<kmlogo:LogoProgram
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:kmlogo="http://www.kermeta.org/kmLogo"
+    xsi:schemaLocation="http://www.kermeta.org/kmLogo ../../puzzle.examples.overlap.logo.metamodel/models/logo.ecore">
+  <instructions
+      xsi:type="kmlogo:VarDeclaration"
+      key="size">
+    <expression
+        xsi:type="kmlogo:IntegerLit"
+        value="10"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:VarDeclaration"
+      key="scale">
+    <expression
+        xsi:type="kmlogo:IntegerLit"
+        value="3"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:VarDeclaration"
+      key="right">
+    <expression
+        xsi:type="kmlogo:IntegerLit"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:Forward">
+    <steps xsi:type="kmlogo:ArithmeticExpression"
+        operator="mult">
+      <left
+          xsi:type="kmlogo:VarReference"
+          key="size"/>
+      <right
+          xsi:type="kmlogo:VarReference"
+          key="scale"/>
+    </steps>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:Right">
+    <angle xsi:type="kmlogo:VarReference"
+        key="right"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:Forward">
+    <steps xsi:type="kmlogo:VarReference"
+        key="size"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:Right">
+    <angle xsi:type="kmlogo:VarReference"
+        key="right"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:Forward">
+    <steps xsi:type="kmlogo:VarReference"
+        key="size"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:Right">
+    <angle xsi:type="kmlogo:VarReference"
+        key="right"/>
+  </instructions>
+  <instructions
+      xsi:type="kmlogo:Forward">
+    <steps xsi:type="kmlogo:VarReference"
+        key="size"/>
+  </instructions>
+</kmlogo:LogoProgram>

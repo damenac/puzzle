@@ -85,10 +85,12 @@
         eType="#//Statement" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Conditional" eSuperTypes="#//Statement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="thenInstructions" eType="#//Program"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elseInstructions" eType="#//Program"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
         eType="#//Expression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Program"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="#//Statement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//Program"

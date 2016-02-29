@@ -192,76 +192,17 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KmLogoPackage.PROC_CALL: {
-				ProcCall procCall = (ProcCall)theEObject;
-				T result = caseProcCall(procCall);
-				if (result == null) result = caseExpression(procCall);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.PROC_DECLARATION: {
-				ProcDeclaration procDeclaration = (ProcDeclaration)theEObject;
-				T result = caseProcDeclaration(procDeclaration);
-				if (result == null) result = caseInstruction(procDeclaration);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.BLOCK: {
-				Block block = (Block)theEObject;
-				T result = caseBlock(block);
-				if (result == null) result = caseInstruction(block);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.IF: {
-				If if_ = (If)theEObject;
-				T result = caseIf(if_);
-				if (result == null) result = caseControlStructure(if_);
-				if (result == null) result = caseInstruction(if_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.CONTROL_STRUCTURE: {
-				ControlStructure controlStructure = (ControlStructure)theEObject;
-				T result = caseControlStructure(controlStructure);
-				if (result == null) result = caseInstruction(controlStructure);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.REPEAT: {
-				Repeat repeat = (Repeat)theEObject;
-				T result = caseRepeat(repeat);
-				if (result == null) result = caseControlStructure(repeat);
-				if (result == null) result = caseInstruction(repeat);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.WHILE: {
-				While while_ = (While)theEObject;
-				T result = caseWhile(while_);
-				if (result == null) result = caseControlStructure(while_);
-				if (result == null) result = caseInstruction(while_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.PARAMETER: {
-				Parameter parameter = (Parameter)theEObject;
-				T result = caseParameter(parameter);
-				if (result == null) result = caseExpression(parameter);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case KmLogoPackage.PARAMETER_CALL: {
-				ParameterCall parameterCall = (ParameterCall)theEObject;
-				T result = caseParameterCall(parameterCall);
-				if (result == null) result = caseExpression(parameterCall);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case KmLogoPackage.VAR_REFERENCE: {
 				VarReference varReference = (VarReference)theEObject;
 				T result = caseVarReference(varReference);
 				if (result == null) result = caseExpression(varReference);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case KmLogoPackage.VAR_DECLARATION: {
+				VarDeclaration varDeclaration = (VarDeclaration)theEObject;
+				T result = caseVarDeclaration(varDeclaration);
+				if (result == null) result = caseInstruction(varDeclaration);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -525,141 +466,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Proc Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Proc Call</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProcCall(ProcCall object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Proc Declaration</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Proc Declaration</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseProcDeclaration(ProcDeclaration object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Block</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseBlock(Block object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>If</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>If</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIf(If object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Control Structure</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Control Structure</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseControlStructure(ControlStructure object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Repeat</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Repeat</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRepeat(Repeat object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>While</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>While</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseWhile(While object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParameter(Parameter object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Parameter Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Parameter Call</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseParameterCall(ParameterCall object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Var Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -671,6 +477,21 @@ public class KmLogoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVarReference(VarReference object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Var Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Var Declaration</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVarDeclaration(VarDeclaration object) {
 		return null;
 	}
 

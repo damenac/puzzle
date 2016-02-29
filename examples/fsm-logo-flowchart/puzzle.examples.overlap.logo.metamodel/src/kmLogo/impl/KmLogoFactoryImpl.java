@@ -71,16 +71,8 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 			case KmLogoPackage.BOOL_LIT: return createBoolLit();
 			case KmLogoPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
 			case KmLogoPackage.RELATIONAL_EXPRESSION: return createRelationalExpression();
-			case KmLogoPackage.PROC_CALL: return createProcCall();
-			case KmLogoPackage.PROC_DECLARATION: return createProcDeclaration();
-			case KmLogoPackage.BLOCK: return createBlock();
-			case KmLogoPackage.IF: return createIf();
-			case KmLogoPackage.CONTROL_STRUCTURE: return createControlStructure();
-			case KmLogoPackage.REPEAT: return createRepeat();
-			case KmLogoPackage.WHILE: return createWhile();
-			case KmLogoPackage.PARAMETER: return createParameter();
-			case KmLogoPackage.PARAMETER_CALL: return createParameterCall();
 			case KmLogoPackage.VAR_REFERENCE: return createVarReference();
+			case KmLogoPackage.VAR_DECLARATION: return createVarDeclaration();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -265,99 +257,19 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ProcCall createProcCall() {
-		ProcCallImpl procCall = new ProcCallImpl();
-		return procCall;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProcDeclaration createProcDeclaration() {
-		ProcDeclarationImpl procDeclaration = new ProcDeclarationImpl();
-		return procDeclaration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Block createBlock() {
-		BlockImpl block = new BlockImpl();
-		return block;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public If createIf() {
-		IfImpl if_ = new IfImpl();
-		return if_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ControlStructure createControlStructure() {
-		ControlStructureImpl controlStructure = new ControlStructureImpl();
-		return controlStructure;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Repeat createRepeat() {
-		RepeatImpl repeat = new RepeatImpl();
-		return repeat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public While createWhile() {
-		WhileImpl while_ = new WhileImpl();
-		return while_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Parameter createParameter() {
-		ParameterImpl parameter = new ParameterImpl();
-		return parameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterCall createParameterCall() {
-		ParameterCallImpl parameterCall = new ParameterCallImpl();
-		return parameterCall;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public VarReference createVarReference() {
 		VarReferenceImpl varReference = new VarReferenceImpl();
 		return varReference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VarDeclaration createVarDeclaration() {
+		VarDeclarationImpl varDeclaration = new VarDeclarationImpl();
+		return varDeclaration;
 	}
 
 	/**

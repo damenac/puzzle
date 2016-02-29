@@ -15,9 +15,7 @@ public class ProgramAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final Program _self, final Hashtable<String, Object> context) {
     flowchartpck.ProgramAspectProgramAspectProperties _self_ = flowchartpck.ProgramAspectProgramAspectContext.getSelf(_self);
-     if (_self instanceof flowchartpck.Program){
-     flowchartpck.ProgramAspect._privk3_eval(_self_, (flowchartpck.Program)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_eval(_self_, _self,context);
   }
   
   private static void super_eval(final Program _self, final Hashtable<String, Object> context) {

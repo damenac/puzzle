@@ -148,87 +148,6 @@ public interface KmLogoFactory extends EFactory {
 	RelationalExpression createRelationalExpression();
 
 	/**
-	 * Returns a new object of class '<em>Proc Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Proc Call</em>'.
-	 * @generated
-	 */
-	ProcCall createProcCall();
-
-	/**
-	 * Returns a new object of class '<em>Proc Declaration</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Proc Declaration</em>'.
-	 * @generated
-	 */
-	ProcDeclaration createProcDeclaration();
-
-	/**
-	 * Returns a new object of class '<em>Block</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Block</em>'.
-	 * @generated
-	 */
-	Block createBlock();
-
-	/**
-	 * Returns a new object of class '<em>If</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>If</em>'.
-	 * @generated
-	 */
-	If createIf();
-
-	/**
-	 * Returns a new object of class '<em>Control Structure</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Control Structure</em>'.
-	 * @generated
-	 */
-	ControlStructure createControlStructure();
-
-	/**
-	 * Returns a new object of class '<em>Repeat</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Repeat</em>'.
-	 * @generated
-	 */
-	Repeat createRepeat();
-
-	/**
-	 * Returns a new object of class '<em>While</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>While</em>'.
-	 * @generated
-	 */
-	While createWhile();
-
-	/**
-	 * Returns a new object of class '<em>Parameter</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter</em>'.
-	 * @generated
-	 */
-	Parameter createParameter();
-
-	/**
-	 * Returns a new object of class '<em>Parameter Call</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Parameter Call</em>'.
-	 * @generated
-	 */
-	ParameterCall createParameterCall();
-
-	/**
 	 * Returns a new object of class '<em>Var Reference</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -236,6 +155,15 @@ public interface KmLogoFactory extends EFactory {
 	 * @generated
 	 */
 	VarReference createVarReference();
+
+	/**
+	 * Returns a new object of class '<em>Var Declaration</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Var Declaration</em>'.
+	 * @generated
+	 */
+	VarDeclaration createVarDeclaration();
 
 	/**
 	 * Returns the package supported by this factory.

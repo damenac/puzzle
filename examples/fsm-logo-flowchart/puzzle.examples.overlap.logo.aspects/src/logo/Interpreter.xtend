@@ -39,6 +39,8 @@ class Interpreter {
 	}
 	
 	def static void main(String[] args){
-		(new Interpreter()).eval('models/SimpleLogo.xmi')
+//		(new Interpreter()).eval('models/SimpleLogo.xmi')
+//		(new Interpreter()).eval('models/VariablesLogo.xmi')
+		(new Interpreter()).eval('models/ExpressionsLogo.xmi')
 	}
 }

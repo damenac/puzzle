@@ -943,22 +943,31 @@ public interface FlowchartpckPackage extends EPackage {
 	int CONDITIONAL = 20;
 
 	/**
+	 * The feature id for the '<em><b>Then Instructions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL__THEN_INSTRUCTIONS = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Else Instructions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL__ELSE_INSTRUCTIONS = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL__CONDITION = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL__BODY = STATEMENT_FEATURE_COUNT + 1;
+	int CONDITIONAL__CONDITION = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Conditional</em>' class.
@@ -967,7 +976,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+	int CONDITIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Conditional</em>' class.
@@ -1727,6 +1736,28 @@ public interface FlowchartpckPackage extends EPackage {
 	EClass getConditional();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Conditional#getThenInstructions <em>Then Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Then Instructions</em>'.
+	 * @see flowchartpck.Conditional#getThenInstructions()
+	 * @see #getConditional()
+	 * @generated
+	 */
+	EReference getConditional_ThenInstructions();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link flowchartpck.Conditional#getElseInstructions <em>Else Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else Instructions</em>'.
+	 * @see flowchartpck.Conditional#getElseInstructions()
+	 * @see #getConditional()
+	 * @generated
+	 */
+	EReference getConditional_ElseInstructions();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link flowchartpck.Conditional#getCondition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1736,17 +1767,6 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConditional_Condition();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link flowchartpck.Conditional#getBody <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body</em>'.
-	 * @see flowchartpck.Conditional#getBody()
-	 * @see #getConditional()
-	 * @generated
-	 */
-	EReference getConditional_Body();
 
 	/**
 	 * Returns the meta object for class '{@link flowchartpck.Loop <em>Loop</em>}'.
@@ -2328,20 +2348,28 @@ public interface FlowchartpckPackage extends EPackage {
 		EClass CONDITIONAL = eINSTANCE.getConditional();
 
 		/**
+		 * The meta object literal for the '<em><b>Then Instructions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL__THEN_INSTRUCTIONS = eINSTANCE.getConditional_ThenInstructions();
+
+		/**
+		 * The meta object literal for the '<em><b>Else Instructions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL__ELSE_INSTRUCTIONS = eINSTANCE.getConditional_ElseInstructions();
+
+		/**
 		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CONDITIONAL__CONDITION = eINSTANCE.getConditional_Condition();
-
-		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL__BODY = eINSTANCE.getConditional_Body();
 
 		/**
 		 * The meta object literal for the '{@link flowchartpck.impl.LoopImpl <em>Loop</em>}' class.

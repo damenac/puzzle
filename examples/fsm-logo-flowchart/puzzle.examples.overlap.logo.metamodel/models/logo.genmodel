@@ -61,40 +61,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//RelationalExpression/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//RelationalExpression/right"/>
     </genClasses>
-    <genClasses ecoreClass="logo.ecore#//ProcCall">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//ProcCall/actualArgs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logo.ecore#//ProcCall/declaration"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//ProcDeclaration">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logo.ecore#//ProcDeclaration/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//ProcDeclaration/args"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logo.ecore#//ProcDeclaration/procCall"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//ProcDeclaration/instructions"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//Block">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//Block/instructions"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//If">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//If/thenPart"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//If/elsePart"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//ControlStructure">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//ControlStructure/condition"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//Repeat">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//Repeat/block"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//While">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//While/block"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//Parameter">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logo.ecore#//Parameter/name"/>
-    </genClasses>
-    <genClasses ecoreClass="logo.ecore#//ParameterCall">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference logo.ecore#//ParameterCall/parameter"/>
-    </genClasses>
     <genClasses ecoreClass="logo.ecore#//VarReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logo.ecore#//VarReference/key"/>
+    </genClasses>
+    <genClasses ecoreClass="logo.ecore#//VarDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//VarDeclaration/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logo.ecore#//VarDeclaration/key"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

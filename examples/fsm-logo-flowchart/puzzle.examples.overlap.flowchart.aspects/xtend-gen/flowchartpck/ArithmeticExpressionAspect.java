@@ -17,7 +17,9 @@ public class ArithmeticExpressionAspect extends ExpressionAspect {
   public static Object eval(final ArithmeticExpression _self, final Hashtable<String, Object> context) {
     flowchartpck.ArithmeticExpressionAspectArithmeticExpressionAspectProperties _self_ = flowchartpck.ArithmeticExpressionAspectArithmeticExpressionAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof flowchartpck.ArithmeticExpression){
+    result = flowchartpck.ArithmeticExpressionAspect._privk3_eval(_self_, (flowchartpck.ArithmeticExpression)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   

@@ -20,7 +20,6 @@ package flowchartpck;
  * @generated
  */
 public interface Action extends Node {
-
 	/**
 	 * Returns the value of the '<em><b>Do Program</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -46,4 +45,5 @@ public interface Action extends Node {
 	 * @generated
 	 */
 	void setDoProgram(Program value);
+
 } // Action

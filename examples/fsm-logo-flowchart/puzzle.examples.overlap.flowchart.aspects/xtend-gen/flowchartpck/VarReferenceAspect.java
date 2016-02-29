@@ -14,7 +14,9 @@ public class VarReferenceAspect extends ExpressionAspect {
   public static Object eval(final VarReference _self, final Hashtable<String, Object> context) {
     flowchartpck.VarReferenceAspectVarReferenceAspectProperties _self_ = flowchartpck.VarReferenceAspectVarReferenceAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof flowchartpck.VarReference){
+    result = flowchartpck.VarReferenceAspect._privk3_eval(_self_, (flowchartpck.VarReference)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   

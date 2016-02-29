@@ -22,14 +22,35 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link flowchartpck.impl.ConditionalImpl#getThenInstructions <em>Then Instructions</em>}</li>
+ *   <li>{@link flowchartpck.impl.ConditionalImpl#getElseInstructions <em>Else Instructions</em>}</li>
  *   <li>{@link flowchartpck.impl.ConditionalImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link flowchartpck.impl.ConditionalImpl#getBody <em>Body</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class ConditionalImpl extends StatementImpl implements Conditional {
+	/**
+	 * The cached value of the '{@link #getThenInstructions() <em>Then Instructions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getThenInstructions()
+	 * @generated
+	 * @ordered
+	 */
+	protected Program thenInstructions;
+
+	/**
+	 * The cached value of the '{@link #getElseInstructions() <em>Else Instructions</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getElseInstructions()
+	 * @generated
+	 * @ordered
+	 */
+	protected Program elseInstructions;
+
 	/**
 	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -39,16 +60,6 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * @ordered
 	 */
 	protected Expression condition;
-
-	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBody()
-	 * @generated
-	 * @ordered
-	 */
-	protected Program body;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,6 +78,92 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	@Override
 	protected EClass eStaticClass() {
 		return FlowchartpckPackage.Literals.CONDITIONAL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Program getThenInstructions() {
+		return thenInstructions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetThenInstructions(Program newThenInstructions, NotificationChain msgs) {
+		Program oldThenInstructions = thenInstructions;
+		thenInstructions = newThenInstructions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS, oldThenInstructions, newThenInstructions);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setThenInstructions(Program newThenInstructions) {
+		if (newThenInstructions != thenInstructions) {
+			NotificationChain msgs = null;
+			if (thenInstructions != null)
+				msgs = ((InternalEObject)thenInstructions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS, null, msgs);
+			if (newThenInstructions != null)
+				msgs = ((InternalEObject)newThenInstructions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS, null, msgs);
+			msgs = basicSetThenInstructions(newThenInstructions, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS, newThenInstructions, newThenInstructions));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Program getElseInstructions() {
+		return elseInstructions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetElseInstructions(Program newElseInstructions, NotificationChain msgs) {
+		Program oldElseInstructions = elseInstructions;
+		elseInstructions = newElseInstructions;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS, oldElseInstructions, newElseInstructions);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setElseInstructions(Program newElseInstructions) {
+		if (newElseInstructions != elseInstructions) {
+			NotificationChain msgs = null;
+			if (elseInstructions != null)
+				msgs = ((InternalEObject)elseInstructions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS, null, msgs);
+			if (newElseInstructions != null)
+				msgs = ((InternalEObject)newElseInstructions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS, null, msgs);
+			msgs = basicSetElseInstructions(newElseInstructions, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS, newElseInstructions, newElseInstructions));
 	}
 
 	/**
@@ -117,56 +214,15 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Program getBody() {
-		return body;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBody(Program newBody, NotificationChain msgs) {
-		Program oldBody = body;
-		body = newBody;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.CONDITIONAL__BODY, oldBody, newBody);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBody(Program newBody) {
-		if (newBody != body) {
-			NotificationChain msgs = null;
-			if (body != null)
-				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.CONDITIONAL__BODY, null, msgs);
-			if (newBody != null)
-				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.CONDITIONAL__BODY, null, msgs);
-			msgs = basicSetBody(newBody, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.CONDITIONAL__BODY, newBody, newBody));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS:
+				return basicSetThenInstructions(null, msgs);
+			case FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS:
+				return basicSetElseInstructions(null, msgs);
 			case FlowchartpckPackage.CONDITIONAL__CONDITION:
 				return basicSetCondition(null, msgs);
-			case FlowchartpckPackage.CONDITIONAL__BODY:
-				return basicSetBody(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -179,10 +235,12 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS:
+				return getThenInstructions();
+			case FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS:
+				return getElseInstructions();
 			case FlowchartpckPackage.CONDITIONAL__CONDITION:
 				return getCondition();
-			case FlowchartpckPackage.CONDITIONAL__BODY:
-				return getBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -195,11 +253,14 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS:
+				setThenInstructions((Program)newValue);
+				return;
+			case FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS:
+				setElseInstructions((Program)newValue);
+				return;
 			case FlowchartpckPackage.CONDITIONAL__CONDITION:
 				setCondition((Expression)newValue);
-				return;
-			case FlowchartpckPackage.CONDITIONAL__BODY:
-				setBody((Program)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -213,11 +274,14 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS:
+				setThenInstructions((Program)null);
+				return;
+			case FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS:
+				setElseInstructions((Program)null);
+				return;
 			case FlowchartpckPackage.CONDITIONAL__CONDITION:
 				setCondition((Expression)null);
-				return;
-			case FlowchartpckPackage.CONDITIONAL__BODY:
-				setBody((Program)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -231,10 +295,12 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case FlowchartpckPackage.CONDITIONAL__THEN_INSTRUCTIONS:
+				return thenInstructions != null;
+			case FlowchartpckPackage.CONDITIONAL__ELSE_INSTRUCTIONS:
+				return elseInstructions != null;
 			case FlowchartpckPackage.CONDITIONAL__CONDITION:
 				return condition != null;
-			case FlowchartpckPackage.CONDITIONAL__BODY:
-				return body != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -20,7 +20,9 @@ public class ActionAspect extends NodeAspect {
   @OverrideAspectMethod
   public static void eval(final Action _self, final Hashtable<String, Object> context) {
     flowchartpck.ActionAspectActionAspectProperties _self_ = flowchartpck.ActionAspectActionAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof flowchartpck.Action){
+     flowchartpck.ActionAspect._privk3_eval(_self_, (flowchartpck.Action)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Action _self, final Hashtable<String, Object> context) {
