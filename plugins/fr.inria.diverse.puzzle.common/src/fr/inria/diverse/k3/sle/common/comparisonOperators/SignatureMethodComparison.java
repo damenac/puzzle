@@ -14,6 +14,28 @@ import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
  */
 public class SignatureMethodComparison implements MethodComparison {
 
+	// ---------------------------------------------------------
+	// Constants
+	// ---------------------------------------------------------
+	
+	public static SignatureMethodComparison instance;
+	
+	// ---------------------------------------------------------
+	// Constructor and singleton
+	// ---------------------------------------------------------
+	
+	private SignatureMethodComparison(){}
+	
+	public static SignatureMethodComparison getInstance(){
+		if(instance == null)
+			instance = new SignatureMethodComparison();
+		return instance;
+	}
+	
+	// ---------------------------------------------------------
+	// Methods
+	// ---------------------------------------------------------
+	
 	@Override
 	public boolean equal(JvmOperation left, JvmOperation right) {
 		boolean identicalModifiers = compareModifiers(left, right);

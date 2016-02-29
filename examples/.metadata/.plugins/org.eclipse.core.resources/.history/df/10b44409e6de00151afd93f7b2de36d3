@@ -1,4 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsm.Trigger = fsmaspects.TriggerAspect
-	fsm.FinalState = fsmaspects.FinalStateAspect
-	fsm.Conditional = fsmaspects.ConditionalAspect

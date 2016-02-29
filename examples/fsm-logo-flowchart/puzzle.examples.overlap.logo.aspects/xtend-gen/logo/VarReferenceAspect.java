@@ -14,7 +14,9 @@ public class VarReferenceAspect extends ExpressionAspect {
   public static Object eval(final VarReference _self, final Hashtable<String, Object> context) {
     logo.VarReferenceAspectVarReferenceAspectProperties _self_ = logo.VarReferenceAspectVarReferenceAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof kmLogo.VarReference){
+    result = logo.VarReferenceAspect._privk3_eval(_self_, (kmLogo.VarReference)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   

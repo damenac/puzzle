@@ -16,7 +16,6 @@ import org.eclipse.core.runtime.Platform;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.MaintananceCosts;
 import fr.inria.diverse.puzzle.metrics.chartMetrics.PairwiseRelationshipRatio;
@@ -92,7 +91,8 @@ public class FamilysMetricManager extends MetricsManager {
 	 * @throws URISyntaxException
 	 * @throws IOException
 	 */
-	public void createReport1FamilysShapeData(ArrayList<Language> languages) throws Exception {
+	public void createReport1FamilysShapeData(ArrayList<Language> languages, 
+			ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator) throws Exception {
 		File syntacticVennData = new File(project.getLocation().toString() + "/libVenn/syntacticVennData.jsonp" );
 		if(!syntacticVennData.exists())
 			syntacticVennData.createNewFile();
@@ -114,7 +114,7 @@ public class FamilysMetricManager extends MetricsManager {
 			semanticVennData.createNewFile();
 		PrintWriter outSemanticVennData = new PrintWriter( semanticVennData );
 		SpecialFamilySemanticChart semanticalVennDiagram = new SemanticSignatureVennDiagram();
-		outSemanticVennData.print(semanticalVennDiagram.getVariablesDeclaration(languages, new NamingConceptComparison(), null));
+		outSemanticVennData.print(semanticalVennDiagram.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator));
 		outSemanticVennData.close();
 		
 		 File semanticSignatureAndBodyVennData = new File(project.getLocation().toString() + "/libVenn/semanticSignatureAndBodyVennData.jsonp" );
@@ -122,7 +122,8 @@ public class FamilysMetricManager extends MetricsManager {
 				semanticSignatureAndBodyVennData.createNewFile();
 			PrintWriter outSemanticSignatureAndBodyVennData = new PrintWriter( semanticSignatureAndBodyVennData );
 			SpecialFamilySemanticChart semanticalSignatureAndBodyVennDiagram = new SemanticSignatureAndBodyVennDiagram();
-			outSemanticSignatureAndBodyVennData.print(semanticalSignatureAndBodyVennDiagram.getVariablesDeclaration(languages, new NamingConceptComparison(), null));
+			outSemanticSignatureAndBodyVennData.print(semanticalSignatureAndBodyVennDiagram.getVariablesDeclaration(languages, 
+					conceptComparisonOperator, methodComparisonOperator));
 			outSemanticSignatureAndBodyVennData.close();
 	}
 	

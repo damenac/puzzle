@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.ui.builder.AbstractBuilder"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.SynthesisProperties"/>
+</qualifiedTypeNameHistroy>

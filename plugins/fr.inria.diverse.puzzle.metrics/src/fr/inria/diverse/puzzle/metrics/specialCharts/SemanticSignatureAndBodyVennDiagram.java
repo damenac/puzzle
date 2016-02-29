@@ -19,7 +19,7 @@ public class SemanticSignatureAndBodyVennDiagram implements SpecialFamilySemanti
 	
 	@Override
 	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
-		methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
+//		methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		Hashtable<String, Integer> membersSizeTable = new Hashtable<String, Integer>();
 		ArrayList<TupleConceptMethodMember> conceptMethodMemberList = FamiliesServices.getInstance().getConceptMethodMemberMappingList(languages);
 		ArrayList<TupleConceptMethodMembers> conceptMethodMemberGroupList = FamiliesServices.getInstance().getConceptMethodMemberGroupList(conceptMethodMemberList, conceptComparisonOperator, methodComparisonOperator);

@@ -1,6 +1,7 @@
 package fsmaspects
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.Main
 
 import java.util.ArrayList
 import java.util.Hashtable
@@ -30,6 +31,7 @@ class StateMachineAspect {
 	/**
 	 * Reads the input events from the console and performs the corresponding steps in the state machine. 
 	 */
+	@Main
 	def public void evalStateMachine() {
 		val Hashtable<String, Object> context = new Hashtable<String, Object>
 		

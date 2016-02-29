@@ -67,7 +67,6 @@ public class ComputeMetricsActionImpl {
 		ConceptComparison conceptComparisonOperator = synthesisProperties.getConceptComparisonOperator();
 		MethodComparison methodComparisonOperator = synthesisProperties.getMethodComparisonOperator();
 		GraphPartition graphPartition = synthesisProperties.getGraphPartition();
-		
 		ArrayList<EPackage> ePackages = new ArrayList<EPackage>();
 		ArrayList<Language> languages = new ArrayList<Language>();
 		
@@ -86,7 +85,6 @@ public class ComputeMetricsActionImpl {
 		chartMetrics.add(new SizeOfCommonality());
 		chartMetrics.add(new ProductRelatedReusability());
 		chartMetrics.add(new IndividualizationRatio());
-		
 		String generalMetricsString = "";
 		for (FamilyChartMetric chartMetric : chartMetrics) {
 			generalMetricsString += chartMetric.getVariablesDeclaration(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
@@ -105,11 +103,10 @@ public class ComputeMetricsActionImpl {
 		outMetrics.print(generalMetricsString + "\n" + generalMetricsWindowsString);
 		outMetrics.close();
 		
-		
 		FamilysMetricManager familysMetric = new FamilysMetricManager(project);
 		
 		familysMetric.createReport1FamilysShape(languages);
-		familysMetric.createReport1FamilysShapeData(languages);
+		familysMetric.createReport1FamilysShapeData(languages, conceptComparisonOperator, methodComparisonOperator);
 //		familysMetric.createReport2CostSaving(languages);
 //		familysMetric.createReport2CostSavingData(languages, conceptComparisonOperator, methodComparisonOperator, graphPartition);
 		familysMetric.createReport3ReuseMetrics(languages);

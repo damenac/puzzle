@@ -5,7 +5,7 @@ import fr.inria.diverse.k3.sle.common.commands.FeaturesModelInference;
 import fr.inria.diverse.k3.sle.common.commands.GraphPartition;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison;
-import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison;
+import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition;
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer;
@@ -23,7 +23,7 @@ public class AbstractBuilder {
    */
   protected SynthesisProperties getSynthesisProperties() {
     ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
-    MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
+    MethodComparison methodComparisonOperator = SignatureMethodComparison.getInstance();
     FeaturesModelInference variabilityInferer = new PuzzleInferrer();
     GraphPartition graphPartition = new MembershipGraphPartition();
     SynthesisProperties properties = new SynthesisProperties(conceptComparisonOperator, methodComparisonOperator, variabilityInferer, graphPartition);
