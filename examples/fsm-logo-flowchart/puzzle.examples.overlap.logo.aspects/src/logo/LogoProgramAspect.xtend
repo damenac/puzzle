@@ -9,10 +9,8 @@ import java.util.Hashtable
 @Aspect(className=LogoProgram)
 public class LogoProgramAspect {
 
-	def int eval (Hashtable<String, Object> context) {
+	def void eval (Hashtable<String, Object> context) {
 		println("LogoProgram eval !")
 		_self.instructions.forEach[instr  | instr.eval(context)]
-		return 0
 	}
-
 }

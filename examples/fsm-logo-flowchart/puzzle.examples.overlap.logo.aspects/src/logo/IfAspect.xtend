@@ -9,15 +9,15 @@ import static extension logo.ExpressionAspect.*
 import java.util.Hashtable
 
 @Aspect(className=If)
-public class IfAspect extends ControlStructureAspect{
+public class IfAspect extends ControlStructureAspect {
 
 	@OverrideAspectMethod
-	def int eval (Hashtable<String, Object> context) {
+	def void eval (Hashtable<String, Object> context) {
 		if (_self.condition.eval(context) != 0) {
-			return _self.thenPart.eval(context)
+			_self.thenPart.eval(context)
 		}
 		else{
-			return _self.elsePart.eval(context)
+			_self.elsePart.eval(context)
 		}
 	}
 

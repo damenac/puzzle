@@ -9,10 +9,8 @@ import java.util.Hashtable
 public class ClearAspect extends PrimitiveAspect{
 	
 	@OverrideAspectMethod
-	def int eval (Hashtable<String, Object> context) {
+	def void eval (Hashtable<String, Object> context) {
 		println("CLEAR")
 		(context.get('turtle') as Turtle).reset
-		return 0
 	}
-
 }

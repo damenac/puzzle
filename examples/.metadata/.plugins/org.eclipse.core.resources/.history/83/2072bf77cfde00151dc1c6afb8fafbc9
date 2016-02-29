@@ -1,0 +1,24 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import kmLogo.Primitive
+import java.util.Hashtable
+import kmLogo.Back
+
+import static extension logo.BackAspect.*
+import kmLogo.Forward
+
+@Aspect(className=Primitive) 
+public class PrimitiveAspect extends InstructionAspect {  
+
+	@OverrideAspectMethod
+	def void eval (Hashtable<String, Object> context) {
+		if(_self instanceof Back)
+			(_self as Back).eval(context)
+		else if(_self instanceof Forward)
+			(_self as Forward).eval(context)
+	} 
+ 
+} 

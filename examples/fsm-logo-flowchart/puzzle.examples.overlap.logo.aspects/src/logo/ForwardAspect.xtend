@@ -12,10 +12,9 @@ import static extension logo.ExpressionAspect.*
 public class ForwardAspect extends PrimitiveAspect{
 
 	@OverrideAspectMethod
-	def int eval (Hashtable<String, Object> context) {
+	def void eval (Hashtable<String, Object> context) {
 		var int param = _self.steps.eval(context) as Integer
 		println("FORWARD " + param)
 		(context.get('turtle') as Turtle).forward(param)
-		return 0
-	}
+	} 
 }

@@ -6,9 +6,10 @@ import kmLogo.ControlStructure
 import java.util.Hashtable
 
 @Aspect(className=ControlStructure)
-public class ControlStructureAspect extends InstructionAspect{
+public class ControlStructureAspect extends InstructionAspect {
+	
 	@OverrideAspectMethod
-	def int eval (Hashtable<String, Object> context) {
-		return 0
+	def void eval (Hashtable<String, Object> context) {
+	
 	}
 }

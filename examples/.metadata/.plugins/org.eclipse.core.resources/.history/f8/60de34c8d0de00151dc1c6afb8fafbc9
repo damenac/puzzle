@@ -1,0 +1,36 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.Hashtable
+import kmLogo.Expression
+import kmLogo.ProcCall
+
+import static extension logo.InstructionAspect.*
+import java.util.ArrayList
+
+@Aspect(className=ProcCall)
+public class ProcCallAspect extends ExpressionAspect {
+
+	@OverrideAspectMethod 
+	def Object eval (Hashtable<String, Object> context) {
+		println("Calling of : " + _self.declaration.name)
+		var Hashtable<String,Integer> params = new Hashtable<String,Integer>()
+		
+		var int i = 0
+		for (Expression exp : _self.actualArgs){
+			var int currentArg = exp.eval(context) as Integer
+			params.put(_self.declaration.args.get(i).name,currentArg)
+			i= i+1
+		}
+		
+		(context.get('stack') as ArrayList<Hashtable<String,Integer>>).add(params)
+		
+		_self.declaration.instructions.forEach[instr | instr.eval(context)]
+		
+		(context.get('stack') as ArrayList<Hashtable<String,Integer>>).
+			remove((context.get('stack') as ArrayList<Hashtable<String,Integer>>).size - 1)
+		return 0
+	}
+}

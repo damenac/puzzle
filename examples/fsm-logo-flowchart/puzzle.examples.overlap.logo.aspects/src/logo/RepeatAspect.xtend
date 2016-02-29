@@ -10,15 +10,14 @@ import static extension logo.BlockAspect.*
 import static extension logo.ExpressionAspect.*
 
 @Aspect(className=Repeat)
-public class RepeatAspect extends ControlStructureAspect{
+public class RepeatAspect extends ControlStructureAspect {
 
 	@OverrideAspectMethod
-	def int eval (Hashtable<String, Object> context) {
+	def void eval (Hashtable<String, Object> context) {
 		var int time =  _self.condition.eval(context) as Integer
 		while( time > 0){
 			_self.block.eval(context)
 			time = time - 1
 		}
-		return 0
 	}
 }

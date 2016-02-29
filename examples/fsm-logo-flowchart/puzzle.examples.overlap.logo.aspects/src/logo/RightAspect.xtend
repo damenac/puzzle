@@ -13,11 +13,9 @@ import static extension logo.ExpressionAspect.*
 public class RightAspect extends PrimitiveAspect{
 
 	@OverrideAspectMethod
-	def int eval (Hashtable<String, Object> context) {
+	def void eval (Hashtable<String, Object> context) {
 		var int param = _self.angle.eval(context) as Integer
 		println("RIGHT " + param)
 		(context.get('turtle') as Turtle).rotate(param)
-		return 0
-	}
-
+	} 
 }
