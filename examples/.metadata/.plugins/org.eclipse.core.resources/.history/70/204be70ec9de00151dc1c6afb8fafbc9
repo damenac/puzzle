@@ -1,0 +1,13 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	kmLogo.Primitive = logo.PrimitiveAspect
+	kmLogo.If = logo.IfAspect
+	kmLogo.Expression = logo.ExpressionAspect
+	kmLogo.ControlStructure = logo.ControlStructureAspect
+	kmLogo.PenDown = logo.PenDownAspect
+	kmLogo.IntegerLit = logo.IntegerLitAspect
+	kmLogo.Parameter = logo.ParameterAspect
+	kmLogo.RelationalExpression = logo.RelationalExpressionAspect
+	kmLogo.BoolLit = logo.BoolLitAspect
+	kmLogo.ArithmeticExpression = logo.ArithmeticExpressionAspect
+	kmLogo.StringLit = logo.StringLitAspect
+	kmLogo.Left = logo.LeftAspect

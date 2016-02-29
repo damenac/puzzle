@@ -31,6 +31,7 @@ import kmLogo.RelationalOperator;
 import kmLogo.Repeat;
 import kmLogo.Right;
 import kmLogo.StringLit;
+import kmLogo.VarReference;
 import kmLogo.While;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -229,6 +230,13 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * @generated
 	 */
 	private EClass parameterCallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass varReferenceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -796,6 +804,24 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVarReference() {
+		return varReferenceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVarReference_Key() {
+		return (EAttribute)varReferenceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getArithmeticOperator() {
 		return arithmeticOperatorEEnum;
 	}
@@ -917,6 +943,9 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		parameterCallEClass = createEClass(PARAMETER_CALL);
 		createEReference(parameterCallEClass, PARAMETER_CALL__PARAMETER);
 
+		varReferenceEClass = createEClass(VAR_REFERENCE);
+		createEAttribute(varReferenceEClass, VAR_REFERENCE__KEY);
+
 		// Create enums
 		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
 		relationalOperatorEEnum = createEEnum(RELATIONAL_OPERATOR);
@@ -973,6 +1002,7 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		whileEClass.getESuperTypes().add(this.getControlStructure());
 		parameterEClass.getESuperTypes().add(this.getExpression());
 		parameterCallEClass.getESuperTypes().add(this.getExpression());
+		varReferenceEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1054,6 +1084,9 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 
 		initEClass(parameterCallEClass, ParameterCall.class, "ParameterCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getParameterCall_Parameter(), this.getParameter(), null, "parameter", null, 1, 1, ParameterCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(varReferenceEClass, VarReference.class, "VarReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVarReference_Key(), ecorePackage.getEString(), "key", null, 0, 1, VarReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");

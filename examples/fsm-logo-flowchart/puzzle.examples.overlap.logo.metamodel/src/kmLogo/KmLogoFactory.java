@@ -229,6 +229,15 @@ public interface KmLogoFactory extends EFactory {
 	ParameterCall createParameterCall();
 
 	/**
+	 * Returns a new object of class '<em>Var Reference</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Var Reference</em>'.
+	 * @generated
+	 */
+	VarReference createVarReference();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

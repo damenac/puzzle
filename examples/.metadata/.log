@@ -3830,3 +3830,2423 @@ java.lang.ClassCastException: The type null is not a valid interface org.eclipse
 	at org.eclipse.egit.ui.Activator$ResourceRefreshJob.runInWorkspace(Activator.java:357)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:38:38.514
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/ArithmeticExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:38:51.306
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/ArithmeticExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:39:00.072
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/ArithmeticExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.888
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/IntegerLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.888
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/BoolLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.891
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/ExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.891
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.892
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.893
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.894
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:11.894
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:12.345
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:12.346
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:23.360
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/BoolLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:40.517
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:40.518
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/ExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:40.518
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:40.521
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:40.545
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:40.552
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:40.553
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/IntegerLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:44.505
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/ExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:44.505
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:44.507
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/IntegerLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:44.508
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:44.510
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:44.511
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:44.528
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.208
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.208
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.208
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/IntegerLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.209
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.210
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.211
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/ExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.212
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:40:45.474
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:43:34.230
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:43:34.240
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:43:34.241
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:43:34.242
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:43:34.251
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:43:34.294
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/IntegerLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:04.506
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/IntegerLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:32.313
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:32.336
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:32.336
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:32.337
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:32.367
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:32.974
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:35.520
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:35.521
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:35.934
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:42.391
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:42.416
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:42.423
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:42.438
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:44:42.920
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalConstraintAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:33.052
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:33.053
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:33.062
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:34.364
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:34.368
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:34.382
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:37.819
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:37.835
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:37.841
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:45:40.739
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/RelationalExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 10:46:02.394
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:02:20.451
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:02:21.137
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:02:35.504
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:02:36.132
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:02:40.220
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:04:06.244
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:04:11.808
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:04:12.281
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:04:32.946
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:04:33.392
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:04:54.384
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:04:54.941
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:02.041
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:02.752
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:08.403
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:09.134
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:19.293
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:30.293
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:48.174
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:48.893
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:57.168
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:05:58.025
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:06:05.919
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:06:06.795
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:06:12.928
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:06:59.616
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:07:00.407
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:07:25.796
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:07:32.276
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:07:50.707
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:07:57.719
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:08:36.932
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:10:01.752
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:10:23.032
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:10:39.597
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:10:46.877
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:11:03.705
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:11:11.462
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:11:18.415
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:11:44.303
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:11:58.057
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:12:03.738
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:12:22.239
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:12:55.375
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:13:07.243
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:15:15.083
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:15:25.157
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:15:52.996
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:16:16.915
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:16:35.826
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:16:41.572
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:16:53.165
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-02-29 11:16:55.807
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/puzzle.examples.overlap.logo.aspects/src/logo/StringLitAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)

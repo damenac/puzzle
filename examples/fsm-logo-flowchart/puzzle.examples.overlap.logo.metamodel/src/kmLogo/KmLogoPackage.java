@@ -1065,6 +1065,43 @@ public interface KmLogoPackage extends EPackage {
 	int PARAMETER_CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link kmLogo.impl.VarReferenceImpl <em>Var Reference</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see kmLogo.impl.VarReferenceImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getVarReference()
+	 * @generated
+	 */
+	int VAR_REFERENCE = 26;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_REFERENCE__KEY = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Var Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Var Reference</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_REFERENCE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1072,7 +1109,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int ARITHMETIC_OPERATOR = 26;
+	int ARITHMETIC_OPERATOR = 27;
 
 	/**
 	 * The meta object id for the '{@link kmLogo.RelationalOperator <em>Relational Operator</em>}' enum.
@@ -1082,7 +1119,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @see kmLogo.impl.KmLogoPackageImpl#getRelationalOperator()
 	 * @generated
 	 */
-	int RELATIONAL_OPERATOR = 27;
+	int RELATIONAL_OPERATOR = 28;
 
 
 	/**
@@ -1654,6 +1691,27 @@ public interface KmLogoPackage extends EPackage {
 	EReference getParameterCall_Parameter();
 
 	/**
+	 * Returns the meta object for class '{@link kmLogo.VarReference <em>Var Reference</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Var Reference</em>'.
+	 * @see kmLogo.VarReference
+	 * @generated
+	 */
+	EClass getVarReference();
+
+	/**
+	 * Returns the meta object for the attribute '{@link kmLogo.VarReference#getKey <em>Key</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see kmLogo.VarReference#getKey()
+	 * @see #getVarReference()
+	 * @generated
+	 */
+	EAttribute getVarReference_Key();
+
+	/**
 	 * Returns the meta object for enum '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2179,6 +2237,24 @@ public interface KmLogoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PARAMETER_CALL__PARAMETER = eINSTANCE.getParameterCall_Parameter();
+
+		/**
+		 * The meta object literal for the '{@link kmLogo.impl.VarReferenceImpl <em>Var Reference</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see kmLogo.impl.VarReferenceImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getVarReference()
+		 * @generated
+		 */
+		EClass VAR_REFERENCE = eINSTANCE.getVarReference();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VAR_REFERENCE__KEY = eINSTANCE.getVarReference_Key();
 
 		/**
 		 * The meta object literal for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

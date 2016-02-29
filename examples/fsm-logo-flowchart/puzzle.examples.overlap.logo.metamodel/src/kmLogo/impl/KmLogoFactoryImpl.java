@@ -80,6 +80,7 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 			case KmLogoPackage.WHILE: return createWhile();
 			case KmLogoPackage.PARAMETER: return createParameter();
 			case KmLogoPackage.PARAMETER_CALL: return createParameterCall();
+			case KmLogoPackage.VAR_REFERENCE: return createVarReference();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -347,6 +348,16 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	public ParameterCall createParameterCall() {
 		ParameterCallImpl parameterCall = new ParameterCallImpl();
 		return parameterCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VarReference createVarReference() {
+		VarReferenceImpl varReference = new VarReferenceImpl();
+		return varReference;
 	}
 
 	/**
