@@ -157,13 +157,13 @@ public interface KmLogoFactory extends EFactory {
 	VarReference createVarReference();
 
 	/**
-	 * Returns a new object of class '<em>Var Declaration</em>'.
+	 * Returns a new object of class '<em>Var Decl</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Var Declaration</em>'.
+	 * @return a new object of class '<em>Var Decl</em>'.
 	 * @generated
 	 */
-	VarDeclaration createVarDeclaration();
+	VarDecl createVarDecl();
 
 	/**
 	 * Returns the package supported by this factory.

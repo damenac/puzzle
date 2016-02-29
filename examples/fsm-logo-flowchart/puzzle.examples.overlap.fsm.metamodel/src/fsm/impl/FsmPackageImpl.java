@@ -595,8 +595,17 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConditional_Body() {
+	public EReference getConditional_ThenInstructions() {
 		return (EReference)conditionalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getConditional_ElseInstructions() {
+		return (EReference)conditionalEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1009,7 +1018,8 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 
 		conditionalEClass = createEClass(CONDITIONAL);
 		createEReference(conditionalEClass, CONDITIONAL__CONDITION);
-		createEReference(conditionalEClass, CONDITIONAL__BODY);
+		createEReference(conditionalEClass, CONDITIONAL__THEN_INSTRUCTIONS);
+		createEReference(conditionalEClass, CONDITIONAL__ELSE_INSTRUCTIONS);
 
 		loopEClass = createEClass(LOOP);
 		createEReference(loopEClass, LOOP__GUARD);
@@ -1161,7 +1171,8 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 
 		initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConditional_Condition(), this.getExpression(), null, "condition", null, 1, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConditional_Body(), this.getProgram(), null, "body", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditional_ThenInstructions(), this.getProgram(), null, "thenInstructions", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditional_ElseInstructions(), this.getProgram(), null, "elseInstructions", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoop_Guard(), this.getExpression(), null, "guard", null, 1, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

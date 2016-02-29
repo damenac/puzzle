@@ -701,13 +701,22 @@ public interface FsmPackage extends EPackage {
 	int CONDITIONAL__CONDITION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * The feature id for the '<em><b>Then Instructions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL__BODY = STATEMENT_FEATURE_COUNT + 1;
+	int CONDITIONAL__THEN_INSTRUCTIONS = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Else Instructions</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL__ELSE_INSTRUCTIONS = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Conditional</em>' class.
@@ -716,7 +725,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+	int CONDITIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Conditional</em>' class.
@@ -1666,15 +1675,26 @@ public interface FsmPackage extends EPackage {
 	EReference getConditional_Condition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link fsm.Conditional#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference '{@link fsm.Conditional#getThenInstructions <em>Then Instructions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body</em>'.
-	 * @see fsm.Conditional#getBody()
+	 * @return the meta object for the containment reference '<em>Then Instructions</em>'.
+	 * @see fsm.Conditional#getThenInstructions()
 	 * @see #getConditional()
 	 * @generated
 	 */
-	EReference getConditional_Body();
+	EReference getConditional_ThenInstructions();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fsm.Conditional#getElseInstructions <em>Else Instructions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Else Instructions</em>'.
+	 * @see fsm.Conditional#getElseInstructions()
+	 * @see #getConditional()
+	 * @generated
+	 */
+	EReference getConditional_ElseInstructions();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.Loop <em>Loop</em>}'.
@@ -2355,12 +2375,20 @@ public interface FsmPackage extends EPackage {
 		EReference CONDITIONAL__CONDITION = eINSTANCE.getConditional_Condition();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Then Instructions</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL__BODY = eINSTANCE.getConditional_Body();
+		EReference CONDITIONAL__THEN_INSTRUCTIONS = eINSTANCE.getConditional_ThenInstructions();
+
+		/**
+		 * The meta object literal for the '<em><b>Else Instructions</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL__ELSE_INSTRUCTIONS = eINSTANCE.getConditional_ElseInstructions();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.LoopImpl <em>Loop</em>}' class.

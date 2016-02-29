@@ -16,9 +16,7 @@ public class RelationalConstraintAspect extends ConstraintAspect {
   public static boolean evalConstraint(final RelationalConstraint _self, final Hashtable<String, Object> context) {
     flowchartpck.RelationalConstraintAspectRelationalConstraintAspectProperties _self_ = flowchartpck.RelationalConstraintAspectRelationalConstraintAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof flowchartpck.RelationalConstraint){
-    result = flowchartpck.RelationalConstraintAspect._privk3_evalConstraint(_self_, (flowchartpck.RelationalConstraint)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_evalConstraint(_self_, _self,context);
     return (boolean)result;
   }
   

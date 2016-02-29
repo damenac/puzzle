@@ -697,14 +697,14 @@ public interface KmLogoPackage extends EPackage {
 	int VAR_REFERENCE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link kmLogo.impl.VarDeclarationImpl <em>Var Declaration</em>}' class.
+	 * The meta object id for the '{@link kmLogo.impl.VarDeclImpl <em>Var Decl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see kmLogo.impl.VarDeclarationImpl
-	 * @see kmLogo.impl.KmLogoPackageImpl#getVarDeclaration()
+	 * @see kmLogo.impl.VarDeclImpl
+	 * @see kmLogo.impl.KmLogoPackageImpl#getVarDecl()
 	 * @generated
 	 */
-	int VAR_DECLARATION = 18;
+	int VAR_DECL = 18;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -713,7 +713,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECLARATION__EXPRESSION = INSTRUCTION_FEATURE_COUNT + 0;
+	int VAR_DECL__EXPRESSION = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -722,25 +722,25 @@ public interface KmLogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECLARATION__KEY = INSTRUCTION_FEATURE_COUNT + 1;
+	int VAR_DECL__KEY = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Var Declaration</em>' class.
+	 * The number of structural features of the '<em>Var Decl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECLARATION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+	int VAR_DECL_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Var Declaration</em>' class.
+	 * The number of operations of the '<em>Var Decl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECLARATION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+	int VAR_DECL_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
@@ -1109,36 +1109,36 @@ public interface KmLogoPackage extends EPackage {
 	EAttribute getVarReference_Key();
 
 	/**
-	 * Returns the meta object for class '{@link kmLogo.VarDeclaration <em>Var Declaration</em>}'.
+	 * Returns the meta object for class '{@link kmLogo.VarDecl <em>Var Decl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Var Declaration</em>'.
-	 * @see kmLogo.VarDeclaration
+	 * @return the meta object for class '<em>Var Decl</em>'.
+	 * @see kmLogo.VarDecl
 	 * @generated
 	 */
-	EClass getVarDeclaration();
+	EClass getVarDecl();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link kmLogo.VarDeclaration#getExpression <em>Expression</em>}'.
+	 * Returns the meta object for the containment reference '{@link kmLogo.VarDecl#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see kmLogo.VarDeclaration#getExpression()
-	 * @see #getVarDeclaration()
+	 * @see kmLogo.VarDecl#getExpression()
+	 * @see #getVarDecl()
 	 * @generated
 	 */
-	EReference getVarDeclaration_Expression();
+	EReference getVarDecl_Expression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link kmLogo.VarDeclaration#getKey <em>Key</em>}'.
+	 * Returns the meta object for the attribute '{@link kmLogo.VarDecl#getKey <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see kmLogo.VarDeclaration#getKey()
-	 * @see #getVarDeclaration()
+	 * @see kmLogo.VarDecl#getKey()
+	 * @see #getVarDecl()
 	 * @generated
 	 */
-	EAttribute getVarDeclaration_Key();
+	EAttribute getVarDecl_Key();
 
 	/**
 	 * Returns the meta object for enum '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}'.
@@ -1484,14 +1484,14 @@ public interface KmLogoPackage extends EPackage {
 		EAttribute VAR_REFERENCE__KEY = eINSTANCE.getVarReference_Key();
 
 		/**
-		 * The meta object literal for the '{@link kmLogo.impl.VarDeclarationImpl <em>Var Declaration</em>}' class.
+		 * The meta object literal for the '{@link kmLogo.impl.VarDeclImpl <em>Var Decl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see kmLogo.impl.VarDeclarationImpl
-		 * @see kmLogo.impl.KmLogoPackageImpl#getVarDeclaration()
+		 * @see kmLogo.impl.VarDeclImpl
+		 * @see kmLogo.impl.KmLogoPackageImpl#getVarDecl()
 		 * @generated
 		 */
-		EClass VAR_DECLARATION = eINSTANCE.getVarDeclaration();
+		EClass VAR_DECL = eINSTANCE.getVarDecl();
 
 		/**
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -1499,7 +1499,7 @@ public interface KmLogoPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VAR_DECLARATION__EXPRESSION = eINSTANCE.getVarDeclaration_Expression();
+		EReference VAR_DECL__EXPRESSION = eINSTANCE.getVarDecl_Expression();
 
 		/**
 		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
@@ -1507,7 +1507,7 @@ public interface KmLogoPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VAR_DECLARATION__KEY = eINSTANCE.getVarDeclaration_Key();
+		EAttribute VAR_DECL__KEY = eINSTANCE.getVarDecl_Key();
 
 		/**
 		 * The meta object literal for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

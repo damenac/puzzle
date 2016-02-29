@@ -72,7 +72,7 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 			case KmLogoPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
 			case KmLogoPackage.RELATIONAL_EXPRESSION: return createRelationalExpression();
 			case KmLogoPackage.VAR_REFERENCE: return createVarReference();
-			case KmLogoPackage.VAR_DECLARATION: return createVarDeclaration();
+			case KmLogoPackage.VAR_DECL: return createVarDecl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -267,9 +267,9 @@ public class KmLogoFactoryImpl extends EFactoryImpl implements KmLogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public VarDeclaration createVarDeclaration() {
-		VarDeclarationImpl varDeclaration = new VarDeclarationImpl();
-		return varDeclaration;
+	public VarDecl createVarDecl() {
+		VarDeclImpl varDecl = new VarDeclImpl();
+		return varDecl;
 	}
 
 	/**

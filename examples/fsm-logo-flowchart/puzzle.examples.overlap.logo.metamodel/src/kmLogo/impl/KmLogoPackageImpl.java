@@ -23,7 +23,7 @@ import kmLogo.RelationalExpression;
 import kmLogo.RelationalOperator;
 import kmLogo.Right;
 import kmLogo.StringLit;
-import kmLogo.VarDeclaration;
+import kmLogo.VarDecl;
 import kmLogo.VarReference;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -172,7 +172,7 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass varDeclarationEClass = null;
+	private EClass varDeclEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -551,8 +551,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVarDeclaration() {
-		return varDeclarationEClass;
+	public EClass getVarDecl() {
+		return varDeclEClass;
 	}
 
 	/**
@@ -560,8 +560,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVarDeclaration_Expression() {
-		return (EReference)varDeclarationEClass.getEStructuralFeatures().get(0);
+	public EReference getVarDecl_Expression() {
+		return (EReference)varDeclEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -569,8 +569,8 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVarDeclaration_Key() {
-		return (EAttribute)varDeclarationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getVarDecl_Key() {
+		return (EAttribute)varDeclEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -670,9 +670,9 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		varReferenceEClass = createEClass(VAR_REFERENCE);
 		createEAttribute(varReferenceEClass, VAR_REFERENCE__KEY);
 
-		varDeclarationEClass = createEClass(VAR_DECLARATION);
-		createEReference(varDeclarationEClass, VAR_DECLARATION__EXPRESSION);
-		createEAttribute(varDeclarationEClass, VAR_DECLARATION__KEY);
+		varDeclEClass = createEClass(VAR_DECL);
+		createEReference(varDeclEClass, VAR_DECL__EXPRESSION);
+		createEAttribute(varDeclEClass, VAR_DECL__KEY);
 
 		// Create enums
 		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
@@ -722,7 +722,7 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		arithmeticExpressionEClass.getESuperTypes().add(this.getExpression());
 		relationalExpressionEClass.getESuperTypes().add(this.getExpression());
 		varReferenceEClass.getESuperTypes().add(this.getExpression());
-		varDeclarationEClass.getESuperTypes().add(this.getInstruction());
+		varDeclEClass.getESuperTypes().add(this.getInstruction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -776,9 +776,9 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		initEClass(varReferenceEClass, VarReference.class, "VarReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVarReference_Key(), ecorePackage.getEString(), "key", null, 0, 1, VarReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(varDeclarationEClass, VarDeclaration.class, "VarDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVarDeclaration_Expression(), this.getExpression(), null, "expression", null, 0, 1, VarDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVarDeclaration_Key(), ecorePackage.getEString(), "key", null, 0, 1, VarDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVarDecl_Expression(), this.getExpression(), null, "expression", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVarDecl_Key(), ecorePackage.getEString(), "key", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");

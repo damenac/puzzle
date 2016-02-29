@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456491778868_2" label="fsm-flowcharts-logo" name="fsm-flowcharts-logo">
-<item elementID="=puzzle.examples.overlap.fsm.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.overlap.fsm.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.logo.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.flowchart.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=puzzle.examples.overlap.fsm.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>

@@ -64,9 +64,9 @@
     <genClasses ecoreClass="logo.ecore#//VarReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logo.ecore#//VarReference/key"/>
     </genClasses>
-    <genClasses ecoreClass="logo.ecore#//VarDeclaration">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//VarDeclaration/expression"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logo.ecore#//VarDeclaration/key"/>
+    <genClasses ecoreClass="logo.ecore#//VarDecl">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference logo.ecore#//VarDecl/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute logo.ecore#//VarDecl/key"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

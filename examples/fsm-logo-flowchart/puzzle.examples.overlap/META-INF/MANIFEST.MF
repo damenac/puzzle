@@ -15,9 +15,9 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  puzzle.examples.overlap.logo.metamodel;bundle-version="1.0.0",
  puzzle.examples.overlap.flowchart.metamodel;bundle-version="1.0.0",
  puzzle.examples.overlap.fsm.metamodel;bundle-version="1.0.0",
- puzzle.examples.overlap.fsm.aspects;bundle-version="1.0.0",
  puzzle.examples.overlap.logo.aspects;bundle-version="1.0.0",
- puzzle.examples.overlap.flowchart.semantics;bundle-version="1.0.0"
+ puzzle.examples.overlap.flowchart.semantics;bundle-version="1.0.0",
+ puzzle.examples.overlap.fsm.semantics;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0

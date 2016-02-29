@@ -140,8 +140,8 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 				return createVarReferenceAdapter();
 			}
 			@Override
-			public Adapter caseVarDeclaration(VarDeclaration object) {
-				return createVarDeclarationAdapter();
+			public Adapter caseVarDecl(VarDecl object) {
+				return createVarDeclAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -416,16 +416,16 @@ public class KmLogoAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link kmLogo.VarDeclaration <em>Var Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link kmLogo.VarDecl <em>Var Decl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see kmLogo.VarDeclaration
+	 * @see kmLogo.VarDecl
 	 * @generated
 	 */
-	public Adapter createVarDeclarationAdapter() {
+	public Adapter createVarDeclAdapter() {
 		return null;
 	}
 

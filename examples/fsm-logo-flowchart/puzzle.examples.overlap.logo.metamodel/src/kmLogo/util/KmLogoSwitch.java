@@ -199,10 +199,10 @@ public class KmLogoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case KmLogoPackage.VAR_DECLARATION: {
-				VarDeclaration varDeclaration = (VarDeclaration)theEObject;
-				T result = caseVarDeclaration(varDeclaration);
-				if (result == null) result = caseInstruction(varDeclaration);
+			case KmLogoPackage.VAR_DECL: {
+				VarDecl varDecl = (VarDecl)theEObject;
+				T result = caseVarDecl(varDecl);
+				if (result == null) result = caseInstruction(varDecl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -481,17 +481,17 @@ public class KmLogoSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Var Declaration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Var Decl</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Var Declaration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Var Decl</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseVarDeclaration(VarDeclaration object) {
+	public T caseVarDecl(VarDecl object) {
 		return null;
 	}
 
