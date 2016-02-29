@@ -1,0 +1,10 @@
+package fr.inria.diverse.k3.examples.abc.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import ABC.A
+	
+@Aspect(className=A)
+class AAspect {
+	
+}

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="ASCII"?>
-<fmpl:Policy
-    xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:fmpl="http://diverse.inria.fr.fmpl"
-    xsi:schemaLocation="http://diverse.inria.fr.fmpl ../../FMPL/models/FMPL-basic.ecore"
-    name="myPolicy"/>

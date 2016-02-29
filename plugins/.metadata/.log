@@ -578,3 +578,13 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.xtext.xbase.file.FileLo
 !ENTRY org.apache.log4j 2 0 2016-02-26 13:56:06.804
 !MESSAGE org.eclipse.xtext.builder.smap.DerivedResourceMarkerCopier  - Failed to find Storage. Please make sure there are no outdated generated files. URI: platform:/resource/fr.inria.diverse.puzzle.ui/fr/inria/diverse/melange/ui/builder/SynthesisBuilder.xtend
 
+!SESSION 2016-02-29 09:47:38.762 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2016-02-29 09:47:45.432
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

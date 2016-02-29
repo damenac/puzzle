@@ -1,2 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	abc.A = fr.inria.diverse.puzzle.abc.semantics.AAspect, fr.inria.diverse.puzzle.abc.semantics.BAspect

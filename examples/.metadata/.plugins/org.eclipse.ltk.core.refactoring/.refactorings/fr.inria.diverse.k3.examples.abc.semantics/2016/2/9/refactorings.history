@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AAspect.xtend&apos; to &apos;fr.inria.diverse.k3.examples.abc.semantics/src/fr.inria.diverse.k3.examples.abc.semantics&apos;&#x0A;- Original project: &apos;fr.inria.diverse.k3.examples.abc.semantics&apos;&#x0A;- Destination element: &apos;fr.inria.diverse.k3.examples.abc.semantics/src/fr.inria.diverse.k3.examples.abc.semantics&apos;&#x0A;- Original element: &apos;AAspect.xtend&apos;" description="Copy file" destination="/src&lt;fr.inria.diverse.k3.examples.abc.semantics" element1="src/fr/inria/diverse/k3/examples/abc/semantics/AAspect.xtend" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1456736640348" units="0" version="1.0"/>
+</session>

@@ -19,5 +19,9 @@
 <item elementID="=fr.inria.diverse.puzzle.xyz.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.puzzle.abc" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456735974187_4" label="k3-examples" name="k3-examples">
+<item elementID="=fr.inria.diverse.k3.examples.abc.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.k3.examples.abc.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456491426915_0" label="Window Working Set" name="Aggregate for window 1456491426915"/>
 </workingSetManager>
