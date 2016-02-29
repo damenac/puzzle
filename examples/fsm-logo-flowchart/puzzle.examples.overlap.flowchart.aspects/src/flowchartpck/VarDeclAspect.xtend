@@ -13,6 +13,6 @@ class VarDeclAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
 	def void eval(Hashtable<String, Object> context){
-		context.put(_self.name, _self.expr.eval(context))
+		context.put(_self.key, _self.expression.eval(context))
 	}
 }

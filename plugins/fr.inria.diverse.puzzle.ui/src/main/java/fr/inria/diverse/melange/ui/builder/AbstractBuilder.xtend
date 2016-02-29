@@ -7,8 +7,8 @@ import fr.inria.diverse.k3.sle.common.commands.GraphPartition
 import fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureAndSourceMethodComparison
 import fr.inria.diverse.puzzle.variabilityinferer.inferers.PuzzleInferrer
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
-import fr.inria.diverse.k3.sle.common.comparisonOperators.NamingConceptComparison
 import fr.inria.diverse.puzzle.breaker.breakers.MembershipGraphPartition
+import fr.inria.diverse.k3.sle.common.comparisonOperators.DeepConceptComparison
 
 /**
  * Abstract builder. Responsible for managing the parameters of the reverse-engineering process. 
@@ -22,7 +22,7 @@ class AbstractBuilder {
 	 * TODO: Read the properties from an external file. 
 	 */
 	def protected SynthesisProperties getSynthesisProperties(){
-		var ConceptComparison conceptComparisonOperator = new NamingConceptComparison();
+		var ConceptComparison conceptComparisonOperator = new DeepConceptComparison();
 		var MethodComparison methodComparisonOperator = SignatureAndSourceMethodComparison.getInstance();
 		var FeaturesModelInference variabilityInferer = new PuzzleInferrer();
 		var GraphPartition graphPartition = new MembershipGraphPartition();

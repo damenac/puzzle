@@ -1,0 +1,4 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	flowchartpck.RelationalExpression = flowchartpck.RelationalExpressionAspect
+	flowchartpck.Conditional = flowchartpck.ConditionalAspect
+	flowchartpck.Start = flowchartpck.StartAspect

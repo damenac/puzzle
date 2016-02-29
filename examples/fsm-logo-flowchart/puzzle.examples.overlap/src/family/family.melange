@@ -54,16 +54,9 @@ language Logo {
 	with logo.IntegerLitAspect
 	with logo.StringLitAspect
 	with logo.BoolLitAspect
+	with logo.VarDeclAspect
 	with logo.ArithmeticExpressionAspect
 	with logo.RelationalExpressionAspect
-	with logo.ProcCallAspect
-	with logo.BlockAspect
-	with logo.ControlStructureAspect
-	with logo.IfAspect
-	with logo.RepeatAspect
-	with logo.WhileAspect
-	with logo.ParameterAspect
-	with logo.ParameterCallAspect
 	with logo.LogoProgramAspect
 	
 	exactType LogoMT

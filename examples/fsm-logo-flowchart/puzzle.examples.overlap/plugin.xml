@@ -1,25 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
-
-   <extension
-         point="fr.inria.diverse.melange.modeltype">
-      <modeltype
-            uri="http://flowchartmt/"
-            id="family.FlowchartMT">
-      </modeltype>
-   </extension>
-   <extension
-         point="fr.inria.diverse.melange.language">
-      <language
-            exactType="family.FlowchartMT"
-            description="A language for Flowcharts"
-            uri="flowchartpck"
-            id="family.Flowchart">
-         <adapter
-               class="family.flowchart.adapters.flowchartmt.FlowchartAdapter"
-               modeltypeId="family.FlowchartMT">
-         </adapter>
-      </language>
-   </extension>
-
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="family.FsmMT" uri="http://fsmmt/"/>
+    <modeltype id="family.LogoMT" uri="http://logomt/"/>
+    <modeltype id="family.FlowchartMT" uri="http://flowchartmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Loop:fsmaspects.LoopAspect;RelationalExpression:fsmaspects.RelationalExpressionAspect;Program:fsmaspects.ProgramAspect;Constraint:fsmaspects.ConstraintAspect;StateMachine:fsmaspects.StateMachineAspect;Statement:fsmaspects.StatementAspect;IntegerLit:fsmaspects.IntegerLitAspect;Conditional:fsmaspects.ConditionalAspect;Assignation:fsmaspects.AssignationAspect;FinalState:fsmaspects.FinalStateAspect;ArithmeticExpression:fsmaspects.ArithmeticExpressionAspect;RelationalConstraint:fsmaspects.RelationalConstraintAspect;StringLit:fsmaspects.StringLitAspect;Print:fsmaspects.PrintAspect;Trigger:fsmaspects.TriggerAspect;Expression:fsmaspects.ExpressionAspect;VarDecl:fsmaspects.VarDeclAspect;State:fsmaspects.StateAspect;Literal:fsmaspects.LiteralAspect;Transition:fsmaspects.TransitionAspect;Println:fsmaspects.PrintlnAspect;Wait:fsmaspects.WaitAspect;BoolLit:fsmaspects.BoolLitAspect" description="A language for simple state machines." entryPoints="" exactType="family.FsmMT" id="family.FSM" uri="http://puzzle.examples.fsm">
+      <adapter class="family.fsm.adapters.fsmmt.FSMAdapter" modeltypeId="family.FsmMT"/>
+    </language>
+    <language aspects="PenDown:logo.PenDownAspect;RelationalExpression:logo.RelationalExpressionAspect;PenUp:logo.PenUpAspect;Left:logo.LeftAspect;IntegerLit:logo.IntegerLitAspect;Right:logo.RightAspect;Instruction:logo.InstructionAspect;ArithmeticExpression:logo.ArithmeticExpressionAspect;Clear:logo.ClearAspect;StringLit:logo.StringLitAspect;Primitive:logo.PrimitiveAspect;Expression:logo.ExpressionAspect;VarDecl:logo.VarDeclAspect;LogoProgram:logo.LogoProgramAspect;Literal:logo.LiteralAspect;Back:logo.BackAspect;Forward:logo.ForwardAspect;BoolLit:logo.BoolLitAspect" description="A language for manipulating Logo's tutle" entryPoints="" exactType="family.LogoMT" id="family.Logo" uri="http://www.kermeta.org/kmLogo">
+      <adapter class="family.logo.adapters.logomt.LogoAdapter" modeltypeId="family.LogoMT"/>
+    </language>
+    <language aspects="Action:flowchartpck.ActionAspect;Start:flowchartpck.StartAspect;Constraint:flowchartpck.ConstraintAspect;Node:flowchartpck.NodeAspect;Conditional:flowchartpck.ConditionalAspect;Assignation:flowchartpck.AssignationAspect;RelationalConstraint:flowchartpck.RelationalConstraintAspect;StringLit:flowchartpck.StringLitAspect;Print:flowchartpck.PrintAspect;VarDecl:flowchartpck.VarDeclAspect;Literal:flowchartpck.LiteralAspect;Loop:flowchartpck.LoopAspect;RelationalExpression:flowchartpck.RelationalExpressionAspect;Program:flowchartpck.ProgramAspect;Statement:flowchartpck.StatementAspect;IntegerLit:flowchartpck.IntegerLitAspect;ArithmeticExpression:flowchartpck.ArithmeticExpressionAspect;Flowchart:flowchartpck.FlowchartAspect;Decision:flowchartpck.DecisionAspect;Arc:flowchartpck.ArcAspect;Expression:flowchartpck.ExpressionAspect;Println:flowchartpck.PrintlnAspect;End:flowchartpck.EndAspect;Wait:flowchartpck.WaitAspect;BoolLit:flowchartpck.BoolLitAspect" description="A language for Flowcharts" entryPoints="flowchartpck.FlowchartAspect.exec(flowchartpck.Flowchart)" exactType="family.FlowchartMT" id="family.Flowcharts" uri="flowchartpck">
+      <adapter class="family.flowcharts.adapters.flowchartmt.FlowchartsAdapter" modeltypeId="family.FlowchartMT"/>
+    </language>
+  </extension>
 </plugin>

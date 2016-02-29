@@ -52,6 +52,9 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 			String leftOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), left.eResource().getURI().segment(1));
 			String rightOperationJavaFile = this.getAspectJavaFile(((JvmGenericType)left.eContainer()).getSimpleName(), right.eResource().getURI().segment(1));
 			
+			if(leftOperationJavaFile == null || rightOperationJavaFile == null)
+				return false;
+			
 			SimilarityGroup[] simGroups = cache.get(leftOperationJavaFile + "-" + rightOperationJavaFile);
 			
 			if(simGroups == null){
@@ -102,7 +105,10 @@ public class SignatureAndSourceMethodComparison implements MethodComparison {
 		try {
 			IProject project = ProjectManagementServices.getEclipseProject(projectName);
 			File aspectFile = ProjectManagementServices.getFile(project, fileName + ".java");
-			return aspectFile.getAbsolutePath();
+			if(aspectFile != null)
+				return aspectFile.getAbsolutePath();
+			else
+				return null;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

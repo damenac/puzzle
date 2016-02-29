@@ -2,6 +2,7 @@
  */
 package kmLogo;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package kmLogo;
  * @model
  * @generated
  */
-public interface VarDecl extends Instruction {
+public interface VarDecl extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

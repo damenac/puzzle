@@ -1238,22 +1238,22 @@ public interface FlowchartpckPackage extends EPackage {
 	int VAR_DECL = 27;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECL__NAME = STATEMENT_FEATURE_COUNT + 0;
+	int VAR_DECL__KEY = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECL__EXPR = STATEMENT_FEATURE_COUNT + 1;
+	int VAR_DECL__EXPRESSION = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Var Decl</em>' class.
@@ -1905,26 +1905,26 @@ public interface FlowchartpckPackage extends EPackage {
 	EClass getVarDecl();
 
 	/**
-	 * Returns the meta object for the attribute '{@link flowchartpck.VarDecl#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link flowchartpck.VarDecl#getKey <em>Key</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see flowchartpck.VarDecl#getName()
+	 * @return the meta object for the attribute '<em>Key</em>'.
+	 * @see flowchartpck.VarDecl#getKey()
 	 * @see #getVarDecl()
 	 * @generated
 	 */
-	EAttribute getVarDecl_Name();
+	EAttribute getVarDecl_Key();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link flowchartpck.VarDecl#getExpr <em>Expr</em>}'.
+	 * Returns the meta object for the containment reference '{@link flowchartpck.VarDecl#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expr</em>'.
-	 * @see flowchartpck.VarDecl#getExpr()
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see flowchartpck.VarDecl#getExpression()
 	 * @see #getVarDecl()
 	 * @generated
 	 */
-	EReference getVarDecl_Expr();
+	EReference getVarDecl_Expression();
 
 	/**
 	 * Returns the meta object for enum '{@link flowchartpck.ArithmeticOperator <em>Arithmetic Operator</em>}'.
@@ -2490,20 +2490,20 @@ public interface FlowchartpckPackage extends EPackage {
 		EClass VAR_DECL = eINSTANCE.getVarDecl();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VAR_DECL__NAME = eINSTANCE.getVarDecl_Name();
+		EAttribute VAR_DECL__KEY = eINSTANCE.getVarDecl_Key();
 
 		/**
-		 * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VAR_DECL__EXPR = eINSTANCE.getVarDecl_Expr();
+		EReference VAR_DECL__EXPRESSION = eINSTANCE.getVarDecl_Expression();
 
 		/**
 		 * The meta object literal for the '{@link flowchartpck.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

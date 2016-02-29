@@ -202,7 +202,6 @@ public class KmLogoSwitch<T> extends Switch<T> {
 			case KmLogoPackage.VAR_DECL: {
 				VarDecl varDecl = (VarDecl)theEObject;
 				T result = caseVarDecl(varDecl);
-				if (result == null) result = caseInstruction(varDecl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

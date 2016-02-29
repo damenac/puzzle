@@ -7,6 +7,7 @@ import java.util.Collection;
 import kmLogo.Instruction;
 import kmLogo.KmLogoPackage;
 import kmLogo.LogoProgram;
+import kmLogo.VarDecl;
 
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -27,6 +28,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link kmLogo.impl.LogoProgramImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link kmLogo.impl.LogoProgramImpl#getInstructions <em>Instructions</em>}</li>
  * </ul>
  * </p>
@@ -34,6 +36,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * @generated
  */
 public class LogoProgramImpl extends MinimalEObjectImpl.Container implements LogoProgram {
+	/**
+	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<VarDecl> variables;
+
 	/**
 	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -68,6 +80,18 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<VarDecl> getVariables() {
+		if (variables == null) {
+			variables = new EObjectContainmentEList<VarDecl>(VarDecl.class, this, KmLogoPackage.LOGO_PROGRAM__VARIABLES);
+		}
+		return variables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Instruction> getInstructions() {
 		if (instructions == null) {
 			instructions = new EObjectContainmentEList<Instruction>(Instruction.class, this, KmLogoPackage.LOGO_PROGRAM__INSTRUCTIONS);
@@ -83,6 +107,8 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case KmLogoPackage.LOGO_PROGRAM__VARIABLES:
+				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
 			case KmLogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
 				return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
 		}
@@ -97,6 +123,8 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case KmLogoPackage.LOGO_PROGRAM__VARIABLES:
+				return getVariables();
 			case KmLogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
 				return getInstructions();
 		}
@@ -112,6 +140,10 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case KmLogoPackage.LOGO_PROGRAM__VARIABLES:
+				getVariables().clear();
+				getVariables().addAll((Collection<? extends VarDecl>)newValue);
+				return;
 			case KmLogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
 				getInstructions().clear();
 				getInstructions().addAll((Collection<? extends Instruction>)newValue);
@@ -128,6 +160,9 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case KmLogoPackage.LOGO_PROGRAM__VARIABLES:
+				getVariables().clear();
+				return;
 			case KmLogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
 				getInstructions().clear();
 				return;
@@ -143,6 +178,8 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case KmLogoPackage.LOGO_PROGRAM__VARIABLES:
+				return variables != null && !variables.isEmpty();
 			case KmLogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
 				return instructions != null && !instructions.isEmpty();
 		}

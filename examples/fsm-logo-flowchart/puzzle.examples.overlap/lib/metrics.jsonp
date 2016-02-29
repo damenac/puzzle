@@ -1,11 +1,11 @@
 var pieDataSyntacticCommonality = [{
-        value: 9,
+        value: 10,
         color:"#FAAC58",
         highlight: "#F7BE81",
         label: "Commonalities"
     },
     {
-        value: 48,
+        value: 39,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -13,13 +13,13 @@ var pieDataSyntacticCommonality = [{
 ];
 
 var pieDataSemanticCommonality = [{
-        value: 0,
+        value: 7,
         color:"#FAAC58",
         highlight: "#F7BE81",
         label: "Commonalities"
     },
     {
-        value: 75,
+        value: 50,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -34,14 +34,14 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [29.03225806451613,32.142857142857146,30.0]
+        data : [32.25806451612903,47.61904761904761,33.33333333333333]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [0.0,0.0,0.0]
+        data : [9.722222222222223,23.333333333333332,16.666666666666664]
       }
     ]
 };
@@ -53,14 +53,14 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(220,220,220,0.8)",
         highlightFill: "rgba(220,220,220,0.75)",
         highlightStroke: "rgba(220,220,220,1)",
-        data : [74.19354838709677,32.142857142857146,76.66666666666667]
+        data : [74.19354838709677,47.61904761904761,76.66666666666667]
       },
       {
         fillColor : "rgba(151,187,205,0.5)",
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [20.930232558139537,0.0,31.57894736842105]
+        data : [25.0,23.333333333333332,42.857142857142854]
       }
     ]
 };

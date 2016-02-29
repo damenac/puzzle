@@ -848,7 +848,7 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVarDecl_Name() {
+	public EAttribute getVarDecl_Key() {
 		return (EAttribute)varDeclEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -857,7 +857,7 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getVarDecl_Expr() {
+	public EReference getVarDecl_Expression() {
 		return (EReference)varDeclEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -992,8 +992,8 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		createEAttribute(waitEClass, WAIT__MILISECONDS);
 
 		varDeclEClass = createEClass(VAR_DECL);
-		createEAttribute(varDeclEClass, VAR_DECL__NAME);
-		createEReference(varDeclEClass, VAR_DECL__EXPR);
+		createEAttribute(varDeclEClass, VAR_DECL__KEY);
+		createEReference(varDeclEClass, VAR_DECL__EXPRESSION);
 
 		// Create enums
 		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
@@ -1138,8 +1138,8 @@ public class FlowchartpckPackageImpl extends EPackageImpl implements Flowchartpc
 		initEAttribute(getWait_Miliseconds(), ecorePackage.getELong(), "miliseconds", null, 0, 1, Wait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVarDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVarDecl_Expr(), this.getExpression(), null, "expr", null, 1, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVarDecl_Key(), ecorePackage.getEString(), "key", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVarDecl_Expression(), this.getExpression(), null, "expression", null, 1, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");

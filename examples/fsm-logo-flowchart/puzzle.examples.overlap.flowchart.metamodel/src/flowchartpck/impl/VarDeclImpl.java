@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link flowchartpck.impl.VarDeclImpl#getName <em>Name</em>}</li>
- *   <li>{@link flowchartpck.impl.VarDeclImpl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link flowchartpck.impl.VarDeclImpl#getKey <em>Key</em>}</li>
+ *   <li>{@link flowchartpck.impl.VarDeclImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -30,34 +30,34 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class VarDeclImpl extends StatementImpl implements VarDecl {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String KEY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getKey() <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getKey()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String key = KEY_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpr()
+	 * @see #getExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression expr;
+	protected Expression expression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -83,8 +83,8 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getKey() {
+		return key;
 	}
 
 	/**
@@ -92,11 +92,11 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setKey(String newKey) {
+		String oldKey = key;
+		key = newKey;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.VAR_DECL__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.VAR_DECL__KEY, oldKey, key));
 	}
 
 	/**
@@ -104,8 +104,8 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Expression getExpr() {
-		return expr;
+	public Expression getExpression() {
+		return expression;
 	}
 
 	/**
@@ -113,11 +113,11 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetExpr(Expression newExpr, NotificationChain msgs) {
-		Expression oldExpr = expr;
-		expr = newExpr;
+	public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs) {
+		Expression oldExpression = expression;
+		expression = newExpression;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.VAR_DECL__EXPR, oldExpr, newExpr);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.VAR_DECL__EXPRESSION, oldExpression, newExpression);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -128,18 +128,18 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setExpr(Expression newExpr) {
-		if (newExpr != expr) {
+	public void setExpression(Expression newExpression) {
+		if (newExpression != expression) {
 			NotificationChain msgs = null;
-			if (expr != null)
-				msgs = ((InternalEObject)expr).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.VAR_DECL__EXPR, null, msgs);
-			if (newExpr != null)
-				msgs = ((InternalEObject)newExpr).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.VAR_DECL__EXPR, null, msgs);
-			msgs = basicSetExpr(newExpr, msgs);
+			if (expression != null)
+				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.VAR_DECL__EXPRESSION, null, msgs);
+			if (newExpression != null)
+				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FlowchartpckPackage.VAR_DECL__EXPRESSION, null, msgs);
+			msgs = basicSetExpression(newExpression, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.VAR_DECL__EXPR, newExpr, newExpr));
+			eNotify(new ENotificationImpl(this, Notification.SET, FlowchartpckPackage.VAR_DECL__EXPRESSION, newExpression, newExpression));
 	}
 
 	/**
@@ -150,8 +150,8 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FlowchartpckPackage.VAR_DECL__EXPR:
-				return basicSetExpr(null, msgs);
+			case FlowchartpckPackage.VAR_DECL__EXPRESSION:
+				return basicSetExpression(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,10 +164,10 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FlowchartpckPackage.VAR_DECL__NAME:
-				return getName();
-			case FlowchartpckPackage.VAR_DECL__EXPR:
-				return getExpr();
+			case FlowchartpckPackage.VAR_DECL__KEY:
+				return getKey();
+			case FlowchartpckPackage.VAR_DECL__EXPRESSION:
+				return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -180,11 +180,11 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FlowchartpckPackage.VAR_DECL__NAME:
-				setName((String)newValue);
+			case FlowchartpckPackage.VAR_DECL__KEY:
+				setKey((String)newValue);
 				return;
-			case FlowchartpckPackage.VAR_DECL__EXPR:
-				setExpr((Expression)newValue);
+			case FlowchartpckPackage.VAR_DECL__EXPRESSION:
+				setExpression((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -198,11 +198,11 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FlowchartpckPackage.VAR_DECL__NAME:
-				setName(NAME_EDEFAULT);
+			case FlowchartpckPackage.VAR_DECL__KEY:
+				setKey(KEY_EDEFAULT);
 				return;
-			case FlowchartpckPackage.VAR_DECL__EXPR:
-				setExpr((Expression)null);
+			case FlowchartpckPackage.VAR_DECL__EXPRESSION:
+				setExpression((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -216,10 +216,10 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FlowchartpckPackage.VAR_DECL__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case FlowchartpckPackage.VAR_DECL__EXPR:
-				return expr != null;
+			case FlowchartpckPackage.VAR_DECL__KEY:
+				return KEY_EDEFAULT == null ? key != null : !KEY_EDEFAULT.equals(key);
+			case FlowchartpckPackage.VAR_DECL__EXPRESSION:
+				return expression != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -234,8 +234,8 @@ public class VarDeclImpl extends StatementImpl implements VarDecl {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (key: ");
+		result.append(key);
 		result.append(')');
 		return result.toString();
 	}

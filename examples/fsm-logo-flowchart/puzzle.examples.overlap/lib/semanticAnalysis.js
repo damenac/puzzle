@@ -114,18 +114,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "ExpressionAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowcharts]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "ExpressionAspect"    }
               ]
     }
 ,
@@ -134,18 +124,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "LiteralAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowcharts]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "LiteralAspect"    }
               ]
     }
 ,
@@ -154,18 +134,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "IntegerLitAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowcharts]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "IntegerLitAspect"    }
               ]
     }
 ,
@@ -174,18 +144,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "StringLitAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowcharts]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "StringLitAspect"    }
               ]
     }
 ,
@@ -194,18 +154,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "BoolLitAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowcharts]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "BoolLitAspect"    }
               ]
     }
 ,
@@ -214,18 +164,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "ArithmeticExpressionAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowcharts]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "ArithmeticExpressionAspect"    }
               ]
     }
 ,
@@ -234,18 +174,8 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
-          "name": "+eval",
-          "parent": "RelationalExpressionAspect",
-          "children": [
-          {
-          "name": "eval [from: FSM, Flowcharts]",
-          "parent": "+eval"    }
-,
-          {
-          "name": "eval [from: Logo]",
-          "parent": "+eval"    }
-              ]
-    }
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "RelationalExpressionAspect"    }
               ]
     }
 ,
@@ -294,8 +224,18 @@ var treeData = [
           "parent": "Family",
           "children": [
           {
+          "name": "+eval",
+          "parent": "VarDeclAspect",
+          "children": [
+          {
           "name": "eval [from: FSM, Flowcharts]",
-          "parent": "VarDeclAspect"    }
+          "parent": "+eval"    }
+,
+          {
+          "name": "eval [from: Logo]",
+          "parent": "+eval"    }
+              ]
+    }
               ]
     }
 ,
@@ -446,94 +386,6 @@ var treeData = [
           {
           "name": "eval [from: Logo]",
           "parent": "ClearAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ProcCallAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ProcCallAspect"    }
-,
-          {
-          "name": "res [from: Logo]",
-          "parent": "ProcCallAspect"    }
-              ]
-    }
-,
-          {
-          "name": "BlockAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "BlockAspect"    }
-,
-          {
-          "name": "res [from: Logo]",
-          "parent": "BlockAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ControlStructureAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ControlStructureAspect"    }
-              ]
-    }
-,
-          {
-          "name": "IfAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "IfAspect"    }
-              ]
-    }
-,
-          {
-          "name": "RepeatAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "RepeatAspect"    }
-              ]
-    }
-,
-          {
-          "name": "WhileAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "WhileAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ParameterAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ParameterAspect"    }
-              ]
-    }
-,
-          {
-          "name": "ParameterCallAspect",
-          "parent": "Family",
-          "children": [
-          {
-          "name": "eval [from: Logo]",
-          "parent": "ParameterCallAspect"    }
               ]
     }
 ,

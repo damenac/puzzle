@@ -11,8 +11,8 @@ package fsm;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link fsm.VarDecl#getName <em>Name</em>}</li>
- *   <li>{@link fsm.VarDecl#getExpr <em>Expr</em>}</li>
+ *   <li>{@link fsm.VarDecl#getKey <em>Key</em>}</li>
+ *   <li>{@link fsm.VarDecl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,55 +22,55 @@ package fsm;
  */
 public interface VarDecl extends Statement {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Key</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Key</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see fsm.FsmPackage#getVarDecl_Name()
+	 * @return the value of the '<em>Key</em>' attribute.
+	 * @see #setKey(String)
+	 * @see fsm.FsmPackage#getVarDecl_Key()
 	 * @model
 	 * @generated
 	 */
-	String getName();
+	String getKey();
 
 	/**
-	 * Sets the value of the '{@link fsm.VarDecl#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link fsm.VarDecl#getKey <em>Key</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Key</em>' attribute.
+	 * @see #getKey()
 	 * @generated
 	 */
-	void setName(String value);
+	void setKey(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Expr</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expr</em>' containment reference.
-	 * @see #setExpr(Expression)
-	 * @see fsm.FsmPackage#getVarDecl_Expr()
+	 * @return the value of the '<em>Expression</em>' containment reference.
+	 * @see #setExpression(Expression)
+	 * @see fsm.FsmPackage#getVarDecl_Expression()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Expression getExpr();
+	Expression getExpression();
 
 	/**
-	 * Sets the value of the '{@link fsm.VarDecl#getExpr <em>Expr</em>}' containment reference.
+	 * Sets the value of the '{@link fsm.VarDecl#getExpression <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expr</em>' containment reference.
-	 * @see #getExpr()
+	 * @param value the new value of the '<em>Expression</em>' containment reference.
+	 * @see #getExpression()
 	 * @generated
 	 */
-	void setExpr(Expression value);
+	void setExpression(Expression value);
 
 } // VarDecl

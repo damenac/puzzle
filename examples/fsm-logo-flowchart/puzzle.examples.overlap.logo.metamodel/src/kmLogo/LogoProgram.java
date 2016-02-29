@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link kmLogo.LogoProgram#getVariables <em>Variables</em>}</li>
  *   <li>{@link kmLogo.LogoProgram#getInstructions <em>Instructions</em>}</li>
  * </ul>
  * </p>
@@ -23,6 +24,22 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface LogoProgram extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link kmLogo.VarDecl}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variables</em>' containment reference list.
+	 * @see kmLogo.KmLogoPackage#getLogoProgram_Variables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<VarDecl> getVariables();
+
 	/**
 	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
 	 * The list contents are of type {@link kmLogo.Instruction}.

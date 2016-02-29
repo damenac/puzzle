@@ -263,8 +263,17 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getLogoProgram_Instructions() {
+	public EReference getLogoProgram_Variables() {
 		return (EReference)logoProgramEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLogoProgram_Instructions() {
+		return (EReference)logoProgramEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -620,6 +629,7 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 
 		// Create classes and their features
 		logoProgramEClass = createEClass(LOGO_PROGRAM);
+		createEReference(logoProgramEClass, LOGO_PROGRAM__VARIABLES);
 		createEReference(logoProgramEClass, LOGO_PROGRAM__INSTRUCTIONS);
 
 		instructionEClass = createEClass(INSTRUCTION);
@@ -722,10 +732,10 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		arithmeticExpressionEClass.getESuperTypes().add(this.getExpression());
 		relationalExpressionEClass.getESuperTypes().add(this.getExpression());
 		varReferenceEClass.getESuperTypes().add(this.getExpression());
-		varDeclEClass.getESuperTypes().add(this.getInstruction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLogoProgram_Variables(), this.getVarDecl(), null, "variables", null, 0, -1, LogoProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLogoProgram_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, LogoProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

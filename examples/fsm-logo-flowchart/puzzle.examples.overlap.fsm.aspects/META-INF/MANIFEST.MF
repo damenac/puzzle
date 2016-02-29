@@ -1,5 +1,5 @@
 Bundle-SymbolicName: puzzle.examples.overlap.fsm.semantics;singleton:=true
-Export-Package: flowchartpck,fsmaspects
+Export-Package: fsmaspects
 Bundle-Version: 1.0.0
 Bundle-Name: puzzle.examples.overlap.fsm.semantics
 Bundle-ClassPath: .
