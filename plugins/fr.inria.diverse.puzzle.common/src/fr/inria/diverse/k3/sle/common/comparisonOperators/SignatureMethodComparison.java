@@ -38,19 +38,25 @@ public class SignatureMethodComparison implements MethodComparison {
 	
 	@Override
 	public boolean equal(JvmOperation left, JvmOperation right) {
+//		System.out.println("left: " + left + " \n ->    right: " + right);
 		boolean identicalModifiers = compareModifiers(left, right);
 		boolean identicalReturnType = compareReturnType(left, right);
 		boolean identicalName = compareName(left, right);
 		boolean identicalParameters = compareParameters(left, right);
 		boolean identicalExceptions = compareExceptions(left, right);
+//		System.out.println("  * Results: " + "identicalModifiers: " + identicalModifiers + ", identicalReturnType: " + identicalReturnType
+//				 + ", identicalName: " + identicalName + ", identicalParameters: " + identicalParameters);
+//		System.out.println(" * Result: " + (identicalModifiers && identicalReturnType && identicalName && identicalParameters && identicalExceptions));
 		return identicalModifiers && identicalReturnType && identicalName && identicalParameters && identicalExceptions;
 	}
 
 	private boolean compareModifiers(JvmOperation left, JvmOperation right) {
-		return left.getVisibility().getName().equals(right.getVisibility().getName()) &&
-				left.isAbstract() == right.isAbstract() &&
-				left.isStatic() == right.isStatic() &&
-				left.isSynchronized() == right.isSynchronized();
+		boolean visibilityDef = left.getVisibility().getName().equals(right.getVisibility().getName());
+		boolean abstractDef = left.isAbstract() == right.isAbstract();
+		boolean staticDef = left.isStatic() == right.isStatic();
+		boolean synchronizedDef = left.isSynchronized() == right.isSynchronized();
+		System.out.println("      compareModifiers -> visibilityDef: " + visibilityDef + ", abstractDef: " + abstractDef + ", staticDef: " + staticDef + ", synchronizedDef: " + synchronizedDef);
+		return visibilityDef && abstractDef && staticDef && synchronizedDef;
 	}
 
 	private boolean compareReturnType(JvmOperation left, JvmOperation right) {

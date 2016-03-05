@@ -23,5 +23,14 @@
 <item elementID="=fr.inria.diverse.k3.examples.abc.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.k3.examples.abc.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1457200550763_5" label="state-machines" name="state-machines">
+<item elementID="=puzzle.examples.fsm.uml.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.fsm.uml.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.fsm.harel.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.family.fsm" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.fsm.harel.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.fsm.rhapsody.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=puzzle.examples.fsm.rhapsody.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456491426915_0" label="Window Working Set" name="Aggregate for window 1456491426915"/>
 </workingSetManager>

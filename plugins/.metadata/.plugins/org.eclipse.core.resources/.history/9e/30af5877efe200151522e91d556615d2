@@ -1,0 +1,36 @@
+package fr.inria.diverse.puzzle.metrics.specialCharts;
+
+import java.util.ArrayList;
+
+import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
+import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
+import fr.inria.diverse.melange.metamodel.melange.Language;
+
+/**
+ * Prints the semantical variability tree
+ * @author David Mendez-Acuna
+ *
+ */
+public class ComponentsArchitectureModel implements SpecialFamilySemanticChart {
+
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	@Override
+	public String getVariablesDeclaration(ArrayList<Language> languages, ConceptComparison conceptComparisonOperator, MethodComparison methodComparisonOperator){
+		String answer = "{ \"class\": \"go.GraphLinksModel\",\n";
+		answer += "  \"copiesArrays\": true,\n";
+		answer += "  \"copiesArrayObjects\": true,\n";
+		answer += "  \"linkFromPortIdProperty\": \"fromPort\",\n";
+		answer += "  \"linkToPortIdProperty\": \"toPort\",\n";
+		answer += "  \"nodeDataArray\": [\n";
+		answer += "";
+		answer += "";
+		
+		
+		return answer;
+	}
+	
+	
+}

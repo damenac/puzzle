@@ -13,6 +13,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
 
+import PuzzleADL.LanguageArchitecture;
 import fr.inria.diverse.k3.sle.common.commands.ConceptComparison;
 import fr.inria.diverse.k3.sle.common.commands.MethodComparison;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
@@ -21,6 +22,7 @@ import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.metrics.componentsMetrics.CouplingMetricsTable;
 import fr.inria.diverse.puzzle.metrics.componentsMetrics.InterConnectivity;
 import fr.inria.diverse.puzzle.metrics.componentsMetrics.IntraConnectivty;
+import fr.inria.diverse.puzzle.metrics.specialCharts.ComponentsArchitectureModel;
 import fr.inria.diverse.puzzle.metrics.specialCharts.ExternalDependenciesGraph;
 import fr.inria.diverse.puzzle.metrics.specialCharts.SpecialProductLineSyntacticChart;
 
@@ -225,5 +227,42 @@ public class ProductLinesMetricManager extends MetricsManager {
 		outMetrics.print(externalDependenciesGraph.getVariablesDeclaration(languages, conceptComparisonOperator, 
 				null, dependenciesGraph));
 		outMetrics.close();
+	}
+	
+	public void createModulesReport(LanguageArchitecture languageArchitecture) throws Exception{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/1-LanguagesArchitectureModel.html");
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+		
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+
+        
+        File newFile = new File(project.getLocation().toString() + "/models/1-LanguagesArchitectureModel.html" );
+		if(!newFile.exists())
+			newFile.createNewFile();
+        
+        String reportData = this.createModulesReportData(languageArchitecture);
+        content = content.replace("<!-- REPLACE ME WITH THE CORRECT CODE!>", reportData);
+		PrintWriter outMetrics = new PrintWriter( newFile );
+		outMetrics.print(content);
+		outMetrics.close();
+	}
+	
+	/**
+	 * Creates the file with the data input of the graph that shows the graph grouping using the family membership criterion.
+	 * @param targetProject. The project where the file should be created.
+	 * @param languages. The set of languages belonging to the family under study.
+	 * @param conceptComparisonOperator
+	 * @param methodComparisonOperator
+	 * @throws Exception
+	 */
+	public String createModulesReportData(LanguageArchitecture languageArchitecture) throws Exception{
+		return (new ComponentsArchitectureModel()).getVariablesDeclaration(languageArchitecture);
 	}
 }

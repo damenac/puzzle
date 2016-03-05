@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="Signature" key="selection"/>
+		<item value="left: JvmOperation: fsmaspects.VarDeclAspect.eval(java.util.Hashtable) (visibility: PUBLIC, simpleName: eval, identifier: fsmaspects.VarDeclAspect.eval(java.util.Hashtable), deprecated: &lt;unset&gt;) (varArgs: false) (static: false, final: false, abstract: false, synchronized: false, default: false, native: false, strictFloatingPoint: false)" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="left: JvmOperation: fsmaspects.VarDeclAspect.eval(java.util.Hashtable) (visibility: PUBLIC, simpleName: eval, identifier: fsmaspects.VarDeclAspect.eval(java.util.Hashtable), deprecated: &lt;unset&gt;) (varArgs: false) (static: false, final: false, abstract: false, synchronized: false, default: false, native: false, strictFloatingPoint: false)"/>
+			<item value="Results: identicalModifiers: false, identicalReturnType: true, identicalName: true, identicalParameters: false"/>
+			<item value="VarDeclAspect"/>
+			<item value="VarDeclAspect\"/>
+			<item value="VarDeclAspect.eval"/>
 			<item value="Signature"/>
 		</list>
 		<list key="replacehistory">

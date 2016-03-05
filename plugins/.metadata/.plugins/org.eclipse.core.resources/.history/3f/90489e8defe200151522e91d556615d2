@@ -1,0 +1,31 @@
+package fr.inria.diverse.puzzle.metrics.specialCharts;
+
+import fr.inria.diverse.k3.sle.common.graphs.EcoreGraph;
+
+/**
+ * Prints the semantical variability tree
+ * @author David Mendez-Acuna
+ *
+ */
+public class ComponentsArchitectureModel {
+
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	public String getVariablesDeclaration(EcoreGraph dependenciesGraph){
+		String answer = "{ \"class\": \"go.GraphLinksModel\",\n";
+		answer += "  \"copiesArrays\": true,\n";
+		answer += "  \"copiesArrayObjects\": true,\n";
+		answer += "  \"linkFromPortIdProperty\": \"fromPort\",\n";
+		answer += "  \"linkToPortIdProperty\": \"toPort\",\n";
+		answer += "  \"nodeDataArray\": [\n";
+		answer += "";
+		answer += "";
+		
+		
+		return answer;
+	}
+	
+	
+}

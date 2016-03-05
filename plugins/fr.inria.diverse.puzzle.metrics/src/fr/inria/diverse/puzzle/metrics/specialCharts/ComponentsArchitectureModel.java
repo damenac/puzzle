@@ -1,0 +1,88 @@
+package fr.inria.diverse.puzzle.metrics.specialCharts;
+
+import org.eclipse.emf.common.util.EList;
+
+import PuzzleADL.InterfaceBinding;
+import PuzzleADL.LanguageArchitecture;
+import PuzzleADL.LanguageModule;
+import PuzzleADL.ProvidedInterface;
+import PuzzleADL.RequiredInterface;
+
+/**
+ * Prints the semantical variability tree
+ * @author David Mendez-Acuna
+ *
+ */
+public class ComponentsArchitectureModel {
+
+	// ------------------------------------------------------
+	// Methods
+	// ------------------------------------------------------
+	
+	public String getVariablesDeclaration(LanguageArchitecture languageArchitecture){
+		String answer = "{ \"class\": \"go.GraphLinksModel\",\n";
+		answer += "  \"copiesArrays\": true,\n";
+		answer += "  \"copiesArrayObjects\": true,\n";
+		answer += "  \"linkFromPortIdProperty\": \"fromPort\",\n";
+		answer += "  \"linkToPortIdProperty\": \"toPort\",\n";
+		answer += "  \"nodeDataArray\": [\n";
+		
+		for (LanguageModule module : languageArchitecture.getLanguageModules()) {
+			answer += "{\"key\":\"" + module.getName() + "\", \"loc\":\"" + LocationStack.getInstance().getNextLocation() + "\",\n";
+			
+			if(module.getProvidedInterface() != null)
+				answer += "\"leftArray\":[ {\"portColor\":\"#77ac1e\", \"portId\":\"" + module.getProvidedInterface().getName() + "\"} ]";
+		
+			if(module.getRequiredInterface() != null){
+				if(module.getProvidedInterface() != null){
+					answer += ",\n";
+				}
+				answer += "\"rightArray\":[ {\"portColor\":\"#ff0000\", \"portId\":\"" + module.getRequiredInterface().getName() + "\"} ]";
+			}
+			answer += "},\n";
+				
+		}
+		answer = answer.subSequence(0, answer.length() - 2).toString();
+		answer += "],\n";
+		answer += "\"linkDataArray\": [\n";
+		
+		for (InterfaceBinding binding : languageArchitecture.getInterfaceBindings()) {
+			answer += "{\"from\":\"" + this.getModuleByRequiredInterface(languageArchitecture.getLanguageModules(), binding.getFrom()).getName() + 
+					"\", \"to\":\"" + this.getModuleByProvidedInterface(languageArchitecture.getLanguageModules(), binding.getTo()).getName() + 
+						"\", \"fromPort\":\"" + binding.getFrom().getName() + "\", \"toPort\":\"" + binding.getTo().getName() + "\"},\n";
+		}
+		
+		answer = answer.subSequence(0, answer.length() - 2).toString() + " ]}";
+		
+		return answer;
+	}
+	
+	
+	/**
+	 * Returns the language module corresponding to the given provided interface.
+	 * @param modulesList
+	 * @param requiredInterface
+	 * @return
+	 */
+	private LanguageModule getModuleByProvidedInterface(EList<LanguageModule> modulesList, ProvidedInterface providedInterface){
+		for (LanguageModule languageModule : modulesList) {
+			if(languageModule.getProvidedInterface() != null && languageModule.getProvidedInterface().getName().equals(providedInterface.getName()))
+				return languageModule;
+		}
+		return null;
+	}
+	
+	/**
+	 * Returns the language module corresponding to the given required interface.
+	 * @param modulesList
+	 * @param requiredInterface
+	 * @return
+	 */
+	private LanguageModule getModuleByRequiredInterface(EList<LanguageModule> modulesList, RequiredInterface requiredInterface){
+		for (LanguageModule languageModule : modulesList) {
+			if(languageModule.getRequiredInterface() != null && languageModule.getRequiredInterface().getName().equals(requiredInterface.getName()))
+				return languageModule;
+		}
+		return null;
+	}
+}
