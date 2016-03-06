@@ -127,6 +127,11 @@ public class BreakerImpl {
 	 */
 	private ArrayList<EClassifier> buildSyntacticModule(EcoreGroup group, ArrayList<Language> languages) throws Exception {
 		ArrayList<EClassifier> requiredClassifiers = new ArrayList<EClassifier>();
+		
+		for (EcoreVertex requiredVertex : group.getRequiredVertex()) {
+			requiredClassifiers.add(requiredVertex.getClassifier());
+		}
+		
 		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex());
 		
 		EPackage moduleEPackage = this.createEPackageByModule(group, moduleName);
@@ -138,7 +143,6 @@ public class BreakerImpl {
 		addMetaclassesRequiredByTheSemantics(allAspects, moduleEPackage);
 		
 		// Adding the required operations to the required interface
-		EcoreQueries.searchRequiredConcepts(moduleEPackage, requiredClassifiers);
 		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
 		this.addRequiredOperationsToRequiredInterface(requiredAspects, moduleEPackage);
 		

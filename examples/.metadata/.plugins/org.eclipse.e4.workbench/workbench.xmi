@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_ZZn2QdyIEeW2o762Qym3-Q" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_ZZodUNyIEeW2o762Qym3-Q" bindingContexts="_ZZodUtyIEeW2o762Qym3-Q">
-  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;1-LanguagesArchitectureModel.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/models/1-LanguagesArchitectureModel.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/models/1-LanguagesArchitectureModel.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;fr.inria.diverse.melange.Melange&quot; name=&quot;fsmFamily.melange&quot; tooltip=&quot;puzzle.examples.family.fsm/src/family/fsmFamily.melange&quot;>&#xA;&lt;persistable path=&quot;/puzzle.examples.family.fsm/src/family/fsmFamily.melange&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;dynamicPorts.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/models/dynamicPorts.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/models/dynamicPorts.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;dynamicPorts.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/dynamicPorts.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/dynamicPorts.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;dynamicPorts.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/reports/dynamicPorts.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/reports/dynamicPorts.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;go.js&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/reports/go.js&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/reports/go.js&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
+  <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;1-LanguagesArchitectureModel.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/models/1-LanguagesArchitectureModel.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/models/1-LanguagesArchitectureModel.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;Report-4-DependenciesGraph.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/reports/Report-4-DependenciesGraph.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/reports/Report-4-DependenciesGraph.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;PuzzleADL.presentation.PuzzleADLEditorID&quot; name=&quot;1-LanguagesArchitectureModel.puzzleadl&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/models/1-LanguagesArchitectureModel.puzzleadl&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/models/1-LanguagesArchitectureModel.puzzleadl&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.emf.ecore.presentation.EcoreEditorID&quot; name=&quot;fsmHarel.ecore&quot; tooltip=&quot;puzzle.examples.fsm.harel.metamodel/models/fsmHarel.ecore&quot;>&#xA;&lt;persistable path=&quot;/puzzle.examples.fsm.harel.metamodel/models/fsmHarel.ecore&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.emf.ecore.presentation.EcoreEditorID&quot; name=&quot;ConditionalModuleProv.ecore&quot; tooltip=&quot;fr.inria.diverse.module.ConditionalModule.syntax/models/ConditionalModuleProv.ecore&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.module.ConditionalModule.syntax/models/ConditionalModuleProv.ecore&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;fr.inria.diverse.melange.Melange&quot; name=&quot;fsmFamily.melange&quot; tooltip=&quot;puzzle.examples.family.fsm/src/family/fsmFamily.melange&quot;>&#xA;&lt;persistable path=&quot;/puzzle.examples.family.fsm/src/family/fsmFamily.melange&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;dynamicPorts.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/models/dynamicPorts.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/models/dynamicPorts.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;dynamicPorts.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/dynamicPorts.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/dynamicPorts.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.browser.editorSupport&quot; name=&quot;dynamicPorts.html&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/reports/dynamicPorts.html&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/reports/dynamicPorts.html&quot;/>&#xA;&lt;/file>&#xA;&lt;file factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; id=&quot;org.eclipse.ui.DefaultTextEditor&quot; name=&quot;go.js&quot; tooltip=&quot;fr.inria.diverse.puzzle.reverseEngineering/reports/go.js&quot;>&#xA;&lt;persistable path=&quot;/fr.inria.diverse.puzzle.reverseEngineering/reports/go.js&quot;/>&#xA;&lt;/file>&#xA;&lt;/mruList>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
   <tags>ModelMigrationProcessor.001</tags>
   <children xsi:type="basic:TrimmedWindow" xmi:id="_ZZodUNyIEeW2o762Qym3-Q" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_ZuHfktyIEeW2o762Qym3-Q" label="%trimmedwindow.label.eclipseSDK" x="133" y="83" width="1303" height="817">
@@ -147,7 +147,7 @@
           <tags>persp.newWizSC:org.eclipse.xtend.ide.wizards.NewXtendEnumWizard</tags>
           <tags>persp.newWizSC:org.eclipse.xtend.ide.wizards.NewXtendAnnotationWizard</tags>
           <children xsi:type="basic:PartSashContainer" xmi:id="_cI2cotyIEeW2o762Qym3-Q" selectedElement="_cI2co9yIEeW2o762Qym3-Q" horizontal="true">
-            <children xsi:type="basic:PartSashContainer" xmi:id="_cI2co9yIEeW2o762Qym3-Q" containerData="2359" selectedElement="_cI2cpNyIEeW2o762Qym3-Q">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_cI2co9yIEeW2o762Qym3-Q" containerData="3207" selectedElement="_cI2cpNyIEeW2o762Qym3-Q">
               <children xsi:type="basic:PartStack" xmi:id="_cI2cpNyIEeW2o762Qym3-Q" elementId="left" containerData="6000" selectedElement="_cI2cpdyIEeW2o762Qym3-Q">
                 <tags>newtablook</tags>
                 <tags>org.eclipse.e4.primaryNavigationStack</tags>
@@ -163,7 +163,7 @@
                 <children xsi:type="advanced:Placeholder" xmi:id="_cI2cq9yIEeW2o762Qym3-Q" elementId="org.eclipse.egit.ui.RepositoriesView" toBeRendered="false" ref="_cI11kNyIEeW2o762Qym3-Q"/>
               </children>
             </children>
-            <children xsi:type="basic:PartSashContainer" xmi:id="_cI2crNyIEeW2o762Qym3-Q" containerData="7641" selectedElement="_cI2crdyIEeW2o762Qym3-Q">
+            <children xsi:type="basic:PartSashContainer" xmi:id="_cI2crNyIEeW2o762Qym3-Q" containerData="6793" selectedElement="_cI2crdyIEeW2o762Qym3-Q">
               <children xsi:type="basic:PartSashContainer" xmi:id="_cI2crdyIEeW2o762Qym3-Q" containerData="7121" selectedElement="_cI2crtyIEeW2o762Qym3-Q" horizontal="true">
                 <children xsi:type="advanced:Placeholder" xmi:id="_cI2crtyIEeW2o762Qym3-Q" elementId="org.eclipse.ui.editorss" containerData="7500" ref="_Z5IcwNyIEeW2o762Qym3-Q"/>
                 <children xsi:type="basic:PartSashContainer" xmi:id="_cI2cr9yIEeW2o762Qym3-Q" toBeRendered="false" containerData="2500">
@@ -180,7 +180,7 @@
                   </children>
                 </children>
               </children>
-              <children xsi:type="basic:PartStack" xmi:id="_cI2cttyIEeW2o762Qym3-Q" elementId="bottom" containerData="2879" selectedElement="_cI2cu9yIEeW2o762Qym3-Q">
+              <children xsi:type="basic:PartStack" xmi:id="_cI2cttyIEeW2o762Qym3-Q" elementId="bottom" containerData="2879" selectedElement="_nka2INyKEeW2o762Qym3-Q">
                 <tags>newtablook</tags>
                 <tags>org.eclipse.e4.secondaryDataStack</tags>
                 <tags>noFocus</tags>
@@ -383,7 +383,7 @@
       <tags>categoryTag:Java</tags>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_cIyyQdyIEeW2o762Qym3-Q" elementId="org.eclipse.ui.views.ProblemView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Problems" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/problems_view.png" closeable="true">
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view PRIMARY_SORT_FIELD=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; categoryGroup=&quot;org.eclipse.ui.ide.severity&quot; markerContentGenerator=&quot;org.eclipse.ui.ide.problemsGenerator&quot; partName=&quot;Problems&quot;>&#xA;&lt;expanded>&#xA;&lt;category IMemento.internal.id=&quot;Warnings (71 items)&quot;/>&#xA;&lt;/expanded>&#xA;&lt;columnWidths org.eclipse.ui.ide.locationField=&quot;105&quot; org.eclipse.ui.ide.markerType=&quot;105&quot; org.eclipse.ui.ide.pathField=&quot;140&quot; org.eclipse.ui.ide.resourceField=&quot;105&quot; org.eclipse.ui.ide.severityAndDescriptionField=&quot;776&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.resourceField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.pathField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.locationField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.markerType&quot;/>&#xA;&lt;/view>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;view PRIMARY_SORT_FIELD=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot; categoryGroup=&quot;org.eclipse.ui.ide.severity&quot; markerContentGenerator=&quot;org.eclipse.ui.ide.problemsGenerator&quot; partName=&quot;Problems&quot;>&#xA;&lt;expanded>&#xA;&lt;category IMemento.internal.id=&quot;Warnings (100 of 191 items)&quot;/>&#xA;&lt;/expanded>&#xA;&lt;columnWidths org.eclipse.ui.ide.locationField=&quot;105&quot; org.eclipse.ui.ide.markerType=&quot;105&quot; org.eclipse.ui.ide.pathField=&quot;140&quot; org.eclipse.ui.ide.resourceField=&quot;105&quot; org.eclipse.ui.ide.severityAndDescriptionField=&quot;776&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.severityAndDescriptionField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.resourceField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.pathField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.locationField&quot;/>&#xA;&lt;visible IMemento.internal.id=&quot;org.eclipse.ui.ide.markerType&quot;/>&#xA;&lt;/view>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
       <menus xmi:id="_cLyb4NyIEeW2o762Qym3-Q" elementId="org.eclipse.ui.views.ProblemView">
@@ -418,7 +418,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_cDkpIdyKEeW2o762Qym3-Q" elementId="org.eclipse.ui.console.ConsoleView"/>
+      <toolbar xmi:id="_cDkpIdyKEeW2o762Qym3-Q" elementId="org.eclipse.ui.console.ConsoleView" visible="false"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_cIzZUtyIEeW2o762Qym3-Q" elementId="org.eclipse.ui.views.ProgressView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Progress" iconURI="platform:/plugin/org.eclipse.ui.ide/icons/full/eview16/pview.png" closeable="true">
       <tags>View</tags>
@@ -444,7 +444,7 @@
         <tags>ViewMenu</tags>
         <tags>menuContribution:menu</tags>
       </menus>
-      <toolbar xmi:id="_nkfHkdyKEeW2o762Qym3-Q" elementId="org.eclipse.ui.views.PropertySheet" visible="false"/>
+      <toolbar xmi:id="_nkfHkdyKEeW2o762Qym3-Q" elementId="org.eclipse.ui.views.PropertySheet"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_cSl7kNyVEeW2o762Qym3-Q" elementId="org.eclipse.debug.ui.DebugView" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Debug" iconURI="platform:/plugin/org.eclipse.debug.ui/icons/full/eview16/debug_view.png" closeable="true">
       <tags>View</tags>
@@ -496,7 +496,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZwJf4NyIEeW2o762Qym3-Q" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_QLC3oOL7EeWxo5zGldR6wg" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_ZaHlsNyIEeW2o762Qym3-Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-_JPEuN4EeWnfb63h5dugg" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_ZaHlsNyIEeW2o762Qym3-Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZwJf4dyIEeW2o762Qym3-Q" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -520,7 +520,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZwKG8NyIEeW2o762Qym3-Q" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_QLHJEOL7EeWxo5zGldR6wg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_ZaG-w9yIEeW2o762Qym3-Q"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-_M5dON4EeWnfb63h5dugg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_ZaG-w9yIEeW2o762Qym3-Q"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_ZwKG8dyIEeW2o762Qym3-Q" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -1123,7 +1123,7 @@
       <tags>platform:cocoa</tags>
       <parameters xmi:id="_Za1XQdyIEeW2o762Qym3-Q" elementId="org.eclipse.ui.views.showView.viewId" name="org.eclipse.ui.views.showView.viewId" value="org.eclipse.ui.views.ProblemView"/>
     </bindings>
-    <bindings xmi:id="_P2I-oeL7EeWxo5zGldR6wg" keySequence="COMMAND+CTRL+F" command="_Za96E9yIEeW2o762Qym3-Q"/>
+    <bindings xmi:id="_-qLrseN4EeWnfb63h5dugg" keySequence="COMMAND+CTRL+F" command="_Za96E9yIEeW2o762Qym3-Q"/>
   </bindingTables>
   <bindingTables xmi:id="_ZalfndyIEeW2o762Qym3-Q" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" bindingContext="_ZaKo4tyIEeW2o762Qym3-Q">
     <bindings xmi:id="_ZamGoNyIEeW2o762Qym3-Q" keySequence="ALT+SHIFT+ARROW_DOWN" command="_ZaFJadyIEeW2o762Qym3-Q"/>
@@ -1232,7 +1232,7 @@
     <bindings xmi:id="_ZaziE9yIEeW2o762Qym3-Q" keySequence="ALT+CR" command="_ZaFwh9yIEeW2o762Qym3-Q"/>
   </bindingTables>
   <bindingTables xmi:id="_Za-hIdyIEeW2o762Qym3-Q" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_ZZodVdyIEeW2o762Qym3-Q">
-    <bindings xmi:id="_P2JlsOL7EeWxo5zGldR6wg" keySequence="M1+W" command="_Za96GNyIEeW2o762Qym3-Q"/>
+    <bindings xmi:id="_-qMSwON4EeWnfb63h5dugg" keySequence="M1+W" command="_Za96GNyIEeW2o762Qym3-Q"/>
   </bindingTables>
   <bindingTables xmi:id="_Z5Jq4dyIEeW2o762Qym3-Q" bindingContext="_Z5Jq4NyIEeW2o762Qym3-Q"/>
   <bindingTables xmi:id="_Z5Jq49yIEeW2o762Qym3-Q" bindingContext="_Z5Jq4tyIEeW2o762Qym3-Q"/>

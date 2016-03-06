@@ -91,6 +91,7 @@ public class SynthesizerManager {
 		LanguageArchitecture languageArchitectureModel = this.createLanguageArchitectureModel("Architecture", modularizationGraph, dependenciesGraph);
 		String modelFile = project.getLocation().toString() + "/models/1-LanguagesArchitectureModel.puzzleadl";
 		ModelUtils.saveXMIFile(languageArchitectureModel, modelFile);
+		metricsManager.createModulesReport(languageArchitectureModel);
 		
 		// Step 2.1: Synthesize the open variability model i.e., the one that only contains
 		//			 the technological constraints so it explotes the variability.

@@ -20,6 +20,7 @@ public class ComponentsArchitectureModel {
 	// ------------------------------------------------------
 	
 	public String getVariablesDeclaration(LanguageArchitecture languageArchitecture){
+		LocationStack stack = new LocationStack();
 		String answer = "{ \"class\": \"go.GraphLinksModel\",\n";
 		answer += "  \"copiesArrays\": true,\n";
 		answer += "  \"copiesArrayObjects\": true,\n";
@@ -28,7 +29,7 @@ public class ComponentsArchitectureModel {
 		answer += "  \"nodeDataArray\": [\n";
 		
 		for (LanguageModule module : languageArchitecture.getLanguageModules()) {
-			answer += "{\"key\":\"" + module.getName() + "\", \"loc\":\"" + LocationStack.getInstance().getNextLocation() + "\",\n";
+			answer += "{\"key\":\"" + module.getName() + "\", \"loc\":\"" + stack.getNextLocation() + "\",\n";
 			
 			if(module.getProvidedInterface() != null)
 				answer += "\"leftArray\":[ {\"portColor\":\"#77ac1e\", \"portId\":\"" + module.getProvidedInterface().getName() + "\"} ]";

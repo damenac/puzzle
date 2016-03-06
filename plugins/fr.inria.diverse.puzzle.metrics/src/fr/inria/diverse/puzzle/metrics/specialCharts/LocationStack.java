@@ -9,13 +9,12 @@ public class LocationStack {
 	// ---------------------------------------
 	
 	private Stack<String> locations;
-	private static LocationStack instance;
 	
 	// ---------------------------------------
 	// Constructor and singleton
 	// ---------------------------------------
 	
-	private LocationStack(){
+	public LocationStack(){
 		locations = new Stack<String>();
 		locations.push("300 450");
 		locations.push("670 500");
@@ -30,14 +29,8 @@ public class LocationStack {
 		locations.push("150 100");
 		locations.push("138 351");
 		locations.push("384 319");
-		locations.push("320 152");
 		locations.push("101 204");
-	}
-	
-	public static LocationStack getInstance(){
-		if(instance == null)
-			instance = new LocationStack();
-		return instance;
+		locations.push("420 152");
 	}
 	
 	// ---------------------------------------

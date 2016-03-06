@@ -3,4 +3,12 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.comparisonOperators.SignatureMethodComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.ui.builder.AbstractBuilder"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.SynthesisProperties"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.graphs.EcoreGroup"/>
+<fullyQualifiedTypeName name="PuzzleADL.LanguageModule"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.LocationStack"/>
+<fullyQualifiedTypeName name="PuzzleADL.InterfaceBinding"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
+<fullyQualifiedTypeName name="PuzzleADL.LanguageArchitecture"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.ComponentsArchitectureModel"/>
 </qualifiedTypeNameHistroy>

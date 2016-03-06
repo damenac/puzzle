@@ -67,6 +67,15 @@ public class MembershipGraphPartition implements GraphPartition {
 						}
 					}
 				}
+				
+				for(EClass superType : ((EClass) eClassifier).getESuperTypes()){
+					EcoreVertex vertex = group.findVertexByEcoreReference(superType, conceptComparisonOperator);
+					if(vertex == null && superType != null && !consideredTypes.contains(superType)){
+						vertex = new EcoreVertex(superType.getName(), superType);
+						consideredTypes.add(superType);
+						group.getRequiredVertex().add(vertex);
+					}
+				}
 			}
 		}
 	}
