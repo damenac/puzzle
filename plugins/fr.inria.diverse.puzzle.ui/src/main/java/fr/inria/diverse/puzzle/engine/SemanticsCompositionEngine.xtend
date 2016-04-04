@@ -312,7 +312,6 @@ class SemanticsCompositionEngine {
 		val ws = targetProject.project.workspace.root
 			
 		// Loading the java elements in the overlapping aspects needed for the java AST refactoring
-		var boolean mergedFixed = false
 		var ArrayList<OverlappingAspectsVO> cleanListOverlappingAspects = overlappingAspects.removeRepeatedElements()
 		var Hashtable<String, PropertiesSetVO> propertiesFiles = new Hashtable<String, PropertiesSetVO>()
 		var Hashtable<String, String> mergedFiles = new Hashtable<String, String>()
@@ -447,6 +446,7 @@ class SemanticsCompositionEngine {
 	
 	def private buildPatternsByType(XtendTypeDeclaration _typeDeclaration, ArrayList<RefactoringPatternVO> refactoringPattern, 
 		LanguageVO leftLanguage, LanguageVO result, EObject _input, EObject _output, String aspectIdentifier) {
+		
 		for(XtendMember _member : _typeDeclaration.members){
 			if((_member instanceof XtendField) && (_input instanceof EClass && _output instanceof EClass)){
 				var String requiredTypeQualifiedName = (_input as EClassifier).qualifiedName//leftLanguage.requiredInterface.name + "." + (_input as EClassifier).name

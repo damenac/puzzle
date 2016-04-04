@@ -22,6 +22,7 @@ import fr.inria.diverse.puzzle.language.binding.Binding;
 import fr.inria.diverse.puzzle.language.binding.LanguageBinding;
 import fr.inria.diverse.puzzle.match.impl.PuzzleMatch;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -289,7 +290,17 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
         LanguageVO requiringLanguage = this.evaluateCompositionTree(compositionNode._requiring, overlappingAspects, overridingAspects, refactoringPatterns);
         LanguageVO providingLanguage = this.evaluateCompositionTree(compositionNode._providing, overlappingAspects, overridingAspects, refactoringPatterns);
         PuzzleMatch _instance = PuzzleMatch.getInstance();
-        final MatchingDiagnostic comparison = _instance.match(requiringLanguage.metamodel, providingLanguage.metamodel);
+        final MatchingDiagnostic comparison = _instance.match(requiringLanguage.requiredInterface, providingLanguage.providedInterface);
+        InputOutput.<String>println("Printing match");
+        List<MatchingDiagnosticItem> _items = comparison.getItems();
+        for (final MatchingDiagnosticItem item : _items) {
+          EObject _left = item.getLeft();
+          String _plus = ("MatchingDiagnosticItem: " + _left);
+          String _plus_1 = (_plus + " -> ");
+          EObject _right = item.getRight();
+          String _plus_2 = (_plus_1 + _right);
+          InputOutput.<String>println(_plus_2);
+        }
         LanguageVO mergedLanguage = new LanguageVO();
         this._abstractSyntaxCompositionEngine.launchAbstractSyntaxComposition(mergedLanguage, requiringLanguage, providingLanguage, comparison);
         this._semanticsCompositionEngine.launchSemanticsComposition(mergedLanguage, requiringLanguage, providingLanguage, comparison, overlappingAspects, overridingAspects, refactoringPatterns, this.targetProject);

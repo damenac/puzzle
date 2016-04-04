@@ -6,6 +6,8 @@ import ExpressionsPackProv.Expression;
 import ExpressionsPackProv.ExpressionsPackProvFactory;
 import ExpressionsPackProv.ExpressionsPackProvPackage;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -98,6 +100,15 @@ public class ExpressionsPackProvPackageImpl extends EPackageImpl implements Expr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getExpression__Eval__Map() {
+		return expressionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ExpressionsPackProvFactory getExpressionsPackProvFactory() {
 		return (ExpressionsPackProvFactory)getEFactoryInstance();
 	}
@@ -122,6 +133,7 @@ public class ExpressionsPackProvPackageImpl extends EPackageImpl implements Expr
 
 		// Create classes and their features
 		expressionEClass = createEClass(EXPRESSION);
+		createEOperation(expressionEClass, EXPRESSION___EVAL__MAP);
 	}
 
 	/**
@@ -155,6 +167,14 @@ public class ExpressionsPackProvPackageImpl extends EPackageImpl implements Expr
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getExpression__Eval__Map(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

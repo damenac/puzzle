@@ -64,7 +64,7 @@ class PuzzleXbaseInterpreter extends XbaseInterpreter {
 		
 		var RefactoringPatternVO refactPatternX = new RefactoringPatternVO
 		refactPatternX.sourcePattern = "(\\s\\w+)(\\." + _input.name +")(\\()"
-		refactPatternX.targetPattern = providingClassName + "Aspect." + _output.name + "\\($1"
+		refactPatternX.targetPattern = " " + providingClassName + "Aspect." + _output.name + "\\($1"
 		refactPatternX.pivotPattern = ".*" + providingClassName + "Aspect." + _output.name + "\\(.*"
 		
 		

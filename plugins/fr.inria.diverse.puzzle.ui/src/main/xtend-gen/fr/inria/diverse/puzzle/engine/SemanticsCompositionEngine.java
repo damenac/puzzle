@@ -561,7 +561,6 @@ public class SemanticsCompositionEngine {
       IProject _project = this.targetProject.getProject();
       IWorkspace _workspace = _project.getWorkspace();
       final IWorkspaceRoot ws = _workspace.getRoot();
-      boolean mergedFixed = false;
       ArrayList<OverlappingAspectsVO> cleanListOverlappingAspects = this.removeRepeatedElements(overlappingAspects);
       Hashtable<String, PropertiesSetVO> propertiesFiles = new Hashtable<String, PropertiesSetVO>();
       Hashtable<String, String> mergedFiles = new Hashtable<String, String>();

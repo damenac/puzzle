@@ -92,7 +92,7 @@ public class PuzzleXbaseInterpreter extends XbaseInterpreter {
     String _plus_1 = (_plus + ")(\\()");
     refactPatternX.setSourcePattern(_plus_1);
     String _name_1 = _output.getName();
-    String _plus_2 = ((providingClassName + "Aspect.") + _name_1);
+    String _plus_2 = (((" " + providingClassName) + "Aspect.") + _name_1);
     String _plus_3 = (_plus_2 + "\\($1");
     refactPatternX.setTargetPattern(_plus_3);
     String _name_2 = _output.getName();

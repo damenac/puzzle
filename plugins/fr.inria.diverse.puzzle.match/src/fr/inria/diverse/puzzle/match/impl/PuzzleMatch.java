@@ -135,8 +135,7 @@ public class PuzzleMatch {
 			EStructuralFeature candidateI = left.getEStructuralFeatures().get(i);
 			for (int j = 0; j < right.getEStructuralFeatures().size(); j++) {
 				EStructuralFeature candidateJ = left.getEStructuralFeatures().get(j);
-				if(i != j)
-					matchEStructuralFeatures(candidateI, candidateJ, matches);
+				matchEStructuralFeatures(candidateI, candidateJ, matches);
 			}
 		}
 		
@@ -144,8 +143,7 @@ public class PuzzleMatch {
 			EOperation candidateI = left.getEOperations().get(i);
 			for (int j = 0; j < right.getEOperations().size(); j++) {
 				EOperation candidateJ = right.getEOperations().get(j);
-				if(i != j)
-					matchEOperations(candidateI, candidateJ, matches);
+				matchEOperations(candidateI, candidateJ, matches);
 			}
 		}
 	}

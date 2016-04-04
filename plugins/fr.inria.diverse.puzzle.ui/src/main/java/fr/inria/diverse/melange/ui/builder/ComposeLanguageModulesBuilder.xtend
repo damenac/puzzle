@@ -45,6 +45,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.pde.internal.core.natures.PDE
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem
 
 /**
  * Builder for the action: Analyze Family.
@@ -195,7 +196,12 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 			var LanguageVO requiringLanguage = compositionNode._requiring.evaluateCompositionTree(overlappingAspects, overridingAspects, refactoringPatterns)
 			var LanguageVO providingLanguage = compositionNode._providing.evaluateCompositionTree(overlappingAspects, overridingAspects, refactoringPatterns)
 			
-			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiringLanguage.metamodel, providingLanguage.metamodel)
+			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiringLanguage.requiredInterface, providingLanguage.providedInterface)
+			
+			println("Printing match")
+			for(MatchingDiagnosticItem item : comparison.items){
+				println("MatchingDiagnosticItem: " + item.left + " -> " + item.right)
+			}
 			
 			// TODO: Validate compatibility
 
