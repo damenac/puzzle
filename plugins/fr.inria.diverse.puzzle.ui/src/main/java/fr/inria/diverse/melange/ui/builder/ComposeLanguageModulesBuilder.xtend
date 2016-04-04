@@ -73,6 +73,14 @@ import org.eclipse.core.resources.IFile
 import org.eclipse.core.runtime.CoreException
 import java.io.File
 import fr.inria.diverse.commons.asm.shade.relocation.SimpleRelocator
+import org.autorefactor.ui.PrepareApplyRefactoringsJob
+import java.util.Hashtable
+import org.autorefactor.ui.PropertiesSetVO
+import java.io.BufferedReader
+import java.io.FileReader
+import java.io.PrintWriter
+import org.eclipse.jdt.core.IJavaElement
+import org.eclipse.core.runtime.IPath
 
 /**
  * Builder for the action: Analyze Family.
@@ -91,6 +99,7 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 	@Inject extension PuzzleXbaseInterpreter puzzleXbaseInterpreter
 	@Inject private Provider<IEvaluationContext> contextProvider;
 	private IProject targetProject
+	private Hashtable<String, IJavaElement> cacheJavaElements = new Hashtable<String, IJavaElement>()
 	
 	// -------------------------------------------------
 	// Methods
@@ -125,12 +134,152 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 		var AbstractCompositionTreeNode compositionTree = calculateCompositionTree(bindingSpace.binding, modelTypingSpace)
 		var LanguageVO composedLanguage = evaluateCompositionTree(compositionTree, overlappingAspects, overridingAspects, refactoringPatterns)
 		
+		// Generating metamodels and metamodels code
 		composedLanguage.serializeEcoreFiles
 		var GenModel gen = composedLanguage.serializeGenmodelFiles
 		gen.generateCode
+		
+		// Executing refactoring patters to finish the semantic composition.
+		executeRefactorings(overlappingAspects, overridingAspects, refactoringPatterns)
+		
 		targetProject.refreshLocal(IResource.DEPTH_INFINITE, null)
 		
 		return answer
+	}
+	
+	def executeRefactorings(ArrayList<OverlappingAspectsVO> overlappingAspects, ArrayList<OverridingAspectsVO> overridingAspects,
+		ArrayList<RefactoringPatternVO> refactoringPatterns) {
+			
+		val ws = targetProject.project.workspace.root
+			
+		// Loading the java elements in the overlapping aspects needed for the java AST refactoring
+		var boolean mergedFixed = false
+		var ArrayList<OverlappingAspectsVO> cleanListOverlappingAspects = overlappingAspects.removeRepeatedElements()
+		var Hashtable<String, PropertiesSetVO> propertiesFiles = new Hashtable<String, PropertiesSetVO>()
+		var Hashtable<String, String> mergedFiles = new Hashtable<String, String>()
+			
+		for(OverlappingAspectsVO _overlappingAspect : overlappingAspects){
+			if(mergedFiles.get(_overlappingAspect.mergedFile) == null){
+				overrideMethod(_overlappingAspect.rightFile, _overlappingAspect.mergedFile);
+				mergedFiles.put(_overlappingAspect.mergedFile,_overlappingAspect.mergedFile);
+			}
+			
+			var String aspectName = _overlappingAspect.leftAspect.aspectTypeRef.identifier.substring(
+					_overlappingAspect.leftAspect.aspectTypeRef.identifier.lastIndexOf(".") + 1)
+				
+			var String mergedPropertiesFile = _overlappingAspect.mergedFile.replace(aspectName, aspectName + aspectName + "Properties")
+			var String leftPropertiesFile = _overlappingAspect.rightFile.replace(aspectName, aspectName + aspectName + "Properties")
+			var String rightPropertiesFile = _overlappingAspect.rightFile.replace(aspectName, aspectName + aspectName + "Properties")
+			
+			var PropertiesSetVO propertiesSet = propertiesFiles.get(mergedPropertiesFile)
+			if(propertiesSet == null){
+					propertiesSet = new PropertiesSetVO()
+					propertiesSet.mergedPropertiesFile = mergedPropertiesFile
+					propertiesSet.allPropertiesFiles.add(mergedPropertiesFile)
+				}
+			if(!propertiesSet.allPropertiesFiles.contains(leftPropertiesFile))
+				propertiesSet.allPropertiesFiles.add(leftPropertiesFile)
+			if(!propertiesSet.allPropertiesFiles.contains(rightPropertiesFile))
+				propertiesSet.allPropertiesFiles.add(rightPropertiesFile)
+			
+			propertiesFiles.put(mergedPropertiesFile, propertiesSet)
+			
+			targetProject.refreshLocal(IResource.DEPTH_INFINITE, null);
+			JavaCore.initializeAfterLoad(null)
+			
+			val String mergedPathString = _overlappingAspect.mergedFile.replace(ws.location.toString, "")
+			var IJavaElement mergedElement = cacheJavaElements.get(mergedPathString)
+			if(mergedElement == null){
+				val IPath mergedPath = new Path(mergedPathString)
+				mergedElement = JavaCore.create(ws.getFile(mergedPath))
+				cacheJavaElements.put(mergedPathString, mergedElement)
+			}
+			
+			val String leftPathString = _overlappingAspect.leftFile.replace(ws.location.toString, "")
+			var IJavaElement extensionElement = cacheJavaElements.get(leftPathString)
+			if(extensionElement == null){
+				val IPath leftPath = new Path(leftPathString)
+				val IFile leftFile = ws.getFile(leftPath);
+				extensionElement = JavaCore.create(leftFile)
+				cacheJavaElements.put(leftPathString, extensionElement)
+			}
+			
+			val String righPathString = _overlappingAspect.rightFile.replace(ws.location.toString, "")
+			var IJavaElement baseElement = cacheJavaElements.get(righPathString)
+			if(baseElement == null){
+				val IPath rightPath = new Path(righPathString)
+				val IFile rightFile = ws.getFile(rightPath);
+				baseElement = JavaCore.create(rightFile)
+				cacheJavaElements.put(righPathString, baseElement)
+			}
+			_overlappingAspect.extensionElement = extensionElement
+			_overlappingAspect.mergedElement = mergedElement
+			_overlappingAspect.baseElement = baseElement
+		}
+		
+		for(OverridingAspectsVO _overridingAspect : overridingAspects){
+			if(_overridingAspect.mergedFile!=null){
+				val String mergedPathString = _overridingAspect.mergedFile.replace(ws.location.toString, "")
+				var IJavaElement mergedElement = cacheJavaElements.get(mergedPathString)
+				if(mergedElement == null){
+					val IPath mergedPath = new Path(mergedPathString)
+					mergedElement = JavaCore.create(ws.getFile(mergedPath))
+					cacheJavaElements.put(mergedPathString, mergedElement)
+				}
+				
+				val String rightPathString = _overridingAspect.baseFile.replace(ws.location.toString, "")
+				var IJavaElement rightElement = cacheJavaElements.get(rightPathString)
+				if(rightElement == null){
+					val IPath rightPath = new Path(rightPathString)
+					rightElement = JavaCore.create(ws.getFile(rightPath))
+					cacheJavaElements.put(rightPathString, rightElement)
+				}
+				
+				val String leftPathString = _overridingAspect.leftFile.replace(ws.location.toString, "")
+				var IJavaElement extensionElement = cacheJavaElements.get(leftPathString)
+				if(extensionElement == null){
+					val IPath leftPath = new Path(leftPathString)
+					val IFile leftFile = ws.getFile(leftPath);
+					extensionElement = JavaCore.create(leftFile)
+					cacheJavaElements.put(leftPathString, extensionElement)
+				}
+				
+				_overridingAspect.mergedElement = mergedElement
+				_overridingAspect.extensionElement = extensionElement
+				_overridingAspect.baseElement = rightElement
+			}
+		}
+		
+		val targetFolderFile = new File(targetProject.locationURI.path + "/xtend-gen/")
+		var PrepareApplyRefactoringsJob refactoringJob = new PrepareApplyRefactoringsJob(cleanListOverlappingAspects, overridingAspects,
+			refactoringPatterns, propertiesFiles, targetFolderFile, targetProject
+		)
+		refactoringJob.schedule()
+	}
+	
+	def ArrayList<OverlappingAspectsVO> removeRepeatedElements(ArrayList<OverlappingAspectsVO> vos) {
+		var ArrayList<OverlappingAspectsVO> answer = newArrayList
+		for(OverlappingAspectsVO _overlappingAspect : vos){
+			if(!answer.contains(_overlappingAspect))
+				answer.add(_overlappingAspect)
+		}
+		return answer
+	}
+	
+	def private overrideMethod(String sourceFilePath, String targetFilePath){
+		var String baseContent = ""
+			val BufferedReader br = new BufferedReader(new FileReader(sourceFilePath));
+			var String line = br.readLine();
+			
+	        while (line != null) {
+	           baseContent = baseContent + line + "\n"
+	           line = br.readLine();
+	        }
+			br.close()
+			
+			var PrintWriter writer = new PrintWriter(new File(targetFilePath));
+			writer.print(baseContent);
+			writer.close();
 	}
 	
 	/**
@@ -312,32 +461,41 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 		
 		for(Aspect _aspect : mergedLanguage.aspects){
 			// Changing the namespaces of the required types of the extension language that still required in the merged language.
-			if(mergedLanguage.requiredInterface != null){
-				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
-				var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
-					requiringLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
-						_requiredClassifier.name)
-				if(!refactoringPatterns.contains(pattern))
-					refactoringPatterns.add(pattern)
-				}
-				
-				// Changing the namespaces of the required types of the base language that still required in the merged language. 
-				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
-					var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
-						providingLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
-							_requiredClassifier.name)
-					if(!refactoringPatterns.contains(pattern))
-						refactoringPatterns.add(pattern)
-				}
-			}
+//			if(mergedLanguage.requiredInterface != null){
+//				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
+//				var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+//					requiringLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
+//						_requiredClassifier.name)
+//				if(!refactoringPatterns.contains(pattern))
+//					refactoringPatterns.add(pattern)
+//				}
+//				
+//				// Changing the namespaces of the required types of the base language that still required in the merged language. 
+//				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
+//					var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+//						providingLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
+//							_requiredClassifier.name)
+//					if(!refactoringPatterns.contains(pattern))
+//						refactoringPatterns.add(pattern)
+//				}
+//			}
 			
 			// Changing the namespaces of the required types of the extension language that were provided by the merged language. 
+			println("Changing the namespaces of the required types of the extension language that were provided by the merged language. ")
 			for(EClassifier _requiredClassifier : mergedLanguage.metamodel.EClassifiers){
-				var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
-					requiringLanguage.requiredInterface.name, _requiredClassifier.name, mergedLanguage.metamodel.name, 
-						_requiredClassifier.name)
-				if(!refactoringPatterns.contains(pattern))
-					refactoringPatterns.add(pattern)
+				if(searchClassByName(requiringLanguage.requiredInterface, _requiredClassifier.name) != null){
+					println("actually _requiredClassifier: " + _requiredClassifier)
+					var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+						requiringLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.metamodel.name, 
+							_requiredClassifier.name)
+					println("  . pattern: " + pattern)
+					if(!refactoringPatterns.contains(pattern)){
+						println("added")
+						refactoringPatterns.add(pattern)
+					}
+						
+				}
+				
 			}
 			
 			// Copying the aspect files to the target project
@@ -362,47 +520,52 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 						println("Crying because of indexing")
 					}
 					
-					for(MatchingDiagnosticItem _mapping : comparison.items){
-						var EObject _input = _mapping.left;
-						var EObject _output = _mapping.right;
-						
-						if(_input instanceof EClassifier && _output instanceof EClassifier){
-							
-							var EClassifier sourceClass = mergedLanguage.metamodel.searchClassByName((_input as EClassifier).name)
-							var EClassifier targetClass = mergedLanguage.metamodel.searchClassByName((_output as EClassifier).name)
-							var RefactoringPatternVO pattern = new RefactoringPatternVO()
-							pattern.sourcePattern = sourceClass.getQualifiedName//leftLanguage.requiredInterface.name + "." + (_input as EClassifier).name
-							pattern.targetPattern = targetClass.getQualifiedName.replace(sourceAspectNamespace, targetAspectNamespace)
-							
-							if(!refactoringPatterns.contains(pattern))
-								refactoringPatterns.add(pattern)
-								
-							if((_input instanceof EClass) && (_output instanceof EClass)){
-								var EClass _inputClass = _input as EClass;
-								var EClass _outputClass = _output as EClass;
-
-									var List<EReference> incomingReferences = newArrayList;
-									_inputClass.getIncomingReferences(requiringLanguage.metamodel, incomingReferences)
-									
-									for(EReference _eRequiringReference : incomingReferences){
-										var RefactoringPatternVO referenceCallPattern = RefactoringPatternsBuilder.buildReferenceCallPattern(_inputClass.name, 
-											_eRequiringReference.name, _outputClass.name, _eRequiringReference.name);
-										
-										if(!refactoringPatterns.contains(referenceCallPattern))
-											refactoringPatterns.add(referenceCallPattern);
-								}
-							}
-						}
-						
-						for(XtendTypeDeclaration _typeDeclaration : xtendFile.xtendTypes){
-							buildPatternsByType(_typeDeclaration, refactoringPatterns, requiringLanguage, mergedLanguage, _input, _output, _aspect.aspectTypeRef.identifier)
-						}
-					}
+//					for(MatchingDiagnosticItem _mapping : comparison.items){
+//						var EObject _input = _mapping.left;
+//						var EObject _output = _mapping.right;
+//						
+//						if(_input instanceof EClassifier && _output instanceof EClassifier){
+//							
+//							var EClassifier sourceClass = mergedLanguage.metamodel.searchClassByName((_input as EClassifier).name)
+//							var EClassifier targetClass = mergedLanguage.metamodel.searchClassByName((_output as EClassifier).name)
+//							var RefactoringPatternVO pattern = new RefactoringPatternVO()
+//							pattern.sourcePattern = sourceClass.getQualifiedName//leftLanguage.requiredInterface.name + "." + (_input as EClassifier).name
+//							pattern.targetPattern = targetClass.getQualifiedName.replace(sourceAspectNamespace, targetAspectNamespace)
+//							
+//							if(!refactoringPatterns.contains(pattern))
+//								refactoringPatterns.add(pattern)
+//								
+//							if((_input instanceof EClass) && (_output instanceof EClass)){
+//								var EClass _inputClass = _input as EClass;
+//								var EClass _outputClass = _output as EClass;
+//
+//									var List<EReference> incomingReferences = newArrayList;
+//									_inputClass.getIncomingReferences(requiringLanguage.metamodel, incomingReferences)
+//									
+//									for(EReference _eRequiringReference : incomingReferences){
+//										var RefactoringPatternVO referenceCallPattern = RefactoringPatternsBuilder.buildReferenceCallPattern(_inputClass.name, 
+//											_eRequiringReference.name, _outputClass.name, _eRequiringReference.name);
+//										
+//										if(!refactoringPatterns.contains(referenceCallPattern))
+//											refactoringPatterns.add(referenceCallPattern);
+//								}
+//							}
+//						}
+//						
+//						for(XtendTypeDeclaration _typeDeclaration : xtendFile.xtendTypes){
+//							buildPatternsByType(_typeDeclaration, refactoringPatterns, requiringLanguage, mergedLanguage, _input, _output, _aspect.aspectTypeRef.identifier)
+//						}
+//					}
 					
-					for(String _MetamodelNamespace : mergedLanguage.oldNamespaces){
-						var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildNamespacePattern(_MetamodelNamespace, targetAspectNamespace)
-						if(!refactoringPatterns.contains(pattern))
-							refactoringPatterns.add(pattern)
+//					for(String _MetamodelNamespace : mergedLanguage.oldNamespaces){
+//						var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildNamespacePattern(_MetamodelNamespace, targetAspectNamespace)
+//						if(!refactoringPatterns.contains(pattern))
+//							refactoringPatterns.add(pattern)
+//					}
+					
+					println("_aspect.aspectTypeRef.type.simpleName: " + _aspect.aspectTypeRef.type.simpleName)
+					for(RefactoringPatternVO pattern : refactoringPatterns){
+						println("pattern: " + pattern)
 					}
 					
 					val projectPathTmp = new StringBuilder
@@ -442,11 +605,11 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 						relocators += new SimpleRelocator(sourceEmfNamespace.toString, targetEmfNamespace.toString, null, #[])
 						
 						var RefactoringPatternVO namespaceRefactoringPattern = new RefactoringPatternVO()
-						 namespaceRefactoringPattern.sourcePattern = sourceAspectNamespace.toString
-						 namespaceRefactoringPattern.targetPattern = targetAspectNamespace.toString
+						namespaceRefactoringPattern.sourcePattern = sourceAspectNamespace.toString
+						namespaceRefactoringPattern.targetPattern = targetAspectNamespace.toString
 						 
-						 if(!refactoringPatterns.contains(namespaceRefactoringPattern))
-						 	refactoringPatterns.add(namespaceRefactoringPattern)
+						if(!refactoringPatterns.contains(namespaceRefactoringPattern))
+						 refactoringPatterns.add(namespaceRefactoringPattern)
 						
 						request.inputFolders = #{sourceFolderFile}
 						request.outputFolder = targetFolderFile

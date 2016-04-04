@@ -35,5 +35,8 @@ public class RefactoringPatternVO {
 		this.pivotPattern = pivotPattern;
 	}
 	
+	public String toString(){
+		return sourcePattern + " -> " + targetPattern;
+	}
 	
 }

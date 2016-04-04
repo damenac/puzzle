@@ -30,19 +30,24 @@ import fr.inria.diverse.puzzle.language.binding.Binding;
 import fr.inria.diverse.puzzle.language.binding.LanguageBinding;
 import fr.inria.diverse.puzzle.match.impl.PuzzleMatch;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
-import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem;
 import fr.inria.diverse.sle.puzzle.merge.impl.PuzzleMerge;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Set;
 import javax.inject.Inject;
 import org.autorefactor.ui.OverlappingAspectsVO;
 import org.autorefactor.ui.OverridingAspectsVO;
+import org.autorefactor.ui.PrepareApplyRefactoringsJob;
+import org.autorefactor.ui.PropertiesSetVO;
 import org.autorefactor.ui.RefactoringPatternVO;
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
@@ -69,10 +74,10 @@ import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.eclipse.jdt.core.IJavaElement;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.pde.internal.core.natures.PDE;
 import org.eclipse.xtend.core.xtend.XtendField;
@@ -119,6 +124,8 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
   
   private IProject targetProject;
   
+  private Hashtable<String, IJavaElement> cacheJavaElements = new Hashtable<String, IJavaElement>();
+  
   /**
    * Compose the language modules referenced in the melange and puzzle scripts given in the parameters
    */
@@ -154,8 +161,193 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
       this.serializeEcoreFiles(composedLanguage);
       GenModel gen = this.serializeGenmodelFiles(composedLanguage);
       this.generateCode(gen);
+      this.executeRefactorings(overlappingAspects, overridingAspects, refactoringPatterns);
       this.targetProject.refreshLocal(IResource.DEPTH_INFINITE, null);
       return answer;
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public void executeRefactorings(final ArrayList<OverlappingAspectsVO> overlappingAspects, final ArrayList<OverridingAspectsVO> overridingAspects, final ArrayList<RefactoringPatternVO> refactoringPatterns) {
+    try {
+      IProject _project = this.targetProject.getProject();
+      IWorkspace _workspace = _project.getWorkspace();
+      final IWorkspaceRoot ws = _workspace.getRoot();
+      boolean mergedFixed = false;
+      ArrayList<OverlappingAspectsVO> cleanListOverlappingAspects = this.removeRepeatedElements(overlappingAspects);
+      Hashtable<String, PropertiesSetVO> propertiesFiles = new Hashtable<String, PropertiesSetVO>();
+      Hashtable<String, String> mergedFiles = new Hashtable<String, String>();
+      for (final OverlappingAspectsVO _overlappingAspect : overlappingAspects) {
+        {
+          String _get = mergedFiles.get(_overlappingAspect.mergedFile);
+          boolean _equals = Objects.equal(_get, null);
+          if (_equals) {
+            this.overrideMethod(_overlappingAspect.rightFile, _overlappingAspect.mergedFile);
+            mergedFiles.put(_overlappingAspect.mergedFile, _overlappingAspect.mergedFile);
+          }
+          JvmTypeReference _aspectTypeRef = _overlappingAspect.leftAspect.getAspectTypeRef();
+          String _identifier = _aspectTypeRef.getIdentifier();
+          JvmTypeReference _aspectTypeRef_1 = _overlappingAspect.leftAspect.getAspectTypeRef();
+          String _identifier_1 = _aspectTypeRef_1.getIdentifier();
+          int _lastIndexOf = _identifier_1.lastIndexOf(".");
+          int _plus = (_lastIndexOf + 1);
+          String aspectName = _identifier.substring(_plus);
+          String mergedPropertiesFile = _overlappingAspect.mergedFile.replace(aspectName, ((aspectName + aspectName) + "Properties"));
+          String leftPropertiesFile = _overlappingAspect.rightFile.replace(aspectName, ((aspectName + aspectName) + "Properties"));
+          String rightPropertiesFile = _overlappingAspect.rightFile.replace(aspectName, ((aspectName + aspectName) + "Properties"));
+          PropertiesSetVO propertiesSet = propertiesFiles.get(mergedPropertiesFile);
+          boolean _equals_1 = Objects.equal(propertiesSet, null);
+          if (_equals_1) {
+            PropertiesSetVO _propertiesSetVO = new PropertiesSetVO();
+            propertiesSet = _propertiesSetVO;
+            propertiesSet.setMergedPropertiesFile(mergedPropertiesFile);
+            ArrayList<String> _allPropertiesFiles = propertiesSet.getAllPropertiesFiles();
+            _allPropertiesFiles.add(mergedPropertiesFile);
+          }
+          ArrayList<String> _allPropertiesFiles_1 = propertiesSet.getAllPropertiesFiles();
+          boolean _contains = _allPropertiesFiles_1.contains(leftPropertiesFile);
+          boolean _not = (!_contains);
+          if (_not) {
+            ArrayList<String> _allPropertiesFiles_2 = propertiesSet.getAllPropertiesFiles();
+            _allPropertiesFiles_2.add(leftPropertiesFile);
+          }
+          ArrayList<String> _allPropertiesFiles_3 = propertiesSet.getAllPropertiesFiles();
+          boolean _contains_1 = _allPropertiesFiles_3.contains(rightPropertiesFile);
+          boolean _not_1 = (!_contains_1);
+          if (_not_1) {
+            ArrayList<String> _allPropertiesFiles_4 = propertiesSet.getAllPropertiesFiles();
+            _allPropertiesFiles_4.add(rightPropertiesFile);
+          }
+          propertiesFiles.put(mergedPropertiesFile, propertiesSet);
+          this.targetProject.refreshLocal(IResource.DEPTH_INFINITE, null);
+          JavaCore.initializeAfterLoad(null);
+          IPath _location = ws.getLocation();
+          String _string = _location.toString();
+          final String mergedPathString = _overlappingAspect.mergedFile.replace(_string, "");
+          IJavaElement mergedElement = this.cacheJavaElements.get(mergedPathString);
+          boolean _equals_2 = Objects.equal(mergedElement, null);
+          if (_equals_2) {
+            final IPath mergedPath = new Path(mergedPathString);
+            IFile _file = ws.getFile(mergedPath);
+            IJavaElement _create = JavaCore.create(_file);
+            mergedElement = _create;
+            this.cacheJavaElements.put(mergedPathString, mergedElement);
+          }
+          IPath _location_1 = ws.getLocation();
+          String _string_1 = _location_1.toString();
+          final String leftPathString = _overlappingAspect.leftFile.replace(_string_1, "");
+          IJavaElement extensionElement = this.cacheJavaElements.get(leftPathString);
+          boolean _equals_3 = Objects.equal(extensionElement, null);
+          if (_equals_3) {
+            final IPath leftPath = new Path(leftPathString);
+            final IFile leftFile = ws.getFile(leftPath);
+            IJavaElement _create_1 = JavaCore.create(leftFile);
+            extensionElement = _create_1;
+            this.cacheJavaElements.put(leftPathString, extensionElement);
+          }
+          IPath _location_2 = ws.getLocation();
+          String _string_2 = _location_2.toString();
+          final String righPathString = _overlappingAspect.rightFile.replace(_string_2, "");
+          IJavaElement baseElement = this.cacheJavaElements.get(righPathString);
+          boolean _equals_4 = Objects.equal(baseElement, null);
+          if (_equals_4) {
+            final IPath rightPath = new Path(righPathString);
+            final IFile rightFile = ws.getFile(rightPath);
+            IJavaElement _create_2 = JavaCore.create(rightFile);
+            baseElement = _create_2;
+            this.cacheJavaElements.put(righPathString, baseElement);
+          }
+          _overlappingAspect.extensionElement = extensionElement;
+          _overlappingAspect.mergedElement = mergedElement;
+          _overlappingAspect.baseElement = baseElement;
+        }
+      }
+      for (final OverridingAspectsVO _overridingAspect : overridingAspects) {
+        boolean _notEquals = (!Objects.equal(_overridingAspect.mergedFile, null));
+        if (_notEquals) {
+          IPath _location = ws.getLocation();
+          String _string = _location.toString();
+          final String mergedPathString = _overridingAspect.mergedFile.replace(_string, "");
+          IJavaElement mergedElement = this.cacheJavaElements.get(mergedPathString);
+          boolean _equals = Objects.equal(mergedElement, null);
+          if (_equals) {
+            final IPath mergedPath = new Path(mergedPathString);
+            IFile _file = ws.getFile(mergedPath);
+            IJavaElement _create = JavaCore.create(_file);
+            mergedElement = _create;
+            this.cacheJavaElements.put(mergedPathString, mergedElement);
+          }
+          IPath _location_1 = ws.getLocation();
+          String _string_1 = _location_1.toString();
+          final String rightPathString = _overridingAspect.baseFile.replace(_string_1, "");
+          IJavaElement rightElement = this.cacheJavaElements.get(rightPathString);
+          boolean _equals_1 = Objects.equal(rightElement, null);
+          if (_equals_1) {
+            final IPath rightPath = new Path(rightPathString);
+            IFile _file_1 = ws.getFile(rightPath);
+            IJavaElement _create_1 = JavaCore.create(_file_1);
+            rightElement = _create_1;
+            this.cacheJavaElements.put(rightPathString, rightElement);
+          }
+          IPath _location_2 = ws.getLocation();
+          String _string_2 = _location_2.toString();
+          final String leftPathString = _overridingAspect.leftFile.replace(_string_2, "");
+          IJavaElement extensionElement = this.cacheJavaElements.get(leftPathString);
+          boolean _equals_2 = Objects.equal(extensionElement, null);
+          if (_equals_2) {
+            final IPath leftPath = new Path(leftPathString);
+            final IFile leftFile = ws.getFile(leftPath);
+            IJavaElement _create_2 = JavaCore.create(leftFile);
+            extensionElement = _create_2;
+            this.cacheJavaElements.put(leftPathString, extensionElement);
+          }
+          _overridingAspect.mergedElement = mergedElement;
+          _overridingAspect.extensionElement = extensionElement;
+          _overridingAspect.baseElement = rightElement;
+        }
+      }
+      URI _locationURI = this.targetProject.getLocationURI();
+      String _path = _locationURI.getPath();
+      String _plus = (_path + "/xtend-gen/");
+      final File targetFolderFile = new File(_plus);
+      PrepareApplyRefactoringsJob refactoringJob = new PrepareApplyRefactoringsJob(cleanListOverlappingAspects, overridingAspects, refactoringPatterns, propertiesFiles, targetFolderFile, this.targetProject);
+      refactoringJob.schedule();
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  public ArrayList<OverlappingAspectsVO> removeRepeatedElements(final ArrayList<OverlappingAspectsVO> vos) {
+    ArrayList<OverlappingAspectsVO> answer = CollectionLiterals.<OverlappingAspectsVO>newArrayList();
+    for (final OverlappingAspectsVO _overlappingAspect : vos) {
+      boolean _contains = answer.contains(_overlappingAspect);
+      boolean _not = (!_contains);
+      if (_not) {
+        answer.add(_overlappingAspect);
+      }
+    }
+    return answer;
+  }
+  
+  private void overrideMethod(final String sourceFilePath, final String targetFilePath) {
+    try {
+      String baseContent = "";
+      FileReader _fileReader = new FileReader(sourceFilePath);
+      final BufferedReader br = new BufferedReader(_fileReader);
+      String line = br.readLine();
+      while ((!Objects.equal(line, null))) {
+        {
+          baseContent = ((baseContent + line) + "\n");
+          String _readLine = br.readLine();
+          line = _readLine;
+        }
+      }
+      br.close();
+      File _file = new File(targetFilePath);
+      PrintWriter writer = new PrintWriter(_file);
+      writer.print(baseContent);
+      writer.close();
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -453,50 +645,24 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
       mergedLanguage.oldNamespaces.add(_name_1);
       for (final Aspect _aspect : mergedLanguage.aspects) {
         {
-          boolean _notEquals = (!Objects.equal(mergedLanguage.requiredInterface, null));
-          if (_notEquals) {
-            EList<EClassifier> _eClassifiers = mergedLanguage.requiredInterface.getEClassifiers();
-            for (final EClassifier _requiredClassifier : _eClassifiers) {
-              {
-                String _name_2 = requiringLanguage.metamodel.getName();
-                String _name_3 = _requiredClassifier.getName();
-                String _name_4 = mergedLanguage.requiredInterface.getName();
-                String _name_5 = _requiredClassifier.getName();
-                RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(_name_2, _name_3, _name_4, _name_5);
-                boolean _contains = refactoringPatterns.contains(pattern);
-                boolean _not = (!_contains);
-                if (_not) {
-                  refactoringPatterns.add(pattern);
-                }
-              }
-            }
-            EList<EClassifier> _eClassifiers_1 = mergedLanguage.requiredInterface.getEClassifiers();
-            for (final EClassifier _requiredClassifier_1 : _eClassifiers_1) {
-              {
-                String _name_2 = providingLanguage.metamodel.getName();
-                String _name_3 = _requiredClassifier_1.getName();
-                String _name_4 = mergedLanguage.requiredInterface.getName();
-                String _name_5 = _requiredClassifier_1.getName();
-                RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(_name_2, _name_3, _name_4, _name_5);
-                boolean _contains = refactoringPatterns.contains(pattern);
-                boolean _not = (!_contains);
-                if (_not) {
-                  refactoringPatterns.add(pattern);
-                }
-              }
-            }
-          }
-          EList<EClassifier> _eClassifiers_2 = mergedLanguage.metamodel.getEClassifiers();
-          for (final EClassifier _requiredClassifier_2 : _eClassifiers_2) {
-            {
-              String _name_2 = requiringLanguage.requiredInterface.getName();
-              String _name_3 = _requiredClassifier_2.getName();
-              String _name_4 = mergedLanguage.metamodel.getName();
-              String _name_5 = _requiredClassifier_2.getName();
-              RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(_name_2, _name_3, _name_4, _name_5);
+          InputOutput.<String>println("Changing the namespaces of the required types of the extension language that were provided by the merged language. ");
+          EList<EClassifier> _eClassifiers = mergedLanguage.metamodel.getEClassifiers();
+          for (final EClassifier _requiredClassifier : _eClassifiers) {
+            String _name_2 = _requiredClassifier.getName();
+            EClassifier _searchClassByName = this._ecoreQueries.searchClassByName(requiringLanguage.requiredInterface, _name_2);
+            boolean _notEquals = (!Objects.equal(_searchClassByName, null));
+            if (_notEquals) {
+              InputOutput.<String>println(("actually _requiredClassifier: " + _requiredClassifier));
+              String _name_3 = requiringLanguage.metamodel.getName();
+              String _name_4 = _requiredClassifier.getName();
+              String _name_5 = mergedLanguage.metamodel.getName();
+              String _name_6 = _requiredClassifier.getName();
+              RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(_name_3, _name_4, _name_5, _name_6);
+              InputOutput.<String>println(("  . pattern: " + pattern));
               boolean _contains = refactoringPatterns.contains(pattern);
               boolean _not = (!_contains);
               if (_not) {
+                InputOutput.<String>println("added");
                 refactoringPatterns.add(pattern);
               }
             }
@@ -569,77 +735,13 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
                   throw Exceptions.sneakyThrow(_t);
                 }
               }
-              List<MatchingDiagnosticItem> _items = comparison.getItems();
-              for (final MatchingDiagnosticItem _mapping : _items) {
-                {
-                  EObject _input = _mapping.getLeft();
-                  EObject _output = _mapping.getRight();
-                  boolean _and_3 = false;
-                  if (!(_input instanceof EClassifier)) {
-                    _and_3 = false;
-                  } else {
-                    _and_3 = (_output instanceof EClassifier);
-                  }
-                  if (_and_3) {
-                    String _name_2 = ((EClassifier) _input).getName();
-                    EClassifier sourceClass = this._ecoreQueries.searchClassByName(mergedLanguage.metamodel, _name_2);
-                    String _name_3 = ((EClassifier) _output).getName();
-                    EClassifier targetClass = this._ecoreQueries.searchClassByName(mergedLanguage.metamodel, _name_3);
-                    RefactoringPatternVO pattern = new RefactoringPatternVO();
-                    String _qualifiedName_1 = this._ecoreQueries.getQualifiedName(sourceClass);
-                    pattern.setSourcePattern(_qualifiedName_1);
-                    String _qualifiedName_2 = this._ecoreQueries.getQualifiedName(targetClass);
-                    String _replace = _qualifiedName_2.replace(sourceAspectNamespace, targetAspectNamespace);
-                    pattern.setTargetPattern(_replace);
-                    boolean _contains = refactoringPatterns.contains(pattern);
-                    boolean _not = (!_contains);
-                    if (_not) {
-                      refactoringPatterns.add(pattern);
-                    }
-                    boolean _and_4 = false;
-                    if (!(_input instanceof EClass)) {
-                      _and_4 = false;
-                    } else {
-                      _and_4 = (_output instanceof EClass);
-                    }
-                    if (_and_4) {
-                      EClass _inputClass = ((EClass) _input);
-                      EClass _outputClass = ((EClass) _output);
-                      List<EReference> incomingReferences = CollectionLiterals.<EReference>newArrayList();
-                      this._ecoreQueries.getIncomingReferences(_inputClass, requiringLanguage.metamodel, incomingReferences);
-                      for (final EReference _eRequiringReference : incomingReferences) {
-                        {
-                          String _name_4 = _inputClass.getName();
-                          String _name_5 = _eRequiringReference.getName();
-                          String _name_6 = _outputClass.getName();
-                          String _name_7 = _eRequiringReference.getName();
-                          RefactoringPatternVO referenceCallPattern = RefactoringPatternsBuilder.buildReferenceCallPattern(_name_4, _name_5, _name_6, _name_7);
-                          boolean _contains_1 = refactoringPatterns.contains(referenceCallPattern);
-                          boolean _not_1 = (!_contains_1);
-                          if (_not_1) {
-                            refactoringPatterns.add(referenceCallPattern);
-                          }
-                        }
-                      }
-                    }
-                  }
-                  EList<XtendTypeDeclaration> _xtendTypes = xtendFile.getXtendTypes();
-                  for (final XtendTypeDeclaration _typeDeclaration : _xtendTypes) {
-                    JvmTypeReference _aspectTypeRef_8 = _aspect.getAspectTypeRef();
-                    String _identifier_1 = _aspectTypeRef_8.getIdentifier();
-                    this.buildPatternsByType(_typeDeclaration, refactoringPatterns, requiringLanguage, mergedLanguage, _input, _output, _identifier_1);
-                  }
-                }
-              }
-              for (final String _MetamodelNamespace : mergedLanguage.oldNamespaces) {
-                {
-                  RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildNamespacePattern(_MetamodelNamespace, targetAspectNamespace);
-                  boolean _contains = refactoringPatterns.contains(pattern);
-                  boolean _not = (!_contains);
-                  if (_not) {
-                    refactoringPatterns.add(pattern);
-                  }
-                }
+              JvmTypeReference _aspectTypeRef_8 = _aspect.getAspectTypeRef();
+              JvmType _type_4 = _aspectTypeRef_8.getType();
+              String _simpleName_1 = _type_4.getSimpleName();
+              String _plus_1 = ("_aspect.aspectTypeRef.type.simpleName: " + _simpleName_1);
+              InputOutput.<String>println(_plus_1);
+              for (final RefactoringPatternVO pattern_1 : refactoringPatterns) {
+                InputOutput.<String>println(("pattern: " + pattern_1));
               }
               final StringBuilder projectPathTmp = new StringBuilder();
               final StringBuilder projectNameTmp = new StringBuilder();
@@ -718,9 +820,9 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
                 namespaceRefactoringPattern.setSourcePattern(_string_4);
                 String _string_5 = targetAspectNamespace.toString();
                 namespaceRefactoringPattern.setTargetPattern(_string_5);
-                boolean _contains = refactoringPatterns.contains(namespaceRefactoringPattern);
-                boolean _not = (!_contains);
-                if (_not) {
+                boolean _contains_1 = refactoringPatterns.contains(namespaceRefactoringPattern);
+                boolean _not_1 = (!_contains_1);
+                if (_not_1) {
                   refactoringPatterns.add(namespaceRefactoringPattern);
                 }
                 request.setInputFolders(Collections.<File>unmodifiableSet(CollectionLiterals.<File>newHashSet(sourceFolderFile)));
@@ -733,103 +835,103 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
               }
               for (final OverlappingAspectsVO _overlappingAspect : overlappingAspects) {
                 {
-                  JvmTypeReference _aspectTypeRef_8 = _aspect.getAspectTypeRef();
-                  String _identifier_1 = _aspectTypeRef_8.getIdentifier();
-                  JvmTypeReference _aspectTypeRef_9 = _overlappingAspect.leftAspect.getAspectTypeRef();
-                  String _identifier_2 = _aspectTypeRef_9.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_9 = _aspect.getAspectTypeRef();
+                  String _identifier_1 = _aspectTypeRef_9.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_10 = _overlappingAspect.leftAspect.getAspectTypeRef();
+                  String _identifier_2 = _aspectTypeRef_10.getIdentifier();
                   boolean _equals = _identifier_1.equals(_identifier_2);
                   if (_equals) {
-                    JvmTypeReference _aspectTypeRef_10 = _aspect.getAspectTypeRef();
-                    String _identifier_3 = _aspectTypeRef_10.getIdentifier();
-                    String _replace = _identifier_3.replace(".", "/");
-                    String _plus_1 = (sourceAspectFolder + _replace);
-                    String _plus_2 = (_plus_1 + ".java");
-                    _overlappingAspect.leftFile = _plus_2;
-                    String _string_6 = targetAspectNamespace.toString();
-                    String _plus_3 = (targetAspectFolder + _string_6);
-                    String _plus_4 = (_plus_3 + "/");
                     JvmTypeReference _aspectTypeRef_11 = _aspect.getAspectTypeRef();
-                    String _identifier_4 = _aspectTypeRef_11.getIdentifier();
+                    String _identifier_3 = _aspectTypeRef_11.getIdentifier();
+                    String _replace = _identifier_3.replace(".", "/");
+                    String _plus_2 = (sourceAspectFolder + _replace);
+                    String _plus_3 = (_plus_2 + ".java");
+                    _overlappingAspect.leftFile = _plus_3;
+                    String _string_6 = targetAspectNamespace.toString();
+                    String _plus_4 = (targetAspectFolder + _string_6);
+                    String _plus_5 = (_plus_4 + "/");
                     JvmTypeReference _aspectTypeRef_12 = _aspect.getAspectTypeRef();
-                    String _identifier_5 = _aspectTypeRef_12.getIdentifier();
+                    String _identifier_4 = _aspectTypeRef_12.getIdentifier();
+                    JvmTypeReference _aspectTypeRef_13 = _aspect.getAspectTypeRef();
+                    String _identifier_5 = _aspectTypeRef_13.getIdentifier();
                     int _lastIndexOf = _identifier_5.lastIndexOf(".");
-                    int _plus_5 = (_lastIndexOf + 1);
-                    String _substring = _identifier_4.substring(_plus_5);
+                    int _plus_6 = (_lastIndexOf + 1);
+                    String _substring = _identifier_4.substring(_plus_6);
                     String _replace_1 = _substring.replace(".", "/");
-                    String _plus_6 = (_plus_4 + _replace_1);
-                    String _plus_7 = (_plus_6 + ".java");
-                    _overlappingAspect.mergedFile = _plus_7;
+                    String _plus_7 = (_plus_5 + _replace_1);
+                    String _plus_8 = (_plus_7 + ".java");
+                    _overlappingAspect.mergedFile = _plus_8;
                   }
-                  JvmTypeReference _aspectTypeRef_13 = _aspect.getAspectTypeRef();
-                  String _identifier_6 = _aspectTypeRef_13.getIdentifier();
-                  JvmTypeReference _aspectTypeRef_14 = _overlappingAspect.rightAspect.getAspectTypeRef();
-                  String _identifier_7 = _aspectTypeRef_14.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_14 = _aspect.getAspectTypeRef();
+                  String _identifier_6 = _aspectTypeRef_14.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_15 = _overlappingAspect.rightAspect.getAspectTypeRef();
+                  String _identifier_7 = _aspectTypeRef_15.getIdentifier();
                   boolean _equals_1 = _identifier_6.equals(_identifier_7);
                   if (_equals_1) {
-                    JvmTypeReference _aspectTypeRef_15 = _aspect.getAspectTypeRef();
-                    String _identifier_8 = _aspectTypeRef_15.getIdentifier();
-                    String _replace_2 = _identifier_8.replace(".", "/");
-                    String _plus_8 = (sourceAspectFolder + _replace_2);
-                    String _plus_9 = (_plus_8 + ".java");
-                    _overlappingAspect.rightFile = _plus_9;
-                    String _string_7 = targetAspectNamespace.toString();
-                    String _plus_10 = (targetAspectFolder + _string_7);
-                    String _plus_11 = (_plus_10 + "/");
                     JvmTypeReference _aspectTypeRef_16 = _aspect.getAspectTypeRef();
-                    String _identifier_9 = _aspectTypeRef_16.getIdentifier();
+                    String _identifier_8 = _aspectTypeRef_16.getIdentifier();
+                    String _replace_2 = _identifier_8.replace(".", "/");
+                    String _plus_9 = (sourceAspectFolder + _replace_2);
+                    String _plus_10 = (_plus_9 + ".java");
+                    _overlappingAspect.rightFile = _plus_10;
+                    String _string_7 = targetAspectNamespace.toString();
+                    String _plus_11 = (targetAspectFolder + _string_7);
+                    String _plus_12 = (_plus_11 + "/");
                     JvmTypeReference _aspectTypeRef_17 = _aspect.getAspectTypeRef();
-                    String _identifier_10 = _aspectTypeRef_17.getIdentifier();
+                    String _identifier_9 = _aspectTypeRef_17.getIdentifier();
+                    JvmTypeReference _aspectTypeRef_18 = _aspect.getAspectTypeRef();
+                    String _identifier_10 = _aspectTypeRef_18.getIdentifier();
                     int _lastIndexOf_1 = _identifier_10.lastIndexOf(".");
-                    int _plus_12 = (_lastIndexOf_1 + 1);
-                    String _substring_1 = _identifier_9.substring(_plus_12);
+                    int _plus_13 = (_lastIndexOf_1 + 1);
+                    String _substring_1 = _identifier_9.substring(_plus_13);
                     String _replace_3 = _substring_1.replace(".", "/");
-                    String _plus_13 = (_plus_11 + _replace_3);
-                    String _plus_14 = (_plus_13 + ".java");
-                    _overlappingAspect.mergedFile = _plus_14;
+                    String _plus_14 = (_plus_12 + _replace_3);
+                    String _plus_15 = (_plus_14 + ".java");
+                    _overlappingAspect.mergedFile = _plus_15;
                   }
                 }
               }
               for (final OverridingAspectsVO _overridingAspect : overridingAspects) {
                 {
-                  JvmTypeReference _aspectTypeRef_8 = _aspect.getAspectTypeRef();
-                  String _identifier_1 = _aspectTypeRef_8.getIdentifier();
-                  JvmTypeReference _aspectTypeRef_9 = _overridingAspect.leftAspect.getAspectTypeRef();
-                  String _identifier_2 = _aspectTypeRef_9.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_9 = _aspect.getAspectTypeRef();
+                  String _identifier_1 = _aspectTypeRef_9.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_10 = _overridingAspect.leftAspect.getAspectTypeRef();
+                  String _identifier_2 = _aspectTypeRef_10.getIdentifier();
                   boolean _equals = _identifier_1.equals(_identifier_2);
                   if (_equals) {
-                    JvmTypeReference _aspectTypeRef_10 = _aspect.getAspectTypeRef();
-                    String _identifier_3 = _aspectTypeRef_10.getIdentifier();
+                    JvmTypeReference _aspectTypeRef_11 = _aspect.getAspectTypeRef();
+                    String _identifier_3 = _aspectTypeRef_11.getIdentifier();
                     String _replace = _identifier_3.replace(".", "/");
-                    String _plus_1 = (sourceAspectFolder + _replace);
-                    String _plus_2 = (_plus_1 + ".java");
-                    _overridingAspect.leftFile = _plus_2;
+                    String _plus_2 = (sourceAspectFolder + _replace);
+                    String _plus_3 = (_plus_2 + ".java");
+                    _overridingAspect.leftFile = _plus_3;
                   }
-                  JvmTypeReference _aspectTypeRef_11 = _aspect.getAspectTypeRef();
-                  String _identifier_4 = _aspectTypeRef_11.getIdentifier();
-                  JvmTypeReference _aspectTypeRef_12 = _overridingAspect.baseAspect.getAspectTypeRef();
-                  String _identifier_5 = _aspectTypeRef_12.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_12 = _aspect.getAspectTypeRef();
+                  String _identifier_4 = _aspectTypeRef_12.getIdentifier();
+                  JvmTypeReference _aspectTypeRef_13 = _overridingAspect.baseAspect.getAspectTypeRef();
+                  String _identifier_5 = _aspectTypeRef_13.getIdentifier();
                   boolean _equals_1 = _identifier_4.equals(_identifier_5);
                   if (_equals_1) {
-                    JvmTypeReference _aspectTypeRef_13 = _aspect.getAspectTypeRef();
-                    String _identifier_6 = _aspectTypeRef_13.getIdentifier();
-                    String _replace_1 = _identifier_6.replace(".", "/");
-                    String _plus_3 = (sourceAspectFolder + _replace_1);
-                    String _plus_4 = (_plus_3 + ".java");
-                    _overridingAspect.baseFile = _plus_4;
-                    String _string_6 = targetAspectNamespace.toString();
-                    String _plus_5 = (targetAspectFolder + _string_6);
-                    String _plus_6 = (_plus_5 + "/");
                     JvmTypeReference _aspectTypeRef_14 = _aspect.getAspectTypeRef();
-                    String _identifier_7 = _aspectTypeRef_14.getIdentifier();
+                    String _identifier_6 = _aspectTypeRef_14.getIdentifier();
+                    String _replace_1 = _identifier_6.replace(".", "/");
+                    String _plus_4 = (sourceAspectFolder + _replace_1);
+                    String _plus_5 = (_plus_4 + ".java");
+                    _overridingAspect.baseFile = _plus_5;
+                    String _string_6 = targetAspectNamespace.toString();
+                    String _plus_6 = (targetAspectFolder + _string_6);
+                    String _plus_7 = (_plus_6 + "/");
                     JvmTypeReference _aspectTypeRef_15 = _aspect.getAspectTypeRef();
-                    String _identifier_8 = _aspectTypeRef_15.getIdentifier();
+                    String _identifier_7 = _aspectTypeRef_15.getIdentifier();
+                    JvmTypeReference _aspectTypeRef_16 = _aspect.getAspectTypeRef();
+                    String _identifier_8 = _aspectTypeRef_16.getIdentifier();
                     int _lastIndexOf = _identifier_8.lastIndexOf(".");
-                    int _plus_7 = (_lastIndexOf + 1);
-                    String _substring = _identifier_7.substring(_plus_7);
+                    int _plus_8 = (_lastIndexOf + 1);
+                    String _substring = _identifier_7.substring(_plus_8);
                     String _replace_2 = _substring.replace(".", "/");
-                    String _plus_8 = (_plus_6 + _replace_2);
-                    String _plus_9 = (_plus_8 + ".java");
-                    _overridingAspect.mergedFile = _plus_9;
+                    String _plus_9 = (_plus_7 + _replace_2);
+                    String _plus_10 = (_plus_9 + ".java");
+                    _overridingAspect.mergedFile = _plus_10;
                   }
                 }
               }
