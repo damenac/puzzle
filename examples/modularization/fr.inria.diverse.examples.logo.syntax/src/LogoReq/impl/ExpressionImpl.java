@@ -7,6 +7,7 @@ import LogoReq.LogoReqPackage;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +48,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object eval(Object context) {
+	public Object eval(Map<?, ?> context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -61,8 +62,8 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case LogoReqPackage.EXPRESSION___EVAL__OBJECT:
-				return eval(arguments.get(0));
+			case LogoReqPackage.EXPRESSION___EVAL__MAP:
+				return eval((Map<?, ?>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

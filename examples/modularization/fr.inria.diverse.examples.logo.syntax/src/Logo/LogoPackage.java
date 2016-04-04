@@ -408,7 +408,7 @@ public interface LogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EXPRESSION___EVAL__OBJECT = 0;
+	int EXPRESSION___EVAL__MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Expression</em>' class.
@@ -463,7 +463,7 @@ public interface LogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROC_CALL___EVAL__OBJECT = EXPRESSION___EVAL__OBJECT;
+	int PROC_CALL___EVAL__MAP = EXPRESSION___EVAL__MAP;
 
 	/**
 	 * The number of operations of the '<em>Proc Call</em>' class.
@@ -794,7 +794,7 @@ public interface LogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER___EVAL__OBJECT = EXPRESSION___EVAL__OBJECT;
+	int PARAMETER___EVAL__MAP = EXPRESSION___EVAL__MAP;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -840,7 +840,7 @@ public interface LogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_CALL___EVAL__OBJECT = EXPRESSION___EVAL__OBJECT;
+	int PARAMETER_CALL___EVAL__MAP = EXPRESSION___EVAL__MAP;
 
 	/**
 	 * The number of operations of the '<em>Parameter Call</em>' class.
@@ -1262,14 +1262,14 @@ public interface LogoPackage extends EPackage {
 	EClass getExpression();
 
 	/**
-	 * Returns the meta object for the '{@link Logo.Expression#eval(java.lang.Object) <em>Eval</em>}' operation.
+	 * Returns the meta object for the '{@link Logo.Expression#eval(java.util.Map) <em>Eval</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Eval</em>' operation.
-	 * @see Logo.Expression#eval(java.lang.Object)
+	 * @see Logo.Expression#eval(java.util.Map)
 	 * @generated
 	 */
-	EOperation getExpression__Eval__Object();
+	EOperation getExpression__Eval__Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1652,7 +1652,7 @@ public interface LogoPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation EXPRESSION___EVAL__OBJECT = eINSTANCE.getExpression__Eval__Object();
+		EOperation EXPRESSION___EVAL__MAP = eINSTANCE.getExpression__Eval__Map();
 
 	}
 

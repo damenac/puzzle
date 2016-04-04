@@ -11,7 +11,7 @@ public class BackAspect extends PrimitiveAspect{
  
 	@OverrideAspectMethod
 	def int eval (Hashtable<String, Object> context) {
-		var int param = -1*  _self.steps.eval(context) as Integer
+		var int param = - 1 *  _self.steps.eval(context) as Integer
 		println("BACK "+ param)
 		(context.get('turtle') as Turtle).forward(param)
 		return 0

@@ -7,6 +7,7 @@ import LogoReq.LogoReqFactory;
 import LogoReq.LogoReqPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -101,7 +102,7 @@ public class LogoReqPackageImpl extends EPackageImpl implements LogoReqPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getExpression__Eval__Object() {
+	public EOperation getExpression__Eval__Map() {
 		return expressionEClass.getEOperations().get(0);
 	}
 
@@ -134,7 +135,7 @@ public class LogoReqPackageImpl extends EPackageImpl implements LogoReqPackage {
 
 		// Create classes and their features
 		expressionEClass = createEClass(EXPRESSION);
-		createEOperation(expressionEClass, EXPRESSION___EVAL__OBJECT);
+		createEOperation(expressionEClass, EXPRESSION___EVAL__MAP);
 	}
 
 	/**
@@ -169,8 +170,13 @@ public class LogoReqPackageImpl extends EPackageImpl implements LogoReqPackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getExpression__Eval__Object(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getExpression__Eval__Map(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -2,6 +2,7 @@
  */
 package Logo;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,6 +22,6 @@ public interface Expression extends EObject {
 	 * @model
 	 * @generated
 	 */
-	Object eval(Object context);
+	Object eval(Map<?, ?> context);
 
 } // Expression
