@@ -10,7 +10,7 @@ import es.us.isa.FAMA.models.FAMAAttributedfeatureModel.FAMAAttributedFeatureMod
 import es.us.isa.FAMA.models.variabilityModel.GenericProduct;
 import es.us.isa.FAMA.models.variabilityModel.VariabilityElement;
 import es.us.isa.fama.PluginQuestionTrader;
-import fr.inria.diverse.puzzle.vmsynthesis.impl.FromLanguageFeatureModelToFAMAAttributed;
+import fr.inria.diverse.puzzle.vmsynthesis.impl.FromPuzzleToFAMAAttributed;
 
 public class TestServices {
 
@@ -44,7 +44,7 @@ public class TestServices {
 	
 	public static double printAllValidProducts(LanguageFeatureModel fm, String PCM){
 //		FAMAFeatureModel famaFm = FromLanguageFeatureModelToFAMA.getInstance().fromLanguageFeatureModelToFAMA(fm);
-		FAMAAttributedFeatureModel famaFm = FromLanguageFeatureModelToFAMAAttributed.getInstance().fromLanguageFeatureModelToFAMA(fm);
+		FAMAAttributedFeatureModel famaFm = FromPuzzleToFAMAAttributed.getInstance().fromPuzzleToFamaAttributed(fm);
 		
 		PluginQuestionTrader qt = new PluginQuestionTrader();
 		qt.setVariabilityModel(famaFm);

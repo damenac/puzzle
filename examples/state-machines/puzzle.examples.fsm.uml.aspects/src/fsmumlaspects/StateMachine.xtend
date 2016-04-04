@@ -24,7 +24,7 @@ class StateMachineAspect {
 	 */
 	def public void evalStateMachine() {
 		println("\nExecuting the state machine. Please enter the events to process...\n")
-		
+		println("")
 		val Hashtable<String, Object> context = new Hashtable<String, Object>
 		
 		_self.regions.forEach[ _region | 

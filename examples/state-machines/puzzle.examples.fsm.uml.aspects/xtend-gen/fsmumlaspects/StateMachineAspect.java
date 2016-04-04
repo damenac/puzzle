@@ -53,6 +53,7 @@ public class StateMachineAspect {
   
   protected static void _privk3_evalStateMachine(final StateMachineAspectStateMachineAspectProperties _self_, final StateMachine _self) {
     InputOutput.<String>println("\nExecuting the state machine. Please enter the events to process...\n");
+    InputOutput.<String>println("");
     final Hashtable<String, Object> context = new Hashtable<String, Object>();
     EList<Region> _regions = _self.getRegions();
     final Consumer<Region> _function = (Region _region) -> {

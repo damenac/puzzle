@@ -10,7 +10,10 @@ Require-Bundle: org.eclipse.ui,
  org.junit;bundle-version="4.11.0",
  es.us.isa.fama;bundle-version="1.0.0",
  fr.inria.diverse.puzzle.common;bundle-version="1.0.0",
- fr.inria.diverse.puzzle.instantancesGenerator;bundle-version="1.0.0"
+ fr.inria.diverse.puzzle.instantancesGenerator;bundle-version="1.0.0",
+ de.ovgu.featureide.core;bundle-version="2.7.5",
+ org.eclipse.core.resources;bundle-version="3.9.1",
+ de.ovgu.featureide.fm.core;bundle-version="2.7.5"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: fr.inria.diverse.puzzle.vmsynthesis,

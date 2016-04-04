@@ -27,6 +27,7 @@ class StateAspect {
 				override run(){
 					 synchronized (_self) {
 					 	_self.doActivity.eval(context)
+					 	println("")
 					 }
 				}
 			}

@@ -268,6 +268,7 @@ public class RegionAspect {
               EList<Transition> _activeTransitions = RegionAspect.getActiveTransitions(_self, _state, events);
               activeTransitions.addAll(_activeTransitions);
             }
+            InputOutput.<String>println("");
             for (final Transition transition : activeTransitions) {
               {
                 RegionAspect.findOldActiveStates(_self, attendedStates, transition, context);

@@ -252,6 +252,7 @@ public class RegionAspect {
   }
   
   protected static void _privk3_step(final RegionAspectRegionAspectProperties _self_, final Region _self, final Hashtable<String, Object> context, final EList<String> events) {
+    InputOutput.<String>println("");
     boolean allJunctionsAttended = false;
     while ((!allJunctionsAttended)) {
       {

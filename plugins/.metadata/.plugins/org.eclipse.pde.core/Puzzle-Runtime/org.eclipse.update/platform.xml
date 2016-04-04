@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<config date="1457254443517" transient="false" version="3.0">
+<config date="1459767409112" transient="false" version="3.0">
 <site enabled="true" policy="USER-EXCLUDE" updateable="true" url="platform:/base/">
 <feature id="org.eclipse.ecf.filetransfer.httpclient4.feature" url="features/org.eclipse.ecf.filetransfer.httpclient4.feature_3.9.2.v20141221-2352/" version="3.9.2.v20141221-2352">
 </feature>
@@ -41,9 +41,13 @@
 </feature>
 <feature id="org.eclipse.mylyn.commons.identity" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.commons.identity_1.6.2.v20150217-2244/" version="1.6.2.v20150217-2244">
 </feature>
+<feature id="de.ovgu.featureide.featurehouse" url="features/de.ovgu.featureide.featurehouse_2.7.5.201512021815/" version="2.7.5.201512021815">
+</feature>
 <feature id="org.eclipse.emf.transaction.source" url="features/org.eclipse.emf.transaction.source_1.8.0.201405281451/" version="1.8.0.201405281451">
 </feature>
 <feature id="org.eclipse.ecf.core.ssl.source.feature" url="features/org.eclipse.ecf.core.ssl.source.feature_1.0.0.v20141221-2352/" version="1.0.0.v20141221-2352">
+</feature>
+<feature id="de.ovgu.featureide.featuremodeling" url="features/de.ovgu.featureide.featuremodeling_2.7.5.201512021815/" version="2.7.5.201512021815">
 </feature>
 <feature id="org.eclipse.emf.ecp.view.compoundcontrol.feature.source" plugin-identifier="org.eclipse.emf.ecp.view.compoundcontrol.model" url="features/org.eclipse.emf.ecp.view.compoundcontrol.feature.source_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
 </feature>
@@ -76,6 +80,8 @@
 <feature id="org.eclipse.gef.source" url="features/org.eclipse.gef.source_3.9.101.201408150207/" version="3.9.101.201408150207">
 </feature>
 <feature id="org.eclipse.emf.cdo.examples.installer.source" url="features/org.eclipse.emf.cdo.examples.installer.source_4.2.100.v20140114-0640/" version="4.2.100.v20140114-0640">
+</feature>
+<feature id="de.ovgu.featureide.munge" url="features/de.ovgu.featureide.munge_2.7.5.201512021815/" version="2.7.5.201512021815">
 </feature>
 <feature id="org.eclipse.emf.ecore.source" url="features/org.eclipse.emf.ecore.source_2.10.2.v20150123-0348/" version="2.10.2.v20150123-0348">
 </feature>
@@ -171,6 +177,8 @@
 </feature>
 <feature id="org.eclipse.emf.ecp.view.custom.feature.source" plugin-identifier="org.eclipse.emf.ecp.view.custom.model" url="features/org.eclipse.emf.ecp.view.custom.feature.source_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
 </feature>
+<feature id="de.ovgu.featureide.ahead" url="features/de.ovgu.featureide.ahead_2.7.5.201512021815/" version="2.7.5.201512021815">
+</feature>
 <feature id="org.eclipse.xtext.gwt" plugin-identifier="org.eclipse.xtext.xbase.lib.gwt" url="features/org.eclipse.xtext.gwt_2.9.1.v201512180746/" version="2.9.1.v201512180746">
 </feature>
 <feature id="org.eclipse.uml2.uml" url="features/org.eclipse.uml2.uml_5.0.2.v20150202-0947/" version="5.0.2.v20150202-0947">
@@ -180,6 +188,8 @@
 <feature id="org.eclipse.ecf.filetransfer.ssl.feature" url="features/org.eclipse.ecf.filetransfer.ssl.feature_1.0.0.v20141221-2352/" version="1.0.0.v20141221-2352">
 </feature>
 <feature id="org.eclipse.uml2.common.source" url="features/org.eclipse.uml2.common.source_2.0.1.v20150202-0947/" version="2.0.1.v20150202-0947">
+</feature>
+<feature id="de.ovgu.featureide" url="features/de.ovgu.featureide_2.7.5.201512021815/" version="2.7.5.201512021815">
 </feature>
 <feature id="org.eclipse.emf.emfstore.common.feature" plugin-identifier="org.eclipse.emf.emfstore.common" url="features/org.eclipse.emf.emfstore.common.feature_1.4.1.v20150218-0800/" version="1.4.1.v20150218-0800">
 </feature>
@@ -243,6 +253,8 @@
 </feature>
 <feature id="org.eclipse.sirius.runtime.acceleo" plugin-identifier="org.eclipse.sirius.common.acceleo.mtl" url="features/org.eclipse.sirius.runtime.acceleo_1.0.2.201501270932/" version="1.0.2.201501270932">
 </feature>
+<feature id="de.ovgu.featureide.aspectj" url="features/de.ovgu.featureide.aspectj_2.7.5.201512021815/" version="2.7.5.201512021815">
+</feature>
 <feature id="org.eclipse.net4j.examples.installer.source" url="features/org.eclipse.net4j.examples.installer.source_4.2.100.v20140114-0640/" version="4.2.100.v20140114-0640">
 </feature>
 <feature id="org.eclipse.rcp.configuration" url="features/org.eclipse.rcp.configuration_1.0.3.v20150204-1745/" version="1.0.3.v20150204-1745">
@@ -293,6 +305,8 @@
 </feature>
 <feature id="org.eclipse.xtext.xbase.lib" url="features/org.eclipse.xtext.xbase.lib_2.9.1.v201512180746/" version="2.9.1.v201512180746">
 </feature>
+<feature id="de.ovgu.featureide.antenna" url="features/de.ovgu.featureide.antenna_2.7.5.201512021815/" version="2.7.5.201512021815">
+</feature>
 <feature id="org.eclipse.gmf" url="features/org.eclipse.gmf_1.8.1.201408201453/" version="1.8.1.201408201453">
 </feature>
 <feature id="org.eclipse.uml2.codegen.ecore.ui" url="features/org.eclipse.uml2.codegen.ecore.ui_2.0.2.v20150202-0947/" version="2.0.2.v20150202-0947">
@@ -302,6 +316,8 @@
 <feature id="org.eclipse.emf.mapping.ecore.editor.source" url="features/org.eclipse.emf.mapping.ecore.editor.source_2.9.0.v20150123-0452/" version="2.9.0.v20150123-0452">
 </feature>
 <feature id="org.eclipse.emf.query.source" url="features/org.eclipse.emf.query.source_1.8.0.201405281426/" version="1.8.0.201405281426">
+</feature>
+<feature id="br.ufal.ic.colligens.feature" url="features/br.ufal.ic.colligens.feature_1.1.4.201512021815/" version="1.1.4.201512021815">
 </feature>
 <feature id="org.eclipse.emf.ecp.view.categorization.feature" plugin-identifier="org.eclipse.emf.ecp.view.categorization.model" url="features/org.eclipse.emf.ecp.view.categorization.feature_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
 </feature>
@@ -459,6 +475,8 @@
 </feature>
 <feature id="org.eclipse.emf.ecp.e3.feature.source" plugin-identifier="org.eclipse.emf.ecp.ui.e3" url="features/org.eclipse.emf.ecp.e3.feature.source_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
 </feature>
+<feature id="de.ovgu.featureide.featurecpp" url="features/de.ovgu.featureide.featurecpp_2.7.5.201512021815/" version="2.7.5.201512021815">
+</feature>
 <feature id="org.eclipse.xtext.runtime" url="features/org.eclipse.xtext.runtime_2.9.1.v201512180746/" version="2.9.1.v201512180746">
 </feature>
 <feature id="org.eclipse.emf.ecp.view.validation.feature.source" plugin-identifier="org.eclipse.emf.ecp.view.validation" url="features/org.eclipse.emf.ecp.view.validation.feature.source_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
@@ -527,6 +545,8 @@
 </feature>
 <feature id="org.eclipse.mylyn.monitor" plugin-identifier="org.eclipse.mylyn.commons.core" url="features/org.eclipse.mylyn.monitor_3.14.2.v20150217-2244/" version="3.14.2.v20150217-2244">
 </feature>
+<feature id="de.ovgu.featureide.exampleprojects" url="features/de.ovgu.featureide.exampleprojects_2.7.5.201512021815/" version="2.7.5.201512021815">
+</feature>
 <feature id="org.eclipse.emf.ecp.view.model.editor.feature" plugin-identifier="org.eclipse.emf.ecp.view.model.editor" url="features/org.eclipse.emf.ecp.view.model.editor.feature_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
 </feature>
 <feature id="org.eclipse.emf.emfstore.license.feature" url="features/org.eclipse.emf.emfstore.license.feature_1.4.1.v20150218-0800/" version="1.4.1.v20150218-0800">
@@ -546,6 +566,8 @@
 <feature id="org.eclipse.equinox.p2.extras.feature.source" url="features/org.eclipse.equinox.p2.extras.feature.source_1.2.0.v20150129-0838/" version="1.2.0.v20150129-0838">
 </feature>
 <feature id="org.eclipse.ocl.all.sdk" plugin-identifier="org.eclipse.ocl.all" url="features/org.eclipse.ocl.all.sdk_5.0.2.v20141027-1335/" version="5.0.2.v20141027-1335">
+</feature>
+<feature id="de.ovgu.featureide.munge.android" url="features/de.ovgu.featureide.munge.android_2.7.5.201512021815/" version="2.7.5.201512021815">
 </feature>
 <feature id="org.eclipse.emf.ecp.view.table.feature.source" plugin-identifier="org.eclipse.emf.ecp.view.table.model" url="features/org.eclipse.emf.ecp.view.table.feature.source_1.5.0.20150218-1434/" version="1.5.0.20150218-1434">
 </feature>

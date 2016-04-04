@@ -1,8 +1,0 @@
-package fr.inria.diverse.puzzle.metrics.specialCharts;
-
-import java.util.Stack;
-
-public class LocationStack {
-
-	private Stack<String> locations
-}

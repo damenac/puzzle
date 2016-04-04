@@ -59,6 +59,7 @@ public class StateMachineAspect {
       RegionAspect.initRegion(_region, context);
     };
     _regions.forEach(_function);
+    InputOutput.<String>println("");
     InputOutput.<String>print("    step: ---> current active state (s): ");
     Set<String> _keySet = context.keySet();
     Iterator<String> _it = _keySet.iterator();

@@ -30,6 +30,7 @@ class StateMachineAspect {
 		_self.regions.forEach[ _region | 
 			_region.initRegion(context)
 		]
+		println("")
 		
 		print("    step: ---> current active state (s): ")
 		var _it = context.keySet.iterator

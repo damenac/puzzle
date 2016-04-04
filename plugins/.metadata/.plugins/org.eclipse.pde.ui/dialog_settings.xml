@@ -9,8 +9,8 @@
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 			<item value="500" key="DIALOG_HEIGHT"/>
-			<item value="370" key="DIALOG_X_ORIGIN"/>
-			<item value="93" key="DIALOG_Y_ORIGIN"/>
+			<item value="468" key="DIALOG_X_ORIGIN"/>
+			<item value="404" key="DIALOG_Y_ORIGIN"/>
 		</section>
 	</section>
 	<section name="quick_assist_proposal_size">

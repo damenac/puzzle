@@ -11,4 +11,15 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
 <fullyQualifiedTypeName name="PuzzleADL.LanguageArchitecture"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.ComponentsArchitectureModel"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPuzzleToFeatureIDE"/>
+<fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTModel"/>
+<fullyQualifiedTypeName name="fm.FeatureModel"/>
+<fullyQualifiedTypeName name="vm.LanguageFeatureModel"/>
+<fullyQualifiedTypeName name="de.ovgu.featureide.core.listeners.IProjectListener"/>
+<fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="vm.LanguageFeature"/>
+<fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTFeature"/>
+<fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTRole"/>
 </qualifiedTypeNameHistroy>

@@ -112,7 +112,7 @@ class RegionAspect {
 				for(AbstractState _state : currentState){
 					activeTransitions.addAll(_self.getActiveTransitions(_state, events))
 				}
-				
+				println("")
 				for(Transition transition : activeTransitions){
 					_self.findOldActiveStates(attendedStates, transition, context)
 					_self.findNewActiveTransitions(currentTransitions, transition, context)

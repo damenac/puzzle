@@ -93,6 +93,7 @@ class RegionAspect {
 	 * If there are several events in the same step they are executed sequentially.  
 	 */
 	def public void step(Hashtable<String, Object> context, EList<String> events){
+		println("")
 		var boolean allJunctionsAttended = false
 		while(!allJunctionsAttended){
 			var ArrayList<AbstractState> currentState = _self.getCurrentState(context, events)

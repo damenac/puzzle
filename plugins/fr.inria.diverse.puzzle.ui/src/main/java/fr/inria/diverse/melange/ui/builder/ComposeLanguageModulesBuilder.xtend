@@ -41,6 +41,38 @@ import fr.inria.diverse.melange.ui.vos.CompositionGraph
 import fr.inria.diverse.melange.ui.vos.LanguageVO
 import fr.inria.diverse.puzzle.language.binding.LanguageBinding
 import fr.inria.diverse.puzzle.language.binding.Binding
+import fr.inria.diverse.melange.metamodel.melange.Aspect
+import org.autorefactor.ui.OverridingAspectsVO
+import org.autorefactor.ui.OverlappingAspectsVO
+import org.eclipse.emf.ecore.EClassifier
+import org.autorefactor.ui.RefactoringPatternVO
+import fr.inria.diverse.commons.asm.shade.DirectoryShader
+import fr.inria.diverse.commons.asm.shade.ShadeRequest
+import fr.inria.diverse.commons.asm.shade.relocation.Relocator
+import org.eclipse.xtend.core.xtend.XtendFile
+import org.eclipse.emf.common.util.TreeIterator
+import fr.inria.diverse.melange.metamodel.melange.Mapping
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EClass
+import org.eclipse.emf.ecore.EReference
+import org.eclipse.xtend.core.xtend.XtendTypeDeclaration
+import org.eclipse.xtend.core.xtend.XtendMember
+import org.eclipse.xtend.core.xtend.XtendField
+import org.eclipse.emf.ecore.EOperation
+import org.eclipse.xtend.core.xtend.XtendFunction
+import org.eclipse.xtext.xbase.XBlockExpression
+import org.eclipse.xtext.xbase.XExpression
+import org.eclipse.xtext.xbase.interpreter.IEvaluationContext
+import org.eclipse.xtext.naming.QualifiedName
+import java.net.URLClassLoader
+import com.google.inject.Provider
+import org.eclipse.xtext.util.CancelIndicator
+import org.eclipse.core.resources.IResourceVisitor
+import org.eclipse.core.resources.IFile
+import org.eclipse.core.runtime.CoreException
+import java.io.File
+import fr.inria.diverse.commons.asm.shade.relocation.SimpleRelocator
 
 /**
  * Builder for the action: Analyze Family.
@@ -55,6 +87,9 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 	// -------------------------------------------------
 	
 	@Inject EclipseProjectHelper eclipseHelper
+	@Inject extension EcoreQueries
+	@Inject extension PuzzleXbaseInterpreter puzzleXbaseInterpreter
+	@Inject private Provider<IEvaluationContext> contextProvider;
 	private IProject targetProject
 	
 	// -------------------------------------------------
@@ -82,9 +117,13 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 				)
 		
 		var String answer = 'Puzzle diagnostic: \n\n';
+
+		var ArrayList<OverlappingAspectsVO> overlappingAspects = new ArrayList<OverlappingAspectsVO>()
+		var ArrayList<OverridingAspectsVO> overridingAspects = new ArrayList<OverridingAspectsVO>()
+		var ArrayList<RefactoringPatternVO> refactoringPatterns = new ArrayList<RefactoringPatternVO>()
 		
 		var AbstractCompositionTreeNode compositionTree = calculateCompositionTree(bindingSpace.binding, modelTypingSpace)
-		var LanguageVO composedLanguage = evaluateCompositionTree(compositionTree)
+		var LanguageVO composedLanguage = evaluateCompositionTree(compositionTree, overlappingAspects, overridingAspects, refactoringPatterns)
 		
 		composedLanguage.serializeEcoreFiles
 		var GenModel gen = composedLanguage.serializeGenmodelFiles
@@ -138,7 +177,8 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 	 * Executes the composition of a set of languages indexed in a composition
 	 * tree given in the parameter.
 	 */
-	def LanguageVO evaluateCompositionTree(AbstractCompositionTreeNode tree){
+	def LanguageVO evaluateCompositionTree(AbstractCompositionTreeNode tree, 
+		ArrayList<OverlappingAspectsVO> overlappingAspects, ArrayList<OverridingAspectsVO> overridingAspects, ArrayList<RefactoringPatternVO> refactoringPatterns){
 		
 		// If the composition tree is a leaf, it returns a VO with the information of the referenced language
 		if(tree instanceof CompositionTreeLeaf){
@@ -160,6 +200,14 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 					ModelUtils.loadEcoreResource((leaf.language.implements.get(0) as ModelType).ecoreUri)
 			}
 			
+			// Adding the aspects to the language VO
+			if(leaf.language.semantics != null){
+				for (Aspect _aspect : leaf.language.semantics) {
+					language.aspects.add(_aspect);
+				}
+			}
+			
+			
 			return language
 		}
 		// If the composition tree is a composition node, it performs the composition.
@@ -167,12 +215,31 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 			var CompositionTreeNode compositionNode = tree as CompositionTreeNode
 			
 			// Obtaining the language corresponding to the two nodes
-			var LanguageVO requiringLanguage = compositionNode._requiring.evaluateCompositionTree
-			var LanguageVO providingLanguage = compositionNode._providing.evaluateCompositionTree
+			var LanguageVO requiringLanguage = compositionNode._requiring.evaluateCompositionTree(overlappingAspects, overridingAspects, refactoringPatterns)
+			var LanguageVO providingLanguage = compositionNode._providing.evaluateCompositionTree(overlappingAspects, overridingAspects, refactoringPatterns)
 			
 			val MatchingDiagnostic comparison = PuzzleMatch.instance.match(requiringLanguage.metamodel, providingLanguage.metamodel)
 			
-			var EPackage recalculatedRequiredInterface = PuzzleMerge.getInstance().
+			// TODO: Validate compatibility
+
+			var LanguageVO mergedLanguage = new LanguageVO()
+			this.launchAbstractSyntaxComposition(mergedLanguage, requiringLanguage, providingLanguage, comparison)
+			this.launchSemanticsComposition(mergedLanguage, requiringLanguage, providingLanguage, comparison, overlappingAspects, overridingAspects, refactoringPatterns)
+			
+			return mergedLanguage
+		}
+		// Error: The composition tree is not valid.
+		else {
+			return null
+		}
+	}
+	
+	/**
+	 * Executes the composition of the abstract syntax of the languages in the parameters. 
+	 */
+	def void launchAbstractSyntaxComposition(LanguageVO mergedLanguage, LanguageVO requiringLanguage, 
+		LanguageVO providingLanguage, MatchingDiagnostic comparison){
+		var EPackage recalculatedRequiredInterface = PuzzleMerge.getInstance().
 				recalculateRequiredInterface(requiringLanguage.requiredInterface, 
 						comparison, "merged", providingLanguage.requiredInterface);
 			 
@@ -182,18 +249,279 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 			var EPackage recalculatedProvidedInterface = PuzzleMerge.instance.
 				recalculateProvidedInterface(requiringLanguage.providedInterface, providingLanguage.providedInterface)
 			
-			var LanguageVO mergedLanguage = new LanguageVO()
+			
 			mergedLanguage.name = 'CompleteDSL'
 			mergedLanguage.mergedPackage = 'CompleteDSLPckg'
 			mergedLanguage.metamodel = mergedPackage
 			mergedLanguage.requiredInterface = recalculatedRequiredInterface
 			mergedLanguage.providedInterface = recalculatedProvidedInterface
-			
-			return mergedLanguage
+	}
+	
+	/**
+	 * Executes the composition of the semantics of the languages in the parameters. 
+	 */
+	def launchSemanticsComposition(LanguageVO mergedLanguage, LanguageVO requiringLanguage, LanguageVO providingLanguage, 
+		MatchingDiagnostic comparison, ArrayList<OverlappingAspectsVO> overlappingAspects, ArrayList<OverridingAspectsVO> overridingAspects,
+		ArrayList<RefactoringPatternVO> refactoringPatterns) {
+		println("launchSemanticsComposition")
+		for(Aspect _providingAspect : providingLanguage.aspects){
+			mergedLanguage.aspects.add(_providingAspect)
 		}
-		// Error: The composition tree is not valid.
-		else {
-			return null
+		
+		for(Aspect _requiringAspect : requiringLanguage.aspects){
+			var boolean repeated = false
+			if(_requiringAspect.aspectTypeRef.qualifiedName.lastIndexOf(".") != -1){
+				var String requiringAspectClassName = _requiringAspect.aspectedClass.name
+
+				// Collecting the repeated (overlapping) aspects				
+				for(Aspect _providingAspect : providingLanguage.aspects){
+					if(_providingAspect.aspectTypeRef.qualifiedName.lastIndexOf(".") != -1){
+						var String providingAspectedClassName = _providingAspect.aspectedClass.name
+						if(requiringAspectClassName.equals(providingAspectedClassName)){
+							repeated = true
+							println("Overlapping aspect: " + providingAspectedClassName)
+							val overlappingAspect = new OverlappingAspectsVO(_providingAspect, providingAspectedClassName, _requiringAspect, requiringAspectClassName)
+							overlappingAspect.rightFile = _providingAspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+							overlappingAspect.leftFile = _requiringAspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+							overlappingAspects.add(overlappingAspect)
+						}
+					}
+				}
+				
+				// Collecting the overriding aspects
+				for(Aspect _providingAspect : providingLanguage.aspects){
+					if(_providingAspect.aspectTypeRef.qualifiedName.lastIndexOf(".") != -1){
+						val String providingAspectedClassName = _providingAspect.aspectedClass.name
+						
+						if(_requiringAspect.aspectedClass != null && !_requiringAspect.aspectedClass.ESuperTypes.filter[ _superType |
+								_superType.name.equals(providingAspectedClassName)].isEmpty){
+							val overridingAspect = new OverridingAspectsVO(_providingAspect, providingAspectedClassName, _requiringAspect, requiringAspectClassName)
+							overridingAspect.baseFile = _providingAspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+							overridingAspect.leftFile = _requiringAspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+							overridingAspects.add(overridingAspect)		
+						}
+					}
+				}
+				
+			}
+			mergedLanguage.aspects.add(_requiringAspect)
+		}
+		
+		mergedLanguage.oldNamespaces.add(requiringLanguage.metamodel.name)
+		mergedLanguage.oldNamespaces.add(providingLanguage.metamodel.name)
+		
+		for(Aspect _aspect : mergedLanguage.aspects){
+			// Changing the namespaces of the required types of the extension language that still required in the merged language.
+			if(mergedLanguage.requiredInterface != null){
+				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
+				var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+					requiringLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
+						_requiredClassifier.name)
+				if(!refactoringPatterns.contains(pattern))
+					refactoringPatterns.add(pattern)
+				}
+				
+				// Changing the namespaces of the required types of the base language that still required in the merged language. 
+				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
+					var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+						providingLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
+							_requiredClassifier.name)
+					if(!refactoringPatterns.contains(pattern))
+						refactoringPatterns.add(pattern)
+				}
+			}
+			
+			// Changing the namespaces of the required types of the extension language that were provided by the merged language. 
+			for(EClassifier _requiredClassifier : mergedLanguage.metamodel.EClassifiers){
+				var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+					requiringLanguage.requiredInterface.name, _requiredClassifier.name, mergedLanguage.metamodel.name, 
+						_requiredClassifier.name)
+				if(!refactoringPatterns.contains(pattern))
+					refactoringPatterns.add(pattern)
+			}
+			
+			// Copying the aspect files to the target project
+			if(_aspect.aspectTypeRef != null && _aspect.aspectTypeRef.type != null 
+					&& _aspect.aspectTypeRef.identifier != null && _aspect.aspectTypeRef.type.eResource != null){
+				
+				val ws = targetProject.project.workspace.root
+				val shader = new DirectoryShader
+				val request = new ShadeRequest
+				val relocators = new ArrayList<Relocator>
+				val sourceEmfNamespace = "FSM"
+				val targetEmfNamespace = "FSM"
+				val sourceAspectNamespace = _aspect.aspectTypeRef.qualifiedName.replace("." + _aspect.aspectTypeRef.simpleName, "")
+				val targetAspectNamespace = mergedLanguage.name
+				
+				if(_aspect.aspectTypeRef.type.eResource.contents.get(0) instanceof XtendFile){
+					var XtendFile xtendFile = _aspect.aspectTypeRef.type.eResource.contents.get(0) as XtendFile;
+					
+					try{
+						EcoreUtil.resolveAll(xtendFile)
+					}catch(IllegalStateException e){
+						println("Crying because of indexing")
+					}
+					
+					for(MatchingDiagnosticItem _mapping : comparison.items){
+						var EObject _input = _mapping.left;
+						var EObject _output = _mapping.right;
+						
+						if(_input instanceof EClassifier && _output instanceof EClassifier){
+							
+							var EClassifier sourceClass = mergedLanguage.metamodel.searchClassByName((_input as EClassifier).name)
+							var EClassifier targetClass = mergedLanguage.metamodel.searchClassByName((_output as EClassifier).name)
+							var RefactoringPatternVO pattern = new RefactoringPatternVO()
+							pattern.sourcePattern = sourceClass.getQualifiedName//leftLanguage.requiredInterface.name + "." + (_input as EClassifier).name
+							pattern.targetPattern = targetClass.getQualifiedName.replace(sourceAspectNamespace, targetAspectNamespace)
+							
+							if(!refactoringPatterns.contains(pattern))
+								refactoringPatterns.add(pattern)
+								
+							if((_input instanceof EClass) && (_output instanceof EClass)){
+								var EClass _inputClass = _input as EClass;
+								var EClass _outputClass = _output as EClass;
+
+									var List<EReference> incomingReferences = newArrayList;
+									_inputClass.getIncomingReferences(requiringLanguage.metamodel, incomingReferences)
+									
+									for(EReference _eRequiringReference : incomingReferences){
+										var RefactoringPatternVO referenceCallPattern = RefactoringPatternsBuilder.buildReferenceCallPattern(_inputClass.name, 
+											_eRequiringReference.name, _outputClass.name, _eRequiringReference.name);
+										
+										if(!refactoringPatterns.contains(referenceCallPattern))
+											refactoringPatterns.add(referenceCallPattern);
+								}
+							}
+						}
+						
+						for(XtendTypeDeclaration _typeDeclaration : xtendFile.xtendTypes){
+							buildPatternsByType(_typeDeclaration, refactoringPatterns, requiringLanguage, mergedLanguage, _input, _output, _aspect.aspectTypeRef.identifier)
+						}
+					}
+					
+					for(String _MetamodelNamespace : mergedLanguage.oldNamespaces){
+						var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildNamespacePattern(_MetamodelNamespace, targetAspectNamespace)
+						if(!refactoringPatterns.contains(pattern))
+							refactoringPatterns.add(pattern)
+					}
+					
+					val projectPathTmp = new StringBuilder
+					val projectNameTmp = new StringBuilder
+					
+					ws.accept(
+					new IResourceVisitor {
+						override visit(IResource resource) throws CoreException {
+							if (resource instanceof IFile) {
+								val resourcePath = resource.locationURI.path
+								if(_aspect.aspectTypeRef != null && _aspect.aspectTypeRef.identifier != null){
+									val String currentAspectIdentifier = _aspect.aspectTypeRef.identifier
+									val toBeMatched = currentAspectIdentifier.replace(".", "/") + ".java"
+									if (resourcePath.endsWith(toBeMatched)) {
+										
+										val projectPath = resource.project.locationURI.path
+										if (projectPathTmp.length == 0)
+											projectPathTmp.append(projectPath)
+										if (projectNameTmp.length == 0)
+											projectNameTmp.append(resource.project.name)
+									}
+								}
+								return false
+							}
+							return true
+						}
+					})
+					
+					
+					val sourceAspectFolder = projectPathTmp + "/xtend-gen/"
+					val sourceFolderFile = new File(sourceAspectFolder)
+					val targetAspectFolder = targetProject.locationURI.path + "/xtend-gen/"
+					
+					if(sourceFolderFile != null && sourceFolderFile.exists){
+						val targetFolderFile = new File(targetAspectFolder)
+						relocators += new SimpleRelocator(sourceAspectNamespace.toString, targetAspectNamespace.toString, null, #[])
+						relocators += new SimpleRelocator(sourceEmfNamespace.toString, targetEmfNamespace.toString, null, #[])
+						
+						var RefactoringPatternVO namespaceRefactoringPattern = new RefactoringPatternVO()
+						 namespaceRefactoringPattern.sourcePattern = sourceAspectNamespace.toString
+						 namespaceRefactoringPattern.targetPattern = targetAspectNamespace.toString
+						 
+						 if(!refactoringPatterns.contains(namespaceRefactoringPattern))
+						 	refactoringPatterns.add(namespaceRefactoringPattern)
+						
+						request.inputFolders = #{sourceFolderFile}
+						request.outputFolder = targetFolderFile
+						request.filters = #[]
+						request.relocators = relocators
+						request.resourceTransformers = new ArrayList
+						shader.shade(request)
+					}
+					
+					for(OverlappingAspectsVO _overlappingAspect : overlappingAspects){
+						if(_aspect.aspectTypeRef.identifier.equals(_overlappingAspect.leftAspect.aspectTypeRef.identifier)){
+							_overlappingAspect.leftFile = sourceAspectFolder + _aspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+							_overlappingAspect.mergedFile = targetAspectFolder + targetAspectNamespace.toString + "/" + _aspect.aspectTypeRef.identifier.
+								substring(_aspect.aspectTypeRef.identifier.lastIndexOf(".") + 1).replace(".", "/") + ".java"
+						}
+						if(_aspect.aspectTypeRef.identifier.equals(_overlappingAspect.rightAspect.aspectTypeRef.identifier)){
+							_overlappingAspect.rightFile = sourceAspectFolder + _aspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+							_overlappingAspect.mergedFile = targetAspectFolder + targetAspectNamespace.toString + "/" + _aspect.aspectTypeRef.identifier.
+								substring(_aspect.aspectTypeRef.identifier.lastIndexOf(".") + 1).replace(".", "/") + ".java"
+						}
+					}
+					
+					for(OverridingAspectsVO _overridingAspect : overridingAspects){
+						if(_aspect.aspectTypeRef.identifier.equals(_overridingAspect.leftAspect.aspectTypeRef.identifier))
+							_overridingAspect.leftFile = sourceAspectFolder + _aspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+						if(_aspect.aspectTypeRef.identifier.equals(_overridingAspect.baseAspect.aspectTypeRef.identifier)){
+							_overridingAspect.baseFile = sourceAspectFolder + _aspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
+							_overridingAspect.mergedFile = targetAspectFolder + targetAspectNamespace.toString + "/" + _aspect.aspectTypeRef.identifier.
+								substring(_aspect.aspectTypeRef.identifier.lastIndexOf(".") + 1).replace(".", "/") + ".java"
+						}
+					}
+				}
+			}
+		}
+	}
+	
+		def private buildPatternsByType(XtendTypeDeclaration _typeDeclaration, ArrayList<RefactoringPatternVO> refactoringPattern, 
+		LanguageVO leftLanguage, LanguageVO result, EObject _input, EObject _output, String aspectIdentifier) {
+		for(XtendMember _member : _typeDeclaration.members){
+			if((_member instanceof XtendField) && (_input instanceof EClass && _output instanceof EClass)){
+				var String requiredTypeQualifiedName = (_input as EClassifier).qualifiedName//leftLanguage.requiredInterface.name + "." + (_input as EClassifier).name
+				var String currentTypeQualifiedName = (_member as XtendField).type.qualifiedName
+				if(currentTypeQualifiedName == null || currentTypeQualifiedName.equals("null")){
+					currentTypeQualifiedName = (_member as XtendField).type.toString.substring((_member as XtendField).type.toString.indexOf("#") + 1, (_member as XtendField).type.toString.length-1)
+				}
+				if(currentTypeQualifiedName.equals(requiredTypeQualifiedName)){
+					var List<RefactoringPatternVO> variablePatterns = RefactoringPatternsBuilder.buildVariablesPattern((_input as EClassifier).name, 
+						(_member as XtendField).name, (_output as EClassifier).name)
+					
+					variablePatterns.forEach[ pattern |
+						if(!refactoringPattern.contains(pattern))
+							refactoringPattern.add(pattern)
+					]
+				}
+			}
+			else if((_member instanceof XtendFunction) && (_input instanceof EOperation && _output instanceof EOperation)){
+				var String requiringClassName = (_input as EOperation).EContainingClass.name
+				var String providingClassName = (_output as EOperation).EContainingClass.name
+				println("(_input as EOperation): " + (_input as EOperation))
+				if((_member as XtendFunction).expression != null){
+					for(XExpression _currentExpressionStatement : ((_member as XtendFunction).expression as XBlockExpression).expressions){
+						var IEvaluationContext evaluationContext = contextProvider.get();
+						evaluationContext.newValue(QualifiedName.create("baseLanguage"), leftLanguage)
+						evaluationContext.newValue(QualifiedName.create("input"), _input)
+						evaluationContext.newValue(QualifiedName.create("output"), _output)
+						evaluationContext.newValue(QualifiedName.create("providingClassName"), providingClassName)
+						evaluationContext.newValue(QualifiedName.create("requiringClassName"), requiringClassName)
+						evaluationContext.newValue(QualifiedName.create("aspects"), result.aspects)
+						evaluationContext.newValue(QualifiedName.create("refactoringPatterns"), refactoringPattern)
+						evaluationContext.newValue(QualifiedName.create("function"),(_member as XtendFunction))
+						puzzleXbaseInterpreter.classLoader = URLClassLoader.getSystemClassLoader()
+						puzzleXbaseInterpreter.evaluate(_currentExpressionStatement, evaluationContext, CancelIndicator.NullImpl)
+					}
+				}
+			}
 		}
 	}
 	

@@ -1,10 +1,27 @@
-# List of external plug-in models previously loaded. Timestamp: 1457254450108
+# List of external plug-in models previously loaded. Timestamp: 1459767415681
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/br.ufal.ic.colligens_1.1.4.201512021815.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.inject_3.0.0.v201312141243.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.ibm.icu_52.1.1.v201501240615.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.jcraft.jsch_0.1.51.v201410302000.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.jcraft.jsch_0.1.50.v201403120620.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.sun.el_2.2.0.v201303151357.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.ahead_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.antenna_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.aspectj_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.conversion.ahead_featurehouse_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.featurecpp_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.featurehouse_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.mpl_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.munge_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.core.munge.android_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.examples_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.fm.core_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.fm.ui_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.ui_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.ui.android_2.7.5.201512021815.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/de.ovgu.featureide.ui.mpl_2.7.5.201512021815.jar
 file:/Users/dmendeza/workspaces/puzzle/plugins/de.trier.cs.jccd/
 file:/Users/dmendeza/workspaces/puzzle/plugins/es.us.isa.fama/
 file:/Users/dmendeza/workspaces/puzzle/plugins/es.us.isa.fama.synthesizer.interface/
@@ -46,6 +63,7 @@ file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.language.
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.match/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.merge/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.metrics/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.refactors/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesis.vmsynthesis.test/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface/
@@ -109,6 +127,10 @@ file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.amalg
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.ant.core_3.3.1.v20150123-1553.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.ant.launching_1.0.400.v20140518-0030.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.ant.ui_3.5.500.v20140521-1557.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.cdt_8.6.0.201502131403.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.cdt.core_5.9.1.201502131403.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.cdt.core.native_5.7.0.201502131403.jar
+file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.cdt.ui_5.9.0.201502131403.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.compare_3.5.501.v20140817-1445.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.compare.core_3.5.400.v20130903-0736.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/org.eclipse.core.commands_3.6.100.v20140528-1422.jar

@@ -11,6 +11,7 @@ import fsmharelaspects.StateAspectStateAspectProperties;
 import java.util.Hashtable;
 import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @Aspect(className = State.class)
 @SuppressWarnings("all")
@@ -54,6 +55,7 @@ public class StateAspect {
           synchronized (_self) {
             Program _doActivity = _self.getDoActivity();
             ProgramAspect.eval(_doActivity, context);
+            InputOutput.<String>println("");
           }
         }
       };
