@@ -1,0 +1,11 @@
+package fr.inria.diverse.puzzle.engine
+
+/**
+ * Some queries on Ecore models.
+ * 
+ * @author David Mendez-Acuna
+ */
+class AbstractSyntaxCompositionEngine {
+	
+	
+}

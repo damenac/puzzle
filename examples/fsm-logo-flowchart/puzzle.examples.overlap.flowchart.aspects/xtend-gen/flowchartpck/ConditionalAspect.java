@@ -17,7 +17,9 @@ public class ConditionalAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final Conditional _self, final Hashtable<String, Object> context) {
     flowchartpck.ConditionalAspectConditionalAspectProperties _self_ = flowchartpck.ConditionalAspectConditionalAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof flowchartpck.Conditional){
+     flowchartpck.ConditionalAspect._privk3_eval(_self_, (flowchartpck.Conditional)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Conditional _self, final Hashtable<String, Object> context) {

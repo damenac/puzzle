@@ -17,7 +17,9 @@ public class RelationalExpressionAspect extends ExpressionAspect {
   public static Object eval(final RelationalExpression _self, final Hashtable<String, Object> context) {
     flowchartpck.RelationalExpressionAspectRelationalExpressionAspectProperties _self_ = flowchartpck.RelationalExpressionAspectRelationalExpressionAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof flowchartpck.RelationalExpression){
+    result = flowchartpck.RelationalExpressionAspect._privk3_eval(_self_, (flowchartpck.RelationalExpression)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   
