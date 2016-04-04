@@ -1,0 +1,4 @@
+1457263325763	Rename type 'FromLanguageFeatureModelToFAMA'
+1457263333173	Rename type 'FromLanguageFeatureModelToFAMAAttributed'
+1457263631722	Rename local variable 'pFeatureModel'
+1457263725072	Rename method 'fromLanguageFeatureModelToFAMA'
