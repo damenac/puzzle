@@ -5,6 +5,12 @@
     <ecorePackage href="SimpleConstraintsProv.ecore#/"/>
     <genClasses>
       <ecoreClass href="SimpleConstraintsProv.ecore#//Constraint"/>
+      <genOperations>
+        <ecoreOperation href="SimpleConstraintsProv.ecore#//Constraint/evalConstraint"/>
+        <genParameters>
+          <ecoreParameter href="SimpleConstraintsProv.ecore#//Constraint/evalConstraint/context"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

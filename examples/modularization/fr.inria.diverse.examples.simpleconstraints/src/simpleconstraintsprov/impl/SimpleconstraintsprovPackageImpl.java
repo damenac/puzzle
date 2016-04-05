@@ -3,6 +3,8 @@
 package simpleconstraintsprov.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -100,6 +102,15 @@ public class SimpleconstraintsprovPackageImpl extends EPackageImpl implements Si
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getConstraint__EvalConstraint__Map() {
+		return constraintEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public SimpleconstraintsprovFactory getSimpleconstraintsprovFactory() {
 		return (SimpleconstraintsprovFactory)getEFactoryInstance();
 	}
@@ -124,6 +135,7 @@ public class SimpleconstraintsprovPackageImpl extends EPackageImpl implements Si
 
 		// Create classes and their features
 		constraintEClass = createEClass(CONSTRAINT);
+		createEOperation(constraintEClass, CONSTRAINT___EVAL_CONSTRAINT__MAP);
 	}
 
 	/**
@@ -157,6 +169,14 @@ public class SimpleconstraintsprovPackageImpl extends EPackageImpl implements Si
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getConstraint__EvalConstraint__Map(), ecorePackage.getEJavaObject(), "evalConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

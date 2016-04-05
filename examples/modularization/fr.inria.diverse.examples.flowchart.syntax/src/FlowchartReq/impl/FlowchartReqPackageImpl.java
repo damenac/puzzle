@@ -7,6 +7,7 @@ import FlowchartReq.FlowchartReqFactory;
 import FlowchartReq.FlowchartReqPackage;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -101,7 +102,7 @@ public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartRe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getConstraint__EvalConstraint__Object() {
+	public EOperation getConstraint__EvalConstraint__Map() {
 		return constraintEClass.getEOperations().get(0);
 	}
 
@@ -134,7 +135,7 @@ public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartRe
 
 		// Create classes and their features
 		constraintEClass = createEClass(CONSTRAINT);
-		createEOperation(constraintEClass, CONSTRAINT___EVAL_CONSTRAINT__OBJECT);
+		createEOperation(constraintEClass, CONSTRAINT___EVAL_CONSTRAINT__MAP);
 	}
 
 	/**
@@ -169,8 +170,13 @@ public class FlowchartReqPackageImpl extends EPackageImpl implements FlowchartRe
 		// Initialize classes, features, and operations; add parameters
 		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getConstraint__EvalConstraint__Object(), ecorePackage.getEBoolean(), "evalConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaObject(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getConstraint__EvalConstraint__Map(), ecorePackage.getEBoolean(), "evalConstraint", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EGenericType g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType();
+		g1.getETypeArguments().add(g2);
+		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -207,8 +207,7 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 
 			var LanguageVO mergedLanguage = new LanguageVO()
 			launchAbstractSyntaxComposition(mergedLanguage, requiringLanguage, providingLanguage, comparison)
-			launchSemanticsComposition(mergedLanguage, requiringLanguage, providingLanguage, comparison, overlappingAspects, 
-				overridingAspects, refactoringPatterns, targetProject)
+			launchSemanticsComposition(mergedLanguage, requiringLanguage, providingLanguage, comparison, overlappingAspects, overridingAspects, refactoringPatterns, targetProject)
 			
 			return mergedLanguage
 		}

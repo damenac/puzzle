@@ -26,9 +26,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eAnnotations source="Required"/>
     <eOperations name="evalConstraint">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       <eParameters name="context">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+        <eGenericType>
+          <eTypeArguments/>
+          <eTypeArguments/>
+          <eClassifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+        </eGenericType>
       </eParameters>
     </eOperations>
   </eClassifiers>

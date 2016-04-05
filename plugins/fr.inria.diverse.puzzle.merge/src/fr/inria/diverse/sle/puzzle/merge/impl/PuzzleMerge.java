@@ -306,7 +306,8 @@ public class PuzzleMerge {
 	 * @return recalculatedProvidedInterface
 	 * 			Recalculated provided interface as the merge of the two interfaces in the parameters.
 	 */
-	public EPackage recalculateProvidedInterface(EPackage extensionLanguageProvidedInterface, EPackage baseLanguageProvidedInterface){
+	public EPackage recalculateProvidedInterface(EPackage extensionLanguageProvidedInterface, 
+			EPackage baseLanguageProvidedInterface){
 		if(extensionLanguageProvidedInterface != null && baseLanguageProvidedInterface != null){
 			EPackage recalculatedProvidedInterface = EcoreFactory.eINSTANCE.createEPackage();
 			recalculatedProvidedInterface.setName(extensionLanguageProvidedInterface.getName() + 
@@ -334,7 +335,6 @@ public class PuzzleMerge {
 			resolveLocalSuperTypes(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface);
 			resolveLocalEOperationTypes(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface);
 			resolveEOppositeReferences(_oldClassifiers, _oldClassifiers, recalculatedProvidedInterface);
-			
 			
 			return recalculatedProvidedInterface;
 		}
@@ -410,7 +410,7 @@ public class PuzzleMerge {
 		for(ClassPair pair : classesToAdd){
 			_oldClassifiers.put(pair.getLeftClass().getName(), pair.getLeftClass());
 			EClass newEClass = cloneEClass(EcoreFactory.eINSTANCE, (EClass)pair.getLeftClass());
-			sumEPackage.getEClassifiers().add(newEClass);
+			baseEPackage.getEClassifiers().add(newEClass);
 			_newClassifiers.put(newEClass.getName(), newEClass);
 		}
 		

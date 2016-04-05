@@ -2,6 +2,7 @@
  */
 package FlowchartReq;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -21,6 +22,6 @@ public interface Constraint extends EObject {
 	 * @model
 	 * @generated
 	 */
-	boolean evalConstraint(Object context);
+	boolean evalConstraint(Map<?, ?> context);
 
 } // Constraint

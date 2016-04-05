@@ -3,6 +3,7 @@
 package simpleconstraintsprov;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
@@ -74,13 +75,22 @@ public interface SimpleconstraintsprovPackage extends EPackage {
 	int CONSTRAINT_FEATURE_COUNT = 0;
 
 	/**
+	 * The operation id for the '<em>Eval Constraint</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTRAINT___EVAL_CONSTRAINT__MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT_OPERATION_COUNT = 0;
+	int CONSTRAINT_OPERATION_COUNT = 1;
 
 
 	/**
@@ -92,6 +102,16 @@ public interface SimpleconstraintsprovPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getConstraint();
+
+	/**
+	 * Returns the meta object for the '{@link simpleconstraintsprov.Constraint#evalConstraint(java.util.Map) <em>Eval Constraint</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Eval Constraint</em>' operation.
+	 * @see simpleconstraintsprov.Constraint#evalConstraint(java.util.Map)
+	 * @generated
+	 */
+	EOperation getConstraint__EvalConstraint__Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -125,6 +145,13 @@ public interface SimpleconstraintsprovPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONSTRAINT = eINSTANCE.getConstraint();
+		/**
+		 * The meta object literal for the '<em><b>Eval Constraint</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation CONSTRAINT___EVAL_CONSTRAINT__MAP = eINSTANCE.getConstraint__EvalConstraint__Map();
 
 	}
 

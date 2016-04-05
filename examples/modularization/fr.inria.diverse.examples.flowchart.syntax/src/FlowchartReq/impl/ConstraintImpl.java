@@ -7,6 +7,7 @@ import FlowchartReq.FlowchartReqPackage;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +48,7 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean evalConstraint(Object context) {
+	public boolean evalConstraint(Map<?, ?> context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -61,8 +62,8 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FlowchartReqPackage.CONSTRAINT___EVAL_CONSTRAINT__OBJECT:
-				return evalConstraint(arguments.get(0));
+			case FlowchartReqPackage.CONSTRAINT___EVAL_CONSTRAINT__MAP:
+				return evalConstraint((Map<?, ?>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

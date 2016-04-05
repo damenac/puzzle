@@ -2,6 +2,7 @@
  */
 package simpleconstraintsprov;
 
+import java.util.Map;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,4 +16,12 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Constraint extends EObject {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Object evalConstraint(Map<?, ?> context);
 } // Constraint

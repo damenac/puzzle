@@ -505,7 +505,7 @@ public interface FlowchartpckPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONSTRAINT___EVAL_CONSTRAINT__OBJECT = 0;
+	int CONSTRAINT___EVAL_CONSTRAINT__MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Constraint</em>' class.
@@ -696,14 +696,14 @@ public interface FlowchartpckPackage extends EPackage {
 	EClass getConstraint();
 
 	/**
-	 * Returns the meta object for the '{@link flowchartpck.Constraint#evalConstraint(java.lang.Object) <em>Eval Constraint</em>}' operation.
+	 * Returns the meta object for the '{@link flowchartpck.Constraint#evalConstraint(java.util.Map) <em>Eval Constraint</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Eval Constraint</em>' operation.
-	 * @see flowchartpck.Constraint#evalConstraint(java.lang.Object)
+	 * @see flowchartpck.Constraint#evalConstraint(java.util.Map)
 	 * @generated
 	 */
-	EOperation getConstraint__EvalConstraint__Object();
+	EOperation getConstraint__EvalConstraint__Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -888,7 +888,7 @@ public interface FlowchartpckPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation CONSTRAINT___EVAL_CONSTRAINT__OBJECT = eINSTANCE.getConstraint__EvalConstraint__Object();
+		EOperation CONSTRAINT___EVAL_CONSTRAINT__MAP = eINSTANCE.getConstraint__EvalConstraint__Map();
 
 	}
 

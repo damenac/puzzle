@@ -20,8 +20,9 @@ public class DecisionAspect extends NodeAspect {
   
   protected static void _privk3_eval(final DecisionAspectDecisionAspectProperties _self_, final Decision _self, final Hashtable<String, Object> context) {
     Constraint _guard = _self.getGuard();
-    boolean guard = _guard.evalConstraint(context);
-    if (guard) {
+    Object _evalConstraint = _guard.evalConstraint(context);
+    Boolean guard = ((Boolean) _evalConstraint);
+    if ((guard).booleanValue()) {
       EList<Arc> _outgoing = _self.getOutgoing();
       Arc _get = _outgoing.get(0);
       Node _target = _get.getTarget();
