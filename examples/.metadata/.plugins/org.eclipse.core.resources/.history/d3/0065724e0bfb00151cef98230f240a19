@@ -1,0 +1,11 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	simpleimperative.Loop = simple.imperative.aspects.LoopAspect
+	simpleimperative.PutInMemory = simple.imperative.aspects.PutInMemoryAspect
+	simpleimperative.Program = simple.imperative.aspects.ProgramAspect
+	simpleimperative.Assignation = simple.imperative.aspects.AssignationAspect
+	simpleimperative.Conditional = simple.imperative.aspects.ConditionalAspect
+	simpleimperative.Wait = simple.imperative.aspects.WaitAspect
+	simpleimperative.Println = simple.imperative.aspects.PrintlnAspect
+	simpleimperative.Print = simple.imperative.aspects.PrintAspect
+	simpleimperative.VarDecl = simple.imperative.aspects.VarDeclAspect
+	simpleimperative.Statement = simple.imperative.aspects.StatementAspect

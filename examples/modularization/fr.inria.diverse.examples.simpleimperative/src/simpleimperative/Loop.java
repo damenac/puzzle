@@ -2,6 +2,7 @@
  */
 package simpleimperative;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,29 +49,19 @@ public interface Loop extends Statement {
 	void setGuard(Expression value);
 
 	/**
-	 * Returns the value of the '<em><b>Body</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Body</b></em>' containment reference list.
+	 * The list contents are of type {@link simpleimperative.Statement}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Body</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Body</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Body</em>' containment reference.
-	 * @see #setBody(Program)
+	 * @return the value of the '<em>Body</em>' containment reference list.
 	 * @see simpleimperative.SimpleimperativePackage#getLoop_Body()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Program getBody();
-
-	/**
-	 * Sets the value of the '{@link simpleimperative.Loop#getBody <em>Body</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Body</em>' containment reference.
-	 * @see #getBody()
-	 * @generated
-	 */
-	void setBody(Program value);
+	EList<Statement> getBody();
 
 } // Loop

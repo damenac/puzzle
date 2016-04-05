@@ -1,0 +1,47 @@
+package simple.imperative.aspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+	
+import simpleimperative.Statement
+import simpleimperative.Println
+import simpleimperative.Print
+
+import java.util.Hashtable
+import simpleimperative.Wait
+
+@Aspect(className=Statement)
+abstract class StatementAspect {
+	
+	def abstract void eval(Hashtable<java.lang.String, Object> context)
+}
+
+
+@Aspect(className=Println)
+class PrintlnAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		println(_self.input)
+	}
+}
+
+@Aspect(className=Print)
+class PrintAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		print(_self.input)
+	}
+}
+
+@Aspect(className=Wait)
+class WaitAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		synchronized(_self){
+			_self.wait(_self.miliseconds)
+		}
+	}
+}

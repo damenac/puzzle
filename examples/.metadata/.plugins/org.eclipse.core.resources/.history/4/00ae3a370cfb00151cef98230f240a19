@@ -1,0 +1,28 @@
+package simple.imperative.aspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+	
+import simpleimperative.Statement
+import simpleimperative.Println
+import simpleimperative.Print
+import simpleimperative.Assignation
+
+import java.util.Hashtable
+import simpleimperative.VarDecl
+import simpleimperative.Loop
+import simpleimperative.Conditional
+import simpleimperative.Wait
+
+
+@Aspect(className=Conditional)
+class ConditionalAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def void eval(Hashtable<java.lang.String, Object> context){
+		var Boolean conditionEval = _self.condition.eval(context) as Boolean
+		if(conditionEval){
+			_self.body.eval(context)
+		}
+	}
+}

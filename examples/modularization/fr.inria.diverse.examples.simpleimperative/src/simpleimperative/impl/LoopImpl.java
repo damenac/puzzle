@@ -2,18 +2,25 @@
  */
 package simpleimperative.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import simpleimperative.Expression;
 import simpleimperative.Loop;
-import simpleimperative.Program;
 import simpleimperative.SimpleimperativePackage;
+import simpleimperative.Statement;
 
 /**
  * <!-- begin-user-doc -->
@@ -41,14 +48,14 @@ public class LoopImpl extends StatementImpl implements Loop {
 	protected Expression guard;
 
 	/**
-	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference.
+	 * The cached value of the '{@link #getBody() <em>Body</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBody()
 	 * @generated
 	 * @ordered
 	 */
-	protected Program body;
+	protected EList<Statement> body;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,42 +124,11 @@ public class LoopImpl extends StatementImpl implements Loop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Program getBody() {
+	public EList<Statement> getBody() {
+		if (body == null) {
+			body = new EObjectContainmentEList<Statement>(Statement.class, this, SimpleimperativePackage.LOOP__BODY);
+		}
 		return body;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetBody(Program newBody, NotificationChain msgs) {
-		Program oldBody = body;
-		body = newBody;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SimpleimperativePackage.LOOP__BODY, oldBody, newBody);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setBody(Program newBody) {
-		if (newBody != body) {
-			NotificationChain msgs = null;
-			if (body != null)
-				msgs = ((InternalEObject)body).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SimpleimperativePackage.LOOP__BODY, null, msgs);
-			if (newBody != null)
-				msgs = ((InternalEObject)newBody).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SimpleimperativePackage.LOOP__BODY, null, msgs);
-			msgs = basicSetBody(newBody, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SimpleimperativePackage.LOOP__BODY, newBody, newBody));
 	}
 
 	/**
@@ -166,7 +142,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 			case SimpleimperativePackage.LOOP__GUARD:
 				return basicSetGuard(null, msgs);
 			case SimpleimperativePackage.LOOP__BODY:
-				return basicSetBody(null, msgs);
+				return ((InternalEList<?>)getBody()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -192,6 +168,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -199,7 +176,8 @@ public class LoopImpl extends StatementImpl implements Loop {
 				setGuard((Expression)newValue);
 				return;
 			case SimpleimperativePackage.LOOP__BODY:
-				setBody((Program)newValue);
+				getBody().clear();
+				getBody().addAll((Collection<? extends Statement>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,7 +195,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 				setGuard((Expression)null);
 				return;
 			case SimpleimperativePackage.LOOP__BODY:
-				setBody((Program)null);
+				getBody().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -234,7 +212,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 			case SimpleimperativePackage.LOOP__GUARD:
 				return guard != null;
 			case SimpleimperativePackage.LOOP__BODY:
-				return body != null;
+				return body != null && !body.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

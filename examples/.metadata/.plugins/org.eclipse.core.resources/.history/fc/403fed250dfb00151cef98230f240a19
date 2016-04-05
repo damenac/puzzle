@@ -1,0 +1,68 @@
+package simple.imperative.aspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+	
+import simpleimperative.Statement
+import simpleimperative.Println
+import simpleimperative.Print
+import simpleimperative.Assignation
+
+import java.util.Hashtable
+import simpleimperative.VarDecl
+import simpleimperative.Wait
+
+@Aspect(className=Statement)
+abstract class StatementAspect {
+	
+	def abstract void eval(Hashtable<java.lang.String, Object> context)
+}
+
+
+@Aspect(className=VarDecl)
+class VarDeclAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def void eval(Hashtable<java.lang.String, Object> context){
+		context.put(_self.name, _self.expr.obtainValue(context))
+	}
+}
+
+
+@Aspect(className=Println)
+class PrintlnAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		println(_self.input)
+	}
+}
+
+@Aspect(className=Print)
+class PrintAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		print(_self.input)
+	}
+}
+
+@Aspect(className=PutInMemory)
+class PutInMemoryAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		context.put("memory.displays." + _self.key, _self.value.obtainValue(context));
+	}
+}
+
+@Aspect(className=Wait)
+class WaitAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		synchronized(_self){
+			_self.wait(_self.miliseconds)
+		}
+	}
+}

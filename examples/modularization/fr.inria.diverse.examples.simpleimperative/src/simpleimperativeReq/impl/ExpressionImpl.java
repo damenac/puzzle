@@ -4,6 +4,8 @@ package simpleimperativeReq.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -47,7 +49,7 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object eval(Object context) {
+	public Object eval(Map<?, ?> context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -61,8 +63,8 @@ public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implem
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case SimpleimperativeReqPackage.EXPRESSION___EVAL__OBJECT:
-				return eval(arguments.get(0));
+			case SimpleimperativeReqPackage.EXPRESSION___EVAL__MAP:
+				return eval((Map<?, ?>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

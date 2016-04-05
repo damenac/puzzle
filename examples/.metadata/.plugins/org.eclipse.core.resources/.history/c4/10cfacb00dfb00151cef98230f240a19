@@ -1,0 +1,20 @@
+package simple.imperative.aspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+	
+import simpleimperative.Statement
+import simpleimperative.Println
+import simpleimperative.Print
+
+import java.util.Hashtable
+import simpleimperative.Wait
+
+@Aspect(className=Println)
+class PrintlnAspect extends StatementAspect {
+	
+	@OverrideAspectMethod
+	def public void eval(Hashtable<java.lang.String, Object> context){
+		println(_self.input)
+	}
+}

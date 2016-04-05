@@ -4,7 +4,7 @@ package simpleimperative;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -58,6 +58,43 @@ public interface SimpleimperativePackage extends EPackage {
 	SimpleimperativePackage eINSTANCE = simpleimperative.impl.SimpleimperativePackageImpl.init();
 
 	/**
+	 * The meta object id for the '{@link simpleimperative.impl.ProgramImpl <em>Program</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see simpleimperative.impl.ProgramImpl
+	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getProgram()
+	 * @generated
+	 */
+	int PROGRAM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM__STATEMENTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Program</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Program</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAM_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link simpleimperative.impl.StatementImpl <em>Statement</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,7 +102,7 @@ public interface SimpleimperativePackage extends EPackage {
 	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getStatement()
 	 * @generated
 	 */
-	int STATEMENT = 0;
+	int STATEMENT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Statement</em>' class.
@@ -84,43 +121,6 @@ public interface SimpleimperativePackage extends EPackage {
 	 * @ordered
 	 */
 	int STATEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.ProgramImpl <em>Program</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.ProgramImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getProgram()
-	 * @generated
-	 */
-	int PROGRAM = 1;
-
-	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAM__STATEMENTS = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Program</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAM_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Program</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAM_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link simpleimperative.impl.ConditionalImpl <em>Conditional</em>}' class.
@@ -142,7 +142,7 @@ public interface SimpleimperativePackage extends EPackage {
 	int CONDITIONAL__CONDITION = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -188,7 +188,7 @@ public interface SimpleimperativePackage extends EPackage {
 	int LOOP__GUARD = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -261,431 +261,6 @@ public interface SimpleimperativePackage extends EPackage {
 	int VAR_DECL_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link simpleimperative.impl.ExpressionImpl <em>Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.ExpressionImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getExpression()
-	 * @generated
-	 */
-	int EXPRESSION = 5;
-
-	/**
-	 * The number of structural features of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.LiteralImpl <em>Literal</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.LiteralImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getLiteral()
-	 * @generated
-	 */
-	int LITERAL = 6;
-
-	/**
-	 * The number of structural features of the '<em>Literal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Literal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.IntegerLitImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getIntegerLit()
-	 * @generated
-	 */
-	int INTEGER_LIT = 7;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Integer Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Integer Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.StringLitImpl <em>String Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.StringLitImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getStringLit()
-	 * @generated
-	 */
-	int STRING_LIT = 8;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>String Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>String Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.BoolLitImpl <em>Bool Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.BoolLitImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getBoolLit()
-	 * @generated
-	 */
-	int BOOL_LIT = 9;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOL_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Bool Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOL_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Bool Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOL_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.ArithmeticExpressionImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getArithmeticExpression()
-	 * @generated
-	 */
-	int ARITHMETIC_EXPRESSION = 10;
-
-	/**
-	 * The feature id for the '<em><b>Left</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Arithmetic Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Arithmetic Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.RelationalExpressionImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getRelationalExpression()
-	 * @generated
-	 */
-	int RELATIONAL_EXPRESSION = 11;
-
-	/**
-	 * The feature id for the '<em><b>Left</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Relational Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Relational Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.VarReferenceImpl <em>Var Reference</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.VarReferenceImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getVarReference()
-	 * @generated
-	 */
-	int VAR_REFERENCE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Ref</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REFERENCE__REF = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Var Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REFERENCE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Var Reference</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REFERENCE_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.ConsoleOutputImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getConsoleOutput()
-	 * @generated
-	 */
-	int CONSOLE_OUTPUT = 13;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSOLE_OUTPUT__INPUT = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Console Output</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSOLE_OUTPUT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Console Output</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSOLE_OUTPUT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.PrintlnImpl <em>Println</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.PrintlnImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getPrintln()
-	 * @generated
-	 */
-	int PRINTLN = 14;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINTLN__INPUT = CONSOLE_OUTPUT__INPUT;
-
-	/**
-	 * The number of structural features of the '<em>Println</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINTLN_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Println</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINTLN_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.impl.PrintImpl <em>Print</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.PrintImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getPrint()
-	 * @generated
-	 */
-	int PRINT = 15;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT__INPUT = CONSOLE_OUTPUT__INPUT;
-
-	/**
-	 * The number of structural features of the '<em>Print</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Print</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link simpleimperative.impl.AssignationImpl <em>Assignation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -693,7 +268,7 @@ public interface SimpleimperativePackage extends EPackage {
 	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getAssignation()
 	 * @generated
 	 */
-	int ASSIGNATION = 16;
+	int ASSIGNATION = 5;
 
 	/**
 	 * The feature id for the '<em><b>Var Ref</b></em>' reference.
@@ -732,87 +307,198 @@ public interface SimpleimperativePackage extends EPackage {
 	int ASSIGNATION_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link simpleimperative.impl.PutInMemoryImpl <em>Put In Memory</em>}' class.
+	 * The meta object id for the '{@link simpleimperative.impl.ExpressionImpl <em>Expression</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.PutInMemoryImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getPutInMemory()
+	 * @see simpleimperative.impl.ExpressionImpl
+	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getExpression()
 	 * @generated
 	 */
-	int PUT_IN_MEMORY = 17;
+	int EXPRESSION = 7;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' containment reference.
+	 * The number of structural features of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUT_IN_MEMORY__VALUE = STATEMENT_FEATURE_COUNT + 0;
+	int EXPRESSION_FEATURE_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The operation id for the '<em>Eval</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUT_IN_MEMORY__KEY = STATEMENT_FEATURE_COUNT + 1;
+	int EXPRESSION___EVAL__OBJECT = 0;
 
 	/**
-	 * The number of structural features of the '<em>Put In Memory</em>' class.
+	 * The number of operations of the '<em>Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUT_IN_MEMORY_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+	int EXPRESSION_OPERATION_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Put In Memory</em>' class.
+	 * The meta object id for the '{@link simpleimperative.impl.VarRefImpl <em>Var Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see simpleimperative.impl.VarRefImpl
+	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getVarRef()
+	 * @generated
+	 */
+	int VAR_REF = 6;
+
+	/**
+	 * The feature id for the '<em><b>Var Ref</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PUT_IN_MEMORY_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+	int VAR_REF__VAR_REF = EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link simpleimperative.impl.GetFromMemoryImpl <em>Get From Memory</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.impl.GetFromMemoryImpl
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getGetFromMemory()
-	 * @generated
-	 */
-	int GET_FROM_MEMORY = 18;
-
-	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The number of structural features of the '<em>Var Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GET_FROM_MEMORY__KEY = EXPRESSION_FEATURE_COUNT + 0;
+	int VAR_REF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Get From Memory</em>' class.
+	 * The operation id for the '<em>Eval</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GET_FROM_MEMORY_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+	int VAR_REF___EVAL__OBJECT = EXPRESSION___EVAL__OBJECT;
 
 	/**
-	 * The number of operations of the '<em>Get From Memory</em>' class.
+	 * The number of operations of the '<em>Var Ref</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GET_FROM_MEMORY_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+	int VAR_REF_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link simpleimperative.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see simpleimperative.impl.ConsoleOutputImpl
+	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getConsoleOutput()
+	 * @generated
+	 */
+	int CONSOLE_OUTPUT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSOLE_OUTPUT__INPUT = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Console Output</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSOLE_OUTPUT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Console Output</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSOLE_OUTPUT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link simpleimperative.impl.PrintlnImpl <em>Println</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see simpleimperative.impl.PrintlnImpl
+	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getPrintln()
+	 * @generated
+	 */
+	int PRINTLN = 9;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINTLN__INPUT = CONSOLE_OUTPUT__INPUT;
+
+	/**
+	 * The number of structural features of the '<em>Println</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINTLN_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Println</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINTLN_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link simpleimperative.impl.PrintImpl <em>Print</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see simpleimperative.impl.PrintImpl
+	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getPrint()
+	 * @generated
+	 */
+	int PRINT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Input</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT__INPUT = CONSOLE_OUTPUT__INPUT;
+
+	/**
+	 * The number of structural features of the '<em>Print</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Print</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PRINT_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link simpleimperative.impl.WaitImpl <em>Wait</em>}' class.
@@ -822,7 +508,7 @@ public interface SimpleimperativePackage extends EPackage {
 	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getWait()
 	 * @generated
 	 */
-	int WAIT = 19;
+	int WAIT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Miliseconds</b></em>' attribute.
@@ -851,36 +537,6 @@ public interface SimpleimperativePackage extends EPackage {
 	 */
 	int WAIT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
-	/**
-	 * The meta object id for the '{@link simpleimperative.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.ArithmeticOperator
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getArithmeticOperator()
-	 * @generated
-	 */
-	int ARITHMETIC_OPERATOR = 20;
-
-	/**
-	 * The meta object id for the '{@link simpleimperative.RelationalOperator <em>Relational Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see simpleimperative.RelationalOperator
-	 * @see simpleimperative.impl.SimpleimperativePackageImpl#getRelationalOperator()
-	 * @generated
-	 */
-	int RELATIONAL_OPERATOR = 21;
-
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.Statement <em>Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Statement</em>'.
-	 * @see simpleimperative.Statement
-	 * @generated
-	 */
-	EClass getStatement();
 
 	/**
 	 * Returns the meta object for class '{@link simpleimperative.Program <em>Program</em>}'.
@@ -904,6 +560,16 @@ public interface SimpleimperativePackage extends EPackage {
 	EReference getProgram_Statements();
 
 	/**
+	 * Returns the meta object for class '{@link simpleimperative.Statement <em>Statement</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Statement</em>'.
+	 * @see simpleimperative.Statement
+	 * @generated
+	 */
+	EClass getStatement();
+
+	/**
 	 * Returns the meta object for class '{@link simpleimperative.Conditional <em>Conditional</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -925,10 +591,10 @@ public interface SimpleimperativePackage extends EPackage {
 	EReference getConditional_Condition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.Conditional#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference list '{@link simpleimperative.Conditional#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body</em>'.
+	 * @return the meta object for the containment reference list '<em>Body</em>'.
 	 * @see simpleimperative.Conditional#getBody()
 	 * @see #getConditional()
 	 * @generated
@@ -957,10 +623,10 @@ public interface SimpleimperativePackage extends EPackage {
 	EReference getLoop_Guard();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.Loop#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference list '{@link simpleimperative.Loop#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body</em>'.
+	 * @return the meta object for the containment reference list '<em>Body</em>'.
 	 * @see simpleimperative.Loop#getBody()
 	 * @see #getLoop()
 	 * @generated
@@ -1000,6 +666,59 @@ public interface SimpleimperativePackage extends EPackage {
 	EReference getVarDecl_Expr();
 
 	/**
+	 * Returns the meta object for class '{@link simpleimperative.Assignation <em>Assignation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assignation</em>'.
+	 * @see simpleimperative.Assignation
+	 * @generated
+	 */
+	EClass getAssignation();
+
+	/**
+	 * Returns the meta object for the reference '{@link simpleimperative.Assignation#getVarRef <em>Var Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Var Ref</em>'.
+	 * @see simpleimperative.Assignation#getVarRef()
+	 * @see #getAssignation()
+	 * @generated
+	 */
+	EReference getAssignation_VarRef();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link simpleimperative.Assignation#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see simpleimperative.Assignation#getExpression()
+	 * @see #getAssignation()
+	 * @generated
+	 */
+	EReference getAssignation_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link simpleimperative.VarRef <em>Var Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Var Ref</em>'.
+	 * @see simpleimperative.VarRef
+	 * @generated
+	 */
+	EClass getVarRef();
+
+	/**
+	 * Returns the meta object for the attribute '{@link simpleimperative.VarRef#getVarRef <em>Var Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Var Ref</em>'.
+	 * @see simpleimperative.VarRef#getVarRef()
+	 * @see #getVarRef()
+	 * @generated
+	 */
+	EAttribute getVarRef_VarRef();
+
+	/**
 	 * Returns the meta object for class '{@link simpleimperative.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1010,184 +729,14 @@ public interface SimpleimperativePackage extends EPackage {
 	EClass getExpression();
 
 	/**
-	 * Returns the meta object for class '{@link simpleimperative.Literal <em>Literal</em>}'.
+	 * Returns the meta object for the '{@link simpleimperative.Expression#eval(java.util.Map) <em>Eval</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Literal</em>'.
-	 * @see simpleimperative.Literal
+	 * @return the meta object for the '<em>Eval</em>' operation.
+	 * @see simpleimperative.Expression#eval(java.util.Map)
 	 * @generated
 	 */
-	EClass getLiteral();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.IntegerLit <em>Integer Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Integer Lit</em>'.
-	 * @see simpleimperative.IntegerLit
-	 * @generated
-	 */
-	EClass getIntegerLit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link simpleimperative.IntegerLit#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see simpleimperative.IntegerLit#getValue()
-	 * @see #getIntegerLit()
-	 * @generated
-	 */
-	EAttribute getIntegerLit_Value();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.StringLit <em>String Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String Lit</em>'.
-	 * @see simpleimperative.StringLit
-	 * @generated
-	 */
-	EClass getStringLit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link simpleimperative.StringLit#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see simpleimperative.StringLit#getValue()
-	 * @see #getStringLit()
-	 * @generated
-	 */
-	EAttribute getStringLit_Value();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.BoolLit <em>Bool Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bool Lit</em>'.
-	 * @see simpleimperative.BoolLit
-	 * @generated
-	 */
-	EClass getBoolLit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link simpleimperative.BoolLit#isValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see simpleimperative.BoolLit#isValue()
-	 * @see #getBoolLit()
-	 * @generated
-	 */
-	EAttribute getBoolLit_Value();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.ArithmeticExpression <em>Arithmetic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Arithmetic Expression</em>'.
-	 * @see simpleimperative.ArithmeticExpression
-	 * @generated
-	 */
-	EClass getArithmeticExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.ArithmeticExpression#getLeft <em>Left</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Left</em>'.
-	 * @see simpleimperative.ArithmeticExpression#getLeft()
-	 * @see #getArithmeticExpression()
-	 * @generated
-	 */
-	EReference getArithmeticExpression_Left();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.ArithmeticExpression#getRight <em>Right</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Right</em>'.
-	 * @see simpleimperative.ArithmeticExpression#getRight()
-	 * @see #getArithmeticExpression()
-	 * @generated
-	 */
-	EReference getArithmeticExpression_Right();
-
-	/**
-	 * Returns the meta object for the attribute '{@link simpleimperative.ArithmeticExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see simpleimperative.ArithmeticExpression#getOperator()
-	 * @see #getArithmeticExpression()
-	 * @generated
-	 */
-	EAttribute getArithmeticExpression_Operator();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.RelationalExpression <em>Relational Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Relational Expression</em>'.
-	 * @see simpleimperative.RelationalExpression
-	 * @generated
-	 */
-	EClass getRelationalExpression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.RelationalExpression#getLeft <em>Left</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Left</em>'.
-	 * @see simpleimperative.RelationalExpression#getLeft()
-	 * @see #getRelationalExpression()
-	 * @generated
-	 */
-	EReference getRelationalExpression_Left();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.RelationalExpression#getRight <em>Right</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Right</em>'.
-	 * @see simpleimperative.RelationalExpression#getRight()
-	 * @see #getRelationalExpression()
-	 * @generated
-	 */
-	EReference getRelationalExpression_Right();
-
-	/**
-	 * Returns the meta object for the attribute '{@link simpleimperative.RelationalExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see simpleimperative.RelationalExpression#getOperator()
-	 * @see #getRelationalExpression()
-	 * @generated
-	 */
-	EAttribute getRelationalExpression_Operator();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.VarReference <em>Var Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Var Reference</em>'.
-	 * @see simpleimperative.VarReference
-	 * @generated
-	 */
-	EClass getVarReference();
-
-	/**
-	 * Returns the meta object for the reference '{@link simpleimperative.VarReference#getRef <em>Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Ref</em>'.
-	 * @see simpleimperative.VarReference#getRef()
-	 * @see #getVarReference()
-	 * @generated
-	 */
-	EReference getVarReference_Ref();
+	EOperation getExpression__Eval__Object();
 
 	/**
 	 * Returns the meta object for class '{@link simpleimperative.ConsoleOutput <em>Console Output</em>}'.
@@ -1231,91 +780,6 @@ public interface SimpleimperativePackage extends EPackage {
 	EClass getPrint();
 
 	/**
-	 * Returns the meta object for class '{@link simpleimperative.Assignation <em>Assignation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Assignation</em>'.
-	 * @see simpleimperative.Assignation
-	 * @generated
-	 */
-	EClass getAssignation();
-
-	/**
-	 * Returns the meta object for the reference '{@link simpleimperative.Assignation#getVarRef <em>Var Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Var Ref</em>'.
-	 * @see simpleimperative.Assignation#getVarRef()
-	 * @see #getAssignation()
-	 * @generated
-	 */
-	EReference getAssignation_VarRef();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.Assignation#getExpression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see simpleimperative.Assignation#getExpression()
-	 * @see #getAssignation()
-	 * @generated
-	 */
-	EReference getAssignation_Expression();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.PutInMemory <em>Put In Memory</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Put In Memory</em>'.
-	 * @see simpleimperative.PutInMemory
-	 * @generated
-	 */
-	EClass getPutInMemory();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link simpleimperative.PutInMemory#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value</em>'.
-	 * @see simpleimperative.PutInMemory#getValue()
-	 * @see #getPutInMemory()
-	 * @generated
-	 */
-	EReference getPutInMemory_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link simpleimperative.PutInMemory#getKey <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see simpleimperative.PutInMemory#getKey()
-	 * @see #getPutInMemory()
-	 * @generated
-	 */
-	EAttribute getPutInMemory_Key();
-
-	/**
-	 * Returns the meta object for class '{@link simpleimperative.GetFromMemory <em>Get From Memory</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Get From Memory</em>'.
-	 * @see simpleimperative.GetFromMemory
-	 * @generated
-	 */
-	EClass getGetFromMemory();
-
-	/**
-	 * Returns the meta object for the attribute '{@link simpleimperative.GetFromMemory#getKey <em>Key</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see simpleimperative.GetFromMemory#getKey()
-	 * @see #getGetFromMemory()
-	 * @generated
-	 */
-	EAttribute getGetFromMemory_Key();
-
-	/**
 	 * Returns the meta object for class '{@link simpleimperative.Wait <em>Wait</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1335,26 +799,6 @@ public interface SimpleimperativePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getWait_Miliseconds();
-
-	/**
-	 * Returns the meta object for enum '{@link simpleimperative.ArithmeticOperator <em>Arithmetic Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Arithmetic Operator</em>'.
-	 * @see simpleimperative.ArithmeticOperator
-	 * @generated
-	 */
-	EEnum getArithmeticOperator();
-
-	/**
-	 * Returns the meta object for enum '{@link simpleimperative.RelationalOperator <em>Relational Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Relational Operator</em>'.
-	 * @see simpleimperative.RelationalOperator
-	 * @generated
-	 */
-	EEnum getRelationalOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1380,16 +824,6 @@ public interface SimpleimperativePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.StatementImpl <em>Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.StatementImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getStatement()
-		 * @generated
-		 */
-		EClass STATEMENT = eINSTANCE.getStatement();
-
-		/**
 		 * The meta object literal for the '{@link simpleimperative.impl.ProgramImpl <em>Program</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1406,6 +840,16 @@ public interface SimpleimperativePackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROGRAM__STATEMENTS = eINSTANCE.getProgram_Statements();
+
+		/**
+		 * The meta object literal for the '{@link simpleimperative.impl.StatementImpl <em>Statement</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see simpleimperative.impl.StatementImpl
+		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getStatement()
+		 * @generated
+		 */
+		EClass STATEMENT = eINSTANCE.getStatement();
 
 		/**
 		 * The meta object literal for the '{@link simpleimperative.impl.ConditionalImpl <em>Conditional</em>}' class.
@@ -1426,7 +870,7 @@ public interface SimpleimperativePackage extends EPackage {
 		EReference CONDITIONAL__CONDITION = eINSTANCE.getConditional_Condition();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1452,7 +896,7 @@ public interface SimpleimperativePackage extends EPackage {
 		EReference LOOP__GUARD = eINSTANCE.getLoop_Guard();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1486,6 +930,50 @@ public interface SimpleimperativePackage extends EPackage {
 		EReference VAR_DECL__EXPR = eINSTANCE.getVarDecl_Expr();
 
 		/**
+		 * The meta object literal for the '{@link simpleimperative.impl.AssignationImpl <em>Assignation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see simpleimperative.impl.AssignationImpl
+		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getAssignation()
+		 * @generated
+		 */
+		EClass ASSIGNATION = eINSTANCE.getAssignation();
+
+		/**
+		 * The meta object literal for the '<em><b>Var Ref</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNATION__VAR_REF = eINSTANCE.getAssignation_VarRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNATION__EXPRESSION = eINSTANCE.getAssignation_Expression();
+
+		/**
+		 * The meta object literal for the '{@link simpleimperative.impl.VarRefImpl <em>Var Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see simpleimperative.impl.VarRefImpl
+		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getVarRef()
+		 * @generated
+		 */
+		EClass VAR_REF = eINSTANCE.getVarRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Var Ref</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VAR_REF__VAR_REF = eINSTANCE.getVarRef_VarRef();
+
+		/**
 		 * The meta object literal for the '{@link simpleimperative.impl.ExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1496,154 +984,12 @@ public interface SimpleimperativePackage extends EPackage {
 		EClass EXPRESSION = eINSTANCE.getExpression();
 
 		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.LiteralImpl <em>Literal</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.LiteralImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getLiteral()
-		 * @generated
-		 */
-		EClass LITERAL = eINSTANCE.getLiteral();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.IntegerLitImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getIntegerLit()
-		 * @generated
-		 */
-		EClass INTEGER_LIT = eINSTANCE.getIntegerLit();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Eval</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INTEGER_LIT__VALUE = eINSTANCE.getIntegerLit_Value();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.StringLitImpl <em>String Lit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.StringLitImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getStringLit()
-		 * @generated
-		 */
-		EClass STRING_LIT = eINSTANCE.getStringLit();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_LIT__VALUE = eINSTANCE.getStringLit_Value();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.BoolLitImpl <em>Bool Lit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.BoolLitImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getBoolLit()
-		 * @generated
-		 */
-		EClass BOOL_LIT = eINSTANCE.getBoolLit();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOL_LIT__VALUE = eINSTANCE.getBoolLit_Value();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.ArithmeticExpressionImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getArithmeticExpression()
-		 * @generated
-		 */
-		EClass ARITHMETIC_EXPRESSION = eINSTANCE.getArithmeticExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARITHMETIC_EXPRESSION__LEFT = eINSTANCE.getArithmeticExpression_Left();
-
-		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARITHMETIC_EXPRESSION__RIGHT = eINSTANCE.getArithmeticExpression_Right();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.RelationalExpressionImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getRelationalExpression()
-		 * @generated
-		 */
-		EClass RELATIONAL_EXPRESSION = eINSTANCE.getRelationalExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONAL_EXPRESSION__LEFT = eINSTANCE.getRelationalExpression_Left();
-
-		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONAL_EXPRESSION__RIGHT = eINSTANCE.getRelationalExpression_Right();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RELATIONAL_EXPRESSION__OPERATOR = eINSTANCE.getRelationalExpression_Operator();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.VarReferenceImpl <em>Var Reference</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.VarReferenceImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getVarReference()
-		 * @generated
-		 */
-		EClass VAR_REFERENCE = eINSTANCE.getVarReference();
-
-		/**
-		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VAR_REFERENCE__REF = eINSTANCE.getVarReference_Ref();
+		EOperation EXPRESSION___EVAL__OBJECT = eINSTANCE.getExpression__Eval__Object();
 
 		/**
 		 * The meta object literal for the '{@link simpleimperative.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
@@ -1684,76 +1030,6 @@ public interface SimpleimperativePackage extends EPackage {
 		EClass PRINT = eINSTANCE.getPrint();
 
 		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.AssignationImpl <em>Assignation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.AssignationImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getAssignation()
-		 * @generated
-		 */
-		EClass ASSIGNATION = eINSTANCE.getAssignation();
-
-		/**
-		 * The meta object literal for the '<em><b>Var Ref</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSIGNATION__VAR_REF = eINSTANCE.getAssignation_VarRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSIGNATION__EXPRESSION = eINSTANCE.getAssignation_Expression();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.PutInMemoryImpl <em>Put In Memory</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.PutInMemoryImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getPutInMemory()
-		 * @generated
-		 */
-		EClass PUT_IN_MEMORY = eINSTANCE.getPutInMemory();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PUT_IN_MEMORY__VALUE = eINSTANCE.getPutInMemory_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PUT_IN_MEMORY__KEY = eINSTANCE.getPutInMemory_Key();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.impl.GetFromMemoryImpl <em>Get From Memory</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.impl.GetFromMemoryImpl
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getGetFromMemory()
-		 * @generated
-		 */
-		EClass GET_FROM_MEMORY = eINSTANCE.getGetFromMemory();
-
-		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute GET_FROM_MEMORY__KEY = eINSTANCE.getGetFromMemory_Key();
-
-		/**
 		 * The meta object literal for the '{@link simpleimperative.impl.WaitImpl <em>Wait</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1770,26 +1046,6 @@ public interface SimpleimperativePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAIT__MILISECONDS = eINSTANCE.getWait_Miliseconds();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.ArithmeticOperator
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getArithmeticOperator()
-		 * @generated
-		 */
-		EEnum ARITHMETIC_OPERATOR = eINSTANCE.getArithmeticOperator();
-
-		/**
-		 * The meta object literal for the '{@link simpleimperative.RelationalOperator <em>Relational Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see simpleimperative.RelationalOperator
-		 * @see simpleimperative.impl.SimpleimperativePackageImpl#getRelationalOperator()
-		 * @generated
-		 */
-		EEnum RELATIONAL_OPERATOR = eINSTANCE.getRelationalOperator();
 
 	}
 
