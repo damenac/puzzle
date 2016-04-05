@@ -240,6 +240,16 @@ var treeData = [
     }
 ,
           {
+          "name": "VarReferenceAspect",
+          "parent": "Family",
+          "children": [
+          {
+          "name": "eval [from: FSM, Logo, Flowcharts]",
+          "parent": "VarReferenceAspect"    }
+              ]
+    }
+,
+          {
           "name": "ConditionalAspect",
           "parent": "Family",
           "children": [

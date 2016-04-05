@@ -248,7 +248,7 @@ public class ProjectManagementServices {
 		while(line != null){
 			if(line.startsWith("package")){
 				line = "package " + prefix + "." + pck + "\n";
-//				line += "import commons.*\n";
+				line += "import commons.*\n";
 			}
 			
 			if(line.startsWith("import") && !line.contains("static extension")){

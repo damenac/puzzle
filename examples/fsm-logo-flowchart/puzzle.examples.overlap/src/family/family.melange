@@ -8,6 +8,7 @@ language FSM {
 	
 	with fsmaspects.StateMachineAspect
 	with fsmaspects.StateAspect
+	with fsmaspects.AbstractStateAspect
 	with fsmaspects.TransitionAspect
 	with fsmaspects.TriggerAspect
 	with fsmaspects.FinalStateAspect
@@ -23,6 +24,7 @@ language FSM {
 	with fsmaspects.StatementAspect
 	with fsmaspects.ProgramAspect
 	with fsmaspects.VarDeclAspect
+	with fsmaspects.VarReferenceAspect
 	with fsmaspects.ConditionalAspect
 	with fsmaspects.LoopAspect
 	with fsmaspects.PrintlnAspect
@@ -55,13 +57,13 @@ language Logo {
 	with logo.StringLitAspect
 	with logo.BoolLitAspect
 	with logo.VarDeclAspect
+	with logo.VarReferenceAspect
 	with logo.ArithmeticExpressionAspect
 	with logo.RelationalExpressionAspect
 	with logo.LogoProgramAspect
 	
 	exactType LogoMT
 }
-
 
 /**
  * A language for Flowcharts 
@@ -70,31 +72,32 @@ language Flowcharts {
 	
 	syntax "platform:/resource/puzzle.examples.overlap.flowchart.metamodel/models/flowchart.ecore"
 	
-	with flowchartpck.FlowchartAspect
-	with flowchartpck.NodeAspect
-	with flowchartpck.ArcAspect
-	with flowchartpck.ActionAspect
-	with flowchartpck.StartAspect
-	with flowchartpck.EndAspect
-	with flowchartpck.DecisionAspect
-	with flowchartpck.ExpressionAspect
-	with flowchartpck.LiteralAspect
-	with flowchartpck.IntegerLitAspect
-	with flowchartpck.StringLitAspect
-	with flowchartpck.BoolLitAspect
-	with flowchartpck.ArithmeticExpressionAspect
-	with flowchartpck.RelationalExpressionAspect
-	with flowchartpck.ConstraintAspect
-	with flowchartpck.RelationalConstraintAspect
-	with flowchartpck.StatementAspect
-	with flowchartpck.ProgramAspect
-	with flowchartpck.VarDeclAspect
-	with flowchartpck.ConditionalAspect
-	with flowchartpck.LoopAspect
-	with flowchartpck.PrintlnAspect
-	with flowchartpck.PrintAspect
-	with flowchartpck.AssignationAspect
-	with flowchartpck.WaitAspect
+	with flowchartaspects.FlowchartAspect
+	with flowchartaspects.NodeAspect
+	with flowchartaspects.ArcAspect
+	with flowchartaspects.ActionAspect
+	with flowchartaspects.StartAspect
+	with flowchartaspects.EndAspect
+	with flowchartaspects.DecisionAspect
+	with flowchartaspects.ExpressionAspect
+	with flowchartaspects.LiteralAspect
+	with flowchartaspects.IntegerLitAspect
+	with flowchartaspects.StringLitAspect
+	with flowchartaspects.BoolLitAspect
+	with flowchartaspects.ArithmeticExpressionAspect
+	with flowchartaspects.RelationalExpressionAspect
+	with flowchartaspects.ConstraintAspect
+	with flowchartaspects.RelationalConstraintAspect
+	with flowchartaspects.StatementAspect
+	with flowchartaspects.ProgramAspect
+	with flowchartaspects.VarDeclAspect
+	with flowchartaspects.VarReferenceAspect
+	with flowchartaspects.ConditionalAspect
+	with flowchartaspects.LoopAspect
+	with flowchartaspects.PrintlnAspect
+	with flowchartaspects.PrintAspect
+	with flowchartaspects.AssignationAspect
+	with flowchartaspects.WaitAspect
 	
 	exactType FlowchartMT
 }
