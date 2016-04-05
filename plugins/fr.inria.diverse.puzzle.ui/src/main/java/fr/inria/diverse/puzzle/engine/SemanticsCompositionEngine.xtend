@@ -131,25 +131,25 @@ class SemanticsCompositionEngine {
 		mergedLanguage.oldNamespaces.add(providingLanguage.metamodel.name)
 		
 		for(Aspect _aspect : mergedLanguage.aspects){
-//			// Changing the namespaces of the required types of the extension language that still required in the merged language.
-//			if(mergedLanguage.requiredInterface != null){
-//				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
-//				var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
-//					requiringLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
-//						_requiredClassifier.name)
-//				if(!refactoringPatterns.contains(pattern))
-//					refactoringPatterns.add(pattern)
-//				}
-//				
-//				// Changing the namespaces of the required types of the base language that still required in the merged language. 
-//				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
-//					var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
-//						providingLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
-//							_requiredClassifier.name)
-//					if(!refactoringPatterns.contains(pattern))
-//						refactoringPatterns.add(pattern)
-//				}
-//			}
+			// Changing the namespaces of the required types of the extension language that still required in the merged language.
+			if(mergedLanguage.requiredInterface != null){
+				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
+				var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+					requiringLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
+						_requiredClassifier.name)
+				if(!refactoringPatterns.contains(pattern))
+					refactoringPatterns.add(pattern)
+				}
+				
+				// Changing the namespaces of the required types of the base language that still required in the merged language. 
+				for(EClassifier _requiredClassifier : mergedLanguage.requiredInterface.EClassifiers){
+					var RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(
+						providingLanguage.metamodel.name, _requiredClassifier.name, mergedLanguage.requiredInterface.name, 
+							_requiredClassifier.name)
+					if(!refactoringPatterns.contains(pattern))
+						refactoringPatterns.add(pattern)
+				}
+			}
 			
 			// Changing the namespaces of the required types of the extension language that were provided by the merged language. 
 			for(EClassifier _requiredClassifier : mergedLanguage.metamodel.EClassifiers){

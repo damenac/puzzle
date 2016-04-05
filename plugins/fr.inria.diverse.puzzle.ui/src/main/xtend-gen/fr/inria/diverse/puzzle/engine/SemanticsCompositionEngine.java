@@ -200,16 +200,49 @@ public class SemanticsCompositionEngine {
       mergedLanguage.oldNamespaces.add(_name_1);
       for (final Aspect _aspect : mergedLanguage.aspects) {
         {
-          EList<EClassifier> _eClassifiers = mergedLanguage.metamodel.getEClassifiers();
-          for (final EClassifier _requiredClassifier : _eClassifiers) {
-            String _name_2 = _requiredClassifier.getName();
+          boolean _notEquals = (!Objects.equal(mergedLanguage.requiredInterface, null));
+          if (_notEquals) {
+            EList<EClassifier> _eClassifiers = mergedLanguage.requiredInterface.getEClassifiers();
+            for (final EClassifier _requiredClassifier : _eClassifiers) {
+              {
+                String _name_2 = requiringLanguage.metamodel.getName();
+                String _name_3 = _requiredClassifier.getName();
+                String _name_4 = mergedLanguage.requiredInterface.getName();
+                String _name_5 = _requiredClassifier.getName();
+                RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(_name_2, _name_3, _name_4, _name_5);
+                boolean _contains = refactoringPatterns.contains(pattern);
+                boolean _not = (!_contains);
+                if (_not) {
+                  refactoringPatterns.add(pattern);
+                }
+              }
+            }
+            EList<EClassifier> _eClassifiers_1 = mergedLanguage.requiredInterface.getEClassifiers();
+            for (final EClassifier _requiredClassifier_1 : _eClassifiers_1) {
+              {
+                String _name_2 = providingLanguage.metamodel.getName();
+                String _name_3 = _requiredClassifier_1.getName();
+                String _name_4 = mergedLanguage.requiredInterface.getName();
+                String _name_5 = _requiredClassifier_1.getName();
+                RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(_name_2, _name_3, _name_4, _name_5);
+                boolean _contains = refactoringPatterns.contains(pattern);
+                boolean _not = (!_contains);
+                if (_not) {
+                  refactoringPatterns.add(pattern);
+                }
+              }
+            }
+          }
+          EList<EClassifier> _eClassifiers_2 = mergedLanguage.metamodel.getEClassifiers();
+          for (final EClassifier _requiredClassifier_2 : _eClassifiers_2) {
+            String _name_2 = _requiredClassifier_2.getName();
             EClassifier _searchClassByName = this._ecoreQueries.searchClassByName(requiringLanguage.requiredInterface, _name_2);
-            boolean _notEquals = (!Objects.equal(_searchClassByName, null));
-            if (_notEquals) {
+            boolean _notEquals_1 = (!Objects.equal(_searchClassByName, null));
+            if (_notEquals_1) {
               String _name_3 = requiringLanguage.metamodel.getName();
-              String _name_4 = _requiredClassifier.getName();
+              String _name_4 = _requiredClassifier_2.getName();
               String _name_5 = mergedLanguage.metamodel.getName();
-              String _name_6 = _requiredClassifier.getName();
+              String _name_6 = _requiredClassifier_2.getName();
               RefactoringPatternVO pattern = RefactoringPatternsBuilder.buildMetaclassReferencePattern(_name_3, _name_4, _name_5, _name_6);
               boolean _contains = refactoringPatterns.contains(pattern);
               boolean _not = (!_contains);
@@ -222,22 +255,22 @@ public class SemanticsCompositionEngine {
           boolean _and_1 = false;
           boolean _and_2 = false;
           JvmTypeReference _aspectTypeRef = _aspect.getAspectTypeRef();
-          boolean _notEquals_1 = (!Objects.equal(_aspectTypeRef, null));
-          if (!_notEquals_1) {
+          boolean _notEquals_2 = (!Objects.equal(_aspectTypeRef, null));
+          if (!_notEquals_2) {
             _and_2 = false;
           } else {
             JvmTypeReference _aspectTypeRef_1 = _aspect.getAspectTypeRef();
             JvmType _type = _aspectTypeRef_1.getType();
-            boolean _notEquals_2 = (!Objects.equal(_type, null));
-            _and_2 = _notEquals_2;
+            boolean _notEquals_3 = (!Objects.equal(_type, null));
+            _and_2 = _notEquals_3;
           }
           if (!_and_2) {
             _and_1 = false;
           } else {
             JvmTypeReference _aspectTypeRef_2 = _aspect.getAspectTypeRef();
             String _identifier = _aspectTypeRef_2.getIdentifier();
-            boolean _notEquals_3 = (!Objects.equal(_identifier, null));
-            _and_1 = _notEquals_3;
+            boolean _notEquals_4 = (!Objects.equal(_identifier, null));
+            _and_1 = _notEquals_4;
           }
           if (!_and_1) {
             _and = false;
@@ -245,8 +278,8 @@ public class SemanticsCompositionEngine {
             JvmTypeReference _aspectTypeRef_3 = _aspect.getAspectTypeRef();
             JvmType _type_1 = _aspectTypeRef_3.getType();
             Resource _eResource = _type_1.eResource();
-            boolean _notEquals_4 = (!Objects.equal(_eResource, null));
-            _and = _notEquals_4;
+            boolean _notEquals_5 = (!Objects.equal(_eResource, null));
+            _and = _notEquals_5;
           }
           if (_and) {
             IProject _project = targetProject.getProject();
@@ -413,8 +446,8 @@ public class SemanticsCompositionEngine {
               String _path = _locationURI.getPath();
               final String targetAspectFolder = (_path + "/xtend-gen/");
               boolean _and_3 = false;
-              boolean _notEquals_5 = (!Objects.equal(sourceFolderFile, null));
-              if (!_notEquals_5) {
+              boolean _notEquals_6 = (!Objects.equal(sourceFolderFile, null));
+              if (!_notEquals_6) {
                 _and_3 = false;
               } else {
                 boolean _exists = sourceFolderFile.exists();

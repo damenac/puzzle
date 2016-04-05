@@ -1,5 +1,5 @@
 Bundle-SymbolicName: fr.inria.diverse.examples.flowchart.semantics;singleton:=true
-Export-Package: flowchartpck
+Export-Package: flowchart.semantics
 Bundle-Version: 1.0.0
 Bundle-Name: fr.inria.diverse.examples.flowchart.semantics
 Bundle-ClassPath: .

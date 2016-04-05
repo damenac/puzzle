@@ -1,25 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
-
-   <extension
-         point="fr.inria.diverse.melange.modeltype">
-      <modeltype
-            uri="http://flowchartmt/"
-            id="family.FlowchartMT">
-      </modeltype>
-   </extension>
-   <extension
-         point="fr.inria.diverse.melange.language">
-      <language
-            exactType="family.FlowchartMT"
-            description="A language for Flowcharts"
-            uri="flowchartpck"
-            id="family.Flowchart">
-         <adapter
-               class="family.flowchart.adapters.flowchartmt.FlowchartAdapter"
-               modeltypeId="family.FlowchartMT">
-         </adapter>
-      </language>
-   </extension>
-
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype description="Required interface for the flowcharts language unit" id="family.RequiredFlowcharts" uri="http://requiredflowcharts/">
+      <subtyping modeltypeId="family.ProvidedConstraints"/>
+    </modeltype>
+    <modeltype description="Provided interface for the Expressions language unit" id="family.ProvidedExpressions" uri="http://providedexpressions/">
+      <subtyping modeltypeId="family.RequiredConstraints"/>
+    </modeltype>
+    <modeltype description="Provided interface for the Constraints language unit" id="family.ProvidedConstraints" uri="http://providedconstraints/"/>
+    <modeltype description="Provided interface for the Constraints language unit" id="family.RequiredConstraints" uri="http://requiredconstraints/">
+      <subtyping modeltypeId="family.ProvidedExpressions"/>
+    </modeltype>
+    <modeltype id="family.FlowchartsMT" uri="http://flowchartsmt/">
+      <subtyping modeltypeId="family.RequiredFlowcharts"/>
+      <subtyping modeltypeId="family.ProvidedConstraints"/>
+    </modeltype>
+    <modeltype id="family.ExpressionsMT" uri="http://expressionsmt/"/>
+    <modeltype id="family.ConstraintsMT" uri="http://constraintsmt/">
+      <subtyping modeltypeId="family.ProvidedExpressions"/>
+      <subtyping modeltypeId="family.ProvidedConstraints"/>
+      <subtyping modeltypeId="family.RequiredConstraints"/>
+    </modeltype>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" description="A language unit for manipulating flowcharts constructs" entryPoints="" exactType="family.FlowchartsMT" id="family.Flowcharts" uri="flowchartpck">
+      <adapter class="family.flowcharts.adapters.requiredflowcharts.FlowchartsAdapter" modeltypeId="family.RequiredFlowcharts"/>
+      <adapter class="family.flowcharts.adapters.providedconstraints.FlowchartsAdapter" modeltypeId="family.ProvidedConstraints"/>
+      <adapter class="family.flowcharts.adapters.flowchartsmt.FlowchartsAdapter" modeltypeId="family.FlowchartsMT"/>
+    </language>
+    <language aspects="RelationalExpression:expressions.semantics.RelationalExpressionAspect;Expression:expressions.semantics.ExpressionAspect;Literal:expressions.semantics.LiteralAspect;ArithmeticExpression:expressions.semantics.ArithmeticExpressionAspect;BoolLit:expressions.semantics.BoolLitAspect;StringLit:expressions.semantics.StringLitAspect" description="A language for simple expressions" entryPoints="" exactType="family.ExpressionsMT" id="family.Expressions" uri="ExpressionPck">
+      <adapter class="family.expressions.adapters.providedexpressions.ExpressionsAdapter" modeltypeId="family.ProvidedExpressions"/>
+      <adapter class="family.expressions.adapters.expressionsmt.ExpressionsAdapter" modeltypeId="family.ExpressionsMT"/>
+    </language>
+    <language aspects="RelationalConstraint:simple.constraints.RelationalConstraintAspect" description="A language for simple constraints" entryPoints="" exactType="family.ConstraintsMT" id="family.Constraints" uri="simpleconstraints">
+      <adapter class="family.constraints.adapters.providedconstraints.ConstraintsAdapter" modeltypeId="family.ProvidedConstraints"/>
+      <adapter class="family.constraints.adapters.providedexpressions.ConstraintsAdapter" modeltypeId="family.ProvidedExpressions"/>
+      <adapter class="family.constraints.adapters.requiredconstraints.ConstraintsAdapter" modeltypeId="family.RequiredConstraints"/>
+      <adapter class="family.constraints.adapters.constraintsmt.ConstraintsAdapter" modeltypeId="family.ConstraintsMT"/>
+    </language>
+  </extension>
 </plugin>

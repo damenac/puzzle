@@ -1,0 +1,75 @@
+package family
+
+/**
+ * A language unit for manipulating flowcharts constructs 
+ */
+language Flowcharts requires RequiredFlowcharts {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.flowchart.syntax/models/flowchart.ecore"
+	
+	with flowchartpck.ArcAspect
+	with flowchartpck.DecisionAspect
+	with flowchartpck.EndAspect
+	with flowchartpck.FlowchartAspect
+	with flowchartpck.NodeAspect
+	with flowchartpck.StartAspect
+	
+	exactType FlowchartsMT
+}
+
+/**
+ * Required interface for the flowcharts language unit
+ */
+modeltype RequiredFlowcharts {
+	syntax "platform:/resource/fr.inria.diverse.examples.flowchart.syntax/models/flowchartReq.ecore"
+}
+
+/**
+ * A language for simple expressions
+ */
+language Expressions implements ProvidedExpressions {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/Expression.ecore"
+	
+	with expressions.semantics.ExpressionAspect
+	with expressions.semantics.LiteralAspect
+	with expressions.semantics.BoolLitAspect
+	with expressions.semantics.StringLitAspect
+	with expressions.semantics.ArithmeticExpressionAspect
+	with expressions.semantics.RelationalExpressionAspect
+	
+	exactType ExpressionsMT
+}
+
+/**
+ * Provided interface for the Expressions language unit
+ */
+modeltype ProvidedExpressions {
+	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/ExpressionsProv.ecore"
+}
+
+/**
+ * A language for simple constraints
+ */
+language Constraints implements ProvidedConstraints requires RequiredConstraints {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraints.ecore"
+	
+	with simple.constraints.RelationalConstraintAspect
+	
+	exactType ConstraintsMT 
+}
+
+/**
+ * Provided interface for the Constraints language unit
+ */
+modeltype ProvidedConstraints {
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraintsProv.ecore"
+}
+
+/**
+ * Provided interface for the Constraints language unit
+ */
+modeltype RequiredConstraints {
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleconstraints.syntax/models/SimpleConstraintsReq.ecore"
+}
