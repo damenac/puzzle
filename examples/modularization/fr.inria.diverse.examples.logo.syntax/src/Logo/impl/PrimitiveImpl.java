@@ -7,6 +7,8 @@ import Logo.Primitive;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Primitive</b></em>'.
@@ -16,7 +18,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public abstract class PrimitiveImpl extends InstructionImpl implements Primitive {
+public abstract class PrimitiveImpl extends MinimalEObjectImpl.Container implements Primitive {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

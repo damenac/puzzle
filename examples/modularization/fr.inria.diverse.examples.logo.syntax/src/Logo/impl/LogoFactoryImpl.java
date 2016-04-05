@@ -64,15 +64,6 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 			case LogoPackage.PEN_DOWN: return createPenDown();
 			case LogoPackage.PEN_UP: return createPenUp();
 			case LogoPackage.CLEAR: return createClear();
-			case LogoPackage.PROC_CALL: return createProcCall();
-			case LogoPackage.PROC_DECLARATION: return createProcDeclaration();
-			case LogoPackage.BLOCK: return createBlock();
-			case LogoPackage.IF: return createIf();
-			case LogoPackage.CONTROL_STRUCTURE: return createControlStructure();
-			case LogoPackage.REPEAT: return createRepeat();
-			case LogoPackage.WHILE: return createWhile();
-			case LogoPackage.PARAMETER: return createParameter();
-			case LogoPackage.PARAMETER_CALL: return createParameterCall();
 			case LogoPackage.EXPRESSION: return createExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -157,96 +148,6 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 	public Clear createClear() {
 		ClearImpl clear = new ClearImpl();
 		return clear;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProcCall createProcCall() {
-		ProcCallImpl procCall = new ProcCallImpl();
-		return procCall;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ProcDeclaration createProcDeclaration() {
-		ProcDeclarationImpl procDeclaration = new ProcDeclarationImpl();
-		return procDeclaration;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Block createBlock() {
-		BlockImpl block = new BlockImpl();
-		return block;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public If createIf() {
-		IfImpl if_ = new IfImpl();
-		return if_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ControlStructure createControlStructure() {
-		ControlStructureImpl controlStructure = new ControlStructureImpl();
-		return controlStructure;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Repeat createRepeat() {
-		RepeatImpl repeat = new RepeatImpl();
-		return repeat;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public While createWhile() {
-		WhileImpl while_ = new WhileImpl();
-		return while_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Parameter createParameter() {
-		ParameterImpl parameter = new ParameterImpl();
-		return parameter;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ParameterCall createParameterCall() {
-		ParameterCallImpl parameterCall = new ParameterCallImpl();
-		return parameterCall;
 	}
 
 	/**

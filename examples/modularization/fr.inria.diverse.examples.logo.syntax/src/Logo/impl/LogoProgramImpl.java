@@ -2,9 +2,9 @@
  */
 package Logo.impl;
 
-import Logo.Instruction;
 import Logo.LogoPackage;
 import Logo.LogoProgram;
+import Logo.Primitive;
 
 import java.util.Collection;
 
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Logo.impl.LogoProgramImpl#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link Logo.impl.LogoProgramImpl#getPrimitives <em>Primitives</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,14 +35,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class LogoProgramImpl extends MinimalEObjectImpl.Container implements LogoProgram {
 	/**
-	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
+	 * The cached value of the '{@link #getPrimitives() <em>Primitives</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInstructions()
+	 * @see #getPrimitives()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Instruction> instructions;
+	protected EList<Primitive> primitives;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,11 +68,11 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Instruction> getInstructions() {
-		if (instructions == null) {
-			instructions = new EObjectContainmentEList<Instruction>(Instruction.class, this, LogoPackage.LOGO_PROGRAM__INSTRUCTIONS);
+	public EList<Primitive> getPrimitives() {
+		if (primitives == null) {
+			primitives = new EObjectContainmentEList<Primitive>(Primitive.class, this, LogoPackage.LOGO_PROGRAM__PRIMITIVES);
 		}
-		return instructions;
+		return primitives;
 	}
 
 	/**
@@ -83,8 +83,8 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case LogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
-				return ((InternalEList<?>)getInstructions()).basicRemove(otherEnd, msgs);
+			case LogoPackage.LOGO_PROGRAM__PRIMITIVES:
+				return ((InternalEList<?>)getPrimitives()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -97,8 +97,8 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
-				return getInstructions();
+			case LogoPackage.LOGO_PROGRAM__PRIMITIVES:
+				return getPrimitives();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,9 +112,9 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
-				getInstructions().clear();
-				getInstructions().addAll((Collection<? extends Instruction>)newValue);
+			case LogoPackage.LOGO_PROGRAM__PRIMITIVES:
+				getPrimitives().clear();
+				getPrimitives().addAll((Collection<? extends Primitive>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -128,8 +128,8 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
-				getInstructions().clear();
+			case LogoPackage.LOGO_PROGRAM__PRIMITIVES:
+				getPrimitives().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -143,8 +143,8 @@ public class LogoProgramImpl extends MinimalEObjectImpl.Container implements Log
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LogoPackage.LOGO_PROGRAM__INSTRUCTIONS:
-				return instructions != null && !instructions.isEmpty();
+			case LogoPackage.LOGO_PROGRAM__PRIMITIVES:
+				return primitives != null && !primitives.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

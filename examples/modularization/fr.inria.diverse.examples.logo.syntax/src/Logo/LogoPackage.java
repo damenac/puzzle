@@ -2,7 +2,6 @@
  */
 package Logo;
 
-import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -68,13 +67,13 @@ public interface LogoPackage extends EPackage {
 	int LOGO_PROGRAM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Primitives</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LOGO_PROGRAM__INSTRUCTIONS = 0;
+	int LOGO_PROGRAM__PRIMITIVES = 0;
 
 	/**
 	 * The number of structural features of the '<em>Program</em>' class.
@@ -95,34 +94,6 @@ public interface LogoPackage extends EPackage {
 	int LOGO_PROGRAM_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Logo.impl.InstructionImpl <em>Instruction</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.InstructionImpl
-	 * @see Logo.impl.LogoPackageImpl#getInstruction()
-	 * @generated
-	 */
-	int INSTRUCTION = 1;
-
-	/**
-	 * The number of structural features of the '<em>Instruction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Instruction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INSTRUCTION_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link Logo.impl.PrimitiveImpl <em>Primitive</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -130,7 +101,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getPrimitive()
 	 * @generated
 	 */
-	int PRIMITIVE = 2;
+	int PRIMITIVE = 1;
 
 	/**
 	 * The number of structural features of the '<em>Primitive</em>' class.
@@ -139,7 +110,7 @@ public interface LogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+	int PRIMITIVE_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Primitive</em>' class.
@@ -148,7 +119,7 @@ public interface LogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PRIMITIVE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+	int PRIMITIVE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link Logo.impl.BackImpl <em>Back</em>}' class.
@@ -158,7 +129,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getBack()
 	 * @generated
 	 */
-	int BACK = 3;
+	int BACK = 2;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference.
@@ -195,7 +166,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getForward()
 	 * @generated
 	 */
-	int FORWARD = 4;
+	int FORWARD = 3;
 
 	/**
 	 * The feature id for the '<em><b>Steps</b></em>' containment reference.
@@ -232,7 +203,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getLeft()
 	 * @generated
 	 */
-	int LEFT = 5;
+	int LEFT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Angle</b></em>' containment reference.
@@ -269,7 +240,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getRight()
 	 * @generated
 	 */
-	int RIGHT = 6;
+	int RIGHT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Angle</b></em>' containment reference.
@@ -306,7 +277,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getPenDown()
 	 * @generated
 	 */
-	int PEN_DOWN = 7;
+	int PEN_DOWN = 6;
 
 	/**
 	 * The number of structural features of the '<em>Pen Down</em>' class.
@@ -334,7 +305,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getPenUp()
 	 * @generated
 	 */
-	int PEN_UP = 8;
+	int PEN_UP = 7;
 
 	/**
 	 * The number of structural features of the '<em>Pen Up</em>' class.
@@ -362,7 +333,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getClear()
 	 * @generated
 	 */
-	int CLEAR = 9;
+	int CLEAR = 8;
 
 	/**
 	 * The number of structural features of the '<em>Clear</em>' class.
@@ -390,7 +361,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 19;
+	int EXPRESSION = 9;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -419,438 +390,6 @@ public interface LogoPackage extends EPackage {
 	 */
 	int EXPRESSION_OPERATION_COUNT = 1;
 
-	/**
-	 * The meta object id for the '{@link Logo.impl.ProcCallImpl <em>Proc Call</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.ProcCallImpl
-	 * @see Logo.impl.LogoPackageImpl#getProcCall()
-	 * @generated
-	 */
-	int PROC_CALL = 10;
-
-	/**
-	 * The feature id for the '<em><b>Actual Args</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_CALL__ACTUAL_ARGS = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Declaration</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_CALL__DECLARATION = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Proc Call</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The operation id for the '<em>Eval</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_CALL___EVAL__MAP = EXPRESSION___EVAL__MAP;
-
-	/**
-	 * The number of operations of the '<em>Proc Call</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.ProcDeclarationImpl <em>Proc Declaration</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.ProcDeclarationImpl
-	 * @see Logo.impl.LogoPackageImpl#getProcDeclaration()
-	 * @generated
-	 */
-	int PROC_DECLARATION = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_DECLARATION__NAME = INSTRUCTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Args</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_DECLARATION__ARGS = INSTRUCTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Proc Call</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_DECLARATION__PROC_CALL = INSTRUCTION_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_DECLARATION__INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Proc Declaration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_DECLARATION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Proc Declaration</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROC_DECLARATION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.BlockImpl <em>Block</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.BlockImpl
-	 * @see Logo.impl.LogoPackageImpl#getBlock()
-	 * @generated
-	 */
-	int BLOCK = 12;
-
-	/**
-	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK__INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.ControlStructureImpl <em>Control Structure</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.ControlStructureImpl
-	 * @see Logo.impl.LogoPackageImpl#getControlStructure()
-	 * @generated
-	 */
-	int CONTROL_STRUCTURE = 14;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_STRUCTURE__CONDITION = INSTRUCTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Control Structure</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_STRUCTURE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Control Structure</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTROL_STRUCTURE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.IfImpl <em>If</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.IfImpl
-	 * @see Logo.impl.LogoPackageImpl#getIf()
-	 * @generated
-	 */
-	int IF = 13;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF__CONDITION = CONTROL_STRUCTURE__CONDITION;
-
-	/**
-	 * The feature id for the '<em><b>Then Part</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF__THEN_PART = CONTROL_STRUCTURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Else Part</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF__ELSE_PART = CONTROL_STRUCTURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>If</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_FEATURE_COUNT = CONTROL_STRUCTURE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>If</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IF_OPERATION_COUNT = CONTROL_STRUCTURE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.RepeatImpl <em>Repeat</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.RepeatImpl
-	 * @see Logo.impl.LogoPackageImpl#getRepeat()
-	 * @generated
-	 */
-	int REPEAT = 15;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPEAT__CONDITION = CONTROL_STRUCTURE__CONDITION;
-
-	/**
-	 * The feature id for the '<em><b>Block</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPEAT__BLOCK = CONTROL_STRUCTURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Repeat</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPEAT_FEATURE_COUNT = CONTROL_STRUCTURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Repeat</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REPEAT_OPERATION_COUNT = CONTROL_STRUCTURE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.WhileImpl <em>While</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.WhileImpl
-	 * @see Logo.impl.LogoPackageImpl#getWhile()
-	 * @generated
-	 */
-	int WHILE = 16;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE__CONDITION = CONTROL_STRUCTURE__CONDITION;
-
-	/**
-	 * The feature id for the '<em><b>Block</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE__BLOCK = CONTROL_STRUCTURE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>While</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE_FEATURE_COUNT = CONTROL_STRUCTURE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>While</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WHILE_OPERATION_COUNT = CONTROL_STRUCTURE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.ParameterImpl <em>Parameter</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.ParameterImpl
-	 * @see Logo.impl.LogoPackageImpl#getParameter()
-	 * @generated
-	 */
-	int PARAMETER = 17;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER__NAME = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Eval</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER___EVAL__MAP = EXPRESSION___EVAL__MAP;
-
-	/**
-	 * The number of operations of the '<em>Parameter</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link Logo.impl.ParameterCallImpl <em>Parameter Call</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Logo.impl.ParameterCallImpl
-	 * @see Logo.impl.LogoPackageImpl#getParameterCall()
-	 * @generated
-	 */
-	int PARAMETER_CALL = 18;
-
-	/**
-	 * The feature id for the '<em><b>Parameter</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_CALL__PARAMETER = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Parameter Call</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Eval</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_CALL___EVAL__MAP = EXPRESSION___EVAL__MAP;
-
-	/**
-	 * The number of operations of the '<em>Parameter Call</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PARAMETER_CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link Logo.LogoProgram <em>Program</em>}'.
@@ -863,25 +402,15 @@ public interface LogoPackage extends EPackage {
 	EClass getLogoProgram();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link Logo.LogoProgram#getInstructions <em>Instructions</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Logo.LogoProgram#getPrimitives <em>Primitives</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instructions</em>'.
-	 * @see Logo.LogoProgram#getInstructions()
+	 * @return the meta object for the containment reference list '<em>Primitives</em>'.
+	 * @see Logo.LogoProgram#getPrimitives()
 	 * @see #getLogoProgram()
 	 * @generated
 	 */
-	EReference getLogoProgram_Instructions();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.Instruction <em>Instruction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Instruction</em>'.
-	 * @see Logo.Instruction
-	 * @generated
-	 */
-	EClass getInstruction();
+	EReference getLogoProgram_Primitives();
 
 	/**
 	 * Returns the meta object for class '{@link Logo.Primitive <em>Primitive</em>}'.
@@ -1008,250 +537,6 @@ public interface LogoPackage extends EPackage {
 	EClass getClear();
 
 	/**
-	 * Returns the meta object for class '{@link Logo.ProcCall <em>Proc Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Proc Call</em>'.
-	 * @see Logo.ProcCall
-	 * @generated
-	 */
-	EClass getProcCall();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Logo.ProcCall#getActualArgs <em>Actual Args</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Actual Args</em>'.
-	 * @see Logo.ProcCall#getActualArgs()
-	 * @see #getProcCall()
-	 * @generated
-	 */
-	EReference getProcCall_ActualArgs();
-
-	/**
-	 * Returns the meta object for the reference '{@link Logo.ProcCall#getDeclaration <em>Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Declaration</em>'.
-	 * @see Logo.ProcCall#getDeclaration()
-	 * @see #getProcCall()
-	 * @generated
-	 */
-	EReference getProcCall_Declaration();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.ProcDeclaration <em>Proc Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Proc Declaration</em>'.
-	 * @see Logo.ProcDeclaration
-	 * @generated
-	 */
-	EClass getProcDeclaration();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Logo.ProcDeclaration#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see Logo.ProcDeclaration#getName()
-	 * @see #getProcDeclaration()
-	 * @generated
-	 */
-	EAttribute getProcDeclaration_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Logo.ProcDeclaration#getArgs <em>Args</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Args</em>'.
-	 * @see Logo.ProcDeclaration#getArgs()
-	 * @see #getProcDeclaration()
-	 * @generated
-	 */
-	EReference getProcDeclaration_Args();
-
-	/**
-	 * Returns the meta object for the reference list '{@link Logo.ProcDeclaration#getProcCall <em>Proc Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Proc Call</em>'.
-	 * @see Logo.ProcDeclaration#getProcCall()
-	 * @see #getProcDeclaration()
-	 * @generated
-	 */
-	EReference getProcDeclaration_ProcCall();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Logo.ProcDeclaration#getInstructions <em>Instructions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instructions</em>'.
-	 * @see Logo.ProcDeclaration#getInstructions()
-	 * @see #getProcDeclaration()
-	 * @generated
-	 */
-	EReference getProcDeclaration_Instructions();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.Block <em>Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Block</em>'.
-	 * @see Logo.Block
-	 * @generated
-	 */
-	EClass getBlock();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Logo.Block#getInstructions <em>Instructions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instructions</em>'.
-	 * @see Logo.Block#getInstructions()
-	 * @see #getBlock()
-	 * @generated
-	 */
-	EReference getBlock_Instructions();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.If <em>If</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>If</em>'.
-	 * @see Logo.If
-	 * @generated
-	 */
-	EClass getIf();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Logo.If#getThenPart <em>Then Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Then Part</em>'.
-	 * @see Logo.If#getThenPart()
-	 * @see #getIf()
-	 * @generated
-	 */
-	EReference getIf_ThenPart();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Logo.If#getElsePart <em>Else Part</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Else Part</em>'.
-	 * @see Logo.If#getElsePart()
-	 * @see #getIf()
-	 * @generated
-	 */
-	EReference getIf_ElsePart();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.ControlStructure <em>Control Structure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Control Structure</em>'.
-	 * @see Logo.ControlStructure
-	 * @generated
-	 */
-	EClass getControlStructure();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Logo.ControlStructure#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition</em>'.
-	 * @see Logo.ControlStructure#getCondition()
-	 * @see #getControlStructure()
-	 * @generated
-	 */
-	EReference getControlStructure_Condition();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.Repeat <em>Repeat</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Repeat</em>'.
-	 * @see Logo.Repeat
-	 * @generated
-	 */
-	EClass getRepeat();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Logo.Repeat#getBlock <em>Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Block</em>'.
-	 * @see Logo.Repeat#getBlock()
-	 * @see #getRepeat()
-	 * @generated
-	 */
-	EReference getRepeat_Block();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.While <em>While</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>While</em>'.
-	 * @see Logo.While
-	 * @generated
-	 */
-	EClass getWhile();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link Logo.While#getBlock <em>Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Block</em>'.
-	 * @see Logo.While#getBlock()
-	 * @see #getWhile()
-	 * @generated
-	 */
-	EReference getWhile_Block();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.Parameter <em>Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Parameter</em>'.
-	 * @see Logo.Parameter
-	 * @generated
-	 */
-	EClass getParameter();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Logo.Parameter#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see Logo.Parameter#getName()
-	 * @see #getParameter()
-	 * @generated
-	 */
-	EAttribute getParameter_Name();
-
-	/**
-	 * Returns the meta object for class '{@link Logo.ParameterCall <em>Parameter Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Parameter Call</em>'.
-	 * @see Logo.ParameterCall
-	 * @generated
-	 */
-	EClass getParameterCall();
-
-	/**
-	 * Returns the meta object for the reference '{@link Logo.ParameterCall#getParameter <em>Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parameter</em>'.
-	 * @see Logo.ParameterCall#getParameter()
-	 * @see #getParameterCall()
-	 * @generated
-	 */
-	EReference getParameterCall_Parameter();
-
-	/**
 	 * Returns the meta object for class '{@link Logo.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1305,22 +590,12 @@ public interface LogoPackage extends EPackage {
 		EClass LOGO_PROGRAM = eINSTANCE.getLogoProgram();
 
 		/**
-		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Primitives</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference LOGO_PROGRAM__INSTRUCTIONS = eINSTANCE.getLogoProgram_Instructions();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.InstructionImpl <em>Instruction</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.InstructionImpl
-		 * @see Logo.impl.LogoPackageImpl#getInstruction()
-		 * @generated
-		 */
-		EClass INSTRUCTION = eINSTANCE.getInstruction();
+		EReference LOGO_PROGRAM__PRIMITIVES = eINSTANCE.getLogoProgram_Primitives();
 
 		/**
 		 * The meta object literal for the '{@link Logo.impl.PrimitiveImpl <em>Primitive</em>}' class.
@@ -1433,208 +708,6 @@ public interface LogoPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CLEAR = eINSTANCE.getClear();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.ProcCallImpl <em>Proc Call</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.ProcCallImpl
-		 * @see Logo.impl.LogoPackageImpl#getProcCall()
-		 * @generated
-		 */
-		EClass PROC_CALL = eINSTANCE.getProcCall();
-
-		/**
-		 * The meta object literal for the '<em><b>Actual Args</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROC_CALL__ACTUAL_ARGS = eINSTANCE.getProcCall_ActualArgs();
-
-		/**
-		 * The meta object literal for the '<em><b>Declaration</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROC_CALL__DECLARATION = eINSTANCE.getProcCall_Declaration();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.ProcDeclarationImpl <em>Proc Declaration</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.ProcDeclarationImpl
-		 * @see Logo.impl.LogoPackageImpl#getProcDeclaration()
-		 * @generated
-		 */
-		EClass PROC_DECLARATION = eINSTANCE.getProcDeclaration();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PROC_DECLARATION__NAME = eINSTANCE.getProcDeclaration_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Args</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROC_DECLARATION__ARGS = eINSTANCE.getProcDeclaration_Args();
-
-		/**
-		 * The meta object literal for the '<em><b>Proc Call</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROC_DECLARATION__PROC_CALL = eINSTANCE.getProcDeclaration_ProcCall();
-
-		/**
-		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PROC_DECLARATION__INSTRUCTIONS = eINSTANCE.getProcDeclaration_Instructions();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.BlockImpl <em>Block</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.BlockImpl
-		 * @see Logo.impl.LogoPackageImpl#getBlock()
-		 * @generated
-		 */
-		EClass BLOCK = eINSTANCE.getBlock();
-
-		/**
-		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BLOCK__INSTRUCTIONS = eINSTANCE.getBlock_Instructions();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.IfImpl <em>If</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.IfImpl
-		 * @see Logo.impl.LogoPackageImpl#getIf()
-		 * @generated
-		 */
-		EClass IF = eINSTANCE.getIf();
-
-		/**
-		 * The meta object literal for the '<em><b>Then Part</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IF__THEN_PART = eINSTANCE.getIf_ThenPart();
-
-		/**
-		 * The meta object literal for the '<em><b>Else Part</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IF__ELSE_PART = eINSTANCE.getIf_ElsePart();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.ControlStructureImpl <em>Control Structure</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.ControlStructureImpl
-		 * @see Logo.impl.LogoPackageImpl#getControlStructure()
-		 * @generated
-		 */
-		EClass CONTROL_STRUCTURE = eINSTANCE.getControlStructure();
-
-		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTROL_STRUCTURE__CONDITION = eINSTANCE.getControlStructure_Condition();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.RepeatImpl <em>Repeat</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.RepeatImpl
-		 * @see Logo.impl.LogoPackageImpl#getRepeat()
-		 * @generated
-		 */
-		EClass REPEAT = eINSTANCE.getRepeat();
-
-		/**
-		 * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REPEAT__BLOCK = eINSTANCE.getRepeat_Block();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.WhileImpl <em>While</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.WhileImpl
-		 * @see Logo.impl.LogoPackageImpl#getWhile()
-		 * @generated
-		 */
-		EClass WHILE = eINSTANCE.getWhile();
-
-		/**
-		 * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference WHILE__BLOCK = eINSTANCE.getWhile_Block();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.ParameterImpl <em>Parameter</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.ParameterImpl
-		 * @see Logo.impl.LogoPackageImpl#getParameter()
-		 * @generated
-		 */
-		EClass PARAMETER = eINSTANCE.getParameter();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PARAMETER__NAME = eINSTANCE.getParameter_Name();
-
-		/**
-		 * The meta object literal for the '{@link Logo.impl.ParameterCallImpl <em>Parameter Call</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Logo.impl.ParameterCallImpl
-		 * @see Logo.impl.LogoPackageImpl#getParameterCall()
-		 * @generated
-		 */
-		EClass PARAMETER_CALL = eINSTANCE.getParameterCall();
-
-		/**
-		 * The meta object literal for the '<em><b>Parameter</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PARAMETER_CALL__PARAMETER = eINSTANCE.getParameterCall_Parameter();
 
 		/**
 		 * The meta object literal for the '{@link Logo.impl.ExpressionImpl <em>Expression</em>}' class.

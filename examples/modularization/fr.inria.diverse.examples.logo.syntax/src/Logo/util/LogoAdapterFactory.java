@@ -72,10 +72,6 @@ public class LogoAdapterFactory extends AdapterFactoryImpl {
 				return createLogoProgramAdapter();
 			}
 			@Override
-			public Adapter caseInstruction(Instruction object) {
-				return createInstructionAdapter();
-			}
-			@Override
 			public Adapter casePrimitive(Primitive object) {
 				return createPrimitiveAdapter();
 			}
@@ -106,42 +102,6 @@ public class LogoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseClear(Clear object) {
 				return createClearAdapter();
-			}
-			@Override
-			public Adapter caseProcCall(ProcCall object) {
-				return createProcCallAdapter();
-			}
-			@Override
-			public Adapter caseProcDeclaration(ProcDeclaration object) {
-				return createProcDeclarationAdapter();
-			}
-			@Override
-			public Adapter caseBlock(Block object) {
-				return createBlockAdapter();
-			}
-			@Override
-			public Adapter caseIf(If object) {
-				return createIfAdapter();
-			}
-			@Override
-			public Adapter caseControlStructure(ControlStructure object) {
-				return createControlStructureAdapter();
-			}
-			@Override
-			public Adapter caseRepeat(Repeat object) {
-				return createRepeatAdapter();
-			}
-			@Override
-			public Adapter caseWhile(While object) {
-				return createWhileAdapter();
-			}
-			@Override
-			public Adapter caseParameter(Parameter object) {
-				return createParameterAdapter();
-			}
-			@Override
-			public Adapter caseParameterCall(ParameterCall object) {
-				return createParameterCallAdapter();
 			}
 			@Override
 			public Adapter caseExpression(Expression object) {
@@ -178,20 +138,6 @@ public class LogoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLogoProgramAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.Instruction <em>Instruction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.Instruction
-	 * @generated
-	 */
-	public Adapter createInstructionAdapter() {
 		return null;
 	}
 
@@ -304,132 +250,6 @@ public class LogoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createClearAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.ProcCall <em>Proc Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.ProcCall
-	 * @generated
-	 */
-	public Adapter createProcCallAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.ProcDeclaration <em>Proc Declaration</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.ProcDeclaration
-	 * @generated
-	 */
-	public Adapter createProcDeclarationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.Block <em>Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.Block
-	 * @generated
-	 */
-	public Adapter createBlockAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.If <em>If</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.If
-	 * @generated
-	 */
-	public Adapter createIfAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.ControlStructure <em>Control Structure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.ControlStructure
-	 * @generated
-	 */
-	public Adapter createControlStructureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.Repeat <em>Repeat</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.Repeat
-	 * @generated
-	 */
-	public Adapter createRepeatAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.While <em>While</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.While
-	 * @generated
-	 */
-	public Adapter createWhileAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.Parameter <em>Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.Parameter
-	 * @generated
-	 */
-	public Adapter createParameterAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Logo.ParameterCall <em>Parameter Call</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Logo.ParameterCall
-	 * @generated
-	 */
-	public Adapter createParameterCallAdapter() {
 		return null;
 	}
 

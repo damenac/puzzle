@@ -2,6 +2,7 @@
  */
 package Logo;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,5 +14,5 @@ package Logo;
  * @model abstract="true"
  * @generated
  */
-public interface Primitive extends Instruction {
+public interface Primitive extends EObject {
 } // Primitive

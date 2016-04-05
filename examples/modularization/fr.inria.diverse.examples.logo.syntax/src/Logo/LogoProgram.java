@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Logo.LogoProgram#getInstructions <em>Instructions</em>}</li>
+ *   <li>{@link Logo.LogoProgram#getPrimitives <em>Primitives</em>}</li>
  * </ul>
  * </p>
  *
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface LogoProgram extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
-	 * The list contents are of type {@link Logo.Instruction}.
+	 * Returns the value of the '<em><b>Primitives</b></em>' containment reference list.
+	 * The list contents are of type {@link Logo.Primitive}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Instructions</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Primitives</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instructions</em>' containment reference list.
-	 * @see Logo.LogoPackage#getLogoProgram_Instructions()
+	 * @return the value of the '<em>Primitives</em>' containment reference list.
+	 * @see Logo.LogoPackage#getLogoProgram_Primitives()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Instruction> getInstructions();
+	EList<Primitive> getPrimitives();
 
 } // LogoProgram
