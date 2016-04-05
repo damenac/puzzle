@@ -184,6 +184,9 @@ public class SemanticsCompositionEngine {
                   String _plus_3 = (_replace_3 + ".java");
                   overridingAspect.leftFile = _plus_3;
                   overridingAspects.add(overridingAspect);
+                  EClass _aspectedClass_5 = _requiringAspect.getAspectedClass();
+                  String _plus_4 = ("OVERRIDING ASPECT: " + _aspectedClass_5);
+                  InputOutput.<String>println(_plus_4);
                 }
               }
             }

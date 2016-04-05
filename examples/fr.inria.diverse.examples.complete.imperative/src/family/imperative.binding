@@ -1,0 +1,7 @@
+package family
+
+import 'imperative.melange'
+
+languageBinding {
+	bind( RequiredSimpleImperative, ProvidedExpressions  )
+}

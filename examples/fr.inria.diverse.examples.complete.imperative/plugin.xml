@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype description="Required interface for the SimpleImperative language unit" id="family.RequiredSimpleImperative" uri="http://requiredsimpleimperative/">
+      <subtyping modeltypeId="family.ProvidedExpressions"/>
+    </modeltype>
+    <modeltype description="Provided interface for the Expressions language unit" id="family.ProvidedExpressions" uri="http://providedexpressions/">
+      <subtyping modeltypeId="family.RequiredSimpleImperative"/>
+    </modeltype>
+    <modeltype id="family.SimpleImperativeMT" uri="http://simpleimperativemt/">
+      <subtyping modeltypeId="family.RequiredSimpleImperative"/>
+      <subtyping modeltypeId="family.ProvidedExpressions"/>
+    </modeltype>
+    <modeltype id="family.ExpressionsMT" uri="http://expressionsmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Loop:simple.imperative.aspects.LoopAspect;VarRef:simple.imperative.aspects.VarRefAspect;Print:simple.imperative.aspects.PrintAspect;Program:simple.imperative.aspects.ProgramAspect;VarDecl:simple.imperative.aspects.VarDeclAspect;Statement:simple.imperative.aspects.StatementAspect;Println:simple.imperative.aspects.PrintlnAspect;Assignation:simple.imperative.aspects.AssignationAspect;Conditional:simple.imperative.aspects.ConditionalAspect;Wait:simple.imperative.aspects.WaitAspect" description="A language for simple imperative programs" entryPoints="" exactType="family.SimpleImperativeMT" id="family.SimpleImperative" uri="simpleimperative">
+      <adapter class="family.simpleimperative.adapters.requiredsimpleimperative.SimpleImperativeAdapter" modeltypeId="family.RequiredSimpleImperative"/>
+      <adapter class="family.simpleimperative.adapters.providedexpressions.SimpleImperativeAdapter" modeltypeId="family.ProvidedExpressions"/>
+      <adapter class="family.simpleimperative.adapters.simpleimperativemt.SimpleImperativeAdapter" modeltypeId="family.SimpleImperativeMT"/>
+    </language>
+    <language aspects="RelationalExpression:expressions.semantics.RelationalExpressionAspect;Expression:expressions.semantics.ExpressionAspect;Literal:expressions.semantics.LiteralAspect;ArithmeticExpression:expressions.semantics.ArithmeticExpressionAspect;BoolLit:expressions.semantics.BoolLitAspect;StringLit:expressions.semantics.StringLitAspect" description="A language for simple expressions" entryPoints="" exactType="family.ExpressionsMT" id="family.Expressions" uri="ExpressionPck">
+      <adapter class="family.expressions.adapters.providedexpressions.ExpressionsAdapter" modeltypeId="family.ProvidedExpressions"/>
+      <adapter class="family.expressions.adapters.expressionsmt.ExpressionsAdapter" modeltypeId="family.ExpressionsMT"/>
+    </language>
+  </extension>
+</plugin>

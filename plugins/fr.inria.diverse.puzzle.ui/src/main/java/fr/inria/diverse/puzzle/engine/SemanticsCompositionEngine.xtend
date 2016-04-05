@@ -116,7 +116,9 @@ class SemanticsCompositionEngine {
 							val overridingAspect = new OverridingAspectsVO(_providingAspect, providingAspectedClassName, _requiringAspect, requiringAspectClassName)
 							overridingAspect.baseFile = _providingAspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
 							overridingAspect.leftFile = _requiringAspect.aspectTypeRef.identifier.replace(".", "/") + ".java"
-							overridingAspects.add(overridingAspect)		
+							overridingAspects.add(overridingAspect)
+							
+							println("OVERRIDING ASPECT: " + _requiringAspect.aspectedClass)	
 						}
 					}
 				}

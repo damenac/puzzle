@@ -1,0 +1,34 @@
+package family
+
+language SimpleImperative {
+	syntax "platform:/resource/fr.inria.diverse.examples.simpleimperative.syntax/models/simpleimperative.ecore"
+	
+	with 
+	
+	exactType SimpleImperativeMT
+}
+
+
+/**
+ * A language for simple expressions
+ */
+language Expressions implements ProvidedExpressions {
+	
+	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/Expression.ecore"
+	
+	with expressions.semantics.ExpressionAspect
+	with expressions.semantics.LiteralAspect
+	with expressions.semantics.BoolLitAspect
+	with expressions.semantics.StringLitAspect
+	with expressions.semantics.ArithmeticExpressionAspect
+	with expressions.semantics.RelationalExpressionAspect
+	
+	exactType ExpressionsMT
+}
+
+/**
+ * Provided interface for the Expressions language unit
+ */
+modeltype ProvidedExpressions {
+	syntax "platform:/resource/fr.inria.diverse.examples.expressions.syntax/models/ExpressionsProv.ecore"
+}
