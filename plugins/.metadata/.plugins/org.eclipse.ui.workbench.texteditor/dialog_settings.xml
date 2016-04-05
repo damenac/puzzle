@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="evaluate" key="selection"/>
+		<item value="MatchingDiagnosticItem" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="MatchingDiagnosticItem"/>
+			<item value="evalConstraint"/>
+			<item value="OVERR"/>
 			<item value="$1"/>
 			<item value="buildPatternsByType"/>
 			<item value="targetAspectNamespace"/>
 			<item value="_MetamodelNamespace"/>
 			<item value="Back"/>
-			<item value="Logo"/>
-			<item value="left: JvmOperation: fsmaspects.VarDeclAspect.eval(java.util.Hashtable) (visibility: PUBLIC, simpleName: eval, identifier: fsmaspects.VarDeclAspect.eval(java.util.Hashtable), deprecated: &lt;unset&gt;) (varArgs: false) (static: false, final: false, abstract: false, synchronized: false, default: false, native: false, strictFloatingPoint: false)"/>
-			<item value="Results: identicalModifiers: false, identicalReturnType: true, identicalName: true, identicalParameters: false"/>
 		</list>
 		<list key="replacehistory">
 		</list>
