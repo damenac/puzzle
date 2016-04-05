@@ -79,7 +79,6 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 			case FsmPackage.PRINT: return createPrint();
 			case FsmPackage.ASSIGNATION: return createAssignation();
 			case FsmPackage.WAIT: return createWait();
-			case FsmPackage.NAMED_ELEMENT: return createNamedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -341,16 +340,6 @@ public class FsmFactoryImpl extends EFactoryImpl implements FsmFactory {
 	public Wait createWait() {
 		WaitImpl wait = new WaitImpl();
 		return wait;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NamedElement createNamedElement() {
-		NamedElementImpl namedElement = new NamedElementImpl();
-		return namedElement;
 	}
 
 	/**

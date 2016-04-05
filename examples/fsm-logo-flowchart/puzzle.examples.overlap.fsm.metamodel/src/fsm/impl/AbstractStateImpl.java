@@ -8,12 +8,16 @@ import fsm.Transition;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -27,12 +31,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fsm.impl.AbstractStateImpl#getIncoming <em>Incoming</em>}</li>
  *   <li>{@link fsm.impl.AbstractStateImpl#getOutgoing <em>Outgoing</em>}</li>
+ *   <li>{@link fsm.impl.AbstractStateImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public abstract class AbstractStateImpl extends NamedElementImpl implements AbstractState {
+public abstract class AbstractStateImpl extends MinimalEObjectImpl.Container implements AbstractState {
 	/**
 	 * The cached value of the '{@link #getIncoming() <em>Incoming</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -52,6 +57,26 @@ public abstract class AbstractStateImpl extends NamedElementImpl implements Abst
 	 * @ordered
 	 */
 	protected EList<Transition> outgoing;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -101,6 +126,27 @@ public abstract class AbstractStateImpl extends NamedElementImpl implements Abst
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.ABSTRACT_STATE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -141,6 +187,8 @@ public abstract class AbstractStateImpl extends NamedElementImpl implements Abst
 				return getIncoming();
 			case FsmPackage.ABSTRACT_STATE__OUTGOING:
 				return getOutgoing();
+			case FsmPackage.ABSTRACT_STATE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,6 +210,9 @@ public abstract class AbstractStateImpl extends NamedElementImpl implements Abst
 				getOutgoing().clear();
 				getOutgoing().addAll((Collection<? extends Transition>)newValue);
 				return;
+			case FsmPackage.ABSTRACT_STATE__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -180,6 +231,9 @@ public abstract class AbstractStateImpl extends NamedElementImpl implements Abst
 			case FsmPackage.ABSTRACT_STATE__OUTGOING:
 				getOutgoing().clear();
 				return;
+			case FsmPackage.ABSTRACT_STATE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -196,8 +250,26 @@ public abstract class AbstractStateImpl extends NamedElementImpl implements Abst
 				return incoming != null && !incoming.isEmpty();
 			case FsmPackage.ABSTRACT_STATE__OUTGOING:
 				return outgoing != null && !outgoing.isEmpty();
+			case FsmPackage.ABSTRACT_STATE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //AbstractStateImpl

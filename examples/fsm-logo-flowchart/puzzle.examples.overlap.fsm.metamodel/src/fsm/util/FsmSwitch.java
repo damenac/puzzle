@@ -69,14 +69,12 @@ public class FsmSwitch<T> extends Switch<T> {
 			case FsmPackage.STATE_MACHINE: {
 				StateMachine stateMachine = (StateMachine)theEObject;
 				T result = caseStateMachine(stateMachine);
-				if (result == null) result = caseNamedElement(stateMachine);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case FsmPackage.ABSTRACT_STATE: {
 				AbstractState abstractState = (AbstractState)theEObject;
 				T result = caseAbstractState(abstractState);
-				if (result == null) result = caseNamedElement(abstractState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -84,14 +82,12 @@ public class FsmSwitch<T> extends Switch<T> {
 				State state = (State)theEObject;
 				T result = caseState(state);
 				if (result == null) result = caseAbstractState(state);
-				if (result == null) result = caseNamedElement(state);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case FsmPackage.TRANSITION: {
 				Transition transition = (Transition)theEObject;
 				T result = caseTransition(transition);
-				if (result == null) result = caseNamedElement(transition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,7 +101,6 @@ public class FsmSwitch<T> extends Switch<T> {
 				Pseudostate pseudostate = (Pseudostate)theEObject;
 				T result = casePseudostate(pseudostate);
 				if (result == null) result = caseAbstractState(pseudostate);
-				if (result == null) result = caseNamedElement(pseudostate);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,7 +109,6 @@ public class FsmSwitch<T> extends Switch<T> {
 				T result = caseFinalState(finalState);
 				if (result == null) result = caseState(finalState);
 				if (result == null) result = caseAbstractState(finalState);
-				if (result == null) result = caseNamedElement(finalState);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -257,12 +251,6 @@ public class FsmSwitch<T> extends Switch<T> {
 				Wait wait = (Wait)theEObject;
 				T result = caseWait(wait);
 				if (result == null) result = caseStatement(wait);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case FsmPackage.NAMED_ELEMENT: {
-				NamedElement namedElement = (NamedElement)theEObject;
-				T result = caseNamedElement(namedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -672,21 +660,6 @@ public class FsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseWait(Wait object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

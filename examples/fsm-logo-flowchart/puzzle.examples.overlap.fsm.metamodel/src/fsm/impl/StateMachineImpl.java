@@ -9,12 +9,16 @@ import fsm.Transition;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,12 +32,13 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link fsm.impl.StateMachineImpl#getSubvertex <em>Subvertex</em>}</li>
  *   <li>{@link fsm.impl.StateMachineImpl#getTransitions <em>Transitions</em>}</li>
+ *   <li>{@link fsm.impl.StateMachineImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StateMachineImpl extends NamedElementImpl implements StateMachine {
+public class StateMachineImpl extends MinimalEObjectImpl.Container implements StateMachine {
 	/**
 	 * The cached value of the '{@link #getSubvertex() <em>Subvertex</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -53,6 +58,26 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	 * @ordered
 	 */
 	protected EList<Transition> transitions;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,6 +127,27 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STATE_MACHINE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -125,6 +171,8 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 				return getSubvertex();
 			case FsmPackage.STATE_MACHINE__TRANSITIONS:
 				return getTransitions();
+			case FsmPackage.STATE_MACHINE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,6 +194,9 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 				getTransitions().clear();
 				getTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
+			case FsmPackage.STATE_MACHINE__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -164,6 +215,9 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 			case FsmPackage.STATE_MACHINE__TRANSITIONS:
 				getTransitions().clear();
 				return;
+			case FsmPackage.STATE_MACHINE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -180,8 +234,26 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 				return subvertex != null && !subvertex.isEmpty();
 			case FsmPackage.STATE_MACHINE__TRANSITIONS:
 				return transitions != null && !transitions.isEmpty();
+			case FsmPackage.STATE_MACHINE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //StateMachineImpl

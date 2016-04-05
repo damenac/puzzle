@@ -58,43 +58,6 @@ public interface FsmPackage extends EPackage {
 	FsmPackage eINSTANCE = fsm.impl.FsmPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link fsm.impl.NamedElementImpl <em>Named Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see fsm.impl.NamedElementImpl
-	 * @see fsm.impl.FsmPackageImpl#getNamedElement()
-	 * @generated
-	 */
-	int NAMED_ELEMENT = 27;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Named Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NAMED_ELEMENT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link fsm.impl.StateMachineImpl <em>State Machine</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -105,22 +68,13 @@ public interface FsmPackage extends EPackage {
 	int STATE_MACHINE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_MACHINE__NAME = NAMED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Subvertex</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__SUBVERTEX = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int STATE_MACHINE__SUBVERTEX = 0;
 
 	/**
 	 * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -129,7 +83,16 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE__TRANSITIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int STATE_MACHINE__TRANSITIONS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>State Machine</em>' class.
@@ -138,7 +101,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int STATE_MACHINE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>State Machine</em>' class.
@@ -147,7 +110,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_MACHINE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int STATE_MACHINE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link fsm.impl.AbstractStateImpl <em>Abstract State</em>}' class.
@@ -160,22 +123,13 @@ public interface FsmPackage extends EPackage {
 	int ABSTRACT_STATE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ABSTRACT_STATE__NAME = NAMED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATE__INCOMING = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int ABSTRACT_STATE__INCOMING = 0;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing</b></em>' reference list.
@@ -184,7 +138,16 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATE__OUTGOING = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int ABSTRACT_STATE__OUTGOING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ABSTRACT_STATE__NAME = 2;
 
 	/**
 	 * The number of structural features of the '<em>Abstract State</em>' class.
@@ -193,7 +156,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int ABSTRACT_STATE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Abstract State</em>' class.
@@ -202,7 +165,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ABSTRACT_STATE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int ABSTRACT_STATE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link fsm.impl.StateImpl <em>State</em>}' class.
@@ -213,15 +176,6 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	int STATE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__NAME = ABSTRACT_STATE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
@@ -240,6 +194,15 @@ public interface FsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int STATE__OUTGOING = ABSTRACT_STATE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__NAME = ABSTRACT_STATE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Do Activity</b></em>' containment reference.
@@ -297,22 +260,13 @@ public interface FsmPackage extends EPackage {
 	int TRANSITION = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__NAME = NAMED_ELEMENT__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Trigger</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TRIGGER = NAMED_ELEMENT_FEATURE_COUNT + 0;
+	int TRANSITION__TRIGGER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference.
@@ -321,7 +275,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__TARGET = NAMED_ELEMENT_FEATURE_COUNT + 1;
+	int TRANSITION__TARGET = 1;
 
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference.
@@ -330,7 +284,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__SOURCE = NAMED_ELEMENT_FEATURE_COUNT + 2;
+	int TRANSITION__SOURCE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Effect</b></em>' containment reference list.
@@ -339,7 +293,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__EFFECT = NAMED_ELEMENT_FEATURE_COUNT + 3;
+	int TRANSITION__EFFECT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
@@ -348,7 +302,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__GUARD = NAMED_ELEMENT_FEATURE_COUNT + 4;
+	int TRANSITION__GUARD = 4;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -357,7 +311,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 5;
+	int TRANSITION_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -366,7 +320,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
+	int TRANSITION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link fsm.impl.TriggerImpl <em>Trigger</em>}' class.
@@ -416,15 +370,6 @@ public interface FsmPackage extends EPackage {
 	int PSEUDOSTATE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PSEUDOSTATE__NAME = ABSTRACT_STATE__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -441,6 +386,15 @@ public interface FsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int PSEUDOSTATE__OUTGOING = ABSTRACT_STATE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PSEUDOSTATE__NAME = ABSTRACT_STATE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Kind</b></em>' attribute.
@@ -480,15 +434,6 @@ public interface FsmPackage extends EPackage {
 	int FINAL_STATE = 6;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_STATE__NAME = STATE__NAME;
-
-	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -505,6 +450,15 @@ public interface FsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int FINAL_STATE__OUTGOING = STATE__OUTGOING;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__NAME = STATE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Do Activity</b></em>' containment reference.
@@ -1344,7 +1298,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getPseudostateKind()
 	 * @generated
 	 */
-	int PSEUDOSTATE_KIND = 28;
+	int PSEUDOSTATE_KIND = 27;
 
 	/**
 	 * The meta object id for the '{@link fsm.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
@@ -1354,7 +1308,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int ARITHMETIC_OPERATOR = 29;
+	int ARITHMETIC_OPERATOR = 28;
 
 	/**
 	 * The meta object id for the '{@link fsm.RelationalOperator <em>Relational Operator</em>}' enum.
@@ -1364,7 +1318,7 @@ public interface FsmPackage extends EPackage {
 	 * @see fsm.impl.FsmPackageImpl#getRelationalOperator()
 	 * @generated
 	 */
-	int RELATIONAL_OPERATOR = 30;
+	int RELATIONAL_OPERATOR = 29;
 
 
 	/**
@@ -1400,6 +1354,17 @@ public interface FsmPackage extends EPackage {
 	EReference getStateMachine_Transitions();
 
 	/**
+	 * Returns the meta object for the attribute '{@link fsm.StateMachine#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fsm.StateMachine#getName()
+	 * @see #getStateMachine()
+	 * @generated
+	 */
+	EAttribute getStateMachine_Name();
+
+	/**
 	 * Returns the meta object for class '{@link fsm.AbstractState <em>Abstract State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1430,6 +1395,17 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAbstractState_Outgoing();
+
+	/**
+	 * Returns the meta object for the attribute '{@link fsm.AbstractState#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see fsm.AbstractState#getName()
+	 * @see #getAbstractState()
+	 * @generated
+	 */
+	EAttribute getAbstractState_Name();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.State <em>State</em>}'.
@@ -2045,27 +2021,6 @@ public interface FsmPackage extends EPackage {
 	EAttribute getWait_Miliseconds();
 
 	/**
-	 * Returns the meta object for class '{@link fsm.NamedElement <em>Named Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Named Element</em>'.
-	 * @see fsm.NamedElement
-	 * @generated
-	 */
-	EClass getNamedElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link fsm.NamedElement#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see fsm.NamedElement#getName()
-	 * @see #getNamedElement()
-	 * @generated
-	 */
-	EAttribute getNamedElement_Name();
-
-	/**
 	 * Returns the meta object for enum '{@link fsm.PseudostateKind <em>Pseudostate Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2145,6 +2100,14 @@ public interface FsmPackage extends EPackage {
 		EReference STATE_MACHINE__TRANSITIONS = eINSTANCE.getStateMachine_Transitions();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATE_MACHINE__NAME = eINSTANCE.getStateMachine_Name();
+
+		/**
 		 * The meta object literal for the '{@link fsm.impl.AbstractStateImpl <em>Abstract State</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2169,6 +2132,14 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ABSTRACT_STATE__OUTGOING = eINSTANCE.getAbstractState_Outgoing();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ABSTRACT_STATE__NAME = eINSTANCE.getAbstractState_Name();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.StateImpl <em>State</em>}' class.
@@ -2683,24 +2654,6 @@ public interface FsmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute WAIT__MILISECONDS = eINSTANCE.getWait_Miliseconds();
-
-		/**
-		 * The meta object literal for the '{@link fsm.impl.NamedElementImpl <em>Named Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see fsm.impl.NamedElementImpl
-		 * @see fsm.impl.FsmPackageImpl#getNamedElement()
-		 * @generated
-		 */
-		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 		/**
 		 * The meta object literal for the '{@link fsm.PseudostateKind <em>Pseudostate Kind</em>}' enum.

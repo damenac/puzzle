@@ -4,6 +4,8 @@ package fsm;
 
 import org.eclipse.emf.common.util.EList;
 
+import org.eclipse.emf.ecore.EObject;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Transition</b></em>'.
@@ -24,7 +26,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Transition extends NamedElement {
+public interface Transition extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Trigger</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

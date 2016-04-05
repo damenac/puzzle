@@ -241,7 +241,6 @@ public class ProjectManagementServices {
 		String line = br.readLine();
 		String content = "";
 		
-		//TODO Complete pck with the variability!!
 		String pck = moduleName.replace("Module", "").toLowerCase();
 		String prefix = aspectLanguageMapping.getLanguagesList();// + "Like";
 		

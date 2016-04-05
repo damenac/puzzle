@@ -1,0 +1,5 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	fsm.VarDecl = fsmaspects.VarDeclAspect
+	fsm.Transition = fsmaspects.TransitionAspect
+	fsm.State = fsmaspects.StateAspect
+	fsm.Loop = fsmaspects.LoopAspect
