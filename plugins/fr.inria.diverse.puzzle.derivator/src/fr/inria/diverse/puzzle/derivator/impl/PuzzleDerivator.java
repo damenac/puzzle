@@ -9,6 +9,9 @@ import org.eclipse.core.resources.IProject;
 
 import vm.LanguageFeature;
 import vm.LanguageFeatureModel;
+import vm.LanguageProductLine;
+import vm.SemanticInterpretation;
+import vm.SemanticVariationPoint;
 import PuzzleADL.InterfaceBinding;
 import PuzzleADL.LanguageArchitecture;
 import PuzzleADL.LanguageModule;
@@ -47,16 +50,16 @@ public class PuzzleDerivator implements IDerivator{
 	@Override
 	public void derivateLangaugeFromConfiguration(IProject derivationProject,
 			LanguageArchitecture languageArchitectureModel,
-			LanguageFeatureModel configuredFeatureModel) throws IOException {
+			LanguageProductLine configuredFeatureModel) throws IOException {
 		
 		String melangeFileContents = "package family\n\n";
 		
 		ArrayList<LanguageFeature> selectedFeatures = new ArrayList<LanguageFeature>();
-		this.collectSelectedFeatures(configuredFeatureModel.getRootFeature(), selectedFeatures);
+		this.collectSelectedFeatures(configuredFeatureModel.getFunctionalVariability().getRootFeature(), selectedFeatures);
 		ArrayList<LanguageModule> selectedLanguageModules = this.collectSelectedLangaugeModules(selectedFeatures);
 
 		for (LanguageModule languageModule : selectedLanguageModules) {
-			melangeFileContents += this.createLanguageModuleDeclaration(languageModule) + "\n";
+			melangeFileContents += this.createLanguageModuleDeclaration(languageModule, languageArchitectureModel, selectedFeatures) + "\n";
 			if(languageModule.getRequiredInterface() != null)
 				melangeFileContents += this.createModelTypeForRequiredInterface(languageModule.getRequiredInterface()) + "\n";
 			if(languageModule.getProvidedInterface() != null)
@@ -72,7 +75,7 @@ public class PuzzleDerivator implements IDerivator{
 		pwMelange.println(melangeFileContents);
 		pwMelange.close();
 		
-		String bindings = this.getBindingsDeclaration(languageArchitectureModel, configuredFeatureModel.getName(), 
+		String bindings = this.getBindingsDeclaration(languageArchitectureModel, configuredFeatureModel.getFunctionalVariability().getName(), 
 				selectedLanguageModules, selectedFeatures);
 		
 		File bindingsFile = new File(derivationProject.getLocation().toString() + "/src/family/dsl.binding");
@@ -118,9 +121,11 @@ public class PuzzleDerivator implements IDerivator{
 	/**
 	 * Creates the definition in melange for a language module given in the parameter.
 	 * @param module Language module under study. 
+	 * @param languageArchitectureModel 
+	 * @param selectedFeatures 
 	 * @return
 	 */
-	private String createLanguageModuleDeclaration(LanguageModule module){
+	private String createLanguageModuleDeclaration(LanguageModule module, LanguageArchitecture languageArchitectureModel, ArrayList<LanguageFeature> selectedFeatures){
 		String answer = "language " + module.getName();
 		
 		if(module.getProvidedInterface() != null)
@@ -133,10 +138,20 @@ public class PuzzleDerivator implements IDerivator{
 		answer += "     syntax \"platform:/resource" + module.getAbstractSyntax().getEcoreRelativePath() + "\"\n";
 		
 		// TODO configurar de acuerdo con la seleccion del modelo de variabilidad ortogonal.
-		if(module.getSemanticsImplementation().size() > 0){
+		if(module.getSemanticsImplementation().size() == 1){
 			answer += "\n";
 			for(String aspect : module.getSemanticsImplementation().get(0).getAspectsIdentifiers()){
 				answer += "     with " + aspect + "\n";
+			}
+		}
+		else if(module.getSemanticsImplementation().size() > 1){
+			answer += "\n";
+			LanguageFeature feature = this.getLanguageFeatureByLanguageModule(module, selectedFeatures);
+			SemanticInterpretation interpretation = getSelectedInterpretation(feature.getSemanticVariationPoint());
+			if(interpretation != null){
+				for(String aspect : interpretation.getImplementation().getAspectsIdentifiers()){
+					answer += "     with " + aspect + "\n";
+				}
 			}
 		}
 		answer += "\n     exactType " + module.getName() + "MT\n";
@@ -145,6 +160,15 @@ public class PuzzleDerivator implements IDerivator{
 		return answer;
 	}
 	
+	private SemanticInterpretation getSelectedInterpretation(
+			SemanticVariationPoint semanticVariationPoint) {
+		for (SemanticInterpretation interpretation : semanticVariationPoint.getInterpretations()) {
+			if(interpretation.isSelected())
+				return interpretation;
+		}
+		return null;
+	}
+
 	/**
 	 * Creates a model type's definition from a required interface. 
 	 * @param requiredInterface. Required interface under study. 

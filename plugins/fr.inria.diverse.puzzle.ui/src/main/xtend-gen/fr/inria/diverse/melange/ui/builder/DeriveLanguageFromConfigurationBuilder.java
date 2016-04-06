@@ -12,7 +12,7 @@ import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import vm.LanguageFeatureModel;
+import vm.LanguageProductLine;
 
 /**
  * Builder for the action: Configure.
@@ -34,7 +34,7 @@ public class DeriveLanguageFromConfigurationBuilder extends AbstractBuilder {
       IResource resource0 = ((IResource) _get);
       Object _get_1 = res[1];
       IResource resource1 = ((IResource) _get_1);
-      LanguageFeatureModel configuredFeatureModel = null;
+      LanguageProductLine configuredFeatureModel = null;
       LanguageArchitecture languageArchitectureModel = null;
       IPath _location = resource0.getLocation();
       String _string = _location.toString();
@@ -43,7 +43,7 @@ public class DeriveLanguageFromConfigurationBuilder extends AbstractBuilder {
         IPath _location_1 = resource0.getLocation();
         String _string_1 = _location_1.toString();
         EObject _loadXMIFile = ModelUtils.loadXMIFile(_string_1);
-        configuredFeatureModel = ((LanguageFeatureModel) _loadXMIFile);
+        configuredFeatureModel = ((LanguageProductLine) _loadXMIFile);
       } else {
         IPath _location_2 = resource0.getLocation();
         String _string_2 = _location_2.toString();
@@ -63,7 +63,7 @@ public class DeriveLanguageFromConfigurationBuilder extends AbstractBuilder {
         IPath _location_5 = resource1.getLocation();
         String _string_5 = _location_5.toString();
         EObject _loadXMIFile_2 = ModelUtils.loadXMIFile(_string_5);
-        configuredFeatureModel = ((LanguageFeatureModel) _loadXMIFile_2);
+        configuredFeatureModel = ((LanguageProductLine) _loadXMIFile_2);
       } else {
         IPath _location_6 = resource1.getLocation();
         String _string_6 = _location_6.toString();

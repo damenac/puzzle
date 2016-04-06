@@ -1,8 +1,10 @@
 package fr.inria.diverse.puzzle.derivator.impl;
 
 import java.io.IOException;
+
 import org.eclipse.core.resources.IProject;
-import vm.LanguageFeatureModel;
+
+import vm.LanguageProductLine;
 import PuzzleADL.LanguageArchitecture;
 
 /**
@@ -26,5 +28,5 @@ public interface IDerivator {
 	 * @throws IOException  In the case of any input/output errors during the derivation files process. 
 	 */
 	public void derivateLangaugeFromConfiguration(IProject derivationProject, 
-			LanguageArchitecture languageArchitectureModel, LanguageFeatureModel configuredFeatureModel) throws IOException;
+			LanguageArchitecture languageArchitectureModel, LanguageProductLine configuredFeatureModel) throws IOException;
 }
