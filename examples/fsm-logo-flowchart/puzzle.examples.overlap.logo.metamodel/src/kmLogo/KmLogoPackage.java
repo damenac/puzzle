@@ -722,7 +722,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECL__EXPRESSION = 0;
+	int VAR_DECL__EXPRESSION = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' attribute.
@@ -731,7 +731,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECL__KEY = 1;
+	int VAR_DECL__KEY = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Var Decl</em>' class.
@@ -740,7 +740,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECL_FEATURE_COUNT = 2;
+	int VAR_DECL_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Var Decl</em>' class.
@@ -749,7 +749,7 @@ public interface KmLogoPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_DECL_OPERATION_COUNT = 0;
+	int VAR_DECL_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link kmLogo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

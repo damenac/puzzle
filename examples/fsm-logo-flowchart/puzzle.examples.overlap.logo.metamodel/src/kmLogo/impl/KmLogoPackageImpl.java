@@ -732,6 +732,7 @@ public class KmLogoPackageImpl extends EPackageImpl implements KmLogoPackage {
 		arithmeticExpressionEClass.getESuperTypes().add(this.getExpression());
 		relationalExpressionEClass.getESuperTypes().add(this.getExpression());
 		varReferenceEClass.getESuperTypes().add(this.getExpression());
+		varDeclEClass.getESuperTypes().add(this.getInstruction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

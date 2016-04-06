@@ -110,11 +110,11 @@ public class BreakerImpl {
 		
 		ArrayList<MetaclassAspectMapping> originalMapping = new ArrayList<MetaclassAspectMapping>();
 		findAspectMapping(languages, originalMapping, conceptComparison);
-		ArrayList<MetaclassAspectMapping> semanticVariabilityMapping = detectSemanticVariability(originalMapping, methodComparison);
+		ArrayList<MetaclassAspectMapping> semanticVariabilityMapping = detectSemanticVariability(originalMapping, methodComparison, conceptComparison);
 		
 		for (EcoreGroup group : dependenciesGraph.getGroups()) {
-			ArrayList<EClassifier> requiredClassifiers = buildSyntacticModule(group, languages);
-			buildSemanticModule(group, originalMapping, semanticVariabilityMapping, languages, requiredClassifiers);
+			ArrayList<EClassifier> requiredClassifiers = buildSyntacticModule(group, languages, conceptComparison);
+			buildSemanticModule(group, originalMapping, semanticVariabilityMapping, languages, requiredClassifiers, conceptComparison);
 		}
 	}
 
@@ -125,7 +125,7 @@ public class BreakerImpl {
 	 * @throws CoreException
 	 * @throws IOException 
 	 */
-	private ArrayList<EClassifier> buildSyntacticModule(EcoreGroup group, ArrayList<Language> languages) throws Exception {
+	private ArrayList<EClassifier> buildSyntacticModule(EcoreGroup group, ArrayList<Language> languages, ConceptComparison conceptComparison) throws Exception {
 		ArrayList<EClassifier> requiredClassifiers = new ArrayList<EClassifier>();
 		
 		for (EcoreVertex requiredVertex : group.getRequiredVertex()) {
@@ -139,11 +139,11 @@ public class BreakerImpl {
 		EcoreQueries.collectEClassifiers(moduleEPackage, metamodelClassifiers);
 		
 		// Adding the constructs that are not used in the syntax but in the semantics
-		ArrayList<Aspect> allAspects = findAspects(group, languages);
+		ArrayList<Aspect> allAspects = findAspects(group, languages, conceptComparison);
 		addMetaclassesRequiredByTheSemantics(allAspects, moduleEPackage);
 		
 		// Adding the required operations to the required interface
-		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
+		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages, conceptComparison);
 		this.addRequiredOperationsToRequiredInterface(requiredAspects, moduleEPackage);
 		
 		EPackage moduleRequiredInteface = null;
@@ -307,33 +307,59 @@ public class BreakerImpl {
 	 * Detects the semantical variability. 
 	 * @param mapping
 	 * @param methodComparison
+	 * @param conceptComparison 
 	 * @return
 	 */
 	private ArrayList<MetaclassAspectMapping> detectSemanticVariability(
-			ArrayList<MetaclassAspectMapping> mapping, MethodComparison methodComparison) {
+			ArrayList<MetaclassAspectMapping> mapping, MethodComparison methodComparison, ConceptComparison conceptComparison) {
 		ArrayList<MetaclassAspectMapping> mappingVariability = new ArrayList<MetaclassAspectMapping>();
 		
 		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
-			MetaclassAspectMapping newEntry = new MetaclassAspectMapping(metaclassAspectMapping.getMetaclass());
-			
-			for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
-				AspectLanguageMapping legacyMapping = findAspectMapping(aspectMapping.getAspect(), newEntry, methodComparison);
+			MetaclassAspectMapping legacyMetaclassAspectMapping = findMetaclassAspectMapping(metaclassAspectMapping.getMetaclass(), mappingVariability, conceptComparison);
+			if(legacyMetaclassAspectMapping == null){
+				MetaclassAspectMapping newEntry = new MetaclassAspectMapping(metaclassAspectMapping.getMetaclass());
 				
-				if(legacyMapping == null){
-					AspectLanguageMapping newAspectLanguageMapping = new AspectLanguageMapping(aspectMapping.getAspect(), aspectMapping.getLanguage());
-					newEntry.getAspects().add(newAspectLanguageMapping);
-				}else{
-					legacyMapping.setLanguagesList(legacyMapping.getLanguagesList() + 
-							aspectMapping.getLanguage().getName());
-					legacyMapping.getLanguagesObjectList().addAll(aspectMapping.getLanguagesObjectList());
+				for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
+					AspectLanguageMapping legacyMapping = findAspectMapping(aspectMapping.getAspect(), newEntry, methodComparison);
+					if(legacyMapping == null){
+						AspectLanguageMapping newAspectLanguageMapping = new AspectLanguageMapping(aspectMapping.getAspect(), aspectMapping.getLanguage());
+						newEntry.getAspects().add(newAspectLanguageMapping);
+					}else{
+						legacyMapping.setLanguagesList(legacyMapping.getLanguagesList() + 
+								aspectMapping.getLanguage().getName());
+						legacyMapping.getLanguagesObjectList().addAll(aspectMapping.getLanguagesObjectList());
+					}
+				}
+				mappingVariability.add(newEntry);
+			}
+			else{
+				for (AspectLanguageMapping aspectMapping : metaclassAspectMapping.getAspects()) {
+					AspectLanguageMapping legacyMapping = findAspectMapping(aspectMapping.getAspect(), legacyMetaclassAspectMapping, methodComparison);
+					if(legacyMapping == null){
+						AspectLanguageMapping newAspectLanguageMapping = new AspectLanguageMapping(aspectMapping.getAspect(), aspectMapping.getLanguage());
+						legacyMetaclassAspectMapping.getAspects().add(newAspectLanguageMapping);
+					}else{
+						legacyMapping.setLanguagesList(legacyMapping.getLanguagesList() + 
+								aspectMapping.getLanguage().getName());
+						legacyMapping.getLanguagesObjectList().addAll(aspectMapping.getLanguagesObjectList());
+					}
 				}
 			}
-			mappingVariability.add(newEntry);
 		}
 		
 		return mappingVariability;
 	}
 	
+	private MetaclassAspectMapping findMetaclassAspectMapping(
+			EClassifier metaclass,
+			ArrayList<MetaclassAspectMapping> mappingVariability, ConceptComparison conceptComparison) {
+		for (MetaclassAspectMapping metaclassAspectMapping : mappingVariability) {
+			if(conceptComparison.equals(metaclassAspectMapping.getMetaclass(), metaclass))
+				return metaclassAspectMapping;
+		}
+		return null;
+	}
+
 	/**
 	 * Finds an ecore type from a java type. 
 	 * @param returnType
@@ -384,7 +410,7 @@ public class BreakerImpl {
 	 */
 	private void buildSemanticModule(EcoreGroup group, ArrayList<MetaclassAspectMapping> originalMapping, 
 			ArrayList<MetaclassAspectMapping> semanticVariabilityMapping,
-			ArrayList<Language> languages, ArrayList<EClassifier> requiredClassifiers) throws Exception {
+			ArrayList<Language> languages, ArrayList<EClassifier> requiredClassifiers, ConceptComparison conceptComparison) throws Exception {
 		
 		// Create the module project with the folders.
 		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
@@ -397,11 +423,29 @@ public class BreakerImpl {
 			classifiers.add(vertex.getClassifier());
 		}
 		
-		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages);
-		ArrayList<MetaclassAspectMapping> originalLocalMapping = filterAspects(group, originalMapping);
-		ArrayList<MetaclassAspectMapping> semanticVariabilityLocalMapping = filterAspects(group, semanticVariabilityMapping);
+		ArrayList<Aspect> requiredAspects = findAspects(requiredClassifiers, languages, conceptComparison);
+		ArrayList<MetaclassAspectMapping> originalLocalMapping = filterAspects(group, originalMapping, conceptComparison);
+		
+		System.out.println("\n\n originalLocalMapping");
+		for (MetaclassAspectMapping metaclassAspectMapping : originalLocalMapping) {
+			System.out.println(metaclassAspectMapping.getMetaclass().getName() + ":" );
+			for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
+				System.out.println("     * " + aspectLanguageMapping.getLanguagesList() + " -> " + aspectLanguageMapping.getAspect().getAspectTypeRef().getSimpleName());
+			}
+		}
+		
+		ArrayList<MetaclassAspectMapping> semanticVariabilityLocalMapping = filterAspects(group, semanticVariabilityMapping, conceptComparison);
+		System.out.println("\n\n semanticVariabilityLocalMapping");
+		for (MetaclassAspectMapping metaclassAspectMapping : semanticVariabilityLocalMapping) {
+			System.out.println(metaclassAspectMapping.getMetaclass().getName() + ":" );
+			for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
+				System.out.println("     * " + aspectLanguageMapping.getLanguagesList() + " -> " + aspectLanguageMapping.getAspect().getAspectTypeRef().getSimpleName());
+			}
+		}
 		
 		boolean semanticVariability = thereIsSemanticVariability(semanticVariabilityLocalMapping);
+		
+		System.out.println("semanticVariability: " + semanticVariability);
 		
 		if(semanticVariability){
 			for (MetaclassAspectMapping metaclassAspectMapping : originalLocalMapping) {
@@ -540,10 +584,10 @@ public class BreakerImpl {
 	 * @return
 	 */
 	private ArrayList<MetaclassAspectMapping> filterAspects(EcoreGroup group,
-			ArrayList<MetaclassAspectMapping> mapping) {
+			ArrayList<MetaclassAspectMapping> mapping, ConceptComparison conceptComparison) {
 		ArrayList<MetaclassAspectMapping> filteredMapping = new ArrayList<MetaclassAspectMapping>();
 		for (MetaclassAspectMapping metaclassAspectMapping : mapping) {
-			if(belongsTo(metaclassAspectMapping.getMetaclass(), group)){
+			if(belongsTo(metaclassAspectMapping.getMetaclass(), group, conceptComparison)){
 				filteredMapping.add(metaclassAspectMapping);
 			}
 		}
@@ -556,9 +600,9 @@ public class BreakerImpl {
 	 * @param group
 	 * @return
 	 */
-	private boolean belongsTo(EClassifier metaclass, EcoreGroup group) {
+	private boolean belongsTo(EClassifier metaclass, EcoreGroup group, ConceptComparison conceptComparison) {
 		for (EcoreVertex vertex : group.getVertex()) {
-			if(vertex.getClassifier().getName().equals(metaclass.getName()))
+			if(conceptComparison.equals(vertex.getClassifier(),metaclass))
 				return true;
 		}
 		return false;
@@ -571,12 +615,12 @@ public class BreakerImpl {
 	 * @return
 	 */
 	private ArrayList<Aspect> findAspects(EcoreGroup group,
-			ArrayList<Language> languages) {
+			ArrayList<Language> languages, ConceptComparison conceptComparison) {
 		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
 		for (EcoreVertex vertex : group.getVertex()) {
 			classifiers.add(vertex.getClassifier());
 		}
-		return this.findAspects(classifiers, languages);
+		return this.findAspects(classifiers, languages, conceptComparison);
 	}
 	
 	/**
@@ -633,11 +677,11 @@ public class BreakerImpl {
 	 * @return
 	 */
 	private ArrayList<Aspect> findAspects(
-			ArrayList<EClassifier> eclassifiers, ArrayList<Language> languages) {
+			ArrayList<EClassifier> eclassifiers, ArrayList<Language> languages, ConceptComparison conceptComparison) {
 		ArrayList<Aspect> aspects = new ArrayList<Aspect>();
 		
 		for (EClassifier eclassifier : eclassifiers) {
-			ArrayList<Aspect> aspectsByMetaclass = findAspectsByMetaclass(eclassifier, languages);
+			ArrayList<Aspect> aspectsByMetaclass = findAspectsByMetaclass(eclassifier, languages, conceptComparison);
 			aspects.addAll(aspectsByMetaclass);
 		}
 		return aspects;
@@ -649,14 +693,14 @@ public class BreakerImpl {
 	 * @param languages
 	 * @return
 	 */
-	private ArrayList<Aspect> findAspectsByMetaclass(EClassifier classifier, ArrayList<Language> languages) {
+	private ArrayList<Aspect> findAspectsByMetaclass(EClassifier classifier, ArrayList<Language> languages, ConceptComparison conceptComparison) {
 		ArrayList<Aspect> aspects = new ArrayList<Aspect>();
 		for (Language language : languages) {
 			EPackage languageMetamodel = MelangeServices.getEPackageFromLanguage(language);
 			
 			if(EcoreQueries.searchEClassByName(languageMetamodel, classifier.getName()) != null){
 				for (Aspect aspect : language.getSemantics()) {
-					if(aspect.getAspectedClass().getName().equals(classifier.getName())){
+					if(conceptComparison.equals(aspect.getAspectedClass(), classifier)){
 						aspects.add(aspect);
 					}
 				}
