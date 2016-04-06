@@ -4,8 +4,6 @@ package vm;
 
 import PuzzleADL.SemanticsImplementation;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Semantic Interpretation</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface SemanticInterpretation extends EObject {
+public interface SemanticInterpretation extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Implementation</b></em>' reference.
 	 * <!-- begin-user-doc -->

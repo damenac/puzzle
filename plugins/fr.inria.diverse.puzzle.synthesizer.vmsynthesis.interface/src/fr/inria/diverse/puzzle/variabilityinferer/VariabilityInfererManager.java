@@ -147,10 +147,16 @@ public class VariabilityInfererManager {
 				LanguageFeature feature = this.findLanguageFeatureByModule(openFeaturesModel.getFunctionalVariability().getRootFeature(),
 						languageModule);
 				vp.setFeature(feature);
+				
 				for (SemanticsImplementation impl : languageModule.getSemanticsImplementation()) {
 					SemanticInterpretation interp = VmFactory.eINSTANCE.createSemanticInterpretation();
 					interp.setImplementation(impl);
 					vp.getInterpretations().add(interp);
+					
+					String interpretationName = "";
+					if(impl.getAspectsIdentifiers().size() > 0)
+						interpretationName = impl.getAspectsIdentifiers().get(0).substring(0,impl.getAspectsIdentifiers().get(0).indexOf("."));
+					interp.setName(interpretationName);
 				}
 				orthogonalVm.getSemanticVariationPoints().add(vp);
 			}

@@ -3,15 +3,10 @@
 package vm.impl;
 
 import PuzzleADL.SemanticsImplementation;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import vm.SemanticInterpretation;
 import vm.VmPackage;
 
@@ -29,7 +24,7 @@ import vm.VmPackage;
  *
  * @generated
  */
-public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container implements SemanticInterpretation {
+public class SemanticInterpretationImpl extends NamedElementImpl implements SemanticInterpretation {
 	/**
 	 * The cached value of the '{@link #getImplementation() <em>Implementation</em>}' reference.
 	 * <!-- begin-user-doc -->

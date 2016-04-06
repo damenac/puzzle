@@ -398,13 +398,14 @@ public class ProjectManagementServices {
 	    generator.generate(genModel, GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, "model project", new BasicMonitor.Printing(System.out));
 	}
 	
-	public static void createXtendConfigurationFile(IProject project, String moduleName, boolean commons, String exportedPackage) throws IOException{
+	public static void createXtendConfigurationFile(IProject project, String moduleName, boolean commons, 
+			String exportedPackage, String additionalDependencies) throws IOException{
 		createPluginFile(project);
 		createPropertiesFile(project);
 		createFolderByName(project, "src");
 		createFolderByName(project, "xtend-gen");
 		createFolderByName(project, "META-INF");
-		createManifest(project, commons, exportedPackage);
+		createManifest(project, commons, exportedPackage, additionalDependencies);
 		createDotProject(project);
 		createClasspath(project);
 	}
@@ -438,7 +439,7 @@ public class ProjectManagementServices {
 		pw.close();
 	}
 	
-	private static void createManifest(IProject project, boolean commons, String exportedPackage) throws IOException{
+	private static void createManifest(IProject project, boolean commons, String exportedPackage, String additionalDependencies) throws IOException{
 		File file = new File(project.getLocation().toString() + "/META-INF/MANIFEST.MF");
 		file.createNewFile();
 		String content = "Bundle-SymbolicName: " + project.getName() + ";singleton:=true\n";
@@ -457,6 +458,9 @@ public class ProjectManagementServices {
 		content += " com.google.guava;bundle-version=\"0.0.0\";visibility:=private,\n";
 		content += " org.eclipse.emf.ecore.xmi;bundle-version=\"2.8.0\";visibility:=reexport,\n";
 		content += " org.eclipse.emf.ecore;bundle-version=\"2.8.0\";visibility:=reexport,\n";
+		
+		if(!additionalDependencies.equals(""))
+			content += additionalDependencies;
 		
 		if(!commons)
 			content += " fr.inria.diverse.commons.semantics;visibility:=reexport,\n";

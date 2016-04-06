@@ -3,21 +3,14 @@
 package vm.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import vm.LanguageFeature;
 import vm.SemanticInterpretation;
 import vm.SemanticVariationPoint;
@@ -37,7 +30,7 @@ import vm.VmPackage;
  *
  * @generated
  */
-public class SemanticVariationPointImpl extends MinimalEObjectImpl.Container implements SemanticVariationPoint {
+public class SemanticVariationPointImpl extends NamedElementImpl implements SemanticVariationPoint {
 	/**
 	 * The cached value of the '{@link #getFeature() <em>Feature</em>}' reference.
 	 * <!-- begin-user-doc -->

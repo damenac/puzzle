@@ -152,6 +152,7 @@ public class BreakerImpl {
 			moduleRequiredInteface = this.createEPackageByClassifiersCollection(requiredClassifiers, moduleName + "Req");
 		
 		EPackage moduleProvidedInteface = this.createEPackageByClassifiersCollection(metamodelClassifiers, moduleName + "Prov");
+		this.addProvidedOperationsToProvidedInterface(allAspects, moduleProvidedInteface);
 		String languageName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 		
 		// Create the module project with the folders.
@@ -171,6 +172,7 @@ public class BreakerImpl {
 		if(moduleRequiredInteface != null){
 			requiredInterfaceLocation = modelsFolderPath + "/" + EcoreGraph.getLanguageModuleName(group.getVertex()) + "Req.ecore";
 			group.setRequiredInterfacePath(requiredInterfaceLocation);
+			this.addRequiredOperationsToRequiredInterface(requiredAspects, moduleRequiredInteface);
 			ModelUtils.saveEcoreFile(requiredInterfaceLocation, moduleRequiredInteface);
 		}
 		
@@ -233,6 +235,15 @@ public class BreakerImpl {
 			ArrayList<Aspect> allAspects, EPackage moduleEPackage) {
 		//TODO
 	}
+	private void addProvidedOperationsToProvidedInterface(
+			ArrayList<Aspect> allAspects, EPackage moduleProvidedInteface) {
+		for (Aspect aspect : allAspects) {
+			EClass metaclass = EcoreQueries.searchEClassByName(moduleProvidedInteface, aspect.getAspectedClass().getName());
+			ArrayList<EOperation> eOperations = createEOperationsByAspect(aspect, moduleProvidedInteface);
+			metaclass.getEOperations().addAll(eOperations);
+		}
+	}
+	
 
 	/**
 	 * Adds the required operations to the required interface in the metamodel in the parameter. 
@@ -417,7 +428,7 @@ public class BreakerImpl {
 		String moduleName = EcoreGraph.getLanguageModuleName(group.getVertex()).trim();
 		IProject moduleProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.module." + 
 				moduleName + ".semantics");
-		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName, false, "aspects");
+		ProjectManagementServices.createXtendConfigurationFile(moduleProject, moduleName, false, "aspects", "");
 		
 		ArrayList<EClassifier> classifiers = new ArrayList<EClassifier>();
 		for (EcoreVertex vertex : group.getVertex()) {
@@ -545,7 +556,7 @@ public class BreakerImpl {
 	 */
 	private void createSemanticsCommonsProject(ArrayList<Language> languages) throws Exception{
 		IProject commonsProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.commons.semantics");
-		ProjectManagementServices.createXtendConfigurationFile(commonsProject, "commons", true, "aspects");
+		ProjectManagementServices.createXtendConfigurationFile(commonsProject, "commons", true, "aspects", "");
 		ProjectManagementServices.createFolderByName(commonsProject, "src/commons");
 		
 		ArrayList<File> commonResources = this.findCommonResources(languages);

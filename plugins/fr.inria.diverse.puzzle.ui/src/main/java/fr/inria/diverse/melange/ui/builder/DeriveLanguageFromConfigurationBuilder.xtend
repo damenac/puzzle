@@ -9,6 +9,7 @@ import fr.inria.diverse.puzzle.derivator.impl.PuzzleDerivator
 import PuzzleADL.LanguageArchitecture
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices
 import vm.LanguageProductLine
+import PuzzleADL.LanguageModule
 
 /**
  * Builder for the action: Configure.
@@ -50,7 +51,7 @@ class DeriveLanguageFromConfigurationBuilder extends AbstractBuilder {
 		
 		// Create a module that contains the modeling-in-the large artifacts as well as the metrics. 
 		var IProject derivationProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.puzzle.reverseEngineering.derivation");
-		this.decorateProjectWithFolderStructure(derivationProject)
+		this.decorateProjectWithFolderStructure(derivationProject, languageArchitectureModel)
 		
 		var IDerivator derivator = PuzzleDerivator.instance;
 		derivator.derivateLangaugeFromConfiguration(derivationProject, languageArchitectureModel, configuredFeatureModel)
@@ -61,8 +62,20 @@ class DeriveLanguageFromConfigurationBuilder extends AbstractBuilder {
 	 * Decorates the project in the parameter with the structure to contain a configured language.
 	 * @param project. Project to decorate.
 	 */
-	def decorateProjectWithFolderStructure(IProject project) {
-		ProjectManagementServices.createXtendConfigurationFile(project, "derivation", false, "family")
+	def decorateProjectWithFolderStructure(IProject project, LanguageArchitecture languageArchitecture) {
+		var String projectDependencies = computeProjectDependencies(languageArchitecture);
+		 
+		ProjectManagementServices.createXtendConfigurationFile(project, "derivation", false, "family", projectDependencies)
 		ProjectManagementServices.createFolderByName(project, "src/family")
 	}
+	
+	def String computeProjectDependencies(LanguageArchitecture architecture) {
+		var String dependencies = "";
+		for(LanguageModule module : architecture.languageModules ){
+			dependencies += " fr.inria.diverse.module." + module.name + ".syntax,\n";
+			dependencies += " fr.inria.diverse.module." + module.name + ".semantics,\n";
+		}
+		return dependencies;
+	}
+	
 }

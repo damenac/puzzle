@@ -1,6 +1,7 @@
 package fr.inria.diverse.melange.ui.builder;
 
 import PuzzleADL.LanguageArchitecture;
+import PuzzleADL.LanguageModule;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.melange.ui.builder.AbstractBuilder;
@@ -10,6 +11,7 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import vm.LanguageProductLine;
@@ -77,7 +79,7 @@ public class DeriveLanguageFromConfigurationBuilder extends AbstractBuilder {
         }
       }
       IProject derivationProject = ProjectManagementServices.createEclipseJavaProject("fr.inria.diverse.puzzle.reverseEngineering.derivation");
-      this.decorateProjectWithFolderStructure(derivationProject);
+      this.decorateProjectWithFolderStructure(derivationProject, languageArchitectureModel);
       IDerivator derivator = PuzzleDerivator.getInstance();
       derivator.derivateLangaugeFromConfiguration(derivationProject, languageArchitectureModel, configuredFeatureModel);
       ProjectManagementServices.refreshProject(derivationProject);
@@ -90,16 +92,37 @@ public class DeriveLanguageFromConfigurationBuilder extends AbstractBuilder {
    * Decorates the project in the parameter with the structure to contain a configured language.
    * @param project. Project to decorate.
    */
-  public String decorateProjectWithFolderStructure(final IProject project) {
+  public String decorateProjectWithFolderStructure(final IProject project, final LanguageArchitecture languageArchitecture) {
     try {
       String _xblockexpression = null;
       {
-        ProjectManagementServices.createXtendConfigurationFile(project, "derivation", false, "family");
+        String projectDependencies = this.computeProjectDependencies(languageArchitecture);
+        ProjectManagementServices.createXtendConfigurationFile(project, "derivation", false, "family", projectDependencies);
         _xblockexpression = ProjectManagementServices.createFolderByName(project, "src/family");
       }
       return _xblockexpression;
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
+  }
+  
+  public String computeProjectDependencies(final LanguageArchitecture architecture) {
+    String dependencies = "";
+    EList<LanguageModule> _languageModules = architecture.getLanguageModules();
+    for (final LanguageModule module : _languageModules) {
+      {
+        String _dependencies = dependencies;
+        String _name = module.getName();
+        String _plus = (" fr.inria.diverse.module." + _name);
+        String _plus_1 = (_plus + ".syntax,\n");
+        dependencies = (_dependencies + _plus_1);
+        String _dependencies_1 = dependencies;
+        String _name_1 = module.getName();
+        String _plus_2 = (" fr.inria.diverse.module." + _name_1);
+        String _plus_3 = (_plus_2 + ".semantics,\n");
+        dependencies = (_dependencies_1 + _plus_3);
+      }
+    }
+    return dependencies;
   }
 }

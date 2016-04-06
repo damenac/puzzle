@@ -746,6 +746,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		languageFeatureRefEClass.getESuperTypes().add(this.getBooleanExpression());
 		unaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
 		binaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
+		semanticVariationPointEClass.getESuperTypes().add(this.getNamedElement());
+		semanticInterpretationEClass.getESuperTypes().add(this.getNamedElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

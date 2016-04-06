@@ -76,13 +76,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="semanticVariationPoints"
         upperBound="-1" eType="#//SemanticVariationPoint" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SemanticVariationPoint">
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticVariationPoint" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feature" lowerBound="1"
         eType="#//LanguageFeature" eOpposite="#//LanguageFeature/semanticVariationPoint"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interpretations" lowerBound="1"
         upperBound="-1" eType="#//SemanticInterpretation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SemanticInterpretation">
+  <eClassifiers xsi:type="ecore:EClass" name="SemanticInterpretation" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" lowerBound="1"
         eType="ecore:EClass ../../fr.inria.diverse.puzzle.language.adl.metamodel/models/ADL.ecore#//SemanticsImplementation"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="selected" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

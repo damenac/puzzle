@@ -146,7 +146,7 @@ public class SynthesizerManager {
 				RequiredInterface requiredInterface = PuzzleADLFactory.eINSTANCE.createRequiredInterface();
 				requiredInterface.setName(group.getName() + "Req");
 				requiredInterface.setEcorePath(group.getRequiredInterfacePath());
-				requiredInterface.setEcoreRelativePath(group.getMetamodelPath().replace(group.getImplementationProjectLocation(), ""));
+				requiredInterface.setEcoreRelativePath(group.getRequiredInterfacePath().replace(group.getImplementationProjectLocation(), ""));
 				languageModule.setRequiredInterface(requiredInterface);
 			}
 			
@@ -154,7 +154,7 @@ public class SynthesizerManager {
 				ProvidedInterface providedInterface = PuzzleADLFactory.eINSTANCE.createProvidedInterface();
 				providedInterface.setName(group.getName() + "Prov");
 				providedInterface.setEcorePath(group.getProvidedInterfacePath());
-				providedInterface.setEcoreRelativePath(group.getMetamodelPath().replace(group.getImplementationProjectLocation(), ""));
+				providedInterface.setEcoreRelativePath(group.getProvidedInterfacePath().replace(group.getImplementationProjectLocation(), "") );
 				languageModule.setProvidedInterface(providedInterface);
 			}
 			

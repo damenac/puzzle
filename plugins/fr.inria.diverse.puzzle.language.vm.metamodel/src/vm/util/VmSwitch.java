@@ -147,12 +147,14 @@ public class VmSwitch<T> extends Switch<T> {
 			case VmPackage.SEMANTIC_VARIATION_POINT: {
 				SemanticVariationPoint semanticVariationPoint = (SemanticVariationPoint)theEObject;
 				T result = caseSemanticVariationPoint(semanticVariationPoint);
+				if (result == null) result = caseNamedElement(semanticVariationPoint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VmPackage.SEMANTIC_INTERPRETATION: {
 				SemanticInterpretation semanticInterpretation = (SemanticInterpretation)theEObject;
 				T result = caseSemanticInterpretation(semanticInterpretation);
+				if (result == null) result = caseNamedElement(semanticInterpretation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

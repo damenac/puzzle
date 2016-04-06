@@ -4,8 +4,6 @@ package vm;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Semantic Variation Point</b></em>'.
@@ -23,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface SemanticVariationPoint extends EObject {
+public interface SemanticVariationPoint extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Feature</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link vm.LanguageFeature#getSemanticVariationPoint <em>Semantic Variation Point</em>}'.

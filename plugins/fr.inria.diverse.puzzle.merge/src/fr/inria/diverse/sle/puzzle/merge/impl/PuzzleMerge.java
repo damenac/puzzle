@@ -810,7 +810,7 @@ public class PuzzleMerge {
 						if(_legacyOperation != null){
 							for(EParameter _newEParameter : _newEOperation.getEParameters()){
 								EParameter _legacyParameter = searchEParameterByName(_legacyOperation, _newEParameter.getName());
-								if(_legacyParameter.getEType() != null){
+								if(_legacyParameter != null && _legacyParameter.getEType() != null){
 									String _resolvedTypeName = _legacyParameter.getEType().getName();
 									if(_resolvedTypeName != null){
 										if(_legacyParameter.getEType() instanceof EDataType){

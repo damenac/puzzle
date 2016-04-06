@@ -656,13 +656,22 @@ public interface VmPackage extends EPackage {
 	int SEMANTIC_VARIATION_POINT = 12;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_VARIATION_POINT__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Feature</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_VARIATION_POINT__FEATURE = 0;
+	int SEMANTIC_VARIATION_POINT__FEATURE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Interpretations</b></em>' containment reference list.
@@ -671,7 +680,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_VARIATION_POINT__INTERPRETATIONS = 1;
+	int SEMANTIC_VARIATION_POINT__INTERPRETATIONS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Semantic Variation Point</em>' class.
@@ -680,7 +689,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_VARIATION_POINT_FEATURE_COUNT = 2;
+	int SEMANTIC_VARIATION_POINT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Semantic Variation Point</em>' class.
@@ -689,7 +698,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_VARIATION_POINT_OPERATION_COUNT = 0;
+	int SEMANTIC_VARIATION_POINT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vm.impl.SemanticInterpretationImpl <em>Semantic Interpretation</em>}' class.
@@ -702,13 +711,22 @@ public interface VmPackage extends EPackage {
 	int SEMANTIC_INTERPRETATION = 13;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_INTERPRETATION__NAME = NAMED_ELEMENT__NAME;
+
+	/**
 	 * The feature id for the '<em><b>Implementation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_INTERPRETATION__IMPLEMENTATION = 0;
+	int SEMANTIC_INTERPRETATION__IMPLEMENTATION = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -717,7 +735,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_INTERPRETATION__SELECTED = 1;
+	int SEMANTIC_INTERPRETATION__SELECTED = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Semantic Interpretation</em>' class.
@@ -726,7 +744,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_INTERPRETATION_FEATURE_COUNT = 2;
+	int SEMANTIC_INTERPRETATION_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Semantic Interpretation</em>' class.
@@ -735,7 +753,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_INTERPRETATION_OPERATION_COUNT = 0;
+	int SEMANTIC_INTERPRETATION_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.
