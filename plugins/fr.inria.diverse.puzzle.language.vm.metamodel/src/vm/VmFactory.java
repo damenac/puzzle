@@ -22,6 +22,15 @@ public interface VmFactory extends EFactory {
 	VmFactory eINSTANCE = vm.impl.VmFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Language Product Line</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Language Product Line</em>'.
+	 * @generated
+	 */
+	LanguageProductLine createLanguageProductLine();
+
+	/**
 	 * Returns a new object of class '<em>Language Feature Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +101,33 @@ public interface VmFactory extends EFactory {
 	 * @generated
 	 */
 	BinaryExpression createBinaryExpression();
+
+	/**
+	 * Returns a new object of class '<em>Orthogonal Variability Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Orthogonal Variability Model</em>'.
+	 * @generated
+	 */
+	OrthogonalVariabilityModel createOrthogonalVariabilityModel();
+
+	/**
+	 * Returns a new object of class '<em>Semantic Variation Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Semantic Variation Point</em>'.
+	 * @generated
+	 */
+	SemanticVariationPoint createSemanticVariationPoint();
+
+	/**
+	 * Returns a new object of class '<em>Semantic Interpretation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Semantic Interpretation</em>'.
+	 * @generated
+	 */
+	SemanticInterpretation createSemanticInterpretation();
 
 	/**
 	 * Returns the package supported by this factory.

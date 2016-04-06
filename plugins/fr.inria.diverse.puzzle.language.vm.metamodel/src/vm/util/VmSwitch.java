@@ -66,23 +66,29 @@ public class VmSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case VmPackage.PNAMED_ELEMENT: {
-				PNamedElement pNamedElement = (PNamedElement)theEObject;
-				T result = casePNamedElement(pNamedElement);
+			case VmPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmPackage.LANGUAGE_PRODUCT_LINE: {
+				LanguageProductLine languageProductLine = (LanguageProductLine)theEObject;
+				T result = caseLanguageProductLine(languageProductLine);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VmPackage.LANGUAGE_FEATURE_MODEL: {
 				LanguageFeatureModel languageFeatureModel = (LanguageFeatureModel)theEObject;
 				T result = caseLanguageFeatureModel(languageFeatureModel);
-				if (result == null) result = casePNamedElement(languageFeatureModel);
+				if (result == null) result = caseNamedElement(languageFeatureModel);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case VmPackage.LANGUAGE_FEATURE: {
 				LanguageFeature languageFeature = (LanguageFeature)theEObject;
 				T result = caseLanguageFeature(languageFeature);
-				if (result == null) result = casePNamedElement(languageFeature);
+				if (result == null) result = caseNamedElement(languageFeature);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -101,7 +107,7 @@ public class VmSwitch<T> extends Switch<T> {
 			case VmPackage.LANGUAGE_CONSTRAINT: {
 				LanguageConstraint languageConstraint = (LanguageConstraint)theEObject;
 				T result = caseLanguageConstraint(languageConstraint);
-				if (result == null) result = casePNamedElement(languageConstraint);
+				if (result == null) result = caseNamedElement(languageConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -132,22 +138,55 @@ public class VmSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case VmPackage.ORTHOGONAL_VARIABILITY_MODEL: {
+				OrthogonalVariabilityModel orthogonalVariabilityModel = (OrthogonalVariabilityModel)theEObject;
+				T result = caseOrthogonalVariabilityModel(orthogonalVariabilityModel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmPackage.SEMANTIC_VARIATION_POINT: {
+				SemanticVariationPoint semanticVariationPoint = (SemanticVariationPoint)theEObject;
+				T result = caseSemanticVariationPoint(semanticVariationPoint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case VmPackage.SEMANTIC_INTERPRETATION: {
+				SemanticInterpretation semanticInterpretation = (SemanticInterpretation)theEObject;
+				T result = caseSemanticInterpretation(semanticInterpretation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>PNamed Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>PNamed Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePNamedElement(PNamedElement object) {
+	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Language Product Line</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Language Product Line</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLanguageProductLine(LanguageProductLine object) {
 		return null;
 	}
 
@@ -283,6 +322,51 @@ public class VmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBinaryExpression(BinaryExpression object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Orthogonal Variability Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Orthogonal Variability Model</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrthogonalVariabilityModel(OrthogonalVariabilityModel object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Semantic Variation Point</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Semantic Variation Point</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSemanticVariationPoint(SemanticVariationPoint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Semantic Interpretation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Semantic Interpretation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSemanticInterpretation(SemanticInterpretation object) {
 		return null;
 	}
 

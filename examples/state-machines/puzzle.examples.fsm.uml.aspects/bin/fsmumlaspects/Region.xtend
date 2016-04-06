@@ -19,7 +19,6 @@ import fsm.State
 import fsm.Region
 import fsm.InitialState
 import java.util.List
-import fsm.DeepHistory
 import fsm.Fork
 import fsm.Join
 import fsm.Junction
@@ -419,17 +418,17 @@ class RegionAspect {
 		return root
 	}
 	
-	def public void saveDeepHistoryState(Hashtable<String, Object> context){
-		println('saving the history state')
-		if(_self.subvertex.exists[ _vertex | _vertex instanceof Pseudostate &&
-			(_vertex instanceof DeepHistory)]){
-				_self.deepHistory = new ArrayList<AbstractState>()
-				val ArrayList<AbstractState> substates = new ArrayList<AbstractState>()
-				_self.getAllSubstates(_self.ownerState, substates)
-				_self.deepHistory.addAll(substates.filter[ _substate | 
-					(context.get("currentState-" + _self.name) as ArrayList<AbstractState>).contains(_substate)])
-		}
-	}
+//	def public void saveDeepHistoryState(Hashtable<String, Object> context){
+//		println('saving the history state')
+//		if(_self.subvertex.exists[ _vertex | _vertex instanceof Pseudostate &&
+//			(_vertex instanceof DeepHistory)]){
+//				_self.deepHistory = new ArrayList<AbstractState>()
+//				val ArrayList<AbstractState> substates = new ArrayList<AbstractState>()
+//				_self.getAllSubstates(_self.ownerState, substates)
+//				_self.deepHistory.addAll(substates.filter[ _substate | 
+//					(context.get("currentState-" + _self.name) as ArrayList<AbstractState>).contains(_substate)])
+//		}
+//	}
 	
 	def public void getAllSubstates(AbstractState vertex, ArrayList<AbstractState> children){
 		if(vertex instanceof State){

@@ -72,6 +72,29 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link vm.LanguageProductLine} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected LanguageProductLineItemProvider languageProductLineItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.LanguageProductLine}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createLanguageProductLineAdapter() {
+		if (languageProductLineItemProvider == null) {
+			languageProductLineItemProvider = new LanguageProductLineItemProvider(this);
+		}
+
+		return languageProductLineItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link vm.LanguageFeatureModel} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -256,6 +279,75 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link vm.OrthogonalVariabilityModel} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OrthogonalVariabilityModelItemProvider orthogonalVariabilityModelItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.OrthogonalVariabilityModel}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOrthogonalVariabilityModelAdapter() {
+		if (orthogonalVariabilityModelItemProvider == null) {
+			orthogonalVariabilityModelItemProvider = new OrthogonalVariabilityModelItemProvider(this);
+		}
+
+		return orthogonalVariabilityModelItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link vm.SemanticVariationPoint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SemanticVariationPointItemProvider semanticVariationPointItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.SemanticVariationPoint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSemanticVariationPointAdapter() {
+		if (semanticVariationPointItemProvider == null) {
+			semanticVariationPointItemProvider = new SemanticVariationPointItemProvider(this);
+		}
+
+		return semanticVariationPointItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link vm.SemanticInterpretation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected SemanticInterpretationItemProvider semanticInterpretationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link vm.SemanticInterpretation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createSemanticInterpretationAdapter() {
+		if (semanticInterpretationItemProvider == null) {
+			semanticInterpretationItemProvider = new SemanticInterpretationItemProvider(this);
+		}
+
+		return semanticInterpretationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -354,6 +446,7 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 	 * @generated
 	 */
 	public void dispose() {
+		if (languageProductLineItemProvider != null) languageProductLineItemProvider.dispose();
 		if (languageFeatureModelItemProvider != null) languageFeatureModelItemProvider.dispose();
 		if (languageFeatureItemProvider != null) languageFeatureItemProvider.dispose();
 		if (languageFeatureGroupItemProvider != null) languageFeatureGroupItemProvider.dispose();
@@ -362,6 +455,9 @@ public class VmItemProviderAdapterFactory extends VmAdapterFactory implements Co
 		if (languageFeatureRefItemProvider != null) languageFeatureRefItemProvider.dispose();
 		if (unaryExpressionItemProvider != null) unaryExpressionItemProvider.dispose();
 		if (binaryExpressionItemProvider != null) binaryExpressionItemProvider.dispose();
+		if (orthogonalVariabilityModelItemProvider != null) orthogonalVariabilityModelItemProvider.dispose();
+		if (semanticVariationPointItemProvider != null) semanticVariationPointItemProvider.dispose();
+		if (semanticInterpretationItemProvider != null) semanticInterpretationItemProvider.dispose();
 	}
 
 }

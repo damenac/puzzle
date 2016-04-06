@@ -68,8 +68,12 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 	protected VmSwitch<Adapter> modelSwitch =
 		new VmSwitch<Adapter>() {
 			@Override
-			public Adapter casePNamedElement(PNamedElement object) {
-				return createPNamedElementAdapter();
+			public Adapter caseNamedElement(NamedElement object) {
+				return createNamedElementAdapter();
+			}
+			@Override
+			public Adapter caseLanguageProductLine(LanguageProductLine object) {
+				return createLanguageProductLineAdapter();
 			}
 			@Override
 			public Adapter caseLanguageFeatureModel(LanguageFeatureModel object) {
@@ -108,6 +112,18 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 				return createBinaryExpressionAdapter();
 			}
 			@Override
+			public Adapter caseOrthogonalVariabilityModel(OrthogonalVariabilityModel object) {
+				return createOrthogonalVariabilityModelAdapter();
+			}
+			@Override
+			public Adapter caseSemanticVariationPoint(SemanticVariationPoint object) {
+				return createSemanticVariationPointAdapter();
+			}
+			@Override
+			public Adapter caseSemanticInterpretation(SemanticInterpretation object) {
+				return createSemanticInterpretationAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -128,16 +144,30 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link vm.PNamedElement <em>PNamed Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link vm.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see vm.PNamedElement
+	 * @see vm.NamedElement
 	 * @generated
 	 */
-	public Adapter createPNamedElementAdapter() {
+	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.LanguageProductLine <em>Language Product Line</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.LanguageProductLine
+	 * @generated
+	 */
+	public Adapter createLanguageProductLineAdapter() {
 		return null;
 	}
 
@@ -264,6 +294,48 @@ public class VmAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBinaryExpressionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.OrthogonalVariabilityModel <em>Orthogonal Variability Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.OrthogonalVariabilityModel
+	 * @generated
+	 */
+	public Adapter createOrthogonalVariabilityModelAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.SemanticVariationPoint <em>Semantic Variation Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.SemanticVariationPoint
+	 * @generated
+	 */
+	public Adapter createSemanticVariationPointAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link vm.SemanticInterpretation <em>Semantic Interpretation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see vm.SemanticInterpretation
+	 * @generated
+	 */
+	public Adapter createSemanticInterpretationAdapter() {
 		return null;
 	}
 

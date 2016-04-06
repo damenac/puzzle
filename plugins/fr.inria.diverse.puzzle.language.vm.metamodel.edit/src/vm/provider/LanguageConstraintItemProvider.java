@@ -24,7 +24,7 @@ import vm.VmPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LanguageConstraintItemProvider extends PNamedElementItemProvider {
+public class LanguageConstraintItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

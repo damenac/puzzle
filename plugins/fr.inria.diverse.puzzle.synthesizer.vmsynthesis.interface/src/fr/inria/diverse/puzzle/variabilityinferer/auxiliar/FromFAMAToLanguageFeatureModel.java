@@ -10,6 +10,7 @@ import vm.LanguageFeature;
 import vm.LanguageFeatureGroup;
 import vm.LanguageFeatureModel;
 import vm.LanguageFeatureRef;
+import vm.LanguageProductLine;
 import vm.UnaryExpression;
 import vm.UninaryOperator;
 import vm.VmFactory;
@@ -56,9 +57,10 @@ public class FromFAMAToLanguageFeatureModel {
 	 * @param famafm The feature model as an FAMAFeatureModel object.
 	 * @return
 	 */
-	public LanguageFeatureModel fromFAMAFeatureModelToFeatureModel(
+	public LanguageProductLine fromFAMAFeatureModelToFeatureModel(
 			FAMAFeatureModel famafm) {
 		Hashtable<String, String> famasIndexVsLanguageModules = PCMsGenerator.getInstance().getFamasIndexVsModulesName();
+		
 		LanguageFeatureModel fm = VmFactory.eINSTANCE.createLanguageFeatureModel();
 		LanguageFeature root = this.fromFAMAFeatureToLanguageFeature(famafm.getRoot());
 		fm.setRootFeature(root);
@@ -123,7 +125,9 @@ public class FromFAMAToLanguageFeatureModel {
 				fm.getConstraints().add(constraint);
 			}
 		}
-		return fm;
+		LanguageProductLine lpl = VmFactory.eINSTANCE.createLanguageProductLine();
+		lpl.setFunctionalVariability(fm);
+		return lpl;
 	}
 	
 	/**

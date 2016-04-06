@@ -21,7 +21,11 @@ import vm.LanguageFeatureGroup;
 import vm.LanguageFeatureGroupCardinality;
 import vm.LanguageFeatureModel;
 import vm.LanguageFeatureRef;
-import vm.PNamedElement;
+import vm.LanguageProductLine;
+import vm.NamedElement;
+import vm.OrthogonalVariabilityModel;
+import vm.SemanticInterpretation;
+import vm.SemanticVariationPoint;
 import vm.UnaryExpression;
 import vm.UninaryOperator;
 import vm.VmFactory;
@@ -39,7 +43,14 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass pNamedElementEClass = null;
+	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass languageProductLineEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -103,6 +114,27 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * @generated
 	 */
 	private EClass binaryExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass orthogonalVariabilityModelEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass semanticVariationPointEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass semanticInterpretationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -187,8 +219,8 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPNamedElement() {
-		return pNamedElementEClass;
+	public EClass getNamedElement() {
+		return namedElementEClass;
 	}
 
 	/**
@@ -196,8 +228,35 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPNamedElement_Name() {
-		return (EAttribute)pNamedElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNamedElement_Name() {
+		return (EAttribute)namedElementEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLanguageProductLine() {
+		return languageProductLineEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLanguageProductLine_FunctionalVariability() {
+		return (EReference)languageProductLineEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLanguageProductLine_SemanticalVariability() {
+		return (EReference)languageProductLineEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -297,6 +356,15 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 */
 	public EAttribute getLanguageFeature_Selected() {
 		return (EAttribute)languageFeatureEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLanguageFeature_SemanticVariationPoint() {
+		return (EReference)languageFeatureEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -466,6 +534,69 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getOrthogonalVariabilityModel() {
+		return orthogonalVariabilityModelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrthogonalVariabilityModel_SemanticVariationPoints() {
+		return (EReference)orthogonalVariabilityModelEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSemanticVariationPoint() {
+		return semanticVariationPointEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSemanticVariationPoint_Feature() {
+		return (EReference)semanticVariationPointEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSemanticVariationPoint_Interpretations() {
+		return (EReference)semanticVariationPointEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getSemanticInterpretation() {
+		return semanticInterpretationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSemanticInterpretation_Implementation() {
+		return (EReference)semanticInterpretationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getUninaryOperator() {
 		return uninaryOperatorEEnum;
 	}
@@ -507,8 +638,12 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		pNamedElementEClass = createEClass(PNAMED_ELEMENT);
-		createEAttribute(pNamedElementEClass, PNAMED_ELEMENT__NAME);
+		namedElementEClass = createEClass(NAMED_ELEMENT);
+		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
+
+		languageProductLineEClass = createEClass(LANGUAGE_PRODUCT_LINE);
+		createEReference(languageProductLineEClass, LANGUAGE_PRODUCT_LINE__FUNCTIONAL_VARIABILITY);
+		createEReference(languageProductLineEClass, LANGUAGE_PRODUCT_LINE__SEMANTICAL_VARIABILITY);
 
 		languageFeatureModelEClass = createEClass(LANGUAGE_FEATURE_MODEL);
 		createEReference(languageFeatureModelEClass, LANGUAGE_FEATURE_MODEL__ROOT_FEATURE);
@@ -522,6 +657,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEReference(languageFeatureEClass, LANGUAGE_FEATURE__PARENT_GROUP);
 		createEReference(languageFeatureEClass, LANGUAGE_FEATURE__IMPLEMENTATION_MODULE);
 		createEAttribute(languageFeatureEClass, LANGUAGE_FEATURE__SELECTED);
+		createEReference(languageFeatureEClass, LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT);
 
 		languageFeatureGroupEClass = createEClass(LANGUAGE_FEATURE_GROUP);
 		createEReference(languageFeatureGroupEClass, LANGUAGE_FEATURE_GROUP__FEATURES);
@@ -547,6 +683,16 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__LEFT);
 		createEReference(binaryExpressionEClass, BINARY_EXPRESSION__RIGHT);
 		createEAttribute(binaryExpressionEClass, BINARY_EXPRESSION__OPERATOR);
+
+		orthogonalVariabilityModelEClass = createEClass(ORTHOGONAL_VARIABILITY_MODEL);
+		createEReference(orthogonalVariabilityModelEClass, ORTHOGONAL_VARIABILITY_MODEL__SEMANTIC_VARIATION_POINTS);
+
+		semanticVariationPointEClass = createEClass(SEMANTIC_VARIATION_POINT);
+		createEReference(semanticVariationPointEClass, SEMANTIC_VARIATION_POINT__FEATURE);
+		createEReference(semanticVariationPointEClass, SEMANTIC_VARIATION_POINT__INTERPRETATIONS);
+
+		semanticInterpretationEClass = createEClass(SEMANTIC_INTERPRETATION);
+		createEReference(semanticInterpretationEClass, SEMANTIC_INTERPRETATION__IMPLEMENTATION);
 
 		// Create enums
 		uninaryOperatorEEnum = createEEnum(UNINARY_OPERATOR);
@@ -584,16 +730,20 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		languageFeatureModelEClass.getESuperTypes().add(this.getPNamedElement());
-		languageFeatureEClass.getESuperTypes().add(this.getPNamedElement());
-		languageConstraintEClass.getESuperTypes().add(this.getPNamedElement());
+		languageFeatureModelEClass.getESuperTypes().add(this.getNamedElement());
+		languageFeatureEClass.getESuperTypes().add(this.getNamedElement());
+		languageConstraintEClass.getESuperTypes().add(this.getNamedElement());
 		languageFeatureRefEClass.getESuperTypes().add(this.getBooleanExpression());
 		unaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
 		binaryExpressionEClass.getESuperTypes().add(this.getBooleanExpression());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(pNamedElementEClass, PNamedElement.class, "PNamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, PNamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(languageProductLineEClass, LanguageProductLine.class, "LanguageProductLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getLanguageProductLine_FunctionalVariability(), this.getLanguageFeatureModel(), null, "functionalVariability", null, 1, 1, LanguageProductLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLanguageProductLine_SemanticalVariability(), this.getOrthogonalVariabilityModel(), null, "semanticalVariability", null, 0, 1, LanguageProductLine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(languageFeatureModelEClass, LanguageFeatureModel.class, "LanguageFeatureModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLanguageFeatureModel_RootFeature(), this.getLanguageFeature(), null, "rootFeature", null, 0, 1, LanguageFeatureModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -607,6 +757,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getLanguageFeature_ParentGroup(), this.getLanguageFeatureGroup(), this.getLanguageFeatureGroup_Features(), "parentGroup", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLanguageFeature_ImplementationModule(), thePuzzleADLPackage.getLanguageModule(), null, "implementationModule", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLanguageFeature_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLanguageFeature_SemanticVariationPoint(), this.getSemanticVariationPoint(), this.getSemanticVariationPoint_Feature(), "semanticVariationPoint", null, 0, 1, LanguageFeature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(languageFeatureGroupEClass, LanguageFeatureGroup.class, "LanguageFeatureGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLanguageFeatureGroup_Features(), this.getLanguageFeature(), this.getLanguageFeature_ParentGroup(), "features", null, 1, -1, LanguageFeatureGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -632,6 +783,16 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 		initEReference(getBinaryExpression_Left(), this.getBooleanExpression(), null, "left", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBinaryExpression_Right(), this.getBooleanExpression(), null, "right", null, 1, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBinaryExpression_Operator(), this.getBinaryOperator(), "operator", null, 0, 1, BinaryExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(orthogonalVariabilityModelEClass, OrthogonalVariabilityModel.class, "OrthogonalVariabilityModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrthogonalVariabilityModel_SemanticVariationPoints(), this.getSemanticVariationPoint(), null, "semanticVariationPoints", null, 0, -1, OrthogonalVariabilityModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(semanticVariationPointEClass, SemanticVariationPoint.class, "SemanticVariationPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSemanticVariationPoint_Feature(), this.getLanguageFeature(), this.getLanguageFeature_SemanticVariationPoint(), "feature", null, 1, 1, SemanticVariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSemanticVariationPoint_Interpretations(), thePuzzleADLPackage.getSemanticsImplementation(), null, "interpretations", null, 1, -1, SemanticVariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(semanticInterpretationEClass, SemanticInterpretation.class, "SemanticInterpretation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getSemanticInterpretation_Implementation(), thePuzzleADLPackage.getSemanticsImplementation(), null, "implementation", null, 1, 1, SemanticInterpretation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(uninaryOperatorEEnum, UninaryOperator.class, "UninaryOperator");

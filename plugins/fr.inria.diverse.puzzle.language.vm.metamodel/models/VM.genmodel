@@ -16,8 +16,12 @@
       <genEnumLiterals ecoreEnumLiteral="VM.ecore#//BinaryOperator/implies"/>
       <genEnumLiterals ecoreEnumLiteral="VM.ecore#//BinaryOperator/xor"/>
     </genEnums>
-    <genClasses image="false" ecoreClass="VM.ecore#//PNamedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//PNamedElement/name"/>
+    <genClasses image="false" ecoreClass="VM.ecore#//NamedElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//NamedElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//LanguageProductLine">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//LanguageProductLine/functionalVariability"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//LanguageProductLine/semanticalVariability"/>
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//LanguageFeatureModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//LanguageFeatureModel/rootFeature"/>
@@ -31,6 +35,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//LanguageFeature/parentGroup"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//LanguageFeature/implementationModule"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//LanguageFeature/selected"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//LanguageFeature/semanticVariationPoint"/>
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//LanguageFeatureGroup">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//LanguageFeatureGroup/features"/>
@@ -55,6 +60,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//BinaryExpression/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//BinaryExpression/right"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//BinaryExpression/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//OrthogonalVariabilityModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//OrthogonalVariabilityModel/semanticVariationPoints"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//SemanticVariationPoint">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference VM.ecore#//SemanticVariationPoint/feature"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//SemanticVariationPoint/interpretations"/>
+    </genClasses>
+    <genClasses ecoreClass="VM.ecore#//SemanticInterpretation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//SemanticInterpretation/implementation"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

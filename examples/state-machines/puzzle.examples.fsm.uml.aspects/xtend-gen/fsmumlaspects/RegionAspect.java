@@ -4,7 +4,6 @@ import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fsm.AbstractState;
-import fsm.DeepHistory;
 import fsm.Fork;
 import fsm.InitialState;
 import fsm.Join;
@@ -132,11 +131,6 @@ public class RegionAspect {
     Object result = null;
     result =_privk3_getContextPath(_self_, _self,_vertex);
     return (java.lang.String)result;
-  }
-  
-  public static void saveDeepHistoryState(final Region _self, final Hashtable<String, Object> context) {
-    fsmumlaspects.RegionAspectRegionAspectProperties _self_ = fsmumlaspects.RegionAspectRegionAspectContext.getSelf(_self);
-    _privk3_saveDeepHistoryState(_self_, _self,context);
   }
   
   public static void getAllSubstates(final Region _self, final AbstractState vertex, final ArrayList<AbstractState> children) {
@@ -780,37 +774,6 @@ public class RegionAspect {
       root = (_root + _plus);
     }
     return root;
-  }
-  
-  protected static void _privk3_saveDeepHistoryState(final RegionAspectRegionAspectProperties _self_, final Region _self, final Hashtable<String, Object> context) {
-    InputOutput.<String>println("saving the history state");
-    EList<AbstractState> _subvertex = _self.getSubvertex();
-    final Function1<AbstractState, Boolean> _function = (AbstractState _vertex) -> {
-      boolean _and = false;
-      if (!(_vertex instanceof Pseudostate)) {
-        _and = false;
-      } else {
-        _and = (_vertex instanceof DeepHistory);
-      }
-      return Boolean.valueOf(_and);
-    };
-    boolean _exists = IterableExtensions.<AbstractState>exists(_subvertex, _function);
-    if (_exists) {
-      ArrayList<AbstractState> _arrayList = new ArrayList<AbstractState>();
-      RegionAspect.deepHistory(_self, _arrayList);
-      final ArrayList<AbstractState> substates = new ArrayList<AbstractState>();
-      State _ownerState = _self.getOwnerState();
-      RegionAspect.getAllSubstates(_self, _ownerState, substates);
-      ArrayList<AbstractState> _deepHistory = RegionAspect.deepHistory(_self);
-      final Function1<AbstractState, Boolean> _function_1 = (AbstractState _substate) -> {
-        String _name = _self.getName();
-        String _plus = ("currentState-" + _name);
-        Object _get = context.get(_plus);
-        return Boolean.valueOf(((ArrayList<AbstractState>) _get).contains(_substate));
-      };
-      Iterable<AbstractState> _filter = IterableExtensions.<AbstractState>filter(substates, _function_1);
-      Iterables.<AbstractState>addAll(_deepHistory, _filter);
-    }
   }
   
   protected static void _privk3_getAllSubstates(final RegionAspectRegionAspectProperties _self_, final Region _self, final AbstractState vertex, final ArrayList<AbstractState> children) {

@@ -2,6 +2,7 @@ package fr.inria.diverse.ksynthesis.ksynthesis.auxiliary;
 
 import vm.LanguageFeature;
 import vm.LanguageFeatureModel;
+import vm.LanguageProductLine;
 import vm.VmFactory;
 import fr.familiar.variable.FeatureModelVariable;
 
@@ -41,14 +42,17 @@ public class PuzzleFMTranslator {
 	 * @param fmv The feature model as an FeatureModelVariable object.
 	 * @return
 	 */
-	public LanguageFeatureModel fromFeatureModelVariableToFeatureModel(
+	public LanguageProductLine fromFeatureModelVariableToFeatureModel(
 			FeatureModelVariable fmv) {
 		LanguageFeatureModel fm = VmFactory.eINSTANCE.createLanguageFeatureModel();
 		
 		gsd.synthesis.FeatureModel<String> originalFeatureModel = fmv.getHierarchy();
 		gsd.synthesis.FeatureGraph<String> diagram = originalFeatureModel.getDiagram();
 		
-		return fm;
+		LanguageProductLine lpl = VmFactory.eINSTANCE.createLanguageProductLine();
+		lpl.setFunctionalVariability(fm);
+		
+		return lpl;
 	}
 	
 	/**

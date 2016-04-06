@@ -19,8 +19,6 @@ import fsm.State
 import fsm.Region
 import fsm.InitialState
 import java.util.List
-import fsm.DeepHistory
-import fsm.Conditional
 import fsm.Fork
 import fsm.Join
 import fsm.Junction
@@ -98,71 +96,62 @@ class RegionAspect {
 		var boolean allJunctionsAttended = false
 		
 		while(!allJunctionsAttended){
-			var boolean allConditionalsAttended = false
+				
+			var ArrayList<AbstractState> currentState = _self.getCurrentState(context, events)
+			var ArrayList<Transition> currentTransitions = new ArrayList<Transition>()
 			
-			while(!allConditionalsAttended){
-				
-				var ArrayList<AbstractState> currentState = _self.getCurrentState(context, events)
-				var ArrayList<Transition> currentTransitions = new ArrayList<Transition>()
-				
-				var ArrayList<AbstractState> attendedStates = new ArrayList<AbstractState>()
-				var ArrayList<AbstractState> newStates = new ArrayList<AbstractState>()
-				var EList<Transition> activeTransitions = new BasicEList<Transition>()
-				
-				for(AbstractState _state : currentState){
-					activeTransitions.addAll(_self.getActiveTransitions(_state, events))
-				}
-				println("")
-				for(Transition transition : activeTransitions){
-					_self.findOldActiveStates(attendedStates, transition, context)
-					_self.findNewActiveTransitions(currentTransitions, transition, context)
-					_self.findNewActiveStates(newStates, transition, currentTransitions, context)
-				}
-				
-				for(AbstractState _attendedState : attendedStates){
-					if(_attendedState instanceof State)
-						(_attendedState as State).exitState(context)
-				}
-				
-				_self.removeStatesFromContext(context, attendedStates)
-				_self.addStatesToContext(context, newStates)
-				
-				activeTransitions.forEach[ transition |
-					transition.evalTransition(context)
-				]
-				
-				currentTransitions.forEach[ transition |
-					if(!transition.alreadyFired(context))
-						transition.evalTransition(context)
-				]
-				
-				newStates.forEach[ state |
-						state.outgoing.forEach[ transition | transition.resetFired() ]
-				]
-				
-				val ArrayList<AbstractState> currentConditionalState = new ArrayList<AbstractState>
-				
-				var _it = context.keySet.iterator
-				while(_it.hasNext){
-					var String _key = _it.next
-					var Object _value = context.get(_key)
-					if(_key.startsWith("currentState"))
-						(_value as ArrayList<AbstractState>).forEach[ _vertex |
-							currentConditionalState.add(_vertex)]
-				}
-				
-				var _conditionalPseudostate = currentConditionalState.findFirst[_vertex | (_vertex instanceof Pseudostate) &&
-					(_vertex instanceof Conditional)]
-					
-				allConditionalsAttended = _conditionalPseudostate == null
+			var ArrayList<AbstractState> attendedStates = new ArrayList<AbstractState>()
+			var ArrayList<AbstractState> newStates = new ArrayList<AbstractState>()
+			var EList<Transition> activeTransitions = new BasicEList<Transition>()
+			
+			for(AbstractState _state : currentState){
+				activeTransitions.addAll(_self.getActiveTransitions(_state, events))
+			}
+			println("")
+			for(Transition transition : activeTransitions){
+				_self.findOldActiveStates(attendedStates, transition, context)
+				_self.findNewActiveTransitions(currentTransitions, transition, context)
+				_self.findNewActiveStates(newStates, transition, currentTransitions, context)
 			}
 			
-			var ArrayList<AbstractState> currentState = context.get("currentState-" + _self.name) as ArrayList<AbstractState>
+			for(AbstractState _attendedState : attendedStates){
+				if(_attendedState instanceof State)
+					(_attendedState as State).exitState(context)
+			}
+			
+			_self.removeStatesFromContext(context, attendedStates)
+			_self.addStatesToContext(context, newStates)
+			
+			activeTransitions.forEach[ transition |
+				transition.evalTransition(context)
+			]
+			
+			currentTransitions.forEach[ transition |
+				if(!transition.alreadyFired(context))
+					transition.evalTransition(context)
+			]
+			
+			newStates.forEach[ state |
+					state.outgoing.forEach[ transition | transition.resetFired() ]
+			]
+			
+			val ArrayList<AbstractState> currentConditionalState = new ArrayList<AbstractState>
+			
+			var _it = context.keySet.iterator
+			while(_it.hasNext){
+				var String _key = _it.next
+				var Object _value = context.get(_key)
+				if(_key.startsWith("currentState"))
+					(_value as ArrayList<AbstractState>).forEach[ _vertex |
+						currentConditionalState.add(_vertex)]
+			}
+		}
+		
+		var ArrayList<AbstractState> currentState = context.get("currentState-" + _self.name) as ArrayList<AbstractState>
 			allJunctionsAttended = !currentState.exists[_vertex | _vertex.outgoing.exists[_outgoing|
 				(_outgoing.target instanceof Pseudostate) &&
 					(_outgoing.target instanceof Junction)
 			]]
-		}
 	}
 	
 	def public void removeStatesFromContext(Hashtable<String, Object> context, ArrayList<AbstractState> toRemove){
@@ -442,17 +431,17 @@ class RegionAspect {
 		return res != activeTransitions.size()
 	}
 	
-	def public void saveDeepHistoryState(Hashtable<String, Object> context){
-		println('saving the history state')
-		if(_self.subvertex.exists[ _vertex | _vertex instanceof Pseudostate &&
-			(_vertex instanceof DeepHistory)]){
-				_self.deepHistory = new ArrayList<AbstractState>()
-				val ArrayList<AbstractState> substates = new ArrayList<AbstractState>()
-				_self.getAllSubstates(_self.ownerState, substates)
-				_self.deepHistory.addAll(substates.filter[ _substate | 
-					(context.get("currentState-" + _self.name) as ArrayList<AbstractState>).contains(_substate)])
-		}
-	}
+//	def public void saveDeepHistoryState(Hashtable<String, Object> context){
+//		println('saving the history state')
+//		if(_self.subvertex.exists[ _vertex | _vertex instanceof Pseudostate &&
+//			(_vertex instanceof DeepHistory)]){
+//				_self.deepHistory = new ArrayList<AbstractState>()
+//				val ArrayList<AbstractState> substates = new ArrayList<AbstractState>()
+//				_self.getAllSubstates(_self.ownerState, substates)
+//				_self.deepHistory.addAll(substates.filter[ _substate | 
+//					(context.get("currentState-" + _self.name) as ArrayList<AbstractState>).contains(_substate)])
+//		}
+//	}
 	
 	def public void getAllSubstates(AbstractState vertex, ArrayList<AbstractState> children){
 		if(vertex instanceof State){

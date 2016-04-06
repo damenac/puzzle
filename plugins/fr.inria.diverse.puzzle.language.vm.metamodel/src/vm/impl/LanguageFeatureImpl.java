@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import vm.LanguageFeature;
 import vm.LanguageFeatureGroup;
+import vm.SemanticVariationPoint;
 import vm.VmPackage;
 
 /**
@@ -39,12 +40,13 @@ import vm.VmPackage;
  *   <li>{@link vm.impl.LanguageFeatureImpl#getParentGroup <em>Parent Group</em>}</li>
  *   <li>{@link vm.impl.LanguageFeatureImpl#getImplementationModule <em>Implementation Module</em>}</li>
  *   <li>{@link vm.impl.LanguageFeatureImpl#isSelected <em>Selected</em>}</li>
+ *   <li>{@link vm.impl.LanguageFeatureImpl#getSemanticVariationPoint <em>Semantic Variation Point</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFeature {
+public class LanguageFeatureImpl extends NamedElementImpl implements LanguageFeature {
 	/**
 	 * The default value of the '{@link #isMandatory() <em>Mandatory</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -124,6 +126,16 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	 * @ordered
 	 */
 	protected boolean selected = SELECTED_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSemanticVariationPoint() <em>Semantic Variation Point</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSemanticVariationPoint()
+	 * @generated
+	 * @ordered
+	 */
+	protected SemanticVariationPoint semanticVariationPoint;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -354,6 +366,66 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public SemanticVariationPoint getSemanticVariationPoint() {
+		if (semanticVariationPoint != null && semanticVariationPoint.eIsProxy()) {
+			InternalEObject oldSemanticVariationPoint = (InternalEObject)semanticVariationPoint;
+			semanticVariationPoint = (SemanticVariationPoint)eResolveProxy(oldSemanticVariationPoint);
+			if (semanticVariationPoint != oldSemanticVariationPoint) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT, oldSemanticVariationPoint, semanticVariationPoint));
+			}
+		}
+		return semanticVariationPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SemanticVariationPoint basicGetSemanticVariationPoint() {
+		return semanticVariationPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSemanticVariationPoint(SemanticVariationPoint newSemanticVariationPoint, NotificationChain msgs) {
+		SemanticVariationPoint oldSemanticVariationPoint = semanticVariationPoint;
+		semanticVariationPoint = newSemanticVariationPoint;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT, oldSemanticVariationPoint, newSemanticVariationPoint);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSemanticVariationPoint(SemanticVariationPoint newSemanticVariationPoint) {
+		if (newSemanticVariationPoint != semanticVariationPoint) {
+			NotificationChain msgs = null;
+			if (semanticVariationPoint != null)
+				msgs = ((InternalEObject)semanticVariationPoint).eInverseRemove(this, VmPackage.SEMANTIC_VARIATION_POINT__FEATURE, SemanticVariationPoint.class, msgs);
+			if (newSemanticVariationPoint != null)
+				msgs = ((InternalEObject)newSemanticVariationPoint).eInverseAdd(this, VmPackage.SEMANTIC_VARIATION_POINT__FEATURE, SemanticVariationPoint.class, msgs);
+			msgs = basicSetSemanticVariationPoint(newSemanticVariationPoint, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT, newSemanticVariationPoint, newSemanticVariationPoint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -368,6 +440,10 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 				if (parentGroup != null)
 					msgs = ((InternalEObject)parentGroup).eInverseRemove(this, VmPackage.LANGUAGE_FEATURE_GROUP__FEATURES, LanguageFeatureGroup.class, msgs);
 				return basicSetParentGroup((LanguageFeatureGroup)otherEnd, msgs);
+			case VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT:
+				if (semanticVariationPoint != null)
+					msgs = ((InternalEObject)semanticVariationPoint).eInverseRemove(this, VmPackage.SEMANTIC_VARIATION_POINT__FEATURE, SemanticVariationPoint.class, msgs);
+				return basicSetSemanticVariationPoint((SemanticVariationPoint)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -388,6 +464,8 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 				return ((InternalEList<?>)getGroups()).basicRemove(otherEnd, msgs);
 			case VmPackage.LANGUAGE_FEATURE__PARENT_GROUP:
 				return basicSetParentGroup(null, msgs);
+			case VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT:
+				return basicSetSemanticVariationPoint(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -430,6 +508,9 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 				return basicGetImplementationModule();
 			case VmPackage.LANGUAGE_FEATURE__SELECTED:
 				return isSelected();
+			case VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT:
+				if (resolve) return getSemanticVariationPoint();
+				return basicGetSemanticVariationPoint();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -466,6 +547,9 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 			case VmPackage.LANGUAGE_FEATURE__SELECTED:
 				setSelected((Boolean)newValue);
 				return;
+			case VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT:
+				setSemanticVariationPoint((SemanticVariationPoint)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -499,6 +583,9 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 			case VmPackage.LANGUAGE_FEATURE__SELECTED:
 				setSelected(SELECTED_EDEFAULT);
 				return;
+			case VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT:
+				setSemanticVariationPoint((SemanticVariationPoint)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -525,6 +612,8 @@ public class LanguageFeatureImpl extends PNamedElementImpl implements LanguageFe
 				return implementationModule != null;
 			case VmPackage.LANGUAGE_FEATURE__SELECTED:
 				return selected != SELECTED_EDEFAULT;
+			case VmPackage.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT:
+				return semanticVariationPoint != null;
 		}
 		return super.eIsSet(featureID);
 	}

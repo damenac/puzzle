@@ -7,7 +7,7 @@ import org.eclipse.core.resources.IProject;
 import PuzzleADL.LanguageArchitecture;
 import PuzzleADL.LanguageModule;
 import vm.LanguageFeature;
-import vm.LanguageFeatureModel;
+import vm.LanguageProductLine;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
 import fr.inria.diverse.graph.Vertex;
@@ -59,14 +59,14 @@ public class VariabilityInfererManager {
 	 * @param languageArchitectureModel 
 	 * @throws Exception
 	 */
-	public LanguageFeatureModel synthesizeOpenFeaturesModel(SynthesisProperties synthesisProperties,
+	public LanguageProductLine synthesizeOpenFeaturesModel(SynthesisProperties synthesisProperties,
 			ArrayList<Language> languages, EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph,
 			IProject project, LanguageArchitecture languageArchitectureModel) throws Exception {
 		
 		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
 		
-		LanguageFeatureModel openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
+		LanguageProductLine openFeaturesModel = inferrer.inferOpenFeaturesModel(project, 
 				synthesisProperties, languages, modularizationGraph, dependenciesGraph);
 
 		this.addModulesInformation(openFeaturesModel, modularizationGraph, languageArchitectureModel);
@@ -81,9 +81,9 @@ public class VariabilityInfererManager {
 	 * @param modularizationGraph
 	 * @param languageArchitectureModel 
 	 */
-	private void addModulesInformation(LanguageFeatureModel featureModel,
+	private void addModulesInformation(LanguageProductLine featureModel,
 			EcoreGraph modularizationGraph, LanguageArchitecture languageArchitectureModel) {
-		this.findLanguageModule(featureModel.getRootFeature(), modularizationGraph, languageArchitectureModel);
+		this.findLanguageModule(featureModel.getFunctionalVariability().getRootFeature(), modularizationGraph, languageArchitectureModel);
 	}
 
 	/**
@@ -133,15 +133,15 @@ public class VariabilityInfererManager {
 	 * @return
 	 * @throws Exception
 	 */
-	public LanguageFeatureModel synthesizeClosedFeaturesModel(
+	public LanguageProductLine synthesizeClosedFeaturesModel(
 			SynthesisProperties synthesisProperties, ArrayList<Language> languages,
 			EcoreGraph modularizationGraph, DependencyGraph dependenciesGraph,
-			IProject project, LanguageFeatureModel openFeaturesModel) throws Exception {
+			IProject project, LanguageProductLine openFeaturesModel) throws Exception {
 		
 		FeaturesModelInference inferrer = synthesisProperties
 				.getVariabilityInferer();
 		
-		LanguageFeatureModel closedFeaturesModel = inferrer.inferClosedFeaturesModel(
+		LanguageProductLine closedFeaturesModel = inferrer.inferClosedFeaturesModel(
 				project, synthesisProperties, languages, modularizationGraph, openFeaturesModel);
 
 		return closedFeaturesModel;

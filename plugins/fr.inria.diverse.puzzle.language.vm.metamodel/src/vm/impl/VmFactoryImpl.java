@@ -57,6 +57,7 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case VmPackage.LANGUAGE_PRODUCT_LINE: return createLanguageProductLine();
 			case VmPackage.LANGUAGE_FEATURE_MODEL: return createLanguageFeatureModel();
 			case VmPackage.LANGUAGE_FEATURE: return createLanguageFeature();
 			case VmPackage.LANGUAGE_FEATURE_GROUP: return createLanguageFeatureGroup();
@@ -65,6 +66,9 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 			case VmPackage.LANGUAGE_FEATURE_REF: return createLanguageFeatureRef();
 			case VmPackage.UNARY_EXPRESSION: return createUnaryExpression();
 			case VmPackage.BINARY_EXPRESSION: return createBinaryExpression();
+			case VmPackage.ORTHOGONAL_VARIABILITY_MODEL: return createOrthogonalVariabilityModel();
+			case VmPackage.SEMANTIC_VARIATION_POINT: return createSemanticVariationPoint();
+			case VmPackage.SEMANTIC_INTERPRETATION: return createSemanticInterpretation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -102,6 +106,16 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LanguageProductLine createLanguageProductLine() {
+		LanguageProductLineImpl languageProductLine = new LanguageProductLineImpl();
+		return languageProductLine;
 	}
 
 	/**
@@ -182,6 +196,36 @@ public class VmFactoryImpl extends EFactoryImpl implements VmFactory {
 	public BinaryExpression createBinaryExpression() {
 		BinaryExpressionImpl binaryExpression = new BinaryExpressionImpl();
 		return binaryExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrthogonalVariabilityModel createOrthogonalVariabilityModel() {
+		OrthogonalVariabilityModelImpl orthogonalVariabilityModel = new OrthogonalVariabilityModelImpl();
+		return orthogonalVariabilityModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SemanticVariationPoint createSemanticVariationPoint() {
+		SemanticVariationPointImpl semanticVariationPoint = new SemanticVariationPointImpl();
+		return semanticVariationPoint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public SemanticInterpretation createSemanticInterpretation() {
+		SemanticInterpretationImpl semanticInterpretation = new SemanticInterpretationImpl();
+		return semanticInterpretation;
 	}
 
 	/**

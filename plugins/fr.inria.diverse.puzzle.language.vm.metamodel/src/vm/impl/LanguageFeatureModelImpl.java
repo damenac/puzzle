@@ -36,7 +36,7 @@ import vm.VmPackage;
  *
  * @generated
  */
-public class LanguageFeatureModelImpl extends PNamedElementImpl implements LanguageFeatureModel {
+public class LanguageFeatureModelImpl extends NamedElementImpl implements LanguageFeatureModel {
 	/**
 	 * The cached value of the '{@link #getRootFeature() <em>Root Feature</em>}' containment reference.
 	 * <!-- begin-user-doc -->

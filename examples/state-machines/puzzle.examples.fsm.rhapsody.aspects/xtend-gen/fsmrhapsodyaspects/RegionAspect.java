@@ -4,7 +4,6 @@ import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fsm.AbstractState;
-import fsm.Conditional;
 import fsm.Fork;
 import fsm.InitialState;
 import fsm.Join;
@@ -223,89 +222,72 @@ public class RegionAspect {
     boolean allJunctionsAttended = false;
     while ((!allJunctionsAttended)) {
       {
-        boolean allConditionalsAttended = false;
-        while ((!allConditionalsAttended)) {
+        ArrayList<AbstractState> currentState = RegionAspect.getCurrentState(_self, context, events);
+        ArrayList<Transition> currentTransitions = new ArrayList<Transition>();
+        ArrayList<AbstractState> attendedStates = new ArrayList<AbstractState>();
+        ArrayList<AbstractState> newStates = new ArrayList<AbstractState>();
+        EList<Transition> activeTransitions = new BasicEList<Transition>();
+        for (final AbstractState _state : currentState) {
+          EList<Transition> _activeTransitions = RegionAspect.getActiveTransitions(_self, _state, events);
+          activeTransitions.addAll(_activeTransitions);
+        }
+        for (final Transition transition : activeTransitions) {
           {
-            ArrayList<AbstractState> currentState = RegionAspect.getCurrentState(_self, context, events);
-            ArrayList<Transition> currentTransitions = new ArrayList<Transition>();
-            ArrayList<AbstractState> attendedStates = new ArrayList<AbstractState>();
-            ArrayList<AbstractState> newStates = new ArrayList<AbstractState>();
-            EList<Transition> activeTransitions = new BasicEList<Transition>();
-            for (final AbstractState _state : currentState) {
-              EList<Transition> _activeTransitions = RegionAspect.getActiveTransitions(_self, _state, events);
-              activeTransitions.addAll(_activeTransitions);
-            }
-            for (final Transition transition : activeTransitions) {
-              {
-                RegionAspect.findOldActiveStates(_self, attendedStates, transition, context);
-                RegionAspect.findNewActiveTransitions(_self, currentTransitions, transition, context);
-                RegionAspect.findNewActiveStates(_self, newStates, transition, currentTransitions, context);
-              }
-            }
-            for (final AbstractState _attendedState : attendedStates) {
-              if ((_attendedState instanceof State)) {
-                StateAspect.exitState(((State) _attendedState), context);
-              }
-            }
-            RegionAspect.removeStatesFromContext(_self, context, attendedStates);
-            RegionAspect.addStatesToContext(_self, context, newStates);
-            final Consumer<Transition> _function = (Transition transition_1) -> {
-              TransitionAspect.evalTransition(transition_1, context);
-            };
-            activeTransitions.forEach(_function);
-            final Consumer<Transition> _function_1 = (Transition transition_1) -> {
-              boolean _alreadyFired = TransitionAspect.alreadyFired(transition_1, context);
-              boolean _not = (!_alreadyFired);
-              if (_not) {
-                TransitionAspect.evalTransition(transition_1, context);
-              }
-            };
-            currentTransitions.forEach(_function_1);
-            final Consumer<AbstractState> _function_2 = (AbstractState state) -> {
-              EList<Transition> _outgoing = state.getOutgoing();
-              final Consumer<Transition> _function_3 = (Transition transition_1) -> {
-                TransitionAspect.resetFired(transition_1);
+            RegionAspect.findOldActiveStates(_self, attendedStates, transition, context);
+            RegionAspect.findNewActiveTransitions(_self, currentTransitions, transition, context);
+            RegionAspect.findNewActiveStates(_self, newStates, transition, currentTransitions, context);
+          }
+        }
+        for (final AbstractState _attendedState : attendedStates) {
+          if ((_attendedState instanceof State)) {
+            StateAspect.exitState(((State) _attendedState), context);
+          }
+        }
+        RegionAspect.removeStatesFromContext(_self, context, attendedStates);
+        RegionAspect.addStatesToContext(_self, context, newStates);
+        final Consumer<Transition> _function = (Transition transition_1) -> {
+          TransitionAspect.evalTransition(transition_1, context);
+        };
+        activeTransitions.forEach(_function);
+        final Consumer<Transition> _function_1 = (Transition transition_1) -> {
+          boolean _alreadyFired = TransitionAspect.alreadyFired(transition_1, context);
+          boolean _not = (!_alreadyFired);
+          if (_not) {
+            TransitionAspect.evalTransition(transition_1, context);
+          }
+        };
+        currentTransitions.forEach(_function_1);
+        final Consumer<AbstractState> _function_2 = (AbstractState state) -> {
+          EList<Transition> _outgoing = state.getOutgoing();
+          final Consumer<Transition> _function_3 = (Transition transition_1) -> {
+            TransitionAspect.resetFired(transition_1);
+          };
+          _outgoing.forEach(_function_3);
+        };
+        newStates.forEach(_function_2);
+        final ArrayList<AbstractState> currentConditionalState = new ArrayList<AbstractState>();
+        Set<String> _keySet = context.keySet();
+        Iterator<String> _it = _keySet.iterator();
+        while (_it.hasNext()) {
+          {
+            String _key = _it.next();
+            Object _value = context.get(_key);
+            boolean _startsWith = _key.startsWith("currentState");
+            if (_startsWith) {
+              final Consumer<AbstractState> _function_3 = (AbstractState _vertex) -> {
+                currentConditionalState.add(_vertex);
               };
-              _outgoing.forEach(_function_3);
-            };
-            newStates.forEach(_function_2);
-            final ArrayList<AbstractState> currentConditionalState = new ArrayList<AbstractState>();
-            Set<String> _keySet = context.keySet();
-            Iterator<String> _it = _keySet.iterator();
-            while (_it.hasNext()) {
-              {
-                String _key = _it.next();
-                Object _value = context.get(_key);
-                boolean _startsWith = _key.startsWith("currentState");
-                if (_startsWith) {
-                  final Consumer<AbstractState> _function_3 = (AbstractState _vertex) -> {
-                    currentConditionalState.add(_vertex);
-                  };
-                  ((ArrayList<AbstractState>) _value).forEach(_function_3);
-                }
-              }
+              ((ArrayList<AbstractState>) _value).forEach(_function_3);
             }
-            final Function1<AbstractState, Boolean> _function_3 = (AbstractState _vertex) -> {
-              boolean _and = false;
-              if (!(_vertex instanceof Pseudostate)) {
-                _and = false;
-              } else {
-                _and = (_vertex instanceof Conditional);
-              }
-              return Boolean.valueOf(_and);
-            };
-            AbstractState _conditionalPseudostate = IterableExtensions.<AbstractState>findFirst(currentConditionalState, _function_3);
-            boolean _equals = Objects.equal(_conditionalPseudostate, null);
-            allConditionalsAttended = _equals;
           }
         }
         String _name = _self.getName();
         String _plus = ("currentState-" + _name);
         Object _get = context.get(_plus);
-        ArrayList<AbstractState> currentState = ((ArrayList<AbstractState>) _get);
-        final Function1<AbstractState, Boolean> _function = (AbstractState _vertex) -> {
+        currentState = ((ArrayList<AbstractState>) _get);
+        final Function1<AbstractState, Boolean> _function_3 = (AbstractState _vertex) -> {
           EList<Transition> _outgoing = _vertex.getOutgoing();
-          final Function1<Transition, Boolean> _function_1 = (Transition _outgoing_1) -> {
+          final Function1<Transition, Boolean> _function_4 = (Transition _outgoing_1) -> {
             boolean _and = false;
             AbstractState _target = _outgoing_1.getTarget();
             if (!(_target instanceof Pseudostate)) {
@@ -316,9 +298,9 @@ public class RegionAspect {
             }
             return Boolean.valueOf(_and);
           };
-          return Boolean.valueOf(IterableExtensions.<Transition>exists(_outgoing, _function_1));
+          return Boolean.valueOf(IterableExtensions.<Transition>exists(_outgoing, _function_4));
         };
-        boolean _exists = IterableExtensions.<AbstractState>exists(currentState, _function);
+        boolean _exists = IterableExtensions.<AbstractState>exists(currentState, _function_3);
         boolean _not = (!_exists);
         allJunctionsAttended = _not;
       }

@@ -11,6 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import vm.LanguageFeatureModel;
+import vm.LanguageProductLine;
 import fr.inria.diverse.generator.pcm.InstanceVO;
 import fr.inria.diverse.generator.pcm.PCMGenerator;
 import fr.inria.diverse.generator.pcm.PCMQueryServices;
@@ -51,14 +52,14 @@ public class RandomTestFromInstancesFiles {
 	
 	public boolean executeTest(InstanceVO instance, StringBuffer buffer) throws Exception {
 		Graph<Vertex, Arc> graph = instance.getDependenciesGraph();
-		LanguageFeatureModel openFM = VmSynthesis.getInstance().synthesizeOpenFeatureModel(graph);
+		LanguageProductLine openFM = VmSynthesis.getInstance().synthesizeOpenFeatureModel(graph);
 		System.out.println("openFM");
-		TestServices.printFM(openFM);
+		TestServices.printFM(openFM.getFunctionalVariability());
 		
 		int originalNumProducts = instance.getOpenPCM().split("\n").length - 1;
 		int numProducts = instance.getClosedPCM().split("\n").length - 1;
 		
-		LanguageFeatureModel closedFM = synthesis.cloneFeatureModel(openFM);
+		LanguageFeatureModel closedFM = synthesis.cloneFeatureModel(openFM.getFunctionalVariability());
 		PCMQueryServices.getInstance().loadPCM(instance.getClosedPCM());
 		long before = System.currentTimeMillis();
 

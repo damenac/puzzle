@@ -27,7 +27,7 @@ import vm.VmPackage;
  *
  * @generated
  */
-public class LanguageConstraintImpl extends PNamedElementImpl implements LanguageConstraint {
+public class LanguageConstraintImpl extends NamedElementImpl implements LanguageConstraint {
 	/**
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->

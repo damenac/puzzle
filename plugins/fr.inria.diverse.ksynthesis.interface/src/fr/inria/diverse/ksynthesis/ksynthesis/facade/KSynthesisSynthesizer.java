@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import vm.LanguageFeatureModel;
+import vm.LanguageProductLine;
 import foreverse.ksynthesis.Heuristic;
 import foreverse.ksynthesis.InteractiveFMSynthesizer;
 import foreverse.ksynthesis.metrics.AlwaysZeroMetric;
@@ -64,7 +64,7 @@ public class KSynthesisSynthesizer {
 	 * @param outputFile The location of the file in which the feature model should be saved. 
 	 * @throws FileNotFoundException 
 	 */
-	public LanguageFeatureModel synthesizeFeatureModelFromPCM(String inputFile, String outputFile) throws Exception{
+	public LanguageProductLine synthesizeFeatureModelFromPCM(String inputFile, String outputFile) throws Exception{
 		ProductLine pl = loadProductLineFromPCM(inputFile);
 		FeatureModelVariable fm = obtainVariabilityModelConstraints(pl);
 		System.out.println(fm + " base fm");

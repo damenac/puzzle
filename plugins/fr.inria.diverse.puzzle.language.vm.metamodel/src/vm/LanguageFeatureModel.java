@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LanguageFeatureModel extends PNamedElement {
+public interface LanguageFeatureModel extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Root Feature</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

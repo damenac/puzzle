@@ -19,7 +19,7 @@ package vm;
  * @model
  * @generated
  */
-public interface LanguageConstraint extends PNamedElement {
+public interface LanguageConstraint extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

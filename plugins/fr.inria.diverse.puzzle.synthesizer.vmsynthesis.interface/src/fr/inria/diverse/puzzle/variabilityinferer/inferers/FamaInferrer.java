@@ -10,8 +10,8 @@ import vm.BinaryExpression;
 import vm.BinaryOperator;
 import vm.LanguageConstraint;
 import vm.LanguageFeature;
-import vm.LanguageFeatureModel;
 import vm.LanguageFeatureRef;
+import vm.LanguageProductLine;
 import vm.VmFactory;
 import es.us.isa.FAMA.models.FAMAfeatureModel.FAMAFeatureModel;
 import fama.synthesizer.facade.FamaSynthesizer;
@@ -37,7 +37,7 @@ public class FamaInferrer implements FeaturesModelInference{
 	// --------------------------------------------------------
 	
 	@Override
-	public LanguageFeatureModel inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties,
+	public LanguageProductLine inferOpenFeaturesModel(IProject targetProject, SynthesisProperties properties,
 			ArrayList<Language> languages, EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph) throws Exception {
 		String PCM = PCMsGenerator.getInstance().generatePCM(properties, languages, modularizationGraph, PCMsGenerator.FAMA_FORMAT);
 		
@@ -55,15 +55,15 @@ public class FamaInferrer implements FeaturesModelInference{
 				+ "/variabilityModel.xml";
 		
 		FAMAFeatureModel famafm = FamaSynthesizer.getInstance().synthesizeFeatureModelFromPCM(inputFile, outputFile);
-		LanguageFeatureModel fm = FromFAMAToLanguageFeatureModel.getInstance().fromFAMAFeatureModelToFeatureModel(famafm);
+		LanguageProductLine fm = FromFAMAToLanguageFeatureModel.getInstance().fromFAMAFeatureModelToFeatureModel(famafm);
 		this.createTechnologicalConstraints(fm, dependenciesGraph);
 		return fm;
 	}
 
 	@Override
-	public LanguageFeatureModel inferClosedFeaturesModel(IProject targetProject,
+	public LanguageProductLine inferClosedFeaturesModel(IProject targetProject,
 			SynthesisProperties properties, ArrayList<Language> languages,
-			EcoreGraph modularizationGraph, LanguageFeatureModel openFeaturesModel) throws Exception {
+			EcoreGraph modularizationGraph, LanguageProductLine openFeaturesModel) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -77,7 +77,7 @@ public class FamaInferrer implements FeaturesModelInference{
 	 * @param fm. The feature model that will be enhanced with the technological constraints.
 	 * @param modularizationGraph. The modularization graph that is used to obtain the technological constraints.
 	 */
-	private void createTechnologicalConstraints(LanguageFeatureModel fm,
+	private void createTechnologicalConstraints(LanguageProductLine fm,
 			Graph<Vertex, Arc> dependenciesGraph) {
 		
 		for (Arc arc : dependenciesGraph.getArcs()) {
@@ -85,17 +85,17 @@ public class FamaInferrer implements FeaturesModelInference{
 			BinaryExpression expression = VmFactory.eINSTANCE.createBinaryExpression();
 			
 			LanguageFeatureRef originRef = VmFactory.eINSTANCE.createLanguageFeatureRef();
-			originRef.setRef(this.getLanguageFeatureByName(arc.getFrom().getIdentifier(), fm.getRootFeature()));
+			originRef.setRef(this.getLanguageFeatureByName(arc.getFrom().getIdentifier(), fm.getFunctionalVariability().getRootFeature()));
 
 			LanguageFeatureRef destinationRef = VmFactory.eINSTANCE.createLanguageFeatureRef();
-			destinationRef.setRef(this.getLanguageFeatureByName(arc.getTo().getIdentifier(), fm.getRootFeature()));
+			destinationRef.setRef(this.getLanguageFeatureByName(arc.getTo().getIdentifier(), fm.getFunctionalVariability().getRootFeature()));
 
 			expression.setLeft(originRef);
 			expression.setRight(destinationRef);
 			expression.setOperator(BinaryOperator.IMPLIES);
 			constraint.setExpression(expression);
 			constraint.setName(originRef.getRef().getName() + " => " + destinationRef.getRef().getName());
-			fm.getConstraints().add(constraint);
+			fm.getFunctionalVariability().getConstraints().add(constraint);
 		}
 	}
 	

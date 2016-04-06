@@ -16,6 +16,7 @@ import vm.LanguageFeatureGroup;
 import vm.LanguageFeatureGroupCardinality;
 import vm.LanguageFeatureModel;
 import vm.LanguageFeatureRef;
+import vm.LanguageProductLine;
 import vm.UnaryExpression;
 import vm.UninaryOperator;
 import vm.VmFactory;
@@ -58,7 +59,7 @@ public class VmSynthesis {
 	 * @param dependenciesGraph
 	 * @return
 	 */
-	public LanguageFeatureModel synthesizeOpenFeatureModel(Graph<Vertex, Arc> dependenciesGraph) {
+	public LanguageProductLine synthesizeOpenFeatureModel(Graph<Vertex, Arc> dependenciesGraph) {
 		LanguageFeatureModel featureModel = VmFactory.eINSTANCE.createLanguageFeatureModel();
 
 		// TODO Put a real family name to the feature model.
@@ -128,7 +129,11 @@ public class VmSynthesis {
 
 		featureModel.setRootFeature(rootFeature);
 		this.addCrosslevelRequires(featureModel, dependenciesGraph);
-		return featureModel;
+		
+		LanguageProductLine lpl = VmFactory.eINSTANCE.createLanguageProductLine();
+		lpl.setFunctionalVariability(featureModel);
+		
+		return lpl;
 	}
 
 	private void addCrosslevelRequires(LanguageFeatureModel featureModel, Graph<Vertex, Arc> dependenciesGraph) {
@@ -172,8 +177,8 @@ public class VmSynthesis {
 		return false;
 	}
 
-	public LanguageFeatureModel synthesizeClosedFeatureModel(String PCM, LanguageFeatureModel openFeatureModel) throws Exception {
-		LanguageFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel);
+	public LanguageProductLine synthesizeClosedFeatureModel(String PCM, LanguageProductLine openFeatureModel) throws Exception {
+		LanguageFeatureModel closedFeatureModel = this.cloneFeatureModel(openFeatureModel.getFunctionalVariability());
 		PCMQueryServices.getInstance().loadPCM(PCM);
 
 		this.identifyMandatoryFeatures(closedFeatureModel);
@@ -183,7 +188,9 @@ public class VmSynthesis {
 		this.addAdditionalExcludesConstraints(closedFeatureModel);
 //		this.groupImplicationsByLeftSide(closedFeatureModel);
 		
-		return closedFeatureModel;
+		LanguageProductLine lpl = VmFactory.eINSTANCE.createLanguageProductLine();
+		lpl.setFunctionalVariability(closedFeatureModel);
+		return lpl;
 	}
 
 

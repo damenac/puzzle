@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link vm.LanguageFeature#getParentGroup <em>Parent Group</em>}</li>
  *   <li>{@link vm.LanguageFeature#getImplementationModule <em>Implementation Module</em>}</li>
  *   <li>{@link vm.LanguageFeature#isSelected <em>Selected</em>}</li>
+ *   <li>{@link vm.LanguageFeature#getSemanticVariationPoint <em>Semantic Variation Point</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,7 +29,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface LanguageFeature extends PNamedElement {
+public interface LanguageFeature extends NamedElement {
 	/**
 	 * Returns the value of the '<em><b>Mandatory</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -196,5 +197,33 @@ public interface LanguageFeature extends PNamedElement {
 	 * @generated
 	 */
 	void setSelected(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Semantic Variation Point</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link vm.SemanticVariationPoint#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Semantic Variation Point</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Semantic Variation Point</em>' reference.
+	 * @see #setSemanticVariationPoint(SemanticVariationPoint)
+	 * @see vm.VmPackage#getLanguageFeature_SemanticVariationPoint()
+	 * @see vm.SemanticVariationPoint#getFeature
+	 * @model opposite="feature"
+	 * @generated
+	 */
+	SemanticVariationPoint getSemanticVariationPoint();
+
+	/**
+	 * Sets the value of the '{@link vm.LanguageFeature#getSemanticVariationPoint <em>Semantic Variation Point</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Semantic Variation Point</em>' reference.
+	 * @see #getSemanticVariationPoint()
+	 * @generated
+	 */
+	void setSemanticVariationPoint(SemanticVariationPoint value);
 
 } // LanguageFeature

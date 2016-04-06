@@ -19,7 +19,6 @@ import fsm.State
 import fsm.Region
 import fsm.InitialState
 import java.util.List
-import fsm.Conditional
 import fsm.Fork
 import fsm.Join
 import fsm.Junction
@@ -87,9 +86,7 @@ class RegionAspect {
 		
 		var boolean allJunctionsAttended = false
 		while(!allJunctionsAttended){
-			var boolean allConditionalsAttended = false
-			while(!allConditionalsAttended){
-				
+
 				var ArrayList<AbstractState> currentState = _self.getCurrentState(context, events)
 				var ArrayList<Transition> currentTransitions = new ArrayList<Transition>()
 				
@@ -139,13 +136,8 @@ class RegionAspect {
 							currentConditionalState.add(_vertex)]
 				}
 				
-				var _conditionalPseudostate = currentConditionalState.findFirst[_vertex | (_vertex instanceof Pseudostate) &&
-					(_vertex instanceof Conditional)]
-					
-				allConditionalsAttended = _conditionalPseudostate == null
-			}
 			
-			var ArrayList<AbstractState> currentState = context.get("currentState-" + _self.name) as ArrayList<AbstractState>
+			currentState = context.get("currentState-" + _self.name) as ArrayList<AbstractState>
 			allJunctionsAttended = !currentState.exists[_vertex | _vertex.outgoing.exists[_outgoing|
 				(_outgoing.target instanceof Pseudostate) &&
 					(_outgoing.target instanceof Junction)]]

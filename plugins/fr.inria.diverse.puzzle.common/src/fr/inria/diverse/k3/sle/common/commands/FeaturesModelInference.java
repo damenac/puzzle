@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.LanguageFeatureModel;
+import vm.LanguageProductLine;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
 import fr.inria.diverse.graph.Vertex;
@@ -30,7 +30,7 @@ public interface FeaturesModelInference {
 	 * @return
 	 * @throws Exception
 	 */
-	public LanguageFeatureModel inferOpenFeaturesModel(IProject targetProject, 
+	public LanguageProductLine inferOpenFeaturesModel(IProject targetProject, 
 			SynthesisProperties properties, ArrayList<Language> languages, 
 			EcoreGraph modularizationGraph, Graph<Vertex, Arc> dependenciesGraph) throws Exception;
 	
@@ -45,7 +45,7 @@ public interface FeaturesModelInference {
 	 * @return
 	 * @throws Exception
 	 */
-	public LanguageFeatureModel inferClosedFeaturesModel(IProject targetProject,
+	public LanguageProductLine inferClosedFeaturesModel(IProject targetProject,
 			SynthesisProperties properties, ArrayList<Language> languages,
-			EcoreGraph modularizationGraph, LanguageFeatureModel openFeaturesModel) throws Exception;
+			EcoreGraph modularizationGraph, LanguageProductLine openFeaturesModel) throws Exception;
 }

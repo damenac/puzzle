@@ -26,7 +26,7 @@ import vm.VmPackage;
  * <!-- end-user-doc -->
  * @generated
  */
-public class LanguageFeatureItemProvider extends PNamedElementItemProvider {
+public class LanguageFeatureItemProvider extends NamedElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
@@ -52,6 +52,7 @@ public class LanguageFeatureItemProvider extends PNamedElementItemProvider {
 			addParentGroupPropertyDescriptor(object);
 			addImplementationModulePropertyDescriptor(object);
 			addSelectedPropertyDescriptor(object);
+			addSemanticVariationPointPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -140,6 +141,28 @@ public class LanguageFeatureItemProvider extends PNamedElementItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Semantic Variation Point feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSemanticVariationPointPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_LanguageFeature_semanticVariationPoint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_LanguageFeature_semanticVariationPoint_feature", "_UI_LanguageFeature_type"),
+				 VmPackage.Literals.LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

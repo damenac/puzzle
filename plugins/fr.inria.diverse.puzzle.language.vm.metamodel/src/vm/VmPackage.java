@@ -58,14 +58,14 @@ public interface VmPackage extends EPackage {
 	VmPackage eINSTANCE = vm.impl.VmPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link vm.impl.PNamedElementImpl <em>PNamed Element</em>}' class.
+	 * The meta object id for the '{@link vm.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see vm.impl.PNamedElementImpl
-	 * @see vm.impl.VmPackageImpl#getPNamedElement()
+	 * @see vm.impl.NamedElementImpl
+	 * @see vm.impl.VmPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int PNAMED_ELEMENT = 0;
+	int NAMED_ELEMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -74,25 +74,71 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PNAMED_ELEMENT__NAME = 0;
+	int NAMED_ELEMENT__NAME = 0;
 
 	/**
-	 * The number of structural features of the '<em>PNamed Element</em>' class.
+	 * The number of structural features of the '<em>Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PNAMED_ELEMENT_FEATURE_COUNT = 1;
+	int NAMED_ELEMENT_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>PNamed Element</em>' class.
+	 * The number of operations of the '<em>Named Element</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PNAMED_ELEMENT_OPERATION_COUNT = 0;
+	int NAMED_ELEMENT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vm.impl.LanguageProductLineImpl <em>Language Product Line</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.LanguageProductLineImpl
+	 * @see vm.impl.VmPackageImpl#getLanguageProductLine()
+	 * @generated
+	 */
+	int LANGUAGE_PRODUCT_LINE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Functional Variability</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE__FUNCTIONAL_VARIABILITY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Semantical Variability</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE__SEMANTICAL_VARIABILITY = 1;
+
+	/**
+	 * The number of structural features of the '<em>Language Product Line</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Language Product Line</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_PRODUCT_LINE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link vm.impl.LanguageFeatureModelImpl <em>Language Feature Model</em>}' class.
@@ -102,7 +148,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getLanguageFeatureModel()
 	 * @generated
 	 */
-	int LANGUAGE_FEATURE_MODEL = 1;
+	int LANGUAGE_FEATURE_MODEL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -111,7 +157,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_MODEL__NAME = PNAMED_ELEMENT__NAME;
+	int LANGUAGE_FEATURE_MODEL__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Root Feature</b></em>' containment reference.
@@ -120,7 +166,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_MODEL__ROOT_FEATURE = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LANGUAGE_FEATURE_MODEL__ROOT_FEATURE = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Constraints</b></em>' containment reference list.
@@ -129,7 +175,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_MODEL__CONSTRAINTS = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LANGUAGE_FEATURE_MODEL__CONSTRAINTS = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Language Feature Model</em>' class.
@@ -138,7 +184,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_MODEL_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LANGUAGE_FEATURE_MODEL_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Language Feature Model</em>' class.
@@ -147,7 +193,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_MODEL_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LANGUAGE_FEATURE_MODEL_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vm.impl.LanguageFeatureImpl <em>Language Feature</em>}' class.
@@ -157,7 +203,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getLanguageFeature()
 	 * @generated
 	 */
-	int LANGUAGE_FEATURE = 2;
+	int LANGUAGE_FEATURE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -166,7 +212,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__NAME = PNAMED_ELEMENT__NAME;
+	int LANGUAGE_FEATURE__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Mandatory</b></em>' attribute.
@@ -175,7 +221,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__MANDATORY = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LANGUAGE_FEATURE__MANDATORY = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference list.
@@ -184,7 +230,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__CHILDREN = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LANGUAGE_FEATURE__CHILDREN = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -193,7 +239,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__PARENT = PNAMED_ELEMENT_FEATURE_COUNT + 2;
+	int LANGUAGE_FEATURE__PARENT = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Groups</b></em>' containment reference list.
@@ -202,7 +248,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__GROUPS = PNAMED_ELEMENT_FEATURE_COUNT + 3;
+	int LANGUAGE_FEATURE__GROUPS = NAMED_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Parent Group</b></em>' reference.
@@ -211,7 +257,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__PARENT_GROUP = PNAMED_ELEMENT_FEATURE_COUNT + 4;
+	int LANGUAGE_FEATURE__PARENT_GROUP = NAMED_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Implementation Module</b></em>' reference.
@@ -220,7 +266,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__IMPLEMENTATION_MODULE = PNAMED_ELEMENT_FEATURE_COUNT + 5;
+	int LANGUAGE_FEATURE__IMPLEMENTATION_MODULE = NAMED_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Selected</b></em>' attribute.
@@ -229,7 +275,16 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE__SELECTED = PNAMED_ELEMENT_FEATURE_COUNT + 6;
+	int LANGUAGE_FEATURE__SELECTED = NAMED_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Semantic Variation Point</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT = NAMED_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Language Feature</em>' class.
@@ -238,7 +293,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 7;
+	int LANGUAGE_FEATURE_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Language Feature</em>' class.
@@ -247,7 +302,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_FEATURE_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LANGUAGE_FEATURE_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vm.impl.LanguageFeatureGroupImpl <em>Language Feature Group</em>}' class.
@@ -257,7 +312,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getLanguageFeatureGroup()
 	 * @generated
 	 */
-	int LANGUAGE_FEATURE_GROUP = 3;
+	int LANGUAGE_FEATURE_GROUP = 4;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' reference list.
@@ -303,7 +358,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getLanguageFeatureGroupCardinality()
 	 * @generated
 	 */
-	int LANGUAGE_FEATURE_GROUP_CARDINALITY = 4;
+	int LANGUAGE_FEATURE_GROUP_CARDINALITY = 5;
 
 	/**
 	 * The feature id for the '<em><b>Lower Bound</b></em>' attribute.
@@ -349,7 +404,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getLanguageConstraint()
 	 * @generated
 	 */
-	int LANGUAGE_CONSTRAINT = 5;
+	int LANGUAGE_CONSTRAINT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -358,7 +413,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_CONSTRAINT__NAME = PNAMED_ELEMENT__NAME;
+	int LANGUAGE_CONSTRAINT__NAME = NAMED_ELEMENT__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -367,7 +422,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_CONSTRAINT__EXPRESSION = PNAMED_ELEMENT_FEATURE_COUNT + 0;
+	int LANGUAGE_CONSTRAINT__EXPRESSION = NAMED_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Language Constraint</em>' class.
@@ -376,7 +431,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_CONSTRAINT_FEATURE_COUNT = PNAMED_ELEMENT_FEATURE_COUNT + 1;
+	int LANGUAGE_CONSTRAINT_FEATURE_COUNT = NAMED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Language Constraint</em>' class.
@@ -385,7 +440,7 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LANGUAGE_CONSTRAINT_OPERATION_COUNT = PNAMED_ELEMENT_OPERATION_COUNT + 0;
+	int LANGUAGE_CONSTRAINT_OPERATION_COUNT = NAMED_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link vm.impl.BooleanExpressionImpl <em>Boolean Expression</em>}' class.
@@ -395,7 +450,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getBooleanExpression()
 	 * @generated
 	 */
-	int BOOLEAN_EXPRESSION = 6;
+	int BOOLEAN_EXPRESSION = 7;
 
 	/**
 	 * The number of structural features of the '<em>Boolean Expression</em>' class.
@@ -423,7 +478,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getLanguageFeatureRef()
 	 * @generated
 	 */
-	int LANGUAGE_FEATURE_REF = 7;
+	int LANGUAGE_FEATURE_REF = 8;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -460,7 +515,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getUnaryExpression()
 	 * @generated
 	 */
-	int UNARY_EXPRESSION = 8;
+	int UNARY_EXPRESSION = 9;
 
 	/**
 	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
@@ -506,7 +561,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getBinaryExpression()
 	 * @generated
 	 */
-	int BINARY_EXPRESSION = 9;
+	int BINARY_EXPRESSION = 10;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -554,6 +609,126 @@ public interface VmPackage extends EPackage {
 	int BINARY_EXPRESSION_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link vm.impl.OrthogonalVariabilityModelImpl <em>Orthogonal Variability Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.OrthogonalVariabilityModelImpl
+	 * @see vm.impl.VmPackageImpl#getOrthogonalVariabilityModel()
+	 * @generated
+	 */
+	int ORTHOGONAL_VARIABILITY_MODEL = 11;
+
+	/**
+	 * The feature id for the '<em><b>Semantic Variation Points</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORTHOGONAL_VARIABILITY_MODEL__SEMANTIC_VARIATION_POINTS = 0;
+
+	/**
+	 * The number of structural features of the '<em>Orthogonal Variability Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORTHOGONAL_VARIABILITY_MODEL_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Orthogonal Variability Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ORTHOGONAL_VARIABILITY_MODEL_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vm.impl.SemanticVariationPointImpl <em>Semantic Variation Point</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.SemanticVariationPointImpl
+	 * @see vm.impl.VmPackageImpl#getSemanticVariationPoint()
+	 * @generated
+	 */
+	int SEMANTIC_VARIATION_POINT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Feature</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_VARIATION_POINT__FEATURE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Interpretations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_VARIATION_POINT__INTERPRETATIONS = 1;
+
+	/**
+	 * The number of structural features of the '<em>Semantic Variation Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_VARIATION_POINT_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Semantic Variation Point</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_VARIATION_POINT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link vm.impl.SemanticInterpretationImpl <em>Semantic Interpretation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see vm.impl.SemanticInterpretationImpl
+	 * @see vm.impl.VmPackageImpl#getSemanticInterpretation()
+	 * @generated
+	 */
+	int SEMANTIC_INTERPRETATION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_INTERPRETATION__IMPLEMENTATION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Semantic Interpretation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_INTERPRETATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Semantic Interpretation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_INTERPRETATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -561,7 +736,7 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getUninaryOperator()
 	 * @generated
 	 */
-	int UNINARY_OPERATOR = 10;
+	int UNINARY_OPERATOR = 14;
 
 	/**
 	 * The meta object id for the '{@link vm.BinaryOperator <em>Binary Operator</em>}' enum.
@@ -571,29 +746,61 @@ public interface VmPackage extends EPackage {
 	 * @see vm.impl.VmPackageImpl#getBinaryOperator()
 	 * @generated
 	 */
-	int BINARY_OPERATOR = 11;
+	int BINARY_OPERATOR = 15;
 
 
 	/**
-	 * Returns the meta object for class '{@link vm.PNamedElement <em>PNamed Element</em>}'.
+	 * Returns the meta object for class '{@link vm.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>PNamed Element</em>'.
-	 * @see vm.PNamedElement
+	 * @return the meta object for class '<em>Named Element</em>'.
+	 * @see vm.NamedElement
 	 * @generated
 	 */
-	EClass getPNamedElement();
+	EClass getNamedElement();
 
 	/**
-	 * Returns the meta object for the attribute '{@link vm.PNamedElement#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link vm.NamedElement#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see vm.PNamedElement#getName()
-	 * @see #getPNamedElement()
+	 * @see vm.NamedElement#getName()
+	 * @see #getNamedElement()
 	 * @generated
 	 */
-	EAttribute getPNamedElement_Name();
+	EAttribute getNamedElement_Name();
+
+	/**
+	 * Returns the meta object for class '{@link vm.LanguageProductLine <em>Language Product Line</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Language Product Line</em>'.
+	 * @see vm.LanguageProductLine
+	 * @generated
+	 */
+	EClass getLanguageProductLine();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vm.LanguageProductLine#getFunctionalVariability <em>Functional Variability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Functional Variability</em>'.
+	 * @see vm.LanguageProductLine#getFunctionalVariability()
+	 * @see #getLanguageProductLine()
+	 * @generated
+	 */
+	EReference getLanguageProductLine_FunctionalVariability();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vm.LanguageProductLine#getSemanticalVariability <em>Semantical Variability</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Semantical Variability</em>'.
+	 * @see vm.LanguageProductLine#getSemanticalVariability()
+	 * @see #getLanguageProductLine()
+	 * @generated
+	 */
+	EReference getLanguageProductLine_SemanticalVariability();
 
 	/**
 	 * Returns the meta object for class '{@link vm.LanguageFeatureModel <em>Language Feature Model</em>}'.
@@ -713,6 +920,17 @@ public interface VmPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLanguageFeature_Selected();
+
+	/**
+	 * Returns the meta object for the reference '{@link vm.LanguageFeature#getSemanticVariationPoint <em>Semantic Variation Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Semantic Variation Point</em>'.
+	 * @see vm.LanguageFeature#getSemanticVariationPoint()
+	 * @see #getLanguageFeature()
+	 * @generated
+	 */
+	EReference getLanguageFeature_SemanticVariationPoint();
 
 	/**
 	 * Returns the meta object for class '{@link vm.LanguageFeatureGroup <em>Language Feature Group</em>}'.
@@ -906,6 +1124,80 @@ public interface VmPackage extends EPackage {
 	EAttribute getBinaryExpression_Operator();
 
 	/**
+	 * Returns the meta object for class '{@link vm.OrthogonalVariabilityModel <em>Orthogonal Variability Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Orthogonal Variability Model</em>'.
+	 * @see vm.OrthogonalVariabilityModel
+	 * @generated
+	 */
+	EClass getOrthogonalVariabilityModel();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link vm.OrthogonalVariabilityModel#getSemanticVariationPoints <em>Semantic Variation Points</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Semantic Variation Points</em>'.
+	 * @see vm.OrthogonalVariabilityModel#getSemanticVariationPoints()
+	 * @see #getOrthogonalVariabilityModel()
+	 * @generated
+	 */
+	EReference getOrthogonalVariabilityModel_SemanticVariationPoints();
+
+	/**
+	 * Returns the meta object for class '{@link vm.SemanticVariationPoint <em>Semantic Variation Point</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Semantic Variation Point</em>'.
+	 * @see vm.SemanticVariationPoint
+	 * @generated
+	 */
+	EClass getSemanticVariationPoint();
+
+	/**
+	 * Returns the meta object for the reference '{@link vm.SemanticVariationPoint#getFeature <em>Feature</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Feature</em>'.
+	 * @see vm.SemanticVariationPoint#getFeature()
+	 * @see #getSemanticVariationPoint()
+	 * @generated
+	 */
+	EReference getSemanticVariationPoint_Feature();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link vm.SemanticVariationPoint#getInterpretations <em>Interpretations</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Interpretations</em>'.
+	 * @see vm.SemanticVariationPoint#getInterpretations()
+	 * @see #getSemanticVariationPoint()
+	 * @generated
+	 */
+	EReference getSemanticVariationPoint_Interpretations();
+
+	/**
+	 * Returns the meta object for class '{@link vm.SemanticInterpretation <em>Semantic Interpretation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Semantic Interpretation</em>'.
+	 * @see vm.SemanticInterpretation
+	 * @generated
+	 */
+	EClass getSemanticInterpretation();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link vm.SemanticInterpretation#getImplementation <em>Implementation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Implementation</em>'.
+	 * @see vm.SemanticInterpretation#getImplementation()
+	 * @see #getSemanticInterpretation()
+	 * @generated
+	 */
+	EReference getSemanticInterpretation_Implementation();
+
+	/**
 	 * Returns the meta object for enum '{@link vm.UninaryOperator <em>Uninary Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -949,14 +1241,14 @@ public interface VmPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link vm.impl.PNamedElementImpl <em>PNamed Element</em>}' class.
+		 * The meta object literal for the '{@link vm.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see vm.impl.PNamedElementImpl
-		 * @see vm.impl.VmPackageImpl#getPNamedElement()
+		 * @see vm.impl.NamedElementImpl
+		 * @see vm.impl.VmPackageImpl#getNamedElement()
 		 * @generated
 		 */
-		EClass PNAMED_ELEMENT = eINSTANCE.getPNamedElement();
+		EClass NAMED_ELEMENT = eINSTANCE.getNamedElement();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -964,7 +1256,33 @@ public interface VmPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PNAMED_ELEMENT__NAME = eINSTANCE.getPNamedElement_Name();
+		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.LanguageProductLineImpl <em>Language Product Line</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.LanguageProductLineImpl
+		 * @see vm.impl.VmPackageImpl#getLanguageProductLine()
+		 * @generated
+		 */
+		EClass LANGUAGE_PRODUCT_LINE = eINSTANCE.getLanguageProductLine();
+
+		/**
+		 * The meta object literal for the '<em><b>Functional Variability</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_PRODUCT_LINE__FUNCTIONAL_VARIABILITY = eINSTANCE.getLanguageProductLine_FunctionalVariability();
+
+		/**
+		 * The meta object literal for the '<em><b>Semantical Variability</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_PRODUCT_LINE__SEMANTICAL_VARIABILITY = eINSTANCE.getLanguageProductLine_SemanticalVariability();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.LanguageFeatureModelImpl <em>Language Feature Model</em>}' class.
@@ -1057,6 +1375,14 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LANGUAGE_FEATURE__SELECTED = eINSTANCE.getLanguageFeature_Selected();
+
+		/**
+		 * The meta object literal for the '<em><b>Semantic Variation Point</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LANGUAGE_FEATURE__SEMANTIC_VARIATION_POINT = eINSTANCE.getLanguageFeature_SemanticVariationPoint();
 
 		/**
 		 * The meta object literal for the '{@link vm.impl.LanguageFeatureGroupImpl <em>Language Feature Group</em>}' class.
@@ -1215,6 +1541,68 @@ public interface VmPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BINARY_EXPRESSION__OPERATOR = eINSTANCE.getBinaryExpression_Operator();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.OrthogonalVariabilityModelImpl <em>Orthogonal Variability Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.OrthogonalVariabilityModelImpl
+		 * @see vm.impl.VmPackageImpl#getOrthogonalVariabilityModel()
+		 * @generated
+		 */
+		EClass ORTHOGONAL_VARIABILITY_MODEL = eINSTANCE.getOrthogonalVariabilityModel();
+
+		/**
+		 * The meta object literal for the '<em><b>Semantic Variation Points</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ORTHOGONAL_VARIABILITY_MODEL__SEMANTIC_VARIATION_POINTS = eINSTANCE.getOrthogonalVariabilityModel_SemanticVariationPoints();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.SemanticVariationPointImpl <em>Semantic Variation Point</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.SemanticVariationPointImpl
+		 * @see vm.impl.VmPackageImpl#getSemanticVariationPoint()
+		 * @generated
+		 */
+		EClass SEMANTIC_VARIATION_POINT = eINSTANCE.getSemanticVariationPoint();
+
+		/**
+		 * The meta object literal for the '<em><b>Feature</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMANTIC_VARIATION_POINT__FEATURE = eINSTANCE.getSemanticVariationPoint_Feature();
+
+		/**
+		 * The meta object literal for the '<em><b>Interpretations</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMANTIC_VARIATION_POINT__INTERPRETATIONS = eINSTANCE.getSemanticVariationPoint_Interpretations();
+
+		/**
+		 * The meta object literal for the '{@link vm.impl.SemanticInterpretationImpl <em>Semantic Interpretation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see vm.impl.SemanticInterpretationImpl
+		 * @see vm.impl.VmPackageImpl#getSemanticInterpretation()
+		 * @generated
+		 */
+		EClass SEMANTIC_INTERPRETATION = eINSTANCE.getSemanticInterpretation();
+
+		/**
+		 * The meta object literal for the '<em><b>Implementation</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SEMANTIC_INTERPRETATION__IMPLEMENTATION = eINSTANCE.getSemanticInterpretation_Implementation();
 
 		/**
 		 * The meta object literal for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.
