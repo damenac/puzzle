@@ -40,6 +40,7 @@ import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.AspectLanguageMapping;
 import fr.inria.diverse.k3.sle.common.vos.MetaclassAspectMapping;
+import fr.inria.diverse.k3.sle.common.vos.PackageAspectsMapping;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -448,23 +449,74 @@ public class BreakerImpl {
 		System.out.println("semanticVariability: " + semanticVariability);
 		
 		if(semanticVariability){
+			ArrayList<PackageAspectsMapping> packageAspectsMapping = new ArrayList<PackageAspectsMapping>();
 			for (MetaclassAspectMapping metaclassAspectMapping : originalLocalMapping) {
 				for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
 					ProjectManagementServices.copyAspectResource(aspectLanguageMapping, moduleProject, moduleName, classifiers, requiredAspects);
+					PackageAspectsMapping legacyEntry = findPackageAspectMapping(aspectLanguageMapping.getLanguagesList(), packageAspectsMapping);
+					if(legacyEntry == null){
+						PackageAspectsMapping newEntry = new PackageAspectsMapping(aspectLanguageMapping.getLanguagesList());
+						newEntry.getAspects().add(moduleName.replace("Module", "").toLowerCase() + "." + aspectLanguageMapping.getAspect().getAspectTypeRef().getSimpleName());
+						packageAspectsMapping.add(newEntry);
+					}
+					else{
+						legacyEntry.getAspects().add(moduleName.replace("Module", "").toLowerCase() + "." + aspectLanguageMapping.getAspect().getAspectTypeRef().getSimpleName());
+					}
+					
 				}
 			}
+			ArrayList<ArrayList<String>> interpretations = new ArrayList<ArrayList<String>>();
+			for (PackageAspectsMapping mapping : packageAspectsMapping) {
+				ArrayList<String> _aspectSet = new ArrayList<String>();
+				for (String string : mapping.getAspects()) {
+					_aspectSet.add(mapping.getPack() + "." + string);
+				}
+				interpretations.add(_aspectSet);
+			}
+			group.setSemanticsImplementations(interpretations);
 		}else{
+			ArrayList<PackageAspectsMapping> packageAspectsMapping = new ArrayList<PackageAspectsMapping>();
 			for (MetaclassAspectMapping metaclassAspectMapping : semanticVariabilityLocalMapping) {
 				for (AspectLanguageMapping aspectLanguageMapping : metaclassAspectMapping.getAspects()) {
 					ProjectManagementServices.copyAspectResource(aspectLanguageMapping, moduleProject, moduleName, classifiers, requiredAspects);
+					PackageAspectsMapping legacyEntry = findPackageAspectMapping(aspectLanguageMapping.getLanguagesList(), packageAspectsMapping);
+					if(legacyEntry == null){
+						PackageAspectsMapping newEntry = new PackageAspectsMapping(aspectLanguageMapping.getLanguagesList());
+						newEntry.getAspects().add(moduleName.replace("Module", "").toLowerCase() + "." + aspectLanguageMapping.getAspect().getAspectTypeRef().getSimpleName());
+						packageAspectsMapping.add(newEntry);
+					}
+					else{
+						legacyEntry.getAspects().add(moduleName.replace("Module", "").toLowerCase() + "." + aspectLanguageMapping.getAspect().getAspectTypeRef().getSimpleName());
+					}
 				}
 			}
+			ArrayList<ArrayList<String>> interpretations = new ArrayList<ArrayList<String>>();
+			for (PackageAspectsMapping mapping : packageAspectsMapping) {
+				ArrayList<String> _aspectSet = new ArrayList<String>();
+				for (String string : mapping.getAspects()) {
+					_aspectSet.add(mapping.getPack() + "." + string);
+				}
+				interpretations.add(_aspectSet);
+			}
+			group.setSemanticsImplementations(interpretations);
 		}
+		
+		
 		
 		// Refresh projects
 		ProjectManagementServices.refreshProject(moduleProject);
 	}
 	
+	private PackageAspectsMapping findPackageAspectMapping(
+			String languagesList,
+			ArrayList<PackageAspectsMapping> packageAspectsMapping) {
+		for (PackageAspectsMapping mapping : packageAspectsMapping) {
+			if(mapping.getPack().equals(languagesList))
+				return mapping;
+		}
+		return null;
+	}
+
 	private boolean thereIsSemanticVariability(
 			ArrayList<MetaclassAspectMapping> localMapping) {
 		ArrayList<Integer> aspectsAmount = new ArrayList<Integer>();

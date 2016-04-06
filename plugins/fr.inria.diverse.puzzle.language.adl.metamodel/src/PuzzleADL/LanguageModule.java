@@ -2,6 +2,8 @@
  */
 package PuzzleADL;
 
+import org.eclipse.emf.common.util.EList;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -102,29 +104,19 @@ public interface LanguageModule extends NamedElement {
 	void setAbstractSyntax(AbstractSyntaxImplementation value);
 
 	/**
-	 * Returns the value of the '<em><b>Semantics Implementation</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Semantics Implementation</b></em>' containment reference list.
+	 * The list contents are of type {@link PuzzleADL.SemanticsImplementation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Semantics Implementation</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Semantics Implementation</em>' containment reference.
-	 * @see #setSemanticsImplementation(SemanticsImplementation)
+	 * @return the value of the '<em>Semantics Implementation</em>' containment reference list.
 	 * @see PuzzleADL.PuzzleADLPackage#getLanguageModule_SemanticsImplementation()
 	 * @model containment="true"
 	 * @generated
 	 */
-	SemanticsImplementation getSemanticsImplementation();
-
-	/**
-	 * Sets the value of the '{@link PuzzleADL.LanguageModule#getSemanticsImplementation <em>Semantics Implementation</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Semantics Implementation</em>' containment reference.
-	 * @see #getSemanticsImplementation()
-	 * @generated
-	 */
-	void setSemanticsImplementation(SemanticsImplementation value);
+	EList<SemanticsImplementation> getSemanticsImplementation();
 
 } // LanguageModule

@@ -195,7 +195,7 @@ public interface PuzzleADLPackage extends EPackage {
 	int LANGUAGE_MODULE__ABSTRACT_SYNTAX = NAMED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Semantics Implementation</b></em>' containment reference.
+	 * The feature id for the '<em><b>Semantics Implementation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -559,10 +559,10 @@ public interface PuzzleADLPackage extends EPackage {
 	EReference getLanguageModule_AbstractSyntax();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link PuzzleADL.LanguageModule#getSemanticsImplementation <em>Semantics Implementation</em>}'.
+	 * Returns the meta object for the containment reference list '{@link PuzzleADL.LanguageModule#getSemanticsImplementation <em>Semantics Implementation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Semantics Implementation</em>'.
+	 * @return the meta object for the containment reference list '<em>Semantics Implementation</em>'.
 	 * @see PuzzleADL.LanguageModule#getSemanticsImplementation()
 	 * @see #getLanguageModule()
 	 * @generated
@@ -820,7 +820,7 @@ public interface PuzzleADLPackage extends EPackage {
 		EReference LANGUAGE_MODULE__ABSTRACT_SYNTAX = eINSTANCE.getLanguageModule_AbstractSyntax();
 
 		/**
-		 * The meta object literal for the '<em><b>Semantics Implementation</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Semantics Implementation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

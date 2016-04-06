@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import org.eclipse.core.resources.IProject;
 
-import vm.LanguageFeatureModel;
 import vm.LanguageProductLine;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;

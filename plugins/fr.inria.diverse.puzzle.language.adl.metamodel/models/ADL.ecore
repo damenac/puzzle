@@ -19,7 +19,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="abstractSyntax" lowerBound="1"
         eType="#//AbstractSyntaxImplementation" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semanticsImplementation"
-        eType="#//SemanticsImplementation" containment="true"/>
+        upperBound="-1" eType="#//SemanticsImplementation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RequiredInterface" eSuperTypes="#//NamedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="ecorePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

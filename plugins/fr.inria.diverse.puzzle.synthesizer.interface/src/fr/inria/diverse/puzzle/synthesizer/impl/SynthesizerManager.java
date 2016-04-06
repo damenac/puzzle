@@ -11,6 +11,7 @@ import PuzzleADL.LanguageModule;
 import PuzzleADL.ProvidedInterface;
 import PuzzleADL.PuzzleADLFactory;
 import PuzzleADL.RequiredInterface;
+import PuzzleADL.SemanticsImplementation;
 import vm.LanguageProductLine;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.k3.sle.common.graphs.DependencyGraph;
@@ -19,6 +20,7 @@ import fr.inria.diverse.k3.sle.common.graphs.EcoreGroup;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
 import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Language;
 import fr.inria.diverse.puzzle.breaker.command.BreakerImpl;
 import fr.inria.diverse.puzzle.metrics.managers.ProductLinesMetricManager;
@@ -125,11 +127,22 @@ public class SynthesizerManager {
 			LanguageModule languageModule = PuzzleADLFactory.eINSTANCE.createLanguageModule();
 			languageModule.setName(group.getName());
 			
+			// Building the abstract syntax of the module
 			AbstractSyntaxImplementation as = PuzzleADLFactory.eINSTANCE.createAbstractSyntaxImplementation();
 			as.setEcorePath(group.getMetamodelPath());
 			as.setEcoreRelativePath(group.getMetamodelPath().replace(group.getImplementationProjectLocation(), ""));
 			languageModule.setAbstractSyntax(as);
+
+			// Building the semantics of the module
+			for (ArrayList<String> semanticImplementation : group.getSemanticsImplementations()) {
+				SemanticsImplementation impl = PuzzleADLFactory.eINSTANCE.createSemanticsImplementation();
+				for (String aspect : semanticImplementation) {
+					impl.getAspectsIdentifiers().add(aspect);
+				}
+				languageModule.getSemanticsImplementation().add(impl);
+			}
 			
+			// Buidling the interfaces of the module
 			if(group.getRequiredInterfacePath() != null){
 				RequiredInterface requiredInterface = PuzzleADLFactory.eINSTANCE.createRequiredInterface();
 				requiredInterface.setName(group.getName() + "Req");

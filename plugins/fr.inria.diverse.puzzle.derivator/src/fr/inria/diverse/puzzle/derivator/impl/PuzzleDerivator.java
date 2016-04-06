@@ -132,9 +132,10 @@ public class PuzzleDerivator implements IDerivator{
 		answer += "{\n";
 		answer += "     syntax \"platform:/resource" + module.getAbstractSyntax().getEcoreRelativePath() + "\"\n";
 		
-		if(module.getSemanticsImplementation() != null){
+		// TODO configurar de acuerdo con la seleccion del modelo de variabilidad ortogonal.
+		if(module.getSemanticsImplementation().size() > 0){
 			answer += "\n";
-			for(String aspect : module.getSemanticsImplementation().getAspectsIdentifiers()){
+			for(String aspect : module.getSemanticsImplementation().get(0).getAspectsIdentifiers()){
 				answer += "     with " + aspect + "\n";
 			}
 		}

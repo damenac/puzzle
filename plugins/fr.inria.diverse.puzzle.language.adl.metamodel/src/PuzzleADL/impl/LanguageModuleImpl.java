@@ -9,13 +9,17 @@ import PuzzleADL.PuzzleADLPackage;
 import PuzzleADL.RequiredInterface;
 
 import PuzzleADL.SemanticsImplementation;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,14 +69,14 @@ public class LanguageModuleImpl extends NamedElementImpl implements LanguageModu
 	protected AbstractSyntaxImplementation abstractSyntax;
 
 	/**
-	 * The cached value of the '{@link #getSemanticsImplementation() <em>Semantics Implementation</em>}' containment reference.
+	 * The cached value of the '{@link #getSemanticsImplementation() <em>Semantics Implementation</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSemanticsImplementation()
 	 * @generated
 	 * @ordered
 	 */
-	protected SemanticsImplementation semanticsImplementation;
+	protected EList<SemanticsImplementation> semanticsImplementation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -227,42 +231,11 @@ public class LanguageModuleImpl extends NamedElementImpl implements LanguageModu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SemanticsImplementation getSemanticsImplementation() {
+	public EList<SemanticsImplementation> getSemanticsImplementation() {
+		if (semanticsImplementation == null) {
+			semanticsImplementation = new EObjectContainmentEList<SemanticsImplementation>(SemanticsImplementation.class, this, PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION);
+		}
 		return semanticsImplementation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSemanticsImplementation(SemanticsImplementation newSemanticsImplementation, NotificationChain msgs) {
-		SemanticsImplementation oldSemanticsImplementation = semanticsImplementation;
-		semanticsImplementation = newSemanticsImplementation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION, oldSemanticsImplementation, newSemanticsImplementation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSemanticsImplementation(SemanticsImplementation newSemanticsImplementation) {
-		if (newSemanticsImplementation != semanticsImplementation) {
-			NotificationChain msgs = null;
-			if (semanticsImplementation != null)
-				msgs = ((InternalEObject)semanticsImplementation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION, null, msgs);
-			if (newSemanticsImplementation != null)
-				msgs = ((InternalEObject)newSemanticsImplementation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION, null, msgs);
-			msgs = basicSetSemanticsImplementation(newSemanticsImplementation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION, newSemanticsImplementation, newSemanticsImplementation));
 	}
 
 	/**
@@ -280,7 +253,7 @@ public class LanguageModuleImpl extends NamedElementImpl implements LanguageModu
 			case PuzzleADLPackage.LANGUAGE_MODULE__ABSTRACT_SYNTAX:
 				return basicSetAbstractSyntax(null, msgs);
 			case PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION:
-				return basicSetSemanticsImplementation(null, msgs);
+				return ((InternalEList<?>)getSemanticsImplementation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -310,6 +283,7 @@ public class LanguageModuleImpl extends NamedElementImpl implements LanguageModu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -323,7 +297,8 @@ public class LanguageModuleImpl extends NamedElementImpl implements LanguageModu
 				setAbstractSyntax((AbstractSyntaxImplementation)newValue);
 				return;
 			case PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION:
-				setSemanticsImplementation((SemanticsImplementation)newValue);
+				getSemanticsImplementation().clear();
+				getSemanticsImplementation().addAll((Collection<? extends SemanticsImplementation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -347,7 +322,7 @@ public class LanguageModuleImpl extends NamedElementImpl implements LanguageModu
 				setAbstractSyntax((AbstractSyntaxImplementation)null);
 				return;
 			case PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION:
-				setSemanticsImplementation((SemanticsImplementation)null);
+				getSemanticsImplementation().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -368,7 +343,7 @@ public class LanguageModuleImpl extends NamedElementImpl implements LanguageModu
 			case PuzzleADLPackage.LANGUAGE_MODULE__ABSTRACT_SYNTAX:
 				return abstractSyntax != null;
 			case PuzzleADLPackage.LANGUAGE_MODULE__SEMANTICS_IMPLEMENTATION:
-				return semanticsImplementation != null;
+				return semanticsImplementation != null && !semanticsImplementation.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

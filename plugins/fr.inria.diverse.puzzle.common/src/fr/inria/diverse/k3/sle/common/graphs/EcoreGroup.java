@@ -28,6 +28,7 @@ public class EcoreGroup {
 	private String providedInterfacePath;
 	private String implementationProjectName;
 	private String implementationProjectLocation;
+	private ArrayList<ArrayList<String>> semanticsImplementations;
 
 	// -----------------------------------------------
 	// Constructor
@@ -37,6 +38,7 @@ public class EcoreGroup {
 		this.name = name;
 		this.vertex = new ArrayList<EcoreVertex>();
 		this.requiredVertex = new ArrayList<EcoreVertex>();
+		this.semanticsImplementations = new ArrayList<ArrayList<String>>();
 	}
 
 	// -----------------------------------------------
@@ -108,6 +110,15 @@ public class EcoreGroup {
 		this.implementationProjectLocation = implementationProjectLocation;
 	}
 	
+	public ArrayList<ArrayList<String>> getSemanticsImplementations() {
+		return semanticsImplementations;
+	}
+
+	public void setSemanticsImplementations(
+			ArrayList<ArrayList<String>> semanticsImplementations) {
+		this.semanticsImplementations = semanticsImplementations;
+	}
+	
 	// -----------------------------------------------
 	// Methods
 	// -----------------------------------------------
@@ -117,8 +128,6 @@ public class EcoreGroup {
 	 * @param eType
 	 * @param conceptComparisonOperator
 	 * @return
-	 * 
-	 * FIXME: You are not identifying correctly the vertex!
 	 */
 	public EcoreVertex findVertexByEcoreReference(EClassifier eType,
 			ConceptComparison conceptComparisonOperator) {
