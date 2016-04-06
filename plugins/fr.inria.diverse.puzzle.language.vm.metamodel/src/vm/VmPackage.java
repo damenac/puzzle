@@ -702,7 +702,7 @@ public interface VmPackage extends EPackage {
 	int SEMANTIC_INTERPRETATION = 13;
 
 	/**
-	 * The feature id for the '<em><b>Implementation</b></em>' containment reference.
+	 * The feature id for the '<em><b>Implementation</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -711,13 +711,22 @@ public interface VmPackage extends EPackage {
 	int SEMANTIC_INTERPRETATION__IMPLEMENTATION = 0;
 
 	/**
+	 * The feature id for the '<em><b>Selected</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEMANTIC_INTERPRETATION__SELECTED = 1;
+
+	/**
 	 * The number of structural features of the '<em>Semantic Interpretation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEMANTIC_INTERPRETATION_FEATURE_COUNT = 1;
+	int SEMANTIC_INTERPRETATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Semantic Interpretation</em>' class.
@@ -1187,15 +1196,26 @@ public interface VmPackage extends EPackage {
 	EClass getSemanticInterpretation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link vm.SemanticInterpretation#getImplementation <em>Implementation</em>}'.
+	 * Returns the meta object for the reference '{@link vm.SemanticInterpretation#getImplementation <em>Implementation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Implementation</em>'.
+	 * @return the meta object for the reference '<em>Implementation</em>'.
 	 * @see vm.SemanticInterpretation#getImplementation()
 	 * @see #getSemanticInterpretation()
 	 * @generated
 	 */
 	EReference getSemanticInterpretation_Implementation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link vm.SemanticInterpretation#isSelected <em>Selected</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Selected</em>'.
+	 * @see vm.SemanticInterpretation#isSelected()
+	 * @see #getSemanticInterpretation()
+	 * @generated
+	 */
+	EAttribute getSemanticInterpretation_Selected();
 
 	/**
 	 * Returns the meta object for enum '{@link vm.UninaryOperator <em>Uninary Operator</em>}'.
@@ -1597,12 +1617,20 @@ public interface VmPackage extends EPackage {
 		EClass SEMANTIC_INTERPRETATION = eINSTANCE.getSemanticInterpretation();
 
 		/**
-		 * The meta object literal for the '<em><b>Implementation</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Implementation</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference SEMANTIC_INTERPRETATION__IMPLEMENTATION = eINSTANCE.getSemanticInterpretation_Implementation();
+
+		/**
+		 * The meta object literal for the '<em><b>Selected</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEMANTIC_INTERPRETATION__SELECTED = eINSTANCE.getSemanticInterpretation_Selected();
 
 		/**
 		 * The meta object literal for the '{@link vm.UninaryOperator <em>Uninary Operator</em>}' enum.

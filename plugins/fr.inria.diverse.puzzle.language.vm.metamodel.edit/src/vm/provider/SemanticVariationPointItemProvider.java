@@ -3,8 +3,6 @@
 package vm.provider;
 
 
-import PuzzleADL.PuzzleADLFactory;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -26,6 +24,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import vm.SemanticVariationPoint;
+import vm.VmFactory;
 import vm.VmPackage;
 
 /**
@@ -176,7 +175,7 @@ public class SemanticVariationPointItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(VmPackage.Literals.SEMANTIC_VARIATION_POINT__INTERPRETATIONS,
-				 PuzzleADLFactory.eINSTANCE.createSemanticsImplementation()));
+				 VmFactory.eINSTANCE.createSemanticInterpretation()));
 	}
 
 	/**

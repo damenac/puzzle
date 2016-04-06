@@ -2,8 +2,6 @@
  */
 package vm;
 
-import PuzzleADL.SemanticsImplementation;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -56,7 +54,7 @@ public interface SemanticVariationPoint extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Interpretations</b></em>' containment reference list.
-	 * The list contents are of type {@link PuzzleADL.SemanticsImplementation}.
+	 * The list contents are of type {@link vm.SemanticInterpretation}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Interpretations</em>' containment reference list isn't clear,
@@ -68,6 +66,6 @@ public interface SemanticVariationPoint extends EObject {
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<SemanticsImplementation> getInterpretations();
+	EList<SemanticInterpretation> getInterpretations();
 
 } // SemanticVariationPoint

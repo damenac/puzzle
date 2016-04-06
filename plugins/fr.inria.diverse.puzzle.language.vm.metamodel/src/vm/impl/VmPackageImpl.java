@@ -597,6 +597,15 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getSemanticInterpretation_Selected() {
+		return (EAttribute)semanticInterpretationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getUninaryOperator() {
 		return uninaryOperatorEEnum;
 	}
@@ -693,6 +702,7 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 
 		semanticInterpretationEClass = createEClass(SEMANTIC_INTERPRETATION);
 		createEReference(semanticInterpretationEClass, SEMANTIC_INTERPRETATION__IMPLEMENTATION);
+		createEAttribute(semanticInterpretationEClass, SEMANTIC_INTERPRETATION__SELECTED);
 
 		// Create enums
 		uninaryOperatorEEnum = createEEnum(UNINARY_OPERATOR);
@@ -789,10 +799,11 @@ public class VmPackageImpl extends EPackageImpl implements VmPackage {
 
 		initEClass(semanticVariationPointEClass, SemanticVariationPoint.class, "SemanticVariationPoint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSemanticVariationPoint_Feature(), this.getLanguageFeature(), this.getLanguageFeature_SemanticVariationPoint(), "feature", null, 1, 1, SemanticVariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSemanticVariationPoint_Interpretations(), thePuzzleADLPackage.getSemanticsImplementation(), null, "interpretations", null, 1, -1, SemanticVariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSemanticVariationPoint_Interpretations(), this.getSemanticInterpretation(), null, "interpretations", null, 1, -1, SemanticVariationPoint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semanticInterpretationEClass, SemanticInterpretation.class, "SemanticInterpretation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSemanticInterpretation_Implementation(), thePuzzleADLPackage.getSemanticsImplementation(), null, "implementation", null, 1, 1, SemanticInterpretation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSemanticInterpretation_Implementation(), thePuzzleADLPackage.getSemanticsImplementation(), null, "implementation", null, 1, 1, SemanticInterpretation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSemanticInterpretation_Selected(), ecorePackage.getEBoolean(), "selected", null, 0, 1, SemanticInterpretation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(uninaryOperatorEEnum, UninaryOperator.class, "UninaryOperator");

@@ -6,8 +6,13 @@ import org.eclipse.core.resources.IProject;
 
 import PuzzleADL.LanguageArchitecture;
 import PuzzleADL.LanguageModule;
+import PuzzleADL.SemanticsImplementation;
 import vm.LanguageFeature;
 import vm.LanguageProductLine;
+import vm.OrthogonalVariabilityModel;
+import vm.SemanticInterpretation;
+import vm.SemanticVariationPoint;
+import vm.VmFactory;
 import fr.inria.diverse.graph.Arc;
 import fr.inria.diverse.graph.Graph;
 import fr.inria.diverse.graph.Vertex;
@@ -70,6 +75,7 @@ public class VariabilityInfererManager {
 				synthesisProperties, languages, modularizationGraph, dependenciesGraph);
 
 		this.addModulesInformation(openFeaturesModel, modularizationGraph, languageArchitectureModel);
+		this.addOrthogonalVariabitilityInformation(openFeaturesModel, modularizationGraph, languageArchitectureModel);
 		
 		return openFeaturesModel;
 	}
@@ -122,6 +128,55 @@ public class VariabilityInfererManager {
 		return null;
 	}
 	
+	/**
+	 * Completes the feature model in the parameter with the information of the orthogonal variability 
+	 * 	i.e., the semantic variability.
+	 * @param featureModel
+	 * @param modularizationGraph
+	 * @param languageArchitectureModel 
+	 */
+	private void addOrthogonalVariabitilityInformation(
+			LanguageProductLine openFeaturesModel,
+			EcoreGraph modularizationGraph,
+			LanguageArchitecture languageArchitectureModel) {
+		
+		OrthogonalVariabilityModel orthogonalVm = VmFactory.eINSTANCE.createOrthogonalVariabilityModel();
+		for (LanguageModule languageModule : languageArchitectureModel.getLanguageModules()) {
+			if(languageModule.getSemanticsImplementation().size() > 1){
+				SemanticVariationPoint vp = VmFactory.eINSTANCE.createSemanticVariationPoint();
+				LanguageFeature feature = this.findLanguageFeatureByModule(openFeaturesModel.getFunctionalVariability().getRootFeature(),
+						languageModule);
+				vp.setFeature(feature);
+				for (SemanticsImplementation impl : languageModule.getSemanticsImplementation()) {
+					SemanticInterpretation interp = VmFactory.eINSTANCE.createSemanticInterpretation();
+					interp.setImplementation(impl);
+					vp.getInterpretations().add(interp);
+				}
+				orthogonalVm.getSemanticVariationPoints().add(vp);
+			}
+		}
+		openFeaturesModel.setSemanticalVariability(orthogonalVm);
+	}
+	
+	/**
+	 * Returns the language feature that represents the language module in the parameter.
+	 * @param openFeaturesModel
+	 * @param languageModule
+	 * @return
+	 */
+	private LanguageFeature findLanguageFeatureByModule(
+			LanguageFeature rootFeature, LanguageModule languageModule) {
+		if(rootFeature.getImplementationModule() != null && rootFeature.getImplementationModule().equals(languageModule))
+			return rootFeature;
+		for (LanguageFeature child : rootFeature.getChildren()){
+			LanguageFeature found = this.findLanguageFeatureByModule(child, languageModule);
+			if(found != null)
+				return found;
+			
+		}
+		return null;
+	}
+
 	/**
 	 * Synthesizes and returns the closed features model.
 	 * @param synthesisProperties

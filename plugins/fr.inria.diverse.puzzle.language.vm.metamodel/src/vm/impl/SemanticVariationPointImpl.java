@@ -2,8 +2,6 @@
  */
 package vm.impl;
 
-import PuzzleADL.SemanticsImplementation;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -21,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import vm.LanguageFeature;
+import vm.SemanticInterpretation;
 import vm.SemanticVariationPoint;
 import vm.VmPackage;
 
@@ -57,7 +56,7 @@ public class SemanticVariationPointImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SemanticsImplementation> interpretations;
+	protected EList<SemanticInterpretation> interpretations;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,9 +142,9 @@ public class SemanticVariationPointImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SemanticsImplementation> getInterpretations() {
+	public EList<SemanticInterpretation> getInterpretations() {
 		if (interpretations == null) {
-			interpretations = new EObjectContainmentEList<SemanticsImplementation>(SemanticsImplementation.class, this, VmPackage.SEMANTIC_VARIATION_POINT__INTERPRETATIONS);
+			interpretations = new EObjectContainmentEList<SemanticInterpretation>(SemanticInterpretation.class, this, VmPackage.SEMANTIC_VARIATION_POINT__INTERPRETATIONS);
 		}
 		return interpretations;
 	}
@@ -213,7 +212,7 @@ public class SemanticVariationPointImpl extends MinimalEObjectImpl.Container imp
 				return;
 			case VmPackage.SEMANTIC_VARIATION_POINT__INTERPRETATIONS:
 				getInterpretations().clear();
-				getInterpretations().addAll((Collection<? extends SemanticsImplementation>)newValue);
+				getInterpretations().addAll((Collection<? extends SemanticInterpretation>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -5,7 +5,6 @@ package vm.impl;
 import PuzzleADL.SemanticsImplementation;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -24,6 +23,7 @@ import vm.VmPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link vm.impl.SemanticInterpretationImpl#getImplementation <em>Implementation</em>}</li>
+ *   <li>{@link vm.impl.SemanticInterpretationImpl#isSelected <em>Selected</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,7 +31,7 @@ import vm.VmPackage;
  */
 public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container implements SemanticInterpretation {
 	/**
-	 * The cached value of the '{@link #getImplementation() <em>Implementation</em>}' containment reference.
+	 * The cached value of the '{@link #getImplementation() <em>Implementation</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getImplementation()
@@ -39,6 +39,25 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected SemanticsImplementation implementation;
+
+	/**
+	 * The default value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SELECTED_EDEFAULT = false;
+	/**
+	 * The cached value of the '{@link #isSelected() <em>Selected</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isSelected()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean selected = SELECTED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -65,6 +84,14 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public SemanticsImplementation getImplementation() {
+		if (implementation != null && implementation.eIsProxy()) {
+			InternalEObject oldImplementation = (InternalEObject)implementation;
+			implementation = (SemanticsImplementation)eResolveProxy(oldImplementation);
+			if (implementation != oldImplementation) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION, oldImplementation, implementation));
+			}
+		}
 		return implementation;
 	}
 
@@ -73,14 +100,8 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetImplementation(SemanticsImplementation newImplementation, NotificationChain msgs) {
-		SemanticsImplementation oldImplementation = implementation;
-		implementation = newImplementation;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION, oldImplementation, newImplementation);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public SemanticsImplementation basicGetImplementation() {
+		return implementation;
 	}
 
 	/**
@@ -89,17 +110,10 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public void setImplementation(SemanticsImplementation newImplementation) {
-		if (newImplementation != implementation) {
-			NotificationChain msgs = null;
-			if (implementation != null)
-				msgs = ((InternalEObject)implementation).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION, null, msgs);
-			if (newImplementation != null)
-				msgs = ((InternalEObject)newImplementation).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION, null, msgs);
-			msgs = basicSetImplementation(newImplementation, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION, newImplementation, newImplementation));
+		SemanticsImplementation oldImplementation = implementation;
+		implementation = newImplementation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION, oldImplementation, implementation));
 	}
 
 	/**
@@ -107,13 +121,20 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION:
-				return basicSetImplementation(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public boolean isSelected() {
+		return selected;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSelected(boolean newSelected) {
+		boolean oldSelected = selected;
+		selected = newSelected;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VmPackage.SEMANTIC_INTERPRETATION__SELECTED, oldSelected, selected));
 	}
 
 	/**
@@ -125,7 +146,10 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION:
-				return getImplementation();
+				if (resolve) return getImplementation();
+				return basicGetImplementation();
+			case VmPackage.SEMANTIC_INTERPRETATION__SELECTED:
+				return isSelected();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -140,6 +164,9 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 		switch (featureID) {
 			case VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION:
 				setImplementation((SemanticsImplementation)newValue);
+				return;
+			case VmPackage.SEMANTIC_INTERPRETATION__SELECTED:
+				setSelected((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -156,6 +183,9 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 			case VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION:
 				setImplementation((SemanticsImplementation)null);
 				return;
+			case VmPackage.SEMANTIC_INTERPRETATION__SELECTED:
+				setSelected(SELECTED_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -170,8 +200,26 @@ public class SemanticInterpretationImpl extends MinimalEObjectImpl.Container imp
 		switch (featureID) {
 			case VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION:
 				return implementation != null;
+			case VmPackage.SEMANTIC_INTERPRETATION__SELECTED:
+				return selected != SELECTED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (selected: ");
+		result.append(selected);
+		result.append(')');
+		return result.toString();
 	}
 
 } //SemanticInterpretationImpl

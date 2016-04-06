@@ -15,12 +15,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -62,8 +64,31 @@ public class SemanticInterpretationItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addSelectedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Selected feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSelectedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_SemanticInterpretation_selected_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_SemanticInterpretation_selected_feature", "_UI_SemanticInterpretation_type"),
+				 VmPackage.Literals.SEMANTIC_INTERPRETATION__SELECTED,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -115,7 +140,8 @@ public class SemanticInterpretationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_SemanticInterpretation_type");
+		SemanticInterpretation semanticInterpretation = (SemanticInterpretation)object;
+		return getString("_UI_SemanticInterpretation_type") + " " + semanticInterpretation.isSelected();
 	}
 	
 
@@ -131,6 +157,9 @@ public class SemanticInterpretationItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(SemanticInterpretation.class)) {
+			case VmPackage.SEMANTIC_INTERPRETATION__SELECTED:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case VmPackage.SEMANTIC_INTERPRETATION__IMPLEMENTATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
