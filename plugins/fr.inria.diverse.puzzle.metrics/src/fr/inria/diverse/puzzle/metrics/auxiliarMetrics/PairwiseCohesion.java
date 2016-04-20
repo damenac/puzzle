@@ -27,13 +27,13 @@ public class PairwiseCohesion {
 	public static double computePairwiseCohesion(EClass x, EClass y){
 		int refsFromXToY = computeCrossReferences(x, y);
 		int refsFromYtoX = computeCrossReferences(y, x);
-		int crossReferencesAmount = countERerences(x) + countERerences(y);
+		int referencesAmount = countReferences(x) + countReferences(y);
 		
-		if(crossReferencesAmount == 0)
+		if(referencesAmount == 0)
 			return 0;
 		else{
 			double result = 0;
-			result = ((double) (refsFromXToY + refsFromYtoX))/(crossReferencesAmount);
+			result = ((double) (refsFromXToY + refsFromYtoX))/(referencesAmount);
 			return result;
 		}
 	}
@@ -55,6 +55,12 @@ public class PairwiseCohesion {
 				result++;
 			}
 		}
+		
+		for (EClass eSuperType : from.getESuperTypes()) {
+			if(eSuperType.getName().equals(to.getName()))
+				result++;
+		}
+		
 		return result;
 	}
 	
@@ -63,12 +69,12 @@ public class PairwiseCohesion {
 	 * @param eClass
 	 * @return
 	 */
-	public static int countERerences(EClass eClass){
+	public static int countReferences(EClass eClass){
 		int result = 0;
 		for (EStructuralFeature eStructuralFeature : eClass.getEStructuralFeatures()) {
 			if(eStructuralFeature instanceof EReference)
 				result ++;
 		}
-		return result;
+		return result + eClass.getESuperTypes().size();
 	}
 }
