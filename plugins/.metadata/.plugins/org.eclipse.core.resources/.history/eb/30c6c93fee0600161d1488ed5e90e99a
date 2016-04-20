@@ -1,0 +1,14 @@
+package fr.inria.diverse.puzzle.metrics.auxiliarMetrics;
+
+/**
+ * Metric that measure the degree of cohesion between two meta-classes
+ * The level of cohesion is defined by the function coh(x,y)
+ *             0           if (x.refs + y.refs) = 0
+ * coh(x,y) =  (|{r|r in x.refs U y.refs | r.from in x.refs and r.to = y }|) otherwise
+ * 
+ * @author dmendeza
+ *
+ */
+public class PairwiseCohesion {
+
+}

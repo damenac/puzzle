@@ -82,10 +82,6 @@ var treeData = [
           "parent": "RegionAspect"    }
 ,
           {
-          "name": "saveDeepHistoryState [from: UML, Harel]",
-          "parent": "RegionAspect"    }
-,
-          {
           "name": "getAllSubstates [from: UML, Harel]",
           "parent": "RegionAspect"    }
 ,

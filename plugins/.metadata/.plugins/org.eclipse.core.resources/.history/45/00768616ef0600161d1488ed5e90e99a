@@ -1,0 +1,33 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import org.eclipse.emf.ecore.EClass;
+import org.junit.Before;
+import org.junit.Test;
+
+public class PairwiseCohesionTest {
+
+	// -------------------------------------------------
+	// Scenarios
+	// -------------------------------------------------
+	
+	private EClass x;
+	private EClass y;
+	
+	// -------------------------------------------------
+	// Scenarios' loading
+	// -------------------------------------------------
+	
+	@Before
+	public void setupScenario(){
+		
+	}
+	
+	// -------------------------------------------------
+	// Test cases
+	// -------------------------------------------------
+	
+	@Test
+	public void computePairwiseCohesionTest(){
+		
+	}
+}

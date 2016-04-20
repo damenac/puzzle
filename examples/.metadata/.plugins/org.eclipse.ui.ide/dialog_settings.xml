@@ -12,6 +12,7 @@
 		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/dmendeza/workspaces/puzzle/examples/empirical-study/puzzle.empirical.study"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/modularization"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/state-machines"/>
 			<item value="/Users/dmendeza/workspaces/puzzle/examples/protocol-languages"/>

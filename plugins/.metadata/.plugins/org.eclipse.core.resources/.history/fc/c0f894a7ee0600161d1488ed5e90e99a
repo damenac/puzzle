@@ -1,0 +1,32 @@
+package fr.inria.diverse.puzzle.metrics.auxiliarMetrics;
+
+import org.eclipse.emf.ecore.EClass;
+
+/**
+ * Metric that measure the degree of cohesion between two meta-classes
+ * The level of cohesion is defined by the function coh(x,y)
+ *             0                                                                                     if (x.refs + y.refs) = 0
+ * coh(x,y) =  (|{r|r in x.refs | r.type = y}| + |{r|r in y.refs | r.type = x}|)/(x.refs + y.refs)   otherwise
+ * 
+ * @author dmendeza
+ *
+ */
+public class PairwiseCohesion {
+
+	public static double computePairwiseCohesion(EClass x, EClass y){
+		
+		return 0;
+	}
+	
+
+	/**
+	 * Return the amount of references that go from the class 'from' to the class 'to'
+	 * @param from
+	 * @param to
+	 * @return
+	 */
+	public static int computeCrossReferences(EClass from, EClass to){
+		
+		return 0;
+	}
+}

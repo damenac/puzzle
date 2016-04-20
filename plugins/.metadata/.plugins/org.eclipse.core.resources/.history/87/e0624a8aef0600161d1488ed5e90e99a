@@ -1,0 +1,37 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import org.junit.Assert;
+import org.eclipse.emf.ecore.EClass;
+import org.junit.Before;
+import org.junit.Test;
+
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesion;
+
+public class PairwiseCohesionTest {
+
+	// -------------------------------------------------
+	// Scenarios
+	// -------------------------------------------------
+	
+	private EClass x;
+	private EClass y;
+	
+	// -------------------------------------------------
+	// Scenarios' loading
+	// -------------------------------------------------
+	
+	@Before
+	public void setupScenario(){
+		
+	}
+	
+	// -------------------------------------------------
+	// Test cases
+	// -------------------------------------------------
+	
+	@SuppressWarnings("deprecation")
+	@Test
+	public void computePairwiseCohesionTest(){
+		Assert.assertEquals(0.2, PairwiseCohesion.computePairwiseCohesion(x, y));
+	}
+}

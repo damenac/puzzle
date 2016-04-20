@@ -1,0 +1,15 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import org.junit.Test;
+
+public class PairwiseCohesionTest {
+
+	// -------------------------------------------------
+	// Test cases
+	// -------------------------------------------------
+	
+	@Test
+	public void computePairwiseCohesionTest(){
+		
+	}
+}

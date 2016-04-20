@@ -1,6 +1,6 @@
-var semanticVennData = [{sets : [0], label : 'UML', size : 41,},
+var semanticVennData = [{sets : [0], label : 'UML', size : 40,},
               {sets : [1], label : 'Rhapsody', size : 36,},
-              {sets : [2], label : 'Harel', size : 43,},
+              {sets : [2], label : 'Harel', size : 42,},
               {sets : [0,1], size:36},
-              {sets : [0,2], size:40},
+              {sets : [0,2], size:39},
               {sets : [1,2], size:35}];

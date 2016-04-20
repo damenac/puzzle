@@ -18,8 +18,18 @@
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.listeners.IProjectListener"/>
 <fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="vm.LanguageFeature"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTFeature"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTRole"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
+<fullyQualifiedTypeName name="PuzzleADL.PuzzleADLFactory"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.PackageAspectsMapping"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="vm.OrthogonalVariabilityModel"/>
+<fullyQualifiedTypeName name="vm.SemanticVariationPoint"/>
+<fullyQualifiedTypeName name="PuzzleADL.SemanticsImplementation"/>
+<fullyQualifiedTypeName name="vm.VmFactory"/>
+<fullyQualifiedTypeName name="vm.LanguageProductLine"/>
+<fullyQualifiedTypeName name="vm.LanguageFeature"/>
+<fullyQualifiedTypeName name="vm.SemanticInterpretation"/>
 </qualifiedTypeNameHistroy>

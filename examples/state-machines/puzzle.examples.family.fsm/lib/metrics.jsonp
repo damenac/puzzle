@@ -19,7 +19,7 @@ var pieDataSemanticCommonality = [{
         label: "Commonalities"
     },
     {
-        value: 9,
+        value: 8,
         color:"#F5F6CE",
         highlight: "#FBFBEF",
         label: "Particularities"
@@ -41,7 +41,7 @@ var barProductRelatedReusability = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [42.168674698795186,47.94520547945205,40.229885057471265]
+        data : [43.20987654320987,47.94520547945205,41.17647058823529]
       }
     ]
 };
@@ -60,7 +60,7 @@ var barIndividualizationRatio = {
         strokeColor : "rgba(151,187,205,0.8)",
         highlightFill : "rgba(151,187,205,0.75)",
         highlightStroke : "rgba(151,187,205,1)",
-        data : [49.39759036144578,49.31506849315068,45.97701149425287]
+        data : [49.382716049382715,49.31506849315068,45.88235294117647]
       }
     ]
 };

@@ -5928,3 +5928,105 @@ Caused by: java.lang.InterruptedException
 	at org.eclipse.net4j.util.lifecycle.Lifecycle.lock(Lifecycle.java:306)
 	at org.eclipse.net4j.util.lifecycle.Lifecycle.internalActivate(Lifecycle.java:65)
 	... 94 more
+!SESSION 2016-04-07 10:23:53.182 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2016-04-07 10:24:01.553
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2016-04-07 10:24:01.933
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-04-07 10:24:01.933
+!MESSAGE A conflict occurred for COMMAND+6:
+Binding(COMMAND+6,
+	ParameterizedCommand(Command(org.eclipse.emf.ecp.cdo.ui.checkinCommand,Checkin,
+		,
+		Category(org.eclipse.emf.ecp.cdo.ui.commands,ECP CDO Provider,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@58ca6ba3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+6,
+	ParameterizedCommand(Command(br.ufal.ic.colligens.commands.CodeAnalyzeCommand,Code Analyzer,
+		Code Analyzer,
+		Category(br.ufal.ic.colligens.commands.ColligensCategory,Colligens,Colligens,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@74797b90,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2016-04-07 13:45:27.421
+!MESSAGE Invalid property category path: org.eclipse.cdt.managedbuilder.ui.properties.Page_head_build (bundle: org.eclipse.cdt.ui, propertyPage: org.eclipse.cdt.managedbuilder.ui.properties.BuildLogPreferencePage)
+!SESSION 2016-04-13 20:43:12.303 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2016-04-13 20:43:44.649
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2016-04-13 20:43:45.041
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-04-13 20:43:45.041
+!MESSAGE A conflict occurred for COMMAND+6:
+Binding(COMMAND+6,
+	ParameterizedCommand(Command(org.eclipse.emf.ecp.cdo.ui.checkinCommand,Checkin,
+		,
+		Category(org.eclipse.emf.ecp.cdo.ui.commands,ECP CDO Provider,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3a7dcfb7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+6,
+	ParameterizedCommand(Command(br.ufal.ic.colligens.commands.CodeAnalyzeCommand,Code Analyzer,
+		Code Analyzer,
+		Category(br.ufal.ic.colligens.commands.ColligensCategory,Colligens,Colligens,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@50b4e7b2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2016-04-13 22:23:02.733
+!MESSAGE Invalid property category path: org.eclipse.cdt.managedbuilder.ui.properties.Page_head_build (bundle: org.eclipse.cdt.ui, propertyPage: org.eclipse.cdt.managedbuilder.ui.properties.BuildLogPreferencePage)
+!SESSION 2016-04-20 12:28:10.237 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.modeling.product -keyring /Users/dmendeza/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2016-04-20 12:28:16.843
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2016-04-20 12:28:17.275
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-04-20 12:28:17.275
+!MESSAGE A conflict occurred for COMMAND+6:
+Binding(COMMAND+6,
+	ParameterizedCommand(Command(org.eclipse.emf.ecp.cdo.ui.checkinCommand,Checkin,
+		,
+		Category(org.eclipse.emf.ecp.cdo.ui.commands,ECP CDO Provider,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2634d000,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+6,
+	ParameterizedCommand(Command(br.ufal.ic.colligens.commands.CodeAnalyzeCommand,Code Analyzer,
+		Code Analyzer,
+		Category(br.ufal.ic.colligens.commands.ColligensCategory,Colligens,Colligens,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1642968c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2016-04-20 13:46:25.381
+!MESSAGE Invalid property category path: org.eclipse.cdt.managedbuilder.ui.properties.Page_head_build (bundle: org.eclipse.cdt.ui, propertyPage: org.eclipse.cdt.managedbuilder.ui.properties.BuildLogPreferencePage)
