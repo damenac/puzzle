@@ -1,5 +1,8 @@
 package fr.inria.diverse.puzzle.metrics;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Assert;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EReference;
@@ -7,6 +10,7 @@ import org.eclipse.emf.ecore.EcoreFactory;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.ContextReferences;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesion;
 
 public class PairwiseCohesionTest {
@@ -17,9 +21,11 @@ public class PairwiseCohesionTest {
 	
 	private EClass x;
 	private EClass y;
+	private List<EClass> contextXY;
 	
 	private EClass o;
 	private EClass p;
+	private List<EClass> contextOP;
 	
 	// -------------------------------------------------
 	// Scenarios' loading
@@ -44,6 +50,11 @@ public class PairwiseCohesionTest {
 		x.getEStructuralFeatures().add(a);
 		x.getEStructuralFeatures().add(b);
 		
+		contextXY = new ArrayList<EClass>();
+		contextXY.add(x);
+		contextXY.add(y);
+		
+		
 		o = EcoreFactory.eINSTANCE.createEClass();
 		o.setName("O");
 		
@@ -61,6 +72,10 @@ public class PairwiseCohesionTest {
 		d.setName("d");
 		d.setEType(o);
 		o.getEStructuralFeatures().add(d);
+		
+		contextOP = new ArrayList<EClass>();
+		contextOP.add(o);
+		contextOP.add(p);
 	}
 	// -------------------------------------------------
 	// Test cases
@@ -68,12 +83,14 @@ public class PairwiseCohesionTest {
 	
 	@Test
 	public void computePairwiseCohesionXYTest(){
-		Assert.assertEquals(0.5, PairwiseCohesion.computePairwiseCohesion(x, y), 0);
+		int contextReferences = ContextReferences.countTotalReferences(contextXY);
+		Assert.assertEquals(0.5, PairwiseCohesion.computePairwiseCohesion(x, y, contextReferences), 0);
 	}
 	
 	@Test
 	public void computePairwiseCohesionXYInverseTest(){
-		Assert.assertEquals(0.5, PairwiseCohesion.computePairwiseCohesion(y, x), 0);
+		int contextReferences = ContextReferences.countTotalReferences(contextXY);
+		Assert.assertEquals(0.5, PairwiseCohesion.computePairwiseCohesion(y, x, contextReferences), 0);
 	}
 	
 	@Test
@@ -94,7 +111,8 @@ public class PairwiseCohesionTest {
 	
 	@Test
 	public void computePairwiseCohesionOPTest(){
-		Assert.assertEquals(0.6, PairwiseCohesion.computePairwiseCohesion(o, p), 0.1);
+		int contextReferences = ContextReferences.countTotalReferences(contextOP);
+		Assert.assertEquals(0.6, PairwiseCohesion.computePairwiseCohesion(o, p, contextReferences), 0.1);
 	}
 	
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="PairwiseCohesionTest" project="fr.inria.diverse.puzzle.metrics" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.126">
+    <testcase name="computePairwiseCohesionXYInverseTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.124"/>
+    <testcase name="countEReferencesTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.0"/>
+    <testcase name="computeCrossReferencesOPTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.001"/>
+    <testcase name="computeCrossReferencesXYTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.0"/>
+    <testcase name="computePairwiseCohesionOPTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.0"/>
+    <testcase name="computePairwiseCohesionXYTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.001"/>
+  </testsuite>
+</testrun>

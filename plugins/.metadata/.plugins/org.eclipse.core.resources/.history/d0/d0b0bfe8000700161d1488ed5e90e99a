@@ -1,0 +1,49 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcoreFactory;
+
+public class PairwiseCohsionMatrixTest {
+
+	// -------------------------------------------------
+	// Scenarios
+	// -------------------------------------------------
+	
+	private EClass x;
+	private EClass y;
+	private EClass o;
+	private EClass p;
+	private EClass z;
+	
+	// -------------------------------------------------
+	// Scenarios' loading
+	// -------------------------------------------------
+
+	public void setupScenario(){
+		x = EcoreFactory.eINSTANCE.createEClass();
+		x.setName("X");
+		
+		y = EcoreFactory.eINSTANCE.createEClass();
+		y.setName("Y");
+		
+		o = EcoreFactory.eINSTANCE.createEClass();
+		o.setName("O");
+		
+		p = EcoreFactory.eINSTANCE.createEClass();
+		p.setName("P");
+		
+		z = EcoreFactory.eINSTANCE.createEClass();
+		z.setName("Z");
+		
+		EReference a = EcoreFactory.eINSTANCE.createEReference();
+		a.setName("a");
+		a.setEType(y);
+		x.getEStructuralFeatures().add(a);
+		
+	}
+	
+	// -------------------------------------------------
+	// Test cases
+	// -------------------------------------------------
+}

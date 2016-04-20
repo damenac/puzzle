@@ -1,0 +1,12 @@
+package fr.inria.diverse.puzzle.metrics.auxiliarMetrics;
+
+/**
+ * A pairwise cohesion matrix according to a collection of meta-classes
+ * @author David Mendez Acuna
+ *
+ */
+public class PairwiseCohesionMatrix {
+
+	
+	public static 
+}

@@ -24,16 +24,15 @@ public class PairwiseCohesion {
 	 * @param y
 	 * @return
 	 */
-	public static double computePairwiseCohesion(EClass x, EClass y){
+	public static double computePairwiseCohesion(EClass x, EClass y, int contextReferences){
 		int refsFromXToY = computeCrossReferences(x, y);
 		int refsFromYtoX = computeCrossReferences(y, x);
-		int referencesAmount = countReferences(x) + countReferences(y);
 		
-		if(referencesAmount == 0)
+		if(contextReferences == 0)
 			return 0;
 		else{
 			double result = 0;
-			result = ((double) (refsFromXToY + refsFromYtoX))/(referencesAmount);
+			result = ((double) (refsFromXToY + refsFromYtoX))/(contextReferences);
 			return result;
 		}
 	}
