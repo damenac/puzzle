@@ -1,0 +1,12 @@
+package fr.inria.diverse.puzzle.metrics.vos;
+
+public class HTMatrixEntry {
+
+	// ----------------------------------------------
+	// Attributes
+	// ----------------------------------------------
+	
+	private HCTreeNode x;
+	private HCTreeNode y;
+	private double value;
+}

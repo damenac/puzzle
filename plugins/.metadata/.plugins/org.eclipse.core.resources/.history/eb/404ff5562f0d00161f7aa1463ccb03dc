@@ -1,0 +1,16 @@
+package fr.inria.diverse.puzzle.metrics.vos;
+
+import java.util.List;
+
+public class HCMatrix {
+
+	// ----------------------------------------------
+	// Attributes
+	// ----------------------------------------------
+	
+	private List<HCMatrixEntry> entries;
+
+	// ----------------------------------------------
+	// Constructor
+	// ----------------------------------------------
+}

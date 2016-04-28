@@ -1,0 +1,33 @@
+package fr.inria.diverse.puzzle.metrics.vos;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class HCMatrix {
+
+	// ----------------------------------------------
+	// Attributes
+	// ----------------------------------------------
+	
+	private List<HCMatrixEntry> entries;
+
+	// ----------------------------------------------
+	// Constructor
+	// ----------------------------------------------
+	
+	public HCMatrix(){
+		entries = new ArrayList<HCMatrixEntry>();
+	}
+	
+	// ----------------------------------------------
+	// Methods
+	// ----------------------------------------------
+	
+	public List<HCMatrixEntry> getEntries() {
+		return entries;
+	}
+
+	public void setEntries(List<HCMatrixEntry> entries) {
+		this.entries = entries;
+	}
+}

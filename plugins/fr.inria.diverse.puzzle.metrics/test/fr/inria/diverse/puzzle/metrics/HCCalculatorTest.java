@@ -10,7 +10,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.HCCalculator;
 import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesionMatrix;
+import fr.inria.diverse.puzzle.metrics.vos.HCMatrix;
+import fr.inria.diverse.puzzle.metrics.vos.HCMatrixEntry;
+import fr.inria.diverse.puzzle.metrics.vos.HCTree;
+import fr.inria.diverse.puzzle.metrics.vos.HCTreeNode;
 
 public class HCCalculatorTest {
 
@@ -18,6 +23,7 @@ public class HCCalculatorTest {
 	// Scenarios
 	// -------------------------------------------------
 	
+	private HCCalculator hcCalculator;
 	private EClass stateMachine;
 	private EClass state;
 	private EClass transition;
@@ -33,6 +39,8 @@ public class HCCalculatorTest {
 	
 	@Before
 	public void loadScenario(){
+		hcCalculator = new HCCalculator();
+		
 		// Creating EClasses
 		stateMachine = EcoreFactory.eINSTANCE.createEClass();
 		stateMachine.setName("StateMachine");
@@ -190,5 +198,131 @@ public class HCCalculatorTest {
 		Assert.assertEquals(0.07, matrix[4][5], 0.01);
 		
 		Assert.assertEquals(0, matrix[5][5], 0);
+	}
+	
+	@Test
+	public void testBuildInitialHCMatrixFromMetrixMatrix(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		HCMatrix initialMatrix = hcCalculator.buildInitialHCMatrixFromMetrixMatrix(metricsMatrix, metaclasses);
+		
+		// Row y = 0; x >= 1
+		Assert.assertEquals("StateMachine", initialMatrix.getEntries()[0][1].getX().geteClass().getName());
+		Assert.assertEquals("State", initialMatrix.getEntries()[0][1].getY().geteClass().getName());
+		Assert.assertEquals(0.14, initialMatrix.getEntries()[0][1].getValue(), 0.01);
+		
+		Assert.assertEquals("StateMachine", initialMatrix.getEntries()[0][2].getX().geteClass().getName());
+		Assert.assertEquals("Transition", initialMatrix.getEntries()[0][2].getY().geteClass().getName());
+		Assert.assertEquals(0.14, initialMatrix.getEntries()[0][2].getValue(), 0.01);
+		
+		Assert.assertEquals("StateMachine", initialMatrix.getEntries()[0][3].getX().geteClass().getName());
+		Assert.assertEquals("Statement", initialMatrix.getEntries()[0][3].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[0][3].getValue(), 0);
+		
+		Assert.assertEquals("StateMachine", initialMatrix.getEntries()[0][4].getX().geteClass().getName());
+		Assert.assertEquals("Block", initialMatrix.getEntries()[0][4].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[0][4].getValue(), 0);
+		
+		Assert.assertEquals("StateMachine", initialMatrix.getEntries()[0][5].getX().geteClass().getName());
+		Assert.assertEquals("Conditional", initialMatrix.getEntries()[0][5].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[0][5].getValue(), 0);
+		
+		Assert.assertEquals("StateMachine", initialMatrix.getEntries()[0][6].getX().geteClass().getName());
+		Assert.assertEquals("Loop", initialMatrix.getEntries()[0][6].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[0][6].getValue(), 0);
+	
+		// Row y = 1; x >= 2
+		Assert.assertEquals("State", initialMatrix.getEntries()[1][2].getX().geteClass().getName());
+		Assert.assertEquals("Transition", initialMatrix.getEntries()[1][2].getY().geteClass().getName());
+		Assert.assertEquals(0.28, initialMatrix.getEntries()[1][2].getValue(), 0.01);
+		
+		Assert.assertEquals("State", initialMatrix.getEntries()[1][3].getX().geteClass().getName());
+		Assert.assertEquals("Statement", initialMatrix.getEntries()[1][3].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[1][3].getValue(), 0);
+		
+		Assert.assertEquals("State", initialMatrix.getEntries()[1][4].getX().geteClass().getName());
+		Assert.assertEquals("Block", initialMatrix.getEntries()[1][4].getY().geteClass().getName());
+		Assert.assertEquals(0.07, initialMatrix.getEntries()[1][4].getValue(), 0.01);
+		
+		Assert.assertEquals("State", initialMatrix.getEntries()[1][5].getX().geteClass().getName());
+		Assert.assertEquals("Conditional", initialMatrix.getEntries()[1][5].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[1][5].getValue(), 0);
+		
+		Assert.assertEquals("State", initialMatrix.getEntries()[1][6].getX().geteClass().getName());
+		Assert.assertEquals("Loop", initialMatrix.getEntries()[1][6].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[1][6].getValue(), 0);
+		
+		// Row y = 2; x >= 3
+		Assert.assertEquals("Transition", initialMatrix.getEntries()[2][3].getX().geteClass().getName());
+		Assert.assertEquals("Statement", initialMatrix.getEntries()[2][3].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[2][3].getValue(), 0);
+		
+		Assert.assertEquals("Transition", initialMatrix.getEntries()[2][4].getX().geteClass().getName());
+		Assert.assertEquals("Block", initialMatrix.getEntries()[2][4].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[2][4].getValue(), 0);
+		
+		Assert.assertEquals("Transition", initialMatrix.getEntries()[2][5].getX().geteClass().getName());
+		Assert.assertEquals("Conditional", initialMatrix.getEntries()[2][5].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[2][5].getValue(), 0);
+		
+		Assert.assertEquals("Transition", initialMatrix.getEntries()[2][6].getX().geteClass().getName());
+		Assert.assertEquals("Loop", initialMatrix.getEntries()[2][6].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[2][6].getValue(), 0);
+		
+		// Row y = 3; x >= 4
+		Assert.assertEquals("Statement", initialMatrix.getEntries()[3][4].getX().geteClass().getName());
+		Assert.assertEquals("Block", initialMatrix.getEntries()[3][4].getY().geteClass().getName());
+		Assert.assertEquals(0.07, initialMatrix.getEntries()[3][4].getValue(), 0.01);
+		
+		Assert.assertEquals("Statement", initialMatrix.getEntries()[3][5].getX().geteClass().getName());
+		Assert.assertEquals("Conditional", initialMatrix.getEntries()[3][5].getY().geteClass().getName());
+		Assert.assertEquals(0.07, initialMatrix.getEntries()[3][5].getValue(), 0.01);
+		
+		Assert.assertEquals("Statement", initialMatrix.getEntries()[3][6].getX().geteClass().getName());
+		Assert.assertEquals("Loop", initialMatrix.getEntries()[3][6].getY().geteClass().getName());
+		Assert.assertEquals(0.07, initialMatrix.getEntries()[3][6].getValue(), 0.01);
+		
+		// Row y = 4; x >= 5
+		Assert.assertEquals("Block", initialMatrix.getEntries()[4][5].getX().geteClass().getName());
+		Assert.assertEquals("Conditional", initialMatrix.getEntries()[4][5].getY().geteClass().getName());
+		Assert.assertEquals(0.07, initialMatrix.getEntries()[4][5].getValue(), 0.01);
+		
+		Assert.assertEquals("Block", initialMatrix.getEntries()[4][6].getX().geteClass().getName());
+		Assert.assertEquals("Loop", initialMatrix.getEntries()[4][6].getY().geteClass().getName());
+		Assert.assertEquals(0.07, initialMatrix.getEntries()[4][6].getValue(), 0.01);
+		
+		// Row y = 5; x >= 6
+		Assert.assertEquals("Conditional", initialMatrix.getEntries()[5][6].getX().geteClass().getName());
+		Assert.assertEquals("Loop", initialMatrix.getEntries()[5][6].getY().geteClass().getName());
+		Assert.assertEquals(0, initialMatrix.getEntries()[5][6].getValue(), 0);
+	}
+	
+	@Test
+	public void testFindBiggerEntry(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		HCMatrix initialMatrix = hcCalculator.buildInitialHCMatrixFromMetrixMatrix(metricsMatrix, metaclasses);
+		HCMatrixEntry biggerEntry = hcCalculator.findBiggerEntry(initialMatrix.getEntries());
+		
+		Assert.assertEquals(0.28, biggerEntry.getValue(), 0.01);
+		Assert.assertEquals("State", biggerEntry.getX().geteClass().getName());
+		Assert.assertEquals("Transition", biggerEntry.getY().geteClass().getName());
+	}
+	
+	@Test
+	public void testUpdateHCTreeWithEntry(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses);
+		
+		HCTree currentTree = hcCalculator.getTree();
+		Assert.assertEquals(3, currentTree.getNodes().size(), 0);
+		
+		HCTreeNode stateNode = currentTree.findNodeByIdentifier("State");
+		Assert.assertNotNull(stateNode);
+		HCTreeNode transitionNode = currentTree.findNodeByIdentifier("Transition");
+		Assert.assertNotNull(transitionNode);
+		HCTreeNode stateTransitionNode = currentTree.findNodeByIdentifier("(State,Transition)");
+		Assert.assertNotNull(stateTransitionNode);
+		
+		Assert.assertEquals(stateNode, stateTransitionNode.getLeftChild());
+		Assert.assertEquals(transitionNode, stateTransitionNode.getRightChild());
 	}
 }

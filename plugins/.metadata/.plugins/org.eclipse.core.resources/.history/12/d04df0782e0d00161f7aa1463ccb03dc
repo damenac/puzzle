@@ -1,0 +1,24 @@
+package fr.inria.diverse.puzzle.metrics.vos;
+
+import java.util.List;
+
+public class HCTree {
+
+	// ----------------------------------------------
+	// Attributes
+	// ----------------------------------------------
+	
+	private List<HCTreeNode> nodes;
+	private HCTreeNode root;
+
+	// ----------------------------------------------
+	// Constructor
+	// ----------------------------------------------
+	
+	public HCTree(){}
+	
+	// ----------------------------------------------
+	// Methods
+	// ----------------------------------------------
+	
+}

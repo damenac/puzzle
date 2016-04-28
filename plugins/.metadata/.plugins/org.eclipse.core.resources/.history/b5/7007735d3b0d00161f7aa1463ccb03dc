@@ -1,0 +1,73 @@
+package fr.inria.diverse.puzzle.metrics.auxiliarMetrics;
+
+import java.util.List;
+
+import org.eclipse.emf.ecore.EClass;
+
+import fr.inria.diverse.puzzle.metrics.vos.HCMatrix;
+import fr.inria.diverse.puzzle.metrics.vos.HCMatrixEntry;
+import fr.inria.diverse.puzzle.metrics.vos.HCTree;
+import fr.inria.diverse.puzzle.metrics.vos.HCTreeNode;
+
+public class HCCalculator {
+
+	// ----------------------------------------------
+	// Attributes
+	// ----------------------------------------------
+	
+	private HCTree tree;
+	
+	// ----------------------------------------------
+	// Constructor
+	// ----------------------------------------------
+	
+	public HCCalculator(){
+		tree = new HCTree();
+	}
+	
+	// ----------------------------------------------
+	// Methods
+	// ----------------------------------------------
+	
+	/**
+	 * Builds the initial HCMatrix from the metrics matrix on the parameter. 
+	 * @param inputMatrix
+	 * @return
+	 */
+	public HCMatrix buildInitialHCMatrixFromMetrixMatrix(double[][] inputMatrix, List<EClass> metaclasses){
+		HCMatrix matrix = new HCMatrix();
+		for (int y = 0; y < inputMatrix.length; y++) {
+			for (int x = y + 1; x < inputMatrix.length; x++) {
+				double value = inputMatrix[y][x];
+				
+				HCTreeNode xTreeNode = new HCTreeNode();
+				xTreeNode.seteClass(metaclasses.get(x));
+				
+				HCTreeNode yTreeNode = new HCTreeNode();
+				yTreeNode.seteClass(metaclasses.get(y));
+				
+				HCMatrixEntry entry = new HCMatrixEntry(xTreeNode, yTreeNode, value);
+				matrix.getEntries().add(entry);
+			}
+		}
+		return matrix;
+	}
+	
+	/**
+	 * Returns the entry with the bigger value in the entries list given in the parameter. 
+	 * @param entries
+	 * @return
+	 */
+	public HCMatrixEntry findBiggerEntry(List<HCMatrixEntry> entries){
+		HCMatrixEntry biggerEntry = null;
+		double biggerValue = -1;
+		
+		for (HCMatrixEntry hcMatrixEntry : entries) {
+			if(hcMatrixEntry.getValue() > biggerValue){
+				biggerEntry = hcMatrixEntry;
+				biggerValue = hcMatrixEntry.getValue();
+			}
+		}
+		return biggerEntry;
+	}
+}

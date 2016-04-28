@@ -23,6 +23,10 @@ public class HCTreeNode {
 	// Methods
 	// ----------------------------------------------
 
+	public String toString(){
+		return this.identifier;
+	}
+	
 	public EClass geteClass() {
 		return eClass;
 	}
