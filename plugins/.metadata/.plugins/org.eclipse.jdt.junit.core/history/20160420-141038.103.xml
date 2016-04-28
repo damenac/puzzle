@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="PairwiseCohesionTest" project="fr.inria.diverse.puzzle.metrics" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.209">
-    <testcase name="computeCrossReferencesTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.208"/>
-    <testcase name="computePairwiseCohesionTest" classname="fr.inria.diverse.puzzle.metrics.PairwiseCohesionTest" time="0.001"/>
-  </testsuite>
-</testrun>

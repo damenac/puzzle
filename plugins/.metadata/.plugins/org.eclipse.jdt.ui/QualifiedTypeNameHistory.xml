@@ -17,14 +17,12 @@
 <fullyQualifiedTypeName name="vm.LanguageFeatureModel"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.listeners.IProjectListener"/>
 <fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTFeature"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTRole"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.melange.metamodel.melange.Aspect"/>
 <fullyQualifiedTypeName name="PuzzleADL.PuzzleADLFactory"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.vos.PackageAspectsMapping"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="vm.OrthogonalVariabilityModel"/>
 <fullyQualifiedTypeName name="vm.SemanticVariationPoint"/>
 <fullyQualifiedTypeName name="PuzzleADL.SemanticsImplementation"/>
@@ -32,4 +30,19 @@
 <fullyQualifiedTypeName name="vm.LanguageProductLine"/>
 <fullyQualifiedTypeName name="vm.LanguageFeature"/>
 <fullyQualifiedTypeName name="vm.SemanticInterpretation"/>
+<fullyQualifiedTypeName name="org.eclipse.xtext.xbase.typesystem.internal.ExpectedExceptionsStackedResolvedTypes"/>
+<fullyQualifiedTypeName name="org.junit.Before"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EcoreFactory"/>
+<fullyQualifiedTypeName name="org.junit.Test"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.PairwiseCohsionMatrixTest"/>
+<fullyQualifiedTypeName name="junit.framework.Assert"/>
+<fullyQualifiedTypeName name="org.junit.Assert"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesionMatrix"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesion"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.ContextReferences"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
 </qualifiedTypeNameHistroy>

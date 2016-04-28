@@ -1,0 +1,12 @@
+package fr.inria.diverse.puzzle.metrics;
+
+import org.eclipse.emf.ecore.EClass;
+
+public class HCCalculatorTest {
+
+	// -------------------------------------------------
+	// Scenarios
+	// -------------------------------------------------
+	
+	private EClass stateMachine;
+}
