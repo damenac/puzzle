@@ -24,6 +24,14 @@ public class HCMatrixEntry {
 	// Methods
 	// ----------------------------------------------
 
+	public String toString(){
+		return Double.toString(this.value);
+	}
+	
+	// ----------------------------------------------
+	// Getters and setters
+	// ----------------------------------------------
+	
 	public HCTreeNode getX() {
 		return x;
 	}

@@ -39,8 +39,8 @@ public class HCCalculator {
 	public void computeHCTree(double[][] inputMatrix, List<EClass> metaclasses){
 		hcMatrix = this.buildInitialHCMatrixFromMetrixMatrix(inputMatrix, metaclasses);
 		HCMatrixEntry biggerEntry = this.findBiggerEntry(hcMatrix.getEntries());
-		updateHCTreeWithEntry(biggerEntry);
-		updateHCMatrix(biggerEntry);
+		HCTreeNode newNode = updateHCTreeWithEntry(biggerEntry);
+		updateHCMatrix(biggerEntry, newNode);
 	}
 	
 	/**
@@ -52,8 +52,11 @@ public class HCCalculator {
 		HCMatrix matrix = new HCMatrix();
 		HCMatrixEntry[][] entryMatrix = new HCMatrixEntry[metaclasses.size()][metaclasses.size()];
 		for (int x = 0; x < inputMatrix.length; x++) {
-			for (int y = x + 1; y < inputMatrix.length; y++) {
+			for (int y = 0; y < inputMatrix.length; y++) {
 				double value = inputMatrix[x][y];
+				
+				if(y<=x)
+					value = -1;
 				
 				HCTreeNode xTreeNode = new HCTreeNode();
 				xTreeNode.seteClass(metaclasses.get(x));
@@ -95,7 +98,7 @@ public class HCCalculator {
 	 * Updates the current hierarchical clustering tree with the new entry given in the parameter. 
 	 * @param biggerEntry
 	 */
-	public void updateHCTreeWithEntry(HCMatrixEntry biggerEntry) {
+	public HCTreeNode updateHCTreeWithEntry(HCMatrixEntry biggerEntry) {
 		HCTreeNode xMatrixNode = biggerEntry.getX();
 		HCTreeNode yMatrixNode = biggerEntry.getY();
 		
@@ -117,15 +120,111 @@ public class HCCalculator {
 		joinNode.setRightChild(yTreeNode);
 		joinNode.setIdentifier("(" + xTreeNode.getIdentifier() + "," + yTreeNode.getIdentifier() + ")");
 		this.tree.getNodes().add(joinNode);
+		
+		return joinNode;
 	}
 	
 	/**
 	 * Updates the HCMatrix with the entry given in the parameter. 
 	 * @param biggerEntry
 	 */
-	public void updateHCMatrix(HCMatrixEntry biggerEntry) {
-		// TODO Auto-generated method stub
+	public void updateHCMatrix(HCMatrixEntry biggerEntry, HCTreeNode newNode) {
+		HCMatrixEntry[][] oldMatrix = this.hcMatrix.getEntries();
+		HCMatrixEntry[][] newMatrix = new HCMatrixEntry[this.hcMatrix.getEntries().length-1][this.hcMatrix.getEntries().length-1];
 		
+		// Calculating the reduced matrix.
+		int deltaX = 0;
+		for (int x = 0; x < oldMatrix.length; x++) {
+			int deltaY = 0;
+			
+			for (int y = 0; y < oldMatrix.length; y++) {
+				
+				if(oldMatrix[x][y] != null){
+					boolean delta = false;
+					
+					if(oldMatrix[x][y].getX().getIdentifier().equals(biggerEntry.getX().getIdentifier()) || 
+							oldMatrix[x][y].getX().getIdentifier().equals(biggerEntry.getY().getIdentifier())){
+						deltaX ++;
+						break;
+					}
+					
+					if(oldMatrix[x][y].getY().getIdentifier().equals(biggerEntry.getX().getIdentifier()) || 
+							oldMatrix[x][y].getY().getIdentifier().equals(biggerEntry.getY().getIdentifier())){
+						deltaY ++;
+						delta = true;
+					}
+					
+					if(!delta){
+						newMatrix[x - deltaX][y - deltaY] = oldMatrix[x][y];
+					}
+				}
+			}
+		}
+		
+		// Computing the values for the unification
+		for (int x = 0; x < newMatrix.length - 1; x++) {
+			HCMatrixEntry newEntry = this.computeJointEntry(biggerEntry.getX(), biggerEntry.getY(), newMatrix[x][0].getX(), newNode);
+			newMatrix[x][newMatrix.length - 1] = newEntry;
+		}
+		
+		for (int y = 0; y < newMatrix.length; y++) {
+			newMatrix[newMatrix.length - 1][y] = new HCMatrixEntry(newNode, newMatrix[0][y].getY(), -1);
+		}
+		
+		// Update the objects
+		this.hcMatrix.setEntries(newMatrix);
+	}
+	
+	
+	public HCMatrixEntry computeJointEntry(HCTreeNode x, HCTreeNode y, HCTreeNode entryNode, HCTreeNode newNode){
+		HCMatrixEntry[][] oldMatrix = this.hcMatrix.getEntries();
+		
+		double rXEntry = -1;
+	
+		for (int i = 0; i < oldMatrix.length; i++) {
+			for (int j = 0; j < oldMatrix.length; j++) {
+				if(oldMatrix[i][j].getX().getIdentifier().equals(x.getIdentifier()) &&
+						oldMatrix[i][j].getY().getIdentifier().equals(entryNode.getIdentifier())){
+					rXEntry = oldMatrix[i][j].getValue();
+				}
+			}
+		}
+		
+		if(rXEntry == -1){
+			for (int i = 0; i < oldMatrix.length; i++) {
+				for (int j = 0; j < oldMatrix.length; j++) {
+					if(oldMatrix[i][j].getX().getIdentifier().equals(entryNode.getIdentifier()) &&
+							oldMatrix[i][j].getY().getIdentifier().equals(x.getIdentifier())){
+						rXEntry = oldMatrix[i][j].getValue();
+					}
+				}
+			}
+		}
+		
+		double rYEntry = -1;
+		
+		for (int i = 0; i < oldMatrix.length; i++) {
+			for (int j = 0; j < oldMatrix.length; j++) {
+				if(oldMatrix[i][j].getX().getIdentifier().equals(y.getIdentifier()) &&
+						oldMatrix[i][j].getY().getIdentifier().equals(entryNode.getIdentifier())){
+					rYEntry = oldMatrix[i][j].getValue();
+				}
+			}
+		}
+		
+		if(rYEntry == -1){
+			for (int i = 0; i < oldMatrix.length; i++) {
+				for (int j = 0; j < oldMatrix.length; j++) {
+					if(oldMatrix[i][j].getX().getIdentifier().equals(entryNode.getIdentifier()) &&
+							oldMatrix[i][j].getY().getIdentifier().equals(y.getIdentifier())){
+						rYEntry = oldMatrix[i][j].getValue();
+					}
+				}
+			}
+		}
+		
+		double answer = ( rXEntry + rYEntry ) / (double) 2;
+		return new HCMatrixEntry(entryNode, newNode , answer);
 	}
 	
 	// ----------------------------------------------
@@ -138,5 +237,13 @@ public class HCCalculator {
 
 	public void setTree(HCTree tree) {
 		this.tree = tree;
+	}
+
+	public HCMatrix getHcMatrix() {
+		return hcMatrix;
+	}
+
+	public void setHcMatrix(HCMatrix hcMatrix) {
+		this.hcMatrix = hcMatrix;
 	}
 }
