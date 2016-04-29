@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="HCCalculatorTest" project="fr.inria.diverse.puzzle.metrics" tests="11" started="11" failures="0" errors="0" ignored="0">
+  <testsuite name="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.096">
+    <testcase name="testUpdateHCMatrixThirdIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.09"/>
+    <testcase name="testFindBiggerEntry" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.0"/>
+    <testcase name="testUpdateHCTreeWithEntryThirdIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
+    <testcase name="testUpdateHCTreeWithEntrySecondIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
+    <testcase name="testUpdateHCMatrixForthIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
+    <testcase name="testUpdateHCMatrixFivethIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
+    <testcase name="testUpdateHCMatrixFirstIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.0"/>
+    <testcase name="testUpdateHCMatrixSecondIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
+    <testcase name="testMetricComputation" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.0"/>
+    <testcase name="testUpdateHCTreeWithEntryFirstIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
+    <testcase name="testBuildInitialHCMatrixFromMetrixMatrix" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.0"/>
+  </testsuite>
+</testrun>

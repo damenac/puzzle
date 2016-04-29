@@ -330,8 +330,6 @@ public class HCCalculatorTest {
 	public void testUpdateHCMatrixFirstIteration(){
 		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
 		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 1);
-		
-		//TODO This test should be fixed when the algorithm becomes iterative! 
 		HCMatrix updatedMatrix = hcCalculator.getHcMatrix();
 		
 		// Row x = 0; y >= 1
@@ -400,15 +398,276 @@ public class HCCalculatorTest {
 		Assert.assertEquals(0, updatedMatrix.getEntries()[4][5].getValue(), 0);
 	}
 	
-//	@Test
-//	public void testComputeJointEntry(){
-//		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
-//		HCMatrix initialMatrix = hcCalculator.buildInitialHCMatrixFromMetrixMatrix(metricsMatrix, metaclasses);
-//		
-//		HCTreeNode entryNode = initialMatrix.getEntries()[0][0].getX(); // StateMachine
-//		HCTreeNode leftNode = initialMatrix.getEntries()[0][1].getY(); // State
-//		HCTreeNode rightNode = initialMatrix.getEntries()[0][2].getY(); // State
-//		
-//		Assert.assertEquals(0.14, hcCalculator.computeJointEntry(leftNode, rightNode, entryNode).getValue(), 0.01);
-//	}
+	@Test
+	public void testUpdateHCTreeWithEntrySecondIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 2);
+		
+		HCTree currentTree = hcCalculator.getTree();
+		Assert.assertEquals(5, currentTree.getNodes().size(), 0);
+		
+		HCTreeNode stateNode = currentTree.findNodeByIdentifier("State");
+		Assert.assertNotNull(stateNode);
+		HCTreeNode transitionNode = currentTree.findNodeByIdentifier("Transition");
+		Assert.assertNotNull(transitionNode);
+		HCTreeNode stateMachineNode = currentTree.findNodeByIdentifier("StateMachine");
+		Assert.assertNotNull(stateMachineNode);
+		HCTreeNode stateTransitionNode = currentTree.findNodeByIdentifier("(State,Transition)");
+		Assert.assertNotNull(stateTransitionNode);
+		HCTreeNode stateMachineStateTransitionNode = currentTree.findNodeByIdentifier("(StateMachine,(State,Transition))");
+		Assert.assertNotNull(stateMachineStateTransitionNode);
+		
+		Assert.assertEquals(stateNode, stateTransitionNode.getLeftChild());
+		Assert.assertEquals(transitionNode, stateTransitionNode.getRightChild());
+		
+		Assert.assertEquals(stateTransitionNode, stateMachineStateTransitionNode.getRightChild());
+		Assert.assertEquals(stateMachineNode, stateMachineStateTransitionNode.getLeftChild());
+	}
+	
+	@Test
+	public void testUpdateHCMatrixSecondIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 2);
+		HCMatrix updatedMatrix = hcCalculator.getHcMatrix();
+		
+		// Row x = 0; y >= 1
+		Assert.assertEquals("Statement", updatedMatrix.getEntries()[0][1].getX().getIdentifier());
+		Assert.assertEquals("Block", updatedMatrix.getEntries()[0][1].getY().getIdentifier());
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[0][1].getValue(), 0.01);
+		
+		Assert.assertEquals("Statement", updatedMatrix.getEntries()[0][2].getX().getIdentifier());
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[0][2].getY().getIdentifier());
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[0][2].getValue(), 0.01);
+		
+		Assert.assertEquals("Statement", updatedMatrix.getEntries()[0][3].getX().getIdentifier());
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[0][3].getY().getIdentifier());
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[0][3].getValue(), 0.01);
+		
+		Assert.assertEquals("Statement", updatedMatrix.getEntries()[0][4].getX().getIdentifier());
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[0][4].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[0][4].getValue(), 0);
+		
+		// Row x = 1; y >= 2
+		Assert.assertEquals("Block", updatedMatrix.getEntries()[1][2].getX().getIdentifier());
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[1][2].getY().getIdentifier());
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[1][2].getValue(), 0.01);
+		
+		Assert.assertEquals("Block", updatedMatrix.getEntries()[1][3].getX().getIdentifier());
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[1][3].getY().getIdentifier());
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[1][3].getValue(), 0.01);
+		
+		Assert.assertEquals("Block", updatedMatrix.getEntries()[1][4].getX().getIdentifier());
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[1][4].getY().getIdentifier());
+		Assert.assertEquals(0.0175, updatedMatrix.getEntries()[1][4].getValue(), 0.01);
+		
+		// Row x = 2; y >= 3
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[2][3].getX().getIdentifier());
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[2][3].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[2][3].getValue(), 0);
+		
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[2][4].getX().getIdentifier());
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[2][4].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[2][4].getValue(), 0);
+		
+		// Row x = 3; y >= 4
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[3][4].getX().getIdentifier());
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[3][4].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[3][4].getValue(), 0);
+	}
+	
+	@Test
+	public void testUpdateHCTreeWithEntryThirdIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 3);
+		
+		HCTree currentTree = hcCalculator.getTree();
+		Assert.assertEquals(8, currentTree.getNodes().size(), 0);
+		
+		HCTreeNode stateNode = currentTree.findNodeByIdentifier("State");
+		Assert.assertNotNull(stateNode);
+		HCTreeNode transitionNode = currentTree.findNodeByIdentifier("Transition");
+		Assert.assertNotNull(transitionNode);
+		HCTreeNode stateMachineNode = currentTree.findNodeByIdentifier("StateMachine");
+		Assert.assertNotNull(stateMachineNode);
+		HCTreeNode stateTransitionNode = currentTree.findNodeByIdentifier("(State,Transition)");
+		Assert.assertNotNull(stateTransitionNode);
+		HCTreeNode stateMachineStateTransitionNode = currentTree.findNodeByIdentifier("(StateMachine,(State,Transition))");
+		Assert.assertNotNull(stateMachineStateTransitionNode);
+		
+		HCTreeNode statementNode = currentTree.findNodeByIdentifier("Statement");
+		Assert.assertNotNull(statementNode);
+		HCTreeNode blockNode = currentTree.findNodeByIdentifier("Block");
+		Assert.assertNotNull(blockNode);
+		HCTreeNode statementBlockNode = currentTree.findNodeByIdentifier("(Statement,Block)");
+		Assert.assertNotNull(statementBlockNode);
+		
+		Assert.assertEquals(stateNode, stateTransitionNode.getLeftChild());
+		Assert.assertEquals(transitionNode, stateTransitionNode.getRightChild());
+		
+		Assert.assertEquals(stateTransitionNode, stateMachineStateTransitionNode.getRightChild());
+		Assert.assertEquals(stateMachineNode, stateMachineStateTransitionNode.getLeftChild());
+		
+		Assert.assertEquals(statementNode, statementBlockNode.getLeftChild());
+		Assert.assertEquals(blockNode, statementBlockNode.getRightChild());
+	}
+	
+	@Test
+	public void testUpdateHCMatrixThirdIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 3);
+		HCMatrix updatedMatrix = hcCalculator.getHcMatrix();
+		
+		// Row x = 0; y >= 1
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[0][1].getX().getIdentifier());
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[0][1].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[0][1].getValue(), 0);
+		
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[0][2].getX().getIdentifier());
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[0][2].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[0][2].getValue(), 0);
+		
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[0][3].getX().getIdentifier());
+		Assert.assertEquals("(Statement,Block)", updatedMatrix.getEntries()[0][3].getY().getIdentifier());
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[0][3].getValue(), 0.01);
+		
+		// Row x = 1; y >= 2
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[1][2].getX().getIdentifier());
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[1][2].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[1][2].getValue(), 0);
+		
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[1][3].getX().getIdentifier());
+		Assert.assertEquals("(Statement,Block)", updatedMatrix.getEntries()[1][3].getY().getIdentifier());
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[1][3].getValue(), 0.01);
+		
+		// Row x = 2; y >= 3
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[2][3].getX().getIdentifier());
+		Assert.assertEquals("(Statement,Block)", updatedMatrix.getEntries()[2][3].getY().getIdentifier());
+		Assert.assertEquals(0.00875, updatedMatrix.getEntries()[2][3].getValue(), 0.001);
+	}
+	
+	@Test
+	public void testUpdateHCTreeWithEntryForthIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 4);
+		
+		HCTree currentTree = hcCalculator.getTree();
+		Assert.assertEquals(10, currentTree.getNodes().size(), 0);
+		
+		HCTreeNode stateNode = currentTree.findNodeByIdentifier("State");
+		Assert.assertNotNull(stateNode);
+		HCTreeNode transitionNode = currentTree.findNodeByIdentifier("Transition");
+		Assert.assertNotNull(transitionNode);
+		HCTreeNode stateMachineNode = currentTree.findNodeByIdentifier("StateMachine");
+		Assert.assertNotNull(stateMachineNode);
+		HCTreeNode stateTransitionNode = currentTree.findNodeByIdentifier("(State,Transition)");
+		Assert.assertNotNull(stateTransitionNode);
+		HCTreeNode stateMachineStateTransitionNode = currentTree.findNodeByIdentifier("(StateMachine,(State,Transition))");
+		Assert.assertNotNull(stateMachineStateTransitionNode);
+		HCTreeNode conditionalNode = currentTree.findNodeByIdentifier("Conditional");
+		Assert.assertNotNull(conditionalNode);
+		HCTreeNode conditionalStatementBlockNode = currentTree.findNodeByIdentifier("(Conditional,(Statement,Block))");
+		Assert.assertNotNull(conditionalStatementBlockNode);
+		
+		HCTreeNode statementNode = currentTree.findNodeByIdentifier("Statement");
+		Assert.assertNotNull(statementNode);
+		HCTreeNode blockNode = currentTree.findNodeByIdentifier("Block");
+		Assert.assertNotNull(blockNode);
+		HCTreeNode statementBlockNode = currentTree.findNodeByIdentifier("(Statement,Block)");
+		Assert.assertNotNull(statementBlockNode);
+		
+		Assert.assertEquals(stateNode, stateTransitionNode.getLeftChild());
+		Assert.assertEquals(transitionNode, stateTransitionNode.getRightChild());
+		
+		Assert.assertEquals(stateTransitionNode, stateMachineStateTransitionNode.getRightChild());
+		Assert.assertEquals(stateMachineNode, stateMachineStateTransitionNode.getLeftChild());
+		
+		Assert.assertEquals(statementNode, statementBlockNode.getLeftChild());
+		Assert.assertEquals(blockNode, statementBlockNode.getRightChild());
+		
+		Assert.assertEquals(conditionalNode, conditionalStatementBlockNode.getLeftChild());
+		Assert.assertEquals(statementBlockNode, conditionalStatementBlockNode.getRightChild());
+	}
+	
+	@Test
+	public void testUpdateHCMatrixForthIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 4);
+		HCMatrix updatedMatrix = hcCalculator.getHcMatrix();
+		
+		// Row x = 0; y >= 1
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[0][1].getX().getIdentifier());
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[0][1].getY().getIdentifier());
+		Assert.assertEquals(0, updatedMatrix.getEntries()[0][1].getValue(), 0);
+		
+		Assert.assertEquals("Loop", updatedMatrix.getEntries()[0][2].getX().getIdentifier());
+		Assert.assertEquals("(Conditional,(Statement,Block))", updatedMatrix.getEntries()[0][2].getY().getIdentifier());
+		Assert.assertEquals(0.035, updatedMatrix.getEntries()[0][2].getValue(), 0.01);
+		
+		// Row x = 1; y >= 2
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[1][2].getX().getIdentifier());
+		Assert.assertEquals("(Conditional,(Statement,Block))", updatedMatrix.getEntries()[1][2].getY().getIdentifier());
+		Assert.assertEquals(0.00475, updatedMatrix.getEntries()[1][2].getValue(), 0.001);
+	}
+	
+	@Test
+	public void testUpdateHCTreeWithEntryFivethIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 5);
+		
+		HCTree currentTree = hcCalculator.getTree();
+		Assert.assertEquals(12, currentTree.getNodes().size(), 0);
+		
+		HCTreeNode stateNode = currentTree.findNodeByIdentifier("State");
+		Assert.assertNotNull(stateNode);
+		HCTreeNode transitionNode = currentTree.findNodeByIdentifier("Transition");
+		Assert.assertNotNull(transitionNode);
+		HCTreeNode stateMachineNode = currentTree.findNodeByIdentifier("StateMachine");
+		Assert.assertNotNull(stateMachineNode);
+		HCTreeNode stateTransitionNode = currentTree.findNodeByIdentifier("(State,Transition)");
+		Assert.assertNotNull(stateTransitionNode);
+		HCTreeNode stateMachineStateTransitionNode = currentTree.findNodeByIdentifier("(StateMachine,(State,Transition))");
+		Assert.assertNotNull(stateMachineStateTransitionNode);
+		HCTreeNode conditionalNode = currentTree.findNodeByIdentifier("Conditional");
+		Assert.assertNotNull(conditionalNode);
+		HCTreeNode conditionalStatementBlockNode = currentTree.findNodeByIdentifier("(Conditional,(Statement,Block))");
+		Assert.assertNotNull(conditionalStatementBlockNode);
+		HCTreeNode loopNode = currentTree.findNodeByIdentifier("Loop");
+		Assert.assertNotNull(loopNode);
+		HCTreeNode loopConditionalStatementBlockNode = currentTree.findNodeByIdentifier("(Loop,(Conditional,(Statement,Block)))");
+		Assert.assertNotNull(loopConditionalStatementBlockNode);
+		
+		HCTreeNode statementNode = currentTree.findNodeByIdentifier("Statement");
+		Assert.assertNotNull(statementNode);
+		HCTreeNode blockNode = currentTree.findNodeByIdentifier("Block");
+		Assert.assertNotNull(blockNode);
+		HCTreeNode statementBlockNode = currentTree.findNodeByIdentifier("(Statement,Block)");
+		Assert.assertNotNull(statementBlockNode);
+		
+		Assert.assertEquals(stateNode, stateTransitionNode.getLeftChild());
+		Assert.assertEquals(transitionNode, stateTransitionNode.getRightChild());
+		
+		Assert.assertEquals(stateTransitionNode, stateMachineStateTransitionNode.getRightChild());
+		Assert.assertEquals(stateMachineNode, stateMachineStateTransitionNode.getLeftChild());
+		
+		Assert.assertEquals(statementNode, statementBlockNode.getLeftChild());
+		Assert.assertEquals(blockNode, statementBlockNode.getRightChild());
+		
+		Assert.assertEquals(conditionalNode, conditionalStatementBlockNode.getLeftChild());
+		Assert.assertEquals(statementBlockNode, conditionalStatementBlockNode.getRightChild());
+		
+		Assert.assertEquals(loopNode, loopConditionalStatementBlockNode.getLeftChild());
+		Assert.assertEquals(conditionalStatementBlockNode, loopConditionalStatementBlockNode.getRightChild());
+	}
+	
+	@Test
+	public void testUpdateHCMatrixFivethIteration(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 5);
+		HCMatrix updatedMatrix = hcCalculator.getHcMatrix();
+		
+		// Row x = 0; y >= 1
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[0][1].getX().getIdentifier());
+		Assert.assertEquals("(Loop,(Conditional,(Statement,Block)))", updatedMatrix.getEntries()[0][1].getY().getIdentifier());
+		Assert.assertEquals(0.0021875, updatedMatrix.getEntries()[0][1].getValue(), 0.001);
+	}
 }
