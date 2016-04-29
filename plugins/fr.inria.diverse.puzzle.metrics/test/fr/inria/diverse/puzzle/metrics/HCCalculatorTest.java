@@ -670,4 +670,66 @@ public class HCCalculatorTest {
 		Assert.assertEquals("(Loop,(Conditional,(Statement,Block)))", updatedMatrix.getEntries()[0][1].getY().getIdentifier());
 		Assert.assertEquals(0.0021875, updatedMatrix.getEntries()[0][1].getValue(), 0.001);
 	}
+	
+	@Test
+	public void testPerformHierarhicalDomainsAnalysis(){
+		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		hcCalculator.performHierarhicalDomainsAnalysis(metricsMatrix, metaclasses);
+		
+		HCMatrix updatedMatrix = hcCalculator.getHcMatrix();
+		
+		// Checking the matrix
+		Assert.assertEquals("(StateMachine,(State,Transition))", updatedMatrix.getEntries()[0][1].getX().getIdentifier());
+		Assert.assertEquals("(Loop,(Conditional,(Statement,Block)))", updatedMatrix.getEntries()[0][1].getY().getIdentifier());
+		Assert.assertEquals(0.0021875, updatedMatrix.getEntries()[0][1].getValue(), 0.001);
+	
+		// Checking the tree
+		HCTree currentTree = hcCalculator.getTree();
+		Assert.assertEquals(13, currentTree.getNodes().size(), 0);
+		
+		HCTreeNode stateNode = currentTree.findNodeByIdentifier("State");
+		Assert.assertNotNull(stateNode);
+		HCTreeNode transitionNode = currentTree.findNodeByIdentifier("Transition");
+		Assert.assertNotNull(transitionNode);
+		HCTreeNode stateMachineNode = currentTree.findNodeByIdentifier("StateMachine");
+		Assert.assertNotNull(stateMachineNode);
+		HCTreeNode stateTransitionNode = currentTree.findNodeByIdentifier("(State,Transition)");
+		Assert.assertNotNull(stateTransitionNode);
+		HCTreeNode stateMachineStateTransitionNode = currentTree.findNodeByIdentifier("(StateMachine,(State,Transition))");
+		Assert.assertNotNull(stateMachineStateTransitionNode);
+		HCTreeNode conditionalNode = currentTree.findNodeByIdentifier("Conditional");
+		Assert.assertNotNull(conditionalNode);
+		HCTreeNode conditionalStatementBlockNode = currentTree.findNodeByIdentifier("(Conditional,(Statement,Block))");
+		Assert.assertNotNull(conditionalStatementBlockNode);
+		HCTreeNode loopNode = currentTree.findNodeByIdentifier("Loop");
+		Assert.assertNotNull(loopNode);
+		HCTreeNode loopConditionalStatementBlockNode = currentTree.findNodeByIdentifier("(Loop,(Conditional,(Statement,Block)))");
+		Assert.assertNotNull(loopConditionalStatementBlockNode);
+		HCTreeNode rootNode = currentTree.findNodeByIdentifier("((StateMachine,(State,Transition)),(Loop,(Conditional,(Statement,Block))))");
+		Assert.assertNotNull(rootNode);
+		
+		
+		HCTreeNode statementNode = currentTree.findNodeByIdentifier("Statement");
+		Assert.assertNotNull(statementNode);
+		HCTreeNode blockNode = currentTree.findNodeByIdentifier("Block");
+		Assert.assertNotNull(blockNode);
+		HCTreeNode statementBlockNode = currentTree.findNodeByIdentifier("(Statement,Block)");
+		Assert.assertNotNull(statementBlockNode);
+		
+		Assert.assertEquals(stateNode, stateTransitionNode.getLeftChild());
+		Assert.assertEquals(transitionNode, stateTransitionNode.getRightChild());
+		
+		Assert.assertEquals(stateTransitionNode, stateMachineStateTransitionNode.getRightChild());
+		Assert.assertEquals(stateMachineNode, stateMachineStateTransitionNode.getLeftChild());
+		
+		Assert.assertEquals(statementNode, statementBlockNode.getLeftChild());
+		Assert.assertEquals(blockNode, statementBlockNode.getRightChild());
+		
+		Assert.assertEquals(conditionalNode, conditionalStatementBlockNode.getLeftChild());
+		Assert.assertEquals(statementBlockNode, conditionalStatementBlockNode.getRightChild());
+		
+		Assert.assertEquals(loopNode, loopConditionalStatementBlockNode.getLeftChild());
+		Assert.assertEquals(conditionalStatementBlockNode, loopConditionalStatementBlockNode.getRightChild());
+		
+	}
 }

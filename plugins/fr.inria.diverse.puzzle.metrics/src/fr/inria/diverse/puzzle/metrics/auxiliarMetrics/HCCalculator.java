@@ -31,6 +31,28 @@ public class HCCalculator {
 	// ----------------------------------------------
 	
 	/**
+	 * Performs the analysis of hierarchical domain on the given meta-classes according to the 
+	 * given metrics. 
+	 * @param inputMatrix
+	 * @param metaclasses
+	 */
+	public void performHierarhicalDomainsAnalysis(double[][] inputMatrix, List<EClass> metaclasses){
+		this.computeHCTree(inputMatrix, metaclasses, metaclasses.size() - 2);
+		
+		// Building the root of the tree.
+		HCTreeNode leftRootNode = hcMatrix.getEntries()[0][1].getX();
+		HCTreeNode rightRootNode = hcMatrix.getEntries()[0][1].getY();
+		
+		HCTreeNode rootNode = new HCTreeNode();
+		rootNode.setLeftChild(leftRootNode);
+		rootNode.setRightChild(rightRootNode);
+		rootNode.setIdentifier("(" + leftRootNode.getIdentifier() + "," + rightRootNode.getIdentifier() + ")");
+		System.out.println(rootNode.getIdentifier());
+		this.tree.setRoot(rootNode);
+		this.tree.getNodes().add(rootNode);
+	}
+	
+	/**
 	 * Computes the tree with the hierarchical analysis of the domains for the meta-classes in the parameter
 	 * by using the matrix metrics also given in the parameter. 
 	 * @param inputMatrix
