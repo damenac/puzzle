@@ -308,9 +308,9 @@ public class HCCalculatorTest {
 	}
 	
 	@Test
-	public void testUpdateHCTreeWithEntry(){
+	public void testUpdateHCTreeWithEntryFirstIteration(){
 		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
-		hcCalculator.computeHCTree(metricsMatrix, metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 1);
 		
 		HCTree currentTree = hcCalculator.getTree();
 		Assert.assertEquals(3, currentTree.getNodes().size(), 0);
@@ -327,9 +327,9 @@ public class HCCalculatorTest {
 	}
 	
 	@Test
-	public void testUpdateHCMatrix(){
+	public void testUpdateHCMatrixFirstIteration(){
 		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
-		hcCalculator.computeHCTree(metricsMatrix, metaclasses);
+		hcCalculator.computeHCTree(metricsMatrix, metaclasses, 1);
 		
 		//TODO This test should be fixed when the algorithm becomes iterative! 
 		HCMatrix updatedMatrix = hcCalculator.getHcMatrix();
@@ -358,15 +358,15 @@ public class HCCalculatorTest {
 		// Row x = 1; y >= 2
 		Assert.assertEquals("Statement", updatedMatrix.getEntries()[1][2].getX().getIdentifier());
 		Assert.assertEquals("Block", updatedMatrix.getEntries()[1][2].getY().getIdentifier());
-		Assert.assertEquals(0, updatedMatrix.getEntries()[1][2].getValue(), 0);
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[1][2].getValue(), 0.01);
 		
 		Assert.assertEquals("Statement", updatedMatrix.getEntries()[1][3].getX().getIdentifier());
 		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[1][3].getY().getIdentifier());
-		Assert.assertEquals(0, updatedMatrix.getEntries()[1][3].getValue(), 0);
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[1][3].getValue(), 0.01);
 		
 		Assert.assertEquals("Statement", updatedMatrix.getEntries()[1][4].getX().getIdentifier());
 		Assert.assertEquals("Loop", updatedMatrix.getEntries()[1][4].getY().getIdentifier());
-		Assert.assertEquals(0, updatedMatrix.getEntries()[1][4].getValue(), 0);
+		Assert.assertEquals(0.07, updatedMatrix.getEntries()[1][4].getValue(), 0.01);
 		
 		Assert.assertEquals("Statement", updatedMatrix.getEntries()[1][5].getX().getIdentifier());
 		Assert.assertEquals("(State,Transition)", updatedMatrix.getEntries()[1][5].getY().getIdentifier());
@@ -374,7 +374,7 @@ public class HCCalculatorTest {
 		
 		// Row x = 2; y >= 3
 		Assert.assertEquals("Block", updatedMatrix.getEntries()[2][3].getX().getIdentifier());
-		Assert.assertEquals("Contidional", updatedMatrix.getEntries()[2][3].getY().getIdentifier());
+		Assert.assertEquals("Conditional", updatedMatrix.getEntries()[2][3].getY().getIdentifier());
 		Assert.assertEquals(0.07, updatedMatrix.getEntries()[2][3].getValue(), 0.01);
 		
 		Assert.assertEquals("Block", updatedMatrix.getEntries()[2][4].getX().getIdentifier());
@@ -400,15 +400,15 @@ public class HCCalculatorTest {
 		Assert.assertEquals(0, updatedMatrix.getEntries()[4][5].getValue(), 0);
 	}
 	
-	@Test
-	public void testComputeJointEntry(){
-		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
-		HCMatrix initialMatrix = hcCalculator.buildInitialHCMatrixFromMetrixMatrix(metricsMatrix, metaclasses);
-		
-		HCTreeNode entryNode = initialMatrix.getEntries()[0][0].getX(); // StateMachine
-		HCTreeNode leftNode = initialMatrix.getEntries()[0][1].getY(); // State
-		HCTreeNode rightNode = initialMatrix.getEntries()[0][2].getY(); // State
-		
+//	@Test
+//	public void testComputeJointEntry(){
+//		double[][] metricsMatrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+//		HCMatrix initialMatrix = hcCalculator.buildInitialHCMatrixFromMetrixMatrix(metricsMatrix, metaclasses);
+//		
+//		HCTreeNode entryNode = initialMatrix.getEntries()[0][0].getX(); // StateMachine
+//		HCTreeNode leftNode = initialMatrix.getEntries()[0][1].getY(); // State
+//		HCTreeNode rightNode = initialMatrix.getEntries()[0][2].getY(); // State
+//		
 //		Assert.assertEquals(0.14, hcCalculator.computeJointEntry(leftNode, rightNode, entryNode).getValue(), 0.01);
-	}
+//	}
 }

@@ -36,11 +36,16 @@ public class HCCalculator {
 	 * @param inputMatrix
 	 * @param metaclasses
 	 */
-	public void computeHCTree(double[][] inputMatrix, List<EClass> metaclasses){
+	public void computeHCTree(double[][] inputMatrix, List<EClass> metaclasses, int iterations){
 		hcMatrix = this.buildInitialHCMatrixFromMetrixMatrix(inputMatrix, metaclasses);
-		HCMatrixEntry biggerEntry = this.findBiggerEntry(hcMatrix.getEntries());
-		HCTreeNode newNode = updateHCTreeWithEntry(biggerEntry);
-		updateHCMatrix(biggerEntry, newNode);
+		
+		int count = iterations;
+		while(count > 0){
+			HCMatrixEntry biggerEntry = this.findBiggerEntry(hcMatrix.getEntries());
+			HCTreeNode newNode = updateHCTreeWithEntry(biggerEntry);
+			updateHCMatrix(biggerEntry, newNode);
+			count --;
+		}
 	}
 	
 	/**
