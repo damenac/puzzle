@@ -1,0 +1,273 @@
+var tree_structure = {
+    chart: {
+        container: "#OrganiseChart6",
+        levelSeparation:    5,
+        siblingSeparation:  20,
+        subTeeSeparation:   30,
+        rootOrientation: "EAST",
+
+        node: {
+            HTMLclass: "tennis-draw",
+            drawLineThrough: true
+        },
+        connectors: {
+            type: "straight",
+            style: {
+                "stroke-width": 2,
+                "stroke": "#ccc"
+            }
+        }
+    },
+    nodeStructure: {
+        text: {
+          name: "",
+          name: "Root",
+          desc: ""
+        },
+        children: [
+          {
+           text: {
+             name: "",
+             desc: ""
+           },
+           children: [
+             {
+              text: {
+                name: "ComponentType",
+                desc: ""
+              },
+              image: "libs/flags/ecore-icon.png",
+              HTMLclass: "first-draw"
+             },
+             {
+              text: {
+                name: "",
+                desc: ""
+              },
+              children: [
+                {
+                 text: {
+                   name: "ACMEFile",
+                   desc: ""
+                 },
+                 image: "libs/flags/ecore-icon.png",
+                 HTMLclass: "first-draw"
+                },
+                {
+                 text: {
+                   name: "ACMEEntry",
+                   desc: ""
+                 },
+                 image: "libs/flags/ecore-icon.png",
+                 HTMLclass: "first-draw"
+                }
+              ]
+             }
+           ]
+          },
+          {
+           text: {
+             name: "",
+             desc: ""
+           },
+           children: [
+             {
+              text: {
+                name: "",
+                desc: ""
+              },
+              children: [
+                {
+                 text: {
+                   name: "Binding",
+                   desc: ""
+                 },
+                 image: "libs/flags/ecore-icon.png",
+                 HTMLclass: "first-draw"
+                },
+                {
+                 text: {
+                   name: "",
+                   desc: ""
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "Attachment",
+                      desc: ""
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: ""
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "Representation",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "System",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "Link",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      }
+                    ]
+                   }
+                 ]
+                }
+              ]
+             },
+             {
+              text: {
+                name: "",
+                desc: ""
+              },
+              children: [
+                {
+                 text: {
+                   name: "",
+                   desc: ""
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "Connector",
+                      desc: ""
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "Role",
+                      desc: ""
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   }
+                 ]
+                },
+                {
+                 text: {
+                   name: "",
+                   desc: ""
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "Property",
+                      desc: ""
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: ""
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "Component",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "ComponentInstance",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "Port",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "",
+                            desc: ""
+                          },
+                          children: [
+                            {
+                             text: {
+                               name: "Element",
+                               desc: ""
+                             },
+                             image: "libs/flags/ecore-icon.png",
+                             HTMLclass: "first-draw"
+                            },
+                            {
+                             text: {
+                               name: "Type",
+                               desc: ""
+                             },
+                             image: "libs/flags/ecore-icon.png",
+                             HTMLclass: "first-draw"
+                            }
+                          ]
+                         }
+                       ]
+                      }
+                    ]
+                   }
+                 ]
+                }
+              ]
+             }
+           ]
+          }
+        ]
+    }
+
+
+
+};

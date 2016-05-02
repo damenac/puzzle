@@ -2,14 +2,16 @@ package fr.inria.diverse.puzzle.metrics.auxiliarMetrics;
 
 import java.util.List;
 
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.ecore.EClass;
 
+import fr.inria.diverse.puzzle.metrics.managers.MetricsManager;
 import fr.inria.diverse.puzzle.metrics.vos.HCMatrix;
 import fr.inria.diverse.puzzle.metrics.vos.HCMatrixEntry;
 import fr.inria.diverse.puzzle.metrics.vos.HCTree;
 import fr.inria.diverse.puzzle.metrics.vos.HCTreeNode;
 
-public class HCCalculator {
+public class HCCalculator extends MetricsManager {
 
 	// ----------------------------------------------
 	// Attributes
@@ -22,7 +24,8 @@ public class HCCalculator {
 	// Constructor
 	// ----------------------------------------------
 	
-	public HCCalculator(){
+	public HCCalculator(IProject project) throws Exception{
+		super(project);
 		tree = new HCTree();
 	}
 	
@@ -36,7 +39,7 @@ public class HCCalculator {
 	 * @param inputMatrix
 	 * @param metaclasses
 	 */
-	public void performHierarhicalDomainsAnalysis(double[][] inputMatrix, List<EClass> metaclasses){
+	public HCTree performHierarhicalDomainsAnalysis(double[][] inputMatrix, List<EClass> metaclasses){
 		this.computeHCTree(inputMatrix, metaclasses, metaclasses.size() - 2);
 		
 		// Building the root of the tree.
@@ -50,6 +53,8 @@ public class HCCalculator {
 		System.out.println(rootNode.getIdentifier());
 		this.tree.setRoot(rootNode);
 		this.tree.getNodes().add(rootNode);
+		
+		return tree;
 	}
 	
 	/**
@@ -254,6 +259,85 @@ public class HCCalculator {
 		return new HCMatrixEntry(entryNode, newNode , answer);
 	}
 	
+	/**
+	 * Returns a report with the tree in the format asked for the .js library used to show the tree. 
+	 * @return
+	 */
+	public String getJSReport() {
+		String report = "var tree_structure = {\n";
+		report += "    chart: {\n";
+		report += "        container: \"#OrganiseChart6\",\n";
+		report += "        levelSeparation:    5,\n";
+		report += "        siblingSeparation:  20,\n";
+		report += "        subTeeSeparation:   30,\n";
+		report += "        rootOrientation: \"EAST\",\n\n";
+		report += "        node: {\n";
+		report += "            HTMLclass: \"tennis-draw\",\n";
+		report += "            drawLineThrough: true\n";
+		report += "        },\n";
+		report += "        connectors: {\n";
+		report += "            type: \"straight\",\n";
+		report += "            style: {\n";
+		report += "                \"stroke-width\": 2,\n";
+		report += "                \"stroke\": \"#ccc\"\n";
+		report += "            }\n";
+		report += "        }\n";
+		report += "    },\n";
+		report += this.getTreeReport();
+		report += "};\n";
+		return report;
+	}
+	
+	/**
+	 * Exports the hierarchical cluster tree in the JS format. 
+	 * @return
+	 */
+	public String getTreeReport() {
+		String report = "    nodeStructure: {\n";
+		report += this.getNodeReport(this.tree.getRoot(), "        ", true);
+		report += "    }\n";
+		report += "\n";
+		report += "\n";
+		report += "\n";
+		return report;
+	}
+	
+	public String getNodeReport(HCTreeNode node, String space, boolean root){
+		String report = space + "text: {\n";
+		if(node.geteClass() != null){
+			report += space + "  name: \"" + node.geteClass().getName() + "\",\n";
+		}else{
+			report += space + "  name: \"\",\n";
+		}
+		if(root){
+			report += space + "  name: \"Root\",\n";
+		}
+		report += space + "  desc: \"\"\n";
+		report += space +  "},\n";
+		
+		if(node.getLeftChild() != null || node.getRightChild() != null){
+			report += space + "children: [\n";
+			if(node.getLeftChild() != null){
+				report += space + "  {\n";
+				report += this.getNodeReport(node.getLeftChild(), space + "   ", false);
+				report += space + "  }";
+			}
+			if(node.getRightChild() != null){
+				report += ",\n";
+				report += space + "  {\n";
+				report += this.getNodeReport(node.getRightChild(), space + "   ", false);
+				report += space + "  }\n";
+			}
+			report += space +  "]\n";
+		}else{
+			report += space + "image: \"libs/flags/ecore-icon.png\",\n";
+			report += space + "HTMLclass: \"first-draw\"\n";
+		}
+		return report;
+	}
+	
+	
+	
 	// ----------------------------------------------
 	// Getters and setters
 	// ----------------------------------------------
@@ -273,4 +357,6 @@ public class HCCalculator {
 	public void setHcMatrix(HCMatrix hcMatrix) {
 		this.hcMatrix = hcMatrix;
 	}
+
+	
 }

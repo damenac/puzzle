@@ -1,18 +1,28 @@
 package fr.inria.diverse.puzzle.metrics.actions;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
+import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices;
 import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.HCCalculator;
+import fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesionMatrix;
 
 /**
  * Action responsible to analyze the domains hierarchy of a given DSL. 
@@ -22,9 +32,10 @@ import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties;
 public class PerformHierarchicalDomainAnalysisActionImpl {
 
 	// -----------------------------------------------
-	// Attributes
+	// Attributes/Constants
 	// -----------------------------------------------
 	
+	private static final String REPORT_PATH_HIERARCHICAL_DOMAIN_ANALYSIS = "Report-HierarchicalDomainAnalysis.html";;
 	private static PerformHierarchicalDomainAnalysisActionImpl instance;
 	
 	// -----------------------------------------------
@@ -53,10 +64,21 @@ public class PerformHierarchicalDomainAnalysisActionImpl {
 	 */
 	public String performDomainAnalysis(SynthesisProperties synthesisProperties, EPackage metamodel, IProject project) throws Exception {
 		System.out.println("Performs the domain analysis");
-		System.out.println(metamodel.getEClassifiers());
-
+		ProjectManagementServices.createFolderByName(project, "reports");
+		ProjectManagementServices.createFolderByName(project, "reports/libs");
 		
+		List<EClass> metaclasses = this.filterEClasses(metamodel.getEClassifiers());
+		double[][] matrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		HCCalculator hcCalculator = new HCCalculator(project);
+		ProjectManagementServices.refreshProject(project);
 		
+		hcCalculator.performHierarhicalDomainsAnalysis(matrix, metaclasses);
+		String treeReport = hcCalculator.getJSReport();
+		
+		this.createReport(project);
+		this.createReportData(treeReport, project);
+		
+		ProjectManagementServices.refreshProject(project);
 		return "DONE...";
 	}
 	
@@ -72,5 +94,46 @@ public class PerformHierarchicalDomainAnalysisActionImpl {
 				answer.add((EClass)eClassifier);
 		}
 		return answer;
+	}
+	
+	/**
+	 * Creates the HTML file with the report that displays the commonalities among the set of DSLs. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
+	public void createReport(IProject project) throws URISyntaxException, IOException{
+		URL path = Platform.getBundle("fr.inria.diverse.puzzle.metrics").getEntry("/data/" + REPORT_PATH_HIERARCHICAL_DOMAIN_ANALYSIS);
+        File file = new File(FileLocator.resolve(path).toURI());
+        BufferedReader br = new BufferedReader(new FileReader(file));
+        String content = "";
+        String currentLine = br.readLine();
+        while(currentLine != null){
+        	content += currentLine + "\n";
+        	currentLine = br.readLine();
+        }
+        br.close();
+        
+        File fileReport = new File(project.getLocation().toString() + "/reports/" + REPORT_PATH_HIERARCHICAL_DOMAIN_ANALYSIS );
+		if(!fileReport.exists())
+			fileReport.createNewFile();
+		PrintWriter outRileReport = new PrintWriter( fileReport );
+		outRileReport.print(content);
+		outRileReport.close();
+	}
+	
+	/**
+	 * Creates the .js files containing the data needed by report that displays the commonalities among the set of DSLs. 
+	 * @param languages
+	 * @throws URISyntaxException
+	 * @throws IOException
+	 */
+	public void createReportData(String treeReport, IProject project) throws Exception {
+		File generalMetrics = new File(project.getLocation().toString() + "/reports/libs/lib/hierarchical-analysis.js" );
+		if(!generalMetrics.exists())
+			generalMetrics.createNewFile();
+		PrintWriter outMetrics = new PrintWriter( generalMetrics );
+		outMetrics.print(treeReport);
+		outMetrics.close();
 	}
 }

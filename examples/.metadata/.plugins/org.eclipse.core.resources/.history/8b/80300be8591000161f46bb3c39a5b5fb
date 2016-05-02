@@ -1,0 +1,23 @@
+var color = d3.scale.category20();
+
+jsnx.draw(G, {
+          element: '#div-graph',
+          withLabels: true,
+          layoutAttr: {
+          charge: -350,
+          linkDistance: 60
+          },
+          nodeAttr: {
+          r: 6,
+          title: function(d) { return d.label;}
+          },
+          nodeStyle: {
+          fill: function(d) {
+          return color(d.data.group);
+          },
+          stroke: 'none'
+          },
+          edgeStyle: {
+          fill: '#E6E6E6'
+          }
+          });

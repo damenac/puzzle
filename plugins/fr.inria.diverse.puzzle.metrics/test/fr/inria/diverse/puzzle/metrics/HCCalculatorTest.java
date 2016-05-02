@@ -38,8 +38,8 @@ public class HCCalculatorTest {
 	// -------------------------------------------------
 	
 	@Before
-	public void loadScenario(){
-		hcCalculator = new HCCalculator();
+	public void loadScenario() throws Exception{
+		hcCalculator = new HCCalculator(null);
 		
 		// Creating EClasses
 		stateMachine = EcoreFactory.eINSTANCE.createEClass();
