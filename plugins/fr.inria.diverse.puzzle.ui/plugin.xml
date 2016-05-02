@@ -45,7 +45,12 @@
                   label="Puzzle">
                <command
                      commandId="fr.inria.diverse.puzzle.PerformLanguagesAnalysis"
-                     label="Perform languages analysis"
+                     label="Perform language family analysis"
+                     style="push">
+               </command>
+               <command
+                     commandId="fr.inria.diverse.puzzle.PerformHierchicalDomainsAnalysis"
+                     label="Perform hierarhical domain analysis"
                      style="push">
                </command>
                <separator
@@ -102,7 +107,11 @@
          point="org.eclipse.ui.commands">
       <command
             id="fr.inria.diverse.puzzle.PerformLanguagesAnalysis"
-            name="Perform languages analysis">
+            name="Perform language family analysis">
+      </command>
+      <command
+            id="fr.inria.diverse.puzzle.PerformHierchicalDomainsAnalysis"
+            name="Perform hierarchical domains analysis">
       </command>
       <command
             id="fr.inria.diverse.puzzle.ReverseEngineeringReusableModules"
@@ -130,6 +139,10 @@
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.PerformLanguagesAnalysis"
             commandId="fr.inria.diverse.puzzle.PerformLanguagesAnalysis">
+      </handler>
+      <handler
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.PerformHierarchicalDomainAnalysis"
+            commandId="fr.inria.diverse.puzzle.PerformHierchicalDomainsAnalysis">
       </handler>
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ReverseEngineeringReusableModules"

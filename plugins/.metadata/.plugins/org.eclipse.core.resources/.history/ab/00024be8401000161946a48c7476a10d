@@ -1,0 +1,37 @@
+package fr.inria.diverse.melange.ui.builder
+
+import org.eclipse.core.resources.IProject
+import org.eclipse.core.runtime.IProgressMonitor
+import org.eclipse.emf.ecore.resource.Resource
+import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace
+import fr.inria.diverse.puzzle.metrics.actions.ComputeMetricsActionImpl
+import fr.inria.diverse.k3.sle.common.vos.SynthesisProperties
+import fr.inria.diverse.k3.sle.common.utils.ProjectManagementServices
+
+/**
+ * Builder for the action: Perform Hierarchical Domain Analysis
+ * Loads the input and performs the delegation to the corresponding plug-in.
+ * 
+ * @author David Mendez-Acuna
+ */
+class PerformHierarchicalDomainAnalysisBuilder extends AbstractBuilder {
+	
+	def void performAnalysis(Resource res, IProject project, IProgressMonitor monitor) {
+		// Load the resources as an ecore file. 
+		// Call the corresponding class in the metrics plug-in. 
+		
+		val root = res.contents.head as ModelTypingSpace
+		var SynthesisProperties properties = this.synthesisProperties
+		this.decorateProjectWithFolderStructure(project)
+		ComputeMetricsActionImpl.instance.computeMetrics(properties, root, project);
+	}
+	
+	/**
+	 * Decorates the project in the parameter with the structure to store the reports
+	 * @param project. Project to decorate.
+	 */
+	def decorateProjectWithFolderStructure(IProject project) {
+		if(!project.getFolder("reports").exists)
+			ProjectManagementServices.createFolderByName(project, "reports")
+	}
+}

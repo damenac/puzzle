@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;PerformLanguagesAnalysisBuilder.xtend&apos; to &apos;fr.inria.diverse.puzzle.ui/src/main/java/fr.inria.diverse.melange.ui.builder&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.ui&apos;&#x0A;- Destination element: &apos;fr.inria.diverse.puzzle.ui/src/main/java/fr.inria.diverse.melange.ui.builder&apos;&#x0A;- Original element: &apos;PerformLanguagesAnalysisBuilder.xtend&apos;" description="Copy file" destination="/src\/main\/java&lt;fr.inria.diverse.melange.ui.builder" element1="src/main/java/fr/inria/diverse/melange/ui/builder/PerformLanguagesAnalysisBuilder.xtend" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1462177854292" units="0" version="1.0"/>
+</session>
