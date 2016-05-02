@@ -67,7 +67,8 @@ public class PerformHierarchicalDomainAnalysisActionImpl {
 		ProjectManagementServices.createFolderByName(project, "reports");
 		ProjectManagementServices.createFolderByName(project, "reports/libs");
 		
-		List<EClass> metaclasses = this.filterEClasses(metamodel.getEClassifiers());
+		List<EClass> metaclasses = new ArrayList<EClass>();
+		this.filterEClasses(metamodel, metaclasses);
 		double[][] matrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
 		HCCalculator hcCalculator = new HCCalculator(project);
 		ProjectManagementServices.refreshProject(project);
@@ -87,12 +88,15 @@ public class PerformHierarchicalDomainAnalysisActionImpl {
 	 * @param eClassifiers
 	 * @return
 	 */
-	public List<EClass> filterEClasses(EList<EClassifier> eClassifiers){
-		List<EClass> answer = new ArrayList<EClass>();
-		for (EClassifier eClassifier : eClassifiers) {
+	public List<EClass> filterEClasses(EPackage ePackage, List<EClass> answer){
+		for (EClassifier eClassifier : ePackage.getEClassifiers()) {
 			if(eClassifier instanceof EClass)
 				answer.add((EClass)eClassifier);
 		}
+		for (EPackage subPackage : ePackage.getESubpackages()) {
+			this.filterEClasses(subPackage, answer);
+		}
+		
 		return answer;
 	}
 	

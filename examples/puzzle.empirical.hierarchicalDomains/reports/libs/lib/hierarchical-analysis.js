@@ -1,6 +1,3 @@
-// source: 
-// http://www.atpworldtour.com/Share/Event-Draws.aspx?EventId=410&Year=2013
-
 var tree_structure = {
     chart: {
         container: "#OrganiseChart6",
@@ -36,24 +33,16 @@ var tree_structure = {
            children: [
              {
               text: {
-                name: "BoolLit",
-                desc: ""
-              },
-              image: "flags/ecore-icon.png",
-              HTMLclass: "first-draw"
-             },
-             {
-              text: {
                 name: "",
                 desc: ""
               },
               children: [
                 {
                  text: {
-                   name: "StringLit",
+                   name: "Division",
                    desc: ""
                  },
-                 image: "flags/ecore-icon.png",
+                 image: "libs/flags/ecore-icon.png",
                  HTMLclass: "first-draw"
                 },
                 {
@@ -64,19 +53,251 @@ var tree_structure = {
                  children: [
                    {
                     text: {
-                      name: "Literal",
+                      name: "Multiplication",
                       desc: ""
                     },
-                    image: "flags/ecore-icon.png",
+                    image: "libs/flags/ecore-icon.png",
                     HTMLclass: "first-draw"
                    },
                    {
                     text: {
-                      name: "IntegerLit",
+                      name: "",
                       desc: ""
                     },
-                    image: "flags/ecore-icon.png",
+                    children: [
+                      {
+                       text: {
+                         name: "Subtraction",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "ArithmeticExpression",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "Addition",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      }
+                    ]
+                   }
+                 ]
+                }
+              ]
+             },
+             {
+              text: {
+                name: "",
+                desc: ""
+              },
+              children: [
+                {
+                 text: {
+                   name: "",
+                   desc: ""
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "GreaterOrEqual",
+                      desc: ""
+                    },
+                    image: "libs/flags/ecore-icon.png",
                     HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: ""
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "LessOrEqual",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "Greater",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "",
+                            desc: ""
+                          },
+                          children: [
+                            {
+                             text: {
+                               name: "RelationalExpression",
+                               desc: ""
+                             },
+                             image: "libs/flags/ecore-icon.png",
+                             HTMLclass: "first-draw"
+                            },
+                            {
+                             text: {
+                               name: "Less",
+                               desc: ""
+                             },
+                             image: "libs/flags/ecore-icon.png",
+                             HTMLclass: "first-draw"
+                            }
+                          ]
+                         }
+                       ]
+                      }
+                    ]
+                   }
+                 ]
+                },
+                {
+                 text: {
+                   name: "",
+                   desc: ""
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "",
+                      desc: ""
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "Different",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "EqualityExpression",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "Equal",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      }
+                    ]
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: ""
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "BinaryExpression",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "CoalescingExpression",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "And",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "",
+                            desc: ""
+                          },
+                          children: [
+                            {
+                             text: {
+                               name: "LogicalExpression",
+                               desc: ""
+                             },
+                             image: "libs/flags/ecore-icon.png",
+                             HTMLclass: "first-draw"
+                            },
+                            {
+                             text: {
+                               name: "Or",
+                               desc: ""
+                             },
+                             image: "libs/flags/ecore-icon.png",
+                             HTMLclass: "first-draw"
+                            }
+                          ]
+                         }
+                       ]
+                      }
+                    ]
                    }
                  ]
                 }
@@ -98,11 +319,91 @@ var tree_structure = {
               children: [
                 {
                  text: {
-                   name: "Print",
+                   name: "",
                    desc: ""
                  },
-                 image: "flags/ecore-icon.png",
-                 HTMLclass: "first-draw"
+                 children: [
+                   {
+                    text: {
+                      name: "",
+                      desc: ""
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "TargetMetamodel",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "ExplicitMetamodel",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "SourceMetamodel",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      }
+                    ]
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: ""
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "ExtentMetamodel",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "Transformation",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "MetamodelDeclaration",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      }
+                    ]
+                   }
+                 ]
                 },
                 {
                  text: {
@@ -112,19 +413,147 @@ var tree_structure = {
                  children: [
                    {
                     text: {
-                      name: "ConsoleOutput",
+                      name: "",
                       desc: ""
                     },
-                    image: "flags/ecore-icon.png",
-                    HTMLclass: "first-draw"
+                    children: [
+                      {
+                       text: {
+                         name: "OtherwiseClause",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "ConditionalMapping",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "WhenClause",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         }
+                       ]
+                      }
+                    ]
                    },
                    {
                     text: {
-                      name: "Println",
+                      name: "",
                       desc: ""
                     },
-                    image: "flags/ecore-icon.png",
-                    HTMLclass: "first-draw"
+                    children: [
+                      {
+                       text: {
+                         name: "FeatureMapping",
+                         desc: ""
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "",
+                         desc: ""
+                       },
+                       children: [
+                         {
+                          text: {
+                            name: "ResultMapping",
+                            desc: ""
+                          },
+                          image: "libs/flags/ecore-icon.png",
+                          HTMLclass: "first-draw"
+                         },
+                         {
+                          text: {
+                            name: "",
+                            desc: ""
+                          },
+                          children: [
+                            {
+                             text: {
+                               name: "",
+                               desc: ""
+                             },
+                             children: [
+                               {
+                                text: {
+                                  name: "AbstractMapping",
+                                  desc: ""
+                                },
+                                image: "libs/flags/ecore-icon.png",
+                                HTMLclass: "first-draw"
+                               },
+                               {
+                                text: {
+                                  name: "DataTypeMapping",
+                                  desc: ""
+                                },
+                                image: "libs/flags/ecore-icon.png",
+                                HTMLclass: "first-draw"
+                               }
+                             ]
+                            },
+                            {
+                             text: {
+                               name: "",
+                               desc: ""
+                             },
+                             children: [
+                               {
+                                text: {
+                                  name: "ClassMapping",
+                                  desc: ""
+                                },
+                                image: "libs/flags/ecore-icon.png",
+                                HTMLclass: "first-draw"
+                               },
+                               {
+                                text: {
+                                  name: "",
+                                  desc: ""
+                                },
+                                children: [
+                                  {
+                                   text: {
+                                     name: "ContentMapping",
+                                     desc: ""
+                                   },
+                                   image: "libs/flags/ecore-icon.png",
+                                   HTMLclass: "first-draw"
+                                  },
+                                  {
+                                   text: {
+                                     name: "CompositeMapping",
+                                     desc: ""
+                                   },
+                                   image: "libs/flags/ecore-icon.png",
+                                   HTMLclass: "first-draw"
+                                  }
+                                ]
+                               }
+                             ]
+                            }
+                          ]
+                         }
+                       ]
+                      }
+                    ]
                    }
                  ]
                 }
@@ -144,10 +573,10 @@ var tree_structure = {
                  children: [
                    {
                     text: {
-                      name: "End",
+                      name: "Minus",
                       desc: ""
                     },
-                    image: "flags/ecore-icon.png",
+                    image: "libs/flags/ecore-icon.png",
                     HTMLclass: "first-draw"
                    },
                    {
@@ -158,83 +587,19 @@ var tree_structure = {
                     children: [
                       {
                        text: {
-                         name: "Start",
+                         name: "UnaryExpression",
                          desc: ""
                        },
-                       image: "flags/ecore-icon.png",
+                       image: "libs/flags/ecore-icon.png",
                        HTMLclass: "first-draw"
                       },
                       {
                        text: {
-                         name: "",
+                         name: "Negation",
                          desc: ""
                        },
-                       children: [
-                         {
-                          text: {
-                            name: "Action",
-                            desc: ""
-                          },
-                          image: "flags/ecore-icon.png",
-                          HTMLclass: "first-draw"
-                         },
-                         {
-                          text: {
-                            name: "",
-                            desc: ""
-                          },
-                          children: [
-                            {
-                             text: {
-                               name: "",
-                               desc: ""
-                             },
-                             children: [
-                               {
-                                text: {
-                                  name: "Node",
-                                  desc: ""
-                                },
-                                image: "flags/ecore-icon.png",
-                                HTMLclass: "first-draw"
-                               },
-                               {
-                                text: {
-                                  name: "Arc",
-                                  desc: ""
-                                },
-                                image: "flags/ecore-icon.png",
-                                HTMLclass: "first-draw"
-                               }
-                             ]
-                            },
-                            {
-                             text: {
-                               name: "",
-                               desc: ""
-                             },
-                             children: [
-                               {
-                                text: {
-                                  name: "NamedElement",
-                                  desc: ""
-                                },
-                                image: "flags/ecore-icon.png",
-                                HTMLclass: "first-draw"
-                               },
-                               {
-                                text: {
-                                  name: "Flowchart",
-                                  desc: ""
-                                },
-                                image: "flags/ecore-icon.png",
-                                HTMLclass: "first-draw"
-                               }
-                             ]
-                            }
-                          ]
-                         }
-                       ]
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
                       }
                     ]
                    }
@@ -248,16 +613,24 @@ var tree_structure = {
                  children: [
                    {
                     text: {
+                      name: "StringLiteral",
+                      desc: ""
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
                       name: "",
                       desc: ""
                     },
                     children: [
                       {
                        text: {
-                         name: "RelationalConstraint",
+                         name: "RealLiteral",
                          desc: ""
                        },
-                       image: "flags/ecore-icon.png",
+                       image: "libs/flags/ecore-icon.png",
                        HTMLclass: "first-draw"
                       },
                       {
@@ -268,42 +641,10 @@ var tree_structure = {
                        children: [
                          {
                           text: {
-                            name: "Decision",
+                            name: "IntegerLiteral",
                             desc: ""
                           },
-                          image: "flags/ecore-icon.png",
-                          HTMLclass: "first-draw"
-                         },
-                         {
-                          text: {
-                            name: "Constraint",
-                            desc: ""
-                          },
-                          image: "flags/ecore-icon.png",
-                          HTMLclass: "first-draw"
-                         }
-                       ]
-                      }
-                    ]
-                   },
-                   {
-                    text: {
-                      name: "",
-                      desc: ""
-                    },
-                    children: [
-                      {
-                       text: {
-                         name: "",
-                         desc: ""
-                       },
-                       children: [
-                         {
-                          text: {
-                            name: "Wait",
-                            desc: ""
-                          },
-                          image: "flags/ecore-icon.png",
+                          image: "libs/flags/ecore-icon.png",
                           HTMLclass: "first-draw"
                          },
                          {
@@ -314,10 +655,10 @@ var tree_structure = {
                           children: [
                             {
                              text: {
-                               name: "Loop",
+                               name: "BooleanLiteral",
                                desc: ""
                              },
-                             image: "flags/ecore-icon.png",
+                             image: "libs/flags/ecore-icon.png",
                              HTMLclass: "first-draw"
                             },
                             {
@@ -328,10 +669,10 @@ var tree_structure = {
                              children: [
                                {
                                 text: {
-                                  name: "Conditional",
+                                  name: "EnumLiteral",
                                   desc: ""
                                 },
-                                image: "flags/ecore-icon.png",
+                                image: "libs/flags/ecore-icon.png",
                                 HTMLclass: "first-draw"
                                },
                                {
@@ -342,107 +683,227 @@ var tree_structure = {
                                 children: [
                                   {
                                    text: {
-                                     name: "Statement",
+                                     name: "ClassLiteral",
                                      desc: ""
                                    },
-                                   image: "flags/ecore-icon.png",
+                                   image: "libs/flags/ecore-icon.png",
                                    HTMLclass: "first-draw"
                                   },
                                   {
                                    text: {
-                                     name: "Program",
+                                     name: "",
                                      desc: ""
                                    },
-                                   image: "flags/ecore-icon.png",
-                                   HTMLclass: "first-draw"
-                                  }
-                                ]
-                               }
-                             ]
-                            }
-                          ]
-                         }
-                       ]
-                      },
-                      {
-                       text: {
-                         name: "",
-                         desc: ""
-                       },
-                       children: [
-                         {
-                          text: {
-                            name: "",
-                            desc: ""
-                          },
-                          children: [
-                            {
-                             text: {
-                               name: "Assignation",
-                               desc: ""
-                             },
-                             image: "flags/ecore-icon.png",
-                             HTMLclass: "first-draw"
-                            },
-                            {
-                             text: {
-                               name: "VarDecl",
-                               desc: ""
-                             },
-                             image: "flags/ecore-icon.png",
-                             HTMLclass: "first-draw"
-                            }
-                          ]
-                         },
-                         {
-                          text: {
-                            name: "",
-                            desc: ""
-                          },
-                          children: [
-                            {
-                             text: {
-                               name: "VarReference",
-                               desc: ""
-                             },
-                             image: "flags/ecore-icon.png",
-                             HTMLclass: "first-draw"
-                            },
-                            {
-                             text: {
-                               name: "",
-                               desc: ""
-                             },
-                             children: [
-                               {
-                                text: {
-                                  name: "RelationalExpression",
-                                  desc: ""
-                                },
-                                image: "flags/ecore-icon.png",
-                                HTMLclass: "first-draw"
-                               },
-                               {
-                                text: {
-                                  name: "",
-                                  desc: ""
-                                },
-                                children: [
-                                  {
-                                   text: {
-                                     name: "Expression",
-                                     desc: ""
-                                   },
-                                   image: "flags/ecore-icon.png",
-                                   HTMLclass: "first-draw"
-                                  },
-                                  {
-                                   text: {
-                                     name: "ArithmeticExpression",
-                                     desc: ""
-                                   },
-                                   image: "flags/ecore-icon.png",
-                                   HTMLclass: "first-draw"
+                                   children: [
+                                     {
+                                      text: {
+                                        name: "Source",
+                                        desc: ""
+                                      },
+                                      image: "libs/flags/ecore-icon.png",
+                                      HTMLclass: "first-draw"
+                                     },
+                                     {
+                                      text: {
+                                        name: "",
+                                        desc: ""
+                                      },
+                                      children: [
+                                        {
+                                         text: {
+                                           name: "",
+                                           desc: ""
+                                         },
+                                         children: [
+                                           {
+                                            text: {
+                                              name: "VariableUse",
+                                              desc: ""
+                                            },
+                                            image: "libs/flags/ecore-icon.png",
+                                            HTMLclass: "first-draw"
+                                           },
+                                           {
+                                            text: {
+                                              name: "",
+                                              desc: ""
+                                            },
+                                            children: [
+                                              {
+                                               text: {
+                                                 name: "Lambda",
+                                                 desc: ""
+                                               },
+                                               image: "libs/flags/ecore-icon.png",
+                                               HTMLclass: "first-draw"
+                                              },
+                                              {
+                                               text: {
+                                                 name: "",
+                                                 desc: ""
+                                               },
+                                               children: [
+                                                 {
+                                                  text: {
+                                                    name: "Let",
+                                                    desc: ""
+                                                  },
+                                                  image: "libs/flags/ecore-icon.png",
+                                                  HTMLclass: "first-draw"
+                                                 },
+                                                 {
+                                                  text: {
+                                                    name: "",
+                                                    desc: ""
+                                                  },
+                                                  children: [
+                                                    {
+                                                     text: {
+                                                       name: "VariableDefinition",
+                                                       desc: ""
+                                                     },
+                                                     image: "libs/flags/ecore-icon.png",
+                                                     HTMLclass: "first-draw"
+                                                    },
+                                                    {
+                                                     text: {
+                                                       name: "VariableInitialization",
+                                                       desc: ""
+                                                     },
+                                                     image: "libs/flags/ecore-icon.png",
+                                                     HTMLclass: "first-draw"
+                                                    }
+                                                  ]
+                                                 }
+                                               ]
+                                              }
+                                            ]
+                                           }
+                                         ]
+                                        },
+                                        {
+                                         text: {
+                                           name: "",
+                                           desc: ""
+                                         },
+                                         children: [
+                                           {
+                                            text: {
+                                              name: "Map",
+                                              desc: ""
+                                            },
+                                            image: "libs/flags/ecore-icon.png",
+                                            HTMLclass: "first-draw"
+                                           },
+                                           {
+                                            text: {
+                                              name: "",
+                                              desc: ""
+                                            },
+                                            children: [
+                                              {
+                                               text: {
+                                                 name: "TypeOfExpression",
+                                                 desc: ""
+                                               },
+                                               image: "libs/flags/ecore-icon.png",
+                                               HTMLclass: "first-draw"
+                                              },
+                                              {
+                                               text: {
+                                                 name: "",
+                                                 desc: ""
+                                               },
+                                               children: [
+                                                 {
+                                                  text: {
+                                                    name: "ExtentExpression",
+                                                    desc: ""
+                                                  },
+                                                  image: "libs/flags/ecore-icon.png",
+                                                  HTMLclass: "first-draw"
+                                                 },
+                                                 {
+                                                  text: {
+                                                    name: "",
+                                                    desc: ""
+                                                  },
+                                                  children: [
+                                                    {
+                                                     text: {
+                                                       name: "FeatureAccess",
+                                                       desc: ""
+                                                     },
+                                                     image: "libs/flags/ecore-icon.png",
+                                                     HTMLclass: "first-draw"
+                                                    },
+                                                    {
+                                                     text: {
+                                                       name: "",
+                                                       desc: ""
+                                                     },
+                                                     children: [
+                                                       {
+                                                        text: {
+                                                          name: "Invocation",
+                                                          desc: ""
+                                                        },
+                                                        image: "libs/flags/ecore-icon.png",
+                                                        HTMLclass: "first-draw"
+                                                       },
+                                                       {
+                                                        text: {
+                                                          name: "",
+                                                          desc: ""
+                                                        },
+                                                        children: [
+                                                          {
+                                                           text: {
+                                                             name: "ConditionalExpression",
+                                                             desc: ""
+                                                           },
+                                                           image: "libs/flags/ecore-icon.png",
+                                                           HTMLclass: "first-draw"
+                                                          },
+                                                          {
+                                                           text: {
+                                                             name: "",
+                                                             desc: ""
+                                                           },
+                                                           children: [
+                                                             {
+                                                              text: {
+                                                                name: "Expression",
+                                                                desc: ""
+                                                              },
+                                                              image: "libs/flags/ecore-icon.png",
+                                                              HTMLclass: "first-draw"
+                                                             },
+                                                             {
+                                                              text: {
+                                                                name: "If",
+                                                                desc: ""
+                                                              },
+                                                              image: "libs/flags/ecore-icon.png",
+                                                              HTMLclass: "first-draw"
+                                                             }
+                                                           ]
+                                                          }
+                                                        ]
+                                                       }
+                                                     ]
+                                                    }
+                                                  ]
+                                                 }
+                                               ]
+                                              }
+                                            ]
+                                           }
+                                         ]
+                                        }
+                                      ]
+                                     }
+                                   ]
                                   }
                                 ]
                                }
