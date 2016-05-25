@@ -1,5 +1,9 @@
 package fr.inria.diverse.puzzle.utilities.impl;
 
+import java.util.ArrayList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EcoreFactory;
 
@@ -42,8 +46,32 @@ public class ExtractRequiredInterface {
 		requiredInterface.setNsPrefix(metamodel.getNsPrefix() + "Req");
 		requiredInterface.setNsURI(metamodel.getNsURI() + "Req");
 		
+		ArrayList<EClass> annotatedEClasses = new ArrayList<EClass>();
+		this.collectRequiredEClasses(annotatedEClasses, metamodel);
 		
+		for (EClass annotatedEClass : annotatedEClasses) {
+			requiredInterface.getEClassifiers().add(annotatedEClass);
+		}
 		
 		return requiredInterface;
+	}
+	
+	/**
+	 * Collects the eclasses contained in the ePackage annotated with @Required. 
+	 * @param eClasses. Array to store the annotated classes
+	 * @param ePackage. EPackage
+	 */
+	private void collectRequiredEClasses(ArrayList<EClass> eClasses, EPackage ePackage){
+		for (EClassifier eClassifier : ePackage.getEClassifiers()) {
+			if(eClassifier instanceof EClass){
+				EClass eClass = (EClass) eClassifier;
+				if(eClass.getEAnnotation("Required") != null)
+					eClasses.add(eClass);
+			}
+		}
+		
+		for (EPackage eSubPackage : ePackage.getESubpackages()) {
+			this.collectRequiredEClasses(eClasses, eSubPackage);
+		}
 	}
 }
