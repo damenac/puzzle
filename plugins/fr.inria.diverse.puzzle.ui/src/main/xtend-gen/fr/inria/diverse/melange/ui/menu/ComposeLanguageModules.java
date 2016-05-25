@@ -25,7 +25,6 @@ import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.xtext.resource.DerivedStateAwareResource;
 import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.eclipse.xtext.xbase.lib.Exceptions;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * Handler for the action: Compose language modules
@@ -63,7 +62,6 @@ public class ComposeLanguageModules extends AbstractHandler {
           URI _createPlatformResourceURI_1 = URI.createPlatformResourceURI(_replace, true);
           Resource _resource_1 = rs.getResource(_createPlatformResourceURI_1, true);
           final DerivedStateAwareResource puzzleRes = ((DerivedStateAwareResource) _resource_1);
-          InputOutput.<String>println("coucou... composing");
           final String composition = ComposeLanguageModules.this.builder.composeLanguageModules(puzzleRes, melangeRes, project, monitor);
           Display _display = ComposeLanguageModules.getDisplay();
           _display.syncExec(

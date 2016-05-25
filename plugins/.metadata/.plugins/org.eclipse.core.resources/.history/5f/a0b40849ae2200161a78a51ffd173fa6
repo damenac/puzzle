@@ -1,0 +1,9 @@
+package fr.inria.diverse.puzzle.utilities.impl;
+
+/**
+ * 
+ * @author David Mendez-Acuna
+ */
+public class ExtractRequiredInterface {
+
+}

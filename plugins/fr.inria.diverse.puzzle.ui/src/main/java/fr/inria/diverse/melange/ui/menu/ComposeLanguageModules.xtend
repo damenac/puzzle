@@ -6,7 +6,6 @@ import org.eclipse.core.commands.ExecutionEvent
 import org.eclipse.core.commands.ExecutionException
 import org.eclipse.core.resources.IResource
 import org.eclipse.core.runtime.IProgressMonitor
-import org.eclipse.core.runtime.OperationCanceledException
 import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.jobs.Job
 import org.eclipse.emf.common.util.URI
@@ -40,8 +39,6 @@ class ComposeLanguageModules extends AbstractHandler {
 					val rs = rsProvider.get(project)
 					val melangeRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString, true), true) as DerivedStateAwareResource
 					val puzzleRes = rs.getResource(URI::createPlatformResourceURI(resource.fullPath.toString.replace('.melange','.binding'), true), true) as DerivedStateAwareResource
-
-					println('coucou... composing')
 
 					val composition = builder.composeLanguageModules(puzzleRes, melangeRes, project, monitor)
 

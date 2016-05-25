@@ -1,0 +1,9 @@
+package fr.inria.diverse.puzzle.utilities.impl;
+
+/**
+ * Service to extract the required interface of a metamodel from the annotations @Required
+ * @author David Mendez-Acuna
+ */
+public class ExtractRequiredInterface {
+
+}
