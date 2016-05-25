@@ -109,6 +109,11 @@
                      label="Extract Required Interface"
                      style="push">
                </command>
+               <command
+                     commandId="fr.inria.diverse.puzzle.ExtractProvidedInterface"
+                     label="Extract Provided Interface"
+                     style="push">
+               </command>
             </menu>
       </menuContribution>
    </extension>  
@@ -146,6 +151,10 @@
             id="fr.inria.diverse.puzzle.ExtractRequiredInterface"
             name="Extract Required Interface">
       </command>
+      <command
+            id="fr.inria.diverse.puzzle.ExtractProvidedInterface"
+            name="Extract Provided Interface">
+      </command>
    </extension>
    <extension
          point="org.eclipse.ui.handlers">
@@ -180,6 +189,10 @@
       <handler
             class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ExtractRequiredInterface"
             commandId="fr.inria.diverse.puzzle.ExtractRequiredInterface">
+      </handler>
+      <handler
+            class="fr.inria.diverse.melange.ui.MelangeExecutableExtensionFactory:fr.inria.diverse.melange.ui.menu.ExtractProvidedInterface"
+            commandId="fr.inria.diverse.puzzle.ExtractProvidedInterface">
       </handler>
    </extension>
 

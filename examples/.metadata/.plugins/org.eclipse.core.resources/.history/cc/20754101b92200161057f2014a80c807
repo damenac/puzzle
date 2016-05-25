@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="actionscriptingReq" nsURI="actionscriptingReq" nsPrefix="actionscriptingReq">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
+    <eAnnotations source="Required"/>
+    <eOperations name="eval">
+      <eParameters name="context"/>
+    </eOperations>
+  </eClassifiers>
+</ecore:EPackage>
