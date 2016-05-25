@@ -1,0 +1,8 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	flowchartpck.Assignation = flowchartaspects.AssignationAspect
+	flowchartpck.RelationalExpression = flowchartaspects.RelationalExpressionAspect
+	flowchartpck.Literal = flowchartaspects.LiteralAspect
+	flowchartpck.RelationalConstraint = flowchartaspects.RelationalConstraintAspect
+	flowchartpck.ArithmeticExpression = flowchartaspects.ArithmeticExpressionAspect
+	flowchartpck.Flowchart = flowchartaspects.FlowchartAspect
+	flowchartpck.VarReference = flowchartaspects.VarReferenceAspect

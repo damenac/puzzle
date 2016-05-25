@@ -12,14 +12,12 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
-import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.handlers.HandlerUtil;
-import org.eclipse.xtext.ui.resource.XtextResourceSetProvider;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
@@ -30,9 +28,6 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 public class ExtractRequiredInterface extends AbstractHandler {
   @Inject
   private ExtractRequiredInterfaceBuilder builder;
-  
-  @Inject
-  private XtextResourceSetProvider rsProvider;
   
   @Override
   public Object execute(final ExecutionEvent event) throws ExecutionException {
@@ -46,7 +41,6 @@ public class ExtractRequiredInterface extends AbstractHandler {
           Object _firstElement = selection.getFirstElement();
           final IResource resource = ((IResource) _firstElement);
           final IProject project = resource.getProject();
-          final ResourceSet rs = ExtractRequiredInterface.this.rsProvider.get(project);
           Object _firstElement_1 = selection.getFirstElement();
           final IResource ecoreResource = ((IResource) _firstElement_1);
           ExtractRequiredInterface.this.builder.extractRequiredInterface(ecoreResource, project, monitor);

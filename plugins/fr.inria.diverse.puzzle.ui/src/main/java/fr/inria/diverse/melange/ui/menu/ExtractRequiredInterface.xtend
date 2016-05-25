@@ -8,10 +8,8 @@ import org.eclipse.core.resources.IResource
 import org.eclipse.core.runtime.IProgressMonitor
 import org.eclipse.core.runtime.Status
 import org.eclipse.core.runtime.jobs.Job
-import org.eclipse.emf.common.util.URI
 import org.eclipse.jface.viewers.IStructuredSelection
 import org.eclipse.ui.handlers.HandlerUtil
-import org.eclipse.xtext.ui.resource.XtextResourceSetProvider
 import org.eclipse.jface.dialogs.MessageDialog
 import org.eclipse.swt.widgets.Display
 import fr.inria.diverse.melange.ui.builder.ExtractRequiredInterfaceBuilder
@@ -23,7 +21,6 @@ import fr.inria.diverse.melange.ui.builder.ExtractRequiredInterfaceBuilder
 class ExtractRequiredInterface extends AbstractHandler {
 	
 	@Inject ExtractRequiredInterfaceBuilder builder
-	@Inject XtextResourceSetProvider rsProvider
 
 	override execute(ExecutionEvent event) throws ExecutionException {
 		new Job("Puzzle: Extract required interface ...") {
@@ -35,7 +32,6 @@ class ExtractRequiredInterface extends AbstractHandler {
 					val selection = sel as IStructuredSelection
 					val resource = selection.firstElement as IResource
 					val project = resource.project
-					val rs = rsProvider.get(project)
 					val ecoreResource = selection.firstElement as IResource
 					
 					builder.extractRequiredInterface(ecoreResource, project, monitor)
