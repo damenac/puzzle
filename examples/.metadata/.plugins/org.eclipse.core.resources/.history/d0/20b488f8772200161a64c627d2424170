@@ -1,0 +1,10 @@
+package fr.inria.diverse.puzzle.examples.fsm.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import fsm.Transition
+	
+@Aspect(className=Transition)
+class TransitionAspect {
+	
+}

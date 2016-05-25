@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.puzzle.examples.actionscripting.syntax/models/simpleimperative.ecore&apos; to &apos;actionscripting.ecore&apos;" description="Rename resource &apos;simpleimperative.ecore&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="models/simpleimperative.ecore" name="actionscripting.ecore" stamp="1464199111780" updateReferences="true"/>
+</session>

@@ -12,6 +12,7 @@ public class HCTreeNode {
 	private String identifier;
 	private HCTreeNode leftChild;
 	private HCTreeNode rightChild;
+	private double similarityValue;
 
 	// ----------------------------------------------
 	// Constructor
@@ -20,7 +21,7 @@ public class HCTreeNode {
 	public HCTreeNode(){}
 
 	// ----------------------------------------------
-	// Methods
+	// Getters and setters
 	// ----------------------------------------------
 
 	public String toString(){
@@ -57,5 +58,13 @@ public class HCTreeNode {
 
 	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
+	}
+
+	public double getSimilarityValue() {
+		return similarityValue;
+	}
+
+	public void setSimilarityValue(double similarityValue) {
+		this.similarityValue = similarityValue;
 	}
 }

@@ -8,7 +8,6 @@
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.LocationStack"/>
 <fullyQualifiedTypeName name="PuzzleADL.InterfaceBinding"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
 <fullyQualifiedTypeName name="PuzzleADL.LanguageArchitecture"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.specialCharts.ComponentsArchitectureModel"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.vmsynthesis.impl.FromPuzzleToFeatureIDE"/>
@@ -16,7 +15,6 @@
 <fullyQualifiedTypeName name="fm.FeatureModel"/>
 <fullyQualifiedTypeName name="vm.LanguageFeatureModel"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.listeners.IProjectListener"/>
-<fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTFeature"/>
 <fullyQualifiedTypeName name="de.ovgu.featureide.core.fstmodel.FSTRole"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.commands.ConceptComparison"/>
@@ -41,8 +39,13 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesion"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.ContextReferences"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.vos.HCTree"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.HCCalculator"/>
+<fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
 </qualifiedTypeNameHistroy>

@@ -45,6 +45,7 @@ fr.inria.diverse.melange.metamodel,0.1.0.201602260918,file:/Users/dmendeza/IDEs/
 fr.inria.diverse.melange.resource,0.1.0.201602260918,file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/fr.inria.diverse.melange.resource_0.1.0.201602260918.jar,4,false
 fr.inria.diverse.melange.ui,0.1.0.201602260918,file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/fr.inria.diverse.melange.ui_0.1.0.201602260918.jar,4,false
 fr.inria.diverse.melange.ui.templates,0.1.0.201602260918,file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/fr.inria.diverse.melange.ui.templates_0.1.0.201602260918.jar,4,false
+fr.inria.diverse.puzzle.annotations,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.annotations/,4,false
 fr.inria.diverse.puzzle.common,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/,4,false
 fr.inria.diverse.puzzle.configurator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.configurator/,4,false
 fr.inria.diverse.puzzle.derivator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.derivator/,4,false

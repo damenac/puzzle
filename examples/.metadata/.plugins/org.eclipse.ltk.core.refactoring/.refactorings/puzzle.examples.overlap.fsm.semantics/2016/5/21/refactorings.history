@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Interpreter.tosave&apos; to &apos;fr.inria.diverse.puzzle.examples.fsm.semantics/src/fr.inria.diverse.puzzle.examples.fsm.semantics&apos;&#x0A;- Original project: &apos;puzzle.examples.overlap.fsm.semantics&apos;&#x0A;- Destination element: &apos;fr.inria.diverse.puzzle.examples.fsm.semantics/src/fr.inria.diverse.puzzle.examples.fsm.semantics&apos;&#x0A;- Original element: &apos;Interpreter.tosave&apos;" description="Copy file" destination="=fr.inria.diverse.puzzle.examples.fsm.semantics/src&lt;fr.inria.diverse.puzzle.examples.fsm.semantics" element1="interpreters/Interpreter.tosave" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1464181598084" units="0" version="1.0"/>
+</session>

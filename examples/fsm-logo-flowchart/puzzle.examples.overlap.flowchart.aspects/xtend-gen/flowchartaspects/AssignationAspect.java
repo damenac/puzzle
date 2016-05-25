@@ -16,9 +16,7 @@ public class AssignationAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final Assignation _self, final Hashtable<String, Object> context) {
     flowchartaspects.AssignationAspectAssignationAspectProperties _self_ = flowchartaspects.AssignationAspectAssignationAspectContext.getSelf(_self);
-     if (_self instanceof flowchartpck.Assignation){
-     flowchartaspects.AssignationAspect._privk3_eval(_self_, (flowchartpck.Assignation)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_eval(_self_, _self,context);
   }
   
   private static void super_eval(final Assignation _self, final Hashtable<String, Object> context) {

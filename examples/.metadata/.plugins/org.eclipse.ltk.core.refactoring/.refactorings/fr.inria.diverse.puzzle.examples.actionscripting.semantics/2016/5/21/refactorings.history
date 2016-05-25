@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.puzzle.examples.actionscripting.semantics/src/fr/inria/diverse/puzzle/examples/actionscripting/semantics/ProgramAspect.xtend&apos; to &apos;BlockAspect.xtend&apos;" description="Rename resource &apos;ProgramAspect.xtend&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/fr/inria/diverse/puzzle/examples/actionscripting/semantics/ProgramAspect.xtend" name="BlockAspect.xtend" stamp="1464200900627" updateReferences="true"/>
+</session>

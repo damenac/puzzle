@@ -1,0 +1,20 @@
+package fr.inria.diverse.puzzle.examples.fsm.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import fsm.Region
+import java.util.Hashtable
+
+@Aspect(className=Region)
+class RegionAspect {
+	
+	def public void initRegion(Hashtable<String, Object> context){
+		
+		
+	}
+	
+	def public void step(Hashtable<String, Object> context){
+		
+		
+	}
+}

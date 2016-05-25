@@ -1,4 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	flowchartpck.Flowchart = flowchart.semantics.FlowchartAspect
-	flowchartpck.Decision = flowchart.semantics.DecisionAspect
-	flowchartpck.Arc = flowchart.semantics.ArcAspect

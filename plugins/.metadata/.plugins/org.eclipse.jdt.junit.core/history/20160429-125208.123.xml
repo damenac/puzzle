@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="HCCalculatorTest" project="fr.inria.diverse.puzzle.metrics" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.13">
-    <testcase name="testFindBiggerEntry" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.127"/>
-    <testcase name="testUpdateHCMatrixFirstIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.0"/>
-    <testcase name="testMetricComputation" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
-    <testcase name="testUpdateHCTreeWithEntryFirstIteration" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
-    <testcase name="testBuildInitialHCMatrixFromMetrixMatrix" classname="fr.inria.diverse.puzzle.metrics.HCCalculatorTest" time="0.001"/>
-  </testsuite>
-</testrun>

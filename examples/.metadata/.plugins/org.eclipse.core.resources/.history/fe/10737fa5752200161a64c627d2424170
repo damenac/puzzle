@@ -1,0 +1,61 @@
+package fr.inria.diverse.puzzle.examples.fsm.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import fsm.Region
+import java.util.Hashtable
+import org.eclipse.emf.common.util.EList
+import java.util.ArrayList
+import fsm.AbstractState
+import fsm.Pseudostate
+import fsm.InitialState
+import fsm.Transition
+
+@Aspect(className=Region)
+class RegionAspect {
+	
+	def public void initRegion(Hashtable<String, Object> context){
+		var ArrayList<AbstractState> regionCurrentState = new ArrayList<AbstractState>();
+		context.put(_self.getContextPathByRegion, regionCurrentState)
+		
+		// Looking for the initial pseudo-state
+		var Pseudostate initialPseudostate = _self.subvertex.
+						findFirst[ _vertex | (_vertex instanceof Pseudostate) && 
+							(_vertex instanceof InitialState)] as Pseudostate
+		
+		// Dispatching the transitions of the initial pseudo-state
+		var ArrayList<AbstractState> initialCurrentState = new ArrayList<AbstractState>()
+		var ArrayList<Transition> initialCurrentTransitions = new ArrayList<Transition>()
+		for(Transition _transition : initialPseudostate.outgoing){
+			initialCurrentTransitions.add(_transition)
+			initialCurrentState.add(_transition.target)
+		}
+		(regionCurrentState as ArrayList<AbstractState>).addAll(initialCurrentState)
+		
+		initialCurrentTransitions.forEach[ transition |
+			transition.evalTransition(context)
+		]
+		
+	}
+	
+	def public String getContextPathByRegion(){
+		var root = "currentState"
+		var ArrayList<Region> parentRegions = new ArrayList<Region>()
+		var Region currentRegion = _self
+		while(currentRegion.ownerState != null && currentRegion.ownerState.ownerRegion != null){
+			parentRegions.add(_self.ownerState.ownerRegion)
+			currentRegion = currentRegion.ownerState.ownerRegion
+		}
+		
+		for(var int i = parentRegions.size() - 1; i >= 0; i--){
+			root += "-" + parentRegions.get(i).name
+		}
+		
+		return root + "-" + _self.name
+	}
+	
+	def public void step(Hashtable<String, Object> context, EList<String> events){
+		
+		
+	}
+}

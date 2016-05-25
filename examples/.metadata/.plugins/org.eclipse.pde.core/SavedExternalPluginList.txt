@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1462189329575
+# List of external plug-in models previously loaded. Timestamp: 1464198387130
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/br.ufal.ic.colligens_1.1.4.201512021815.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.inject_3.0.0.v201312141243.jar
@@ -45,6 +45,7 @@ file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/fr.inria.diverse.
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/fr.inria.diverse.melange.resource_0.1.0.201602260918.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/fr.inria.diverse.melange.ui_0.1.0.201602260918.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/fr.inria.diverse.melange.ui.templates_0.1.0.201602260918.jar
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.annotations/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.common/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.configurator/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.derivator/

@@ -1,6 +1,0 @@
-package fr.inria.diverse.puzzle.metrics.vos;
-
-public class HCTree {
-
-	private HCTreeNode root;
-}

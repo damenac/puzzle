@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="family.FSMMT" uri="http://fsmmt/"/>
+    <modeltype id="family.ActionScriptingMT" uri="http://actionscriptingmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Trigger:fr.inria.diverse.puzzle.examples.fsm.semantics.TriggerAspect;StateMachine:fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect;State:fr.inria.diverse.puzzle.examples.fsm.semantics.StateAspect;Transition:fr.inria.diverse.puzzle.examples.fsm.semantics.TransitionAspect;Region:fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect" description="A language for state machines." entryPoints="fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect.eval(fsm.StateMachine)" exactType="family.FSMMT" id="family.FSM" uri="http://puzzle.examples.fsm">
+      <adapter class="family.fsm.adapters.fsmmt.FSMAdapter" modeltypeId="family.FSMMT"/>
+    </language>
+    <language aspects="Loop:fr.inria.diverse.puzzle.examples.actionscripting.semantics.LoopAspect;Print:fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintAspect;Expression:fr.inria.diverse.puzzle.examples.actionscripting.semantics.ExpressionAspect;VarDecl:fr.inria.diverse.puzzle.examples.actionscripting.semantics.VarDeclAspect;Statement:fr.inria.diverse.puzzle.examples.actionscripting.semantics.StatementAspect;Block:fr.inria.diverse.puzzle.examples.actionscripting.semantics.BlockAspect;Println:fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintlnAspect;Assignation:fr.inria.diverse.puzzle.examples.actionscripting.semantics.AssignationAspect;Conditional:fr.inria.diverse.puzzle.examples.actionscripting.semantics.ConditionalAspect;Wait:fr.inria.diverse.puzzle.examples.actionscripting.semantics.WaitAspect" description="A language for Rhapsody state machines." entryPoints="" exactType="family.ActionScriptingMT" id="family.ActionScripting" uri="actionscripting">
+      <adapter class="family.actionscripting.adapters.actionscriptingmt.ActionScriptingAdapter" modeltypeId="family.ActionScriptingMT"/>
+    </language>
+  </extension>
+</plugin>

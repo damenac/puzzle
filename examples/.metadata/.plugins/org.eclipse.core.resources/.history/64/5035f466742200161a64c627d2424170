@@ -1,0 +1,33 @@
+package fr.inria.diverse.puzzle.examples.fsm.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	 
+import fsm.StateMachine
+import java.util.Hashtable
+
+import static extension fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect.*
+
+@Aspect(className=StateMachine)
+class StateMachineAspect {
+	
+	def public void eval(){
+		println("\nExecuting the state machine. Please enter the events to process...\n")
+		
+		val Hashtable<String, Object> context = new Hashtable<String, Object>
+		
+		_self.regions.forEach[ _region | 
+			_region.initRegion(context)
+		]
+		println("")
+		
+		print("    step: ---> current active state (s): ")
+		var _it = context.keySet.iterator
+		while(_it.hasNext){
+			var String _key = _it.next
+			var Object _value = context.get(_key)
+			if(_key.startsWith("currentState"))
+				(_value as ArrayList<AbstractState>).forEach[ _vertex |
+					print( _vertex.name + " ")]
+		}
+	}
+}

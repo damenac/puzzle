@@ -1,0 +1,35 @@
+package family
+
+/**
+ * A language for state machines.
+ */
+language FSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm.ecore"
+	
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.TransitionAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.TriggerAspect
+	
+	exactType FSMMT
+}
+
+/**
+ * A language for Rhapsody state machines.
+ */
+language ActionScripting {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.actionscripting.syntax/models/actionscripting.ecore"
+
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.AssignationAspect
+	with fsmrhapsodyaspects.RegionAspect
+	with fsmrhapsodyaspects.StateAspect
+	with fsmrhapsodyaspects.TransitionAspect
+	with fsmrhapsodyaspects.TriggerAspect
+	with fsmrhapsodyaspects.FinalStateAspect
+	with fsmrhapsodyaspects.ConstraintAspect
+	with fsmrhapsodyaspects.StatementAspect
+	with fsmrhapsodyaspects.ProgramAspect
+
+	exactType ActionScriptingMT
+}

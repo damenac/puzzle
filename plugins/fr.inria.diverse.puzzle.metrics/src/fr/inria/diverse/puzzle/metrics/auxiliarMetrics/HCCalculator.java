@@ -93,10 +93,12 @@ public class HCCalculator extends MetricsManager {
 				HCTreeNode xTreeNode = new HCTreeNode();
 				xTreeNode.seteClass(metaclasses.get(x));
 				xTreeNode.setIdentifier(metaclasses.get(x).getName());
+				xTreeNode.setSimilarityValue(value);
 				
 				HCTreeNode yTreeNode = new HCTreeNode();
 				yTreeNode.seteClass(metaclasses.get(y));
 				yTreeNode.setIdentifier(metaclasses.get(y).getName());
+				yTreeNode.setSimilarityValue(value);
 				
 				HCMatrixEntry entry = new HCMatrixEntry(xTreeNode, yTreeNode, value);
 				entryMatrix[x][y] = entry;
@@ -151,6 +153,7 @@ public class HCCalculator extends MetricsManager {
 		joinNode.setLeftChild(xTreeNode);
 		joinNode.setRightChild(yTreeNode);
 		joinNode.setIdentifier("(" + xTreeNode.getIdentifier() + "," + yTreeNode.getIdentifier() + ")");
+		joinNode.setSimilarityValue(biggerEntry.getValue());
 		this.tree.getNodes().add(joinNode);
 		
 		return joinNode;
@@ -312,7 +315,7 @@ public class HCCalculator extends MetricsManager {
 		if(root){
 			report += space + "  name: \"Root\",\n";
 		}
-		report += space + "  desc: \"\"\n";
+		report += space + "  desc: \"" + node.getSimilarityValue() + "\"\n";
 		report += space +  "},\n";
 		
 		if(node.getLeftChild() != null || node.getRightChild() != null){

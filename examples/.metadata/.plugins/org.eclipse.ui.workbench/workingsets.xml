@@ -48,5 +48,16 @@
 <item elementID="=fr.inria.diverse.examples.complete.logo" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=fr.inria.diverse.examples.flowchart.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1463729317765_7" label="hierarchical-domain-analysis" name="hierarchical-domain-analysis">
+<item elementID="=puzzle.empirical.study" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/puzzle.empirical.hierarchicalDomains" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1464178240491_8" label="modular-state-machines" name="modular-state-machines">
+<item elementID="=fr.inria.diverse.puzzle.examples.fsm.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.examples.actionscripting.syntax" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.examples.composition" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.examples.fsm.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=fr.inria.diverse.puzzle.examples.actionscripting.semantics" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1456491426915_0" label="Window Working Set" name="Aggregate for window 1456491426915"/>
 </workingSetManager>

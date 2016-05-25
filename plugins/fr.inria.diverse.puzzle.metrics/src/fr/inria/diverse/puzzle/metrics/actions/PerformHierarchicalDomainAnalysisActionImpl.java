@@ -14,7 +14,6 @@ import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
 import org.eclipse.emf.ecore.EPackage;
@@ -70,6 +69,7 @@ public class PerformHierarchicalDomainAnalysisActionImpl {
 		List<EClass> metaclasses = new ArrayList<EClass>();
 		this.filterEClasses(metamodel, metaclasses);
 		double[][] matrix = PairwiseCohesionMatrix.computePairwiseCohesionMatrix(metaclasses);
+		this.printMatrix(matrix);
 		HCCalculator hcCalculator = new HCCalculator(project);
 		ProjectManagementServices.refreshProject(project);
 		
@@ -139,5 +139,14 @@ public class PerformHierarchicalDomainAnalysisActionImpl {
 		PrintWriter outMetrics = new PrintWriter( generalMetrics );
 		outMetrics.print(treeReport);
 		outMetrics.close();
+	}
+	
+	private void printMatrix(double[][] matrix){
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix.length; j++) {
+				System.out.print(matrix[i][j] + ",");
+			}
+			System.out.println();
+		}
 	}
 }

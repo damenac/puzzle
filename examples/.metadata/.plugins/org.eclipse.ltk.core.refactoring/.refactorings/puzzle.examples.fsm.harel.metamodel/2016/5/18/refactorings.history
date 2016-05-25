@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;fsmHarel.ecore&apos; to &apos;metamodels&apos;&#x0A;- Original project: &apos;puzzle.examples.fsm.harel.metamodel&apos;&#x0A;- Destination element: &apos;metamodels&apos;&#x0A;- Original element: &apos;fsmHarel.ecore&apos;" description="Copy file" element1="models/fsmHarel.ecore" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1462275674201" target="/puzzle.empirical.hierarchicalDomains/metamodels" units="0" version="1.0"/>
+</session>
