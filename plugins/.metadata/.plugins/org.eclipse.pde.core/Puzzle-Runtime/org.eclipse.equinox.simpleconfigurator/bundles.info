@@ -69,6 +69,7 @@ fr.inria.diverse.puzzle.synthesis.vmsynthesis.test,1.0.0.qualifier,file:/Users/d
 fr.inria.diverse.puzzle.synthesizer.interface,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.interface/,4,false
 fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface/,4,false
 fr.inria.diverse.puzzle.ui,0.1.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.ui/,4,false
+fr.inria.diverse.puzzle.utilities,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.utilities/,4,false
 fr.inria.diverse.puzzle.validator,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.validator/,4,false
 fr.inria.diverse.puzzle.vmsynthesis,1.0.0.qualifier,file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesis.vmsynthesis/,4,false
 javaewah,0.7.9.v201401101600,file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/javaewah_0.7.9.v201401101600.jar,4,false

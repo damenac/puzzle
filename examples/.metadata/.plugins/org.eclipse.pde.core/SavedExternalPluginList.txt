@@ -1,4 +1,4 @@
-# List of external plug-in models previously loaded. Timestamp: 1464198387130
+# List of external plug-in models previously loaded. Timestamp: 1464207035069
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/br.ufal.ic.colligens_1.1.4.201512021815.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.guava_15.0.0.v201403281430.jar
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/com.google.inject_3.0.0.v201312141243.jar
@@ -69,6 +69,7 @@ file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesis
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesizer.vmsynthesis.interface/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.ui/
+file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.utilities/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.validator/
 file:/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.synthesis.vmsynthesis/
 file:/Users/dmendeza/IDEs/eclipse-melange-2016/eclipse/plugins/javaewah_0.7.9.v201401101600.jar

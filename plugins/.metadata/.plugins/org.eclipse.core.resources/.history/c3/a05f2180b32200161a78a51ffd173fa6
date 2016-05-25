@@ -1,0 +1,34 @@
+package fr.inria.diverse.melange.ui.builder
+
+import org.eclipse.core.resources.IProject
+import org.eclipse.core.runtime.IProgressMonitor
+import org.eclipse.emf.ecore.resource.Resource
+
+/**
+ * Builder for the action: Analyze Family.
+ * Loads the input and performs the delegation to the corresponding plug-in.
+ * 
+ * @author David Mendez-Acuna
+ */
+class ExtractRequiredInterfaceBuilder extends AbstractBuilder {
+	
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
+	
+	private IProject targetProject
+	
+	// -------------------------------------------------
+	// Methods
+	// -------------------------------------------------
+	
+	/**
+	 * Compose the language modules referenced in the melange and puzzle scripts given in the parameters
+	 */
+	def String extractRequiredInterface(Resource ecoreResource, IProject project, IProgressMonitor monitor) {
+		this.targetProject = project;
+		return null
+	}
+	
+	
+}

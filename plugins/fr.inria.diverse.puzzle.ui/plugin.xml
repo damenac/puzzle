@@ -101,6 +101,14 @@
                </command>-->
                
             </menu>
+            <menu
+                  icon="icons/triskell.png"
+                  label="Puzzle Utils">
+               <command
+                     commandId="fr.inria.diverse.puzzle.ExtractRequiredInterface"
+                     style="push">
+               </command>
+            </menu>
       </menuContribution>
    </extension>  
    <extension

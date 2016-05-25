@@ -1,0 +1,81 @@
+package fr.inria.diverse.melange.ui.builder
+
+import fr.inria.diverse.k3.sle.common.utils.ModelUtils
+import fr.inria.diverse.melange.eclipse.EclipseProjectHelper
+import fr.inria.diverse.melange.metamodel.melange.Aspect
+import fr.inria.diverse.melange.metamodel.melange.Language
+import fr.inria.diverse.melange.metamodel.melange.ModelType
+import fr.inria.diverse.melange.metamodel.melange.ModelTypingSpace
+import fr.inria.diverse.melange.ui.vos.AbstractCompositionTreeNode
+import fr.inria.diverse.melange.ui.vos.CompositionGraph
+import fr.inria.diverse.melange.ui.vos.CompositionStatementVO
+import fr.inria.diverse.melange.ui.vos.CompositionTreeLeaf
+import fr.inria.diverse.melange.ui.vos.CompositionTreeNode
+import fr.inria.diverse.melange.ui.vos.LanguageVO
+import fr.inria.diverse.puzzle.engine.AbstractSyntaxCompositionEngine
+import fr.inria.diverse.puzzle.engine.SemanticsCompositionEngine
+import fr.inria.diverse.puzzle.language.binding.Binding
+import fr.inria.diverse.puzzle.language.binding.LanguageBinding
+import fr.inria.diverse.puzzle.match.impl.PuzzleMatch
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic
+import java.io.IOException
+import java.util.ArrayList
+import java.util.Collections
+import java.util.List
+import javax.inject.Inject
+import org.autorefactor.ui.OverlappingAspectsVO
+import org.autorefactor.ui.OverridingAspectsVO
+import org.autorefactor.ui.RefactoringPatternVO
+import org.eclipse.core.resources.IProject
+import org.eclipse.core.resources.IResource
+import org.eclipse.core.runtime.IProgressMonitor
+import org.eclipse.core.runtime.NullProgressMonitor
+import org.eclipse.core.runtime.Path
+import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel
+import org.eclipse.emf.codegen.ecore.genmodel.GenModel
+import org.eclipse.emf.codegen.ecore.genmodel.GenModelFactory
+import org.eclipse.emf.codegen.ecore.genmodel.GenPackage
+import org.eclipse.emf.codegen.ecore.genmodel.generator.GenBaseGeneratorAdapter
+import org.eclipse.emf.codegen.ecore.genmodel.util.GenModelUtil
+import org.eclipse.emf.common.util.BasicMonitor
+import org.eclipse.emf.common.util.URI
+import org.eclipse.emf.ecore.EPackage
+import org.eclipse.emf.ecore.resource.Resource
+import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
+import org.eclipse.jdt.core.JavaCore
+import org.eclipse.pde.internal.core.natures.PDE
+import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem
+
+/**
+ * Builder for the action: Analyze Family.
+ * Loads the input and performs the delegation to the corresponding plug-in.
+ * 
+ * @author David Mendez-Acuna
+ */
+class ExtractRequiredInterfaceBuilder extends AbstractBuilder {
+	
+	// -------------------------------------------------
+	// Attributes
+	// -------------------------------------------------
+	
+	@Inject extension AbstractSyntaxCompositionEngine
+	@Inject extension SemanticsCompositionEngine
+	@Inject EclipseProjectHelper eclipseHelper
+	
+	private IProject targetProject
+	
+	// -------------------------------------------------
+	// Methods
+	// -------------------------------------------------
+	
+	/**
+	 * Compose the language modules referenced in the melange and puzzle scripts given in the parameters
+	 */
+	def String composeLanguageModules(Resource ecoreResource, IProject project, IProgressMonitor monitor) {
+	
+		return null
+	}
+	
+	
+}
