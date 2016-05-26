@@ -30,7 +30,6 @@
 <fullyQualifiedTypeName name="vm.SemanticInterpretation"/>
 <fullyQualifiedTypeName name="org.eclipse.xtext.xbase.typesystem.internal.ExpectedExceptionsStackedResolvedTypes"/>
 <fullyQualifiedTypeName name="org.junit.Before"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EcoreFactory"/>
 <fullyQualifiedTypeName name="org.junit.Test"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.PairwiseCohsionMatrixTest"/>
 <fullyQualifiedTypeName name="junit.framework.Assert"/>
@@ -41,11 +40,15 @@
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesion"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.ContextReferences"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.vos.HCTree"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.HCCalculator"/>
 <fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.utilities.impl.ExtractRequiredInterface"/>
+<fullyQualifiedTypeName name="org.osgi.service.packageadmin.ExportedPackage"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EcoreFactory"/>
 </qualifiedTypeNameHistroy>

@@ -13,6 +13,8 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcoreFactory;
 
+import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
+
 /**
  * Service to extract the required interface of a metamodel from the annotations @Required
  * @author David Mendez-Acuna
@@ -138,6 +140,8 @@ public class RequiredInterfaceExtractor {
 					newParameter.setUnique(_parameter.isUnique());
 					newParameter.setLowerBound(_parameter.getLowerBound());
 					newParameter.setUpperBound(_parameter.getUpperBound());
+					EClassifier eType = EcoreQueries.searchNativeTypeByName(_parameter.getEType().getName());
+					newParameter.setEType(eType);
 					newOperation.getEParameters().add(newParameter);
 				}
 				newClass.getEOperations().add(newOperation);

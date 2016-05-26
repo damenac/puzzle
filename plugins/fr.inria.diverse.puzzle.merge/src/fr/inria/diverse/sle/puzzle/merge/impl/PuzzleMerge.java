@@ -18,13 +18,13 @@ import org.eclipse.emf.ecore.EParameter;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcoreFactory;
-import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.mapping.Mapping;
 import org.eclipse.emf.mapping.MappingFactory;
 import org.eclipse.emf.mapping.MappingRoot;
 import org.eclipse.emf.mapping.ecore2ecore.Ecore2EcoreFactory;
 import org.eclipse.xtext.common.types.JvmTypeReference;
 
+import fr.inria.diverse.k3.sle.common.utils.EcoreQueries;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem;
 import fr.inria.diverse.sle.puzzle.merge.vos.ClassPair;
@@ -787,18 +787,8 @@ public class PuzzleMerge {
 							String _resolvedTypeName = _legacyOperation.getEType().getName();
 							if(_resolvedTypeName != null){
 								if(_legacyOperation.getEType() instanceof EDataType){
-									// TODO We need to improve this!!! A LOT indeed
-									if(_resolvedTypeName.equals("EJavaObject") || _resolvedTypeName.equals("Object")){
-										_newEOperation.setEType(EcorePackage.eINSTANCE.getEJavaObject()); 
-									}else if(_resolvedTypeName.equals("EBoolean") || _resolvedTypeName.equals("EBooleanObject")){
-										_newEOperation.setEType(EcorePackage.eINSTANCE.getEBoolean()); 
-									}else if(_resolvedTypeName.equals("EMap")){
-										_newEOperation.setEType(EcorePackage.eINSTANCE.getEMap()); 
-									}else if(_resolvedTypeName.equals("EString") || _resolvedTypeName.equals("String")){
-										_newEOperation.setEType(EcorePackage.eINSTANCE.getEString()); 
-									}else if(_resolvedTypeName.equals("EEList") || _resolvedTypeName.equals("EList")){
-										_newEOperation.setEType(EcorePackage.eINSTANCE.getEEList()); 
-									}
+									EClassifier eType = EcoreQueries.searchNativeTypeByName(_resolvedTypeName);
+									_legacyOperation.setEType(eType);
 								}else{
 									EClassifier _resolvedType = _newClassifiers.get(_resolvedTypeName);
 									_newEOperation.setEType(_resolvedType);
@@ -814,18 +804,8 @@ public class PuzzleMerge {
 									String _resolvedTypeName = _legacyParameter.getEType().getName();
 									if(_resolvedTypeName != null){
 										if(_legacyParameter.getEType() instanceof EDataType){
-											// TODO We need to improve this!!! A LOT indeed
-											if(_resolvedTypeName.equals("EJavaObject") || _resolvedTypeName.equals("Object")){
-												_newEParameter.setEType(EcorePackage.eINSTANCE.getEJavaObject()); 
-											}else if(_resolvedTypeName.equals("EBoolean") || _resolvedTypeName.equals("EBooleanObject")){
-												_newEParameter.setEType(EcorePackage.eINSTANCE.getEBoolean()); 
-											}else if(_resolvedTypeName.equals("EMap") || _resolvedTypeName.equals("Hashtable")){
-												_newEParameter.setEType(EcorePackage.eINSTANCE.getEMap()); 
-											}else if(_resolvedTypeName.equals("EString") || _resolvedTypeName.equals("String")){
-												_newEParameter.setEType(EcorePackage.eINSTANCE.getEString()); 
-											}else if(_resolvedTypeName.equals("EEList") || _resolvedTypeName.equals("EList")){
-												_newEParameter.setEType(EcorePackage.eINSTANCE.getEEList()); 
-											}
+											EClassifier eType = EcoreQueries.searchNativeTypeByName(_resolvedTypeName);
+											_newEParameter.setEType(eType);
 										}else{
 											EClassifier _resolvedType = _newClassifiers.get(_resolvedTypeName);
 											_newEParameter.setEType(_resolvedType);

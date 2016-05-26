@@ -1,0 +1,24 @@
+package fr.inria.diverse.k3.sle.common.vos;
+
+import org.eclipse.emf.ecore.EClassifier;
+import org.eclipse.emf.ecore.EcorePackage;
+
+public class EcoreQueries {
+
+	public static EClassifier getNativeETypeByName(String name){
+		EClassifier eType = null;
+		if(name.equals("EJavaObject") || name.equals("Object")){
+			eType = EcorePackage.eINSTANCE.getEJavaObject(); 
+		}else if(name.equals("EBoolean") || name.equals("EBooleanObject")){
+			eType = EcorePackage.eINSTANCE.getEBoolean(); 
+		}else if(name.equals("EMap") || name.equals("Hashtable")){
+			eType = EcorePackage.eINSTANCE.getEMap(); 
+		}else if(name.equals("EString") || name.equals("String")){
+			eType = EcorePackage.eINSTANCE.getEString(); 
+		}else if(name.equals("EEList") || name.equals("EList")){
+			eType = EcorePackage.eINSTANCE.getEEList(); 
+		}
+		// Complete with the other types of the list
+		return eType;
+	}
+}

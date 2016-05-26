@@ -1,0 +1,10 @@
+package fr.inria.diverse.k3.sle.common.vos;
+
+import org.eclipse.emf.ecore.EClassifier;
+
+public class EcoreQueries {
+
+	public static EClassifier getNativeETypeByName(String name){
+		return null;
+	}
+}

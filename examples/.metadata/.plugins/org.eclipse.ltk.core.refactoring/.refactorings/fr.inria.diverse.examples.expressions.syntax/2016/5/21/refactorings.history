@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Expression.ecore&apos; to &apos;models&apos;&#x0A;- Original project: &apos;fr.inria.diverse.examples.expressions.syntax&apos;&#x0A;- Destination element: &apos;models&apos;&#x0A;- Original element: &apos;Expression.ecore&apos;" description="Copy file" element1="models/Expression.ecore" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1464249807549" target="/fr.inria.diverse.puzzle.examples.expressions.syntax/models" units="0" version="1.0"/>
+</session>
