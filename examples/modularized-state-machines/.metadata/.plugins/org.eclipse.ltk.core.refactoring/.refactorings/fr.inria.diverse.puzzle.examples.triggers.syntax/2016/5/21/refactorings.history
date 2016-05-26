@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.puzzle.examples.triggers.syntax/models/fsmHarel.ecore&apos; to &apos;triggers.ecore&apos;" description="Rename resource &apos;fsmHarel.ecore&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="models/fsmHarel.ecore" name="triggers.ecore" stamp="1464280615682" updateReferences="true"/>
+</session>
