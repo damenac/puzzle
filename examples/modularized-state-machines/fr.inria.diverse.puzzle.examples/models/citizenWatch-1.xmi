@@ -32,7 +32,7 @@
               input="Alarm 1 Bip...   "/>
           <body
               xsi:type="CompleteDSLPckg:Wait"
-              miliseconds="3000"/>
+              miliseconds="1000"/>
         </statements>
       </doAction>
     </subvertex>
@@ -40,7 +40,22 @@
         xsi:type="CompleteDSLPckg:State"
         name="Alarm 2"
         incoming="//@regions.0/@transitions.2"
-        outgoing="//@regions.0/@transitions.4"/>
+        outgoing="//@regions.0/@transitions.4">
+      <entryAction>
+        <statements
+            xsi:type="CompleteDSLPckg:Loop">
+          <guard
+              xsi:type="CompleteDSLPckg:BoolLit"
+              value="true"/>
+          <body
+              xsi:type="CompleteDSLPckg:Print"
+              input="Alarm 2 Bip...   "/>
+          <body
+              xsi:type="CompleteDSLPckg:Wait"
+              miliseconds="1000"/>
+        </statements>
+      </entryAction>
+    </subvertex>
     <transitions
         name="start"
         target="//@regions.0/@subvertex.1"

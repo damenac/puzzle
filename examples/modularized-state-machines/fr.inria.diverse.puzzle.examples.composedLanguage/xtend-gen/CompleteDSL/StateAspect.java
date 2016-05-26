@@ -25,6 +25,18 @@ public class StateAspect {
     _privk3_exitState(_self_, _self,context);
   }
   
+  private static Thread executionThread(final State _self) {
+    CompleteDSL.StateAspectStateAspectProperties _self_ = CompleteDSL.StateAspectStateAspectContext.getSelf(_self);
+    Object result = null;
+    result =_privk3_executionThread(_self_, _self);
+    return (java.lang.Thread)result;
+  }
+  
+  private static void executionThread(final State _self, final Thread executionThread) {
+    CompleteDSL.StateAspectStateAspectProperties _self_ = CompleteDSL.StateAspectStateAspectContext.getSelf(_self);
+    _privk3_executionThread(_self_, _self,executionThread);
+  }
+  
   protected static void _privk3_entryState(final StateAspectStateAspectProperties _self_, final State _self, final Hashtable<String, Object> context) {
     Block _entryAction = _self.getEntryAction();
     boolean _notEquals = (!Objects.equal(_entryAction, null));
@@ -38,17 +50,72 @@ public class StateAspect {
     Block _doAction = _self.getDoAction();
     boolean _notEquals = (!Objects.equal(_doAction, null));
     if (_notEquals) {
-      Block _doAction_1 = _self.getDoAction();
-      BlockAspect.evalStatement( _doAction_1,context);
+      Runnable _runnable = new Runnable() {
+        @Override
+        public void run() {
+          synchronized (_self) {
+            Block _doAction = _self.getDoAction();
+            BlockAspect.evalStatement( _doAction,context);
+          }
+        }
+      };
+      Thread _thread = new Thread(_runnable);
+      StateAspect.executionThread(_self, _thread);
+      Thread _executionThread = StateAspect.executionThread(_self);
+      _executionThread.start();
     }
   }
   
   protected static void _privk3_exitState(final StateAspectStateAspectProperties _self_, final State _self, final Hashtable<String, Object> context) {
+    boolean _and = false;
+    Thread _executionThread = StateAspect.executionThread(_self);
+    boolean _notEquals = (!Objects.equal(_executionThread, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      Thread _executionThread_1 = StateAspect.executionThread(_self);
+      boolean _isAlive = _executionThread_1.isAlive();
+      _and = _isAlive;
+    }
+    if (_and) {
+      Thread _executionThread_2 = StateAspect.executionThread(_self);
+      _executionThread_2.stop();
+    }
     Block _exitAction = _self.getExitAction();
-    boolean _notEquals = (!Objects.equal(_exitAction, null));
-    if (_notEquals) {
+    boolean _notEquals_1 = (!Objects.equal(_exitAction, null));
+    if (_notEquals_1) {
       Block _exitAction_1 = _self.getExitAction();
       BlockAspect.evalStatement( _exitAction_1,context);
+    }
+  }
+  
+  protected static Thread _privk3_executionThread(final StateAspectStateAspectProperties _self_, final State _self) {
+    try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("getExecutionThread") &&
+    			m.getParameterTypes().length == 0) {
+    				Object ret = m.invoke(_self);
+    				if (ret != null) {
+    					return (java.lang.Thread) ret;
+    				}
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
+    }
+    return _self_.executionThread;
+  }
+  
+  protected static void _privk3_executionThread(final StateAspectStateAspectProperties _self_, final State _self, final Thread executionThread) {
+    _self_.executionThread = executionThread; try {
+    	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
+    		if (m.getName().equals("setExecutionThread")
+    				&& m.getParameterTypes().length == 1) {
+    			m.invoke(_self, executionThread);
+    		}
+    	}
+    } catch (Exception e) {
+    	// Chut !
     }
   }
 }
