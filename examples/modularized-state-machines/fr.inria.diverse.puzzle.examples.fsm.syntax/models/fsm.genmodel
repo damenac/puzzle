@@ -75,9 +75,9 @@
     <genClasses>
       <ecoreClass href="fsm.ecore#//Block"/>
       <genOperations>
-        <ecoreOperation href="fsm.ecore#//Block/eval"/>
+        <ecoreOperation href="fsm.ecore#//Block/evalStatement"/>
         <genParameters>
-          <ecoreParameter href="fsm.ecore#//Block/eval/context"/>
+          <ecoreParameter href="fsm.ecore#//Block/evalStatement/context"/>
         </genParameters>
       </genOperations>
     </genClasses>

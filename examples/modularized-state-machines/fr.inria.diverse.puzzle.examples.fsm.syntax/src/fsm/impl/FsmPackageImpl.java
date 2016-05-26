@@ -391,7 +391,7 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getBlock__Eval__Map() {
+	public EOperation getBlock__EvalStatement__Map() {
 		return blockEClass.getEOperations().get(0);
 	}
 
@@ -457,7 +457,7 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
 		blockEClass = createEClass(BLOCK);
-		createEOperation(blockEClass, BLOCK___EVAL__MAP);
+		createEOperation(blockEClass, BLOCK___EVAL_STATEMENT__MAP);
 	}
 
 	/**
@@ -533,7 +533,7 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 
 		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getBlock__Eval__Map(), null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getBlock__EvalStatement__Map(), null, "evalStatement", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -545,8 +545,45 @@ public class FsmPackageImpl extends EPackageImpl implements FsmPackage {
 		createResource(eNS_URI);
 
 		// Create annotations
+		// Provided
+		createProvidedAnnotations();
 		// Required
 		createRequiredAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>Provided</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createProvidedAnnotations() {
+		String source = "Provided";	
+		addAnnotation
+		  (stateMachineEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (regionEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (abstractStateEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (stateEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (transitionEClass, 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 	/**

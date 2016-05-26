@@ -1,7 +1,0 @@
-package family
-
-import 'family.melange'
-
-languageBinding {
-	bind( RequiredFSM, ProvidedExpressions  )
-}

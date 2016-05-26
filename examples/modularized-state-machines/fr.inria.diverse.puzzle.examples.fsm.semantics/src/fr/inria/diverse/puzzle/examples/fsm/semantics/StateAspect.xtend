@@ -12,7 +12,7 @@ class StateAspect {
 	}
 	
 	def public void evalState(Hashtable<String, Object> context) {
-		_self.doAction.eval(context)
+		_self.doAction.evalStatement(context)
 	}
 	
 	def public void exitState(Hashtable<String, Object> context){

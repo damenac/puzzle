@@ -1,5 +1,5 @@
 Bundle-SymbolicName: fr.inria.diverse.puzzle.examples.actionscripting.semantics; singleton:=true
-Export-Package: simple.imperative.aspects,fr.inria.diverse.puzzle.examples.actionscripting.semantics
+Export-Package: fr.inria.diverse.puzzle.examples.actionscripting.semantics
 Bundle-Name: fr.inria.diverse.puzzle.examples.actionscripting.semantics
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .

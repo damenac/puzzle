@@ -314,7 +314,7 @@ public interface ActionscriptingPackage extends EPackage {
 	 * @see actionscripting.impl.ActionscriptingPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 7;
+	int EXPRESSION = 6;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -344,52 +344,6 @@ public interface ActionscriptingPackage extends EPackage {
 	int EXPRESSION_OPERATION_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link actionscripting.impl.VarRefImpl <em>Var Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see actionscripting.impl.VarRefImpl
-	 * @see actionscripting.impl.ActionscriptingPackageImpl#getVarRef()
-	 * @generated
-	 */
-	int VAR_REF = 6;
-
-	/**
-	 * The feature id for the '<em><b>Var Ref</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REF__VAR_REF = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Var Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The operation id for the '<em>Eval</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REF___EVAL__MAP = EXPRESSION___EVAL__MAP;
-
-	/**
-	 * The number of operations of the '<em>Var Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REF_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link actionscripting.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,7 +351,7 @@ public interface ActionscriptingPackage extends EPackage {
 	 * @see actionscripting.impl.ActionscriptingPackageImpl#getConsoleOutput()
 	 * @generated
 	 */
-	int CONSOLE_OUTPUT = 8;
+	int CONSOLE_OUTPUT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
@@ -434,7 +388,7 @@ public interface ActionscriptingPackage extends EPackage {
 	 * @see actionscripting.impl.ActionscriptingPackageImpl#getPrintln()
 	 * @generated
 	 */
-	int PRINTLN = 9;
+	int PRINTLN = 8;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
@@ -471,7 +425,7 @@ public interface ActionscriptingPackage extends EPackage {
 	 * @see actionscripting.impl.ActionscriptingPackageImpl#getPrint()
 	 * @generated
 	 */
-	int PRINT = 10;
+	int PRINT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Input</b></em>' attribute.
@@ -508,7 +462,7 @@ public interface ActionscriptingPackage extends EPackage {
 	 * @see actionscripting.impl.ActionscriptingPackageImpl#getWait()
 	 * @generated
 	 */
-	int WAIT = 11;
+	int WAIT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Miliseconds</b></em>' attribute.
@@ -696,27 +650,6 @@ public interface ActionscriptingPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAssignation_Expression();
-
-	/**
-	 * Returns the meta object for class '{@link actionscripting.VarRef <em>Var Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Var Ref</em>'.
-	 * @see actionscripting.VarRef
-	 * @generated
-	 */
-	EClass getVarRef();
-
-	/**
-	 * Returns the meta object for the attribute '{@link actionscripting.VarRef#getVarRef <em>Var Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Var Ref</em>'.
-	 * @see actionscripting.VarRef#getVarRef()
-	 * @see #getVarRef()
-	 * @generated
-	 */
-	EAttribute getVarRef_VarRef();
 
 	/**
 	 * Returns the meta object for class '{@link actionscripting.Expression <em>Expression</em>}'.
@@ -954,24 +887,6 @@ public interface ActionscriptingPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ASSIGNATION__EXPRESSION = eINSTANCE.getAssignation_Expression();
-
-		/**
-		 * The meta object literal for the '{@link actionscripting.impl.VarRefImpl <em>Var Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see actionscripting.impl.VarRefImpl
-		 * @see actionscripting.impl.ActionscriptingPackageImpl#getVarRef()
-		 * @generated
-		 */
-		EClass VAR_REF = eINSTANCE.getVarRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Var Ref</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VAR_REF__VAR_REF = eINSTANCE.getVarRef_VarRef();
 
 		/**
 		 * The meta object literal for the '{@link actionscripting.impl.ExpressionImpl <em>Expression</em>}' class.

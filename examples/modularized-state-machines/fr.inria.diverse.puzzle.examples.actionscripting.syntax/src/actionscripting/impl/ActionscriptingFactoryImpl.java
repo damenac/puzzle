@@ -61,7 +61,6 @@ public class ActionscriptingFactoryImpl extends EFactoryImpl implements Actionsc
 			case ActionscriptingPackage.LOOP: return createLoop();
 			case ActionscriptingPackage.VAR_DECL: return createVarDecl();
 			case ActionscriptingPackage.ASSIGNATION: return createAssignation();
-			case ActionscriptingPackage.VAR_REF: return createVarRef();
 			case ActionscriptingPackage.CONSOLE_OUTPUT: return createConsoleOutput();
 			case ActionscriptingPackage.PRINTLN: return createPrintln();
 			case ActionscriptingPackage.PRINT: return createPrint();
@@ -119,16 +118,6 @@ public class ActionscriptingFactoryImpl extends EFactoryImpl implements Actionsc
 	public Assignation createAssignation() {
 		AssignationImpl assignation = new AssignationImpl();
 		return assignation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public VarRef createVarRef() {
-		VarRefImpl varRef = new VarRefImpl();
-		return varRef;
 	}
 
 	/**

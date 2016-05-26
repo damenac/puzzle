@@ -10,7 +10,7 @@ import actionscripting.Print
 class PrintAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
-	def public void eval(Hashtable<String, Object> context){
+	def public void evalStatement(Hashtable<String, Object> context){
 		print(_self.input)
 	}
 }

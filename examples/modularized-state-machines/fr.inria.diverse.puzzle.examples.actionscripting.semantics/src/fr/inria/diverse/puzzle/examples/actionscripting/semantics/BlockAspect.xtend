@@ -13,9 +13,9 @@ import static extension fr.inria.diverse.puzzle.examples.actionscripting.semanti
 class BlockAspect {
 	
 	@Main
-	def void eval(Hashtable<String, Object> context){
+	def void evalStatement(Hashtable<String, Object> context){
 		for(Statement _statement : _self.statements){
-			_statement.eval(context)
+			_statement.evalStatement(context)
 		}
 	}
 }

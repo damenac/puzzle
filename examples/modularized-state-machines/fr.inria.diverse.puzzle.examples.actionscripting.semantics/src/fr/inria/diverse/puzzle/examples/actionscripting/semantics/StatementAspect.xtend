@@ -8,5 +8,5 @@ import actionscripting.Statement
 @Aspect(className=Statement)
 abstract class StatementAspect {
 	
-	def abstract void eval(Hashtable<String, Object> context)
+	def abstract void evalStatement(Hashtable<String, Object> context)
 }

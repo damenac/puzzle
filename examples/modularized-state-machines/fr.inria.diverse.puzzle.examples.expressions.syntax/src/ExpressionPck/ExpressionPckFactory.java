@@ -67,6 +67,15 @@ public interface ExpressionPckFactory extends EFactory {
 	RelationalExpression createRelationalExpression();
 
 	/**
+	 * Returns a new object of class '<em>Var Ref</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Var Ref</em>'.
+	 * @generated
+	 */
+	VarRef createVarRef();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

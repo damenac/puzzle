@@ -87,5 +87,11 @@
         <ecoreFeature xsi:type="ecore:EReference" href="Expression.ecore#//RelationalExpression/right"/>
       </genFeatures>
     </genClasses>
+    <genClasses>
+      <ecoreClass href="Expression.ecore#//VarRef"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Expression.ecore#//VarRef/ref"/>
+      </genFeatures>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

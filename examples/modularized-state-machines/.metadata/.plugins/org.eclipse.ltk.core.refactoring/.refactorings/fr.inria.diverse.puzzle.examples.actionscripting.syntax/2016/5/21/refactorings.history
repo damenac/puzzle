@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 3 elements from project &apos;fr.inria.diverse.puzzle.examples.actionscripting.syntax&apos;&#x0A;- Original project: &apos;fr.inria.diverse.puzzle.examples.actionscripting.syntax&apos;&#x0A;- Original elements:&#x0A;     fr.inria.diverse.puzzle.examples.actionscripting.syntax/src/actionscripting&#x0A;     fr.inria.diverse.puzzle.examples.actionscripting.syntax/src/actionscripting.impl&#x0A;     fr.inria.diverse.puzzle.examples.actionscripting.syntax/src/actionscripting.util" description="Delete elements" element1="/src&lt;actionscripting.util" element2="/src&lt;actionscripting.impl" element3="/src&lt;actionscripting" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1464258915914" subPackages="false" version="1.0"/>
+</session>

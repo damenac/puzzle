@@ -1,24 +1,28 @@
 package family
 
-///**
-// * A language for state machines.
-// */
-//language FSM requires RequiredFSM {
-//	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm.ecore"
-//	
-//	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect
-//	with fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect
-//	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateAspect
-//	with fr.inria.diverse.puzzle.examples.fsm.semantics.TransitionAspect
-//	with fr.inria.diverse.puzzle.examples.fsm.semantics.TriggerAspect
-//	
-//	exactType FSMMT
-//}
-//
-//modeltype RequiredFSM {
-//	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm-required.ecore"
-//}
+/**
+ * A language for state machines.
+ */
+language FSM implements ProvidedFSM requires RequiredFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm.ecore"
+	
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.TransitionAspect
+	with fr.inria.diverse.puzzle.examples.fsm.semantics.TriggerAspect
+	
+	exactType FSMMT
+}
 
+modeltype RequiredFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm-required.ecore"
+}
+
+modeltype ProvidedFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm-provided.ecore"
+}
+ 
 /** 
  * A language for Rhapsody state machines.
  */
@@ -28,7 +32,6 @@ language ActionScripting implements ProvidedActionScripting requires RequiredAct
 	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.AssignationAspect
 	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.BlockAspect
 	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.ConditionalAspect
-	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.ExpressionAspect
 	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.LoopAspect
 	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintAspect
 	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintlnAspect
@@ -54,12 +57,13 @@ language Expressions implements ProvidedExpressions {
 	
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.expressions.syntax/models/Expression.ecore"
 	
-	with fr.inria.diverse.puzzle.examples.expressions.semantics.ExpressionAspect
-	with fr.inria.diverse.puzzle.examples.expressions.semantics.ArithmeticExpressionAspect
-	with fr.inria.diverse.puzzle.examples.expressions.semantics.IntegerLitAspect
-	with fr.inria.diverse.puzzle.examples.expressions.semantics.RelationalExpressionAspect
-	with fr.inria.diverse.puzzle.examples.expressions.semantics.StringLitAspect
-	with fr.inria.diverse.puzzle.examples.expressions.semantics.BoolLitAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.ExpressionAspect 
+	with fr.inria.diverse.puzzle.examples.expr.semantics.ArithmeticExpressionAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.IntegerLitAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.RelationalExpressionAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.StringLitAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.BoolLitAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.VarRefAspect
 	
 	exactType ExpressionsMT
 }

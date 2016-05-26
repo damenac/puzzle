@@ -67,15 +67,6 @@ public interface ActionscriptingFactory extends EFactory {
 	Assignation createAssignation();
 
 	/**
-	 * Returns a new object of class '<em>Var Ref</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Var Ref</em>'.
-	 * @generated
-	 */
-	VarRef createVarRef();
-
-	/**
 	 * Returns a new object of class '<em>Console Output</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -10,7 +10,7 @@ import actionscripting.Wait
 class WaitAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
-	def public void eval(Hashtable<String, Object> context){
+	def public void evalStatement(Hashtable<String, Object> context){
 		synchronized(_self){
 			_self.wait(_self.miliseconds)
 		}

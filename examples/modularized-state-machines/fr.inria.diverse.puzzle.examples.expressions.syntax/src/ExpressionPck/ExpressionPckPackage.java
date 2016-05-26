@@ -335,6 +335,43 @@ public interface ExpressionPckPackage extends EPackage {
 	int RELATIONAL_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link ExpressionPck.impl.VarRefImpl <em>Var Ref</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ExpressionPck.impl.VarRefImpl
+	 * @see ExpressionPck.impl.ExpressionPckPackageImpl#getVarRef()
+	 * @generated
+	 */
+	int VAR_REF = 7;
+
+	/**
+	 * The feature id for the '<em><b>Ref</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_REF__REF = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Var Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_REF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Var Ref</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VAR_REF_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link ExpressionPck.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -342,7 +379,7 @@ public interface ExpressionPckPackage extends EPackage {
 	 * @see ExpressionPck.impl.ExpressionPckPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int ARITHMETIC_OPERATOR = 7;
+	int ARITHMETIC_OPERATOR = 8;
 
 	/**
 	 * The meta object id for the '{@link ExpressionPck.RelationalOperator <em>Relational Operator</em>}' enum.
@@ -352,7 +389,7 @@ public interface ExpressionPckPackage extends EPackage {
 	 * @see ExpressionPck.impl.ExpressionPckPackageImpl#getRelationalOperator()
 	 * @generated
 	 */
-	int RELATIONAL_OPERATOR = 8;
+	int RELATIONAL_OPERATOR = 9;
 
 
 	/**
@@ -523,6 +560,27 @@ public interface ExpressionPckPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRelationalExpression_Right();
+
+	/**
+	 * Returns the meta object for class '{@link ExpressionPck.VarRef <em>Var Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Var Ref</em>'.
+	 * @see ExpressionPck.VarRef
+	 * @generated
+	 */
+	EClass getVarRef();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ExpressionPck.VarRef#getRef <em>Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Ref</em>'.
+	 * @see ExpressionPck.VarRef#getRef()
+	 * @see #getVarRef()
+	 * @generated
+	 */
+	EAttribute getVarRef_Ref();
 
 	/**
 	 * Returns the meta object for enum '{@link ExpressionPck.ArithmeticOperator <em>Arithmetic Operator</em>}'.
@@ -708,6 +766,24 @@ public interface ExpressionPckPackage extends EPackage {
 		 * @generated
 		 */
 		EReference RELATIONAL_EXPRESSION__RIGHT = eINSTANCE.getRelationalExpression_Right();
+
+		/**
+		 * The meta object literal for the '{@link ExpressionPck.impl.VarRefImpl <em>Var Ref</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ExpressionPck.impl.VarRefImpl
+		 * @see ExpressionPck.impl.ExpressionPckPackageImpl#getVarRef()
+		 * @generated
+		 */
+		EClass VAR_REF = eINSTANCE.getVarRef();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VAR_REF__REF = eINSTANCE.getVarRef_Ref();
 
 		/**
 		 * The meta object literal for the '{@link ExpressionPck.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

@@ -62,6 +62,7 @@ public class ExpressionPckFactoryImpl extends EFactoryImpl implements Expression
 			case ExpressionPckPackage.BOOL_LIT: return createBoolLit();
 			case ExpressionPckPackage.ARITHMETIC_EXPRESSION: return createArithmeticExpression();
 			case ExpressionPckPackage.RELATIONAL_EXPRESSION: return createRelationalExpression();
+			case ExpressionPckPackage.VAR_REF: return createVarRef();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -149,6 +150,16 @@ public class ExpressionPckFactoryImpl extends EFactoryImpl implements Expression
 	public RelationalExpression createRelationalExpression() {
 		RelationalExpressionImpl relationalExpression = new RelationalExpressionImpl();
 		return relationalExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public VarRef createVarRef() {
+		VarRefImpl varRef = new VarRefImpl();
+		return varRef;
 	}
 
 	/**

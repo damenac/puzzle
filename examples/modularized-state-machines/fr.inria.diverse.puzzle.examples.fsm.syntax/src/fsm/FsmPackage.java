@@ -664,13 +664,13 @@ public interface FsmPackage extends EPackage {
 	int BLOCK_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Eval</em>' operation.
+	 * The operation id for the '<em>Eval Statement</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___EVAL__MAP = 0;
+	int BLOCK___EVAL_STATEMENT__MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Block</em>' class.
@@ -936,14 +936,14 @@ public interface FsmPackage extends EPackage {
 	EClass getBlock();
 
 	/**
-	 * Returns the meta object for the '{@link fsm.Block#eval(java.util.Map) <em>Eval</em>}' operation.
+	 * Returns the meta object for the '{@link fsm.Block#evalStatement(java.util.Map) <em>Eval Statement</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Eval</em>' operation.
-	 * @see fsm.Block#eval(java.util.Map)
+	 * @return the meta object for the '<em>Eval Statement</em>' operation.
+	 * @see fsm.Block#evalStatement(java.util.Map)
 	 * @generated
 	 */
-	EOperation getBlock__Eval__Map();
+	EOperation getBlock__EvalStatement__Map();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1183,12 +1183,12 @@ public interface FsmPackage extends EPackage {
 		EClass BLOCK = eINSTANCE.getBlock();
 
 		/**
-		 * The meta object literal for the '<em><b>Eval</b></em>' operation.
+		 * The meta object literal for the '<em><b>Eval Statement</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation BLOCK___EVAL__MAP = eINSTANCE.getBlock__Eval__Map();
+		EOperation BLOCK___EVAL_STATEMENT__MAP = eINSTANCE.getBlock__EvalStatement__Map();
 
 	}
 

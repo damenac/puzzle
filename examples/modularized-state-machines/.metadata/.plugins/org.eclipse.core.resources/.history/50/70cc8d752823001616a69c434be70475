@@ -1,0 +1,4 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	ExpressionPck.RelationalExpression = fr.inria.diverse.puzzle.examples.expressions.semantics.RelationalExpressionAspect
+	ExpressionPck.ArithmeticExpression = fr.inria.diverse.puzzle.examples.expr.semantics.ArithmeticExpressionAspect
+	ExpressionPck.Expression = fr.inria.diverse.puzzle.examples.expressions.semantics.ExpressionAspect

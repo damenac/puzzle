@@ -49,7 +49,7 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void eval(Map<?, ?> context) {
+	public void evalStatement(Map<?, ?> context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -63,8 +63,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block {
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case FsmPackage.BLOCK___EVAL__MAP:
-				eval((Map<?, ?>)arguments.get(0));
+			case FsmPackage.BLOCK___EVAL_STATEMENT__MAP:
+				evalStatement((Map<?, ?>)arguments.get(0));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

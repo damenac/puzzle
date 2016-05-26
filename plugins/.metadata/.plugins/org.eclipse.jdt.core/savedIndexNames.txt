@@ -74,7 +74,6 @@ INDEX VERSION 1.127+/Users/dmendeza/workspaces/puzzle/plugins/.metadata/.plugins
 759479792.index
 3963941001.index
 3337441284.index
-2829757837.index
 2456407862.index
 140304279.index
 3138159046.index

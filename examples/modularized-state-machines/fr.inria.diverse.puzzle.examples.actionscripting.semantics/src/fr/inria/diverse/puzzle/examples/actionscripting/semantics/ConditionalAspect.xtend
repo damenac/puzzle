@@ -11,11 +11,11 @@ import actionscripting.Statement
 class ConditionalAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
-	def void eval(Hashtable<String, Object> context){
+	def void evalStatement(Hashtable<String, Object> context){
 		var Boolean conditionEval = _self.condition.eval(context) as Boolean
 		if(conditionEval){
 			for(Statement _statement : _self.body){
-				_statement.eval(context)
+				_statement.evalStatement(context)
 			}
 		}
 	}

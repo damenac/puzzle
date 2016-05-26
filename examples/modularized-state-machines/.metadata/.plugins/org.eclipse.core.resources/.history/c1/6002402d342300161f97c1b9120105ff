@@ -1,0 +1,9 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	actionscripting.Block = fr.inria.diverse.puzzle.examples.actionscripting.semantics.BlockAspect
+	actionscripting.Loop = fr.inria.diverse.puzzle.examples.actionscripting.semantics.LoopAspect
+	actionscripting.Statement = fr.inria.diverse.puzzle.examples.actionscripting.semantics.StatementAspect
+	actionscripting.Wait = fr.inria.diverse.puzzle.examples.actionscripting.semantics.WaitAspect
+	actionscripting.Print = fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintAspect
+	actionscripting.Println = fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintlnAspect
+	actionscripting.Assignation = fr.inria.diverse.puzzle.examples.actionscripting.semantics.AssignationAspect
+	actionscripting.Conditional = fr.inria.diverse.puzzle.examples.actionscripting.semantics.ConditionalAspect

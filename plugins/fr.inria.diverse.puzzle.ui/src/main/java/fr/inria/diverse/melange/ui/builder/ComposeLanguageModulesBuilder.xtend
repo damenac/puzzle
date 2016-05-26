@@ -173,6 +173,7 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 			
 			// Obtaining the provided interface if exists
 			// TODO Check the conflict between the provided interface and the exact type. 
+			// En efecto lo hay. Si no existe una interface proveida entonces se toma el exact type que debe poder encontrarse. 
 			if(leaf.language.implements.size > 0){
 				language.providedInterface = 
 					ModelUtils.loadEcoreResource((leaf.language.implements.get(0) as ModelType).ecoreUri)

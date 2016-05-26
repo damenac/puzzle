@@ -23,6 +23,6 @@ public interface Block extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void eval(Map<?, ?> context);
+	void evalStatement(Map<?, ?> context);
 
 } // Block

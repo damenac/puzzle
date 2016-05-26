@@ -9,7 +9,7 @@ import actionscripting.Assignation
 class AssignationAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
-	def public void eval(Hashtable<String, Object> context){
+	def public void evalStatement(Hashtable<String, Object> context){
 		context.put(_self.varRef.name, _self.expression.eval(context))
 	}
 }

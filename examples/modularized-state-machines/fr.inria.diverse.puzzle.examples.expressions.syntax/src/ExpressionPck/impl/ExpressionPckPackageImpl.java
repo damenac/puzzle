@@ -14,6 +14,7 @@ import ExpressionPck.RelationalExpression;
 import ExpressionPck.RelationalOperator;
 import ExpressionPck.StringLit;
 
+import ExpressionPck.VarRef;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
@@ -77,6 +78,13 @@ public class ExpressionPckPackageImpl extends EPackageImpl implements Expression
 	 * @generated
 	 */
 	private EClass relationalExpressionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass varRefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -302,6 +310,24 @@ public class ExpressionPckPackageImpl extends EPackageImpl implements Expression
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getVarRef() {
+		return varRefEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVarRef_Ref() {
+		return (EAttribute)varRefEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getArithmeticOperator() {
 		return arithmeticOperatorEEnum;
 	}
@@ -366,6 +392,9 @@ public class ExpressionPckPackageImpl extends EPackageImpl implements Expression
 		createEReference(relationalExpressionEClass, RELATIONAL_EXPRESSION__LEFT);
 		createEReference(relationalExpressionEClass, RELATIONAL_EXPRESSION__RIGHT);
 
+		varRefEClass = createEClass(VAR_REF);
+		createEAttribute(varRefEClass, VAR_REF__REF);
+
 		// Create enums
 		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
 		relationalOperatorEEnum = createEEnum(RELATIONAL_OPERATOR);
@@ -405,6 +434,7 @@ public class ExpressionPckPackageImpl extends EPackageImpl implements Expression
 		boolLitEClass.getESuperTypes().add(this.getLiteral());
 		arithmeticExpressionEClass.getESuperTypes().add(this.getExpression());
 		relationalExpressionEClass.getESuperTypes().add(this.getExpression());
+		varRefEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -430,6 +460,9 @@ public class ExpressionPckPackageImpl extends EPackageImpl implements Expression
 		initEReference(getRelationalExpression_Left(), this.getExpression(), null, "left", null, 1, 1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRelationalExpression_Right(), this.getExpression(), null, "right", null, 1, 1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(varRefEClass, VarRef.class, "VarRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVarRef_Ref(), ecorePackage.getEString(), "ref", null, 0, 1, VarRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
 		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
@@ -447,6 +480,40 @@ public class ExpressionPckPackageImpl extends EPackageImpl implements Expression
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// Provided
+		createProvidedAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>Provided</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createProvidedAnnotations() {
+		String source = "Provided";	
+		addAnnotation
+		  (expressionEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (literalEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (arithmeticExpressionEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (relationalExpressionEClass, 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 } //ExpressionPckPackageImpl

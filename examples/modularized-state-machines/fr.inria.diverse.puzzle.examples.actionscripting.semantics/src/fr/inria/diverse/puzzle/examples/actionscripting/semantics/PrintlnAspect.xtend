@@ -10,7 +10,7 @@ import actionscripting.Println
 class PrintlnAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
-	def public void eval(Hashtable<String, Object> context){
+	def public void evalStatement(Hashtable<String, Object> context){
 		println(_self.input)
 	}
 }

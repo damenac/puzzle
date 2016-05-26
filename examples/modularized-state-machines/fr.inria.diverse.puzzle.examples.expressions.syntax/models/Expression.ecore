@@ -47,4 +47,9 @@
     <eLiterals name="lessThanOrEqualTo" value="4" literal="lessThanOrEqualTo"/>
     <eLiterals name="greaterThanOrEqualTo" value="5" literal="greaterThanOrEqualTo"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VarRef" eSuperTypes="//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="ref">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
 </ecore:EPackage>

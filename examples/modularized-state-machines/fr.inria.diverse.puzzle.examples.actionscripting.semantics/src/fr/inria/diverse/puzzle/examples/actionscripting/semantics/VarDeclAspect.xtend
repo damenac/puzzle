@@ -10,7 +10,7 @@ import actionscripting.VarDecl
 class VarDeclAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
-	def void eval(Hashtable<String, Object> context){
+	def void evalStatement(Hashtable<String, Object> context){
 		context.put(_self.name, _self.expr.eval(context))
 	}
 }

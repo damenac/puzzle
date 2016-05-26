@@ -1,5 +1,5 @@
-Bundle-SymbolicName: puzzle.examples.family.fsm;singleton:=true
-Bundle-Name: puzzle.examples.family.fsm
+Bundle-SymbolicName: fr.inria.diverse.puzzle.examples;singleton:=true
+Bundle-Name: fr.inria.diverse.puzzle.examples
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private,
@@ -22,5 +22,5 @@ Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0
 Import-Package: fr.inria.diverse.puzzle.examples.actionscripting.semantics,
- fr.inria.diverse.puzzle.examples.expressions.semantics,
+ fr.inria.diverse.puzzle.examples.expr.semantics,
  fr.inria.diverse.puzzle.examples.fsm.semantics

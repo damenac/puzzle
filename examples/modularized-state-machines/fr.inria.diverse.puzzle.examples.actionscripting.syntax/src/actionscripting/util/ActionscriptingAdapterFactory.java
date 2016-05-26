@@ -92,10 +92,6 @@ public class ActionscriptingAdapterFactory extends AdapterFactoryImpl {
 				return createAssignationAdapter();
 			}
 			@Override
-			public Adapter caseVarRef(VarRef object) {
-				return createVarRefAdapter();
-			}
-			@Override
 			public Adapter caseExpression(Expression object) {
 				return createExpressionAdapter();
 			}
@@ -216,20 +212,6 @@ public class ActionscriptingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAssignationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link actionscripting.VarRef <em>Var Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see actionscripting.VarRef
-	 * @generated
-	 */
-	public Adapter createVarRefAdapter() {
 		return null;
 	}
 

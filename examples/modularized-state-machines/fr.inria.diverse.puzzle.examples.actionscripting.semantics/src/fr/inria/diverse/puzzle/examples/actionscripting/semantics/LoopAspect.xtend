@@ -11,11 +11,11 @@ import actionscripting.Statement
 class LoopAspect extends StatementAspect {
 	
 	@OverrideAspectMethod
-	def void eval(Hashtable<String, Object> context){
+	def void evalStatement(Hashtable<String, Object> context){
 		var Boolean guardEval = _self.guard.eval(context) as Boolean
 		while(guardEval){
 			for(Statement _statement : _self.body){
-				_statement.eval(context)
+				_statement.evalStatement(context)
 			}
 		}
 	}

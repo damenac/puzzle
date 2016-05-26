@@ -14,7 +14,6 @@ import actionscripting.Print;
 import actionscripting.Println;
 import actionscripting.Statement;
 import actionscripting.VarDecl;
-import actionscripting.VarRef;
 import actionscripting.Wait;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -74,13 +73,6 @@ public class ActionscriptingPackageImpl extends EPackageImpl implements Actionsc
 	 * @generated
 	 */
 	private EClass assignationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass varRefEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -318,24 +310,6 @@ public class ActionscriptingPackageImpl extends EPackageImpl implements Actionsc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getVarRef() {
-		return varRefEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVarRef_VarRef() {
-		return (EAttribute)varRefEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getExpression() {
 		return expressionEClass;
 	}
@@ -452,9 +426,6 @@ public class ActionscriptingPackageImpl extends EPackageImpl implements Actionsc
 		createEReference(assignationEClass, ASSIGNATION__VAR_REF);
 		createEReference(assignationEClass, ASSIGNATION__EXPRESSION);
 
-		varRefEClass = createEClass(VAR_REF);
-		createEAttribute(varRefEClass, VAR_REF__VAR_REF);
-
 		expressionEClass = createEClass(EXPRESSION);
 		createEOperation(expressionEClass, EXPRESSION___EVAL__MAP);
 
@@ -501,7 +472,6 @@ public class ActionscriptingPackageImpl extends EPackageImpl implements Actionsc
 		loopEClass.getESuperTypes().add(this.getStatement());
 		varDeclEClass.getESuperTypes().add(this.getStatement());
 		assignationEClass.getESuperTypes().add(this.getStatement());
-		varRefEClass.getESuperTypes().add(this.getExpression());
 		consoleOutputEClass.getESuperTypes().add(this.getStatement());
 		printlnEClass.getESuperTypes().add(this.getConsoleOutput());
 		printEClass.getESuperTypes().add(this.getConsoleOutput());
@@ -529,9 +499,6 @@ public class ActionscriptingPackageImpl extends EPackageImpl implements Actionsc
 		initEReference(getAssignation_VarRef(), this.getVarDecl(), null, "varRef", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAssignation_Expression(), this.getExpression(), null, "expression", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(varRefEClass, VarRef.class, "VarRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVarRef_VarRef(), ecorePackage.getEString(), "varRef", null, 1, 1, VarRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		EOperation op = initEOperation(getExpression__Eval__Map(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -556,8 +523,25 @@ public class ActionscriptingPackageImpl extends EPackageImpl implements Actionsc
 		createResource(eNS_URI);
 
 		// Create annotations
+		// Provided
+		createProvidedAnnotations();
 		// Required
 		createRequiredAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>Provided</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createProvidedAnnotations() {
+		String source = "Provided";	
+		addAnnotation
+		  (blockEClass, 
+		   source, 
+		   new String[] {
+		   });
 	}
 
 	/**
