@@ -180,6 +180,18 @@ public class CompleteDSLPckgAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
+			public Adapter caseNotTrigger(NotTrigger object) {
+				return createNotTriggerAdapter();
+			}
+			@Override
+			public Adapter caseAndTrigger(AndTrigger object) {
+				return createAndTriggerAdapter();
+			}
+			@Override
+			public Adapter caseOrTrigger(OrTrigger object) {
+				return createOrTriggerAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -588,6 +600,48 @@ public class CompleteDSLPckgAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.NotTrigger <em>Not Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CompleteDSLPckg.NotTrigger
+	 * @generated
+	 */
+	public Adapter createNotTriggerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.AndTrigger <em>And Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CompleteDSLPckg.AndTrigger
+	 * @generated
+	 */
+	public Adapter createAndTriggerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.OrTrigger <em>Or Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CompleteDSLPckg.OrTrigger
+	 * @generated
+	 */
+	public Adapter createOrTriggerAdapter() {
 		return null;
 	}
 

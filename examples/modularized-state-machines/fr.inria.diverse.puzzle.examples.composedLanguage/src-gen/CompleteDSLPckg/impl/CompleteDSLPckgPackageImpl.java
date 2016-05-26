@@ -3,6 +3,7 @@
 package CompleteDSLPckg.impl;
 
 import CompleteDSLPckg.AbstractState;
+import CompleteDSLPckg.AndTrigger;
 import CompleteDSLPckg.ArithmeticExpression;
 import CompleteDSLPckg.ArithmeticOperator;
 import CompleteDSLPckg.Assignation;
@@ -19,6 +20,8 @@ import CompleteDSLPckg.IntegerLit;
 import CompleteDSLPckg.Literal;
 import CompleteDSLPckg.Loop;
 import CompleteDSLPckg.NamedElement;
+import CompleteDSLPckg.NotTrigger;
+import CompleteDSLPckg.OrTrigger;
 import CompleteDSLPckg.Print;
 import CompleteDSLPckg.Println;
 import CompleteDSLPckg.Pseudostate;
@@ -245,6 +248,27 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 	 * @generated
 	 */
 	private EClass namedElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass notTriggerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass andTriggerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass orTriggerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -902,6 +926,78 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNotTrigger() {
+		return notTriggerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNotTrigger_Trigger() {
+		return (EReference)notTriggerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getAndTrigger() {
+		return andTriggerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAndTrigger_Left() {
+		return (EReference)andTriggerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAndTrigger_Right() {
+		return (EReference)andTriggerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOrTrigger() {
+		return orTriggerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrTrigger_Left() {
+		return (EReference)orTriggerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOrTrigger_Right() {
+		return (EReference)orTriggerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getArithmeticOperator() {
 		return arithmeticOperatorEEnum;
 	}
@@ -1035,6 +1131,17 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
+		notTriggerEClass = createEClass(NOT_TRIGGER);
+		createEReference(notTriggerEClass, NOT_TRIGGER__TRIGGER);
+
+		andTriggerEClass = createEClass(AND_TRIGGER);
+		createEReference(andTriggerEClass, AND_TRIGGER__LEFT);
+		createEReference(andTriggerEClass, AND_TRIGGER__RIGHT);
+
+		orTriggerEClass = createEClass(OR_TRIGGER);
+		createEReference(orTriggerEClass, OR_TRIGGER__LEFT);
+		createEReference(orTriggerEClass, OR_TRIGGER__RIGHT);
+
 		// Create enums
 		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
 		relationalOperatorEEnum = createEEnum(RELATIONAL_OPERATOR);
@@ -1091,6 +1198,9 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		pseudostateEClass.getESuperTypes().add(this.getAbstractState());
 		initialStateEClass.getESuperTypes().add(this.getPseudostate());
 		finalStateEClass.getESuperTypes().add(this.getState());
+		notTriggerEClass.getESuperTypes().add(this.getTrigger());
+		andTriggerEClass.getESuperTypes().add(this.getTrigger());
+		orTriggerEClass.getESuperTypes().add(this.getTrigger());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1185,6 +1295,17 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(notTriggerEClass, NotTrigger.class, "NotTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getNotTrigger_Trigger(), this.getTrigger(), null, "trigger", null, 1, 1, NotTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(andTriggerEClass, AndTrigger.class, "AndTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAndTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAndTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(orTriggerEClass, OrTrigger.class, "OrTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOrTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, OrTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, OrTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
 		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
@@ -1263,6 +1384,11 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		   });	
 		addAnnotation
 		  (transitionEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (triggerEClass, 
 		   source, 
 		   new String[] {
 		   });

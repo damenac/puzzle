@@ -229,6 +229,33 @@ public interface CompleteDSLPckgFactory extends EFactory {
 	NamedElement createNamedElement();
 
 	/**
+	 * Returns a new object of class '<em>Not Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Not Trigger</em>'.
+	 * @generated
+	 */
+	NotTrigger createNotTrigger();
+
+	/**
+	 * Returns a new object of class '<em>And Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>And Trigger</em>'.
+	 * @generated
+	 */
+	AndTrigger createAndTrigger();
+
+	/**
+	 * Returns a new object of class '<em>Or Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Or Trigger</em>'.
+	 * @generated
+	 */
+	OrTrigger createOrTrigger();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

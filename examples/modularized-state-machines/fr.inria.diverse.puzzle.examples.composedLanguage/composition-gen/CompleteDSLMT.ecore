@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="fsmProvactionscriptingProvExpressionPckProv" nsURI="http://puzzle.examples.fsmProv/actionscriptingProv/ExpressionPckProv" nsPrefix="fsmProvfsmProv">
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="triggersReqfsmProvactionscriptingProvExpressionPckProv" nsURI="http://triggersReq/puzzle.examples.fsmProv/actionscriptingProv/ExpressionPckProv" nsPrefix="triggersReqtriggersReqtriggersReqtriggersReq">
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
     <eAnnotations source="Provided"/>
     <eOperations name="eval">
@@ -39,5 +39,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition">
     <eAnnotations source="Provided"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger">
+    <eAnnotations source="Provided"/>
+    <eOperations name="evalTrigger">
+      <eParameters name="events">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
+      </eParameters>
+    </eOperations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

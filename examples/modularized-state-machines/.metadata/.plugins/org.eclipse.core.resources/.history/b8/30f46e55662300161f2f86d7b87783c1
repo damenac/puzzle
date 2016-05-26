@@ -1,0 +1,9 @@
+package family
+
+import 'family.melange'
+
+languageBinding {
+	bind(RequiredFSM, ProvidedActionScripting)
+	bind(RequiredActionScripting, ProvidedExpressions)
+	bind(RequiredActionScripting, ProvidedExpressions)
+}

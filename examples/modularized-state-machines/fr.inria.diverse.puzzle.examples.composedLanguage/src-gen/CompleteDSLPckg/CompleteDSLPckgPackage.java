@@ -1391,6 +1391,162 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	int FINAL_STATE_OPERATION_COUNT = STATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link CompleteDSLPckg.impl.NotTriggerImpl <em>Not Trigger</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CompleteDSLPckg.impl.NotTriggerImpl
+	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getNotTrigger()
+	 * @generated
+	 */
+	int NOT_TRIGGER = 28;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TRIGGER__EXPRESSION = TRIGGER__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Trigger</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TRIGGER__TRIGGER = TRIGGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Not Trigger</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TRIGGER_FEATURE_COUNT = TRIGGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Not Trigger</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOT_TRIGGER_OPERATION_COUNT = TRIGGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link CompleteDSLPckg.impl.AndTriggerImpl <em>And Trigger</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CompleteDSLPckg.impl.AndTriggerImpl
+	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getAndTrigger()
+	 * @generated
+	 */
+	int AND_TRIGGER = 29;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TRIGGER__EXPRESSION = TRIGGER__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TRIGGER__LEFT = TRIGGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TRIGGER__RIGHT = TRIGGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>And Trigger</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TRIGGER_FEATURE_COUNT = TRIGGER_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>And Trigger</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AND_TRIGGER_OPERATION_COUNT = TRIGGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link CompleteDSLPckg.impl.OrTriggerImpl <em>Or Trigger</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CompleteDSLPckg.impl.OrTriggerImpl
+	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getOrTrigger()
+	 * @generated
+	 */
+	int OR_TRIGGER = 30;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TRIGGER__EXPRESSION = TRIGGER__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TRIGGER__LEFT = TRIGGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TRIGGER__RIGHT = TRIGGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Or Trigger</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TRIGGER_FEATURE_COUNT = TRIGGER_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Or Trigger</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OR_TRIGGER_OPERATION_COUNT = TRIGGER_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link CompleteDSLPckg.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1398,7 +1554,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int ARITHMETIC_OPERATOR = 28;
+	int ARITHMETIC_OPERATOR = 31;
 
 	/**
 	 * The meta object id for the '{@link CompleteDSLPckg.RelationalOperator <em>Relational Operator</em>}' enum.
@@ -1408,7 +1564,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getRelationalOperator()
 	 * @generated
 	 */
-	int RELATIONAL_OPERATOR = 29;
+	int RELATIONAL_OPERATOR = 32;
 
 
 	/**
@@ -2088,6 +2244,91 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
+	 * Returns the meta object for class '{@link CompleteDSLPckg.NotTrigger <em>Not Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Not Trigger</em>'.
+	 * @see CompleteDSLPckg.NotTrigger
+	 * @generated
+	 */
+	EClass getNotTrigger();
+
+	/**
+	 * Returns the meta object for the reference '{@link CompleteDSLPckg.NotTrigger#getTrigger <em>Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Trigger</em>'.
+	 * @see CompleteDSLPckg.NotTrigger#getTrigger()
+	 * @see #getNotTrigger()
+	 * @generated
+	 */
+	EReference getNotTrigger_Trigger();
+
+	/**
+	 * Returns the meta object for class '{@link CompleteDSLPckg.AndTrigger <em>And Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>And Trigger</em>'.
+	 * @see CompleteDSLPckg.AndTrigger
+	 * @generated
+	 */
+	EClass getAndTrigger();
+
+	/**
+	 * Returns the meta object for the reference '{@link CompleteDSLPckg.AndTrigger#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Left</em>'.
+	 * @see CompleteDSLPckg.AndTrigger#getLeft()
+	 * @see #getAndTrigger()
+	 * @generated
+	 */
+	EReference getAndTrigger_Left();
+
+	/**
+	 * Returns the meta object for the reference '{@link CompleteDSLPckg.AndTrigger#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Right</em>'.
+	 * @see CompleteDSLPckg.AndTrigger#getRight()
+	 * @see #getAndTrigger()
+	 * @generated
+	 */
+	EReference getAndTrigger_Right();
+
+	/**
+	 * Returns the meta object for class '{@link CompleteDSLPckg.OrTrigger <em>Or Trigger</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Or Trigger</em>'.
+	 * @see CompleteDSLPckg.OrTrigger
+	 * @generated
+	 */
+	EClass getOrTrigger();
+
+	/**
+	 * Returns the meta object for the reference '{@link CompleteDSLPckg.OrTrigger#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Left</em>'.
+	 * @see CompleteDSLPckg.OrTrigger#getLeft()
+	 * @see #getOrTrigger()
+	 * @generated
+	 */
+	EReference getOrTrigger_Left();
+
+	/**
+	 * Returns the meta object for the reference '{@link CompleteDSLPckg.OrTrigger#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Right</em>'.
+	 * @see CompleteDSLPckg.OrTrigger#getRight()
+	 * @see #getOrTrigger()
+	 * @generated
+	 */
+	EReference getOrTrigger_Right();
+
+	/**
 	 * Returns the meta object for enum '{@link CompleteDSLPckg.ArithmeticOperator <em>Arithmetic Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2697,6 +2938,76 @@ public interface CompleteDSLPckgPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
+
+		/**
+		 * The meta object literal for the '{@link CompleteDSLPckg.impl.NotTriggerImpl <em>Not Trigger</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see CompleteDSLPckg.impl.NotTriggerImpl
+		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getNotTrigger()
+		 * @generated
+		 */
+		EClass NOT_TRIGGER = eINSTANCE.getNotTrigger();
+
+		/**
+		 * The meta object literal for the '<em><b>Trigger</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NOT_TRIGGER__TRIGGER = eINSTANCE.getNotTrigger_Trigger();
+
+		/**
+		 * The meta object literal for the '{@link CompleteDSLPckg.impl.AndTriggerImpl <em>And Trigger</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see CompleteDSLPckg.impl.AndTriggerImpl
+		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getAndTrigger()
+		 * @generated
+		 */
+		EClass AND_TRIGGER = eINSTANCE.getAndTrigger();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AND_TRIGGER__LEFT = eINSTANCE.getAndTrigger_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AND_TRIGGER__RIGHT = eINSTANCE.getAndTrigger_Right();
+
+		/**
+		 * The meta object literal for the '{@link CompleteDSLPckg.impl.OrTriggerImpl <em>Or Trigger</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see CompleteDSLPckg.impl.OrTriggerImpl
+		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getOrTrigger()
+		 * @generated
+		 */
+		EClass OR_TRIGGER = eINSTANCE.getOrTrigger();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OR_TRIGGER__LEFT = eINSTANCE.getOrTrigger_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OR_TRIGGER__RIGHT = eINSTANCE.getOrTrigger_Right();
 
 		/**
 		 * The meta object literal for the '{@link CompleteDSLPckg.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.

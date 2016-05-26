@@ -268,6 +268,27 @@ public class CompleteDSLPckgSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CompleteDSLPckgPackage.NOT_TRIGGER: {
+				NotTrigger notTrigger = (NotTrigger)theEObject;
+				T result = caseNotTrigger(notTrigger);
+				if (result == null) result = caseTrigger(notTrigger);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompleteDSLPckgPackage.AND_TRIGGER: {
+				AndTrigger andTrigger = (AndTrigger)theEObject;
+				T result = caseAndTrigger(andTrigger);
+				if (result == null) result = caseTrigger(andTrigger);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CompleteDSLPckgPackage.OR_TRIGGER: {
+				OrTrigger orTrigger = (OrTrigger)theEObject;
+				T result = caseOrTrigger(orTrigger);
+				if (result == null) result = caseTrigger(orTrigger);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -689,6 +710,51 @@ public class CompleteDSLPckgSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNamedElement(NamedElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Not Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Not Trigger</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNotTrigger(NotTrigger object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>And Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>And Trigger</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAndTrigger(AndTrigger object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Or Trigger</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Or Trigger</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOrTrigger(OrTrigger object) {
 		return null;
 	}
 

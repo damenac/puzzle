@@ -74,3 +74,13 @@ language Expressions implements ProvidedExpressions {
 modeltype ProvidedExpressions {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.expressions.syntax/models/Expression-provided.ecore"
 }
+
+language ComplexTriggers requires RequiredComplexTriggers {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers.ecore"
+	with fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspect.*
+	exactType ComplexTriggersMT
+}
+
+modeltype RequiredComplexTriggers {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers-required.ecore"
+}

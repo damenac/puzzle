@@ -80,6 +80,9 @@ public class CompleteDSLPckgFactoryImpl extends EFactoryImpl implements Complete
 			case CompleteDSLPckgPackage.INITIAL_STATE: return createInitialState();
 			case CompleteDSLPckgPackage.FINAL_STATE: return createFinalState();
 			case CompleteDSLPckgPackage.NAMED_ELEMENT: return createNamedElement();
+			case CompleteDSLPckgPackage.NOT_TRIGGER: return createNotTrigger();
+			case CompleteDSLPckgPackage.AND_TRIGGER: return createAndTrigger();
+			case CompleteDSLPckgPackage.OR_TRIGGER: return createOrTrigger();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -347,6 +350,36 @@ public class CompleteDSLPckgFactoryImpl extends EFactoryImpl implements Complete
 	public NamedElement createNamedElement() {
 		NamedElementImpl namedElement = new NamedElementImpl();
 		return namedElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotTrigger createNotTrigger() {
+		NotTriggerImpl notTrigger = new NotTriggerImpl();
+		return notTrigger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AndTrigger createAndTrigger() {
+		AndTriggerImpl andTrigger = new AndTriggerImpl();
+		return andTrigger;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OrTrigger createOrTrigger() {
+		OrTriggerImpl orTrigger = new OrTriggerImpl();
+		return orTrigger;
 	}
 
 	/**
