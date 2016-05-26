@@ -96,8 +96,10 @@ public class ProvidedInterfaceExtractor {
 		for (EAttribute eAttribute : oldClass.getEAttributes()) {
 			EAttribute newAttribute = ecoreFactory.createEAttribute();
 			newAttribute.setName(eAttribute.getName());
-			if(!(eAttribute.getEType() instanceof EEnum)) newAttribute.setEType(eAttribute.getEType());
-			newClass.getEStructuralFeatures().add(newAttribute);
+			if(!(eAttribute.getEType() instanceof EEnum)){
+				newAttribute.setEType(eAttribute.getEType());
+				newClass.getEStructuralFeatures().add(newAttribute);
+			} 
 			
 			for(EAnnotation annotation : eAttribute.getEAnnotations()){
 				EAnnotation newEAnnotation = ecoreFactory.createEAnnotation();

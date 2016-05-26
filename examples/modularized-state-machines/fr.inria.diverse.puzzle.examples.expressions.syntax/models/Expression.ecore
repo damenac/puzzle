@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ExpressionPck" nsURI="ExpressionPck" nsPrefix="ExpressionPck">
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Literal" abstract="true" eSuperTypes="//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
+    <eAnnotations source="Provided"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Literal" abstract="true" eSuperTypes="//Expression">
+    <eAnnotations source="Provided"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerLit" eSuperTypes="//Literal">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -18,6 +22,7 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression" eSuperTypes="//Expression">
+    <eAnnotations source="Provided"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="//ArithmeticOperator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="//Expression" containment="true"/>
@@ -29,6 +34,7 @@
     <eLiterals name="div" value="3" literal="div"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RelationalExpression" eSuperTypes="//Expression">
+    <eAnnotations source="Provided"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="//RelationalOperator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="//Expression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="//Expression" containment="true"/>
