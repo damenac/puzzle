@@ -1,9 +1,21 @@
 package CompleteDSL;
 
+import CompleteDSLPckg.ArithmeticExpression;
+import CompleteDSLPckg.BoolLit;
 import CompleteDSLPckg.Expression;
+import CompleteDSLPckg.IntegerLit;
+import CompleteDSLPckg.RelationalExpression;
+import CompleteDSLPckg.StringLit;
+import CompleteDSLPckg.VarRef;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
+import CompleteDSL.ArithmeticExpressionAspect;
+import CompleteDSL.BoolLitAspect;
 import CompleteDSL.ExpressionAspectExpressionAspectProperties;
+import CompleteDSL.IntegerLitAspect;
+import CompleteDSL.RelationalExpressionAspect;
+import CompleteDSL.StringLitAspect;
+import CompleteDSL.VarRefAspect;
 import java.util.Hashtable;
 
 @Aspect(className = Expression.class)
@@ -18,6 +30,30 @@ public class ExpressionAspect {
   }
   
   protected static Object _privk3_eval(final ExpressionAspectExpressionAspectProperties _self_, final Expression _self, final Hashtable<String, Object> context) {
-    return Integer.valueOf(0);
+    if ((_self instanceof IntegerLit)) {
+      return IntegerLitAspect.eval(((IntegerLit) _self), context);
+    } else {
+      if ((_self instanceof StringLit)) {
+        return StringLitAspect.eval(((StringLit) _self), context);
+      } else {
+        if ((_self instanceof BoolLit)) {
+          return BoolLitAspect.eval(((BoolLit) _self), context);
+        } else {
+          if ((_self instanceof ArithmeticExpression)) {
+            return ArithmeticExpressionAspect.eval(((ArithmeticExpression) _self), context);
+          } else {
+            if ((_self instanceof RelationalExpression)) {
+              return RelationalExpressionAspect.eval(((RelationalExpression) _self), context);
+            } else {
+              if ((_self instanceof VarRef)) {
+                return VarRefAspect.eval(((VarRef) _self), context);
+              } else {
+                return null;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

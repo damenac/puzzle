@@ -1,0 +1,23 @@
+package fr.inria.diverse.puzzle.examples.expr.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.Main
+
+import ExpressionPck.Expression
+import ExpressionPck.IntegerLit
+
+import static extension fr.inria.diverse.puzzle.examples.expr.semantics.IntegerLitAspect.*
+
+import java.util.Hashtable
+
+@Aspect(className=Expression)
+public class ExpressionAspect {
+	
+	@Main
+	def Object eval (Hashtable<String, Object> context) {
+		if(_self instanceof IntegerLit){
+			(_self as IntegerLit).eval(context)
+		}
+		return null
+	}
+}
