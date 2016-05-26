@@ -30,8 +30,11 @@ class StateAspect {
 	}
 	
 	def public void exitState(Hashtable<String, Object> context){
-		if(_self.executionThread != null && _self.executionThread.isAlive)
+		if(_self.executionThread != null && _self.executionThread.isAlive){
 			_self.executionThread.stop
+			_self.executionThread = null
+		}
+			
 			
 		if(_self.exitAction != null)
 			_self.exitAction.evalStatement(context)

@@ -41,7 +41,7 @@
         name="Alarm 2"
         incoming="//@regions.0/@transitions.2"
         outgoing="//@regions.0/@transitions.4">
-      <entryAction>
+      <doAction>
         <statements
             xsi:type="CompleteDSLPckg:Loop">
           <guard
@@ -54,7 +54,7 @@
               xsi:type="CompleteDSLPckg:Wait"
               miliseconds="1000"/>
         </statements>
-      </entryAction>
+      </doAction>
     </subvertex>
     <transitions
         name="start"

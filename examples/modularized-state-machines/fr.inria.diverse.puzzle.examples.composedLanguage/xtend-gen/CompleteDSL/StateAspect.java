@@ -80,6 +80,7 @@ public class StateAspect {
     if (_and) {
       Thread _executionThread_2 = StateAspect.executionThread(_self);
       _executionThread_2.stop();
+      StateAspect.executionThread(_self, null);
     }
     Block _exitAction = _self.getExitAction();
     boolean _notEquals_1 = (!Objects.equal(_exitAction, null));
