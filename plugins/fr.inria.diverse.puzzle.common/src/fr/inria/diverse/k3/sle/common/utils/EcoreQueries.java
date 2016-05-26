@@ -417,6 +417,8 @@ public class EcoreQueries {
 			return EcorePackage.eINSTANCE.getEObject();
 		else if(typeName.equals("EJavaObject") || typeName.equalsIgnoreCase("Object"))
 			return EcorePackage.eINSTANCE.getEJavaObject();
+		else if(typeName.equals("EEList") || typeName.equalsIgnoreCase("EList") || typeName.equalsIgnoreCase("List"))
+			return EcorePackage.eINSTANCE.getEEList();
 					
 		return null;
 	}

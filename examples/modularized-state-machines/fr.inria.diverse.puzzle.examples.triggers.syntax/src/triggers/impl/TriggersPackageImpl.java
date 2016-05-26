@@ -127,7 +127,7 @@ public class TriggersPackageImpl extends EPackageImpl implements TriggersPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getTrigger__EvalTrigger__Map() {
+	public EOperation getTrigger__EvalTrigger__EList() {
 		return triggerEClass.getEOperations().get(0);
 	}
 
@@ -232,7 +232,7 @@ public class TriggersPackageImpl extends EPackageImpl implements TriggersPackage
 
 		// Create classes and their features
 		triggerEClass = createEClass(TRIGGER);
-		createEOperation(triggerEClass, TRIGGER___EVAL_TRIGGER__MAP);
+		createEOperation(triggerEClass, TRIGGER___EVAL_TRIGGER__ELIST);
 
 		notTriggerEClass = createEClass(NOT_TRIGGER);
 		createEReference(notTriggerEClass, NOT_TRIGGER__TRIGGER);
@@ -281,13 +281,11 @@ public class TriggersPackageImpl extends EPackageImpl implements TriggersPackage
 		// Initialize classes, features, and operations; add parameters
 		initEClass(triggerEClass, Trigger.class, "Trigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getTrigger__EvalTrigger__Map(), null, "evalTrigger", 0, 1, IS_UNIQUE, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
+		EOperation op = initEOperation(getTrigger__EvalTrigger__EList(), ecorePackage.getEBoolean(), "evalTrigger", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEEList());
 		EGenericType g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType();
-		g1.getETypeArguments().add(g2);
-		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, g1, "event", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(notTriggerEClass, NotTrigger.class, "NotTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getNotTrigger_Trigger(), this.getTrigger(), null, "trigger", null, 1, 1, NotTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -2,7 +2,7 @@
  */
 package triggers;
 
-import java.util.Map;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -20,9 +20,9 @@ public interface Trigger extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model eventMany="false"
 	 * @generated
 	 */
-	void evalTrigger(Map<?, ?> context);
+	boolean evalTrigger(EList<?> event);
 
 } // Trigger

@@ -3,11 +3,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Trigger">
     <eAnnotations source="Required"/>
     <eOperations name="evalTrigger">
-      <eParameters name="context">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      <eParameters name="event">
         <eGenericType>
           <eTypeArguments/>
-          <eTypeArguments/>
-          <eClassifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+          <eClassifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
         </eGenericType>
       </eParameters>
     </eOperations>

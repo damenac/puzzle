@@ -131,6 +131,8 @@ public class RequiredInterfaceExtractor {
 		for (EOperation operation : oldClass.getEOperations()) {
 				EOperation newOperation = ecoreFactory.createEOperation();
 				newOperation.setName(operation.getName());
+				EClassifier operationType = EcoreQueries.searchNativeTypeByName(operation.getEType().getName());
+				newOperation.setEType(operationType);
 				
 				// Clone the parameters of the operation... 
 				for(EParameter _parameter : operation.getEParameters()){

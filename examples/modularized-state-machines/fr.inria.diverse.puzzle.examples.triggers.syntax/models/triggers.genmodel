@@ -8,7 +8,7 @@
       <genOperations>
         <ecoreOperation href="triggers.ecore#//Trigger/evalTrigger"/>
         <genParameters>
-          <ecoreParameter href="triggers.ecore#//Trigger/evalTrigger/context"/>
+          <ecoreParameter href="triggers.ecore#//Trigger/evalTrigger/event"/>
         </genParameters>
       </genOperations>
     </genClasses>

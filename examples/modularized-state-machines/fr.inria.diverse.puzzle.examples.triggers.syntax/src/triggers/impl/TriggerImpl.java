@@ -4,8 +4,6 @@ package triggers.impl;
 
 import java.lang.reflect.InvocationTargetException;
 
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -49,7 +47,7 @@ public class TriggerImpl extends MinimalEObjectImpl.Container implements Trigger
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void evalTrigger(Map<?, ?> context) {
+	public boolean evalTrigger(EList<?> event) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -63,9 +61,8 @@ public class TriggerImpl extends MinimalEObjectImpl.Container implements Trigger
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case TriggersPackage.TRIGGER___EVAL_TRIGGER__MAP:
-				evalTrigger((Map<?, ?>)arguments.get(0));
-				return null;
+			case TriggersPackage.TRIGGER___EVAL_TRIGGER__ELIST:
+				return evalTrigger((EList<?>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

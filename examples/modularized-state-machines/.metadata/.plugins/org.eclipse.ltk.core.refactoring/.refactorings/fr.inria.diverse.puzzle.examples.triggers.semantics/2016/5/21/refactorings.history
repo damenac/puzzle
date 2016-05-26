@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.puzzle.examples.triggers.semantics/src/fr/inria/diverse/puzzle/examples/triggers/semantics/Trigger.xtend&apos; to &apos;AndTriggerAspect.xtend&apos;" description="Rename resource &apos;Trigger.xtend&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/fr/inria/diverse/puzzle/examples/triggers/semantics/Trigger.xtend" name="AndTriggerAspect.xtend" stamp="1464281594568" updateReferences="true"/>
+</session>
