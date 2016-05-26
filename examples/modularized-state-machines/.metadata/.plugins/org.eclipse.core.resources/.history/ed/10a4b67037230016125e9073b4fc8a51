@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<CompleteDSLPckg:StateMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:CompleteDSLPckg="http://CompleteDSLPckg"
+    xsi:schemaLocation="http://CompleteDSLPckg ../../fr.inria.diverse.puzzle.examples.composedLanguage/composition-gen/CompleteDSL.ecore"
+    name="CitizenWatch"/>

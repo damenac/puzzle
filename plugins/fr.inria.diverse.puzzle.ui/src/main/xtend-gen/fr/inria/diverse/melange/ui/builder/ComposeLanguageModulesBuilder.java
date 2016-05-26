@@ -106,7 +106,7 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("src-gen", "xtend-gen")), 
         Collections.<IProject>unmodifiableList(CollectionLiterals.<IProject>newArrayList()), 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("fr.inria.diverse.k3.al.annotationprocessor.plugin")), 
-        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("CompleteDSL")), 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), _nullProgressMonitor);
       this.targetProject = _createEclipseProject;
       String answer = "Puzzle diagnostic: \n\n";

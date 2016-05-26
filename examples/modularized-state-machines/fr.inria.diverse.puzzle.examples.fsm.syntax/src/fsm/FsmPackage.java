@@ -315,13 +315,31 @@ public interface FsmPackage extends EPackage {
 	int STATE__OWNER_REGION = ABSTRACT_STATE__OWNER_REGION;
 
 	/**
+	 * The feature id for the '<em><b>Entry Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__ENTRY_ACTION = ABSTRACT_STATE_FEATURE_COUNT + 0;
+
+	/**
 	 * The feature id for the '<em><b>Do Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE__DO_ACTION = ABSTRACT_STATE_FEATURE_COUNT + 0;
+	int STATE__DO_ACTION = ABSTRACT_STATE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Exit Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE__EXIT_ACTION = ABSTRACT_STATE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>State</em>' class.
@@ -330,7 +348,7 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = ABSTRACT_STATE_FEATURE_COUNT + 1;
+	int STATE_FEATURE_COUNT = ABSTRACT_STATE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>State</em>' class.
@@ -617,6 +635,15 @@ public interface FsmPackage extends EPackage {
 	int FINAL_STATE__OWNER_REGION = STATE__OWNER_REGION;
 
 	/**
+	 * The feature id for the '<em><b>Entry Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__ENTRY_ACTION = STATE__ENTRY_ACTION;
+
+	/**
 	 * The feature id for the '<em><b>Do Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -624,6 +651,15 @@ public interface FsmPackage extends EPackage {
 	 * @ordered
 	 */
 	int FINAL_STATE__DO_ACTION = STATE__DO_ACTION;
+
+	/**
+	 * The feature id for the '<em><b>Exit Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FINAL_STATE__EXIT_ACTION = STATE__EXIT_ACTION;
 
 	/**
 	 * The number of structural features of the '<em>Final State</em>' class.
@@ -800,6 +836,17 @@ public interface FsmPackage extends EPackage {
 	EClass getState();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link fsm.State#getEntryAction <em>Entry Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Entry Action</em>'.
+	 * @see fsm.State#getEntryAction()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_EntryAction();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link fsm.State#getDoAction <em>Do Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -809,6 +856,17 @@ public interface FsmPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getState_DoAction();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link fsm.State#getExitAction <em>Exit Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Exit Action</em>'.
+	 * @see fsm.State#getExitAction()
+	 * @see #getState()
+	 * @generated
+	 */
+	EReference getState_ExitAction();
 
 	/**
 	 * Returns the meta object for class '{@link fsm.Transition <em>Transition</em>}'.
@@ -1065,12 +1123,28 @@ public interface FsmPackage extends EPackage {
 		EClass STATE = eINSTANCE.getState();
 
 		/**
+		 * The meta object literal for the '<em><b>Entry Action</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__ENTRY_ACTION = eINSTANCE.getState_EntryAction();
+
+		/**
 		 * The meta object literal for the '<em><b>Do Action</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference STATE__DO_ACTION = eINSTANCE.getState_DoAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Exit Action</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STATE__EXIT_ACTION = eINSTANCE.getState_ExitAction();
 
 		/**
 		 * The meta object literal for the '{@link fsm.impl.TransitionImpl <em>Transition</em>}' class.

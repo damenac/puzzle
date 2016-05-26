@@ -84,7 +84,7 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 					#["src-gen", "xtend-gen"],
 					#[],
 					#["fr.inria.diverse.k3.al.annotationprocessor.plugin"],
-					#[],
+					#["CompleteDSL"],
 					#[],
 					new NullProgressMonitor
 				)

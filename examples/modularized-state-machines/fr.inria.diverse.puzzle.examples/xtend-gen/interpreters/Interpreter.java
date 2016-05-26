@@ -1,8 +1,8 @@
 package interpreters;
 
-import fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect;
-import fsm.FsmPackage;
-import fsm.StateMachine;
+import CompleteDSL.StateMachineAspect;
+import CompleteDSLPckg.CompleteDSLPckgPackage;
+import CompleteDSLPckg.StateMachine;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -19,10 +19,10 @@ public class Interpreter {
   
   public void eval(final String modelPath) {
     XMIResourceFactoryImpl fact = new XMIResourceFactoryImpl();
-    boolean _containsKey = EPackage.Registry.INSTANCE.containsKey(FsmPackage.eNS_URI);
+    boolean _containsKey = EPackage.Registry.INSTANCE.containsKey(CompleteDSLPckgPackage.eNS_URI);
     boolean _not = (!_containsKey);
     if (_not) {
-      EPackage.Registry.INSTANCE.put(FsmPackage.eNS_URI, FsmPackage.eINSTANCE);
+      EPackage.Registry.INSTANCE.put(CompleteDSLPckgPackage.eNS_URI, CompleteDSLPckgPackage.eINSTANCE);
     }
     Map<String, Object> _extensionToFactoryMap = Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap();
     _extensionToFactoryMap.put("*", fact);
@@ -37,6 +37,6 @@ public class Interpreter {
   
   public static void main(final String[] args) {
     Interpreter _interpreter = new Interpreter();
-    _interpreter.eval("models/citizenWatch.xmi");
+    _interpreter.eval("models/citizenWatch-1.xmi");
   }
 }

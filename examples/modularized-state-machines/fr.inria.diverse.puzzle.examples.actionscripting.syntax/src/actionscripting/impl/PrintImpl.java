@@ -4,7 +4,6 @@ package actionscripting.impl;
 
 import actionscripting.ActionscriptingPackage;
 import actionscripting.Print;
-
 import org.eclipse.emf.ecore.EClass;
 
 /**

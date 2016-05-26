@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: fr.inria.diverse.puzzle.examples.composedLanguage;singleton:=true
+Bundle-Version: 0.1.0
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
+ org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
+Export-Package: CompleteDSL,
+ CompleteDSLPckg,
+ CompleteDSLPckg.impl,
+ CompleteDSLPckg.util
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

@@ -18,7 +18,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="//AbstractState">
     <eAnnotations source="Provided"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entryAction" eType="//Block" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="doAction" eType="//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="exitAction" eType="//Block" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Transition" eSuperTypes="//NamedElement">
     <eAnnotations source="Provided"/>

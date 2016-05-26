@@ -36,7 +36,13 @@
     <genClasses>
       <ecoreClass href="fsm.ecore#//State"/>
       <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsm.ecore#//State/entryAction"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="fsm.ecore#//State/doAction"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="fsm.ecore#//State/exitAction"/>
       </genFeatures>
     </genClasses>
     <genClasses>

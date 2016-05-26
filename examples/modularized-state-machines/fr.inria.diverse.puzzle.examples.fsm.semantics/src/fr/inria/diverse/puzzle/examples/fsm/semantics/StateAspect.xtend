@@ -8,14 +8,17 @@ import java.util.Hashtable
 class StateAspect {
 	
 	def public void entryState(Hashtable<String, Object> context){
-		
+		if(_self.entryAction != null)
+			_self.entryAction.evalStatement(context)
 	}
 	
 	def public void evalState(Hashtable<String, Object> context) {
-		_self.doAction.evalStatement(context)
+		if(_self.doAction != null)
+			_self.doAction.evalStatement(context)
 	}
 	
 	def public void exitState(Hashtable<String, Object> context){
-		
+		if(_self.exitAction != null)
+			_self.exitAction.evalStatement(context)
 	}
 }

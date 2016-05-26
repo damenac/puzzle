@@ -1,0 +1,19 @@
+package fr.inria.diverse.puzzle.examples.actionscripting.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import java.util.Hashtable
+import actionscripting.Statement
+import fr.inria.diverse.k3.al.annotationprocessor.Main
+import actionscripting.Block
+
+@Aspect(className=Statement)
+class StatementAspect {
+	
+	@Main
+	def void evalStatement(Hashtable<String, Object> context){
+		if(_self instanceof Block){
+			(_self as Block).evalStatement(context)
+		}
+	}
+}
