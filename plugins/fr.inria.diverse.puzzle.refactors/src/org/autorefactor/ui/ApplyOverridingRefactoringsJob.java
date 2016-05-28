@@ -50,6 +50,7 @@ import org.eclipse.core.filebuffers.ITextFileBuffer;
 import org.eclipse.core.filebuffers.ITextFileBufferManager;
 import org.eclipse.core.filebuffers.LocationKind;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jdt.core.IAnnotation;
@@ -111,10 +112,10 @@ public class ApplyOverridingRefactoringsJob {
             	IType basePrimaryType = baseCompilationUnit.findPrimaryType();
             	IType mergedPrimaryType = mergedCompilationUnit.findPrimaryType();
             	
-//            	System.out.println("ApplyOverridingRefactoringsJob.run0 " + "extension: " + extensionCompilationUnit.getElementName()
-//            			+ " base: " + baseCompilationUnit.getElementName());
-//            	System.out.println("ApplyOverridingRefactoringsJob.run0 " + "extension: " + extensionCompilationUnit.getJavaProject().getElementName()
-//            			+ " base: " + baseCompilationUnit.getJavaProject().getElementName());
+            	if(mergedPrimaryType == null){
+            		targetProject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+            		mergedPrimaryType = mergedCompilationUnit.findPrimaryType();
+            	}
             	
             	IMethod extensionMethod = null;
             	IMethod privExtensionMethod = null;
@@ -159,21 +160,24 @@ public class ApplyOverridingRefactoringsJob {
                     		}
                     	}
                     	
-                    	for(IMethod _method : mergedPrimaryType.getMethods()){
-                    		if(_method.getElementName().equals(baseMethod.getElementName())
-                    				&& _method.getNumberOfParameters() == baseMethod.getNumberOfParameters()){
-                    			mergedMethod = _method;
-                    		}
+                    	if(mergedPrimaryType != null){
+                    		for(IMethod _method : mergedPrimaryType.getMethods()){
+                        		if(_method.getElementName().equals(baseMethod.getElementName())
+                        				&& _method.getNumberOfParameters() == baseMethod.getNumberOfParameters()){
+                        			mergedMethod = _method;
+                        		}
+                        	}
+                    		
+                    		for(IMethod _method : mergedPrimaryType.getMethods()){
+                        		if(_method.getElementName().equals(privBaseMethod.getElementName())
+                        				&& _method.getNumberOfParameters() == privBaseMethod.getNumberOfParameters()){
+                        			privMergedMethod = _method;
+                        		}
+                        	}
                     	}
                     	
-                    	for(IMethod _method : mergedPrimaryType.getMethods()){
-                    		if(_method.getElementName().equals(privBaseMethod.getElementName())
-                    				&& _method.getNumberOfParameters() == privBaseMethod.getNumberOfParameters()){
-                    			privMergedMethod = _method;
-                    		}
-                    	}
-                    	
-            			mergedMethod.delete(true, monitor);
+                    	if(mergedMethod != null)
+                    		mergedMethod.delete(true, monitor);
             			
             			String baseReturnType = baseMethod.getReturnType();
             			String baseElementName = baseMethod.getElementName();

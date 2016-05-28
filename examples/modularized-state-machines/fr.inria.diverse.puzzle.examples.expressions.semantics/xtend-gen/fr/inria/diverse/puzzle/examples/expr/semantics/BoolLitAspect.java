@@ -14,7 +14,9 @@ public class BoolLitAspect extends LiteralAspect {
   public static Object eval(final BoolLit _self, final Hashtable<String, Object> context) {
     fr.inria.diverse.puzzle.examples.expr.semantics.BoolLitAspectBoolLitAspectProperties _self_ = fr.inria.diverse.puzzle.examples.expr.semantics.BoolLitAspectBoolLitAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof ExpressionPck.BoolLit){
+    result = fr.inria.diverse.puzzle.examples.expr.semantics.BoolLitAspect._privk3_eval(_self_, (ExpressionPck.BoolLit)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   

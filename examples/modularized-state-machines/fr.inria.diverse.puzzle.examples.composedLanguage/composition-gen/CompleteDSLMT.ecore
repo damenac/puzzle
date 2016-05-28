@@ -1,30 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="triggersReqfsmProvactionscriptingProvExpressionPckProv" nsURI="http://triggersReq/puzzle.examples.fsmProv/actionscriptingProv/ExpressionPckProv" nsPrefix="triggersReqtriggersReqtriggersReqtriggersReq">
-  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
-    <eAnnotations source="Provided"/>
-    <eOperations name="eval">
-      <eParameters name="context">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
-      </eParameters>
-    </eOperations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Literal" abstract="true">
-    <eAnnotations source="Provided"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ArithmeticExpression">
-    <eAnnotations source="Provided"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="RelationalExpression">
-    <eAnnotations source="Provided"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Block">
-    <eAnnotations source="Provided"/>
-    <eOperations name="evalStatement">
-      <eParameters name="context">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
-      </eParameters>
-    </eOperations>
-  </eClassifiers>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="complextriggersReqfsmProv" nsURI="http://complextriggersReq/puzzle.examples.fsmProv" nsPrefix="complextriggersReqcomplextriggersReq">
   <eClassifiers xsi:type="ecore:EClass" name="StateMachine">
     <eAnnotations source="Provided"/>
   </eClassifiers>

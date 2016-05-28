@@ -42,7 +42,7 @@ public class StateAspect {
     boolean _notEquals = (!Objects.equal(_entryAction, null));
     if (_notEquals) {
       Block _entryAction_1 = _self.getEntryAction();
-      BlockAspect.evalStatement( _entryAction_1,context);
+      _entryAction_1.evalStatement(context);
     }
   }
   
@@ -55,7 +55,7 @@ public class StateAspect {
         public void run() {
           synchronized (_self) {
             Block _doAction = _self.getDoAction();
-            BlockAspect.evalStatement( _doAction,context);
+            _doAction.evalStatement(context);
           }
         }
       };
@@ -86,7 +86,7 @@ public class StateAspect {
     boolean _notEquals_1 = (!Objects.equal(_exitAction, null));
     if (_notEquals_1) {
       Block _exitAction_1 = _self.getExitAction();
-      BlockAspect.evalStatement( _exitAction_1,context);
+      _exitAction_1.evalStatement(context);
     }
   }
   

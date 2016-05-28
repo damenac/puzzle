@@ -105,7 +105,7 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.BUILDER_ID, PDE.MANIFEST_BUILDER_ID, PDE.SCHEMA_BUILDER_ID)), 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("src-gen", "xtend-gen")), 
         Collections.<IProject>unmodifiableList(CollectionLiterals.<IProject>newArrayList()), 
-        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("fr.inria.diverse.k3.al.annotationprocessor.plugin")), 
+        Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("fr.inria.diverse.k3.al.annotationprocessor.plugin", "fr.inria.diverse.puzzle.annotations")), 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("CompleteDSL")), 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList()), _nullProgressMonitor);
       this.targetProject = _createEclipseProject;

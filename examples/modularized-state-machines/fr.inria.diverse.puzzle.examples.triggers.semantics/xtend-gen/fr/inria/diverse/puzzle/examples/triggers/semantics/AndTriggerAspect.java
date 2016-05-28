@@ -1,11 +1,11 @@
 package fr.inria.diverse.puzzle.examples.triggers.semantics;
 
+import complextriggers.AndTrigger;
+import complextriggers.Trigger;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspectAndTriggerAspectProperties;
 import org.eclipse.emf.common.util.EList;
 import puzzle.annotations.processor.OverrideSuperAspectMethod;
-import triggers.AndTrigger;
-import triggers.Trigger;
 
 @Aspect(className = AndTrigger.class)
 @SuppressWarnings("all")

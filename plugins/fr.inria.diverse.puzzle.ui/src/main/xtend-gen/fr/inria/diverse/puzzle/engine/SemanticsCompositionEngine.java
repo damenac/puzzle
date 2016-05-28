@@ -191,11 +191,35 @@ public class SemanticsCompositionEngine {
           mergedLanguage.aspects.add(_requiringAspect);
         }
       }
+      InputOutput.<String>println("All aspects");
+      for (final Aspect _aspect : mergedLanguage.aspects) {
+        EClass _aspectedClass = _aspect.getAspectedClass();
+        String _plus = ("Aspect: " + _aspectedClass);
+        InputOutput.<String>println(_plus);
+      }
+      InputOutput.<String>println("Overriding aspects");
+      for (final OverridingAspectsVO _aspect_1 : overridingAspects) {
+        EClass _aspectedClass_1 = _aspect_1.baseAspect.getAspectedClass();
+        String _plus_1 = ("Aspect: " + _aspectedClass_1);
+        String _plus_2 = (_plus_1 + " - ");
+        EClass _aspectedClass_2 = _aspect_1.leftAspect.getAspectedClass();
+        String _plus_3 = (_plus_2 + _aspectedClass_2);
+        InputOutput.<String>println(_plus_3);
+      }
+      InputOutput.<String>println("Overlapping aspects");
+      for (final OverlappingAspectsVO _aspect_2 : overlappingAspects) {
+        EClass _aspectedClass_3 = _aspect_2.rightAspect.getAspectedClass();
+        String _plus_4 = ("Aspect: " + _aspectedClass_3);
+        String _plus_5 = (_plus_4 + " - ");
+        EClass _aspectedClass_4 = _aspect_2.leftAspect.getAspectedClass();
+        String _plus_6 = (_plus_5 + _aspectedClass_4);
+        InputOutput.<String>println(_plus_6);
+      }
       String _name = requiringLanguage.metamodel.getName();
       mergedLanguage.oldNamespaces.add(_name);
       String _name_1 = providingLanguage.metamodel.getName();
       mergedLanguage.oldNamespaces.add(_name_1);
-      for (final Aspect _aspect : mergedLanguage.aspects) {
+      for (final Aspect _aspect_3 : mergedLanguage.aspects) {
         {
           EList<EClassifier> _eClassifiers = mergedLanguage.metamodel.getEClassifiers();
           for (final EClassifier _requiredClassifier : _eClassifiers) {
@@ -218,12 +242,12 @@ public class SemanticsCompositionEngine {
           boolean _and = false;
           boolean _and_1 = false;
           boolean _and_2 = false;
-          JvmTypeReference _aspectTypeRef = _aspect.getAspectTypeRef();
+          JvmTypeReference _aspectTypeRef = _aspect_3.getAspectTypeRef();
           boolean _notEquals_1 = (!Objects.equal(_aspectTypeRef, null));
           if (!_notEquals_1) {
             _and_2 = false;
           } else {
-            JvmTypeReference _aspectTypeRef_1 = _aspect.getAspectTypeRef();
+            JvmTypeReference _aspectTypeRef_1 = _aspect_3.getAspectTypeRef();
             JvmType _type = _aspectTypeRef_1.getType();
             boolean _notEquals_2 = (!Objects.equal(_type, null));
             _and_2 = _notEquals_2;
@@ -231,7 +255,7 @@ public class SemanticsCompositionEngine {
           if (!_and_2) {
             _and_1 = false;
           } else {
-            JvmTypeReference _aspectTypeRef_2 = _aspect.getAspectTypeRef();
+            JvmTypeReference _aspectTypeRef_2 = _aspect_3.getAspectTypeRef();
             String _identifier = _aspectTypeRef_2.getIdentifier();
             boolean _notEquals_3 = (!Objects.equal(_identifier, null));
             _and_1 = _notEquals_3;
@@ -239,7 +263,7 @@ public class SemanticsCompositionEngine {
           if (!_and_1) {
             _and = false;
           } else {
-            JvmTypeReference _aspectTypeRef_3 = _aspect.getAspectTypeRef();
+            JvmTypeReference _aspectTypeRef_3 = _aspect_3.getAspectTypeRef();
             JvmType _type_1 = _aspectTypeRef_3.getType();
             Resource _eResource = _type_1.eResource();
             boolean _notEquals_4 = (!Objects.equal(_eResource, null));
@@ -254,20 +278,20 @@ public class SemanticsCompositionEngine {
             final ArrayList<Relocator> relocators = new ArrayList<Relocator>();
             final String sourceEmfNamespace = "FSM";
             final String targetEmfNamespace = "FSM";
-            JvmTypeReference _aspectTypeRef_4 = _aspect.getAspectTypeRef();
+            JvmTypeReference _aspectTypeRef_4 = _aspect_3.getAspectTypeRef();
             String _qualifiedName = _aspectTypeRef_4.getQualifiedName();
-            JvmTypeReference _aspectTypeRef_5 = _aspect.getAspectTypeRef();
+            JvmTypeReference _aspectTypeRef_5 = _aspect_3.getAspectTypeRef();
             String _simpleName = _aspectTypeRef_5.getSimpleName();
-            String _plus = ("." + _simpleName);
-            final String sourceAspectNamespace = _qualifiedName.replace(_plus, "");
+            String _plus_7 = ("." + _simpleName);
+            final String sourceAspectNamespace = _qualifiedName.replace(_plus_7, "");
             final String targetAspectNamespace = mergedLanguage.name;
-            JvmTypeReference _aspectTypeRef_6 = _aspect.getAspectTypeRef();
+            JvmTypeReference _aspectTypeRef_6 = _aspect_3.getAspectTypeRef();
             JvmType _type_2 = _aspectTypeRef_6.getType();
             Resource _eResource_1 = _type_2.eResource();
             EList<EObject> _contents = _eResource_1.getContents();
             EObject _get = _contents.get(0);
             if ((_get instanceof XtendFile)) {
-              JvmTypeReference _aspectTypeRef_7 = _aspect.getAspectTypeRef();
+              JvmTypeReference _aspectTypeRef_7 = _aspect_3.getAspectTypeRef();
               JvmType _type_3 = _aspectTypeRef_7.getType();
               Resource _eResource_2 = _type_3.eResource();
               EList<EObject> _contents_1 = _eResource_2.getContents();
@@ -339,7 +363,7 @@ public class SemanticsCompositionEngine {
                   }
                   EList<XtendTypeDeclaration> _xtendTypes = xtendFile.getXtendTypes();
                   for (final XtendTypeDeclaration _typeDeclaration : _xtendTypes) {
-                    JvmTypeReference _aspectTypeRef_8 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_8 = _aspect_3.getAspectTypeRef();
                     String _identifier_1 = _aspectTypeRef_8.getIdentifier();
                     this.buildPatternsByType(_typeDeclaration, refactoringPatterns, requiringLanguage, mergedLanguage, _input, _output, _identifier_1);
                   }
@@ -365,18 +389,18 @@ public class SemanticsCompositionEngine {
                       URI _locationURI = ((IFile)resource).getLocationURI();
                       final String resourcePath = _locationURI.getPath();
                       boolean _and = false;
-                      JvmTypeReference _aspectTypeRef = _aspect.getAspectTypeRef();
+                      JvmTypeReference _aspectTypeRef = _aspect_3.getAspectTypeRef();
                       boolean _notEquals = (!Objects.equal(_aspectTypeRef, null));
                       if (!_notEquals) {
                         _and = false;
                       } else {
-                        JvmTypeReference _aspectTypeRef_1 = _aspect.getAspectTypeRef();
+                        JvmTypeReference _aspectTypeRef_1 = _aspect_3.getAspectTypeRef();
                         String _identifier = _aspectTypeRef_1.getIdentifier();
                         boolean _notEquals_1 = (!Objects.equal(_identifier, null));
                         _and = _notEquals_1;
                       }
                       if (_and) {
-                        JvmTypeReference _aspectTypeRef_2 = _aspect.getAspectTypeRef();
+                        JvmTypeReference _aspectTypeRef_2 = _aspect_3.getAspectTypeRef();
                         final String currentAspectIdentifier = _aspectTypeRef_2.getIdentifier();
                         String _replace = currentAspectIdentifier.replace(".", "/");
                         final String toBeMatched = (_replace + ".java");
@@ -447,103 +471,103 @@ public class SemanticsCompositionEngine {
               }
               for (final OverlappingAspectsVO _overlappingAspect : overlappingAspects) {
                 {
-                  JvmTypeReference _aspectTypeRef_8 = _aspect.getAspectTypeRef();
+                  JvmTypeReference _aspectTypeRef_8 = _aspect_3.getAspectTypeRef();
                   String _identifier_1 = _aspectTypeRef_8.getIdentifier();
                   JvmTypeReference _aspectTypeRef_9 = _overlappingAspect.leftAspect.getAspectTypeRef();
                   String _identifier_2 = _aspectTypeRef_9.getIdentifier();
                   boolean _equals = _identifier_1.equals(_identifier_2);
                   if (_equals) {
-                    JvmTypeReference _aspectTypeRef_10 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_10 = _aspect_3.getAspectTypeRef();
                     String _identifier_3 = _aspectTypeRef_10.getIdentifier();
                     String _replace = _identifier_3.replace(".", "/");
-                    String _plus_1 = (sourceAspectFolder + _replace);
-                    String _plus_2 = (_plus_1 + ".java");
-                    _overlappingAspect.leftFile = _plus_2;
+                    String _plus_8 = (sourceAspectFolder + _replace);
+                    String _plus_9 = (_plus_8 + ".java");
+                    _overlappingAspect.leftFile = _plus_9;
                     String _string_6 = targetAspectNamespace.toString();
-                    String _plus_3 = (targetAspectFolder + _string_6);
-                    String _plus_4 = (_plus_3 + "/");
-                    JvmTypeReference _aspectTypeRef_11 = _aspect.getAspectTypeRef();
+                    String _plus_10 = (targetAspectFolder + _string_6);
+                    String _plus_11 = (_plus_10 + "/");
+                    JvmTypeReference _aspectTypeRef_11 = _aspect_3.getAspectTypeRef();
                     String _identifier_4 = _aspectTypeRef_11.getIdentifier();
-                    JvmTypeReference _aspectTypeRef_12 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_12 = _aspect_3.getAspectTypeRef();
                     String _identifier_5 = _aspectTypeRef_12.getIdentifier();
                     int _lastIndexOf = _identifier_5.lastIndexOf(".");
-                    int _plus_5 = (_lastIndexOf + 1);
-                    String _substring = _identifier_4.substring(_plus_5);
+                    int _plus_12 = (_lastIndexOf + 1);
+                    String _substring = _identifier_4.substring(_plus_12);
                     String _replace_1 = _substring.replace(".", "/");
-                    String _plus_6 = (_plus_4 + _replace_1);
-                    String _plus_7 = (_plus_6 + ".java");
-                    _overlappingAspect.mergedFile = _plus_7;
+                    String _plus_13 = (_plus_11 + _replace_1);
+                    String _plus_14 = (_plus_13 + ".java");
+                    _overlappingAspect.mergedFile = _plus_14;
                   }
-                  JvmTypeReference _aspectTypeRef_13 = _aspect.getAspectTypeRef();
+                  JvmTypeReference _aspectTypeRef_13 = _aspect_3.getAspectTypeRef();
                   String _identifier_6 = _aspectTypeRef_13.getIdentifier();
                   JvmTypeReference _aspectTypeRef_14 = _overlappingAspect.rightAspect.getAspectTypeRef();
                   String _identifier_7 = _aspectTypeRef_14.getIdentifier();
                   boolean _equals_1 = _identifier_6.equals(_identifier_7);
                   if (_equals_1) {
-                    JvmTypeReference _aspectTypeRef_15 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_15 = _aspect_3.getAspectTypeRef();
                     String _identifier_8 = _aspectTypeRef_15.getIdentifier();
                     String _replace_2 = _identifier_8.replace(".", "/");
-                    String _plus_8 = (sourceAspectFolder + _replace_2);
-                    String _plus_9 = (_plus_8 + ".java");
-                    _overlappingAspect.rightFile = _plus_9;
+                    String _plus_15 = (sourceAspectFolder + _replace_2);
+                    String _plus_16 = (_plus_15 + ".java");
+                    _overlappingAspect.rightFile = _plus_16;
                     String _string_7 = targetAspectNamespace.toString();
-                    String _plus_10 = (targetAspectFolder + _string_7);
-                    String _plus_11 = (_plus_10 + "/");
-                    JvmTypeReference _aspectTypeRef_16 = _aspect.getAspectTypeRef();
+                    String _plus_17 = (targetAspectFolder + _string_7);
+                    String _plus_18 = (_plus_17 + "/");
+                    JvmTypeReference _aspectTypeRef_16 = _aspect_3.getAspectTypeRef();
                     String _identifier_9 = _aspectTypeRef_16.getIdentifier();
-                    JvmTypeReference _aspectTypeRef_17 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_17 = _aspect_3.getAspectTypeRef();
                     String _identifier_10 = _aspectTypeRef_17.getIdentifier();
                     int _lastIndexOf_1 = _identifier_10.lastIndexOf(".");
-                    int _plus_12 = (_lastIndexOf_1 + 1);
-                    String _substring_1 = _identifier_9.substring(_plus_12);
+                    int _plus_19 = (_lastIndexOf_1 + 1);
+                    String _substring_1 = _identifier_9.substring(_plus_19);
                     String _replace_3 = _substring_1.replace(".", "/");
-                    String _plus_13 = (_plus_11 + _replace_3);
-                    String _plus_14 = (_plus_13 + ".java");
-                    _overlappingAspect.mergedFile = _plus_14;
+                    String _plus_20 = (_plus_18 + _replace_3);
+                    String _plus_21 = (_plus_20 + ".java");
+                    _overlappingAspect.mergedFile = _plus_21;
                   }
                 }
               }
               for (final OverridingAspectsVO _overridingAspect : overridingAspects) {
                 {
-                  JvmTypeReference _aspectTypeRef_8 = _aspect.getAspectTypeRef();
+                  JvmTypeReference _aspectTypeRef_8 = _aspect_3.getAspectTypeRef();
                   String _identifier_1 = _aspectTypeRef_8.getIdentifier();
                   JvmTypeReference _aspectTypeRef_9 = _overridingAspect.leftAspect.getAspectTypeRef();
                   String _identifier_2 = _aspectTypeRef_9.getIdentifier();
                   boolean _equals = _identifier_1.equals(_identifier_2);
                   if (_equals) {
-                    JvmTypeReference _aspectTypeRef_10 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_10 = _aspect_3.getAspectTypeRef();
                     String _identifier_3 = _aspectTypeRef_10.getIdentifier();
                     String _replace = _identifier_3.replace(".", "/");
-                    String _plus_1 = (sourceAspectFolder + _replace);
-                    String _plus_2 = (_plus_1 + ".java");
-                    _overridingAspect.leftFile = _plus_2;
+                    String _plus_8 = (sourceAspectFolder + _replace);
+                    String _plus_9 = (_plus_8 + ".java");
+                    _overridingAspect.leftFile = _plus_9;
                   }
-                  JvmTypeReference _aspectTypeRef_11 = _aspect.getAspectTypeRef();
+                  JvmTypeReference _aspectTypeRef_11 = _aspect_3.getAspectTypeRef();
                   String _identifier_4 = _aspectTypeRef_11.getIdentifier();
                   JvmTypeReference _aspectTypeRef_12 = _overridingAspect.baseAspect.getAspectTypeRef();
                   String _identifier_5 = _aspectTypeRef_12.getIdentifier();
                   boolean _equals_1 = _identifier_4.equals(_identifier_5);
                   if (_equals_1) {
-                    JvmTypeReference _aspectTypeRef_13 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_13 = _aspect_3.getAspectTypeRef();
                     String _identifier_6 = _aspectTypeRef_13.getIdentifier();
                     String _replace_1 = _identifier_6.replace(".", "/");
-                    String _plus_3 = (sourceAspectFolder + _replace_1);
-                    String _plus_4 = (_plus_3 + ".java");
-                    _overridingAspect.baseFile = _plus_4;
+                    String _plus_10 = (sourceAspectFolder + _replace_1);
+                    String _plus_11 = (_plus_10 + ".java");
+                    _overridingAspect.baseFile = _plus_11;
                     String _string_6 = targetAspectNamespace.toString();
-                    String _plus_5 = (targetAspectFolder + _string_6);
-                    String _plus_6 = (_plus_5 + "/");
-                    JvmTypeReference _aspectTypeRef_14 = _aspect.getAspectTypeRef();
+                    String _plus_12 = (targetAspectFolder + _string_6);
+                    String _plus_13 = (_plus_12 + "/");
+                    JvmTypeReference _aspectTypeRef_14 = _aspect_3.getAspectTypeRef();
                     String _identifier_7 = _aspectTypeRef_14.getIdentifier();
-                    JvmTypeReference _aspectTypeRef_15 = _aspect.getAspectTypeRef();
+                    JvmTypeReference _aspectTypeRef_15 = _aspect_3.getAspectTypeRef();
                     String _identifier_8 = _aspectTypeRef_15.getIdentifier();
                     int _lastIndexOf = _identifier_8.lastIndexOf(".");
-                    int _plus_7 = (_lastIndexOf + 1);
-                    String _substring = _identifier_7.substring(_plus_7);
+                    int _plus_14 = (_lastIndexOf + 1);
+                    String _substring = _identifier_7.substring(_plus_14);
                     String _replace_2 = _substring.replace(".", "/");
-                    String _plus_8 = (_plus_6 + _replace_2);
-                    String _plus_9 = (_plus_8 + ".java");
-                    _overridingAspect.mergedFile = _plus_9;
+                    String _plus_15 = (_plus_13 + _replace_2);
+                    String _plus_16 = (_plus_15 + ".java");
+                    _overridingAspect.mergedFile = _plus_16;
                   }
                 }
               }
@@ -807,7 +831,6 @@ public class SemanticsCompositionEngine {
           String requiringClassName = _eContainingClass.getName();
           EClass _eContainingClass_1 = ((EOperation) _output).getEContainingClass();
           String providingClassName = _eContainingClass_1.getName();
-          InputOutput.<String>println(("(_input as EOperation): " + ((EOperation) _input)));
           XExpression _expression = ((XtendFunction) _member).getExpression();
           boolean _notEquals = (!Objects.equal(_expression, null));
           if (_notEquals) {

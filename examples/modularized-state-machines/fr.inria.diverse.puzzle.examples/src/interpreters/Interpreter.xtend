@@ -32,6 +32,6 @@ class Interpreter {
 	}
 	
 	def static void main(String[] args){
-		(new Interpreter()).eval('models/citizenWatch-1.xmi')
+		(new Interpreter()).eval('models/citizenWatch-2.xmi')
 	}
 }

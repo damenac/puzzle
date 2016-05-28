@@ -83,7 +83,7 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 					#[JavaCore::BUILDER_ID,	PDE::MANIFEST_BUILDER_ID, PDE::SCHEMA_BUILDER_ID],
 					#["src-gen", "xtend-gen"],
 					#[],
-					#["fr.inria.diverse.k3.al.annotationprocessor.plugin"],
+					#["fr.inria.diverse.k3.al.annotationprocessor.plugin", "fr.inria.diverse.puzzle.annotations"],
 					#["CompleteDSL"],
 					#[],
 					new NullProgressMonitor

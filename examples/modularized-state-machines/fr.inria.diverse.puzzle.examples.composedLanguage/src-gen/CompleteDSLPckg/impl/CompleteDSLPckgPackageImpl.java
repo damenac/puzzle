@@ -4,43 +4,24 @@ package CompleteDSLPckg.impl;
 
 import CompleteDSLPckg.AbstractState;
 import CompleteDSLPckg.AndTrigger;
-import CompleteDSLPckg.ArithmeticExpression;
-import CompleteDSLPckg.ArithmeticOperator;
-import CompleteDSLPckg.Assignation;
 import CompleteDSLPckg.Block;
-import CompleteDSLPckg.BoolLit;
 import CompleteDSLPckg.CompleteDSLPckgFactory;
 import CompleteDSLPckg.CompleteDSLPckgPackage;
-import CompleteDSLPckg.Conditional;
-import CompleteDSLPckg.ConsoleOutput;
-import CompleteDSLPckg.Expression;
 import CompleteDSLPckg.FinalState;
 import CompleteDSLPckg.InitialState;
-import CompleteDSLPckg.IntegerLit;
-import CompleteDSLPckg.Literal;
-import CompleteDSLPckg.Loop;
 import CompleteDSLPckg.NamedElement;
 import CompleteDSLPckg.NotTrigger;
 import CompleteDSLPckg.OrTrigger;
-import CompleteDSLPckg.Print;
-import CompleteDSLPckg.Println;
 import CompleteDSLPckg.Pseudostate;
 import CompleteDSLPckg.Region;
-import CompleteDSLPckg.RelationalExpression;
-import CompleteDSLPckg.RelationalOperator;
 import CompleteDSLPckg.State;
 import CompleteDSLPckg.StateMachine;
-import CompleteDSLPckg.Statement;
-import CompleteDSLPckg.StringLit;
 import CompleteDSLPckg.Transition;
 import CompleteDSLPckg.Trigger;
-import CompleteDSLPckg.VarDecl;
-import CompleteDSLPckg.VarRef;
-import CompleteDSLPckg.Wait;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -53,132 +34,6 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * @generated
  */
 public class CompleteDSLPckgPackageImpl extends EPackageImpl implements CompleteDSLPckgPackage {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass expressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass literalEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass integerLitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stringLitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass boolLitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass arithmeticExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass relationalExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass varRefEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass blockEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass statementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass conditionalEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass loopEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass varDeclEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass assignationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass consoleOutputEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass printlnEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass printEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass waitEClass = null;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -254,6 +109,13 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass blockEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass notTriggerEClass = null;
 
 	/**
@@ -269,20 +131,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 	 * @generated
 	 */
 	private EClass orTriggerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum arithmeticOperatorEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum relationalOperatorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -343,357 +191,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(CompleteDSLPckgPackage.eNS_URI, theCompleteDSLPckgPackage);
 		return theCompleteDSLPckgPackage;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getExpression() {
-		return expressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLiteral() {
-		return literalEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getIntegerLit() {
-		return integerLitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIntegerLit_Value() {
-		return (EAttribute)integerLitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStringLit() {
-		return stringLitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getStringLit_Value() {
-		return (EAttribute)stringLitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBoolLit() {
-		return boolLitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBoolLit_Value() {
-		return (EAttribute)boolLitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getArithmeticExpression() {
-		return arithmeticExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getArithmeticExpression_Operator() {
-		return (EAttribute)arithmeticExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArithmeticExpression_Left() {
-		return (EReference)arithmeticExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getArithmeticExpression_Right() {
-		return (EReference)arithmeticExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getRelationalExpression() {
-		return relationalExpressionEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getRelationalExpression_Operator() {
-		return (EAttribute)relationalExpressionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRelationalExpression_Left() {
-		return (EReference)relationalExpressionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getRelationalExpression_Right() {
-		return (EReference)relationalExpressionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVarRef() {
-		return varRefEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVarRef_Ref() {
-		return (EAttribute)varRefEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBlock() {
-		return blockEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBlock_Statements() {
-		return (EReference)blockEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getStatement() {
-		return statementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConditional() {
-		return conditionalEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConditional_Condition() {
-		return (EReference)conditionalEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getConditional_Body() {
-		return (EReference)conditionalEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLoop() {
-		return loopEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLoop_Guard() {
-		return (EReference)loopEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getLoop_Body() {
-		return (EReference)loopEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVarDecl() {
-		return varDeclEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVarDecl_Name() {
-		return (EAttribute)varDeclEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVarDecl_Expr() {
-		return (EReference)varDeclEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getAssignation() {
-		return assignationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAssignation_VarRef() {
-		return (EReference)assignationEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getAssignation_Expression() {
-		return (EReference)assignationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getConsoleOutput() {
-		return consoleOutputEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getConsoleOutput_Input() {
-		return (EAttribute)consoleOutputEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPrintln() {
-		return printlnEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getPrint() {
-		return printEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getWait() {
-		return waitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getWait_Miliseconds() {
-		return (EAttribute)waitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -926,6 +423,24 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getBlock() {
+		return blockEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getBlock__EvalStatement__Map() {
+		return blockEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getNotTrigger() {
 		return notTriggerEClass;
 	}
@@ -998,24 +513,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getArithmeticOperator() {
-		return arithmeticOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EEnum getRelationalOperator() {
-		return relationalOperatorEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CompleteDSLPckgFactory getCompleteDSLPckgFactory() {
 		return (CompleteDSLPckgFactory)getEFactoryInstance();
 	}
@@ -1039,63 +536,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		isCreated = true;
 
 		// Create classes and their features
-		expressionEClass = createEClass(EXPRESSION);
-
-		literalEClass = createEClass(LITERAL);
-
-		integerLitEClass = createEClass(INTEGER_LIT);
-		createEAttribute(integerLitEClass, INTEGER_LIT__VALUE);
-
-		stringLitEClass = createEClass(STRING_LIT);
-		createEAttribute(stringLitEClass, STRING_LIT__VALUE);
-
-		boolLitEClass = createEClass(BOOL_LIT);
-		createEAttribute(boolLitEClass, BOOL_LIT__VALUE);
-
-		arithmeticExpressionEClass = createEClass(ARITHMETIC_EXPRESSION);
-		createEAttribute(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__OPERATOR);
-		createEReference(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__LEFT);
-		createEReference(arithmeticExpressionEClass, ARITHMETIC_EXPRESSION__RIGHT);
-
-		relationalExpressionEClass = createEClass(RELATIONAL_EXPRESSION);
-		createEAttribute(relationalExpressionEClass, RELATIONAL_EXPRESSION__OPERATOR);
-		createEReference(relationalExpressionEClass, RELATIONAL_EXPRESSION__LEFT);
-		createEReference(relationalExpressionEClass, RELATIONAL_EXPRESSION__RIGHT);
-
-		varRefEClass = createEClass(VAR_REF);
-		createEAttribute(varRefEClass, VAR_REF__REF);
-
-		blockEClass = createEClass(BLOCK);
-		createEReference(blockEClass, BLOCK__STATEMENTS);
-
-		statementEClass = createEClass(STATEMENT);
-
-		conditionalEClass = createEClass(CONDITIONAL);
-		createEReference(conditionalEClass, CONDITIONAL__CONDITION);
-		createEReference(conditionalEClass, CONDITIONAL__BODY);
-
-		loopEClass = createEClass(LOOP);
-		createEReference(loopEClass, LOOP__GUARD);
-		createEReference(loopEClass, LOOP__BODY);
-
-		varDeclEClass = createEClass(VAR_DECL);
-		createEAttribute(varDeclEClass, VAR_DECL__NAME);
-		createEReference(varDeclEClass, VAR_DECL__EXPR);
-
-		assignationEClass = createEClass(ASSIGNATION);
-		createEReference(assignationEClass, ASSIGNATION__VAR_REF);
-		createEReference(assignationEClass, ASSIGNATION__EXPRESSION);
-
-		consoleOutputEClass = createEClass(CONSOLE_OUTPUT);
-		createEAttribute(consoleOutputEClass, CONSOLE_OUTPUT__INPUT);
-
-		printlnEClass = createEClass(PRINTLN);
-
-		printEClass = createEClass(PRINT);
-
-		waitEClass = createEClass(WAIT);
-		createEAttribute(waitEClass, WAIT__MILISECONDS);
-
 		stateMachineEClass = createEClass(STATE_MACHINE);
 		createEReference(stateMachineEClass, STATE_MACHINE__REGIONS);
 
@@ -1131,6 +571,9 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 		createEAttribute(namedElementEClass, NAMED_ELEMENT__NAME);
 
+		blockEClass = createEClass(BLOCK);
+		createEOperation(blockEClass, BLOCK___EVAL_STATEMENT__MAP);
+
 		notTriggerEClass = createEClass(NOT_TRIGGER);
 		createEReference(notTriggerEClass, NOT_TRIGGER__TRIGGER);
 
@@ -1141,10 +584,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		orTriggerEClass = createEClass(OR_TRIGGER);
 		createEReference(orTriggerEClass, OR_TRIGGER__LEFT);
 		createEReference(orTriggerEClass, OR_TRIGGER__RIGHT);
-
-		// Create enums
-		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
-		relationalOperatorEEnum = createEEnum(RELATIONAL_OPERATOR);
 	}
 
 	/**
@@ -1175,21 +614,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		literalEClass.getESuperTypes().add(this.getExpression());
-		integerLitEClass.getESuperTypes().add(this.getLiteral());
-		stringLitEClass.getESuperTypes().add(this.getLiteral());
-		boolLitEClass.getESuperTypes().add(this.getLiteral());
-		arithmeticExpressionEClass.getESuperTypes().add(this.getExpression());
-		relationalExpressionEClass.getESuperTypes().add(this.getExpression());
-		varRefEClass.getESuperTypes().add(this.getExpression());
-		conditionalEClass.getESuperTypes().add(this.getStatement());
-		loopEClass.getESuperTypes().add(this.getStatement());
-		varDeclEClass.getESuperTypes().add(this.getStatement());
-		assignationEClass.getESuperTypes().add(this.getStatement());
-		consoleOutputEClass.getESuperTypes().add(this.getStatement());
-		printlnEClass.getESuperTypes().add(this.getConsoleOutput());
-		printEClass.getESuperTypes().add(this.getConsoleOutput());
-		waitEClass.getESuperTypes().add(this.getStatement());
 		stateMachineEClass.getESuperTypes().add(this.getNamedElement());
 		regionEClass.getESuperTypes().add(this.getNamedElement());
 		abstractStateEClass.getESuperTypes().add(this.getNamedElement());
@@ -1203,63 +627,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		orTriggerEClass.getESuperTypes().add(this.getTrigger());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(literalEClass, Literal.class, "Literal", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(integerLitEClass, IntegerLit.class, "IntegerLit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntegerLit_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntegerLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stringLitEClass, StringLit.class, "StringLit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStringLit_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(boolLitEClass, BoolLit.class, "BoolLit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBoolLit_Value(), ecorePackage.getEBoolean(), "value", null, 0, 1, BoolLit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(arithmeticExpressionEClass, ArithmeticExpression.class, "ArithmeticExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getArithmeticExpression_Operator(), this.getArithmeticOperator(), "operator", null, 0, 1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArithmeticExpression_Left(), this.getExpression(), null, "left", null, 1, 1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getArithmeticExpression_Right(), this.getExpression(), null, "right", null, 1, 1, ArithmeticExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(relationalExpressionEClass, RelationalExpression.class, "RelationalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRelationalExpression_Operator(), this.getRelationalOperator(), "operator", null, 0, 1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRelationalExpression_Left(), this.getExpression(), null, "left", null, 1, 1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRelationalExpression_Right(), this.getExpression(), null, "right", null, 1, 1, RelationalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(varRefEClass, VarRef.class, "VarRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVarRef_Ref(), ecorePackage.getEString(), "ref", null, 0, 1, VarRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBlock_Statements(), this.getStatement(), null, "statements", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConditional_Condition(), this.getExpression(), null, "condition", null, 1, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConditional_Body(), this.getStatement(), null, "body", null, 0, -1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getLoop_Guard(), this.getExpression(), null, "guard", null, 1, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLoop_Body(), this.getStatement(), null, "body", null, 0, -1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(varDeclEClass, VarDecl.class, "VarDecl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVarDecl_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getVarDecl_Expr(), this.getExpression(), null, "expr", null, 1, 1, VarDecl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(assignationEClass, Assignation.class, "Assignation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAssignation_VarRef(), this.getVarDecl(), null, "varRef", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssignation_Expression(), this.getExpression(), null, "expression", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(consoleOutputEClass, ConsoleOutput.class, "ConsoleOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConsoleOutput_Input(), ecorePackage.getEString(), "input", null, 0, 1, ConsoleOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(printlnEClass, Println.class, "Println", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(printEClass, Print.class, "Print", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(waitEClass, Wait.class, "Wait", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getWait_Miliseconds(), ecorePackage.getELong(), "miliseconds", null, 0, 1, Wait.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(stateMachineEClass, StateMachine.class, "StateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getStateMachine_Regions(), this.getRegion(), this.getRegion_OwnerStateMachine(), "regions", null, 0, -1, StateMachine.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1295,31 +662,21 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNamedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, NamedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getBlock__EvalStatement__Map(), null, "evalStatement", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEMap(), "context", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(notTriggerEClass, NotTrigger.class, "NotTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNotTrigger_Trigger(), this.getTrigger(), null, "trigger", null, 1, 1, NotTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNotTrigger_Trigger(), this.getTrigger(), null, "trigger", null, 1, 1, NotTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(andTriggerEClass, AndTrigger.class, "AndTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAndTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAndTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAndTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAndTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, AndTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(orTriggerEClass, OrTrigger.class, "OrTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOrTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, OrTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOrTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, OrTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MINUS);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MULT);
-		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.DIV);
-
-		initEEnum(relationalOperatorEEnum, RelationalOperator.class, "RelationalOperator");
-		addEEnumLiteral(relationalOperatorEEnum, RelationalOperator.LESS_THAN);
-		addEEnumLiteral(relationalOperatorEEnum, RelationalOperator.GREATER_THAN);
-		addEEnumLiteral(relationalOperatorEEnum, RelationalOperator.EQUALS);
-		addEEnumLiteral(relationalOperatorEEnum, RelationalOperator.NOT_EQUAL);
-		addEEnumLiteral(relationalOperatorEEnum, RelationalOperator.LESS_THAN_OR_EQUAL_TO);
-		addEEnumLiteral(relationalOperatorEEnum, RelationalOperator.GREATER_THAN_OR_EQUAL_TO);
+		initEReference(getOrTrigger_Left(), this.getTrigger(), null, "left", null, 1, 1, OrTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOrTrigger_Right(), this.getTrigger(), null, "right", null, 1, 1, OrTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -1327,6 +684,8 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		// Create annotations
 		// Provided
 		createProvidedAnnotations();
+		// Required
+		createRequiredAnnotations();
 	}
 
 	/**
@@ -1337,31 +696,6 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 	 */
 	protected void createProvidedAnnotations() {
 		String source = "Provided";	
-		addAnnotation
-		  (expressionEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (literalEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (arithmeticExpressionEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (relationalExpressionEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (blockEClass, 
-		   source, 
-		   new String[] {
-		   });	
 		addAnnotation
 		  (stateMachineEClass, 
 		   source, 
@@ -1389,6 +723,21 @@ public class CompleteDSLPckgPackageImpl extends EPackageImpl implements Complete
 		   });	
 		addAnnotation
 		  (triggerEClass, 
+		   source, 
+		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>Required</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createRequiredAnnotations() {
+		String source = "Required";	
+		addAnnotation
+		  (blockEClass, 
 		   source, 
 		   new String[] {
 		   });

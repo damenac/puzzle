@@ -92,7 +92,7 @@ class SemanticsCompositionEngine {
 			if(_requiringAspect.aspectTypeRef.qualifiedName.lastIndexOf(".") != -1){
 				var String requiringAspectClassName = _requiringAspect.aspectedClass.name
 
-				// Collecting the repeated (overlapping) aspects				
+				// Collecting the (overlapping) aspects				
 				for(Aspect _providingAspect : providingLanguage.aspects){
 					if(_providingAspect.aspectTypeRef.qualifiedName.lastIndexOf(".") != -1){
 						var String providingAspectedClassName = _providingAspect.aspectedClass.name
@@ -123,6 +123,21 @@ class SemanticsCompositionEngine {
 				
 			}
 			mergedLanguage.aspects.add(_requiringAspect)
+		}
+		
+		println("All aspects")
+		for(Aspect _aspect : mergedLanguage.aspects){
+			println("Aspect: " + _aspect.aspectedClass)
+		}
+		
+		println("Overriding aspects")
+		for(OverridingAspectsVO _aspect : overridingAspects){
+			println("Aspect: " + _aspect.baseAspect.aspectedClass + " - " + _aspect.leftAspect.aspectedClass)
+		}
+		
+		println("Overlapping aspects")
+		for(OverlappingAspectsVO _aspect : overlappingAspects){
+			println("Aspect: " + _aspect.rightAspect.aspectedClass + " - " + _aspect.leftAspect.aspectedClass)
 		}
 		
 		mergedLanguage.oldNamespaces.add(requiringLanguage.metamodel.name)
@@ -467,7 +482,7 @@ class SemanticsCompositionEngine {
 			else if((_member instanceof XtendFunction) && (_input instanceof EOperation && _output instanceof EOperation)){
 				var String requiringClassName = (_input as EOperation).EContainingClass.name
 				var String providingClassName = (_output as EOperation).EContainingClass.name
-				println("(_input as EOperation): " + (_input as EOperation))
+//				println("(_input as EOperation): " + (_input as EOperation))
 				if((_member as XtendFunction).expression != null){
 					for(XExpression _currentExpressionStatement : ((_member as XtendFunction).expression as XBlockExpression).expressions){
 						var IEvaluationContext evaluationContext = contextProvider.get();

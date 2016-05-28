@@ -68,78 +68,6 @@ public class CompleteDSLPckgAdapterFactory extends AdapterFactoryImpl {
 	protected CompleteDSLPckgSwitch<Adapter> modelSwitch =
 		new CompleteDSLPckgSwitch<Adapter>() {
 			@Override
-			public Adapter caseExpression(Expression object) {
-				return createExpressionAdapter();
-			}
-			@Override
-			public Adapter caseLiteral(Literal object) {
-				return createLiteralAdapter();
-			}
-			@Override
-			public Adapter caseIntegerLit(IntegerLit object) {
-				return createIntegerLitAdapter();
-			}
-			@Override
-			public Adapter caseStringLit(StringLit object) {
-				return createStringLitAdapter();
-			}
-			@Override
-			public Adapter caseBoolLit(BoolLit object) {
-				return createBoolLitAdapter();
-			}
-			@Override
-			public Adapter caseArithmeticExpression(ArithmeticExpression object) {
-				return createArithmeticExpressionAdapter();
-			}
-			@Override
-			public Adapter caseRelationalExpression(RelationalExpression object) {
-				return createRelationalExpressionAdapter();
-			}
-			@Override
-			public Adapter caseVarRef(VarRef object) {
-				return createVarRefAdapter();
-			}
-			@Override
-			public Adapter caseBlock(Block object) {
-				return createBlockAdapter();
-			}
-			@Override
-			public Adapter caseStatement(Statement object) {
-				return createStatementAdapter();
-			}
-			@Override
-			public Adapter caseConditional(Conditional object) {
-				return createConditionalAdapter();
-			}
-			@Override
-			public Adapter caseLoop(Loop object) {
-				return createLoopAdapter();
-			}
-			@Override
-			public Adapter caseVarDecl(VarDecl object) {
-				return createVarDeclAdapter();
-			}
-			@Override
-			public Adapter caseAssignation(Assignation object) {
-				return createAssignationAdapter();
-			}
-			@Override
-			public Adapter caseConsoleOutput(ConsoleOutput object) {
-				return createConsoleOutputAdapter();
-			}
-			@Override
-			public Adapter casePrintln(Println object) {
-				return createPrintlnAdapter();
-			}
-			@Override
-			public Adapter casePrint(Print object) {
-				return createPrintAdapter();
-			}
-			@Override
-			public Adapter caseWait(Wait object) {
-				return createWaitAdapter();
-			}
-			@Override
 			public Adapter caseStateMachine(StateMachine object) {
 				return createStateMachineAdapter();
 			}
@@ -180,6 +108,10 @@ public class CompleteDSLPckgAdapterFactory extends AdapterFactoryImpl {
 				return createNamedElementAdapter();
 			}
 			@Override
+			public Adapter caseBlock(Block object) {
+				return createBlockAdapter();
+			}
+			@Override
 			public Adapter caseNotTrigger(NotTrigger object) {
 				return createNotTriggerAdapter();
 			}
@@ -210,258 +142,6 @@ public class CompleteDSLPckgAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Expression
-	 * @generated
-	 */
-	public Adapter createExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Literal <em>Literal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Literal
-	 * @generated
-	 */
-	public Adapter createLiteralAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.IntegerLit <em>Integer Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.IntegerLit
-	 * @generated
-	 */
-	public Adapter createIntegerLitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.StringLit <em>String Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.StringLit
-	 * @generated
-	 */
-	public Adapter createStringLitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.BoolLit <em>Bool Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.BoolLit
-	 * @generated
-	 */
-	public Adapter createBoolLitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.ArithmeticExpression <em>Arithmetic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.ArithmeticExpression
-	 * @generated
-	 */
-	public Adapter createArithmeticExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.RelationalExpression <em>Relational Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.RelationalExpression
-	 * @generated
-	 */
-	public Adapter createRelationalExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.VarRef <em>Var Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.VarRef
-	 * @generated
-	 */
-	public Adapter createVarRefAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Block <em>Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Block
-	 * @generated
-	 */
-	public Adapter createBlockAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Statement <em>Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Statement
-	 * @generated
-	 */
-	public Adapter createStatementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Conditional <em>Conditional</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Conditional
-	 * @generated
-	 */
-	public Adapter createConditionalAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Loop <em>Loop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Loop
-	 * @generated
-	 */
-	public Adapter createLoopAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.VarDecl <em>Var Decl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.VarDecl
-	 * @generated
-	 */
-	public Adapter createVarDeclAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Assignation <em>Assignation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Assignation
-	 * @generated
-	 */
-	public Adapter createAssignationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.ConsoleOutput <em>Console Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.ConsoleOutput
-	 * @generated
-	 */
-	public Adapter createConsoleOutputAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Println <em>Println</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Println
-	 * @generated
-	 */
-	public Adapter createPrintlnAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Print <em>Print</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Print
-	 * @generated
-	 */
-	public Adapter createPrintAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Wait <em>Wait</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see CompleteDSLPckg.Wait
-	 * @generated
-	 */
-	public Adapter createWaitAdapter() {
-		return null;
-	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.StateMachine <em>State Machine</em>}'.
@@ -600,6 +280,20 @@ public class CompleteDSLPckgAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNamedElementAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link CompleteDSLPckg.Block <em>Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see CompleteDSLPckg.Block
+	 * @generated
+	 */
+	public Adapter createBlockAdapter() {
 		return null;
 	}
 

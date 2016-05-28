@@ -4,7 +4,7 @@ package CompleteDSLPckg;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -58,717 +58,6 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	CompleteDSLPckgPackage eINSTANCE = CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.ExpressionImpl <em>Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.ExpressionImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getExpression()
-	 * @generated
-	 */
-	int EXPRESSION = 0;
-
-	/**
-	 * The number of structural features of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EXPRESSION_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.LiteralImpl <em>Literal</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.LiteralImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getLiteral()
-	 * @generated
-	 */
-	int LITERAL = 1;
-
-	/**
-	 * The number of structural features of the '<em>Literal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Literal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LITERAL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.IntegerLitImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getIntegerLit()
-	 * @generated
-	 */
-	int INTEGER_LIT = 2;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Integer Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Integer Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.StringLitImpl <em>String Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.StringLitImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getStringLit()
-	 * @generated
-	 */
-	int STRING_LIT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>String Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>String Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.BoolLitImpl <em>Bool Lit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.BoolLitImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getBoolLit()
-	 * @generated
-	 */
-	int BOOL_LIT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOL_LIT__VALUE = LITERAL_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Bool Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOL_LIT_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Bool Lit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOL_LIT_OPERATION_COUNT = LITERAL_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.ArithmeticExpressionImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getArithmeticExpression()
-	 * @generated
-	 */
-	int ARITHMETIC_EXPRESSION = 5;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Left</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__LEFT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Arithmetic Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Arithmetic Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARITHMETIC_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.RelationalExpressionImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getRelationalExpression()
-	 * @generated
-	 */
-	int RELATIONAL_EXPRESSION = 6;
-
-	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION__OPERATOR = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Left</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION__LEFT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Right</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Relational Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of operations of the '<em>Relational Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONAL_EXPRESSION_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.VarRefImpl <em>Var Ref</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.VarRefImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getVarRef()
-	 * @generated
-	 */
-	int VAR_REF = 7;
-
-	/**
-	 * The feature id for the '<em><b>Ref</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REF__REF = EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Var Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REF_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Var Ref</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_REF_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.BlockImpl <em>Block</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.BlockImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getBlock()
-	 * @generated
-	 */
-	int BLOCK = 8;
-
-	/**
-	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK__STATEMENTS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK_FEATURE_COUNT = 1;
-
-	/**
-	 * The number of operations of the '<em>Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.StatementImpl <em>Statement</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.StatementImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getStatement()
-	 * @generated
-	 */
-	int STATEMENT = 9;
-
-	/**
-	 * The number of structural features of the '<em>Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATEMENT_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Statement</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATEMENT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.ConditionalImpl <em>Conditional</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.ConditionalImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getConditional()
-	 * @generated
-	 */
-	int CONDITIONAL = 10;
-
-	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL__CONDITION = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL__BODY = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Conditional</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Conditional</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.LoopImpl <em>Loop</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.LoopImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getLoop()
-	 * @generated
-	 */
-	int LOOP = 11;
-
-	/**
-	 * The feature id for the '<em><b>Guard</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP__GUARD = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP__BODY = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Loop</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Loop</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LOOP_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.VarDeclImpl <em>Var Decl</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.VarDeclImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getVarDecl()
-	 * @generated
-	 */
-	int VAR_DECL = 12;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_DECL__NAME = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_DECL__EXPR = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Var Decl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_DECL_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Var Decl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_DECL_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.AssignationImpl <em>Assignation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.AssignationImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getAssignation()
-	 * @generated
-	 */
-	int ASSIGNATION = 13;
-
-	/**
-	 * The feature id for the '<em><b>Var Ref</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNATION__VAR_REF = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNATION__EXPRESSION = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Assignation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNATION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Assignation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ASSIGNATION_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.ConsoleOutputImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getConsoleOutput()
-	 * @generated
-	 */
-	int CONSOLE_OUTPUT = 14;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSOLE_OUTPUT__INPUT = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Console Output</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSOLE_OUTPUT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Console Output</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONSOLE_OUTPUT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.PrintlnImpl <em>Println</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.PrintlnImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getPrintln()
-	 * @generated
-	 */
-	int PRINTLN = 15;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINTLN__INPUT = CONSOLE_OUTPUT__INPUT;
-
-	/**
-	 * The number of structural features of the '<em>Println</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINTLN_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Println</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINTLN_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.PrintImpl <em>Print</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.PrintImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getPrint()
-	 * @generated
-	 */
-	int PRINT = 16;
-
-	/**
-	 * The feature id for the '<em><b>Input</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT__INPUT = CONSOLE_OUTPUT__INPUT;
-
-	/**
-	 * The number of structural features of the '<em>Print</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT_FEATURE_COUNT = CONSOLE_OUTPUT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Print</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PRINT_OPERATION_COUNT = CONSOLE_OUTPUT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.impl.WaitImpl <em>Wait</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.impl.WaitImpl
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getWait()
-	 * @generated
-	 */
-	int WAIT = 17;
-
-	/**
-	 * The feature id for the '<em><b>Miliseconds</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAIT__MILISECONDS = STATEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Wait</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAIT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Wait</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int WAIT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link CompleteDSLPckg.impl.NamedElementImpl <em>Named Element</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -776,7 +65,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getNamedElement()
 	 * @generated
 	 */
-	int NAMED_ELEMENT = 27;
+	int NAMED_ELEMENT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -813,7 +102,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getStateMachine()
 	 * @generated
 	 */
-	int STATE_MACHINE = 18;
+	int STATE_MACHINE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -859,7 +148,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getRegion()
 	 * @generated
 	 */
-	int REGION = 19;
+	int REGION = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -923,7 +212,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getAbstractState()
 	 * @generated
 	 */
-	int ABSTRACT_STATE = 20;
+	int ABSTRACT_STATE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -987,7 +276,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getState()
 	 * @generated
 	 */
-	int STATE = 21;
+	int STATE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1078,7 +367,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getTransition()
 	 * @generated
 	 */
-	int TRANSITION = 22;
+	int TRANSITION = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1142,7 +431,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getTrigger()
 	 * @generated
 	 */
-	int TRIGGER = 23;
+	int TRIGGER = 5;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1179,7 +468,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getPseudostate()
 	 * @generated
 	 */
-	int PSEUDOSTATE = 24;
+	int PSEUDOSTATE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1243,7 +532,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getInitialState()
 	 * @generated
 	 */
-	int INITIAL_STATE = 25;
+	int INITIAL_STATE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1307,7 +596,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getFinalState()
 	 * @generated
 	 */
-	int FINAL_STATE = 26;
+	int FINAL_STATE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1391,6 +680,43 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	int FINAL_STATE_OPERATION_COUNT = STATE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link CompleteDSLPckg.impl.BlockImpl <em>Block</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see CompleteDSLPckg.impl.BlockImpl
+	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getBlock()
+	 * @generated
+	 */
+	int BLOCK = 10;
+
+	/**
+	 * The number of structural features of the '<em>Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Eval Statement</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK___EVAL_STATEMENT__MAP = 0;
+
+	/**
+	 * The number of operations of the '<em>Block</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BLOCK_OPERATION_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link CompleteDSLPckg.impl.NotTriggerImpl <em>Not Trigger</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1398,7 +724,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getNotTrigger()
 	 * @generated
 	 */
-	int NOT_TRIGGER = 28;
+	int NOT_TRIGGER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1410,7 +736,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	int NOT_TRIGGER__EXPRESSION = TRIGGER__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Trigger</b></em>' reference.
+	 * The feature id for the '<em><b>Trigger</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1444,7 +770,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getAndTrigger()
 	 * @generated
 	 */
-	int AND_TRIGGER = 29;
+	int AND_TRIGGER = 12;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1456,7 +782,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	int AND_TRIGGER__EXPRESSION = TRIGGER__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Left</b></em>' reference.
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1465,7 +791,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	int AND_TRIGGER__LEFT = TRIGGER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Right</b></em>' reference.
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1499,7 +825,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getOrTrigger()
 	 * @generated
 	 */
-	int OR_TRIGGER = 30;
+	int OR_TRIGGER = 13;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' attribute.
@@ -1511,7 +837,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	int OR_TRIGGER__EXPRESSION = TRIGGER__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Left</b></em>' reference.
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1520,7 +846,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	int OR_TRIGGER__LEFT = TRIGGER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Right</b></em>' reference.
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1546,437 +872,6 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 */
 	int OR_TRIGGER_OPERATION_COUNT = TRIGGER_OPERATION_COUNT + 0;
 
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.ArithmeticOperator
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getArithmeticOperator()
-	 * @generated
-	 */
-	int ARITHMETIC_OPERATOR = 31;
-
-	/**
-	 * The meta object id for the '{@link CompleteDSLPckg.RelationalOperator <em>Relational Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see CompleteDSLPckg.RelationalOperator
-	 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getRelationalOperator()
-	 * @generated
-	 */
-	int RELATIONAL_OPERATOR = 32;
-
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Expression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Expression</em>'.
-	 * @see CompleteDSLPckg.Expression
-	 * @generated
-	 */
-	EClass getExpression();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Literal <em>Literal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Literal</em>'.
-	 * @see CompleteDSLPckg.Literal
-	 * @generated
-	 */
-	EClass getLiteral();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.IntegerLit <em>Integer Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Integer Lit</em>'.
-	 * @see CompleteDSLPckg.IntegerLit
-	 * @generated
-	 */
-	EClass getIntegerLit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.IntegerLit#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see CompleteDSLPckg.IntegerLit#getValue()
-	 * @see #getIntegerLit()
-	 * @generated
-	 */
-	EAttribute getIntegerLit_Value();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.StringLit <em>String Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>String Lit</em>'.
-	 * @see CompleteDSLPckg.StringLit
-	 * @generated
-	 */
-	EClass getStringLit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.StringLit#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see CompleteDSLPckg.StringLit#getValue()
-	 * @see #getStringLit()
-	 * @generated
-	 */
-	EAttribute getStringLit_Value();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.BoolLit <em>Bool Lit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bool Lit</em>'.
-	 * @see CompleteDSLPckg.BoolLit
-	 * @generated
-	 */
-	EClass getBoolLit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.BoolLit#isValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see CompleteDSLPckg.BoolLit#isValue()
-	 * @see #getBoolLit()
-	 * @generated
-	 */
-	EAttribute getBoolLit_Value();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.ArithmeticExpression <em>Arithmetic Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Arithmetic Expression</em>'.
-	 * @see CompleteDSLPckg.ArithmeticExpression
-	 * @generated
-	 */
-	EClass getArithmeticExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.ArithmeticExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see CompleteDSLPckg.ArithmeticExpression#getOperator()
-	 * @see #getArithmeticExpression()
-	 * @generated
-	 */
-	EAttribute getArithmeticExpression_Operator();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.ArithmeticExpression#getLeft <em>Left</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Left</em>'.
-	 * @see CompleteDSLPckg.ArithmeticExpression#getLeft()
-	 * @see #getArithmeticExpression()
-	 * @generated
-	 */
-	EReference getArithmeticExpression_Left();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.ArithmeticExpression#getRight <em>Right</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Right</em>'.
-	 * @see CompleteDSLPckg.ArithmeticExpression#getRight()
-	 * @see #getArithmeticExpression()
-	 * @generated
-	 */
-	EReference getArithmeticExpression_Right();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.RelationalExpression <em>Relational Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Relational Expression</em>'.
-	 * @see CompleteDSLPckg.RelationalExpression
-	 * @generated
-	 */
-	EClass getRelationalExpression();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.RelationalExpression#getOperator <em>Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see CompleteDSLPckg.RelationalExpression#getOperator()
-	 * @see #getRelationalExpression()
-	 * @generated
-	 */
-	EAttribute getRelationalExpression_Operator();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.RelationalExpression#getLeft <em>Left</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Left</em>'.
-	 * @see CompleteDSLPckg.RelationalExpression#getLeft()
-	 * @see #getRelationalExpression()
-	 * @generated
-	 */
-	EReference getRelationalExpression_Left();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.RelationalExpression#getRight <em>Right</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Right</em>'.
-	 * @see CompleteDSLPckg.RelationalExpression#getRight()
-	 * @see #getRelationalExpression()
-	 * @generated
-	 */
-	EReference getRelationalExpression_Right();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.VarRef <em>Var Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Var Ref</em>'.
-	 * @see CompleteDSLPckg.VarRef
-	 * @generated
-	 */
-	EClass getVarRef();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.VarRef#getRef <em>Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Ref</em>'.
-	 * @see CompleteDSLPckg.VarRef#getRef()
-	 * @see #getVarRef()
-	 * @generated
-	 */
-	EAttribute getVarRef_Ref();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Block <em>Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Block</em>'.
-	 * @see CompleteDSLPckg.Block
-	 * @generated
-	 */
-	EClass getBlock();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link CompleteDSLPckg.Block#getStatements <em>Statements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Statements</em>'.
-	 * @see CompleteDSLPckg.Block#getStatements()
-	 * @see #getBlock()
-	 * @generated
-	 */
-	EReference getBlock_Statements();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Statement <em>Statement</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Statement</em>'.
-	 * @see CompleteDSLPckg.Statement
-	 * @generated
-	 */
-	EClass getStatement();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Conditional <em>Conditional</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Conditional</em>'.
-	 * @see CompleteDSLPckg.Conditional
-	 * @generated
-	 */
-	EClass getConditional();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.Conditional#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition</em>'.
-	 * @see CompleteDSLPckg.Conditional#getCondition()
-	 * @see #getConditional()
-	 * @generated
-	 */
-	EReference getConditional_Condition();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link CompleteDSLPckg.Conditional#getBody <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Body</em>'.
-	 * @see CompleteDSLPckg.Conditional#getBody()
-	 * @see #getConditional()
-	 * @generated
-	 */
-	EReference getConditional_Body();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Loop <em>Loop</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Loop</em>'.
-	 * @see CompleteDSLPckg.Loop
-	 * @generated
-	 */
-	EClass getLoop();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.Loop#getGuard <em>Guard</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Guard</em>'.
-	 * @see CompleteDSLPckg.Loop#getGuard()
-	 * @see #getLoop()
-	 * @generated
-	 */
-	EReference getLoop_Guard();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link CompleteDSLPckg.Loop#getBody <em>Body</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Body</em>'.
-	 * @see CompleteDSLPckg.Loop#getBody()
-	 * @see #getLoop()
-	 * @generated
-	 */
-	EReference getLoop_Body();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.VarDecl <em>Var Decl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Var Decl</em>'.
-	 * @see CompleteDSLPckg.VarDecl
-	 * @generated
-	 */
-	EClass getVarDecl();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.VarDecl#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see CompleteDSLPckg.VarDecl#getName()
-	 * @see #getVarDecl()
-	 * @generated
-	 */
-	EAttribute getVarDecl_Name();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.VarDecl#getExpr <em>Expr</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expr</em>'.
-	 * @see CompleteDSLPckg.VarDecl#getExpr()
-	 * @see #getVarDecl()
-	 * @generated
-	 */
-	EReference getVarDecl_Expr();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Assignation <em>Assignation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Assignation</em>'.
-	 * @see CompleteDSLPckg.Assignation
-	 * @generated
-	 */
-	EClass getAssignation();
-
-	/**
-	 * Returns the meta object for the reference '{@link CompleteDSLPckg.Assignation#getVarRef <em>Var Ref</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Var Ref</em>'.
-	 * @see CompleteDSLPckg.Assignation#getVarRef()
-	 * @see #getAssignation()
-	 * @generated
-	 */
-	EReference getAssignation_VarRef();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.Assignation#getExpression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see CompleteDSLPckg.Assignation#getExpression()
-	 * @see #getAssignation()
-	 * @generated
-	 */
-	EReference getAssignation_Expression();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.ConsoleOutput <em>Console Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Console Output</em>'.
-	 * @see CompleteDSLPckg.ConsoleOutput
-	 * @generated
-	 */
-	EClass getConsoleOutput();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.ConsoleOutput#getInput <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Input</em>'.
-	 * @see CompleteDSLPckg.ConsoleOutput#getInput()
-	 * @see #getConsoleOutput()
-	 * @generated
-	 */
-	EAttribute getConsoleOutput_Input();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Println <em>Println</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Println</em>'.
-	 * @see CompleteDSLPckg.Println
-	 * @generated
-	 */
-	EClass getPrintln();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Print <em>Print</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Print</em>'.
-	 * @see CompleteDSLPckg.Print
-	 * @generated
-	 */
-	EClass getPrint();
-
-	/**
-	 * Returns the meta object for class '{@link CompleteDSLPckg.Wait <em>Wait</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Wait</em>'.
-	 * @see CompleteDSLPckg.Wait
-	 * @generated
-	 */
-	EClass getWait();
-
-	/**
-	 * Returns the meta object for the attribute '{@link CompleteDSLPckg.Wait#getMiliseconds <em>Miliseconds</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Miliseconds</em>'.
-	 * @see CompleteDSLPckg.Wait#getMiliseconds()
-	 * @see #getWait()
-	 * @generated
-	 */
-	EAttribute getWait_Miliseconds();
 
 	/**
 	 * Returns the meta object for class '{@link CompleteDSLPckg.StateMachine <em>State Machine</em>}'.
@@ -2244,6 +1139,26 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	EAttribute getNamedElement_Name();
 
 	/**
+	 * Returns the meta object for class '{@link CompleteDSLPckg.Block <em>Block</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Block</em>'.
+	 * @see CompleteDSLPckg.Block
+	 * @generated
+	 */
+	EClass getBlock();
+
+	/**
+	 * Returns the meta object for the '{@link CompleteDSLPckg.Block#evalStatement(java.util.Map) <em>Eval Statement</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Eval Statement</em>' operation.
+	 * @see CompleteDSLPckg.Block#evalStatement(java.util.Map)
+	 * @generated
+	 */
+	EOperation getBlock__EvalStatement__Map();
+
+	/**
 	 * Returns the meta object for class '{@link CompleteDSLPckg.NotTrigger <em>Not Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2254,10 +1169,10 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	EClass getNotTrigger();
 
 	/**
-	 * Returns the meta object for the reference '{@link CompleteDSLPckg.NotTrigger#getTrigger <em>Trigger</em>}'.
+	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.NotTrigger#getTrigger <em>Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Trigger</em>'.
+	 * @return the meta object for the containment reference '<em>Trigger</em>'.
 	 * @see CompleteDSLPckg.NotTrigger#getTrigger()
 	 * @see #getNotTrigger()
 	 * @generated
@@ -2275,10 +1190,10 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	EClass getAndTrigger();
 
 	/**
-	 * Returns the meta object for the reference '{@link CompleteDSLPckg.AndTrigger#getLeft <em>Left</em>}'.
+	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.AndTrigger#getLeft <em>Left</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Left</em>'.
+	 * @return the meta object for the containment reference '<em>Left</em>'.
 	 * @see CompleteDSLPckg.AndTrigger#getLeft()
 	 * @see #getAndTrigger()
 	 * @generated
@@ -2286,10 +1201,10 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	EReference getAndTrigger_Left();
 
 	/**
-	 * Returns the meta object for the reference '{@link CompleteDSLPckg.AndTrigger#getRight <em>Right</em>}'.
+	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.AndTrigger#getRight <em>Right</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Right</em>'.
+	 * @return the meta object for the containment reference '<em>Right</em>'.
 	 * @see CompleteDSLPckg.AndTrigger#getRight()
 	 * @see #getAndTrigger()
 	 * @generated
@@ -2307,10 +1222,10 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	EClass getOrTrigger();
 
 	/**
-	 * Returns the meta object for the reference '{@link CompleteDSLPckg.OrTrigger#getLeft <em>Left</em>}'.
+	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.OrTrigger#getLeft <em>Left</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Left</em>'.
+	 * @return the meta object for the containment reference '<em>Left</em>'.
 	 * @see CompleteDSLPckg.OrTrigger#getLeft()
 	 * @see #getOrTrigger()
 	 * @generated
@@ -2318,35 +1233,15 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	EReference getOrTrigger_Left();
 
 	/**
-	 * Returns the meta object for the reference '{@link CompleteDSLPckg.OrTrigger#getRight <em>Right</em>}'.
+	 * Returns the meta object for the containment reference '{@link CompleteDSLPckg.OrTrigger#getRight <em>Right</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Right</em>'.
+	 * @return the meta object for the containment reference '<em>Right</em>'.
 	 * @see CompleteDSLPckg.OrTrigger#getRight()
 	 * @see #getOrTrigger()
 	 * @generated
 	 */
 	EReference getOrTrigger_Right();
-
-	/**
-	 * Returns the meta object for enum '{@link CompleteDSLPckg.ArithmeticOperator <em>Arithmetic Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Arithmetic Operator</em>'.
-	 * @see CompleteDSLPckg.ArithmeticOperator
-	 * @generated
-	 */
-	EEnum getArithmeticOperator();
-
-	/**
-	 * Returns the meta object for enum '{@link CompleteDSLPckg.RelationalOperator <em>Relational Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Relational Operator</em>'.
-	 * @see CompleteDSLPckg.RelationalOperator
-	 * @generated
-	 */
-	EEnum getRelationalOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2371,354 +1266,6 @@ public interface CompleteDSLPckgPackage extends EPackage {
 	 * @generated
 	 */
 	interface Literals {
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.ExpressionImpl <em>Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.ExpressionImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getExpression()
-		 * @generated
-		 */
-		EClass EXPRESSION = eINSTANCE.getExpression();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.LiteralImpl <em>Literal</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.LiteralImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getLiteral()
-		 * @generated
-		 */
-		EClass LITERAL = eINSTANCE.getLiteral();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.IntegerLitImpl <em>Integer Lit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.IntegerLitImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getIntegerLit()
-		 * @generated
-		 */
-		EClass INTEGER_LIT = eINSTANCE.getIntegerLit();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INTEGER_LIT__VALUE = eINSTANCE.getIntegerLit_Value();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.StringLitImpl <em>String Lit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.StringLitImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getStringLit()
-		 * @generated
-		 */
-		EClass STRING_LIT = eINSTANCE.getStringLit();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STRING_LIT__VALUE = eINSTANCE.getStringLit_Value();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.BoolLitImpl <em>Bool Lit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.BoolLitImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getBoolLit()
-		 * @generated
-		 */
-		EClass BOOL_LIT = eINSTANCE.getBoolLit();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOL_LIT__VALUE = eINSTANCE.getBoolLit_Value();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.ArithmeticExpressionImpl <em>Arithmetic Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.ArithmeticExpressionImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getArithmeticExpression()
-		 * @generated
-		 */
-		EClass ARITHMETIC_EXPRESSION = eINSTANCE.getArithmeticExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ARITHMETIC_EXPRESSION__OPERATOR = eINSTANCE.getArithmeticExpression_Operator();
-
-		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARITHMETIC_EXPRESSION__LEFT = eINSTANCE.getArithmeticExpression_Left();
-
-		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ARITHMETIC_EXPRESSION__RIGHT = eINSTANCE.getArithmeticExpression_Right();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.RelationalExpressionImpl <em>Relational Expression</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.RelationalExpressionImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getRelationalExpression()
-		 * @generated
-		 */
-		EClass RELATIONAL_EXPRESSION = eINSTANCE.getRelationalExpression();
-
-		/**
-		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RELATIONAL_EXPRESSION__OPERATOR = eINSTANCE.getRelationalExpression_Operator();
-
-		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONAL_EXPRESSION__LEFT = eINSTANCE.getRelationalExpression_Left();
-
-		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONAL_EXPRESSION__RIGHT = eINSTANCE.getRelationalExpression_Right();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.VarRefImpl <em>Var Ref</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.VarRefImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getVarRef()
-		 * @generated
-		 */
-		EClass VAR_REF = eINSTANCE.getVarRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Ref</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VAR_REF__REF = eINSTANCE.getVarRef_Ref();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.BlockImpl <em>Block</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.BlockImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getBlock()
-		 * @generated
-		 */
-		EClass BLOCK = eINSTANCE.getBlock();
-
-		/**
-		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BLOCK__STATEMENTS = eINSTANCE.getBlock_Statements();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.StatementImpl <em>Statement</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.StatementImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getStatement()
-		 * @generated
-		 */
-		EClass STATEMENT = eINSTANCE.getStatement();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.ConditionalImpl <em>Conditional</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.ConditionalImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getConditional()
-		 * @generated
-		 */
-		EClass CONDITIONAL = eINSTANCE.getConditional();
-
-		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL__CONDITION = eINSTANCE.getConditional_Condition();
-
-		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL__BODY = eINSTANCE.getConditional_Body();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.LoopImpl <em>Loop</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.LoopImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getLoop()
-		 * @generated
-		 */
-		EClass LOOP = eINSTANCE.getLoop();
-
-		/**
-		 * The meta object literal for the '<em><b>Guard</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOOP__GUARD = eINSTANCE.getLoop_Guard();
-
-		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference LOOP__BODY = eINSTANCE.getLoop_Body();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.VarDeclImpl <em>Var Decl</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.VarDeclImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getVarDecl()
-		 * @generated
-		 */
-		EClass VAR_DECL = eINSTANCE.getVarDecl();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VAR_DECL__NAME = eINSTANCE.getVarDecl_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VAR_DECL__EXPR = eINSTANCE.getVarDecl_Expr();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.AssignationImpl <em>Assignation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.AssignationImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getAssignation()
-		 * @generated
-		 */
-		EClass ASSIGNATION = eINSTANCE.getAssignation();
-
-		/**
-		 * The meta object literal for the '<em><b>Var Ref</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSIGNATION__VAR_REF = eINSTANCE.getAssignation_VarRef();
-
-		/**
-		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ASSIGNATION__EXPRESSION = eINSTANCE.getAssignation_Expression();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.ConsoleOutputImpl <em>Console Output</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.ConsoleOutputImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getConsoleOutput()
-		 * @generated
-		 */
-		EClass CONSOLE_OUTPUT = eINSTANCE.getConsoleOutput();
-
-		/**
-		 * The meta object literal for the '<em><b>Input</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONSOLE_OUTPUT__INPUT = eINSTANCE.getConsoleOutput_Input();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.PrintlnImpl <em>Println</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.PrintlnImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getPrintln()
-		 * @generated
-		 */
-		EClass PRINTLN = eINSTANCE.getPrintln();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.PrintImpl <em>Print</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.PrintImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getPrint()
-		 * @generated
-		 */
-		EClass PRINT = eINSTANCE.getPrint();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.impl.WaitImpl <em>Wait</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.impl.WaitImpl
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getWait()
-		 * @generated
-		 */
-		EClass WAIT = eINSTANCE.getWait();
-
-		/**
-		 * The meta object literal for the '<em><b>Miliseconds</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute WAIT__MILISECONDS = eINSTANCE.getWait_Miliseconds();
-
 		/**
 		 * The meta object literal for the '{@link CompleteDSLPckg.impl.StateMachineImpl <em>State Machine</em>}' class.
 		 * <!-- begin-user-doc -->
@@ -2940,6 +1487,24 @@ public interface CompleteDSLPckgPackage extends EPackage {
 		EAttribute NAMED_ELEMENT__NAME = eINSTANCE.getNamedElement_Name();
 
 		/**
+		 * The meta object literal for the '{@link CompleteDSLPckg.impl.BlockImpl <em>Block</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see CompleteDSLPckg.impl.BlockImpl
+		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getBlock()
+		 * @generated
+		 */
+		EClass BLOCK = eINSTANCE.getBlock();
+
+		/**
+		 * The meta object literal for the '<em><b>Eval Statement</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation BLOCK___EVAL_STATEMENT__MAP = eINSTANCE.getBlock__EvalStatement__Map();
+
+		/**
 		 * The meta object literal for the '{@link CompleteDSLPckg.impl.NotTriggerImpl <em>Not Trigger</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2950,7 +1515,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 		EClass NOT_TRIGGER = eINSTANCE.getNotTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Trigger</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Trigger</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2968,7 +1533,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 		EClass AND_TRIGGER = eINSTANCE.getAndTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2976,7 +1541,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 		EReference AND_TRIGGER__LEFT = eINSTANCE.getAndTrigger_Left();
 
 		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -2994,7 +1559,7 @@ public interface CompleteDSLPckgPackage extends EPackage {
 		EClass OR_TRIGGER = eINSTANCE.getOrTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Left</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3002,32 +1567,12 @@ public interface CompleteDSLPckgPackage extends EPackage {
 		EReference OR_TRIGGER__LEFT = eINSTANCE.getOrTrigger_Left();
 
 		/**
-		 * The meta object literal for the '<em><b>Right</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference OR_TRIGGER__RIGHT = eINSTANCE.getOrTrigger_Right();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.ArithmeticOperator
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getArithmeticOperator()
-		 * @generated
-		 */
-		EEnum ARITHMETIC_OPERATOR = eINSTANCE.getArithmeticOperator();
-
-		/**
-		 * The meta object literal for the '{@link CompleteDSLPckg.RelationalOperator <em>Relational Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see CompleteDSLPckg.RelationalOperator
-		 * @see CompleteDSLPckg.impl.CompleteDSLPckgPackageImpl#getRelationalOperator()
-		 * @generated
-		 */
-		EEnum RELATIONAL_OPERATOR = eINSTANCE.getRelationalOperator();
 
 	}
 

@@ -7,6 +7,7 @@ import CompleteDSLPckg.OrTrigger;
 import CompleteDSLPckg.Trigger;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -29,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	/**
-	 * The cached value of the '{@link #getLeft() <em>Left</em>}' reference.
+	 * The cached value of the '{@link #getLeft() <em>Left</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getLeft()
@@ -39,7 +40,7 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	protected Trigger left;
 
 	/**
-	 * The cached value of the '{@link #getRight() <em>Right</em>}' reference.
+	 * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRight()
@@ -73,14 +74,6 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	 * @generated
 	 */
 	public Trigger getLeft() {
-		if (left != null && left.eIsProxy()) {
-			InternalEObject oldLeft = (InternalEObject)left;
-			left = (Trigger)eResolveProxy(oldLeft);
-			if (left != oldLeft) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompleteDSLPckgPackage.OR_TRIGGER__LEFT, oldLeft, left));
-			}
-		}
 		return left;
 	}
 
@@ -89,8 +82,14 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger basicGetLeft() {
-		return left;
+	public NotificationChain basicSetLeft(Trigger newLeft, NotificationChain msgs) {
+		Trigger oldLeft = left;
+		left = newLeft;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.OR_TRIGGER__LEFT, oldLeft, newLeft);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -99,10 +98,17 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	 * @generated
 	 */
 	public void setLeft(Trigger newLeft) {
-		Trigger oldLeft = left;
-		left = newLeft;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.OR_TRIGGER__LEFT, oldLeft, left));
+		if (newLeft != left) {
+			NotificationChain msgs = null;
+			if (left != null)
+				msgs = ((InternalEObject)left).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CompleteDSLPckgPackage.OR_TRIGGER__LEFT, null, msgs);
+			if (newLeft != null)
+				msgs = ((InternalEObject)newLeft).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CompleteDSLPckgPackage.OR_TRIGGER__LEFT, null, msgs);
+			msgs = basicSetLeft(newLeft, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.OR_TRIGGER__LEFT, newLeft, newLeft));
 	}
 
 	/**
@@ -111,14 +117,6 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	 * @generated
 	 */
 	public Trigger getRight() {
-		if (right != null && right.eIsProxy()) {
-			InternalEObject oldRight = (InternalEObject)right;
-			right = (Trigger)eResolveProxy(oldRight);
-			if (right != oldRight) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompleteDSLPckgPackage.OR_TRIGGER__RIGHT, oldRight, right));
-			}
-		}
 		return right;
 	}
 
@@ -127,8 +125,14 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger basicGetRight() {
-		return right;
+	public NotificationChain basicSetRight(Trigger newRight, NotificationChain msgs) {
+		Trigger oldRight = right;
+		right = newRight;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.OR_TRIGGER__RIGHT, oldRight, newRight);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -137,10 +141,33 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	 * @generated
 	 */
 	public void setRight(Trigger newRight) {
-		Trigger oldRight = right;
-		right = newRight;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.OR_TRIGGER__RIGHT, oldRight, right));
+		if (newRight != right) {
+			NotificationChain msgs = null;
+			if (right != null)
+				msgs = ((InternalEObject)right).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CompleteDSLPckgPackage.OR_TRIGGER__RIGHT, null, msgs);
+			if (newRight != null)
+				msgs = ((InternalEObject)newRight).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CompleteDSLPckgPackage.OR_TRIGGER__RIGHT, null, msgs);
+			msgs = basicSetRight(newRight, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.OR_TRIGGER__RIGHT, newRight, newRight));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CompleteDSLPckgPackage.OR_TRIGGER__LEFT:
+				return basicSetLeft(null, msgs);
+			case CompleteDSLPckgPackage.OR_TRIGGER__RIGHT:
+				return basicSetRight(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -152,11 +179,9 @@ public class OrTriggerImpl extends TriggerImpl implements OrTrigger {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CompleteDSLPckgPackage.OR_TRIGGER__LEFT:
-				if (resolve) return getLeft();
-				return basicGetLeft();
+				return getLeft();
 			case CompleteDSLPckgPackage.OR_TRIGGER__RIGHT:
-				if (resolve) return getRight();
-				return basicGetRight();
+				return getRight();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

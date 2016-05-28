@@ -7,6 +7,7 @@ import CompleteDSLPckg.NotTrigger;
 import CompleteDSLPckg.Trigger;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -28,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	/**
-	 * The cached value of the '{@link #getTrigger() <em>Trigger</em>}' reference.
+	 * The cached value of the '{@link #getTrigger() <em>Trigger</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTrigger()
@@ -62,14 +63,6 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	 * @generated
 	 */
 	public Trigger getTrigger() {
-		if (trigger != null && trigger.eIsProxy()) {
-			InternalEObject oldTrigger = (InternalEObject)trigger;
-			trigger = (Trigger)eResolveProxy(oldTrigger);
-			if (trigger != oldTrigger) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER, oldTrigger, trigger));
-			}
-		}
 		return trigger;
 	}
 
@@ -78,8 +71,14 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Trigger basicGetTrigger() {
-		return trigger;
+	public NotificationChain basicSetTrigger(Trigger newTrigger, NotificationChain msgs) {
+		Trigger oldTrigger = trigger;
+		trigger = newTrigger;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER, oldTrigger, newTrigger);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -88,10 +87,31 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	 * @generated
 	 */
 	public void setTrigger(Trigger newTrigger) {
-		Trigger oldTrigger = trigger;
-		trigger = newTrigger;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER, oldTrigger, trigger));
+		if (newTrigger != trigger) {
+			NotificationChain msgs = null;
+			if (trigger != null)
+				msgs = ((InternalEObject)trigger).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER, null, msgs);
+			if (newTrigger != null)
+				msgs = ((InternalEObject)newTrigger).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER, null, msgs);
+			msgs = basicSetTrigger(newTrigger, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER, newTrigger, newTrigger));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER:
+				return basicSetTrigger(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -103,8 +123,7 @@ public class NotTriggerImpl extends TriggerImpl implements NotTrigger {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case CompleteDSLPckgPackage.NOT_TRIGGER__TRIGGER:
-				if (resolve) return getTrigger();
-				return basicGetTrigger();
+				return getTrigger();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

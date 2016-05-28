@@ -1,8 +1,8 @@
 package fr.inria.diverse.puzzle.examples.triggers.semantics;
 
+import complextriggers.AndTrigger;
 import fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspectAndTriggerAspectProperties;
 import java.util.Map;
-import triggers.AndTrigger;
 
 @SuppressWarnings("all")
 public class AndTriggerAspectAndTriggerAspectContext {
@@ -14,7 +14,7 @@ public class AndTriggerAspectAndTriggerAspectContext {
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<AndTrigger, AndTriggerAspectAndTriggerAspectProperties> map = new java.util.WeakHashMap<triggers.AndTrigger, fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspectAndTriggerAspectProperties>();
+  private Map<AndTrigger, AndTriggerAspectAndTriggerAspectProperties> map = new java.util.WeakHashMap<complextriggers.AndTrigger, fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspectAndTriggerAspectProperties>();
   
   public Map<AndTrigger, AndTriggerAspectAndTriggerAspectProperties> getMap() {
     return map;

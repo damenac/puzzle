@@ -1,0 +1,25 @@
+package fr.inria.diverse.puzzle.examples.triggers.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import puzzle.annotations.processor.OverrideRequiredAspectMethod
+
+import org.eclipse.emf.common.util.EList
+import complextriggers.AndTrigger
+import complextriggers.Trigger
+
+// *.*
+// ASPECT
+@Aspect(className=Trigger)
+class TriggerAspect { 
+	 
+	@OverrideRequiredAspectMethod
+	def public boolean evalTrigger(EList<String> events){
+		if(_self instanceof AndTrigger){
+			var andTrigger = (_self as AndTrigger)
+			return andTrigger.evalTrigger(events)
+		}
+		else {
+			return _original_evalTrigger(_self, events)
+		}
+	}
+}

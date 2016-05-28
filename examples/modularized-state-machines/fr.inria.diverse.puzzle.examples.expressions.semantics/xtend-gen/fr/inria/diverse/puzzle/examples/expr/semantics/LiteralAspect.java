@@ -14,7 +14,9 @@ public class LiteralAspect extends ExpressionAspect {
   public static Object eval(final Literal _self, final Hashtable<String, Object> context) {
     fr.inria.diverse.puzzle.examples.expr.semantics.LiteralAspectLiteralAspectProperties _self_ = fr.inria.diverse.puzzle.examples.expr.semantics.LiteralAspectLiteralAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof ExpressionPck.Literal){
+    result = fr.inria.diverse.puzzle.examples.expr.semantics.LiteralAspect._privk3_eval(_self_, (ExpressionPck.Literal)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   

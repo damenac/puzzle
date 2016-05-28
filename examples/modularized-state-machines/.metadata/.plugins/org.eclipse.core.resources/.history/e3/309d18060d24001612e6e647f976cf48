@@ -1,0 +1,4 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	triggers.AndTrigger = fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspect
+	complextriggers.Trigger = fr.inria.diverse.puzzle.examples.triggers.semantics.TriggerAspect
+	complextriggers.AndTrigger = fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspect, fr.inria.diverse.puzzle.examples.triggers.semantics.TriggerAspect

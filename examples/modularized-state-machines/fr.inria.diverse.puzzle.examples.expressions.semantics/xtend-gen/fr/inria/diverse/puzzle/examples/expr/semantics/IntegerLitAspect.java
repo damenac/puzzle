@@ -14,7 +14,9 @@ public class IntegerLitAspect extends LiteralAspect {
   public static Object eval(final IntegerLit _self, final Hashtable<String, Object> context) {
     fr.inria.diverse.puzzle.examples.expr.semantics.IntegerLitAspectIntegerLitAspectProperties _self_ = fr.inria.diverse.puzzle.examples.expr.semantics.IntegerLitAspectIntegerLitAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof ExpressionPck.IntegerLit){
+    result = fr.inria.diverse.puzzle.examples.expr.semantics.IntegerLitAspect._privk3_eval(_self_, (ExpressionPck.IntegerLit)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   

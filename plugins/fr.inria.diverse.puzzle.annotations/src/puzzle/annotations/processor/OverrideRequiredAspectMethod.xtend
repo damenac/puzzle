@@ -29,18 +29,70 @@ class OverrideRequiredAspectMethodProcessor extends AbstractMethodProcessor {
 		}
 		
 		if(annotatedMethod.declaringType.findDeclaredMethod("_original_") == null){
-			annotatedMethod.declaringType.addMethod('_original_' + annotatedMethod.simpleName)[
+			if(annotatedMethod.returnType == null){
+				annotatedMethod.declaringType.addMethod('_original_' + annotatedMethod.simpleName)[
 				abstract = annotatedMethod.abstract
 				static = annotatedMethod.static
+				returnType = annotatedMethod.returnType
 				
 				body = ['''
 						// Required method *.*
 					''']
 				
 				annotatedMethod.parameters.forEach[_annotatedMethodParam |
-					addParameter(_annotatedMethodParam.simpleName, _annotatedMethodParam.type)
+					addParameter(_annotatedMethodParam.simpleName, _annotatedMethodParam.type)]
 				]
-			]
+			}
+			
+			else if(annotatedMethod.returnType.name.equals("boolean")){
+				annotatedMethod.declaringType.addMethod('_original_' + annotatedMethod.simpleName)[
+				abstract = annotatedMethod.abstract
+				static = annotatedMethod.static
+				returnType = annotatedMethod.returnType
+				
+				body = ['''
+						// Required method *.*
+						return false;
+					''']
+				
+				annotatedMethod.parameters.forEach[_annotatedMethodParam |
+					addParameter(_annotatedMethodParam.simpleName, _annotatedMethodParam.type)]
+				]
+			}
+			
+			else if(annotatedMethod.returnType.name.equals("int") || annotatedMethod.returnType.name.equals("double")
+				|| annotatedMethod.returnType.name.equals("real") || annotatedMethod.returnType.name.equals("char")
+			){
+				annotatedMethod.declaringType.addMethod('_original_' + annotatedMethod.simpleName)[
+				abstract = annotatedMethod.abstract
+				static = annotatedMethod.static
+				returnType = annotatedMethod.returnType
+				
+				body = ['''
+						// Required method *.*
+						return 0;
+					''']
+				
+				annotatedMethod.parameters.forEach[_annotatedMethodParam |
+					addParameter(_annotatedMethodParam.simpleName, _annotatedMethodParam.type)]
+				]
+			}
+			
+			else{
+				annotatedMethod.declaringType.addMethod('_original_' + annotatedMethod.simpleName)[
+				abstract = annotatedMethod.abstract
+				static = annotatedMethod.static
+				returnType = annotatedMethod.returnType
+				
+				body = ['''
+						// Required method *.*
+						return null;
+					''']
+				
+				annotatedMethod.parameters.forEach[_annotatedMethodParam |
+					addParameter(_annotatedMethodParam.simpleName, _annotatedMethodParam.type)]
+				]
+			}
 		}
 	}
 }

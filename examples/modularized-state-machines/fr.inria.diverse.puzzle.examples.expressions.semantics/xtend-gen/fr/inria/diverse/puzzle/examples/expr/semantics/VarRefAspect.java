@@ -14,7 +14,9 @@ public class VarRefAspect extends ExpressionAspect {
   public static Object eval(final VarRef _self, final Hashtable<String, Object> context) {
     fr.inria.diverse.puzzle.examples.expr.semantics.VarRefAspectVarRefAspectProperties _self_ = fr.inria.diverse.puzzle.examples.expr.semantics.VarRefAspectVarRefAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof ExpressionPck.VarRef){
+    result = fr.inria.diverse.puzzle.examples.expr.semantics.VarRefAspect._privk3_eval(_self_, (ExpressionPck.VarRef)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   
