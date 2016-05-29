@@ -1,0 +1,19 @@
+package fr.inria.diverse.puzzle.examples.compositestates.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import hfsm.Region
+import puzzle.annotations.processor.OverrideRequiredAspectMethod
+import java.util.ArrayList
+import java.util.Hashtable
+import hfsm.Transition
+import hfsm.AbstractState
+
+@Aspect(className=Region)
+class RegionAspect {
+
+	@OverrideRequiredAspectMethod
+	def public void findNewActiveStates(){
+			println("hola")
+		}
+}

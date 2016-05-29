@@ -69,12 +69,35 @@ public class HfsmSwitch<T> extends Switch<T> {
 			case HfsmPackage.STATE: {
 				State state = (State)theEObject;
 				T result = caseState(state);
+				if (result == null) result = caseAbstractState(state);
+				if (result == null) result = caseNamedElement(state);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case HfsmPackage.REGION: {
 				Region region = (Region)theEObject;
 				T result = caseRegion(region);
+				if (result == null) result = caseNamedElement(region);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HfsmPackage.ABSTRACT_STATE: {
+				AbstractState abstractState = (AbstractState)theEObject;
+				T result = caseAbstractState(abstractState);
+				if (result == null) result = caseNamedElement(abstractState);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HfsmPackage.TRANSITION: {
+				Transition transition = (Transition)theEObject;
+				T result = caseTransition(transition);
+				if (result == null) result = caseNamedElement(transition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case HfsmPackage.NAMED_ELEMENT: {
+				NamedElement namedElement = (NamedElement)theEObject;
+				T result = caseNamedElement(namedElement);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -109,6 +132,51 @@ public class HfsmSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseRegion(Region object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Abstract State</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Abstract State</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAbstractState(AbstractState object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Transition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTransition(Transition object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Named Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNamedElement(NamedElement object) {
 		return null;
 	}
 

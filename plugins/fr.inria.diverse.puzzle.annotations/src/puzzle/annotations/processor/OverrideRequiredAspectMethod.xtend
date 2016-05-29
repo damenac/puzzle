@@ -29,7 +29,23 @@ class OverrideRequiredAspectMethodProcessor extends AbstractMethodProcessor {
 		}
 		
 		if(annotatedMethod.declaringType.findDeclaredMethod("_original_") == null){
+			
 			if(annotatedMethod.returnType == null){
+				annotatedMethod.declaringType.addMethod('_original_' + annotatedMethod.simpleName)[
+				abstract = annotatedMethod.abstract
+				static = annotatedMethod.static
+				returnType = annotatedMethod.returnType
+				
+				body = ['''
+						// Required method *.*
+					''']
+				
+				annotatedMethod.parameters.forEach[_annotatedMethodParam |
+					addParameter(_annotatedMethodParam.simpleName, _annotatedMethodParam.type)]
+				]
+			}
+			
+			else if(annotatedMethod.returnType.name.equalsIgnoreCase("void")){
 				annotatedMethod.declaringType.addMethod('_original_' + annotatedMethod.simpleName)[
 				abstract = annotatedMethod.abstract
 				static = annotatedMethod.static

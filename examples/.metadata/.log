@@ -6028,3 +6028,6 @@ Binding(COMMAND+6,
 !ENTRY org.apache.log4j 2 0 2016-05-29 15:36:33.197
 !MESSAGE org.eclipse.xtext.internal.ExtensionResourceServiceProviderRegistryReader  - Both 'fr.inria.diverse.melange.ui' and 'fr.inria.diverse.puzzle.ui' register a content parser for 'melange'
 
+
+!ENTRY org.eclipse.ui 2 2 2016-05-29 16:11:01.502
+!MESSAGE Invalid property category path: org.eclipse.cdt.managedbuilder.ui.properties.Page_head_build (bundle: org.eclipse.cdt.ui, propertyPage: org.eclipse.cdt.managedbuilder.ui.properties.BuildLogPreferencePage)

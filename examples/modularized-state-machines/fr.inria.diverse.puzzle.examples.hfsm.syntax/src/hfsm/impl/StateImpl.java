@@ -5,19 +5,12 @@ package hfsm.impl;
 import hfsm.HfsmPackage;
 import hfsm.Region;
 import hfsm.State;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,7 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class StateImpl extends MinimalEObjectImpl.Container implements State {
+public class StateImpl extends AbstractStateImpl implements State {
 	/**
 	 * The cached value of the '{@link #getOwnedRegions() <em>Owned Regions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -70,24 +63,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State {
 	 */
 	public EList<Region> getOwnedRegions() {
 		if (ownedRegions == null) {
-			ownedRegions = new EObjectContainmentWithInverseEList<Region>(Region.class, this, HfsmPackage.STATE__OWNED_REGIONS, HfsmPackage.REGION__OWNER_STATE);
+			ownedRegions = new EObjectContainmentEList<Region>(Region.class, this, HfsmPackage.STATE__OWNED_REGIONS);
 		}
 		return ownedRegions;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case HfsmPackage.STATE__OWNED_REGIONS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedRegions()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

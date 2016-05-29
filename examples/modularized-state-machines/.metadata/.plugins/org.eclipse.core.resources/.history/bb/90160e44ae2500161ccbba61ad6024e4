@@ -1,0 +1,28 @@
+package fr.inria.diverse.puzzle.examples.compositestates.semantics
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+	
+import hfsm.Region
+import puzzle.annotations.processor.OverrideRequiredAspectMethod
+import java.util.ArrayList
+import java.util.Hashtable
+import hfsm.Transition
+import hfsm.AbstractState
+
+@Aspect(className=Region)
+class RegionAspect {
+
+	@OverrideRequiredAspectMethod 
+	def public void findNewActiveStates(ArrayList<AbstractState> newActiveStates,
+		Transition selectedTransition, ArrayList<Transition> currentActiveTransitions, 
+		Hashtable<String, Object> context){
+			
+			// Adding the super states to the current state.
+			val ArrayList<AbstractState> targetParents = new ArrayList<AbstractState>()
+			_self.getAllParents(selectedTransition.target, targetParents)
+			targetParents.forEach[_parent | 
+				if(!newActiveStates.contains(_parent))
+						newActiveStates.add(_parent);
+			]
+	}
+}

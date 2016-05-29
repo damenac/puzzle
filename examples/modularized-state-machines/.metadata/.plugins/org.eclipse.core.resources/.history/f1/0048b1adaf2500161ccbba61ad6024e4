@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.examples.hfsm.syntax/src"
+    modelPluginID="fr.inria.diverse.puzzle.examples.hfsm.syntax" modelName="Hfsm"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>hfsm.ecore</foreignModel>
+  <genPackages prefix="Hfsm" disposableProviderFactory="true" ecorePackage="hfsm.ecore#/">
+    <genClasses ecoreClass="hfsm.ecore#//State">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hfsm.ecore#//State/ownedRegions"/>
+    </genClasses>
+    <genClasses ecoreClass="hfsm.ecore#//Region">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hfsm.ecore#//Region/ownerState"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hfsm.ecore#//Region/subvertex"/>
+    </genClasses>
+    <genClasses ecoreClass="hfsm.ecore#//AbstractState">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hfsm.ecore#//AbstractState/incoming"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hfsm.ecore#//AbstractState/outgoing"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference hfsm.ecore#//AbstractState/ownerRegion"/>
+    </genClasses>
+    <genClasses ecoreClass="hfsm.ecore#//Transition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hfsm.ecore#//Transition/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hfsm.ecore#//Transition/source"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -40,6 +40,33 @@ public interface HfsmFactory extends EFactory {
 	Region createRegion();
 
 	/**
+	 * Returns a new object of class '<em>Abstract State</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Abstract State</em>'.
+	 * @generated
+	 */
+	AbstractState createAbstractState();
+
+	/**
+	 * Returns a new object of class '<em>Transition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Transition</em>'.
+	 * @generated
+	 */
+	Transition createTransition();
+
+	/**
+	 * Returns a new object of class '<em>Named Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Named Element</em>'.
+	 * @generated
+	 */
+	NamedElement createNamedElement();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

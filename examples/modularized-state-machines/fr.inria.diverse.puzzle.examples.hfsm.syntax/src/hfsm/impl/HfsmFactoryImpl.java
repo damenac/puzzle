@@ -58,6 +58,9 @@ public class HfsmFactoryImpl extends EFactoryImpl implements HfsmFactory {
 		switch (eClass.getClassifierID()) {
 			case HfsmPackage.STATE: return createState();
 			case HfsmPackage.REGION: return createRegion();
+			case HfsmPackage.ABSTRACT_STATE: return createAbstractState();
+			case HfsmPackage.TRANSITION: return createTransition();
+			case HfsmPackage.NAMED_ELEMENT: return createNamedElement();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -81,6 +84,36 @@ public class HfsmFactoryImpl extends EFactoryImpl implements HfsmFactory {
 	public Region createRegion() {
 		RegionImpl region = new RegionImpl();
 		return region;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AbstractState createAbstractState() {
+		AbstractStateImpl abstractState = new AbstractStateImpl();
+		return abstractState;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Transition createTransition() {
+		TransitionImpl transition = new TransitionImpl();
+		return transition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NamedElement createNamedElement() {
+		NamedElementImpl namedElement = new NamedElementImpl();
+		return namedElement;
 	}
 
 	/**

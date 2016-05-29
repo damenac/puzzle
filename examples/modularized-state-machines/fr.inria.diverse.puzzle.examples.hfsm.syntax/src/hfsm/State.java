@@ -4,8 +4,6 @@ package hfsm;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>State</b></em>'.
@@ -22,11 +20,10 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface State extends EObject {
+public interface State extends AbstractState {
 	/**
 	 * Returns the value of the '<em><b>Owned Regions</b></em>' containment reference list.
 	 * The list contents are of type {@link hfsm.Region}.
-	 * It is bidirectional and its opposite is '{@link hfsm.Region#getOwnerState <em>Owner State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Owned Regions</em>' containment reference list isn't clear,
@@ -35,8 +32,7 @@ public interface State extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Regions</em>' containment reference list.
 	 * @see hfsm.HfsmPackage#getState_OwnedRegions()
-	 * @see hfsm.Region#getOwnerState
-	 * @model opposite="ownerState" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Region> getOwnedRegions();
