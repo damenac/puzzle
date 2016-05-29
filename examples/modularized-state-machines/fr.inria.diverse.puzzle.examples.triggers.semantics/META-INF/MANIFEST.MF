@@ -1,5 +1,5 @@
 Bundle-SymbolicName: fr.inria.diverse.puzzle.examples.triggers.semantics; singleton:=true
-Export-Package: fsmrhapsodyaspects,fr.inria.diverse.puzzle.examples.triggers.semantics
+Export-Package: fr.inria.diverse.puzzle.examples.newtriggers.semantics
 Bundle-Name: fr.inria.diverse.puzzle.examples.triggers.semantics
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .

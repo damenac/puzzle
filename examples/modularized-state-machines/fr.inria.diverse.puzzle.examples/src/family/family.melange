@@ -6,11 +6,11 @@ package family
 language FSM implements ProvidedFSM requires RequiredFSM {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm.ecore"
 	
-	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect
-	with fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect
-	with fr.inria.diverse.puzzle.examples.fsm.semantics.StateAspect
-	with fr.inria.diverse.puzzle.examples.fsm.semantics.TransitionAspect
-	with fr.inria.diverse.puzzle.examples.fsm.semantics.TriggerAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.StateMachineAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.RegionAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.StateAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.TransitionAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.TriggerAspect
 	
 	exactType FSMMT
 }
@@ -77,9 +77,8 @@ modeltype ProvidedExpressions {
 
 language ComplexTriggers requires RequiredComplexTriggers {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers.ecore"
-	
-//	with fr.inria.diverse.puzzle.examples.triggers.semantics.TriggerAspect
-	with fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspect
+	 
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect
 	
 	exactType ComplexTriggersMT
 }

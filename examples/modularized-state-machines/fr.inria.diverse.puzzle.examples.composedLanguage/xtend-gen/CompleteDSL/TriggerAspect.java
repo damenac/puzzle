@@ -28,7 +28,7 @@ public static boolean evalTrigger(final Trigger _self,final EList<String> events
 }
 
 public static boolean super_evalTrigger(final Trigger _self, final EList<String> events) {
-    fr.inria.diverse.puzzle.examples.CompleteDSLPckg.semantics.TriggerAspectTriggerAspectProperties _self_ = fr.inria.diverse.puzzle.examples.CompleteDSLPckg.semantics.TriggerAspectTriggerAspectContext.getSelf(_self);
+    CompleteDSL.TriggerAspectTriggerAspectProperties _self_ = CompleteDSL.TriggerAspectTriggerAspectContext.getSelf(_self);
     Object result = null;
     result =_privk3_evalTrigger(_self_, _self,events);
     return (boolean)result;

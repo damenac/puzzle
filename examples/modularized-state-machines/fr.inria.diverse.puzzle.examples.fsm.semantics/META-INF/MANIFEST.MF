@@ -1,5 +1,5 @@
 Bundle-SymbolicName: fr.inria.diverse.puzzle.examples.fsm.semantics; singleton:=true
-Export-Package: fr.inria.diverse.puzzle.examples.fsm.semantics
+Export-Package: fr.inria.diverse.puzzle.examples.statemachine.semantics
 Bundle-Name: fr.inria.diverse.puzzle.examples.fsm.semantics
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .

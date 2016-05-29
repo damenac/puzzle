@@ -2,7 +2,7 @@
  */
 package CompleteDSLPckg;
 
-import java.util.Map;
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -11,6 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Block</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link CompleteDSLPckg.Block#getStatements <em>Statements</em>}</li>
+ * </ul>
+ * </p>
  *
  * @see CompleteDSLPckg.CompleteDSLPckgPackage#getBlock()
  * @model
@@ -18,11 +24,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Block extends EObject {
 	/**
+	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.
+	 * The list contents are of type {@link CompleteDSLPckg.Statement}.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Statements</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @return the value of the '<em>Statements</em>' containment reference list.
+	 * @see CompleteDSLPckg.CompleteDSLPckgPackage#getBlock_Statements()
+	 * @model containment="true"
 	 * @generated
 	 */
-	void evalStatement(Map context);
+	EList<Statement> getStatements();
 
 } // Block

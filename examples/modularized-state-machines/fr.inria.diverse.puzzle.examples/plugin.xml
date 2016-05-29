@@ -32,7 +32,7 @@
     </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="Trigger:fr.inria.diverse.puzzle.examples.fsm.semantics.TriggerAspect;StateMachine:fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect;State:fr.inria.diverse.puzzle.examples.fsm.semantics.StateAspect;Transition:fr.inria.diverse.puzzle.examples.fsm.semantics.TransitionAspect;Region:fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect" description="A language for state machines." entryPoints="fr.inria.diverse.puzzle.examples.fsm.semantics.StateMachineAspect.eval(fsm.StateMachine)" exactType="family.FSMMT" id="family.FSM" uri="http://puzzle.examples.fsm">
+    <language aspects="Trigger:fr.inria.diverse.puzzle.examples.statemachine.semantics.TriggerAspect;StateMachine:fr.inria.diverse.puzzle.examples.statemachine.semantics.StateMachineAspect;State:fr.inria.diverse.puzzle.examples.statemachine.semantics.StateAspect;Transition:fr.inria.diverse.puzzle.examples.statemachine.semantics.TransitionAspect;Region:fr.inria.diverse.puzzle.examples.statemachine.semantics.RegionAspect" description="A language for state machines." entryPoints="fr.inria.diverse.puzzle.examples.statemachine.semantics.StateMachineAspect.eval(fsm.StateMachine)" exactType="family.FSMMT" id="family.FSM" uri="http://puzzle.examples.fsm">
       <adapter class="family.fsm.adapters.providedfsm.FSMAdapter" modeltypeId="family.ProvidedFSM"/>
       <adapter class="family.fsm.adapters.requiredfsm.FSMAdapter" modeltypeId="family.RequiredFSM"/>
       <adapter class="family.fsm.adapters.providedactionscripting.FSMAdapter" modeltypeId="family.ProvidedActionScripting"/>
@@ -48,7 +48,7 @@
       <adapter class="family.expressions.adapters.providedexpressions.ExpressionsAdapter" modeltypeId="family.ProvidedExpressions"/>
       <adapter class="family.expressions.adapters.expressionsmt.ExpressionsAdapter" modeltypeId="family.ExpressionsMT"/>
     </language>
-    <language aspects="AndTrigger:fr.inria.diverse.puzzle.examples.triggers.semantics.AndTriggerAspect" entryPoints="" exactType="family.ComplexTriggersMT" id="family.ComplexTriggers" uri="http://complextriggers">
+    <language aspects="AndTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect" entryPoints="" exactType="family.ComplexTriggersMT" id="family.ComplexTriggers" uri="http://complextriggers">
       <adapter class="family.complextriggers.adapters.requiredcomplextriggers.ComplexTriggersAdapter" modeltypeId="family.RequiredComplexTriggers"/>
       <adapter class="family.complextriggers.adapters.complextriggersmt.ComplexTriggersAdapter" modeltypeId="family.ComplexTriggersMT"/>
     </language>
