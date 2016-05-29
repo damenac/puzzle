@@ -1,0 +1,100 @@
+package family
+
+/**
+ * A language for state machines.
+ */
+language FSM implements ProvidedFSM requires RequiredFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm.ecore"
+	
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.StateMachineAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.RegionAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.StateAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.TransitionAspect
+	with fr.inria.diverse.puzzle.examples.statemachine.semantics.TriggerAspect
+	
+	exactType FSMMT
+}
+
+modeltype RequiredFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm-required.ecore"
+}
+
+modeltype ProvidedFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.fsm.syntax/models/fsm-provided.ecore"
+}
+ 
+/** 
+ * A language for Rhapsody state machines.
+ */
+language ActionScripting implements ProvidedActionScripting requires RequiredActionScripting {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.actionscripting.syntax/models/actionscripting.ecore"
+
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.AssignationAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.BlockAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.ConditionalAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.LoopAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintlnAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.StatementAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.VarDeclAspect
+	with fr.inria.diverse.puzzle.examples.actionscripting.semantics.WaitAspect
+
+	exactType ActionScriptingMT
+}
+
+modeltype RequiredActionScripting {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.actionscripting.syntax/models/actionscripting-required.ecore"
+}
+
+modeltype ProvidedActionScripting {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.actionscripting.syntax/models/actionscripting-provided.ecore"
+}
+
+/**
+ * A language for simple expressions
+ */
+language Expressions implements ProvidedExpressions {
+	
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.expressions.syntax/models/Expression.ecore"
+	
+	with fr.inria.diverse.puzzle.examples.expr.semantics.ExpressionAspect 
+	with fr.inria.diverse.puzzle.examples.expr.semantics.ArithmeticExpressionAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.IntegerLitAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.RelationalExpressionAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.StringLitAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.BoolLitAspect
+	with fr.inria.diverse.puzzle.examples.expr.semantics.VarRefAspect
+	
+	exactType ExpressionsMT
+}
+
+/**
+ * Provided interface for the Expressions language unit
+ */
+modeltype ProvidedExpressions {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.expressions.syntax/models/Expression-provided.ecore"
+}
+
+language ComplexTriggers requires RequiredComplexTriggers {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers.ecore"
+	 
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.OrTriggerAspect
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.NotTriggerAspect
+	
+	exactType ComplexTriggersMT
+}
+
+modeltype RequiredComplexTriggers {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers-required.ecore"
+}
+
+language HierarchicalFSM requires RequiredHierarchicalFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm.ecore"
+	
+	exactType HierarchicalFSMMT
+}
+
+modeltype RequiredHierarchicalFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm-required.ecore"
+}

@@ -68,6 +68,8 @@ public class PuzzleMerge {
 			EPackage requiredInterface, MatchingDiagnostic binding, 
 			EPackage recalculatedRequiredInterface, String languageName) {
 		
+		System.out.println("Merging... " + extensionLanguage.getName() + " and " + baseLanguage.getName());
+		
 		Hashtable<String, EClassifier> oldEClassifiers = new Hashtable<String, EClassifier>();
 		Hashtable<String, EClassifier> unifiedEClassifiers = new Hashtable<String, EClassifier>();
 		
@@ -128,13 +130,35 @@ public class PuzzleMerge {
 			addEPackageClasses(_ePackage, clone, oldEClassifiers, unifiedEClassifiers);
 		}
 		
+		// Adding the elements of the required interface to the metamodel. 
 		if(recalculatedRequiredInterface != null){
-			resolveCrossCuttingEReferences(oldEClassifiers, unifiedEClassifiers, baseLanguage, binding, recalculatedRequiredInterface);
-			resolveCrossCuttingESuperTypes(oldEClassifiers, unifiedEClassifiers, baseLanguage, binding, recalculatedRequiredInterface);
+			for (EClassifier requiredClassifier : recalculatedRequiredInterface.getEClassifiers()) {
+				if(requiredClassifier instanceof EClass){
+					if(unifiedEClassifiers.get(((EClass)requiredClassifier).getName()) == null){
+						oldEClassifiers.put(((EClass)requiredClassifier).getName(), (EClass) requiredClassifier);
+						EClass newEClass = cloneEClass(EcoreFactory.eINSTANCE, (EClass) requiredClassifier);
+						clone.getEClassifiers().add(newEClass);
+						unifiedEClassifiers.put(newEClass.getName(), newEClass);
+					}
+				}
+				else if(requiredClassifier instanceof EEnum){
+					oldEClassifiers.put(((EEnum)requiredClassifier).getName(), (EEnum) requiredClassifier);
+					EEnum newEEnum = cloneEEnum(EcoreFactory.eINSTANCE, (EEnum) requiredClassifier);
+					clone.getEClassifiers().add(newEEnum);
+					unifiedEClassifiers.put(newEEnum.getName(), newEEnum);
+				}
+				
+				if(requiredClassifier.getEAnnotation("Required") == null){
+					EAnnotation requiredAnnotation = EcoreFactory.eINSTANCE.createEAnnotation();
+					requiredAnnotation.setSource("Required");
+					requiredClassifier.getEAnnotations().add(requiredAnnotation);
+				}
+			}
+			resolveLocalEAttributes(oldEClassifiers, unifiedEClassifiers, clone);
+			resolveLocalEReferences(oldEClassifiers, unifiedEClassifiers, clone, false);
+			resolveLocalEOperationTypes(oldEClassifiers, unifiedEClassifiers, clone);
+			resolveLocalSuperTypes(oldEClassifiers, unifiedEClassifiers, clone);
 		}
-		resolveLocalEAttributes(oldEClassifiers, unifiedEClassifiers, clone);
-		resolveEOppositeReferences(oldEClassifiers, unifiedEClassifiers, clone);
-		resolveLocalEOperationTypes(oldEClassifiers, unifiedEClassifiers, clone);
 		
 		return clone;
 	}
@@ -804,7 +828,7 @@ public class PuzzleMerge {
 							if(_resolvedTypeName != null){
 								if(_legacyOperation.getEType() instanceof EDataType){
 									EClassifier eType = EcoreQueries.searchNativeTypeByName(_resolvedTypeName);
-									_legacyOperation.setEType(eType);
+									_newEOperation.setEType(eType);
 								}else{
 									EClassifier _resolvedType = _newClassifiers.get(_resolvedTypeName);
 									_newEOperation.setEType(_resolvedType);
@@ -864,7 +888,13 @@ public class PuzzleMerge {
 				
 				if(oldClass != null){
 					for (EClass _oldSuperType : oldClass.getESuperTypes() ) {
-						newClass.getESuperTypes().add((EClass)_newClassifiers.get(_oldSuperType.getName()));
+						EClass newSuperType = (EClass)_newClassifiers.get(_oldSuperType.getName());
+						System.out.println("Resolving super types: " + _oldSuperType.getName());
+						if(newSuperType != null){
+							newClass.getESuperTypes().add(newSuperType);
+							System.out.println("OK");
+						}
+						
 					}
 				}
 			}
@@ -1053,7 +1083,12 @@ public class PuzzleMerge {
 					EClass newClass = (EClass) unifiedEClassifiers.get(currentKey);
 					
 					for (EClass eSuperType : oldClass.getESuperTypes() ) {
-						newClass.getESuperTypes().add((EClass)unifiedEClassifiers.get(eSuperType.getName()));
+						EClass newSuperType = (EClass)unifiedEClassifiers.get(eSuperType.getName());
+						System.out.println("Resolving cross cutting super types: " + eSuperType.getName());
+						if(newSuperType != null){
+							newClass.getESuperTypes().add(newSuperType);
+							System.out.println("OK");
+						}
 					}
 				}
 			}

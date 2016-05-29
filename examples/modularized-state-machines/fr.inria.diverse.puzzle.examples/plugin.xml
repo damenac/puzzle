@@ -7,7 +7,6 @@
     </modeltype>
     <modeltype id="family.ProvidedFSM" uri="http://providedfsm/">
       <subtyping modeltypeId="family.RequiredComplexTriggers"/>
-      <subtyping modeltypeId="family.RequiredHierarchicalFSM"/>
     </modeltype>
     <modeltype id="family.RequiredActionScripting" uri="http://requiredactionscripting/"/>
     <modeltype id="family.ProvidedActionScripting" uri="http://providedactionscripting/">
@@ -59,7 +58,7 @@
       <adapter class="family.complextriggers.adapters.requiredcomplextriggers.ComplexTriggersAdapter" modeltypeId="family.RequiredComplexTriggers"/>
       <adapter class="family.complextriggers.adapters.complextriggersmt.ComplexTriggersAdapter" modeltypeId="family.ComplexTriggersMT"/>
     </language>
-    <language aspects="" entryPoints="" exactType="family.HierarchicalFSMMT" id="family.HierarchicalFSM" uri="http://hfsm">
+    <language aspects="Region:fr.inria.diverse.puzzle.examples.compositestates.semantics.RegionAspect" entryPoints="" exactType="family.HierarchicalFSMMT" id="family.HierarchicalFSM" uri="http://hfsm">
       <adapter class="family.hierarchicalfsm.adapters.requiredhierarchicalfsm.HierarchicalFSMAdapter" modeltypeId="family.RequiredHierarchicalFSM"/>
       <adapter class="family.hierarchicalfsm.adapters.hierarchicalfsmmt.HierarchicalFSMAdapter" modeltypeId="family.HierarchicalFSMMT"/>
     </language>

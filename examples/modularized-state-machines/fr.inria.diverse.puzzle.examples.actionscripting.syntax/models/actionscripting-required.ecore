@@ -3,6 +3,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
     <eAnnotations source="Required"/>
     <eOperations name="eval">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
       <eParameters name="context">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
       </eParameters>

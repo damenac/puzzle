@@ -2,9 +2,15 @@
 <ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="hfsmReq" nsURI="http://hfsmReq" nsPrefix="hfsmReq">
   <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="//AbstractState">
     <eAnnotations source="Required"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedRegions" upperBound="-1" eType="//Region" containment="true">
+      <eAnnotations source="Addition"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Region" eSuperTypes="//NamedElement">
     <eAnnotations source="Required"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownerState" eType="//State">
+      <eAnnotations source="Addition"/>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="subvertex" upperBound="-1" eType="//AbstractState" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AbstractState" eSuperTypes="//NamedElement">

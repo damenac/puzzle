@@ -21,11 +21,13 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.puzzle.examples.triggers.semantics;bundle-version="1.0.0",
  fr.inria.diverse.puzzle.examples.triggers.syntax;bundle-version="1.0.0",
  fr.inria.diverse.puzzle.examples.composedLanguage;bundle-version="0.1.0",
- fr.inria.diverse.puzzle.examples.hfsm.syntax;bundle-version="1.0.0"
+ fr.inria.diverse.puzzle.examples.hfsm.syntax;bundle-version="1.0.0",
+ fr.inria.diverse.puzzle.examples.hfsm.semantics;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0
 Import-Package: fr.inria.diverse.puzzle.examples.actionscripting.semantics,
+ fr.inria.diverse.puzzle.examples.compositestates.semantics,
  fr.inria.diverse.puzzle.examples.expr.semantics,
- fr.inria.diverse.puzzle.examples.statemachine.semantics,
- fr.inria.diverse.puzzle.examples.newtriggers.semantics
+ fr.inria.diverse.puzzle.examples.newtriggers.semantics,
+ fr.inria.diverse.puzzle.examples.statemachine.semantics

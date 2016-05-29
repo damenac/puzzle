@@ -125,7 +125,7 @@ public class RequiredInterfaceExtractor {
 		
 		//Clone the references
 		for (EReference eReference : oldClass.getEReferences()) {
-			if(eReference.getEAnnotation("Addition") == null){
+//			if(eReference.getEAnnotation("Addition") == null){
 				EReference newEReference = ecoreFactory.createEReference();
 				newEReference.setName(eReference.getName());
 				newEReference.setLowerBound(eReference.getLowerBound());
@@ -141,7 +141,7 @@ public class RequiredInterfaceExtractor {
 					newEReference.getEAnnotations().add(newEAnnotation);
 				}
 			}
-		}
+//		}
 		
 		//Clone the operations
 		for (EOperation operation : oldClass.getEOperations()) {

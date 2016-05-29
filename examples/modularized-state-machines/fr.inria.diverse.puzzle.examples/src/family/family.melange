@@ -92,6 +92,8 @@ modeltype RequiredComplexTriggers {
 language HierarchicalFSM requires RequiredHierarchicalFSM {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm.ecore"
 	
+	with fr.inria.diverse.puzzle.examples.compositestates.semantics.RegionAspect
+	
 	exactType HierarchicalFSMMT
 }
 
