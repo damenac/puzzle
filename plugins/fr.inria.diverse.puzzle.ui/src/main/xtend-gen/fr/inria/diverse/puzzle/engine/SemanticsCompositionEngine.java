@@ -590,9 +590,16 @@ public class SemanticsCompositionEngine {
       Hashtable<String, String> mergedFiles = new Hashtable<String, String>();
       for (final OverlappingAspectsVO _overlappingAspect : overlappingAspects) {
         {
-          String _get = mergedFiles.get(_overlappingAspect.mergedFile);
-          boolean _equals = Objects.equal(_get, null);
-          if (_equals) {
+          boolean _and = false;
+          boolean _notEquals = (!Objects.equal(_overlappingAspect.mergedFile, null));
+          if (!_notEquals) {
+            _and = false;
+          } else {
+            String _get = mergedFiles.get(_overlappingAspect.mergedFile);
+            boolean _equals = Objects.equal(_get, null);
+            _and = _equals;
+          }
+          if (_and) {
             this.overrideMethod(_overlappingAspect.rightFile, _overlappingAspect.mergedFile);
             mergedFiles.put(_overlappingAspect.mergedFile, _overlappingAspect.mergedFile);
           }

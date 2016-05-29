@@ -56,7 +56,7 @@ class EcoreQueries {
 			if(_eClassifier instanceof EClass){
 				var EClass _eClass = _eClassifier as EClass
 				for(EReference _eReference : _eClass.EReferences){
-					if(_eReference.EType.name.equals(targetClass.name)){
+					if(_eReference.EType != null &&_eReference.EType.name.equals(targetClass.name)){
 						incomingReferences.add(_eReference)
 					}
 				}

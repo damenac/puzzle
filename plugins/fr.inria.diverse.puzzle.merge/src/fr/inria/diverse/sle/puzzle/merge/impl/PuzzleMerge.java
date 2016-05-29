@@ -777,6 +777,7 @@ public class PuzzleMerge {
 			if(_eClassifier instanceof EClass){
 				EClass newClass = (EClass) _eClassifier;
 				EClass oldClass = (EClass) _oldClassifiers.get(_eClassifier.getName());
+				
 				if(oldClass != null){
 					ArrayList<EReference> toDelete = new ArrayList<EReference>();
 					for (EReference _newReference : newClass.getEReferences() ) {
@@ -788,9 +789,21 @@ public class PuzzleMerge {
 								EClassifier _resolvedType = _newClassifiers.get(_resolvedTypeName);
 								_newReference.setEType(_resolvedType);
 							}
-							if(_newReference.getEType() == null)
-								toDelete.add(_newReference);
 						}
+						else{
+							EClassifier _extendedOldClass = _oldClassifiers.get(_eClassifier.getName() + "-extension");
+							if(_extendedOldClass != null){
+								EReference _oldExtendedReference = ((EReference)searchStructuralFeatureByName((EClass)_extendedOldClass, _newReference.getName()));
+								String _resolvedTypeName = _oldExtendedReference.getEType().getName();
+								if(_resolvedTypeName != null){
+									EClassifier _resolvedType = _newClassifiers.get(_resolvedTypeName);
+									_newReference.setEType(_resolvedType);
+								}
+							}
+						}
+						
+						if(_newReference.getEType() == null)
+							toDelete.add(_newReference);
 					}
 					
 					if(deleteUntyped){

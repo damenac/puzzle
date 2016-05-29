@@ -79,11 +79,19 @@ public class EcoreQueries {
         EClass _eClass = ((EClass) _eClassifier);
         EList<EReference> _eReferences = _eClass.getEReferences();
         for (final EReference _eReference : _eReferences) {
+          boolean _and = false;
           EClassifier _eType = _eReference.getEType();
-          String _name = _eType.getName();
-          String _name_1 = targetClass.getName();
-          boolean _equals = _name.equals(_name_1);
-          if (_equals) {
+          boolean _notEquals = (!Objects.equal(_eType, null));
+          if (!_notEquals) {
+            _and = false;
+          } else {
+            EClassifier _eType_1 = _eReference.getEType();
+            String _name = _eType_1.getName();
+            String _name_1 = targetClass.getName();
+            boolean _equals = _name.equals(_name_1);
+            _and = _equals;
+          }
+          if (_and) {
             incomingReferences.add(_eReference);
           }
         }

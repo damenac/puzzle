@@ -332,7 +332,7 @@ class SemanticsCompositionEngine {
 		var Hashtable<String, String> mergedFiles = new Hashtable<String, String>()
 			
 		for(OverlappingAspectsVO _overlappingAspect : overlappingAspects){
-			if(mergedFiles.get(_overlappingAspect.mergedFile) == null){
+			if(_overlappingAspect.mergedFile != null && mergedFiles.get(_overlappingAspect.mergedFile) == null){
 				overrideMethod(_overlappingAspect.rightFile, _overlappingAspect.mergedFile);
 				mergedFiles.put(_overlappingAspect.mergedFile,_overlappingAspect.mergedFile);
 			}
