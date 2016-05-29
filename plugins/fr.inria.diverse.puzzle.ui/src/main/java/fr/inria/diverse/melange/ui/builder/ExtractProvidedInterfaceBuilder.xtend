@@ -33,6 +33,7 @@ class ExtractProvidedInterfaceBuilder extends AbstractBuilder {
 		var EPackage metamodel = ModelUtils.loadEcoreFile(ecoreResource.location.toString)
 		var EPackage providedInterface = ProvidedInterfaceExtractor.instance.extractProvidedInterface(metamodel)
 		ModelUtils.saveEcoreFile(ecoreResource.location.toString.replace(".ecore","") + "-provided.ecore", providedInterface)
+		this.targetProject.refreshLocal(IResource.DEPTH_INFINITE, monitor)
 		return "Interface successfully extracted"
 	}
 	

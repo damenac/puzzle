@@ -8702,3 +8702,9 @@ Caused by: java.lang.ClassNotFoundException: org.eclipse.xtext.xbase.file.FileLo
 
 !ENTRY org.eclipse.ui 2 2 2016-05-26 09:27:23.533
 !MESSAGE Invalid property category path: org.eclipse.cdt.managedbuilder.ui.properties.Page_head_build (bundle: org.eclipse.cdt.ui, propertyPage: org.eclipse.cdt.managedbuilder.ui.properties.BuildLogPreferencePage)
+
+!ENTRY org.eclipse.ui 4 4 2016-05-29 15:45:40.729
+!MESSAGE Conflicting handlers for org.eclipse.jdt.ui.edit.text.java.source.quickMenu: {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@6cba8e20} vs {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@39ce7c04}
+
+!ENTRY org.eclipse.ui 4 4 2016-05-29 15:45:40.729
+!MESSAGE Conflicting handlers for org.eclipse.jdt.ui.edit.text.java.refactor.quickMenu: {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@1c4d5e30} vs {org.eclipse.jdt.internal.ui.actions.JDTQuickMenuCreator$1@23181360}

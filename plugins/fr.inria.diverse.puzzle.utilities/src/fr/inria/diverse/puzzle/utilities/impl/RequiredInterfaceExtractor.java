@@ -111,19 +111,21 @@ public class RequiredInterfaceExtractor {
 		
 		//Clone the references
 		for (EReference eReference : oldClass.getEReferences()) {
-			EReference newEReference = ecoreFactory.createEReference();
-			newEReference.setName(eReference.getName());
-			newEReference.setLowerBound(eReference.getLowerBound());
-			newEReference.setUpperBound(eReference.getUpperBound());
-			newEReference.setContainment(eReference.isContainment());
-			newEReference.setChangeable(eReference.isChangeable());
-			newEReference.setDerived(eReference.isDerived());
-			newClass.getEStructuralFeatures().add(newEReference);
-			
-			for(EAnnotation eAnnotation : eReference.getEAnnotations()){
-				EAnnotation newEAnnotation = ecoreFactory.createEAnnotation();
-				newEAnnotation.setSource(eAnnotation.getSource());
-				newEReference.getEAnnotations().add(newEAnnotation);
+			if(eReference.getEAnnotation("Addition") == null){
+				EReference newEReference = ecoreFactory.createEReference();
+				newEReference.setName(eReference.getName());
+				newEReference.setLowerBound(eReference.getLowerBound());
+				newEReference.setUpperBound(eReference.getUpperBound());
+				newEReference.setContainment(eReference.isContainment());
+				newEReference.setChangeable(eReference.isChangeable());
+				newEReference.setDerived(eReference.isDerived());
+				newClass.getEStructuralFeatures().add(newEReference);
+				
+				for(EAnnotation eAnnotation : eReference.getEAnnotations()){
+					EAnnotation newEAnnotation = ecoreFactory.createEAnnotation();
+					newEAnnotation.setSource(eAnnotation.getSource());
+					newEReference.getEAnnotations().add(newEAnnotation);
+				}
 			}
 		}
 		

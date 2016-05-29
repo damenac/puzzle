@@ -33,6 +33,7 @@ class ExtractRequiredInterfaceBuilder extends AbstractBuilder {
 		var EPackage metamodel = ModelUtils.loadEcoreFile(ecoreResource.location.toString)
 		var EPackage requiredInterface = RequiredInterfaceExtractor.instance.extractRequiredInterface(metamodel)
 		ModelUtils.saveEcoreFile(ecoreResource.location.toString.replace(".ecore","") + "-required.ecore", requiredInterface)
+		this.targetProject.refreshLocal(IResource.DEPTH_INFINITE, monitor)
 		return "Interface successfully extracted"
 	}
 	

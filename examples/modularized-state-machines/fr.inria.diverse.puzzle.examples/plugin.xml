@@ -7,6 +7,7 @@
     </modeltype>
     <modeltype id="family.ProvidedFSM" uri="http://providedfsm/">
       <subtyping modeltypeId="family.RequiredComplexTriggers"/>
+      <subtyping modeltypeId="family.RequiredHierarchicalFSM"/>
     </modeltype>
     <modeltype id="family.RequiredActionScripting" uri="http://requiredactionscripting/"/>
     <modeltype id="family.ProvidedActionScripting" uri="http://providedactionscripting/">
@@ -16,11 +17,13 @@
       <subtyping modeltypeId="family.RequiredActionScripting"/>
     </modeltype>
     <modeltype id="family.RequiredComplexTriggers" uri="http://requiredcomplextriggers/"/>
+    <modeltype id="family.RequiredHierarchicalFSM" uri="http://requiredhierarchicalfsm/"/>
     <modeltype id="family.FSMMT" uri="http://fsmmt/">
       <subtyping modeltypeId="family.RequiredFSM"/>
       <subtyping modeltypeId="family.ProvidedFSM"/>
       <subtyping modeltypeId="family.ProvidedActionScripting"/>
       <subtyping modeltypeId="family.RequiredComplexTriggers"/>
+      <subtyping modeltypeId="family.RequiredHierarchicalFSM"/>
     </modeltype>
     <modeltype id="family.ActionScriptingMT" uri="http://actionscriptingmt/">
       <subtyping modeltypeId="family.RequiredFSM"/>
@@ -30,6 +33,9 @@
     <modeltype id="family.ComplexTriggersMT" uri="http://complextriggersmt/">
       <subtyping modeltypeId="family.RequiredComplexTriggers"/>
     </modeltype>
+    <modeltype id="family.HierarchicalFSMMT" uri="http://hierarchicalfsmmt/">
+      <subtyping modeltypeId="family.RequiredHierarchicalFSM"/>
+    </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
     <language aspects="Trigger:fr.inria.diverse.puzzle.examples.statemachine.semantics.TriggerAspect;StateMachine:fr.inria.diverse.puzzle.examples.statemachine.semantics.StateMachineAspect;State:fr.inria.diverse.puzzle.examples.statemachine.semantics.StateAspect;Transition:fr.inria.diverse.puzzle.examples.statemachine.semantics.TransitionAspect;Region:fr.inria.diverse.puzzle.examples.statemachine.semantics.RegionAspect" description="A language for state machines." entryPoints="fr.inria.diverse.puzzle.examples.statemachine.semantics.StateMachineAspect.eval(fsm.StateMachine)" exactType="family.FSMMT" id="family.FSM" uri="http://puzzle.examples.fsm">
@@ -37,6 +43,7 @@
       <adapter class="family.fsm.adapters.requiredfsm.FSMAdapter" modeltypeId="family.RequiredFSM"/>
       <adapter class="family.fsm.adapters.providedactionscripting.FSMAdapter" modeltypeId="family.ProvidedActionScripting"/>
       <adapter class="family.fsm.adapters.requiredcomplextriggers.FSMAdapter" modeltypeId="family.RequiredComplexTriggers"/>
+      <adapter class="family.fsm.adapters.requiredhierarchicalfsm.FSMAdapter" modeltypeId="family.RequiredHierarchicalFSM"/>
       <adapter class="family.fsm.adapters.fsmmt.FSMAdapter" modeltypeId="family.FSMMT"/>
     </language>
     <language aspects="Loop:fr.inria.diverse.puzzle.examples.actionscripting.semantics.LoopAspect;Print:fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintAspect;VarDecl:fr.inria.diverse.puzzle.examples.actionscripting.semantics.VarDeclAspect;Statement:fr.inria.diverse.puzzle.examples.actionscripting.semantics.StatementAspect;Block:fr.inria.diverse.puzzle.examples.actionscripting.semantics.BlockAspect;Println:fr.inria.diverse.puzzle.examples.actionscripting.semantics.PrintlnAspect;Assignation:fr.inria.diverse.puzzle.examples.actionscripting.semantics.AssignationAspect;Conditional:fr.inria.diverse.puzzle.examples.actionscripting.semantics.ConditionalAspect;Wait:fr.inria.diverse.puzzle.examples.actionscripting.semantics.WaitAspect" description="A language for Rhapsody state machines." entryPoints="fr.inria.diverse.puzzle.examples.actionscripting.semantics.StatementAspect.evalStatement(actionscripting.Statement,java.util.Hashtable)" exactType="family.ActionScriptingMT" id="family.ActionScripting" uri="actionscripting">
@@ -51,6 +58,10 @@
     <language aspects="OrTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.OrTriggerAspect;NotTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.NotTriggerAspect;AndTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect" entryPoints="" exactType="family.ComplexTriggersMT" id="family.ComplexTriggers" uri="http://complextriggers">
       <adapter class="family.complextriggers.adapters.requiredcomplextriggers.ComplexTriggersAdapter" modeltypeId="family.RequiredComplexTriggers"/>
       <adapter class="family.complextriggers.adapters.complextriggersmt.ComplexTriggersAdapter" modeltypeId="family.ComplexTriggersMT"/>
+    </language>
+    <language aspects="" entryPoints="" exactType="family.HierarchicalFSMMT" id="family.HierarchicalFSM" uri="http://hfsm">
+      <adapter class="family.hierarchicalfsm.adapters.requiredhierarchicalfsm.HierarchicalFSMAdapter" modeltypeId="family.RequiredHierarchicalFSM"/>
+      <adapter class="family.hierarchicalfsm.adapters.hierarchicalfsmmt.HierarchicalFSMAdapter" modeltypeId="family.HierarchicalFSMMT"/>
     </language>
   </extension>
 </plugin>

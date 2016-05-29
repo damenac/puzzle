@@ -88,3 +88,13 @@ language ComplexTriggers requires RequiredComplexTriggers {
 modeltype RequiredComplexTriggers {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers-required.ecore"
 }
+
+language HierarchicalFSM requires RequiredHierarchicalFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm.ecore"
+	
+	exactType HierarchicalFSMMT
+}
+
+modeltype RequiredHierarchicalFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm-required.ecore"
+}

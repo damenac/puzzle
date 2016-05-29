@@ -8,6 +8,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 
 /**
  * Builder for the action: ExtractProvidedInterfaceBuilder.
@@ -23,17 +24,22 @@ public class ExtractProvidedInterfaceBuilder extends AbstractBuilder {
    * Compose the language modules referenced in the melange and puzzle scripts given in the parameters
    */
   public String extractProvidedInterface(final IResource ecoreResource, final IProject project, final IProgressMonitor monitor) {
-    this.targetProject = project;
-    IPath _location = ecoreResource.getLocation();
-    String _string = _location.toString();
-    EPackage metamodel = ModelUtils.loadEcoreFile(_string);
-    ProvidedInterfaceExtractor _instance = ProvidedInterfaceExtractor.getInstance();
-    EPackage providedInterface = _instance.extractProvidedInterface(metamodel);
-    IPath _location_1 = ecoreResource.getLocation();
-    String _string_1 = _location_1.toString();
-    String _replace = _string_1.replace(".ecore", "");
-    String _plus = (_replace + "-provided.ecore");
-    ModelUtils.saveEcoreFile(_plus, providedInterface);
-    return "Interface successfully extracted";
+    try {
+      this.targetProject = project;
+      IPath _location = ecoreResource.getLocation();
+      String _string = _location.toString();
+      EPackage metamodel = ModelUtils.loadEcoreFile(_string);
+      ProvidedInterfaceExtractor _instance = ProvidedInterfaceExtractor.getInstance();
+      EPackage providedInterface = _instance.extractProvidedInterface(metamodel);
+      IPath _location_1 = ecoreResource.getLocation();
+      String _string_1 = _location_1.toString();
+      String _replace = _string_1.replace(".ecore", "");
+      String _plus = (_replace + "-provided.ecore");
+      ModelUtils.saveEcoreFile(_plus, providedInterface);
+      this.targetProject.refreshLocal(IResource.DEPTH_INFINITE, monitor);
+      return "Interface successfully extracted";
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

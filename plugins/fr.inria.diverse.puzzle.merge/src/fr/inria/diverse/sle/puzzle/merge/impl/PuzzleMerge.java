@@ -89,7 +89,7 @@ public class PuzzleMerge {
 		
 		// 2. Copy the extension language to the merged metamodel
 		for (EClassifier eClassifier : extensionLanguage.getEClassifiers()) {
-			if(eClassifier.getEAnnotation("required") == null && eClassifier.getEAnnotation("extension") == null){
+			if(eClassifier.getEAnnotation("Required") == null){
 				if(eClassifier instanceof EClass){
 					if(unifiedEClassifiers.get(((EClass)eClassifier).getName()) == null){
 						oldEClassifiers.put(((EClass)eClassifier).getName(), (EClass)eClassifier);
@@ -105,7 +105,7 @@ public class PuzzleMerge {
 					unifiedEClassifiers.put(newEEnum.getName(), newEEnum);
 				}
 			}
-			else if(eClassifier.getEAnnotation("required") == null && eClassifier.getEAnnotation("extension") != null){
+			else if(eClassifier.getEAnnotation("Required") != null && includesAdditions(eClassifier)){
 				if(eClassifier instanceof EClass){
 					if(unifiedEClassifiers.get(eClassifier.getName()) != null){
 						oldEClassifiers.put(eClassifier.getName() + "-extension", (EClass)eClassifier);
@@ -139,11 +139,27 @@ public class PuzzleMerge {
 		return clone;
 	}
 
+	/**
+	 * Returns true of the eClassifier in the parameter is an EClass and it contains additions to the base class.
+	 * @param eClassifier
+	 * @return
+	 */
+	private boolean includesAdditions(EClassifier eClassifier) {
+		if(eClassifier instanceof EClass){
+			EClass extensionEClass = (EClass) eClassifier;
+			for(EStructuralFeature _eStructuralFeature : extensionEClass.getEStructuralFeatures()){
+				if(_eStructuralFeature.getEAnnotation("Addition") != null){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
 	private EClass extendEClass(EClass baseEClass,
 			EClass extensionEClass) {
-		
 		for(EStructuralFeature _eStructuralFeature : extensionEClass.getEStructuralFeatures()){
-			if(_eStructuralFeature.getEAnnotation("addition") != null){
+			if(_eStructuralFeature.getEAnnotation("Addition") != null){
 				if(_eStructuralFeature instanceof EAttribute){
 					EAttribute eAttribute = (EAttribute) _eStructuralFeature;
 					EAttribute newAttribute = EcoreFactory.eINSTANCE.createEAttribute();
@@ -182,7 +198,7 @@ public class PuzzleMerge {
 	
 	private EEnum extendEEnum(EEnum baseEEnum, EEnum extensionEEnum) {
 		for(EEnumLiteral _extensionLiteral : extensionEEnum.getELiterals()){
-			if(_extensionLiteral.getEAnnotation("addition") != null){
+			if(_extensionLiteral.getEAnnotation("Addition") != null){
 				EEnumLiteral _newEEnumLiteral = EcoreFactory.eINSTANCE.createEEnumLiteral();
 				_newEEnumLiteral.setName(_extensionLiteral.getName());
 				_newEEnumLiteral.setLiteral(_extensionLiteral.getLiteral());
@@ -288,7 +304,7 @@ public class PuzzleMerge {
 	
 	private boolean allStructuralFeaturesAreAdditions(EClass eClass){
 		for (EStructuralFeature _eStructuralFeature : eClass.getEStructuralFeatures()) {
-			if(_eStructuralFeature.getEAnnotation("addition") == null)
+			if(_eStructuralFeature.getEAnnotation("Addition") == null)
 				return false;
 		}
 		return true;
@@ -542,7 +558,7 @@ public class PuzzleMerge {
 		}
 		
 		for(EReference _eReference : eClass.getEReferences()){
-			if(_eReference.getEAnnotation("addition") == null){
+			if(_eReference.getEAnnotation("Addition") == null){
 				table.put(PuzzleConstants.EReference + ":" + eClass.getName() + ":" + _eReference.getName() + ":" +  _eReference.getEType().getName(), _eReference);
 			}
 		}
@@ -664,7 +680,7 @@ public class PuzzleMerge {
 		}
 		else{
 			for (EClassifier eClassifier : toClone.getEClassifiers()) {
-				if(eClassifier.getEAnnotation("required") == null){
+				if(eClassifier.getEAnnotation("Required") == null){
 					if(eClassifier instanceof EClass){
 						EClass legacyEClass = searchEClassByName(eClassifier.getName(), clone);
 						if(legacyEClass == null){
