@@ -1,10 +1,10 @@
 package fr.inria.diverse.puzzle.examples.newtriggers.semantics
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import puzzle.annotations.processor.OverrideSuperAspectMethod
 
 import org.eclipse.emf.common.util.EList
 import complextriggers.AndTrigger
-import puzzle.annotations.processor.OverrideSuperAspectMethod
 
 // *.*
 // ASPECT

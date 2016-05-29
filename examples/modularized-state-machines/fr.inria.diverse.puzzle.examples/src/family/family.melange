@@ -79,6 +79,8 @@ language ComplexTriggers requires RequiredComplexTriggers {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers.ecore"
 	 
 	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.OrTriggerAspect
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.NotTriggerAspect
 	
 	exactType ComplexTriggersMT
 }

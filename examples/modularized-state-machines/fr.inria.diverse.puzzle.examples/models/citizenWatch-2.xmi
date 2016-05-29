@@ -77,7 +77,12 @@
         target="//@regions.0/@subvertex.3"
         source="//@regions.0/@subvertex.1">
       <trigger
-          expression="T2"/>
+          xsi:type="CompleteDSLPckg:OrTrigger">
+        <left
+            expression="T2"/>
+        <right
+            expression="t2"/>
+      </trigger>
     </transitions>
     <transitions
         name="a"
@@ -87,11 +92,14 @@
           expression="a"/>
     </transitions>
     <transitions
-        name="a"
+        name="!a"
         target="//@regions.0/@subvertex.1"
         source="//@regions.0/@subvertex.3">
       <trigger
-          expression="a"/>
+          xsi:type="CompleteDSLPckg:NotTrigger">
+        <trigger
+            expression="a"/>
+      </trigger>
     </transitions>
   </regions>
 </CompleteDSLPckg:StateMachine>

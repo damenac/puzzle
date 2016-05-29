@@ -8,6 +8,10 @@ import CompleteDSLPckg.AndTrigger;
 import CompleteDSLPckg.Trigger;
 import CompleteDSL.AndTriggerAspectAndTriggerAspectProperties;
 import puzzle.annotations.processor.OverrideSuperAspectMethod;
+import CompleteDSLPckg.OrTrigger;
+import CompleteDSL.OrTriggerAspectOrTriggerAspectProperties;
+import CompleteDSLPckg.NotTrigger;
+import CompleteDSL.NotTriggerAspectNotTriggerAspectProperties;
 
 @Aspect(className = Trigger.class)
 @SuppressWarnings("all")
@@ -20,6 +24,10 @@ public class TriggerAspect {
 public static boolean evalTrigger(final Trigger _self,final EList<String> events){ 
       if (_self instanceof AndTrigger){
          return AndTriggerAspect.evalTrigger((AndTrigger)_self,events);
+      } else if (_self instanceof OrTrigger){
+         return OrTriggerAspect.evalTrigger((OrTrigger)_self,events);
+      } else if (_self instanceof NotTrigger){
+         return NotTriggerAspect.evalTrigger((NotTrigger)_self,events);
       } else if (_self instanceof Trigger){
         return super_evalTrigger((Trigger)_self,events);
       }

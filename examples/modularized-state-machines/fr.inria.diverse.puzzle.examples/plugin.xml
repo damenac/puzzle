@@ -48,7 +48,7 @@
       <adapter class="family.expressions.adapters.providedexpressions.ExpressionsAdapter" modeltypeId="family.ProvidedExpressions"/>
       <adapter class="family.expressions.adapters.expressionsmt.ExpressionsAdapter" modeltypeId="family.ExpressionsMT"/>
     </language>
-    <language aspects="AndTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect" entryPoints="" exactType="family.ComplexTriggersMT" id="family.ComplexTriggers" uri="http://complextriggers">
+    <language aspects="OrTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.OrTriggerAspect;NotTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.NotTriggerAspect;AndTrigger:fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect" entryPoints="" exactType="family.ComplexTriggersMT" id="family.ComplexTriggers" uri="http://complextriggers">
       <adapter class="family.complextriggers.adapters.requiredcomplextriggers.ComplexTriggersAdapter" modeltypeId="family.RequiredComplexTriggers"/>
       <adapter class="family.complextriggers.adapters.complextriggersmt.ComplexTriggersAdapter" modeltypeId="family.ComplexTriggersMT"/>
     </language>

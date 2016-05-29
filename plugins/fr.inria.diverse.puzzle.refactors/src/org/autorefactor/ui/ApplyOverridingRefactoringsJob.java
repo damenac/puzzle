@@ -237,11 +237,14 @@ public class ApplyOverridingRefactoringsJob {
                     	}
             			
                     	// Adding the imports needed by the injected code
-                    	for(IImportDeclaration _import : extensionCompilationUnit.getImports()){
-                    		if(!mergedRefactoringUnit.getCompilationUnit().getImport(_import.getElementName()).exists()){
-                    			mergedRefactoringUnit.getCompilationUnit().createImport(_import.getElementName(), null, monitor);
-                    		}
-                    	}
+                    	for (RefactoringUnit extensionRU : extensionRefactoringUnits) {
+                    		ICompilationUnit extensionCU = extensionRU.getCompilationUnit();
+                        	for(IImportDeclaration _import : extensionCU.getImports()){
+                        		if(!mergedRefactoringUnit.getCompilationUnit().getImport(_import.getElementName()).exists()){
+                        			mergedRefactoringUnit.getCompilationUnit().createImport(_import.getElementName(), null, monitor);
+                        		}
+                        	}
+						}
             		}
             	}
         	}
