@@ -1,16 +1,16 @@
 package fr.inria.diverse.puzzle.examples.compositestates.semantics
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-	
-import hfsm.Region
 import puzzle.annotations.processor.OverrideRequiredAspectMethod
+import puzzle.annotations.processor.AddExtensionMethod
+
+import hfsm.Region
 import java.util.ArrayList
 import java.util.Hashtable
 import hfsm.Transition
 import hfsm.AbstractState
-import puzzle.annotations.processor.AddExtensionMethod
 import hfsm.State
-import java.util.List
+
 
 @Aspect(className=Region)
 class RegionAspect {
@@ -20,60 +20,18 @@ class RegionAspect {
 		Transition selectedTransition, ArrayList<Transition> currentActiveTransitions, 
 		Hashtable<String, Object> context){
 			
-			// Adding the super states to the current state.
-			val ArrayList<AbstractState> targetParents = new ArrayList<AbstractState>()
-			_self.getAllParents(selectedTransition.target, targetParents)
-			targetParents.forEach[_parent | 
-				if(!newActiveStates.contains(_parent))
-						newActiveStates.add(_parent);
-			]
-			
-			// Performing the legacy operation
-			for(Transition _currentTransition : currentActiveTransitions){
-				_self._original_findNewActiveStates(newActiveStates, _currentTransition, currentActiveTransitions, context)
-			}
-			
-			// Removing the states coming from conflicting transitions
-			var ArrayList<AbstractState> toDelete = new ArrayList<AbstractState>()
-			val ArrayList<AbstractState> targetChildren = new ArrayList<AbstractState>()
-			_self.getAllChildren(selectedTransition.source, targetChildren)
-	
-			for(AbstractState _newState : newActiveStates){
-			//Do we can delete all this?
-			var boolean delete = true
-			var List<Transition> transitions = new ArrayList<Transition>();
-			transitions.addAll(_newState.incoming)
-			for(AbstractState _children : targetChildren){
-				transitions.addAll(_children.incoming)
-			}
-			for(Transition _incoming : transitions){
-				
-				if(_newState instanceof State){
-					var ArrayList<AbstractState> children = newArrayList
-					_self.getAllChildren(_newState, children)
-					if(children.findFirst[child | newActiveStates.contains(child)] != null)
-						delete = false
-				}
-
-				if(currentActiveTransitions.contains(_incoming))
-					delete = false
-			}
-			
-			if(delete)
-				toDelete.add(_newState)
-		}
-		
-		val ArrayList<AbstractState> moreToDelete = new ArrayList<AbstractState>()
-		newActiveStates.forEach[ _state |
-			val ArrayList<AbstractState> child = new ArrayList<AbstractState>()
-			_self.getAllChildren(_state, child)
-			if(!_state.incoming.exists[ t | currentActiveTransitions.contains(t)] &&
-				!child.exists[ s | s.incoming.exists[ t | currentActiveTransitions.contains(t)]])
-					moreToDelete.add(_state)
+		// Adding the super states to the current state.
+		val ArrayList<AbstractState> targetParents = new ArrayList<AbstractState>()
+		_self.getAllParents(selectedTransition.target, targetParents)
+		targetParents.forEach[_parent | 
+			if(!newActiveStates.contains(_parent))
+					newActiveStates.add(_parent);
 		]
 		
-		toDelete.addAll(moreToDelete)
-		newActiveStates.removeAll(toDelete)
+		// Performing the legacy operation
+		for(Transition _currentTransition : currentActiveTransitions){
+			_self._original_findNewActiveStates(newActiveStates, _currentTransition, currentActiveTransitions, context)
+		}
 	}
 	
 	@OverrideRequiredAspectMethod

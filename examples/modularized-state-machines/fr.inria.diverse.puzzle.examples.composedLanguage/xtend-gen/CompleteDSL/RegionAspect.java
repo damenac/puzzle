@@ -28,8 +28,6 @@ import CompleteDSLPckg.AbstractState;
 import CompleteDSLPckg.Region;
 import CompleteDSLPckg.State;
 import CompleteDSLPckg.Transition;
-import java.util.List;
-import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import puzzle.annotations.processor.AddExtensionMethod;
 import puzzle.annotations.processor.OverrideRequiredAspectMethod;
 
@@ -256,77 +254,6 @@ public class RegionAspect {
     for (final Transition _currentTransition : currentActiveTransitions) {
       RegionAspect._original_findNewActiveStates(_self_, _self, newActiveStates, _currentTransition, currentActiveTransitions, context);
     }
-    ArrayList<AbstractState> toDelete = new ArrayList<AbstractState>();
-    final ArrayList<AbstractState> targetChildren = new ArrayList<AbstractState>();
-    AbstractState _source = selectedTransition.getSource();
-    RegionAspect.getAllChildren(_self, _source, targetChildren);
-    for (final AbstractState _newState : newActiveStates) {
-      {
-        boolean delete = true;
-        List<Transition> transitions = new ArrayList<Transition>();
-        EList<Transition> _incoming = _newState.getIncoming();
-        transitions.addAll(_incoming);
-        for (final AbstractState _children : targetChildren) {
-          EList<Transition> _incoming_1 = _children.getIncoming();
-          transitions.addAll(_incoming_1);
-        }
-        for (final Transition _incoming_2 : transitions) {
-          {
-            if ((_newState instanceof State)) {
-              ArrayList<AbstractState> children = CollectionLiterals.<AbstractState>newArrayList();
-              RegionAspect.getAllChildren(_self, _newState, children);
-              final Function1<AbstractState, Boolean> _function_1 = (AbstractState child) -> {
-                return Boolean.valueOf(newActiveStates.contains(child));
-              };
-              AbstractState _findFirst = IterableExtensions.<AbstractState>findFirst(children, _function_1);
-              boolean _notEquals = (!Objects.equal(_findFirst, null));
-              if (_notEquals) {
-                delete = false;
-              }
-            }
-            boolean _contains = currentActiveTransitions.contains(_incoming_2);
-            if (_contains) {
-              delete = false;
-            }
-          }
-        }
-        if (delete) {
-          toDelete.add(_newState);
-        }
-      }
-    }
-    final ArrayList<AbstractState> moreToDelete = new ArrayList<AbstractState>();
-    final Consumer<AbstractState> _function_1 = (AbstractState _state) -> {
-      final ArrayList<AbstractState> child = new ArrayList<AbstractState>();
-      RegionAspect.getAllChildren(_self, _state, child);
-      boolean _and = false;
-      EList<Transition> _incoming = _state.getIncoming();
-      final Function1<Transition, Boolean> _function_2 = (Transition t) -> {
-        return Boolean.valueOf(currentActiveTransitions.contains(t));
-      };
-      boolean _exists = IterableExtensions.<Transition>exists(_incoming, _function_2);
-      boolean _not = (!_exists);
-      if (!_not) {
-        _and = false;
-      } else {
-        final Function1<AbstractState, Boolean> _function_3 = (AbstractState s) -> {
-          EList<Transition> _incoming_1 = s.getIncoming();
-          final Function1<Transition, Boolean> _function_4 = (Transition t) -> {
-            return Boolean.valueOf(currentActiveTransitions.contains(t));
-          };
-          return Boolean.valueOf(IterableExtensions.<Transition>exists(_incoming_1, _function_4));
-        };
-        boolean _exists_1 = IterableExtensions.<AbstractState>exists(child, _function_3);
-        boolean _not_1 = (!_exists_1);
-        _and = _not_1;
-      }
-      if (_and) {
-        moreToDelete.add(_state);
-      }
-    };
-    newActiveStates.forEach(_function_1);
-    toDelete.addAll(moreToDelete);
-    newActiveStates.removeAll(toDelete);
   }
 
 protected static void _original_findNewActiveStates(final RegionAspectRegionAspectProperties _self_, final Region _self, final ArrayList<AbstractState> newActiveStates, final Transition selectedTransition, final ArrayList<Transition> currentActiveTransitions, final Hashtable<String, Object> context) {
