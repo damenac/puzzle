@@ -74,3 +74,29 @@ language Expressions implements ProvidedExpressions {
 modeltype ProvidedExpressions {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.expressions.syntax/models/Expression-provided.ecore"
 }
+
+language ComplexTriggers requires RequiredComplexTriggers {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers.ecore"
+	 
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.AndTriggerAspect
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.OrTriggerAspect
+	with fr.inria.diverse.puzzle.examples.newtriggers.semantics.NotTriggerAspect
+	
+	exactType ComplexTriggersMT
+}
+
+modeltype RequiredComplexTriggers {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.triggers.syntax/models/triggers-required.ecore"
+}
+
+language HierarchicalFSM requires RequiredHierarchicalFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm.ecore"
+	
+	with fr.inria.diverse.puzzle.examples.compositestates.semantics.RegionAspect
+	
+	exactType HierarchicalFSMMT
+}
+
+modeltype RequiredHierarchicalFSM {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.examples.hfsm.syntax/models/hfsm-required.ecore"
+}

@@ -5,4 +5,6 @@ import 'family.melange'
 languageBinding {
 	bind(RequiredFSM, ProvidedActionScripting)
 	bind(RequiredActionScripting, ProvidedExpressions)
+	bind(RequiredHierarchicalFSM, ProvidedFSM)
+	bind(RequiredComplexTriggers, ProvidedFSM)
 }
