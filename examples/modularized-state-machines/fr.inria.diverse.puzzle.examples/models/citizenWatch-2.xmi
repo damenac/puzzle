@@ -10,17 +10,20 @@
     <subvertex
         xsi:type="CompleteDSLPckg:InitialState"
         name="Initial"
-        outgoing="//@regions.0/@transitions.0"/>
+        outgoing="//@regions.0/@transitions.0"
+        ownerRegion="//@regions.0"/>
     <subvertex
         xsi:type="CompleteDSLPckg:State"
         name="Displays"
         incoming="//@regions.0/@transitions.0 //@regions.0/@transitions.3 //@regions.0/@transitions.4"
-        outgoing="//@regions.0/@transitions.1 //@regions.0/@transitions.2"/>
+        outgoing="//@regions.0/@transitions.1 //@regions.0/@transitions.2"
+        ownerRegion="//@regions.0"/>
     <subvertex
         xsi:type="CompleteDSLPckg:State"
         name="Alarm 1"
         incoming="//@regions.0/@transitions.1"
-        outgoing="//@regions.0/@transitions.3">
+        outgoing="//@regions.0/@transitions.3"
+        ownerRegion="//@regions.0">
       <doAction>
         <statements
             xsi:type="CompleteDSLPckg:Loop">
@@ -40,7 +43,8 @@
         xsi:type="CompleteDSLPckg:State"
         name="Alarm 2"
         incoming="//@regions.0/@transitions.2"
-        outgoing="//@regions.0/@transitions.4">
+        outgoing="//@regions.0/@transitions.4"
+        ownerRegion="//@regions.0">
       <doAction>
         <statements
             xsi:type="CompleteDSLPckg:Loop">

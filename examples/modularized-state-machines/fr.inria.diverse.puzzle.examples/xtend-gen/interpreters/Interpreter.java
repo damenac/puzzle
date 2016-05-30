@@ -37,6 +37,6 @@ public class Interpreter {
   
   public static void main(final String[] args) {
     Interpreter _interpreter = new Interpreter();
-    _interpreter.eval("models/citizenWatch-2.xmi");
+    _interpreter.eval("models/citizenWatch-1.xmi");
   }
 }

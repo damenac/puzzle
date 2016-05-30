@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ASCII"?>
+<CompleteDSLPckg:StateMachine
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:CompleteDSLPckg="http://CompleteDSLPckg"
+    xsi:schemaLocation="http://CompleteDSLPckg ../../fr.inria.diverse.puzzle.examples.composedLanguage/composition-gen/CompleteDSL.ecore"
+    name="CitizenWatch">
+  <regions name="MainRegion"
+      ownerStateMachine="/">
+    <subvertex
+        xsi:type="CompleteDSLPckg:InitialState"
+        name="Initial"
+        outgoing="//@regions.0/@transitions.0"/>
+    <subvertex
+        xsi:type="CompleteDSLPckg:State"
+        name="Displays"
+        incoming="//@regions.0/@transitions.0 //@regions.0/@transitions.3 //@regions.0/@transitions.4"
+        outgoing="//@regions.0/@transitions.1 //@regions.0/@transitions.2"/>
+    <subvertex
+        xsi:type="CompleteDSLPckg:State"
+        name="Alarm 1"
+        incoming="//@regions.0/@transitions.1"
+        outgoing="//@regions.0/@transitions.3">
+      <doAction>
+        <statements
+            xsi:type="CompleteDSLPckg:Loop">
+          <guard
+              xsi:type="CompleteDSLPckg:BoolLit"
+              value="true"/>
+          <body
+              xsi:type="CompleteDSLPckg:Print"
+              input="Alarm 1 Bip...   "/>
+          <body
+              xsi:type="CompleteDSLPckg:Wait"
+              miliseconds="1000"/>
+        </statements>
+      </doAction>
+    </subvertex>
+    <subvertex
+        xsi:type="CompleteDSLPckg:State"
+        name="Alarm 2"
+        incoming="//@regions.0/@transitions.2"
+        outgoing="//@regions.0/@transitions.4">
+      <doAction>
+        <statements
+            xsi:type="CompleteDSLPckg:Loop">
+          <guard
+              xsi:type="CompleteDSLPckg:BoolLit"
+              value="true"/>
+          <body
+              xsi:type="CompleteDSLPckg:Print"
+              input="Alarm 2 Bip...   "/>
+          <body
+              xsi:type="CompleteDSLPckg:Wait"
+              miliseconds="1000"/>
+        </statements>
+      </doAction>
+    </subvertex>
+    <transitions
+        name="start"
+        target="//@regions.0/@subvertex.1"
+        source="//@regions.0/@subvertex.0"/>
+    <transitions
+        name="T1"
+        target="//@regions.0/@subvertex.2"
+        source="//@regions.0/@subvertex.1">
+      <trigger
+          expression="T1"/>
+    </transitions>
+    <transitions
+        name="T2"
+        target="//@regions.0/@subvertex.3"
+        source="//@regions.0/@subvertex.1">
+      <trigger
+          expression="T2"/>
+    </transitions>
+    <transitions
+        name="a"
+        target="//@regions.0/@subvertex.1"
+        source="//@regions.0/@subvertex.2">
+      <trigger
+          expression="a"/>
+    </transitions>
+    <transitions
+        name="a"
+        target="//@regions.0/@subvertex.1"
+        source="//@regions.0/@subvertex.3">
+      <trigger
+          expression="a"/>
+    </transitions>
+  </regions>
+</CompleteDSLPckg:StateMachine>

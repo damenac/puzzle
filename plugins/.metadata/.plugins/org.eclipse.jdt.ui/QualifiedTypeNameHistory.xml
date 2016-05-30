@@ -50,5 +50,7 @@
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
+<fullyQualifiedTypeName name="org.eclipse.core.resources.IResource"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EcoreFactory"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.EcoreQueries"/>
 </qualifiedTypeNameHistroy>
