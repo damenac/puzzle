@@ -188,8 +188,6 @@
         eType="#//Generalization" containment="true" eOpposite="#//Generalization/specific"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="substitution" upperBound="-1"
         eType="#//Substitution" containment="true" eOpposite="#//Substitution/substitutingClassifier"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="powertypeExtent" upperBound="-1"
-        eType="#//GeneralizationSet" eOpposite="#//GeneralizationSet/powertype"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Feature" abstract="true" eSuperTypes="#//RedefinableElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -222,10 +220,6 @@
         eOpposite="#//DataType/ownedAttribute"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"
         eOpposite="#//Interface/ownedAttribute"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="qualifier" upperBound="-1"
-        eType="#//Property" containment="true" eOpposite="#//Property/associationEnd"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="associationEnd" eType="#//Property"
-        eOpposite="#//Property/qualifier"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//DirectedRelationship">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSubstitutable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -233,8 +227,6 @@
         eType="#//Classifier"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="specific" lowerBound="1"
         eType="#//Classifier" eOpposite="#//Classifier/generalization"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generalizationSet" upperBound="-1"
-        eType="#//GeneralizationSet" eOpposite="#//GeneralizationSet/generalization"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BehavioralFeature" abstract="true" eSuperTypes="#//Feature #//Namespace">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedParameter" upperBound="-1"
@@ -264,8 +256,6 @@
         eOpposite="#//Class/ownedOperation"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" eType="#//DataType"
         eOpposite="#//DataType/ownedOperation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" eType="#//Interface"
-        eOpposite="#//Interface/ownedOperation"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Class" eSuperTypes="#//Classifier">
     <eStructuralFeatures xsi:type="ecore:EReference" name="nestedClassifier" upperBound="-1"
@@ -338,26 +328,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedAttribute" upperBound="-1"
         eType="#//Property" containment="true" eOpposite="#//Property/interface"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ownedOperation" upperBound="-1"
-        eType="#//Operation" containment="true" eOpposite="#//Operation/interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InterfaceRealization" eSuperTypes="#//Realization">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="implementingClassifier"
-        lowerBound="1" eType="#//BehavioredClassifier" eOpposite="#//BehavioredClassifier/interfaceRealization"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="contract" lowerBound="1"
-        eType="#//Interface"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BehavioredClassifier" abstract="true"
-      eSuperTypes="#//Classifier">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interfaceRealization" upperBound="-1"
-        eType="#//InterfaceRealization" containment="true" eOpposite="#//InterfaceRealization/implementingClassifier"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AssociationClass" eSuperTypes="#//Class #//Association"/>
-  <eClassifiers xsi:type="ecore:EClass" name="GeneralizationSet" eSuperTypes="#//PackageableElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCovering" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDisjoint" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="powertype" eType="#//Classifier"
-        eOpposite="#//Classifier/powertypeExtent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="generalization" upperBound="-1"
-        eType="#//Generalization" eOpposite="#//Generalization/generalizationSet"/>
+        eType="#//Operation" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>
