@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Classes" nsURI="fr.inria.diverse.puzzle.uml.classes.metamodel/Classes"
+    nsPrefix="Classes">
+  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedComment" upperBound="-1"
+        eType="#//Comment" containment="true" eOpposite="#//Comment/owningElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedElement" upperBound="-1"
+        eType="#//Element" containment="true" eOpposite="#//Element/owner"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owner" eType="#//Element"
+        eOpposite="#//Element/ownedElement"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Comment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="owningElement" eType="#//Element"
+        eOpposite="#//Element/ownedComment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true"/>
+</ecore:EPackage>

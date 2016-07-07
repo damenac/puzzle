@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.module.ChoiceModule.syntax/src" editDirectory="/fr.inria.diverse.module.ChoiceModule.syntax.editor/src" modelPluginID="fr.inria.diverse.module.ChoiceModule.syntax" modelName="ChoiceModule" testsDirectory="/fr.inria.diverse.module.ChoiceModule.syntax.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="fr.inria.diverse.module.ChoiceModule.syntax.editor" testsPluginID="fr.inria.diverse.module.ChoiceModule.syntax" operationReflection="true">
+  <foreignModel>ChoiceModuleReq.ecore</foreignModel>
+  <genPackages prefix="ChoiceModuleReq" disposableProviderFactory="true">
+    <ecorePackage href="ChoiceModuleReq.ecore#/"/>
+    <genClasses image="false">
+      <ecoreClass href="ChoiceModuleReq.ecore#//Pseudostate"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

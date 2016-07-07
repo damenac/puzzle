@@ -1,0 +1,5 @@
+package exercise.visibility;
+
+private class A {
+
+}

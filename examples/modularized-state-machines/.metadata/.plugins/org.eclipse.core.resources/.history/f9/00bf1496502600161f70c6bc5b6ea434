@@ -1,0 +1,8 @@
+package exercise.visibility.C;
+
+import exercise.visibility.AB.A;
+
+public class C {
+
+	public A a;
+}

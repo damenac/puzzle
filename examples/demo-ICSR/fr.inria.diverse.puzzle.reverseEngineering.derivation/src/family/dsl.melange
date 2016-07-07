@@ -1,0 +1,36 @@
+package family
+
+language StateMachineModule implements StateMachineModuleProv{
+     syntax "platform:/resource/fr.inria.diverse.module.StateMachineModule.syntax/models/StateMachineModule.ecore"
+
+     with UML.statemachine.RegionAspect
+     with UML.statemachine.StateAspect
+     with UML.statemachine.TransitionAspect
+     with UML.statemachine.TriggerAspect
+     with UML.statemachine.FinalStateAspect
+     with UML.statemachine.ConstraintAspect
+     with UML.statemachine.StatementAspect
+     with UML.statemachine.ProgramAspect
+
+     exactType StateMachineModuleMT
+}
+
+modeltype StateMachineModuleProv{
+     syntax "platform:/resource/fr.inria.diverse.module.StateMachineModule.syntax/models/StateMachineModuleProv.ecore"
+}
+
+language ChoiceModule implements ChoiceModuleProv requires ChoiceModuleReq{
+     syntax "platform:/resource/fr.inria.diverse.module.ChoiceModule.syntax/models/ChoiceModule.ecore"
+
+     exactType ChoiceModuleMT
+}
+
+modeltype ChoiceModuleReq{
+     syntax "platform:/resource/fr.inria.diverse.module.ChoiceModule.syntax/models/ChoiceModuleReq.ecore"
+}
+
+modeltype ChoiceModuleProv{
+     syntax "platform:/resource/fr.inria.diverse.module.ChoiceModule.syntax/models/ChoiceModuleProv.ecore"
+}
+
+

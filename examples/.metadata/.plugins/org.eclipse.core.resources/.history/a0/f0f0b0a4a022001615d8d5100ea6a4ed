@@ -1,7 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	simpleimperative.Wait = simple.imperative.aspects.WaitAspect
-	simpleimperative.Program = simple.imperative.aspects.ProgramAspect
-	simpleimperative.Println = simple.imperative.aspects.PrintlnAspect
-	simpleimperative.Assignation = simple.imperative.aspects.AssignationAspect
-	simpleimperative.Statement = simple.imperative.aspects.StatementAspect
-	simpleimperative.VarRef = simple.imperative.aspects.VarRefAspect
