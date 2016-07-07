@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Components" nsURI="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Components"
+    nsPrefix="Components">
+  <eClassifiers xsi:type="ecore:EClass" name="Component" eSuperTypes="#//Class #//NamedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIndirectlyInstantiated"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="required" upperBound="-1"
+        eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="provided" upperBound="-1"
+        eType="#//Interface"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="realization" upperBound="-1"
+        eType="#//ComponentRealization" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentRealization" eSuperTypes="#//Realization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Class">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Interface">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Realization">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+</ecore:EPackage>
