@@ -4,7 +4,6 @@
     <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="//FundamentalActivities/Behavior">
       <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="group" upperBound="-1" eType="//FundamentalActivities/ActivityGroup" containment="true" eOpposite="//FundamentalActivities/ActivityGroup/inActivity"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="edge" upperBound="-1" eType="//BasicActivities/ActivityEdge" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
       <eAnnotations source="Required"/>
@@ -15,8 +14,6 @@
     <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="//FundamentalActivities/NamedElement //BasicActivities/RedefinableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="inGroup" upperBound="-1" eType="//FundamentalActivities/ActivityGroup" eOpposite="//FundamentalActivities/ActivityGroup/containedNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedNode" upperBound="-1" eType="//FundamentalActivities/ActivityNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/target"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/source"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="//FundamentalActivities/ActivityNode">
       <eAnnotations source="Required"/>
@@ -29,37 +26,15 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="superGroup" eType="//FundamentalActivities/ActivityGroup" eOpposite="//FundamentalActivities/ActivityGroup/subgroup"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inActivity" eType="//FundamentalActivities/Activity" eOpposite="//FundamentalActivities/Activity/group"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="containedNode" upperBound="-1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/inGroup"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="containedEdge" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/inGroup"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="BasicActivities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities/BasicActivities" nsPrefix="BasicActivities">
     <eClassifiers xsi:type="ecore:EClass" name="RedefinableElement" abstract="true">
-      <eAnnotations source="Required"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedElement" upperBound="-1" eType="//BasicActivities/RedefinableElement"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" abstract="true" eSuperTypes="//FundamentalActivities/ActivityNode //BasicActivities/TypedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectNode" eSuperTypes="//FundamentalActivities/ActivityNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="TypedElement">
       <eAnnotations source="Required"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Pin" abstract="true" eSuperTypes="//BasicActivities/ObjectNode">
-      <eAnnotations source="Required"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityParameterNode" eSuperTypes="//BasicActivities/ObjectNode">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" lowerBound="1" eType="//BasicActivities/Parameter"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Parameter">
-      <eAnnotations source="Required"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ControlNode" abstract="true" eSuperTypes="//FundamentalActivities/ActivityNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityFinalNode" eSuperTypes="//BasicActivities/ControlNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="//BasicActivities/ControlNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" abstract="true" eSuperTypes="//BasicActivities/RedefinableElement">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/incoming"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/outgoing"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedEdge" upperBound="-1" eType="//BasicActivities/ActivityEdge"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inGroup" upperBound="-1" eType="//FundamentalActivities/ActivityGroup" eOpposite="//FundamentalActivities/ActivityGroup/containedEdge"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ControlFlow" eSuperTypes="//BasicActivities/ActivityEdge"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectFlow" eSuperTypes="//BasicActivities/ActivityEdge"/>
   </eSubpackages>
 </ecore:EPackage>
