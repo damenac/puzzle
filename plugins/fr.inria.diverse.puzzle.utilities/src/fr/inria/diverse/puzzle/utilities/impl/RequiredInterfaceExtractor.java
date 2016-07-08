@@ -190,7 +190,7 @@ public class RequiredInterfaceExtractor {
 			
 				if(newClass != null && oldClass != null){
 					for(EAttribute eAttribute : newClass.getEAttributes()){
-						EAttribute _oldAttribute = ((EAttribute)searchStructuralFeatureByName(oldClass, eAttribute.getName()));
+						EAttribute _oldAttribute = ((EAttribute) searchStructuralFeatureByName(oldClass, eAttribute.getName()));
 						String _resolvedTypeName = _oldAttribute.getEType().getName();
 						
 						if(_resolvedTypeName != null && ( _oldAttribute.getEType() instanceof EEnum)){

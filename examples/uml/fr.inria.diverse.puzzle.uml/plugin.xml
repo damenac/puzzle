@@ -2,11 +2,20 @@
 <plugin>
   
 <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="family.ClassesProvided" uri="http://classesprovided/"/>
+    <modeltype id="family.ComponentsRequired" uri="http://componentsrequired/"/>
     <modeltype id="family.ClassesMT" uri="http://classesmt/"/>
-    <modeltype id="family.ComponentsMT" uri="http://componentsmt/"/>
+    <modeltype id="family.ComponentsMT" uri="http://componentsmt/">
+      <subtyping modeltypeId="family.ComponentsRequired"/>
+    </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ClassesMT" id="family.Classes" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes"/>
-    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ComponentsMT" id="family.Components" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes"/>
+    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ClassesMT" id="family.Classes" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes">
+      <adapter class="family.classes.adapters.classesprovided.ClassesAdapter" modeltypeId="family.ClassesProvided"/>
+    </language>
+    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ComponentsMT" id="family.Components" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Components">
+      <adapter class="family.components.adapters.componentsrequired.ComponentsAdapter" modeltypeId="family.ComponentsRequired"/>
+      <adapter class="family.components.adapters.componentsmt.ComponentsAdapter" modeltypeId="family.ComponentsMT"/>
+    </language>
   </extension>
 </plugin>

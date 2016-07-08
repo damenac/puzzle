@@ -1,0 +1,7 @@
+package family
+
+import 'uml.melange'
+
+languageBinding {
+	bind( RequiredLogo, ProvidedExpressions  )
+}
