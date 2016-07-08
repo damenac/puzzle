@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Activities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities" nsPrefix="Activities">
+  <eSubpackages name="FundamentalActivities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities/FundamentalActivities" nsPrefix="FundamentalActivities">
+    <eClassifiers xsi:type="ecore:EClass" name="Activity" eSuperTypes="//FundamentalActivities/Behavior">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityNode" abstract="true" eSuperTypes="//FundamentalActivities/NamedElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="//FundamentalActivities/ActivityNode">
+      <eAnnotations source="Required"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLocallyReentrant">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityGroup" abstract="true" eSuperTypes="//FundamentalActivities/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subgroup" upperBound="-1" eType="//FundamentalActivities/ActivityGroup" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
