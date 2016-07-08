@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.uml.classes.metamodel/src" modelPluginID="fr.inria.diverse.puzzle.uml.classes.metamodel" modelName="Classes" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Classes.ecore</foreignModel>
+  <genPackages prefix="Classes" disposableProviderFactory="true">
+    <ecorePackage href="Classes.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Classes.ecore#//VisibilityKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Classes.ecore#//VisibilityKind/package"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Classes.ecore#//VisibilityKind/public"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Classes.ecore#//VisibilityKind/private"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Classes.ecore#//VisibilityKind/protected"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="Classes.ecore#//AggregationKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Classes.ecore#//AggregationKind/none"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Classes.ecore#//AggregationKind/shared"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="Classes.ecore#//AggregationKind/composite"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//Element"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Element/ownedComment"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Element/ownedElement"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Element/owner"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Comment"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Comment/owningElement"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Comment/body"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Comment/annotatedElement"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//Relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Relationship/relatedElement"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//DirectedRelationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//DirectedRelationship/target"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//DirectedRelationship/source"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//NamedElement/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//NamedElement/qualifiedName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//NamedElement/visibility"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//NamedElement/namespace"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//NamedElement/clientDependency"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Namespace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Namespace/importedMember"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Namespace/member"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Namespace/ownedMember"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Namespace/elementImport"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Namespace/packageImport"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Namespace/ownedRule"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//PackageableElement"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//ElementImport"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//ElementImport/visibility"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//ElementImport/alias"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//ElementImport/importedElement"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//ElementImport/importingNamespace"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//PackageImport"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//PackageImport/visibility"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//PackageImport/importedPackage"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//PackageImport/importingNamespace"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Package"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Package/URI"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Package/nestedPackage"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Package/nestingPackage"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Package/packagedElement"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Package/ownedType"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Package/packageMerge"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//MultiplicityElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//MultiplicityElement/isOrdered"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//MultiplicityElement/isUnique"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//MultiplicityElement/upper"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//MultiplicityElement/lower"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//MultiplicityElement/upperValue"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//MultiplicityElement/lowerValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//ValueSpecification"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//ValueSpecification/owningUpper"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//ValueSpecification/owningLower"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//ValueSpecification/owningConstraint"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//ValueSpecification/owningSlot"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//ValueSpecification/owningInstanceSpec"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//TypedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//TypedElement/type"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//Type"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Type/package"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Expression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Expression/symbol"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Expression/operand"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//OpaqueExpression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//OpaqueExpression/body"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//OpaqueExpression/language"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//LiteralSpecification"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//LiteralNull"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//LiteralBoolean"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//LiteralInteger"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//LiteralReal"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//LiteralString"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//LiteralUnilimitedNatural"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//InstanceValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//InstanceValue/instance"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//InstanceSpecification"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//InstanceSpecification/slot"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//InstanceSpecification/specification"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//InstanceSpecification/classifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Constraint"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Constraint/context"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Constraint/constrainedElement"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Constraint/specification"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Slot"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Slot/owningInstace"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Slot/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Slot/definingFeature"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//RedefinableElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//RedefinableElement/redefinedElement"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//RedefinableElement/isLeaf"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//RedefinableElement/redefinitionContext"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//Classifier"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Classifier/isAbstract"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Classifier/isFinalSpecialization"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/inheritedMember"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/feature"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/attribute"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/redefinedClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/general"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/generalization"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/substitution"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Classifier/powertypeExtent"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//Feature"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Feature/isStatic"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Feature/featuringClassifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//StructuralFeature"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//StructuralFeature/isReadOnly"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Property"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/class"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Property/isDerived"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Property/isDerivedUnion"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Property/default"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Property/isComposite"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Property/isID"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Property/aggregation"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/redefinedProperty"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/defaultValue"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/opposite"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/subsettedProperty"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/association"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/owningAssociation"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/dataType"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/interface"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/qualifier"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Property/associationEnd"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Generalization"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Generalization/isSubstitutable"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Generalization/general"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Generalization/specific"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Generalization/generalizationSet"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//BehavioralFeature"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//BehavioralFeature/ownedParameter"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//BehavioralFeature/raisedException"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Parameter"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Parameter/default"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Parameter/ownedFormalParam"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Parameter/defaultValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Operation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Operation/isQuery"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Operation/isOrdered"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Operation/isUnique"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Operation/upper"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Operation/lower"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Operation/type"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Operation/precondition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Operation/bodyCondition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Operation/postcondition"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Operation/class"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Operation/dataType"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Operation/interface"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Class"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Class/nestedClassifier"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Class/ownedOperation"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Class/superClass"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Class/ownedAttribute"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Association"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//Association/isDerived"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Association/navigableOwnedEnd"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Association/memberEnd"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Association/ownedEnd"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//DataType"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//DataType/ownedAttribute"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//DataType/ownedOperation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//PrimitiveType"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Enumeration"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Enumeration/ownedLiteral"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//EnumerationLiteral"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//EnumerationLiteral/enumeration"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//PackageMerge"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//PackageMerge/receivingPackage"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//PackageMerge/mergedPackage"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Dependency"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Dependency/client"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Dependency/supplier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Usage"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Abstraction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Abstraction/mapping"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Realization"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Substitution"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Substitution/substitutingClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Substitution/contract"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//Interface"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Interface/nestedClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Interface/redefinedInterface"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Interface/ownedAttribute"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//Interface/ownedOperation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//InterfaceRealization"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//InterfaceRealization/implementingClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//InterfaceRealization/contract"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="Classes.ecore#//BehavioredClassifier"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//BehavioredClassifier/interfaceRealization"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//AssociationClass"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="Classes.ecore#//GeneralizationSet"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//GeneralizationSet/isCovering"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="Classes.ecore#//GeneralizationSet/isDisjoint"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//GeneralizationSet/powertype"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="Classes.ecore#//GeneralizationSet/generalization"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

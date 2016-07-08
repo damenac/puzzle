@@ -9,9 +9,40 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated CompositeStructures -->
       <package
-            uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/CompositeStructures"
-            class="CompositeStructures.CompositeStructuresPackage"
+            uri="http://fr.inria.diverse.puzzle.uml/CompositeStructures/InternalStructures"
+            class="CompositeStructures.InternalStructures.InternalStructuresPackage"
             genModel="models/CompositeStructures.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CompositeStructures -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/CompositeStructures/Ports"
+            class="CompositeStructures.Ports.PortsPackage"
+            genModel="models/CompositeStructures.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CompositeStructures -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/CompositeStructures/Collaborations"
+            class="CompositeStructures.Collaborations.CollaborationsPackage"
+            genModel="models/CompositeStructures.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CompositeStructures -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/CompositeStructures/InvocationActions"
+            class="CompositeStructures.InvocationActions.InvocationActionsPackage"
+            genModel="models/CompositeStructures.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CompositeStructures -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/CompositeStructures/StructuredActivities"
+            class="CompositeStructures.StructuredActivities.StructuredActivitiesPackage"
+            genModel="models/CompositeStructures.genmodel"/>
+   </extension>
 </plugin>

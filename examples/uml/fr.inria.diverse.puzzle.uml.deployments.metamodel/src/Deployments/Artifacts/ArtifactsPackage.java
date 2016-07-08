@@ -2,6 +2,7 @@
  */
 package Deployments.Artifacts;
 
+import Deployments.Nodes.NodesPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -224,13 +225,31 @@ public interface ArtifactsPackage extends EPackage {
 	int PROPERTY = 4;
 
 	/**
+	 * The feature id for the '<em><b>Deployed Element</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__DEPLOYED_ELEMENT = NodesPackage.DEPLOYMENT_TARGET__DEPLOYED_ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Deployment</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTY__DEPLOYMENT = NodesPackage.DEPLOYMENT_TARGET__DEPLOYMENT;
+
+	/**
 	 * The number of structural features of the '<em>Property</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_FEATURE_COUNT = 0;
+	int PROPERTY_FEATURE_COUNT = NodesPackage.DEPLOYMENT_TARGET_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Property</em>' class.
@@ -239,7 +258,7 @@ public interface ArtifactsPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTY_OPERATION_COUNT = 0;
+	int PROPERTY_OPERATION_COUNT = NodesPackage.DEPLOYMENT_TARGET_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Deployments.Artifacts.impl.AbstractionImpl <em>Abstraction</em>}' class.

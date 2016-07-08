@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Components -->
       <package
-            uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Components"
-            class="Components.ComponentsPackage"
+            uri="http://fr.inria.diverse.puzzle.uml/Components/BasicComponents"
+            class="Components.BasicComponents.BasicComponentsPackage"
             genModel="models/Components.genmodel"/>
    </extension>
 

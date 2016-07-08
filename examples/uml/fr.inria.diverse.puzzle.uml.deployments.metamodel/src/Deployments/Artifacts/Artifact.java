@@ -2,6 +2,7 @@
  */
 package Deployments.Artifacts;
 
+import Deployments.Nodes.DeployedArtifact;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -24,7 +25,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Artifact extends Classifier, NamedElement {
+public interface Artifact extends Classifier, NamedElement, DeployedArtifact {
 	/**
 	 * Returns the value of the '<em><b>File Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->

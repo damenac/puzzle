@@ -14,4 +14,20 @@
             genModel="models/Deployments.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Deployments -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Deployments/Nodes"
+            class="Deployments.Nodes.NodesPackage"
+            genModel="models/Deployments.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Deployments -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Deployments/ComponentDeployments"
+            class="Deployments.ComponentDeployments.ComponentDeploymentsPackage"
+            genModel="models/Deployments.genmodel"/>
+   </extension>
+
 </plugin>

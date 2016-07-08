@@ -9,7 +9,13 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: Deployments.Artifacts,
  Deployments.Artifacts.impl,
- Deployments.Artifacts.util
+ Deployments.Artifacts.util,
+ Deployments.ComponentDeployments,
+ Deployments.ComponentDeployments.impl,
+ Deployments.ComponentDeployments.util,
+ Deployments.Nodes,
+ Deployments.Nodes.impl,
+ Deployments.Nodes.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

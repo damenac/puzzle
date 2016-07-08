@@ -18,4 +18,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="PackageableElement">
     <eAnnotations source="Required"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class" abstract="true">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Association">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InstanceSpecification">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Dependency">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
 </ecore:EPackage>

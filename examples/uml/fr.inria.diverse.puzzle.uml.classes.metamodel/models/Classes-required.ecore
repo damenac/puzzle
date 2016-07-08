@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ClassesReq" nsURI="http://fr.inria.diverse.puzzle.uml.classes.metamodel/ClassesReq" nsPrefix="ClassesReq">
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ClassesReq" nsURI="http://fr.inria.diverse.puzzle.uml/ClassesReq" nsPrefix="ClassesReq">
   <eClassifiers xsi:type="ecore:EClass" name="BehavioredClassifier" abstract="true">
     <eAnnotations source="Required"/>
   </eClassifiers>

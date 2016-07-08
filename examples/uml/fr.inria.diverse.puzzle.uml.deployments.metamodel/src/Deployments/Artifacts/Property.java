@@ -2,7 +2,7 @@
  */
 package Deployments.Artifacts;
 
-import org.eclipse.emf.ecore.EObject;
+import Deployments.Nodes.DeploymentTarget;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,5 +14,5 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Property extends EObject {
+public interface Property extends DeploymentTarget {
 } // Property

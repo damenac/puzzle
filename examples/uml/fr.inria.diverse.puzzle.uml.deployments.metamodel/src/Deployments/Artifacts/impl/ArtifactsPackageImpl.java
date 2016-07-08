@@ -13,6 +13,10 @@ import Deployments.Artifacts.Operation;
 import Deployments.Artifacts.PackageableElement;
 import Deployments.Artifacts.Property;
 
+import Deployments.ComponentDeployments.ComponentDeploymentsPackage;
+import Deployments.ComponentDeployments.impl.ComponentDeploymentsPackageImpl;
+import Deployments.Nodes.NodesPackage;
+import Deployments.Nodes.impl.NodesPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -129,11 +133,19 @@ public class ArtifactsPackageImpl extends EPackageImpl implements ArtifactsPacka
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		NodesPackageImpl theNodesPackage = (NodesPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(NodesPackage.eNS_URI) instanceof NodesPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(NodesPackage.eNS_URI) : NodesPackage.eINSTANCE);
+		ComponentDeploymentsPackageImpl theComponentDeploymentsPackage = (ComponentDeploymentsPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(ComponentDeploymentsPackage.eNS_URI) instanceof ComponentDeploymentsPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(ComponentDeploymentsPackage.eNS_URI) : ComponentDeploymentsPackage.eINSTANCE);
+
 		// Create package meta-data objects
 		theArtifactsPackage.createPackageContents();
+		theNodesPackage.createPackageContents();
+		theComponentDeploymentsPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theArtifactsPackage.initializePackageContents();
+		theNodesPackage.initializePackageContents();
+		theComponentDeploymentsPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theArtifactsPackage.freeze();
@@ -344,6 +356,9 @@ public class ArtifactsPackageImpl extends EPackageImpl implements ArtifactsPacka
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		NodesPackage theNodesPackage = (NodesPackage)EPackage.Registry.INSTANCE.getEPackage(NodesPackage.eNS_URI);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -351,6 +366,8 @@ public class ArtifactsPackageImpl extends EPackageImpl implements ArtifactsPacka
 		// Add supertypes to classes
 		artifactEClass.getESuperTypes().add(this.getClassifier());
 		artifactEClass.getESuperTypes().add(this.getNamedElement());
+		artifactEClass.getESuperTypes().add(theNodesPackage.getDeployedArtifact());
+		propertyEClass.getESuperTypes().add(theNodesPackage.getDeploymentTarget());
 		manifestationEClass.getESuperTypes().add(this.getAbstraction());
 
 		// Initialize classes, features, and operations; add parameters

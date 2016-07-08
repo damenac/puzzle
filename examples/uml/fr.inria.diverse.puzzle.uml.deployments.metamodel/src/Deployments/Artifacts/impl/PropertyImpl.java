@@ -4,10 +4,8 @@ package Deployments.Artifacts.impl;
 
 import Deployments.Artifacts.ArtifactsPackage;
 import Deployments.Artifacts.Property;
-
+import Deployments.Nodes.impl.DeploymentTargetImpl;
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class PropertyImpl extends MinimalEObjectImpl.Container implements Property {
+public class PropertyImpl extends DeploymentTargetImpl implements Property {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

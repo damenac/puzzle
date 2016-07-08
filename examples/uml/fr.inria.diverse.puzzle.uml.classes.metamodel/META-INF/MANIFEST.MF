@@ -7,9 +7,21 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: Classes,
- Classes.impl,
- Classes.util
+Export-Package: Classes.AssociationClasses,
+ Classes.AssociationClasses.impl,
+ Classes.AssociationClasses.util,
+ Classes.Dependencies,
+ Classes.Dependencies.impl,
+ Classes.Dependencies.util,
+ Classes.Interfaces,
+ Classes.Interfaces.impl,
+ Classes.Interfaces.util,
+ Classes.Kernel,
+ Classes.Kernel.impl,
+ Classes.Kernel.util,
+ Classes.PowerTypes,
+ Classes.PowerTypes.impl,
+ Classes.PowerTypes.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

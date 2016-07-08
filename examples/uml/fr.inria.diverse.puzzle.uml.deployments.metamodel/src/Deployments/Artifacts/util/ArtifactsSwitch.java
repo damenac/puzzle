@@ -4,6 +4,8 @@ package Deployments.Artifacts.util;
 
 import Deployments.Artifacts.*;
 
+import Deployments.Nodes.DeployedArtifact;
+import Deployments.Nodes.DeploymentTarget;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -70,6 +72,7 @@ public class ArtifactsSwitch<T> extends Switch<T> {
 				Artifact artifact = (Artifact)theEObject;
 				T result = caseArtifact(artifact);
 				if (result == null) result = caseClassifier(artifact);
+				if (result == null) result = caseDeployedArtifact(artifact);
 				if (result == null) result = caseNamedElement(artifact);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -95,6 +98,8 @@ public class ArtifactsSwitch<T> extends Switch<T> {
 			case ArtifactsPackage.PROPERTY: {
 				Property property = (Property)theEObject;
 				T result = caseProperty(property);
+				if (result == null) result = caseDeploymentTarget(property);
+				if (result == null) result = caseNamedElement(property);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -238,6 +243,36 @@ public class ArtifactsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePackageableElement(PackageableElement object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Deployed Artifact</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Deployed Artifact</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeployedArtifact(DeployedArtifact object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Deployment Target</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Deployment Target</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseDeploymentTarget(DeploymentTarget object) {
 		return null;
 	}
 

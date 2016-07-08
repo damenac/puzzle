@@ -9,9 +9,40 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated Classes -->
       <package
-            uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes"
-            class="Classes.ClassesPackage"
+            uri="http://fr.inria.diverse.puzzle.uml/Classes/Kernel"
+            class="Classes.Kernel.KernelPackage"
             genModel="models/Classes.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Classes -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Classes/Dependencies"
+            class="Classes.Dependencies.DependenciesPackage"
+            genModel="models/Classes.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Classes -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Classes/Interfaces"
+            class="Classes.Interfaces.InterfacesPackage"
+            genModel="models/Classes.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Classes -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Classes/AssociationClasses"
+            class="Classes.AssociationClasses.AssociationClassesPackage"
+            genModel="models/Classes.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Classes -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Classes/PowerTypes"
+            class="Classes.PowerTypes.PowerTypesPackage"
+            genModel="models/Classes.genmodel"/>
+   </extension>
 </plugin>
