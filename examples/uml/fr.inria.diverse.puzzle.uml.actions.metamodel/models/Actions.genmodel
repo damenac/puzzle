@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.uml.actions.metamodel/src" modelPluginID="fr.inria.diverse.puzzle.uml.actions.metamodel" modelName="Actions" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Actions.ecore</foreignModel>
+  <genPackages prefix="Actions" disposableProviderFactory="true">
+    <ecorePackage href="Actions.ecore#/"/>
+    <nestedGenPackages prefix="BasicActions" disposableProviderFactory="true">
+      <ecorePackage href="Actions.ecore#//BasicActions"/>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/Action"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/Action/context"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/Action/input"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/Action/output"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/NamedElement"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/Classifier"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/OpaqueAction"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//BasicActions/OpaqueAction/body"/>
+        </genFeatures>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//BasicActions/OpaqueAction/language"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/OpaqueAction/inputValue"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/OpaqueAction/outputValue"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/InputPin"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/OutputPin"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/Pin"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/MultiplicityElement"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/TypedElement"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/ValuePin"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/ValuePin/value"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/ValueSpecification"/>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/InvocationAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/InvocationAction/argument"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/CallAction"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//BasicActions/CallAction/isSynchronous"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/CallAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/CallBehaviorAction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/CallBehaviorAction/behavior"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//BasicActions/Behavior"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/CallOperationAction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/CallOperationAction/operation"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/CallOperationAction/target"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/Operation"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/SendSignalAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/SendSignalAction/target"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//BasicActions/SendSignalAction/signal"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//BasicActions/Signal"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="IntermediateActions" disposableProviderFactory="true">
+      <ecorePackage href="Actions.ecore#//IntermediateActions"/>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/BroadcastSignalAction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/BroadcastSignalAction/signal"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/SendObjectAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/SendObjectAction/target"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/SendObjectAction/request"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/CreateObjectAction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/CreateObjectAction/classifier"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/CreateObjectAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/DestroyObjectAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/DestroyObjectAction/target"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/TestIdentityAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/TestIdentityAction/result"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/TestIdentityAction/first"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/TestIdentityAction/second"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/ReadSelfAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/ReadSelfAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/ValueSpecificationAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/ValueSpecificationAction/result"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/ValueSpecificationAction/value"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//IntermediateActions/StructuralFeatureAction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/StructuralFeatureAction/structuralFeature"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/StructuralFeatureAction/object"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//IntermediateActions/StructuralFeature"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/ReadStructuralFeatureAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/ReadStructuralFeatureAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//IntermediateActions/WriteStructuralFeatureAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/WriteStructuralFeatureAction/value"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/WriteStructuralFeatureAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/AddStructuralFeatureValueAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/AddStructuralFeatureValueAction/insertAt"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/RemoveStructuralFeatureValueAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/RemoveStructuralFeatureValueAction/removeAt"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/ClearStructuralFeatureAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/ClearStructuralFeatureAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/LinkAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/LinkAction/inputValue"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/LinkAction/endData"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//IntermediateActions/LinkEndData"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/LinkEndData/value"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/LinkEndData/end"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/LinkEndData/qualifier"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/Property"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/ReadLinkAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/ReadLinkAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//IntermediateActions/WriteLinkAction"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/CreateLinkAction"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/LinkEndCreationData"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//IntermediateActions/LinkEndCreationData/isReplaceAll"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/LinkEndCreationData/insertAt"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//IntermediateActions/Element"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/DestroyLinkAction"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//IntermediateActions/LinkEndDestructionData"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//IntermediateActions/LinkEndDestructionData/isDestroyDuplicates"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//IntermediateActions/LinkEndDestructionData/destroyAt"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="CompleteActions" disposableProviderFactory="true">
+      <ecorePackage href="Actions.ecore#//CompleteActions"/>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/ReplyAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReplyAction/returnInformation"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReplyAction/replyValue"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReplyAction/replyToCall"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/UnmarshallAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/UnmarshallAction/object"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/UnmarshallAction/unmarshallType"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/UnmarshallAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/AcceptEventAction"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//CompleteActions/AcceptEventAction/isUnmarshall"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/AcceptEventAction/result"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/AcceptEventAction/trigger"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/AcceptCallAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/AcceptCallAction/returnInformation"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/Trigger"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/ReadExtendAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadExtendAction/result"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadExtendAction/classifier"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/ReclassifyObjectAction"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//CompleteActions/ReclassifyObjectAction/isReplaceAll"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReclassifyObjectAction/object"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReclassifyObjectAction/oldClassifier"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReclassifyObjectAction/newClassifier"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/ReadlsClassifiedObjectAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadlsClassifiedObjectAction/result"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadlsClassifiedObjectAction/object"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/StartClassifierBehaviorAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/StartClassifierBehaviorAction/object"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/StartObjectBehaviorAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/StartObjectBehaviorAction/object"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/QualifierValue"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/QualifierValue/qualifier"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/QualifierValue/value"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/ReadLinkObjectEndAction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadLinkObjectEndAction/end"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadLinkObjectEndAction/object"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadLinkObjectEndAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/ReadLinkObjectEndQualifierAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadLinkObjectEndQualifierAction/object"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadLinkObjectEndQualifierAction/result"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReadLinkObjectEndQualifierAction/qualifier"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/CreateLinkObjectAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/CreateLinkObjectAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//CompleteActions/ReduceAction"/>
+        <genFeatures createChild="false">
+          <ecoreFeature xsi:type="ecore:EAttribute" href="Actions.ecore#//CompleteActions/ReduceAction/isOrdered"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReduceAction/result"/>
+        </genFeatures>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReduceAction/collection"/>
+        </genFeatures>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//CompleteActions/ReduceAction/reducer"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages prefix="StructuredActions" disposableProviderFactory="true">
+      <ecorePackage href="Actions.ecore#//StructuredActions"/>
+      <genClasses image="false">
+        <ecoreClass href="Actions.ecore#//StructuredActions/VariableAction"/>
+        <genFeatures notify="false" createChild="false" propertySortChoices="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//StructuredActions/VariableAction/variable"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/Variable"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/ReadVariableAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//StructuredActions/ReadVariableAction/result"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/WriteVariableAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//StructuredActions/WriteVariableAction/value"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/AddVariableValueAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//StructuredActions/AddVariableValueAction/insertAt"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/RemoveVariableValueAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//StructuredActions/RemoveVariableValueAction/removeAt"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/ClearVariableAction"/>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/RaiseExceptionAction"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//StructuredActions/RaiseExceptionAction/exception"/>
+        </genFeatures>
+      </genClasses>
+      <genClasses>
+        <ecoreClass href="Actions.ecore#//StructuredActions/ActionInputPin"/>
+        <genFeatures property="None" children="true" createChild="true">
+          <ecoreFeature xsi:type="ecore:EReference" href="Actions.ecore#//StructuredActions/ActionInputPin/fromAction"/>
+        </genFeatures>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

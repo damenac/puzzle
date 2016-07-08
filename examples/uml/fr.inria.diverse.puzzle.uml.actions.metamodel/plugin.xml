@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Actions -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Actions/BasicActions"
+            class="Actions.BasicActions.BasicActionsPackage"
+            genModel="models/Actions.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Actions -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Actions/IntermediateActions"
+            class="Actions.IntermediateActions.IntermediateActionsPackage"
+            genModel="models/Actions.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Actions -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Actions/CompleteActions"
+            class="Actions.CompleteActions.CompleteActionsPackage"
+            genModel="models/Actions.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Actions -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Actions/StructuredActions"
+            class="Actions.StructuredActions.StructuredActionsPackage"
+            genModel="models/Actions.genmodel"/>
+   </extension>
+
+</plugin>
