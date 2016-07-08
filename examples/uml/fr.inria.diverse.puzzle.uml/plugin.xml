@@ -2,7 +2,9 @@
 <plugin>
   
 <extension point="fr.inria.diverse.melange.modeltype">
-    <modeltype id="family.ClassesProvided" uri="http://classesprovided/"/>
+    <modeltype id="family.ClassesProvided" uri="http://classesprovided/">
+      <subtyping modeltypeId="family.DeploymentsRequired"/>
+    </modeltype>
     <modeltype id="family.ClassesRequired" uri="http://classesrequired/"/>
     <modeltype id="family.ComponentsProvided" uri="http://componentsprovided/"/>
     <modeltype id="family.ComponentsRequired" uri="http://componentsrequired/"/>
@@ -10,8 +12,11 @@
     <modeltype id="family.CompositeStructuresRequired" uri="http://compositestructuresrequired/">
       <subtyping modeltypeId="family.ClassesRequired"/>
     </modeltype>
+    <modeltype id="family.DeploymentsProvided" uri="http://deploymentsprovided/"/>
+    <modeltype id="family.DeploymentsRequired" uri="http://deploymentsrequired/"/>
     <modeltype id="family.ClassesMT" uri="http://classesmt/">
       <subtyping modeltypeId="family.ClassesRequired"/>
+      <subtyping modeltypeId="family.DeploymentsRequired"/>
     </modeltype>
     <modeltype id="family.ComponentsMT" uri="http://componentsmt/">
       <subtyping modeltypeId="family.ComponentsProvided"/>
@@ -22,22 +27,32 @@
       <subtyping modeltypeId="family.CompositeStructuresProvided"/>
       <subtyping modeltypeId="family.CompositeStructuresRequired"/>
     </modeltype>
+    <modeltype id="family.DeploymentsMT" uri="http://deploymentsmt/">
+      <subtyping modeltypeId="family.DeploymentsProvided"/>
+      <subtyping modeltypeId="family.DeploymentsRequired"/>
+    </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
     <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ClassesMT" id="family.Classes" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes">
       <adapter class="family.classes.adapters.classesprovided.ClassesAdapter" modeltypeId="family.ClassesProvided"/>
       <adapter class="family.classes.adapters.classesrequired.ClassesAdapter" modeltypeId="family.ClassesRequired"/>
+      <adapter class="family.classes.adapters.deploymentsrequired.ClassesAdapter" modeltypeId="family.DeploymentsRequired"/>
     </language>
-    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ComponentsMT" id="family.Components" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Components">
+    <language aspects="" description="Definition of the language unit called &quot;Components&quot;" entryPoints="" exactType="family.ComponentsMT" id="family.Components" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Components">
       <adapter class="family.components.adapters.componentsprovided.ComponentsAdapter" modeltypeId="family.ComponentsProvided"/>
       <adapter class="family.components.adapters.componentsrequired.ComponentsAdapter" modeltypeId="family.ComponentsRequired"/>
       <adapter class="family.components.adapters.componentsmt.ComponentsAdapter" modeltypeId="family.ComponentsMT"/>
     </language>
-    <language aspects="" entryPoints="" exactType="family.CompositeStructuresMT" id="family.CompositeStructures" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/CompositeStructures">
+    <language aspects="" description="Definition of the language unit called &quot;Composite Structures&quot;" entryPoints="" exactType="family.CompositeStructuresMT" id="family.CompositeStructures" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/CompositeStructures">
       <adapter class="family.compositestructures.adapters.compositestructuresprovided.CompositeStructuresAdapter" modeltypeId="family.CompositeStructuresProvided"/>
       <adapter class="family.compositestructures.adapters.classesrequired.CompositeStructuresAdapter" modeltypeId="family.ClassesRequired"/>
       <adapter class="family.compositestructures.adapters.compositestructuresrequired.CompositeStructuresAdapter" modeltypeId="family.CompositeStructuresRequired"/>
       <adapter class="family.compositestructures.adapters.compositestructuresmt.CompositeStructuresAdapter" modeltypeId="family.CompositeStructuresMT"/>
+    </language>
+    <language aspects="" description="Definition of the language unit called &quot;Deployments&quot;" entryPoints="" exactType="family.DeploymentsMT" id="family.Deployments" uri="http://fr.inria.diverse.puzzle.uml/Deployments">
+      <adapter class="family.deployments.adapters.deploymentsprovided.DeploymentsAdapter" modeltypeId="family.DeploymentsProvided"/>
+      <adapter class="family.deployments.adapters.deploymentsrequired.DeploymentsAdapter" modeltypeId="family.DeploymentsRequired"/>
+      <adapter class="family.deployments.adapters.deploymentsmt.DeploymentsAdapter" modeltypeId="family.DeploymentsMT"/>
     </language>
   </extension>
 </plugin>
