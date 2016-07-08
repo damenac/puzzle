@@ -3,5 +3,7 @@ package family
 import 'uml.melange'
 
 languageBinding {
-	bind( ComponentsRequired, ClassesProvided  )
+	bind( ComponentsRequired, ClassesProvided )
+//	bind( CompositeStructuresRequired, ClassesProvided )
+	bind( CompositeStructuresRequired, ComponentsProvided )
 }

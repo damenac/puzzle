@@ -368,7 +368,9 @@ public class ProvidedInterfaceExtractor {
 				
 				if(oldClass != null){
 					for (EClass _oldSuperType : oldClass.getESuperTypes() ) {
-						newClass.getESuperTypes().add((EClass)_newClassifiers.get(_oldSuperType.getName()));
+						EClass newSuperType = (EClass)_newClassifiers.get(_oldSuperType.getName());
+						if(newSuperType != null)
+							newClass.getESuperTypes().add(newSuperType);
 					}
 				}
 			}

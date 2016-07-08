@@ -111,21 +111,23 @@ public class RequiredInterfaceExtractor {
 		
 		//Clone the attributes
 		for (EAttribute eAttribute : oldClass.getEAttributes()) {
-			EAttribute newAttribute = ecoreFactory.createEAttribute();
-			newAttribute.setName(eAttribute.getName());
-			if(!(eAttribute.getEType() instanceof EEnum)) newAttribute.setEType(eAttribute.getEType());
-			newClass.getEStructuralFeatures().add(newAttribute);
-			
-			for(EAnnotation annotation : eAttribute.getEAnnotations()){
-				EAnnotation newEAnnotation = ecoreFactory.createEAnnotation();
-				newEAnnotation.setSource(annotation.getSource());
-				newAttribute.getEAnnotations().add(newEAnnotation);
+			if(eAttribute.getEAnnotation("Required") != null){
+				EAttribute newAttribute = ecoreFactory.createEAttribute();
+				newAttribute.setName(eAttribute.getName());
+				if(!(eAttribute.getEType() instanceof EEnum)) newAttribute.setEType(eAttribute.getEType());
+				newClass.getEStructuralFeatures().add(newAttribute);
+				
+				for(EAnnotation annotation : eAttribute.getEAnnotations()){
+					EAnnotation newEAnnotation = ecoreFactory.createEAnnotation();
+					newEAnnotation.setSource(annotation.getSource());
+					newAttribute.getEAnnotations().add(newEAnnotation);
+				}
 			}
 		}
 		
 		//Clone the references
 		for (EReference eReference : oldClass.getEReferences()) {
-//			if(eReference.getEAnnotation("Addition") == null){
+			if(eReference.getEAnnotation("Required") != null){
 				EReference newEReference = ecoreFactory.createEReference();
 				newEReference.setName(eReference.getName());
 				newEReference.setLowerBound(eReference.getLowerBound());
@@ -141,10 +143,11 @@ public class RequiredInterfaceExtractor {
 					newEReference.getEAnnotations().add(newEAnnotation);
 				}
 			}
-//		}
+		}
 		
 		//Clone the operations
 		for (EOperation operation : oldClass.getEOperations()) {
+			if(operation.getEAnnotation("Required") != null){
 				EOperation newOperation = ecoreFactory.createEOperation();
 				newOperation.setName(operation.getName());
 				EClassifier operationType = EcoreQueries.searchNativeTypeByName(operation.getEType().getName());
@@ -163,6 +166,7 @@ public class RequiredInterfaceExtractor {
 					newOperation.getEParameters().add(newParameter);
 				}
 				newClass.getEOperations().add(newOperation);
+			}
 		}
 		
 		//Clone the annotations
@@ -330,7 +334,9 @@ public class RequiredInterfaceExtractor {
 				
 				if(oldClass != null){
 					for (EClass _oldSuperType : oldClass.getESuperTypes() ) {
-						newClass.getESuperTypes().add((EClass)_newClassifiers.get(_oldSuperType.getName()));
+						EClass _newSuperType = (EClass)_newClassifiers.get(_oldSuperType.getName());
+						if(_newSuperType != null)
+							newClass.getESuperTypes().add(_newSuperType);
 					}
 				}
 			}

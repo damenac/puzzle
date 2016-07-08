@@ -902,12 +902,9 @@ public class PuzzleMerge {
 				if(oldClass != null){
 					for (EClass _oldSuperType : oldClass.getESuperTypes() ) {
 						EClass newSuperType = (EClass)_newClassifiers.get(_oldSuperType.getName());
-						System.out.println("Resolving super types: " + _oldSuperType.getName());
 						if(newSuperType != null){
 							newClass.getESuperTypes().add(newSuperType);
-							System.out.println("OK");
 						}
-						
 					}
 				}
 			}
