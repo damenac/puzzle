@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.uml.compositestructures.metamodel/src" modelPluginID="fr.inria.diverse.puzzle.uml.compositestructures.metamodel" modelName="CompositeStructures" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>CompositeStructures.ecore</foreignModel>
+  <genPackages prefix="CompositeStructures" disposableProviderFactory="true">
+    <ecorePackage href="CompositeStructures.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Connector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Connector/redefinedConnector"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Connector/end"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//Feature"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Feature/featuringClassifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//RedefinableElement"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//StructuredClassifier"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//StructuredClassifier/ownedConnector"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//StructuredClassifier/role"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//StructuredClassifier/ownedAttribute"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//StructuredClassifier/part"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//Classifier"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Classifier/feature"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Classifier/collaborationUse"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Classifier/representation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//Namespace"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//StructuralFeature"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Class"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//ConnectableElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//ConnectableElement/end"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//TypedElement"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Property"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//ConnectorEnd"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//ConnectorEnd/type"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//ConnectorEnd/role"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//ConnectorEnd/definingEnd"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//ConnectorEnd/partWithPort"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Association"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Port"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompositeStructures.ecore#//Port/isBehavior"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompositeStructures.ecore#//Port/isService"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompositeStructures.ecore#//Port/isConjugated"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Port/required"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Port/provided"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Port/redefinedPort"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Interface"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//EncapsulatedClassifier"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//EncapsulatedClassifier/ownedPort"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Parameter"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Collaboration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Collaboration/collaborationRole"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//BehavioredClassifier"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//CollaborationUse"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//CollaborationUse/type"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//CollaborationUse/roleBinding"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//NamedElement"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Dependency"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//InvocationAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//InvocationAction/onPort"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompositeStructures.ecore#//Trigger"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//Trigger/port"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompositeStructures.ecore#//Variable"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

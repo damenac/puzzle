@@ -1,0 +1,10 @@
+package family
+
+/**
+ * A language for UML state machines.
+ */
+language Classes {
+	syntax "platform:/resource/puzzle.examples.fsm.uml.metamodel/models/fsmUml.ecore"
+	
+	exactType ClassesMT
+}

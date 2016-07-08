@@ -1,25 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <plugin>
-
-   <extension
-         point="fr.inria.diverse.melange.modeltype">
-      <modeltype
-            uri="http://flowchartmt/"
-            id="family.FlowchartMT">
-      </modeltype>
-   </extension>
-   <extension
-         point="fr.inria.diverse.melange.language">
-      <language
-            exactType="family.FlowchartMT"
-            description="A language for Flowcharts"
-            uri="flowchartpck"
-            id="family.Flowchart">
-         <adapter
-               class="family.flowchart.adapters.flowchartmt.FlowchartAdapter"
-               modeltypeId="family.FlowchartMT">
-         </adapter>
-      </language>
-   </extension>
-
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="family.ClassesMT" uri="http://classesmt/"/>
+    <modeltype id="family.ComponentsMT" uri="http://componentsmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ClassesMT" id="family.Classes" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes"/>
+    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ComponentsMT" id="family.Components" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes"/>
+  </extension>
 </plugin>
