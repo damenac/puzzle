@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Interactions -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Interactions/BasicInteractions"
+            class="Interactions.BasicInteractions.BasicInteractionsPackage"
+            genModel="models/Interactions.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Interactions -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Interactions/Fragments"
+            class="Interactions.Fragments.FragmentsPackage"
+            genModel="models/Interactions.genmodel"/>
+   </extension>
+
+</plugin>

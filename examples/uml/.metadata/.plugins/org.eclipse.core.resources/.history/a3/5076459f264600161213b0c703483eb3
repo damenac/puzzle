@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Interactions" nsURI="http://fr.inria.diverse.puzzle.uml/Interactions" nsPrefix="Interactions">
+  <eSubpackages name="BasicInteractions" nsURI="http://fr.inria.diverse.puzzle.uml/Interactions/BasicInteractions" nsPrefix="BasicInteractions">
+    <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="InteractionFragment" abstract="true" eSuperTypes="//BasicInteractions/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="covered" upperBound="-1" eType="//BasicInteractions/Lifeline" eOpposite="//BasicInteractions/Lifeline/coveredBy"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutionSpecification" abstract="true" eSuperTypes="//BasicInteractions/InteractionFragment"/>
+    <eClassifiers xsi:type="ecore:EClass" name="OccurenceSpecification" eSuperTypes="//BasicInteractions/InteractionFragment">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="covered" lowerBound="1" eType="//BasicInteractions/Lifeline"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Constraint">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StateInvariant" eSuperTypes="//BasicInteractions/InteractionFragment">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="invariant" lowerBound="1" eType="//BasicInteractions/Constraint" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="covered" lowerBound="1" eType="//BasicInteractions/Lifeline"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Interaction" eSuperTypes="//BasicInteractions/Behavior //BasicInteractions/InteractionFragment">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="fragment" upperBound="-1" eType="//BasicInteractions/InteractionFragment" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="lifeline" upperBound="-1" eType="//BasicInteractions/Lifeline" containment="true" eOpposite="//BasicInteractions/Lifeline/interaction"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Lifeline" eSuperTypes="//BasicInteractions/NamedElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="coveredBy" upperBound="-1" eType="//BasicInteractions/InteractionFragment" eOpposite="//BasicInteractions/InteractionFragment/covered"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interaction" lowerBound="1" eType="//BasicInteractions/Interaction" eOpposite="//BasicInteractions/Interaction/lifeline"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="represents" eType="//BasicInteractions/ConnectableElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="selector" eType="//BasicInteractions/ValueSpecification" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ConnectableElement" abstract="true">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ValueSpecification" abstract="true">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Message"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="MessageKind">
+      <eLiterals name="complete"/>
+      <eLiterals name="lost" value="1"/>
+      <eLiterals name="found" value="2"/>
+      <eLiterals name="unknown" value="3"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
