@@ -38,6 +38,8 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="localPrecondition" upperBound="-1" eType="//IntermediateActivities/Constraint" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="localPostcondition" upperBound="-1" eType="//IntermediateActivities/Constraint" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="input" upperBound="-1" eType="//CompleteStructuredActivities/InputPin" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="output" upperBound="-1" eType="//StructuredActivities/OutputPin" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityGroup" abstract="true" eSuperTypes="//FundamentalActivities/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="subgroup" upperBound="-1" eType="//FundamentalActivities/ActivityGroup" containment="true" eOpposite="//FundamentalActivities/ActivityGroup/superGroup"/>
@@ -91,6 +93,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="inPartition" upperBound="-1" eType="//IntermediateActivities/ActivityPartition" eOpposite="//IntermediateActivities/ActivityPartition/edge"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="weight" lowerBound="1" eType="//IntermediateActivities/ValueSpecification" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="interrupts" eType="//IntermediateActivities/InterruptibleActivityRegion" eOpposite="//IntermediateActivities/InterruptibleActivityRegion/interruptingEdge"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inStructuredNode" eType="//StructuredActivities/StructuredActivityNode" eOpposite="//StructuredActivities/StructuredActivityNode/edge"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ControlFlow" eSuperTypes="//BasicActivities/ActivityEdge"/>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectFlow" eSuperTypes="//BasicActivities/ActivityEdge">
@@ -176,13 +179,21 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/inInterruptibleRegion"/>
     </eClassifiers>
   </eSubpackages>
-  <eSubpackages name="StructuredActivities" nsURI="StructuredActivities" nsPrefix="StructuredActivities">
-    <eClassifiers xsi:type="ecore:EClass" name="StructuredActivityNode" eSuperTypes="//FundamentalActivities/Namespace //StructuredActivities/ExecutableNode //FundamentalActivities/ActivityGroup">
+  <eSubpackages name="StructuredActivities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities/StructuredActivities" nsPrefix="StructuredActivities">
+    <eClassifiers xsi:type="ecore:EClass" name="StructuredActivityNode" eSuperTypes="//FundamentalActivities/Namespace //StructuredActivities/ExecutableNode //FundamentalActivities/ActivityGroup //FundamentalActivities/Action">
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="//FundamentalActivities/Activity" eOpposite="//FundamentalActivities/Activity/structuredNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1" eType="//StructuredActivities/Variable" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" containment="true" eOpposite="//FundamentalActivities/ActivityNode/inStructuredNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="structuredNodeInput" upperBound="-1" eType="//CompleteStructuredActivities/InputPin" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="edge" upperBound="-1" eType="//BasicActivities/ActivityEdge" containment="true" eOpposite="//BasicActivities/ActivityEdge/inStructuredNode"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mustIsolate">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="structuredNodeOutput" upperBound="-1" eType="//StructuredActivities/OutputPin" containment="true"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExecutableNode" eSuperTypes="//FundamentalActivities/ActivityNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExecutableNode" eSuperTypes="//FundamentalActivities/ActivityNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="handler" upperBound="-1" eType="//ExtraStructuredActivities/ExceptionHandler" containment="true" eOpposite="//ExtraStructuredActivities/ExceptionHandler/protectedNode"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="//StructuredActivities/MultiplicityElement //BasicActivities/TypedElement">
       <eAnnotations source="Required"/>
     </eClassifiers>
@@ -197,6 +208,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="test" lowerBound="1" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="decider" lowerBound="1" eType="//StructuredActivities/OutputPin"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="loopVariableInput" upperBound="-1" eType="//CompleteStructuredActivities/InputPin" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="loopVariable" upperBound="-1" eType="//StructuredActivities/OutputPin"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="bodyOutput" upperBound="-1" eType="//StructuredActivities/OutputPin"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="result" upperBound="-1" eType="//StructuredActivities/OutputPin" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OutputPin">
       <eAnnotations source="Required"/>
@@ -211,6 +226,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="clause" lowerBound="1" upperBound="-1" eType="//StructuredActivities/Clause" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="test" lowerBound="1" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="result" upperBound="-1" eType="//StructuredActivities/OutputPin" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Clause" eSuperTypes="//IntermediateActivities/Element">
       <eStructuralFeatures xsi:type="ecore:EReference" name="predecessorClause" upperBound="-1" eType="//StructuredActivities/Clause" eOpposite="//StructuredActivities/Clause/sucessorClause"/>
@@ -219,6 +235,36 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SequenceNode" eSuperTypes="//StructuredActivities/StructuredActivityNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="executableNode" upperBound="-1" eType="//StructuredActivities/ExecutableNode" containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="CompleteStructuredActivities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities/CompleteStructuredActivities" nsPrefix="CompleteStructuredActivities">
+    <eClassifiers xsi:type="ecore:EClass" name="InputPin">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+  </eSubpackages>
+  <eSubpackages name="ExtraStructuredActivities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities/ExtraStructuredActivities" nsPrefix="ExtraStructuredActivities">
+    <eClassifiers xsi:type="ecore:EClass" name="ExceptionHandler" eSuperTypes="//IntermediateActivities/Element">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="handlerBody" lowerBound="1" eType="//StructuredActivities/ExecutableNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="protectedNode" lowerBound="1" eType="//StructuredActivities/ExecutableNode" eOpposite="//StructuredActivities/ExecutableNode/handler"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionInput" lowerBound="1" eType="//BasicActivities/ObjectNode"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="exceptionType" lowerBound="1" upperBound="-1" eType="//ExtraStructuredActivities/Classifier"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true">
+      <eAnnotations source="Required"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpansionRegion" eSuperTypes="//StructuredActivities/StructuredActivityNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="//ExtraStructuredActivities/ExpansionKind"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="inputElement" lowerBound="1" upperBound="-1" eType="//ExtraStructuredActivities/ExpansionNode" eOpposite="//ExtraStructuredActivities/ExpansionNode/regionAsInput"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="outputElement" upperBound="-1" eType="//ExtraStructuredActivities/ExpansionNode" eOpposite="//ExtraStructuredActivities/ExpansionNode/regionAsOutput"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ExpansionKind">
+      <eLiterals name="parallel"/>
+      <eLiterals name="iterative" value="1"/>
+      <eLiterals name="stream" value="2"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpansionNode" eSuperTypes="//BasicActivities/ObjectNode">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="regionAsInput" eType="//ExtraStructuredActivities/ExpansionRegion" eOpposite="//ExtraStructuredActivities/ExpansionRegion/inputElement"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="regionAsOutput" eType="//ExtraStructuredActivities/ExpansionRegion" eOpposite="//ExtraStructuredActivities/ExpansionRegion/outputElement"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

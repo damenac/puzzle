@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Activities -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Activities/FundamentalActivities"
+            class="Activities.FundamentalActivities.FundamentalActivitiesPackage"
+            genModel="models/Activities.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Activities -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Activities/BasicActivities"
+            class="Activities.BasicActivities.BasicActivitiesPackage"
+            genModel="models/Activities.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Activities -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Activities/IntermediateActivities"
+            class="Activities.IntermediateActivities.IntermediateActivitiesPackage"
+            genModel="models/Activities.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Activities -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Activities/StructuredActivities"
+            class="Activities.StructuredActivities.StructuredActivitiesPackage"
+            genModel="models/Activities.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Activities -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Activities/CompleteStructuredActivities"
+            class="Activities.CompleteStructuredActivities.CompleteStructuredActivitiesPackage"
+            genModel="models/Activities.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Activities -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/Activities/ExtraStructuredActivities"
+            class="Activities.ExtraStructuredActivities.ExtraStructuredActivitiesPackage"
+            genModel="models/Activities.genmodel"/>
+   </extension>
+
+</plugin>
