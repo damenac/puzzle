@@ -12,8 +12,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isSingleExecution">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="structuredNode" upperBound="-1" eType="//StructuredActivities/StructuredActivityNode" containment="true" eOpposite="//StructuredActivities/StructuredActivityNode/activity"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1" eType="//StructuredActivities/Variable" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true" eSuperTypes="//IntermediateActivities/Class">
       <eAnnotations source="Required"/>
@@ -28,8 +26,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/target"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/source"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inPartition" upperBound="-1" eType="//IntermediateActivities/ActivityPartition" eOpposite="//IntermediateActivities/ActivityPartition/node"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inInterruptibleRegion" eType="//IntermediateActivities/InterruptibleActivityRegion" eOpposite="//IntermediateActivities/InterruptibleActivityRegion/node"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inStructuredNode" eType="//StructuredActivities/StructuredActivityNode" eOpposite="//StructuredActivities/StructuredActivityNode/node"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="//FundamentalActivities/ActivityNode">
       <eAnnotations source="Required"/>
@@ -80,7 +76,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="parameterSet" upperBound="-1" eType="//IntermediateActivities/ParameterSet" eOpposite="//IntermediateActivities/ParameterSet/parameter"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ControlNode" abstract="true" eSuperTypes="//FundamentalActivities/ActivityNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ActivityFinalNode" eSuperTypes="//BasicActivities/ControlNode //IntermediateActivities/FinalNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityFinalNode" eSuperTypes="//BasicActivities/ControlNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="InitialNode" eSuperTypes="//BasicActivities/ControlNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityEdge" abstract="true" eSuperTypes="//BasicActivities/RedefinableElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/incoming"/>
@@ -90,7 +86,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="guard" lowerBound="1" eType="//IntermediateActivities/ValueSpecification" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inPartition" upperBound="-1" eType="//IntermediateActivities/ActivityPartition" eOpposite="//IntermediateActivities/ActivityPartition/edge"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="weight" lowerBound="1" eType="//IntermediateActivities/ValueSpecification" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="interrupts" eType="//IntermediateActivities/InterruptibleActivityRegion" eOpposite="//IntermediateActivities/InterruptibleActivityRegion/interruptingEdge"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ControlFlow" eSuperTypes="//BasicActivities/ActivityEdge"/>
     <eClassifiers xsi:type="ecore:EClass" name="ObjectFlow" eSuperTypes="//BasicActivities/ActivityEdge">
@@ -118,14 +113,10 @@
   <eSubpackages name="IntermediateActivities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities/IntermediateActivities" nsPrefix="IntermediateActivities">
     <eClassifiers xsi:type="ecore:EClass" name="CentralBufferNode" eSuperTypes="//BasicActivities/ObjectNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="FinalNode" abstract="true" eSuperTypes="//BasicActivities/ControlNode"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ActivityFinalNode" eSuperTypes="//IntermediateActivities/FinalNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="FlowFinalNode" eSuperTypes="//IntermediateActivities/FinalNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="ForkNode" eSuperTypes="//BasicActivities/ControlNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="JoinNode" eSuperTypes="//BasicActivities/ControlNode">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCombineDuplicate">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="joinSpec" lowerBound="1" eType="//IntermediateActivities/ValueSpecification" containment="true"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="JoinNode" eSuperTypes="//BasicActivities/ControlNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="MergeNode" eSuperTypes="//BasicActivities/ControlNode"/>
     <eClassifiers xsi:type="ecore:EClass" name="DecisionNode" eSuperTypes="//BasicActivities/ControlNode">
       <eStructuralFeatures xsi:type="ecore:EReference" name="decisionInputFlow" eType="//BasicActivities/ObjectFlow"/>
@@ -171,23 +162,14 @@
     <eClassifiers xsi:type="ecore:EClass" name="Class">
       <eAnnotations source="Required"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="JoinNode" eSuperTypes="//BasicActivities/ControlNode">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isCombineDuplicate">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="joinSpec" lowerBound="1" eType="//IntermediateActivities/ValueSpecification" containment="true"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="InterruptibleActivityRegion" eSuperTypes="//FundamentalActivities/ActivityGroup">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="interruptingEdge" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/interrupts"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/inInterruptibleRegion"/>
-    </eClassifiers>
-  </eSubpackages>
-  <eSubpackages name="StructuredActivities" nsURI="StructuredActivities" nsPrefix="StructuredActivities">
-    <eClassifiers xsi:type="ecore:EClass" name="StructuredActivityNode" eSuperTypes="//FundamentalActivities/Namespace //StructuredActivities/ExecutableNode //FundamentalActivities/ActivityGroup">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="//FundamentalActivities/Activity" eOpposite="//FundamentalActivities/Activity/structuredNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1" eType="//StructuredActivities/Variable" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" containment="true" eOpposite="//FundamentalActivities/ActivityNode/inStructuredNode"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ExecutableNode" eSuperTypes="//FundamentalActivities/ActivityNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="//StructuredActivities/MultiplicityElement //BasicActivities/TypedElement">
-      <eAnnotations source="Required"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement" abstract="true">
-      <eAnnotations source="Required"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="interruptingEdge" upperBound="-1" eType="//BasicActivities/ActivityEdge"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

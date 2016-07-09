@@ -29,7 +29,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/source"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inPartition" upperBound="-1" eType="//IntermediateActivities/ActivityPartition" eOpposite="//IntermediateActivities/ActivityPartition/node"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inInterruptibleRegion" eType="//IntermediateActivities/InterruptibleActivityRegion" eOpposite="//IntermediateActivities/InterruptibleActivityRegion/node"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inStructuredNode" eType="//StructuredActivities/StructuredActivityNode" eOpposite="//StructuredActivities/StructuredActivityNode/node"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="//FundamentalActivities/ActivityNode">
       <eAnnotations source="Required"/>
@@ -180,10 +179,9 @@
     <eClassifiers xsi:type="ecore:EClass" name="StructuredActivityNode" eSuperTypes="//FundamentalActivities/Namespace //StructuredActivities/ExecutableNode //FundamentalActivities/ActivityGroup">
       <eStructuralFeatures xsi:type="ecore:EReference" name="activity" eType="//FundamentalActivities/Activity" eOpposite="//FundamentalActivities/Activity/structuredNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="variable" upperBound="-1" eType="//StructuredActivities/Variable" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" containment="true" eOpposite="//FundamentalActivities/ActivityNode/inStructuredNode"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ExecutableNode" eSuperTypes="//FundamentalActivities/ActivityNode"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Variable" eSuperTypes="//StructuredActivities/MultiplicityElement //BasicActivities/TypedElement">
+    <eClassifiers xsi:type="ecore:EClass" name="Variable">
       <eAnnotations source="Required"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="MultiplicityElement" abstract="true">
