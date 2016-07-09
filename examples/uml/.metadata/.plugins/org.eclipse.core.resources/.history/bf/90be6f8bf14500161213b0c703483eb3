@@ -193,32 +193,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isTestedFirst">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="setupPart" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="bodyPart" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="test" lowerBound="1" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="decider" lowerBound="1" eType="//StructuredActivities/OutputPin"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="OutputPin">
-      <eAnnotations source="Required"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ConditionalNode" eSuperTypes="//StructuredActivities/StructuredActivityNode">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isDeterminate">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAssumed">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="clause" lowerBound="1" upperBound="-1" eType="//StructuredActivities/Clause" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="test" lowerBound="1" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="body" lowerBound="1" upperBound="-1" eType="//StructuredActivities/ExecutableNode"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Clause" eSuperTypes="//IntermediateActivities/Element">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="predecessorClause" upperBound="-1" eType="//StructuredActivities/Clause" eOpposite="//StructuredActivities/Clause/sucessorClause"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="sucessorClause" upperBound="-1" eType="//StructuredActivities/Clause" eOpposite="//StructuredActivities/Clause/predecessorClause"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="decider" lowerBound="1" eType="//StructuredActivities/OutputPin"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SequenceNode" eSuperTypes="//StructuredActivities/StructuredActivityNode">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="executableNode" upperBound="-1" eType="//StructuredActivities/ExecutableNode" containment="true"/>
     </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

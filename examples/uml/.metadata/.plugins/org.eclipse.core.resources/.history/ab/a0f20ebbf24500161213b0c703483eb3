@@ -217,8 +217,5 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="sucessorClause" upperBound="-1" eType="//StructuredActivities/Clause" eOpposite="//StructuredActivities/Clause/predecessorClause"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="decider" lowerBound="1" eType="//StructuredActivities/OutputPin"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="SequenceNode" eSuperTypes="//StructuredActivities/StructuredActivityNode">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="executableNode" upperBound="-1" eType="//StructuredActivities/ExecutableNode" containment="true"/>
-    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
