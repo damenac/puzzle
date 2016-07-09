@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CommonBehavior -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/CommonBehavior/BasicBehavior"
+            class="CommonBehavior.BasicBehavior.BasicBehaviorPackage"
+            genModel="models/CommonBehavior.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CommonBehavior -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/CommonBehavior/Communications"
+            class="CommonBehavior.Communications.CommunicationsPackage"
+            genModel="models/CommonBehavior.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CommonBehavior -->
+      <package
+            uri="http://fr.inria.diverse.puzzle.uml/CommonBehavior/SimpleTime"
+            class="CommonBehavior.SimpleTime.SimpleTimePackage"
+            genModel="models/CommonBehavior.genmodel"/>
+   </extension>
+
+</plugin>

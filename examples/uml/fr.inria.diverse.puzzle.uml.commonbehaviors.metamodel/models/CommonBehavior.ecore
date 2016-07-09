@@ -126,5 +126,32 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="//Communications/ValueSpecification" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="observation" upperBound="-1" eType="//SimpleTime/Observation"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Interval" eSuperTypes="//Communications/ValueSpecification">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="max" lowerBound="1" eType="//Communications/ValueSpecification"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="min" lowerBound="1" eType="//Communications/ValueSpecification"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TimeInterval" eSuperTypes="//SimpleTime/Interval">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="timeMax" lowerBound="1" eType="//SimpleTime/TimeExpression"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="timeMin" lowerBound="1" eType="//SimpleTime/TimeExpression"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DurationInterval" eSuperTypes="//SimpleTime/Interval">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="durationMax" lowerBound="1" eType="//SimpleTime/Duration"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="durationMin" lowerBound="1" eType="//SimpleTime/Duration"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntervalConstraint" eSuperTypes="//BasicBehavior/Constraint">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1" eType="//SimpleTime/Interval"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TimeConstraint" eSuperTypes="//SimpleTime/IntervalConstraint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstEvent">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="timeSpecification" lowerBound="1" eType="//SimpleTime/TimeInterval"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DurationConstraint" eSuperTypes="//SimpleTime/IntervalConstraint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstEvent" upperBound="2">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="durationSpecification" lowerBound="1" eType="//SimpleTime/DurationInterval"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>
