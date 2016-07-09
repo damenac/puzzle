@@ -21,7 +21,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedNode" upperBound="-1" eType="//FundamentalActivities/ActivityNode"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="incoming" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/target"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoing" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/source"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inPartition" upperBound="-1" eType="//IntermediateActivities/ActivityPartition" eOpposite="//IntermediateActivities/ActivityPartition/node"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Action" eSuperTypes="//FundamentalActivities/ActivityNode">
       <eAnnotations source="Required"/>
@@ -88,11 +87,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="edge" upperBound="-1" eType="//BasicActivities/ActivityEdge" eOpposite="//BasicActivities/ActivityEdge/inPartition"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subpartition" upperBound="-1" eType="//IntermediateActivities/ActivityPartition" containment="true" eOpposite="//IntermediateActivities/ActivityPartition/superPartition"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="superPartition" eType="//IntermediateActivities/ActivityPartition" eOpposite="//IntermediateActivities/ActivityPartition/subpartition"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="represents" eType="//IntermediateActivities/Element"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/inPartition"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
-      <eAnnotations source="Required"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
   </eSubpackages>
 </ecore:EPackage>
