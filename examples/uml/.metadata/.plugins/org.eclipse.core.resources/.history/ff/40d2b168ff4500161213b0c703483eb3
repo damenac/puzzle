@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CommonBehavior" nsURI="http://fr.inria.diverse.puzzle.uml/CommonBehavior" nsPrefix="CommonBehavior">
+  <eClassifiers xsi:type="ecore:EClass" name="BehavioredClassifier" eSuperTypes="//Classifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBehavior" upperBound="-1" eType="//Behavior" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="classifierBehavior" eType="//Behavior"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true" eSuperTypes="//RedefinableElement">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Class" abstract="true" eSuperTypes="//Classifier">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true" eSuperTypes="//Class">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="context" eType="//BehavioredClassifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isReentrant">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedBehavior" upperBound="-1" eType="//Behavior"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RedefinableElement" abstract="true">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpaqueBehavior" eSuperTypes="//Behavior">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="body" unique="false" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" upperBound="-1">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionBehavior" eSuperTypes="//OpaqueBehavior"/>
+  <eSubpackages name="BasicBehavior" nsURI="http://fr.inria.diverse.puzzle.uml/CommonBehavior/BasicBehavior" nsPrefix="BasicBehavior"/>
+</ecore:EPackage>
