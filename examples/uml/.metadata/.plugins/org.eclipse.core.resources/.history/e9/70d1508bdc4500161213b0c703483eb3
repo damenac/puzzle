@@ -86,7 +86,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isControlType">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inState" upperBound="-1" eType="//IntermediateActivities/State"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="ObjectNodeOrderingKind">
       <eLiterals name="unordered"/>

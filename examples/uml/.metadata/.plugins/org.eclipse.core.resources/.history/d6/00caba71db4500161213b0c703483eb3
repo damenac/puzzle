@@ -31,8 +31,6 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLocallyReentrant">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="localPrecondition" upperBound="-1" eType="//IntermediateActivities/Constraint" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="localPostcondition" upperBound="-1" eType="//IntermediateActivities/Constraint" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ActivityGroup" abstract="true" eSuperTypes="//FundamentalActivities/NamedElement">
       <eStructuralFeatures xsi:type="ecore:EReference" name="subgroup" upperBound="-1" eType="//FundamentalActivities/ActivityGroup" containment="true" eOpposite="//FundamentalActivities/ActivityGroup/superGroup"/>
@@ -70,30 +68,9 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="inGroup" upperBound="-1" eType="//FundamentalActivities/ActivityGroup" eOpposite="//FundamentalActivities/ActivityGroup/containedEdge"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="guard" lowerBound="1" eType="//IntermediateActivities/ValueSpecification" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="inPartition" upperBound="-1" eType="//IntermediateActivities/ActivityPartition" eOpposite="//IntermediateActivities/ActivityPartition/edge"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="weight" lowerBound="1" eType="//IntermediateActivities/ValueSpecification" containment="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="ControlFlow" eSuperTypes="//BasicActivities/ActivityEdge"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ObjectFlow" eSuperTypes="//BasicActivities/ActivityEdge">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMulticast">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isMultireceive">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="transformation" eType="//FundamentalActivities/Behavior"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="selection" eType="//FundamentalActivities/Behavior"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="ordering" eType="//BasicActivities/ObjectNodeOrderingKind"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isControlType">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-      </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="inState" upperBound="-1" eType="//IntermediateActivities/State"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EEnum" name="ObjectNodeOrderingKind">
-      <eLiterals name="unordered"/>
-      <eLiterals name="ordered" value="1"/>
-      <eLiterals name="LIFO" value="2"/>
-      <eLiterals name="FIFO" value="3"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ObjectFlow" eSuperTypes="//BasicActivities/ActivityEdge"/>
   </eSubpackages>
   <eSubpackages name="IntermediateActivities" nsURI="http://fr.inria.diverse.puzzle.uml/Activities/IntermediateActivities" nsPrefix="IntermediateActivities">
     <eClassifiers xsi:type="ecore:EClass" name="CentralBufferNode" eSuperTypes="//BasicActivities/ObjectNode"/>
@@ -118,12 +95,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="node" upperBound="-1" eType="//FundamentalActivities/ActivityNode" eOpposite="//FundamentalActivities/ActivityNode/inPartition"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true">
-      <eAnnotations source="Required"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="Constraint">
-      <eAnnotations source="Required"/>
-    </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="State">
       <eAnnotations source="Required"/>
     </eClassifiers>
   </eSubpackages>
