@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.uml.usecases.metamodel/src" modelPluginID="fr.inria.diverse.puzzle.uml.usecases.metamodel" modelName="UseCases" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>UseCases.ecore</foreignModel>
+  <genPackages prefix="UseCases" disposableProviderFactory="true">
+    <ecorePackage href="UseCases.ecore#/"/>
+    <genClasses image="false">
+      <ecoreClass href="UseCases.ecore#//BehavioredClassifier"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="UseCases.ecore#//Namespace"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="UseCases.ecore#//NamedElement"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="UseCases.ecore#//DirectedRelationship"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="UseCases.ecore#//Constraint"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="UseCases.ecore#//RedefinableElement"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="UseCases.ecore#//Classifier"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Classifier/ownedUseCase"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Classifier/useCase"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="UseCases.ecore#//Actor"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="UseCases.ecore#//UseCase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//UseCase/subject"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//UseCase/extensionPoint"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//UseCase/extend"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//UseCase/include"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="UseCases.ecore#//ExtensionPoint"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//ExtensionPoint/useCase"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="UseCases.ecore#//Extend"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Extend/extensionLocation"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Extend/extension"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Extend/condition"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Extend/extendedCase"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="UseCases.ecore#//Include"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Include/includingCase"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="UseCases.ecore#//Include/addition"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
