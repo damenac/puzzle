@@ -1,0 +1,137 @@
+package family
+
+/**
+ * A language unit with classes and references. 
+ */
+language Classes implements ClassesProvided requires ClassesRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.classes.metamodel/models/Classes.ecore"
+	exactType ClassesMT
+}
+
+modeltype ClassesProvided{
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.classes.metamodel/models/Classes-provided.ecore"
+}
+
+modeltype ClassesRequired{
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.classes.metamodel/models/Classes-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "Components" 
+ */
+language Components implements ComponentsProvided requires ComponentsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.components.metamodel/models/Components.ecore"
+	exactType ComponentsMT
+}
+
+modeltype ComponentsProvided{
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.components.metamodel/models/Components-provided.ecore"
+}
+
+modeltype ComponentsRequired{
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.components.metamodel/models/Components-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "Composite Structures" 
+ */
+language CompositeStructures implements CompositeStructuresProvided requires CompositeStructuresRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.compositestructures.metamodel/models/CompositeStructures.ecore"
+	exactType CompositeStructuresMT
+}
+
+modeltype CompositeStructuresProvided{
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.compositestructures.metamodel/models/CompositeStructures-provided.ecore"
+}
+
+modeltype CompositeStructuresRequired{
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.compositestructures.metamodel/models/CompositeStructures-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "Deployments" 
+ */
+language Deployments implements DeploymentsProvided requires DeploymentsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.deployments.metamodel/models/Deployments.ecore"
+	exactType DeploymentsMT
+}
+
+modeltype DeploymentsProvided {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.deployments.metamodel/models/Deployments-provided.ecore"
+}
+
+modeltype DeploymentsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.deployments.metamodel/models/Deployments-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "Actions" 
+ */
+language Actions implements ActionsProvided requires ActionsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.actions.metamodel/models/Actions.ecore"
+	exactType ActionsMT
+}
+
+modeltype ActionsProvided {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.actions.metamodel/models/Actions-provided.ecore"
+}
+
+modeltype ActionsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.actions.metamodel/models/Actions-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "Activities" 
+ */
+language Activities implements ActivitiesProvided requires ActivitiesRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.activities.metamodel/models/Activities.ecore"
+	exactType ActivitiesMT
+}
+
+modeltype ActivitiesProvided {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.activities.metamodel/models/Activities-provided.ecore"
+}
+
+modeltype ActivitiesRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.activities.metamodel/models/Activities-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "Common Behaviors" 
+ */
+language CommonBehaviors implements CommonBehaviorsProvided requires CommonBehaviorsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.commonbehaviors.metamodel/models/CommonBehavior.ecore"
+	exactType CommonBehaviorsMT
+}
+
+modeltype CommonBehaviorsProvided {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.commonbehaviors.metamodel/models/CommonBehavior-provided.ecore"
+}
+
+modeltype CommonBehaviorsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.commonbehaviors.metamodel/models/CommonBehavior-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "Interactions" 
+ */
+language Interactions implements InteractionsProvided requires InteractionsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.interactions.metamodel/models/Interactions.ecore"
+	exactType InteractionsMT
+}
+
+modeltype InteractionsProvided {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.interactions.metamodel/models/Interactions-provided.ecore"
+}
+
+modeltype InteractionsRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.interactions.metamodel/models/Interactions-required.ecore"
+}
+
+/**
+ * Definition of the language unit called "State Machines" 
+ */
+ language StateMachines implements StateMachinesProvided requires StateMachinesRequired {
+	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.statemachines.metamodel/models/StateMachines.ecore"
+	exactType InteractionsMT
+}

@@ -4,6 +4,7 @@
 <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="family.ClassesProvided" uri="http://classesprovided/">
       <subtyping modeltypeId="family.DeploymentsRequired"/>
+      <subtyping modeltypeId="family.CommonBehaviorsRequired"/>
     </modeltype>
     <modeltype id="family.ClassesRequired" uri="http://classesrequired/"/>
     <modeltype id="family.ComponentsProvided" uri="http://componentsprovided/"/>
@@ -14,9 +15,27 @@
     </modeltype>
     <modeltype id="family.DeploymentsProvided" uri="http://deploymentsprovided/"/>
     <modeltype id="family.DeploymentsRequired" uri="http://deploymentsrequired/"/>
+    <modeltype id="family.ActionsProvided" uri="http://actionsprovided/"/>
+    <modeltype id="family.ActionsRequired" uri="http://actionsrequired/"/>
+    <modeltype id="family.ActivitiesProvided" uri="http://activitiesprovided/"/>
+    <modeltype id="family.ActivitiesRequired" uri="http://activitiesrequired/"/>
+    <modeltype id="family.CommonBehaviorsProvided" uri="http://commonbehaviorsprovided/">
+      <subtyping modeltypeId="family.ClassesRequired"/>
+    </modeltype>
+    <modeltype id="family.CommonBehaviorsRequired" uri="http://commonbehaviorsrequired/"/>
+    <modeltype id="family.InteractionsProvided" uri="http://interactionsprovided/"/>
+    <modeltype id="family.InteractionsRequired" uri="http://interactionsrequired/"/>
+    <modeltype id="family.StateMachinesProvided" uri="http://statemachinesprovided/"/>
+    <modeltype id="family.StateMachinesRequired" uri="http://statemachinesrequired/"/>
+    <modeltype id="family.UseCasesProvided" uri="http://usecasesprovided/"/>
+    <modeltype id="family.UseCasesRequired" uri="http://usecasesrequired/">
+      <subtyping modeltypeId="family.ClassesRequired"/>
+    </modeltype>
     <modeltype id="family.ClassesMT" uri="http://classesmt/">
       <subtyping modeltypeId="family.ClassesRequired"/>
       <subtyping modeltypeId="family.DeploymentsRequired"/>
+      <subtyping modeltypeId="family.CommonBehaviorsRequired"/>
+      <subtyping modeltypeId="family.UseCasesRequired"/>
     </modeltype>
     <modeltype id="family.ComponentsMT" uri="http://componentsmt/">
       <subtyping modeltypeId="family.ComponentsProvided"/>
@@ -31,19 +50,44 @@
       <subtyping modeltypeId="family.DeploymentsProvided"/>
       <subtyping modeltypeId="family.DeploymentsRequired"/>
     </modeltype>
+    <modeltype id="family.ActionsMT" uri="http://actionsmt/">
+      <subtyping modeltypeId="family.ActionsRequired"/>
+    </modeltype>
+    <modeltype id="family.ActivitiesMT" uri="http://activitiesmt/">
+      <subtyping modeltypeId="family.ActivitiesRequired"/>
+    </modeltype>
+    <modeltype id="family.CommonBehaviorsMT" uri="http://commonbehaviorsmt/">
+      <subtyping modeltypeId="family.ClassesRequired"/>
+      <subtyping modeltypeId="family.CommonBehaviorsRequired"/>
+    </modeltype>
+    <modeltype id="family.InteractionsMT" uri="http://interactionsmt/">
+      <subtyping modeltypeId="family.InteractionsProvided"/>
+      <subtyping modeltypeId="family.InteractionsRequired"/>
+    </modeltype>
+    <modeltype id="family.StateMachinesMT" uri="http://statemachinesmt/">
+      <subtyping modeltypeId="family.StateMachinesProvided"/>
+      <subtyping modeltypeId="family.StateMachinesRequired"/>
+    </modeltype>
+    <modeltype id="family.UseCasesMT" uri="http://usecasesmt/">
+      <subtyping modeltypeId="family.ClassesRequired"/>
+      <subtyping modeltypeId="family.UseCasesProvided"/>
+      <subtyping modeltypeId="family.UseCasesRequired"/>
+    </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ClassesMT" id="family.Classes" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Classes">
+    <language aspects="" description="A language unit with classes and references." entryPoints="" exactType="family.ClassesMT" id="family.Classes" uri="http://fr.inria.diverse.puzzle.uml/Classes">
       <adapter class="family.classes.adapters.classesprovided.ClassesAdapter" modeltypeId="family.ClassesProvided"/>
       <adapter class="family.classes.adapters.classesrequired.ClassesAdapter" modeltypeId="family.ClassesRequired"/>
       <adapter class="family.classes.adapters.deploymentsrequired.ClassesAdapter" modeltypeId="family.DeploymentsRequired"/>
+      <adapter class="family.classes.adapters.commonbehaviorsrequired.ClassesAdapter" modeltypeId="family.CommonBehaviorsRequired"/>
+      <adapter class="family.classes.adapters.usecasesrequired.ClassesAdapter" modeltypeId="family.UseCasesRequired"/>
     </language>
-    <language aspects="" description="Definition of the language unit called &quot;Components&quot;" entryPoints="" exactType="family.ComponentsMT" id="family.Components" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/Components">
+    <language aspects="" description="Definition of the language unit called &quot;Components&quot;" entryPoints="" exactType="family.ComponentsMT" id="family.Components" uri="http://fr.inria.diverse.puzzle.uml/Components">
       <adapter class="family.components.adapters.componentsprovided.ComponentsAdapter" modeltypeId="family.ComponentsProvided"/>
       <adapter class="family.components.adapters.componentsrequired.ComponentsAdapter" modeltypeId="family.ComponentsRequired"/>
       <adapter class="family.components.adapters.componentsmt.ComponentsAdapter" modeltypeId="family.ComponentsMT"/>
     </language>
-    <language aspects="" description="Definition of the language unit called &quot;Composite Structures&quot;" entryPoints="" exactType="family.CompositeStructuresMT" id="family.CompositeStructures" uri="http://fr.inria.diverse.puzzle.uml.classes.metamodel/CompositeStructures">
+    <language aspects="" description="Definition of the language unit called &quot;Composite Structures&quot;" entryPoints="" exactType="family.CompositeStructuresMT" id="family.CompositeStructures" uri="http://fr.inria.diverse.puzzle.uml/CompositeStructures">
       <adapter class="family.compositestructures.adapters.compositestructuresprovided.CompositeStructuresAdapter" modeltypeId="family.CompositeStructuresProvided"/>
       <adapter class="family.compositestructures.adapters.classesrequired.CompositeStructuresAdapter" modeltypeId="family.ClassesRequired"/>
       <adapter class="family.compositestructures.adapters.compositestructuresrequired.CompositeStructuresAdapter" modeltypeId="family.CompositeStructuresRequired"/>
@@ -53,6 +97,36 @@
       <adapter class="family.deployments.adapters.deploymentsprovided.DeploymentsAdapter" modeltypeId="family.DeploymentsProvided"/>
       <adapter class="family.deployments.adapters.deploymentsrequired.DeploymentsAdapter" modeltypeId="family.DeploymentsRequired"/>
       <adapter class="family.deployments.adapters.deploymentsmt.DeploymentsAdapter" modeltypeId="family.DeploymentsMT"/>
+    </language>
+    <language aspects="" description="Definition of the language unit called &quot;Actions&quot;" entryPoints="" exactType="family.ActionsMT" id="family.Actions" uri="http://fr.inria.diverse.puzzle.uml/Actions">
+      <adapter class="family.actions.adapters.actionsprovided.ActionsAdapter" modeltypeId="family.ActionsProvided"/>
+      <adapter class="family.actions.adapters.actionsrequired.ActionsAdapter" modeltypeId="family.ActionsRequired"/>
+      <adapter class="family.actions.adapters.actionsmt.ActionsAdapter" modeltypeId="family.ActionsMT"/>
+    </language>
+    <language aspects="" description="Definition of the language unit called &quot;Activities&quot;" entryPoints="" exactType="family.ActivitiesMT" id="family.Activities" uri="http://fr.inria.diverse.puzzle.uml/Activities">
+      <adapter class="family.activities.adapters.activitiesprovided.ActivitiesAdapter" modeltypeId="family.ActivitiesProvided"/>
+      <adapter class="family.activities.adapters.activitiesrequired.ActivitiesAdapter" modeltypeId="family.ActivitiesRequired"/>
+    </language>
+    <language aspects="" description="Definition of the language unit called &quot;Common Behaviors&quot;" entryPoints="" exactType="family.CommonBehaviorsMT" id="family.CommonBehaviors" uri="http://fr.inria.diverse.puzzle.uml/CommonBehavior">
+      <adapter class="family.commonbehaviors.adapters.commonbehaviorsprovided.CommonBehaviorsAdapter" modeltypeId="family.CommonBehaviorsProvided"/>
+      <adapter class="family.commonbehaviors.adapters.classesrequired.CommonBehaviorsAdapter" modeltypeId="family.ClassesRequired"/>
+      <adapter class="family.commonbehaviors.adapters.commonbehaviorsrequired.CommonBehaviorsAdapter" modeltypeId="family.CommonBehaviorsRequired"/>
+    </language>
+    <language aspects="" description="Definition of the language unit called &quot;Interactions&quot;" entryPoints="" exactType="family.InteractionsMT" id="family.Interactions" uri="http://fr.inria.diverse.puzzle.uml/Interactions">
+      <adapter class="family.interactions.adapters.interactionsprovided.InteractionsAdapter" modeltypeId="family.InteractionsProvided"/>
+      <adapter class="family.interactions.adapters.interactionsrequired.InteractionsAdapter" modeltypeId="family.InteractionsRequired"/>
+      <adapter class="family.interactions.adapters.interactionsmt.InteractionsAdapter" modeltypeId="family.InteractionsMT"/>
+    </language>
+    <language aspects="" description="Definition of the language unit called &quot;State Machines&quot;" entryPoints="" exactType="family.StateMachinesMT" id="family.StateMachines" uri="http://fr.inria.diverse.puzzle.uml/StateMachines">
+      <adapter class="family.statemachines.adapters.statemachinesprovided.StateMachinesAdapter" modeltypeId="family.StateMachinesProvided"/>
+      <adapter class="family.statemachines.adapters.statemachinesrequired.StateMachinesAdapter" modeltypeId="family.StateMachinesRequired"/>
+      <adapter class="family.statemachines.adapters.statemachinesmt.StateMachinesAdapter" modeltypeId="family.StateMachinesMT"/>
+    </language>
+    <language aspects="" description="Definition of the language unit called &quot;State Machines&quot;" entryPoints="" exactType="family.UseCasesMT" id="family.UseCases" uri="http://fr.inria.diverse.puzzle.uml/UseCases">
+      <adapter class="family.usecases.adapters.usecasesprovided.UseCasesAdapter" modeltypeId="family.UseCasesProvided"/>
+      <adapter class="family.usecases.adapters.classesrequired.UseCasesAdapter" modeltypeId="family.ClassesRequired"/>
+      <adapter class="family.usecases.adapters.usecasesrequired.UseCasesAdapter" modeltypeId="family.UseCasesRequired"/>
+      <adapter class="family.usecases.adapters.usecasesmt.UseCasesAdapter" modeltypeId="family.UseCasesMT"/>
     </language>
   </extension>
 </plugin>
