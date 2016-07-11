@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: fr.inria.diverse.puzzle.uml.composedLanguage
+Bundle-SymbolicName: fr.inria.diverse.puzzle.uml.composedLanguage;singleton:=true
+Bundle-Version: 0.1.0
+Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin,
+  fr.inria.diverse.puzzle.annotations
+Export-Package: CompleteDSL
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+

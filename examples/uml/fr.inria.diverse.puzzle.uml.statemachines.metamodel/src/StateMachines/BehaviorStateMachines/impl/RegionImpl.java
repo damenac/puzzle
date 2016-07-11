@@ -3,25 +3,18 @@
 package StateMachines.BehaviorStateMachines.impl;
 
 import StateMachines.BehaviorStateMachines.BehaviorStateMachinesPackage;
-import StateMachines.BehaviorStateMachines.Classifier;
 import StateMachines.BehaviorStateMachines.Region;
 import StateMachines.BehaviorStateMachines.State;
 import StateMachines.BehaviorStateMachines.StateMachine;
 import StateMachines.BehaviorStateMachines.Transition;
 import StateMachines.BehaviorStateMachines.Vertex;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -38,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.RegionImpl#getTransition <em>Transition</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.RegionImpl#getState <em>State</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.RegionImpl#getExtendedRegion <em>Extended Region</em>}</li>
- *   <li>{@link StateMachines.BehaviorStateMachines.impl.RegionImpl#getRedefinitionContext <em>Redefinition Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,16 +66,6 @@ public class RegionImpl extends NamespaceImpl implements Region {
 	 * @ordered
 	 */
 	protected Region extendedRegion;
-
-	/**
-	 * The cached value of the '{@link #getRedefinitionContext() <em>Redefinition Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRedefinitionContext()
-	 * @generated
-	 * @ordered
-	 */
-	protected Classifier redefinitionContext;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -253,44 +235,6 @@ public class RegionImpl extends NamespaceImpl implements Region {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Classifier getRedefinitionContext() {
-		if (redefinitionContext != null && redefinitionContext.eIsProxy()) {
-			InternalEObject oldRedefinitionContext = (InternalEObject)redefinitionContext;
-			redefinitionContext = (Classifier)eResolveProxy(oldRedefinitionContext);
-			if (redefinitionContext != oldRedefinitionContext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorStateMachinesPackage.REGION__REDEFINITION_CONTEXT, oldRedefinitionContext, redefinitionContext));
-			}
-		}
-		return redefinitionContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Classifier basicGetRedefinitionContext() {
-		return redefinitionContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRedefinitionContext(Classifier newRedefinitionContext) {
-		Classifier oldRedefinitionContext = redefinitionContext;
-		redefinitionContext = newRedefinitionContext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorStateMachinesPackage.REGION__REDEFINITION_CONTEXT, oldRedefinitionContext, redefinitionContext));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -366,9 +310,6 @@ public class RegionImpl extends NamespaceImpl implements Region {
 			case BehaviorStateMachinesPackage.REGION__EXTENDED_REGION:
 				if (resolve) return getExtendedRegion();
 				return basicGetExtendedRegion();
-			case BehaviorStateMachinesPackage.REGION__REDEFINITION_CONTEXT:
-				if (resolve) return getRedefinitionContext();
-				return basicGetRedefinitionContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -399,9 +340,6 @@ public class RegionImpl extends NamespaceImpl implements Region {
 			case BehaviorStateMachinesPackage.REGION__EXTENDED_REGION:
 				setExtendedRegion((Region)newValue);
 				return;
-			case BehaviorStateMachinesPackage.REGION__REDEFINITION_CONTEXT:
-				setRedefinitionContext((Classifier)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -429,9 +367,6 @@ public class RegionImpl extends NamespaceImpl implements Region {
 			case BehaviorStateMachinesPackage.REGION__EXTENDED_REGION:
 				setExtendedRegion((Region)null);
 				return;
-			case BehaviorStateMachinesPackage.REGION__REDEFINITION_CONTEXT:
-				setRedefinitionContext((Classifier)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -454,8 +389,6 @@ public class RegionImpl extends NamespaceImpl implements Region {
 				return getState() != null;
 			case BehaviorStateMachinesPackage.REGION__EXTENDED_REGION:
 				return extendedRegion != null;
-			case BehaviorStateMachinesPackage.REGION__REDEFINITION_CONTEXT:
-				return redefinitionContext != null;
 		}
 		return super.eIsSet(featureID);
 	}

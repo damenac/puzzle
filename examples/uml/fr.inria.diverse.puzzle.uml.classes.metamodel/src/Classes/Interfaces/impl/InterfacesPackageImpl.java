@@ -317,25 +317,6 @@ public class InterfacesPackageImpl extends EPackageImpl implements InterfacesPac
 
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// Required
-		createRequiredAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>Required</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createRequiredAnnotations() {
-		String source = "Required";	
-		addAnnotation
-		  (behavioredClassifierEClass, 
-		   source, 
-		   new String[] {
-		   });
 	}
 
 } //InterfacesPackageImpl

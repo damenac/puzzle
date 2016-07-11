@@ -3,7 +3,7 @@
   <foreignModel>StateMachines.ecore</foreignModel>
   <genPackages prefix="StateMachines" disposableProviderFactory="true">
     <ecorePackage href="StateMachines.ecore#/"/>
-    <nestedGenPackages prefix="BehaviorStateMachines" disposableProviderFactory="true">
+    <nestedGenPackages prefix="BehaviorStateMachines" basePackage="StateMachines" disposableProviderFactory="true">
       <ecorePackage href="StateMachines.ecore#//BehaviorStateMachines"/>
       <genEnums typeSafeEnumCompatible="false">
         <ecoreEnum href="StateMachines.ecore#//BehaviorStateMachines/TransitionKind"/>
@@ -52,9 +52,6 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true">
           <ecoreFeature xsi:type="ecore:EReference" href="StateMachines.ecore#//BehaviorStateMachines/Region/extendedRegion"/>
         </genFeatures>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true">
-          <ecoreFeature xsi:type="ecore:EReference" href="StateMachines.ecore#//BehaviorStateMachines/Region/redefinitionContext"/>
-        </genFeatures>
       </genClasses>
       <genClasses image="false">
         <ecoreClass href="StateMachines.ecore#//BehaviorStateMachines/NamedElement"/>
@@ -96,9 +93,6 @@
         </genFeatures>
         <genFeatures notify="false" createChild="false" propertySortChoices="true">
           <ecoreFeature xsi:type="ecore:EReference" href="StateMachines.ecore#//BehaviorStateMachines/Transition/redefinedTransition"/>
-        </genFeatures>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true">
-          <ecoreFeature xsi:type="ecore:EReference" href="StateMachines.ecore#//BehaviorStateMachines/Transition/redefinitionContext"/>
         </genFeatures>
       </genClasses>
       <genClasses image="false">
@@ -169,9 +163,6 @@
         <genFeatures notify="false" createChild="false" propertySortChoices="true">
           <ecoreFeature xsi:type="ecore:EReference" href="StateMachines.ecore#//BehaviorStateMachines/State/redefinedState"/>
         </genFeatures>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true">
-          <ecoreFeature xsi:type="ecore:EReference" href="StateMachines.ecore#//BehaviorStateMachines/State/redefinitionContext"/>
-        </genFeatures>
       </genClasses>
       <genClasses>
         <ecoreClass href="StateMachines.ecore#//BehaviorStateMachines/FinalState"/>
@@ -186,7 +177,7 @@
         <ecoreClass href="StateMachines.ecore#//BehaviorStateMachines/TimeEvent"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="ProtocolStateMachines" disposableProviderFactory="true">
+    <nestedGenPackages prefix="ProtocolStateMachines" basePackage="StateMachines" disposableProviderFactory="true">
       <ecorePackage href="StateMachines.ecore#//ProtocolStateMachines"/>
       <genClasses>
         <ecoreClass href="StateMachines.ecore#//ProtocolStateMachines/ProtocolStateMachine"/>

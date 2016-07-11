@@ -348,15 +348,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRegion_RedefinitionContext() {
-		return (EReference)regionEClass.getEStructuralFeatures().get(5);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getNamedElement() {
 		return namedElementEClass;
 	}
@@ -476,15 +467,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 	 */
 	public EReference getTransition_RedefinedTransition() {
 		return (EReference)transitionEClass.getEStructuralFeatures().get(7);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTransition_RedefinitionContext() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -699,15 +681,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getState_RedefinitionContext() {
-		return (EReference)stateEClass.getEStructuralFeatures().get(14);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getFinalState() {
 		return finalStateEClass;
 	}
@@ -792,7 +765,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 		createEReference(regionEClass, REGION__TRANSITION);
 		createEReference(regionEClass, REGION__STATE);
 		createEReference(regionEClass, REGION__EXTENDED_REGION);
-		createEReference(regionEClass, REGION__REDEFINITION_CONTEXT);
 
 		namedElementEClass = createEClass(NAMED_ELEMENT);
 
@@ -810,7 +782,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 		createEReference(transitionEClass, TRANSITION__GUARD);
 		createEReference(transitionEClass, TRANSITION__CONTAINER);
 		createEReference(transitionEClass, TRANSITION__REDEFINED_TRANSITION);
-		createEReference(transitionEClass, TRANSITION__REDEFINITION_CONTEXT);
 
 		constraintEClass = createEClass(CONSTRAINT);
 
@@ -839,7 +810,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 		createEReference(stateEClass, STATE__ENTRY);
 		createEReference(stateEClass, STATE__STATE_INVARIANT);
 		createEReference(stateEClass, STATE__REDEFINED_STATE);
-		createEReference(stateEClass, STATE__REDEFINITION_CONTEXT);
 
 		finalStateEClass = createEClass(FINAL_STATE);
 
@@ -911,7 +881,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 		initEReference(getRegion_Transition(), this.getTransition(), this.getTransition_Container(), "transition", null, 0, -1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_State(), this.getState(), this.getState_Region(), "state", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRegion_ExtendedRegion(), this.getRegion(), null, "extendedRegion", null, 0, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRegion_RedefinitionContext(), this.getClassifier(), null, "redefinitionContext", null, 1, 1, Region.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(namedElementEClass, NamedElement.class, "NamedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -929,7 +898,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 		initEReference(getTransition_Guard(), this.getConstraint(), null, "guard", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Container(), this.getRegion(), this.getRegion_Transition(), "container", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_RedefinedTransition(), this.getTransition(), null, "redefinedTransition", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTransition_RedefinitionContext(), this.getClassifier(), null, "redefinitionContext", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -958,7 +926,6 @@ public class BehaviorStateMachinesPackageImpl extends EPackageImpl implements Be
 		initEReference(getState_Entry(), this.getBehavior(), null, "entry", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_StateInvariant(), this.getConstraint(), null, "stateInvariant", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getState_RedefinedState(), this.getState(), null, "redefinedState", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getState_RedefinitionContext(), this.getClassifier(), null, "redefinitionContext", null, 1, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finalStateEClass, FinalState.class, "FinalState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -3,17 +3,13 @@ package family
 /**
  * A language unit with classes and references. 
  */
-language Classes implements ClassesProvided requires ClassesRequired {
+language Classes implements ClassesProvided {
 	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.classes.metamodel/models/Classes.ecore"
 	exactType ClassesMT
 }
 
 modeltype ClassesProvided{
 	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.classes.metamodel/models/Classes-provided.ecore"
-}
-
-modeltype ClassesRequired{
-	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.classes.metamodel/models/Classes-required.ecore"
 }
 
 /**

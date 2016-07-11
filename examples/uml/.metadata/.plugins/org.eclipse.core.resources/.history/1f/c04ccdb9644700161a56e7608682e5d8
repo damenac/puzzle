@@ -1,0 +1,22 @@
+package family
+
+import 'uml.melange'
+
+languageBinding {
+	bind( ComponentsRequired, ClassesProvided )
+//	bind( CompositeStructuresRequired, ClassesProvided )
+//	bind( CompositeStructuresRequired, ComponentsProvided )
+//	bind( DeploymentsRequired, ClassesProvided )
+//	bind( ActionsRequired, ClassesProvided )
+//	bind( ActivitiesRequired, ClassesProvided )
+	bind( CommonBehaviorsRequired, ClassesProvided )
+	
+//	bind( ComponentsRequired, CommonBehaviorsProvided )
+//	bind( CompositeStructuresRequired, CommonBehaviorsProvided )
+//	bind( ActionsRequired, CommonBehaviorsProvided )
+//	bind( ActivitiesRequired, CommonBehaviorsProvided )
+//	bind( InteractionsRequired, ClassesProvided )
+//	bind( InteractionsRequired, ComponentsProvided )
+//	bind( InteractionsRequired, CommonBehaviorsProvided )
+	
+}

@@ -4,22 +4,17 @@ package StateMachines.BehaviorStateMachines.impl;
 
 import StateMachines.BehaviorStateMachines.Behavior;
 import StateMachines.BehaviorStateMachines.BehaviorStateMachinesPackage;
-import StateMachines.BehaviorStateMachines.Classifier;
 import StateMachines.BehaviorStateMachines.Constraint;
 import StateMachines.BehaviorStateMachines.Region;
 import StateMachines.BehaviorStateMachines.Transition;
 import StateMachines.BehaviorStateMachines.TransitionKind;
 import StateMachines.BehaviorStateMachines.Trigger;
 import StateMachines.BehaviorStateMachines.Vertex;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
@@ -37,7 +32,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.TransitionImpl#getGuard <em>Guard</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.TransitionImpl#getContainer <em>Container</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.TransitionImpl#getRedefinedTransition <em>Redefined Transition</em>}</li>
- *   <li>{@link StateMachines.BehaviorStateMachines.impl.TransitionImpl#getRedefinitionContext <em>Redefinition Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -123,16 +117,6 @@ public class TransitionImpl extends NamespaceImpl implements Transition {
 	 * @ordered
 	 */
 	protected Transition redefinedTransition;
-
-	/**
-	 * The cached value of the '{@link #getRedefinitionContext() <em>Redefinition Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRedefinitionContext()
-	 * @generated
-	 * @ordered
-	 */
-	protected Classifier redefinitionContext;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -507,44 +491,6 @@ public class TransitionImpl extends NamespaceImpl implements Transition {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Classifier getRedefinitionContext() {
-		if (redefinitionContext != null && redefinitionContext.eIsProxy()) {
-			InternalEObject oldRedefinitionContext = (InternalEObject)redefinitionContext;
-			redefinitionContext = (Classifier)eResolveProxy(oldRedefinitionContext);
-			if (redefinitionContext != oldRedefinitionContext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorStateMachinesPackage.TRANSITION__REDEFINITION_CONTEXT, oldRedefinitionContext, redefinitionContext));
-			}
-		}
-		return redefinitionContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Classifier basicGetRedefinitionContext() {
-		return redefinitionContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRedefinitionContext(Classifier newRedefinitionContext) {
-		Classifier oldRedefinitionContext = redefinitionContext;
-		redefinitionContext = newRedefinitionContext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorStateMachinesPackage.TRANSITION__REDEFINITION_CONTEXT, oldRedefinitionContext, redefinitionContext));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -629,9 +575,6 @@ public class TransitionImpl extends NamespaceImpl implements Transition {
 			case BehaviorStateMachinesPackage.TRANSITION__REDEFINED_TRANSITION:
 				if (resolve) return getRedefinedTransition();
 				return basicGetRedefinedTransition();
-			case BehaviorStateMachinesPackage.TRANSITION__REDEFINITION_CONTEXT:
-				if (resolve) return getRedefinitionContext();
-				return basicGetRedefinitionContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -667,9 +610,6 @@ public class TransitionImpl extends NamespaceImpl implements Transition {
 				return;
 			case BehaviorStateMachinesPackage.TRANSITION__REDEFINED_TRANSITION:
 				setRedefinedTransition((Transition)newValue);
-				return;
-			case BehaviorStateMachinesPackage.TRANSITION__REDEFINITION_CONTEXT:
-				setRedefinitionContext((Classifier)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -707,9 +647,6 @@ public class TransitionImpl extends NamespaceImpl implements Transition {
 			case BehaviorStateMachinesPackage.TRANSITION__REDEFINED_TRANSITION:
 				setRedefinedTransition((Transition)null);
 				return;
-			case BehaviorStateMachinesPackage.TRANSITION__REDEFINITION_CONTEXT:
-				setRedefinitionContext((Classifier)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -738,8 +675,6 @@ public class TransitionImpl extends NamespaceImpl implements Transition {
 				return getContainer() != null;
 			case BehaviorStateMachinesPackage.TRANSITION__REDEFINED_TRANSITION:
 				return redefinedTransition != null;
-			case BehaviorStateMachinesPackage.TRANSITION__REDEFINITION_CONTEXT:
-				return redefinitionContext != null;
 		}
 		return super.eIsSet(featureID);
 	}

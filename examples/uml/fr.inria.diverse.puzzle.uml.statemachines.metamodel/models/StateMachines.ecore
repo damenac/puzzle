@@ -19,7 +19,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="transition" upperBound="-1" eType="//BehaviorStateMachines/Transition" containment="true" eOpposite="//BehaviorStateMachines/Transition/container"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="state" eType="//BehaviorStateMachines/State" eOpposite="//BehaviorStateMachines/State/region"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="extendedRegion" eType="//BehaviorStateMachines/Region"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="redefinitionContext" lowerBound="1" eType="//BehaviorStateMachines/Classifier"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="NamedElement" abstract="true">
       <eAnnotations source="Required"/>
@@ -38,7 +37,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="guard" eType="//BehaviorStateMachines/Constraint" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="container" eType="//BehaviorStateMachines/Region" eOpposite="//BehaviorStateMachines/Region/transition"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedTransition" eType="//BehaviorStateMachines/Transition"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="redefinitionContext" lowerBound="1" eType="//BehaviorStateMachines/Classifier"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EEnum" name="TransitionKind">
       <eLiterals name="external"/>
@@ -81,7 +79,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="entry" eType="//BehaviorStateMachines/Behavior" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="stateInvariant" eType="//BehaviorStateMachines/Constraint" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="redefinedState" eType="//BehaviorStateMachines/State"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="redefinitionContext" lowerBound="1" eType="//BehaviorStateMachines/Classifier"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FinalState" eSuperTypes="//BehaviorStateMachines/State"/>
     <eClassifiers xsi:type="ecore:EClass" name="RedefinableElement" abstract="true">

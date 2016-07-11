@@ -431,15 +431,6 @@ public class SimpleTimePackageImpl extends EPackageImpl implements SimpleTimePac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIntervalConstraint_Specification() {
-		return (EReference)intervalConstraintEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getTimeConstraint() {
 		return timeConstraintEClass;
 	}
@@ -552,7 +543,6 @@ public class SimpleTimePackageImpl extends EPackageImpl implements SimpleTimePac
 		createEReference(durationIntervalEClass, DURATION_INTERVAL__DURATION_MIN);
 
 		intervalConstraintEClass = createEClass(INTERVAL_CONSTRAINT);
-		createEReference(intervalConstraintEClass, INTERVAL_CONSTRAINT__SPECIFICATION);
 
 		timeConstraintEClass = createEClass(TIME_CONSTRAINT);
 		createEAttribute(timeConstraintEClass, TIME_CONSTRAINT__FIRST_EVENT);
@@ -643,7 +633,6 @@ public class SimpleTimePackageImpl extends EPackageImpl implements SimpleTimePac
 		initEReference(getDurationInterval_DurationMin(), this.getDuration(), null, "durationMin", null, 1, 1, DurationInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(intervalConstraintEClass, IntervalConstraint.class, "IntervalConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIntervalConstraint_Specification(), this.getInterval(), null, "specification", null, 1, 1, IntervalConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeConstraintEClass, TimeConstraint.class, "TimeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeConstraint_FirstEvent(), ecorePackage.getEBoolean(), "firstEvent", null, 0, 1, TimeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

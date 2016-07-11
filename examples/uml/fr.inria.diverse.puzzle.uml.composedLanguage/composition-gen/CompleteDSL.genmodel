@@ -1,0 +1,2353 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.puzzle.uml.composedLanguage/src-gen" editDirectory="/fr.inria.diverse.puzzle.uml.composedLanguage.edit/src" editorDirectory="/fr.inria.diverse.puzzle.uml.composedLanguage.editor/src" modelPluginID="fr.inria.diverse.puzzle.uml.composedLanguage" modelName="CompleteDSL" testsDirectory="/fr.inria.diverse.puzzle.uml.composedLanguage.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="fr.inria.diverse.puzzle.uml.composedLanguage.edit" editorPluginID="fr.inria.diverse.puzzle.uml.composedLanguage.editor" testsPluginID="fr.inria.diverse.puzzle.uml.composedLanguage.tests" operationReflection="true">
+  <foreignModel>CompleteDSL.ecore</foreignModel>
+  <genPackages prefix="CompleteDSLPckg" disposableProviderFactory="true" loadInitialization="true" literalsInterface="false">
+    <ecorePackage href="CompleteDSL.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//VisibilityKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//VisibilityKind/package"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//VisibilityKind/public"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//VisibilityKind/private"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//VisibilityKind/protected"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//AggregationKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//AggregationKind/none"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//AggregationKind/shared"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//AggregationKind/composite"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//CallConcurrencyFeature"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//CallConcurrencyFeature/sequential"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//CallConcurrencyFeature/guarded"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//CallConcurrencyFeature/concurrent"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//ConnectorKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ConnectorKind/assembly"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ConnectorKind/delegation"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//TransitionKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//TransitionKind/external"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//TransitionKind/internal"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//ObjectNodeOrderingKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ObjectNodeOrderingKind/unordered"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ObjectNodeOrderingKind/ordered"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ObjectNodeOrderingKind/LIFO"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ObjectNodeOrderingKind/FIFO"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//ParameterEffectKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ParameterEffectKind/create"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ParameterEffectKind/read"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ParameterEffectKind/update"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ParameterEffectKind/delete"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//ExpansionKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ExpansionKind/parallel"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ExpansionKind/iterative"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ExpansionKind/stream"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//MessageKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageKind/complete"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageKind/lost"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageKind/found"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageKind/unknown"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//MessageSort"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageSort/synchCall"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageSort/asynchCall"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageSort/asynchSignal"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageSort/createMessage"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageSort/deleteMessage"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//MessageSort/reply"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//InteractionOperandKind"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/seq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/alt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/opt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/break"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/par"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/strict"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/loop"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/critical"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/neg"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/assert"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/ignore"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//InteractionOperandKind/consider"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Element"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Element/ownedComment"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Element/ownedElement"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Element/owner"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//NamedElement/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//NamedElement/qualifiedName"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//NamedElement/visibility"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//NamedElement/namespace"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//NamedElement/clientDependency"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Namespace"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Namespace/importedMember"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Namespace/member"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Namespace/ownedMember"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Namespace/elementImport"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Namespace/packageImport"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Namespace/ownedRule"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//PackageableElement"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ElementImport"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ElementImport/visibility"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ElementImport/alias"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ElementImport/importedElement"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ElementImport/importingNamespace"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//PackageImport"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//PackageImport/visibility"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//PackageImport/importedPackage"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//PackageImport/importingNamespace"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Package"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Package/URI"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Package/nestedPackage"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Package/nestingPackage"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Package/packagedElement"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Package/ownedType"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Package/packageMerge"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Comment"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Comment/body"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Comment/owningElement"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Comment/annotatedElement"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Relationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Relationship/relatedElement"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//DirectedRelationship"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DirectedRelationship/target"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DirectedRelationship/source"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//MultiplicityElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//MultiplicityElement/isOrdered"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//MultiplicityElement/isUnique"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//MultiplicityElement/upper"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//MultiplicityElement/lower"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//MultiplicityElement/upperValue"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//MultiplicityElement/lowerValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ValueSpecification"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValueSpecification/owningUpper"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValueSpecification/owningLower"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValueSpecification/owningConstraint"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValueSpecification/owningSlot"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValueSpecification/owningInstanceSpec"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//TypedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TypedElement/type"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Type"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Type/package"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Expression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Expression/symbol"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Expression/operand"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//OpaqueExpression"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//OpaqueExpression/body"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//OpaqueExpression/language"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//OpaqueExpression/result"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//OpaqueExpression/behavior"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//LiteralSpecification"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LiteralNull"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LiteralBoolean"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LiteralInteger"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LiteralReal"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LiteralString"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LiteralUnilimitedNatural"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InstanceValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InstanceValue/instance"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InstanceSpecification"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InstanceSpecification/slot"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InstanceSpecification/specification"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InstanceSpecification/classifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Constraint"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Constraint/context"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Constraint/constrainedElement"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Constraint/specification"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Slot"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Slot/owningInstace"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Slot/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Slot/definingFeature"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//RedefinableElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//RedefinableElement/isLeaf"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//RedefinableElement/redefinedElement"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//RedefinableElement/redefinitionContext"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Classifier"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Classifier/isAbstract"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Classifier/isFinalSpecialization"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/inheritedMember"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/feature"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/attribute"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/redefinedClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/general"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/generalization"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/substitution"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/powertypeExtent"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/collaborationUse"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Classifier/representation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Feature"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Feature/isStatic"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Feature/featuringClassifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//StructuralFeature"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//StructuralFeature/isReadOnly"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Property"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Property/isDerived"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Property/isDerivedUnion"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Property/default"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Property/isComposite"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Property/isID"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Property/aggregation"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/class"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/redefinedProperty"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/defaultValue"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/opposite"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/subsettedProperty"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/association"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/owningAssociation"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/dataType"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/interface"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/qualifier"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Property/associationEnd"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Generalization"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Generalization/isSubstitutable"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Generalization/general"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Generalization/specific"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Generalization/generalizationSet"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//BehavioralFeature"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BehavioralFeature/ownedParameter"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BehavioralFeature/raisedException"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Parameter"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Parameter/default"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Parameter/ownedFormalParam"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Parameter/defaultValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Operation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Operation/isQuery"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Operation/isOrdered"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Operation/isUnique"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Operation/upper"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Operation/lower"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Operation/type"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Operation/precondition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Operation/bodyCondition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Operation/postcondition"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Operation/class"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Operation/dataType"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Operation/interface"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Class"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Class/nestedClassifier"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Class/ownedOperation"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Class/superClass"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Class/ownedAttribute"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Class/ownedReception"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Association"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Association/isDerived"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Association/navigableOwnedEnd"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Association/memberEnd"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Association/ownedEnd"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DataType"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DataType/ownedAttribute"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DataType/ownedOperation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//PrimitiveType"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Enumeration"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Enumeration/ownedLiteral"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//EnumerationLiteral"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//EnumerationLiteral/enumeration"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//PackageMerge"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//PackageMerge/receivingPackage"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//PackageMerge/mergedPackage"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Dependency"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Dependency/client"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Dependency/supplier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Usage"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Abstraction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Abstraction/mapping"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Realization"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Substitution"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Substitution/substitutingClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Substitution/contract"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Interface"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interface/nestedClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interface/redefinedInterface"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interface/ownedAttribute"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interface/ownedOperation"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interface/ownedReception"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InterfaceRealization"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InterfaceRealization/implementingClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InterfaceRealization/contract"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//BehavioredClassifier"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BehavioredClassifier/interfaceRealization"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BehavioredClassifier/ownedBehavior"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BehavioredClassifier/classifierBehavior"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//AssociationClass"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//GeneralizationSet"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//GeneralizationSet/isCovering"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//GeneralizationSet/isDisjoint"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//GeneralizationSet/powertype"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//GeneralizationSet/generalization"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Behavior"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Behavior/isReentrant"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Behavior/context"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Behavior/redefinedBehavior"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Behavior/specification"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Behavior/ownedParameter"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Behavior/precondition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Behavior/postcondition"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//OpaqueBehavior"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//OpaqueBehavior/body"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//OpaqueBehavior/language"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//FunctionBehavior"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Signal"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Signal/ownedAttribute"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Reception"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Reception/signal"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Trigger"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Trigger/event"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Event"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//MessageEvent"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//AnyReceiveEvent"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//SignalEvent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//SignalEvent/signal"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CallEvent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CallEvent/operation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ChangeEvent"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ChangeEvent/changeExpression"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//TimeEvent"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//TimeEvent/isRelative"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TimeEvent/when"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//TimeExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TimeExpression/expr"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TimeExpression/observation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Observation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//TimeObservation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//TimeObservation/firstEvent"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TimeObservation/event"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DurationObservation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//DurationObservation/firstEvent"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DurationObservation/event"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Duration"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Duration/expr"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Duration/observation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Interval"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interval/max"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interval/min"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//TimeInterval"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TimeInterval/timeMax"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TimeInterval/timeMin"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DurationInterval"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DurationInterval/durationMax"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DurationInterval/durationMin"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//IntervalConstraint"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//TimeConstraint"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//TimeConstraint/firstEvent"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TimeConstraint/timeSpecification"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DurationConstraint"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//DurationConstraint/firstEvent"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DurationConstraint/durationSpecification"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Component"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Component/isIndirectlyInstantiated"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Component/required"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Component/provided"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Component/realization"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Component/packagedElement"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ComponentRealization"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ComponentRealization/abstraction"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ComponentRealization/realizingClassifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Connector"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Connector/kind"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Connector/end"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Connector/contract"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Connector/redefinedConnector"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ConnectorEnd"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectorEnd/partWithPort"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectorEnd/role"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectorEnd/type"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectorEnd/definingEnd"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ConnectableElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectableElement/end"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//StructuredClassifier"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredClassifier/ownedConnector"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredClassifier/role"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredClassifier/structuredOwnedAttribute"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredClassifier/part"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Port"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Port/isBehavior"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Port/isService"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Port/isConjugated"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Port/required"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Port/provided"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Port/redefinedPort"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//EncapsulatedClassifier"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//EncapsulatedClassifier/ownedPort"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Collaboration"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Collaboration/collaborationRole"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CollaborationUse"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CollaborationUse/type"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CollaborationUse/roleBinding"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//InvocationAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InvocationAction/onPort"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Variable"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Artifact"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Artifact/fileName"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Artifact/ownedOperation"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Artifact/ownedAttribute"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Artifact/nestedArtifact"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Artifact/manifestation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Manifestation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Manifestation/utilizedElement"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Node"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Node/nestedNode"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Device"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ExecutionEnvironment"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CommunicationPath"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//DeploymentTarget"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DeploymentTarget/deployedElement"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DeploymentTarget/deployment"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Deployment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Deployment/location"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Deployment/deployedArtifact"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Deployment/configuration"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//DeployedArtifact"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DeploymentSpecification"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//DeploymentSpecification/deploymentLocation"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//DeploymentSpecification/executionLocation"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DeploymentSpecification/deployment"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Action/context"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Action/input"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Action/output"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//OpaqueAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//OpaqueAction/body"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//OpaqueAction/language"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//OpaqueAction/inputValue"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//OpaqueAction/outputValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InputPin"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//OutputPin"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Pin"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ValuePin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValuePin/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//CallAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//CallAction/isSynchronous"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CallAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CallBehaviorAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CallBehaviorAction/behavior"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CallOperationAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CallOperationAction/operation"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CallOperationAction/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//SendSignalAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//SendSignalAction/target"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//SendSignalAction/signal"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//BroadcastSignalAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BroadcastSignalAction/signal"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//SendObjectAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//SendObjectAction/target"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//SendObjectAction/request"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CreateObjectAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CreateObjectAction/classifier"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CreateObjectAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DestroyObjectAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DestroyObjectAction/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//TestIdentityAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TestIdentityAction/result"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TestIdentityAction/first"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//TestIdentityAction/second"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadSelfAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadSelfAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ValueSpecificationAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValueSpecificationAction/result"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ValueSpecificationAction/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//StructuralFeatureAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuralFeatureAction/structuralFeature"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuralFeatureAction/object"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadStructuralFeatureAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadStructuralFeatureAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//WriteStructuralFeatureAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//WriteStructuralFeatureAction/value"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//WriteStructuralFeatureAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//AddStructuralFeatureValueAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//AddStructuralFeatureValueAction/insertAt"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//RemoveStructuralFeatureValueAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//RemoveStructuralFeatureValueAction/removeAt"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ClearStructuralFeatureAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ClearStructuralFeatureAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LinkAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LinkAction/inputValue"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LinkAction/endData"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//LinkEndData"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LinkEndData/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LinkEndData/end"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LinkEndData/qualifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadLinkAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadLinkAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//WriteLinkAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CreateLinkAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LinkEndCreationData"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//LinkEndCreationData/isReplaceAll"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LinkEndCreationData/insertAt"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DestroyLinkAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LinkEndDestructionData"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//LinkEndDestructionData/isDestroyDuplicates"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LinkEndDestructionData/destroyAt"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReplyAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReplyAction/returnInformation"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReplyAction/replyValue"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReplyAction/replyToCall"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//UnmarshallAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//UnmarshallAction/object"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//UnmarshallAction/unmarshallType"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//UnmarshallAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//AcceptEventAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//AcceptEventAction/isUnmarshall"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//AcceptEventAction/result"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//AcceptEventAction/trigger"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//AcceptCallAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//AcceptCallAction/returnInformation"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadExtendAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadExtendAction/result"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadExtendAction/classifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReclassifyObjectAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ReclassifyObjectAction/isReplaceAll"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReclassifyObjectAction/object"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReclassifyObjectAction/oldClassifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReclassifyObjectAction/newClassifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadlsClassifiedObjectAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadlsClassifiedObjectAction/result"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadlsClassifiedObjectAction/object"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//StartClassifierBehaviorAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StartClassifierBehaviorAction/object"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//StartObjectBehaviorAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StartObjectBehaviorAction/object"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//QualifierValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//QualifierValue/qualifier"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//QualifierValue/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadLinkObjectEndAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadLinkObjectEndAction/end"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadLinkObjectEndAction/object"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadLinkObjectEndAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadLinkObjectEndQualifierAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadLinkObjectEndQualifierAction/object"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadLinkObjectEndQualifierAction/result"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadLinkObjectEndQualifierAction/qualifier"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CreateLinkObjectAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CreateLinkObjectAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReduceAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ReduceAction/isOrdered"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReduceAction/result"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReduceAction/collection"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReduceAction/reducer"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//VariableAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//VariableAction/variable"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ReadVariableAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ReadVariableAction/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//WriteVariableAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//WriteVariableAction/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//AddVariableValueAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//AddVariableValueAction/insertAt"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//RemoveVariableValueAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//RemoveVariableValueAction/removeAt"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ClearVariableAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//RaiseExceptionAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//RaiseExceptionAction/exception"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ActionInputPin"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActionInputPin/fromAction"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//StateMachine"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StateMachine/region"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StateMachine/connectionPoint"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StateMachine/submachineState"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StateMachine/extendedStateMachine"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Region"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Region/subvertex"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Region/stateMachine"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Region/transition"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Region/state"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Region/extendedRegion"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Vertex"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Vertex/outgoing"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Vertex/incoming"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Vertex/container"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Transition"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Transition/kind"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Transition/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Transition/target"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Transition/effect"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Transition/trigger"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Transition/guard"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Transition/container"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Transition/redefinedTransition"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Pseudostate"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Pseudostate/state"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ConnectionPointReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectionPointReference/exit"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectionPointReference/entry"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConnectionPointReference/state"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//State"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//State/isComposite"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//State/isOrthogonal"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//State/isSimple"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//State/isSubmachineState"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/connection"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/connectionPoint"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/submachine"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/region"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/deferrableTrigger"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/exit"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/doActivity"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/entry"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/stateInvariant"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//State/redefinedState"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//FinalState"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ProtocolStateMachine"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ProtocolStateMachine/conformance"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ProtocolConformance"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ProtocolConformance/specificMachine"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ProtocolConformance/generalMachine"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ProtocolTransition"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ProtocolTransition/preCondition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ProtocolTransition/postCondition"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ProtocolTransition/referred"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Activity"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Activity/isReadOnly"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Activity/isSingleExecution"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Activity/node"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Activity/group"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Activity/edge"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Activity/partition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Activity/structuredNode"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Activity/variable"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ActivityNode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityNode/inGroup"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityNode/redefinedNode"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityNode/incoming"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityNode/outgoing"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityNode/inPartition"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityNode/inInterruptibleRegion"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityNode/inStructuredNode"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ActivityGroup"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityGroup/subgroup"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityGroup/superGroup"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityGroup/inActivity"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityGroup/containedNode"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityGroup/containedEdge"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ObjectNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ActivityParameterNode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityParameterNode/parameter"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ControlNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ActivityFinalNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InitialNode"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ActivityEdge"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/target"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/redefinedEdge"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/inGroup"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/guard"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/inPartition"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/weight"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/interrupts"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityEdge/inStructuredNode"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ControlFlow"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ObjectFlow"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ObjectFlow/isMulticast"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ObjectFlow/isMultireceive"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ObjectFlow/ordering"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ObjectFlow/isControlType"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ObjectFlow/transformation"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ObjectFlow/selection"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ObjectFlow/inState"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CentralBufferNode"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//FinalNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//FlowFinalNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ForkNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//JoinNode"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//JoinNode/isCombineDuplicate"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//JoinNode/joinSpec"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//MergeNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DecisionNode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DecisionNode/decisionInputFlow"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//DecisionNode/decisionInput"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ActivityPartition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityPartition/edge"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityPartition/subpartition"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityPartition/superPartition"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityPartition/represents"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActivityPartition/node"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DataStoreNode"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ParameterSet"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ParameterSet/parameter"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ParameterSet/condition"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InterruptibleActivityRegion"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InterruptibleActivityRegion/interruptingEdge"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InterruptibleActivityRegion/node"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//StructuredActivityNode"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//StructuredActivityNode/mustIsolate"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredActivityNode/activity"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredActivityNode/variable"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredActivityNode/node"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredActivityNode/structuredNodeInput"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredActivityNode/edge"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StructuredActivityNode/structuredNodeOutput"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ExecutableNode"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExecutableNode/handler"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LoopNode"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//LoopNode/isTestedFirst"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/setupPart"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/bodyPart"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/test"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/decider"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/loopVariableInput"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/loopVariable"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/bodyOutput"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LoopNode/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ConditionalNode"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ConditionalNode/isDeterminate"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ConditionalNode/isAssumed"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConditionalNode/clause"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConditionalNode/test"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConditionalNode/body"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConditionalNode/result"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Clause"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Clause/predecessorClause"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Clause/sucessorClause"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Clause/decider"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//SequenceNode"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//SequenceNode/executableNode"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ExceptionHandler"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExceptionHandler/handlerBody"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExceptionHandler/protectedNode"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExceptionHandler/exceptionInput"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExceptionHandler/exceptionType"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ExpansionRegion"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ExpansionRegion/mode"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExpansionRegion/inputElement"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExpansionRegion/outputElement"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ExpansionNode"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExpansionNode/regionAsInput"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExpansionNode/regionAsOutput"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//InteractionFragment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionFragment/covered"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionFragment/generalOrdering"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionFragment/enclosingOperand"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ExecutionSpecification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExecutionSpecification/start"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExecutionSpecification/finish"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//OccurenceSpecification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//OccurenceSpecification/toBefore"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//OccurenceSpecification/toAfter"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//StateInvariant"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//StateInvariant/invariant"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Interaction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interaction/fragment"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interaction/lifeline"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interaction/action"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Interaction/formalGate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Lifeline"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Lifeline/coveredBy"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Lifeline/interaction"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Lifeline/represents"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Lifeline/selector"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Lifeline/decomposedAs"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Message"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Message/messageKind"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Message/messageSort"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Message/argument"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Message/connector"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Message/signature"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Message/sendEvent"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Message/receiveEvent"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//MessageEnd"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//MessageEnd/message"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ExecutionOccurrenceSpecification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExecutionOccurrenceSpecification/execution"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//MessageOccurrenceSpecification"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//DestructionOccurrenceSpecification"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//BehaviorExecutionSpecification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BehaviorExecutionSpecification/behavior"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ActionExecutionSpecification"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ActionExecutionSpecification/action"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//GeneralOrdering"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//GeneralOrdering/after"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//GeneralOrdering/before"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InteractionOperand"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionOperand/fragment"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionOperand/guard"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//CombinedFragment"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//CombinedFragment/interactionOperator"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CombinedFragment/operand"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//CombinedFragment/cfragmentGate"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ConsiderIgnoreFragment"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ConsiderIgnoreFragment/message"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Continuation"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Continuation/setting"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InteractionConstraint"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionConstraint/maxint"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionConstraint/minint"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Gate"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//InteractionUse"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionUse/actualGate"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionUse/argument"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionUse/returnValue"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionUse/returnValueRecipient"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//InteractionUse/refersTo"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//PartDecomposition"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Actor"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//UseCase"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//UseCase/subject"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//UseCase/extensionPoint"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//UseCase/extend"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//UseCase/include"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ExtensionPoint"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ExtensionPoint/useCase"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Extend"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Extend/extensionLocation"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Extend/extension"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Extend/condition"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Extend/extendedCase"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Include"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Include/includingCase"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Include/addition"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -361,15 +361,6 @@ public interface ProtocolStateMachinesPackage extends EPackage {
 	int PROTOCOL_TRANSITION__REDEFINED_TRANSITION = BehaviorStateMachinesPackage.TRANSITION__REDEFINED_TRANSITION;
 
 	/**
-	 * The feature id for the '<em><b>Redefinition Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROTOCOL_TRANSITION__REDEFINITION_CONTEXT = BehaviorStateMachinesPackage.TRANSITION__REDEFINITION_CONTEXT;
-
-	/**
 	 * The feature id for the '<em><b>Pre Condition</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

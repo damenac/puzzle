@@ -3,7 +3,7 @@
   <foreignModel>CommonBehavior.ecore</foreignModel>
   <genPackages prefix="CommonBehavior" disposableProviderFactory="true">
     <ecorePackage href="CommonBehavior.ecore#/"/>
-    <nestedGenPackages prefix="BasicBehavior" disposableProviderFactory="true">
+    <nestedGenPackages prefix="BasicBehavior" basePackage="CommonBehavior" disposableProviderFactory="true">
       <ecorePackage href="CommonBehavior.ecore#//BasicBehavior"/>
       <genClasses>
         <ecoreClass href="CommonBehavior.ecore#//BasicBehavior/BehavioredClassifier"/>
@@ -87,7 +87,7 @@
         <ecoreClass href="CommonBehavior.ecore#//BasicBehavior/Constraint"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="Communications" disposableProviderFactory="true">
+    <nestedGenPackages prefix="Communications" basePackage="CommonBehavior" disposableProviderFactory="true">
       <ecorePackage href="CommonBehavior.ecore#//Communications"/>
       <genEnums typeSafeEnumCompatible="false">
         <ecoreEnum href="CommonBehavior.ecore#//Communications/CallConcurrencyFeature"/>
@@ -168,7 +168,7 @@
         <ecoreClass href="CommonBehavior.ecore#//Communications/ValueSpecification"/>
       </genClasses>
     </nestedGenPackages>
-    <nestedGenPackages prefix="SimpleTime" disposableProviderFactory="true">
+    <nestedGenPackages prefix="SimpleTime" basePackage="CommonBehavior" disposableProviderFactory="true">
       <ecorePackage href="CommonBehavior.ecore#//SimpleTime"/>
       <genClasses>
         <ecoreClass href="CommonBehavior.ecore#//SimpleTime/TimeEvent"/>
@@ -247,9 +247,6 @@
       </genClasses>
       <genClasses>
         <ecoreClass href="CommonBehavior.ecore#//SimpleTime/IntervalConstraint"/>
-        <genFeatures notify="false" createChild="false" propertySortChoices="true">
-          <ecoreFeature xsi:type="ecore:EReference" href="CommonBehavior.ecore#//SimpleTime/IntervalConstraint/specification"/>
-        </genFeatures>
       </genClasses>
       <genClasses>
         <ecoreClass href="CommonBehavior.ecore#//SimpleTime/TimeConstraint"/>

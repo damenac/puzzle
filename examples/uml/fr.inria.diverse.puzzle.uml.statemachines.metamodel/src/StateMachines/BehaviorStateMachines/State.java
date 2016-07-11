@@ -26,7 +26,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link StateMachines.BehaviorStateMachines.State#getEntry <em>Entry</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.State#getStateInvariant <em>State Invariant</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.State#getRedefinedState <em>Redefined State</em>}</li>
- *   <li>{@link StateMachines.BehaviorStateMachines.State#getRedefinitionContext <em>Redefinition Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -366,31 +365,5 @@ public interface State extends Vertex, RedefinableElement, Namespace {
 	 * @generated
 	 */
 	void setRedefinedState(State value);
-
-	/**
-	 * Returns the value of the '<em><b>Redefinition Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Redefinition Context</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Redefinition Context</em>' reference.
-	 * @see #setRedefinitionContext(Classifier)
-	 * @see StateMachines.BehaviorStateMachines.BehaviorStateMachinesPackage#getState_RedefinitionContext()
-	 * @model required="true"
-	 * @generated
-	 */
-	Classifier getRedefinitionContext();
-
-	/**
-	 * Sets the value of the '{@link StateMachines.BehaviorStateMachines.State#getRedefinitionContext <em>Redefinition Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Redefinition Context</em>' reference.
-	 * @see #getRedefinitionContext()
-	 * @generated
-	 */
-	void setRedefinitionContext(Classifier value);
 
 } // State

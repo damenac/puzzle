@@ -233,22 +233,13 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 	int REGION__EXTENDED_REGION = NAMESPACE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Redefinition Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REGION__REDEFINITION_CONTEXT = NAMESPACE_FEATURE_COUNT + 5;
-
-	/**
 	 * The number of structural features of the '<em>Region</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REGION_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 6;
+	int REGION_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Region</em>' class.
@@ -425,22 +416,13 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 	int TRANSITION__REDEFINED_TRANSITION = NAMESPACE_FEATURE_COUNT + 7;
 
 	/**
-	 * The feature id for the '<em><b>Redefinition Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__REDEFINITION_CONTEXT = NAMESPACE_FEATURE_COUNT + 8;
-
-	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 9;
+	int TRANSITION_FEATURE_COUNT = NAMESPACE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -817,22 +799,13 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 	int STATE__REDEFINED_STATE = VERTEX_FEATURE_COUNT + 13;
 
 	/**
-	 * The feature id for the '<em><b>Redefinition Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE__REDEFINITION_CONTEXT = VERTEX_FEATURE_COUNT + 14;
-
-	/**
 	 * The number of structural features of the '<em>State</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 15;
+	int STATE_FEATURE_COUNT = VERTEX_FEATURE_COUNT + 14;
 
 	/**
 	 * The number of operations of the '<em>State</em>' class.
@@ -1005,15 +978,6 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 	 * @ordered
 	 */
 	int FINAL_STATE__REDEFINED_STATE = STATE__REDEFINED_STATE;
-
-	/**
-	 * The feature id for the '<em><b>Redefinition Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FINAL_STATE__REDEFINITION_CONTEXT = STATE__REDEFINITION_CONTEXT;
 
 	/**
 	 * The number of structural features of the '<em>Final State</em>' class.
@@ -1268,17 +1232,6 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 	EReference getRegion_ExtendedRegion();
 
 	/**
-	 * Returns the meta object for the reference '{@link StateMachines.BehaviorStateMachines.Region#getRedefinitionContext <em>Redefinition Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Redefinition Context</em>'.
-	 * @see StateMachines.BehaviorStateMachines.Region#getRedefinitionContext()
-	 * @see #getRegion()
-	 * @generated
-	 */
-	EReference getRegion_RedefinitionContext();
-
-	/**
 	 * Returns the meta object for class '{@link StateMachines.BehaviorStateMachines.NamedElement <em>Named Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1428,17 +1381,6 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTransition_RedefinedTransition();
-
-	/**
-	 * Returns the meta object for the reference '{@link StateMachines.BehaviorStateMachines.Transition#getRedefinitionContext <em>Redefinition Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Redefinition Context</em>'.
-	 * @see StateMachines.BehaviorStateMachines.Transition#getRedefinitionContext()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EReference getTransition_RedefinitionContext();
 
 	/**
 	 * Returns the meta object for class '{@link StateMachines.BehaviorStateMachines.Constraint <em>Constraint</em>}'.
@@ -1689,17 +1631,6 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 	EReference getState_RedefinedState();
 
 	/**
-	 * Returns the meta object for the reference '{@link StateMachines.BehaviorStateMachines.State#getRedefinitionContext <em>Redefinition Context</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Redefinition Context</em>'.
-	 * @see StateMachines.BehaviorStateMachines.State#getRedefinitionContext()
-	 * @see #getState()
-	 * @generated
-	 */
-	EReference getState_RedefinitionContext();
-
-	/**
 	 * Returns the meta object for class '{@link StateMachines.BehaviorStateMachines.FinalState <em>Final State</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1885,14 +1816,6 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 		EReference REGION__EXTENDED_REGION = eINSTANCE.getRegion_ExtendedRegion();
 
 		/**
-		 * The meta object literal for the '<em><b>Redefinition Context</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference REGION__REDEFINITION_CONTEXT = eINSTANCE.getRegion_RedefinitionContext();
-
-		/**
 		 * The meta object literal for the '{@link StateMachines.BehaviorStateMachines.impl.NamedElementImpl <em>Named Element</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2009,14 +1932,6 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TRANSITION__REDEFINED_TRANSITION = eINSTANCE.getTransition_RedefinedTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Redefinition Context</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRANSITION__REDEFINITION_CONTEXT = eINSTANCE.getTransition_RedefinitionContext();
 
 		/**
 		 * The meta object literal for the '{@link StateMachines.BehaviorStateMachines.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -2211,14 +2126,6 @@ public interface BehaviorStateMachinesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference STATE__REDEFINED_STATE = eINSTANCE.getState_RedefinedState();
-
-		/**
-		 * The meta object literal for the '<em><b>Redefinition Context</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STATE__REDEFINITION_CONTEXT = eINSTANCE.getState_RedefinitionContext();
 
 		/**
 		 * The meta object literal for the '{@link StateMachines.BehaviorStateMachines.impl.FinalStateImpl <em>Final State</em>}' class.

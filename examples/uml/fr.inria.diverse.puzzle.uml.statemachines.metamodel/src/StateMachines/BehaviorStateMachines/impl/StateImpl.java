@@ -4,7 +4,6 @@ package StateMachines.BehaviorStateMachines.impl;
 
 import StateMachines.BehaviorStateMachines.Behavior;
 import StateMachines.BehaviorStateMachines.BehaviorStateMachinesPackage;
-import StateMachines.BehaviorStateMachines.Classifier;
 import StateMachines.BehaviorStateMachines.ConnectionPointReference;
 import StateMachines.BehaviorStateMachines.Constraint;
 import StateMachines.BehaviorStateMachines.Pseudostate;
@@ -12,19 +11,13 @@ import StateMachines.BehaviorStateMachines.Region;
 import StateMachines.BehaviorStateMachines.State;
 import StateMachines.BehaviorStateMachines.StateMachine;
 import StateMachines.BehaviorStateMachines.Trigger;
-
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -50,7 +43,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.StateImpl#getEntry <em>Entry</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.StateImpl#getStateInvariant <em>State Invariant</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.impl.StateImpl#getRedefinedState <em>Redefined State</em>}</li>
- *   <li>{@link StateMachines.BehaviorStateMachines.impl.StateImpl#getRedefinitionContext <em>Redefinition Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -236,16 +228,6 @@ public class StateImpl extends VertexImpl implements State {
 	 * @ordered
 	 */
 	protected State redefinedState;
-
-	/**
-	 * The cached value of the '{@link #getRedefinitionContext() <em>Redefinition Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRedefinitionContext()
-	 * @generated
-	 * @ordered
-	 */
-	protected Classifier redefinitionContext;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -673,44 +655,6 @@ public class StateImpl extends VertexImpl implements State {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Classifier getRedefinitionContext() {
-		if (redefinitionContext != null && redefinitionContext.eIsProxy()) {
-			InternalEObject oldRedefinitionContext = (InternalEObject)redefinitionContext;
-			redefinitionContext = (Classifier)eResolveProxy(oldRedefinitionContext);
-			if (redefinitionContext != oldRedefinitionContext) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, BehaviorStateMachinesPackage.STATE__REDEFINITION_CONTEXT, oldRedefinitionContext, redefinitionContext));
-			}
-		}
-		return redefinitionContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Classifier basicGetRedefinitionContext() {
-		return redefinitionContext;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRedefinitionContext(Classifier newRedefinitionContext) {
-		Classifier oldRedefinitionContext = redefinitionContext;
-		redefinitionContext = newRedefinitionContext;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, BehaviorStateMachinesPackage.STATE__REDEFINITION_CONTEXT, oldRedefinitionContext, redefinitionContext));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -797,9 +741,6 @@ public class StateImpl extends VertexImpl implements State {
 			case BehaviorStateMachinesPackage.STATE__REDEFINED_STATE:
 				if (resolve) return getRedefinedState();
 				return basicGetRedefinedState();
-			case BehaviorStateMachinesPackage.STATE__REDEFINITION_CONTEXT:
-				if (resolve) return getRedefinitionContext();
-				return basicGetRedefinitionContext();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -859,9 +800,6 @@ public class StateImpl extends VertexImpl implements State {
 			case BehaviorStateMachinesPackage.STATE__REDEFINED_STATE:
 				setRedefinedState((State)newValue);
 				return;
-			case BehaviorStateMachinesPackage.STATE__REDEFINITION_CONTEXT:
-				setRedefinitionContext((Classifier)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -916,9 +854,6 @@ public class StateImpl extends VertexImpl implements State {
 			case BehaviorStateMachinesPackage.STATE__REDEFINED_STATE:
 				setRedefinedState((State)null);
 				return;
-			case BehaviorStateMachinesPackage.STATE__REDEFINITION_CONTEXT:
-				setRedefinitionContext((Classifier)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -959,8 +894,6 @@ public class StateImpl extends VertexImpl implements State {
 				return stateInvariant != null;
 			case BehaviorStateMachinesPackage.STATE__REDEFINED_STATE:
 				return redefinedState != null;
-			case BehaviorStateMachinesPackage.STATE__REDEFINITION_CONTEXT:
-				return redefinitionContext != null;
 		}
 		return super.eIsSet(featureID);
 	}

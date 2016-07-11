@@ -19,7 +19,6 @@ package StateMachines.BehaviorStateMachines;
  *   <li>{@link StateMachines.BehaviorStateMachines.Transition#getGuard <em>Guard</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.Transition#getContainer <em>Container</em>}</li>
  *   <li>{@link StateMachines.BehaviorStateMachines.Transition#getRedefinedTransition <em>Redefined Transition</em>}</li>
- *   <li>{@link StateMachines.BehaviorStateMachines.Transition#getRedefinitionContext <em>Redefinition Context</em>}</li>
  * </ul>
  * </p>
  *
@@ -244,31 +243,5 @@ public interface Transition extends Namespace, RedefinableElement {
 	 * @generated
 	 */
 	void setRedefinedTransition(Transition value);
-
-	/**
-	 * Returns the value of the '<em><b>Redefinition Context</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Redefinition Context</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Redefinition Context</em>' reference.
-	 * @see #setRedefinitionContext(Classifier)
-	 * @see StateMachines.BehaviorStateMachines.BehaviorStateMachinesPackage#getTransition_RedefinitionContext()
-	 * @model required="true"
-	 * @generated
-	 */
-	Classifier getRedefinitionContext();
-
-	/**
-	 * Sets the value of the '{@link StateMachines.BehaviorStateMachines.Transition#getRedefinitionContext <em>Redefinition Context</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Redefinition Context</em>' reference.
-	 * @see #getRedefinitionContext()
-	 * @generated
-	 */
-	void setRedefinitionContext(Classifier value);
 
 } // Transition

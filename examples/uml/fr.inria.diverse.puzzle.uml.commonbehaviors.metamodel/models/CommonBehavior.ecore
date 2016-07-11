@@ -2,6 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="CommonBehavior" nsURI="http://fr.inria.diverse.puzzle.uml/CommonBehavior" nsPrefix="CommonBehavior">
   <eSubpackages name="BasicBehavior" nsURI="http://fr.inria.diverse.puzzle.uml/CommonBehavior/BasicBehavior" nsPrefix="BasicBehavior">
     <eClassifiers xsi:type="ecore:EClass" name="BehavioredClassifier" eSuperTypes="//BasicBehavior/Classifier">
+      <eAnnotations source="Required"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ownedBehavior" upperBound="-1" eType="//BasicBehavior/Behavior" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="classifierBehavior" eType="//BasicBehavior/Behavior"/>
     </eClassifiers>
@@ -138,9 +139,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="durationMax" lowerBound="1" eType="//SimpleTime/Duration"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="durationMin" lowerBound="1" eType="//SimpleTime/Duration"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="IntervalConstraint" eSuperTypes="//BasicBehavior/Constraint">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="specification" lowerBound="1" eType="//SimpleTime/Interval"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntervalConstraint" eSuperTypes="//BasicBehavior/Constraint"/>
     <eClassifiers xsi:type="ecore:EClass" name="TimeConstraint" eSuperTypes="//SimpleTime/IntervalConstraint">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstEvent">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>

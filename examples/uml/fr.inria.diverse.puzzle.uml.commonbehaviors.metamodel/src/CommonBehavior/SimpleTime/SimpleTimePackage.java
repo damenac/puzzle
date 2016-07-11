@@ -503,22 +503,13 @@ public interface SimpleTimePackage extends EPackage {
 	int INTERVAL_CONSTRAINT = 9;
 
 	/**
-	 * The feature id for the '<em><b>Specification</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTERVAL_CONSTRAINT__SPECIFICATION = BasicBehaviorPackage.CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Interval Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVAL_CONSTRAINT_FEATURE_COUNT = BasicBehaviorPackage.CONSTRAINT_FEATURE_COUNT + 1;
+	int INTERVAL_CONSTRAINT_FEATURE_COUNT = BasicBehaviorPackage.CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Interval Constraint</em>' class.
@@ -538,15 +529,6 @@ public interface SimpleTimePackage extends EPackage {
 	 * @generated
 	 */
 	int TIME_CONSTRAINT = 10;
-
-	/**
-	 * The feature id for the '<em><b>Specification</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_CONSTRAINT__SPECIFICATION = INTERVAL_CONSTRAINT__SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>First Event</b></em>' attribute.
@@ -593,15 +575,6 @@ public interface SimpleTimePackage extends EPackage {
 	 * @generated
 	 */
 	int DURATION_CONSTRAINT = 11;
-
-	/**
-	 * The feature id for the '<em><b>Specification</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DURATION_CONSTRAINT__SPECIFICATION = INTERVAL_CONSTRAINT__SPECIFICATION;
 
 	/**
 	 * The feature id for the '<em><b>First Event</b></em>' attribute list.
@@ -917,17 +890,6 @@ public interface SimpleTimePackage extends EPackage {
 	EClass getIntervalConstraint();
 
 	/**
-	 * Returns the meta object for the reference '{@link CommonBehavior.SimpleTime.IntervalConstraint#getSpecification <em>Specification</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Specification</em>'.
-	 * @see CommonBehavior.SimpleTime.IntervalConstraint#getSpecification()
-	 * @see #getIntervalConstraint()
-	 * @generated
-	 */
-	EReference getIntervalConstraint_Specification();
-
-	/**
 	 * Returns the meta object for class '{@link CommonBehavior.SimpleTime.TimeConstraint <em>Time Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,14 +1203,6 @@ public interface SimpleTimePackage extends EPackage {
 		 * @generated
 		 */
 		EClass INTERVAL_CONSTRAINT = eINSTANCE.getIntervalConstraint();
-
-		/**
-		 * The meta object literal for the '<em><b>Specification</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference INTERVAL_CONSTRAINT__SPECIFICATION = eINSTANCE.getIntervalConstraint_Specification();
 
 		/**
 		 * The meta object literal for the '{@link CommonBehavior.SimpleTime.impl.TimeConstraintImpl <em>Time Constraint</em>}' class.

@@ -588,6 +588,11 @@ public class BasicBehaviorPackageImpl extends EPackageImpl implements BasicBehav
 	protected void createRequiredAnnotations() {
 		String source = "Required";	
 		addAnnotation
+		  (behavioredClassifierEClass, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (classifierEClass, 
 		   source, 
 		   new String[] {
