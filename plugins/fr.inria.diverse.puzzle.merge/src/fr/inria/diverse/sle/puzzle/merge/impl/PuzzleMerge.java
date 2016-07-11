@@ -170,23 +170,6 @@ public class PuzzleMerge {
 		return clone;
 	}
 
-//	/**
-//	 * Returns true of the eClassifier in the parameter is an EClass and it contains additions to the base class.
-//	 * @param eClassifier
-//	 * @return
-//	 */
-//	private boolean includesAdditions(EClassifier eClassifier) {
-//		if(eClassifier instanceof EClass){
-//			EClass extensionEClass = (EClass) eClassifier;
-//			for(EStructuralFeature _eStructuralFeature : extensionEClass.getEStructuralFeatures()){
-//				if(_eStructuralFeature.getEAnnotation("Required") == null){
-//					return true;
-//				}
-//			}
-//		}
-//		return false;
-//	}
-
 	private EClass extendEClass(EClass baseEClass,
 			EClass extensionEClass, Hashtable<String, EClassifier> unifiedEClassifiers) {
 		
@@ -778,6 +761,12 @@ public class PuzzleMerge {
 				if(newClass != null && oldClass != null){
 					for(EAttribute eAttribute : newClass.getEAttributes()){
 						EAttribute _oldAttribute = ((EAttribute)searchStructuralFeatureByName(oldClass, eAttribute.getName()));
+						if(_oldAttribute == null){
+							oldClass = (EClass) _oldClassifiers.get(_eClassifier.getName() + "-extension");
+							if(oldClass != null){
+								_oldAttribute = ((EAttribute)searchStructuralFeatureByName(oldClass, eAttribute.getName()));
+							}
+						}
 						if(_oldAttribute != null && _oldAttribute.getEType() != null){
 							String _resolvedTypeName = _oldAttribute.getEType().getName();
 							
@@ -795,7 +784,7 @@ public class PuzzleMerge {
 			resolveLocalEAttributes(_oldClassifiers, _newClassifiers, _subPackage);
 		}
 	}
-	
+
 	/**
 	 * Resolution of the local references of the recently cloned metamodel
 	 * @param _oldClassifiers
@@ -1043,127 +1032,6 @@ public class PuzzleMerge {
 		
 	}
 	
-	/**
-	 * Resolution of the cross-cutting references of the merged metamodel
-	 * @param sourceTable
-	 * @param targetPackage
-	 * @param binding
-	 */
-	private void resolveCrossCuttingEReferences(Hashtable<String, EClassifier> oldEClassifiers, Hashtable<String, EClassifier> unifiedEClassifiers,
-			EPackage targetPackage, MatchingDiagnostic binding, EPackage recalculatedRequiredInterface){
-		
-		Enumeration<String> keys = unifiedEClassifiers.keys();
-		while(keys.hasMoreElements()){
-			String currentKey = keys.nextElement();
-			
-			if(unifiedEClassifiers.get(currentKey) instanceof EClass){
-				EClass oldClass = (EClass) oldEClassifiers.get(currentKey);
-				
-				if(oldClass != null){
-					EClass newClass = (EClass) unifiedEClassifiers.get(currentKey);
-					ArrayList<EReference> toDelete = new ArrayList<EReference>();
-					
-					
-					ArrayList<EReference> allReferences = new ArrayList<EReference>();
-					allReferences.addAll(oldClass.getEReferences());
-					
-					EClass extensionOldClass = (EClass) oldEClassifiers.get(currentKey + "-extension");
-					if(extensionOldClass != null)
-						allReferences.addAll(extensionOldClass.getEReferences());
-					
-					for (EReference eReference : allReferences ) {
-						EReference newEReference = (EReference) searchStructuralFeatureByName(newClass, eReference.getName());
-						
-						//TODO Fix the conditions!!
-						
-						// Case 1: The reference type is a class already included in the current merged language and the names match. 
-						if(eReference.getEType().getName() != null && unifiedEClassifiers.get(eReference.getEType().getName()) != null){
-							newEReference.setEType(unifiedEClassifiers.get(eReference.getEType().getName()));
-						}
-						
-						// Case 2: The reference type is a class already included in the current merged language, the name match, but it is currently defined as a non-resolved proxy. 
-						else if(eReference.getEType().getName() == null){
-							String superTypeName = eReference.getEType().toString().split("#//")[1].replace(')', ' ').trim();
-							newEReference.setEType(unifiedEClassifiers.get(superTypeName));
-						}
-						
-						// Case 3: The reference type is a class already included in the current merged language but the names do not match. 
-						//         We need to look for the correspondence in the binding. 
-						else {
-							String requiredTypeName = eReference.getEType().getName();
-							if(requiredTypeName != null){
-								List<MatchingDiagnosticItem> matches = binding.getItems();
-								for (MatchingDiagnosticItem _mapping : matches) {
-									
-									EObject _input = _mapping.getLeft();
-									EObject _output = _mapping.getRight();
-									
-									if ((_input instanceof EClass) && (_output instanceof EClass)) {
-										EClass _inputClass = (EClass) _input;
-										EClass _outputClass = (EClass) _output;
-										if(_inputClass.getName().equals(requiredTypeName)){
-											newEReference.setEType(unifiedEClassifiers.get(_outputClass.getName()));
-										}
-									}
-								}
-							}
-						}
-
-						// Case 4: The reference type is not included in the current merged language but it is part of the recalculated required interface. 
-						if(newEReference.getEType() == null){
-							String requiredTypeName = eReference.getEType().getName();
-							for (EClassifier _eClassifierRequired : recalculatedRequiredInterface.getEClassifiers()) {
-								if(_eClassifierRequired.getName().equals(requiredTypeName)){
-									newEReference.setEType(_eClassifierRequired);
-								}
-							}
-						}
-						
-						// Case 5: Removing untyped references
-						if(newEReference.getEType() == null){
-							toDelete.add(newEReference);
-						}
-					}
-					
-					for (EReference eReference : toDelete) {
-						newClass.getEStructuralFeatures().remove(eReference);
-					}
-				}
-			}
-		}
-	}
-	
-	/**
-	 * Resolution of the cross-cutting references of the merged metamodel
-	 * @param sourceTable
-	 * @param targetPackage
-	 * @param binding
-	 */
-	private void resolveCrossCuttingESuperTypes(Hashtable<String, EClassifier> oldEClassifiers, Hashtable<String, EClassifier> unifiedEClassifiers,
-			EPackage targetPackage, MatchingDiagnostic binding, EPackage recalculatedRequiredInterface){
-		
-		Enumeration<String> keys = unifiedEClassifiers.keys();
-		while(keys.hasMoreElements()){
-			String currentKey = keys.nextElement();
-			
-			if(unifiedEClassifiers.get(currentKey) instanceof EClass){
-				EClass oldClass = (EClass) oldEClassifiers.get(currentKey);
-				
-				if(oldClass != null){
-					EClass newClass = (EClass) unifiedEClassifiers.get(currentKey);
-					
-					for (EClass eSuperType : oldClass.getESuperTypes() ) {
-						EClass newSuperType = (EClass)unifiedEClassifiers.get(eSuperType.getName());
-						System.out.println("Resolving cross cutting super types: " + eSuperType.getName());
-						if(newSuperType != null){
-							newClass.getESuperTypes().add(newSuperType);
-							System.out.println("OK");
-						}
-					}
-				}
-			}
-		}
-	}
 	
 	/**
 	 * Search a class by name in the given package
@@ -1204,6 +1072,16 @@ public class PuzzleMerge {
 		return null;
 	}
 	
+	private EAttribute searchEAttributeByName(EClass _class, String name) {
+		// Searching the structural feature in the given class
+		for (EAttribute _attribute : _class.getEAllAttributes()) {
+			if(_attribute.getName().equals(name))
+				return _attribute;
+		}
+				
+		return null;
+	}
+	
 	public EOperation searchEOperationByName(EClass _class,
 			String name) {
 		// TODO Adicionar el tema de tipos y parametros a esta comparacion.
@@ -1216,32 +1094,6 @@ public class PuzzleMerge {
 		return null;
 	}
 
-	/**
-	 * Introduces recursively the classes of the given package
-	 * @param _package
-	 * @param rootPackage
-	 */
-	private void addEPackageClasses(EPackage _package, EPackage rootPackage, 
-			Hashtable<String, EClassifier> oldEClassifiers, Hashtable<String, EClassifier> unifiedEClassifiers) {
-		
-		for (EClassifier eClassifier : _package.getEClassifiers()) {
-			if(eClassifier instanceof EClass){
-				oldEClassifiers.put(((EClass)eClassifier).getName(), (EClass)eClassifier);
-				EClass newEClass = cloneEClass(EcoreFactory.eINSTANCE, (EClass)eClassifier);
-				rootPackage.getEClassifiers().add(newEClass);
-				unifiedEClassifiers.put(newEClass.getName(), newEClass);
-			}
-			else if(eClassifier instanceof EEnum){
-				oldEClassifiers.put(((EEnum)eClassifier).getName(), (EEnum)eClassifier);
-				EEnum newEEnum = cloneEEnum(EcoreFactory.eINSTANCE, (EEnum)eClassifier);
-				rootPackage.getEClassifiers().add(newEEnum);
-				unifiedEClassifiers.put(newEEnum.getName(), newEEnum);
-			}
-		}
-		for (EPackage _subEPackage : _package.getESubpackages()) {
-			addEPackageClasses(_subEPackage, rootPackage, oldEClassifiers, unifiedEClassifiers);
-		}
-	}
 	
 	/**
 	 * Clones a EClass in the parameter by using the ECORE factory.
