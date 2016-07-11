@@ -1,0 +1,11 @@
+package family
+
+import 'uml.melange'
+
+languageBinding {
+	bind( ComponentsRequired, ClassesProvided )
+	bind( CompositeStructuresRequired, ClassesProvided )
+	bind( CompositeStructuresRequired, ComponentsProvided )
+	bind( ComponentsRequired, CompositeStructuresProvided )
+//	bind( DeploymentsRequired, ClassesProvided )
+}

@@ -68,6 +68,7 @@ public class PuzzleMerge {
 			EPackage requiredInterface, MatchingDiagnostic binding, 
 			EPackage recalculatedRequiredInterface, String languageName) {
 		
+		System.out.println("PuzzleMerge.mergeAbstractSyntax()");
 		System.out.println("Merging... " + extensionLanguage.getName() + " and " + baseLanguage.getName());
 		
 		Hashtable<String, EClassifier> oldEClassifiers = new Hashtable<String, EClassifier>();
@@ -79,18 +80,25 @@ public class PuzzleMerge {
 		clone.setNsPrefix(baseLanguage.getNsPrefix());
 		clone.setNsURI(baseLanguage.getNsURI());
 		
-		cloneEPackage(baseLanguage, clone, oldEClassifiers, unifiedEClassifiers, "http://" + languageName, false);
+		cloneEPackage(baseLanguage, clone, oldEClassifiers, unifiedEClassifiers, "http://" + languageName, false, binding);
 		resolveLocalEAttributes(oldEClassifiers, unifiedEClassifiers, clone);
 		resolveLocalEReferences(oldEClassifiers, unifiedEClassifiers, clone, false);
 		resolveLocalEOperationTypes(oldEClassifiers, unifiedEClassifiers, clone);
 		resolveLocalSuperTypes(oldEClassifiers, unifiedEClassifiers, clone);
+		resolveEOppositeReferences(oldEClassifiers, unifiedEClassifiers, clone);
+		includeAdditionalSuperTypes(oldEClassifiers, unifiedEClassifiers, clone);
 		
 		clone.setName(languageName);
 		clone.setNsPrefix(languageName);
 		clone.setNsURI("http://" + languageName);
 		
 		// 2. Copy the extension language to the merged metamodel
-		for (EClassifier eClassifier : extensionLanguage.getEClassifiers()) {
+		ArrayList<EClassifier> extensionClassifiers = new ArrayList<EClassifier>();
+		EcoreQueries.collectEClassifiers(extensionLanguage, extensionClassifiers);
+		
+		for (EClassifier eClassifier : extensionClassifiers) {
+			
+			// The case in which the element in the extension language is a new element.
 			if(eClassifier.getEAnnotation("Required") == null){
 				if(eClassifier instanceof EClass){
 					if(unifiedEClassifiers.get(((EClass)eClassifier).getName()) == null){
@@ -107,14 +115,15 @@ public class PuzzleMerge {
 					unifiedEClassifiers.put(newEEnum.getName(), newEEnum);
 				}
 			}
-			else if(eClassifier.getEAnnotation("Required") != null && includesAdditions(eClassifier)){
+			
+			// The case in which the element in the extension language is a required construct that is being extended with additional features. 
+			else if(eClassifier.getEAnnotation("Required") != null){
 				if(eClassifier instanceof EClass){
 					if(unifiedEClassifiers.get(eClassifier.getName()) != null){
 						oldEClassifiers.put(eClassifier.getName() + "-extension", (EClass)eClassifier);
-						EClass extendedClass = extendEClass((EClass)unifiedEClassifiers.get(eClassifier.getName()), (EClass)eClassifier);
+						EClass extendedClass = extendEClass((EClass)unifiedEClassifiers.get(eClassifier.getName()), (EClass)eClassifier, unifiedEClassifiers);
 						unifiedEClassifiers.put(extendedClass.getName(), extendedClass);
 					}
-					
 				}
 				else if(eClassifier instanceof EEnum){
 					if(unifiedEClassifiers.get(eClassifier.getName()) != null){
@@ -124,10 +133,6 @@ public class PuzzleMerge {
 					}
 				}
 			}
-		}
-		
-		for (EPackage _ePackage : extensionLanguage.getESubpackages()) {
-			addEPackageClasses(_ePackage, clone, oldEClassifiers, unifiedEClassifiers);
 		}
 		
 		// Adding the elements of the required interface to the metamodel. 
@@ -154,36 +159,42 @@ public class PuzzleMerge {
 					requiredClassifier.getEAnnotations().add(requiredAnnotation);
 				}
 			}
+			
 			resolveLocalEAttributes(oldEClassifiers, unifiedEClassifiers, clone);
 			resolveLocalEReferences(oldEClassifiers, unifiedEClassifiers, clone, false);
 			resolveLocalEOperationTypes(oldEClassifiers, unifiedEClassifiers, clone);
 			resolveLocalSuperTypes(oldEClassifiers, unifiedEClassifiers, clone);
+			includeAdditionalSuperTypes(oldEClassifiers, unifiedEClassifiers, clone);
 		}
 		
 		return clone;
 	}
 
-	/**
-	 * Returns true of the eClassifier in the parameter is an EClass and it contains additions to the base class.
-	 * @param eClassifier
-	 * @return
-	 */
-	private boolean includesAdditions(EClassifier eClassifier) {
-		if(eClassifier instanceof EClass){
-			EClass extensionEClass = (EClass) eClassifier;
-			for(EStructuralFeature _eStructuralFeature : extensionEClass.getEStructuralFeatures()){
-				if(_eStructuralFeature.getEAnnotation("Addition") != null){
-					return true;
-				}
-			}
-		}
-		return false;
-	}
+//	/**
+//	 * Returns true of the eClassifier in the parameter is an EClass and it contains additions to the base class.
+//	 * @param eClassifier
+//	 * @return
+//	 */
+//	private boolean includesAdditions(EClassifier eClassifier) {
+//		if(eClassifier instanceof EClass){
+//			EClass extensionEClass = (EClass) eClassifier;
+//			for(EStructuralFeature _eStructuralFeature : extensionEClass.getEStructuralFeatures()){
+//				if(_eStructuralFeature.getEAnnotation("Required") == null){
+//					return true;
+//				}
+//			}
+//		}
+//		return false;
+//	}
 
 	private EClass extendEClass(EClass baseEClass,
-			EClass extensionEClass) {
+			EClass extensionEClass, Hashtable<String, EClassifier> unifiedEClassifiers) {
+		
+		System.out.println("PuzzleMerge.extendEClass: " + extensionEClass.getName());
+		
+		// Including the additional structural features to the base class. 
 		for(EStructuralFeature _eStructuralFeature : extensionEClass.getEStructuralFeatures()){
-			if(_eStructuralFeature.getEAnnotation("Addition") != null){
+			if(_eStructuralFeature.getEAnnotation("Required") == null){
 				if(_eStructuralFeature instanceof EAttribute){
 					EAttribute eAttribute = (EAttribute) _eStructuralFeature;
 					EAttribute newAttribute = EcoreFactory.eINSTANCE.createEAttribute();
@@ -220,6 +231,20 @@ public class PuzzleMerge {
 		return baseEClass;
 	}
 	
+	/**
+	 * Returns true if the eClass contains the eSuperType within the list of parameters; returns false otherwise.
+	 * @param eClass
+	 * @param eSuperType
+	 * @return
+	 */
+	private boolean includesSuperType(EClass baseEClass, EClass _superType) {
+		for(EClass _baseSuperType : baseEClass.getESuperTypes()){
+			if(_baseSuperType.getName().equals(_superType.getName()))
+				return true;
+		}
+		return false;
+	}
+
 	private EEnum extendEEnum(EEnum baseEEnum, EEnum extensionEEnum) {
 		for(EEnumLiteral _extensionLiteral : extensionEEnum.getELiterals()){
 			if(_extensionLiteral.getEAnnotation("Addition") != null){
@@ -253,7 +278,7 @@ public class PuzzleMerge {
 		clone.setNsPrefix(languageName + "required");
 		clone.setNsURI("http://" + languageName + "required");
 		
-		cloneEPackage(_extensionLanguageRequiredInterface, clone, _oldClassifiers, _newClassifiers, "http://" + languageName, true);
+		cloneEPackage(_extensionLanguageRequiredInterface, clone, _oldClassifiers, _newClassifiers, "http://" + languageName, true, null);
 		resolveLocalEAttributes(_oldClassifiers, _newClassifiers, clone);
 		resolveLocalEReferences(_oldClassifiers, _newClassifiers, clone, false);
 		resolveLocalEOperationTypes(_oldClassifiers, _newClassifiers, clone);
@@ -314,7 +339,7 @@ public class PuzzleMerge {
 				Hashtable<String, EClassifier> _newLegacyClassifiers = new Hashtable<String, EClassifier>();
 				
 				cloneEPackage(_baseLanguageRequiredInterface, clone, _oldLegacyClassifiers, 
-						_newLegacyClassifiers, "http://" + languageName, true);
+						_newLegacyClassifiers, "http://" + languageName, true, null);
 
 				resolveLocalEAttributes(_oldLegacyClassifiers, _newLegacyClassifiers, clone);
 				resolveLocalEReferences(_oldLegacyClassifiers, _newLegacyClassifiers, clone, false);
@@ -361,7 +386,7 @@ public class PuzzleMerge {
 			Hashtable<String, EClassifier> _newClassifiers = new Hashtable<String, EClassifier>();
 			
 			cloneEPackage(baseLanguageProvidedInterface, recalculatedProvidedInterface, _oldClassifiers, 
-					_newClassifiers, recalculatedProvidedInterface.getNsPrefix(), false);
+					_newClassifiers, recalculatedProvidedInterface.getNsPrefix(), false, null);
 			resolveLocalEAttributes(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface);
 			resolveLocalEReferences(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface, true);
 			resolveLocalSuperTypes(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface);
@@ -388,7 +413,7 @@ public class PuzzleMerge {
 			Hashtable<String, EClassifier> _newClassifiers = new Hashtable<String, EClassifier>();
 			
 			cloneEPackage(baseLanguageProvidedInterface, recalculatedProvidedInterface, _oldClassifiers, 
-					_newClassifiers, recalculatedProvidedInterface.getNsPrefix(), true);
+					_newClassifiers, recalculatedProvidedInterface.getNsPrefix(), true, null);
 			
 			resolveLocalEAttributes(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface);
 			resolveLocalEReferences(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface, true);
@@ -408,7 +433,7 @@ public class PuzzleMerge {
 			Hashtable<String, EClassifier> _newClassifiers = new Hashtable<String, EClassifier>();
 			
 			cloneEPackage(extensionLanguageProvidedInterface, recalculatedProvidedInterface, _oldClassifiers, 
-					_newClassifiers, recalculatedProvidedInterface.getNsPrefix(), true);
+					_newClassifiers, recalculatedProvidedInterface.getNsPrefix(), true, null);
 			
 			resolveLocalEAttributes(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface);
 			resolveLocalEReferences(_oldClassifiers, _newClassifiers, recalculatedProvidedInterface, true);
@@ -664,20 +689,15 @@ public class PuzzleMerge {
 	 * Clones the metamodel in the parameter. 
 	 * TODO This method breaks the packages hierarchy of the old metamodel.
 	 * All the classifiers are added to the root package. 
+	 * @param binding 
 	 * @param oldMetamodel
 	 * @return
 	 */
 	public void cloneEPackage(EPackage toClone, EPackage clone, Hashtable<String, EClassifier> _oldClassifiers, 
-			Hashtable<String, EClassifier> _newClassifiers, String targetNamespace, boolean includeRequired){
+			Hashtable<String, EClassifier> _newClassifiers, String targetNamespace, boolean includeRequired, MatchingDiagnostic binding){
 		
 		for(EPackage _subPackage : toClone.getESubpackages()){
-			EPackage _subPackageClone = EcoreFactory.eINSTANCE.createEPackage();
-			_subPackageClone.setName(_subPackage.getName());
-			_subPackageClone.setNsPrefix(_subPackage.getNsPrefix());
-			_subPackageClone.setNsURI(targetNamespace + "/" + _subPackage.getName());
-			
-			cloneEPackage(_subPackage, _subPackageClone, _oldClassifiers, _newClassifiers, targetNamespace, includeRequired);
-			clone.getESubpackages().add(_subPackageClone);
+			cloneEPackage(_subPackage, clone, _oldClassifiers, _newClassifiers, targetNamespace, includeRequired, binding);
 		}
 		
 		if(includeRequired){
@@ -688,9 +708,6 @@ public class PuzzleMerge {
 						EClass newEClass = cloneEClass(EcoreFactory.eINSTANCE, (EClass)eClassifier);
 						clone.getEClassifiers().add(newEClass);
 						_newClassifiers.put(newEClass.getName(), newEClass);
-					}
-					else{
-						// TODO!
 					}
 				}
 				else if(eClassifier instanceof EEnum){
@@ -704,7 +721,10 @@ public class PuzzleMerge {
 		}
 		else{
 			for (EClassifier eClassifier : toClone.getEClassifiers()) {
-				if(eClassifier.getEAnnotation("Required") == null){
+				boolean presentInBinding = binding != null && classifierInBinding(eClassifier, binding);
+				boolean requiredNotPresentInBinding = eClassifier.getEAnnotation("Required") != null && !presentInBinding;
+				
+				if(eClassifier.getEAnnotation("Required") == null || requiredNotPresentInBinding){
 					if(eClassifier instanceof EClass){
 						EClass legacyEClass = searchEClassByName(eClassifier.getName(), clone);
 						if(legacyEClass == null){
@@ -727,6 +747,15 @@ public class PuzzleMerge {
 		
 	}
 	
+	private boolean classifierInBinding(EClassifier eClassifier,
+			MatchingDiagnostic binding) {
+		for (MatchingDiagnosticItem item : binding.getItems()) {
+			if(item.getLeft() instanceof EClassifier && ((EClassifier)item.getLeft()).getName().equals(eClassifier.getName()))
+				return true;
+		}
+		return false;
+	}
+
 	private EAnnotation cloneEAnnotation(EAnnotation _annotation) {
 		EAnnotation clone = EcoreFactory.eINSTANCE.createEAnnotation();
 		clone.setSource(_annotation.getSource());
@@ -749,11 +778,13 @@ public class PuzzleMerge {
 				if(newClass != null && oldClass != null){
 					for(EAttribute eAttribute : newClass.getEAttributes()){
 						EAttribute _oldAttribute = ((EAttribute)searchStructuralFeatureByName(oldClass, eAttribute.getName()));
-						String _resolvedTypeName = _oldAttribute.getEType().getName();
-						
-						if(_resolvedTypeName != null && ( _oldAttribute.getEType() instanceof EEnum)){
-							EClassifier _resolvedType = _newClassifiers.get(_resolvedTypeName);
-							eAttribute.setEType(_resolvedType);
+						if(_oldAttribute != null && _oldAttribute.getEType() != null){
+							String _resolvedTypeName = _oldAttribute.getEType().getName();
+							
+							if(_resolvedTypeName != null && ( _oldAttribute.getEType() instanceof EEnum)){
+								EClassifier _resolvedType = _newClassifiers.get(_resolvedTypeName);
+								eAttribute.setEType(_resolvedType);
+							}
 						}
 					}
 				}
@@ -945,7 +976,8 @@ public class PuzzleMerge {
 										_oldReference.getEOpposite().getName());
 								EReference _currentEReference = searchEReferenceByName(newClass, _oldReference.getName());
 								_currentEReference.setEOpposite(_newEOppositeReference);
-								_newEOppositeReference.setEOpposite(_currentEReference);
+								if(_newEOppositeReference != null)
+									_newEOppositeReference.setEOpposite(_currentEReference);
 							}
 						}
 					}
@@ -958,6 +990,32 @@ public class PuzzleMerge {
 		}
 	}
 	
+	private void includeAdditionalSuperTypes(
+			Hashtable<String, EClassifier> _oldClassifiers,
+			Hashtable<String, EClassifier> _newClassifiers, EPackage metamodel) {
+		// Including the additional super types to the base class. 
+		for (EClassifier _eClassifier : metamodel.getEClassifiers()) {
+			if(_eClassifier instanceof EClass){
+				EClass newClass = (EClass) _eClassifier;
+				EClass oldClass = (EClass) _oldClassifiers.get(_eClassifier.getName());
+				
+				if(oldClass != null){
+					
+					EClass extensionClass = (EClass)_oldClassifiers.get(_eClassifier.getName() + "-extension");
+					if(extensionClass != null){
+						System.out.println("Extending EClass: " + extensionClass.getName() + "; extensionEClass.getESuperTypes() -> " + extensionClass.getESuperTypes());
+						for(EClass _superType : extensionClass.getESuperTypes()){
+							boolean includesSuperType = includesSuperType(newClass, _superType);
+							if(!includesSuperType){
+								newClass.getESuperTypes().add((EClass)_newClassifiers.get(_superType.getName()));
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
 	/**
 	 * Searches an eReference by name in the given class and its super types. 
 	 * @param eClass
@@ -966,16 +1024,18 @@ public class PuzzleMerge {
 	 */
 	private EReference searchEReferenceByName(EClass eClass, String name) {
 		// 1. Looking for the reference in the eClass
-		for(EReference _currentReference : eClass.getEReferences()){
-			if(_currentReference.getName().equals(name))
-				return _currentReference;
-		}
-		
-		// 2. Looking for the reference in the super types.
-		for(EClass _superType : eClass.getESuperTypes()){
-			EReference _result = searchEReferenceByName(_superType, name);
-			if(_result != null)
-				return _result;
+		if(eClass != null){
+			for(EReference _currentReference : eClass.getEReferences()){
+				if(_currentReference.getName().equals(name))
+					return _currentReference;
+			}
+			
+			// 2. Looking for the reference in the super types.
+			for(EClass _superType : eClass.getESuperTypes()){
+				EReference _result = searchEReferenceByName(_superType, name);
+				if(_result != null)
+					return _result;
+			}
 		}
 		
 		// 3. Reference not found. Let's return null. 

@@ -32,7 +32,7 @@
           <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//InternalStructures/StructuredClassifier/role"/>
         </genFeatures>
         <genFeatures property="None" children="true" createChild="true">
-          <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//InternalStructures/StructuredClassifier/ownedAttribute"/>
+          <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//InternalStructures/StructuredClassifier/structuredOwnedAttribute"/>
         </genFeatures>
         <genFeatures notify="false" createChild="false" propertySortChoices="true">
           <ecoreFeature xsi:type="ecore:EReference" href="CompositeStructures.ecore#//InternalStructures/StructuredClassifier/part"/>

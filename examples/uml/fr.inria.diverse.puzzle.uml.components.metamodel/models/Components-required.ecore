@@ -39,9 +39,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Property">
     <eAnnotations source="Required"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConnectableElement" abstract="true" eSuperTypes="//TypedElement">
-    <eAnnotations source="Required"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypedElement" abstract="true">
     <eAnnotations source="Required"/>
   </eClassifiers>

@@ -1,9 +1,0 @@
-package family
-
-/**
- * A language for UML state machines.
- */
-language Classes {
-	syntax "platform:/resource/fr.inria.diverse.puzzle.uml.classes.metamodel/models/Classes.ecore"
-	exactType ClassesMT
-}
