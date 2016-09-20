@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="VarRef"/>
+			<item value="kmlogo"/>
+			<item value="IntegerLit"/>
+			<item value="LogoPackage"/>
+		</list>
+		<list key="replacehistory">
+			<item value="Logo"/>
+			<item value="Integer"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="289" key="DIALOG_WIDTH"/>
+		<item value="1|Lucida Grande|13.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
+		<item value="417" key="DIALOG_HEIGHT"/>
+		<item value="1090" key="DIALOG_X_ORIGIN"/>
+		<item value="301" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

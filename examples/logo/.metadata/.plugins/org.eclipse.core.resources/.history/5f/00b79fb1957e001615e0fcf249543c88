@@ -1,0 +1,17 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+import java.util.Hashtable
+
+import static extension logo.VarDeclAspect.*
+
+@Aspect(className=Logo.VarRef)
+public class VarRef extends ExpressionAspect {
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		_self.ref.eval(context)
+		return context.get(_self.ref)
+	}
+} 

@@ -1,0 +1,257 @@
+var tree_structure = {
+    chart: {
+        container: "#OrganiseChart6",
+        levelSeparation:    5,
+        siblingSeparation:  20,
+        subTeeSeparation:   30,
+        rootOrientation: "EAST",
+
+        node: {
+            HTMLclass: "tennis-draw",
+            drawLineThrough: true
+        },
+        connectors: {
+            type: "straight",
+            style: {
+                "stroke-width": 2,
+                "stroke": "#ccc"
+            }
+        }
+    },
+    nodeStructure: {
+        text: {
+          name: "",
+          name: "Root",
+          desc: "0.0"
+        },
+        children: [
+          {
+           text: {
+             name: "",
+             desc: "0.00625"
+           },
+           children: [
+             {
+              text: {
+                name: "Boolean",
+                desc: "-1.0"
+              },
+              image: "libs/flags/ecore-icon.png",
+              HTMLclass: "first-draw"
+             },
+             {
+              text: {
+                name: "",
+                desc: "0.0125"
+              },
+              children: [
+                {
+                 text: {
+                   name: "String",
+                   desc: "-1.0"
+                 },
+                 image: "libs/flags/ecore-icon.png",
+                 HTMLclass: "first-draw"
+                },
+                {
+                 text: {
+                   name: "",
+                   desc: "0.025"
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "Double",
+                      desc: "-1.0"
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: "0.05"
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "Literal",
+                         desc: "0.05"
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "Integer",
+                         desc: "0.05"
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      }
+                    ]
+                   }
+                 ]
+                }
+              ]
+             }
+           ]
+          },
+          {
+           text: {
+             name: "",
+             desc: "0.00625"
+           },
+           children: [
+             {
+              text: {
+                name: "",
+                desc: "0.018750000000000003"
+              },
+              children: [
+                {
+                 text: {
+                   name: "",
+                   desc: "0.025"
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "Letf",
+                      desc: "-1.0"
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: "0.05"
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "Primitive",
+                         desc: "0.05"
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "Foreward",
+                         desc: "0.05"
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      }
+                    ]
+                   }
+                 ]
+                },
+                {
+                 text: {
+                   name: "",
+                   desc: "0.025"
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "Right",
+                      desc: "-1.0"
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "",
+                      desc: "0.05"
+                    },
+                    children: [
+                      {
+                       text: {
+                         name: "Back",
+                         desc: "0.05"
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      },
+                      {
+                       text: {
+                         name: "Expression",
+                         desc: "0.05"
+                       },
+                       image: "libs/flags/ecore-icon.png",
+                       HTMLclass: "first-draw"
+                      }
+                    ]
+                   }
+                 ]
+                }
+              ]
+             },
+             {
+              text: {
+                name: "",
+                desc: "0.0125"
+              },
+              children: [
+                {
+                 text: {
+                   name: "",
+                   desc: "0.05"
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "LogoProgram",
+                      desc: "0.05"
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "Instruction",
+                      desc: "0.05"
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   }
+                 ]
+                },
+                {
+                 text: {
+                   name: "",
+                   desc: "0.05"
+                 },
+                 children: [
+                   {
+                    text: {
+                      name: "VarDecl",
+                      desc: "0.05"
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   },
+                   {
+                    text: {
+                      name: "VarRef",
+                      desc: "0.05"
+                    },
+                    image: "libs/flags/ecore-icon.png",
+                    HTMLclass: "first-draw"
+                   }
+                 ]
+                }
+              ]
+             }
+           ]
+          }
+        ]
+    }
+
+
+
+};

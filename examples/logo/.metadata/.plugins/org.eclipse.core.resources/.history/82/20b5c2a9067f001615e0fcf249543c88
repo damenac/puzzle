@@ -1,0 +1,28 @@
+package logo;
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
+import java.util.Hashtable;
+import logo.IntegerLitAspectIntegerAspectProperties;
+import logo.LiteralAspect;
+
+@Aspect(className = Logo.Integer.class)
+@SuppressWarnings("all")
+public class IntegerLitAspect extends LiteralAspect {
+  @OverrideAspectMethod
+  public static Object eval(final Logo.Integer _self, final Hashtable<String, Object> context) {
+    logo.IntegerLitAspectIntegerAspectProperties _self_ = logo.IntegerLitAspectIntegerAspectContext.getSelf(_self);
+    Object result = null;
+    result =_privk3_eval(_self_, _self,context);
+    return (java.lang.Object)result;
+  }
+  
+  private static Object super_eval(final Logo.Integer _self, final Hashtable<String, Object> context) {
+    logo.LiteralAspectLiteralAspectProperties _self_ = logo.LiteralAspectLiteralAspectContext.getSelf(_self);
+    return  logo.LiteralAspect._privk3_eval(_self_, _self,context);
+  }
+  
+  protected static Object _privk3_eval(final IntegerLitAspectIntegerAspectProperties _self_, final Logo.Integer _self, final Hashtable<String, Object> context) {
+    return Integer.valueOf(_self.getValue());
+  }
+}

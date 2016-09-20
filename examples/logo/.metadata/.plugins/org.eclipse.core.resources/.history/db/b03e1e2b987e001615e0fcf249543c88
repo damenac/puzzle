@@ -1,0 +1,31 @@
+package logo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.Hashtable
+import Logo.BinaryExpr
+import java.util.function.BinaryOperator
+
+@Aspect(className=BinaryExpr)
+public class BinaryExprAspect extends ExpressionAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		var int result = 0
+		if(_self.operator == Logo.BinaryOperator.PLUS){
+			result = (_self.leftExpr.eval(context) as Logo.Integer).value + (_self.rightExpr.eval(context) as Logo.Integer).value
+		}
+		else if(_self.operator == Logo.BinaryOperator.DIFF){
+			result = (_self.leftExpr.eval(context) as Logo.Integer).value - (_self.rightExpr.eval(context) as Logo.Integer).value
+		}
+		else if(_self.operator == Logo.BinaryOperator.MULT){
+			result = (_self.left.eval(context) as Integer) * (_self.right.eval(context) as Integer)
+		}
+		else if(_self.operator == ArithmeticOperator.DIV){
+			result = (_self.left.eval(context) as Integer) / (_self.right.eval(context) as Integer)
+		}
+		else 
+			return result
+	}
+}

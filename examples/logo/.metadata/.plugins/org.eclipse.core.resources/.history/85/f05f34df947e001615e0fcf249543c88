@@ -1,0 +1,7 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	Logo.Instruction = logo.InstructionAspect
+	Logo.Expression = logo.ExpressionAspect
+	Logo.Forward = logo.ForwardAspect
+	Logo.Back = logo.BackAspect
+	Logo.Primitive = logo.PrimitiveAspect
+	Logo.LogoProgram = logo.LogoProgramAspect

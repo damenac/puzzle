@@ -1,0 +1,53 @@
+package logo;
+
+import Logo.BinaryExpr;
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
+import java.util.Hashtable;
+import logo.ArithmeticExpressionAspectBinaryExprAspectProperties;
+import logo.ExpressionAspect;
+
+@Aspect(className = BinaryExpr.class)
+@SuppressWarnings("all")
+public class ArithmeticExpressionAspect extends ExpressionAspect {
+  @OverrideAspectMethod
+  public static Object eval(final BinaryExpr _self, final Hashtable<String, Object> context) {
+    logo.ArithmeticExpressionAspectBinaryExprAspectProperties _self_ = logo.ArithmeticExpressionAspectBinaryExprAspectContext.getSelf(_self);
+    Object result = null;
+    result =_privk3_eval(_self_, _self,context);
+    return (java.lang.Object)result;
+  }
+  
+  private static Object super_eval(final BinaryExpr _self, final Hashtable<String, Object> context) {
+    logo.ExpressionAspectExpressionAspectProperties _self_ = logo.ExpressionAspectExpressionAspectContext.getSelf(_self);
+    return  logo.ExpressionAspect._privk3_eval(_self_, _self,context);
+  }
+  
+  protected static Object _privk3_eval(final ArithmeticExpressionAspectBinaryExprAspectProperties _self_, final BinaryExpr _self, final Hashtable<String, Object> context) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field ArithmeticOperator is undefined"
+      + "\nThe method or field left is undefined for the type BinaryExpr"
+      + "\nThe method or field right is undefined for the type BinaryExpr"
+      + "\nThe method or field ArithmeticOperator is undefined"
+      + "\nThe method or field left is undefined for the type BinaryExpr"
+      + "\nThe method or field right is undefined for the type BinaryExpr"
+      + "\nThe method or field ArithmeticOperator is undefined"
+      + "\nThe method or field left is undefined for the type BinaryExpr"
+      + "\nThe method or field right is undefined for the type BinaryExpr"
+      + "\nThe method or field ArithmeticOperator is undefined"
+      + "\nThe method or field left is undefined for the type BinaryExpr"
+      + "\nThe method or field right is undefined for the type BinaryExpr"
+      + "\nPLUS cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\nMINUS cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\nMULT cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\nDIV cannot be resolved"
+      + "\neval cannot be resolved"
+      + "\neval cannot be resolved");
+  }
+}
