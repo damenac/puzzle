@@ -21,7 +21,9 @@ public class PrimitiveAspect extends InstructionAspect {
   @OverrideAspectMethod
   public static void eval(final Primitive _self, final Hashtable<String, Object> context) {
     semanticsLogo.PrimitiveAspectPrimitiveAspectProperties _self_ = semanticsLogo.PrimitiveAspectPrimitiveAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.Primitive){
+     semanticsLogo.PrimitiveAspect._privk3_eval(_self_, (Logo.Primitive)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Primitive _self, final Hashtable<String, Object> context) {

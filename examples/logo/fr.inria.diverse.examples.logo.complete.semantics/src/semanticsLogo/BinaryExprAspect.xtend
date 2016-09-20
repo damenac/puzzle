@@ -24,10 +24,10 @@ public class BinaryExprAspect extends ExpressionAspect{
 			return (_self.leftExpr.eval(context) as Integer).intValue / (_self.rightExpr.eval(context) as Integer).intValue
 		}
 		else if(_self.operator == Logo.BinaryOperator.EQUAL){
-			return _self.leftExpr.eval(context).equals(_self.rightExpr.eval(context))
+			return (_self.leftExpr.eval(context) as Integer).intValue == (_self.rightExpr.eval(context) as Integer).intValue
 		}
 		else if(_self.operator == Logo.BinaryOperator.DIFF){
-			return !_self.leftExpr.eval(context).equals(_self.rightExpr.eval(context))
+			return (_self.leftExpr.eval(context) as Integer).intValue != (_self.rightExpr.eval(context) as Integer).intValue
 		}
 //		else if(_self.operator == Logo.BinaryOperator.GREATER_THAN){
 //			return _self.leftExpr.eval(context).(_self.rightExpr.eval(context))

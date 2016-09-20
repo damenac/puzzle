@@ -1,0 +1,22 @@
+package semanticsLogo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.Hashtable
+import Logo.If
+
+import static extension semanticsLogo.ExpressionAspect.*
+
+@Aspect(className=While)
+class WhileAspect extends ControlStructureAspect {
+	
+	@OverrideAspectMethod
+	def void eval(Hashtable<String, Object> context){
+		println('')
+		var condition = _self.condition.eval(context) as Boolean
+		if(condition){
+			_self.body.eval(context)
+		}
+	}
+}

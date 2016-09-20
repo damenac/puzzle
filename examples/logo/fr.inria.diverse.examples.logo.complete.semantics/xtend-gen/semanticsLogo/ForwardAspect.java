@@ -17,7 +17,9 @@ public class ForwardAspect extends PrimitiveAspect {
   @OverrideAspectMethod
   public static void eval(final Forward _self, final Hashtable<String, Object> context) {
     semanticsLogo.ForwardAspectForwardAspectProperties _self_ = semanticsLogo.ForwardAspectForwardAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.Forward){
+     semanticsLogo.ForwardAspect._privk3_eval(_self_, (Logo.Forward)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Forward _self, final Hashtable<String, Object> context) {

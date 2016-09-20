@@ -17,9 +17,7 @@ public class BinaryExprAspect extends ExpressionAspect {
   public static Object eval(final BinaryExpr _self, final Hashtable<String, Object> context) {
     semanticsLogo.BinaryExprAspectBinaryExprAspectProperties _self_ = semanticsLogo.BinaryExprAspectBinaryExprAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof Logo.BinaryExpr){
-    result = semanticsLogo.BinaryExprAspect._privk3_eval(_self_, (Logo.BinaryExpr)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   
@@ -78,19 +76,22 @@ public class BinaryExprAspect extends ExpressionAspect {
             if (_equals_4) {
               Expression _leftExpr_4 = _self.getLeftExpr();
               Object _eval_8 = ExpressionAspect.eval(_leftExpr_4, context);
+              int _intValue_8 = ((Integer) _eval_8).intValue();
               Expression _rightExpr_4 = _self.getRightExpr();
               Object _eval_9 = ExpressionAspect.eval(_rightExpr_4, context);
-              return Boolean.valueOf(_eval_8.equals(_eval_9));
+              int _intValue_9 = ((Integer) _eval_9).intValue();
+              return Boolean.valueOf((_intValue_8 == _intValue_9));
             } else {
               BinaryOperator _operator_5 = _self.getOperator();
               boolean _equals_5 = Objects.equal(_operator_5, BinaryOperator.DIFF);
               if (_equals_5) {
                 Expression _leftExpr_5 = _self.getLeftExpr();
                 Object _eval_10 = ExpressionAspect.eval(_leftExpr_5, context);
+                int _intValue_10 = ((Integer) _eval_10).intValue();
                 Expression _rightExpr_5 = _self.getRightExpr();
                 Object _eval_11 = ExpressionAspect.eval(_rightExpr_5, context);
-                boolean _equals_6 = _eval_10.equals(_eval_11);
-                return Boolean.valueOf((!_equals_6));
+                int _intValue_11 = ((Integer) _eval_11).intValue();
+                return Boolean.valueOf((_intValue_10 != _intValue_11));
               } else {
                 return null;
               }

@@ -17,7 +17,9 @@ public class BackAspect extends PrimitiveAspect {
   @OverrideAspectMethod
   public static void eval(final Back _self, final Hashtable<String, Object> context) {
     semanticsLogo.BackAspectBackAspectProperties _self_ = semanticsLogo.BackAspectBackAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.Back){
+     semanticsLogo.BackAspect._privk3_eval(_self_, (Logo.Back)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Back _self, final Hashtable<String, Object> context) {
