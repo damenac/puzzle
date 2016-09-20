@@ -920,6 +920,52 @@ public interface LogoPackage extends EPackage {
 	int PROCEDURE_CALL_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link Logo.impl.AssignationImpl <em>Assignation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Logo.impl.AssignationImpl
+	 * @see Logo.impl.LogoPackageImpl#getAssignation()
+	 * @generated
+	 */
+	int ASSIGNATION = 23;
+
+	/**
+	 * The feature id for the '<em><b>Ref</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION__REF = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION__EXPR = INSTRUCTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Assignation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Assignation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ASSIGNATION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link Logo.BinaryOperator <em>Binary Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -927,7 +973,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getBinaryOperator()
 	 * @generated
 	 */
-	int BINARY_OPERATOR = 23;
+	int BINARY_OPERATOR = 24;
 
 
 	/**
@@ -1425,6 +1471,38 @@ public interface LogoPackage extends EPackage {
 	EReference getProcedureCall_Ref();
 
 	/**
+	 * Returns the meta object for class '{@link Logo.Assignation <em>Assignation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Assignation</em>'.
+	 * @see Logo.Assignation
+	 * @generated
+	 */
+	EClass getAssignation();
+
+	/**
+	 * Returns the meta object for the reference '{@link Logo.Assignation#getRef <em>Ref</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Ref</em>'.
+	 * @see Logo.Assignation#getRef()
+	 * @see #getAssignation()
+	 * @generated
+	 */
+	EReference getAssignation_Ref();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link Logo.Assignation#getExpr <em>Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expr</em>'.
+	 * @see Logo.Assignation#getExpr()
+	 * @see #getAssignation()
+	 * @generated
+	 */
+	EReference getAssignation_Expr();
+
+	/**
 	 * Returns the meta object for enum '{@link Logo.BinaryOperator <em>Binary Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1878,6 +1956,32 @@ public interface LogoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROCEDURE_CALL__REF = eINSTANCE.getProcedureCall_Ref();
+
+		/**
+		 * The meta object literal for the '{@link Logo.impl.AssignationImpl <em>Assignation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Logo.impl.AssignationImpl
+		 * @see Logo.impl.LogoPackageImpl#getAssignation()
+		 * @generated
+		 */
+		EClass ASSIGNATION = eINSTANCE.getAssignation();
+
+		/**
+		 * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNATION__REF = eINSTANCE.getAssignation_Ref();
+
+		/**
+		 * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ASSIGNATION__EXPR = eINSTANCE.getAssignation_Expr();
 
 		/**
 		 * The meta object literal for the '{@link Logo.BinaryOperator <em>Binary Operator</em>}' enum.

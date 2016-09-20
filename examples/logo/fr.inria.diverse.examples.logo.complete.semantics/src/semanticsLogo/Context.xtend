@@ -6,7 +6,6 @@ import java.util.Hashtable
 class Context {
 	
 		var ArrayList<Hashtable<String,Integer>> stack
-		public var Hashtable<String, Object> variablesTable 
 		
 		new() { 
 			stack = new ArrayList<Hashtable<String,Integer>>()

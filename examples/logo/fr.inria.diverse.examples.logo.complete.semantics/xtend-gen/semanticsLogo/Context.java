@@ -8,8 +8,6 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 public class Context {
   private ArrayList<Hashtable<String, Integer>> stack;
   
-  public Hashtable<String, Object> variablesTable;
-  
   public Context() {
     ArrayList<Hashtable<String, Integer>> _arrayList = new ArrayList<Hashtable<String, Integer>>();
     this.stack = _arrayList;

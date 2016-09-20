@@ -12,16 +12,16 @@ public class BinaryExprAspect extends ExpressionAspect{
 	@OverrideAspectMethod
 	def Object eval (Hashtable<String, Object> context) {
 		if(_self.operator == Logo.BinaryOperator.PLUS){
-			return (_self.leftExpr.eval(context) as Logo.Integer).value + (_self.rightExpr.eval(context) as Logo.Integer).value
+			return (_self.leftExpr.eval(context) as Integer).intValue + (_self.rightExpr.eval(context) as Integer).intValue
 		}
 		else if(_self.operator == Logo.BinaryOperator.MINUS){
-			return (_self.leftExpr.eval(context) as Logo.Integer).value - (_self.rightExpr.eval(context) as Logo.Integer).value
+			return (_self.leftExpr.eval(context) as Integer).intValue - (_self.rightExpr.eval(context) as Integer).intValue
 		}
 		else if(_self.operator == Logo.BinaryOperator.MULT){
-			return (_self.leftExpr.eval(context) as Logo.Integer).value * (_self.rightExpr.eval(context) as Logo.Integer).value
+			return (_self.leftExpr.eval(context) as Integer).intValue * (_self.rightExpr.eval(context) as Integer).intValue
 		}
 		else if(_self.operator == Logo.BinaryOperator.DIV){
-			return (_self.leftExpr.eval(context) as Logo.Integer).value / (_self.rightExpr.eval(context) as Logo.Integer).value
+			return (_self.leftExpr.eval(context) as Integer).intValue / (_self.rightExpr.eval(context) as Integer).intValue
 		}
 		else if(_self.operator == Logo.BinaryOperator.EQUAL){
 			return _self.leftExpr.eval(context).equals(_self.rightExpr.eval(context))

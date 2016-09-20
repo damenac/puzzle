@@ -2,6 +2,7 @@
  */
 package Logo.impl;
 
+import Logo.Assignation;
 import Logo.Back;
 import Logo.BinaryExpr;
 import Logo.BinaryOperator;
@@ -199,6 +200,13 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 	 * @generated
 	 */
 	private EClass procedureCallEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass assignationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -696,6 +704,33 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAssignation() {
+		return assignationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssignation_Ref() {
+		return (EReference)assignationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAssignation_Expr() {
+		return (EReference)assignationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBinaryOperator() {
 		return binaryOperatorEEnum;
 	}
@@ -798,6 +833,10 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 		procedureCallEClass = createEClass(PROCEDURE_CALL);
 		createEReference(procedureCallEClass, PROCEDURE_CALL__REF);
 
+		assignationEClass = createEClass(ASSIGNATION);
+		createEReference(assignationEClass, ASSIGNATION__REF);
+		createEReference(assignationEClass, ASSIGNATION__EXPR);
+
 		// Create enums
 		binaryOperatorEEnum = createEEnum(BINARY_OPERATOR);
 	}
@@ -851,6 +890,7 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 		binaryExprEClass.getESuperTypes().add(this.getExpression());
 		procedureEClass.getESuperTypes().add(this.getInstruction());
 		procedureCallEClass.getESuperTypes().add(this.getExpression());
+		assignationEClass.getESuperTypes().add(this.getInstruction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(logoProgramEClass, LogoProgram.class, "LogoProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -922,6 +962,10 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 
 		initEClass(procedureCallEClass, ProcedureCall.class, "ProcedureCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProcedureCall_Ref(), this.getProcedure(), null, "ref", null, 0, 1, ProcedureCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(assignationEClass, Assignation.class, "Assignation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAssignation_Ref(), this.getVarDecl(), null, "ref", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAssignation_Expr(), this.getExpression(), null, "expr", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(binaryOperatorEEnum, BinaryOperator.class, "BinaryOperator");

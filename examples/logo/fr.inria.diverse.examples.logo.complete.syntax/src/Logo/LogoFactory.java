@@ -184,6 +184,15 @@ public interface LogoFactory extends EFactory {
 	ProcedureCall createProcedureCall();
 
 	/**
+	 * Returns a new object of class '<em>Assignation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Assignation</em>'.
+	 * @generated
+	 */
+	Assignation createAssignation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

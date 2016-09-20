@@ -41,8 +41,10 @@ public class Interpreter {
       Hashtable<String, Object> context = new Hashtable<String, Object>();
       Turtle turtle = new Turtle();
       ArrayList<Hashtable<String, Integer>> stack = new ArrayList<Hashtable<String, Integer>>();
+      Hashtable<String, Object> variablesTable = new Hashtable<String, Object>();
       context.put("turtle", turtle);
       context.put("stack", stack);
+      context.put("variables", variablesTable);
       LogoProgramAspect.eval(logo, context);
       Object _get_1 = context.get("turtle");
       _xblockexpression = new Window(((Turtle) _get_1));
@@ -52,6 +54,6 @@ public class Interpreter {
   
   public static void main(final String[] args) {
     Interpreter _interpreter = new Interpreter();
-    _interpreter.eval("models/SimpleLogo.xmi");
+    _interpreter.eval("models/VariablesLogo.xmi");
   }
 }

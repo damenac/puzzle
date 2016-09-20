@@ -33,17 +33,19 @@ class Interpreter {
 		
 		var Turtle turtle = new Turtle()
 		var ArrayList<Hashtable<String,Integer>> stack = new ArrayList<Hashtable<String,Integer>>()
+		var Hashtable<String, Object> variablesTable = new Hashtable<String, Object>()
+		
 		context.put('turtle', turtle)
 		context.put('stack', stack)
+		context.put('variables', variablesTable)
 		
 		logo.eval(context)
 		new Window (context.get('turtle') as Turtle)
 	}
 	
 	def static void main(String[] args){
-		(new Interpreter()).eval('models/SimpleLogo.xmi')
-		
-//		(new Interpreter()).eval('models/VariablesLogo.xmi')
+//		(new Interpreter()).eval('models/SimpleLogo.xmi')
+		(new Interpreter()).eval('models/VariablesLogo.xmi')
 //		(new Interpreter()).eval('models/ExpressionsLogo.xmi')
 	}
 }

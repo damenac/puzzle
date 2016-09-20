@@ -17,7 +17,9 @@ public class BinaryExprAspect extends ExpressionAspect {
   public static Object eval(final BinaryExpr _self, final Hashtable<String, Object> context) {
     semanticsLogo.BinaryExprAspectBinaryExprAspectProperties _self_ = semanticsLogo.BinaryExprAspectBinaryExprAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.BinaryExpr){
+    result = semanticsLogo.BinaryExprAspect._privk3_eval(_self_, (Logo.BinaryExpr)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   
@@ -32,44 +34,44 @@ public class BinaryExprAspect extends ExpressionAspect {
     if (_equals) {
       Expression _leftExpr = _self.getLeftExpr();
       Object _eval = ExpressionAspect.eval(_leftExpr, context);
-      int _value = ((Logo.Integer) _eval).getValue();
+      int _intValue = ((Integer) _eval).intValue();
       Expression _rightExpr = _self.getRightExpr();
       Object _eval_1 = ExpressionAspect.eval(_rightExpr, context);
-      int _value_1 = ((Logo.Integer) _eval_1).getValue();
-      return Integer.valueOf((_value + _value_1));
+      int _intValue_1 = ((Integer) _eval_1).intValue();
+      return Integer.valueOf((_intValue + _intValue_1));
     } else {
       BinaryOperator _operator_1 = _self.getOperator();
       boolean _equals_1 = Objects.equal(_operator_1, BinaryOperator.MINUS);
       if (_equals_1) {
         Expression _leftExpr_1 = _self.getLeftExpr();
         Object _eval_2 = ExpressionAspect.eval(_leftExpr_1, context);
-        int _value_2 = ((Logo.Integer) _eval_2).getValue();
+        int _intValue_2 = ((Integer) _eval_2).intValue();
         Expression _rightExpr_1 = _self.getRightExpr();
         Object _eval_3 = ExpressionAspect.eval(_rightExpr_1, context);
-        int _value_3 = ((Logo.Integer) _eval_3).getValue();
-        return Integer.valueOf((_value_2 - _value_3));
+        int _intValue_3 = ((Integer) _eval_3).intValue();
+        return Integer.valueOf((_intValue_2 - _intValue_3));
       } else {
         BinaryOperator _operator_2 = _self.getOperator();
         boolean _equals_2 = Objects.equal(_operator_2, BinaryOperator.MULT);
         if (_equals_2) {
           Expression _leftExpr_2 = _self.getLeftExpr();
           Object _eval_4 = ExpressionAspect.eval(_leftExpr_2, context);
-          int _value_4 = ((Logo.Integer) _eval_4).getValue();
+          int _intValue_4 = ((Integer) _eval_4).intValue();
           Expression _rightExpr_2 = _self.getRightExpr();
           Object _eval_5 = ExpressionAspect.eval(_rightExpr_2, context);
-          int _value_5 = ((Logo.Integer) _eval_5).getValue();
-          return Integer.valueOf((_value_4 * _value_5));
+          int _intValue_5 = ((Integer) _eval_5).intValue();
+          return Integer.valueOf((_intValue_4 * _intValue_5));
         } else {
           BinaryOperator _operator_3 = _self.getOperator();
           boolean _equals_3 = Objects.equal(_operator_3, BinaryOperator.DIV);
           if (_equals_3) {
             Expression _leftExpr_3 = _self.getLeftExpr();
             Object _eval_6 = ExpressionAspect.eval(_leftExpr_3, context);
-            int _value_6 = ((Logo.Integer) _eval_6).getValue();
+            int _intValue_6 = ((Integer) _eval_6).intValue();
             Expression _rightExpr_3 = _self.getRightExpr();
             Object _eval_7 = ExpressionAspect.eval(_rightExpr_3, context);
-            int _value_7 = ((Logo.Integer) _eval_7).getValue();
-            return Integer.valueOf((_value_6 / _value_7));
+            int _intValue_7 = ((Integer) _eval_7).intValue();
+            return Integer.valueOf((_intValue_6 / _intValue_7));
           } else {
             BinaryOperator _operator_4 = _self.getOperator();
             boolean _equals_4 = Objects.equal(_operator_4, BinaryOperator.EQUAL);

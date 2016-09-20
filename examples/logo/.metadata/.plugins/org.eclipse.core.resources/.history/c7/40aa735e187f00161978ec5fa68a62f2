@@ -1,0 +1,20 @@
+package semanticsLogo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.Hashtable
+
+import static extension semanticsLogo.ExpressionAspect.*
+import Logo.VarDecl
+import java.util.ArrayList
+
+@Aspect(className=VarDecl)
+class VarDeclAspect extends InstructionAspect {
+	
+	@OverrideAspectMethod
+	def void eval(Hashtable<String, Object> context){
+		var ArrayList<Hashtable<String,Integer>> stack = context.get('stack') as ArrayList<Hashtable<String,Integer>>
+		stack.put(_self.name, _self.expr.eval(context))
+	}
+}

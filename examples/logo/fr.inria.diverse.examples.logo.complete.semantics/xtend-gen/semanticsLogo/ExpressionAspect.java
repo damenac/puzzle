@@ -6,8 +6,10 @@ import Logo.Literal;
 import Logo.VarReference;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
+import semanticsLogo.BinaryExprAspect;
 import semanticsLogo.ExpressionAspectExpressionAspectProperties;
 import semanticsLogo.LiteralAspect;
+import semanticsLogo.VarReferenceAspect;
 
 @Aspect(className = Expression.class)
 @SuppressWarnings("all")
@@ -24,10 +26,10 @@ public class ExpressionAspect {
       return LiteralAspect.eval(((Literal) _self), context);
     } else {
       if ((_self instanceof BinaryExpr)) {
-        return ExpressionAspect.eval(((BinaryExpr) _self), context);
+        return BinaryExprAspect.eval(((BinaryExpr) _self), context);
       } else {
         if ((_self instanceof VarReference)) {
-          return ExpressionAspect.eval(((VarReference) _self), context);
+          return VarReferenceAspect.eval(((VarReference) _self), context);
         } else {
           return Integer.valueOf(0);
         }

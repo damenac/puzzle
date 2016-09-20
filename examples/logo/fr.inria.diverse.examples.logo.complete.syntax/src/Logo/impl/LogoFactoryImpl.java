@@ -2,6 +2,7 @@
  */
 package Logo.impl;
 
+import Logo.Assignation;
 import Logo.Back;
 import Logo.BinaryExpr;
 import Logo.BinaryOperator;
@@ -90,6 +91,7 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 			case LogoPackage.BINARY_EXPR: return createBinaryExpr();
 			case LogoPackage.PROCEDURE: return createProcedure();
 			case LogoPackage.PROCEDURE_CALL: return createProcedureCall();
+			case LogoPackage.ASSIGNATION: return createAssignation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -303,6 +305,16 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 	public ProcedureCall createProcedureCall() {
 		ProcedureCallImpl procedureCall = new ProcedureCallImpl();
 		return procedureCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Assignation createAssignation() {
+		AssignationImpl assignation = new AssignationImpl();
+		return assignation;
 	}
 
 	/**

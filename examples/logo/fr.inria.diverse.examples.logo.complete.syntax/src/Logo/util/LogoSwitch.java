@@ -2,6 +2,7 @@
  */
 package Logo.util;
 
+import Logo.Assignation;
 import Logo.Back;
 import Logo.BinaryExpr;
 import Logo.Block;
@@ -261,6 +262,13 @@ public class LogoSwitch<T> extends Switch<T> {
 				T result = caseProcedureCall(procedureCall);
 				if (result == null) result = caseExpression(procedureCall);
 				if (result == null) result = caseInstruction(procedureCall);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LogoPackage.ASSIGNATION: {
+				Assignation assignation = (Assignation)theEObject;
+				T result = caseAssignation(assignation);
+				if (result == null) result = caseInstruction(assignation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -610,6 +618,21 @@ public class LogoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseProcedureCall(ProcedureCall object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Assignation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Assignation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAssignation(Assignation object) {
 		return null;
 	}
 

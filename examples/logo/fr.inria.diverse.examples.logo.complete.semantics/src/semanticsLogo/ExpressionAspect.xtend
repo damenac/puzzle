@@ -4,10 +4,13 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 
 import java.util.Hashtable
 
-import static extension semanticsLogo.LiteralAspect.*
 import Logo.Literal
 import Logo.BinaryExpr
 import Logo.Expression
+
+import static extension semanticsLogo.LiteralAspect.*
+import static extension semanticsLogo.BinaryExprAspect.*
+import static extension semanticsLogo.VarReferenceAspect.*
 
 @Aspect(className=Expression)
 public class ExpressionAspect {

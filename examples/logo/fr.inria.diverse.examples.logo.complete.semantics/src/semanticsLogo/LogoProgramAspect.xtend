@@ -8,6 +8,7 @@ import java.util.Hashtable
 import static extension semanticsLogo.InstructionAspect.*
 //import static extension logo.VarDeclAspect.*
 import Logo.LogoProgram
+import Logo.Instruction
 
 @Aspect(className=LogoProgram)
 public class LogoProgramAspect {
@@ -15,7 +16,9 @@ public class LogoProgramAspect {
 	@Main
 	def void eval (Hashtable<String, Object> context) {
 		println("LogoProgram eval !")
-//		_self.variables.forEach[ variable | variable.eval(context) ]
-		_self.instructions.forEach[ instr  | instr.eval(context)]
+		for(Instruction instruction : _self.instructions){
+			println(instruction)
+			instruction.eval(context)
+		}
 	}
 }

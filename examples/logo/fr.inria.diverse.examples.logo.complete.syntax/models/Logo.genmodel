@@ -80,5 +80,9 @@
     <genClasses ecoreClass="Logo.ecore#//ProcedureCall">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Logo.ecore#//ProcedureCall/ref"/>
     </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Assignation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Logo.ecore#//Assignation/ref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Assignation/expr"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>
