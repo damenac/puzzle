@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.examples.logo.productLine.composedLanguage/src-gen" editDirectory="/fr.inria.diverse.examples.logo.productLine.composedLanguage.edit/src" editorDirectory="/fr.inria.diverse.examples.logo.productLine.composedLanguage.editor/src" modelPluginID="fr.inria.diverse.examples.logo.productLine.composedLanguage" modelName="CompleteDSL" testsDirectory="/fr.inria.diverse.examples.logo.productLine.composedLanguage.tests/src" complianceLevel="8.0" copyrightFields="false" editPluginID="fr.inria.diverse.examples.logo.productLine.composedLanguage.edit" editorPluginID="fr.inria.diverse.examples.logo.productLine.composedLanguage.editor" testsPluginID="fr.inria.diverse.examples.logo.productLine.composedLanguage.tests" operationReflection="true">
+  <foreignModel>CompleteDSL.ecore</foreignModel>
+  <genPackages prefix="CompleteDSLPckg" disposableProviderFactory="true">
+    <ecorePackage href="CompleteDSL.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//ArithmeticOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ArithmeticOperator/plus"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ArithmeticOperator/minus"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ArithmeticOperator/mult"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//ArithmeticOperator/div"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="CompleteDSL.ecore#//BooleanOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//BooleanOperator/equal"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//BooleanOperator/diff"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//BooleanOperator/greaterThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="CompleteDSL.ecore#//BooleanOperator/lowerThan"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Expression"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Literal"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Integer"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Integer/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Void"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Double"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Double/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//String"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//String/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Boolean"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Boolean/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//LogoProgram"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//LogoProgram/instructions"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Instruction"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//Primitive"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Forward"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Forward/steps"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Back"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Back/steps"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Left"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Left/angle"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Right"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Right/angle"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//BinaryExpr"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BinaryExpr/leftExpr"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//BinaryExpr/rightExpr"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ArithmeticExpr"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//ArithmeticExpr/operator"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//BooleanExpr"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//BooleanExpr/operator"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//VarDecl"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//VarDecl/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//VarDecl/expr"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//VarReference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//VarReference/ref"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Assignation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Assignation/ref"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Assignation/expr"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="CompleteDSL.ecore#//ControlStructure"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//If"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//If/body"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//If/condition"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Block"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Block/instructions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Block/instructions.1"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//While"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//While/body"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//While/guard"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//Procedure"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="CompleteDSL.ecore#//Procedure/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Procedure/body"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//Procedure/returnType"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="CompleteDSL.ecore#//ProcedureCall"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="CompleteDSL.ecore#//ProcedureCall/ref"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

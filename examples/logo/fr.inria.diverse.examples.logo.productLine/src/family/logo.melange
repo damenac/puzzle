@@ -95,19 +95,46 @@ modeltype RequiredVariables {
 /**
  * A language unit containing basic variables management
  */
-language ControlStructures requires RequiredControlStructures {
+language ControlStructures implements ProvidedControlStructures requires RequiredControlStructures {
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures.ecore"
 	
-//	with semanticsLogoVariables.AssignationAspect
-//	with semanticsLogoVariables.VarDeclAspect
-//	with semanticsLogoVariables.VarReferenceAspect
+	with semanticsLogoControlStructures.BlockAspect
+	with semanticsLogoControlStructures.ControlStructureAspect
+	with semanticsLogoControlStructures.IfAspect
+	with semanticsLogoControlStructures.WhileAspect
 	
 	exactType ControlStructuresMT
 }
 
 /**
- * Required interface for the Variables language unit
+ * Required interface for the ControlStructures language unit
  */
 modeltype RequiredControlStructures {
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures-required.ecore"
+}
+
+/**
+ * Provided interface for the ControlStructures language unit
+ */
+modeltype ProvidedControlStructures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures-provided.ecore"
+}
+
+/**
+ * A language unit containing basic variables management
+ */
+language Procedures requires RequiredProcedures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.procedures.syntax/models/Procedures.ecore"
+	
+	with semanticsLogoProcedures.ProcedureAspect
+	with semanticsLogoProcedures.ProcedureCallAspect
+	
+	exactType ProceduresMT
+}
+
+/**
+ * Required interface for the Procedures language unit
+ */
+modeltype RequiredProcedures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.procedures.syntax/models/Procedures-required.ecore"
 }

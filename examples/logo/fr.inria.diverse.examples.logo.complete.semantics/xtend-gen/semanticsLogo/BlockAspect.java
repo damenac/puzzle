@@ -17,7 +17,9 @@ public class BlockAspect extends ControlStructureAspect {
   @OverrideAspectMethod
   public static void eval(final Block _self, final Hashtable<String, Object> context) {
     semanticsLogo.BlockAspectBlockAspectProperties _self_ = semanticsLogo.BlockAspectBlockAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.Block){
+     semanticsLogo.BlockAspect._privk3_eval(_self_, (Logo.Block)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Block _self, final Hashtable<String, Object> context) {

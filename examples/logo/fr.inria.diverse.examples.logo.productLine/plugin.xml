@@ -14,7 +14,13 @@
       <subtyping modeltypeId="family.RequiredPrimitives"/>
     </modeltype>
     <modeltype description="Required interface for the Variables language unit" id="family.RequiredVariables" uri="http://requiredvariables/"/>
-    <modeltype description="Required interface for the Variables language unit" id="family.RequiredControlStructures" uri="http://requiredcontrolstructures/">
+    <modeltype description="Required interface for the ControlStructures language unit" id="family.RequiredControlStructures" uri="http://requiredcontrolstructures/">
+      <subtyping modeltypeId="family.RequiredPrimitives"/>
+      <subtyping modeltypeId="family.RequiredBinaryExpressions"/>
+      <subtyping modeltypeId="family.RequiredVariables"/>
+    </modeltype>
+    <modeltype description="Provided interface for the ControlStructures language unit" id="family.ProvidedControlStructures" uri="http://providedcontrolstructures/"/>
+    <modeltype description="Required interface for the Procedures language unit" id="family.RequiredProcedures" uri="http://requiredprocedures/">
       <subtyping modeltypeId="family.RequiredPrimitives"/>
       <subtyping modeltypeId="family.RequiredBinaryExpressions"/>
       <subtyping modeltypeId="family.RequiredVariables"/>
@@ -41,6 +47,12 @@
       <subtyping modeltypeId="family.RequiredVariables"/>
       <subtyping modeltypeId="family.RequiredControlStructures"/>
     </modeltype>
+    <modeltype id="family.ProceduresMT" uri="http://proceduresmt/">
+      <subtyping modeltypeId="family.RequiredPrimitives"/>
+      <subtyping modeltypeId="family.RequiredBinaryExpressions"/>
+      <subtyping modeltypeId="family.RequiredVariables"/>
+      <subtyping modeltypeId="family.RequiredProcedures"/>
+    </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
     <language aspects="Primitive:semanticsLogoPrimitives.PrimitiveAspect;Left:semanticsLogoPrimitives.LeftAspect;Back:semanticsLogoPrimitives.BackAspect;Right:semanticsLogoPrimitives.RightAspect;Forward:semanticsLogoPrimitives.ForwardAspect;Instruction:semanticsLogoPrimitives.InstructionAspect" description="A language unit for containing the basic primitives of Logo" entryPoints="" exactType="family.PrimitivesMT" id="family.Primitives" uri="http://fr.inria.diverse.examples.logo.primitives">
@@ -65,12 +77,20 @@
       <adapter class="family.variables.adapters.requiredvariables.VariablesAdapter" modeltypeId="family.RequiredVariables"/>
       <adapter class="family.variables.adapters.variablesmt.VariablesAdapter" modeltypeId="family.VariablesMT"/>
     </language>
-    <language aspects="" description="A language unit containing basic variables management" entryPoints="" exactType="family.ControlStructuresMT" id="family.ControlStructures" uri="http://fr.inria.diverse.examples.logo.ControlStructures">
+    <language aspects="Block:semanticsLogoControlStructures.BlockAspect;While:semanticsLogoControlStructures.WhileAspect;ControlStructure:semanticsLogoControlStructures.ControlStructureAspect;If:semanticsLogoControlStructures.IfAspect" description="A language unit containing basic variables management" entryPoints="" exactType="family.ControlStructuresMT" id="family.ControlStructures" uri="http://fr.inria.diverse.examples.logo.ControlStructures">
+      <adapter class="family.controlstructures.adapters.providedcontrolstructures.ControlStructuresAdapter" modeltypeId="family.ProvidedControlStructures"/>
       <adapter class="family.controlstructures.adapters.requiredprimitives.ControlStructuresAdapter" modeltypeId="family.RequiredPrimitives"/>
       <adapter class="family.controlstructures.adapters.requiredbinaryexpressions.ControlStructuresAdapter" modeltypeId="family.RequiredBinaryExpressions"/>
       <adapter class="family.controlstructures.adapters.requiredvariables.ControlStructuresAdapter" modeltypeId="family.RequiredVariables"/>
       <adapter class="family.controlstructures.adapters.requiredcontrolstructures.ControlStructuresAdapter" modeltypeId="family.RequiredControlStructures"/>
       <adapter class="family.controlstructures.adapters.controlstructuresmt.ControlStructuresAdapter" modeltypeId="family.ControlStructuresMT"/>
+    </language>
+    <language aspects="ProcedureCall:semanticsLogoProcedures.ProcedureCallAspect;Procedure:semanticsLogoProcedures.ProcedureAspect" description="A language unit containing basic variables management" entryPoints="" exactType="family.ProceduresMT" id="family.Procedures" uri="http://fr.inria.diverse.examples.logo.Procedures">
+      <adapter class="family.procedures.adapters.requiredprimitives.ProceduresAdapter" modeltypeId="family.RequiredPrimitives"/>
+      <adapter class="family.procedures.adapters.requiredbinaryexpressions.ProceduresAdapter" modeltypeId="family.RequiredBinaryExpressions"/>
+      <adapter class="family.procedures.adapters.requiredvariables.ProceduresAdapter" modeltypeId="family.RequiredVariables"/>
+      <adapter class="family.procedures.adapters.requiredprocedures.ProceduresAdapter" modeltypeId="family.RequiredProcedures"/>
+      <adapter class="family.procedures.adapters.proceduresmt.ProceduresAdapter" modeltypeId="family.ProceduresMT"/>
     </language>
   </extension>
 </plugin>

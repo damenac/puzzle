@@ -17,9 +17,7 @@ public class LiteralAspect extends ExpressionAspect {
   public static Object eval(final Literal _self, final Hashtable<String, Object> context) {
     semanticsLogo.LiteralAspectLiteralAspectProperties _self_ = semanticsLogo.LiteralAspectLiteralAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof Logo.Literal){
-    result = semanticsLogo.LiteralAspect._privk3_eval(_self_, (Logo.Literal)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    result =_privk3_eval(_self_, _self,context);
     return (java.lang.Object)result;
   }
   

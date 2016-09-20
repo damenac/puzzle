@@ -1,0 +1,128 @@
+package family
+
+/**
+ * A language unit for containing the basic primitives of Logo
+ */
+language Primitives implements ProvidedPrimitives requires RequiredPrimitives {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives.ecore"
+	
+	with semanticsLogoPrimitives.BackAspect
+	with semanticsLogoPrimitives.ForwardAspect
+	with semanticsLogoPrimitives.InstructionAspect
+	with semanticsLogoPrimitives.LeftAspect
+	with semanticsLogoPrimitives.PrimitiveAspect
+	with semanticsLogoPrimitives.RightAspect
+	
+	exactType PrimitivesMT
+}
+
+/**
+ * Required interface for the primitives language unit
+ */
+modeltype RequiredPrimitives {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore"
+}
+
+/**
+ * Required interface for the primitives language unit
+ */
+modeltype ProvidedPrimitives {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-provided.ecore"
+}
+
+/**
+ * A language unit for containing basic literals
+ */
+language Literals implements ProvidedLiterals { 
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.literals.syntax/models/Literals.ecore"
+	
+	with semanticsLiteralsLogo.BooleanAspect
+	with semanticsLiteralsLogo.ExpressionAspect
+	with semanticsLiteralsLogo.IntegerAspect
+	with semanticsLiteralsLogo.LiteralAspect
+	with semanticsLiteralsLogo.StringAspect
+	
+	exactType LiteralsMT
+}
+
+/**
+ * Provided interface for the Literals language unit
+ */
+modeltype ProvidedLiterals {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.literals.syntax/models/Literals-provided.ecore"
+}
+
+/**
+ * A language unit containing basic binary expressions
+ */
+language BinaryExpressions requires RequiredBinaryExpressions{ 
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions.ecore"
+	
+	with semanticsLogoBinaryExpressions.ArithmeticExprAspect
+	with semanticsLogoBinaryExpressions.BinaryExprAspect
+	with semanticsLogoBinaryExpressions.BooleanExprAspect
+	
+	exactType BinaryExpressionsMT
+}
+
+/**
+ * Required interface for the BinaryExpressions language unit
+ */
+modeltype RequiredBinaryExpressions {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions-required.ecore"
+}
+
+/**
+ * A language unit containing basic variables management
+ */
+language Variables requires RequiredVariables {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.variables.syntax/models/Variables.ecore"
+	
+	with semanticsLogoVariables.AssignationAspect
+	with semanticsLogoVariables.VarDeclAspect
+	with semanticsLogoVariables.VarReferenceAspect
+	
+	exactType VariablesMT
+}
+
+/**
+ * Required interface for the Variables language unit
+ */
+modeltype RequiredVariables {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.variables.syntax/models/Variables-required.ecore"
+}
+
+/**
+ * A language unit containing basic variables management
+ */
+language ControlStructures requires RequiredControlStructures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures.ecore"
+	
+	with semanticsLogoControlStructures.BlockAspect
+	with semanticsLogoControlStructures.ControlStructureAspect
+	with semanticsLogoControlStructures.IfAspect
+	with semanticsLogoControlStructures.WhileAspect
+	
+	exactType ControlStructuresMT
+}
+
+/**
+ * Required interface for the Variables language unit
+ */
+modeltype RequiredControlStructures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures-required.ecore"
+}
+
+/**
+ * A language unit containing basic variables management
+ */
+language Procedures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures.ecore"
+	
+//	with semanticsLogoControlStructures.BlockAspect
+//	with semanticsLogoControlStructures.ControlStructureAspect
+//	with semanticsLogoControlStructures.IfAspect
+//	with semanticsLogoControlStructures.WhileAspect
+	
+	exactType ControlStructuresMT
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.jdt.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link22</name>
+			<type>2</type>
+			<location>/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.annotations/bin</location>
+		</link>
+		<link>
+			<name>.link23</name>
+			<type>2</type>
+			<location>/Users/dmendeza/workspaces/puzzle/plugins/fr.inria.diverse.puzzle.annotations</location>
+		</link>
+	</linkedResources>
+</projectDescription>

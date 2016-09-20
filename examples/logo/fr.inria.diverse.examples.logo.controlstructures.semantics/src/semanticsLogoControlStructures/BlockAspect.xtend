@@ -13,7 +13,6 @@ class BlockAspect extends ControlStructureAspect {
 	@OverrideAspectMethod
 	def void eval(Hashtable<String, Object> context){
 		for(Instruction instruction : _self.instructions){
-			println(instruction)
 			instruction.eval(context)
 		}
 	}

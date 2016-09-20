@@ -1155,3 +1155,967 @@ java.lang.NullPointerException
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.910
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/BinaryExprAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.911
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/RightAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.911
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ProcedureAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.915
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/IfAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.915
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/InstructionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.917
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/BlockAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.917
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/LeftAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.922
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/WhileAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.922
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/BooleanAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.924
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.926
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ArithmeticExprAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.926
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/LogoProgramAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.927
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ControlStructureAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.930
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/AssignationAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.930
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/PrimitiveAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.931
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/BackAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.932
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/LiteralAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.933
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.934
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ExpressionAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.934
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/VarDeclAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.936
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/BooleanExprAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.937
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ForwardAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.937
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/StringAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:44:30.939
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/IntegerAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.168
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ProcedureAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.168
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.169
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/RightAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.170
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.172
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/VarDeclAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.173
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/StringAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.173
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/WhileAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.465
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/WhileAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.465
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.465
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/VarReferenceAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.466
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/StringAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.467
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/VarDeclAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.467
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/ProcedureAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:25.468
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogo/RightAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:38.221
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:38.222
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:43.323
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:43.323
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:43.625
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:46.959
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:45:59.813
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 22:46:09.132
+!MESSAGE org.eclipse.xtext.builder.BuilderParticipant  - Error during compilation of 'platform:/resource/fr.inria.diverse.examples.logo.procedures.semantics/src/semanticsLogoProcedures/ProcedureCallAspect.xtend'.
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.k3.al.annotationprocessor.AspectProcessor.doGenerateCode(AspectProcessor.java:142)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.callMacroProcessors(XtendGenerator.java:158)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:105)
+	at org.eclipse.xtend.core.compiler.XtendGenerator.doGenerate(XtendGenerator.java:120)
+	at org.eclipse.xtext.generator.GeneratorDelegate.doGenerate(GeneratorDelegate.java:43)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:183)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.handleChangedContents(ParallelBuilderParticipant.java:172)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant.doGenerate(ParallelBuilderParticipant.java:343)
+	at org.eclipse.xtext.builder.ParallelBuilderParticipant$1.run(ParallelBuilderParticipant.java:308)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.apache.log4j 4 0 2016-09-20 23:27:33.333
+!MESSAGE fr.inria.diverse.melange.jvmmodel.MelangeJvmModelInferrer  - Exception: 
+
+!STACK 0
+java.lang.NullPointerException
+	at fr.inria.diverse.melange.ast.NamingHelper.factoryAdapterNameFor(NamingHelper.java:561)
+	at fr.inria.diverse.melange.jvmmodel.LanguageAdapterInferrer.generateAdapter(LanguageAdapterInferrer.java:125)
+	at fr.inria.diverse.melange.jvmmodel.LanguageInferrer$2.accept(LanguageInferrer.java:281)
+	at fr.inria.diverse.melange.jvmmodel.LanguageInferrer$2.accept(LanguageInferrer.java:1)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at fr.inria.diverse.melange.jvmmodel.LanguageInferrer.generateAdapters(LanguageInferrer.java:526)
+	at fr.inria.diverse.melange.jvmmodel.MelangeJvmModelInferrer$4.accept(MelangeJvmModelInferrer.java:173)
+	at fr.inria.diverse.melange.jvmmodel.MelangeJvmModelInferrer$4.accept(MelangeJvmModelInferrer.java:1)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at fr.inria.diverse.melange.jvmmodel.MelangeJvmModelInferrer._infer(MelangeJvmModelInferrer.java:176)
+	at fr.inria.diverse.melange.jvmmodel.MelangeJvmModelInferrer.infer(MelangeJvmModelInferrer.java:486)
+	at org.eclipse.xtext.xbase.jvmmodel.JvmModelAssociator.installDerivedState(JvmModelAssociator.java:382)
+	at fr.inria.diverse.melange.resource.MelangeDerivedStateComputer.installDerivedState(MelangeDerivedStateComputer.java:112)
+	at org.eclipse.xtext.resource.DerivedStateAwareResource.installDerivedState(DerivedStateAwareResource.java:242)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.getContents(BatchLinkableResource.java:148)
+	at org.eclipse.xtext.xbase.typesystem.internal.LogicalContainerAwareBatchTypeResolver.getEntryPoints(LogicalContainerAwareBatchTypeResolver.java:44)
+	at org.eclipse.xtext.xbase.typesystem.internal.DefaultBatchTypeResolver.getTypeResolver(DefaultBatchTypeResolver.java:84)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:49)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver$1.get(CachingBatchTypeResolver.java:1)
+	at org.eclipse.xtext.util.OnChangeEvictingCache.get(OnChangeEvictingCache.java:77)
+	at org.eclipse.xtext.xbase.typesystem.internal.CachingBatchTypeResolver.doResolveTypes(CachingBatchTypeResolver.java:46)
+	at org.eclipse.xtext.xbase.typesystem.internal.AbstractBatchTypeResolver.resolveTypes(AbstractBatchTypeResolver.java:69)
+	at org.eclipse.xtext.xbase.resource.BatchLinkingService.resolveBatched(BatchLinkingService.java:71)
+	at org.eclipse.xtext.xbase.resource.BatchLinkableResource.resolveLazyCrossReferences(BatchLinkableResource.java:165)
+	at org.eclipse.xtext.EcoreUtil2.resolveLazyCrossReferences(EcoreUtil2.java:498)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.postParse(XtextDocumentReconcileStrategy.java:175)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.doReconcile(XtextDocumentReconcileStrategy.java:153)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy.reconcile(XtextDocumentReconcileStrategy.java:67)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.doRun(XtextReconciler.java:442)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.access$3(XtextReconciler.java:422)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$1.process(XtextReconciler.java:363)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler$1.process(XtextReconciler.java:1)
+	at org.eclipse.xtext.util.concurrent.IUnitOfWork$Void.exec(IUnitOfWork.java:37)
+	at org.eclipse.xtext.resource.OutdatedStateManager.exec(OutdatedStateManager.java:121)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument$XtextDocumentLocker.modify(XtextDocument.java:428)
+	at org.eclipse.xtext.ui.editor.model.XtextDocument.internalModify(XtextDocument.java:162)
+	at org.eclipse.xtext.ui.editor.reconciler.XtextReconciler.run(XtextReconciler.java:360)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
