@@ -36,11 +36,8 @@
 <fullyQualifiedTypeName name="org.junit.Assert"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesionMatrix"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.PairwiseCohesion"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.ContextReferences"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.vos.HCTree"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.puzzle.metrics.auxiliarMetrics.HCCalculator"/>
 <fullyQualifiedTypeName name="org.eclipse.core.resources.IProject"/>
@@ -48,9 +45,13 @@
 <fullyQualifiedTypeName name="org.osgi.service.packageadmin.ExportedPackage"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EPackage"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClass"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 <fullyQualifiedTypeName name="org.eclipse.core.resources.IResource"/>
 <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EcoreFactory"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EReference"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="fr.inria.diverse.k3.sle.common.utils.EcoreQueries"/>
+<fullyQualifiedTypeName name="fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem"/>
+<fullyQualifiedTypeName name="org.eclipse.emf.ecore.EClassifier"/>
 </qualifiedTypeNameHistroy>

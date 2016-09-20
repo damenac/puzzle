@@ -1,7 +1,0 @@
-package family
-
-import 'uml.melange'
-
-languageBinding {
-	bind( ComponentsRequired, ClassesProvided  )
-}

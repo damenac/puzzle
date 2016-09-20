@@ -1,4 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsm.Trigger = fr.inria.diverse.puzzle.examples.fsm.semantics.TriggerAspect
-	fsm.Region = fr.inria.diverse.puzzle.examples.fsm.semantics.RegionAspect
-	fsm.State = fr.inria.diverse.puzzle.examples.fsm.semantics.StateAspect

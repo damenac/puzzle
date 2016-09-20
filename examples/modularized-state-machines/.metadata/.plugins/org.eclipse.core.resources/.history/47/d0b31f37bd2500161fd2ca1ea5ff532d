@@ -1,4 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	fsm.Transition = fr.inria.diverse.puzzle.examples.statemachine.semantics.TransitionAspect
-	fsm.StateMachine = fr.inria.diverse.puzzle.examples.statemachine.semantics.StateMachineAspect
-	fsm.Region = fr.inria.diverse.puzzle.examples.statemachine.semantics.RegionAspect

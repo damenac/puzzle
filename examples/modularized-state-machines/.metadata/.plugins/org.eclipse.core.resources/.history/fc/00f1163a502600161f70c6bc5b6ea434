@@ -1,6 +1,0 @@
-package exercise.visibility;
-
-public class A {
-
-	public B b;
-}

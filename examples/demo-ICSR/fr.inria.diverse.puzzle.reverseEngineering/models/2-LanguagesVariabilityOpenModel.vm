@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ASCII"?>
 <vm:LanguageProductLine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel">
   <functionalVariability name="FeatureModel">
-    <rootFeature name="Root" mandatory="true" selected="true">
-      <children name="StateMachineModule" parentGroup="//@functionalVariability/@rootFeature/@groups.0" selected="true" semanticVariationPoint="//@semanticalVariability/@semanticVariationPoints.0">
+    <rootFeature name="Root" mandatory="true">
+      <children name="StateMachineModule" parentGroup="//@functionalVariability/@rootFeature/@groups.0" semanticVariationPoint="//@semanticalVariability/@semanticVariationPoints.0">
         <children name="AndTriggerModule" parentGroup="//@functionalVariability/@rootFeature/@children.0/@groups.0">
           <implementationModule href="1-LanguagesArchitectureModel.puzzleadl#//@languageModules.1"/>
         </children>
-        <children name="ChoiceModule" parentGroup="//@functionalVariability/@rootFeature/@children.0/@groups.1" selected="true">
+        <children name="ChoiceModule" parentGroup="//@functionalVariability/@rootFeature/@children.0/@groups.1">
           <implementationModule href="1-LanguagesArchitectureModel.puzzleadl#//@languageModules.2"/>
         </children>
         <children name="ConditionalModule" parentGroup="//@functionalVariability/@rootFeature/@children.0/@groups.2">
@@ -36,7 +36,7 @@
   </functionalVariability>
   <semanticalVariability>
     <semanticVariationPoints feature="//@functionalVariability/@rootFeature/@children.0">
-      <interpretations name="UML" selected="true">
+      <interpretations name="UML">
         <implementation href="1-LanguagesArchitectureModel.puzzleadl#//@languageModules.0/@semanticsImplementation.0"/>
       </interpretations>
       <interpretations name="Rhapsody">

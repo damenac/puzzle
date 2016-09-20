@@ -548,7 +548,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_9CGFtSMdEea93M63nxH-Xg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_oaDlECnjEeaK4ouGF-d7Iw" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_9CH6SCMdEea93M63nxH-Xg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_UqbBsEjwEea6rN8GlZPYxQ" elementId="print" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_9CH6SCMdEea93M63nxH-Xg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_9CGFwiMdEea93M63nxH-Xg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -572,7 +572,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_9CGF9CMdEea93M63nxH-Xg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_oaHPcynjEeaK4ouGF-d7Iw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_9CHW3iMdEea93M63nxH-Xg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_Uqdd9EjwEea6rN8GlZPYxQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_9CHW3iMdEea93M63nxH-Xg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_9CGF_iMdEea93M63nxH-Xg" elementId="vm.presentation.VmEditorID" visible="false">
         <tags>Draggable</tags>
@@ -1184,7 +1184,7 @@
     <bindings xmi:id="_9CGHXyMdEea93M63nxH-Xg" keySequence="COMMAND+6" command="_9CH7qiMdEea93M63nxH-Xg"/>
     <bindings xmi:id="_9CGHYCMdEea93M63nxH-Xg" keySequence="COMMAND+7" command="_9CH73SMdEea93M63nxH-Xg"/>
     <bindings xmi:id="_9CGHYSMdEea93M63nxH-Xg" keySequence="COMMAND+8" command="_9CH7hCMdEea93M63nxH-Xg"/>
-    <bindings xmi:id="_n9Mp8SnjEeaK4ouGF-d7Iw" keySequence="COMMAND+CTRL+F" command="_9CH68yMdEea93M63nxH-Xg"/>
+    <bindings xmi:id="_USwIkUjwEea6rN8GlZPYxQ" keySequence="COMMAND+CTRL+F" command="_9CH68yMdEea93M63nxH-Xg"/>
   </bindingTables>
   <bindingTables xmi:id="_9CGHYyMdEea93M63nxH-Xg" elementId="org.eclipse.mylyn.tasks.ui.views.tasks" bindingContext="_9CGIMSMdEea93M63nxH-Xg">
     <bindings xmi:id="_9CGHZCMdEea93M63nxH-Xg" keySequence="ALT+SHIFT+ARROW_DOWN" command="_9CHVtyMdEea93M63nxH-Xg"/>
@@ -1293,7 +1293,7 @@
     <bindings xmi:id="_9CGHryMdEea93M63nxH-Xg" keySequence="ALT+CR" command="_9CHWGiMdEea93M63nxH-Xg"/>
   </bindingTables>
   <bindingTables xmi:id="_9CGHsCMdEea93M63nxH-Xg" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_9CGINCMdEea93M63nxH-Xg">
-    <bindings xmi:id="_n9NRACnjEeaK4ouGF-d7Iw" keySequence="M1+W" command="_9CH69SMdEea93M63nxH-Xg"/>
+    <bindings xmi:id="_USwvoEjwEea6rN8GlZPYxQ" keySequence="M1+W" command="_9CH69SMdEea93M63nxH-Xg"/>
   </bindingTables>
   <bindingTables xmi:id="_9CGHsiMdEea93M63nxH-Xg" bindingContext="_9CGIOiMdEea93M63nxH-Xg"/>
   <bindingTables xmi:id="_9CGHsyMdEea93M63nxH-Xg" bindingContext="_9CGIOyMdEea93M63nxH-Xg"/>
@@ -1681,7 +1681,7 @@
     <tags>View</tags>
     <tags>categoryTag:Java</tags>
   </descriptors>
-  <descriptors xmi:id="_9CGIjyMdEea93M63nxH-Xg" elementId="org.eclipse.ui.texteditor.TemplatesView" label="Templates" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/eview16/templates.gif" category="org.eclipse.e4.secondaryDataStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
+  <descriptors xmi:id="_9CGIjyMdEea93M63nxH-Xg" elementId="org.eclipse.ui.texteditor.TemplatesView" label="Templates" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/view16/templates.gif" category="org.eclipse.e4.secondaryDataStack" closeable="true" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView">
     <tags>View</tags>
     <tags>categoryTag:General</tags>
   </descriptors>

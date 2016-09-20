@@ -1,8 +1,0 @@
-package family
-
-import "FeatureModel.melange"
-
-languageBinding {
-     bind( ChoiceModuleReq, StateMachineModuleProv )
-}
-
