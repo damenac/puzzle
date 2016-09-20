@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Literals -->
+      <package
+            uri="http://fr.inria.diverse.examples.logo.literals"
+            class="Literals.LiteralsPackage"
+            genModel="models/Literals.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="PrimitivesReq" nsURI="http://fr.inria.diverse.examples.logo.primitivesReq" nsPrefix="PrimitivesReq">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true">
+    <eAnnotations source="Required"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype description="Required interface for the primitives language unit" id="family.RequiredPrimitives" uri="http://requiredprimitives/"/>
+    <modeltype description="Provided interface for the Literals language unit" id="family.ProvidedLiterals" uri="http://providedliterals/"/>
+    <modeltype id="family.PrimitivesMT" uri="http://primitivesmt/">
+      <subtyping modeltypeId="family.RequiredPrimitives"/>
+    </modeltype>
+    <modeltype id="family.LiteralsMT" uri="http://literalsmt/">
+      <subtyping modeltypeId="family.RequiredPrimitives"/>
+      <subtyping modeltypeId="family.ProvidedLiterals"/>
+    </modeltype>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Primitive:semanticsLogoPrimitives.PrimitiveAspect;Left:semanticsLogoPrimitives.LeftAspect;Back:semanticsLogoPrimitives.BackAspect;Right:semanticsLogoPrimitives.RightAspect;Forward:semanticsLogoPrimitives.ForwardAspect;Instruction:semanticsLogoPrimitives.InstructionAspect" description="A language unit for containing the basic primitives of Logo" entryPoints="" exactType="family.PrimitivesMT" id="family.Primitives" uri="http://fr.inria.diverse.examples.logo.primitives">
+      <adapter class="family.primitives.adapters.requiredprimitives.PrimitivesAdapter" modeltypeId="family.RequiredPrimitives"/>
+      <adapter class="family.primitives.adapters.primitivesmt.PrimitivesAdapter" modeltypeId="family.PrimitivesMT"/>
+    </language>
+    <language aspects="Integer:semanticsLiteralsLogo.IntegerAspect;Expression:semanticsLiteralsLogo.ExpressionAspect;Literal:semanticsLiteralsLogo.LiteralAspect;String:semanticsLiteralsLogo.StringAspect;Boolean:semanticsLiteralsLogo.BooleanAspect" description="A language unit for containing basic literals" entryPoints="" exactType="family.LiteralsMT" id="family.Literals" uri="http://fr.inria.diverse.examples.logo.literals">
+      <adapter class="family.literals.adapters.providedliterals.LiteralsAdapter" modeltypeId="family.ProvidedLiterals"/>
+      <adapter class="family.literals.adapters.requiredprimitives.LiteralsAdapter" modeltypeId="family.RequiredPrimitives"/>
+      <adapter class="family.literals.adapters.literalsmt.LiteralsAdapter" modeltypeId="family.LiteralsMT"/>
+    </language>
+  </extension>
+</plugin>

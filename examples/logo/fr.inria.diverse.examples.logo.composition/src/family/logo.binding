@@ -1,0 +1,7 @@
+package family
+
+import 'logo.melange'
+
+languageBinding {
+	bind( RequiredPrimitives, ProvidedLiterals )
+}

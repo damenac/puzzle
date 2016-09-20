@@ -1,0 +1,21 @@
+package semanticsLiteralsLogo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import java.util.Hashtable
+import LogoLiterals.Literal
+
+@Aspect(className=Literal)
+public class LiteralAspect {
+
+	def Object eval (Hashtable<String, Object> context) {
+		if(_self instanceof LogoLiterals.Integer)
+			return (_self as LogoLiterals.Integer).value
+		else if(_self instanceof LogoLiterals.String)
+			return (_self as LogoLiterals.String).value
+		else if(_self instanceof LogoLiterals.Boolean)
+			return (_self as LogoLiterals.Boolean).value
+		else 
+			return 0
+	}
+}

@@ -1,0 +1,16 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	Primitives.Forward = semanticsLogoPrimitives.ForwardAspect
+	Logo.Instruction = semanticsLogoPrimitives.InstructionAspect
+	Logo.Left = semanticsLogoPrimitives.LeftAspect
+	Logo.Right = semanticsLogoPrimitives.RightAspect
+	Primitives.LogoProgram = semanticsLogoPrimitives.LogoProgramAspect
+	Primitives.Instruction = semanticsLogoPrimitives.InstructionAspect
+	Primitives.Back = semanticsLogoPrimitives.BackAspect
+	Logo.Back = semanticsLogoPrimitives.BackAspect
+	Primitives.Left = semanticsLogoPrimitives.LeftAspect
+	Logo.LogoProgram = semanticsLogoPrimitives.LogoProgramAspect
+	Primitives.Right = semanticsLogoPrimitives.RightAspect
+	Logo.Forward = semanticsLogoPrimitives.ForwardAspect
+	Logo.Primitive = semanticsLogoPrimitives.PrimitiveAspect
+	Primitives.Primitive = semanticsLogoPrimitives.PrimitiveAspect
+	Primitives.Expression = semanticsLogoPrimitives.ExpressionAspect

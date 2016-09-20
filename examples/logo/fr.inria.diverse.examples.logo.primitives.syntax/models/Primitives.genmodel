@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.examples.logo.primitives.syntax/src"
+    modelPluginID="fr.inria.diverse.examples.logo.primitives.syntax" modelName="Primitives"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Primitives.ecore</foreignModel>
+  <genPackages prefix="Logo" disposableProviderFactory="true" ecorePackage="Primitives.ecore#/">
+    <genClasses ecoreClass="Primitives.ecore#//LogoProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Primitives.ecore#//LogoProgram/instructions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Primitives.ecore#//Instruction"/>
+    <genClasses image="false" ecoreClass="Primitives.ecore#//Primitive"/>
+    <genClasses ecoreClass="Primitives.ecore#//Forward">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Primitives.ecore#//Forward/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="Primitives.ecore#//Back">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Primitives.ecore#//Back/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="Primitives.ecore#//Left">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Primitives.ecore#//Left/angle"/>
+    </genClasses>
+    <genClasses ecoreClass="Primitives.ecore#//Right">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Primitives.ecore#//Right/angle"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Primitives.ecore#//Expression">
+      <genOperations ecoreOperation="Primitives.ecore#//Expression/eval">
+        <genParameters ecoreParameter="Primitives.ecore#//Expression/eval/context"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

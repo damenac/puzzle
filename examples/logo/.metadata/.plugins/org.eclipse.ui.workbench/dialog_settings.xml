@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="563" key="dialogHeight"/>
-		<item value="900" key="dialogWidth"/>
+		<item value="750" key="dialogHeight"/>
+		<item value="1200" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -16,11 +16,6 @@
 		<item value="org.eclipse.emf.importer.ui.EMFModelWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
 			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
-			<item value="org.eclipse.ui.Examples"/>
-			<item value="org.eclipse.ui.Examples/org.eclipse.emf.examples.EMF"/>
-			<item value="org.eclipse.ui.Examples/org.eclipse.emf.validation.examples.category"/>
-			<item value="org.eclipse.ui.Examples/org.eclipse.gmf.examples.runtime"/>
-			<item value="org.eclipse.ui.Examples/org.eclipse.uml2.examples.category"/>
 		</list>
 	</section>
 	<section name="ImportExportAction">
