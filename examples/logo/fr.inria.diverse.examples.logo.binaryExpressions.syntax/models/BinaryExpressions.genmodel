@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.examples.logo.binaryExpressions.syntax/src"
+    modelPluginID="fr.inria.diverse.examples.logo.binaryExpressions.syntax" modelName="BinaryExpressions"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>BinaryExpressions.ecore</foreignModel>
+  <genPackages prefix="BinaryExpressions" disposableProviderFactory="true" ecorePackage="BinaryExpressions.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="BinaryExpressions.ecore#//ArithmeticOperator">
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//ArithmeticOperator/plus"/>
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//ArithmeticOperator/minus"/>
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//ArithmeticOperator/mult"/>
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//ArithmeticOperator/div"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="BinaryExpressions.ecore#//BooleanOperator">
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//BooleanOperator/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//BooleanOperator/diff"/>
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//BooleanOperator/greaterThan"/>
+      <genEnumLiterals ecoreEnumLiteral="BinaryExpressions.ecore#//BooleanOperator/lowerThan"/>
+    </genEnums>
+    <genClasses image="false" ecoreClass="BinaryExpressions.ecore#//Expression">
+      <genOperations ecoreOperation="BinaryExpressions.ecore#//Expression/eval">
+        <genParameters ecoreParameter="BinaryExpressions.ecore#//Expression/eval/context"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="BinaryExpressions.ecore#//BinaryExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BinaryExpressions.ecore#//BinaryExpr/leftExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference BinaryExpressions.ecore#//BinaryExpr/rightExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="BinaryExpressions.ecore#//ArithmeticExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BinaryExpressions.ecore#//ArithmeticExpr/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="BinaryExpressions.ecore#//BooleanExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute BinaryExpressions.ecore#//BooleanExpr/operator"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
