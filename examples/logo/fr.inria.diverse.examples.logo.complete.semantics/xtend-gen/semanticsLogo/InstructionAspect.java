@@ -4,6 +4,7 @@ import Logo.Assignation;
 import Logo.ControlStructure;
 import Logo.Instruction;
 import Logo.Primitive;
+import Logo.ProcedureCall;
 import Logo.VarDecl;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
@@ -11,6 +12,7 @@ import semanticsLogo.AssignationAspect;
 import semanticsLogo.ControlStructureAspect;
 import semanticsLogo.InstructionAspectInstructionAspectProperties;
 import semanticsLogo.PrimitiveAspect;
+import semanticsLogo.ProcedureCallAspect;
 import semanticsLogo.VarDeclAspect;
 
 @Aspect(className = Instruction.class)
@@ -33,6 +35,10 @@ public class InstructionAspect {
         } else {
           if ((_self instanceof ControlStructure)) {
             ControlStructureAspect.eval(((ControlStructure) _self), context);
+          } else {
+            if ((_self instanceof ProcedureCall)) {
+              ProcedureCallAspect.eval(((ProcedureCall) _self), context);
+            }
           }
         }
       }

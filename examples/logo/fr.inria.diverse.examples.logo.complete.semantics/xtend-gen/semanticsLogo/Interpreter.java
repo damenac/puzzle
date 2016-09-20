@@ -54,6 +54,6 @@ public class Interpreter {
   
   public static void main(final String[] args) {
     Interpreter _interpreter = new Interpreter();
-    _interpreter.eval("models/ControlStructuresLogo.xmi");
+    _interpreter.eval("models/ProceduresLogo.xmi");
   }
 }

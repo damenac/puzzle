@@ -9,11 +9,13 @@ import Logo.Primitive
 import Logo.VarDecl
 import Logo.Assignation
 import Logo.ControlStructure
+import Logo.ProcedureCall
 
 import static extension semanticsLogo.PrimitiveAspect.*
 import static extension semanticsLogo.VarDeclAspect.*
 import static extension semanticsLogo.AssignationAspect.*
 import static extension semanticsLogo.ControlStructureAspect.*
+import static extension semanticsLogo.ProcedureCallAspect.*
 
 // *.*
 // ASPECT
@@ -29,5 +31,7 @@ class InstructionAspect {
 			(_self as Assignation).eval(context)
 		else if(_self instanceof ControlStructure)
 			(_self as ControlStructure).eval(context)
+		else if(_self instanceof ProcedureCall)
+			(_self as ProcedureCall).eval(context)
 	}  
 }
