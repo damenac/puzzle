@@ -21,7 +21,6 @@ package Logo;
  * @generated
  */
 public interface Assignation extends Instruction {
-
 	/**
 	 * Returns the value of the '<em><b>Ref</b></em>' reference.
 	 * <!-- begin-user-doc -->
@@ -73,4 +72,5 @@ public interface Assignation extends Instruction {
 	 * @generated
 	 */
 	void setExpr(Expression value);
+
 } // Assignation

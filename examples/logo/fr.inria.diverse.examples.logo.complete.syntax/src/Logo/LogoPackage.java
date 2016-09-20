@@ -801,22 +801,13 @@ public interface LogoPackage extends EPackage {
 	int BINARY_EXPR__RIGHT_EXPR = EXPRESSION_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Operator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_EXPR__OPERATOR = EXPRESSION_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Binary Expr</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_EXPR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+	int BINARY_EXPR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Binary Expr</em>' class.
@@ -828,6 +819,116 @@ public interface LogoPackage extends EPackage {
 	int BINARY_EXPR_OPERATION_COUNT = EXPRESSION_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link Logo.impl.ArithmeticExprImpl <em>Arithmetic Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Logo.impl.ArithmeticExprImpl
+	 * @see Logo.impl.LogoPackageImpl#getArithmeticExpr()
+	 * @generated
+	 */
+	int ARITHMETIC_EXPR = 21;
+
+	/**
+	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPR__LEFT_EXPR = BINARY_EXPR__LEFT_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Right Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPR__RIGHT_EXPR = BINARY_EXPR__RIGHT_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPR__OPERATOR = BINARY_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Arithmetic Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPR_FEATURE_COUNT = BINARY_EXPR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Arithmetic Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARITHMETIC_EXPR_OPERATION_COUNT = BINARY_EXPR_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link Logo.impl.BooleanExprImpl <em>Boolean Expr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Logo.impl.BooleanExprImpl
+	 * @see Logo.impl.LogoPackageImpl#getBooleanExpr()
+	 * @generated
+	 */
+	int BOOLEAN_EXPR = 22;
+
+	/**
+	 * The feature id for the '<em><b>Left Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPR__LEFT_EXPR = BINARY_EXPR__LEFT_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Right Expr</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPR__RIGHT_EXPR = BINARY_EXPR__RIGHT_EXPR;
+
+	/**
+	 * The feature id for the '<em><b>Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPR__OPERATOR = BINARY_EXPR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPR_FEATURE_COUNT = BINARY_EXPR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Boolean Expr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPR_OPERATION_COUNT = BINARY_EXPR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link Logo.impl.ProcedureImpl <em>Procedure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -835,7 +936,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getProcedure()
 	 * @generated
 	 */
-	int PROCEDURE = 21;
+	int PROCEDURE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Body</b></em>' containment reference.
@@ -890,7 +991,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getProcedureCall()
 	 * @generated
 	 */
-	int PROCEDURE_CALL = 22;
+	int PROCEDURE_CALL = 24;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -927,7 +1028,7 @@ public interface LogoPackage extends EPackage {
 	 * @see Logo.impl.LogoPackageImpl#getAssignation()
 	 * @generated
 	 */
-	int ASSIGNATION = 23;
+	int ASSIGNATION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -966,14 +1067,24 @@ public interface LogoPackage extends EPackage {
 	int ASSIGNATION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link Logo.BinaryOperator <em>Binary Operator</em>}' enum.
+	 * The meta object id for the '{@link Logo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Logo.BinaryOperator
-	 * @see Logo.impl.LogoPackageImpl#getBinaryOperator()
+	 * @see Logo.ArithmeticOperator
+	 * @see Logo.impl.LogoPackageImpl#getArithmeticOperator()
 	 * @generated
 	 */
-	int BINARY_OPERATOR = 24;
+	int ARITHMETIC_OPERATOR = 26;
+
+	/**
+	 * The meta object id for the '{@link Logo.BooleanOperator <em>Boolean Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Logo.BooleanOperator
+	 * @see Logo.impl.LogoPackageImpl#getBooleanOperator()
+	 * @generated
+	 */
+	int BOOLEAN_OPERATOR = 27;
 
 
 	/**
@@ -1396,15 +1507,46 @@ public interface LogoPackage extends EPackage {
 	EReference getBinaryExpr_RightExpr();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Logo.BinaryExpr#getOperator <em>Operator</em>}'.
+	 * Returns the meta object for class '{@link Logo.ArithmeticExpr <em>Arithmetic Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arithmetic Expr</em>'.
+	 * @see Logo.ArithmeticExpr
+	 * @generated
+	 */
+	EClass getArithmeticExpr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Logo.ArithmeticExpr#getOperator <em>Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operator</em>'.
-	 * @see Logo.BinaryExpr#getOperator()
-	 * @see #getBinaryExpr()
+	 * @see Logo.ArithmeticExpr#getOperator()
+	 * @see #getArithmeticExpr()
 	 * @generated
 	 */
-	EAttribute getBinaryExpr_Operator();
+	EAttribute getArithmeticExpr_Operator();
+
+	/**
+	 * Returns the meta object for class '{@link Logo.BooleanExpr <em>Boolean Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Expr</em>'.
+	 * @see Logo.BooleanExpr
+	 * @generated
+	 */
+	EClass getBooleanExpr();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Logo.BooleanExpr#getOperator <em>Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operator</em>'.
+	 * @see Logo.BooleanExpr#getOperator()
+	 * @see #getBooleanExpr()
+	 * @generated
+	 */
+	EAttribute getBooleanExpr_Operator();
 
 	/**
 	 * Returns the meta object for class '{@link Logo.Procedure <em>Procedure</em>}'.
@@ -1503,14 +1645,24 @@ public interface LogoPackage extends EPackage {
 	EReference getAssignation_Expr();
 
 	/**
-	 * Returns the meta object for enum '{@link Logo.BinaryOperator <em>Binary Operator</em>}'.
+	 * Returns the meta object for enum '{@link Logo.ArithmeticOperator <em>Arithmetic Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Binary Operator</em>'.
-	 * @see Logo.BinaryOperator
+	 * @return the meta object for enum '<em>Arithmetic Operator</em>'.
+	 * @see Logo.ArithmeticOperator
 	 * @generated
 	 */
-	EEnum getBinaryOperator();
+	EEnum getArithmeticOperator();
+
+	/**
+	 * Returns the meta object for enum '{@link Logo.BooleanOperator <em>Boolean Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Boolean Operator</em>'.
+	 * @see Logo.BooleanOperator
+	 * @generated
+	 */
+	EEnum getBooleanOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1898,12 +2050,40 @@ public interface LogoPackage extends EPackage {
 		EReference BINARY_EXPR__RIGHT_EXPR = eINSTANCE.getBinaryExpr_RightExpr();
 
 		/**
+		 * The meta object literal for the '{@link Logo.impl.ArithmeticExprImpl <em>Arithmetic Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Logo.impl.ArithmeticExprImpl
+		 * @see Logo.impl.LogoPackageImpl#getArithmeticExpr()
+		 * @generated
+		 */
+		EClass ARITHMETIC_EXPR = eINSTANCE.getArithmeticExpr();
+
+		/**
 		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BINARY_EXPR__OPERATOR = eINSTANCE.getBinaryExpr_Operator();
+		EAttribute ARITHMETIC_EXPR__OPERATOR = eINSTANCE.getArithmeticExpr_Operator();
+
+		/**
+		 * The meta object literal for the '{@link Logo.impl.BooleanExprImpl <em>Boolean Expr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Logo.impl.BooleanExprImpl
+		 * @see Logo.impl.LogoPackageImpl#getBooleanExpr()
+		 * @generated
+		 */
+		EClass BOOLEAN_EXPR = eINSTANCE.getBooleanExpr();
+
+		/**
+		 * The meta object literal for the '<em><b>Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_EXPR__OPERATOR = eINSTANCE.getBooleanExpr_Operator();
 
 		/**
 		 * The meta object literal for the '{@link Logo.impl.ProcedureImpl <em>Procedure</em>}' class.
@@ -1984,14 +2164,24 @@ public interface LogoPackage extends EPackage {
 		EReference ASSIGNATION__EXPR = eINSTANCE.getAssignation_Expr();
 
 		/**
-		 * The meta object literal for the '{@link Logo.BinaryOperator <em>Binary Operator</em>}' enum.
+		 * The meta object literal for the '{@link Logo.ArithmeticOperator <em>Arithmetic Operator</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see Logo.BinaryOperator
-		 * @see Logo.impl.LogoPackageImpl#getBinaryOperator()
+		 * @see Logo.ArithmeticOperator
+		 * @see Logo.impl.LogoPackageImpl#getArithmeticOperator()
 		 * @generated
 		 */
-		EEnum BINARY_OPERATOR = eINSTANCE.getBinaryOperator();
+		EEnum ARITHMETIC_OPERATOR = eINSTANCE.getArithmeticOperator();
+
+		/**
+		 * The meta object literal for the '{@link Logo.BooleanOperator <em>Boolean Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Logo.BooleanOperator
+		 * @see Logo.impl.LogoPackageImpl#getBooleanOperator()
+		 * @generated
+		 */
+		EEnum BOOLEAN_OPERATOR = eINSTANCE.getBooleanOperator();
 
 	}
 

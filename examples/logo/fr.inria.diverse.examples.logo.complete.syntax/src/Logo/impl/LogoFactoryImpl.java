@@ -2,11 +2,13 @@
  */
 package Logo.impl;
 
+import Logo.ArithmeticExpr;
+import Logo.ArithmeticOperator;
 import Logo.Assignation;
 import Logo.Back;
-import Logo.BinaryExpr;
-import Logo.BinaryOperator;
 import Logo.Block;
+import Logo.BooleanExpr;
+import Logo.BooleanOperator;
 import Logo.Forward;
 import Logo.If;
 import Logo.Left;
@@ -88,7 +90,8 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 			case LogoPackage.IF: return createIf();
 			case LogoPackage.BLOCK: return createBlock();
 			case LogoPackage.WHILE: return createWhile();
-			case LogoPackage.BINARY_EXPR: return createBinaryExpr();
+			case LogoPackage.ARITHMETIC_EXPR: return createArithmeticExpr();
+			case LogoPackage.BOOLEAN_EXPR: return createBooleanExpr();
 			case LogoPackage.PROCEDURE: return createProcedure();
 			case LogoPackage.PROCEDURE_CALL: return createProcedureCall();
 			case LogoPackage.ASSIGNATION: return createAssignation();
@@ -105,8 +108,10 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case LogoPackage.BINARY_OPERATOR:
-				return createBinaryOperatorFromString(eDataType, initialValue);
+			case LogoPackage.ARITHMETIC_OPERATOR:
+				return createArithmeticOperatorFromString(eDataType, initialValue);
+			case LogoPackage.BOOLEAN_OPERATOR:
+				return createBooleanOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -120,8 +125,10 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case LogoPackage.BINARY_OPERATOR:
-				return convertBinaryOperatorToString(eDataType, instanceValue);
+			case LogoPackage.ARITHMETIC_OPERATOR:
+				return convertArithmeticOperatorToString(eDataType, instanceValue);
+			case LogoPackage.BOOLEAN_OPERATOR:
+				return convertBooleanOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -282,9 +289,19 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BinaryExpr createBinaryExpr() {
-		BinaryExprImpl binaryExpr = new BinaryExprImpl();
-		return binaryExpr;
+	public ArithmeticExpr createArithmeticExpr() {
+		ArithmeticExprImpl arithmeticExpr = new ArithmeticExprImpl();
+		return arithmeticExpr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanExpr createBooleanExpr() {
+		BooleanExprImpl booleanExpr = new BooleanExprImpl();
+		return booleanExpr;
 	}
 
 	/**
@@ -322,8 +339,8 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BinaryOperator createBinaryOperatorFromString(EDataType eDataType, String initialValue) {
-		BinaryOperator result = BinaryOperator.get(initialValue);
+	public ArithmeticOperator createArithmeticOperatorFromString(EDataType eDataType, String initialValue) {
+		ArithmeticOperator result = ArithmeticOperator.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -333,7 +350,27 @@ public class LogoFactoryImpl extends EFactoryImpl implements LogoFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertBinaryOperatorToString(EDataType eDataType, Object instanceValue) {
+	public String convertArithmeticOperatorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanOperator createBooleanOperatorFromString(EDataType eDataType, String initialValue) {
+		BooleanOperator result = BooleanOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBooleanOperatorToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

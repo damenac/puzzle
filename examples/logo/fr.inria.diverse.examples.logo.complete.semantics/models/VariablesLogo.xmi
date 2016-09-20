@@ -51,13 +51,13 @@
   <instructions
       xsi:type="Logo:Assignation"
       ref="//@instructions.1">
-    <expr xsi:type="Logo:BinaryExpr">
+    <expr xsi:type="Logo:ArithmeticExpr">
       <leftExpr
-          xsi:type="Logo:Integer"
-          value="10"/>
-      <rightExpr
           xsi:type="Logo:VarReference"
           ref="//@instructions.1"/>
+      <rightExpr
+          xsi:type="Logo:VarReference"
+          ref="//@instructions.2"/>
     </expr>
   </instructions>
   <instructions
@@ -83,13 +83,13 @@
   <instructions
       xsi:type="Logo:Assignation"
       ref="//@instructions.1">
-    <expr xsi:type="Logo:BinaryExpr">
+    <expr xsi:type="Logo:ArithmeticExpr">
       <leftExpr
-          xsi:type="Logo:Integer"
-          value="10"/>
-      <rightExpr
           xsi:type="Logo:VarReference"
           ref="//@instructions.1"/>
+      <rightExpr
+          xsi:type="Logo:VarReference"
+          ref="//@instructions.2"/>
     </expr>
   </instructions>
   <instructions
@@ -115,13 +115,13 @@
   <instructions
       xsi:type="Logo:Assignation"
       ref="//@instructions.1">
-    <expr xsi:type="Logo:BinaryExpr">
+    <expr xsi:type="Logo:ArithmeticExpr">
       <leftExpr
-          xsi:type="Logo:Integer"
-          value="10"/>
-      <rightExpr
           xsi:type="Logo:VarReference"
           ref="//@instructions.1"/>
+      <rightExpr
+          xsi:type="Logo:VarReference"
+          ref="//@instructions.2"/>
     </expr>
   </instructions>
   <instructions
@@ -147,13 +147,13 @@
   <instructions
       xsi:type="Logo:Assignation"
       ref="//@instructions.1">
-    <expr xsi:type="Logo:BinaryExpr">
+    <expr xsi:type="Logo:ArithmeticExpr">
       <leftExpr
-          xsi:type="Logo:Integer"
-          value="10"/>
-      <rightExpr
           xsi:type="Logo:VarReference"
           ref="//@instructions.1"/>
+      <rightExpr
+          xsi:type="Logo:VarReference"
+          ref="//@instructions.2"/>
     </expr>
   </instructions>
   <instructions
@@ -179,13 +179,13 @@
   <instructions
       xsi:type="Logo:Assignation"
       ref="//@instructions.1">
-    <expr xsi:type="Logo:BinaryExpr">
+    <expr xsi:type="Logo:ArithmeticExpr">
       <leftExpr
-          xsi:type="Logo:Integer"
-          value="10"/>
-      <rightExpr
           xsi:type="Logo:VarReference"
           ref="//@instructions.1"/>
+      <rightExpr
+          xsi:type="Logo:VarReference"
+          ref="//@instructions.2"/>
     </expr>
   </instructions>
   <instructions

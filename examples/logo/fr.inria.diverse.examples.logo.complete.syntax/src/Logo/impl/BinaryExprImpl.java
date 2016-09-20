@@ -3,7 +3,6 @@
 package Logo.impl;
 
 import Logo.BinaryExpr;
-import Logo.BinaryOperator;
 import Logo.Expression;
 import Logo.LogoPackage;
 
@@ -24,13 +23,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link Logo.impl.BinaryExprImpl#getLeftExpr <em>Left Expr</em>}</li>
  *   <li>{@link Logo.impl.BinaryExprImpl#getRightExpr <em>Right Expr</em>}</li>
- *   <li>{@link Logo.impl.BinaryExprImpl#getOperator <em>Operator</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
+public abstract class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
 	/**
 	 * The cached value of the '{@link #getLeftExpr() <em>Left Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -50,26 +48,6 @@ public class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
 	 * @ordered
 	 */
 	protected Expression rightExpr;
-
-	/**
-	 * The default value of the '{@link #getOperator() <em>Operator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperator()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final BinaryOperator OPERATOR_EDEFAULT = BinaryOperator.PLUS;
-
-	/**
-	 * The cached value of the '{@link #getOperator() <em>Operator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperator()
-	 * @generated
-	 * @ordered
-	 */
-	protected BinaryOperator operator = OPERATOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -181,27 +159,6 @@ public class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BinaryOperator getOperator() {
-		return operator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOperator(BinaryOperator newOperator) {
-		BinaryOperator oldOperator = operator;
-		operator = newOperator == null ? OPERATOR_EDEFAULT : newOperator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LogoPackage.BINARY_EXPR__OPERATOR, oldOperator, operator));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -225,8 +182,6 @@ public class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
 				return getLeftExpr();
 			case LogoPackage.BINARY_EXPR__RIGHT_EXPR:
 				return getRightExpr();
-			case LogoPackage.BINARY_EXPR__OPERATOR:
-				return getOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,9 +199,6 @@ public class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
 				return;
 			case LogoPackage.BINARY_EXPR__RIGHT_EXPR:
 				setRightExpr((Expression)newValue);
-				return;
-			case LogoPackage.BINARY_EXPR__OPERATOR:
-				setOperator((BinaryOperator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -266,9 +218,6 @@ public class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
 			case LogoPackage.BINARY_EXPR__RIGHT_EXPR:
 				setRightExpr((Expression)null);
 				return;
-			case LogoPackage.BINARY_EXPR__OPERATOR:
-				setOperator(OPERATOR_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -285,26 +234,8 @@ public class BinaryExprImpl extends ExpressionImpl implements BinaryExpr {
 				return leftExpr != null;
 			case LogoPackage.BINARY_EXPR__RIGHT_EXPR:
 				return rightExpr != null;
-			case LogoPackage.BINARY_EXPR__OPERATOR:
-				return operator != OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (operator: ");
-		result.append(operator);
-		result.append(')');
-		return result.toString();
 	}
 
 } //BinaryExprImpl

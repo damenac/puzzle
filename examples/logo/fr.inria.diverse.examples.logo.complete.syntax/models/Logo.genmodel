@@ -6,15 +6,17 @@
     complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>Logo.ecore</foreignModel>
   <genPackages prefix="Logo" disposableProviderFactory="true" ecorePackage="Logo.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Logo.ecore#//BinaryOperator">
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/plus"/>
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/minus"/>
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/mult"/>
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/div"/>
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/equal"/>
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/diff"/>
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/greaterThan"/>
-      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BinaryOperator/lowerThan"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Logo.ecore#//ArithmeticOperator">
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/plus"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/minus"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/mult"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/div"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Logo.ecore#//BooleanOperator">
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/diff"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/greaterThan"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/lowerThan"/>
     </genEnums>
     <genClasses ecoreClass="Logo.ecore#//LogoProgram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//LogoProgram/instructions"/>
@@ -70,7 +72,12 @@
     <genClasses ecoreClass="Logo.ecore#//BinaryExpr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//BinaryExpr/leftExpr"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//BinaryExpr/rightExpr"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//BinaryExpr/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//ArithmeticExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//ArithmeticExpr/operator"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//BooleanExpr">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//BooleanExpr/operator"/>
     </genClasses>
     <genClasses ecoreClass="Logo.ecore#//Procedure">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Procedure/body"/>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.examples.logo.complete.syntax/src"
+    modelPluginID="fr.inria.diverse.examples.logo.complete.syntax" modelName="Logo"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>Logo.ecore</foreignModel>
+  <genPackages prefix="Logo" disposableProviderFactory="true" ecorePackage="Logo.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Logo.ecore#//ArithmeticOperator">
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/plus"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/minus"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/mult"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//ArithmeticOperator/div"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Logo.ecore#//BooleanOperator">
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/diff"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/greaterThan"/>
+      <genEnumLiterals ecoreEnumLiteral="Logo.ecore#//BooleanOperator/lowerThan"/>
+    </genEnums>
+    <genClasses ecoreClass="Logo.ecore#//LogoProgram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//LogoProgram/instructions"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Logo.ecore#//Instruction"/>
+    <genClasses image="false" ecoreClass="Logo.ecore#//Primitive"/>
+    <genClasses ecoreClass="Logo.ecore#//Forward">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Forward/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Back">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Back/steps"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Left">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Left/angle"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Right">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Right/angle"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Logo.ecore#//Expression"/>
+    <genClasses image="false" ecoreClass="Logo.ecore#//Literal"/>
+    <genClasses ecoreClass="Logo.ecore#//Integer">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//Integer/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Void"/>
+    <genClasses ecoreClass="Logo.ecore#//Double">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//Double/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//String">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//String/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Boolean">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//Boolean/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//VarDecl">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//VarDecl/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//VarDecl/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//VarReference">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Logo.ecore#//VarReference/ref"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Logo.ecore#//ControlStructure"/>
+    <genClasses ecoreClass="Logo.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//If/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//If/condition"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Block">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Block/instructions"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//While">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//While/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//While/guard"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//BinaryExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//BinaryExpr/leftExpr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//BinaryExpr/rightExpr"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//ArithmeticExpr"/>
+    <genClasses ecoreClass="Logo.ecore#//BooleanExpr"/>
+    <genClasses ecoreClass="Logo.ecore#//Procedure">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Procedure/body"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Procedure/returnType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Logo.ecore#//Procedure/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//ProcedureCall">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Logo.ecore#//ProcedureCall/ref"/>
+    </genClasses>
+    <genClasses ecoreClass="Logo.ecore#//Assignation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Logo.ecore#//Assignation/ref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Logo.ecore#//Assignation/expr"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

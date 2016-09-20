@@ -2,11 +2,14 @@
  */
 package Logo.impl;
 
+import Logo.ArithmeticExpr;
+import Logo.ArithmeticOperator;
 import Logo.Assignation;
 import Logo.Back;
 import Logo.BinaryExpr;
-import Logo.BinaryOperator;
 import Logo.Block;
+import Logo.BooleanExpr;
+import Logo.BooleanOperator;
 import Logo.ControlStructure;
 import Logo.Expression;
 import Logo.Forward;
@@ -192,6 +195,20 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass arithmeticExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanExprEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass procedureEClass = null;
 
 	/**
@@ -213,7 +230,14 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum binaryOperatorEEnum = null;
+	private EEnum arithmeticOperatorEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum booleanOperatorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -641,8 +665,35 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBinaryExpr_Operator() {
-		return (EAttribute)binaryExprEClass.getEStructuralFeatures().get(2);
+	public EClass getArithmeticExpr() {
+		return arithmeticExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getArithmeticExpr_Operator() {
+		return (EAttribute)arithmeticExprEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBooleanExpr() {
+		return booleanExprEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooleanExpr_Operator() {
+		return (EAttribute)booleanExprEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -731,8 +782,17 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getBinaryOperator() {
-		return binaryOperatorEEnum;
+	public EEnum getArithmeticOperator() {
+		return arithmeticOperatorEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getBooleanOperator() {
+		return booleanOperatorEEnum;
 	}
 
 	/**
@@ -823,7 +883,12 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 		binaryExprEClass = createEClass(BINARY_EXPR);
 		createEReference(binaryExprEClass, BINARY_EXPR__LEFT_EXPR);
 		createEReference(binaryExprEClass, BINARY_EXPR__RIGHT_EXPR);
-		createEAttribute(binaryExprEClass, BINARY_EXPR__OPERATOR);
+
+		arithmeticExprEClass = createEClass(ARITHMETIC_EXPR);
+		createEAttribute(arithmeticExprEClass, ARITHMETIC_EXPR__OPERATOR);
+
+		booleanExprEClass = createEClass(BOOLEAN_EXPR);
+		createEAttribute(booleanExprEClass, BOOLEAN_EXPR__OPERATOR);
 
 		procedureEClass = createEClass(PROCEDURE);
 		createEReference(procedureEClass, PROCEDURE__BODY);
@@ -838,7 +903,8 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 		createEReference(assignationEClass, ASSIGNATION__EXPR);
 
 		// Create enums
-		binaryOperatorEEnum = createEEnum(BINARY_OPERATOR);
+		arithmeticOperatorEEnum = createEEnum(ARITHMETIC_OPERATOR);
+		booleanOperatorEEnum = createEEnum(BOOLEAN_OPERATOR);
 	}
 
 	/**
@@ -888,6 +954,8 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 		blockEClass.getESuperTypes().add(this.getControlStructure());
 		whileEClass.getESuperTypes().add(this.getControlStructure());
 		binaryExprEClass.getESuperTypes().add(this.getExpression());
+		arithmeticExprEClass.getESuperTypes().add(this.getBinaryExpr());
+		booleanExprEClass.getESuperTypes().add(this.getBinaryExpr());
 		procedureEClass.getESuperTypes().add(this.getInstruction());
 		procedureCallEClass.getESuperTypes().add(this.getExpression());
 		assignationEClass.getESuperTypes().add(this.getInstruction());
@@ -950,10 +1018,15 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 		initEReference(getWhile_Body(), this.getBlock(), null, "body", null, 0, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getWhile_Guard(), this.getExpression(), null, "guard", null, 1, 1, While.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(binaryExprEClass, BinaryExpr.class, "BinaryExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(binaryExprEClass, BinaryExpr.class, "BinaryExpr", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBinaryExpr_LeftExpr(), this.getExpression(), null, "leftExpr", null, 1, 1, BinaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getBinaryExpr_RightExpr(), this.getExpression(), null, "rightExpr", null, 1, 1, BinaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBinaryExpr_Operator(), this.getBinaryOperator(), "operator", null, 0, 1, BinaryExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(arithmeticExprEClass, ArithmeticExpr.class, "ArithmeticExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getArithmeticExpr_Operator(), this.getArithmeticOperator(), "operator", null, 0, 1, ArithmeticExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanExprEClass, BooleanExpr.class, "BooleanExpr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBooleanExpr_Operator(), this.getBooleanOperator(), "operator", null, 0, 1, BooleanExpr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(procedureEClass, Procedure.class, "Procedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProcedure_Body(), this.getBlock(), null, "body", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -968,15 +1041,17 @@ public class LogoPackageImpl extends EPackageImpl implements LogoPackage {
 		initEReference(getAssignation_Expr(), this.getExpression(), null, "expr", null, 1, 1, Assignation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(binaryOperatorEEnum, BinaryOperator.class, "BinaryOperator");
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.PLUS);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.MINUS);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.MULT);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.DIV);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.EQUAL);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.DIFF);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.GREATER_THAN);
-		addEEnumLiteral(binaryOperatorEEnum, BinaryOperator.LOWER_THAN);
+		initEEnum(arithmeticOperatorEEnum, ArithmeticOperator.class, "ArithmeticOperator");
+		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.PLUS);
+		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MINUS);
+		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.MULT);
+		addEEnumLiteral(arithmeticOperatorEEnum, ArithmeticOperator.DIV);
+
+		initEEnum(booleanOperatorEEnum, BooleanOperator.class, "BooleanOperator");
+		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.EQUAL);
+		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.DIFF);
+		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.GREATER_THAN);
+		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.LOWER_THAN);
 
 		// Create resource
 		createResource(eNS_URI);

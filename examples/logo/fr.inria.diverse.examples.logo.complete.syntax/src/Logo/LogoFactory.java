@@ -157,13 +157,22 @@ public interface LogoFactory extends EFactory {
 	While createWhile();
 
 	/**
-	 * Returns a new object of class '<em>Binary Expr</em>'.
+	 * Returns a new object of class '<em>Arithmetic Expr</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Binary Expr</em>'.
+	 * @return a new object of class '<em>Arithmetic Expr</em>'.
 	 * @generated
 	 */
-	BinaryExpr createBinaryExpr();
+	ArithmeticExpr createArithmeticExpr();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Expr</em>'.
+	 * @generated
+	 */
+	BooleanExpr createBooleanExpr();
 
 	/**
 	 * Returns a new object of class '<em>Procedure</em>'.

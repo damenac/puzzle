@@ -2,10 +2,12 @@
  */
 package Logo.util;
 
+import Logo.ArithmeticExpr;
 import Logo.Assignation;
 import Logo.Back;
 import Logo.BinaryExpr;
 import Logo.Block;
+import Logo.BooleanExpr;
 import Logo.ControlStructure;
 import Logo.Expression;
 import Logo.Forward;
@@ -247,6 +249,24 @@ public class LogoSwitch<T> extends Switch<T> {
 				T result = caseBinaryExpr(binaryExpr);
 				if (result == null) result = caseExpression(binaryExpr);
 				if (result == null) result = caseInstruction(binaryExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LogoPackage.ARITHMETIC_EXPR: {
+				ArithmeticExpr arithmeticExpr = (ArithmeticExpr)theEObject;
+				T result = caseArithmeticExpr(arithmeticExpr);
+				if (result == null) result = caseBinaryExpr(arithmeticExpr);
+				if (result == null) result = caseExpression(arithmeticExpr);
+				if (result == null) result = caseInstruction(arithmeticExpr);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LogoPackage.BOOLEAN_EXPR: {
+				BooleanExpr booleanExpr = (BooleanExpr)theEObject;
+				T result = caseBooleanExpr(booleanExpr);
+				if (result == null) result = caseBinaryExpr(booleanExpr);
+				if (result == null) result = caseExpression(booleanExpr);
+				if (result == null) result = caseInstruction(booleanExpr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -588,6 +608,36 @@ public class LogoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBinaryExpr(BinaryExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Arithmetic Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Arithmetic Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseArithmeticExpr(ArithmeticExpr object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Expr</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Expr</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanExpr(BooleanExpr object) {
 		return null;
 	}
 

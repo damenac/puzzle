@@ -1,0 +1,39 @@
+/**
+ */
+package Logo.impl;
+
+import Logo.BooleanExpr;
+import Logo.LogoPackage;
+
+import org.eclipse.emf.ecore.EClass;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Boolean Expr</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * </p>
+ *
+ * @generated
+ */
+public class BooleanExprImpl extends BinaryExprImpl implements BooleanExpr {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BooleanExprImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return LogoPackage.Literals.BOOLEAN_EXPR;
+	}
+
+} //BooleanExprImpl

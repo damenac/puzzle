@@ -1,0 +1,16 @@
+package semanticsLogo
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.Hashtable
+import Logo.BinaryExpr
+
+@Aspect(className=BinaryExpr)
+public class ArithmeticExprAspect extends ExpressionAspect{
+
+	@OverrideAspectMethod
+	def Object eval (Hashtable<String, Object> context) {
+		
+	}
+}

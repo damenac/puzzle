@@ -2,10 +2,12 @@
  */
 package Logo.util;
 
+import Logo.ArithmeticExpr;
 import Logo.Assignation;
 import Logo.Back;
 import Logo.BinaryExpr;
 import Logo.Block;
+import Logo.BooleanExpr;
 import Logo.ControlStructure;
 import Logo.Expression;
 import Logo.Forward;
@@ -169,6 +171,14 @@ public class LogoAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseBinaryExpr(BinaryExpr object) {
 				return createBinaryExprAdapter();
+			}
+			@Override
+			public Adapter caseArithmeticExpr(ArithmeticExpr object) {
+				return createArithmeticExprAdapter();
+			}
+			@Override
+			public Adapter caseBooleanExpr(BooleanExpr object) {
+				return createBooleanExprAdapter();
 			}
 			@Override
 			public Adapter caseProcedure(Procedure object) {
@@ -493,6 +503,34 @@ public class LogoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBinaryExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Logo.ArithmeticExpr <em>Arithmetic Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Logo.ArithmeticExpr
+	 * @generated
+	 */
+	public Adapter createArithmeticExprAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Logo.BooleanExpr <em>Boolean Expr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Logo.BooleanExpr
+	 * @generated
+	 */
+	public Adapter createBooleanExprAdapter() {
 		return null;
 	}
 

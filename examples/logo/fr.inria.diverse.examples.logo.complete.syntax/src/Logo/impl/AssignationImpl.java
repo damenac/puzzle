@@ -5,12 +5,14 @@ package Logo.impl;
 import Logo.Assignation;
 import Logo.Expression;
 import Logo.LogoPackage;
-
 import Logo.VarDecl;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -37,6 +39,7 @@ public class AssignationImpl extends InstructionImpl implements Assignation {
 	 * @ordered
 	 */
 	protected VarDecl ref;
+
 	/**
 	 * The cached value of the '{@link #getExpr() <em>Expr</em>}' containment reference.
 	 * <!-- begin-user-doc -->

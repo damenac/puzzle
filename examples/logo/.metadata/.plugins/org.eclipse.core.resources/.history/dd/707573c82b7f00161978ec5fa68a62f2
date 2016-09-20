@@ -1,0 +1,17 @@
+/**
+ */
+package Logo;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Boolean Expr</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see Logo.LogoPackage#getBooleanExpr()
+ * @model
+ * @generated
+ */
+public interface BooleanExpr extends BinaryExpr {
+} // BooleanExpr
