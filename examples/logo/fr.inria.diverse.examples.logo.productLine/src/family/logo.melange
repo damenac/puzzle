@@ -3,7 +3,7 @@ package family
 /**
  * A language unit for containing the basic primitives of Logo
  */
-language Primitives requires RequiredPrimitives {
+language Primitives implements ProvidedPrimitives requires RequiredPrimitives {
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives.ecore"
 	
 	with semanticsLogoPrimitives.BackAspect
@@ -21,6 +21,13 @@ language Primitives requires RequiredPrimitives {
  */
 modeltype RequiredPrimitives {
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore"
+}
+
+/**
+ * Required interface for the primitives language unit
+ */
+modeltype ProvidedPrimitives {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-provided.ecore"
 }
 
 /**
@@ -46,7 +53,7 @@ modeltype ProvidedLiterals {
 }
 
 /**
- * A language unit for containing basic literals
+ * A language unit containing basic binary expressions
  */
 language BinaryExpressions requires RequiredBinaryExpressions{ 
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions.ecore"
@@ -59,8 +66,28 @@ language BinaryExpressions requires RequiredBinaryExpressions{
 }
 
 /**
- * Required interface for the primitives language unit
+ * Required interface for the BinaryExpressions language unit
  */
 modeltype RequiredBinaryExpressions {
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions-required.ecore"
+}
+
+/**
+ * A language unit containing basic variables management
+ */
+language Variables requires RequiredVariables {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.variables.syntax/models/Variables.ecore"
+	
+	with semanticsLogoVariables.AssignationAspect
+	with semanticsLogoVariables.VarDeclAspect
+	with semanticsLogoVariables.VarReferenceAspect
+	
+	exactType VariablesMT
+}
+
+/**
+ * Required interface for the Variables language unit
+ */
+modeltype RequiredVariables {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.variables.syntax/models/Variables-required.ecore"
 }

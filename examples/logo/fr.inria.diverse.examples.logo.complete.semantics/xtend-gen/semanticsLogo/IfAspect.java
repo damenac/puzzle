@@ -18,9 +18,7 @@ public class IfAspect extends ControlStructureAspect {
   @OverrideAspectMethod
   public static void eval(final If _self, final Hashtable<String, Object> context) {
     semanticsLogo.IfAspectIfAspectProperties _self_ = semanticsLogo.IfAspectIfAspectContext.getSelf(_self);
-     if (_self instanceof Logo.If){
-     semanticsLogo.IfAspect._privk3_eval(_self_, (Logo.If)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_eval(_self_, _self,context);
   }
   
   private static void super_eval(final If _self, final Hashtable<String, Object> context) {

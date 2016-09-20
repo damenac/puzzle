@@ -1,0 +1,5 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	Logo.VarDecl = semanticsLogoVariables.VarDeclAspect
+	Variables.Assignation = semanticsLogoVariables.AssignationAspect
+	Logo.Assignation = semanticsLogoVariables.AssignationAspect
+	Logo.VarReference = semanticsLogoVariables.VarReferenceAspect

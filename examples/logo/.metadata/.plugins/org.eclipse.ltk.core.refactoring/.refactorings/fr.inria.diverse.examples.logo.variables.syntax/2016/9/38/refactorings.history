@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;fr.inria.diverse.examples.logo.variables.syntax/models/Logo.ecore&apos; to &apos;Variables.ecore&apos;" description="Rename resource &apos;Logo.ecore&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="models/Logo.ecore" name="Variables.ecore" stamp="1474400678659" updateReferences="true"/>
+</session>

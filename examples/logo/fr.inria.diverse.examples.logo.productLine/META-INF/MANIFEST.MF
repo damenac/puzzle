@@ -17,7 +17,9 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.examples.logo.primitives.semantics;bundle-version="1.0.0",
  fr.inria.diverse.examples.logo.primitives.syntax;bundle-version="1.0.0",
  fr.inria.diverse.examples.logo.binaryExpressions.semantics;bundle-version="1.0.0",
- fr.inria.diverse.examples.logo.binaryExpressions.syntax;bundle-version="1.0.0"
+ fr.inria.diverse.examples.logo.binaryExpressions.syntax;bundle-version="1.0.0",
+ fr.inria.diverse.examples.logo.variables.semantics;bundle-version="1.0.0",
+ fr.inria.diverse.examples.logo.variables.syntax;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0

@@ -18,7 +18,9 @@ public class ArithmeticExprAspect extends BinaryExprAspect {
   public static Object eval(final ArithmeticExpr _self, final Hashtable<String, Object> context) {
     semanticsLogo.ArithmeticExprAspectArithmeticExprAspectProperties _self_ = semanticsLogo.ArithmeticExprAspectArithmeticExprAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.ArithmeticExpr){
+    result = semanticsLogo.ArithmeticExprAspect._privk3_eval(_self_, (Logo.ArithmeticExpr)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   
