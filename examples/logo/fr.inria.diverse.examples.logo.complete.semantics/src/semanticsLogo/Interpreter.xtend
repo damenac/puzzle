@@ -30,15 +30,19 @@ class Interpreter {
 		var res = rs.getResource(uri, true);
 		var LogoProgram logo = res.contents.get(0) as LogoProgram
 		var Hashtable<String, Object> context = new Hashtable<String, Object>()
+		
 		var Turtle turtle = new Turtle()
-		context.put('turtle', turtle)
 		var ArrayList<Hashtable<String,Integer>> stack = new ArrayList<Hashtable<String,Integer>>()
+		context.put('turtle', turtle)
 		context.put('stack', stack)
+		
 		logo.eval(context)
+		new Window (context.get('turtle') as Turtle)
 	}
 	
 	def static void main(String[] args){
 		(new Interpreter()).eval('models/SimpleLogo.xmi')
+		
 //		(new Interpreter()).eval('models/VariablesLogo.xmi')
 //		(new Interpreter()).eval('models/ExpressionsLogo.xmi')
 	}

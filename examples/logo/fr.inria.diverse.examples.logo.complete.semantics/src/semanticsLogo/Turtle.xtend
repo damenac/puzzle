@@ -47,9 +47,9 @@ class Turtle {
 	}
 	
 	def void reset() {
-		position = new Point(0,0)
+		position = new Point(250,200)
 		heading = 0
-		penUp = true
+		penUp = false
 		drawings = new ArrayList<Segment>()
 	
 	}

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="ASCII"?>
+<Logo:LogoProgram
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:Logo="http://fr.inria.diverse.examples.logo.complete"
+    xsi:schemaLocation="http://fr.inria.diverse.examples.logo.complete ../../fr.inria.diverse.examples.logo.complete.syntax/models/Logo.ecore">
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="50"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="50"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="60"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="60"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="70"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="70"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="80"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="80"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Left">
+    <angle xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+  <instructions
+      xsi:type="Logo:Forward">
+    <steps xsi:type="Logo:Integer"
+        value="90"/>
+  </instructions>
+</Logo:LogoProgram>

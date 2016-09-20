@@ -3,7 +3,6 @@ package semanticsLogo;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import semanticsLogo.Turtle;
 
 @SuppressWarnings("all")
 public class Context {
@@ -11,13 +10,9 @@ public class Context {
   
   public Hashtable<String, Object> variablesTable;
   
-  public Turtle turtle;
-  
   public Context() {
     ArrayList<Hashtable<String, Integer>> _arrayList = new ArrayList<Hashtable<String, Integer>>();
     this.stack = _arrayList;
-    Turtle _turtle = new Turtle();
-    this.turtle = _turtle;
   }
   
   public void reset() {

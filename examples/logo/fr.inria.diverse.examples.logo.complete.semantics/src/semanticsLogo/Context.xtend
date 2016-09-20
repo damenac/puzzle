@@ -7,11 +7,9 @@ class Context {
 	
 		var ArrayList<Hashtable<String,Integer>> stack
 		public var Hashtable<String, Object> variablesTable 
-		public var Turtle turtle
 		
 		new() { 
 			stack = new ArrayList<Hashtable<String,Integer>>()
-			turtle = new Turtle()
 		}
 		
 		def void reset () {

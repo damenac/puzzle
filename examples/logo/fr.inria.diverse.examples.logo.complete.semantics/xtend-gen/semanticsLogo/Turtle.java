@@ -20,10 +20,10 @@ public class Turtle {
   }
   
   public void reset() {
-    Point _point = new Point(0, 0);
+    Point _point = new Point(250, 200);
     this.position = _point;
     this.heading = 0;
-    this.penUp = true;
+    this.penUp = false;
     ArrayList<Segment> _arrayList = new ArrayList<Segment>();
     this.drawings = _arrayList;
   }
