@@ -13,7 +13,9 @@ public class IntegerAspect extends LiteralAspect {
   public static Object eval(final Logo.Integer _self, final Hashtable<String, Object> context) {
     semanticsLogo.IntegerAspectIntegerAspectProperties _self_ = semanticsLogo.IntegerAspectIntegerAspectContext.getSelf(_self);
     Object result = null;
-    result =_privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.Integer){
+    result = semanticsLogo.IntegerAspect._privk3_eval(_self_, (Logo.Integer)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.Object)result;
   }
   

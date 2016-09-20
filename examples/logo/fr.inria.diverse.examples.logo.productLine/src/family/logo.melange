@@ -91,3 +91,23 @@ language Variables requires RequiredVariables {
 modeltype RequiredVariables {
 	syntax "platform:/resource/fr.inria.diverse.examples.logo.variables.syntax/models/Variables-required.ecore"
 }
+
+/**
+ * A language unit containing basic variables management
+ */
+language ControlStructures requires RequiredControlStructures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures.ecore"
+	
+//	with semanticsLogoVariables.AssignationAspect
+//	with semanticsLogoVariables.VarDeclAspect
+//	with semanticsLogoVariables.VarReferenceAspect
+	
+	exactType ControlStructuresMT
+}
+
+/**
+ * Required interface for the Variables language unit
+ */
+modeltype RequiredControlStructures {
+	syntax "platform:/resource/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures-required.ecore"
+}

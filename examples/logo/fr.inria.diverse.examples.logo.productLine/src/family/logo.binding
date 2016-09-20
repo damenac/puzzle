@@ -7,4 +7,6 @@ languageBinding {
 	bind( RequiredBinaryExpressions, ProvidedLiterals )
 	bind( RequiredVariables, ProvidedLiterals )
 	bind( RequiredVariables, ProvidedPrimitives )
+	bind( RequiredControlStructures, ProvidedLiterals )
+	bind( RequiredControlStructures, ProvidedPrimitives )
 }

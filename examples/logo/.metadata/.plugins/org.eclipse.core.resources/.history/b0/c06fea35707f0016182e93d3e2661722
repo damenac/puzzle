@@ -1,0 +1,27 @@
+package semanticsLogoControlStructures
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
+
+import java.util.Hashtable
+
+import ControlStructures.ControlStructure
+import ControlStructures.If
+
+import static extension semanticsLogoControlStructures.IfAspect.*
+import static extension semanticsLogoControlStructures.WhileAspect.*
+import static extension semasemanticsLogoControlStructuresnticsLogo.BlockAspect.*
+
+@Aspect(className=ControlStructure)
+class ControlStructureAspect extends InstructionAspect {
+	
+	@OverrideAspectMethod
+	def void eval(Hashtable<String, Object> context){
+		if(_self instanceof If)
+			(_self as If).eval(context)
+		else if(_self instanceof Logo.While)
+			(_self as Logo.While).eval(context)
+		else if(_self instanceof Logo.Block)
+			(_self as Logo.Block).eval(context)
+	}
+}

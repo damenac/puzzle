@@ -1,0 +1,6 @@
+# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
+	Logo.Block = semanticsLogoControlStructures.BlockAspect
+	ControlStructures.ControlStructure = semanticsLogoControlStructures.ControlStructureAspect
+	Logo.If = semanticsLogoControlStructures.IfAspect
+	Logo.ControlStructure = semanticsLogoControlStructures.ControlStructureAspect
+	Logo.While = semanticsLogoControlStructures.WhileAspect

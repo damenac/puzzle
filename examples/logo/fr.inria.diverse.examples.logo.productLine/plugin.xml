@@ -14,6 +14,11 @@
       <subtyping modeltypeId="family.RequiredPrimitives"/>
     </modeltype>
     <modeltype description="Required interface for the Variables language unit" id="family.RequiredVariables" uri="http://requiredvariables/"/>
+    <modeltype description="Required interface for the Variables language unit" id="family.RequiredControlStructures" uri="http://requiredcontrolstructures/">
+      <subtyping modeltypeId="family.RequiredPrimitives"/>
+      <subtyping modeltypeId="family.RequiredBinaryExpressions"/>
+      <subtyping modeltypeId="family.RequiredVariables"/>
+    </modeltype>
     <modeltype id="family.PrimitivesMT" uri="http://primitivesmt/">
       <subtyping modeltypeId="family.RequiredPrimitives"/>
       <subtyping modeltypeId="family.ProvidedPrimitives"/>
@@ -29,6 +34,12 @@
       <subtyping modeltypeId="family.RequiredPrimitives"/>
       <subtyping modeltypeId="family.RequiredBinaryExpressions"/>
       <subtyping modeltypeId="family.RequiredVariables"/>
+    </modeltype>
+    <modeltype id="family.ControlStructuresMT" uri="http://controlstructuresmt/">
+      <subtyping modeltypeId="family.RequiredPrimitives"/>
+      <subtyping modeltypeId="family.RequiredBinaryExpressions"/>
+      <subtyping modeltypeId="family.RequiredVariables"/>
+      <subtyping modeltypeId="family.RequiredControlStructures"/>
     </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
@@ -53,6 +64,13 @@
       <adapter class="family.variables.adapters.requiredbinaryexpressions.VariablesAdapter" modeltypeId="family.RequiredBinaryExpressions"/>
       <adapter class="family.variables.adapters.requiredvariables.VariablesAdapter" modeltypeId="family.RequiredVariables"/>
       <adapter class="family.variables.adapters.variablesmt.VariablesAdapter" modeltypeId="family.VariablesMT"/>
+    </language>
+    <language aspects="" description="A language unit containing basic variables management" entryPoints="" exactType="family.ControlStructuresMT" id="family.ControlStructures" uri="http://fr.inria.diverse.examples.logo.ControlStructures">
+      <adapter class="family.controlstructures.adapters.requiredprimitives.ControlStructuresAdapter" modeltypeId="family.RequiredPrimitives"/>
+      <adapter class="family.controlstructures.adapters.requiredbinaryexpressions.ControlStructuresAdapter" modeltypeId="family.RequiredBinaryExpressions"/>
+      <adapter class="family.controlstructures.adapters.requiredvariables.ControlStructuresAdapter" modeltypeId="family.RequiredVariables"/>
+      <adapter class="family.controlstructures.adapters.requiredcontrolstructures.ControlStructuresAdapter" modeltypeId="family.RequiredControlStructures"/>
+      <adapter class="family.controlstructures.adapters.controlstructuresmt.ControlStructuresAdapter" modeltypeId="family.ControlStructuresMT"/>
     </language>
   </extension>
 </plugin>

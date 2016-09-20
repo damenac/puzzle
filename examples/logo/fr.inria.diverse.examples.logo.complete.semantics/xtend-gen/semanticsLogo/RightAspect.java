@@ -17,7 +17,9 @@ public class RightAspect extends PrimitiveAspect {
   @OverrideAspectMethod
   public static void eval(final Right _self, final Hashtable<String, Object> context) {
     semanticsLogo.RightAspectRightAspectProperties _self_ = semanticsLogo.RightAspectRightAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+     if (_self instanceof Logo.Right){
+     semanticsLogo.RightAspect._privk3_eval(_self_, (Logo.Right)_self,context);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
   private static void super_eval(final Right _self, final Hashtable<String, Object> context) {

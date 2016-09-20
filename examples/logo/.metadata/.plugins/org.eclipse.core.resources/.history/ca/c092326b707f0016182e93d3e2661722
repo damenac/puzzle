@@ -1,0 +1,30 @@
+package semanticsLogoControlStructures
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+
+import java.util.Hashtable
+
+import ControlStructures.ControlStructure
+import ControlStructures.If
+
+import static extension semanticsLogoControlStructures.IfAspect.*
+import static extension semanticsLogoControlStructures.WhileAspect.*
+import static extension semanticsLogoControlStructures.BlockAspect.*
+import ControlStructures.While
+
+@Aspect(className=ControlStructure)
+class ControlStructureAspect {
+	
+	def void eval(Hashtable<String, Object> context){
+		if(_self instanceof If){
+			var If _if = _self as If
+			_if.eval(context)
+		}
+		else if(_self instanceof While){
+			
+		}
+			(_self as Logo.While).eval(context)
+		else if(_self instanceof Logo.Block)
+			(_self as Logo.Block).eval(context)
+	}
+}
