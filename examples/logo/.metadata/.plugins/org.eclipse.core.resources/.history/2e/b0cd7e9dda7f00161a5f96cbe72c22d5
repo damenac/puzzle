@@ -1,0 +1,68 @@
+package family
+
+language Primitives implements PrimitivesProvided requires RequiredPrimitives{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives.ecore"
+
+     with semanticsLogoPrimitives.BackAspect
+     with semanticsLogoPrimitives.ForwardAspect
+     with semanticsLogoPrimitives.InstructionAspect
+     with semanticsLogoPrimitives.LeftAspect
+     with semanticsLogoPrimitives.PrimitiveAspect
+     with semanticsLogoPrimitives.RightAspect
+
+     exactType PrimitivesMT
+}
+
+modeltype RequiredPrimitives{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore"
+}
+
+modeltype PrimitivesProvided{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-provided.ecore"
+}
+
+language Literals implements ProvidedLiterals{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.literals.syntax/models/Literals.ecore"
+
+     with semanticsLiteralsLogo.BooleanAspect
+     with semanticsLiteralsLogo.ExpressionAspect
+     with semanticsLiteralsLogo.IntegerAspect
+     with semanticsLiteralsLogo.LiteralAspect
+     with semanticsLiteralsLogo.StringAspect
+
+     exactType LiteralsMT
+}
+
+modeltype ProvidedLiterals{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.literals.syntax/models/Literals-provided.ecore"
+}
+
+language BinaryExpressions requires RequiredBinaryExpressions{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions.ecore"
+
+     with semanticsLogoBinaryExpressions.ArithmeticExprAspect
+     with semanticsLogoBinaryExpressions.BinaryExprAspect
+     with semanticsLogoBinaryExpressions.BooleanExprAspect
+
+     exactType BinaryExpressionsMT
+}
+
+modeltype RequiredBinaryExpressions{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions-required.ecore"
+}
+
+language Variables requires RequiredVariables{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.variables.syntax/models/Variables.ecore"
+
+     with semanticsLogoVariables.AssignationAspect
+     with semanticsLogoVariables.VarDeclAspectAspect
+     with semanticsLogoVariables.VarReferenceAspect
+
+     exactType VariablesMT
+}
+
+modeltype RequiredVariables{
+     syntax "platform:/resource/fr.inria.diverse.examples.logo.variables.syntax/models/Variables-required.ecore"
+}
+
+

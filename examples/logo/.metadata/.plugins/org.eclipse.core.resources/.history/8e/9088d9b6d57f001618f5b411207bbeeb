@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PuzzleADL:LanguageArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:PuzzleADL="http://fr.inria.diverse.puzzle.language.adl" name="Logo">
+  <languageModules name="Primitives">
+    <requiredInterface name="RequiredPrimitives" ecoreRelativePath="/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore"/>
+  </languageModules>
+</PuzzleADL:LanguageArchitecture>

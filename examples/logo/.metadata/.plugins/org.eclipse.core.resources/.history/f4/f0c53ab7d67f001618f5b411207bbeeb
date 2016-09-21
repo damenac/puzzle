@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vm:LanguageProductLine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel">
+  <functionalVariability name="FunctionalVariability">
+    <rootFeature name="Primitives">
+      <children/>
+      <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.0"/>
+    </rootFeature>
+  </functionalVariability>
+</vm:LanguageProductLine>

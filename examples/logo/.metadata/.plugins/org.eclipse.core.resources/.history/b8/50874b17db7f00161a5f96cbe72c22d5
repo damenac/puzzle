@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PuzzleADL:LanguageArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:PuzzleADL="http://fr.inria.diverse.puzzle.language.adl" name="Logo">
+  <languageModules name="Primitives">
+    <requiredInterface name="RequiredPrimitives" ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore"/>
+    <providedInterface name="PrimitivesProvided" ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-provided.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-provided.ecore"/>
+    <abstractSyntax ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives.ecore"/>
+    <semanticsImplementation>
+      <aspectsIdentifiers>semanticsLogoPrimitives.BackAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.ForwardAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.InstructionAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.LeftAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.PrimitiveAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.RightAspect</aspectsIdentifiers>
+    </semanticsImplementation>
+  </languageModules>
+  <languageModules name="Literals">
+    <providedInterface name="ProvidedLiterals" ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.literals.syntax/models/Literals-provided.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.literals.syntax/models/Literals-provided.ecore"/>
+    <abstractSyntax ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.literals.syntax/models/Literals.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.literals.syntax/models/Literals.ecore"/>
+    <semanticsImplementation>
+      <aspectsIdentifiers>semanticsLiteralsLogo.BooleanAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLiteralsLogo.ExpressionAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLiteralsLogo.IntegerAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLiteralsLogo.LiteralAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLiteralsLogo.StringAspect</aspectsIdentifiers>
+    </semanticsImplementation>
+  </languageModules>
+  <languageModules name="BinaryExpressions">
+    <requiredInterface name="RequiredBinaryExpressions" ecoreRelativePath="/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions-required.ecore"/>
+    <abstractSyntax ecoreRelativePath="/fr.inria.diverse.examples.logo.binaryExpressions.syntax/models/BinaryExpressions.ecore"/>
+    <semanticsImplementation>
+      <aspectsIdentifiers>semanticsLogoBinaryExpressions.ArithmeticExprAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoBinaryExpressions.BinaryExprAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoBinaryExpressions.BooleanExprAspect</aspectsIdentifiers>
+    </semanticsImplementation>
+  </languageModules>
+  <languageModules name="Variables">
+    <requiredInterface name="RequiredVariables" ecoreRelativePath="/fr.inria.diverse.examples.logo.variables.syntax/models/Variables-required.ecore"/>
+    <abstractSyntax ecoreRelativePath="/fr.inria.diverse.examples.logo.variables.syntax/models/Variables.ecore"/>
+    <semanticsImplementation>
+      <aspectsIdentifiers>semanticsLogoVariables.AssignationAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoVariables.VarDeclAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoVariables.VarReferenceAspect</aspectsIdentifiers>
+    </semanticsImplementation>
+  </languageModules>
+  <languageModules name="ControlStructures">
+    <requiredInterface ecoreRelativePath="/fr.inria.diverse.examples.logo.controlstructures.syntax/models/ControlStructures.ecore"/>
+  </languageModules>
+  <interfaceBindings from="//@languageModules.0/@requiredInterface" to="//@languageModules.1/@providedInterface"/>
+  <interfaceBindings from="//@languageModules.2/@requiredInterface" to="//@languageModules.1/@providedInterface"/>
+  <interfaceBindings from="//@languageModules.3/@requiredInterface" to="//@languageModules.1/@providedInterface"/>
+  <interfaceBindings from="//@languageModules.3/@requiredInterface" to="//@languageModules.0/@providedInterface"/>
+</PuzzleADL:LanguageArchitecture>

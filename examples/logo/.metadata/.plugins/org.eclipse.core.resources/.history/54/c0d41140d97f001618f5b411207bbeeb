@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vm:LanguageProductLine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel">
+  <functionalVariability name="FunctionalVariability">
+    <rootFeature name="Root" mandatory="true">
+      <children name="Primitives" mandatory="true" selected="true">
+        <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.0"/>
+      </children>
+      <children name="Literals" selected="true">
+        <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.1"/>
+      </children>
+    </rootFeature>
+    <constraints name="Primitives implies Literals">
+      <expression xsi:type="vm:BinaryExpression" operator="implies">
+        <left xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.0"/>
+        <right xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1"/>
+      </expression>
+    </constraints>
+  </functionalVariability>
+</vm:LanguageProductLine>

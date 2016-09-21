@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vm:LanguageProductLine xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:vm="http://fr.inria.diverse.puzzle.vm.metamodel">
+  <functionalVariability name="FunctionalVariability">
+    <rootFeature name="Root" mandatory="true">
+      <children name="Primitives" mandatory="true" selected="true">
+        <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.0"/>
+      </children>
+      <children name="ImperativeProgrammingFeatures" mandatory="true" selected="true">
+        <children name="Literals" selected="true">
+          <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.1"/>
+        </children>
+        <children name="BinaryExpressions" selected="true">
+          <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.2"/>
+        </children>
+        <children name="Variables" selected="true">
+          <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.3"/>
+        </children>
+        <children name="ControlStructures" selected="true">
+          <implementationModule href="LogoProductLine.puzzleadl#//@languageModules.4"/>
+        </children>
+      </children>
+    </rootFeature>
+    <constraints name="Primitives implies Literals">
+      <expression xsi:type="vm:BinaryExpression" operator="implies">
+        <left xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.0"/>
+        <right xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1/@children.0"/>
+      </expression>
+    </constraints>
+    <constraints name="BinaryExpressions implies Literals">
+      <expression xsi:type="vm:BinaryExpression" operator="implies">
+        <left xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1/@children.1"/>
+        <right xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1/@children.0"/>
+      </expression>
+    </constraints>
+    <constraints name="Variables implies (Literals and Primitives)">
+      <expression xsi:type="vm:BinaryExpression" operator="implies">
+        <left xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1/@children.2"/>
+        <right xsi:type="vm:BinaryExpression">
+          <left xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1/@children.0"/>
+          <right xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.0"/>
+        </right>
+      </expression>
+    </constraints>
+    <constraints name="ControlStructures implies (Literals and Primitives)">
+      <expression xsi:type="vm:BinaryExpression" operator="implies">
+        <left xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1/@children.3"/>
+        <right xsi:type="vm:BinaryExpression">
+          <left xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.1/@children.0"/>
+          <right xsi:type="vm:LanguageFeatureRef" ref="//@functionalVariability/@rootFeature/@children.0"/>
+        </right>
+      </expression>
+    </constraints>
+  </functionalVariability>
+</vm:LanguageProductLine>

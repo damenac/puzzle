@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PuzzleADL:LanguageArchitecture xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:PuzzleADL="http://fr.inria.diverse.puzzle.language.adl" name="Logo">
+  <languageModules name="Primitives">
+    <requiredInterface name="RequiredPrimitives" ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-required.ecore"/>
+    <providedInterface name="PrimitivesProvided" ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-provided.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives-provided.ecore"/>
+    <abstractSyntax ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.primitives.syntax/models/Primitives.ecore"/>
+    <semanticsImplementation>
+      <aspectsIdentifiers>semanticsLogoPrimitives.BackAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.ForwardAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.InstructionAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.LeftAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.PrimitiveAspect</aspectsIdentifiers>
+      <aspectsIdentifiers>semanticsLogoPrimitives.RightAspect</aspectsIdentifiers>
+    </semanticsImplementation>
+  </languageModules>
+  <languageModules name="Literals">
+    <providedInterface name="ProvidedLiterals" ecorePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.literals.syntax/models/Literals-provided.ecore" ecoreRelativePath="/fr.inria.diverse.examples.logo.literals.syntax/models/Literals-provided.ecore"/>
+    <abstractSyntax ecorePath="/fr.inria.diverse.examples.logo.literals.syntax/models/Literals-provided.ecore" ecoreRelativePath="/Users/dmendeza/workspaces/puzzle/examples/logo/fr.inria.diverse.examples.logo.literals.syntax/models/Literals.ecore"/>
+    <semanticsImplementation/>
+  </languageModules>
+</PuzzleADL:LanguageArchitecture>
