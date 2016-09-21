@@ -8,7 +8,7 @@ import Variables.VarDecl
 @Aspect(className=VarDecl)
 class VarDeclAspect {
 	
-	def void eval(Hashtable<String, Object> context){
+	def void evalInstruction(Hashtable<String, Object> context){
 		var Hashtable<String, Object> variablesTable = context.get('variables') as Hashtable<String, Object>
 		variablesTable.put(_self.name, _self.expr.eval(context))
 	}

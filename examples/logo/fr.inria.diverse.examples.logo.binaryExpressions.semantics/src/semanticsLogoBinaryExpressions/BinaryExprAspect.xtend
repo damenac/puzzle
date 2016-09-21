@@ -1,16 +1,11 @@
 package semanticsLogoBinaryExpressions
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 
 import java.util.Hashtable
 import BinaryExpressions.BinaryExpr
 import BinaryExpressions.ArithmeticExpr
 import BinaryExpressions.BooleanExpr
-
-import static extension semanticsLogoBinaryExpressions.ArithmeticExprAspect.*
-import static extension semanticsLogoBinaryExpressions.BooleanExprAspect.*
-
 
 @Aspect(className=BinaryExpr)
 public class BinaryExprAspect {

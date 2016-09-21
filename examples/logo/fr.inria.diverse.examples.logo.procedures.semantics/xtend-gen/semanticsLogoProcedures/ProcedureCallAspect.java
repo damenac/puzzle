@@ -4,7 +4,6 @@ import Procedures.Procedure;
 import Procedures.ProcedureCall;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import java.util.Hashtable;
-import semanticsLogoProcedures.ProcedureAspect;
 import semanticsLogoProcedures.ProcedureCallAspectProcedureCallAspectProperties;
 
 @Aspect(className = ProcedureCall.class)
@@ -17,6 +16,6 @@ public class ProcedureCallAspect {
   
   protected static void _privk3_eval(final ProcedureCallAspectProcedureCallAspectProperties _self_, final ProcedureCall _self, final Hashtable<String, Object> context) {
     Procedure _ref = _self.getRef();
-    ProcedureAspect.eval(_ref, context);
+    _ref.evalInstruction(context);
   }
 }

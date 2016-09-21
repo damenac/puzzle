@@ -14,19 +14,19 @@ import semanticsLogoPrimitives.Turtle;
 @SuppressWarnings("all")
 public class BackAspect extends PrimitiveAspect {
   @OverrideAspectMethod
-  public static void eval(final Back _self, final Hashtable<String, Object> context) {
+  public static void evalInstruction(final Back _self, final Hashtable<String, Object> context) {
     semanticsLogoPrimitives.BackAspectBackAspectProperties _self_ = semanticsLogoPrimitives.BackAspectBackAspectContext.getSelf(_self);
      if (_self instanceof Primitives.Back){
-     semanticsLogoPrimitives.BackAspect._privk3_eval(_self_, (Primitives.Back)_self,context);
+     semanticsLogoPrimitives.BackAspect._privk3_evalInstruction(_self_, (Primitives.Back)_self,context);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
   }
   
-  private static void super_eval(final Back _self, final Hashtable<String, Object> context) {
+  private static void super_evalInstruction(final Back _self, final Hashtable<String, Object> context) {
     semanticsLogoPrimitives.PrimitiveAspectPrimitiveAspectProperties _self_ = semanticsLogoPrimitives.PrimitiveAspectPrimitiveAspectContext.getSelf(_self);
-     semanticsLogoPrimitives.PrimitiveAspect._privk3_eval(_self_, _self,context);
+     semanticsLogoPrimitives.PrimitiveAspect._privk3_evalInstruction(_self_, _self,context);
   }
   
-  protected static void _privk3_eval(final BackAspectBackAspectProperties _self_, final Back _self, final Hashtable<String, Object> context) {
+  protected static void _privk3_evalInstruction(final BackAspectBackAspectProperties _self_, final Back _self, final Hashtable<String, Object> context) {
     Expression _steps = _self.getSteps();
     Object _eval = _steps.eval(context);
     int _intValue = ((Integer) _eval).intValue();

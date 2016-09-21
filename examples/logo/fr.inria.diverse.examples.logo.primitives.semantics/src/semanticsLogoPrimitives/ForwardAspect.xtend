@@ -11,7 +11,7 @@ import Primitives.Forward
 public class ForwardAspect extends PrimitiveAspect{
 
 	@OverrideAspectMethod
-	def void eval (Hashtable<String, Object> context) {
+	def void evalInstruction (Hashtable<String, Object> context) {
 		var int param = (_self.steps.eval(context) as Integer).intValue
 		println("FORWARD " + param)
 		(context.get('turtle') as Turtle).forward(param)

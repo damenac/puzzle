@@ -10,12 +10,12 @@ import ControlStructures.While
 class WhileAspect extends ControlStructureAspect {
 	
 	@OverrideAspectMethod
-	def void eval(Hashtable<String, Object> context){
+	def void evalInstruction(Hashtable<String, Object> context){
 		println('')
 		var condition = _self.guard.eval(context) as Boolean
 		while(condition){
-			_self.body.eval(context)
+			_self.body.evalInstruction(context)
 			condition = _self.guard.eval(context) as Boolean
-		}
+		} 
 	}
 }

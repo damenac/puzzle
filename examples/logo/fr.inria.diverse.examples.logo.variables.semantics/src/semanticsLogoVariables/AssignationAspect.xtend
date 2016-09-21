@@ -8,7 +8,7 @@ import Variables.Assignation
 @Aspect(className=Assignation)
 class AssignationAspect {
 	
-	def void eval(Hashtable<String, Object> context){
+	def void evalInstruction(Hashtable<String, Object> context){
 		var Hashtable<String, Object> variablesTable = context.get('variables') as Hashtable<String, Object>
 		variablesTable.put(_self.ref.name, _self.expr.eval(context))
 	}

@@ -11,9 +11,9 @@ import ControlStructures.Instruction
 class BlockAspect extends ControlStructureAspect {
 	
 	@OverrideAspectMethod
-	def void eval(Hashtable<String, Object> context){
+	def void evalInstruction(Hashtable<String, Object> context){
 		for(Instruction instruction : _self.instructions){
-			instruction.eval(context)
+			instruction.evalInstruction(context)
 		}
 	}
 }

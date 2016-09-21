@@ -76,13 +76,13 @@ public interface ControlStructuresPackage extends EPackage {
 	int INSTRUCTION_FEATURE_COUNT = 0;
 
 	/**
-	 * The operation id for the '<em>Eval</em>' operation.
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION___EVAL__MAP = 0;
+	int INSTRUCTION___EVAL_INSTRUCTION__MAP = 0;
 
 	/**
 	 * The number of operations of the '<em>Instruction</em>' class.
@@ -111,6 +111,15 @@ public interface ControlStructuresPackage extends EPackage {
 	 * @ordered
 	 */
 	int EXPRESSION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION___EVAL_INSTRUCTION__MAP = INSTRUCTION___EVAL_INSTRUCTION__MAP;
 
 	/**
 	 * The operation id for the '<em>Eval</em>' operation.
@@ -150,13 +159,13 @@ public interface ControlStructuresPackage extends EPackage {
 	int CONTROL_STRUCTURE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Eval</em>' operation.
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROL_STRUCTURE___EVAL__MAP = INSTRUCTION___EVAL__MAP;
+	int CONTROL_STRUCTURE___EVAL_INSTRUCTION__MAP = INSTRUCTION___EVAL_INSTRUCTION__MAP;
 
 	/**
 	 * The number of operations of the '<em>Control Structure</em>' class.
@@ -205,13 +214,13 @@ public interface ControlStructuresPackage extends EPackage {
 	int IF_FEATURE_COUNT = CONTROL_STRUCTURE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Eval</em>' operation.
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF___EVAL__MAP = CONTROL_STRUCTURE___EVAL__MAP;
+	int IF___EVAL_INSTRUCTION__MAP = CONTROL_STRUCTURE___EVAL_INSTRUCTION__MAP;
 
 	/**
 	 * The number of operations of the '<em>If</em>' class.
@@ -251,13 +260,13 @@ public interface ControlStructuresPackage extends EPackage {
 	int BLOCK_FEATURE_COUNT = CONTROL_STRUCTURE_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Eval</em>' operation.
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK___EVAL__MAP = CONTROL_STRUCTURE___EVAL__MAP;
+	int BLOCK___EVAL_INSTRUCTION__MAP = CONTROL_STRUCTURE___EVAL_INSTRUCTION__MAP;
 
 	/**
 	 * The number of operations of the '<em>Block</em>' class.
@@ -306,13 +315,13 @@ public interface ControlStructuresPackage extends EPackage {
 	int WHILE_FEATURE_COUNT = CONTROL_STRUCTURE_FEATURE_COUNT + 2;
 
 	/**
-	 * The operation id for the '<em>Eval</em>' operation.
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WHILE___EVAL__MAP = CONTROL_STRUCTURE___EVAL__MAP;
+	int WHILE___EVAL_INSTRUCTION__MAP = CONTROL_STRUCTURE___EVAL_INSTRUCTION__MAP;
 
 	/**
 	 * The number of operations of the '<em>While</em>' class.
@@ -335,14 +344,14 @@ public interface ControlStructuresPackage extends EPackage {
 	EClass getInstruction();
 
 	/**
-	 * Returns the meta object for the '{@link ControlStructures.Instruction#eval(java.util.Map) <em>Eval</em>}' operation.
+	 * Returns the meta object for the '{@link ControlStructures.Instruction#evalInstruction(java.util.Map) <em>Eval Instruction</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Eval</em>' operation.
-	 * @see ControlStructures.Instruction#eval(java.util.Map)
+	 * @return the meta object for the '<em>Eval Instruction</em>' operation.
+	 * @see ControlStructures.Instruction#evalInstruction(java.util.Map)
 	 * @generated
 	 */
-	EOperation getInstruction__Eval__Map();
+	EOperation getInstruction__EvalInstruction__Map();
 
 	/**
 	 * Returns the meta object for class '{@link ControlStructures.Expression <em>Expression</em>}'.
@@ -493,12 +502,12 @@ public interface ControlStructuresPackage extends EPackage {
 		EClass INSTRUCTION = eINSTANCE.getInstruction();
 
 		/**
-		 * The meta object literal for the '<em><b>Eval</b></em>' operation.
+		 * The meta object literal for the '<em><b>Eval Instruction</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation INSTRUCTION___EVAL__MAP = eINSTANCE.getInstruction__Eval__Map();
+		EOperation INSTRUCTION___EVAL_INSTRUCTION__MAP = eINSTANCE.getInstruction__EvalInstruction__Map();
 
 		/**
 		 * The meta object literal for the '{@link ControlStructures.impl.ExpressionImpl <em>Expression</em>}' class.

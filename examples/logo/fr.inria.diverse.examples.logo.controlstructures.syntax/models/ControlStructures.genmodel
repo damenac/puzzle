@@ -6,9 +6,9 @@
     <genClasses image="false">
       <ecoreClass href="ControlStructures.ecore#//Instruction"/>
       <genOperations>
-        <ecoreOperation href="ControlStructures.ecore#//Instruction/eval"/>
+        <ecoreOperation href="ControlStructures.ecore#//Instruction/evalInstruction"/>
         <genParameters>
-          <ecoreParameter href="ControlStructures.ecore#//Instruction/eval/context"/>
+          <ecoreParameter href="ControlStructures.ecore#//Instruction/evalInstruction/context"/>
         </genParameters>
       </genOperations>
     </genClasses>

@@ -2,6 +2,17 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Procedures" nsURI="http://fr.inria.diverse.examples.logo.Procedures" nsPrefix="Procedures">
   <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true">
     <eAnnotations source="Required"/>
+    <eOperations name="evalInstruction">
+      <eAnnotations source="Required"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      <eParameters name="context">
+        <eGenericType>
+          <eTypeArguments/>
+          <eTypeArguments/>
+          <eClassifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
+        </eGenericType>
+      </eParameters>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true" eSuperTypes="//Instruction">
     <eAnnotations source="Required"/>
@@ -17,23 +28,8 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Block">
-    <eAnnotations source="Required"/>
-    <eOperations name="eval">
-      <eAnnotations source="Required"/>
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      <eParameters name="context">
-        <eGenericType>
-          <eTypeArguments/>
-          <eTypeArguments/>
-          <eClassifier xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EMap"/>
-        </eGenericType>
-      </eParameters>
-    </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1" eType="//Instruction" containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Procedure" eSuperTypes="//Instruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="body" upperBound="-1" eType="//Instruction" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="returnType" eType="//Literal" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>

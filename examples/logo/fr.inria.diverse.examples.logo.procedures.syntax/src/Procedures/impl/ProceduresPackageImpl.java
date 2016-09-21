@@ -2,7 +2,6 @@
  */
 package Procedures.impl;
 
-import Procedures.Block;
 import Procedures.Expression;
 import Procedures.Instruction;
 import Procedures.Literal;
@@ -40,13 +39,6 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 	 * @generated
 	 */
 	private EClass expressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass blockEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -144,6 +136,15 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getInstruction__EvalInstruction__Map() {
+		return instructionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getExpression() {
 		return expressionEClass;
 	}
@@ -155,33 +156,6 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 	 */
 	public EOperation getExpression__Eval__Map() {
 		return expressionEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBlock() {
-		return blockEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBlock_Instructions() {
-		return (EReference)blockEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getBlock__Eval__Map() {
-		return blockEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -276,13 +250,10 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 
 		// Create classes and their features
 		instructionEClass = createEClass(INSTRUCTION);
+		createEOperation(instructionEClass, INSTRUCTION___EVAL_INSTRUCTION__MAP);
 
 		expressionEClass = createEClass(EXPRESSION);
 		createEOperation(expressionEClass, EXPRESSION___EVAL__MAP);
-
-		blockEClass = createEClass(BLOCK);
-		createEReference(blockEClass, BLOCK__INSTRUCTIONS);
-		createEOperation(blockEClass, BLOCK___EVAL__MAP);
 
 		procedureEClass = createEClass(PROCEDURE);
 		createEReference(procedureEClass, PROCEDURE__BODY);
@@ -330,9 +301,7 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 		// Initialize classes, features, and operations; add parameters
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		EOperation op = initEOperation(getExpression__Eval__Map(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getInstruction__EvalInstruction__Map(), ecorePackage.getEJavaObject(), "evalInstruction", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -340,10 +309,9 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 		g1.getETypeArguments().add(g2);
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBlock_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(expressionEClass, Expression.class, "Expression", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = initEOperation(getBlock__Eval__Map(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getExpression__Eval__Map(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 		g1 = createEGenericType(ecorePackage.getEMap());
 		g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -352,7 +320,7 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 		addEParameter(op, g1, "context", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(procedureEClass, Procedure.class, "Procedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getProcedure_Body(), this.getBlock(), null, "body", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProcedure_Body(), this.getInstruction(), null, "body", null, 0, -1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProcedure_ReturnType(), this.getLiteral(), null, "returnType", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProcedure_Name(), ecorePackage.getEString(), "name", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -383,22 +351,17 @@ public class ProceduresPackageImpl extends EPackageImpl implements ProceduresPac
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getInstruction__EvalInstruction__Map(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (expressionEClass, 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
 		  (getExpression__Eval__Map(), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (blockEClass, 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (getBlock__Eval__Map(), 
 		   source, 
 		   new String[] {
 		   });	

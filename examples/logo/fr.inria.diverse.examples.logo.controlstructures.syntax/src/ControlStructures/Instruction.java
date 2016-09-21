@@ -23,6 +23,6 @@ public interface Instruction extends EObject {
 	 * @model
 	 * @generated
 	 */
-	Object eval(Map<?, ?> context);
+	Object evalInstruction(Map<?, ?> context);
 
 } // Instruction

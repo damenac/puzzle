@@ -17,7 +17,7 @@ public class LogoProgramAspect {
 		println("LogoProgram eval !")
 		for(Instruction instruction : _self.instructions){
 			println(instruction)
-			instruction.eval(context)
+			instruction.evalInstruction(context)
 		}
 	}
 }

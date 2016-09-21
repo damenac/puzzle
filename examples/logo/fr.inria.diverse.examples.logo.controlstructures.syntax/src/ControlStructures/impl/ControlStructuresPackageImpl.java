@@ -143,7 +143,7 @@ public class ControlStructuresPackageImpl extends EPackageImpl implements Contro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getInstruction__Eval__Map() {
+	public EOperation getInstruction__EvalInstruction__Map() {
 		return instructionEClass.getEOperations().get(0);
 	}
 
@@ -275,7 +275,7 @@ public class ControlStructuresPackageImpl extends EPackageImpl implements Contro
 
 		// Create classes and their features
 		instructionEClass = createEClass(INSTRUCTION);
-		createEOperation(instructionEClass, INSTRUCTION___EVAL__MAP);
+		createEOperation(instructionEClass, INSTRUCTION___EVAL_INSTRUCTION__MAP);
 
 		expressionEClass = createEClass(EXPRESSION);
 		createEOperation(expressionEClass, EXPRESSION___EVAL__MAP);
@@ -331,7 +331,7 @@ public class ControlStructuresPackageImpl extends EPackageImpl implements Contro
 		// Initialize classes, features, and operations; add parameters
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getInstruction__Eval__Map(), ecorePackage.getEJavaObject(), "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		EOperation op = initEOperation(getInstruction__EvalInstruction__Map(), ecorePackage.getEJavaObject(), "evalInstruction", 0, 1, IS_UNIQUE, IS_ORDERED);
 		EGenericType g1 = createEGenericType(ecorePackage.getEMap());
 		EGenericType g2 = createEGenericType();
 		g1.getETypeArguments().add(g2);
@@ -384,7 +384,7 @@ public class ControlStructuresPackageImpl extends EPackageImpl implements Contro
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getInstruction__Eval__Map(), 
+		  (getInstruction__EvalInstruction__Map(), 
 		   source, 
 		   new String[] {
 		   });	

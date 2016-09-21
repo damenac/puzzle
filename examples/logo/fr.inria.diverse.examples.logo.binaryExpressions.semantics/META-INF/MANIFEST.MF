@@ -1,5 +1,5 @@
 Bundle-SymbolicName: fr.inria.diverse.examples.logo.binaryExpressions.semantics;singleton:=true
-Export-Package: semanticsLogoBinaryExpressions,semanticsLogo
+Export-Package: semanticsLogoBinaryExpressions
 Bundle-Version: 1.0.0
 Bundle-Name: fr.inria.diverse.examples.logo.binaryExpressions.semantics
 Bundle-ClassPath: .,lib/hamcrest-core-1.3.jar,lib/itext-pdfa-5.5.3-sources.jar,lib/itext-xtra-5.5.3-javadoc.jar,lib/itext-pdfa-5.5.3-javadoc.jar,lib/itext-pdfa-5.5.3.jar,lib/itext-xtra-5.5.3-sources.jar,lib/itext-xtra-5.5.3.jar,lib/itextpdf-5.5.3-javadoc.jar,lib/itextpdf-5.5.3-sources.jar,lib/itextpdf-5.5.3.jar,lib/jcommon-1.0.23.jar,lib/jfreechart-1.0.19.jar

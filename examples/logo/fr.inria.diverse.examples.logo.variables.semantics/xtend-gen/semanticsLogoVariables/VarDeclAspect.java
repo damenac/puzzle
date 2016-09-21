@@ -9,12 +9,12 @@ import semanticsLogoVariables.VarDeclAspectVarDeclAspectProperties;
 @Aspect(className = VarDecl.class)
 @SuppressWarnings("all")
 public class VarDeclAspect {
-  public static void eval(final VarDecl _self, final Hashtable<String, Object> context) {
+  public static void evalInstruction(final VarDecl _self, final Hashtable<String, Object> context) {
     semanticsLogoVariables.VarDeclAspectVarDeclAspectProperties _self_ = semanticsLogoVariables.VarDeclAspectVarDeclAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+    _privk3_evalInstruction(_self_, _self,context);
   }
   
-  protected static void _privk3_eval(final VarDeclAspectVarDeclAspectProperties _self_, final VarDecl _self, final Hashtable<String, Object> context) {
+  protected static void _privk3_evalInstruction(final VarDeclAspectVarDeclAspectProperties _self_, final VarDecl _self, final Hashtable<String, Object> context) {
     Object _get = context.get("variables");
     Hashtable<String, Object> variablesTable = ((Hashtable<String, Object>) _get);
     String _name = _self.getName();

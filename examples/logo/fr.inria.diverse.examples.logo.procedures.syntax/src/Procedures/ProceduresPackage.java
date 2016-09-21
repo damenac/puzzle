@@ -77,13 +77,22 @@ public interface ProceduresPackage extends EPackage {
 	int INSTRUCTION_FEATURE_COUNT = 0;
 
 	/**
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION___EVAL_INSTRUCTION__MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Instruction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INSTRUCTION_OPERATION_COUNT = 0;
+	int INSTRUCTION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link Procedures.impl.ExpressionImpl <em>Expression</em>}' class.
@@ -105,6 +114,15 @@ public interface ProceduresPackage extends EPackage {
 	int EXPRESSION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION___EVAL_INSTRUCTION__MAP = INSTRUCTION___EVAL_INSTRUCTION__MAP;
+
+	/**
 	 * The operation id for the '<em>Eval</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -123,52 +141,6 @@ public interface ProceduresPackage extends EPackage {
 	int EXPRESSION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link Procedures.impl.BlockImpl <em>Block</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Procedures.impl.BlockImpl
-	 * @see Procedures.impl.ProceduresPackageImpl#getBlock()
-	 * @generated
-	 */
-	int BLOCK = 2;
-
-	/**
-	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK__INSTRUCTIONS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK_FEATURE_COUNT = 1;
-
-	/**
-	 * The operation id for the '<em>Eval</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK___EVAL__MAP = 0;
-
-	/**
-	 * The number of operations of the '<em>Block</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOCK_OPERATION_COUNT = 1;
-
-	/**
 	 * The meta object id for the '{@link Procedures.impl.ProcedureImpl <em>Procedure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -176,10 +148,10 @@ public interface ProceduresPackage extends EPackage {
 	 * @see Procedures.impl.ProceduresPackageImpl#getProcedure()
 	 * @generated
 	 */
-	int PROCEDURE = 3;
+	int PROCEDURE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Body</b></em>' containment reference.
+	 * The feature id for the '<em><b>Body</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -215,6 +187,15 @@ public interface ProceduresPackage extends EPackage {
 	int PROCEDURE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
 
 	/**
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCEDURE___EVAL_INSTRUCTION__MAP = INSTRUCTION___EVAL_INSTRUCTION__MAP;
+
+	/**
 	 * The number of operations of the '<em>Procedure</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -231,7 +212,7 @@ public interface ProceduresPackage extends EPackage {
 	 * @see Procedures.impl.ProceduresPackageImpl#getProcedureCall()
 	 * @generated
 	 */
-	int PROCEDURE_CALL = 4;
+	int PROCEDURE_CALL = 3;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -250,6 +231,15 @@ public interface ProceduresPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCEDURE_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Eval Instruction</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCEDURE_CALL___EVAL_INSTRUCTION__MAP = EXPRESSION___EVAL_INSTRUCTION__MAP;
 
 	/**
 	 * The operation id for the '<em>Eval</em>' operation.
@@ -277,7 +267,7 @@ public interface ProceduresPackage extends EPackage {
 	 * @see Procedures.impl.ProceduresPackageImpl#getLiteral()
 	 * @generated
 	 */
-	int LITERAL = 5;
+	int LITERAL = 4;
 
 	/**
 	 * The number of structural features of the '<em>Literal</em>' class.
@@ -309,6 +299,16 @@ public interface ProceduresPackage extends EPackage {
 	EClass getInstruction();
 
 	/**
+	 * Returns the meta object for the '{@link Procedures.Instruction#evalInstruction(java.util.Map) <em>Eval Instruction</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Eval Instruction</em>' operation.
+	 * @see Procedures.Instruction#evalInstruction(java.util.Map)
+	 * @generated
+	 */
+	EOperation getInstruction__EvalInstruction__Map();
+
+	/**
 	 * Returns the meta object for class '{@link Procedures.Expression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -329,37 +329,6 @@ public interface ProceduresPackage extends EPackage {
 	EOperation getExpression__Eval__Map();
 
 	/**
-	 * Returns the meta object for class '{@link Procedures.Block <em>Block</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Block</em>'.
-	 * @see Procedures.Block
-	 * @generated
-	 */
-	EClass getBlock();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link Procedures.Block#getInstructions <em>Instructions</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instructions</em>'.
-	 * @see Procedures.Block#getInstructions()
-	 * @see #getBlock()
-	 * @generated
-	 */
-	EReference getBlock_Instructions();
-
-	/**
-	 * Returns the meta object for the '{@link Procedures.Block#eval(java.util.Map) <em>Eval</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Eval</em>' operation.
-	 * @see Procedures.Block#eval(java.util.Map)
-	 * @generated
-	 */
-	EOperation getBlock__Eval__Map();
-
-	/**
 	 * Returns the meta object for class '{@link Procedures.Procedure <em>Procedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -370,10 +339,10 @@ public interface ProceduresPackage extends EPackage {
 	EClass getProcedure();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link Procedures.Procedure#getBody <em>Body</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Procedures.Procedure#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Body</em>'.
+	 * @return the meta object for the containment reference list '<em>Body</em>'.
 	 * @see Procedures.Procedure#getBody()
 	 * @see #getProcedure()
 	 * @generated
@@ -467,6 +436,14 @@ public interface ProceduresPackage extends EPackage {
 		EClass INSTRUCTION = eINSTANCE.getInstruction();
 
 		/**
+		 * The meta object literal for the '<em><b>Eval Instruction</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation INSTRUCTION___EVAL_INSTRUCTION__MAP = eINSTANCE.getInstruction__EvalInstruction__Map();
+
+		/**
 		 * The meta object literal for the '{@link Procedures.impl.ExpressionImpl <em>Expression</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -485,32 +462,6 @@ public interface ProceduresPackage extends EPackage {
 		EOperation EXPRESSION___EVAL__MAP = eINSTANCE.getExpression__Eval__Map();
 
 		/**
-		 * The meta object literal for the '{@link Procedures.impl.BlockImpl <em>Block</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Procedures.impl.BlockImpl
-		 * @see Procedures.impl.ProceduresPackageImpl#getBlock()
-		 * @generated
-		 */
-		EClass BLOCK = eINSTANCE.getBlock();
-
-		/**
-		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BLOCK__INSTRUCTIONS = eINSTANCE.getBlock_Instructions();
-
-		/**
-		 * The meta object literal for the '<em><b>Eval</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BLOCK___EVAL__MAP = eINSTANCE.getBlock__Eval__Map();
-
-		/**
 		 * The meta object literal for the '{@link Procedures.impl.ProcedureImpl <em>Procedure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -521,7 +472,7 @@ public interface ProceduresPackage extends EPackage {
 		EClass PROCEDURE = eINSTANCE.getProcedure();
 
 		/**
-		 * The meta object literal for the '<em><b>Body</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Body</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

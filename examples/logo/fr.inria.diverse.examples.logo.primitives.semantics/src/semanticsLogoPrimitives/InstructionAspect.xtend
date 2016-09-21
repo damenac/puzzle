@@ -14,8 +14,8 @@ import static extension semanticsLogoPrimitives.PrimitiveAspect.*
  @Aspect(className=Instruction) 
 class InstructionAspect {
  
-	def public void eval (Hashtable<String, Object> context ) {
+	def public void evalInstruction (Hashtable<String, Object> context ) {
 		if(_self instanceof Primitive)
-			(_self as Primitive).eval(context)
+			(_self as Primitive).evalInstruction(context)
 	}  
 }

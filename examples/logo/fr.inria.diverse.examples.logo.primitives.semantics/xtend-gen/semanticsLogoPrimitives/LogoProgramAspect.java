@@ -25,7 +25,7 @@ public class LogoProgramAspect {
     for (final Instruction instruction : _instructions) {
       {
         InputOutput.<Instruction>println(instruction);
-        InstructionAspect.eval(instruction, context);
+        InstructionAspect.evalInstruction(instruction, context);
       }
     }
   }

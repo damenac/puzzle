@@ -9,7 +9,6 @@ languageBinding {
 	bind( RequiredVariables, ProvidedPrimitives )
 	bind( RequiredControlStructures, ProvidedLiterals )
 	bind( RequiredControlStructures, ProvidedPrimitives )
-	bind( RequiredProcedures, ProvidedControlStructures )
 	bind( RequiredProcedures, ProvidedLiterals )
 	bind( RequiredProcedures, ProvidedPrimitives )
 }

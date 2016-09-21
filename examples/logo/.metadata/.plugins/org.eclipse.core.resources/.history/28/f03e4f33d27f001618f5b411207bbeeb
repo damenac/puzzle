@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.diverse.examples.logo.controlstructures.syntax/src" modelPluginID="fr.inria.diverse.examples.logo.controlstructures.syntax" modelName="ControlStructures" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>ControlStructures.ecore</foreignModel>
+  <genPackages prefix="ControlStructures" disposableProviderFactory="true">
+    <ecorePackage href="ControlStructures.ecore#/"/>
+    <genClasses image="false">
+      <ecoreClass href="ControlStructures.ecore#//Instruction"/>
+      <genOperations>
+        <ecoreOperation href="ControlStructures.ecore#//Instruction/eval"/>
+        <genParameters>
+          <ecoreParameter href="ControlStructures.ecore#//Instruction/eval/context"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="ControlStructures.ecore#//Expression"/>
+      <genOperations>
+        <ecoreOperation href="ControlStructures.ecore#//Expression/eval"/>
+        <genParameters>
+          <ecoreParameter href="ControlStructures.ecore#//Expression/eval/context"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="ControlStructures.ecore#//ControlStructure"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ControlStructures.ecore#//If"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ControlStructures.ecore#//If/body"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ControlStructures.ecore#//If/condition"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ControlStructures.ecore#//Block"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ControlStructures.ecore#//Block/instructions"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="ControlStructures.ecore#//While"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ControlStructures.ecore#//While/body"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="ControlStructures.ecore#//While/guard"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

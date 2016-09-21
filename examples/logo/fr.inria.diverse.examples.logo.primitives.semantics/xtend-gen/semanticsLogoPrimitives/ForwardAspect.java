@@ -14,19 +14,17 @@ import semanticsLogoPrimitives.Turtle;
 @SuppressWarnings("all")
 public class ForwardAspect extends PrimitiveAspect {
   @OverrideAspectMethod
-  public static void eval(final Forward _self, final Hashtable<String, Object> context) {
+  public static void evalInstruction(final Forward _self, final Hashtable<String, Object> context) {
     semanticsLogoPrimitives.ForwardAspectForwardAspectProperties _self_ = semanticsLogoPrimitives.ForwardAspectForwardAspectContext.getSelf(_self);
-     if (_self instanceof Primitives.Forward){
-     semanticsLogoPrimitives.ForwardAspect._privk3_eval(_self_, (Primitives.Forward)_self,context);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    _privk3_evalInstruction(_self_, _self,context);
   }
   
-  private static void super_eval(final Forward _self, final Hashtable<String, Object> context) {
+  private static void super_evalInstruction(final Forward _self, final Hashtable<String, Object> context) {
     semanticsLogoPrimitives.PrimitiveAspectPrimitiveAspectProperties _self_ = semanticsLogoPrimitives.PrimitiveAspectPrimitiveAspectContext.getSelf(_self);
-     semanticsLogoPrimitives.PrimitiveAspect._privk3_eval(_self_, _self,context);
+     semanticsLogoPrimitives.PrimitiveAspect._privk3_evalInstruction(_self_, _self,context);
   }
   
-  protected static void _privk3_eval(final ForwardAspectForwardAspectProperties _self_, final Forward _self, final Hashtable<String, Object> context) {
+  protected static void _privk3_evalInstruction(final ForwardAspectForwardAspectProperties _self_, final Forward _self, final Hashtable<String, Object> context) {
     Expression _steps = _self.getSteps();
     Object _eval = _steps.eval(context);
     int param = ((Integer) _eval).intValue();

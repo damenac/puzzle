@@ -10,7 +10,7 @@ import Primitives.Left
 public class LeftAspect extends PrimitiveAspect{
  
 	@OverrideAspectMethod
-	def void eval (Hashtable<String, Object> context) {
+	def void evalInstruction (Hashtable<String, Object> context) {
 		var int param = (-1)  * (_self.angle.eval(context) as Integer).intValue
 		println("LEFT " + param)
 		(context.get('turtle') as Turtle).rotate(param)

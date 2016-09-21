@@ -1,0 +1,15 @@
+package family
+
+import 'logo.melange'
+
+languageBinding {
+	bind( RequiredPrimitives, ProvidedLiterals )
+	bind( RequiredBinaryExpressions, ProvidedLiterals )
+	bind( RequiredVariables, ProvidedLiterals )
+	bind( RequiredVariables, ProvidedPrimitives )
+	bind( RequiredProcedures, ProvidedControlStructures )
+	bind( RequiredProcedures, ProvidedLiterals )
+	bind( RequiredProcedures, ProvidedPrimitives )
+	bind( RequiredControlStructures, ProvidedLiterals )
+	bind( RequiredControlStructures, ProvidedPrimitives )
+}

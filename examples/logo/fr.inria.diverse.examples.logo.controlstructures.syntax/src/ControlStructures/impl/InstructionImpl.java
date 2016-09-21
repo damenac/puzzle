@@ -49,7 +49,7 @@ public abstract class InstructionImpl extends MinimalEObjectImpl.Container imple
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Object eval(Map<?, ?> context) {
+	public Object evalInstruction(Map<?, ?> context) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -63,8 +63,8 @@ public abstract class InstructionImpl extends MinimalEObjectImpl.Container imple
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ControlStructuresPackage.INSTRUCTION___EVAL__MAP:
-				return eval((Map<?, ?>)arguments.get(0));
+			case ControlStructuresPackage.INSTRUCTION___EVAL_INSTRUCTION__MAP:
+				return evalInstruction((Map<?, ?>)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -10,11 +10,11 @@ import ControlStructures.If
 class IfAspect extends ControlStructureAspect {
 	
 	@OverrideAspectMethod
-	def void eval(Hashtable<String, Object> context){
+	def void evalInstruction(Hashtable<String, Object> context){
 		println('')
 		var condition = _self.condition.eval(context) as Boolean
 		if(condition){
-			_self.body.eval(context)
+			_self.body.evalInstruction(context)
 		}
 	}
 }

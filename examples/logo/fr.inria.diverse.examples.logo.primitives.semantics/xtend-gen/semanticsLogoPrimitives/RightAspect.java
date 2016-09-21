@@ -14,17 +14,17 @@ import semanticsLogoPrimitives.Turtle;
 @SuppressWarnings("all")
 public class RightAspect extends PrimitiveAspect {
   @OverrideAspectMethod
-  public static void eval(final Right _self, final Hashtable<String, Object> context) {
+  public static void evalInstruction(final Right _self, final Hashtable<String, Object> context) {
     semanticsLogoPrimitives.RightAspectRightAspectProperties _self_ = semanticsLogoPrimitives.RightAspectRightAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+    _privk3_evalInstruction(_self_, _self,context);
   }
   
-  private static void super_eval(final Right _self, final Hashtable<String, Object> context) {
+  private static void super_evalInstruction(final Right _self, final Hashtable<String, Object> context) {
     semanticsLogoPrimitives.PrimitiveAspectPrimitiveAspectProperties _self_ = semanticsLogoPrimitives.PrimitiveAspectPrimitiveAspectContext.getSelf(_self);
-     semanticsLogoPrimitives.PrimitiveAspect._privk3_eval(_self_, _self,context);
+     semanticsLogoPrimitives.PrimitiveAspect._privk3_evalInstruction(_self_, _self,context);
   }
   
-  protected static void _privk3_eval(final RightAspectRightAspectProperties _self_, final Right _self, final Hashtable<String, Object> context) {
+  protected static void _privk3_evalInstruction(final RightAspectRightAspectProperties _self_, final Right _self, final Hashtable<String, Object> context) {
     Expression _angle = _self.getAngle();
     Object _eval = _angle.eval(context);
     int param = ((Integer) _eval).intValue();

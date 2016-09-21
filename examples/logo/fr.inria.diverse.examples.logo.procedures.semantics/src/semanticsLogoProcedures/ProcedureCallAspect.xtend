@@ -11,6 +11,6 @@ import static extension semanticsLogoProcedures.ProcedureAspect.*
 class ProcedureCallAspect {
 	
 	def void eval(Hashtable<String, Object> context){
-		_self.ref.eval(context)
+		_self.ref.evalInstruction(context)
 	}
 }

@@ -13,20 +13,20 @@ import semanticsLogoControlStructures.ControlStructureAspect;
 @SuppressWarnings("all")
 public class BlockAspect extends ControlStructureAspect {
   @OverrideAspectMethod
-  public static void eval(final Block _self, final Hashtable<String, Object> context) {
+  public static void evalInstruction(final Block _self, final Hashtable<String, Object> context) {
     semanticsLogoControlStructures.BlockAspectBlockAspectProperties _self_ = semanticsLogoControlStructures.BlockAspectBlockAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+    _privk3_evalInstruction(_self_, _self,context);
   }
   
-  private static void super_eval(final Block _self, final Hashtable<String, Object> context) {
+  private static void super_evalInstruction(final Block _self, final Hashtable<String, Object> context) {
     semanticsLogoControlStructures.ControlStructureAspectControlStructureAspectProperties _self_ = semanticsLogoControlStructures.ControlStructureAspectControlStructureAspectContext.getSelf(_self);
-     semanticsLogoControlStructures.ControlStructureAspect._privk3_eval(_self_, _self,context);
+     semanticsLogoControlStructures.ControlStructureAspect._privk3_evalInstruction(_self_, _self,context);
   }
   
-  protected static void _privk3_eval(final BlockAspectBlockAspectProperties _self_, final Block _self, final Hashtable<String, Object> context) {
+  protected static void _privk3_evalInstruction(final BlockAspectBlockAspectProperties _self_, final Block _self, final Hashtable<String, Object> context) {
     EList<Instruction> _instructions = _self.getInstructions();
     for (final Instruction instruction : _instructions) {
-      instruction.eval(context);
+      instruction.evalInstruction(context);
     }
   }
 }

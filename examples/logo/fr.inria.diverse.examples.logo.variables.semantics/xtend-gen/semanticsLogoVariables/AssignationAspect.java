@@ -10,12 +10,12 @@ import semanticsLogoVariables.AssignationAspectAssignationAspectProperties;
 @Aspect(className = Assignation.class)
 @SuppressWarnings("all")
 public class AssignationAspect {
-  public static void eval(final Assignation _self, final Hashtable<String, Object> context) {
+  public static void evalInstruction(final Assignation _self, final Hashtable<String, Object> context) {
     semanticsLogoVariables.AssignationAspectAssignationAspectProperties _self_ = semanticsLogoVariables.AssignationAspectAssignationAspectContext.getSelf(_self);
-    _privk3_eval(_self_, _self,context);
+    _privk3_evalInstruction(_self_, _self,context);
   }
   
-  protected static void _privk3_eval(final AssignationAspectAssignationAspectProperties _self_, final Assignation _self, final Hashtable<String, Object> context) {
+  protected static void _privk3_evalInstruction(final AssignationAspectAssignationAspectProperties _self_, final Assignation _self, final Hashtable<String, Object> context) {
     Object _get = context.get("variables");
     Hashtable<String, Object> variablesTable = ((Hashtable<String, Object>) _get);
     VarDecl _ref = _self.getRef();
