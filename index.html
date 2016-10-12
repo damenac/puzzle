@@ -43,22 +43,25 @@
 
 <p>Similarly to software product lines, language product lines can be built through two different approaches: top-down and bottom-up <a href="http://dl.acm.org/citation.cfm?id=2934470">[Kuhn:2016]</a>. In the top-down approach, a language product line is designed and implemented through a domain analysis process where the knowledge owned by experts and final users is used to define a set of language modules that implement the language features of the product line. Also, the domain knowledge is used to specify variability models capturing the rules that define the way in which the language features can be combined to produce valid DSL variants. In the bottom-up approach, the language product line is built up from a set of existing DSL variants through reverse-engineering techniques. Those techniques should provide mechanisms for: (1) recovering of a language modular design including all the language constructs existing in the DSL variants; and (2) synthesis of the corresponding variability models.</p>
 
+<h3>
+<a id="contributions" class="anchor" href="#contributions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contributions</h3>
+
 <p>Based on these different approaches for the construction of language product lines, we propose two contributions briefly explained below:</p>
 
-<h3>
-<a id="a-top-down-perspective-for-l-ple" class="anchor" href="#a-top-down-perspective-for-l-ple" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A top-down perspective for L-PLE</h3>
+<h2>
+<a id="a-top-down-perspective-for-l-ple" class="anchor" href="#a-top-down-perspective-for-l-ple" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A top-down perspective for L-PLE</h2>
 
 <p>As a first contribution, we introduce a set of facilities to support the development of top-down language product lines. Concretely, we provide a language modularization approach that permits the decomposition of DSLs into interdependent language features. We also introduce a modeling strategy to represent the variability of a language product line. These facilities are accompanied with a set of methodological insights to guide language designers during the development process. </p>
 
-<h3>
-<a id="a-bottom-up-perspective-for-l-ple" class="anchor" href="#a-bottom-up-perspective-for-l-ple" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A bottom-up perspective for L-PLE</h3>
+<h2>
+<a id="a-bottom-up-perspective-for-l-ple" class="anchor" href="#a-bottom-up-perspective-for-l-ple" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A bottom-up perspective for L-PLE</h2>
 
 <p>As a second contribution, we introduce a reverse-engineering process to automatically build up a language product line from a set of existing DSL variants. This process encompasses: (1) the recovering of a language modular design that defines the features of the language product line; and (2) the synthesis of variability models that represent the corresponding variability.</p>
 
 <p><img src="https://github.com/damende/puzzle/blob/master/website-sources/reverse-engineering.jpg?raw=true" width="520" height="240"></p>
 
-<h3>
-<a id="scope" class="anchor" href="#scope" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scope</h3>
+<h2>
+<a id="scope" class="anchor" href="#scope" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Scope</h2>
 
 <p>All the ideas that we will present in the remainder of this thesis are scoped to executable domain-specific modeling languages (xDSMLs) where the abstract syntax is specified through <em>metamodels</em>, and the dynamic semantics is specified operationally as a set of <em>domain-specific actions</em> <a href="http://link.springer.com/chapter/10.1007/978-3-642-36089-3_11">[Combemale:2013]</a>. Domain-specific actions are java-like methods that introduce behavior in the meta-classes of a given metamodel. Such injection is performed via weaving as the same as in aspect oriented programming <a href="http://link.springer.com/article/10.1007/s10270-013-0354-4">[Jezequel:2015]</a>. Concrete syntax, and hence concrete syntax variability, are out of the scope of this thesis. </p>
 
@@ -89,6 +92,7 @@
 <li><a href="http://people.irisa.fr/Benoit.Combemale/">Benoit Combemale</a></li>
 <li><a href="https://people.irisa.fr/Arnaud.Blouin/">Arnaud Blouin</a></li>
 <li><a href="http://people.rennes.inria.fr/Benoit.Baudry/">Benoit Baudry</a></li>
+<li><a href="http://www.le-guernic.info">Gurvan Le Guernic</a></li>
 </ul>
 
 <h3>
