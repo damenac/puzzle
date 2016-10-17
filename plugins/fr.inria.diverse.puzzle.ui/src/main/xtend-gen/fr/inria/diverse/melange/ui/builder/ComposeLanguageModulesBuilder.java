@@ -1,8 +1,8 @@
 package fr.inria.diverse.melange.ui.builder;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils;
-import fr.inria.diverse.melange.eclipse.EclipseProjectHelper;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.melange.metamodel.melange.Element;
 import fr.inria.diverse.melange.metamodel.melange.Language;
@@ -23,21 +23,34 @@ import fr.inria.diverse.puzzle.language.binding.LanguageBinding;
 import fr.inria.diverse.puzzle.match.impl.PuzzleMatch;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnostic;
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 import javax.inject.Inject;
 import org.autorefactor.ui.OverlappingAspectsVO;
 import org.autorefactor.ui.OverridingAspectsVO;
 import org.autorefactor.ui.RefactoringPatternVO;
+import org.eclipse.core.resources.ICommand;
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IFolder;
 import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
 import org.eclipse.core.resources.IResource;
+import org.eclipse.core.resources.IWorkspace;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.core.runtime.SubProgressMonitor;
 import org.eclipse.emf.codegen.ecore.generator.Generator;
 import org.eclipse.emf.codegen.ecore.genmodel.GenJDKLevel;
 import org.eclipse.emf.codegen.ecore.genmodel.GenModel;
@@ -54,14 +67,20 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl;
+import org.eclipse.jdt.core.IClasspathEntry;
+import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.pde.internal.core.natures.PDE;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
+import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 /**
  * Builder for the action: Analyze Family.
@@ -78,9 +97,6 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
   @Inject
   @Extension
   private SemanticsCompositionEngine _semanticsCompositionEngine;
-  
-  @Inject
-  private EclipseProjectHelper eclipseHelper;
   
   private IProject targetProject;
   
@@ -100,7 +116,7 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
       String _plus = (_name + ".");
       String _plus_1 = (_plus + "composedLanguage");
       NullProgressMonitor _nullProgressMonitor = new NullProgressMonitor();
-      IProject _createEclipseProject = this.eclipseHelper.createEclipseProject(_plus_1, 
+      IProject _createEclipseProject = this.createEclipseProject(_plus_1, 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.NATURE_ID, PDE.PLUGIN_NATURE)), 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList(JavaCore.BUILDER_ID, PDE.MANIFEST_BUILDER_ID, PDE.SCHEMA_BUILDER_ID)), 
         Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("src-gen", "xtend-gen")), 
@@ -442,5 +458,250 @@ public class ComposeLanguageModulesBuilder extends AbstractBuilder {
     BasicMonitor.Printing _printing = new BasicMonitor.Printing(System.out);
     generator.generate(genModel, 
       GenBaseGeneratorAdapter.MODEL_PROJECT_TYPE, _printing);
+  }
+  
+  /**
+   * Wololo, wololo wololo.
+   */
+  private IProject createEclipseProject(final String name, final Iterable<String> natures, final Iterable<String> builders, final Iterable<String> srcFolders, final Iterable<IProject> referencedProjects, final Iterable<String> requiredBundles, final Iterable<String> exportedPackages, final Iterable<String> extensions, final IProgressMonitor monitor) {
+    try {
+      monitor.beginTask("", 10);
+      monitor.subTask(("Creating project " + name));
+      final IWorkspace workspace = ResourcesPlugin.getWorkspace();
+      IWorkspaceRoot _root = workspace.getRoot();
+      final IProject project = _root.getProject(name);
+      IPath previousProjectLocation = null;
+      boolean _exists = project.exists();
+      if (_exists) {
+        IPath _location = project.getLocation();
+        previousProjectLocation = _location;
+        SubProgressMonitor _subProgressMonitor = new SubProgressMonitor(monitor, 1);
+        project.delete(true, true, _subProgressMonitor);
+      }
+      final IJavaProject javaProject = JavaCore.create(project);
+      final IProjectDescription description = workspace.newProjectDescription(name);
+      description.setLocation(previousProjectLocation);
+      SubProgressMonitor _subProgressMonitor_1 = new SubProgressMonitor(monitor, 1);
+      project.create(description, _subProgressMonitor_1);
+      final ArrayList<IClasspathEntry> classpathEntries = CollectionLiterals.<IClasspathEntry>newArrayList();
+      boolean _isEmpty = IterableExtensions.isEmpty(referencedProjects);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        description.setReferencedProjects(((IProject[])Conversions.unwrapArray(referencedProjects, IProject.class)));
+        final Function1<IProject, IClasspathEntry> _function = new Function1<IProject, IClasspathEntry>() {
+          @Override
+          public IClasspathEntry apply(final IProject it) {
+            IPath _fullPath = it.getFullPath();
+            return JavaCore.newProjectEntry(_fullPath);
+          }
+        };
+        Iterable<IClasspathEntry> _map = IterableExtensions.<IProject, IClasspathEntry>map(referencedProjects, _function);
+        Iterables.<IClasspathEntry>addAll(classpathEntries, _map);
+      }
+      description.setNatureIds(((String[])Conversions.unwrapArray(natures, String.class)));
+      final Function1<String, ICommand> _function_1 = new Function1<String, ICommand>() {
+        @Override
+        public ICommand apply(final String buildName) {
+          ICommand _newCommand = description.newCommand();
+          final Procedure1<ICommand> _function = new Procedure1<ICommand>() {
+            @Override
+            public void apply(final ICommand it) {
+              it.setBuilderName(buildName);
+            }
+          };
+          return ObjectExtensions.<ICommand>operator_doubleArrow(_newCommand, _function);
+        }
+      };
+      Iterable<ICommand> _map_1 = IterableExtensions.<String, ICommand>map(builders, _function_1);
+      description.setBuildSpec(((ICommand[])Conversions.unwrapArray(_map_1, ICommand.class)));
+      SubProgressMonitor _subProgressMonitor_2 = new SubProgressMonitor(monitor, 1);
+      project.open(_subProgressMonitor_2);
+      SubProgressMonitor _subProgressMonitor_3 = new SubProgressMonitor(monitor, 1);
+      project.setDescription(description, _subProgressMonitor_3);
+      final Consumer<String> _function_2 = new Consumer<String>() {
+        @Override
+        public void accept(final String src) {
+          final IFolder container = project.getFolder(src);
+          try {
+            boolean _exists = container.exists();
+            boolean _not = (!_exists);
+            if (_not) {
+              SubProgressMonitor _subProgressMonitor = new SubProgressMonitor(monitor, 1);
+              container.create(false, true, _subProgressMonitor);
+            }
+            IPath _fullPath = container.getFullPath();
+            IClasspathEntry _newSourceEntry = JavaCore.newSourceEntry(_fullPath);
+            classpathEntries.add(0, _newSourceEntry);
+          } catch (final Throwable _t) {
+            if (_t instanceof CoreException) {
+              final CoreException e = (CoreException)_t;
+              System.out.println("Couldn\'t update project classpath");
+            } else {
+              throw Exceptions.sneakyThrow(_t);
+            }
+          }
+        }
+      };
+      srcFolders.forEach(_function_2);
+      Path _path = new Path("org.eclipse.jdt.launching.JRE_CONTAINER");
+      IClasspathEntry _newContainerEntry = JavaCore.newContainerEntry(_path);
+      classpathEntries.add(_newContainerEntry);
+      Path _path_1 = new Path("org.eclipse.pde.core.requiredPlugins");
+      IClasspathEntry _newContainerEntry_1 = JavaCore.newContainerEntry(_path_1);
+      classpathEntries.add(_newContainerEntry_1);
+      final IFolder binFolder = project.getFolder("bin");
+      SubProgressMonitor _subProgressMonitor_4 = new SubProgressMonitor(monitor, 1);
+      binFolder.create(false, true, _subProgressMonitor_4);
+      SubProgressMonitor _subProgressMonitor_5 = new SubProgressMonitor(monitor, 1);
+      javaProject.setRawClasspath(((IClasspathEntry[])Conversions.unwrapArray(classpathEntries, IClasspathEntry.class)), _subProgressMonitor_5);
+      IPath _fullPath = binFolder.getFullPath();
+      SubProgressMonitor _subProgressMonitor_6 = new SubProgressMonitor(monitor, 1);
+      javaProject.setOutputLocation(_fullPath, _subProgressMonitor_6);
+      this.createManifest(name, requiredBundles, exportedPackages, monitor, project);
+      this.createPluginXml(project, extensions, monitor);
+      this.createBuildProperties(project, srcFolders, monitor);
+      return project;
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        final Exception e = (Exception)_t;
+        System.out.println("Unexpected exception while generating new project");
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+    return null;
+  }
+  
+  private void createManifest(final String name, final Iterable<String> requiredBundles, final Iterable<String> exportedPackages, final IProgressMonitor monitor, final IProject project) throws CoreException {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("Manifest-Version: 1.0");
+    _builder.newLine();
+    _builder.append("Bundle-ManifestVersion: 2");
+    _builder.newLine();
+    _builder.append("Bundle-Name: ");
+    _builder.append(name, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("Bundle-SymbolicName: ");
+    _builder.append(name, "");
+    _builder.append(";singleton:=true");
+    _builder.newLineIfNotEmpty();
+    _builder.append("Bundle-Version: 0.1.0");
+    _builder.newLine();
+    {
+      boolean _isEmpty = IterableExtensions.isEmpty(requiredBundles);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("Require-Bundle: ");
+        {
+          boolean _hasElements = false;
+          for(final String b : requiredBundles) {
+            if (!_hasElements) {
+              _hasElements = true;
+            } else {
+              _builder.appendImmediate(",\n  ", "");
+            }
+            _builder.append(b, "");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      boolean _isEmpty_1 = IterableExtensions.isEmpty(exportedPackages);
+      boolean _not_1 = (!_isEmpty_1);
+      if (_not_1) {
+        _builder.append("Export-Package: ");
+        {
+          boolean _hasElements_1 = false;
+          for(final String p : exportedPackages) {
+            if (!_hasElements_1) {
+              _hasElements_1 = true;
+            } else {
+              _builder.appendImmediate(",\n  ", "");
+            }
+            _builder.append(p, "");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("Bundle-RequiredExecutionEnvironment: JavaSE-1.7");
+    _builder.newLine();
+    final String content = _builder.toString();
+    final IFolder metaInf = project.getFolder("META-INF");
+    SubProgressMonitor _subProgressMonitor = new SubProgressMonitor(monitor, 1);
+    metaInf.create(false, true, _subProgressMonitor);
+    this.createFile("MANIFEST.MF", metaInf, content, monitor);
+  }
+  
+  private void createPluginXml(final IProject project, final Iterable<String> extensions, final IProgressMonitor monitor) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+    _builder.newLine();
+    _builder.append("<?eclipse version=\"3.0\"?>");
+    _builder.newLine();
+    _builder.append("<plugin>");
+    _builder.newLine();
+    {
+      for(final String e : extensions) {
+        _builder.append(e, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("</plugin>");
+    _builder.newLine();
+    final String content = _builder.toString();
+    this.createFile("plugin.xml", project, content, monitor);
+  }
+  
+  private void createBuildProperties(final IProject project, final Iterable<String> srcFolders, final IProgressMonitor monitor) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("source.. = ");
+    {
+      boolean _hasElements = false;
+      for(final String f : srcFolders) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(",\\n  ", "");
+        }
+        _builder.append(f, "");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("bin.includes = META-INF/,\\");
+    _builder.newLine();
+    _builder.append("  ");
+    _builder.append(".");
+    _builder.newLine();
+    final String content = _builder.toString();
+    this.createFile("build.properties", project, content, monitor);
+  }
+  
+  private IFile createFile(final String name, final IContainer container, final String content, final IProgressMonitor monitor) {
+    Path _path = new Path(name);
+    final IFile f = container.getFile(_path);
+    InputStream stream = null;
+    try {
+      String _charset = f.getCharset();
+      byte[] _bytes = content.getBytes(_charset);
+      ByteArrayInputStream _byteArrayInputStream = new ByteArrayInputStream(_bytes);
+      stream = _byteArrayInputStream;
+      boolean _exists = f.exists();
+      if (_exists) {
+        f.setContents(stream, true, true, monitor);
+      } else {
+        f.create(stream, true, monitor);
+      }
+    } catch (final Throwable _t) {
+      if (_t instanceof Exception) {
+        final Exception e = (Exception)_t;
+        System.out.println("Error while creating new IFile");
+      } else {
+        throw Exceptions.sneakyThrow(_t);
+      }
+    }
+    monitor.worked(1);
+    return f;
   }
 }

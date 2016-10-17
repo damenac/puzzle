@@ -1,5 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	simpleconstraintslanguage.Constraint = simple.constraints.ConstraintAspect
-	simpleconstraints.Constraint = simple.constraints.ConstraintAspect
-	simpleconstraints.RelationalConstraint = simple.constraints.RelationalConstraintAspect
-	simpleconstraintslanguage.RelationalConstraint = simple.constraints.RelationalConstraintAspect

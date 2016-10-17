@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="563" key="dialogHeight"/>
-		<item value="900" key="dialogWidth"/>
+		<item value="-1" key="dialogHeight"/>
+		<item value="-1" key="dialogWidth"/>
 		<list key="textEntries">
 		</list>
 		<list key="orderedElements">
@@ -16,17 +16,6 @@
 		<item value="org.eclipse.ui.wizards.import.ExternalProject" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
 			<item value="org.eclipse.ui.Basic"/>
-		</list>
-	</section>
-	<section name="ShowViewDialog">
-		<item value="335" key="DIALOG_WIDTH"/>
-		<item value="1|Lucida Grande|13.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
-		<item value="org.eclipse.ui.views.PropertySheet" key="ShowViewDialog.STORE_SELECTED_VIEW_ID"/>
-		<item value="434" key="DIALOG_HEIGHT"/>
-		<item value="484" key="DIALOG_X_ORIGIN"/>
-		<item value="102" key="DIALOG_Y_ORIGIN"/>
-		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.ui"/>
 		</list>
 	</section>
 </section>

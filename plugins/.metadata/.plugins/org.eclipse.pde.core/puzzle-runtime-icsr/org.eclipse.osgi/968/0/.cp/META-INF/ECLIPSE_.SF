@@ -1,0 +1,57 @@
+Signature-Version: 1.0
+SHA-256-Digest-Manifest-Main-Attributes: LM66IppCEQiZp+d81MA1shSvY/LVg
+ UPlaJWg5TDARmI=
+SHA-256-Digest-Manifest: AybAwX8AUQ7G2fCZ44RQr4lL8okW68Pxd01NHJQ/zqo=
+Created-By: 1.8.0_40 (Oracle Corporation)
+
+Name: about.html
+SHA-256-Digest: Yb9nT4AQtkAyntrTJPKsiLxw/pEHlS2hWw0PND6lP8A=
+
+Name: plugin.xml
+SHA-256-Digest: 1iZbyLrWJ+HHmrzDEmfB5TKsnY7XSBnRIyWJjO/jdDU=
+
+Name: org/eclipse/amalgam/discovery/modeling/Activator.class
+SHA-256-Digest: 3NF1ETLkh4kpySUw3G7Y/cFjb93uGFF9zbYAj1tQEg8=
+
+Name: icons/modeling16.png
+SHA-256-Digest: Hc8fjsiBRLpcxJbcthMNDlpRzFWPvQ5k8kUCMSrJPL8=
+
+Name: intro/images/banner-discovery.png
+SHA-256-Digest: EYZz2fxCoobijWO+ccQVp644udDAHf6NhCi91iO/Ukc=
+
+Name: intro/css/overview.css
+SHA-256-Digest: RbD/Ki4Bemhewu/XAiixIl24HDBT9r4sEQJKdWceRrQ=
+
+Name: intro/css/overview.properties
+SHA-256-Digest: 4Q6bSuFuQ2yOel9far7dz4/tIsnUpIBysystQpT0nRk=
+
+Name: META-INF/maven/org.eclipse.amalgam/org.eclipse.amalgam.discovery
+ .modeling/pom.xml
+SHA-256-Digest: bQrmt4vY53OEJ867806Jlxo8eXvoGpv8NshXy42bQnQ=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingPackageD
+ iscovery.class
+SHA-256-Digest: spZLFUl8qD/I61+f9RmRJaneat4bHDZ/KpU+BpqoeW8=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingDiscover
+ yHandler.class
+SHA-256-Digest: qT7EYReECXyzy67ji+zz3DuLtIOpQ1fJvx1KFVOyv7E=
+
+Name: intro/amalgamDiscovery.xml
+SHA-256-Digest: VrBBaogBOQV1CsTEj6MSQv7mLVgwAVdWOR5Ys4wr8os=
+
+Name: META-INF/maven/org.eclipse.amalgam/org.eclipse.amalgam.discovery
+ .modeling/pom.properties
+SHA-256-Digest: 8LN7lg3wqYpagHikiYFE5DS5AGVQSz/PBl0/dse5JtM=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingPackageD
+ iscovery$1.class
+SHA-256-Digest: MhPtxrzQag93oMVZeyc8cB7OlAkMd2XFGQ+kNYuFmhY=
+
+Name: icons/modeling32.png
+SHA-256-Digest: yOmxNYLDyRbN7kkqDclBv/Jkb+ILfwkrDMCvSdAe4VE=
+
+Name: org/eclipse/amalgam/discovery/modeling/handlers/ModelingDiscover
+ yAction.class
+SHA-256-Digest: H6MqqELQc9vwfbDV0dz0Kfibs9Cd8GZZiCvyN5ypUjk=
+

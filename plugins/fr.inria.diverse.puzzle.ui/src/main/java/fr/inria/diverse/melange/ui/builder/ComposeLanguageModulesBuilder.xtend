@@ -1,7 +1,6 @@
 package fr.inria.diverse.melange.ui.builder
 
 import fr.inria.diverse.k3.sle.common.utils.ModelUtils
-import fr.inria.diverse.melange.eclipse.EclipseProjectHelper
 import fr.inria.diverse.melange.metamodel.melange.Aspect
 import fr.inria.diverse.melange.metamodel.melange.Language
 import fr.inria.diverse.melange.metamodel.melange.ModelType
@@ -46,6 +45,14 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
 import org.eclipse.jdt.core.JavaCore
 import org.eclipse.pde.internal.core.natures.PDE
 import fr.inria.diverse.puzzle.match.vo.MatchingDiagnosticItem
+import org.eclipse.core.resources.ResourcesPlugin
+import org.eclipse.core.runtime.IPath
+import org.eclipse.core.runtime.SubProgressMonitor
+import org.eclipse.core.runtime.CoreException
+import java.io.InputStream
+import java.io.ByteArrayInputStream
+import org.eclipse.core.resources.IFile
+import org.eclipse.core.resources.IContainer
 
 /**
  * Builder for the action: Analyze Family.
@@ -61,7 +68,6 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 	
 	@Inject extension AbstractSyntaxCompositionEngine
 	@Inject extension SemanticsCompositionEngine
-	@Inject EclipseProjectHelper eclipseHelper
 	
 	private IProject targetProject
 	
@@ -77,7 +83,7 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 		val modelTypingSpace = melangeResource.contents.head as ModelTypingSpace
 		EcoreUtil.resolveAll(modelTypingSpace);
 		
-		targetProject = eclipseHelper.createEclipseProject(
+		targetProject = createEclipseProject(
 					project.name + "." + "composedLanguage",
 					#[JavaCore::NATURE_ID, PDE::PLUGIN_NATURE],
 					#[JavaCore::BUILDER_ID,	PDE::MANIFEST_BUILDER_ID, PDE::SCHEMA_BUILDER_ID],
@@ -335,5 +341,168 @@ class ComposeLanguageModulesBuilder extends AbstractBuilder {
 			GenBaseGeneratorAdapter::MODEL_PROJECT_TYPE,
 			new BasicMonitor.Printing(System::out)
 		)
+	}
+	
+	/**
+	 * Wololo, wololo wololo.
+	 */
+	private def IProject createEclipseProject(
+		String name,
+		Iterable<String> natures,
+		Iterable<String> builders,
+		Iterable<String> srcFolders,
+		Iterable<IProject> referencedProjects,
+		Iterable<String> requiredBundles,
+		Iterable<String> exportedPackages,
+		Iterable<String> extensions,
+		IProgressMonitor monitor
+	) {
+		try {
+			monitor.beginTask("", 10)
+			monitor.subTask("Creating project " + name)
+
+			val workspace = ResourcesPlugin.workspace
+			val project = workspace.root.getProject(name)
+
+			var IPath previousProjectLocation = null
+			if (project.exists){
+				previousProjectLocation = project.location
+				project.delete(true, true, new SubProgressMonitor(monitor, 1))				
+			}
+
+			val javaProject = JavaCore::create(project)
+			val description = workspace.newProjectDescription(name)
+
+			description.location = previousProjectLocation
+			project.create(description, new SubProgressMonitor(monitor, 1))
+
+			val classpathEntries = newArrayList
+
+			if (!referencedProjects.empty) {
+				description.referencedProjects = referencedProjects
+				classpathEntries += referencedProjects.map[
+					JavaCore::newProjectEntry(fullPath)
+				]
+			}
+
+			description.natureIds = natures
+			description.buildSpec = builders.map[buildName |
+				description.newCommand => [builderName = buildName]
+			]
+
+			project.open(new SubProgressMonitor(monitor, 1))
+			project.setDescription(description, new SubProgressMonitor(monitor, 1))
+
+			srcFolders.forEach[src |
+				val container = project.getFolder(src)
+
+				try {
+					if (!container.exists)
+						container.create(false, true, new SubProgressMonitor(monitor, 1))
+
+					classpathEntries.add(0, JavaCore::newSourceEntry(container.fullPath))
+				} catch (CoreException e) {
+					System.out.println("Couldn't update project classpath");
+				}
+			]
+		
+			classpathEntries += JavaCore::newContainerEntry(new Path("org.eclipse.jdt.launching.JRE_CONTAINER"))
+			classpathEntries += JavaCore::newContainerEntry(new Path("org.eclipse.pde.core.requiredPlugins"))
+
+			val binFolder = project.getFolder("bin")
+			binFolder.create(false, true, new SubProgressMonitor(monitor, 1))
+			javaProject.setRawClasspath(classpathEntries, new SubProgressMonitor(monitor, 1))
+			javaProject.setOutputLocation(binFolder.fullPath, new SubProgressMonitor(monitor, 1))
+
+			createManifest(name, requiredBundles, exportedPackages, monitor, project)
+			createPluginXml(project, extensions, monitor)
+			createBuildProperties(project, srcFolders, monitor)
+
+			return project
+		} catch (Exception e) {
+			System.out.println("Unexpected exception while generating new project");
+		}
+
+		return null
+	}
+	
+	def private void createManifest(
+		String name,
+		Iterable<String> requiredBundles,
+		Iterable<String> exportedPackages,
+		IProgressMonitor monitor,
+		IProject project
+	) throws CoreException {
+		val content = '''
+			Manifest-Version: 1.0
+			Bundle-ManifestVersion: 2
+			Bundle-Name: «name»
+			Bundle-SymbolicName: «name»;singleton:=true
+			Bundle-Version: 0.1.0
+			«IF !requiredBundles.empty»
+			Require-Bundle: «FOR b : requiredBundles SEPARATOR ",\n  "»«b»«ENDFOR»
+			«ENDIF»
+			«IF !exportedPackages.empty»
+			Export-Package: «FOR p : exportedPackages SEPARATOR ",\n  "»«p»«ENDFOR»
+			«ENDIF»
+			Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+		'''
+
+		val metaInf = project.getFolder("META-INF")
+		metaInf.create(false, true, new SubProgressMonitor(monitor, 1))
+		createFile("MANIFEST.MF", metaInf, content, monitor)
+	}
+
+	def private void createPluginXml(
+		IProject project,
+		Iterable<String> extensions,
+		IProgressMonitor monitor
+	) {
+		val content = '''
+			<?xml version="1.0" encoding="UTF-8"?>
+			<?eclipse version="3.0"?>
+			<plugin>
+			«FOR e : extensions»«e»
+			«ENDFOR»
+			</plugin>
+		'''
+		createFile("plugin.xml", project, content, monitor)
+	}
+
+	def private void createBuildProperties(
+		IProject project,
+		Iterable<String> srcFolders,
+		IProgressMonitor monitor
+	) {
+		val content = '''
+			source.. = «FOR f : srcFolders SEPARATOR ",\\n  "»«f»«ENDFOR»
+			bin.includes = META-INF/,\
+			  .
+		'''
+
+		createFile("build.properties", project, content, monitor)
+	}
+	
+	def private IFile createFile(
+		String name,
+		IContainer container,
+		String content,
+		IProgressMonitor monitor
+	) {
+		val f = container.getFile(new Path(name))
+		var InputStream stream = null
+
+		try {
+			stream = new ByteArrayInputStream(content.getBytes(f.getCharset))
+			if (f.exists)
+				f.setContents(stream, true, true, monitor)
+			else
+				f.create(stream, true, monitor)
+		} catch (Exception e) {
+			System.out.println("Error while creating new IFile");
+		} 
+
+		monitor.worked(1)
+		return f
 	}
 }

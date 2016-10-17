@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.function.Consumer;
 import javax.inject.Inject;
 import org.autorefactor.ui.OverlappingAspectsVO;
 import org.autorefactor.ui.OverridingAspectsVO;
@@ -69,7 +70,6 @@ import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 /**
  * Builder for the action: Analyze Family.
@@ -814,9 +814,9 @@ public class SemanticsCompositionEngine {
           String _name_1 = ((XtendField) _member).getName();
           String _name_2 = ((EClassifier) _output).getName();
           List<RefactoringPatternVO> variablePatterns = RefactoringPatternsBuilder.buildVariablesPattern(_name, _name_1, _name_2);
-          final Procedure1<RefactoringPatternVO> _function = new Procedure1<RefactoringPatternVO>() {
+          final Consumer<RefactoringPatternVO> _function = new Consumer<RefactoringPatternVO>() {
             @Override
-            public void apply(final RefactoringPatternVO pattern) {
+            public void accept(final RefactoringPatternVO pattern) {
               boolean _contains = refactoringPattern.contains(pattern);
               boolean _not = (!_contains);
               if (_not) {
@@ -824,7 +824,7 @@ public class SemanticsCompositionEngine {
               }
             }
           };
-          IterableExtensions.<RefactoringPatternVO>forEach(variablePatterns, _function);
+          variablePatterns.forEach(_function);
         }
       } else {
         boolean _and_1 = false;

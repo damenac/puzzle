@@ -1,13 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1464997049982_2" label="legacy-dsls" name="legacy-dsls">
-<item elementID="=puzzle.examples.fsm.uml.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.uml.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.harel.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.family.fsm" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.harel.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.rhapsody.metamodel" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=puzzle.examples.fsm.rhapsody.aspects" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-</workingSet>
-<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1464996900398_0" label="Window Working Set" name="Aggregate for window 1464996900398"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1476272125945_0" label="Window Working Set" name="Aggregate for window 1476272125944"/>
 </workingSetManager>

@@ -5,6 +5,7 @@ import com.google.inject.Inject;
 import fr.inria.diverse.melange.metamodel.melange.Aspect;
 import fr.inria.diverse.puzzle.engine.EcoreQueries;
 import java.util.List;
+import java.util.function.Consumer;
 import org.autorefactor.ui.RefactoringPatternVO;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -40,8 +41,6 @@ import org.eclipse.xtext.xbase.interpreter.impl.EvaluationException;
 import org.eclipse.xtext.xbase.interpreter.impl.InterpreterCanceledException;
 import org.eclipse.xtext.xbase.interpreter.impl.XbaseInterpreter;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 
 /**
  * Class that go through an xbase xexpression and creates the corresponding refactoring patterns
@@ -278,9 +277,9 @@ public class PuzzleXbaseInterpreter extends XbaseInterpreter {
   
   public Object _doEvaluate(final AnonymousClass xExpression, final IEvaluationContext context, final CancelIndicator indicator) {
     EList<XtendMember> _members = xExpression.getMembers();
-    final Procedure1<XtendMember> _function = new Procedure1<XtendMember>() {
+    final Consumer<XtendMember> _function = new Consumer<XtendMember>() {
       @Override
-      public void apply(final XtendMember member) {
+      public void accept(final XtendMember member) {
         if ((member instanceof XtendFunction)) {
           final XtendFunction _function = ((XtendFunction) member);
           XExpression _expression = _function.getExpression();
@@ -288,7 +287,7 @@ public class PuzzleXbaseInterpreter extends XbaseInterpreter {
         }
       }
     };
-    IterableExtensions.<XtendMember>forEach(_members, _function);
+    _members.forEach(_function);
     return null;
   }
   
