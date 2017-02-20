@@ -17,9 +17,11 @@
 		</list>
 	</section>
 	<section name="NewWizardAction">
-		<item value="org.eclipse.pde.ui.NewProjectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<item value="org.eclipse.emf.ecore.presentation.EcoreModelWizardID" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
 		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
-			<item value="org.eclipse.pde.PDE"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory/org.eclipse.emf.codegen.ecore.ui.mappingWizardCategory"/>
+			<item value="org.eclipse.xtext.projectwiz"/>
 			<item value="org.eclipse.ui.Examples"/>
 			<item value="org.eclipse.ui.Examples/fr.inria.diverse.k3.example.category"/>
 		</list>

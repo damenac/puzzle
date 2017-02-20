@@ -1,0 +1,156 @@
+\section{The reverse engineering process}
+\label{sec:reverse-engineering}
+
+In this section, we introduce a reverse engineering strategy for bottom up language product lines engineering. Fig. \ref{fig:reverse-engineering} presents an overview of the approach. It receives as input a set of DSLs implemented according to the development process described in Section \ref{sec:thedevelopmentscenario} and under the technological space introduced in Section \ref{sec:technologicalscope}.
+
+The first step of the process corresponds to the extraction of the language modules that implement the features included in the language product line. The process continues with the synthesis of a variability model that captures both abstract syntax and semantic variability. Such a model can be later used to configure and derive concrete DSLs.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.7\linewidth]{images/reverse-engineering-overview}
+\caption{Reverse engineering language product lines: approach overview}
+\label{fig:reverse-engineering}
+\end{figure*}
+
+\subsection{Reverse engineering reusable language modules}
+\label{sec:reverseengineeringmodules}
+
+Let us start the description of our reverse engineering strategy by explaining the way in which we extract the language modules. Roughly speaking, our approach takes the DSLs given in the input and break them down into several language modules. The purpose of such a breaking down process is to remove all the specification clones existing among the given DSLs, thus reducing the maintenance costs associated to the DSLs\footnote{Note that we assume the existence such as clones; after all, the involved DSLs were built up by using the \textit{Copy\&Paste\&Modify} pattern.}. To this end, we analyze the given DSLs to detect the existing specification clones. Then, we extract those clones in separate language modules that can be later included from the involved DSLs. %Our extraction strategy is based on five reverse engineering principles that explained below. %For example, if two DSLs have the constructs A and B, and those constructs are \textit{equal} in terms of their abstract syntax and semantics, then we can extract them and encapsulated them in a separate language module that the involved DSLs might import. 
+
+%Note that this strategy relies on some comparison operators that allow to detect specification clones. These operators might take into consideration not only the abstract syntax, but also the semantics of the language constructs. Then, we need a mechanism to extract the detected specification clones and encapsulate them in such a way that they can be re-composed later with the other parts of the involved DSLs. 
+
+%The first step of our strategy towards bottom up language product lines corresponds to reverse engineering reusable language modules from a given set of legacy DSLs. To this end, we define some comparison operators that allow the identification of replicated language constructs. These operators take into account not only the names of the constructs but also the inter constructs relationships and the semantics. Then, we extract replicated constructs as interdependent language modules whose dependencies are expressed through well defined interfaces. Those language modules can be later assembled among them to build up new DSLs. 
+
+\subsubsection{Principles for language modules' reverse engineering}
+
+Our strategy for reverse engineering reverse engineering reusable language modules is based on five principles that will be introduced in this section. Then, we explain how we use those principles to extract a catalog of reusable language modules that implement the language features provided by the language product line.
+
+\vspace{2mm}
+\textbf{Principle 1:} \textit{DSL specifications are comparable. Hence, specification clones can be detected automatically.} Two DSL specifications can be compared each other. This comparison can be either coarse grained indicating if the two specifications are equal regarding both syntax and semantics, or fine-grained detecting segments of the specifications that match. The latter approach permits to identify specification clones between two DSLs and supposes the comparison of each specification element.
+
+For the technological space discussed in this paper, specification elements for the abstract syntax are metaclasses whereas specification elements for the semantics are domain specific actions. 
+
+\vspace{1mm}
+\textit{Comparison of metaclasses.} For the case of comparison of metaclasses, we need to take into account that a metaclass is specified by a name, a set of attributes, and a set of references to other metaclasses. Two metaclasses are considered as equal (and so, they are clones) if all those elements match. Formally, comparison of metaclasses can be specified by the operator $\doteqdot$. %Comparing two metamodels relies on pair-wise comparison of all their metaclasses. 
+
+\begin{equation}
+  \doteqdot~: MC \times MC \rightarrow bool
+\end{equation}
+\vspace{-1mm}
+\begin{equation}
+\begin{split}
+  MC_{A} &\doteqdot MC_{B} = true \implies \\
+   & MC_{A}.name = MC_{B}.name ~ \wedge \\
+   & \forall a_1 \in MC_{A}.attr \mid (\exists a_2 \in MC_{B}.attr \mid a_1 = a_2) ~ \wedge \\
+   & \forall r_1 \in MC_{A}.refs \mid (\exists r_2 \in MC_{B}.refs \mid r_1 = r_2) ~ \wedge \\
+   & |MC_{A}.attr| = |MC_{B}.attr| ~ \wedge \\
+   & |MC_{A}.refs| = |MC_{B}.refs|
+  \end{split}
+\end{equation}
+
+\vspace{1mm}
+\textit{Comparison of domain specific actions.} For comparison for domain specific actions we need to take into account that --like methods in Java-- domain specific actions have a signature that specifies its contract (i.e., return type, visibility, parameters, name, and so on), and a body where the behavior is implemented. Two domain specific actions are equal if they have the same signature and body.
+
+Whereas comparison of signatures can be performed by syntactic comparison of the signature elements, comparison of bodies can be arbitrary difficult. If we try to compare the behavior of the domain-specific actions, then we will have to address the semantic equivalence problem, which is known to be undecidable \cite{Lucanu:2013}. To address this issue, we conceive bodies comparison in terms of its abstract syntax tree as proposed by Biegel et al. \cite{Biegel:2010}. In other words, to compare two bodies, we first parse them to extract their abstract syntax tree, and then we compare those trees. Note that this decision makes sense because we are detecting specification clones more than equivalent behavior. Formally, comparison of domain-specific actions (DSAs) is specified by the operator $\fallingdotseq$.  
+
+\begin{equation}
+  \fallingdotseq~: DSA \times DSA \rightarrow bool
+\end{equation}
+\vspace{-1mm}
+\begin{equation}
+\begin{split}
+  DSA_{A} & \fallingdotseq DSA_{B} = true \implies \\
+   & DSA_{A}.name = DSA_{B}.name ~ \wedge \\
+   & DSA_{A}.returnType = DSA_{B}.returnType ~ \wedge \\
+   & DSA_{A}.visibility = DSA_{B}.visibility ~ \wedge \\
+   & \forall p_1 \in DSA_{A}.params \mid (\exists p_2 \in DSA_{B}.params \mid p_1 = p_2)  ~ \wedge \\
+   & |DSA_{A}.params| = |DSA_{B}.params|  ~ \wedge \\
+   & DSA_{A}.AST = DSA_{B}.AST
+ \end{split}
+\end{equation}
+
+\vspace{2mm}
+\textbf{Principle 2:}\textit{ Specification clones can be viewed as sets overlapping.} If a DSL specification is viewed as sets of metaclasses and domain specific actions, then specification clones can be viewed as intersections (a.k.a., overlapping) of those sets. Figure \ref{fig:shape} illustrates this observation for the case of the motivation scenario introduced in Section \ref{sec:problemstatement}. We use two Venn diagrams to represent both syntax and semantic overlapping.
+
+In the case of abstract syntax overlapping, the Venn diagram shows that the classical concepts for state machines such as StateMachine, State, and Transition are in the intersection of the three DSLs given in the input i.e., UML state machines, Rhapsody, and Harel's state machines. In turn, there are certain particularities for each DSL. For example, the concept AndTrigger is owned by UML and Harel state machines but not for Rhapsody. Concepts such as OrTrigger and NotTrigger are only provided by Harel state machines since the concept of Choice is exclusive of UML state machines. 
+
+For the case of semantic variability, we can see that the intersection is empty which means that there is not a common semantic for the DSLs. In other words, there is not a behavior that we can identify as common among the three DSLs. Rather, UML state machines and Rhapsody share the domain specific actions corresponding to the concetps of State Machine, State, and Transition. In turn, the implementation of Harel state machines is different. Note that this figure is a simplification of the semantic overlapping. All the details will be given later in this article. 
+
+In that case, the fact that the expression language is used in all the DSLs is represented by the intersection in the center of the diagram where the three sets overlap the metaclass \texttt{Expression} (and its domain-specific actions). In turn, the intersection between the state machines DSL and Logo shows that they overlap the metaclass \texttt{Constraint} that belongs to the constraint language. Note that the identification of such overlapping is only possible when there are comparison operators (principle 1) that formalize the notion of equality.  
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{images/fig-overlapping.png}
+\caption{Syntactic and semantic overlapping in a set of DSLs}
+\label{fig:shape}
+\end{figure}
+
+\vspace{2mm}
+\textbf{Principle 3:} \textit{Breaking down overlapping produces reusable modules.} According to principle 2, overlapping between two DSLs implies the existence of repeated metaclasses and/or domain specific actions (i.e., specification clones). Those repeated elements can be specified once and reused in the two DSLs \cite[p. 60-61]{Voelter:2013b}. Hence, reusable language modules can be obtained by breaking down the overlapping existing among DSL specifications as illustrated in Figure \ref{fig:cutting}; each different intersection is encapsulated in a different language module. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.97\linewidth]{images/fig-breaking-overlapping.png}
+\caption{Breaking down overlapping to obtain language modules}
+\label{fig:cutting}
+\end{figure}
+
+\vspace{2mm}
+\textbf{Principle 4:} \textit{Abstract syntax first, semantics afterwards.} Since the abstract syntax of a DSL specifies its structure in terms of metaclasses and relationships among them, the domain-specific actions add executability to the metaclasses. Hence, the abstract syntax is the backbone of the DSL specification, and so, the process of breaking down overlapping should be performed for the abstract syntax first. Afterwards, we can do the proper for the semantics. In doing so, we need to take into consideration the phenomenon of semantic variability. That is, two cloned metaclasses might have different domain-specific actions. That occurs when two DSLs share some syntax specification but differ in their semantics.
+
+\vspace{2mm}
+\textbf{Principle 5:} \textit{Breaking down a metamodel is a graph partitioning problem.} The metamodel that specifies the abstract syntax of a DSL can be viewed as a directed graph $G$. $$G=<V,A>$$ where:
+
+\begin{itemize}
+\item \textbf{V}: is the set of vertices each of which represents a metaclass.
+\item \textbf{A}: is the set of arcs each of which represents a relationships between two meta-classes (i.e., references, containments, and inheritances).
+\end{itemize}
+
+This observation is quite useful at the moment of breaking down a metamodel to satisfy the principle 4. Breaking down a metamodel can be viewed as a graph partitioning problem where the result is a finite set of subgraphs. Each subgraph represents the metamodel of a reusable language module.
+
+\vspace{2mm}
+\textbf{The 5 principles in action.} The reverse-engineering strategy to produce a catalog of reusable modules is illustrated in Figure \ref{fig:breakingdown}. It is composed of two steps: identifying overlapping and breaking down.
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.8\linewidth]{images/fig-reverse-engineering-detailed}
+\caption{Breaking down the input set by cutting overlapping}
+\label{fig:breakingdown}
+\end{figure*}
+
+\vspace{2mm}
+\textit{Identifying overlapping: \textit{match} and \textit{merge}.} To identify syntactic overlapping in a given set of DSLs, we start by producing a graph for each DSL according to the principle 5. Then, we identify specification clones (the matching phase) using the comparison operators defined in principle 1. After that, we have a set of graphs (one for each DSL) and a set of matching relationships among some of the vertex. At that point we can proceed to create the overlapping defined in principle 2. To this end, we merge the matched vertex as illustrated in the second square of Figure \ref{fig:breakingdown}. This merging permits to remove cloned metaclasses.
+
+To identify semantic overlapping, we check whether the domain-specific actions of the matched metaclasses are equal as well. If so, they can be considered as clones in the semantic specification, so there is semantic overlapping. In that case, these domain-specific actions are merged. If not all the domain-specific actions associated to the matched metaclasses are the same, different clusters of domain-specific actions are created, thus establishing semantic variation points.
+
+\vspace{2mm}
+\textit{Breaking down: \textit{cut} and \textit{encapsulate}.} Once overlapping among the DSLs of the portfolio has been identified, we extract a set of reusable language modules. This process corresponds to break-down the graph produced in the last phase using a graph partitioning algorithm. The algorithm receives the graph(s) obtained from the merging process and returns a set of vertex clusters: one cluster for each intersection of the Venn diagram. Arcs defined between vertices in different clusters can be considered as cross-cutting dependencies between clusters. Then, we encapsulate each vertex cluster in the form of language modules. Each module contains a metamodel, a set of domain-specific actions, and a set of dependencies towards other language modules. 
+
+As the reader might imagine, dependencies between language modules can be viewed through the interfaces introduced in Section \ref{sec:meta-langauges}. Those interfaces are reverse engineered from each module. Required interfaces are generating by creating a virtual element for those elements that are required by the module but that are not part of its definition. The provided interface is generated by defining all the specification elements of the language module as public. If there are specification elements that should be hidden, then the language designer should modify the generated definition.
+
+\subsection{Reverse engineering language variability models}
+
+Once we have obtained a set of reusable language modules from a given set of DSLs, we need to represent the variability of the language product line. In other words, once we have broken down a set of existing DSLs by identifying commonalities and particularities, we need to represent those commonalities and particularities in a model that permits to configure concrete DSLs. 
+
+To achieve such a challenge, we propose a reverse engineering algorithm to synthesize variability models from a set of reusable language modules. Our algorithm produces not only a feature model with the abstract syntax variability, but also an orthogonal variability model representing the semantic variability. An overview of the approach is presented in Fig. \ref{fig:everse-engineering-vm}, and the remainder of this section is dedicated to explain it in detail. 
+
+\begin{figure*}
+\centering
+\includegraphics[width=0.8\linewidth]{images/reverse-engineering-vm.png}
+\caption{Reverse-engineering variability models for language product lines}
+\label{fig:everse-engineering-vm}
+\end{figure*}
+
+\vspace{2mm}
+\textit{Reverse engineering feature models representing abstract syntax variability.} The first step to represent the variability of a language product line is to extract the feature model that represents the abstract syntax variability. To this end, we need an algorithm that receives the dependencies graph between the language modules, and produces a feature model which includes a set of features representing the given language modules as well as a set of constraints representing the dependencies among those modules. The produced feature model must guarantee that all the valid configurations (i.e., those that respect the constraints) produce correct DSLs.
+
+In the literature, there are several approaches for reverse engineering feature modules from dependencies graphs (consider for example the approach presented by Assun\c{c}ao et al. \cite{Assuncao:2015}, or the one presented by She et al., \cite{She:2014}). In our case, we opt for an algorithm that produces a simple feature model where each language module is represented in a concrete feature, and where the dependencies between language modules are encoded either by parent-child relationships or by the classical \textit{implies} relationship. Our algorithm was inspired from the approach presented by Vacchi et al. \cite{Vacchi:2013} which fulfills the aforementioned requirements. Besides, it has been applied for the particular case of languages variability. 
+
+The tooling that supports our algorithms is flexible enough to permit the use of other approaches for synthesis of feature model. To this end, we provide an interface called \texttt{ISynthesis}. In order to extend our approach with a new algorithm for synthesis of feature models, language designers just need to implement such interface. In addition to the one proposed by Vacchi et al. \cite{Vacchi:2013}, we have integrated our approach with the one provided by Assun\c{c}ao et al., \cite{Assuncao:2015}.
+
+%The pseudo-code of the algorithm is introduced below; it is composed of four steps. The first step creates an abstract feature that will be used as the root feature of the variability model. The second step finds the first-level features i.e., the children of the abstract root feature. To this end, it searches all the modules that have not dependencies towards other modules. The third step finishes the hierarchy. It starts by asking the features of the first level to the dependencies they receive. For each of them they create a child. This process is repeated while there are modules that are not included in the model. Finally, we detect these dependencies that are not captured in the hierarchy and we add it in the model in the form of implies relationships. 
+
+\vspace{2mm}
+\textit{Reverse-engineering orthogonal variability models representing semantic variability.} Once the feature model encoding abstract syntax variability is produced, we proceed to do the proper with the orthogonal variability model encoding semantic variability. To this end, we need to analyze the results of the process for extracting the language modules. As explained in Section \ref{sec:reverseengineeringmodules}, according to the result of the comparison of the semantics, a language module might have more than one cluster of domain specific actions. This occurs when the two DSLs share constructs that are equal in terms of the abstract syntax, but differ in their semantics. Since this is the definition of semantic variation point, we materialize those clusters in semantic variation points of an orthogonal variability model.
+
+To do this, we scan all the language modules extracted in the first phase of the reverse engineering strategy. For each language module, we verify if it has more than one cluster of domain specific actions. If so, we create a semantic variation point where each variation references one cluster. Finally, the semantic variation point is associated with the feature that represents the language module owning the clusters. 

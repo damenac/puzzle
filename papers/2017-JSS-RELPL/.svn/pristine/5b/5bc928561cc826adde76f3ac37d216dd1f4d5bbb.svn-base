@@ -1,0 +1,66 @@
+\documentclass[preprint,5p]{elsarticle}
+
+%\usepackage[sc]{mathpazo}
+%\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+%\usepackage[amsmath,thmmarks]{ntheorem}
+\usepackage{lineno}
+
+\modulolinenumbers[1]
+
+\journal{Journal of Software and Systems}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Reverse Engineering Language Product Lines}
+
+\author{David M\'endez-Acu\~na}
+\ead{david.mendez-acuna@inria.fr}
+
+\author{Jos\'e A. Galindo}
+\ead{jagalindo@inria.fr}
+
+\author{Benoit Combemale}
+\ead{benoit.combemale@inria.fr}
+
+\author{Arnaud Blouin}
+\ead{arnaud.blouin@inria.fr}
+
+\author{Benoit Baudry}
+\ead{benoit.baudry@inria.fr}
+
+\address{INRIA/IRISA and University of Rennes 1, France}
+
+\begin{abstract}
+The use of domain-specific languages (DSLs) has become a successful technique in the development of complex systems. Nowadays, we find a variety of DSLs within the same organization targeting different but similar applications. Therefore, companies ends by having DSLs variants, which are different versions of a DSL adapted for different purposes but sharing certain commonalities.  In this scenario, the challenge for language designers is to take advantage of the commonalities existing among similar DSLs by reusing as much as possible. The objective is to leverage previous engineering efforts to narrow implementation from scratch. To this end, recent research in software language engineering has proposed the use of product line engineering; thus introducing the notion of language product lines.
+
+In this article we provide a set of meta-languages and structures to support the definition of language product lines. Afterwards, we provide a reverse engineering process that permits to automatically produce a language product line from a set of existing DSLs. We validate our approach through a case study including several different DSLs implementing various formalisms for modeling finite state machines.
+\end{abstract}
+
+\begin{keyword}
+Language product lines, software languages engineering, domain-specific languages, reverse-engineering.
+\end{keyword}
+
+\end{frontmatter}
+
+\linenumbers
+
+\input{sections/introduction}
+\input{sections/process}
+\input{sections/approach}
+\input{sections/validation}
+%\input{sections/limitations}
+\input{sections/related-work}
+\input{sections/conclusions}
+
+\section*{References}
+
+\bibliography{mybibfile}
+
+\end{document}

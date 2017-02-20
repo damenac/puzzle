@@ -1,0 +1,57 @@
+\section{Problem statement}
+\label{sec:problemstatement}
+
+In this section, we deeply describe the problem addressed in this article. Concretely, we characterize the development scenario in which our approach results useful. This description has two purposes. On one hand, we aim to provide an archetypal description of the development process behind bottom up language product lines. On the other hand, we aim to clearly define the scope of our approach. That means that the solution presented in this article is useful when the development project satisfies the constraints described in this scenario; other situations will need other type of solutions. 
+
+\subsection{The development scenario}
+\label{sec:thedevelopmentscenario}
+
+Like in software product line engineering \cite{Linden:2007}, in language product line engineering the development process is divided into two phases: domain engineering and application engineering (see Fig. \ref{fig:lple-dimensions}). During the \textit{domain engineering} phase, the objective is to build the language product line itself. This process includes the design and implementation of a set of interdependent language modules that implement the language features, as well as the construction of variability models encoding the rules in which those features can be combined to produce valid DSLs.
+
+In turn, during the \textit{application engineering} phase, the objective is to derivate DSLs according to the needs of specific sets of final users. Such derivation process comprises the selection of the features that should be included in the DSL, i.e., language configuration, as well as the assembly of the corresponding language modules, i.e., language modules composition. 
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth]{images/lple-dimensions-fig.png}
+\caption{Phases of the life cycle of a language product line \label{fig:lple-dimensions}}
+\end{figure*}
+
+The top-down and bottom up approaches are different ways to face the life-cycle of a language product line. In the top-down approach, the domain engineering phase is performed first, and the produced artifacts are used to conduct the application engineering phase. Language engineers use domain analysis to design and implement a set of language modules and variability models from some domain knowledge owned by experts and final users. Those artifacts can be later used to configure and compose particular DSLs.
+
+In the bottom-up approach, the application engineering phase is performed before the domain engineering phase. Language designers are asked to build an initial DSL with in a well-defined domain and for a specific purpose. However, with the evolution of the language development project, some variants of the DSLs are needed in order to address new requirements. Then language designers create a new variants of the initial DSL with the corresponding adaptations. At some point, language designers realize that there is potential reuse among these DSLs to build up a language product line to capitalize reuse and facilitate the construction of future DSLs. Hence, they launch a re-engineering process where the DSLs are analyzed to extract a modular language design and the corresponding variability models. 
+
+\vspace{2mm}
+\textit{The clone-and-own approach.} In this article, we are interested in bottom-up language product lines. Specifically, we aim to contribute with some strategies to reverse engineering language product lines from sets of existing DSLs which have been built through the \textit{clone-and-own} approach. Under this approach, new variants are created by cloning existing versions of the DSL and performing the corresponding modifications. While several research works have shown that such a practice is quite common in software development projects \cite{Mayrand:1996,Rubin:2015}, in a recent work \cite{MendezAcuna:2016} we provided some empirical evidence showing that it is also a common practice in language development. We performed an analysis of a large pool of DSLs obtained from GitHub, and we detected a relevant amount of specification clones among them.
+
+%As a response to this phenomenon, recent research works have proposed mechanisms to reverse engineering software product lines from sets of existing software products which share code clones. This type of approaches are a clear example of bottom-up software product lines. and discussed its on software maintenance \cite{Chatterji:2016}
+
+%Another important characteristic of the development process during the construction of bottom-up language product lines is that, in many cases, language designers use the copy/paste/modify pattern to create  individual DSLs. This approach is explained by Lopez Herrej\'on et all for the general case of software product lines.
+
+\vspace{2mm}
+\textit{A running example.} Let us illustrate the development scenario described above through a running example. Suppose a team of language designers working on the construction of the DSL for finite state machines. To this end, language designers follow the UML specification \cite{UML:2011} thus defining language constructs such as states, regions, transitions, triggers, and so on. Those language constructs are specified in terms of their syntax and semantics so, at the end of the language development process, they release a DSL which can be executed and which behavior complies the UML specification.
+
+Once this first DSL is released, on team of language designers is asked to build a new variant of the DSL. This time, the DSL must comply the Rhapsody specification \cite{Harel:2004} (i.e., another formalism to finite state machines). This new variant shares many commonalities with UML but it is not exactly the same. There are differences at the level of both syntax and semantics. At this point, language designers face the problem of reusing as much as possible the constructs defined in the DSL for UML state machines.
+
+One of the possibilities that language designers have to deal with this challenge is to use the clone-and-own approach by copy-pasting the specification of the first DSL in a new project, and then performing the corresponding adaptations. Although the disadvantages of this practice are usually well known by software developers (including language designers), it permits a fast prototyping of the second DSL. After this process, language designers have two different DSLs --they implement different formalisms of state machines-- that share many specification clones.
+
+Suppose now that the final users realize that they need support for other formalisms for state machines. Hence, the team of language designers is asked to implement two more variants of the DSL: one complying the Stateflow specification \cite{Martaj:2010}, and the other one complying classical Harel state machines \cite{Harel:1996}. If the language designers use again the clone-and-own approach, then the result would be a set of four DSLs for state machines that share some commonalities in the form of specification clones, and which own certain particularities that make them unique. 
+
+The problem that language designers face at this point is two fold. First, they will have to produce a new variant of the DSL for each state machines formalism needed by final users. Event worst, suppose for example that final users need to combine some specifications in order to produce hybrid formalisms. Language designers will have to produce a new version of the DSL for each desired combination and the clone-and-own approach becomes impractical. Second, the existence of specification clones increases the maintenance costs of the involved DSLs. If language designers detect bugs in one of the specifications, it is quite probable that such bugs is replicated in all the DSLs sharing the specification clone.
+
+This type of situations have been largely discussed in the software engineering community. There are several approaches approaches that exploit the notion of clones to produce software product lines from existing product variants \cite{LopezHerrejon:2015,Martinez:2015,Martinez:2015b}. In this article, do the proper for the case of language product lines.
+
+\subsection{Technological scope}
+\label{sec:technologicalscope}
+
+%Nowadays, there are many technological spaces to build DSLs are quite diverse. Although the purpose of all those technological spaces is the construction of DSLs, the concepts and definitions they use is quite different; for instance, the definition of a grammar based DSL whose semantics is specified denotationally by means of attribute grammars, is quite different from the definition of a metamodel based DSLs where the semantics are specified in a model to model transformation using the ideas of Model Driven Engineering. This diversity makes difficult to generalize the ideas of software language engineering to all the technological spaces. As a result, we need to clearly specify the scope of our approach by indicating the technological space we address. 
+
+It is worth clarifying that all the ideas presented in this article are focused to executable domain specific modeling languages (xDSMLs) where the abstract syntax is specified through \textit{metamodels}, and the dynamic semantics is specified operationally as a set of \textit{domain specific actions} \cite{Combemale:2013}. Domain specific actions are java like methods that introduce behavior in the metaclasses of a given metamodel. Such injection is performed via weaving as the same as in aspect oriented programming \cite{Jezequel:2015b}. Concrete syntax, and hence concrete syntax variability, are out of the scope of this article. 
+
+Fig. \ref{fig:fig-dsl-example} illustrates this type of DSLs through a simple example on finite states machines. In that case, the metamodel that implements the abstract syntax contains three metaclasses: \textsl{StateMachine}, \textsl{State}, and \textsl{Transition}. There are some references among those metaclasses representing the relationships existing among the corresponding language constructs. The domain specific actions at the right of the Fig. \ref{fig:fig-dsl-example} introduce the operational semantics to the DSL. In this example, there is one domain specific action for each metaclass. Note that the interactions among domain specific actions can be internally specified in their implementation by means of the \textit{interpreter pattern}, or externalized in a model of computation \cite{Combemale:2013}.
+
+\begin{figure}
+\centering
+\includegraphics[width=1\linewidth]{images/fig-dsl-example.png}
+\caption{A simple DSL for finite state machines}
+\label{fig:fig-dsl-example}
+\end{figure}

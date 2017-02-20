@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;examples/models/provided-example.ecore&apos; to &apos;required-example.ecore&apos;" description="Rename resource &apos;provided-example.ecore&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="models/provided-example.ecore" name="required-example.ecore" stamp="1481655770071" updateReferences="true"/>
+</session>

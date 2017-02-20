@@ -1,0 +1,65 @@
+\documentclass[preprint,5p]{elsarticle}
+
+\usepackage{lineno}
+%\usepackage[sc]{mathpazo}
+%\usepackage{wrapfig}
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+%\usepackage[amsmath,thmmarks]{ntheorem}
+\modulolinenumbers[1]
+
+\journal{Journal of Software and Systems}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Reverse Engineering Language Product Lines}
+
+\author{David M\'endez-Acu\~na}
+\ead{david.mendez-acuna@inria.fr}
+
+\author{Jos\'e A. Galindo}
+\ead{jagalindo@inria.fr}
+
+\author{Benoit Combemale}
+\ead{benoit.combemale@inria.fr}
+
+\author{Arnaud Blouin}
+\ead{arnaud.blouin@inria.fr}
+
+\author{Benoit Baudry}
+\ead{benoit.baudry@inria.fr}
+
+\address{INRIA/IRISA and University of Rennes 1, France}
+
+\begin{abstract}
+The use of domain-specific languages (DSLs) has become a successful technique in the development of complex systems. Consequently, nowadays we can find a large variety of DSLs for diverse purposes. In this context, an emerging phenomenon is the existence of DSLs variants, which are different versions of a DSL adapted for different purposes but that conserve certain commonalities among them.  In this scenario, the challenge for language designers is to take advantage of the commonalities existing among similar DSLs by reusing, as much as possible, formerly defined language constructs. The objective is to leverage previous engineering efforts to minimize implementation from scratch. To this end, recent research in software language engineering proposes the use of product line engineering; thus introducing the notion of language product lines. 
+
+In this article we aim to contribute in the field of language product line engineering. Concretely speaking, we provide a set of meta-languages and structures to support the definition of language product lines. Afterwards, we provide a reverse engineering process that permits to automatically produce a language product line from a set of existing DSLs, thus adopting a bottom-up perspective. We validate our approach through a case study include several different DSLs implementing different formalisms for modeling finite state machines.
+\end{abstract}
+
+\begin{keyword}
+Language product lines, software languages engineering, domain-specific languages, reverse-engineering. 
+\end{keyword}
+
+\end{frontmatter}
+
+%\linenumbers
+
+\input{sections/introduction}
+\input{sections/process}
+\input{sections/approach}
+\input{sections/validation}
+%\input{sections/limitations}
+\input{sections/related-work}
+\input{sections/conclusions}
+
+\section*{References}
+
+\bibliography{mybibfile}
+
+\end{document}

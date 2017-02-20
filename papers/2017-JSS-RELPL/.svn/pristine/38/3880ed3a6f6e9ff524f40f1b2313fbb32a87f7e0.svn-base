@@ -1,0 +1,748 @@
+@Article{Rubin:2015,
+author="Rubin, Julia
+and Czarnecki, Krzysztof
+and Chechik, Marsha",
+title="Cloned product variants: from ad-hoc to managed software product lines",
+journal="International Journal on Software Tools for Technology Transfer",
+year="2015",
+volume="17",
+number="5",
+pages="627--646",
+abstract="We focus on the problem of managing a collection of related software product variants realized via cloning. By analyzing three industrial case studies of organizations with cloned product lines, we conclude that an efficient management of clones relies on both refactoring cloned variants into a single-copy product line representation and improving development experience when maintaining existing clones. We propose a framework that consists of seven conceptual operators for cloned product line management and show that these operators are adequate to realize development activities we observed in the analyzed case studies. We discuss options for implementing the operators and benefits of the operator-based view.",
+issn="1433-2787",
+doi="10.1007/s10009-014-0347-9",
+url="http://dx.doi.org/10.1007/s10009-014-0347-9"
+}
+
+@article{Roos-Frantz:2012,
+author={Roos-Frantz, Fabricia and Benavides, David and Ruiz-Cort{\'e}s, Antonio and Heuer, Andr{\'e} and Lauenroth, Kim},
+title={Quality-aware analysis in product line engineering with the orthogonal variability model},
+journal={Software Quality Journal},
+year={2012},
+volume={20},
+number={3},
+pages={519--565},
+issn={1573-1367},
+doi={10.1007/s11219-011-9156-5}
+}
+
+@incollection{Czarnecki:2004,
+year={2004},
+isbn={978-3-540-22918-6},
+booktitle={Software Product Lines},
+volume={3154},
+series={Lecture Notes in Computer Science},
+editor={Nord, RobertL.},
+doi={10.1007/978-3-540-28630-1_17},
+title={Staged Configuration Using Feature Models},
+publisher={Springer Berlin Heidelberg},
+author={Czarnecki, Krzysztof and Helsen, Simon and Eisenecker, Ulrich},
+pages={266-283},
+language={English}
+}
+
+@inproceedings{Dinkelaker:2010,
+booktitle = {Proceedings of the First International Workshop on Composition and Variability co-located with AOSD'2010},
+year = {2010},
+title = {Supporting Variability with Late Semantic Adaptations of Domain-Specific Modeling Languages},
+author = {Tom Dinkelaker and Martin Monperrus and Mira Mezini},
+location = {Rennes, France},
+language={English}
+}
+
+@inproceedings{Kuhn:2016,
+ author = {K\"uhn, Thomas and Cazzola, Walter},
+ title = {Apples and Oranges: Comparing Top-Down and Bottom-Up Language Product Lines},
+ booktitle = {Proceedings of the 20th International Software Product Line Conference},
+ series = {SPLC '16},
+ year = {2016},
+ address = {Beijing, China},
+ publisher = {ACM}
+} 
+
+@inproceedings{Gray:2008,
+ author = {Gray, Jeff and Fisher, Kathleen and Consel, Charles and Karsai, Gabor and Mernik, Marjan and Tolvanen, Juha-Pekka},
+ title = {DSLs: The Good, the Bad, and the Ugly},
+ booktitle = {Companion to the 23rd ACM SIGPLAN Conference on Object-oriented Programming Systems Languages and Applications},
+ series = {OOPSLA Companion '08},
+ year = {2008},
+ isbn = {978-1-60558-220-7},
+ location = {Nashville, TN, USA},
+ pages = {791--794},
+ numpages = {4},
+ url = {http://doi.acm.org/10.1145/1449814.1449863},
+ doi = {10.1145/1449814.1449863},
+ acmid = {1449863},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {domain-specific languages, grammarware, metamodeling},
+}
+
+@Inbook{Homer:2014,
+author={Homer, Michael and Jones, Timothy and Noble, James and Bruce, Kim B. and Black, Andrew P.},
+editor={Jones, Richard},
+title={Graceful Dialects},
+series={ECOOP 2014},
+booktitle={Proceedings of the 28th European Conference on Object-Oriented Programming},
+year={2014},
+publisher={Springer Berlin Heidelberg},
+address={Uppsala, Sweden},
+pages={131--156},
+isbn={978-3-662-44202-9},
+doi={10.1007/978-3-662-44202-9_6}
+}
+
+@article{James:2014,
+author={James, Phillip and Roggenbach, Markus},
+title={Encapsulating Formal Methods within Domain Specific Languages: A Solution for Verifying Railway Scheme Plans},
+journal={Mathematics in Computer Science},
+year={2014},
+volume={8},
+number={1},
+pages={11--38},
+issn={1661-8289},
+doi={10.1007/s11786-014-0174-0}
+}
+
+@Inbook{Iliasov:2013,
+author="Iliasov, Alexei
+and Lopatkin, Ilya
+and Romanovsky, Alexander",
+editor="Bitsch, Friedemann
+and Guiochet, J{\'e}r{\'e}mie
+and Ka{\^a}niche, Mohamed",
+title="The SafeCap Platform for Modelling Railway Safety and Capacity",
+bookTitle="Computer Safety, Reliability, and Security: 32nd International Conference, SAFECOMP 2013, Toulouse, France, September 24-27, 2013. Proceedings",
+year="2013",
+publisher="Springer Berlin Heidelberg",
+address="Berlin, Heidelberg",
+pages="130--137",
+isbn="978-3-642-40793-2",
+doi="10.1007/978-3-642-40793-2_12",
+url="http://dx.doi.org/10.1007/978-3-642-40793-2_12"
+}
+
+@inproceedings{Assuncao:2015,
+ author = {Assun\c{c}\~{a}o, Wesley K.G. and Lopez-Herrejon, Roberto E. and Linsbauer, Lukas and Vergilio, Silvia R. and Egyed, Alexander},
+ title = {Extracting Variability-Safe Feature Models from Source Code Dependencies in System Variants},
+ booktitle = {Proceedings of the 2015 Annual Conference on Genetic and Evolutionary Computation},
+ series = {GECCO '15},
+ year = {2015},
+ isbn = {978-1-4503-3472-3},
+ location = {Madrid, Spain},
+ pages = {1303--1310},
+ numpages = {8},
+ url = {http://doi.acm.org/10.1145/2739480.2754720},
+ doi = {10.1145/2739480.2754720},
+ acmid = {2754720},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {feature models, multi-objective evolutionary algorithms, reverse engineering},
+}
+
+@article{Harel:1987,
+title = {Statecharts: a visual formalism for complex systems},
+journal = {Science of Computer Programming},
+volume = {8},
+number = {3},
+pages = {231 - 274},
+year = {1987},
+issn = {0167-6423},
+doi = {http://dx.doi.org/10.1016/0167-6423(87)90035-9},
+author = {David Harel}
+}
+
+@article{She:2014,
+title = {Efficient synthesis of feature models},
+journal = {Information and Software Technology},
+volume = {56},
+number = {9},
+pages = {1122 - 1143},
+year = {2014},
+note = {Special Sections from “Asia-Pacific Software Engineering Conference (APSEC), 2012” and “ Software Product Line conference (SPLC), 2012”},
+issn = {0950-5849},
+doi = {http://dx.doi.org/10.1016/j.infsof.2014.01.012},
+author = {Steven She and Uwe Ryssel and Nele Andersen and Andrzej Wasowski and Krzysztof Czarnecki},
+}
+
+@inproceedings{Vacchi:2014,
+    title = {{Automating Variability Model Inference for Component-Based Language Implementations}},
+    author = {Vacchi, Edoardo and Cazzola, Walter and Combemale, Benoit and Acher, Mathieu},
+    keywords = {Variability Models ; SW Product Lines ; DSL Implementation},
+    language = {Anglais},
+    affiliation = {Dipartimento di Scienze dell'Informazione [Milano] , Dipartimento di Informatica - ISLab , DIVERSE - INRIA - IRISA},
+    booktitle = {{SPLC'14 - 18th International Software Product Line Conference}},
+    publisher = {ACM},
+    address = {Florence, Italie},
+    editor = {Patrick Heymans and Julia Rubin },
+    year = {2014},
+    month = Sep,
+}
+
+@Inbook{Vacchi:2013,
+author={Vacchi, Edoardo and Cazzola, Walter and Pillay, Suresh and Combemale, Beno{\^i}t},
+editor={Erwig, Martin and Paige, Richard F. and Van Wyk, Eric},
+title={Variability Support in Domain-Specific Language Development},
+series={SLE 2013},
+booktitle={Proceedings of 6th International Conference on Software Language Engineering},
+year={2013},
+publisher={Springer International Publishing},
+address={Indianapolis, IN, USA},
+pages={76--95},
+isbn={978-3-319-02654-1},
+doi={10.1007/978-3-319-02654-1_5}
+}
+
+
+@article{Crane:2007,
+year={2007},
+issn={1619-1366},
+journal={Software \& Systems Modeling},
+volume={6},
+number={4},
+doi={10.1007/s10270-006-0042-8},
+title={UML vs. classical vs. rhapsody statecharts: not all models are created equal},
+author={Crane, MichelleL. and Dingel, Juergen}
+}
+
+@incollection{Chechik:2010,
+author={Chechik, Marsha and Gurfinkel, Arie and Uchitel, Sebastian and Ben-David, Shoham},
+title={Raising Level of Abstraction with Partial Models: A Vision},
+series={ICMT 2012},
+booktitle={Proceedings of NSF/MSR Workshop on Usable Verification},
+year={2010},
+address={Redmond, Washington}
+}
+
+@inproceedings{Biegel:2010,
+ author = {Biegel, Benjamin and Diehl, Stephan},
+ title = {JCCD: A Flexible and Extensible API for Implementing Custom Code Clone Detectors},
+ booktitle = {Proceedings of the International Conference on Automated Software Engineering},
+ series = {ASE 2010},
+ year = {2010},
+ address = {Antwerp, Belgium},
+ publisher={ACM},
+ pages = {167--168}
+} 
+
+@inproceedings{Lucanu:2013,
+author={Lucanu, Dorel and Rusu, Vlad},
+title={Program Equivalence by Circular Reasoning},
+booktitle={Proceedings of the International Conference on Integrated Formal Methods},
+series={IFM 2013},
+year={2013},
+publisher={Springer},
+address={Turku, Finland},
+pages={362--377}
+}
+
+@incollection{Jezequel:2014,
+year={2015},
+isbn={978-3-319-11616-7},
+booktitle={Complex Systems Design \& Management},
+editor={Boulanger, Fr\'ed\'eric and Krob, Daniel and Morel, G\'erard and Roussel, Jean-Claude},
+doi={10.1007/978-3-319-11617-4_1},
+title={When Systems Engineering Meets Software Language Engineering},
+publisher={Springer International Publishing},
+author={J{\'e}z{\'e}quel, Jean-Marc and M{\'e}ndez-Acu{\~n}a, David and Degueule, Thomas and Combemale, Benoit and Barais, Olivier},
+pages={1-13},
+language={English}
+}
+
+@inproceedings{Combemale:2013,
+author={Combemale, Beno{\^i}t and Hardebolle, C{\'e}cile and Jacquet, Christophe and Boulanger, Fr{\'e}d{\'e}ric and Baudry, Benoit},
+title={Bridging the Chasm between Executable Metamodeling and Models of Computation},
+booktitle={Proceedings of the International Conference on Software Language Engineering},
+series={SLE 2012},
+year={2013},
+publisher={Springer},
+address={Dresden, Germany},
+pages={184--203}
+}
+
+@article{Combemale:2014, 
+author={Combemale, Benoit and De antoni, Julien and Baudry, Benoit and France, Robert and J\'ez\'equel, Jean-Marc and Gray, Jeff}, 
+journal={Computer}, 
+title={Globalizing Modeling Languages}, 
+year={2014}, 
+volume={47}, 
+number={6}, 
+pages={68-71}, 
+doi={10.1109/MC.2014.147}, 
+ISSN={0018-9162}, 
+month={June},
+}
+
+@inbook{Clark:2013,
+author={Clark, Tony and Barn, Balbir S.},
+chapter={Domain Engineering for Software Tools},
+title={Domain Engineering: Product Lines, Languages, and Conceptual Models},
+year={2013},
+publisher={Springer},
+address={Berlin, Heidelberg},
+pages={187--209}
+}
+
+@article{Mernik:2005b,
+ author = {Mernik, Marjan and Heering, Jan and Sloane, Anthony M.},
+ title = {When and How to Develop Domain-specific Languages},
+ journal = {ACM Comput. Surv.},
+ issue_date = {December 2005},
+ volume = {37},
+ number = {4},
+ month = dec,
+ year = {2005},
+ issn = {0360-0300},
+ pages = {316--344},
+ numpages = {29},
+ doi = {10.1145/1118890.1118892},
+ acmid = {1118892},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {Domain-specific language, application language, domain analysis, language development system},
+}
+
+@inproceedings{Oney:2012,
+ author = {Oney, Stephen and Myers, Brad and Brandt, Joel},
+ title = {ConstraintJS: Programming Interactive Behaviors for the Web by Integrating Constraints and States},
+ booktitle = {Proceedings of the 25th Annual ACM Symposium on User Interface Software and Technology},
+ series = {UIST '12},
+ year = {2012},
+ isbn = {978-1-4503-1580-7},
+ location = {Cambridge, Massachusetts, USA},
+ pages = {229--238},
+ numpages = {10},
+ doi = {10.1145/2380116.2380146},
+ acmid = {2380146},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+}
+
+@incollection{Lodderstedt:2002,
+year={2002},
+isbn={978-3-540-44254-7},
+booktitle={UML 2002 - The Unified Modeling Language},
+volume={2460},
+series={Lecture Notes in Computer Science},
+editor={J\'ez\'equel, Jean-Marc and Hussmann, Heinrich and Cook, Stephen},
+doi={10.1007/3-540-45800-X_33},
+title={SecureUML: A UML-Based Modeling Language for Model-Driven Security},
+publisher={Springer Berlin Heidelberg},
+author={Lodderstedt, Torsten and Basin, David and Doser, J\"urgen},
+pages={426-441},
+language={English}
+}
+
+@Inbook{Funk:2012,
+author={Funk, Mathias and Rauterberg, Matthias},
+editor={Herrlich, Marc and Malaka, Rainer and Masuch, Maic},
+title={PULP Scription: A DSL for Mobile HTML5 Game Applications},
+series={ICEC 2012},
+booktitle={Proceedings of 11th International Conference on Entertainment Computing},
+year={2012},
+month={September},
+publisher={Springer Berlin Heidelberg},
+address={Bremen, Germany},
+pages={504--510},
+isbn={978-3-642-33542-6},
+doi={10.1007/978-3-642-33542-6_65}
+}
+
+@incollection{Zschaler:2010b,
+year={2010},
+isbn={978-3-642-12106-7},
+booktitle={Software Language Engineering},
+volume={5969},
+series={LNCS},
+doi={10.1007/978-3-642-12107-4_23},
+title={Domain-Specific Metamodelling Languages for Software Language Engineering},
+author={Zschaler, Steffen and Kolovos, Dimitrios S. and Drivalos, Nikolaos and Paige, Richard F. and Rashid, Awais},
+language={English}
+}
+
+@incollection{Lara:2012,
+author={Lara, Juan and Guerra, Esther},
+title={Domain-Specific Textual Meta-Modelling Languages for Model Driven Engineering},
+series={ECMFA 2012},
+booktitle={8th European Conference on Modelling Foundations and Applications},
+year={2012},
+address={Lyngby, Denmark},
+pages={259--274},
+}
+
+@incollection{Agron:2009,
+author={Agron, Jason},
+editor={Taha, Walid Mohamed},
+booktitle={Domain-Specific Language for HW/SW Co-design for FPGAs},
+series={DSL 2009},
+title={Domain-Specific Languages},
+year={2009},
+month={July},
+publisher={Springer Berlin Heidelberg},
+address={Oxford, United Kingdom},
+pages={262--284},
+isbn={978-3-642-03034-5},
+doi={10.1007/978-3-642-03034-5_13},
+}
+
+@incollection{Anlauff:2000,
+author={Anlauff, Matthias and Kutter, Philipp W. and Pierantonio, Alfonso and S{\"u}nb{\"u}l, Asuman},
+editor={Maibaum, Tom},
+title={Using Domain-Specific Languages for the Realization of Component Composition},
+series={FASE 2000},
+booktitle={Fundamental Approaches to Software Engineering},
+year={2000},
+month={April},
+publisher={Springer Berlin Heidelberg},
+address={Berlin, Germany},
+pages={112--126},
+isbn={978-3-540-46428-0},
+doi={10.1007/3-540-46428-X_9},
+}
+
+@incollection{Neskovic:2011,
+author={Neskovic, Sinisa and Paunovic, Ogren and Babarogic, Slajan},
+editor={Andersen, Kim Normann and Francesconi, Enrico and Gr{\"o}nlund, {\AA}ke and Engers, Tom M.},
+title={Using Protocols and Domain Specific Languages to Achieve Compliance of Administrative Processes with Legislation},
+series={EGOVIS 2011},
+booktitle={International Conference on Electronic Government and the Information Systems Perspective},
+year={2011},
+publisher={Springer Berlin Heidelberg},
+address={Toulouse, France},
+pages={284--298},
+isbn={978-3-642-22961-9},
+doi={10.1007/978-3-642-22961-9_23},
+month={August},
+}
+
+@incollection{Zschaler:2010,
+year={2010},
+isbn={978-3-642-12106-7},
+booktitle={Software Language Engineering},
+volume={5969},
+series={Lecture Notes in Computer Science},
+editor={van den Brand, Mark and Gasevic, Dragan and Gray, Jeff},
+doi={10.1007/978-3-642-12107-4_7},
+title={VML* $–$ A Family of Languages for Variability Management in Software Product Lines},
+publisher={Springer Berlin Heidelberg},
+keywords={Software Product Lines; Family of Languages; Domain-specific Languages; Variability Management},
+author={Zschaler, Steffen and S\'anchez, Pablo and Santos, Jo\~{a}o and Alf\'erez, Mauricio and Rashid, Awais and Fuentes, Lidia and Moreira, Ana and Ara\'ujo, Jo\~{a}o and Kulesza, Uir\'a},
+pages={82-102},
+language={English}
+}
+
+@article{White:2009, 
+author={J. White and J. H. Hill and J. Gray and S. Tambe and A. S. Gokhale and D. C. Schmidt}, 
+journal={IEEE Software}, 
+title={Improving Domain-Specific Language Reuse with Software Product Line Techniques}, 
+year={2009}, 
+volume={26}, 
+number={4}, 
+pages={47-53}, 
+ISSN={0740-7459}, 
+month={July},}
+
+@inproceedings{Kuhn:2015,
+ author = {K\"{u}hn, Thomas and Cazzola, Walter and Olivares, Diego Mathias},
+ title = {Choosy and Picky: Configuration of Language Product Lines},
+ booktitle = {Proceedings of the 19th International Conference on Software Product Line},
+ series = {SPLC '15},
+ year = {2015},
+ isbn = {978-1-4503-3613-0},
+ location = {Nashville, Tennessee},
+ pages = {71--80},
+ numpages = {10},
+ doi = {10.1145/2791060.2791092},
+ acmid = {2791092},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {language composition, language product lines},
+}
+
+@inproceedings{Liebig:2013,
+ author = {Liebig, J\"{o}rg and Daniel, Rolf and Apel, Sven},
+ title = {Feature-oriented Language Families: A Case Study},
+ booktitle = {Proceedings of the Seventh International Workshop on Variability Modelling of Software-intensive Systems},
+ series = {VaMoS '13},
+ year = {2013},
+ isbn = {978-1-4503-1541-8},
+ location = {Pisa, Italy},
+ pages = {11:1--11:8},
+ articleno = {11},
+ numpages = {8},
+ doi = {10.1145/2430502.2430518},
+ acmid = {2430518},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {feature-oriented programming, language evolution, language families},
+}
+
+@book{Voelter:2013b,
+author={Markus V\"olter and Sebastian Benz and Christian Dietrich and Birgit Engelmann and Mats Helander and Lennart C. L. Kats and Eelco Visser and Guido Wachsmuth},
+title={{DSL} Engineering - Designing, Implementing and Using Domain-Specific Languages},
+publisher={dslbook.org},
+year={2013},
+isbn={978-1-4812-1858-0},
+}
+
+@article{Jezequel:2015b,
+year={2015},
+issn={1619-1366},
+journal={Software \& Systems Modeling},
+volume={14},
+number={2},
+title={Mashup of metalanguages and its implementation in the Kermeta language workbench},
+author={J\'ez\'equel, Jean-Marc and Combemale, Benoit and Barais, Olivier and Monperrus, Martin and Fouquet, François},
+pages={905-920}
+}
+
+@book{Linden:2007,
+ author = {Linden, Frank J. van der and Schmid, Klaus and Rommes, Eelco},
+ title = {Software Product Lines in Action: The Best Industrial Practice in Product Line Engineering},
+ year = {2007},
+ isbn = {3540714367},
+ publisher = {Springer-Verlag New York, Inc.},
+ address = {Secaucus, NJ, USA},
+}
+
+@inproceedings{Rosenmuller:2011,
+ author = {Rosenm\"{u}ller, Marko and Siegmund, Norbert and Th\"{u}m, Thomas and Saake, Gunter},
+ title = {Multi-dimensional Variability Modeling},
+ booktitle = {Proceedings of the 5th Workshop on Variability Modeling of Software-Intensive Systems},
+ series = {VaMoS '11},
+ year = {2011},
+ isbn = {978-1-4503-0570-9},
+ location = {Namur, Belgium},
+ pages = {11--20},
+ numpages = {10},
+ doi = {10.1145/1944892.1944894},
+ acmid = {1944894},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {feature models, separation of concerns, variability modeling}
+}
+
+@incollection{Cengarle:2009,
+year={2009},
+isbn={978-3-642-04424-3},
+booktitle={Model Driven Engineering Languages and Systems},
+volume={5795},
+series={Lecture Notes in Computer Science},
+editor={Sch\"urr, Andy and Selic, Bran},
+doi={10.1007/978-3-642-04425-0_54},
+title={Variability within Modeling Language Definitions},
+publisher={Springer Berlin Heidelberg},
+keywords={Modeling languages; variability; formal semantics; UML},
+author={Cengarle, Mar\'ia Victoria and Gr\"onniger, Hans and Rumpe, Bernhard},
+pages={670-684},
+language={English}
+}
+
+@incollection{Gronniger:2011,
+year={2011},
+isbn={978-3-642-21291-8},
+booktitle={Foundations of Computer Software. Modeling, Development, and Verification of Adaptive Systems},
+volume={6662},
+series={Lecture Notes in Computer Science},
+editor={Calinescu, Radu and Jackson, Ethan},
+doi={10.1007/978-3-642-21292-5_2},
+title={Modeling Language Variability},
+publisher={Springer Berlin Heidelberg},
+author={Gr\"onniger, Hans and Rumpe, Bernhard},
+pages={17-32}
+}
+
+@inproceedings{Tripakis:2003,
+author={Tripakis, Stavros},
+editor={Garavel, Hubert and Hatcliff, John},
+title={Automated Module Composition},
+series={TACAS 2003},
+booktitle={Proceedings of the 9th International Conference on Tools and Algorithms for the Construction and Analysis of Systems},
+year={2003},
+publisher={Springer Berlin Heidelberg},
+address={Warsaw, Poland},
+pages={347--362},
+isbn={978-3-540-36577-8},
+doi={10.1007/3-540-36577-X_25}
+}
+
+@Inbook{Gschwind:2012,
+author={Gschwind, Thomas},
+editor={Breitman, K. Karin and Horspool, Nigel R.},
+title={Automated Adaptation of Component Interfaces with Type Based Adaptation},
+bookTitle={Patterns, Programming and Everything},
+year={2012},
+publisher={Springer London},
+address={London},
+pages={45--61},
+isbn={978-1-4471-2350-7},
+doi={10.1007/978-1-4471-2350-7_5}
+}
+
+@article{Steel:2007,
+author={Steel, Jim and J{\'e}z{\'e}quel, Jean-Marc},
+title={On model typing},
+journal={Software {\&} Systems Modeling},
+year={2007},
+volume={6},
+number={4},
+pages={401--413},
+issn={1619-1374},
+doi={10.1007/s10270-006-0036-6},
+url={http://dx.doi.org/10.1007/s10270-006-0036-6}
+}
+
+@inproceedings{Degueule:2015a,
+  TITLE = {Melange: A Meta-language for Modular and Reusable Development of DSLs},
+  AUTHOR = {Degueule, Thomas and Combemale, Benoit and Blouin, Arnaud and Barais, Olivier and J{\'e}z{\'e}quel, Jean-Marc},
+  URL = {https://hal.inria.fr/hal-01197038},
+  BOOKTITLE = {8th International Conference on Software Language Engineering (SLE)},
+  ADDRESS = {Pittsburgh, United States},
+  YEAR = {2015},
+  MONTH = Oct,
+  KEYWORDS = {Domain-specific languages ; language reuse ; lan-guage composition ; model typing ; melange},
+  PDF = {https://hal.inria.fr/hal-01197038/file/sle15-melange.pdf},
+  HAL_ID = {hal-01197038},
+  HAL_VERSION = {v1},
+}
+
+@inproceedings{Guy:2012,
+author={Guy, Cl{\'e}ment and Combemale, Beno{\^i}t and Derrien, Steven and Steel, Jim R. H. and J{\'e}z{\'e}quel, Jean-Marc},
+editor={Vallecillo, Antonio and Tolvanen, Juha-Pekka and Kindler, Ekkart and St{\"o}rrle, Harald and Kolovos, Dimitris},
+title={On Model Subtyping},
+series={ECMFA 2012},
+booktitle={Proceedings of the 8th European Conference on Modelling Foundations and Applications},
+year={2012},
+publisher={Springer Berlin Heidelberg},
+address={Lyngby, Denmark},
+pages={400--415},
+isbn={978-3-642-31491-9},
+doi={10.1007/978-3-642-31491-9_30}
+}
+
+@inproceedings{Mayrand:1996, 
+author={J. Mayrand and C. Leblanc and E. M. Merlo}, 
+booktitle={Software Maintenance 1996, Proceedings., International Conference on}, 
+title={Experiment on the automatic detection of function clones in a software system using metrics}, 
+year={1996}, 
+pages={244-253}, 
+keywords={computerised monitoring;software maintenance;software metrics;software tools;telecommunication computing;telecommunication network management;Datrix tool;clone identification technique;cloning level;duplicate function identification;function clone detection;large software system;software maintainability;software metrics;source code;telecommunication monitoring systems;thresholds;Software metrics}, 
+doi={10.1109/ICSM.1996.565012}, 
+ISSN={1063-6773}, 
+month={Nov},}
+
+@article{Chatterji:2016,
+author="Chatterji, Debarshi and Carver, Jeffrey C. and Kraft, Nicholas A.",
+title="Code clones and developer behavior: results of two surveys of the clone research community",
+journal="Empirical Software Engineering",
+year="2016",
+volume="21",
+number="4",
+pages="1476--1508",
+issn="1573-7616",
+doi="10.1007/s10664-015-9394-4",
+url="http://dx.doi.org/10.1007/s10664-015-9394-4"
+}
+
+@incollection{MendezAcuna:2016,
+year={2016},
+booktitle={Proceedings of the International Conference on Software Reuse},
+series={ICSR 2016},
+title={Reverse-engineering reusable language modules from legacy domain-specific languages},
+author={M\'endez-Acu\~na, David and Galindo, Jos\'e A. and Combemale, Benoit and Blouin, Arnaud and Baudry, Benoit},
+publisher={Springer},
+address={Limassol, Cyprus}
+}
+
+@misc{UML:2011,
+  author = {Object Management Group (OMG)},
+  edition = {Version 2.4.1},
+  keywords = {metamodel omg specification uml},
+  number = {OMG Document Number: formal/2011-08-06},
+  timestamp = {2013-10-18T15:41:52.000+0200},
+  title = {UML 2.4.1 Superstructure Specification},
+  year = {2011}
+}
+
+@incollection{Harel:2004,
+year={2004},
+isbn={978-3-540-23135-6},
+booktitle={Integration of Software Specification Techniques for Applications in Engineering},
+volume={3147},
+series={Lecture Notes in Computer Science},
+editor={Ehrig, Hartmut and Damm, Werner and Desel, Jörg and Große-Rhode, Martin and Reif, Wolfgang and Schnieder, Eckehard and Westkämper, Engelbert},
+doi={10.1007/978-3-540-27863-4_19},
+title={The Rhapsody Semantics of Statecharts (or, On the Executable Core of the UML)},
+url={http://dx.doi.org/10.1007/978-3-540-27863-4_19},
+publisher={Springer Berlin Heidelberg},
+author={Harel, David and Kugler, Hillel},
+pages={325-354},
+language={English}
+}
+
+@article{Harel:1996,
+ author = {Harel, David and Naamad, Amnon},
+ title = {The STATEMATE Semantics of Statecharts},
+ journal = {ACM Trans. Softw. Eng. Methodol.},
+ issue_date = {Oct. 1996},
+ volume = {5},
+ number = {4},
+ month = oct,
+ year = {1996},
+ issn = {1049-331X},
+ pages = {293--333},
+ numpages = {41},
+ url = {http://doi.acm.org/10.1145/235321.235322},
+ doi = {10.1145/235321.235322},
+ acmid = {235322},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {STATEMATE, behavioral modeling, reactive system, semantics, statechart},
+}
+
+@incollection{Martaj:2010,
+year={2010},
+isbn={978-3-642-11763-3},
+booktitle={MATLAB R2009, SIMULINK et STATEFLOW pour Ing\'enieurs, Chercheurs et \'Etudiants},
+doi={10.1007/978-3-642-11764-0_13},
+title={Stateflow},
+url={http://dx.doi.org/10.1007/978-3-642-11764-0_13},
+publisher={Springer Berlin Heidelberg},
+author={Martaj, Nadia and Mokhtari, Mohand},
+pages={513-586},
+language={French}
+}
+
+@inproceedings{Martinez:2015,
+  author = {Jabier Martinez and Tewfik Ziadi and Tegawend{\'{e}} F. Bissyand{\'{e}} and Jacques Klein and Yves Le Traon},
+  title = {Bottom-up adoption of software product lines: a generic and extensible approach},
+  booktitle = {Proceedings of the 19th International Conference on Software Product Line, {SPLC} 2015, Nashville, TN, USA, July 20-24, 2015},
+  pages = {101--110},
+  year = {2015}, 
+  url = {http://doi.acm.org/10.1145/2791060.2791086},
+  doi = {10.1145/2791060.2791086},  
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{LopezHerrejon:2015,
+title = "An assessment of search-based techniques for reverse engineering feature models ",
+journal = "Journal of Systems and Software ",
+volume = "103",
+number = "",
+pages = "353 - 369",
+year = "2015",
+note = "",
+issn = "0164-1212",
+doi = "http://dx.doi.org/10.1016/j.jss.2014.10.037",
+url = "http://www.sciencedirect.com/science/article/pii/S0164121214002349",
+author = "Roberto E. Lopez-Herrejon and Lukas Linsbauer and Jos\'e A. Galindo and Jos\'e A. Parejo and David Benavides and Sergio Segura and Alexander Egyed"
+}
+
+@inproceedings{Martinez:2015b, 
+author={J. Martinez and T. Ziadi and T. F. Bissyandé and J. Klein and Y. l. Traon}, 
+booktitle={Automated Software Engineering (ASE), 2015 30th IEEE/ACM International Conference on}, 
+title={Automating the Extraction of Model-Based Software Product Lines from Model Variants (T)}, 
+year={2015}, 
+pages={396-406}, 
+doi={10.1109/ASE.2015.44}, 
+month={Nov},}

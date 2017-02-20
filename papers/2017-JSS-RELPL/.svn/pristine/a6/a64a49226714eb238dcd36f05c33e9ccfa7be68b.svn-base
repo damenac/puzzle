@@ -1,0 +1,96 @@
+\documentclass[preprint,5p]{elsarticle}
+
+\usepackage{lineno}
+\usepackage[sc]{mathpazo}
+\usepackage{wrapfig}
+\usepackage[colorlinks=true,allcolors=black,breaklinks,draft=false]{hyperref}
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{pseudocode}
+\usepackage[amsmath,thmmarks]{ntheorem}
+\modulolinenumbers[1]
+
+\journal{Journal of Software and Systems}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%% Elsevier bibliography styles
+%%%%%%%%%%%%%%%%%%%%%%%
+%% To change the style, put a % in front of the second line of the current style and
+%% remove the % from the second line of the style you would like to use.
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Numbered
+%\bibliographystyle{model1-num-names}
+
+%% Numbered without titles
+%\bibliographystyle{model1a-num-names}
+
+%% Harvard
+%\bibliographystyle{model2-names.bst}\biboptions{authoryear}
+
+%% Vancouver numbered
+%\usepackage{numcompress}\bibliographystyle{model3-num-names}
+
+%% Vancouver name/year
+%\usepackage{numcompress}\bibliographystyle{model4-names}\biboptions{authoryear}
+
+%% APA style
+%\bibliographystyle{model5-names}\biboptions{authoryear}
+
+%% AMA style
+%\usepackage{numcompress}\bibliographystyle{model6-num-names}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Reverse Engineering Language Product Lines}
+
+\author{David M\'endez-Acu\~na}
+\ead{david.mendez-acuna@inria.fr}
+
+\author{Jos\'e A. Galindo}
+\ead{jagalindo@inria.fr}
+
+\author{Benoit Combemale}
+\ead{benoit.combemale@inria.fr}
+
+\author{Arnaud Blouin}
+\ead{arnaud.blouin@inria.fr}
+
+\author{Benoit Baudry}
+\ead{benoit.baudry@inria.fr}
+
+\address{INRIA/IRISA and University of Rennes 1\\Campus de Beaulieu. Rennes, France}
+
+\begin{abstract}
+The use of domain-specific languages (DSLs) has become a successful technique in the development of complex systems. Consequently, nowadays we can find a large variety of DSLs for diverse purposes. However, not all these DSLs are completely different; many of them share certain commonalities coming from similar modeling patterns (such as state machines or petri nets) used several application contexts. In this scenario, the challenge for language designers is to take advantage of the commonalities existing among similar DSLs by reusing, as much as possible, formerly defined language constructs. The objective is to leverage previous engineering efforts to minimize implementation from scratch. To this end, recent research in software language engineering proposes the use of product lines engineering; thus introducing the notion of language product lines. 
+
+In this article we aim to contribute in the field of language product lines engineering. Concretely speaking, we provide a set of meta-languages and structures to support the definition of language product lines. Afterwards, we provide a reverse engineering process that permits to automatically produce a language product line from a set of existing DSLs, thus adopting a bottom-up perspective. We validate our approach through a case study include several different DSLs implementing different formalisms for modeling finite state machines.
+\end{abstract}
+
+\begin{keyword}
+Language product lines, software languages engineering, domain-specific languages, reverse-engineering. 
+\end{keyword}
+
+\end{frontmatter}
+
+%\linenumbers
+
+\input{sections/introduction}
+\input{sections/process}
+\input{sections/metalanguages}
+\input{sections/reverse-engineering}
+\input{sections/validation}
+%\input{sections/limitations}
+\input{sections/related-work}
+\input{sections/conclusions}
+
+\section*{References}
+
+\bibliography{mybibfile}
+
+\end{document}

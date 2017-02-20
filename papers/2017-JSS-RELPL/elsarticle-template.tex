@@ -1,0 +1,67 @@
+\documentclass[preprint,5p]{elsarticle}
+
+%\usepackage[sc]{mathpazo}
+%\usepackage{wrapfig}
+%\usepackage{hyperref}
+\usepackage{amsmath,amssymb,amsfonts,mathrsfs}
+%\usepackage[amsmath,thmmarks]{ntheorem}
+\usepackage{lineno}
+\usepackage[colorlinks=true,allcolors=black,breaklinks,draft=false]{hyperref}
+%\modulolinenumbers[1]
+
+\journal{Journal of Software and Systems}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Reverse Engineering Language Product Lines from Existing DSL Variants}
+
+\author{David M\'endez-Acu\~na}
+\ead{david.mendez-acuna@inria.fr}
+
+\author{Jos\'e A. Galindo}
+\ead{jagalindo@inria.fr}
+
+\author{Benoit Combemale}
+\ead{benoit.combemale@inria.fr}
+
+\author{Arnaud Blouin}
+\ead{arnaud.blouin@inria.fr}
+
+\author{Benoit Baudry}
+\ead{benoit.baudry@inria.fr}
+
+\address{INRIA/IRISA and University of Rennes 1, France}
+
+\begin{abstract}
+The use of domain-specific languages (DSLs) has become an alternative during the development of complex systems. In this context, an emerging phenomenon is the existence of DSL variants, which are different versions of a DSL adapted to specific purposes but that still share commonalities. In such a case, the challenge for language designers is to reuse, as much as possible, previously defined language constructs to narrow implementation from scratch. To overcome this challenge, recent research in software languages engineering introduced the the notion of \textit{\textbf{language product lines}}. Similarly to software product lines, language product lines are often built through a bottom-up approach: there is a set of existing DSL variants that language designers decompose into several interdependent language modules representing the features of the product line. Besides, they define variability models that capture both commonalities and particularities of the DSL variants. In this article, we propose a reverse-engineering technique to ease-off such a development scenario. Our approach receives a set of DSL variants which are used to automatically recover a language modular design and to synthesize the corresponding variability models. The validation is performed through a case study that consists of three different variants of a DSL for finite state machines. We use our approach to reverse engineering a language product line, and then we check that the detected variation points correspond to the actual differences among the variants. This validation shows that our approach is able to correctly identify commonalities and variability. Besides, it allows us identifying open issues.
+
+\end{abstract}
+
+\begin{keyword}
+Language product lines, software languages engineering, domain-specific languages, reverse-engineering.
+\end{keyword}
+
+\end{frontmatter}
+
+%\linenumbers
+
+\input{sections/introduction}
+\input{sections/process}
+\input{sections/approach}
+\input{sections/validation}
+%\input{sections/limitations}
+\input{sections/related-work}
+\input{sections/conclusions}
+
+\section*{Acknowledgments}
+This work is supported by the ANR INS Project GEMOC (ANR-12-INSE-0011); the bilateral collaboration VaryMDE between Inria and Thales; the bilateral collaboration FPML between Inria and DGA; and the European Union within the FP7 Marie Curie Initial Training Network “RELATE" under grant agreement number 264840. 
+\section*{References}
+
+\bibliography{mybibfile}
+
+\end{document}

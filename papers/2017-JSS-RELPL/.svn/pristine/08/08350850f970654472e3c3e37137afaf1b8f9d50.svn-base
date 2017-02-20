@@ -1,0 +1,92 @@
+\section{Case study: Finite State Machines}
+\label{sec:validation}
+
+ To evaluate of our approach, we use as case study the set of DSLs for state machines that we have used as running example all along this article. This case study is inspired from the analysis of variability on languages for finite state machines provided by Crane et al. \cite{Crane:2007}, and it is composed of three different DSLs: UML state diagrams, Rhapsody, and Harel's state charts. These three DSLs have some commonalities since they are intended to express the same formalism. According to the development scenario we address in this paper, these commonalities will be materialized as clones in the DSL specifications. In this section, we summarize both commonalities and differences existing in the case study. Then, we apply our approach and we present the obtained results. 
+
+\subsection{Description of the commonalities}
+
+Generally speaking, state machines are graphs where nodes represent states and arcs represent transitions between the states \cite{Harel:1987}. The execution of a state machine is performed in a sequence of \textit{steps} each of which receives a set of events that the state machine should react to. The reaction of a machine to set of events can be understood as a passage from an initial configuration (t$_i$) to a final configuration (t$_{f}$). A configuration is the set of active states in the machine. 
+
+The relationship between the state machine and the arriving events is materialized at the level of the transitions. Each transition is associated to one or more events (also called triggers). When an event arrives, the state machine fires the transitions outgoing from the states in the current configuration whose trigger matches with the event. As a result, the source state of each fired transition is deactivated whereas the corresponding target state is activated. Optionally, guards might be defined on the transitions. A transition is fired if and only if the evaluation of the guard returns true at the moment of the trigger arrival. 
+
+The initial configuration of the state machine is given by a set of initial pseudostates.  Transitions outgoing from initial pseudosates are fired automatically when the state machine is initialized. In turn, the execution of a state machine continues until the current configuration is composed only by final states (an special type of states without outgoing transitions).
+
+All of the DSLs included in this case study support the notion of region. A state machine might be divided in several regions that are executed concurrently. Each region might have its own initial and final (pseudo)states. In addition, the DSLs also support the definition of different types of actions. States can define entry/do/exit actions, and transitions can have effect actions. 
+
+\subsection{Description of the variability}
+
+\textit{Abstract syntax variability.} Differences at the level of the abstract syntax between the DSLs under study correspond to the diversity of constructs each of those DSLs provide. In particular, there are differences in the support for transition's triggers and pseudostates. 
+
+In the case of transitions' triggers, whereas Rhapsody only supports atomic triggers, both Harel's statecharts and UML provide support for composite triggers. In Harel's statecharts triggers can be composed by using \texttt{AND}, \texttt{OR}, and \texttt{NOT} operators. In turn, in UML triggers can be composed by using the \texttt{AND} operator.
+
+In the case of pseudostates, whereas all the DSLs support \texttt{Fork}, \texttt{Join}, \texttt{ShallowHistory}, and \texttt{Junction}, there are two psueudostates i.e., \texttt{DeepHistory} and \texttt{Choice} that are only supported by UML. The \texttt{Conditional} pseudostate is only provided by Harel's state charts. Figure \ref{fig:oracle} shows the language constructs provided by each DSL.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.8\linewidth]{images/tab-oracle-statemachines}
+\caption{Diversity of constructs provided by the DSLs for state machines}
+\label{fig:oracle}
+\end{figure*}
+
+\vspace{2mm}
+\textit{Semantic variability.} Semantic differences between the DSLs under study can be summarized in three issues: 
+
+\vspace{2mm}
+\textit{(1) Events dispatching policy:} The first semantic difference in the operational semantics of state machines refers to the way in which events are consumed by the state machine. In a first interpretation, simultaneous events are supported i.e., the state machine can process more than one event in a single step. In a second interpretation, the state machine follows the principle of run to completion i.e., the state machine is able only of supporting one event by step so several events require several steps.
+
+The semantics of UML and Rhapsody fit the run to completion policy for events dispatching whereas Harel's statecharts support simultaneous events.
+
+\vspace{2mm}
+\textit{(2) Execution order of transitions' effects:} It is possible to define actions on the transitions that will affect the execution environment where transitions are fired. These actions are usually known as transitions' effects. All the DSLs for state machines in our family support the expression of such effects. However, there are certain differences regarding their execution.
+
+The first way of executing the effects of a transition is by respecting the order in which they are defined. This is due to the fact that transitions effects are usually defined by means of imperative action script languages where the order of the instructions is intrinsic. The second interpretation to the execution of transitions' effect is to execute them in parallel. In other words, the effects are defined as a set of instructions that will be executed at the same time so no assumptions should be made with respect to the execution order. 
+
+UML and Rhapsody execute the transition effects in parallel. Harel's statecharts execute transition effects simultaneously.
+
+\vspace{2mm}
+\textit{(3) Priorities in the transitions:} Because several transitions can be associated to the same event, there are cases in which more than one transitions are intended to be fired in the same step. In general, all the DSLs for state machines agree in the fact that all the activated transitions should be fired. However, this is not always possible because conflicts might appear. Consider for example the state machine presented in Fig \ref{fig:conflicting-priorities}. The transitions $T_D$ and $T_E$ are conflictive because they are activated by the same event i.e., $e_2$, they exit the same state, and they go to different target states. Then, the final configuration of the state machine will be different according to the selected transition. 
+
+In order to tackle such situations, it is necessary to establish policies that permit to solve such conflicts. Specifically, we need to define a mechanism for prioritizing conflicting transitions so the interpreter is able to easily select a transition from a group of conflicting transitions. One of the best known semantic differences among DSLs for state machines is related with these policies. In particular, there are two different mechanisms for solving this kind of conflicts. A first mechanism for solving conflicting transition is to select the transition with the lower scope. That is, the deeper transition w.r.t. the hierarchy of the state machine.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=1\linewidth]{images/conflicting-priorities.pdf}
+  \caption{Example of a state machine with conflicting priorities}
+  \label{fig:conflicting-priorities}
+\end{figure}
+
+In the example presented in Fig \ref{fig:conflicting-priorities} the dispatched transition according to this policy would be the transition $T_E$ so the state machine would move to the state $S_5$. The second mechanism for solving conflicts in the transition is to select the transition with the higher scope. That is, the higher transition w.r.t. the hierarchy of the state machine. In the example presented in Fig \ref{fig:conflicting-priorities} the dispatched transition according to this policy is the transition $T_D$ so the state machine will move to the state $S_4$.
+
+The semantics of UML and Rhapsody fits on the first interpretation i.e., deepest transition priority whereas the semantics of Harel's statecharts fits on the second interpretation i.e., highest transitions priority.
+
+%are reified by the fact that not all the DSLs have the same behavior at execution time. For example, whereas Harel's statecharts attend simultaneous events in parallel, both UML and Rhapsody follow the run to completion principle. So, simultaneous events are attended sequentially \cite{Crane:2007}. Consequently, not all the domain-specific actions are the same. In particular, the domain-specific actions \texttt{eval()} and \texttt{step()} in the \texttt{StateMachine} metaclass are different in each DSL.  
+
+\subsection{Applying our approach}
+
+The starting point of the applicability of our approach in the case study is a set of DSLs implementing each of the specifications explained above. Hence, at the beginning we have three different DSLs for state machines that can be accessed in a GitHub repository\footnote{Repository for the case study: https://github.com/damende/puzzle/tree/master/examples/state-machines}. Using these specifications as input, we proceed to apply our approach and we obtained the following results: 
+
+%\vspace{2mm}
+%\textit{Identification of specification clones.} The first result we obtained from the applicability of our approach in the case study was the identification of the specification clones deployed in the Venn diagrams shown in Fig. \ref{fig:puzzle-overlapping}. The diagram at the left shows the specification clones for at the level of the abstract syntax whereas the diagram at the right do the proper at the level of the semantics. 
+
+%In the case of the abstract syntax, we have that the DSLs under study share 17 constructs --which matches with the table introduced in Fig. \ref{fig:oracle}--. Besides, we have certain particularities. For example, UML state machines have a total of 19 constructs. This corresponds to the 17 basic constructs plus the AndTrigger and Choice metaclasses that are particular of UML.
+
+%In the case of the semantics, we can see that there are also several commonalities. These commonalities correspond to the domain specific actions that are equivalent in the three DSLs. However, the domain specific actions called eval() and step() are always different. This finding reflects the semantic variation points described below. Note that all these variation points are associated to the main flow of the execution of the state machine. 
+
+%\begin{figure*}
+%\centering
+%\includegraphics[width=0.8\linewidth]{images/fig-puzzle-overlapping}
+%\caption{Overlapping detected by Puzzle in the state machines case study. }
+%\label{fig:puzzle-overlapping}
+%\end{figure*}
+
+%\vspace{2mm}
+\textit{Reverse engineering a language product line.} Once we have the result of the static analysis where specification clones are detected, we proceed to reverse engineering the language product line. The results are summarized in Fig. \ref{fig:results-casestudy}. At the left of the figure we present the set of language modules we obtained as well as the language interfaces existing among them. Those modules group the language constructs according to the heuristic introduced in Section \ref{sec:reverseengineeringmodules} on breaking down overlapping. At the right of the figure we show the corresponding variability models. Each feature of the feature models is associated to a given language module. In turn, the semantic variability points in the orthogonal model are associated to clusters of domain specific actions.
+
+%Note that we marked different configurations in the figure to identify each of the corresponding DSLs. In addition, we calculated the number of possible configurations. We obtained that with this variability model, we can obtain XXX DSLs for state machines. 
+
+\begin{figure*}
+\centering
+\includegraphics[width=1\linewidth]{images/results-casestudy.png}
+\caption{Language product line produced for the case study of the finite state machines. }
+\label{fig:results-casestudy}
+\end{figure*}

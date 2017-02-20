@@ -1,0 +1,4 @@
+\section{Conclusions}
+\label{sec:conclusions}
+
+In this article we presented an approach to support the construction of bottom-up language product lines. Our approach consists of a set of meta-language facilities to define language product lines, and a reverse-engineering process that allows to automatically produce a language product line from a set of DSL variants. Such reverse-engineering process starts by breaking down the DSLs into a set of reusable language modules. Then, the process goes through the synthesis of the models that capture the variability existing among the extracted language modules. We validate our approach in a case study on different DSL variants to express finite state machines. 
