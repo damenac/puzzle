@@ -1,8 +1,7 @@
-This is BibTeX, Version 0.99d (TeX Live 2013)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: elsarticle-template.aux
+This is BibTeX, Version 0.99dThe top-level auxiliary file: elsarticle-template.aux
 The style file: elsarticle-num.bst
 Database file #1: mybibfile.bib
+Warning--I didn't find a database entry for "runeson-book"
 Warning--empty publisher in Chechik:2010
 Warning--empty pages in Chechik:2010
 Warning--can't use both author and editor fields in Homer:2014
@@ -20,45 +19,4 @@ Warning--can't use both author and editor fields in Gschwind:2012
 Warning--empty chapter and pages in Gschwind:2012
 Warning--empty pages in Degueule:2015a
 Warning--empty pages in Vacchi:2014
-You've used 49 entries,
-            2937 wiz_defined-function locations,
-            1087 strings with 18983 characters,
-and the built_in function-call counts, 20852 in all, are:
-= -- 1958
-> -- 676
-< -- 33
-+ -- 255
-- -- 206
-* -- 1629
-:= -- 2580
-add.period$ -- 84
-call.type$ -- 49
-change.case$ -- 43
-chr.to.int$ -- 0
-cite$ -- 66
-duplicate$ -- 769
-empty$ -- 2379
-format.name$ -- 260
-if$ -- 5486
-int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 55
-newline$ -- 202
-num.names$ -- 67
-pop$ -- 453
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 1361
-stack$ -- 0
-substring$ -- 1074
-swap$ -- 345
-text.length$ -- 33
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 17
-while$ -- 147
-width$ -- 51
-write$ -- 524
-(There were 17 warnings)
+(There were 18 warnings)

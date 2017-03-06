@@ -264,13 +264,6 @@ M.~Rosenm\"{u}ller, N.~Siegmund, T.~Th\"{u}m, G.~Saake, Multi-dimensional
 \newblock \href {http://dx.doi.org/10.1145/1944892.1944894}
   {\path{doi:10.1145/1944892.1944894}}.
 
-\bibitem{Roos-Frantz:2012}
-F.~Roos-Frantz, D.~Benavides, A.~Ruiz-Cort{\'e}s, A.~Heuer, K.~Lauenroth,
-  Quality-aware analysis in product line engineering with the orthogonal
-  variability model, Software Quality Journal 20~(3) (2012) 519--565.
-\newblock \href {http://dx.doi.org/10.1007/s11219-011-9156-5}
-  {\path{doi:10.1007/s11219-011-9156-5}}.
-
 \bibitem{Liebig:2013}
 J.~Liebig, R.~Daniel, S.~Apel, Feature-oriented language families: A case
   study, in: Proceedings of the Seventh International Workshop on Variability
@@ -278,6 +271,13 @@ J.~Liebig, R.~Daniel, S.~Apel, Feature-oriented language families: A case
   2013, pp. 11:1--11:8.
 \newblock \href {http://dx.doi.org/10.1145/2430502.2430518}
   {\path{doi:10.1145/2430502.2430518}}.
+
+\bibitem{Roos-Frantz:2012}
+F.~Roos-Frantz, D.~Benavides, A.~Ruiz-Cort{\'e}s, A.~Heuer, K.~Lauenroth,
+  Quality-aware analysis in product line engineering with the orthogonal
+  variability model, Software Quality Journal 20~(3) (2012) 519--565.
+\newblock \href {http://dx.doi.org/10.1007/s11219-011-9156-5}
+  {\path{doi:10.1007/s11219-011-9156-5}}.
 
 \bibitem{Assuncao:2015}
 W.~K. Assun\c{c}\~{a}o, R.~E. Lopez-Herrejon, L.~Linsbauer, S.~R. Vergilio,
