@@ -1,32 +1,43 @@
-% !TEX root = ../elsarticle-template.texmain.tex
+% !TEX root = ../elsarticle-template.tex
 %-------------------
-\section{Case study: Finite State Machines}
+\section{Validation: Finite State Machines}
 \label{sec:validation}
 
- To evaluate of our approach, we use as case study the set of DSLs for state machines. Note that a simplified version have been used as running example along this paper (see Section \ref{sec:thedevelopmentscenario}). This case study is inspired from the analysis of variability on languages for finite state machines provided by Crane et al. \cite{Crane:2007}, and it is composed of three different DSLs: UML state diagrams, Rhapsody, and Harel's state charts. As aforementioned, these DSLs have some commonalities since they are intended to express the same formalism. According to the development scenario we address in this paper, these commonalities will be materialized as clones in the DSL specifications. In this section, we summarize both commonalities and differences existing in the case study. Then, we apply our approach and we present the obtained results. To explain this case stude we followed a mehod inspired by Runeson et al\cite{runeson-book}.
+ To evaluate of our approach, we use a set of DSLs for state machines. Note that a simplified version have been used as running example along this paper (see Section \ref{sec:thedevelopmentscenario}). This scenario is inspired from the analysis of variability on languages for finite state machines provided by Crane et al. \cite{Crane:2007}, and it is composed of three different DSLs: UML state diagrams, Rhapsody, and Harel's state charts. As aforementioned, these DSLs have some commonalities since they are intended to express the same formalism. According to the development scenario we address in this paper, these commonalities will be materialized as clones in the DSL specifications. In this section, we summarize both commonalities and differences existing in the case study. Then, we apply our approach and we present the obtained results. To explain this scenario we try to follow as close as possible the guidelines provided by \cite{runeson-book} for the sake of clarity and organization. Note that we do not claim this to be a case study.
 
 \subsection{Background to the research project}
-This research is the result of a bilateral collaboration (2011 - 2015) between the DiverSE team at INRIA and the MDE lab at Thales Research & Technology (TRT) in the framework of the VaryMDE project. This partnership explores variability management issues at both the modeling level and the metamodeling level (i.e., design and implementation of software languages).
+This research is the result of a bilateral collaboration (2011 - 2015) between the DiverSE team at INRIA and the MDE lab at Thales Research \& Technology (TRT) in the framework of the VaryMDE project. This partnership explores variability management issues at both the modeling level and the metamodeling level (i.e., design and implementation of software languages).
 
 As a matter of fact, while DSLs have been found useful for structuring development processes and providing abstractions to stakeholders, their ultimate value has been severely limited by the cost of the associated tooling (i.e., editors, parsers, etc...). The construction of that tooling is a challenging and time-consuming task that requires specialized knowledge. A language designers must own not only quite solid modeling skills but also the technical expertise for conducting the definition of specific artifacts such as grammars, metamodels, compilers, and interpreters. The situation becomes even more difficult in the context of multi-domain companies (such as Thales) where there are several domains that co-exist and overlap through different business units. In that case, diverse, and possibly conflicting, requirements often appear on the same DSL specially when it is required by two or more business units. According to its modeling needs, each business unit imposes specific constraints and demands particular capabilities. Language designers must face these situation by adapting the DSL and releasing different variants when needed.
 
-The typical development process to address the aforementioned situation is quite similar to the one followed in the
-general case of software development: at the beginning, there is a first DSL from which new development branches are forked and where the DSL is adapted to the new requirements. After some repetitions, language designers have a set of DSLs (a.k.a family of DSLs) that share some commonalities (materialized as replication of code) and that offer different capabilities that have been adapted for the application context. As one may expect, this approach introduces several problems. For example, because of code replication, all the effort invested in maintenance and bug fixing should be replicated as well.
+The typical development process to address the aforementioned situation is quite similar to the one followed in the general case of software development: at the beginning, there is a first DSL from which new development branches are forked and where the DSL is adapted to the new requirements. After some repetitions, language designers have a set of DSLs (a.k.a family of DSLs) that share some commonalities (materialized as replication of code) and that offer different capabilities that have been adapted for the application context. As one may expect, this approach introduces several problems. For example, because of code replication, all the effort invested in maintenance and bug fixing should be replicated as well.
 
 In this context, it is desirable to have an approach that facilitates the engineering of families of DSLs. Such approach should be intended to exploit reuse as an alternative to code replication and to manage the variability among the different DSLs that compose the family. In addition, it is worth noting that an approach for dealing with families of DSLs has to take into account that the differences among members of a family of DSLs can be found in at any of the implementation concerns.
 
 
-\subsection{Case Study Design and planning}
+\subsection{Design and planning}
+
 \subsubsection{Rationale}
 The retionale behind this study is to contribute to the state of the art of DSL development. We want to discover if in an industrial case such as the one involving the VaryMDE project we can reverse engeniering language madules and then, improve the develoment process for future DSLs.
 
 \subsubsection{Objective}
-The main objective of this case study is to analyse the amount of reuse automatically retrieved from the software artifacts.
+The main objective of this project was to analyse the amount of reuse automatically retrieved from the software artifacts.
+
 \subsubsection{Units of Analyses}
-Two main units of analysis has been considered. First, the commonalities, this is the common parts to all the existing state machines formalisms. Second, the variabilities
+Three different formalims were considered i) UML; ii) Rhapsody, and; iii) Harel's statecharts. For each of take a look to two properties of them. First, the commonalities, this is the common parts to all the existing state machines formalisms. Second, the variabilities or the parts that differ between the different formalims.
 
+\paragraph{Methods, data collection and measures}
+The main source of information in this enquiry is the set of meetings that some of the authors had with the representative of the Thales side of the project. A total of \todo[inline]{XX} meetings were held. After the first one a set of software artifacts were provided for a detailed analysis as well as the requisites for each formalism.
 
-\paragraph{Description of the Commonalities}
+The data were collected in the following ways
+\begin{
+  \item Artifacts analysis, we received from Thales a set of models and metamodels depicting the diferent state machines that the thales group uses.
+  \item Interviews, we performed several meeting to ask for the aplications and plans for the metamodels and its variabilities and commonalities.
+\end{itemize}
+
+\subsection{Data analysis}
+In this section we depict the commonalities and variabilities we have found in the different formalisms used at Thales.
+\subsubsection{Description of the Commonalities}
 
 Generally speaking, state machines are graphs where nodes represent states and arcs represent transitions between the states \cite{Harel:1987}. The execution of a state machine is performed in a sequence of \textit{steps} each of which receives a set of events that the state machine should react to. The reaction of a machine to set of events can be understood as a passage from an initial configuration (t$_i$) to a final configuration (t$_{f}$). A configuration is the set of active states in the machine.
 
@@ -36,7 +47,7 @@ The initial configuration of the state machine is given by a set of initial pseu
 
 All of the DSLs included in this case study support the notion of region. A state machine might be divided in several regions that are executed concurrently. Each region might have its own initial and final (pseudo)states. In addition, the DSLs also support the definition of different types of actions. States can define entry/do/exit actions, and transitions can have effect actions.
 
-\paragraph{Description of the Variability}
+\subsubsection{Description of the Variability}
 
 \vspace{2mm}
 \textit{\textbf{Abstract syntax variability.}} Differences at the level of the abstract syntax between the DSLs under study correspond to the diversity of constructs each of those DSLs provide. In particular, there are differences in the support for transition's triggers and pseudostates.
@@ -84,10 +95,6 @@ In the example presented in Fig \ref{fig:conflicting-priorities} the dispatched 
 The semantics of UML and Rhapsody fits on the first interpretation i.e., deepest transition priority whereas the semantics of Harel's statecharts fits on the second interpretation i.e., highest transitions priority.
 
 %are reified by the fact that not all the DSLs have the same behavior at execution time. For example, whereas Harel's statecharts attend simultaneous events in parallel, both UML and Rhapsody follow the run to completion principle. So, simultaneous events are attended sequentially \cite{Crane:2007}. Consequently, not all the domain-specific actions are the same. In particular, the domain-specific actions \texttt{eval()} and \texttt{step()} in the \texttt{StateMachine} metaclass are different in each DSL.
-\subsubsection{Case Study protocol}
-
-\subsection{Data collection}
-
 
 
 \subsection{Results}
