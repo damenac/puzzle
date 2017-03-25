@@ -17,13 +17,13 @@ Let us start the description of our reverse engineering technique by explaining 
 
 \subsubsection{Language Modules. \textbf{How to identify them?}}
 
-To identify the language modules of a language product line, we propose to take all the given DSL variants and unify them in a unique DSL. Then, the unified DSL is broken down into several interdependent language modules. This process results in a factorization of the specification clones existing in the DSL variants. The purpose of this strategy is to remove specification clones, thus reducing the maintenance costs. Such a factorization strategy is based on four principles explained in the following:
+To identify the language modules of a language product line, we define some comparison operators that facilitate the identification of language constructs replicated in the DSL variants. These operators take into account both syntax and semantics of language constructs. Then, we extract replicated constructs into interdependent language modules whose dependencies are expressed through interfaces guaranteeing that those language modules can be later assembled among them. Such a strategy to extract reusable language modules is based on four principles explained in the following:
 
-\vspace{2mm}
-\emph{\textbf{Principle 1:} DSL specifications are comparable. So, specification clones can be automatically detected.} To detect the specification clones in a given set of DSL variants, we need to compare those specification clones and find out the repeated specification elements. For the technological space discussed in this article, specification elements for the abstract syntax correspond to metaclasses whereas specification elements for the semantics correspond to domain specific actions. Hence, comparison of DSL specifications corresponds to compare metaclasses and domain specific actions.
+\vspace{1mm}
+\emph{\textbf{Principle 1:} DSL specifications are comparable. So, replicated language constructs can be automatically detected.} To detect replicated language constructs in a given set of DSL variants, we need to define some criteria to compare the DSL specifications to decide when a language construct is equal to another. For the technological space discussed in this article, a language construct is defined in terms of a metaclass and a set of domain specific actions. 
 
-\vspace{2mm}
-\emph{Comparison of metaclasses.} To compare metaclasses, we need to take into account that a metaclass is specified by a name, a set of attributes, and a set of references to other metaclasses. Two metaclasses are considered as equal (and so, they are clones) if all those elements match. Formally, comparison of metaclasses is formalized by the operator $\doteqdot$. %Comparing two metamodels relies on pair-wise comparison of all their metaclasses. 
+\vspace{1mm}
+\emph{Comparison of metaclasses.} To compare metaclasses, we need to take into account that a metaclass is specified by a name, a set of attributes, and a set of references to other metaclasses. Two metaclasses are considered as equal if all those elements match. Formally, comparison of metaclasses is formalized by the operator $\doteqdot$.
 
 \begin{equation}
   \doteqdot~: MC \times MC \rightarrow bool
@@ -41,7 +41,7 @@ To identify the language modules of a language product line, we propose to take 
 
 \emph{Comparison of domain-specific actions.} To compare domain specific actions, we need to consider that --similarly to methods in Java-- domain specific actions have a signature that specifies its contract (i.e., return type, visibility, parameters, name, and so on), and a body where the behavior is implemented. Two domain specific actions are equal if their signatures and bodies are equivalent.
 
-Whereas comparison of signatures can be performed by syntactic comparison of the signature elements, comparison of bodies can be arbitrary difficult. If we try to compare the behavior of the domain-specific actions, then we will have to address the semantic equivalence problem, which is known to be undecidable \cite{Lucanu:2013}. To address this issue, we conceive bodies comparison in terms of its abstract syntax tree as proposed by Biegel et al. \cite{Biegel:2010}. In other words, to compare two bodies, we first parse them to extract their abstract syntax tree, and then we compare those trees. Note that this decision makes sense because we are detecting specification clones more than equivalent behavior. Formally, comparison of domain-specific actions (DSAs) is specified by the operator $\fallingdotseq$.  
+Whereas comparison of signatures can be performed by syntactic comparison of the signature elements, comparison of bodies can be arbitrary difficult. If we try to compare the behavior of the domain-specific actions, then we will have to address the semantic equivalence problem, which is known to be undecidable \cite{Lucanu:2013}. To address this issue, we conceive bodies comparison in terms of its abstract syntax tree as proposed by Biegel et al. \cite{Biegel:2010}. In other words, to compare two bodies, we first parse them to extract their abstract syntax tree, and then we compare those trees. Formally, comparison of domain-specific actions (DSAs) is specified by the operator $\fallingdotseq$.  
 
 \begin{equation}
   \fallingdotseq~: DSA \times DSA \rightarrow bool
@@ -59,21 +59,25 @@ Whereas comparison of signatures can be performed by syntactic comparison of the
  \end{split}
 \end{equation}
 
+Note that these comparison operators are structural for both syntax and semantics of language constructs. They result useful when the DSL variants were built-up by using practices such as clone-and-clone. To enhance the scope of the approach, other comparison operators that take into accoung not only the structure of the constructs but their runtime behavior can be introduced. 
+
 \vspace{2mm}
-\emph{\textbf{Principle 2:} Specification clones can be viewed as sets' intersections, which is useful to factorization.} A DSL specification can be seen as a set of metaclasses and a set of domain specific actions. In doing so, specification clones correspond to intersections among those sets. Those intersection elements can be specified once and reused in several DSL variants \cite[p. 60-61]{Voelter:2013b}. Hence, we can factorize specification clones by breaking down the intersections existing among DSL specifications.
+\emph{\textbf{Principle 2:} Replicated constructs can be viewed as sets' intersections, which is useful to factorization.} A DSL specification can be seen as a set of metaclasses and a set of domain specific actions. In doing so, replicated constructs correspond to intersections among those sets. Those intersection elements can be specified once and reused in several DSL variants \cite[p. 60-61]{Voelter:2013b}. Hence, we can factorize replication constructs by breaking down the intersections existing among DSL specifications.
+
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=1\linewidth]{images/principle2.png}
+	\caption{Factorizing replicated language constructs from DSL variants}
+	\label{fig:shape}
+\end{figure*}
 
 Fig. \ref{fig:shape} illustrates this observation through the running example introduced in Section \ref{sec:problemstatement}. At the left of the figure, we show two Venn diagrams to represent both syntax and semantic intersections. The Venn diagram corresponding to the abstract syntax shows that the classical constructs for state machines such as StateMachine, State, and Transition are in the intersection of the three given DSL variants i.e., UML state machines, Rhapsody, and Harel's state machines. In turn, there are certain particularities for each DSL. For example, the concept AndTrigger is owned by UML and Harel state machines but not for Rhapsody. Concepts such as OrTrigger and NotTrigger are only provided by Harel state machines since the concept of Choice is exclusive of UML state machines.
 
 For the case of semantic variability, the 3-sets intersection is empty. It means that there is not a common semantic for the three DSL variants. Rather, UML state machines and Rhapsody share the domain specific actions corresponding to the constructs of State Machine, State, and Transition. In turn, the implementation of Harel state machines is different. 
 
-This way to conceive DSL specifications is useful to factorize specification clones as illustrated at the right of the Fig. \ref{fig:shape}. Each different intersection is separated in a separate subset that, as we will explain later, is encapsulated in a language module. 
+This way to conceive DSL specifications is useful to factorize replicated language constructs as illustrated at the right of Fig. \ref{fig:shape}. Each different intersection is separated in a separate subset that, as we will explain later, is encapsulated in a language module. 
 
-\begin{figure*}
-\centering
-\includegraphics[width=1\linewidth]{images/principle2.png}
-\caption{Factorizing specification clones from DSL variants}
-\label{fig:shape}
-\end{figure*}
+
 
 %\vspace{2mm}
 %\textit{\textbf{Principle 3:} Breaking down overlapping is useful to factorize specification clones.} According to principle 2, overlapping between two DSLs implies the existence of repeated metaclasses and/or domain specific actions i.e., specification clones. Those repeated elements can be specified once and reused in the two DSLs \cite[p. 60-61]{Voelter:2013b}. Hence, we can factorize specification clones by breaking down the overlapping existing among DSL specifications as illustrated in Figure \ref{fig:cutting}; 
@@ -86,7 +90,7 @@ This way to conceive DSL specifications is useful to factorize specification clo
 %\end{figure}
 
 \vspace{2mm}
-\textit{\textbf{Principle 3:} Abstract syntax first, semantics afterwards.} The abstract syntax is the backbone of the DSL specification; it specifies its structure in terms of metaclasses and relationships among them whereas the domain-specific actions add executability to the metaclasses. Hence, the process of breaking down intersections should be performed for the abstract syntax first, thus identifying the way in which metaclasses should be grouped into the different language modules. Afterwards, we can do the proper for the semantics. In doing so, we need to take into consideration the phenomenon of semantic variability. That is, two cloned metaclasses might have different domain-specific actions. That occurs when two DSLs share some syntax specification but differ in their semantics.
+\textit{\textbf{Principle 3:} Abstract syntax first, semantics afterwards.} The abstract syntax is the backbone of the DSL specification; it specifies its structure in terms of metaclasses and relationships among them whereas the domain-specific actions add executability to the metaclasses. Hence, the process of breaking down intersections should be performed for the abstract syntax first, thus identifying the way in which metaclasses should be grouped into the different language modules. Afterwards, we can do the proper for the semantics. In doing so, we need to take into consideration the phenomenon of semantic variability. That is, two replicated metaclasses might have different domain-specific actions. That occurs when two DSLs share some syntax specification but differ in their semantics.
 
 \vspace{2mm}
 \textit{\textbf{Principle 4:} Breaking down a metamodel is a graph partitioning problem.} A metamodel can be seen as a directed graph $G=<V,A>$ where:
@@ -109,12 +113,12 @@ This observation is useful for breaking down metamodels, which can be viewed as 
 \end{figure*}
 
 \vspace{2mm}
-\textit{Unification: \textbf{match} and \textbf{merge}.} The objective of this step is to unify all the DSL variants in a unique specification. To this end, we first produce a graph $G$ for the metamodel of each DSL variant according to the principle 4. Second, we use the comparison operators defined in the principle 1 to match the vertices representing the metaclasses repeated in two or more DSL variants. Third, we create the syntactic intersections defined in principle 2 by merging the matched vertices. In doing so, we remove cloned metaclasses. After this process, we have a unified graph (which is not necessarily a connected graph) including all the metaclasses provided in the DSL variants. 
+\textit{Unification: \textbf{match} and \textbf{merge}.} The objective of this step is to unify all the DSL variants in a unique specification. To this end, we first produce a graph $G$ for the metamodel of each DSL variant according to the principle 4. Second, we use the comparison operators defined in the principle 1 to match the vertices representing the metaclasses repeated in two or more DSL variants. Third, we create the syntactic intersections defined in principle 2 by merging the matched vertices. In doing so, we remove replicated metaclasses. After this process, we have a unified graph (which is not necessarily a connected graph) including all the metaclasses provided in the DSL variants. 
 
-To identify semantic intersections, we check whether the domain specific actions of the matched metaclasses are equal. If so, they can be considered as semantic specification clones, and they are also merged. If not all the domain specific actions associated to the matched metaclasses are equal, different clusters of domain specific actions are created, thus establishing semantic variation points.
+To identify semantic intersections, we check whether the domain specific actions of the matched metaclasses are equal. If so, they can be considered as semantic replications, and they are also merged. If not all the domain specific actions associated to the matched metaclasses are equal, different clusters of domain specific actions are created, thus establishing semantic variation points.
 
 \vspace{2mm}
-\textit{Breaking down: \textbf{cut} and \textbf{encapsulate}.} Once intersections among the DSL variants have been identified, we factorize the specification clones. To this end, we break down the unified graph using a graph partitioning algorithm. Our algorithm returns a set of clusters of vertices: one cluster for each intersection of the Venn diagram. Arcs defined between vertices in different clusters can be considered as cross-cutting dependencies between clusters. Finally, we encapsulate each vertex cluster in the form of a language module. 
+\textit{Breaking down: \textbf{cut} and \textbf{encapsulate}.} Once intersections among the DSL variants have been identified, we factorize the replicated language constructs. To this end, we break down the unified graph using a graph partitioning algorithm. Our algorithm returns a set of clusters of vertices: one cluster for each intersection of the Venn diagram. Arcs defined between vertices in different clusters can be considered as cross-cutting dependencies between clusters. Finally, we encapsulate each vertex cluster in the form of a language module. 
 
 \subsubsection{Language Modules. \textbf{How to specify them?}}
 
