@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: elsarticle-template.aux
+The style file: elsarticle-num.bst
+Database file #1: mybibfile.bib
+Warning--empty publisher in Chechik:2010
+Warning--empty pages in Chechik:2010
+Warning--can't use both author and editor fields in Homer:2014
+Warning--empty chapter and pages in Homer:2014
+Warning--can't use both author and editor fields in Funk:2012
+Warning--empty chapter and pages in Funk:2012
+Warning--can't use both author and editor fields in Iliasov:2013
+Warning--empty chapter and pages in Iliasov:2013
+Warning--empty pages in Kuhn:2016
+Warning--empty pages in MendezAcuna:2016
+Warning--can't use both author and editor fields in Vacchi:2013
+Warning--empty chapter and pages in Vacchi:2013
+Warning--empty pages in Dinkelaker:2010
+Warning--can't use both author and editor fields in Gschwind:2012
+Warning--empty chapter and pages in Gschwind:2012
+Warning--empty pages in Degueule:2015a
+Warning--empty pages in Vacchi:2014
+You've used 47 entries,
+            2937 wiz_defined-function locations,
+            1071 strings with 18440 characters,
+and the built_in function-call counts, 20016 in all, are:
+= -- 1872
+> -- 656
+< -- 32
++ -- 247
+- -- 200
+* -- 1564
+:= -- 2478
+add.period$ -- 80
+call.type$ -- 47
+change.case$ -- 41
+chr.to.int$ -- 0
+cite$ -- 64
+duplicate$ -- 739
+empty$ -- 2284
+format.name$ -- 252
+if$ -- 5264
+int.to.chr$ -- 0
+int.to.str$ -- 47
+missing$ -- 53
+newline$ -- 193
+num.names$ -- 65
+pop$ -- 439
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1306
+stack$ -- 0
+substring$ -- 1021
+swap$ -- 330
+text.length$ -- 32
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 17
+while$ -- 141
+width$ -- 49
+write$ -- 502
+(There were 17 warnings)

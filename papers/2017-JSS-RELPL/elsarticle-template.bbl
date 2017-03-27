@@ -1,0 +1,349 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Chechik:2010}
+M.~Chechik, A.~Gurfinkel, S.~Uchitel, S.~Ben-David, Raising level of
+  abstraction with partial models: A vision, in: Proceedings of NSF/MSR
+  Workshop on Usable Verification, ICMT 2012, Redmond, Washington, 2010.
+
+\bibitem{Jezequel:2014}
+J.-M. J{\'e}z{\'e}quel, D.~M{\'e}ndez-Acu{\~n}a, T.~Degueule, B.~Combemale,
+  O.~Barais, When systems engineering meets software language engineering, in:
+  F.~Boulanger, D.~Krob, G.~Morel, J.-C. Roussel (Eds.), Complex Systems Design
+  \& Management, Springer International Publishing, 2015, pp. 1--13.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-11617-4_1}
+  {\path{doi:10.1007/978-3-319-11617-4_1}}.
+
+\bibitem{Mernik:2005b}
+M.~Mernik, J.~Heering, A.~M. Sloane, When and how to develop domain-specific
+  languages, ACM Comput. Surv. 37~(4) (2005) 316--344.
+\newblock \href {http://dx.doi.org/10.1145/1118890.1118892}
+  {\path{doi:10.1145/1118890.1118892}}.
+
+\bibitem{Oney:2012}
+S.~Oney, B.~Myers, J.~Brandt, Constraintjs: Programming interactive behaviors
+  for the web by integrating constraints and states, in: Proceedings of the
+  25th Annual ACM Symposium on User Interface Software and Technology, UIST
+  '12, ACM, New York, NY, USA, 2012, pp. 229--238.
+\newblock \href {http://dx.doi.org/10.1145/2380116.2380146}
+  {\path{doi:10.1145/2380116.2380146}}.
+
+\bibitem{Lodderstedt:2002}
+T.~Lodderstedt, D.~Basin, J.~Doser, Secureuml: A uml-based modeling language
+  for model-driven security, in: J.-M. J\'ez\'equel, H.~Hussmann, S.~Cook
+  (Eds.), UML 2002 - The Unified Modeling Language, Vol. 2460 of Lecture Notes
+  in Computer Science, Springer Berlin Heidelberg, 2002, pp. 426--441.
+\newblock \href {http://dx.doi.org/10.1007/3-540-45800-X_33}
+  {\path{doi:10.1007/3-540-45800-X_33}}.
+
+\bibitem{Ribeiro:2014}
+A.~Ribeiro, A.~R. da~Silva,
+  \href{http://doi.acm.org/10.1145/2554850.2554926}{Xis-mobile: A dsl for
+  mobile applications}, in: Proceedings of the 29th Annual ACM Symposium on
+  Applied Computing, SAC '14, ACM, New York, NY, USA, 2014, pp. 1316--1323.
+\newblock \href {http://dx.doi.org/10.1145/2554850.2554926}
+  {\path{doi:10.1145/2554850.2554926}}.
+\newline\urlprefix\url{http://doi.acm.org/10.1145/2554850.2554926}
+
+\bibitem{Gray:2008}
+J.~Gray, K.~Fisher, C.~Consel, G.~Karsai, M.~Mernik, J.-P. Tolvanen,
+  \href{http://doi.acm.org/10.1145/1449814.1449863}{Dsls: The good, the bad,
+  and the ugly}, in: Companion to the 23rd ACM SIGPLAN Conference on
+  Object-oriented Programming Systems Languages and Applications, OOPSLA
+  Companion '08, ACM, New York, NY, USA, 2008, pp. 791--794.
+\newblock \href {http://dx.doi.org/10.1145/1449814.1449863}
+  {\path{doi:10.1145/1449814.1449863}}.
+\newline\urlprefix\url{http://doi.acm.org/10.1145/1449814.1449863}
+
+\bibitem{Homer:2014}
+M.~Homer, T.~Jones, J.~Noble, K.~B. Bruce, A.~P. Black, Graceful Dialects,
+  ECOOP 2014, Springer Berlin Heidelberg, Uppsala, Sweden, 2014, pp. 131--156.
+\newblock \href {http://dx.doi.org/10.1007/978-3-662-44202-9_6}
+  {\path{doi:10.1007/978-3-662-44202-9_6}}.
+
+\bibitem{Funk:2012}
+M.~Funk, M.~Rauterberg, PULP Scription: A DSL for Mobile HTML5 Game
+  Applications, ICEC 2012, Springer Berlin Heidelberg, Bremen, Germany, 2012,
+  pp. 504--510.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-33542-6_65}
+  {\path{doi:10.1007/978-3-642-33542-6_65}}.
+
+\bibitem{James:2014}
+P.~James, M.~Roggenbach, Encapsulating formal methods within domain specific
+  languages: A solution for verifying railway scheme plans, Mathematics in
+  Computer Science 8~(1) (2014) 11--38.
+\newblock \href {http://dx.doi.org/10.1007/s11786-014-0174-0}
+  {\path{doi:10.1007/s11786-014-0174-0}}.
+
+\bibitem{Iliasov:2013}
+A.~Iliasov, I.~Lopatkin, A.~Romanovsky,
+  \href{http://dx.doi.org/10.1007/978-3-642-40793-2_12}{The SafeCap Platform
+  for Modelling Railway Safety and Capacity}, Springer Berlin Heidelberg,
+  Berlin, Heidelberg, 2013, pp. 130--137.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-40793-2_12}
+  {\path{doi:10.1007/978-3-642-40793-2_12}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/978-3-642-40793-2_12}
+
+\bibitem{Zschaler:2010}
+S.~Zschaler, P.~S\'anchez, J.~a. Santos, M.~Alf\'erez, A.~Rashid, L.~Fuentes,
+  A.~Moreira, J.~a. Ara\'ujo, U.~Kulesza, Vml* $–$ a family of languages for
+  variability management in software product lines, in: M.~van~den Brand,
+  D.~Gasevic, J.~Gray (Eds.), Software Language Engineering, Vol. 5969 of
+  Lecture Notes in Computer Science, Springer Berlin Heidelberg, 2010, pp.
+  82--102.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-12107-4_7}
+  {\path{doi:10.1007/978-3-642-12107-4_7}}.
+
+\bibitem{White:2009}
+J.~White, J.~H. Hill, J.~Gray, S.~Tambe, A.~S. Gokhale, D.~C. Schmidt,
+  Improving domain-specific language reuse with software product line
+  techniques, IEEE Software 26~(4) (2009) 47--53.
+
+\bibitem{Kuhn:2015}
+T.~K\"{u}hn, W.~Cazzola, D.~M. Olivares, Choosy and picky: Configuration of
+  language product lines, in: Proceedings of the 19th International Conference
+  on Software Product Line, SPLC '15, ACM, New York, NY, USA, 2015, pp. 71--80.
+\newblock \href {http://dx.doi.org/10.1145/2791060.2791092}
+  {\path{doi:10.1145/2791060.2791092}}.
+
+\bibitem{Kuhn:2016}
+T.~K\"uhn, W.~Cazzola, Apples and oranges: Comparing top-down and bottom-up
+  language product lines, in: Proceedings of the 20th International Software
+  Product Line Conference, SPLC '16, ACM, Beijing, China, 2016.
+
+\bibitem{MendezAcuna:2016}
+D.~M\'endez-Acu\~na, J.~A. Galindo, B.~Combemale, A.~Blouin, B.~Baudry,
+  Reverse-engineering reusable language modules from legacy domain-specific
+  languages, in: Proceedings of the International Conference on Software Reuse,
+  ICSR 2016, Springer, Limassol, Cyprus, 2016.
+
+\bibitem{Crane:2007}
+M.~Crane, J.~Dingel, Uml vs. classical vs. rhapsody statecharts: not all models
+  are created equal, Software \& Systems Modeling 6~(4).
+\newblock \href {http://dx.doi.org/10.1007/s10270-006-0042-8}
+  {\path{doi:10.1007/s10270-006-0042-8}}.
+
+\bibitem{Linden:2007}
+F.~J. v.~d. Linden, K.~Schmid, E.~Rommes, Software Product Lines in Action: The
+  Best Industrial Practice in Product Line Engineering, Springer-Verlag New
+  York, Inc., Secaucus, NJ, USA, 2007.
+
+\bibitem{UML:2011}
+O.~M.~G. (OMG), Uml 2.4.1 superstructure specification (2011).
+
+\bibitem{Harel:2004}
+D.~Harel, H.~Kugler, \href{http://dx.doi.org/10.1007/978-3-540-27863-4_19}{The
+  rhapsody semantics of statecharts (or, on the executable core of the uml)},
+  in: H.~Ehrig, W.~Damm, J.~Desel, M.~Große-Rhode, W.~Reif, E.~Schnieder,
+  E.~Westkämper (Eds.), Integration of Software Specification Techniques for
+  Applications in Engineering, Vol. 3147 of Lecture Notes in Computer Science,
+  Springer Berlin Heidelberg, 2004, pp. 325--354.
+\newblock \href {http://dx.doi.org/10.1007/978-3-540-27863-4_19}
+  {\path{doi:10.1007/978-3-540-27863-4_19}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/978-3-540-27863-4_19}
+
+\bibitem{Martaj:2010}
+N.~Martaj, M.~Mokhtari,
+  \href{http://dx.doi.org/10.1007/978-3-642-11764-0_13}{Stateflow}, in: MATLAB
+  R2009, SIMULINK et STATEFLOW pour Ing\'enieurs, Chercheurs et \'Etudiants,
+  Springer Berlin Heidelberg, 2010, pp. 513--586.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-11764-0_13}
+  {\path{doi:10.1007/978-3-642-11764-0_13}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/978-3-642-11764-0_13}
+
+\bibitem{Harel:1996}
+D.~Harel, A.~Naamad, \href{http://doi.acm.org/10.1145/235321.235322}{The
+  statemate semantics of statecharts}, ACM Trans. Softw. Eng. Methodol. 5~(4)
+  (1996) 293--333.
+\newblock \href {http://dx.doi.org/10.1145/235321.235322}
+  {\path{doi:10.1145/235321.235322}}.
+\newline\urlprefix\url{http://doi.acm.org/10.1145/235321.235322}
+
+\bibitem{LopezHerrejon:2015}
+R.~E. Lopez-Herrejon, L.~Linsbauer, J.~A. Galindo, J.~A. Parejo, D.~Benavides,
+  S.~Segura, A.~Egyed,
+  \href{http://www.sciencedirect.com/science/article/pii/S0164121214002349}{An
+  assessment of search-based techniques for reverse engineering feature
+  models}, Journal of Systems and Software 103 (2015) 353 -- 369.
+\newblock \href {http://dx.doi.org/http://dx.doi.org/10.1016/j.jss.2014.10.037}
+  {\path{doi:http://dx.doi.org/10.1016/j.jss.2014.10.037}}.
+\newline\urlprefix\url{http://www.sciencedirect.com/science/article/pii/S0164121214002349}
+
+\bibitem{Martinez:2015}
+J.~Martinez, T.~Ziadi, T.~F. Bissyand{\'{e}}, J.~Klein, Y.~L. Traon,
+  \href{http://doi.acm.org/10.1145/2791060.2791086}{Bottom-up adoption of
+  software product lines: a generic and extensible approach}, in: Proceedings
+  of the 19th International Conference on Software Product Line, {SPLC} 2015,
+  Nashville, TN, USA, July 20-24, 2015, 2015, pp. 101--110.
+\newblock \href {http://dx.doi.org/10.1145/2791060.2791086}
+  {\path{doi:10.1145/2791060.2791086}}.
+\newline\urlprefix\url{http://doi.acm.org/10.1145/2791060.2791086}
+
+\bibitem{Martinez:2015b}
+J.~Martinez, T.~Ziadi, T.~F. Bissyandé, J.~Klein, Y.~l.~Traon, Automating the
+  extraction of model-based software product lines from model variants (t), in:
+  Automated Software Engineering (ASE), 2015 30th IEEE/ACM International
+  Conference on, 2015, pp. 396--406.
+\newblock \href {http://dx.doi.org/10.1109/ASE.2015.44}
+  {\path{doi:10.1109/ASE.2015.44}}.
+
+\bibitem{Combemale:2013}
+B.~Combemale, C.~Hardebolle, C.~Jacquet, F.~Boulanger, B.~Baudry, Bridging the
+  chasm between executable metamodeling and models of computation, in:
+  Proceedings of the International Conference on Software Language Engineering,
+  SLE 2012, Springer, Dresden, Germany, 2013, pp. 184--203.
+
+\bibitem{Jezequel:2015b}
+J.-M. J\'ez\'equel, B.~Combemale, O.~Barais, M.~Monperrus, F.~Fouquet, Mashup
+  of metalanguages and its implementation in the kermeta language workbench,
+  Software \& Systems Modeling 14~(2) (2015) 905--920.
+
+\bibitem{Lucanu:2013}
+D.~Lucanu, V.~Rusu, Program equivalence by circular reasoning, in: Proceedings
+  of the International Conference on Integrated Formal Methods, IFM 2013,
+  Springer, Turku, Finland, 2013, pp. 362--377.
+
+\bibitem{Biegel:2010}
+B.~Biegel, S.~Diehl, Jccd: A flexible and extensible api for implementing
+  custom code clone detectors, in: Proceedings of the International Conference
+  on Automated Software Engineering, ASE 2010, ACM, Antwerp, Belgium, 2010, pp.
+  167--168.
+
+\bibitem{Voelter:2013b}
+M.~V\"olter, S.~Benz, C.~Dietrich, B.~Engelmann, M.~Helander, L.~C.~L. Kats,
+  E.~Visser, G.~Wachsmuth, {DSL} Engineering - Designing, Implementing and
+  Using Domain-Specific Languages, dslbook.org, 2013.
+
+\bibitem{Harel:2004b}
+D.~Harel, B.~Rumpe, Meaningful modeling: what's the semantics of ``semantics"?,
+  Computer 37~(10) (2004) 64--72.
+\newblock \href {http://dx.doi.org/10.1109/MC.2004.172}
+  {\path{doi:10.1109/MC.2004.172}}.
+
+\bibitem{Cengarle:2009}
+M.~V. Cengarle, H.~Gr\"onniger, B.~Rumpe, Variability within modeling language
+  definitions, in: A.~Sch\"urr, B.~Selic (Eds.), Model Driven Engineering
+  Languages and Systems, Vol. 5795 of Lecture Notes in Computer Science,
+  Springer Berlin Heidelberg, 2009, pp. 670--684.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-04425-0_54}
+  {\path{doi:10.1007/978-3-642-04425-0_54}}.
+
+\bibitem{Gronniger:2011}
+H.~Gr\"onniger, B.~Rumpe, Modeling language variability, in: R.~Calinescu,
+  E.~Jackson (Eds.), Foundations of Computer Software. Modeling, Development,
+  and Verification of Adaptive Systems, Vol. 6662 of Lecture Notes in Computer
+  Science, Springer Berlin Heidelberg, 2011, pp. 17--32.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-21292-5_2}
+  {\path{doi:10.1007/978-3-642-21292-5_2}}.
+
+\bibitem{Rosenmuller:2011}
+M.~Rosenm\"{u}ller, N.~Siegmund, T.~Th\"{u}m, G.~Saake, Multi-dimensional
+  variability modeling, in: Proceedings of the 5th Workshop on Variability
+  Modeling of Software-Intensive Systems, VaMoS '11, ACM, New York, NY, USA,
+  2011, pp. 11--20.
+\newblock \href {http://dx.doi.org/10.1145/1944892.1944894}
+  {\path{doi:10.1145/1944892.1944894}}.
+
+\bibitem{Liebig:2013}
+J.~Liebig, R.~Daniel, S.~Apel, Feature-oriented language families: A case
+  study, in: Proceedings of the Seventh International Workshop on Variability
+  Modelling of Software-intensive Systems, VaMoS '13, ACM, New York, NY, USA,
+  2013, pp. 11:1--11:8.
+\newblock \href {http://dx.doi.org/10.1145/2430502.2430518}
+  {\path{doi:10.1145/2430502.2430518}}.
+
+\bibitem{Roos-Frantz:2012}
+F.~Roos-Frantz, D.~Benavides, A.~Ruiz-Cort{\'e}s, A.~Heuer, K.~Lauenroth,
+  Quality-aware analysis in product line engineering with the orthogonal
+  variability model, Software Quality Journal 20~(3) (2012) 519--565.
+\newblock \href {http://dx.doi.org/10.1007/s11219-011-9156-5}
+  {\path{doi:10.1007/s11219-011-9156-5}}.
+
+\bibitem{Assuncao:2015}
+W.~K. Assun\c{c}\~{a}o, R.~E. Lopez-Herrejon, L.~Linsbauer, S.~R. Vergilio,
+  A.~Egyed, \href{http://doi.acm.org/10.1145/2739480.2754720}{Extracting
+  variability-safe feature models from source code dependencies in system
+  variants}, in: Proceedings of the 2015 Annual Conference on Genetic and
+  Evolutionary Computation, GECCO '15, ACM, New York, NY, USA, 2015, pp.
+  1303--1310.
+\newblock \href {http://dx.doi.org/10.1145/2739480.2754720}
+  {\path{doi:10.1145/2739480.2754720}}.
+\newline\urlprefix\url{http://doi.acm.org/10.1145/2739480.2754720}
+
+\bibitem{She:2014}
+S.~She, U.~Ryssel, N.~Andersen, A.~Wasowski, K.~Czarnecki, Efficient synthesis
+  of feature models, Information and Software Technology 56~(9) (2014) 1122 --
+  1143, special Sections from “Asia-Pacific Software Engineering Conference
+  (APSEC), 2012” and “ Software Product Line conference (SPLC), 2012”.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/j.infsof.2014.01.012}
+  {\path{doi:http://dx.doi.org/10.1016/j.infsof.2014.01.012}}.
+
+\bibitem{Vacchi:2013}
+E.~Vacchi, W.~Cazzola, S.~Pillay, B.~Combemale, Variability Support in
+  Domain-Specific Language Development, SLE 2013, Springer International
+  Publishing, Indianapolis, IN, USA, 2013, pp. 76--95.
+\newblock \href {http://dx.doi.org/10.1007/978-3-319-02654-1_5}
+  {\path{doi:10.1007/978-3-319-02654-1_5}}.
+
+\bibitem{Czarnecki:2004}
+K.~Czarnecki, S.~Helsen, U.~Eisenecker, Staged configuration using feature
+  models, in: R.~Nord (Ed.), Software Product Lines, Vol. 3154 of Lecture Notes
+  in Computer Science, Springer Berlin Heidelberg, 2004, pp. 266--283.
+\newblock \href {http://dx.doi.org/10.1007/978-3-540-28630-1_17}
+  {\path{doi:10.1007/978-3-540-28630-1_17}}.
+
+\bibitem{Dinkelaker:2010}
+T.~Dinkelaker, M.~Monperrus, M.~Mezini, Supporting variability with late
+  semantic adaptations of domain-specific modeling languages, in: Proceedings
+  of the First International Workshop on Composition and Variability co-located
+  with AOSD'2010, 2010.
+
+\bibitem{Gschwind:2012}
+T.~Gschwind, Automated Adaptation of Component Interfaces with Type Based
+  Adaptation, Springer London, London, 2012, pp. 45--61.
+\newblock \href {http://dx.doi.org/10.1007/978-1-4471-2350-7_5}
+  {\path{doi:10.1007/978-1-4471-2350-7_5}}.
+
+\bibitem{Steel:2007}
+J.~Steel, J.-M. J{\'e}z{\'e}quel,
+  \href{http://dx.doi.org/10.1007/s10270-006-0036-6}{On model typing}, Software
+  {\&} Systems Modeling 6~(4) (2007) 401--413.
+\newblock \href {http://dx.doi.org/10.1007/s10270-006-0036-6}
+  {\path{doi:10.1007/s10270-006-0036-6}}.
+\newline\urlprefix\url{http://dx.doi.org/10.1007/s10270-006-0036-6}
+
+\bibitem{Degueule:2015a}
+T.~Degueule, B.~Combemale, A.~Blouin, O.~Barais, J.-M. J{\'e}z{\'e}quel,
+  \href{https://hal.inria.fr/hal-01197038}{Melange: A meta-language for modular
+  and reusable development of dsls}, in: 8th International Conference on
+  Software Language Engineering (SLE), Pittsburgh, United States, 2015.
+\newline\urlprefix\url{https://hal.inria.fr/hal-01197038}
+
+\bibitem{Guy:2012}
+C.~Guy, B.~Combemale, S.~Derrien, J.~R.~H. Steel, J.-M. J{\'e}z{\'e}quel, On
+  model subtyping, in: A.~Vallecillo, J.-P. Tolvanen, E.~Kindler,
+  H.~St{\"o}rrle, D.~Kolovos (Eds.), Proceedings of the 8th European Conference
+  on Modelling Foundations and Applications, ECMFA 2012, Springer Berlin
+  Heidelberg, Lyngby, Denmark, 2012, pp. 400--415.
+\newblock \href {http://dx.doi.org/10.1007/978-3-642-31491-9_30}
+  {\path{doi:10.1007/978-3-642-31491-9_30}}.
+
+\bibitem{Vacchi:2014}
+E.~Vacchi, W.~Cazzola, B.~Combemale, M.~Acher, {Automating Variability Model
+  Inference for Component-Based Language Implementations}, in: P.~Heymans,
+  J.~Rubin (Eds.), {SPLC'14 - 18th International Software Product Line
+  Conference}, ACM, Florence, Italie, 2014.
+
+\bibitem{Harel:1987}
+D.~Harel, Statecharts: a visual formalism for complex systems, Science of
+  Computer Programming 8~(3) (1987) 231 -- 274.
+\newblock \href
+  {http://dx.doi.org/http://dx.doi.org/10.1016/0167-6423(87)90035-9}
+  {\path{doi:http://dx.doi.org/10.1016/0167-6423(87)90035-9}}.
+
+\end{thebibliography}
