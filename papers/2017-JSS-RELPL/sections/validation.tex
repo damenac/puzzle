@@ -1,9 +1,9 @@
 % !TEX root = ../elsarticle-template.tex
 %-------------------
-\section{Case Study: The VaryMDE Project}
+\section{Validation: The VaryMDE Project}
 \label{sec:validation}
 
-In this section, we introduce the VaryMDE project which is bilateral collaboration between INRIA and Thales Research \& Technology (TRT). The role of this project in the research presented in this article is two-fold. On one hand, it provides a set of research questions that motivate our work. Concretely, the research presented in this article represents an answer to some of the needs emerging in Thales in terms of language engineering. On the other hand, this project provides a realistic application scenario which we used as validation of the approach. In the reminder of this section, we present an overview of the project and we discuss the results of applying our approach in the scenario introduced by Thales.  
+In this section, we introduce the VaryMDE project which is bilateral collaboration between INRIA and Thales Research \& Technology (TRT). The role of this project in the research presented in this article is two-fold. On one hand, it provides a set of research questions that motivate our work. Concretely, the research presented in this article represents an answer to some of the needs emerging in Thales in terms of language engineering. On the other hand, this project provides a realistic application scenario which we used as validation of the approach. In the reminder of this section, we present an overview of the project and we discuss the results of applying our approach in the scenario introduced by Thales. To explain this scenario we try to follow as close as possible the guidelines provided by \cite{runeson-book} for the sake of clarity and organization.
 
 %INRIA' Diverse team worked togueter with Thales Research \& Technology (TRT) researchers towards targueting variability management issues at both the modeling level and the metamodeling level (i.e., design and implementation of software languages). Concretely, Thales researchers ended up having DSLs defined using three finite-state machines specifications and needed supoprt to avoid future costs. In the Section \label{sec:validation} we present more details about the used case.
 
@@ -12,21 +12,21 @@ In this section, we introduce the VaryMDE project which is bilateral collaborati
 \subsection{Background to the research project}
 Thales is a company whose business model turns around the construction of different types of systems that solve needs in diverse domains such as transport, aerospace, security, or defense. During the construction of these systems, Thales' engineers often appeal to the use of state machine languages to express behavior.
 
-Despite the expressibility of state machines, the diversity of the systems built by Thales imposes an accidental complexity. Depending on the type of system under construction, there are different requirements on the way in which a state machine should be executed. Hence, there is certain semantic flexibility that state machine languages should offer to support the particularities of the systems unde construction. As a result, Thales engineers are intended to build not only the devices themselves but also to adapt the state machines formalisms. 
+Despite the expressibility of state machines, the diversity of the systems built by Thales imposes an accidental complexity. Depending on the type of system under construction, there are different requirements on the way in which a state machine should be executed. Hence, there is certain semantic flexibility that state machine languages should offer to support the particularities of the systems unde construction. As a result, Thales engineers are intended to build not only the devices themselves but also to adapt the state machines formalisms.
 
-The typical development process to address the implementation of the formalisms for state machines is as follows: at the beginning, language designers build an initial DSL for state machines that fits the needs of one type of system. Then, they create new development branches when they adapt the first variant of the DSL to the needs of other types of systems. After some repetitions, language designers have a family of DSLs for state machines. Those DSLs have both syntax and semantic differences. 
+The typical development process to address the implementation of the formalisms for state machines is as follows: at the beginning, language designers build an initial DSL for state machines that fits the needs of one type of system. Then, they create new development branches when they adapt the first variant of the DSL to the needs of other types of systems. After some repetitions, language designers have a family of DSLs for state machines. Those DSLs have both syntax and semantic differences.
 
-\subsection{Design of the case study}
+\subsection{Design of the experiment}
 
 \textbf{Objectives.} One of the challenges of the VaryMDE project is to find out a way to facilitate the development process descrived above. As an answer of this challenge, we propose the use of reverse engineering techniques to create language product lines of DSLs for state machines from existing variants.
 
 \vspace{2mm}
-\textbf{Planning.} The case study was planned in three phases as shown in Fig. \ref{fig:planning}. In the first phase, the data set is prepared. Such a data set corresponds to the set of DSL variants that will be used to reverse engineer the language product line. This phase is iterative since we need to consider the feedback comming from the Thales' engineers. During the second phase, we execute our approach using the initial set of DSL variants. Finally, in the third phase we analyse the produced language product lines. 
+\textbf{Planning.} The experiment was planned in three phases as shown in Fig. \ref{fig:planning}. In the first phase, the data set is prepared. Such a data set corresponds to the set of DSL variants that will be used to reverse engineer the language product line. This phase is iterative since we need to consider the feedback comming from the Thales' engineers. During the second phase, we execute our approach using the initial set of DSL variants. Finally, in the third phase we analyse the produced language product lines.
 
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=1\linewidth]{images/planning-casestudy-fig.pdf}
-	\caption{Planning of the case study}
+	\caption{Project planning}
 	\label{fig:planning}
 \end{figure}
 
@@ -34,7 +34,7 @@ The typical development process to address the implementation of the formalisms 
 
 As aformentioned, the objective in this phase is to define the set of initial DSL variants that will be used to execute our approach. The most important limitation we found at this stage is that many of the implementations for state machine DSLs are built in different language workbenches and using diverse language meta-languages. Under these conditions, commonalities and particularities of DSLs are more difficult to detect.
 
-To overcome such a limitation, we decided to implement the initial DSL variants in a unified language workbench and using the same meta-languages. Hence, the phase of preparation for data collection corresponds to a language development process where three different formalisms for state machiens were implemented: UML state machines, Rhapsody, and Harel statecharts. Those formalisms were selected because they have a complete documentation that allow to fully understand its semantics. The implementation of the formalisms was conducted on top of Melange \cite{Degueule:2015a} language workbench and it is available on a dedicated GitHub repository\footnote{GitHub repository: \url{https://github.com/damende/puzzle/tree/master/examples/state-machines}}. The description of commonalities and differences existing among the selected formalisms are well-studied by Crane et al and are described in Annexe A. 
+To overcome such a limitation, we decided to implement the initial DSL variants in a unified language workbench and using the same meta-languages. Hence, the phase of preparation for data collection corresponds to a language development process where three different formalisms for state machiens were implemented: UML state machines, Rhapsody, and Harel statecharts. Those formalisms were selected because they have a complete documentation that allow to fully understand its semantics. The implementation of the formalisms was conducted on top of Melange \cite{Degueule:2015a} language workbench and it is available on a dedicated GitHub repository\footnote{GitHub repository: \url{https://github.com/damende/puzzle/tree/master/examples/state-machines}}. The description of commonalities and differences existing among the selected formalisms are well-studied by Crane et al and are described in Annexe A.
 
 \subsection{Collecting evidence}
 
@@ -45,13 +45,13 @@ Once we built the initial set of DSLs variants, we execute our approach and obta
 \begin{figure*}
 	\centering
 	\includegraphics[width=1\linewidth]{images/results-casestudy.png}
-	\caption{Language product line produced for the case study of the finite state machines. }
+	\caption{Language product line produced for the VaryMDE project. }
 	\label{fig:results-casestudy}
 \end{figure*}
 
 \subsection{Analysis of collected data}
 
-Let us now discuss the results of the case study. As expected, we obtained a language product product line from a set of DSL variants for finite state machines. But... Does this product line identify all the variation points and commonalities existing in the DSL variants? Are those variation points properly specified in the language modular design and variability models? Since we know these variation points and commonalities, we can check whether they are appear in the produced language product line. The results of this verification are presented in Table \ref{fig:validation-results}.
+Let us now discuss the results of the project regarding. As expected, we obtained a language product product line from a set of DSL variants for finite state machines. But... Does this product line identify all the variation points and commonalities existing in the DSL variants? Are those variation points properly specified in the language modular design and variability models? Since we know these variation points and commonalities, we can check whether they are appear in the produced language product line. The results of this verification are presented in Table \ref{fig:validation-results}.
 
 The results are promising in the case of abstract syntax variability. According to the Table \ref{fig:oracle}, the DSL variants share 17 constructs in common. Those constructs are properly factorized in a language module that we named StateMachine. This module is correctly identified during the recovering of the language modular design, and it is properly specified as a language module in terms of a metamodel enhance with domain specific actions and offering a provided interface. Besides, the particularities of the DSL variants are also well factorized. There is a module that contains the constructs NotTrigger and OrTrigger that belong only to the variant complying the Harel' statecharts specification. Besides, there are three additional modules that contain the constructs AndTrigger, Choice, and Conditional respectively. Using this modular design, we can re-compose any of the three initial DSL variants.
 
@@ -62,7 +62,7 @@ This threat to validity of our technique can be explained by the fact that the a
 \begin{table}
 \centering
 \includegraphics[width=1\linewidth]{images/validation-results}
-\caption{Analysis of the results of the case study}
+\caption{Analysis of the results}
 \label{fig:validation-results}
 \end{table}
 
